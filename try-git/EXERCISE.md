@@ -39,7 +39,7 @@ Back to the master branch. Your file is not there any more.
 
 Go back to your branch:
 
-```
+```sh
 $ git checkout issueN-test-yourname # switch back to your branch
 ```
 
