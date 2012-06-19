@@ -1,0 +1,482 @@
+{
+	"$prototypes": {
+		"menuItem": {
+			"$key": "title.en-US",
+			"application":{
+				"$key": ["application", "contract"]
+			}
+		},
+		"portlet": {
+			"$key": "title.en-US",
+			"application":{
+				"$key": ["application", "contract"]
+			},
+			"items":{
+				"$key": "title.en-US"
+			}
+		},
+		"pageData": {
+			"$key": "title.en-US",
+			"application":{
+				"$key": ["application", "contract"]
+			},
+			"portlets":{
+				"$key": ["portlet", "endpoint"],
+				"portlet": {
+					"$key": "title.en-US"
+				},
+				"endpoint": {
+					"$key": "description"
+				}
+			},
+			"roles": {
+				"$key": "description"
+			}
+		}	
+	},
+	"$items": [{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Applications",
+			"fr-FR": "Applications"
+		},
+		"description": {
+			"en-US": "Applications management interface",
+			"fr-FR": "Gestion des applications"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "applications",
+		"representation": "application",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Roles",
+			"fr-FR": "Rôles"
+		},
+		"description": {
+			"en-US": "User roles management interface",
+			"fr-FR": "Gestion des rôles utilisateur"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "roles",
+		"representation": "role",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "X3 Servers",
+			"fr-FR": "Serveurs X3"
+		},
+		"description": {
+			"en-US": "X3 Servers management interface",
+			"fr-FR": "Gestion des serveurs X3"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "x3servers",
+		"representation": "x3server",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Endpoints",
+			"fr-FR": "Points d'accès"
+		},
+		"description": {
+			"en-US": "Service access endpoints management",
+			"fr-FR": "Gestion des points d'accès au services"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "endPoints",
+		"representation": "endPoint",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Groups",
+			"fr-FR": "Groupes"
+		},
+		"description": {
+			"en-US": "User groups management interface",
+			"fr-FR": "Gestion des groupes d'utilisateur"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "groups",
+		"representation": "group",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Users",
+			"fr-FR": "Utilisateurs"
+		},
+		"description": {
+			"en-US": "Users management interface",
+			"fr-FR": "Gestion des utilisateurs"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "users",
+		"representation": "user",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Locales",
+			"fr-FR": "Préférences régionnales"
+		},
+		"description": {
+			"en-US": "Locales management interface",
+			"fr-FR": "Gestion des préférences régionales"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "localePreferences",
+		"representation": "localePreference",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Pages",
+			"fr-FR": "Pages"
+		},
+		"description": {
+			"en-US": "Pages management interface",
+			"fr-FR": "Gestion des pages"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "pageDatas",
+		"representation": "pageData",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Vignettes",
+			"fr-FR": "Vignettes"
+		},
+		"description": {
+			"en-US": "Vignettes management interface",
+			"fr-FR": "Gestion des vignettes"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "portlets",
+		"representation": "portlet",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Menu Items",
+			"fr-FR": "Entrées de menu"
+		},
+		"description": {
+			"en-US": "Menu items management interface",
+			"fr-FR": "Gestion des entrées de menu"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "menuItems",
+		"representation": "menuItem",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Menu Categories",
+			"fr-FR": "Catégories de menu"
+		},
+		"description": {
+			"en-US": "Menu categories management interface",
+			"fr-FR": "Gestion des catégories de menu"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "menuCategories",
+		"representation": "menuCategory",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Pages History",
+			"fr-FR": "Historique de pages"
+		},
+		"description": {
+			"en-US": "Pages history management interface",
+			"fr-FR": "Gestion de l'historique de pages"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "pageDataHistories",
+		"representation": "pageDataHistory",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Configurations",
+			"fr-FR": "Configurations"
+		},
+		"description": {
+			"en-US": "Configurations management interface",
+			"fr-FR": "Gestion des configurations"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "configurations",
+		"representation": "configuration",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Import Tool",
+			"fr-FR": "Outil d'import"
+		},
+		"description": {
+			"en-US": "Import tool",
+			"fr-FR": "Outil d'import"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "importTools",
+		"representation": "importTool",
+		"facet": "$create"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Search Index Management",
+			"fr-FR": "Gestion de l'outil de recherche"
+		},
+		"description": {
+			"en-US": "Search Index Management",
+			"fr-FR": "Gestion de l'outil de recherche"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "searchAdmins",
+		"representation": "searchAdmin",
+		"facet": "$create"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Syracuse Sessions",
+			"fr-FR": "Gestion de sessions Syracuse"
+		},
+		"description": {
+			"en-US": "Syracuse Sessions Management",
+			"fr-FR": "Gestion de sessions Syracuse"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "sessionInfos",
+		"representation": "sessionInfo",
+		"facet": "$query"
+	},{
+		"$type": "portlet",
+		"title": {
+			"en-US": "Syracuse administration",
+			"fr-FR": "Administration Syracuse"
+		},
+		"description": {
+			"en-US": "Syracuse administration pages",
+			"fr-FR": "Menus d'administration Syracuse"
+		},
+		"type": "$menu",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"items": ["Applications", "Roles", "X3 Servers", "Endpoints", "Groups", "Users", "Locales"]
+	},{
+		"$type": "portlet",
+		"title": {
+			"en-US": "Syracuse authoring",
+			"fr-FR": "Personnalisation Syracuse"
+		},
+		"description": {
+			"en-US": "Syracuse authoring tools",
+			"fr-FR": "Outils de personnalisation Syracuse"
+		},
+		"type": "$menu",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"items": ["Pages", "Vignettes", "Menu Items", "Menu Categories", "Pages History", "Configurations"]
+	},{
+		"$type": "portlet",
+		"title": {
+			"en-US": "Syracuse tools",
+			"fr-FR": "Outils Syracuse"
+		},
+		"description": {
+			"en-US": "Syracuse tools",
+			"fr-FR": "Outils Syracuse"
+		},
+		"type": "$menu",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"items": ["Import Tool", "Search Index Management", "Syracuse Sessions"]
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Teams",
+			"fr-FR": "Collaborateurs"
+		},
+		"description": {
+			"en-US": "Teams management",
+			"fr-FR": "Gestion de collaborateurs"
+		},
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"representation": "team",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Documents",
+			"fr-FR": "Documents"
+		},
+		"description": {
+			"en-US": "Document management",
+			"fr-FR": "Gestion de documents"
+		},
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"representation": "document",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Document tags",
+			"fr-FR": "Etiquettes de document"
+		},
+		"description": {
+			"en-US": "Document tags",
+			"fr-FR": "Gestion des etiquettes"
+		},
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"representation": "documentTag",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Tags categories",
+			"fr-FR": "Categories d'étiquettes de document"
+		},
+		"description": {
+			"en-US": "Tags categories",
+			"fr-FR": "Categories d'étiquettes de document"
+		},
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"representation": "documentTagCategory",
+		"facet": "$query"
+	},{
+		"$type": "portlet",
+		"title": {
+			"en-US": "Syracuse collaboration",
+			"fr-FR": "Espace collaboratif"
+		},
+		"description": {
+			"en-US": "Syracuse collaboration",
+			"fr-FR": "Espace collaboratif"
+		},
+		"type": "$menu",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"items": ["Teams", "Documents", "Document tags", "Tags categories"]
+	},{
+		"$type": "pageData",
+		"title": {
+			"en-US": "Administration dashboard",
+			"fr-FR": "Menu d'administration"
+		},
+		"facet": "$dashboard",
+		"dashboardName": "home",
+		"roles": ["Super administrator", "Endpoint administrator"],		
+		"allApplications": false,
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"portlets": [{
+			"portlet": "Syracuse administration",
+			"allEndpoints": true
+		},{
+			"portlet": "Syracuse collaboration",
+			"allEndpoints": true
+		},{
+			"portlet": "Syracuse authoring",
+			"allEndpoints": true
+		},{
+			"portlet": "Syracuse tools",
+			"allEndpoints": true
+		}]
+	}	
+	]
+}

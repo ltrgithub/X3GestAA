@@ -1,0 +1,651 @@
+{
+    "$type": "application/json",
+    "$title": "{@W-OAOC-12236}",
+    "$": {
+        "AA1": {
+            "$type": "application/x-string",
+            "$title": "{@S-AOC0-125}",
+            "$isMandatory": true,
+            "$constraints": {
+                "$maxLength": "8"
+            },
+            "$groupName": "A"
+        },
+        "AA3": {
+            "$type": "application/x-string",
+            "$title": "{@S-AOC0-8}",
+            "$constraints": {
+                "$maxLength": "30"
+            },
+            "$groupName": "A"
+        },
+        "BA1": {
+            "$type": "application/x-string",
+            "$title": "{@S-AOC1-1390}",
+            "$constraints": {
+                "$maxLength": "10"
+            },
+            "$groupName": "A"
+        },
+        "BA2": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC1-25797}",
+            "$mnu": "90",
+            "$format": "$radios",
+            "$constraints": {
+                "$maxLength": "15"
+            },
+            "$groupName": "A"
+        },
+        "BA3": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC1-26553}",
+            "$constraints": {
+                "$maxLength": "15"
+            },
+            "$groupName": "A"
+        },
+        "BA4": {
+            "$type": "application/x-integer",
+            "$title": "{@S-AOC1-10817}",
+            "$constraints": {
+                "$maxLength": "4"
+            },
+            "$groupName": "A"
+        },
+        "BB": {
+            "$type": "application/x-collection",
+            "$item": {
+                "$": {
+                    "BB1": {
+                        "$type": "application/x-integer",
+                        "$title": "",
+                        "$constraints": {
+                            "$maxLength": "4"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB2": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC1-1176}",
+                        "$constraints": {
+                            "$maxLength": "12"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB3": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC1-663}",
+                        "$isMandatory": true,
+                        "$constraints": {
+                            "$maxLength": "12"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB4": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC1-843}",
+                        "$isMandatory": true,
+                        "$constraints": {
+                            "$maxLength": "200"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB5": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC1-8}",
+                        "$constraints": {
+                            "$maxLength": "30"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB7": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC1-680}",
+                        "$isMandatory": true,
+                        "$constraints": {
+                            "$maxLength": "8"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB8": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC1-34}",
+                        "$constraints": {
+                            "$maxLength": "10"
+                        },
+                        "$groupName": "B"
+                    },
+                    "BB9": {
+                        "$type": "application/x-decimal",
+                        "$title": "{@S-AOC1-25}",
+                        "$constraints": {
+                            "$maxLength": "5"
+                        },
+                        "$groupName": "B"
+                    }
+                }
+            }
+        },
+        "BC1": {
+            "$type": "application/x-string",
+            "$title": "{@S-AOC1-810}",
+            "$constraints": {
+                "$maxLength": "15"
+            },
+            "$groupName": "C"
+        },
+        "BC2": {
+            "$type": "application/x-string",
+            "$title": "{@S-AOC1-8751}",
+            "$constraints": {
+                "$maxLength": "15"
+            },
+            "$groupName": "C"
+        },
+        "BD1": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC1-3922}",
+            "$constraints": {
+                "$maxLength": "20"
+            },
+            "$groupName": "D"
+        },
+        "BD2": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC1-22809}",
+            "$constraints": {
+                "$maxLength": "20"
+            },
+            "$groupName": "D"
+        },
+        "BE1": {
+            "$type": "application/x-string",
+            "$title": "",
+            "$constraints": {
+                "$maxLength": "250"
+            },
+            "$groupName": "E"
+        },
+        "CA1": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC2-188}",
+            "$constraints": {
+                "$maxLength": "20"
+            },
+            "$groupName": "A"
+        },
+        "CA3": {
+            "$type": "application/x-string",
+            "$title": "{@S-AOC2-4010}",
+            "$constraints": {
+                "$maxLength": "10"
+            },
+            "$groupName": "A"
+        },
+        "CB1": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC2-188}",
+            "$constraints": {
+                "$maxLength": "20"
+            },
+            "$groupName": "B"
+        },
+        "CB2": {
+            "$type": "application/x-choice",
+            "$title": "{@S-AOC2-14473}",
+            "$constraints": {
+                "$maxLength": "20"
+            },
+            "$groupName": "B"
+        },
+        "CC": {
+            "$type": "application/x-collection",
+            "$item": {
+                "$": {
+                    "CC1": {
+                        "$type": "application/x-integer",
+                        "$title": "",
+                        "$constraints": {
+                            "$maxLength": "4"
+                        },
+                        "$groupName": "C"
+                    },
+                    "CC2": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC2-1158}",
+                        "$constraints": {
+                            "$maxLength": "8"
+                        },
+                        "$groupName": "C"
+                    },
+                    "CC3": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC2-988}",
+                        "$constraints": {
+                            "$maxLength": "50"
+                        },
+                        "$groupName": "C"
+                    },
+                    "CC4": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC2-15983}",
+                        "$constraints": {
+                            "$maxLength": "3"
+                        },
+                        "$groupName": "C"
+                    },
+                    "CC5": {
+                        "$type": "application/x-string",
+                        "$title": "{@S-AOC2-23087}",
+                        "$constraints": {
+                            "$maxLength": "30"
+                        },
+                        "$groupName": "C"
+                    }
+                }
+            }
+        },
+        "bA": {
+            "$type": "application/x-collection",
+            "$item": {
+                "$": {
+                    "bA1": {
+                        "$title": "{@O-AOC-125}",
+                        "$constraints": {
+                            "$maxLength": "8"
+                        },
+                        "$type": "application/x-string"
+                    },
+                    "bA2": {
+                        "$title": "{@O-AOC-132}",
+                        "$constraints": {
+                            "$maxLength": "30"
+                        },
+                        "$type": "application/x-integer"
+                    },
+                    "bA3": {
+                        "$title": "{@O-AOC-23}",
+                        "$constraints": {
+                            "$maxLength": "12"
+                        },
+                        "$type": "application/x-string"
+                    }
+                }
+            }
+        },
+        "bB": {
+            "$type": "application/x-collection",
+            "$item": {
+                "$": {
+                    "bB1": {
+                        "$title": "{@O-AOC-125}",
+                        "$constraints": {
+                            "$maxLength": "8"
+                        },
+                        "$type": "application/x-string"
+                    },
+                    "bB2": {
+                        "$title": "{@O-AOC-132}",
+                        "$constraints": {
+                            "$maxLength": "30"
+                        },
+                        "$type": "application/x-integer"
+                    },
+                    "bB3": {
+                        "$title": "{@O-AOC-23}",
+                        "$constraints": {
+                            "$maxLength": "12"
+                        },
+                        "$type": "application/x-string"
+                    }
+                }
+            }
+        }
+    },
+    "$links": {
+        "aB1": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC-1401}",
+            "$act": "2125"
+        }
+    },
+    "$actions": {
+        "aA1": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC--123002}",
+            "$act": "1116"
+        },
+        "aA2": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC--123003}",
+            "$act": "1117"
+        },
+        "aA3": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC--123004}",
+            "$act": "1118"
+        },
+        "aA4": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC--123005}",
+            "$act": "2816"
+        },
+        "aA5": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC-1401}",
+            "$act": "2125"
+        },
+        "aA6": {
+            "$category": "fusionLink",
+            "$title": "{@W-OAOC--123065}",
+            "$act": "2845"
+        }
+    },
+    "$article": {
+        "$layout": {
+            "$layoutType": "columns",
+            "$layoutSubType": "25,75",
+            "$items": [
+                {
+                    "$layoutType": "stack",
+                    "$items": [
+                        {
+                            "$category": "fusionBar",
+                            "$items": [
+                                {
+                                    "$title": "{@W-OAOC-12236}",
+                                    "$bind": "bA",
+                                    "$selectMode": false,
+                                    "$format": "xflgrid",
+                                    "$layoutTypeBad": "stack",
+                                    "$isEditMode": false,
+                                    "$isFusion": true
+                                },
+                                {
+                                    "$title": "{@W-OAOC--123196}",
+                                    "$bind": "bB",
+                                    "$selectMode": false,
+                                    "$format": "xflgrid",
+                                    "$layoutTypeBad": "stack",
+                                    "$isEditMode": false,
+                                    "$isFusion": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$layoutType": "stack",
+                    "$items": [
+                        {
+                            "$category": "section",
+                            "$XID": "A",
+                            "$isFusion": true,
+                            "$x3bind": "A",
+							"$layout":{
+                            "$items": [
+                                {
+                                    "$title": "",
+                                    "$category": "block",
+                                    "$layoutTypeBad": "columns",
+                                    "$isFusion": true,
+                                    "$x3bind": "AA",
+                                    "$layout": {
+                                        "$items": [
+                                            {
+                                                "$isEditMode": true,
+                                                "$isFusion": true,
+                                                "$bind": "AA1"
+                                            },
+                                            {
+                                                "$isReadOnly": true,
+                                                "$isFusion": true,
+                                                "$bind": "AA3"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]}
+                        },
+                        {
+                            "$layoutType": "tabs",
+                            "$items": [
+                                {
+                                    "$title": "{@W-OAOC-6109}",
+                                    "$category": "section",
+                                    "$XID": "B",
+                                    "$isFusion": true,
+                                    "$x3bind": "B",
+									"$layout":{
+                                    "$items": [
+                                        {
+                                            "$title": "{@S-AOC1-742}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "BA",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BA1"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BA2"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BA3"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BA4"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "$title": "{@S-AOC1-148}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "BB",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BB"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "$title": "{@S-AOC1-754}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "BC",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BC1"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BC2"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "$title": "{@S-AOC1-1056}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "BD",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BD1"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BD2"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "$title": "{@S-AOC1-27185}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "BE",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "BE1"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]}
+                                },
+                                {
+                                    "$title": "{@W-OAOC-6109}",
+                                    "$category": "section",
+                                    "$XID": "C",
+                                    "$isFusion": true,
+                                    "$x3bind": "C",
+									"$layout":{
+									"$items": [
+                                        {
+                                            "$title": "{@S-AOC2-15984}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "CA",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "CA1"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "CA3"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "$title": "{@S-AOC2-14452}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "CB",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "CB1"
+                                                    },
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "CB2"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "$title": "{@S-AOC2-16035}",
+                                            "$category": "block",
+                                            "$layoutTypeBad": "columns",
+                                            "$isFusion": true,
+                                            "$x3bind": "CC",
+                                            "$layout": {
+                                                "$items": [
+                                                    {
+                                                        "$isEditMode": true,
+                                                        "$isFusion": true,
+                                                        "$bind": "CC"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]}
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "$localization": {
+        "@S-AOC0-125": "Code objet",
+        "@S-AOC0-8": "Intitulé",
+        "@S-AOC1-1390": "Index",
+        "@S-AOC1-25797": "Sens",
+        "@S-AOC1-26553": "Liste hiérarchisée",
+        "@S-AOC1-10817": "Nb caractères",
+        "@S-AOC1-1176": "Table",
+        "@S-AOC1-663": "Zone",
+        "@S-AOC1-843": "Expression",
+        "@S-AOC1-8": "Intitulé",
+        "@S-AOC1-680": "Type",
+        "@S-AOC1-34": "Options",
+        "@S-AOC1-25": "Longueur",
+        "@S-AOC1-810": "Impression",
+        "@S-AOC1-8751": "Liste",
+        "@S-AOC1-3922": "Statistiques",
+        "@S-AOC1-22809": "Verrou en modification",
+        "@S-AOC1-742": "Ecran de sélection",
+        "@S-AOC1-148": "Champs de sélection",
+        "@S-AOC1-754": "Etats",
+        "@S-AOC1-1056": "Divers",
+        "@S-AOC1-27185": "Url d'archivage",
+        "@S-AOC2-188": "Actif",
+        "@S-AOC2-4010": "Intitulé court",
+        "@S-AOC2-14473": "En première position",
+        "@S-AOC2-1158": "Objet",
+        "@S-AOC2-988": "Expression de lien",
+        "@S-AOC2-15983": "Code liaison",
+        "@S-AOC2-23087": "Tableau",
+        "@S-AOC2-15984": "Explorateur de liaisons",
+        "@S-AOC2-14452": "Derniers lus",
+        "@S-AOC2-16035": "Liaisons automatiques",
+        "@O-AOC-12236": "Personnalisation objets",
+        "@O-AOC-125": "Code objet",
+        "@O-AOC-132": "Intitulé objet",
+        "@O-AOC-23": "Table liée",
+        "@W-OAOC-12236": "Personnalisation objets",
+        "@W-OAOC-1401": "Copie",
+        "@W-OAOC--123002": "Enregistrer",
+        "@W-OAOC--123003": "Créer",
+        "@W-OAOC--123004": "Supprimer",
+        "@W-OAOC--123005": "Abandon",
+        "@W-OAOC--123065": "Fin",
+        "@W-OAOC--123196": "Derniers lus",
+        "@W-OAOC-6109": "Sélection"
+    }
+}

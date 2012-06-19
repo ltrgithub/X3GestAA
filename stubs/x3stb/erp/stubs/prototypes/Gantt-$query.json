@@ -1,0 +1,20 @@
+{
+	"$baseUrl": "http://syra_server/x3/demo",
+	"$baseType": "application/json; vnd.sage.syracuse.representation=x3.erp.demo",
+	"$url": "{$baseUrl}/conssta?&codeStat={$codeStat}&dateStart={$dateStart}&dateEnd={$dateEnd}&keyValue1={$keyValue1}&keyValue2={$keyValue2}&keyValue3={$keyValue3}",
+	"$title": "Test Gantt",
+	"$methods": "GET, POST, PUT, DELETE",
+	"$": {
+		"firstName": {
+			"$type": "application/x-string"
+		},
+		"lastName": {
+			"$type": "application/x-string"
+		},
+		"gantt": {
+			"$title": "Gantt",
+			"$type": "application/x-gantt",
+			"$url": "{$baseUrl}/users('{$uuid}')/gantt"
+		}
+	}
+}

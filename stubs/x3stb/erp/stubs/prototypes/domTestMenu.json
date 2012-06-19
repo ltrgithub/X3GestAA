@@ -1,0 +1,124 @@
+{
+    "$url": "syracuse.collaboration.syracuse.DOM.$dashboard,$page",
+    "$authorUrl": "http://localhost:8126/sdata/syracuse/collaboration/syracuse/pageDatas('d2e5d7af-996f-47e4-90d0-9b63ea50ad4b')/$workingCopies?representation=pageData.$edit",
+    "$prototype": {
+        "$title": "User DOM",
+        "$": {
+            "e00bd840-ff5e-4570-9fca-b0898ccc3f47-dbd49ebb-423c-4e2e-84c3-75248ee66668": {
+                "$format": "$menu",
+                "$links": {
+                    "69a9b0df-3396-4c2b-a8cf-f5e0235ee89a-dbd49ebb-423c-4e2e-84c3-75248ee66668": {
+                        "$type": "application/json;vnd.sage=syracuse",
+                        "$title": "Objets",
+                        "$description": "Objets",
+                        "$url": "/sdata/x3/erp/SUPERV/AOBJET?representation=AOBJET.$query",
+                        "$method": "GET",
+                        "$target": "self"
+                    },
+                    "789e5a08-b9c2-4b4d-be28-0aec189fb06e-dbd49ebb-423c-4e2e-84c3-75248ee66668": {
+                        "$type": "application/json;vnd.sage=syracuse",
+                        "$title": "Lecture traces",
+                        "$description": "Lecture traces",
+                        "$url": "/fusion/x3/erp/SUPERV/$sessions?f=LECTRACE%2F2%2F%2FM%2F",
+                        "$method": "GET",
+                        "$target": "self"
+                    },
+                    "69875667-d23c-4362-886e-e4e6ca884da0-dbd49ebb-423c-4e2e-84c3-75248ee66668": {
+                        "$type": "application/json;vnd.sage=syracuse",
+                        "$title": "Visualisation de requêtes",
+                        "$description": "Visualisation de requêtes",
+                        "$url": "/sdata/x3/erp/SUPERV/QUERY('TOTO')?representation=QUERY~TOTO.$query",
+                        "$method": "GET",
+                        "$target": "self"
+                    }
+                },
+                "$article": {
+                    "$menus": [
+                        {
+                            "$bind": "69a9b0df-3396-4c2b-a8cf-f5e0235ee89a-dbd49ebb-423c-4e2e-84c3-75248ee66668"
+                        },
+                        {
+                            "$bind": "789e5a08-b9c2-4b4d-be28-0aec189fb06e-dbd49ebb-423c-4e2e-84c3-75248ee66668"
+                        },
+						{
+                            "$title": "Premier menu",
+                            "$items": [
+                                {
+                                    "$bind": "69a9b0df-3396-4c2b-a8cf-f5e0235ee89a-dbd49ebb-423c-4e2e-84c3-75248ee66668"
+                                },
+                                {
+                                    "$title": "sous menu",
+                                    "$items": [
+                                        {
+                                            "$bind": "69875667-d23c-4362-886e-e4e6ca884da0-dbd49ebb-423c-4e2e-84c3-75248ee66668"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$bind": "789e5a08-b9c2-4b4d-be28-0aec189fb06e-dbd49ebb-423c-4e2e-84c3-75248ee66668"
+                                }
+                            ]
+                        },
+                        {
+                            "$title": "Deuxieme menu",
+                            "$items": [
+                                {
+                                    "$bind": "69875667-d23c-4362-886e-e4e6ca884da0-dbd49ebb-423c-4e2e-84c3-75248ee66668"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "$type": "application/x-portlet",
+                "$title": "Navigateur - ERP X3",
+                "$description": "Navigateur - ERP X3",
+                "$": {}
+            },
+            "ad7deaca-4f65-4c34-888b-d5901ebb9611-6d0cf271-cdf0-45d1-b8e9-f37e292c63fa": {
+                "$location": {
+                    "$type": "application/json;vnd.sage=syracuse",
+                    "$title": "Our Sage Place",
+                    "$description": "Our Sage Place",
+                    "$url": "https://www.oursageplace.com/web/guest",
+                    "$method": "GET",
+                    "$target": "self"
+                },
+                "$type": "application/x-portlet",
+                "$title": "Our Sage Place - Sprint1",
+                "$description": "Our Sage Place - Sprint1",
+                "$": {}
+            },
+            "ad7deaca-4f65-4c34-888b-d5901ebb9611-dbd49ebb-423c-4e2e-84c3-75248ee66668": {
+                "$location": {
+                    "$type": "application/json;vnd.sage=syracuse",
+                    "$title": "Our Sage Place",
+                    "$description": "Our Sage Place",
+                    "$url": "https://www.oursageplace.com/web/guest",
+                    "$method": "GET",
+                    "$target": "self"
+                },
+                "$type": "application/x-portlet",
+                "$title": "Our Sage Place - ERP X3",
+                "$description": "Our Sage Place - ERP X3",
+                "$": {}
+            },
+            "ad7deaca-4f65-4c34-888b-d5901ebb9611-facb61b8-505d-499d-985e-e4af5e515dcf": {
+                "$location": {
+                    "$type": "application/json;vnd.sage=syracuse",
+                    "$title": "Our Sage Place",
+                    "$description": "Our Sage Place",
+                    "$url": "https://www.oursageplace.com/web/guest",
+                    "$method": "GET",
+                    "$target": "self"
+                },
+                "$type": "application/x-portlet",
+                "$title": "Our Sage Place - Syracuse administration",
+                "$description": "Our Sage Place - Syracuse administration",
+                "$": {}
+            }
+        }
+    },
+    "$article": null,
+    "$uuid": "2592f114-ba29-42e3-b08c-c328d3eff1e5",
+    "$key": "2592f114-ba29-42e3-b08c-c328d3eff1e5"
+}

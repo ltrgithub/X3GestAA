@@ -1,0 +1,100 @@
+{
+	"$prototypes": {
+		"application": {
+			"$key": ["application", "contract"]
+		},
+		"role": {
+			"$key": "description"
+		},
+		"endPoint": {
+			"$key": "description",
+			"applicationRef": {
+				"$key": ["application", "contract"]
+			}
+		},
+		"group": {
+			"$key": "description",
+			"endPoints": {
+				"$key": "description"
+			},
+			"role": {
+				"$key": "description"
+			}
+		},
+		"user": {
+			"$key": "lastName",
+			"groups": {
+				"$key": "description"
+			}
+		},
+		"localePreference": {
+			"$key": "code"
+		}
+	},
+	"$includeBefore": [],
+	"$includeAfter": ["syracuse-admin-menu"],
+	"$items": [
+	{
+		"$type": "localePreference",
+		"code": "fr-FR",
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " ",
+		"enabled": true
+	},{
+		"$type": "localePreference",
+		"code": "en-US",
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " ",
+		"enabled": true
+	},{
+		"$type": "application",
+		"description": "Syracuse Collaboration",
+		"application": "syracuse",
+		"contract": "collaboration",
+		"protocol": "syracuse"
+	},{
+		"$type": "application",
+		"description": "X3 ERP",
+		"application": "x3",
+		"contract": "erp",
+		"protocol": "x3"
+	},{
+		"$type": "role",
+		"description": "Super administrator"
+	},{
+		"$type": "role",
+		"description": "Endpoint administrator"
+	},{
+		"$type": "endPoint",
+		"description": "Syracuse administration",
+		"applicationRef": {
+			"application": "syracuse",		
+			"contract": "collaboration"
+		},
+		"dataset": "syracuse",
+		"databaseHost": "localhost",
+		"databaseDriver": "mongodb",
+		"databasePort": 27017
+	},{
+		"$type": "group",
+		"description": "Super administrators",
+		"endPoints": ["Syracuse administration"],
+		"role": "Super administrator"
+	},{
+		"$type": "group",
+		"description": "Endpoint administrators",
+		"role": "Endpoint administrator"
+	},{
+		"$type": "user",
+		"login": "admin",
+		"password": "admin",
+		"lastName": "Super administrator",
+		"groups": ["Super administrators"]
+	},{
+		"$type": "user",
+		"login": "guest",
+		"password": "guest",
+		"lastName": "Guest"
+	}
+	]
+}
