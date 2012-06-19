@@ -1,0 +1,34 @@
+if [ "$1" = "stop" ]
+then
+   if [ -f /tmp/mongod.pid ]
+   then
+      kill `cat /tmp/mongod.pid`
+      rm -f /tmp/mongod.pid
+   else
+      echo "no mongod pid found in /tmp"
+   fi
+   if [ -f /tmp/syra.pid ]
+   then
+      kill `cat /tmp/syra.pid`
+      rm -f /tmp/syra.pid
+   else
+      echo "no node pid found in /tmp"
+   fi
+else
+   if [ -f /tmp/mongod.pid ]
+   then
+      echo "mongodb runs "
+      exit 1
+   else
+      ../mongodb-*/bin/mongod &
+      echo $! >/tmp/mongod.pid
+   fi
+   if [ -f /tmp/syra.pid ]
+   then
+      echo "node runs "
+      exit 1
+   else
+      node node & 
+      echo $! >/tmp/syra.pid
+   fi
+fi
