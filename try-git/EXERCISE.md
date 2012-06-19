@@ -25,7 +25,7 @@ $ git add yourname.txt
 $ git commit -a -m "your message"
 ```
 
-The commit is local. If you refresh the directory page on GitHub, you won't see your file.
+The commit is local. If you refresh the [directory page](https://github.com/Sage-ERP-X3/Syracuse/tree/master/try-git) on GitHub, you won't see your file.
 
 ## Switch branch
 
@@ -70,7 +70,7 @@ $ git merge issueN-test-yourname # merge your branch into master
 $ git push # push your changes to GitHub
 ```
 
-Now, refresh the directory page on GitHub. Your file should be there!
+Now, refresh the [directory page](https://github.com/Sage-ERP-X3/Syracuse/tree/master/try-git) on GitHub. Your file should be there!
 
 Also, look at the issue in GitHub issue tracking system.
 
