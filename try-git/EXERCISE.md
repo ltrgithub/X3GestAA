@@ -9,9 +9,9 @@ First, create a test issue in the issue tracking system.
 Then create a branch:
 
 ```sh
-git checkout master # go back to master branch
-git pull # bring your local master up-to-date before branching
-git checkout -b issueN-test-yourname origin/master # branch
+$ git checkout master # go back to master branch
+$ git pull # bring your local master up-to-date before branching
+$ git checkout -b issueN-test-yourname origin/master # branch
 ```
 
 ## Commit locally
@@ -21,8 +21,8 @@ Create a file called yourname.txt in this directory
 ```sh
 $ cd try-git
 $ echo "hello yourname" > yourname.txt
-$ git add yourname.txt
-$ git commit -a -m "your message"
+$ git add yourname.txt # add your file to git's index
+$ git commit -a -m "#N: your message" # commit locally
 ```
 
 The commit is local. If you refresh the [directory page](https://github.com/Sage-ERP-X3/Syracuse/tree/master/try-git) on GitHub, you won't see your file.
@@ -32,7 +32,7 @@ The commit is local. If you refresh the [directory page](https://github.com/Sage
 Go back to the master branch:
 
 ```sh
-$ git checkout master
+$ git checkout master # switch to master branch
 ```
 
 Back to the master branch. Your file is not there any more.
@@ -40,7 +40,7 @@ Back to the master branch. Your file is not there any more.
 Go back to your branch:
 
 ```
-$ git checkout issueN-test-yourname
+$ git checkout issueN-test-yourname # switch back to your branch
 ```
 
 Your file is back!
@@ -57,7 +57,7 @@ Commit with a _close_ message:
 
 ```sh
 $ git status # check were you are
-$ git commit -a -m "close #N: implemented hello goodbye"
+$ git commit -a -m "close #N: implemented hello goodbye" # commit locally
 
 ```
 
@@ -74,7 +74,7 @@ Now, refresh the [directory page](https://github.com/Sage-ERP-X3/Syracuse/tree/m
 
 Also, look at the issue in GitHub issue tracking system.
 
-You can now clean up and delete your local branch:
+If everything's ok you can now clean up and delete your local branch:
 
 ```sh
 $ git branch -d issueN-test-yourname
