@@ -6,6 +6,7 @@ try {
 	console.log(ex);
 }
 
+require('coffee-script');
 require("streamline").register(config.streamline || {
 	fibers: false,
 	verbose: true,
