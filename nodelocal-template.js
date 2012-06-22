@@ -23,7 +23,7 @@ exports.config = {
 	session: {
 		timeout: 20, // minutes
 		checkInterval: 60, // secondes
-		ignoreStoreSession: true,
+//		ignoreStoreSession: true,
 		"auth": "basic"
 	},
 	streamline: {
@@ -33,5 +33,9 @@ exports.config = {
 	},
 	session: {
 		"auth": "basic"
-	}	
+	},
+	x3fusion: {
+//		tracer: console.log,
+//		profiler: console.log
+	}
 };
