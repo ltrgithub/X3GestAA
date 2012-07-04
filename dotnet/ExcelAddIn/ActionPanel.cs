@@ -125,5 +125,14 @@ namespace ExcelAddIn
         {
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "selectionChanged" });
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            UnitTest_Tables test1 = new UnitTest_Tables();
+            if (test1.Execute())
+                MessageBox.Show("Succes");
+            else
+                MessageBox.Show("Fail");
+        }
     }
 }
