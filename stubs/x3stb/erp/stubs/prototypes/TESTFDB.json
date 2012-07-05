@@ -6,26 +6,40 @@
     "$": {
         "bA": {
             "$type": "application/x-collection",
-            "$title": "Liste multi",
+            "$title": "Liste syra mode row",
+            "$capabilities": "sort,filter",
+            "$isFieldPager": true,
+            "$links": {
+                "$next": {
+                    "$title": "mynext",
+                    "$url": "leftList-Next",
+                    "$type": "application/json"
+                },
+                "$previous": {
+                    "$title": "myprev",
+                    "$url": "leftList-Prev",
+                    "$type": "application/json"
+                }
+            },
             "$item": {
                 "$": {
                     "bA1": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Code",
                         "$type": "application/x-string"
                     },
                     "bA2": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Label",
                         "$type": "application/x-string"
                     },
                     "bA3": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Module",
                         "$type": "application/x-string"
                     },
                     "bA4": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Flag",
                         "$type": "application/x-string"
                     }
@@ -34,26 +48,40 @@
         },
         "bB": {
             "$type": "application/x-collection",
-            "$title": "Liste standard",
+            "$title": "Liste syra mode multi",
+            "$capabilities": "sort,filter",
+            "$isFieldPager": true,
+            "$links": {
+                "$next": {
+                    "$title": "mynext",
+                    "$url": "leftList-Next",
+                    "$type": "application/json"
+                },
+                "$previous": {
+                    "$title": "myprev",
+                    "$url": "leftList-Prev",
+                    "$type": "application/json"
+                }
+            },
             "$item": {
                 "$": {
                     "bB1": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Code",
                         "$type": "application/x-string"
                     },
                     "bB2": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Label",
                         "$type": "application/x-string"
                     },
                     "bB3": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Module",
                         "$type": "application/x-string"
                     },
                     "bB4": {
-                        "$capabilities": "",
+                        "$capabilities": "sort,filter",
                         "$title": "Flag",
                         "$type": "application/x-string"
                     }
@@ -74,46 +102,6 @@
             "$type": "application/x-tree",
             "$format": "xrec",
             "$title": "Liste hiérarchique récursive"
-        },
-        "bF": {
-            "$type": "application/x-collection",
-            "$title": "Liste avec tri et pager",
-            "$capabilities": "sort,filter",
-			"$isFieldPager" : true ,
-		    "$links": {
-			        "$next": {
-			            "$url": "leftList-Next",
-			            "$type": "application/json"
-			        },
-			        "$prev": {
-			            "$url": "leftList-Prev",
-			            "$type": "application/json"
-			        }
-		    },
-            "$item": {
-                "$": {
-                    "bF1": {
-            			"$capabilities": "sort,filter",
-                        "$title": "Code",
-                        "$type": "application/x-string"
-                    },
-                    "bF2": {
-            			"$capabilities": "sort,filter",
-                        "$title": "Label",
-                        "$type": "application/x-string"
-                    },
-                    "bF3": {
-            			"$capabilities": "sort,filter",
-                        "$title": "Module",
-                        "$type": "application/x-string"
-                    },
-                    "bF4": {
-            			"$capabilities": "sort,filter",
-                        "$title": "Flag",
-                        "$type": "application/x-string"
-                    }
-                }
-            }
         },
         "AA1": {
             "$title": "Activity Code",
@@ -137,26 +125,20 @@
                         "$bind": "bA",
                         "$format": "xflgrid",
                         "$isEditMode": false,
-                        "$hidePager": false,
-                        "$selectMode": "multi"
+                        "$isPagerHidden": false,
+                        "$selectMode": "row"
                     }, {
                         "$bind": "bB",
                         "$format": "xflgrid",
                         "$isEditMode": false,
                         "$hidePager": false,
-                        "$selectMode": null
+                        "$selectMode": "multi"
                     }, {
                         "$bind": "bC"
                     }, {
                         "$bind": "bD"
                     }, {
                         "$bind": "bE"
-                    }, {
-                        "$bind": "bF",
-                        "$format": "xflgridsyra",
-                        "$isEditMode": false,
-                        "$hidePager": false,
-                        "$selectMode": "single"
                     }]
                 }]
             }, {
