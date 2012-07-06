@@ -106,7 +106,7 @@ namespace ExcelAddIn
                 if (Globals.ThisAddIn.GetCellsInsertStyle() == CellsInsertStyle.ShiftCells)
                 {
                     Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow, initialCol],
-                        targetWorksheet.Cells[initialRow + rowCount, initialCol + colCount - 1]];
+                        targetWorksheet.Cells[initialRow + rowCount - 1, initialCol + colCount - 1]];
                     try
                     {
                         toShift.Insert(XlInsertShiftDirection.xlShiftDown);
@@ -122,7 +122,7 @@ namespace ExcelAddIn
                 else
                     if (Globals.ThisAddIn.GetCellsInsertStyle() == CellsInsertStyle.InsertRows)
                     {
-                        Range toShift = (Range)targetWorksheet.Rows[String.Format("{0}:{1}", initialRow, (initialRow + rowCount))];
+                        Range toShift = (Range)targetWorksheet.Rows[String.Format("{0}:{1}", initialRow, (initialRow + rowCount - 1))];
                         try
                         {
                             toShift.Insert(XlInsertShiftDirection.xlShiftDown);
@@ -137,27 +137,12 @@ namespace ExcelAddIn
                     }
             }
             else
-            {
-                if (Globals.ThisAddIn.GetCellsDeleteStyle() == CellsDeleteStyle.ShiftCells)
+                if(rowCount < 0)
                 {
-                    Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow, initialCol],
-                        targetWorksheet.Cells[initialRow - rowCount - 1, initialCol + colCount - 1]];
-                    try
+                    if (Globals.ThisAddIn.GetCellsDeleteStyle() == CellsDeleteStyle.ShiftCells)
                     {
-                        toShift.Delete(XlDeleteShiftDirection.xlShiftUp);
-                    }
-                    catch (Exception e)
-                    {
-                        // delete error
-                        MessageBox.Show(String.Format("Cannot shift up {0} columns and {1} rows. The range value are cleared.\n(Error was: \"{2}\")",
-                            colCount, -rowCount, e.Message));
-                        toShift.Value2 = "";
-                    }
-                }
-                else
-                    if (Globals.ThisAddIn.GetCellsDeleteStyle() == CellsDeleteStyle.DeleteRows)
-                    {
-                        Range toShift = (Range)targetWorksheet.Rows[String.Format("{0}:{1}", initialRow, (initialRow - rowCount - 1))];
+                        Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow, initialCol],
+                            targetWorksheet.Cells[initialRow - rowCount - 1, initialCol + colCount - 1]];
                         try
                         {
                             toShift.Delete(XlDeleteShiftDirection.xlShiftUp);
@@ -171,13 +156,29 @@ namespace ExcelAddIn
                         }
                     }
                     else
-                    {
-                        // just empty values
-                        Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow + rowCount, initialCol],
-                            targetWorksheet.Cells[initialRow, initialCol + colCount - 1]];
-                        toShift.Value2 = "";
-                    }
-            }
+                        if (Globals.ThisAddIn.GetCellsDeleteStyle() == CellsDeleteStyle.DeleteRows)
+                        {
+                            Range toShift = (Range)targetWorksheet.Rows[String.Format("{0}:{1}", initialRow, (initialRow - rowCount - 1))];
+                            try
+                            {
+                                toShift.Delete(XlDeleteShiftDirection.xlShiftUp);
+                            }
+                            catch (Exception e)
+                            {
+                                // delete error
+                                MessageBox.Show(String.Format("Cannot shift up {0} columns and {1} rows. The range value are cleared.\n(Error was: \"{2}\")",
+                                    colCount, -rowCount, e.Message));
+                                toShift.Value2 = "";
+                            }
+                        }
+                        else
+                        {
+                            // just empty values
+                            Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow + rowCount, initialCol],
+                                targetWorksheet.Cells[initialRow, initialCol + colCount - 1]];
+                            toShift.Value2 = "";
+                        }
+                }
             return true;
         }
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
@@ -241,8 +242,9 @@ namespace ExcelAddIn
                         activeWorksheet.Cells[activeListObject.DataBodyRange.Row + actualRowCount + diff, activeListObject.DataBodyRange.Column + activeListObject.ListColumns.Count]];
 
  */ 
-                    // make place
-                    if (!_makePlace(activeWorksheet, activeListObject.DataBodyRange.Row + actualRowCount + 1, activeListObject.DataBodyRange.Column, activeListObject.ListColumns.Count, diff-1))
+                    // make place: insert cells/rows starting with tables last line
+//                    if (!_makePlace(activeWorksheet, activeListObject.DataBodyRange.Row + actualRowCount + 1, activeListObject.DataBodyRange.Column, activeListObject.ListColumns.Count, diff - 1))
+                    if (!_makePlace(activeWorksheet, activeListObject.DataBodyRange.Row + actualRowCount + totalRowCount, activeListObject.DataBodyRange.Column, activeListObject.ListColumns.Count, diff))
                         return false;
                     // resize
                     if (!_resizeListObject(activeWorksheet, activeListObject, rowCount, true)) 
