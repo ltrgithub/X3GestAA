@@ -23,6 +23,7 @@
             "$constraints": {
                 "$maxLength": 30
             },
+			"$isEditMode" : true,
             "$isMandatory": true,
             "$capabilities": "sort,filter",
             "$links": {
@@ -456,7 +457,8 @@
                                             "$bind": "firstName"
                                         },
                                         {
-                                            "$bind": "lastName"
+                                            "$bind": "lastName",
+											"$isEditMode" : true
                                         },
                                         {
                                             "$bind": "title"
