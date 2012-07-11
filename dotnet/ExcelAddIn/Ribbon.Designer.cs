@@ -27,7 +27,7 @@ namespace ExcelAddIn
             }
             base.Dispose(disposing);
         }
-
+        
         #region Component Designer generated code
 
         /// <summary>
