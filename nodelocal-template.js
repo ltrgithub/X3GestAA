@@ -19,6 +19,21 @@ helpers.debug.traces = {
 	//"sql.execute": true
 };
 
+helpers.fusionProxyTracer = false;  // true ==> Every client/server exchanges are traced
+
+helpers.proxy ={
+	server: "your_proxy_server",
+	port: 80
+}
+
+helpers.sageup = {
+	format: 'json',  // format can be 'json' or 'xml'
+	debug: false,  // Activate http request traces
+	params: {   // add everything as http parameters at url queue ==> ?param1key=param1val&param2key=param2val...
+		//returnDelta: true   
+	}
+};
+
 exports.config = {
 	session: {
 		timeout: 20, // minutes
