@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
-using System.Threading;
-using System.Globalization;
 
 namespace ExcelAddIn
 {

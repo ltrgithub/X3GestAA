@@ -5,8 +5,6 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
 using Microsoft.Office.Tools.Excel.Extensions;
 using System.Windows.Forms;
-using System.Globalization;
-using System.Threading;
 
 namespace ExcelAddIn
 {
@@ -23,10 +21,6 @@ namespace ExcelAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            //
-            Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
-            //
             if (this.Application.ActiveWorkbook != null)
                 AutoConnect();
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);

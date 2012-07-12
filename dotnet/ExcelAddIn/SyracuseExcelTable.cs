@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
-using System.Resources;
 
 namespace ExcelAddIn
 {
@@ -33,7 +32,6 @@ namespace ExcelAddIn
         ExcelTablePrototypeField[] _fields;
         String _name;
         Dictionary<string, Range> _columnRanges;
-        ResourceManager _locRes = new ResourceManager("ExcelAddIn.Messages", typeof(ThisAddIn).Assembly);
 
         public SyracuseExcelTable(String name, ExcelTablePrototypeField[] fields)
         {
@@ -116,7 +114,8 @@ namespace ExcelAddIn
                     catch (Exception e)
                     {
                         // insert error
-                        MessageBox.Show(String.Format(_locRes.GetString("InsertCellsError"), colCount, rowCount, e.Message, "\n"));
+                        MessageBox.Show(String.Format("Cannot shift down {0} columns and {1} rows, the range might overlap another table. Please check Your insert preferences.\n(Error was: \"{2}\")",
+                            colCount, rowCount, e.Message));
                         return false;
                     }
                 }
@@ -131,7 +130,8 @@ namespace ExcelAddIn
                         catch (Exception e)
                         {
                             // insert error
-                            MessageBox.Show(String.Format(_locRes.GetString("InsertRowsError"), rowCount, e.Message, "\n"));
+                            MessageBox.Show(String.Format("Cannot insert {0} rows, the range might overlap another table. Please check Your insert preferences.\n(Error was: \"{1}\")",
+                                rowCount, e.Message));
                             return false;
                         }
                     }
@@ -150,7 +150,8 @@ namespace ExcelAddIn
                         catch (Exception e)
                         {
                             // delete error
-                            MessageBox.Show(String.Format(_locRes.GetString("DeleteCellsError"), colCount, -rowCount, e.Message, "\n"));
+                            MessageBox.Show(String.Format("Cannot shift up {0} columns and {1} rows. The range value are cleared.\n(Error was: \"{2}\")",
+                                colCount, -rowCount, e.Message));
                             toShift.Value2 = "";
                         }
                     }
@@ -165,7 +166,8 @@ namespace ExcelAddIn
                             catch (Exception e)
                             {
                                 // delete error
-                                MessageBox.Show(String.Format(_locRes.GetString("DeleteCellsError"), colCount, -rowCount, e.Message, "\n"));
+                                MessageBox.Show(String.Format("Cannot shift up {0} columns and {1} rows. The range value are cleared.\n(Error was: \"{2}\")",
+                                    colCount, -rowCount, e.Message));
                                 toShift.Value2 = "";
                             }
                         }
@@ -207,7 +209,8 @@ namespace ExcelAddIn
             }
             catch (Exception e)
             {
-                MessageBox.Show(String.Format(_locRes.GetString("CreateTableError"), headers.Length, rowCount, e.Message, "\n"));
+                MessageBox.Show(String.Format("Cannot create a table with {0} columns and {1} rows. Please check Your insert preferences.\n(Error was: \"{2}\")",
+                    headers.Length, rowCount, e.Message));
                 return null;
             }
             resultListObject.Name = _name;
@@ -229,11 +232,18 @@ namespace ExcelAddIn
             int actualRowCount = activeListObject.ListRows.Count;
             // resize
             int diff = rowCount - actualRowCount;
+//            Range cells;
             if (diff != 0)
             {
                 if (diff > 0)
                 {
+/*                    cells = activeWorksheet.Range[
+                        activeWorksheet.Cells[activeListObject.DataBodyRange.Row + actualRowCount + 1, activeListObject.DataBodyRange.Column],
+                        activeWorksheet.Cells[activeListObject.DataBodyRange.Row + actualRowCount + diff, activeListObject.DataBodyRange.Column + activeListObject.ListColumns.Count]];
+
+ */ 
                     // make place: insert cells/rows starting with tables last line
+//                    if (!_makePlace(activeWorksheet, activeListObject.DataBodyRange.Row + actualRowCount + 1, activeListObject.DataBodyRange.Column, activeListObject.ListColumns.Count, diff - 1))
                     if (!_makePlace(activeWorksheet, activeListObject.DataBodyRange.Row + actualRowCount + totalRowCount, activeListObject.DataBodyRange.Column, activeListObject.ListColumns.Count, diff))
                         return false;
                     // resize
@@ -243,6 +253,12 @@ namespace ExcelAddIn
                 else
                     if (diff < 0)
                     {
+                        // cells to shift
+/*                        cells = activeWorksheet.Range[
+                            activeWorksheet.Cells[activeListObject.DataBodyRange.Row + activeListObject.ListRows.Count + totalRowCount + diff, activeListObject.DataBodyRange.Column],
+                            activeWorksheet.Cells[activeListObject.DataBodyRange.Row + activeListObject.ListRows.Count + totalRowCount - 1, activeListObject.DataBodyRange.Column + activeListObject.ListColumns.Count]];
+
+ */
                         // resize table
                         var showTotals = activeListObject.ShowTotals;
                         activeListObject.ShowTotals = false;
@@ -321,7 +337,8 @@ namespace ExcelAddIn
                     // check if same dataset
                     if ((activeListObject != null) && (activeListObject.Name != _name))
                     {
-                        if (MessageBox.Show(String.Format(_locRes.GetString("OverrideTableConfirm"), activeCell.Address, activeListObject.Name), _locRes.GetString("AddinTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show(String.Format("The reference \"{0}\" is allready associated with table \"{1}\". Do You want to delete table \"{1}\" and replace its content ?",
+                            activeCell.Address, activeListObject.Name), "Sage X3 for Office", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             ((Range)activeListObject.Range.Item[1, 1]).Select();
                             _deleteTable(activeListObject, true);

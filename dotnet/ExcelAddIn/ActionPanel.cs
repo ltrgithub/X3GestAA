@@ -11,8 +11,6 @@ using Office = Microsoft.Office.Core;
 using VB = Microsoft.Vbe.Interop;
 using System.Web.Script.Serialization;
 using Path = System.IO.Path;
-using System.Threading;
-using System.Globalization;
 
 namespace ExcelAddIn
 {
@@ -23,7 +21,6 @@ namespace ExcelAddIn
         public ActionPanel()
         {
             connected = false;
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
             InitializeComponent();
         }
 
