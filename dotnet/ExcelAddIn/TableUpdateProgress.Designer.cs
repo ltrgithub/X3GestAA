@@ -28,30 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableUpdateProgress));
             this.buttonAbort = new System.Windows.Forms.Button();
             this.labelLoading = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAbort
             // 
-            resources.ApplyResources(this.buttonAbort, "buttonAbort");
+            this.buttonAbort.Location = new System.Drawing.Point(103, 17);
             this.buttonAbort.Name = "buttonAbort";
+            this.buttonAbort.Size = new System.Drawing.Size(71, 28);
+            this.buttonAbort.TabIndex = 0;
+            this.buttonAbort.Text = "Abort";
             this.buttonAbort.UseVisualStyleBackColor = true;
             this.buttonAbort.Click += new System.EventHandler(this.buttonAbort_Click);
             // 
             // labelLoading
             // 
-            resources.ApplyResources(this.labelLoading, "labelLoading");
+            this.labelLoading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelLoading.Location = new System.Drawing.Point(29, 62);
             this.labelLoading.Name = "labelLoading";
+            this.labelLoading.Size = new System.Drawing.Size(217, 17);
+            this.labelLoading.TabIndex = 1;
+            this.labelLoading.Text = "Loading X rows";
+            this.labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TableUpdateProgress
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(269, 116);
             this.Controls.Add(this.labelLoading);
             this.Controls.Add(this.buttonAbort);
             this.Name = "TableUpdateProgress";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TableUpdateProgress";
             this.ResumeLayout(false);
 
         }
