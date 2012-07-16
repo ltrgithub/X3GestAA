@@ -8,11 +8,17 @@ using System.Windows.Forms;
 
 namespace WordAddIn
 {
-    class SyracuseOfficeCustomData
+    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
+    public class SyracuseOfficeCustomData
     {
-        private const String sageERPX3JsonTagXPath = "/SyracuseOfficeCustomData";
+        private const String sageERPX3JsonTagXPath = "//SyracuseOfficeCustomData";
+        private String serverUrlProperty = "serverUrl";
+        private String resourceUrlProperty = "resourceUrl";
 
         private Dictionary<String, object> dictionary;
+
+        private Microsoft.Office.Interop.Word.Document doc;
+        private Microsoft.Office.Interop.Excel.Workbook workbook;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
         public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Word.Document doc)
@@ -23,7 +29,7 @@ namespace WordAddIn
                 return null;
             }
 
-            return new SyracuseOfficeCustomData(dict);
+            return new SyracuseOfficeCustomData(dict, doc);
         }
 
         // Gets a dictionary from an excel document by accessing its customxmlparts
@@ -34,11 +40,28 @@ namespace WordAddIn
             {
                 return null;
             }
-            return new SyracuseOfficeCustomData(dict);
+            return new SyracuseOfficeCustomData(dict, doc);
         }
 
-        public string getServerURL() {
-            return dictionary["serverUrl"].ToString();
+        public string getServerUrl() 
+        {
+            return getStringProperty(serverUrlProperty);
+        }
+
+        public string getResourceUrl()
+        {
+            return getStringProperty(resourceUrlProperty);
+        }
+
+        public string getStringProperty(String name)
+        {
+            object o = dictionary[name];
+            if (o == null)
+            {
+                MessageBox.Show(name + " is null!");
+                return "";
+            }
+            return o.ToString();
         }
 
         public void debug() 
@@ -56,9 +79,21 @@ namespace WordAddIn
             return this.dictionary;
         }
 
-        private SyracuseOfficeCustomData(Dictionary<String, object> dictionary)
+        public Microsoft.Office.Interop.Word.Document getWordDoc()
+        {
+            return doc;
+        }
+
+        private SyracuseOfficeCustomData(Dictionary<String, object> dictionary, Microsoft.Office.Interop.Word.Document doc)
         {
             this.dictionary = dictionary;
+            this.doc = doc;
+        }
+
+        private SyracuseOfficeCustomData(Dictionary<String, object> dictionary, Microsoft.Office.Interop.Excel.Workbook workbook)
+        {
+            this.dictionary = dictionary;
+            this.workbook = workbook;
         }
 
         //Used by word
@@ -77,6 +112,7 @@ namespace WordAddIn
         {
             foreach (CustomXMLPart part in parts)
             {
+                
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
