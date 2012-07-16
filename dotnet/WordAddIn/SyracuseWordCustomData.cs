@@ -53,15 +53,53 @@ namespace WordAddIn
             return getStringProperty(resourceUrlProperty);
         }
 
-        public string getStringProperty(String name)
+        public Boolean isRefreshDone()
         {
-            object o = dictionary[name];
-            if (o == null)
+            Boolean r = false;
+            try
             {
-                MessageBox.Show(name + " is null!");
+                if (getStringProperty("REFRESH_DONE", false).Equals("1"))
+                {
+                    r = true;
+                }
+                else
+                {
+                    r = false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return r;
+        }
+
+        public void setRefreshDone(Boolean status)
+        {
+            dictionary["REFRESH_DONE"] = (status ? "1" : "0");
+            writeDictionaryToDocument();
+        }
+
+        public string getStringProperty(String name, Boolean required = true)
+        {
+            try
+            {
+                object o = dictionary[name];
+                if (o == null && required)
+                {
+                    MessageBox.Show(name + " is null!");
+                    return "";
+                }
+                return o.ToString();
+            }
+            catch (KeyNotFoundException e)
+            {
+                if (required)
+                {
+                    MessageBox.Show(name + " is not set!");
+                }
                 return "";
             }
-            return o.ToString();
         }
 
         public void debug() 
@@ -94,6 +132,20 @@ namespace WordAddIn
         {
             this.dictionary = dictionary;
             this.workbook = workbook;
+        }
+
+        private void writeDictionaryToDocument()
+        {
+            foreach (CustomXMLPart part in doc.CustomXMLParts)
+            {
+
+                CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
+                if (node != null)
+                {
+                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    node.Text = ser.Serialize(dictionary);
+                }
+            }
         }
 
         //Used by word
