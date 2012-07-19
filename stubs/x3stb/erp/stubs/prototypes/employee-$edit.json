@@ -462,6 +462,15 @@
             "$title": "Liste de employees",
             "$url": "{$baseUrl}/{$pluralType}?representation={$singularType}.$query&role={$role}"
         },
+		"employeeProperties": {
+                        "$title": "Employees Properties",
+                        "$description": "Grid layout: default layout",
+						"$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}",
+						"$properties":{
+							"param1":"{lastName}",
+							"param2":"value"
+						}
+                    },
         "$print": {
             "$type": "application/pdf",
             "$title": "Imprimer",
