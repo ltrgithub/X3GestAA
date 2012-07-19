@@ -432,12 +432,46 @@
 							"param2":"value"
 						}
                     },
+					"employeePropertiesForm": {
+                        "$title": "Employees Properties Form",
+                        "$description": "Grid layout: default layout",
+						"$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}",
+						"$properties":{
+							"$":{         
+							"param3" :{
+                            		"$title" : "mon param3",
+                                    "$type" : "application/x-string"
+									},	
+							"param4" :{
+                            	"$title" : "mon param4",
+                                "$type" : "application/x-string"
+								},
+							"param5" :{
+                                       "$title" : "mon param4",
+                                       "$type" : "application/x-string",
+                                       "$isEditMode" : false       
+								}
+							},
+							"param1":"{lastName}",
+							"param2":"value"
+						}
+                    },		
         "$print": {
             "$type": "application/pdf",
             "$title": "Imprimer",
             "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$singularType}.$details&role={$role}"
         }
     },
+	"$actions":{
+				"actionsProperties2": {
+                       "$title": "Action Employees Properties",
+                       "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}",
+						"$properties":{
+							"param1":"{lastName}",
+							"param2":"value"
+						}
+                    }
+	},
     "$article": {
         "$layout": {
             "$items": [
