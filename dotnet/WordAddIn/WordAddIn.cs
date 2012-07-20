@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace WordAddIn
 {
-    public partial class ThisAddIn
+    public partial class WordAddIn
     {
+        public BrowserDialog browserDialog;
+
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             this.Application.DocumentChange += new Word.ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
@@ -39,6 +41,43 @@ namespace WordAddIn
             }
         }
 
+        public void connect()
+        {
+            if (browserDialog == null)
+            {
+                browserDialog = new BrowserDialog();
+                browserDialog.connect("http://localhost:8124");
+                browserDialog.Show();
+            }
+        }
+
+        public void serverSettings()
+        {
+            ServerSettings settings = new ServerSettings();
+            if (settings.ShowDialog() == DialogResult.OK)
+            {
+                String connectUrl = settings.GetConnectUrl();
+            }
+        }
+
+        public void CreateMailMerge()
+        {
+            if (!connectedToServer())
+            {
+                return;
+            }
+            browserDialog.createMailMerge();
+        }
+
+        public Boolean connectedToServer() 
+        {
+            if (browserDialog == null)
+            {
+                connect();
+            }
+            return true;
+        }
+        
         #region Von VSTO generierter Code
 
         /// <summary>

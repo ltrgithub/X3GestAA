@@ -189,12 +189,27 @@
     <Compile Include="DatasourceForm.Designer.cs">
       <DependentUpon>DatasourceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrowserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserDialog.Designer.cs">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerSettings.Designer.cs">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="WordAddInJSExternal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <EmbeddedResource Include="DatasourceForm.resx">
       <DependentUpon>DatasourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowserDialog.resx">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,9 +219,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -223,17 +242,23 @@
       <DependentUpon>Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="SyracuseWordCustomData.cs" />
-    <Compile Include="ThisAddIn.cs">
+    <Compile Include="WordAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="ThisAddIn.Designer.xml">
-      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    <None Include="WordAddIn.Designer.xml">
+      <DependentUpon>WordAddIn.cs</DependentUpon>
     </None>
-    <Compile Include="ThisAddIn.Designer.cs">
-      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    <Compile Include="WordAddIn.Designer.cs">
+      <DependentUpon>WordAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
     <None Include="WordAddIn_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -245,7 +270,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Word" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\14.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{147FB6A7-F239-4523-AE65-B6A4E49B361F}" />
         <Host Name="Word" GeneratedCodeNamespace="WordAddIn" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+          <HostItem Name="ThisAddIn" Code="WordAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="WordAddIn.Designer.xml" GeneratedCode="WordAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
