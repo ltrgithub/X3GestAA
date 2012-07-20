@@ -28,11 +28,13 @@
     <AssemblyName>Sage.Syracuse.ExcelAddIn</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <IsWebBootstrapper>False</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>C:\Users\bruno\dev\syracuse\node_modules\msoffice\lib\excel\addIn\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.2</ApplicationVersion>
+    <ApplicationVersion>1.0.0.3</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -141,7 +143,17 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
@@ -156,18 +168,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Tools.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Office.Tools.Common.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Office.Tools.Excel.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <Private>False</Private>
-    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>False</Private>
     </Reference>
@@ -208,12 +208,19 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="ActionPanel.en.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionPanel.fr.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionPanel.resx">
       <DependentUpon>ActionPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatasourceMngtForm.resx">
       <DependentUpon>DatasourceMngtForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Messages.en.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -224,11 +231,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Messages.fr.resx" />
+    <EmbeddedResource Include="Ribbon.en.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.fr.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.en.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.fr.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServerSettings.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableUpdateProgress.fr.resx">
+      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableUpdateProgress.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
@@ -241,6 +264,7 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Ribbon.cs">
       <SubType>Component</SubType>
@@ -296,7 +320,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Excel" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\14.0\Excel\InstallRoot\Path#excel.exe" AddItemTemplatesGuid="{147FB6A7-F239-4523-AE65-B6A4E49B361F}" />
         <Host Name="Excel" GeneratedCodeNamespace="ExcelAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="46A1294930C8ED42823D4E0C98F363DBD3CF21E2" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="76517034B29E3E9BF3F0B8C86B4B0CC28FFF3A0F" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
