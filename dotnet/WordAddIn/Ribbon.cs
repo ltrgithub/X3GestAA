@@ -12,5 +12,20 @@ namespace WordAddIn
         {
  
         }
+
+        private void buttonConnect_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.connect();
+        }
+
+        private void buttonServerSettings_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.serverSettings();
+        }
+
+        private void buttonCreateMailMerge_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.CreateMailMerge();
+        }
     }
 }

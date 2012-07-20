@@ -38,7 +38,7 @@ namespace WordAddIn
             Document doc = customData.getWordDoc();
             Document dataDoc;
 
-            String delim = WordAddIn.Globals.ThisAddIn.Application.International[WdInternationalIndex.wdListSeparator].ToString();
+            String delim = Globals.WordAddIn.Application.International[WdInternationalIndex.wdListSeparator].ToString();
 
             Object[] columnInfo = (Object[])mailMergeData["columns"];
             int numberOfColumns = columnInfo.Length;
@@ -65,7 +65,7 @@ namespace WordAddIn
             string filename = System.IO.Path.GetTempFileName().Replace(".tmp", ".docx");
             doc.MailMerge.CreateDataSource(filename, Type.Missing, Type.Missing, headers);
 
-            dataDoc = WordAddIn.Globals.ThisAddIn.Application.Documents.Open(filename);
+            dataDoc = Globals.WordAddIn.Application.Documents.Open(filename);
             for (int row = 0; row < numberOfRows; row++)
             {
                 if (row > 0)    // CreateDataSource has already create the first data row
@@ -89,7 +89,7 @@ namespace WordAddIn
 
         private void createMailMergeFields(Dictionary<String, object> mailMergeData)
         {
-            Selection wrdSelection = WordAddIn.Globals.ThisAddIn.Application.Selection;
+            Selection wrdSelection = Globals.WordAddIn.Application.Selection;
             Document doc = customData.getWordDoc();
 
             MailMergeFields wrdMergeFields = doc.MailMerge.Fields;
