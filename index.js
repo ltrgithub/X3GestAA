@@ -5,7 +5,14 @@ try {
 } catch (ex) {
 	console.log(ex);
 }
-
+//crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local sytem account
+if(config.streamline) {
+	if(config.streamline.homedrive)
+		process.env.HOMEDRIVE = config.streamline.homedrive;
+	if(config.streamline.homepath)
+		process.env.HOMEPATH = config.streamline.homepath;
+}
+//
 require('coffee-script');
 require("streamline").register(config.streamline || {
 	fibers: false,
