@@ -46,4 +46,4 @@ using Microsoft.Office.Tools.Excel;
 // behavior of Visual Studio Tools for Office, Version 2003. This can cause unexpected 
 // results in locale-sensitive information such as formula names and date formats.
 // 
-[assembly: ExcelLocale1033(false)]
+//[assembly: ExcelLocale1033(false)]
