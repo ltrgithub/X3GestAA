@@ -1,3 +1,11 @@
+// crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local sytem account
+// argument HOMEPATH="path"
+process.argv.forEach(function(argv) {
+	var parts = argv.split("=");
+	if((parts[0] === "HOMEPATH") && (parts[1] != null) && (parts[1] != ""))
+		process.env.HOMEPATH = parts[1];
+});
+//
 var config = {};
 
 try {
