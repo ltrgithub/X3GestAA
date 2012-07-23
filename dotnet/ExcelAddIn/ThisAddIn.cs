@@ -123,7 +123,7 @@ namespace ExcelAddIn
 
         public Ribbon Ribbon
         {
-            get { return (Ribbon)Globals.Ribbons[0].Ribbon; }
+            get { return (Ribbon)Globals.Ribbons.Ribbon; }
         }
         public ActionPanel ActionPanel
         {

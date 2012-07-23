@@ -2,7 +2,7 @@
 using System.Globalization;
 namespace ExcelAddIn
 {
-    partial class Ribbon : Microsoft.Office.Tools.Ribbon.OfficeRibbon
+    partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// Required designer variable.
@@ -10,6 +10,7 @@ namespace ExcelAddIn
         private System.ComponentModel.IContainer components = null;
 
         public Ribbon()
+            : base(Globals.Factory.GetRibbonFactory())
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace ExcelAddIn
             }
             base.Dispose(disposing);
         }
-        
+       
         #region Component Designer generated code
 
         /// <summary>
@@ -37,25 +38,25 @@ namespace ExcelAddIn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem1 = new Microsoft.Office.Tools.Ribbon.RibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem2 = new Microsoft.Office.Tools.Ribbon.RibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem3 = new Microsoft.Office.Tools.Ribbon.RibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem4 = new Microsoft.Office.Tools.Ribbon.RibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem5 = new Microsoft.Office.Tools.Ribbon.RibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem6 = new Microsoft.Office.Tools.Ribbon.RibbonDropDownItem();
-            this.syracuseTab = new Microsoft.Office.Tools.Ribbon.RibbonTab();
-            this.group1 = new Microsoft.Office.Tools.Ribbon.RibbonGroup();
-            this.buttonConnect = new Microsoft.Office.Tools.Ribbon.RibbonButton();
-            this.buttonServer = new Microsoft.Office.Tools.Ribbon.RibbonButton();
-            this.group2 = new Microsoft.Office.Tools.Ribbon.RibbonGroup();
-            this.buttonSettings = new Microsoft.Office.Tools.Ribbon.RibbonButton();
-            this.buttonRefreshAll = new Microsoft.Office.Tools.Ribbon.RibbonButton();
-            this.group3 = new Microsoft.Office.Tools.Ribbon.RibbonGroup();
-            this.buttonPublish = new Microsoft.Office.Tools.Ribbon.RibbonButton();
-            this.groupSageX3 = new Microsoft.Office.Tools.Ribbon.RibbonGroup();
-            this.checkBox1 = new Microsoft.Office.Tools.Ribbon.RibbonCheckBox();
-            this.dropDownInsert = new Microsoft.Office.Tools.Ribbon.RibbonDropDown();
-            this.dropDownDelete = new Microsoft.Office.Tools.Ribbon.RibbonDropDown();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem1 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem2 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem3 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem4 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem5 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItem6 = this.Factory.CreateRibbonDropDownItem();
+            this.syracuseTab = this.Factory.CreateRibbonTab();
+            this.group1 = this.Factory.CreateRibbonGroup();
+            this.buttonConnect = this.Factory.CreateRibbonButton();
+            this.buttonServer = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.buttonSettings = this.Factory.CreateRibbonButton();
+            this.buttonRefreshAll = this.Factory.CreateRibbonButton();
+            this.group3 = this.Factory.CreateRibbonGroup();
+            this.buttonPublish = this.Factory.CreateRibbonButton();
+            this.groupSageX3 = this.Factory.CreateRibbonGroup();
+            this.checkBox1 = this.Factory.CreateRibbonCheckBox();
+            this.dropDownInsert = this.Factory.CreateRibbonDropDown();
+            this.dropDownDelete = this.Factory.CreateRibbonDropDown();
             this.syracuseTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -87,7 +88,7 @@ namespace ExcelAddIn
             this.buttonConnect.Image = global::ExcelAddIn.Properties.Resources.connect;
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.ShowImage = true;
-            this.buttonConnect.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonConnect_Click);
+            this.buttonConnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonConnect_Click);
             // 
             // buttonServer
             // 
@@ -96,7 +97,7 @@ namespace ExcelAddIn
             this.buttonServer.Image = global::ExcelAddIn.Properties.Resources.server_settings;
             this.buttonServer.Name = "buttonServer";
             this.buttonServer.ShowImage = true;
-            this.buttonServer.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonServer_Click);
+            this.buttonServer.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonServer_Click);
             // 
             // group2
             // 
@@ -112,7 +113,7 @@ namespace ExcelAddIn
             this.buttonSettings.Image = global::ExcelAddIn.Properties.Resources.settings;
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.ShowImage = true;
-            this.buttonSettings.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonSettings_Click);
+            this.buttonSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSettings_Click);
             // 
             // buttonRefreshAll
             // 
@@ -121,7 +122,7 @@ namespace ExcelAddIn
             this.buttonRefreshAll.Image = global::ExcelAddIn.Properties.Resources.refresh;
             this.buttonRefreshAll.Name = "buttonRefreshAll";
             this.buttonRefreshAll.ShowImage = true;
-            this.buttonRefreshAll.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonRefreshAll_Click);
+            this.buttonRefreshAll.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshAll_Click);
             // 
             // group3
             // 
@@ -136,7 +137,7 @@ namespace ExcelAddIn
             this.buttonPublish.Image = global::ExcelAddIn.Properties.Resources.save;
             this.buttonPublish.Name = "buttonPublish";
             this.buttonPublish.ShowImage = true;
-            this.buttonPublish.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonPublish_Click);
+            this.buttonPublish.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPublish_Click);
             // 
             // groupSageX3
             // 
@@ -150,7 +151,7 @@ namespace ExcelAddIn
             // 
             resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.checkBox1_Click);
+            this.checkBox1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBox1_Click);
             // 
             // dropDownInsert
             // 
@@ -180,7 +181,7 @@ namespace ExcelAddIn
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.syracuseTab);
             resources.ApplyResources(this, "$this");
-            this.Load += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonUIEventArgs>(this.Ribbon_Load);
+            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
             this.syracuseTab.ResumeLayout(false);
             this.syracuseTab.PerformLayout();
             this.group1.ResumeLayout(false);

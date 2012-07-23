@@ -15,7 +15,7 @@ namespace ExcelAddIn {
     /// 
     [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(0)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class ThisAddIn : Microsoft.Office.Tools.AddIn, Microsoft.VisualStudio.Tools.Office.IOfficeEntryPoint {
+    public sealed partial class ThisAddIn : Microsoft.Office.Tools.AddInBase {
         
         internal Microsoft.Office.Tools.CustomTaskPaneCollection CustomTaskPanes;
         
@@ -30,8 +30,9 @@ namespace ExcelAddIn {
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public ThisAddIn() : 
-                base("AddIn", "ThisAddIn") {
+        public ThisAddIn(global::Microsoft.Office.Tools.Excel.ApplicationFactory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "AddIn", "ThisAddIn") {
+            Globals.Factory = factory;
         }
         
         /// 
@@ -97,7 +98,6 @@ namespace ExcelAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private void StartCaching(string MemberName) {
             this.DataHost.StartCaching(this, MemberName);
@@ -105,7 +105,6 @@ namespace ExcelAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private void StopCaching(string MemberName) {
             this.DataHost.StopCaching(this, MemberName);
@@ -113,7 +112,6 @@ namespace ExcelAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private bool IsCached(string MemberName) {
             return this.DataHost.IsCached(this, MemberName);
@@ -144,8 +142,8 @@ namespace ExcelAddIn {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.CustomTaskPanes = new Microsoft.Office.Tools.CustomTaskPaneCollection(this.ItemProvider, this.HostContext, "CustomTaskPanes", this, "CustomTaskPanes");
-            this.VstoSmartTags = new Microsoft.Office.Tools.SmartTagCollection(this.ItemProvider, this.HostContext, "VstoSmartTags", this, "VstoSmartTags");
+            this.CustomTaskPanes = Globals.Factory.CreateCustomTaskPaneCollection(null, null, "CustomTaskPanes", "CustomTaskPanes", this);
+            this.VstoSmartTags = Globals.Factory.CreateSmartTagCollection(null, null, "VstoSmartTags", "VstoSmartTags", this);
         }
         
         /// 
@@ -157,7 +155,6 @@ namespace ExcelAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private bool NeedsFill(string MemberName) {
             return this.DataHost.NeedsFill(this, MemberName);
@@ -185,6 +182,8 @@ namespace ExcelAddIn {
         
         private static ThisAddIn _ThisAddIn;
         
+        private static global::Microsoft.Office.Tools.Excel.ApplicationFactory _factory;
+        
         private static ThisRibbonCollection _ThisRibbonCollection;
         
         internal static ThisAddIn ThisAddIn {
@@ -201,10 +200,24 @@ namespace ExcelAddIn {
             }
         }
         
+        internal static global::Microsoft.Office.Tools.Excel.ApplicationFactory Factory {
+            get {
+                return _factory;
+            }
+            set {
+                if ((_factory == null)) {
+                    _factory = value;
+                }
+                else {
+                    throw new System.NotSupportedException();
+                }
+            }
+        }
+        
         internal static ThisRibbonCollection Ribbons {
             get {
                 if ((_ThisRibbonCollection == null)) {
-                    _ThisRibbonCollection = new ThisRibbonCollection();
+                    _ThisRibbonCollection = new ThisRibbonCollection(_factory.GetRibbonFactory());
                 }
                 return _ThisRibbonCollection;
             }
@@ -214,6 +227,11 @@ namespace ExcelAddIn {
     /// 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
-    internal sealed partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection {
+    internal sealed partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonCollectionBase {
+        
+        /// 
+        internal ThisRibbonCollection(global::Microsoft.Office.Tools.Ribbon.RibbonFactory factory) : 
+                base(factory) {
+        }
     }
 }

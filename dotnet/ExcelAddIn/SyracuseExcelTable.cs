@@ -199,11 +199,11 @@ namespace ExcelAddIn
             // the table must be created after cells shift
             try
             {
-                resultListObject = targetWorksheet.ListObjects.AddEx(XlListObjectSourceType.xlSrcRange,
+                resultListObject = targetWorksheet.ListObjects.Add(XlListObjectSourceType.xlSrcRange,
                     targetWorksheet.Range[
                     targetWorksheet.Cells[initialRow, initialCol],
                     targetWorksheet.Cells[initialRow + rowCount, initialCol + headers.Length - 1]],
-                    Type.Missing, XlYesNoGuess.xlYes, Type.Missing, Type.Missing);
+                    Type.Missing, XlYesNoGuess.xlYes, Type.Missing);
             }
             catch (Exception e)
             {
