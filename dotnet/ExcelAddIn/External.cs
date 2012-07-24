@@ -7,6 +7,7 @@ using Office = Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using Path = System.IO.Path;
 using VB = Microsoft.Vbe.Interop;
+using System.Windows.Forms;
 
 namespace ExcelAddIn
 {
@@ -152,6 +153,11 @@ namespace ExcelAddIn
         public void SelectionChanged()
         {
             Globals.ThisAddIn.ActionPanel.onSelectionChange();
+        }
+        // check version
+        public String GetAddinVersion()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
     public class JsConsole
