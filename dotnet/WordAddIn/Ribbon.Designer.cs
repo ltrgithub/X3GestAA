@@ -1,6 +1,6 @@
 ﻿namespace WordAddIn
 {
-    partial class Ribbon : Microsoft.Office.Tools.Ribbon.OfficeRibbon
+    partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -8,6 +8,7 @@
         private System.ComponentModel.IContainer components = null;
 
         public Ribbon()
+            : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
         }
@@ -33,12 +34,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabSageERPX3 = new Microsoft.Office.Tools.Ribbon.RibbonTab();
-            this.groupServer = new Microsoft.Office.Tools.Ribbon.RibbonGroup();
-            this.buttonConnect = new Microsoft.Office.Tools.Ribbon.RibbonSplitButton();
-            this.buttonServerSettings = new Microsoft.Office.Tools.Ribbon.RibbonButton();
-            this.groupMailMerge = new Microsoft.Office.Tools.Ribbon.RibbonGroup();
-            this.buttonCreateMailMerge = new Microsoft.Office.Tools.Ribbon.RibbonButton();
+            this.tabSageERPX3 = this.Factory.CreateRibbonTab();
+            this.groupServer = this.Factory.CreateRibbonGroup();
+            this.buttonConnect = this.Factory.CreateRibbonSplitButton();
+            this.buttonServerSettings = this.Factory.CreateRibbonButton();
+            this.groupMailMerge = this.Factory.CreateRibbonGroup();
+            this.buttonCreateMailMerge = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupServer.SuspendLayout();
             this.groupMailMerge.SuspendLayout();
@@ -65,7 +66,7 @@
             this.buttonConnect.Items.Add(this.buttonServerSettings);
             this.buttonConnect.Label = "Connect";
             this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonConnect_Click);
+            this.buttonConnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonConnect_Click);
             // 
             // buttonServerSettings
             // 
@@ -73,7 +74,7 @@
             this.buttonServerSettings.Label = "Server settings";
             this.buttonServerSettings.Name = "buttonServerSettings";
             this.buttonServerSettings.ShowImage = true;
-            this.buttonServerSettings.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonServerSettings_Click);
+            this.buttonServerSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonServerSettings_Click);
             // 
             // groupMailMerge
             // 
@@ -85,14 +86,14 @@
             // 
             this.buttonCreateMailMerge.Label = "Create mail merge";
             this.buttonCreateMailMerge.Name = "buttonCreateMailMerge";
-            this.buttonCreateMailMerge.Click += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs>(this.buttonCreateMailMerge_Click);
+            this.buttonCreateMailMerge.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonCreateMailMerge_Click);
             // 
             // Ribbon
             // 
             this.Name = "Ribbon";
             this.RibbonType = "Microsoft.Word.Document";
             this.Tabs.Add(this.tabSageERPX3);
-            this.Load += new System.EventHandler<Microsoft.Office.Tools.Ribbon.RibbonUIEventArgs>(this.Ribbon_Load);
+            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
             this.tabSageERPX3.ResumeLayout(false);
             this.tabSageERPX3.PerformLayout();
             this.groupServer.ResumeLayout(false);
