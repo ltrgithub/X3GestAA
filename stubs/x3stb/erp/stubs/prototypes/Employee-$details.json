@@ -517,7 +517,7 @@
             "$title": "Employees Properties",
             "$description": "Grid layout: default layout",
             "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}",
-            "$properties": {
+            "$parameters": {
                 "param1": "{lastName}",
                 "param2": "value"
             }
@@ -526,7 +526,7 @@
             "$title": "Employees Properties Form",
             "$description": "Grid layout: default layout",
             "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}&par3={param3}&par4={param4}&par4={param5}",
-            "$properties": {
+            "$parameters": {
                 "$": {
                     "param3": {
                         "$title": "mon param3",
@@ -556,7 +556,7 @@
         "actionEmployeesProperties": {
             "$title": "Action Employees Properties",
             "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
-            "$properties": {
+            "$parameters": {
                 "param1": "{lastName}",
                 "param2": "value"
             }
@@ -564,7 +564,7 @@
         "actionEmployeesPropertiesForm": {
             "$title": "Action Employees Properties Form",
             "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
-            "$properties": {
+            "$parameters": {
                 "$": {
                     "param3": {
                         "$title": "mon param3",
