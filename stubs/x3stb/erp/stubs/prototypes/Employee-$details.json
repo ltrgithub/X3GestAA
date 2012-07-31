@@ -17,13 +17,103 @@
             },
             "$capabilities": "sort,filter"
         },
+        "arrayString": {
+            "$type": "application/x-collection",
+            "$maxItems": 3,
+            "$minItems": 1,
+            "$title": "Array string",
+            "$item": {
+                "$type": "application/x-string",
+                "$constraints": {
+                    "$maxLength": 20
+                }
+            }
+        },
+		 "arrayEmail": {
+            "$type": "application/x-collection",
+            "$maxItems": 3,
+            "$minItems": 1,
+            "$title": "Array Email",
+            "$item": {
+                "$type": "application/x-string",
+                "$format": "$email",
+                "$constraints": {
+                    "$maxLength": 20
+                }
+            }
+        },
+		"arrayChoice": {
+            "$type": "application/x-collection",
+            "$maxItems": 3,
+            "$minItems": 1,
+            "$title": "Array Choice",
+            "$item": {
+                "$type":"application/x-choice",
+                 "$value": {
+                        "$type": "application/x-integer",
+                        "$constraints": {
+                            "$enum": [{
+                                    "$value": 1,
+                                    "$title": "Value 1"
+                                },{
+                                    "$value": 2,
+                                    "$title": "Value 2"
+                                },{
+                                    "$value": 3,
+                                    "$title": "Value 3"
+                                },{
+                                    "$value": 4,
+                                    "$title": "Value 4"
+                                },{
+                                    "$value": 5,
+                                    "$title": "Value 5"
+                                }]
+                        }
+                    }
+            }
+        },
+		 "arrayDate": {
+            "$type": "application/x-collection",
+            "$maxItems": 3,
+            "$minItems": 1,
+            "$title": "Array Date",
+            "$item": {
+                "$type": "application/x-date",
+                "$constraints": {
+                    "$maxLength": 20
+                }
+            }
+        },
+		 "arrayBoolean": {
+            "$type": "application/x-collection",
+            "$maxItems": 3,
+            "$minItems": 1,
+            "$title": "Array Boolean",
+            "$item": {
+                "$type": "application/x-boolean",
+                "$constraints": {
+                    "$maxLength": 20
+                }
+            }
+        },"arrayDecimal": {
+            "$type": "application/x-collection",
+            "$maxItems": 3,
+            "$minItems": 1,
+            "$title": "Array Decimal",
+            "$item": {
+                "$type": "application/x-decimal",
+                "$constraints": {
+                    "$maxLength": 20
+                }
+            }
+        },
         "lastName": {
             "$title": "Last Name",
             "$type": "application/x-string",
             "$constraints": {
                 "$maxLength": 30
             },
-			"$isEditMode" : true,
+            "$isEditMode": true,
             "$isMandatory": true,
             "$capabilities": "sort,filter",
             "$links": {
@@ -31,18 +121,18 @@
                     "$type": "application/json;vnd.sage=syracuse",
                     "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$singularType}.$details&role={$role}"
                 },
-				"$details1": {
-					"$title" : "$details1",
+                "$details1": {
+                    "$title": "$details1",
                     "$type": "application/json;vnd.sage=syracuse",
                     "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$singularType}.$summary&role={$role}"
                 },
-				"$details2": {
-					"$title" : "$details2",
+                "$details2": {
+                    "$title": "$details2",
                     "$type": "application/json;vnd.sage=syracuse",
                     "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$singularType}.$details&role={$role}"
                 },
-				"$details3": {
-					"$title" : "$details3",
+                "$details3": {
+                    "$title": "$details3",
                     "$type": "application/json;vnd.sage=syracuse",
                     "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$singularType}.$details&role={$role}"
                 }
@@ -423,78 +513,78 @@
             "$title": "Liste de employees",
             "$url": "{$baseUrl}/{$pluralType}?representation={$singularType}.$query&role={$role}"
         },
-				"employeeProperties": {
-                        "$title": "Employees Properties",
-                        "$description": "Grid layout: default layout",
-						"$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}",
-						"$properties":{
-							"param1":"{lastName}",
-							"param2":"value"
-						}
+        "employeeProperties": {
+            "$title": "Employees Properties",
+            "$description": "Grid layout: default layout",
+            "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}",
+            "$parameters": {
+                "param1": "{lastName}",
+                "param2": "value"
+            }
+        },
+        "employeePropertiesForm": {
+            "$title": "Employees Properties Form",
+            "$description": "Grid layout: default layout",
+            "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}&par3={param3}&par4={param4}&par4={param5}",
+            "$parameters": {
+                "$": {
+                    "param3": {
+                        "$title": "mon param3",
+                        "$type": "application/x-string"
                     },
-					"employeePropertiesForm": {
-                        "$title": "Employees Properties Form",
-                        "$description": "Grid layout: default layout",
-						"$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}&par3={param3}&par4={param4}&par4={param5}",
-						"$properties":{
-							"$":{         
-							"param3" :{
-                            		"$title" : "mon param3",
-                                    "$type" : "application/x-string"
-									},	
-							"param4" :{
-                            	"$title" : "mon param4",
-                                "$type" : "application/x-string"
-								},
-							"param5" :{
-                                       "$title" : "mon param4",
-                                       "$type" : "application/x-string",
-                                       "$isEditMode" : false       
-								}
-							},
-							"param1":"{lastName}",
-							"param2":"value"
-						}
-                    },		
+                    "param4": {
+                        "$title": "mon param4",
+                        "$type": "application/x-string"
+                    },
+                    "param5": {
+                        "$title": "mon param4",
+                        "$type": "application/x-string",
+                        "$isEditMode": false
+                    }
+                },
+                "param1": "{lastName}",
+                "param2": "value"
+            }
+        },
         "$print": {
             "$type": "application/pdf",
             "$title": "Imprimer",
             "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$singularType}.$details&role={$role}"
         }
     },
-	"$actions":{
-				"actionEmployeesProperties": {
-                       "$title": "Action Employees Properties",
-                       "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
-						"$properties":{
-							"param1":"{lastName}",
-							"param2":"value"
-						}
+    "$actions": {
+        "actionEmployeesProperties": {
+            "$title": "Action Employees Properties",
+            "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
+            "$parameters": {
+                "param1": "{lastName}",
+                "param2": "value"
+            }
+        },
+        "actionEmployeesPropertiesForm": {
+            "$title": "Action Employees Properties Form",
+            "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
+            "$parameters": {
+                "$": {
+                    "param3": {
+                        "$title": "mon param3",
+                        "$type": "application/x-string"
                     },
-					"actionEmployeesPropertiesForm": {
-                       "$title": "Action Employees Properties Form",
-                       "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
-						"$properties":{
-						"$":{         
-							"param3" :{
-                            		"$title" : "mon param3",
-                                    "$type" : "application/x-string"
-									},	
-							"param4" :{
-                            	"$title" : "mon param4",
-                                "$type" : "application/x-string"
-								},
-							"param5" :{
-                                       "$title" : "mon param4",
-                                       "$type" : "application/x-string",
-                                       "$isEditMode" : false       
-								}
-							},
-							"param1":"{lastName}",
-							"param2":"value"
-						}
+                    "param4": {
+                        "$title": "mon param4",
+                        "$type": "application/x-string"
+                    },
+                    "param5": {
+                        "$title": "mon param4",
+                        "$type": "application/x-string",
+                        "$isEditMode": false
                     }
-	},
+                },
+                "param1": "{lastName}",
+                "param2": "value"
+            }
+        }
+    },
     "$article": {
         "$layout": {
             "$items": [
@@ -508,6 +598,20 @@
                                 "$category": "block",
                                 "$layout": {
                                     "$items": [
+                                        {
+                                            "$bind": "arrayString"
+                                        },
+										 {
+                                            "$bind": "arrayEmail"
+                                        }, {
+                                            "$bind": "arrayChoice"
+                                        }, {
+                                            "$bind": "arrayDate"
+                                        }, {
+                                            "$bind": "arrayBoolean"
+                                        }, {
+                                            "$bind": "arrayDecimal"
+                                        },
                                         {
                                             "$bind": "photo"
                                         }
@@ -524,7 +628,7 @@
                                         },
                                         {
                                             "$bind": "lastName",
-											"$isEditMode" : true
+                                            "$isEditMode": true
                                         },
                                         {
                                             "$bind": "title"
@@ -545,7 +649,7 @@
                                     "$items": [
                                         {
                                             "$bind": "children",
-											"$isTitleHidden": true
+                                            "$isTitleHidden": true
                                         }
                                     ]
                                 }

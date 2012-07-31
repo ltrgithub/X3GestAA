@@ -90,7 +90,8 @@ namespace ExcelAddIn
                 settingsForm.Connect(connectUrl);
             }
             mainHandle = NativeWindow.FromHandle(ActionPanel.Handle);
-            settingsForm.Show(mainHandle);
+            if(!settingsForm.Visible)
+                settingsForm.Show(mainHandle);
         }
         internal void SettingsFormDestroyed()
         {
