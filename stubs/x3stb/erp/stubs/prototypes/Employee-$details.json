@@ -29,7 +29,7 @@
                 }
             }
         },
-		 "arrayEmail": {
+        "arrayEmail": {
             "$type": "application/x-collection",
             "$maxItems": 3,
             "$minItems": 1,
@@ -42,37 +42,43 @@
                 }
             }
         },
-		"arrayChoice": {
+        "arrayChoice": {
             "$type": "application/x-collection",
             "$maxItems": 3,
             "$minItems": 1,
             "$title": "Array Choice",
             "$item": {
-                "$type":"application/x-choice",
-                 "$value": {
-                        "$type": "application/x-integer",
-                        "$constraints": {
-                            "$enum": [{
-                                    "$value": 1,
-                                    "$title": "Value 1"
-                                },{
-                                    "$value": 2,
-                                    "$title": "Value 2"
-                                },{
-                                    "$value": 3,
-                                    "$title": "Value 3"
-                                },{
-                                    "$value": 4,
-                                    "$title": "Value 4"
-                                },{
-                                    "$value": 5,
-                                    "$title": "Value 5"
-                                }]
-                        }
+                "$type": "application/x-choice",
+                "$value": {
+                    "$type": "application/x-integer",
+                    "$constraints": {
+                        "$enum": [
+                            {
+                                "$value": 1,
+                                "$title": "Value 1"
+                            },
+                            {
+                                "$value": 2,
+                                "$title": "Value 2"
+                            },
+                            {
+                                "$value": 3,
+                                "$title": "Value 3"
+                            },
+                            {
+                                "$value": 4,
+                                "$title": "Value 4"
+                            },
+                            {
+                                "$value": 5,
+                                "$title": "Value 5"
+                            }
+                        ]
                     }
+                }
             }
         },
-		 "arrayDate": {
+        "arrayDate": {
             "$type": "application/x-collection",
             "$maxItems": 3,
             "$minItems": 1,
@@ -84,7 +90,7 @@
                 }
             }
         },
-		 "arrayBoolean": {
+        "arrayBoolean": {
             "$type": "application/x-collection",
             "$maxItems": 3,
             "$minItems": 1,
@@ -95,7 +101,8 @@
                     "$maxLength": 20
                 }
             }
-        },"arrayDecimal": {
+        },
+        "arrayDecimal": {
             "$type": "application/x-collection",
             "$maxItems": 3,
             "$minItems": 1,
@@ -583,6 +590,241 @@
                 "param1": "{lastName}",
                 "param2": "value"
             }
+        },
+        "actionEmployeesSelectForm": {
+            "$title": "Action Employees Select Form",
+            "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
+            "$parameters": {
+                "$actions": {
+                    "$select": {
+                        "$title": "Vignettes",
+                        "$type": "application/x-collection",
+                        "$url": "{$baseUrl}/employees?representation=employee.$select",
+                        "$item": {
+                            "$descriptor": "prototype pageData.$edit",
+                            "$type": "application/json",
+                            "$description": "Vignette",
+                            "$pluralType": "portlets",
+                            "$representation": "pageData",
+                            "$": {
+                                "code": {
+                                    "$title": "Code",
+                                    "$type": "application/x-string",
+                                    "$constraints": {},
+                                    "$capabilities": "sort,alphaTab"
+                                },
+                                "title": {
+                                    "$title": "Title",
+                                    "$type": "application/x-string",
+                                    "$constraints": {
+                                        "$isUnique": true
+                                    },
+                                    "$isMandatory": true,
+                                    "$capabilities": "sort,alphaTab",
+                                    "$links": {
+                                        "$details": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$details&role={$role}"
+                                        }
+                                    }
+                                },
+                                "description": {
+                                    "$title": "Description",
+                                    "$type": "application/x-string",
+                                    "$constraints": {},
+                                    "$capabilities": "sort,alphaTab"
+                                },
+                                "type": {
+                                    "$title": "Type",
+                                    "$type": "application/x-choice",
+                                    "$value": {
+                                        "$type": "application/x-string",
+                                        "$constraints": {
+                                            "$enum": [
+                                                {
+                                                    "$value": "$menu",
+                                                    "$title": "Menu"
+                                                },
+                                                {
+                                                    "$value": "$page",
+                                                    "$title": "Page"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "$capabilities": "sort,alphaTab"
+                                },
+                                "application": {
+                                    "$title": "Application",
+                                    "$capabilities": "sort",
+                                    "$type": "application/x-reference",
+                                    "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
+                                    "$value": "{description}",
+                                    "$description": "L'application et le contrat identifient un service",
+                                    "$key": "{$uuid}",
+                                    "$": {
+                                        "description": {
+                                            "$type": "application/x-string"
+                                        }
+                                    },
+                                    "$links": {
+                                        "$details": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$url": "{$baseUrl}/applications('{$key}')?representation=application.$details&role={$role}"
+                                        },
+                                        "$lookup": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$title": "Ajouter",
+                                            "$url": "{$baseUrl}/applications?representation=application.$lookup&role={$role}&trackingId={$trackingId}&binding=portlets('{$uuid}')/application"
+                                        }
+                                    }
+                                },
+                                "endpoint": {
+                                    "$title": "Endpoint",
+                                    "$capabilities": "sort",
+                                    "$type": "application/x-reference",
+                                    "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
+                                    "$value": "{description}",
+                                    "$description": "Endpoints describes services locations",
+                                    "$key": "{$uuid}",
+                                    "$": {
+                                        "description": {
+                                            "$type": "application/x-string"
+                                        }
+                                    },
+                                    "$links": {
+                                        "$details": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$url": "{$baseUrl}/endPoints('{$key}')?representation=endPoint.$details&role={$role}"
+                                        },
+                                        "$lookup": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$title": "Ajouter",
+                                            "$url": "{$baseUrl}/endPoints?representation=endPoint.$lookup&role={$role}&trackingId={$trackingId}&binding=portlets('{$uuid}')/endpoint"
+                                        }
+                                    }
+                                },
+                                "items": {
+                                    "$title": "Items",
+                                    "$capabilities": "sort",
+                                    "$type": "application/x-collection",
+                                    "$item": {
+                                        "$type": "application/x-reference",
+                                        "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
+                                        "$value": "{title}",
+                                        "$description": "Menu item",
+                                        "$key": "{$uuid}",
+                                        "$": {
+                                            "title": {
+                                                "$type": "application/x-string"
+                                            }
+                                        },
+                                        "$links": {
+                                            "$details": {
+                                                "$type": "application/json;vnd.sage=syracuse",
+                                                "$url": "{$baseUrl}/menuItems('{$key}')?representation=menuItem.$details&role={$role}"
+                                            },
+                                            "$select": {
+                                                "$type": "application/json;vnd.sage=syracuse",
+                                                "$title": "Ajouter",
+                                                "$url": "{$baseUrl}/menuItems?representation=menuItem.$select&role={$role}&trackingId={$trackingId}&binding=portlets('{$uuid}')/items"
+                                            }
+                                        }
+                                    }
+                                },
+                                "pageItem": {
+                                    "$title": "Page content",
+                                    "$capabilities": "sort",
+                                    "$type": "application/x-reference",
+                                    "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
+                                    "$value": "{title}",
+                                    "$description": "Menu item",
+                                    "$key": "{$uuid}",
+                                    "$": {
+                                        "title": {
+                                            "$type": "application/x-string"
+                                        }
+                                    },
+                                    "$links": {
+                                        "$details": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$url": "{$baseUrl}/menuItems('{$key}')?representation=menuItem.$details&role={$role}"
+                                        },
+                                        "$lookup": {
+                                            "$type": "application/json;vnd.sage=syracuse",
+                                            "$title": "Ajouter",
+                                            "$url": "{$baseUrl}/menuItems?representation=menuItem.$lookup&role={$role}&trackingId={$trackingId}&binding=portlets('{$uuid}')/pageItem"
+                                        }
+                                    }
+                                },
+                                "categories": {
+                                    "$title": "Categories",
+                                    "$capabilities": "sort",
+                                    "$type": "application/x-collection",
+                                    "$item": {
+                                        "$type": "application/x-reference",
+                                        "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
+                                        "$value": "{description}",
+                                        "$description": "Menu category",
+                                        "$key": "{$uuid}",
+                                        "$": {
+                                            "description": {
+                                                "$type": "application/x-string"
+                                            }
+                                        },
+                                        "$links": {
+                                            "$details": {
+                                                "$type": "application/json;vnd.sage=syracuse",
+                                                "$url": "{$baseUrl}/menuCategories('{$key}')?representation=menuCategory.$details&role={$role}"
+                                            },
+                                            "$select": {
+                                                "$type": "application/json;vnd.sage=syracuse",
+                                                "$title": "Ajouter",
+                                                "$url": "{$baseUrl}/menuCategories?representation=menuCategory.$select&role={$role}&trackingId={$trackingId}&binding=portlets('{$uuid}')/categories"
+                                            }
+                                        }
+                                    }
+                                },
+                                "$creUser": {
+                                    "$title": "Created by",
+                                    "$type": "application/x-string",
+                                    "$isDisabled": true,
+                                    "$isHidden": true,
+                                    "$capabilities": "sort,filter"
+                                },
+                                "$updUser": {
+                                    "$title": "Updated by",
+                                    "$type": "application/x-string",
+                                    "$isDisabled": true,
+                                    "$isHidden": true,
+                                    "$capabilities": "sort,filter"
+                                },
+                                "$creDate": {
+                                    "$title": "Created on",
+                                    "$type": "application/x-datetime",
+                                    "$isDisabled": true,
+                                    "$isHidden": true,
+                                    "$capabilities": "sort,filter"
+                                },
+                                "$updDate": {
+                                    "$title": "Updated on",
+                                    "$type": "application/x-datetime",
+                                    "$isDisabled": true,
+                                    "$isHidden": true,
+                                    "$capabilities": "sort,filter"
+                                }
+                            },
+                            "$links": {},
+                            "$actions": {
+                                "$delete": {
+                                    "$title": "Supprimer",
+                                    "$method": "PUT"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "$article": {
@@ -601,15 +843,19 @@
                                         {
                                             "$bind": "arrayString"
                                         },
-										 {
+                                        {
                                             "$bind": "arrayEmail"
-                                        }, {
+                                        },
+                                        {
                                             "$bind": "arrayChoice"
-                                        }, {
+                                        },
+                                        {
                                             "$bind": "arrayDate"
-                                        }, {
+                                        },
+                                        {
                                             "$bind": "arrayBoolean"
-                                        }, {
+                                        },
+                                        {
                                             "$bind": "arrayDecimal"
                                         },
                                         {
