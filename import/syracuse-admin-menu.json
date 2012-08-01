@@ -15,22 +15,25 @@
 				"$key": "title.en-US"
 			}
 		},
-		"pageData": {
+		"dashboardDef": {
 			"$key": "title.en-US",
-			"application":{
-				"$key": ["application", "contract"]
-			},
-			"portlets":{
-				"$key": ["portlet", "endpoint"],
-				"portlet": {
-					"$key": "title.en-US"
+			"variants":{
+				"$key": "title.en-US",
+				"vignettes":{
+					"$key": ["portlet", "endpoint"],
+					"portlet": {
+						"$key": "title.en-US"
+					},
+					"endpoint": {
+						"$key": "description"
+					}
 				},
-				"endpoint": {
+				"roles": {
 					"$key": "description"
+				},
+				"application":{
+					"$key": ["application", "contract"]
 				}
-			},
-			"roles": {
-				"$key": "description"
 			}
 		}	
 	},
@@ -455,31 +458,36 @@
 		},
 		"items": ["Teams", "Documents", "Document tags", "Tags categories"]
 	},{
-		"$type": "pageData",
+		"$type": "dashboardDef",
 		"title": {
 			"en-US": "Administration dashboard",
 			"fr-FR": "Menu d'administration"
 		},
-		"facet": "$dashboard",
 		"dashboardName": "home",
-		"roles": ["Super administrator", "Endpoint administrator"],		
-		"allApplications": false,
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"portlets": [{
-			"portlet": "Syracuse administration",
-			"allEndpoints": true
-		},{
-			"portlet": "Syracuse collaboration",
-			"allEndpoints": true
-		},{
-			"portlet": "Syracuse authoring",
-			"allEndpoints": true
-		},{
-			"portlet": "Syracuse tools",
-			"allEndpoints": true
+		"variants": [{
+			"title": {
+				"en-US": "Administration dashboard",
+				"fr-FR": "Menu d'administration"
+			},
+			"roles": ["Super administrator", "Endpoint administrator"],		
+			"allApplications": false,
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"vignettes": [{
+				"portlet": "Syracuse administration",
+				"allEndpoints": true
+			},{
+				"portlet": "Syracuse collaboration",
+				"allEndpoints": true
+			},{
+				"portlet": "Syracuse authoring",
+				"allEndpoints": true
+			},{
+				"portlet": "Syracuse tools",
+				"allEndpoints": true
+			}]
 		}]
 	}	
 	]
