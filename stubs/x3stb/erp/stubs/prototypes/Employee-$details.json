@@ -19,7 +19,7 @@
         },
         "arrayString": {
             "$type": "application/x-collection",
-            "$maxItems": 3,
+            "$maxItems": 6,
             "$minItems": 1,
             "$title": "Array string",
             "$item": {
@@ -31,7 +31,7 @@
         },
         "arrayEmail": {
             "$type": "application/x-collection",
-            "$maxItems": 3,
+            "$maxItems": 4,
             "$minItems": 1,
             "$title": "Array Email",
             "$item": {
@@ -841,22 +841,28 @@
                                 "$layout": {
                                     "$items": [
                                         {
-                                            "$bind": "arrayString"
+                                            "$bind": "arrayString",
+											"$isEditMode": true
                                         },
                                         {
-                                            "$bind": "arrayEmail"
+                                            "$bind": "arrayEmail",
+											"$isEditMode": true
                                         },
                                         {
-                                            "$bind": "arrayChoice"
+                                            "$bind": "arrayChoice",
+											"$isEditMode": true											
                                         },
                                         {
-                                            "$bind": "arrayDate"
+                                            "$bind": "arrayDate",
+											"$isEditMode": true
                                         },
                                         {
-                                            "$bind": "arrayBoolean"
+                                            "$bind": "arrayBoolean",
+											"$isEditMode": true
                                         },
                                         {
-                                            "$bind": "arrayDecimal"
+                                            "$bind": "arrayDecimal",
+											"$isEditMode": true
                                         },
                                         {
                                             "$bind": "photo"
