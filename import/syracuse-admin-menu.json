@@ -184,6 +184,24 @@
 	},{
 		"$type": "menuItem",
 		"title": {
+			"en-US": "Dashboards",
+			"fr-FR": "Portails"
+		},
+		"description": {
+			"en-US": "Dashboards management interface",
+			"fr-FR": "Gestion des portails"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "dashboardDefs",
+		"representation": "dashboardDef",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
 			"en-US": "Vignettes",
 			"fr-FR": "Vignettes"
 		},
@@ -356,7 +374,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Pages", "Vignettes", "Menu Items", "Menu Categories", "Pages History", "Configurations"]
+		"items": ["Pages", "Dashboards", "Vignettes", "Menu Items", "Menu Categories", "Pages History", "Configurations"]
 	},{
 		"$type": "portlet",
 		"title": {
