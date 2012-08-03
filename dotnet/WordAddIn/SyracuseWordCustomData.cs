@@ -12,8 +12,12 @@ namespace WordAddIn
     public class SyracuseOfficeCustomData
     {
         private const String sageERPX3JsonTagXPath = "//SyracuseOfficeCustomData";
-        private String serverUrlProperty = "serverUrl";
-        private String resourceUrlProperty = "resourceUrl";
+
+        private const String serverUrlProperty      = "serverUrl";
+        private const String resourceUrlProperty    = "resourceUrl";
+        private const String forceRefreshProperty   = "forceRefresh";
+        private const String dataSourceUuidProperty = "dataSourceUuid";
+        private const String createModeProperty     = "createMode";
 
         private Dictionary<String, object> dictionary;
 
@@ -21,15 +25,21 @@ namespace WordAddIn
         private Microsoft.Office.Interop.Excel.Workbook workbook;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
-        public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Word.Document doc)
+        public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Word.Document doc, Boolean create = false)
         {
             Dictionary<String, object> dict = getDictionaryFromCustomXMLPart(doc);
-            if (dict == null)
+            if (dict != null)
             {
-                return null;
+                return new SyracuseOfficeCustomData(dict, doc);
             }
-
-            return new SyracuseOfficeCustomData(dict, doc);
+            if (create)
+            {
+                dict = new Dictionary<String, object>();
+                SyracuseOfficeCustomData cd = new SyracuseOfficeCustomData(dict, doc);
+                cd.writeDictionaryToDocument();
+                return cd;
+            }
+            return null;
         }
 
         // Gets a dictionary from an excel document by accessing its customxmlparts
@@ -47,18 +57,40 @@ namespace WordAddIn
         {
             return getStringProperty(serverUrlProperty);
         }
-
+        public void setResourceUrl(String value)
+        {
+            setStringProperty(resourceUrlProperty, value);
+        }
         public string getResourceUrl()
         {
-            return getStringProperty(resourceUrlProperty);
+            return getStringProperty(resourceUrlProperty, false);
         }
-
-        public Boolean isRefreshDone()
+        public void setForceRefresh(Boolean status)
+        {
+            setBooleanValue(forceRefreshProperty, status);
+        }
+        public Boolean isForceRefresh()
+        {
+            return getBooleanProperty(forceRefreshProperty, false);
+        }
+        public void setCreateMode(String value)
+        {
+            setStringProperty(createModeProperty, value);
+        }
+        public String getCreateMode()
+        {
+            return getStringProperty(createModeProperty);
+        }
+        public void setBooleanValue(String name, Boolean status)
+        {
+            dictionary[forceRefreshProperty] = (status ? "1" : "0");
+        }
+        public Boolean getBooleanProperty(String name, Boolean required = true)
         {
             Boolean r = false;
             try
             {
-                if (getStringProperty("REFRESH_DONE", false).Equals("1"))
+                if (getStringProperty(forceRefreshProperty, required).Equals("1"))
                 {
                     r = true;
                 }
@@ -73,13 +105,10 @@ namespace WordAddIn
             }
             return r;
         }
-
-        public void setRefreshDone(Boolean status)
+        public void setStringProperty(String name, String value)
         {
-            dictionary["REFRESH_DONE"] = (status ? "1" : "0");
-            writeDictionaryToDocument();
+            dictionary[name] = value;
         }
-
         public string getStringProperty(String name, Boolean required = true)
         {
             try
@@ -92,7 +121,7 @@ namespace WordAddIn
                 }
                 return o.ToString();
             }
-            catch (KeyNotFoundException e)
+            catch (KeyNotFoundException)
             {
                 if (required)
                 {
@@ -134,7 +163,7 @@ namespace WordAddIn
             this.workbook = workbook;
         }
 
-        private void writeDictionaryToDocument()
+        public void writeDictionaryToDocument()
         {
             foreach (CustomXMLPart part in doc.CustomXMLParts)
             {
@@ -164,7 +193,6 @@ namespace WordAddIn
         {
             foreach (CustomXMLPart part in parts)
             {
-                
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
