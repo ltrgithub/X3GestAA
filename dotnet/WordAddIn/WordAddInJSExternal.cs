@@ -15,12 +15,12 @@ namespace WordAddIn
     public class WordAddInJSExternal
     {
         private SyracuseOfficeCustomData customData;
-        private DatasourceForm dialogForm;
+        private BrowserDialog browserDialog;
 
-        public WordAddInJSExternal(SyracuseOfficeCustomData customData, DatasourceForm dialogForm)
+        public WordAddInJSExternal(SyracuseOfficeCustomData customData, BrowserDialog browserDialog)
         {
             this.customData = customData;
-            this.dialogForm = dialogForm;
+            this.browserDialog = browserDialog;
         }
 
         public SyracuseOfficeCustomData getSyracuseOfficeCustomData() 
@@ -28,9 +28,9 @@ namespace WordAddIn
             return customData;
         }
 
-        public void closeDialogForm() 
+        public void closeBrowserDialog() 
         {
-            dialogForm.Close();
+            browserDialog.Close();
         }
 
         private void createMailMergeDataFile(Dictionary<String, object> mailMergeData)
@@ -100,10 +100,7 @@ namespace WordAddIn
             {
                 Dictionary<String, Object> column = (Dictionary<String, Object>)columnInfo[i];
                 String columnName = column["_name"].ToString();
-                /*
-                String columnType = column["_type"].ToString();
-                String columnTitle = column["_title"].ToString();
-                */
+
                 wrdMergeFields.Add(wrdSelection.Range, columnName);
                 wrdSelection.TypeParagraph();
             }
@@ -121,27 +118,19 @@ namespace WordAddIn
 
                 createMailMergeDataFile(mailMergeData);
 
-                createMailMergeFields(mailMergeData);
+                if (!customData.getCreateMode().Equals("3"))
+                {
+                    createMailMergeFields(mailMergeData);
+                }
 
-                String xml = null;
-                CustomXMLPart match = null;
-                foreach (CustomXMLPart part in doc.CustomXMLParts)
-                {
-                    CustomXMLNode node = part.SelectSingleNode("//SyracuseOfficeCustomData");
-                    if (node != null)
-                    {
-                        match = part;
-                        xml = part.XML;
-                        break;
-                    }
-                }
-                if (match != null)
-                {
-                    match.Delete();
-                }
+                String xml = removeCustomDataBeforeMerge(doc);
 
                 doc.MailMerge.Destination = WdMailMergeDestination.wdSendToNewDocument;
-                doc.MailMerge.Execute();
+                //doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdMailingLabels;
+                if (customData.getCreateMode().Equals("3"))
+                {
+                    doc.MailMerge.ShowWizard(5);
+                }
 
                 if (xml != null)
                 {
@@ -161,27 +150,30 @@ namespace WordAddIn
                         sw.Flush();
                         sw.Close();
                     }
-                    catch (Exception e) { };
+                    catch (Exception) { };
                 }
             }
         }
 
-        private void writeCSVValue(StreamWriter sw, object cellData)
+        public String removeCustomDataBeforeMerge(Document doc)
         {
-            if (cellData == null)
+            String xml = null;
+            CustomXMLPart match = null;
+            foreach (CustomXMLPart part in doc.CustomXMLParts)
             {
-                sw.Write("");
+                CustomXMLNode node = part.SelectSingleNode("//SyracuseOfficeCustomData");
+                if (node != null)
+                {
+                    match = part;
+                    xml = part.XML;
+                    break;
+                }
             }
-            Object value = cellData;
-            if (cellData.GetType().Equals(typeof(Object[])))
+            if (match != null)
             {
-                value = ((Object[])cellData) [0];
+                match.Delete();
             }
-
-            String text = value.ToString();
-            text = text.Replace("\"", "\"\"");
-
-            sw.Write(text);
+            return xml;
         }
 
         private string getStringValue(object cellData)
@@ -199,6 +191,5 @@ namespace WordAddIn
             String text = value.ToString();
             return text;
         }
-
-   }
+    }
 }
