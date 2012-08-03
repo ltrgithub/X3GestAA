@@ -19,7 +19,7 @@
         },
         "arrayString": {
             "$type": "application/x-collection",
-            "$maxItems": 3,
+            "$maxItems": 6,
             "$minItems": 1,
             "$title": "Array string",
             "$item": {
@@ -31,7 +31,7 @@
         },
         "arrayEmail": {
             "$type": "application/x-collection",
-            "$maxItems": 3,
+            "$maxItems": 4,
             "$minItems": 1,
             "$title": "Array Email",
             "$item": {
@@ -836,7 +836,38 @@
                     "$layout": {
                         "$items": [
                             {
-                                "$title": "General",
+                                "$title": "Array Block",
+                                "$category": "block",
+                                "$layout": {
+                                    "$items": [
+                                        {
+                                            "$bind": "arrayString",
+											"$isEditMode": true
+                                        },
+                                        {
+                                            "$bind": "arrayEmail",
+											"$isEditMode": true
+                                        },
+                                        {
+                                            "$bind": "arrayChoice",
+											"$isEditMode": true											
+                                        },
+                                        {
+                                            "$bind": "arrayDate",
+											"$isEditMode": true
+                                        },
+                                        {
+                                            "$bind": "arrayBoolean",
+											"$isEditMode": true
+                                        },
+                                        {
+                                            "$bind": "arrayDecimal",
+											"$isEditMode": true
+                                        }
+                                    ]
+                                }
+                            },{
+                                "$title": "Array Block",
                                 "$category": "block",
                                 "$layout": {
                                     "$items": [
@@ -847,7 +878,7 @@
                                             "$bind": "arrayEmail"
                                         },
                                         {
-                                            "$bind": "arrayChoice"
+                                            "$bind": "arrayChoice"									
                                         },
                                         {
                                             "$bind": "arrayDate"
@@ -857,9 +888,6 @@
                                         },
                                         {
                                             "$bind": "arrayDecimal"
-                                        },
-                                        {
-                                            "$bind": "photo"
                                         }
                                     ]
                                 }
@@ -869,6 +897,9 @@
                                 "$category": "block",
                                 "$layout": {
                                     "$items": [
+									                                        {
+                                            "$bind": "photo"
+                                        },
                                         {
                                             "$bind": "firstName"
                                         },
