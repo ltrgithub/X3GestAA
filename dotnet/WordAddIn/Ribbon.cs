@@ -6,6 +6,7 @@ using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using System.Threading;
 using System.Globalization;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace WordAddIn
 {
@@ -28,7 +29,11 @@ namespace WordAddIn
 
         private void buttonCreateMailMerge_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.WordAddIn.CreateMailMerge();
+            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            if (doc != null)
+            {
+                Globals.WordAddIn.CreateMailMerge(doc);
+            }
         }
     }
 }
