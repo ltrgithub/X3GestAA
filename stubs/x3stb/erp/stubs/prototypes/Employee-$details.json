@@ -8,6 +8,11 @@
     "$title": "{firstName} {lastName}",
     "$pluralType": "employees",
     "$singularType": "employee",
+	"$localization": {
+        "@S-AOC0-125": "Code objet",
+        "@S-AOC0-8": "Intitule",
+        "@S-AOC1-1390": "Index"
+	},
     "$": {
         "firstName": {
             "$title": "First Name",
@@ -574,15 +579,15 @@
             "$parameters": {
                 "$": {
                     "param3": {
-                        "$title": "mon param3",
+                        "$title": "{@S-AOC0-125}",
                         "$type": "application/x-string"
                     },
                     "param4": {
-                        "$title": "mon param4",
+                        "$title": "{@S-AOC0-8}",
                         "$type": "application/x-string"
                     },
                     "param5": {
-                        "$title": "mon param4",
+                        "$title": "{@S-AOC1-1390}",
                         "$type": "application/x-string",
                         "$isEditMode": false
                     }
@@ -836,7 +841,7 @@
                     "$layout": {
                         "$items": [
                             {
-                                "$title": "General",
+                                "$title": "Array Block",
                                 "$category": "block",
                                 "$layout": {
                                     "$items": [
@@ -863,9 +868,31 @@
                                         {
                                             "$bind": "arrayDecimal",
 											"$isEditMode": true
+                                        }
+                                    ]
+                                }
+                            },{
+                                "$title": "Array Block",
+                                "$category": "block",
+                                "$layout": {
+                                    "$items": [
+                                        {
+                                            "$bind": "arrayString"
                                         },
                                         {
-                                            "$bind": "photo"
+                                            "$bind": "arrayEmail"
+                                        },
+                                        {
+                                            "$bind": "arrayChoice"									
+                                        },
+                                        {
+                                            "$bind": "arrayDate"
+                                        },
+                                        {
+                                            "$bind": "arrayBoolean"
+                                        },
+                                        {
+                                            "$bind": "arrayDecimal"
                                         }
                                     ]
                                 }
@@ -875,6 +902,9 @@
                                 "$category": "block",
                                 "$layout": {
                                     "$items": [
+									                                        {
+                                            "$bind": "photo"
+                                        },
                                         {
                                             "$bind": "firstName"
                                         },
