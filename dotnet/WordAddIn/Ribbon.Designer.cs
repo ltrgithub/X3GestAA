@@ -36,28 +36,43 @@
         {
             this.tabSageERPX3 = this.Factory.CreateRibbonTab();
             this.groupServer = this.Factory.CreateRibbonGroup();
+            this.groupMailMerge = this.Factory.CreateRibbonGroup();
+            this.groupSave = this.Factory.CreateRibbonGroup();
             this.buttonConnect = this.Factory.CreateRibbonSplitButton();
             this.buttonServerSettings = this.Factory.CreateRibbonButton();
-            this.groupMailMerge = this.Factory.CreateRibbonGroup();
             this.buttonCreateMailMerge = this.Factory.CreateRibbonButton();
+            this.buttonSave = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupServer.SuspendLayout();
             this.groupMailMerge.SuspendLayout();
-            this.SuspendLayout();
+            this.groupSave.SuspendLayout();
             // 
             // tabSageERPX3
             // 
             this.tabSageERPX3.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tabSageERPX3.Groups.Add(this.groupServer);
             this.tabSageERPX3.Groups.Add(this.groupMailMerge);
-            this.tabSageERPX3.Label = "Sage ERP X3";
+            this.tabSageERPX3.Groups.Add(this.groupSave);
+            this.tabSageERPX3.Label = "Sage Syracuse";
             this.tabSageERPX3.Name = "tabSageERPX3";
             // 
             // groupServer
             // 
             this.groupServer.Items.Add(this.buttonConnect);
-            this.groupServer.Label = "Server";
+            this.groupServer.Label = "Settings";
             this.groupServer.Name = "groupServer";
+            // 
+            // groupMailMerge
+            // 
+            this.groupMailMerge.Items.Add(this.buttonCreateMailMerge);
+            this.groupMailMerge.Label = "Mail merge";
+            this.groupMailMerge.Name = "groupMailMerge";
+            // 
+            // groupSave
+            // 
+            this.groupSave.Items.Add(this.buttonSave);
+            this.groupSave.Label = "Save document";
+            this.groupSave.Name = "groupSave";
             // 
             // buttonConnect
             // 
@@ -76,17 +91,23 @@
             this.buttonServerSettings.ShowImage = true;
             this.buttonServerSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonServerSettings_Click);
             // 
-            // groupMailMerge
-            // 
-            this.groupMailMerge.Items.Add(this.buttonCreateMailMerge);
-            this.groupMailMerge.Label = "Mail merge";
-            this.groupMailMerge.Name = "groupMailMerge";
-            // 
             // buttonCreateMailMerge
             // 
+            this.buttonCreateMailMerge.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonCreateMailMerge.Image = global::WordAddIn.Properties.Resources.mailmerge;
             this.buttonCreateMailMerge.Label = "Create mail merge";
             this.buttonCreateMailMerge.Name = "buttonCreateMailMerge";
+            this.buttonCreateMailMerge.ShowImage = true;
             this.buttonCreateMailMerge.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonCreateMailMerge_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonSave.Image = global::WordAddIn.Properties.Resources.save;
+            this.buttonSave.Label = "Save to X3";
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.ShowImage = true;
+            this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
             // 
             // Ribbon
             // 
@@ -100,7 +121,8 @@
             this.groupServer.PerformLayout();
             this.groupMailMerge.ResumeLayout(false);
             this.groupMailMerge.PerformLayout();
-            this.ResumeLayout(false);
+            this.groupSave.ResumeLayout(false);
+            this.groupSave.PerformLayout();
 
         }
 
@@ -112,6 +134,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonServerSettings;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupMailMerge;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCreateMailMerge;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSave;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSave;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

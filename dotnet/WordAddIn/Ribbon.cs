@@ -14,17 +14,16 @@ namespace WordAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
- 
         }
 
         private void buttonConnect_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.WordAddIn.connect();
+            Globals.WordAddIn.Connect();
         }
 
         private void buttonServerSettings_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.WordAddIn.serverSettings();
+            Globals.WordAddIn.ServerSettings();
         }
 
         private void buttonCreateMailMerge_Click(object sender, RibbonControlEventArgs e)
@@ -33,6 +32,15 @@ namespace WordAddIn
             if (doc != null)
             {
                 Globals.WordAddIn.CreateMailMerge(doc);
+            }
+        }
+
+        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
+        {
+            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            if (doc != null)
+            {
+                Globals.WordAddIn.SaveDocumentToX3(doc);
             }
         }
     }

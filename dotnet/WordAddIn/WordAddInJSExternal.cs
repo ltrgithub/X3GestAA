@@ -16,6 +16,12 @@ namespace WordAddIn
     {
         private SyracuseOfficeCustomData customData;
         private BrowserDialog browserDialog;
+        private Document doc;
+
+        public WordAddInJSExternal(Document doc, BrowserDialog browserDialog)
+        {
+            this.doc = doc;
+        }
 
         public WordAddInJSExternal(SyracuseOfficeCustomData customData, BrowserDialog browserDialog)
         {
@@ -51,10 +57,7 @@ namespace WordAddIn
             {
                 Dictionary<String, Object> column = (Dictionary<String, Object>)columnInfo[col];
                 String columnName = column["_name"].ToString();
-                /*
-                String columnType = column["_type"].ToString();
-                String columnTitle = column["_title"].ToString();
-                */
+
                 if (col != 0)
                 {
                     headers += delim;
@@ -84,7 +87,7 @@ namespace WordAddIn
             }
 
             dataDoc.Save();
-            dataDoc.Close(false, Type.Missing, Type.Missing);
+            ((_Document)dataDoc).Close(false);
         }
 
         private void createMailMergeFields(Dictionary<String, object> mailMergeData)
@@ -108,9 +111,7 @@ namespace WordAddIn
 
         public void createDatasource(String mailMergeDataJSon)
         {
-            StreamWriter sw = null;
             Document doc = customData.getWordDoc();
-
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -126,7 +127,6 @@ namespace WordAddIn
                 String xml = removeCustomDataBeforeMerge(doc);
 
                 doc.MailMerge.Destination = WdMailMergeDestination.wdSendToNewDocument;
-                //doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdMailingLabels;
                 if (customData.getCreateMode().Equals("3"))
                 {
                     doc.MailMerge.ShowWizard(5);
@@ -140,18 +140,6 @@ namespace WordAddIn
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString() + "\n" + e.StackTrace);
-            }
-            finally
-            {
-                if (sw != null)
-                {
-                    try
-                    {
-                        sw.Flush();
-                        sw.Close();
-                    }
-                    catch (Exception) { };
-                }
             }
         }
 
@@ -190,6 +178,31 @@ namespace WordAddIn
 
             String text = value.ToString();
             return text;
+        }
+
+        public string GetDocumentContent()
+        {
+            // TODO: Original file will be closed, this is wrong
+            // find a way to save a copy of the current doc. w/o
+            // closing and reopening.
+            Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
+            if (doc == null)
+            {
+                MessageBox.Show("Unable to access document");
+                return "";
+            }
+
+            // Datei schließen, codiert einlesen und wieder öffnen
+            String tempFileName = Path.GetTempFileName();
+            doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
+
+            Globals.WordAddIn.Application.ActiveWindow.Close();
+            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
+
+            String base64string = Convert.ToBase64String(content);
+
+            Globals.WordAddIn.Application.Documents.Open(tempFileName);
+            return base64string;
         }
     }
 }

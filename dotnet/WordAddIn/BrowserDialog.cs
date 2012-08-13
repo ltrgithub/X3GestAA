@@ -20,7 +20,20 @@ namespace WordAddIn
         public BrowserDialog()
         {
             InitializeComponent();
+
             webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
+
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+
+            base.OnFormClosing(e);
         }
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -32,7 +45,7 @@ namespace WordAddIn
             hideOnCompletion = false;
         }
 
-        public void connect(String serverUrl)
+        public void Connect(String serverUrl)
         {
             hideOnCompletion = true;
             this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
@@ -40,9 +53,9 @@ namespace WordAddIn
             hideOnCompletion = false;
         }
 
-        public void createMailMergeDocument(Word.Document doc)
+        public void CreateMailMergeDocument(Word.Document doc)
         {
-            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
+            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&attachDatasource=true");
 
             this.Show();
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
@@ -51,9 +64,25 @@ namespace WordAddIn
                 // Create new custom data for document
                 customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
                 customData.setCreateMode("1"); // New empty doc, add all mail merge fields
-                uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dmailmergeds.%24dashboard");
+                uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dmailmergeds.%24dashboard&attachDatasource=true");
             }
 
+            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
+            this.webBrowser.Url = uri;
+        }
+
+        public void SaveDocumentToX3(Word.Document doc)
+        {
+            Uri uri = new Uri(serverUrl +"/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordsave.%24dashboard");
+
+            this.Show();
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
+                customData.setCreateMode("3");
+                customData.setForceRefresh(false); 
+            }
             this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
             this.webBrowser.Url = uri;
         }

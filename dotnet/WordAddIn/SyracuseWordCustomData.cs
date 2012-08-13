@@ -11,13 +11,16 @@ namespace WordAddIn
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public class SyracuseOfficeCustomData
     {
-        private const String sageERPX3JsonTagXPath = "//SyracuseOfficeCustomData";
+        private const String sageERPX3JsonTagName   = "SyracuseOfficeCustomData";
+        private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;
 
         private const String serverUrlProperty      = "serverUrl";
         private const String resourceUrlProperty    = "resourceUrl";
         private const String forceRefreshProperty   = "forceRefresh";
         private const String dataSourceUuidProperty = "dataSourceUuid";
         private const String createModeProperty     = "createMode";
+        private const String documentUrlProperty    = "documentUrl";
+        private const String documentTitleProperty  = "documentTitle";
 
         private Dictionary<String, object> dictionary;
 
@@ -79,7 +82,23 @@ namespace WordAddIn
         }
         public String getCreateMode()
         {
-            return getStringProperty(createModeProperty);
+            return getStringProperty(createModeProperty, false);
+        }
+        public void setDocumentUrl(String url)
+        {
+            setStringProperty(documentUrlProperty, url);
+        }
+        public String getDocumentUrl()
+        {
+            return getStringProperty(documentUrlProperty, false);
+        }
+        public void setDocumentTitle(String title)
+        {
+            setStringProperty(documentTitleProperty, title);
+        }
+        public String getDocumentTitle()
+        {
+            return getStringProperty(documentTitleProperty, false);
         }
         public void setBooleanValue(String name, Boolean status)
         {
@@ -90,7 +109,7 @@ namespace WordAddIn
             Boolean r = false;
             try
             {
-                if (getStringProperty(forceRefreshProperty, required).Equals("1"))
+                if (getStringProperty(name, required).Equals("1"))
                 {
                     r = true;
                 }
@@ -146,6 +165,11 @@ namespace WordAddIn
             return this.dictionary;
         }
 
+        public void setDictionary(Dictionary<String, object> d)
+        {
+            this.dictionary = d;
+        }
+
         public Microsoft.Office.Interop.Word.Document getWordDoc()
         {
             return doc;
@@ -165,16 +189,21 @@ namespace WordAddIn
 
         public void writeDictionaryToDocument()
         {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            String json = ser.Serialize(dictionary);
+
             foreach (CustomXMLPart part in doc.CustomXMLParts)
             {
 
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
-                    JavaScriptSerializer ser = new JavaScriptSerializer();
-                    node.Text = ser.Serialize(dictionary);
+                    node.Text = json;
+                    return;
                 }
             }
+            string xml = "<" + sageERPX3JsonTagName + ">" + json + "</" + sageERPX3JsonTagName + ">";
+            doc.CustomXMLParts.Add(xml);
         }
 
         //Used by word
