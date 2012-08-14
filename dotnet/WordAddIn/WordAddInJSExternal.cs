@@ -34,11 +34,6 @@ namespace WordAddIn
             return customData;
         }
 
-        public void closeBrowserDialog() 
-        {
-            browserDialog.Close();
-        }
-
         private void createMailMergeDataFile(Dictionary<String, object> mailMergeData)
         {
             Document doc = customData.getWordDoc();
@@ -141,6 +136,8 @@ namespace WordAddIn
             {
                 MessageBox.Show(e.ToString() + "\n" + e.StackTrace);
             }
+
+            browserDialog.Hide();
         }
 
         public String removeCustomDataBeforeMerge(Document doc)
@@ -203,6 +200,12 @@ namespace WordAddIn
 
             Globals.WordAddIn.Application.Documents.Open(tempFileName);
             return base64string;
+        }
+
+        public void NotifySaveDocumentDone()
+        {
+            browserDialog.Hide();
+            MessageBox.Show("Document has been saved!");
         }
     }
 }
