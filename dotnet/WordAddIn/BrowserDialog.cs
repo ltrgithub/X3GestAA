@@ -32,7 +32,6 @@ namespace WordAddIn
                 e.Cancel = true;
                 Hide();
             }
-
             base.OnFormClosing(e);
         }
 
@@ -40,17 +39,15 @@ namespace WordAddIn
         {
             if (hideOnCompletion == true)
             {
-                this.Hide();
+//                this.Hide();
             }
             hideOnCompletion = false;
         }
 
         public void Connect(String serverUrl)
         {
-            hideOnCompletion = true;
             this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
             this.serverUrl = serverUrl;
-            hideOnCompletion = false;
         }
 
         public void CreateMailMergeDocument(Word.Document doc)
@@ -73,7 +70,7 @@ namespace WordAddIn
 
         public void SaveDocumentToX3(Word.Document doc)
         {
-            Uri uri = new Uri(serverUrl +"/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordsave.%24dashboard");
+            Uri uri = new Uri(serverUrl +"/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard");
 
             this.Show();
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
