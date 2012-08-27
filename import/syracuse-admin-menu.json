@@ -15,22 +15,25 @@
 				"$key": "title.en-US"
 			}
 		},
-		"pageData": {
+		"dashboardDef": {
 			"$key": "title.en-US",
-			"application":{
-				"$key": ["application", "contract"]
-			},
-			"portlets":{
-				"$key": ["portlet", "endpoint"],
-				"portlet": {
-					"$key": "title.en-US"
+			"variants":{
+				"$key": "title.en-US",
+				"vignettes":{
+					"$key": ["portlet", "endpoint"],
+					"portlet": {
+						"$key": "title.en-US"
+					},
+					"endpoint": {
+						"$key": "description"
+					}
 				},
-				"endpoint": {
+				"roles": {
 					"$key": "description"
+				},
+				"application":{
+					"$key": ["application", "contract"]
 				}
-			},
-			"roles": {
-				"$key": "description"
 			}
 		}	
 	},
@@ -177,6 +180,24 @@
 		},
 		"entity": "pageDatas",
 		"representation": "pageData",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"title": {
+			"en-US": "Dashboards",
+			"fr-FR": "Portails"
+		},
+		"description": {
+			"en-US": "Dashboards management interface",
+			"fr-FR": "Gestion des portails"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "dashboardDefs",
+		"representation": "dashboardDef",
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
@@ -353,7 +374,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Pages", "Vignettes", "Menu Items", "Menu Categories", "Pages History", "Configurations"]
+		"items": ["Pages", "Dashboards", "Vignettes", "Menu Items", "Menu Categories", "Pages History", "Configurations"]
 	},{
 		"$type": "portlet",
 		"title": {
@@ -455,31 +476,36 @@
 		},
 		"items": ["Teams", "Documents", "Document tags", "Tags categories"]
 	},{
-		"$type": "pageData",
+		"$type": "dashboardDef",
 		"title": {
 			"en-US": "Administration dashboard",
 			"fr-FR": "Menu d'administration"
 		},
-		"facet": "$dashboard",
 		"dashboardName": "home",
-		"roles": ["Super administrator", "Endpoint administrator"],		
-		"allApplications": false,
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"portlets": [{
-			"portlet": "Syracuse administration",
-			"allEndpoints": true
-		},{
-			"portlet": "Syracuse collaboration",
-			"allEndpoints": true
-		},{
-			"portlet": "Syracuse authoring",
-			"allEndpoints": true
-		},{
-			"portlet": "Syracuse tools",
-			"allEndpoints": true
+		"variants": [{
+			"title": {
+				"en-US": "Administration dashboard",
+				"fr-FR": "Menu d'administration"
+			},
+			"roles": ["Super administrator", "Endpoint administrator"],		
+			"allApplications": false,
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"vignettes": [{
+				"portlet": "Syracuse administration",
+				"allEndpoints": true
+			},{
+				"portlet": "Syracuse collaboration",
+				"allEndpoints": true
+			},{
+				"portlet": "Syracuse authoring",
+				"allEndpoints": true
+			},{
+				"portlet": "Syracuse tools",
+				"allEndpoints": true
+			}]
 		}]
 	}	
 	]
