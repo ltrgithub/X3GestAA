@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerSettings));
             this.textBoxServerAddress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,54 +37,38 @@
             // 
             // textBoxServerAddress
             // 
-            this.textBoxServerAddress.Location = new System.Drawing.Point(237, 79);
+            resources.ApplyResources(this.textBoxServerAddress, "textBoxServerAddress");
             this.textBoxServerAddress.Name = "textBoxServerAddress";
-            this.textBoxServerAddress.Size = new System.Drawing.Size(263, 20);
-            this.textBoxServerAddress.TabIndex = 0;
-            this.textBoxServerAddress.Text = "http://localhost:8124";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 82);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Server location";
             // 
             // button1
             // 
+            resources.ApplyResources(this.button1, "button1");
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(237, 130);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
+            resources.ApplyResources(this.button2, "button2");
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(319, 130);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // ServerSettings
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 274);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxServerAddress);
             this.Name = "ServerSettings";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ServerSettings";
             this.Load += new System.EventHandler(this.ServerSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
