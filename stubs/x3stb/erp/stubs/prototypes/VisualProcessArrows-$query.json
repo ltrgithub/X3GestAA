@@ -1,0 +1,32 @@
+{
+	"$baseUrl": "http://syra_server/x3/demo",
+	"$baseType": "application/json; vnd.sage.syracuse.representation=x3.erp.demo",
+	"$url": "{$baseUrl}/conssta?&codeStat={$codeStat}&dateStart={$dateStart}&dateEnd={$dateEnd}&keyValue1={$keyValue1}&keyValue2={$keyValue2}&keyValue3={$keyValue3}",
+	"$title": "Test Visual Process",
+	"$methods": "GET, POST, PUT, DELETE",
+	"$": {
+	"flashImage": {
+			"$title": "Flash process",
+                        "$type": "image"
+		},
+		"process": {
+			"$type": "application/x-process",
+			"$title": "Visual Process Player test"
+		}
+		
+	},
+	"$article": {
+		"$layout": {
+			"$items": [{
+				"$bind": "flashImage",
+				"$isEditMode": false,
+				"$labelWidth": "auto"
+			},
+                        {
+				"$bind": "process",
+				"$isEditMode": false,
+				"$labelWidth": "auto"
+			}]
+		}
+	}
+}
