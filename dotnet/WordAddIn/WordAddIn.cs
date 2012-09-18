@@ -8,12 +8,14 @@ using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Word;
 using Microsoft.Office.Tools.Word.Extensions;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace WordAddIn
 {
     public partial class WordAddIn
     {
         public BrowserDialog browserDialog = null;
+        ResourceManager _locRes = new ResourceManager("WordAddIn.Messages", typeof(WordAddIn).Assembly);
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -38,7 +40,7 @@ namespace WordAddIn
 
         void on_document_before_save(object sender, Microsoft.Office.Tools.Word.SaveEventArgs e)
         {
-            if (MessageBox.Show("Do you want to save the document?", "BeforeSave",
+            if (MessageBox.Show(_locRes.GetString("DocumentSaveConfirm"), _locRes.GetString("SaveInfo"),
                 MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 e.Cancel = true;
