@@ -6,8 +6,6 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Microsoft.Office.Core;
-using System.Resources;
-
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
@@ -19,7 +17,6 @@ namespace WordAddIn
         private SyracuseOfficeCustomData customData;
         private BrowserDialog browserDialog;
         private Document doc;
-        ResourceManager _locRes = new ResourceManager("WordAddIn.Messages", typeof(WordAddIn).Assembly);
 
         public WordAddInJSExternal(Document doc, BrowserDialog browserDialog)
         {
@@ -176,7 +173,7 @@ namespace WordAddIn
                 value = ((Object[])cellData)[0];
             }
 
-            String text = (value == null ? "" : value.ToString());
+            String text = value.ToString();
             return text;
         }
 
@@ -188,8 +185,7 @@ namespace WordAddIn
             Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
             if (doc == null)
             {
-                //MessageBox.Show("Unable to access document");
-                MessageBox.Show(String.Format(_locRes.GetString("AccessDocumentError"), "\n"));
+                MessageBox.Show("Unable to access document");
                 return "";
             }
 
@@ -209,8 +205,7 @@ namespace WordAddIn
         public void NotifySaveDocumentDone()
         {
             browserDialog.Hide();
-            //MessageBox.Show("Document has been saved!");
-            MessageBox.Show(String.Format(_locRes.GetString("DocumentSavedInfo"), "\n"));
+            MessageBox.Show("Document has been saved!");
         }
     }
 }
