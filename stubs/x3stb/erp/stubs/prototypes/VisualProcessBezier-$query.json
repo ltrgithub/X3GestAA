@@ -5,9 +5,9 @@
 	"$title": "Test Visual Process",
 	"$methods": "GET, POST, PUT, DELETE",
 	"$": {
-	"screenshot": {
-                        "$title": "Expected",
-                        "$type": "image",
+	"flashImage": {
+                        "$title": "Bezier forms",
+                        "$type": "image"
                         },
 		"process": {
 			"$type": "application/x-process",
@@ -20,9 +20,10 @@
 	"$article": {
 		"$layout": {
 			"$items": [{
-				"$bind": "screenshot",
-				"$isEditMode": false,
-				"$labelWidth": "auto"
+				"$bind": "flashImage",
+				"$isAutoSize": false,
+				"$imageHeight": "400px",
+                                "$imageWidht": "100%"
 			},
                         {
 				"$bind": "process",
