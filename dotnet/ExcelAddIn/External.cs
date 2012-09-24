@@ -146,6 +146,12 @@ namespace ExcelAddIn
             if (onLogonHandler != null)
                 onLogonHandler();
         }
+        public System.Action onTablesLoadedHandler = null;
+        public void onTablesLoaded()
+        {
+            if (onTablesLoadedHandler != null)
+                onTablesLoadedHandler();
+        }
         public void ShowSettingsForm()
         {
             Globals.ThisAddIn.ShowSettingsForm();
