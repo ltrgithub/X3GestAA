@@ -35,7 +35,6 @@ namespace ExcelAddIn
             this.buttonConnect = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
-            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +43,6 @@ namespace ExcelAddIn
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.buttonConnect);
             this.flowLayoutPanel1.Controls.Add(this.buttonSettings);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // buttonConnect
@@ -71,13 +69,6 @@ namespace ExcelAddIn
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
             // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ActionPanel
             // 
             resources.ApplyResources(this, "$this");
@@ -97,7 +88,6 @@ namespace ExcelAddIn
         private System.Windows.Forms.Button buttonConnect;
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.WebBrowser webBrowser;
-        private System.Windows.Forms.Button button1;
 
 
     }
