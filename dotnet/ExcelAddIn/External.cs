@@ -146,11 +146,13 @@ namespace ExcelAddIn
             if (onLogonHandler != null)
                 onLogonHandler();
         }
-        public System.Action onTablesLoadedHandler = null;
-        public void onTablesLoaded()
+//        public System.Action onTablesLoadedHandler = null;
+        public delegate void TablesLoadedCallback(string errorMessage);
+        public TablesLoadedCallback onTablesLoadedHandler = null;
+        public void onTablesLoaded(string errorMessage)
         {
             if (onTablesLoadedHandler != null)
-                onTablesLoadedHandler();
+                onTablesLoadedHandler(errorMessage);
         }
         public void ShowSettingsForm()
         {
