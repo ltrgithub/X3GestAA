@@ -39,13 +39,13 @@ namespace ExcelAddIn
                 webBrowser.ObjectForScripting = new External();
                 ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
                     {
+                        connected = true;
                         // actions after logon
                         // has datasources ?
                         if ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") == "")
                             Globals.ThisAddIn.ShowSettingsForm();
                     };
                 webBrowser.Refresh();
-                connected = true;
             }
             catch (Exception ex)
             {
@@ -89,5 +89,64 @@ namespace ExcelAddIn
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "selectionChanged" });
         }
 
+        private void internalLoadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded) 
+        {
+            ((External)webBrowser.ObjectForScripting).onTablesLoadedHandler = onTablesLoaded;
+            webBrowser.Document.InvokeScript("loadTables", new object[] { parameters });
+        }
+        public void loadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded)
+        {
+            if(!connected) {
+                // get server url
+                var connectUrl = Globals.ThisAddIn.GetServerUrl();
+                //
+                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                webBrowser.ObjectForScripting = new External();
+                ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
+                {
+                    connected = true;
+                    // actions after logon
+                    internalLoadTables(parameters, onTablesLoaded);
+                };
+                webBrowser.Refresh();
+            } 
+            else 
+            {
+                // TODO: make sure it's connected to the same server !!!
+                internalLoadTables(parameters, onTablesLoaded);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, object>[] par = new Dictionary<string,object>[3];
+            par[0] = new Dictionary<string,object>();
+            par[0]["dsName"] = "users_1";
+            par[0]["cellAddress"] = "A1";
+            par[0]["endpointName"] = "syracuse";
+            par[0]["className"] = "users";
+            par[0]["representationName"] = "user";
+            par[0]["fields"] = new object[] {"login", "firstName", "lastName"};
+            par[0]["parameters"] = "where=(login eq \"guest\")";
+            par[0]["limit"] = -1;
+            //
+            par[1] = new Dictionary<string, object>();
+            par[1]["dsName"] = "groups_1";
+            par[1]["cellAddress"] = "A4";
+            par[1]["endpointName"] = "syracuse_";
+            par[1]["className"] = "groups";
+            par[1]["representationName"] = "group";
+            par[1]["fields"] = new object[] { "description" };
+//            par[1]["parameters"] = "";
+            par[1]["limit"] = -1;
+            //
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            loadTables(ser.Serialize(par), delegate(string errorMessage) {
+                if (errorMessage == "")
+                    MessageBox.Show("Loaded");
+                else
+                    MessageBox.Show("Load Error: " + errorMessage);
+            });
+        }
      }
 }
