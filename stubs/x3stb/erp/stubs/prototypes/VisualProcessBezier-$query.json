@@ -6,8 +6,8 @@
 	"$methods": "GET, POST, PUT, DELETE",
 	"$": {
 	"flashImage": {
-                        "$title": "Expected",
-                        "$type": "image",
+                        "$title": "Bezier forms",
+                        "$type": "image"
                         },
 		"process": {
 			"$type": "application/x-process",
@@ -21,7 +21,9 @@
 		"$layout": {
 			"$items": [{
 				"$bind": "flashImage",
-				"$isAutoSize": false
+				"$isAutoSize": false,
+				"$imageHeight": "400px",
+                                "$imageWidht": "100%"
 			},
                         {
 				"$bind": "process",

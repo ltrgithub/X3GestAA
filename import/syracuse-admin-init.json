@@ -29,6 +29,9 @@
 		},
 		"localePreference": {
 			"$key": "code"
+		},
+		"storageVolume": {
+			"$key": "code"
 		}
 	},
 	"$includeBefore": [],
@@ -46,6 +49,15 @@
 		"numberDecimalSeparator": ".",
 		"numberGroupSeparator": " ",
 		"enabled": true
+	},{
+		"$type": "storageVolume",
+		"code": "STD",
+		"storageType": "db_file",
+		"description": {
+			"default": "Standard storage volume",
+			"fr-FR": "Volume standard",
+			"en-US": "Standard storage volume"
+		}
 	},{
 		"$type": "application",
 		"description": "Syracuse Collaboration",
