@@ -279,7 +279,6 @@ namespace WordAddIn
                     String title = item["$title"].ToString();
                     String bind = item["$bind"].ToString();
 
-
                     col++;
                     Range r;
                     r = t.Cell(1, col).Range;
@@ -362,6 +361,25 @@ namespace WordAddIn
         {
             browserDialog.Hide();
             MessageBox.Show("Document has been saved!");
+        }
+
+        public String getSyracuseDocumentType()
+        {
+            Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
+            if (doc == null)
+            {
+                MessageBox.Show("Unable to access document");
+                return "word-mailmerge";
+            }
+            if ("4".Equals(customData.getCreateMode()))
+            {
+                return "word-report-tpl";
+            }
+            else if ("5".Equals(customData.getCreateMode()))
+            {
+                return "word-report";
+            }
+            return "word-mailmerge";
         }
     }
 }
