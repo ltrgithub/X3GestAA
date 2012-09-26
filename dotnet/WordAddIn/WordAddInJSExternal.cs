@@ -200,7 +200,7 @@ namespace WordAddIn
         {
             Document doc = customData.getWordDoc();
             Paragraph p;
-            MessageBox.Show(layoutData);
+
             /* Debug: Add layout json */
             p = doc.Paragraphs.Add();
             p.Range.Text = layoutData;
@@ -315,7 +315,10 @@ namespace WordAddIn
                 }
             }
         }
-
+        public void populateWordTemplate(String data)
+        {
+            MessageBox.Show(data);
+        }
         private string getStringValue(object cellData)
         {
             if (cellData == null)
