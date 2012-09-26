@@ -68,6 +68,20 @@ namespace WordAddIn
             this.webBrowser.Url = uri;
         }
 
+        public void CreateWordReportTemplate(Word.Document doc)
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&attachDatasource=true");
+
+            this.Show();
+            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
+            this.webBrowser.Url = uri;
+        }
+
         public void SaveDocumentToX3(Word.Document doc)
         {
             Uri uri = new Uri(serverUrl +"/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard");

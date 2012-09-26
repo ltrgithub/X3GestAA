@@ -89,12 +89,12 @@ namespace ExcelAddIn
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "selectionChanged" });
         }
 
-        private void internalLoadTables(string parameters, System.Action onTablesLoaded) 
+        private void internalLoadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded) 
         {
             ((External)webBrowser.ObjectForScripting).onTablesLoadedHandler = onTablesLoaded;
             webBrowser.Document.InvokeScript("loadTables", new object[] { parameters });
         }
-        public void loadTables(string parameters, System.Action onTablesLoaded)
+        public void loadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded)
         {
             if(!connected) {
                 // get server url
@@ -119,7 +119,7 @@ namespace ExcelAddIn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dictionary<string, object>[] par = new Dictionary<string,object>[2];
+            Dictionary<string, object>[] par = new Dictionary<string,object>[3];
             par[0] = new Dictionary<string,object>();
             par[0]["dsName"] = "users_1";
             par[0]["cellAddress"] = "A1";
@@ -133,7 +133,7 @@ namespace ExcelAddIn
             par[1] = new Dictionary<string, object>();
             par[1]["dsName"] = "groups_1";
             par[1]["cellAddress"] = "A4";
-            par[1]["endpointName"] = "syracuse";
+            par[1]["endpointName"] = "syracuse_";
             par[1]["className"] = "groups";
             par[1]["representationName"] = "group";
             par[1]["fields"] = new object[] { "description" };
@@ -141,8 +141,11 @@ namespace ExcelAddIn
             par[1]["limit"] = -1;
             //
             JavaScriptSerializer ser = new JavaScriptSerializer();
-            loadTables(ser.Serialize(par), delegate() {
-                MessageBox.Show("Loaded");
+            loadTables(ser.Serialize(par), delegate(string errorMessage) {
+                if (errorMessage == "")
+                    MessageBox.Show("Loaded");
+                else
+                    MessageBox.Show("Load Error: " + errorMessage);
             });
         }
      }
