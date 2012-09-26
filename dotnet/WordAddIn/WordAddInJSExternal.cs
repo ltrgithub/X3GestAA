@@ -161,6 +161,161 @@ namespace WordAddIn
             return xml;
         }
 
+        /*
+         * Called from JS to build a basic layout
+         Basic layout definition is like:
+         [
+           {
+              "$title":"{@LoginSectionTitle}",
+              "$container":"box",
+              "$items":{
+                 "login":{
+                    "$type":"application/x-string",
+                    "$title":"Default Account",
+                    "$bind":"login"
+                 },
+                 "active":{
+                    "$type":"application/x-boolean",
+                    "$title":"Active",
+                    "$bind":"active"
+                 },
+           {
+              "$container":"table",
+              "$items":{
+                 "login":{
+                    "$type":"application/x-string",
+                    "$title":"User Login",
+                    "$bind":"login"
+                 },
+                 "endpoint":{
+                    "$type":"application/x-reference",
+                    "$title":"Endpoint",
+                    "$bind":"endpoint"
+                 }
+                }
+            }
+        ]
+         */
+        public void createWordTemplate(String layoutData)
+        {
+            Document doc = customData.getWordDoc();
+            Paragraph p;
+            MessageBox.Show(layoutData);
+            /* Debug: Add layout json */
+            p = doc.Paragraphs.Add();
+            p.Range.Text = layoutData;
+            /* */
+
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
+
+            Object[] boxes = (Object[]) layout["layout"];
+            foreach (Object o in boxes) {
+                try
+                {
+                    Dictionary<String, object> box = (Dictionary<String, object>) o;
+                    if (box.ContainsKey("$title"))
+                    {
+                        p = doc.Paragraphs.Add();
+                        p.Range.Text = box["$title"].ToString();
+                    }
+
+                    if (box.ContainsKey("$items"))
+                    {
+                        Dictionary<String, object> items = (Dictionary<String, object>)box["$items"];
+                        String container = "box";
+                        if (box.ContainsKey("$container"))
+                        {
+                            container = box["$container"].ToString();
+                        }
+
+                        if (container.Equals("table"))
+                        {
+                            addTable(box, items);
+                        }
+                        else
+                        {
+                            addBox(box, items);
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
+            if (!doc.FormsDesign)
+            {
+                doc.ToggleFormsDesign();
+            }
+            browserDialog.Hide();
+        }
+
+        private void addTable(Dictionary<String, object> box, Dictionary<String, object> items)
+        {
+            Document doc = customData.getWordDoc();
+            Paragraph p;
+            p = doc.Paragraphs.Add();
+
+            int colCount = 0;
+            foreach (KeyValuePair<String, object> i in items)
+            {
+                Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                String hidden = item["$hidden"].ToString();
+                if (!"true".Equals(hidden))
+                {
+                    colCount++;
+                }
+            }
+
+            Table t = doc.Tables.Add(p.Range, 2, colCount, WdDefaultTableBehavior.wdWord9TableBehavior, WdAutoFitBehavior.wdAutoFitWindow);
+            t.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDot;
+
+            int col = 0;
+            foreach (KeyValuePair<String, object> i in items)
+            {
+                Dictionary<String, Object> item = (Dictionary<String, Object>) i.Value;
+                String hidden = item["$hidden"].ToString();
+                if (!"true".Equals(hidden))
+                {
+                    String type = item["$type"].ToString();
+                    String title = item["$title"].ToString();
+                    String bind = item["$bind"].ToString();
+
+                    col++;
+                    Range r;
+                    r = t.Cell(1, col).Range;
+                    r.Text = title;
+
+                    r = t.Cell(2, col).Range;
+                    ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, r);
+                    c.SetPlaceholderText(null, null, title);
+                }
+            }
+        }
+
+        private void addBox(Dictionary<String, object> box, Dictionary<String, object> items)
+        {
+            Document doc = customData.getWordDoc();
+            Paragraph p;
+
+            foreach (KeyValuePair<String, object> i in items)
+            {
+                Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                String type = item["$type"].ToString();
+                String title = item["$title"].ToString();
+                String bind = item["$bind"].ToString();
+                String hidden = item["$hidden"].ToString();
+
+                if (!"true".Equals(hidden))
+                {
+                    p = doc.Paragraphs.Add();
+                    Range r;
+                    r = p.Range;
+
+                    ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, r);
+                    c.SetPlaceholderText(null, null, title);
+                }
+            }
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)
@@ -206,6 +361,25 @@ namespace WordAddIn
         {
             browserDialog.Hide();
             MessageBox.Show("Document has been saved!");
+        }
+
+        public String getSyracuseDocumentType()
+        {
+            Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
+            if (doc == null)
+            {
+                MessageBox.Show("Unable to access document");
+                return "word-mailmerge";
+            }
+            if ("4".Equals(customData.getCreateMode()))
+            {
+                return "word-report-tpl";
+            }
+            else if ("5".Equals(customData.getCreateMode()))
+            {
+                return "word-report";
+            }
+            return "word-mailmerge";
         }
     }
 }

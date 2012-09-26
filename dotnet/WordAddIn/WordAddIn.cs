@@ -59,6 +59,13 @@ namespace WordAddIn
                 {
                     CreateNewMailMergeDocument();
                 }
+                else if ("4".Equals(mode))
+                {
+                    if (customData.isForceRefresh())
+                    {
+                        CreateWordReportTemplate();
+                    }
+                }
                 else if (!"".Equals(mode))
                 {
                     if (customData.isForceRefresh())
@@ -128,6 +135,30 @@ namespace WordAddIn
             newCustomData.setCreateMode("3");
             newCustomData.writeDictionaryToDocument();
             CreateMailMerge(newDoc);
+
+            Globals.Ribbons.Ribbon.buttonCreateMailMerge.Enabled = false;
+        }
+
+        public void CreateWordReportTemplate()
+        {
+            Word.Document doc = this.Application.ActiveDocument;
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+
+            if (!ConnectedToServer())
+            {
+                return;
+            }
+            browserDialog.CreateWordReportTemplate(doc);
+            customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData != null)
+            {
+                customData.setForceRefresh(false);
+                customData.writeDictionaryToDocument();
+            }
 
             Globals.Ribbons.Ribbon.buttonCreateMailMerge.Enabled = false;
         }
