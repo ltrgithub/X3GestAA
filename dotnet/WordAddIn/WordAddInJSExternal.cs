@@ -287,6 +287,8 @@ namespace WordAddIn
             Table t = r.Tables.Add(r, 2, colCount, WdDefaultTableBehavior.wdWord9TableBehavior, WdAutoFitBehavior.wdAutoFitWindow);
             t.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDot;
 
+            String bind = box["$bind"].ToString();
+
             int col = 0;
             foreach (KeyValuePair<String, object> i in items)
             {
@@ -294,17 +296,13 @@ namespace WordAddIn
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
-                    String type = item["$type"].ToString();
                     String title = item["$title"].ToString();
-                    String bind = item["$bind"].ToString();
 
                     col++;
                     r = t.Cell(1, col).Range;
                     r.Text = title;
-
                     r = t.Cell(2, col).Range;
-                    ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, r);
-                    c.SetPlaceholderText(null, null, title);
+                    createContentControl(doc, r, item, bind);
                 }
             }
 
@@ -318,19 +316,13 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
-                String type = item["$type"].ToString();
-                String title = item["$title"].ToString();
-                String bind = item["$bind"].ToString();
                 String hidden = item["$hidden"].ToString();
 
                 if (!"true".Equals(hidden))
                 {
                     Range r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
-
-                    ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, r);
-                    c.SetPlaceholderText(null, null, title);
-
+                    createContentControl(doc, r, item, null);
                     r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
                     r.InsertParagraph();
@@ -338,8 +330,37 @@ namespace WordAddIn
             }
         }
 
+        public void createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
+        {
+            String type = item["$type"].ToString();
+            String title = item["$title"].ToString();
+            String bind = item["$bind"].ToString();
+
+            ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, range);
+            c.SetPlaceholderText(null, null, title);
+            c.Tag = (parent != null ? parent + "." : "") + bind;
+            c.Title = type;
+        }
+
         public void populateWordTemplate(String data)
         {
+            TextWriter tw = new StreamWriter("c:\\temp\\data.txt");
+
+            // write a line of text to the file
+            tw.WriteLine(data);
+
+            // close the stream
+            tw.Close();
+/*
+
+            Document doc = customData.getWordDoc();
+            addBoxes(doc, layoutData);
+            if (!doc.FormsDesign)
+            {
+                doc.ToggleFormsDesign();
+            }
+            browserDialog.Hide();
+            */
             MessageBox.Show(data);
         }
         private string getStringValue(object cellData)
