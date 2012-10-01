@@ -75,7 +75,21 @@ namespace WordAddIn
             {
                 return;
             }
-            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&attachDatasource=true");
+            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
+
+            this.Show();
+            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
+            this.webBrowser.Url = uri;
+        }
+
+        public void PopulateWordReportTemplate(Word.Document doc)
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
 
             this.Show();
             this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
