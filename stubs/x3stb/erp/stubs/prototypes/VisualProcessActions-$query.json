@@ -5,6 +5,10 @@
 	"$title": "Test Visual Process",
 	"$methods": "GET, POST, PUT, DELETE",
 	"$": {
+		"description": {
+			"$title": "Case description",
+			"$type": "application/x-string"
+		},
 		"process": {
 			"$type": "application/x-process",
 			"$title": "Visual Process Player test"
@@ -12,11 +16,15 @@
 	},
 	"$article": {
 		"$layout": {
-			"$items": [{
+			"$items": [			{
+				"$bind": "description",
+				"$isEditMode": false
+			},{
 				"$bind": "process",
 				"$isEditMode": false,
 				"$labelWidth": "auto"
-			}]
+			}
+]
 		}
 	}
 }

@@ -29,6 +29,9 @@
 		},
 		"localePreference": {
 			"$key": "code"
+		},
+		"storageVolume": {
+			"$key": "code"
 		}
 	},
 	"$includeBefore": [],
@@ -47,6 +50,15 @@
 		"numberGroupSeparator": " ",
 		"enabled": true
 	},{
+		"$type": "storageVolume",
+		"code": "STD",
+		"storageType": "db_file",
+		"description": {
+			"default": "Standard storage volume",
+			"fr-FR": "Volume standard",
+			"en-US": "Standard storage volume"
+		}
+	},{
 		"$type": "application",
 		"description": "Syracuse Collaboration",
 		"application": "syracuse",
@@ -64,6 +76,9 @@
 	},{
 		"$type": "role",
 		"description": "Endpoint administrator"
+	},{
+		"$type": "role",
+		"description": "Guest"
 	},{
 		"$type": "endPoint",
 		"description": "Syracuse administration",
@@ -85,6 +100,11 @@
 		"description": "Endpoint administrators",
 		"role": "Endpoint administrator"
 	},{
+		"$type": "group",
+		"description": "Guests",
+		"endPoints": ["Syracuse administration"],
+		"role": "Guest"
+	},{
 		"$type": "user",
 		"login": "admin",
 		"password": "admin",
@@ -94,7 +114,8 @@
 		"$type": "user",
 		"login": "guest",
 		"password": "guest",
-		"lastName": "Guest"
+		"lastName": "Guest",
+		"groups": ["Guests"]
 	}
 	]
 }

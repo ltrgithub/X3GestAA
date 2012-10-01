@@ -39,13 +39,13 @@ namespace ExcelAddIn
                 webBrowser.ObjectForScripting = new External();
                 ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
                     {
+                        connected = true;
                         // actions after logon
                         // has datasources ?
                         if ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") == "")
                             Globals.ThisAddIn.ShowSettingsForm();
                     };
                 webBrowser.Refresh();
-                connected = true;
             }
             catch (Exception ex)
             {
@@ -71,47 +71,7 @@ namespace ExcelAddIn
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            // range update test
-//            Range cells = Globals.ThisAddIn.Application.ActiveCell.Worksheet.Range["B2", "G3"];
-//            cells.Value = new object[,] { { "1", "2", "3", "8", "7", "6" }, { "10", "9", "8", "7", "6", "5" } };
-            // sort test
-/*            Range cells = Globals.ThisAddIn.Application.ActiveCell.Worksheet.Range["A2", "G1002"];
-            cells.Sort(Globals.ThisAddIn.Application.ActiveCell.Worksheet.Cells[1, 4], 
-                XlSortOrder.xlDescending, Type.Missing, Type.Missing, XlSortOrder.xlAscending, Type.Missing, XlSortOrder.xlAscending,
-                XlYesNoGuess.xlNo, Type.Missing, Type.Missing, XlSortOrientation.xlSortColumns, XlSortMethod.xlPinYin, XlSortDataOption.xlSortNormal, 
-                XlSortDataOption.xlSortNormal, XlSortDataOption.xlSortNormal);
- */
-            // querytable test
-            //Globals.ThisAddIn.Application.ActiveCell.Worksheet.QueryTables.Add("url://", Type.Missing);
-            // names test
-/*            Worksheet ws = Globals.ThisAddIn.Application.ActiveCell.Worksheet;
-            foreach (Name n in ws.Names)
-            {
-                MessageBox.Show(n.Name + "-" + n.RefersTo);
-            }
- */
-            // discontinue range update
- /*           Range cells = Globals.ThisAddIn.Application.ActiveCell.Worksheet.Range["B2:B3,D2:E3"];
-            cells.Value = new object[,] { { "1", "2", "3", "8", "7", "6" }, { "10", "9", "8", "7", "6", "5" } };
-  */
-            // document properties
-/*            Office.DocumentProperties props = (Office.DocumentProperties)Globals.ThisAddIn.Application.ActiveWorkbook.CustomDocumentProperties;
-            foreach (Office.DocumentProperty prop in props)
-            {
-                MessageBox.Show(prop.Name + ":" + prop.Value);
-            }*/
-/*            Worksheet activeSheet = (Worksheet)Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet;
-            Range cell = (Range)activeSheet.Range["A1"];
-            MessageBox.Show((String)cell.Value2);
- */
-//            Globals.ThisAddIn.Connect();
-            Globals.ThisAddIn.ShowSettingsForm();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonSettings_Click(object sender, EventArgs e)
         {
             Globals.ThisAddIn.ShowSettingsForm();
         }
@@ -129,13 +89,64 @@ namespace ExcelAddIn
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "selectionChanged" });
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void internalLoadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded) 
         {
-            UnitTest_Tables test1 = new UnitTest_Tables();
-            if (test1.Execute())
-                MessageBox.Show("Succes");
-            else
-                MessageBox.Show("Fail");
+            ((External)webBrowser.ObjectForScripting).onTablesLoadedHandler = onTablesLoaded;
+            webBrowser.Document.InvokeScript("loadTables", new object[] { parameters });
         }
-    }
+        public void loadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded)
+        {
+            if(!connected) {
+                // get server url
+                var connectUrl = Globals.ThisAddIn.GetServerUrl();
+                //
+                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                webBrowser.ObjectForScripting = new External();
+                ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
+                {
+                    connected = true;
+                    // actions after logon
+                    internalLoadTables(parameters, onTablesLoaded);
+                };
+                webBrowser.Refresh();
+            } 
+            else 
+            {
+                // TODO: make sure it's connected to the same server !!!
+                internalLoadTables(parameters, onTablesLoaded);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, object>[] par = new Dictionary<string,object>[3];
+            par[0] = new Dictionary<string,object>();
+            par[0]["dsName"] = "users_1";
+            par[0]["cellAddress"] = "A1";
+            par[0]["endpointName"] = "syracuse";
+            par[0]["className"] = "users";
+            par[0]["representationName"] = "user";
+            par[0]["fields"] = new object[] {"login", "firstName", "lastName"};
+            par[0]["parameters"] = "where=(login eq \"guest\")";
+            par[0]["limit"] = -1;
+            //
+            par[1] = new Dictionary<string, object>();
+            par[1]["dsName"] = "groups_1";
+            par[1]["cellAddress"] = "A4";
+            par[1]["endpointName"] = "syracuse_";
+            par[1]["className"] = "groups";
+            par[1]["representationName"] = "group";
+            par[1]["fields"] = new object[] { "description" };
+//            par[1]["parameters"] = "";
+            par[1]["limit"] = -1;
+            //
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            loadTables(ser.Serialize(par), delegate(string errorMessage) {
+                if (errorMessage == "")
+                    MessageBox.Show("Loaded");
+                else
+                    MessageBox.Show("Load Error: " + errorMessage);
+            });
+        }
+     }
 }

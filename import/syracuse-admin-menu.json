@@ -410,6 +410,24 @@
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_VOL",
+		"title": {
+			"en-US": "Volumes",
+			"fr-FR": "Volumes"
+		},
+		"description": {
+			"en-US": "Storage volumes",
+			"fr-FR": "Volumes de stockage"
+		},
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "storageVolumes",
+		"representation": "storageVolume",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
 		"title": {
 			"en-US": "Documents",
 			"fr-FR": "Documents"
@@ -474,7 +492,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Teams", "Documents", "Document tags", "Tags categories"]
+		"items": ["Teams", "Volumes", "Documents", "Document tags", "Tags categories"]
 	},{
 		"$type": "dashboardDef",
 		"title": {
