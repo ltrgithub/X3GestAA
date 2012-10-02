@@ -428,5 +428,12 @@ namespace WordAddIn
             }
             return "word-mailmerge";
         }
+
+        // check version
+        public String getAddinVersion()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+
     }
 }
