@@ -77,9 +77,6 @@
 		"$type": "role",
 		"description": "Endpoint administrator"
 	},{
-		"$type": "role",
-		"description": "Guest"
-	},{
 		"$type": "endPoint",
 		"description": "Syracuse administration",
 		"applicationRef": {
@@ -100,11 +97,6 @@
 		"description": "Endpoint administrators",
 		"role": "Endpoint administrator"
 	},{
-		"$type": "group",
-		"description": "Guests",
-		"endPoints": ["Syracuse administration"],
-		"role": "Guest"
-	},{
 		"$type": "user",
 		"login": "admin",
 		"password": "admin",
@@ -114,8 +106,7 @@
 		"$type": "user",
 		"login": "guest",
 		"password": "guest",
-		"lastName": "Guest",
-		"groups": ["Guests"]
+		"lastName": "Guest"
 	}
 	]
 }
