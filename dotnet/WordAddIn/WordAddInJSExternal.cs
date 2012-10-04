@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using Microsoft.Office.Interop.Word;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using Microsoft.Office.Core;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
 {
+    public partial class TableInfo
+    {
+        public List<ContentControl> controls = new List<ContentControl>();
+    }
+
     // The only one class/object to be referenced from javascript 'external'
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public class WordAddInJSExternal
@@ -161,6 +165,437 @@ namespace WordAddIn
             return xml;
         }
 
+        /*
+         * Called from JS to build a basic layout
+         Basic layout definition is like:
+         [
+           {
+              "$title":"{@LoginSectionTitle}",
+              "$container":"box",
+              "$items":{
+                 "login":{
+                    "$type":"application/x-string",
+                    "$title":"Default Account",
+                    "$bind":"login"
+                 },
+                 "active":{
+                    "$type":"application/x-boolean",
+                    "$title":"Active",
+                    "$bind":"active"
+                 },
+           {
+              "$container":"table",
+              "$items":{
+                 "login":{
+                    "$type":"application/x-string",
+                    "$title":"User Login",
+                    "$bind":"login"
+                 },
+                 "endpoint":{
+                    "$type":"application/x-reference",
+                    "$title":"Endpoint",
+                    "$bind":"endpoint"
+                 }
+                }
+            }
+        ]
+         */
+        public void createWordTemplate(String layoutData)
+        {
+            Document doc = customData.getWordDoc();
+
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
+
+            Object[] boxes = (Object[])layout["layout"];
+            foreach (Object o in boxes)
+            {
+                try
+                {
+                    Dictionary<String, object> box = (Dictionary<String, object>)o;
+                    if (box.ContainsKey("$title"))
+                    {
+                        int level = Convert.ToInt32(box["$level"].ToString());
+                        Range r = doc.Range();
+                        r.Collapse(WdCollapseDirection.wdCollapseEnd);
+                        r.InsertAfter(box["$title"].ToString());
+                        r = doc.Range();
+                        r.Collapse(WdCollapseDirection.wdCollapseEnd);
+                        r.InsertParagraph();
+                    }
+
+                    if (box.ContainsKey("$items"))
+                    {
+                        Dictionary<String, object> items = (Dictionary<String, object>)box["$items"];
+                        String container = "box";
+                        if (box.ContainsKey("$container"))
+                        {
+                            container = box["$container"].ToString();
+                        }
+                        if (container.Equals("table"))
+                        {
+                            addTable(doc, box, items);
+                        }
+                        else
+                        {
+                            addBox(doc, box, items);
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
+            if (!doc.FormsDesign)
+            {
+                doc.ToggleFormsDesign();
+            }
+            browserDialog.Hide();
+        }
+
+        private void addTable(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        {
+            int colCount = 0;
+            foreach (KeyValuePair<String, object> i in items)
+            {
+                Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                String hidden = item["$hidden"].ToString();
+                if (!"true".Equals(hidden))
+                {
+                    colCount++;
+                }
+            }
+
+            Range r = doc.Range();
+            r.Collapse(WdCollapseDirection.wdCollapseEnd);
+            Table t = r.Tables.Add(r, 2, colCount, WdDefaultTableBehavior.wdWord9TableBehavior, WdAutoFitBehavior.wdAutoFitWindow);
+            t.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDot;
+
+            String bind = box["$bind"].ToString();
+
+            int col = 0;
+            foreach (KeyValuePair<String, object> i in items)
+            {
+                Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                String hidden = item["$hidden"].ToString();
+                if (!"true".Equals(hidden))
+                {
+                    String title = item["$title"].ToString();
+
+                    col++;
+                    r = t.Cell(1, col).Range;
+                    r.Text = title;
+                    r = t.Cell(2, col).Range;
+                    createContentControl(doc, r, item, bind);
+                }
+            }
+
+            r = doc.Range();
+            r.Collapse(WdCollapseDirection.wdCollapseEnd);
+            r.InsertParagraph();
+        }
+
+        private void addBox(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        {
+            foreach (KeyValuePair<String, object> i in items)
+            {
+                Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                String hidden = item["$hidden"].ToString();
+                if (!"true".Equals(hidden))
+                {
+                    Range r = doc.Range();
+                    r.Collapse(WdCollapseDirection.wdCollapseEnd);
+                    createContentControl(doc, r, item, null);
+                    r = doc.Range();
+                    r.Collapse(WdCollapseDirection.wdCollapseEnd);
+                    r.InsertParagraph();
+                }
+            }
+        }
+
+        public void createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
+        {
+            String type = item["$type"].ToString();
+            String title = item["$title"].ToString();
+            String bind = item["$bind"].ToString();
+
+            ContentControl c;
+            if ("image".Equals(type))
+            {
+                c = doc.ContentControls.Add(WdContentControlType.wdContentControlPicture, range);
+            }
+            else
+            {
+                c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, range);
+            }
+
+            c.SetPlaceholderText(null, null, title);
+            c.Tag = (parent != null ? parent + "." : "") + bind;
+            c.Title = type;
+        }
+
+        public void populateWordTemplate(String data)
+        {
+            Document doc = customData.getWordDoc();
+
+            Globals.WordAddIn.Application.Visible = false;
+            Globals.WordAddIn.Application.ScreenUpdating = false;
+            fillTemplate(doc, data);
+            Globals.WordAddIn.Application.ScreenUpdating = true;
+            Globals.WordAddIn.Application.Visible = true;
+
+            if (doc.FormsDesign)
+            {
+                doc.ToggleFormsDesign();
+            }
+            browserDialog.Hide();
+        }
+
+        public void fillTemplate(Document doc, String data)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
+
+            Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
+            List<ContentControl> ccs = GetAllContentControls(doc);
+
+            // Process simple properties not container in a collection
+            foreach (ContentControl c in ccs)
+            {
+                // Simple properties (no collections)
+                string tag = c.Tag;
+                if (!tag.Contains(".") && entityData.ContainsKey(tag))
+                {
+                    Dictionary<String, object> propData = (Dictionary<String, object>)entityData[tag];
+                    setControlContent(doc, c, propData);
+                }
+            }
+
+            Dictionary<String, TableInfo> tables = new Dictionary<String, TableInfo>();
+
+            List<Table> ts = GetAllTables(doc);
+            foreach (Table t in ts)
+            {
+                object[] items = null;
+                if (t.Range.ContentControls.Count > 0)
+                {
+                    string lastCollection = null;
+                    foreach (Row r in t.Rows)
+                    {
+                        foreach (ContentControl c in r.Range.ContentControls)
+                        {
+                            String collection = "";
+                            int i = c.Tag.IndexOf(".");
+                            if (i > -1)
+                            {
+                                collection = c.Tag.Substring(0, i);
+                            }
+                            if (lastCollection != null && !collection.Equals(lastCollection))
+                            {
+                                MessageBox.Show("Two different collections not allowed in one table!");
+                                return;
+                            }
+                            // only treat table as list if a . is found in the tag - otherwise the table is just a
+                            // flat representation of a single entity for layouting reasons
+                            if (lastCollection == null && !"".Equals(collection))
+                            {
+                                Dictionary<String, object> propData = (Dictionary<String, object>)entityData[collection];
+                                if ("application/x-collection".Equals(propData["$type"].ToString()))
+                                {
+                                    items = (object[])propData["$items"];
+                                }
+                            }
+                            lastCollection = collection;
+                        }
+                    }
+                    if (items != null)
+                    {
+                        List<Row> rowsToRemove = new List<Row>();
+                        int rowcount = t.Rows.Count;
+                        for (int row = 1; row <= rowcount; row++)
+                        {
+                            Row r = t.Rows[row];
+                            if (r.Range.ContentControls.Count > 0)
+                            {
+                                rowsToRemove.Add(r);
+                            }
+                        }
+                        for (int item = 0; item < items.Length; item++)
+                        {
+                            Dictionary<String, object> collectionItem = (Dictionary<String, object>)items[item];
+                            for (int row = 1; row <= rowcount; row++)
+                            {
+                                Row r = t.Rows[row];
+                                if (r.Range.ContentControls.Count > 0)
+                                {
+                                    Row newRow = t.Rows.Add();
+                                    foreach (Cell cell in r.Cells)
+                                    {
+                                        Cell newCell = newRow.Cells[cell.ColumnIndex];
+                                        copyCellContent(cell, newCell);
+                                        foreach (ContentControl cc in newCell.Range.ContentControls)
+                                        {
+                                            string tag = cc.Tag;
+                                            int pos = tag.IndexOf(".");
+                                            if (pos > -1)
+                                            {
+                                                tag = tag.Substring(pos + 1);
+                                            }
+                                            if (collectionItem.ContainsKey(tag))
+                                            {
+                                                cc.Tag = tag;
+                                                Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[tag];
+                                                setControlContent(doc, cc, entity);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        foreach (Row r in rowsToRemove)
+                        {
+                            r.Delete();
+                        }
+                    }
+                }
+            }
+        }
+
+        private static List<ContentControl> GetAllContentControls(Document doc)
+        {
+            List<ContentControl> list = new List<ContentControl>();
+            foreach (Range range in doc.StoryRanges)
+            {
+                try
+                {
+                    foreach (ContentControl cc in range.ContentControls)
+                    {
+                        if (!list.Contains(cc))
+                        {
+                            list.Add(cc);
+                        }
+                    }
+                    foreach (Microsoft.Office.Interop.Word.Shape shape in range.ShapeRange)
+                    {
+                        foreach (ContentControl cc in shape.TextFrame.TextRange.ContentControls)
+                        {
+                            if (!list.Contains(cc))
+                            {
+                                list.Add(cc);
+                            }
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
+            return list;
+        }
+
+        private static List<Table> GetAllTables(Document doc)
+        {
+            List<Table> list = new List<Table>();
+            foreach (Range range in doc.StoryRanges)
+            {
+                try
+                {
+                    foreach (Table t in range.Tables)
+                    {
+                        if (!list.Contains(t))
+                        {
+                            list.Add(t);
+                        }
+                    }
+                    foreach (Microsoft.Office.Interop.Word.Shape shape in range.ShapeRange)
+                    {
+                        foreach (Table t in shape.TextFrame.TextRange.Tables)
+                        {
+                            if (!list.Contains(t))
+                            {
+                                list.Add(t);
+                            }
+                        }
+                    }
+                }
+                catch (Exception) { }
+            }
+            return list;
+        }
+
+        private void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity)
+        {
+            string tag = c.Tag;
+            String value = tag;
+
+            if (c.Type == WdContentControlType.wdContentControlPicture)
+            {
+                String url = null;
+                try
+                {
+                    url = ((Dictionary<String, object>)entity["$value"])["$url"].ToString();
+                    browserDialog.readURLContent(url);
+                }
+                catch (Exception) { };
+
+                url = null;
+                if (url != null)
+                {
+                    float width = -1;
+                    float height = -1;
+
+                    if (c.Range.InlineShapes.Count > 0)
+                    {
+                        width = c.Range.InlineShapes[1].Width;
+                        height = c.Range.InlineShapes[1].Height;
+                        c.Range.InlineShapes[1].Delete();
+                    }
+                    // setting url does not work (maybe because of required http login)
+                    doc.InlineShapes.AddPicture(url, true, false, c.Range);
+                    if (c.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
+                    {
+                        c.Range.InlineShapes[1].Width = width;
+                        c.Range.InlineShapes[1].Height = height;
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    String type = "";
+                    if (entity.ContainsKey("$$type"))
+                    {
+                        type = entity["$type"].ToString();
+                    }
+
+                    if (entity.ContainsKey("$value"))
+                    {
+                        value = entity["$value"].ToString();
+                    }
+                    else
+                    {
+                        // empty or null values are not present in the dictionary
+                        value = " ";
+                    }
+
+                    switch (type) {
+                        case "application/x-datetime":
+                            DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
+                            value = dt.ToString("G");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                catch (Exception) {  }
+                c.Range.Text = value;
+            }
+        }
+
+        private static void copyCellContent(Cell src, Cell dest)
+        {
+            src.Range.Copy();
+            dest.Range.Paste();
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)
@@ -207,5 +642,29 @@ namespace WordAddIn
             browserDialog.Hide();
             MessageBox.Show("Document has been saved!");
         }
+
+        public String getSyracuseDocumentType()
+        {
+            Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
+            if (doc == null)
+            {
+                MessageBox.Show("Unable to access document");
+                return "word-mailmerge";
+            }
+            if ("4".Equals(customData.getCreateMode()))
+            {
+                return "word-report-tpl";
+            }
+            else if ("5".Equals(customData.getCreateMode()))
+            {
+                return "word-report";
+            }
+            return "word-mailmerge";
+        }
+
+        public BrowserDialog getBrowserDialog()
+        {
+            return browserDialog;
+        }   
     }
 }
