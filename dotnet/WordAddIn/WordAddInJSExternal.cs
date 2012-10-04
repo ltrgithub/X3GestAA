@@ -167,14 +167,12 @@ namespace WordAddIn
          [
            {
               "$title":"{@LoginSectionTitle}",
-              "$level":1,
               "$container":"box",
               "$items":{
                  "login":{
                     "$type":"application/x-string",
                     "$title":"Default Account",
-                    "$bind":"login",
-                    "$hidden": "yes"
+                    "$bind":"login"
                  },
                  "active":{
                     "$type":"application/x-boolean",
@@ -200,46 +198,26 @@ namespace WordAddIn
          */
         public void createWordTemplate(String layoutData)
         {
-            // create a writer and open the file
-            /*
-            TextWriter tw = new StreamWriter("c:\\temp\\layout.txt");
-
-            // write a line of text to the file
-            tw.WriteLine(layoutData);
-
-            // close the stream
-            tw.Close();
-             */
-
             Document doc = customData.getWordDoc();
-            addBoxes(doc, layoutData);
-            if (!doc.FormsDesign)
-            {
-                doc.ToggleFormsDesign();
-            }
-            browserDialog.Hide();
-        }
+            Paragraph p;
 
-        public void addBoxes(Document doc, String layoutData)
-        {
+            /* Debug: Add layout json */
+            p = doc.Paragraphs.Add();
+            p.Range.Text = layoutData;
+            /* */
+
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
 
-            Object[] boxes = (Object[])layout["layout"];
-            foreach (Object o in boxes)
-            {
+            Object[] boxes = (Object[]) layout["layout"];
+            foreach (Object o in boxes) {
                 try
                 {
-                    Dictionary<String, object> box = (Dictionary<String, object>)o;
+                    Dictionary<String, object> box = (Dictionary<String, object>) o;
                     if (box.ContainsKey("$title"))
                     {
-                        int level = Convert.ToInt32(box["$level"].ToString());
-                        Range r = doc.Range();
-                        r.Collapse(WdCollapseDirection.wdCollapseEnd);
-                        r.InsertAfter(box["$title"].ToString());
-                        r = doc.Range();
-                        r.Collapse(WdCollapseDirection.wdCollapseEnd);
-                        r.InsertParagraph();
+                        p = doc.Paragraphs.Add();
+                        p.Range.Text = box["$title"].ToString();
                     }
 
                     if (box.ContainsKey("$items"))
@@ -253,11 +231,11 @@ namespace WordAddIn
 
                         if (container.Equals("table"))
                         {
-                            addTable(doc, box, items);
+                            addTable(box, items);
                         }
                         else
                         {
-                            addBox(doc, box, items);
+                            addBox(box, items);
                         }
                     }
                 }
@@ -267,10 +245,15 @@ namespace WordAddIn
             {
                 doc.ToggleFormsDesign();
             }
+            browserDialog.Hide();
         }
 
-        private void addTable(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        private void addTable(Dictionary<String, object> box, Dictionary<String, object> items)
         {
+            Document doc = customData.getWordDoc();
+            Paragraph p;
+            p = doc.Paragraphs.Add();
+
             int colCount = 0;
             foreach (KeyValuePair<String, object> i in items)
             {
@@ -282,85 +265,58 @@ namespace WordAddIn
                 }
             }
 
-            Range r = doc.Range();
-            r.Collapse(WdCollapseDirection.wdCollapseEnd);
-            Table t = r.Tables.Add(r, 2, colCount, WdDefaultTableBehavior.wdWord9TableBehavior, WdAutoFitBehavior.wdAutoFitWindow);
+            Table t = doc.Tables.Add(p.Range, 2, colCount, WdDefaultTableBehavior.wdWord9TableBehavior, WdAutoFitBehavior.wdAutoFitWindow);
             t.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleDot;
-
-            String bind = box["$bind"].ToString();
 
             int col = 0;
             foreach (KeyValuePair<String, object> i in items)
             {
-                Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                Dictionary<String, Object> item = (Dictionary<String, Object>) i.Value;
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
+                    String type = item["$type"].ToString();
                     String title = item["$title"].ToString();
+                    String bind = item["$bind"].ToString();
 
                     col++;
+                    Range r;
                     r = t.Cell(1, col).Range;
                     r.Text = title;
+
                     r = t.Cell(2, col).Range;
-                    createContentControl(doc, r, item, bind);
+                    ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, r);
+                    c.SetPlaceholderText(null, null, title);
                 }
             }
-
-            r = doc.Range();
-            r.Collapse(WdCollapseDirection.wdCollapseEnd);
-            r.InsertParagraph();
         }
 
-        private void addBox(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        private void addBox(Dictionary<String, object> box, Dictionary<String, object> items)
         {
+            Document doc = customData.getWordDoc();
+            Paragraph p;
+
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                String type = item["$type"].ToString();
+                String title = item["$title"].ToString();
+                String bind = item["$bind"].ToString();
                 String hidden = item["$hidden"].ToString();
 
                 if (!"true".Equals(hidden))
                 {
-                    Range r = doc.Range();
-                    r.Collapse(WdCollapseDirection.wdCollapseEnd);
-                    createContentControl(doc, r, item, null);
-                    r = doc.Range();
-                    r.Collapse(WdCollapseDirection.wdCollapseEnd);
-                    r.InsertParagraph();
+                    p = doc.Paragraphs.Add();
+                    Range r;
+                    r = p.Range;
+
+                    ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, r);
+                    c.SetPlaceholderText(null, null, title);
                 }
             }
         }
-
-        public void createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
-        {
-            String type = item["$type"].ToString();
-            String title = item["$title"].ToString();
-            String bind = item["$bind"].ToString();
-
-            ContentControl c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, range);
-            c.SetPlaceholderText(null, null, title);
-            c.Tag = (parent != null ? parent + "." : "") + bind;
-            c.Title = type;
-        }
-
         public void populateWordTemplate(String data)
         {
-            TextWriter tw = new StreamWriter("c:\\temp\\data.txt");
-
-            // write a line of text to the file
-            tw.WriteLine(data);
-
-            // close the stream
-            tw.Close();
-/*
-
-            Document doc = customData.getWordDoc();
-            addBoxes(doc, layoutData);
-            if (!doc.FormsDesign)
-            {
-                doc.ToggleFormsDesign();
-            }
-            browserDialog.Hide();
-            */
             MessageBox.Show(data);
         }
         private string getStringValue(object cellData)
@@ -428,12 +384,5 @@ namespace WordAddIn
             }
             return "word-mailmerge";
         }
-
-        // check version
-        public String getAddinVersion()
-        {
-            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        }
-
     }
 }
