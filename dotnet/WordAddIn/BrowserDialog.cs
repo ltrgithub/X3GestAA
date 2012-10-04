@@ -111,5 +111,10 @@ namespace WordAddIn
             this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
             this.webBrowser.Url = uri;
         }
+
+        public String readURLContent(String url)
+        {
+            return this.webBrowser.Document.InvokeScript("readURLContent", new object[] {url}).ToString();
+        }
     }
 }
