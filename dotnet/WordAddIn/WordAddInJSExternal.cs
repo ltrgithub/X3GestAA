@@ -665,6 +665,12 @@ namespace WordAddIn
         public BrowserDialog getBrowserDialog()
         {
             return browserDialog;
-        }   
+        }
+        
+        // check version 
+        public String getAddinVersion()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
     }
 }
