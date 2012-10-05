@@ -111,5 +111,17 @@ namespace WordAddIn
             this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
             this.webBrowser.Url = uri;
         }
+
+        public byte[] readBinaryURLContent(String url)
+        {
+            try
+            {
+                Object ret = this.webBrowser.Document.InvokeScript("readBinaryURLContentIE", new object[] { url });
+                byte[] bytes = (byte[]) ret;
+                return bytes;
+            }
+            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);  };
+            return null;
+        }
     }
 }
