@@ -112,9 +112,16 @@ namespace WordAddIn
             this.webBrowser.Url = uri;
         }
 
-        public String readURLContent(String url)
+        public byte[] readBinaryURLContent(String url)
         {
-            return this.webBrowser.Document.InvokeScript("readURLContent", new object[] {url}).ToString();
+            try
+            {
+                Object ret = this.webBrowser.Document.InvokeScript("readBinaryURLContentIE", new object[] { url });
+                byte[] bytes = (byte[]) ret;
+                return bytes;
+            }
+            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);  };
+            return null;
         }
     }
 }
