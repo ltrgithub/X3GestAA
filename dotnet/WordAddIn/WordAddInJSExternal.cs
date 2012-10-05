@@ -52,6 +52,7 @@ namespace WordAddIn
             }
             else
             {
+                t.collection = "";
                 t.property = tag;
                 t.isSimple = true;
             }
@@ -553,7 +554,7 @@ namespace WordAddIn
         private void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity, TagInfo ti)
         {
             string tag = ti.property;
-            String value = tag;
+            String value = null;
             String imageFile = null;
 
             if (c.Type == WdContentControlType.wdContentControlPicture)
@@ -623,17 +624,26 @@ namespace WordAddIn
                     }
                 } catch (Exception) {  }
 
-                try {
-                    switch (type) {
-                        case "application/x-datetime":
-                            DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
-                            value = dt.ToString("G");
-                            break;
-                        default:
-                            break;
+                if (value != null)
+                {
+                    try
+                    {
+                        switch (type)
+                        {
+                            case "application/x-datetime":
+                                DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
+                                value = dt.ToString("G");
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    catch (Exception) { }
                 }
-                catch (Exception) {  }
+                else
+                {
+                    value = " ";
+                }
                 c.Range.Text = value;
             }
         }
