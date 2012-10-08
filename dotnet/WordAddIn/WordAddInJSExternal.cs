@@ -14,6 +14,53 @@ namespace WordAddIn
         public List<ContentControl> controls = new List<ContentControl>();
     }
 
+    // Information extracted from a ContentControl tag-property
+    // [<entity>.]<property>[:<display>]
+    // <entity>   only when handling collections (Name of collection property of entity)
+    // <property> property whos value is to displayed
+    // <display>  $title or $value (Display title or value of property) - NOT USED YET
+    public class TagInfo
+    {
+        public string property;
+        public string collection;
+        public string display;
+        public Boolean isSimple;
+
+        public static TagInfo create(ContentControl c)
+        {
+            int i;
+            TagInfo t = new TagInfo();
+            string tag = c.Tag;
+            i = tag.IndexOf(":");
+            if (i > -1)
+            {
+                t.display = tag.Substring(i + 1);
+                tag = tag.Substring(0, i);
+            }
+            
+            if (!"$title".Equals(t.display))
+            {
+                t.display = "$value";
+            }
+
+            i = tag.IndexOf(".");
+            if (i > -1)
+            {
+                t.collection = tag.Substring(0, i);
+                t.property = tag.Substring(i + 1);
+                t.isSimple = false;
+            }
+            else
+            {
+                t.collection = "";
+                t.property = tag;
+                t.isSimple = true;
+            }
+
+            return t;
+        }
+    }
+
     // The only one class/object to be referenced from javascript 'external'
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public class WordAddInJSExternal
@@ -335,12 +382,9 @@ namespace WordAddIn
         public void populateWordTemplate(String data)
         {
             Document doc = customData.getWordDoc();
-
-            Globals.WordAddIn.Application.Visible = false;
             Globals.WordAddIn.Application.ScreenUpdating = false;
             fillTemplate(doc, data);
             Globals.WordAddIn.Application.ScreenUpdating = true;
-            Globals.WordAddIn.Application.Visible = true;
 
             if (doc.FormsDesign)
             {
@@ -357,20 +401,18 @@ namespace WordAddIn
             Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
             List<ContentControl> ccs = GetAllContentControls(doc);
 
-            // Process simple properties not container in a collection
             foreach (ContentControl c in ccs)
             {
                 // Simple properties (no collections)
-                string tag = c.Tag;
-                if (!tag.Contains(".") && entityData.ContainsKey(tag))
+                TagInfo t = TagInfo.create(c);
+                if (t.isSimple && entityData.ContainsKey(t.property))
                 {
-                    Dictionary<String, object> propData = (Dictionary<String, object>)entityData[tag];
-                    setControlContent(doc, c, propData);
+                    Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t.property];
+                    setControlContent(doc, c, propData, t);
                 }
             }
 
             Dictionary<String, TableInfo> tables = new Dictionary<String, TableInfo>();
-
             List<Table> ts = GetAllTables(doc);
             foreach (Table t in ts)
             {
@@ -382,28 +424,23 @@ namespace WordAddIn
                     {
                         foreach (ContentControl c in r.Range.ContentControls)
                         {
-                            String collection = "";
-                            int i = c.Tag.IndexOf(".");
-                            if (i > -1)
-                            {
-                                collection = c.Tag.Substring(0, i);
-                            }
-                            if (lastCollection != null && !collection.Equals(lastCollection))
+                            TagInfo t1 = TagInfo.create(c);
+                            if (lastCollection != null && !t1.collection.Equals(lastCollection))
                             {
                                 MessageBox.Show("Two different collections not allowed in one table!");
                                 return;
                             }
                             // only treat table as list if a . is found in the tag - otherwise the table is just a
                             // flat representation of a single entity for layouting reasons
-                            if (lastCollection == null && !"".Equals(collection))
+                            if (lastCollection == null && !"".Equals(t1.collection))
                             {
-                                Dictionary<String, object> propData = (Dictionary<String, object>)entityData[collection];
+                                Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t1.collection];
                                 if ("application/x-collection".Equals(propData["$type"].ToString()))
                                 {
                                     items = (object[])propData["$items"];
                                 }
                             }
-                            lastCollection = collection;
+                            lastCollection = t1.collection;
                         }
                     }
                     if (items != null)
@@ -433,17 +470,11 @@ namespace WordAddIn
                                         copyCellContent(cell, newCell);
                                         foreach (ContentControl cc in newCell.Range.ContentControls)
                                         {
-                                            string tag = cc.Tag;
-                                            int pos = tag.IndexOf(".");
-                                            if (pos > -1)
+                                            TagInfo t2 = TagInfo.create(cc);
+                                            if (collectionItem.ContainsKey(t2.property))
                                             {
-                                                tag = tag.Substring(pos + 1);
-                                            }
-                                            if (collectionItem.ContainsKey(tag))
-                                            {
-                                                cc.Tag = tag;
-                                                Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[tag];
-                                                setControlContent(doc, cc, entity);
+                                                Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
+                                                setControlContent(doc, cc, entity, t2);
                                             }
                                         }
                                     }
@@ -520,10 +551,11 @@ namespace WordAddIn
             return list;
         }
 
-        private void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity)
+        private void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity, TagInfo ti)
         {
-            string tag = c.Tag;
-            String value = tag;
+            string tag = ti.property;
+            String value = null;
+            String imageFile = null;
 
             if (c.Type == WdContentControlType.wdContentControlPicture)
             {
@@ -531,61 +563,87 @@ namespace WordAddIn
                 try
                 {
                     url = ((Dictionary<String, object>)entity["$value"])["$url"].ToString();
-                    browserDialog.readURLContent(url);
+                    byte[] image = browserDialog.readBinaryURLContent(url);
+                    if (image != null)
+                    {
+                        imageFile = Path.GetTempFileName();
+                        using (FileStream stream = new FileStream(imageFile, FileMode.Create))
+                        {
+                            using (BinaryWriter writer = new BinaryWriter(stream))
+                            {
+                                writer.Write(image);
+                                writer.Close();
+                            }
+                        }
+                    }
                 }
-                catch (Exception) { };
+                catch (Exception) { /*MessageBox.Show(e.Message + ":" + e.StackTrace);*/  };
 
-                url = null;
-                if (url != null)
+                if (imageFile != null)
                 {
-                    float width = -1;
-                    float height = -1;
+                    try
+                    {
+                        float width = -1;
+                        float height = -1;
 
-                    if (c.Range.InlineShapes.Count > 0)
-                    {
-                        width = c.Range.InlineShapes[1].Width;
-                        height = c.Range.InlineShapes[1].Height;
-                        c.Range.InlineShapes[1].Delete();
+                        if (c.Range.InlineShapes.Count > 0)
+                        {
+                            width = c.Range.InlineShapes[1].Width;
+                            height = c.Range.InlineShapes[1].Height;
+                            c.Range.InlineShapes[1].Delete();
+                        }
+                        // setting url does not work (maybe because of required http login)
+                        doc.InlineShapes.AddPicture(imageFile, false, true, c.Range);
+                        if (c.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
+                        {
+                            c.Range.InlineShapes[1].Width = width;
+                            c.Range.InlineShapes[1].Height = height;
+                        }
                     }
-                    // setting url does not work (maybe because of required http login)
-                    doc.InlineShapes.AddPicture(url, true, false, c.Range);
-                    if (c.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
-                    {
-                        c.Range.InlineShapes[1].Width = width;
-                        c.Range.InlineShapes[1].Height = height;
-                    }
+                    catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
+                    File.Delete(imageFile);
                 }
+                else
+                {
+                    c.Delete();
+                }
+
             }
-            else
+            else if (c.Type == WdContentControlType.wdContentControlText)
             {
-                try
+                String type = "";
+                if (entity.ContainsKey("$type"))
                 {
-                    String type = "";
-                    if (entity.ContainsKey("$$type"))
-                    {
-                        type = entity["$type"].ToString();
-                    }
+                    type = entity["$type"].ToString();
+                }
 
+                try {
                     if (entity.ContainsKey("$value"))
                     {
-                        value = entity["$value"].ToString();
+                        value = ((Dictionary<String, object>)entity["$value"])["$value"].ToString();
                     }
-                    else
-                    {
-                        // empty or null values are not present in the dictionary
-                        value = " ";
-                    }
+                } catch (Exception) {  }
 
-                    switch (type) {
-                        case "application/x-datetime":
-                            DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
-                            value = dt.ToString("G");
-                            break;
-                        default:
-                            break;
+                if (value != null)
+                {
+                    try
+                    {
+                        switch (type)
+                        {
+                            case "application/x-datetime":
+                                DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
+                                value = dt.ToString("G");
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    catch (Exception) { }
                 }
-                catch (Exception) {  }
+                else
+                {
+                    value = " ";
+                }
                 c.Range.Text = value;
             }
         }
@@ -665,6 +723,12 @@ namespace WordAddIn
         public BrowserDialog getBrowserDialog()
         {
             return browserDialog;
-        }   
+        }
+        
+        // check version 
+        public String getAddinVersion()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
     }
 }
