@@ -32,6 +32,7 @@ namespace ExcelAddIn
         {
             // get server url
             var connectUrl = Globals.ThisAddIn.GetServerUrl();
+            if (connectUrl == "") return;
             //
             try
             {

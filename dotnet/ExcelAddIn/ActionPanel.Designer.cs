@@ -41,6 +41,7 @@ namespace ExcelAddIn
             // flowLayoutPanel1
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.flowLayoutPanel1.Controls.Add(this.buttonConnect);
             this.flowLayoutPanel1.Controls.Add(this.buttonSettings);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
