@@ -22,7 +22,6 @@ namespace WordAddIn
             InitializeComponent();
 
             webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
-
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -76,7 +75,6 @@ namespace WordAddIn
                 return;
             }
             Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
-
             this.Show();
             this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
             this.webBrowser.Url = uri;

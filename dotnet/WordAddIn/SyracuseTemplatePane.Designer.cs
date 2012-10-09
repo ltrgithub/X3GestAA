@@ -33,6 +33,7 @@
             // 
             // treeViewFields
             // 
+            this.treeViewFields.AccessibleRole = System.Windows.Forms.AccessibleRole.Indicator;
             this.treeViewFields.Location = new System.Drawing.Point(3, 3);
             this.treeViewFields.Name = "treeViewFields";
             this.treeViewFields.Size = new System.Drawing.Size(144, 69);

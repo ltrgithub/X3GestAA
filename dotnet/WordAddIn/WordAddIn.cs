@@ -25,24 +25,12 @@ namespace WordAddIn
             this.customTemplatePane.VisibleChanged += SyracuseTemplatePane_VisibleChanged;
 
             this.Application.DocumentChange += new Word.ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
-
-            // Only called on user interaction...
-            this.Application.DocumentOpen += new Word.ApplicationEvents4_DocumentOpenEventHandler(on_document_open);
-
-            // Bevor merging starts (Only called on user interaction)
-            this.Application.MailMergeBeforeMerge += new Word.ApplicationEvents4_MailMergeBeforeMergeEventHandler(on_merge_start);
-            this.Application.MailMergeDataSourceLoad += new Word.ApplicationEvents4_MailMergeDataSourceLoadEventHandler(on_datasource_load);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
 
         }
-
-        public void on_document_open(Word.Document doc)
-        {
-        }
-
         void on_document_before_save(object sender, Microsoft.Office.Tools.Word.SaveEventArgs e)
         {
             if (MessageBox.Show("Do you want to save the document?", "BeforeSave",
@@ -99,14 +87,6 @@ namespace WordAddIn
             }
             
             RefreshTemplatePane();
-        }
-
-        public void on_datasource_load(Word.Document doc) 
-        {
-        }
-
-        public void on_merge_start(Word.Document doc, int StartRecord, int EndRecord, ref bool Cancel)
-        {
         }
 
         public void Connect()
@@ -231,7 +211,7 @@ namespace WordAddIn
             doc = Application.Documents.Add();
             doc.Range().Paste();
             browserDialog.preparePreview(doc);
-            WordAddInJSExternal.fillTemplate(doc, customData.getLayoutData(), browserDialog);
+            ReportingUtils.fillTemplate(doc, customData.getLayoutData(), browserDialog);
         }
 
         // Add MailMerge DS to active Document after selecting DS
