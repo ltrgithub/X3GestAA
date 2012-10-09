@@ -155,11 +155,14 @@ namespace WordAddIn
             {
                 // Simple properties (no collections)
                 TagInfo t = TagInfo.create(c);
+                if (t == null)
+                    continue;
                 if (t.isSimple && entityData.ContainsKey(t.property))
                 {
                     Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t.property];
                     setControlContent(doc, c, propData, t, browserDialog);
                 }
+
             }
 
             Dictionary<String, TableInfo> tables = new Dictionary<String, TableInfo>();
@@ -178,6 +181,8 @@ namespace WordAddIn
                             foreach (ContentControl c in r.Range.ContentControls)
                             {
                                 TagInfo t1 = TagInfo.create(c);
+                                if (t1 == null)
+                                    continue;
                                 if (lastCollection != null && !t1.collection.Equals(lastCollection))
                                 {
                                     MessageBox.Show("Two different collections not allowed in one table!");
@@ -202,12 +207,15 @@ namespace WordAddIn
 
                         List<Row> rowsToRemove = new List<Row>();
                         int rowcount = t.Rows.Count;
-                        for (int row = 1; row <= rowcount; row++)
+                        if (lastCollection != null && !"".Equals(lastCollection))
                         {
-                            Row r = t.Rows[row];
-                            if (r.Range.ContentControls.Count > 0)
+                            for (int row = 1; row <= rowcount; row++)
                             {
-                                rowsToRemove.Add(r);
+                                Row r = t.Rows[row];
+                                if (r.Range.ContentControls.Count > 0)
+                                {
+                                    rowsToRemove.Add(r);
+                                }
                             }
                         }
 
@@ -442,36 +450,43 @@ namespace WordAddIn
 
         public static TagInfo create(ContentControl c)
         {
-            int i;
-            TagInfo t = new TagInfo();
-            string tag = c.Tag;
-            i = tag.IndexOf(":");
-            if (i > -1)
+            try
             {
-                t.display = tag.Substring(i + 1);
-                tag = tag.Substring(0, i);
-            }
+                int i;
+                TagInfo t = new TagInfo();
+                string tag = c.Tag;
+                i = tag.IndexOf(":");
+                if (i > -1)
+                {
+                    t.display = tag.Substring(i + 1);
+                    tag = tag.Substring(0, i);
+                }
 
-            if (!"$title".Equals(t.display))
-            {
-                t.display = "$value";
-            }
+                if (!"$title".Equals(t.display))
+                {
+                    t.display = "$value";
+                }
 
-            i = tag.IndexOf(".");
-            if (i > -1)
-            {
-                t.collection = tag.Substring(0, i);
-                t.property = tag.Substring(i + 1);
-                t.isSimple = false;
-            }
-            else
-            {
-                t.collection = "";
-                t.property = tag;
-                t.isSimple = true;
-            }
+                i = tag.IndexOf(".");
+                if (i > -1)
+                {
+                    t.collection = tag.Substring(0, i);
+                    t.property = tag.Substring(i + 1);
+                    t.isSimple = false;
+                }
+                else
+                {
+                    t.collection = "";
+                    t.property = tag;
+                    t.isSimple = true;
+                }
 
-            return t;
+                return t;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

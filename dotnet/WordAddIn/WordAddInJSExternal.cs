@@ -182,15 +182,14 @@ namespace WordAddIn
         public void populateWordTemplate(String data)
         {
             Document doc = customData.getWordDoc();
-            Globals.WordAddIn.Application.ScreenUpdating = false;
-            ReportingUtils.fillTemplate(doc, data, browserDialog);
-            Globals.WordAddIn.Application.ScreenUpdating = true;
-
             if (doc.FormsDesign)
             {
                 doc.ToggleFormsDesign();
             }
             browserDialog.Hide();
+            Globals.WordAddIn.Application.ScreenUpdating = false;
+            ReportingUtils.fillTemplate(doc, data, browserDialog);
+            Globals.WordAddIn.Application.ScreenUpdating = true;
         }
 
         private string getStringValue(object cellData)
