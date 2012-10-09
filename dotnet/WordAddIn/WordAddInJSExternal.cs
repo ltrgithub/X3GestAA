@@ -250,6 +250,13 @@ namespace WordAddIn
         public void createWordTemplate(String layoutData)
         {
             Document doc = customData.getWordDoc();
+            if (doc.FormsDesign)
+            {
+                doc.ToggleFormsDesign();
+            }
+
+            customData.setLayoutData(layoutData);
+            customData.writeDictionaryToDocument();
 
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
@@ -291,6 +298,7 @@ namespace WordAddIn
                 }
                 catch (Exception) { }
             }
+            Globals.WordAddIn.templatePane.showFields(layoutData);
             if (!doc.FormsDesign)
             {
                 doc.ToggleFormsDesign();
@@ -298,7 +306,7 @@ namespace WordAddIn
             browserDialog.Hide();
         }
 
-        private void addTable(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        private static void addTable(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
         {
             int colCount = 0;
             foreach (KeyValuePair<String, object> i in items)
@@ -340,7 +348,7 @@ namespace WordAddIn
             r.InsertParagraph();
         }
 
-        private void addBox(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        private static void addBox(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
         {
             foreach (KeyValuePair<String, object> i in items)
             {
@@ -358,7 +366,7 @@ namespace WordAddIn
             }
         }
 
-        public void createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
+        public static ContentControl createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
         {
             String type = item["$type"].ToString();
             String title = item["$title"].ToString();
@@ -367,23 +375,24 @@ namespace WordAddIn
             ContentControl c;
             if ("image".Equals(type))
             {
-                c = doc.ContentControls.Add(WdContentControlType.wdContentControlPicture, range);
+                c = range.ContentControls.Add(WdContentControlType.wdContentControlPicture);
             }
             else
             {
-                c = doc.ContentControls.Add(WdContentControlType.wdContentControlText, range);
+                c = range.ContentControls.Add(WdContentControlType.wdContentControlText);
             }
 
             c.SetPlaceholderText(null, null, title);
             c.Tag = (parent != null ? parent + "." : "") + bind;
             c.Title = type;
+            return c;
         }
 
         public void populateWordTemplate(String data)
         {
             Document doc = customData.getWordDoc();
             Globals.WordAddIn.Application.ScreenUpdating = false;
-            fillTemplate(doc, data);
+            fillTemplate(doc, data, browserDialog);
             Globals.WordAddIn.Application.ScreenUpdating = true;
 
             if (doc.FormsDesign)
@@ -393,7 +402,7 @@ namespace WordAddIn
             browserDialog.Hide();
         }
 
-        public void fillTemplate(Document doc, String data)
+        public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
@@ -408,43 +417,48 @@ namespace WordAddIn
                 if (t.isSimple && entityData.ContainsKey(t.property))
                 {
                     Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t.property];
-                    setControlContent(doc, c, propData, t);
+                    setControlContent(doc, c, propData, t, browserDialog);
                 }
             }
 
             Dictionary<String, TableInfo> tables = new Dictionary<String, TableInfo>();
             List<Table> ts = GetAllTables(doc);
+
             foreach (Table t in ts)
             {
-                object[] items = null;
-                if (t.Range.ContentControls.Count > 0)
+                try
                 {
-                    string lastCollection = null;
-                    foreach (Row r in t.Rows)
+                    object[] items = null;
+                    if (t.Range.ContentControls.Count > 0)
                     {
-                        foreach (ContentControl c in r.Range.ContentControls)
+                        string lastCollection = null;
+                        foreach (Row r in t.Rows)
                         {
-                            TagInfo t1 = TagInfo.create(c);
-                            if (lastCollection != null && !t1.collection.Equals(lastCollection))
+                            foreach (ContentControl c in r.Range.ContentControls)
                             {
-                                MessageBox.Show("Two different collections not allowed in one table!");
-                                return;
-                            }
-                            // only treat table as list if a . is found in the tag - otherwise the table is just a
-                            // flat representation of a single entity for layouting reasons
-                            if (lastCollection == null && !"".Equals(t1.collection))
-                            {
-                                Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t1.collection];
-                                if ("application/x-collection".Equals(propData["$type"].ToString()))
+                                TagInfo t1 = TagInfo.create(c);
+                                if (lastCollection != null && !t1.collection.Equals(lastCollection))
                                 {
-                                    items = (object[])propData["$items"];
+                                    MessageBox.Show("Two different collections not allowed in one table!");
+                                    return;
                                 }
+                                // only treat table as list if a . is found in the tag - otherwise the table is just a
+                                // flat representation of a single entity for layouting reasons
+                                if (lastCollection == null && !"".Equals(t1.collection))
+                                {
+                                    Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t1.collection];
+                                    if ("application/x-collection".Equals(propData["$type"].ToString()))
+                                    {
+                                        if (propData.ContainsKey("$items"))
+                                        {
+                                            items = (object[])propData["$items"];
+                                        }
+                                    }
+                                }
+                                lastCollection = t1.collection;
                             }
-                            lastCollection = t1.collection;
                         }
-                    }
-                    if (items != null)
-                    {
+
                         List<Row> rowsToRemove = new List<Row>();
                         int rowcount = t.Rows.Count;
                         for (int row = 1; row <= rowcount; row++)
@@ -455,40 +469,44 @@ namespace WordAddIn
                                 rowsToRemove.Add(r);
                             }
                         }
-                        for (int item = 0; item < items.Length; item++)
+
+                        if (items != null)
                         {
-                            Dictionary<String, object> collectionItem = (Dictionary<String, object>)items[item];
-                            for (int row = 1; row <= rowcount; row++)
+                            for (int item = 0; item < items.Length; item++)
                             {
-                                Row r = t.Rows[row];
-                                if (r.Range.ContentControls.Count > 0)
+                                Dictionary<String, object> collectionItem = (Dictionary<String, object>)items[item];
+                                for (int row = 1; row <= rowcount; row++)
                                 {
-                                    Row newRow = t.Rows.Add();
-                                    foreach (Cell cell in r.Cells)
+                                    Row r = t.Rows[row];
+                                    if (r.Range.ContentControls.Count > 0)
                                     {
-                                        Cell newCell = newRow.Cells[cell.ColumnIndex];
-                                        copyCellContent(cell, newCell);
-                                        foreach (ContentControl cc in newCell.Range.ContentControls)
+                                        Row newRow = t.Rows.Add();
+                                        foreach (Cell cell in r.Cells)
                                         {
-                                            TagInfo t2 = TagInfo.create(cc);
-                                            if (collectionItem.ContainsKey(t2.property))
+                                            Cell newCell = newRow.Cells[cell.ColumnIndex];
+                                            copyCellContent(cell, newCell);
+                                            foreach (ContentControl cc in newCell.Range.ContentControls)
                                             {
-                                                Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
-                                                setControlContent(doc, cc, entity, t2);
+                                                TagInfo t2 = TagInfo.create(cc);
+                                                if (collectionItem.ContainsKey(t2.property))
+                                                {
+                                                    Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
+                                                    setControlContent(doc, cc, entity, t2, browserDialog);
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-
                         foreach (Row r in rowsToRemove)
                         {
                             r.Delete();
                         }
+                        rowsToRemove.Clear();
                     }
-                }
-            }
+                } catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
+            } 
         }
 
         private static List<ContentControl> GetAllContentControls(Document doc)
@@ -528,36 +546,42 @@ namespace WordAddIn
             {
                 try
                 {
-                    foreach (Table t in range.Tables)
+                    Range sr = range;
+                    do
                     {
-                        if (!list.Contains(t))
-                        {
-                            list.Add(t);
-                        }
-                    }
-                    foreach (Microsoft.Office.Interop.Word.Shape shape in range.ShapeRange)
-                    {
-                        foreach (Table t in shape.TextFrame.TextRange.Tables)
+                        foreach (Table t in sr.Tables)
                         {
                             if (!list.Contains(t))
                             {
                                 list.Add(t);
                             }
                         }
-                    }
+                        foreach (Microsoft.Office.Interop.Word.Shape shape in range.ShapeRange)
+                        {
+                            foreach (Table t in shape.TextFrame.TextRange.Tables)
+                            {
+                                if (!list.Contains(t))
+                                {
+                                    list.Add(t);
+                                }
+                            }
+                        }
+                        //sr = sr.NextStoryRange;
+                        sr = null;
+                    } while (sr != null);
                 }
                 catch (Exception) { }
             }
             return list;
         }
 
-        private void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity, TagInfo ti)
+        private static void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity, TagInfo ti, BrowserDialog browserDialog)
         {
             string tag = ti.property;
             String value = null;
             String imageFile = null;
 
-            if (c.Type == WdContentControlType.wdContentControlPicture)
+            if (c.Type == WdContentControlType.wdContentControlPicture && browserDialog != null)
             {
                 String url = null;
                 try

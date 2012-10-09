@@ -21,6 +21,7 @@ namespace WordAddIn
         private const String createModeProperty     = "createMode";
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
+        private const String layoutData             = "layoutData";
 
         private Dictionary<String, object> dictionary;
 
@@ -99,6 +100,14 @@ namespace WordAddIn
         public String getDocumentTitle()
         {
             return getStringProperty(documentTitleProperty, false);
+        }
+        public void setLayoutData(String data)
+        {
+            setStringProperty(layoutData, data);
+        }
+        public String getLayoutData()
+        {
+            return getStringProperty(layoutData, false);
         }
         public void setBooleanValue(String name, Boolean status)
         {

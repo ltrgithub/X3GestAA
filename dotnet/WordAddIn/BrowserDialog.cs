@@ -112,6 +112,21 @@ namespace WordAddIn
             this.webBrowser.Url = uri;
         }
 
+        public void preparePreview(Word.Document doc)
+        {
+            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard");
+
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
+                customData.setCreateMode("5");
+                customData.setForceRefresh(false);
+            }
+            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
+            this.webBrowser.Url = uri;
+        }
+
         public byte[] readBinaryURLContent(String url)
         {
             try
