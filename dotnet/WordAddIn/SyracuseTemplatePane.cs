@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
 
@@ -13,22 +14,6 @@ using Microsoft.Office.Core;
 
 namespace WordAddIn
 {
-    public class FieldTreeNode : TreeNode
-    {
-        public Dictionary<String, Object> item;
-        public String itemParent;
-
-        public FieldTreeNode(String title)
-            : base(title)
-        {
-        }
-        public FieldTreeNode(String title, Dictionary<String, Object> item)
-            : base(title)
-        {
-            this.item = item;
-        }
-    };
-
     public partial class SyracuseTemplatePane : UserControl
     {
         public SyracuseTemplatePane()
@@ -37,6 +22,7 @@ namespace WordAddIn
 
             this.SizeChanged += new EventHandler(SyracuseTemplatePane_SizeChanged);
             this.treeViewFields.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(SyracuseTemplatePane_NodeMouseDoubleClick);
+            this.treeViewFields.ImageList = ReportingFieldUtil.getTypeImageList();
         }
 
         public void SyracuseTemplatePane_SizeChanged(Object sender, EventArgs e)
@@ -63,7 +49,7 @@ namespace WordAddIn
                     tog = true;
                 }
 
-                ContentControl c = WordAddInJSExternal.createContentControl(doc, cursor, n.item, n.itemParent);
+                ContentControl c = ReportingUtils.createContentControl(doc, cursor, n.item, n.itemParent);
                 cursor = c.Range;
                 cursor.Collapse(WdCollapseDirection.wdCollapseEnd);
                 cursor.Select();
@@ -137,13 +123,16 @@ namespace WordAddIn
                         node = new FieldTreeNode(title);
                         if (container.Equals("table"))
                         {
-                            node.Text = node.Text + " (TABLE)";
                             node.itemParent = box["$bind"].ToString();
+                            node.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(ReportingFieldTypes.TABLE);
                         }
                         else
                         {
-                            node.Text = node.Text + " (BOX)";
+                            node.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(ReportingFieldTypes.BOX);
                         }
+                        
+                        
+                        node.SelectedImageIndex = node.ImageIndex;
 
                         foreach (KeyValuePair<String, object> i in items)
                         {
@@ -153,18 +142,13 @@ namespace WordAddIn
                             String ctitle = item["$title"].ToString();
                             String type = item["$type"].ToString();
                             String bind = item["$bind"].ToString();
-
+                            
+                            ReportingFieldTypes tft = ReportingFieldUtil.getType(type);
+                            
                             FieldTreeNode child = new FieldTreeNode(ctitle, item);
-                            if ("image".Equals(type))
-                            {
-                                child.ImageIndex = 1;
-                                child.SelectedImageIndex = child.ImageIndex;
-                            }
-                            else
-                            {
-                                child.ImageIndex = 2;
-                                child.SelectedImageIndex = child.ImageIndex;
-                            }
+                            child.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(tft);
+                            child.SelectedImageIndex = child.ImageIndex;
+
                             node.Nodes.Add(child);
                         }
 
@@ -173,7 +157,26 @@ namespace WordAddIn
                 }
                 catch (Exception) { }
             }
-            
+
+            treeViewFields.ExpandAll();
         }
     }
+
+    public class FieldTreeNode : TreeNode
+    {
+        public Dictionary<String, Object> item;
+        public String itemParent;
+
+        public FieldTreeNode(String title)
+            : base(title)
+        {
+        }
+        public FieldTreeNode(String title, Dictionary<String, Object> item)
+            : base(title)
+        {
+            this.item = item;
+        }
+    };
+
+
 }
