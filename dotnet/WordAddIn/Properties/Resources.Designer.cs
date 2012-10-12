@@ -74,6 +74,76 @@ namespace WordAddIn.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap s_author_light_boolean {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_boolean", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_choice {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_choice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_collection {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_collection", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_date {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_date", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_datetime {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_datetime", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_decimale {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_decimale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_graph {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_graph", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_image {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_string {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_string", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap s_author_light_vignette {
+            get {
+                object obj = ResourceManager.GetObject("s_author_light_vignette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
