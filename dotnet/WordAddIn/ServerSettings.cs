@@ -11,9 +11,14 @@ namespace WordAddIn
 {
     public partial class ServerSettings : Form
     {
-        public ServerSettings()
+        public ServerSettings(String connectUrl)
         {
             InitializeComponent();
+
+            if (connectUrl != null)
+            {
+                textBoxServerAddress.Text = connectUrl;
+            }
         }
 
         internal string GetConnectUrl()
@@ -23,7 +28,7 @@ namespace WordAddIn
 
         private void ServerSettings_Load(object sender, EventArgs e)
         {
-            textBoxServerAddress.Text = "http://localhost:8124";
+            //textBoxServerAddress.Text = "http://localhost:8124";
         }
     }
 }
