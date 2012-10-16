@@ -15,6 +15,7 @@ namespace WordAddIn
     {
         public SyracuseTemplatePane templatePane;
         public Microsoft.Office.Tools.CustomTaskPane customTemplatePane;
+        private String connectUrl;
 
         public BrowserDialog browserDialog = null;
 
@@ -94,16 +95,20 @@ namespace WordAddIn
             if (browserDialog == null)
             {
                 browserDialog = new BrowserDialog();
-                browserDialog.Connect("http://localhost:8124");
+                if (connectUrl == null)
+                {
+                    connectUrl = "http://localhost:8124";
+                }
+                browserDialog.Connect(connectUrl);
             }
         }
 
         public void ServerSettings()
         {
-            ServerSettings settings = new ServerSettings();
+            ServerSettings settings = new ServerSettings(connectUrl);
             if (settings.ShowDialog() == DialogResult.OK)
             {
-                String connectUrl = settings.GetConnectUrl();
+                connectUrl = settings.GetConnectUrl();
             }
         }
 
@@ -151,7 +156,7 @@ namespace WordAddIn
             {
                 return;
             }
-
+            connectUrl = customData.getServerUrl();
             if (!ConnectedToServer())
             {
                 return;
@@ -174,6 +179,7 @@ namespace WordAddIn
                 return;
             }
 
+            connectUrl = customData.getServerUrl();
             if (!ConnectedToServer())
             {
                 return;
