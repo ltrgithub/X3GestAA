@@ -43,5 +43,23 @@ namespace WordAddIn
                 Globals.WordAddIn.SaveDocumentToX3(doc);
             }
         }
+
+        private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
+        {
+            if (checkBoxShowTemplatePane.Checked)
+            {
+                Globals.WordAddIn.customTemplatePane.Visible = true;
+            }
+            else
+            {
+                Globals.WordAddIn.customTemplatePane.Visible = false;
+            }
+        }
+
+        private void buttonPreview_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.CreateWordReportPreview();
+        }
+
     }
 }
