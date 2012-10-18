@@ -220,6 +220,8 @@ namespace WordAddIn
                 return "";
             }
 
+            // MailMerge-Query entfernen
+            doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdNotAMergeDocument;
             // Datei schließen, codiert einlesen und wieder öffnen
             String tempFileName = Path.GetTempFileName();
             doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
