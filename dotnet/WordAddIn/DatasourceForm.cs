@@ -23,7 +23,7 @@ namespace WordAddIn
         {
             try
             {
-                Uri uri = new Uri(customData.getServerUrl() + "/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
+                Uri uri = new Uri(customData.getServerUrl() + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
                 browser.ObjectForScripting = new WordAddInJSExternal(customData, this);
                 browser.Url = uri;
             }

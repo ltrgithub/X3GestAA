@@ -54,6 +54,13 @@ namespace WordAddIn
                 }
                 catch (Exception) { }
             }
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+            if (customData != null)
+            {
+                customData.setCreateMode(ReportingActions.rpt_is_tpl);
+                customData.writeDictionaryToDocument();
+            }
+
             Globals.WordAddIn.templatePane.showFields(layoutAndData);
             if (!doc.FormsDesign)
             {

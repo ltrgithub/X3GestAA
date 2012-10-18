@@ -16,34 +16,22 @@ namespace WordAddIn
         {
         }
 
-        private void buttonConnect_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.WordAddIn.Connect();
-        }
-
-        private void buttonServerSettings_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.WordAddIn.ServerSettings();
-        }
-
-        private void buttonCreateMailMerge_Click(object sender, RibbonControlEventArgs e)
-        {
-            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
-            if (doc != null)
-            {
-                Globals.WordAddIn.CreateMailMerge(doc);
-            }
-        }
-
         private void buttonSave_Click(object sender, RibbonControlEventArgs e)
         {
             Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
             if (doc != null)
             {
-                Globals.WordAddIn.SaveDocumentToX3(doc);
+                Globals.WordAddIn.commons.SaveDocumentToX3(doc);
             }
         }
-
+        private void buttonSaveTpl_Click(object sender, RibbonControlEventArgs e)
+        {
+            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            if (doc != null)
+            {
+                Globals.WordAddIn.commons.SaveTemplateToX3(doc);
+            }
+        }
         private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
         {
             if (checkBoxShowTemplatePane.Checked)
@@ -58,8 +46,7 @@ namespace WordAddIn
 
         private void buttonPreview_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.WordAddIn.CreateWordReportPreview();
+            Globals.WordAddIn.reporting.CreateWordReportPreview();
         }
-
     }
 }
