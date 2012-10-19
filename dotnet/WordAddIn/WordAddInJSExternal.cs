@@ -15,12 +15,7 @@ namespace WordAddIn
     {
         private SyracuseOfficeCustomData customData;
         private BrowserDialog browserDialog;
-        private Document doc;
-
-        public WordAddInJSExternal(Document doc, BrowserDialog browserDialog)
-        {
-            this.doc = doc;
-        }
+//        private Document doc;
 
         public WordAddInJSExternal(SyracuseOfficeCustomData customData, BrowserDialog browserDialog)
         {
@@ -170,6 +165,7 @@ namespace WordAddIn
 
             customData.setLayoutData(layoutAndData);
             customData.writeDictionaryToDocument();
+
             ReportingUtils.createWordTemplate(doc, layoutAndData);
 
             if (!doc.FormsDesign)
@@ -213,7 +209,7 @@ namespace WordAddIn
             // TODO: Original file will be closed, this is wrong
             // find a way to save a copy of the current doc. w/o
             // closing and reopening.
-            Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
+            Document doc = (customData != null) ? customData.getWordDoc() : null; // this.doc;
             if (doc == null)
             {
                 MessageBox.Show("Unable to access document");
@@ -243,20 +239,26 @@ namespace WordAddIn
 
         public String getSyracuseDocumentType()
         {
-            Document doc = (customData != null) ? customData.getWordDoc() : this.doc;
+            Document doc = (customData != null) ? customData.getWordDoc() : null; // : this.doc;
             if (doc == null)
             {
                 MessageBox.Show("Unable to access document");
                 return "word-mailmerge";
             }
-            if ("4".Equals(customData.getCreateMode()))
+            string mode = customData.getCreateMode();
+            if (ReportingActions.rpt_build_tpl.Equals(mode))
             {
                 return "word-report-tpl";
             }
-            else if ("5".Equals(customData.getCreateMode()))
+            else if (ReportingActions.rpt_fill_tpl.Equals(mode))
             {
                 return "word-report";
             }
+            else if (ReportingActions.rpt_is_tpl.Equals(mode))
+            {
+                return "word-report-tpl-refresh";
+            }
+
             return "word-mailmerge";
         }
 
