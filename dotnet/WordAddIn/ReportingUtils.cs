@@ -16,6 +16,24 @@ namespace WordAddIn
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutAndData);
+            SyracuseOfficeCustomData customData;
+
+            try
+            {
+                if (layout["refreshOnly"].ToString().ToLower().Equals("true"))
+                {
+                    customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+                    if (customData != null)
+                    {
+                        customData.setForceRefresh(false);
+                        customData.writeDictionaryToDocument();
+                    }
+
+                    Globals.WordAddIn.refreshReportingFieldsTaskPane(doc.ActiveWindow);
+                    return;
+                }
+            }
+            catch (Exception) { };
 
             Object[] boxes = (Object[])layout["layout"];
             foreach (Object o in boxes)
@@ -54,14 +72,15 @@ namespace WordAddIn
                 }
                 catch (Exception) { }
             }
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+
+            customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
             if (customData != null)
             {
                 customData.setCreateMode(ReportingActions.rpt_is_tpl);
                 customData.writeDictionaryToDocument();
             }
 
-            Globals.WordAddIn.templatePane.showFields(layoutAndData);
+            Globals.WordAddIn.refreshReportingFieldsTaskPane(doc.ActiveWindow);
             if (!doc.FormsDesign)
             {
                 doc.ToggleFormsDesign();

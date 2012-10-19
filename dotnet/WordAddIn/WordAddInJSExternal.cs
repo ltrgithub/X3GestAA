@@ -165,6 +165,7 @@ namespace WordAddIn
 
             customData.setLayoutData(layoutAndData);
             customData.writeDictionaryToDocument();
+
             ReportingUtils.createWordTemplate(doc, layoutAndData);
 
             if (!doc.FormsDesign)
@@ -255,7 +256,7 @@ namespace WordAddIn
             }
             else if (ReportingActions.rpt_is_tpl.Equals(mode))
             {
-                return "word-report";
+                return "word-report-tpl-refresh";
             }
 
             return "word-mailmerge";

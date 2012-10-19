@@ -34,14 +34,7 @@ namespace WordAddIn
         }
         private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
         {
-            if (checkBoxShowTemplatePane.Checked)
-            {
-                Globals.WordAddIn.customTemplatePane.Visible = true;
-            }
-            else
-            {
-                Globals.WordAddIn.customTemplatePane.Visible = false;
-            }
+            Globals.WordAddIn.showReportingFieldsTaskPane(checkBoxShowTemplatePane.Checked);
         }
 
         private void buttonPreview_Click(object sender, RibbonControlEventArgs e)

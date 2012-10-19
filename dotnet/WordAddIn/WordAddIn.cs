@@ -12,9 +12,6 @@ namespace WordAddIn
 {
     public partial class WordAddIn
     {
-        public SyracuseTemplatePane templatePane;
-        public Microsoft.Office.Tools.CustomTaskPane customTemplatePane;
-
         private BrowserDialog browserDialog = null;
 
         public ReportingActions reporting = null;
@@ -29,11 +26,9 @@ namespace WordAddIn
             mailmerge = new MailMergeActions(browserDialog);
             commons = new CommonUtils(browserDialog);
 
-            this.templatePane = new SyracuseTemplatePane();
-            this.customTemplatePane = this.CustomTaskPanes.Add(templatePane, "Template fields");
-            this.customTemplatePane.VisibleChanged += SyracuseTemplatePane_VisibleChanged;
-
             this.Application.DocumentChange += new ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
+            this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
+            this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(on_window_deactivate);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -41,16 +36,21 @@ namespace WordAddIn
 
         }
 
+        public void on_window_activate(Document doc, Window win)
+        {
+            addReportingFieldsTaskPane(win);
+        }
+
+        public void on_window_deactivate(Document doc, Window win)
+        {
+        }
+
         // Called when ever a document is opend by word or one is activated
         public void on_document_changed()
         {
-            if (this.Application == null)
+            Document doc = getActiveDocument();
+            if (doc == null)
                 return;
-
-            if (this.Application.Documents.Count <= 0)
-                return;
-
-            Document doc = Application.ActiveDocument;
             if (MailMergeActions.isMailMergeDocument(doc))
             {
                 mailmerge.ActiveDocumentChanged(doc);
@@ -59,26 +59,65 @@ namespace WordAddIn
             {
                 reporting.ActiveDocumentChanged(doc);
             }
-
-            // Always refresh on doc change, pane will be empty in worst case
-            reporting.RefreshTemplatePane(doc, templatePane);
         }
 
-        private void SyracuseTemplatePane_VisibleChanged(object sender, EventArgs e)
+        private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
         {
             Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
             if (taskPane != null)
             {
-                if (taskPane.Visible)
-                {
-                    Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = true;
-                }
-                else
-                {
-                    Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = false;
-                }
+                Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = taskPane.Visible;
             }
         }
+
+        public void refreshReportingFieldsTaskPane(Window win)
+        {
+            Microsoft.Office.Tools.CustomTaskPane pane = addReportingFieldsTaskPane(win);
+            if (pane != null)
+            {
+                SyracuseTemplatePane t = (SyracuseTemplatePane)pane.Control;
+                t.showFields(win.Document);
+            }
+        }
+
+        private Microsoft.Office.Tools.CustomTaskPane addReportingFieldsTaskPane(Window win)
+        {
+            try
+            {
+                foreach (Microsoft.Office.Tools.CustomTaskPane pane in CustomTaskPanes)
+                {
+                    if (pane.Control is SyracuseTemplatePane && pane.Window == win)
+                        return pane;
+                }
+            }
+            catch (Exception) { }
+
+            Microsoft.Office.Tools.CustomTaskPane p;
+            p = CustomTaskPanes.Add(new SyracuseTemplatePane(), "Template fields", win);
+            p.VisibleChanged += ReportingFieldsPane_VisibleChanged;
+            return p;
+        }
+
+   
+        public void showReportingFieldsTaskPane(bool visible)
+        {
+            Document adoc = getActiveDocument();
+            Microsoft.Office.Tools.CustomTaskPane pane = addReportingFieldsTaskPane(Application.ActiveWindow);
+            pane.Visible = visible;
+            SyracuseTemplatePane t = (SyracuseTemplatePane)pane.Control;
+            t.showFields(adoc);
+        }
+
+        public Document getActiveDocument()
+        {
+            if (this.Application == null)
+                return null;
+
+            if (this.Application.Documents.Count <= 0)
+                return null;
+            return Application.ActiveDocument;
+        }
+
         #region Von VSTO generierter Code
 
         /// <summary>

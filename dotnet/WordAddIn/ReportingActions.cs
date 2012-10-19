@@ -26,7 +26,7 @@ namespace WordAddIn
             if (customData != null)
             {
                 String mode = customData.getCreateMode();
-                if (rpt_build_tpl.Equals(mode) || rpt_fill_tpl.Equals(mode))
+                if (rpt_build_tpl.Equals(mode) || rpt_fill_tpl.Equals(mode) || rpt_is_tpl.Equals(mode))
                 {
                     return true;
                 }
@@ -54,25 +54,22 @@ namespace WordAddIn
                         PopulateWordReportTemplate(doc, customData);
                     }
                 }
+                else if (rpt_is_tpl.Equals(mode))
+                {
+                    if (customData.isForceRefresh())
+                    {
+                        RefreshWordReportTemplate(doc, customData);
+                    }
+                }
             }
         }
-        public void RefreshTemplatePane(Document doc, SyracuseTemplatePane templatePane)
-        {
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            if (customData == null)
-            {
-                templatePane.clear();
-                return;
-            }
-            if (!"rpt_is_tpl".Equals(customData.getCreateMode()))
-            {
-                templatePane.clear();
-                return;
-            }
-            templatePane.showFields(customData.getLayoutData());
-        }        
 
         public void CreateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
+        {
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+        }
+
+        public void RefreshWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
             browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
