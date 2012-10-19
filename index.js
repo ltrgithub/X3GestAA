@@ -5,25 +5,26 @@ try {
 } catch (ex) {
 	console.log(ex);
 }
-//crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local sytem account
+//crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local system account
 if(config.streamline) {
 	if(config.streamline.homedrive)
 		process.env.HOMEDRIVE = config.streamline.homedrive;
 	if(config.streamline.homepath)
 		process.env.HOMEPATH = config.streamline.homepath;
+} else {
+	config.streamline = {
+			fibers: false,
+			verbose: true,
+			cache: true,
+			trampoline: "nextTick"
+		}
 }
 //
 require('coffee-script');
 
-var crypter = require('syracuse-lic/lib/encrypt');
-crypter.register();
+var crypter = require('syracuse-lic/lib/encrypt').register();
 
-require("streamline").register(config.streamline || {
-	fibers: false,
-	verbose: true,
-	cache: true,
-	trampoline: "nextTick"
-});
+require("streamline").register(config.streamline);
 
 var syracuse = require('syracuse-main/lib/syracuse');
 var port = syracuse.config.port || 8124;
