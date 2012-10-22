@@ -70,7 +70,7 @@ namespace WordAddIn
                         }
                     }
                 }
-                catch (Exception) { }
+                catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);  }
             }
 
             customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
@@ -139,6 +139,8 @@ namespace WordAddIn
                 {
                     Range r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
+                    r.Start++;
+                    r.End++;
                     createContentControl(doc, r, item, null);
                     r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
@@ -149,24 +151,28 @@ namespace WordAddIn
 
         public static ContentControl createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
         {
-            String type = item["$type"].ToString();
-            String title = item["$title"].ToString();
-            String bind = item["$bind"].ToString();
-
-            ContentControl c;
-            if ("image".Equals(type))
+            try
             {
-                c = range.ContentControls.Add(WdContentControlType.wdContentControlPicture);
-            }
-            else
-            {
-                c = range.ContentControls.Add(WdContentControlType.wdContentControlText);
-            }
+                String type = item["$type"].ToString();
+                String title = item["$title"].ToString();
+                String bind = item["$bind"].ToString();
 
-            c.SetPlaceholderText(null, null, title);
-            c.Tag = (parent != null ? parent + "." : "") + bind;
-            c.Title = type;
-            return c;
+                ContentControl c;
+                if ("image".Equals(type))
+                {
+                    c = range.ContentControls.Add(WdContentControlType.wdContentControlPicture);
+                }
+                else
+                {
+                    c = range.ContentControls.Add(WdContentControlType.wdContentControlText);
+                }
+
+                c.SetPlaceholderText(null, null, title);
+                c.Tag = (parent != null ? parent + "." : "") + bind;
+                c.Title = type;
+                return c;
+            } catch (Exception) { };
+            return null;
         }
 
         public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
@@ -411,15 +417,7 @@ namespace WordAddIn
                             c.Range.InlineShapes[1].Width = width;
                             c.Range.InlineShapes[1].Height = height;
                         }
-
-                        if (link != null)
-                        {
-                            Range r = c.Range;
-                            // Expand range to cover full content control
-                            r.Start--;
-                            r.End++;
-                            doc.Hyperlinks.Add(r, link);
-                        }
+                        addLinkToContentControl(doc, c, link);
                     }
                     catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
                     File.Delete(imageFile);
@@ -428,48 +426,35 @@ namespace WordAddIn
                 {
                     c.Delete();
                 }
-
             }
             else if (c.Type == WdContentControlType.wdContentControlText)
             {
                 try {   value = ((Dictionary<String, object>)entity["$value"])["$value"].ToString();    } catch (Exception) { }
 
-
-                if (value != null && type != null)
-                {
-                    try
-                    {
-                        switch (type)
-                        {
-                            case "application/x-datetime":
-                                DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
-                                value = dt.ToString("G");
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    catch (Exception) { }
-                }
-                else
-                {
-                    value = " ";
-                }
+                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
 
                 try
                 {
                     c.Range.Text = value;
-                    if (link != null)
-                    {
-                        Range r = c.Range;
-                        // Expand range to cover full content control
-                        r.Start --;
-                        r.End ++;
-                        doc.Hyperlinks.Add(r, link);
-                    }
+                    addLinkToContentControl(doc, c, link);
                 }
                 catch (Exception) { /* MessageBox.Show(e.Message + ":" + e.StackTrace); */}
             }
+        }
+
+        private static void addLinkToContentControl(Document doc, ContentControl c, String link)
+        {
+            if (link == null)
+            {
+                return;
+            }
+            
+            Range r = c.Range;
+
+            // Expand range to cover full content control
+            r.Start--;
+            r.End++;
+            doc.Hyperlinks.Add(r, link);
         }
 
         private static void copyCellContent(Cell src, Cell dest)
