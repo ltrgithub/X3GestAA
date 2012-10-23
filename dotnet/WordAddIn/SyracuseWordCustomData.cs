@@ -26,7 +26,6 @@ namespace WordAddIn
         private Dictionary<String, object> dictionary;
 
         private Microsoft.Office.Interop.Word.Document doc;
-        private Microsoft.Office.Interop.Excel.Workbook workbook;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
         public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Word.Document doc, Boolean create = false)
@@ -44,17 +43,6 @@ namespace WordAddIn
                 return cd;
             }
             return null;
-        }
-
-        // Gets a dictionary from an excel document by accessing its customxmlparts
-        public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Excel.Workbook doc)
-        {
-            Dictionary<String, object> dict = getDictionaryFromCustomXMLPart(doc);
-            if (dict == null)
-            {
-                return null;
-            }
-            return new SyracuseOfficeCustomData(dict, doc);
         }
 
         public string getServerUrl() 
@@ -188,12 +176,6 @@ namespace WordAddIn
         {
             this.dictionary = dictionary;
             this.doc = doc;
-        }
-
-        private SyracuseOfficeCustomData(Dictionary<String, object> dictionary, Microsoft.Office.Interop.Excel.Workbook workbook)
-        {
-            this.dictionary = dictionary;
-            this.workbook = workbook;
         }
 
         public void writeDictionaryToDocument()

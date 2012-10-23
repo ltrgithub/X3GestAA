@@ -92,8 +92,16 @@ namespace WordAddIn
             treeViewFields.Nodes.Clear();
         }
 
-        public void showFields(string layoutData)
+        public void showFields(Document doc)
         {
+            clear();
+            if (doc == null)
+                return;
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+                return;
+            String layoutData = customData.getLayoutData();
+
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
 
