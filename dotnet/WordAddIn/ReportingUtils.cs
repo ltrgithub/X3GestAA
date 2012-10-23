@@ -16,6 +16,24 @@ namespace WordAddIn
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutAndData);
+            SyracuseOfficeCustomData customData;
+
+            try
+            {
+                if (layout["refreshOnly"].ToString().ToLower().Equals("true"))
+                {
+                    customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+                    if (customData != null)
+                    {
+                        customData.setForceRefresh(false);
+                        customData.writeDictionaryToDocument();
+                    }
+
+                    Globals.WordAddIn.refreshReportingFieldsTaskPane(doc.ActiveWindow);
+                    return;
+                }
+            }
+            catch (Exception) { };
 
             Object[] boxes = (Object[])layout["layout"];
             foreach (Object o in boxes)
@@ -52,9 +70,17 @@ namespace WordAddIn
                         }
                     }
                 }
-                catch (Exception) { }
+                catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);  }
             }
-            Globals.WordAddIn.templatePane.showFields(layoutAndData);
+
+            customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+            if (customData != null)
+            {
+                customData.setCreateMode(ReportingActions.rpt_is_tpl);
+                customData.writeDictionaryToDocument();
+            }
+
+            Globals.WordAddIn.refreshReportingFieldsTaskPane(doc.ActiveWindow);
             if (!doc.FormsDesign)
             {
                 doc.ToggleFormsDesign();
@@ -113,6 +139,8 @@ namespace WordAddIn
                 {
                     Range r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
+                    r.Start++;
+                    r.End++;
                     createContentControl(doc, r, item, null);
                     r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
@@ -123,24 +151,28 @@ namespace WordAddIn
 
         public static ContentControl createContentControl(Document doc, Range range, Dictionary<String, Object> item, String parent)
         {
-            String type = item["$type"].ToString();
-            String title = item["$title"].ToString();
-            String bind = item["$bind"].ToString();
-
-            ContentControl c;
-            if ("image".Equals(type))
+            try
             {
-                c = range.ContentControls.Add(WdContentControlType.wdContentControlPicture);
-            }
-            else
-            {
-                c = range.ContentControls.Add(WdContentControlType.wdContentControlText);
-            }
+                String type = item["$type"].ToString();
+                String title = item["$title"].ToString();
+                String bind = item["$bind"].ToString();
 
-            c.SetPlaceholderText(null, null, title);
-            c.Tag = (parent != null ? parent + "." : "") + bind;
-            c.Title = type;
-            return c;
+                ContentControl c;
+                if ("image".Equals(type))
+                {
+                    c = range.ContentControls.Add(WdContentControlType.wdContentControlPicture);
+                }
+                else
+                {
+                    c = range.ContentControls.Add(WdContentControlType.wdContentControlText);
+                }
+
+                c.SetPlaceholderText(null, null, title);
+                c.Tag = (parent != null ? parent + "." : "") + bind;
+                c.Title = type;
+                return c;
+            } catch (Exception) { };
+            return null;
         }
 
         public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
@@ -151,6 +183,7 @@ namespace WordAddIn
             Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
             List<ContentControl> ccs = GetAllContentControls(doc);
 
+            List<ContentControl> simpleCcs = new List<ContentControl>();
             foreach (ContentControl c in ccs)
             {
                 // Simple properties (no collections)
@@ -159,10 +192,16 @@ namespace WordAddIn
                     continue;
                 if (t.isSimple && entityData.ContainsKey(t.property))
                 {
-                    Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t.property];
-                    setControlContent(doc, c, propData, t, browserDialog);
+                    if (!simpleCcs.Contains(c))
+                        simpleCcs.Add(c);
                 }
+            }
 
+            foreach (ContentControl c in simpleCcs)
+            {
+                TagInfo t = TagInfo.create(c);
+                Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t.property];
+                setContentControlValue(doc, c, propData, t, browserDialog);
             }
 
             Dictionary<String, TableInfo> tables = new Dictionary<String, TableInfo>();
@@ -240,7 +279,7 @@ namespace WordAddIn
                                                 if (collectionItem.ContainsKey(t2.property))
                                                 {
                                                     Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
-                                                    setControlContent(doc, cc, entity, t2, browserDialog);
+                                                    setContentControlValue(doc, cc, entity, t2, browserDialog);
                                                 }
                                             }
                                         }
@@ -325,15 +364,20 @@ namespace WordAddIn
             return list;
         }
 
-        private static void setControlContent(Document doc, ContentControl c, Dictionary<String, object> entity, TagInfo ti, BrowserDialog browserDialog)
+        private static void setContentControlValue(Document doc, ContentControl c, Dictionary<String, object> entity, TagInfo ti, BrowserDialog browserDialog)
         {
             string tag = ti.property;
-            String value = null;
-            String imageFile = null;
+            string value = null;
+            string imageFile = null;
+            string type = null;
+            string link = null;
+
+            try { type = entity["$type"].ToString(); } catch (Exception) { }
+            try { link = entity["$link"].ToString(); } catch (Exception) { }
 
             if (c.Type == WdContentControlType.wdContentControlPicture && browserDialog != null)
             {
-                String url = null;
+                string url = null;
                 try
                 {
                     url = ((Dictionary<String, object>)entity["$value"])["$url"].ToString();
@@ -373,6 +417,7 @@ namespace WordAddIn
                             c.Range.InlineShapes[1].Width = width;
                             c.Range.InlineShapes[1].Height = height;
                         }
+                        addLinkToContentControl(doc, c, link);
                     }
                     catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
                     File.Delete(imageFile);
@@ -381,47 +426,35 @@ namespace WordAddIn
                 {
                     c.Delete();
                 }
-
             }
             else if (c.Type == WdContentControlType.wdContentControlText)
             {
-                String type = "";
-                if (entity.ContainsKey("$type"))
-                {
-                    type = entity["$type"].ToString();
-                }
+                try {   value = ((Dictionary<String, object>)entity["$value"])["$value"].ToString();    } catch (Exception) { }
+
+                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
 
                 try
                 {
-                    if (entity.ContainsKey("$value"))
-                    {
-                        value = ((Dictionary<String, object>)entity["$value"])["$value"].ToString();
-                    }
+                    c.Range.Text = value;
+                    addLinkToContentControl(doc, c, link);
                 }
-                catch (Exception) { }
-
-                if (value != null)
-                {
-                    try
-                    {
-                        switch (type)
-                        {
-                            case "application/x-datetime":
-                                DateTime dt = DateTime.ParseExact(value, "yyyy MM dd HH:mm:ss.fff", null);
-                                value = dt.ToString("G");
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    catch (Exception) { }
-                }
-                else
-                {
-                    value = " ";
-                }
-                c.Range.Text = value;
+                catch (Exception) { /* MessageBox.Show(e.Message + ":" + e.StackTrace); */}
             }
+        }
+
+        private static void addLinkToContentControl(Document doc, ContentControl c, String link)
+        {
+            if (link == null)
+            {
+                return;
+            }
+            
+            Range r = c.Range;
+
+            // Expand range to cover full content control
+            r.Start--;
+            r.End++;
+            doc.Hyperlinks.Add(r, link);
         }
 
         private static void copyCellContent(Cell src, Cell dest)
