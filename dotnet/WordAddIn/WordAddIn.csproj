@@ -25,27 +25,32 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>WordAddIn</RootNamespace>
-    <AssemblyName>WordAddIn</AssemblyName>
+    <AssemblyName>Sage.Syracuse.WordAddIn</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
-    <TargetCulture>de</TargetCulture>
+    <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateInterval>7</UpdateInterval>
+    <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
-    <ProductName>WordAddIn</ProductName>
+    <ProductName>Sage.Syracuse.WordAddIn</ProductName>
     <PublisherName />
     <SupportUrl />
     <FriendlyName>WordAddIn</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -137,6 +142,9 @@
   <PropertyGroup>
     <ManifestCertificateThumbprint>2C99C53D4E4A7139F7A27DFCA41A00B128AA3D8D</ManifestCertificateThumbprint>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <!--
     This section specifies references for the project.
   -->
@@ -200,12 +208,17 @@
     <Compile Include="BrowserDialog.Designer.cs">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServerSettings.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CommonUtils.cs" />
+    <Compile Include="MailMergeActions.cs" />
+    <Compile Include="ReportingActions.cs" />
+    <Compile Include="ReportingUtils.cs" />
+    <Compile Include="SyracuseTemplatePane.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ServerSettings.Designer.cs">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
+    <Compile Include="SyracuseTemplatePane.Designer.cs">
+      <DependentUpon>SyracuseTemplatePane.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportingFieldTypes.cs" />
     <Compile Include="WordAddInJSExternal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -232,14 +245,8 @@
     <EmbeddedResource Include="Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.en.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.fr.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
+    <EmbeddedResource Include="SyracuseTemplatePane.resx">
+      <DependentUpon>SyracuseTemplatePane.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -277,6 +284,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\mailmerge.png" />
+    <Content Include="Resources\s-author-light-boolean.png" />
+    <Content Include="Resources\s-author-light-choice.png" />
+    <Content Include="Resources\s-author-light-collection.png" />
+    <Content Include="Resources\s-author-light-date.png" />
+    <Content Include="Resources\s-author-light-datetime.png" />
+    <Content Include="Resources\s-author-light-decimale.png" />
+    <Content Include="Resources\s-author-light-graph.png" />
+    <Content Include="Resources\s-author-light-image.png" />
+    <Content Include="Resources\s-author-light-string.png" />
+    <Content Include="Resources\s-author-light-vignette.png" />
     <None Include="Resources\save.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->

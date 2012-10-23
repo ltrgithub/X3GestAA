@@ -59,6 +59,24 @@
 			"en-US": "Standard storage volume"
 		}
 	},{
+		"$type": "storageVolume",
+		"code": "WORD_TEMPLATE_MAILMERGE",
+		"storageType": "db_file",
+		"description": {
+			"default": "Word templates for mail merge",
+			"fr-FR": "Modèles word pour publipostage",
+			"en-US": "Word templates for mail merge"
+		}
+	},{
+		"$type": "storageVolume",
+		"code": "WORD_TEMPLATE_REPORT",
+		"storageType": "db_file",
+		"description": {
+			"default": "Word templates for reporting",
+			"fr-FR": "Modèles word pour publication",
+			"en-US": "Word templates for reporting"
+		}
+	},{
 		"$type": "application",
 		"description": "Syracuse Collaboration",
 		"application": "syracuse",
@@ -76,6 +94,9 @@
 	},{
 		"$type": "role",
 		"description": "Endpoint administrator"
+	},{
+		"$type": "role",
+		"description": "Guest"
 	},{
 		"$type": "endPoint",
 		"description": "Syracuse administration",
@@ -97,6 +118,11 @@
 		"description": "Endpoint administrators",
 		"role": "Endpoint administrator"
 	},{
+		"$type": "group",
+		"description": "Guests",
+		"endPoints": ["Syracuse administration"],
+		"role": "Guest"
+	},{
 		"$type": "user",
 		"login": "admin",
 		"password": "admin",
@@ -106,7 +132,8 @@
 		"$type": "user",
 		"login": "guest",
 		"password": "guest",
-		"lastName": "Guest"
+		"lastName": "Guest",
+		"groups": ["Guests"]
 	}
 	]
 }
