@@ -208,13 +208,10 @@
     <Compile Include="BrowserDialog.Designer.cs">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonUtils.cs" />
+    <Compile Include="MailMergeActions.cs" />
+    <Compile Include="ReportingActions.cs" />
     <Compile Include="ReportingUtils.cs" />
-    <Compile Include="ServerSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ServerSettings.Designer.cs">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="SyracuseTemplatePane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -247,15 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.en.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.fr.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SyracuseTemplatePane.resx">
       <DependentUpon>SyracuseTemplatePane.cs</DependentUpon>
