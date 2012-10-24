@@ -11,11 +11,11 @@
    "$title":"Ventes Syracuse",
    "$type":"{$baseType}.statistics",
    "$methods":"GET",
-   "$":{
+   "$properties":{
       "$resources":{
          "$type":"application/x-collection",
          "$item":{
-            "$":{
+            "$properties":{
                "dateStat":{
                   "$type":"application/x-date",
                   "$title":"Date",
@@ -27,7 +27,7 @@
                   "$thumb":{
                      "$type":"application/json",
                      "$url":"{$baseUrl}/gesAdi('30~{code}')",
-                     "$":{
+                     "$properties":{
                         "code":{
                            "$type":"application/x-string",
                            "$constraints":{
@@ -58,7 +58,7 @@
                   "$thumb":{
                      "$type":"application/json",
                      "$url":"{$baseUrl}/gesAdi('31~{code}')",
-                     "$":{
+                     "$properties":{
                         "code":{
                            "$type":"application/x-string",
                            "$constraints":{
@@ -89,7 +89,7 @@
                   "$thumb":{
                      "$type":"application/json",
                      "$url":"{$baseUrl}/gesBpc('{bpcnum}')",
-                     "$":{
+                     "$properties":{
                         "bpcnum":{
                            "$type":"application/x-string",
                            "$constraints":{
@@ -120,7 +120,7 @@
                      "$type":"application/json",
                      "$url":"{$baseUrl}/gesAdi('20~{code}')",
                      "$value":"{code}",
-                     "$":{
+                     "$properties":{
                         "code":{
                            "$type":"application/x-string",
                            "$constraints":{
@@ -151,7 +151,7 @@
                   "$thumb":{
                      "$type":"application/json",
                      "$url":"{$baseUrl}/gesItm('{itmref}')",
-                     "$":{
+                     "$properties":{
                         "itmref":{
                            "$type":"application/x-string",
                            "$constraints":{
