@@ -13,7 +13,7 @@
         "@S-AOC0-8": "Intitule",
         "@S-AOC1-1390": "Index"
 	},
-    "$": {
+    "$properties": {
         "firstName": {
             "$title": "First Name",
             "$type": "application/x-string",
@@ -284,7 +284,7 @@
             "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={singularType}.$thumb",
             "$value": "{code}",
             "$description": "Country",
-            "$": {
+            "$properties": {
                 "code": {
                     "$type": "application/x-string"
                 },
@@ -311,7 +311,7 @@
             "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={singularType}.$thumb",
             "$value": "{code}",
             "$description": "Company",
-            "$": {
+            "$properties": {
                 "code": {
                     "$type": "application/x-string"
                 },
@@ -339,7 +339,7 @@
                 "$type": "application/json",
                 "$pluralType": "children",
                 "$singularType": "child",
-                "$": {
+                "$properties": {
                     "firstName": {
                         "$title": "First Name",
                         "$type": "application/x-string",
@@ -541,7 +541,7 @@
             "$description": "Grid layout: default layout",
             "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query&par1={param1}&par2={param2}&par3={param3}&par4={param4}&par4={param5}",
             "$parameters": {
-                "$": {
+                "$properties": {
                     "param3": {
                         "$title": "mon param3",
                         "$type": "application/x-string"
@@ -579,7 +579,7 @@
             "$title": "Action Employees Properties Form",
             "$url": "/sdata/sprint1/settings/sprint1/employees?representation=employee.$query",
             "$parameters": {
-                "$": {
+                "$properties": {
                     "param3": {
                         "$title": "{@S-AOC0-125}",
                         "$type": "application/x-string"
@@ -613,7 +613,7 @@
                             "$description": "Vignette",
                             "$pluralType": "portlets",
                             "$representation": "pageData",
-                            "$": {
+                            "$properties": {
                                 "code": {
                                     "$title": "Code",
                                     "$type": "application/x-string",
@@ -669,7 +669,7 @@
                                     "$value": "{description}",
                                     "$description": "L'application et le contrat identifient un service",
                                     "$key": "{$uuid}",
-                                    "$": {
+                                    "$properties": {
                                         "description": {
                                             "$type": "application/x-string"
                                         }
@@ -694,7 +694,7 @@
                                     "$value": "{description}",
                                     "$description": "Endpoints describes services locations",
                                     "$key": "{$uuid}",
-                                    "$": {
+                                    "$properties": {
                                         "description": {
                                             "$type": "application/x-string"
                                         }
@@ -721,7 +721,7 @@
                                         "$value": "{title}",
                                         "$description": "Menu item",
                                         "$key": "{$uuid}",
-                                        "$": {
+                                        "$properties": {
                                             "title": {
                                                 "$type": "application/x-string"
                                             }
@@ -747,7 +747,7 @@
                                     "$value": "{title}",
                                     "$description": "Menu item",
                                     "$key": "{$uuid}",
-                                    "$": {
+                                    "$properties": {
                                         "title": {
                                             "$type": "application/x-string"
                                         }
@@ -774,7 +774,7 @@
                                         "$value": "{description}",
                                         "$description": "Menu category",
                                         "$key": "{$uuid}",
-                                        "$": {
+                                        "$properties": {
                                             "description": {
                                                 "$type": "application/x-string"
                                             }
