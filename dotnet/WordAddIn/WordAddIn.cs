@@ -48,9 +48,22 @@ namespace WordAddIn
         // Called when ever a document is opend by word or one is activated
         public void on_document_changed()
         {
+            Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+
             Document doc = getActiveDocument();
             if (doc == null)
+            {
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
                 return;
+            }
+
+            // Enable save buttons as soon as there is a document
+            // It is ok to save ANY kind of document also as template, because
+            // the template can be modified later
+            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+
             if (MailMergeActions.isMailMergeDocument(doc))
             {
                 mailmerge.ActiveDocumentChanged(doc);
@@ -58,6 +71,14 @@ namespace WordAddIn
             else if (ReportingActions.isReportingDocument(Application.ActiveDocument))
             {
                 reporting.ActiveDocumentChanged(doc);
+            }
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData != null)
+            {
+                if (!"".Equals(customData.getDocumentUrl()))
+                {
+                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                }
             }
         }
 
