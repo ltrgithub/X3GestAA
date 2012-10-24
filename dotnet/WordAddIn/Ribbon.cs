@@ -21,15 +21,15 @@ namespace WordAddIn
             Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
             if (doc != null)
             {
-                Globals.WordAddIn.commons.SaveDocumentToX3(doc);
+                Globals.WordAddIn.commons.Save(doc);
             }
         }
-        private void buttonSaveTpl_Click(object sender, RibbonControlEventArgs e)
+        private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
         {
             Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
             if (doc != null)
             {
-                Globals.WordAddIn.commons.SaveTemplateToX3(doc);
+                Globals.WordAddIn.commons.SaveAs(doc);
             }
         }
         private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
@@ -40,6 +40,11 @@ namespace WordAddIn
         private void buttonPreview_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.WordAddIn.reporting.CreateWordReportPreview();
+        }
+
+        private void buttonRefreshReport_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.reporting.RefreshReport();
         }
     }
 }

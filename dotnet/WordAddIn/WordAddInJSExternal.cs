@@ -212,7 +212,7 @@ namespace WordAddIn
             Document doc = (customData != null) ? customData.getWordDoc() : null; // this.doc;
             if (doc == null)
             {
-                MessageBox.Show("Unable to access document");
+                CommonUtils.ShowErrorMessage(global::WordAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
                 return "";
             }
 
@@ -234,7 +234,7 @@ namespace WordAddIn
         public void NotifySaveDocumentDone()
         {
             browserDialog.Hide();
-            MessageBox.Show("Document has been saved!");
+            CommonUtils.ShowInfoMessage(global::WordAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::WordAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
         }
 
         public String getSyracuseDocumentType()
@@ -242,7 +242,7 @@ namespace WordAddIn
             Document doc = (customData != null) ? customData.getWordDoc() : null; // : this.doc;
             if (doc == null)
             {
-                MessageBox.Show("Unable to access document");
+                CommonUtils.ShowErrorMessage(global::WordAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
                 return "word-mailmerge";
             }
             string mode = customData.getCreateMode();
