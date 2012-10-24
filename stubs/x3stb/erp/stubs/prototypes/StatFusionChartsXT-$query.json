@@ -5,7 +5,7 @@
 	"$type": "application/json; vnd.sage=syracuse.presentation=x3.erp.superv/STAT('DOM')",
 	"$methods": "GET",
 	"codeStat": "DOM",
-	"$": {
+	"$properties": {
 		"$resources": {
 			"$type": "application/x-collection",
 			"$provType": "PORTALSTA",
@@ -39,7 +39,7 @@
 				"$type": "application/json",
 				"$url": "{$baseUrl}/stats('DOM')?representation=$cube('DOM')&role={$role}",
 				"$title": "Statistiques fichier",
-				"$": {
+				"$properties": {
 					"dateStat": {
 						"$type": "application/x-date",
 						"$capabilities": "sort,filter"
@@ -135,7 +135,7 @@
 								"$url": "{$baseUrl}/AUTILIS('{$key}')?representation=AUTILIS.$details&role={$role}"
 							}
 						},
-						"$": {
+						"$properties": {
 							"USR": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
@@ -156,7 +156,7 @@
 								"$url": "{$baseUrl}/COMPANY('{$key}')?representation=COMPANY.$details&role={$role}"
 							}
 						},
-						"$": {
+						"$properties": {
 							"CPY": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
@@ -177,7 +177,7 @@
 								"$url": "{$baseUrl}/TABCUR('{$key}')?representation=TABCUR.$details&role={$role}"
 							}
 						},
-						"$": {
+						"$properties": {
 							"CUR": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
