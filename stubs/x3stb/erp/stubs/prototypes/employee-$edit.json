@@ -8,7 +8,7 @@
     "$title": "{firstName} {lastName}",
     "$pluralType": "employees",
     "$singularType": "employee",
-    "$": {
+    "$properties": {
         "firstName": {
             "$title": "First Name",
             "$type": "application/x-string",
@@ -221,7 +221,7 @@
             "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={singularType}.$thumb",
             "$value": "{code}",
             "$description": "Country",
-            "$": {
+            "$properties": {
                 "code": {
                     "$type": "application/x-string"
                 },
@@ -248,7 +248,7 @@
             "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={singularType}.$thumb",
             "$value": "{code}",
             "$description": "Company",
-            "$": {
+            "$properties": {
                 "code": {
                     "$type": "application/x-string"
                 },
@@ -276,7 +276,7 @@
                 "$type": "application/json",
                 "$pluralType": "children",
                 "$singularType": "child",
-                "$": {
+                "$properties": {
                     "firstName": {
                         "$title": "First Name",
                         "$type": "application/x-string",
