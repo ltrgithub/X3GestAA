@@ -156,5 +156,10 @@ namespace WordAddIn
             return value;
 
         }
+        public static bool isSupportedType(ReportingFieldTypes type) {
+            if (ReportingFieldTypes.GRAPH == type)
+                return false;
+            return true;
+        }
     }
 }

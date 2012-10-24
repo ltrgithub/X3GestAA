@@ -1,6 +1,6 @@
 ﻿namespace WordAddIn
 {
-    partial class SyracuseTemplatePane
+    partial class ReportingTemplatePane
     {
         /// <summary> 
         /// Erforderliche Designervariable.

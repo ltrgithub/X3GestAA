@@ -93,6 +93,9 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                if (!isSupportedType(item))
+                    continue;
+
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
@@ -111,6 +114,9 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                if (!isSupportedType(item))
+                    continue;
+
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
@@ -134,6 +140,9 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                if (!isSupportedType(item))
+                    continue;
+
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
@@ -173,6 +182,19 @@ namespace WordAddIn
                 return c;
             } catch (Exception) { };
             return null;
+        }
+
+        public static bool isSupportedType(Dictionary<String, Object> item)
+        {
+            try
+            {
+                string type = item["$type"].ToString();
+                ReportingFieldTypes ft = ReportingFieldUtil.getType(type);
+                if (ReportingFieldUtil.isSupportedType(ft))
+                    return true;
+            }
+            catch (Exception) { }
+            return false;
         }
 
         public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
@@ -465,7 +487,11 @@ namespace WordAddIn
             // Expand range to cover full content control
             r.Start--;
             r.End++;
-            doc.Hyperlinks.Add(r, link);
+            try
+            {
+                doc.Hyperlinks.Add(r, link);
+            }
+            catch (Exception) { };
         }
 
         private static void copyCellContent(Cell src, Cell dest)
