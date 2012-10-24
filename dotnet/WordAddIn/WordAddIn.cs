@@ -48,9 +48,22 @@ namespace WordAddIn
         // Called when ever a document is opend by word or one is activated
         public void on_document_changed()
         {
+            Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+
             Document doc = getActiveDocument();
             if (doc == null)
+            {
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
                 return;
+            }
+
+            // Enable save buttons as soon as there is a document
+            // It is ok to save ANY kind of document also as template, because
+            // the template can be modified later
+            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+
             if (MailMergeActions.isMailMergeDocument(doc))
             {
                 mailmerge.ActiveDocumentChanged(doc);
@@ -58,6 +71,14 @@ namespace WordAddIn
             else if (ReportingActions.isReportingDocument(Application.ActiveDocument))
             {
                 reporting.ActiveDocumentChanged(doc);
+            }
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData != null)
+            {
+                if (!"".Equals(customData.getDocumentUrl()))
+                {
+                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                }
             }
         }
 
@@ -75,7 +96,7 @@ namespace WordAddIn
             Microsoft.Office.Tools.CustomTaskPane pane = addReportingFieldsTaskPane(win);
             if (pane != null)
             {
-                SyracuseTemplatePane t = (SyracuseTemplatePane)pane.Control;
+                ReportingTemplatePane t = (ReportingTemplatePane)pane.Control;
                 t.showFields(win.Document);
             }
         }
@@ -86,14 +107,14 @@ namespace WordAddIn
             {
                 foreach (Microsoft.Office.Tools.CustomTaskPane pane in CustomTaskPanes)
                 {
-                    if (pane.Control is SyracuseTemplatePane && pane.Window == win)
+                    if (pane.Control is ReportingTemplatePane && pane.Window == win)
                         return pane;
                 }
             }
             catch (Exception) { }
 
             Microsoft.Office.Tools.CustomTaskPane p;
-            p = CustomTaskPanes.Add(new SyracuseTemplatePane(), "Template fields", win);
+            p = CustomTaskPanes.Add(new ReportingTemplatePane(), "Template fields", win);
             p.VisibleChanged += ReportingFieldsPane_VisibleChanged;
             return p;
         }
@@ -104,7 +125,7 @@ namespace WordAddIn
             Document adoc = getActiveDocument();
             Microsoft.Office.Tools.CustomTaskPane pane = addReportingFieldsTaskPane(Application.ActiveWindow);
             pane.Visible = visible;
-            SyracuseTemplatePane t = (SyracuseTemplatePane)pane.Control;
+            ReportingTemplatePane t = (ReportingTemplatePane)pane.Control;
             t.showFields(adoc);
         }
 

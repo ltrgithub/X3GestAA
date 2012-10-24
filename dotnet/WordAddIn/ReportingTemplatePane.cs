@@ -14,23 +14,23 @@ using Microsoft.Office.Core;
 
 namespace WordAddIn
 {
-    public partial class SyracuseTemplatePane : UserControl
+    public partial class ReportingTemplatePane : UserControl
     {
-        public SyracuseTemplatePane()
+        public ReportingTemplatePane()
         {
             InitializeComponent();
 
-            this.SizeChanged += new EventHandler(SyracuseTemplatePane_SizeChanged);
-            this.treeViewFields.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(SyracuseTemplatePane_NodeMouseDoubleClick);
+            this.SizeChanged += new EventHandler(ReportingTemplatePane_SizeChanged);
+            this.treeViewFields.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(ReportingTemplatePane_NodeMouseDoubleClick);
             this.treeViewFields.ImageList = ReportingFieldUtil.getTypeImageList();
         }
 
-        public void SyracuseTemplatePane_SizeChanged(Object sender, EventArgs e)
+        public void ReportingTemplatePane_SizeChanged(Object sender, EventArgs e)
         {
             treeViewFields.Size = this.Size;
         }
 
-        public void SyracuseTemplatePane_NodeMouseDoubleClick(Object sender, TreeNodeMouseClickEventArgs e)
+        public void ReportingTemplatePane_NodeMouseDoubleClick(Object sender, TreeNodeMouseClickEventArgs e)
         {
             Document doc = Globals.WordAddIn.Application.ActiveDocument;
             Boolean tog = false;
@@ -145,7 +145,9 @@ namespace WordAddIn
                         foreach (KeyValuePair<String, object> i in items)
                         {
                             Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
-                            
+                            if (!ReportingUtils.isSupportedType(item))
+                                continue;
+
                             String hidden = item["$hidden"].ToString();
                             String ctitle = item["$title"].ToString();
                             String type = item["$type"].ToString();
@@ -160,7 +162,8 @@ namespace WordAddIn
                             node.Nodes.Add(child);
                         }
 
-                        treeViewFields.Nodes.Add(node);
+                        if (node.Nodes.Count > 0)
+                            treeViewFields.Nodes.Add(node);
                     }
                 }
                 catch (Exception) { }
