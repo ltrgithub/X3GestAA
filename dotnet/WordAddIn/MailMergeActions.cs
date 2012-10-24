@@ -39,7 +39,7 @@ namespace WordAddIn
                 {
                     CreateNewMailMergeDocument(doc, customData);
                 }
-                else if (!"".Equals(mode))
+                else if ("1".Equals(mode) || "3".Equals(mode))
                 {
                     if (customData.isForceRefresh())
                     {
@@ -82,8 +82,7 @@ namespace WordAddIn
             WordAddInJSExternal external = new WordAddInJSExternal(customData, browserDialog);
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dmailmergeds.%24dashboard", external);
-
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", external);
         }
     }
 }

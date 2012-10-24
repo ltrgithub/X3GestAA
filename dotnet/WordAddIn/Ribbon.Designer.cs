@@ -38,10 +38,11 @@
             this.tabSageERPX3 = this.Factory.CreateRibbonTab();
             this.groupSave = this.Factory.CreateRibbonGroup();
             this.buttonSave = this.Factory.CreateRibbonButton();
-            this.buttonSaveTpl = this.Factory.CreateRibbonButton();
+            this.buttonSaveAs = this.Factory.CreateRibbonButton();
             this.groupReporting = this.Factory.CreateRibbonGroup();
-            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
+            this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
+            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.tabSageERPX3.SuspendLayout();
             this.groupSave.SuspendLayout();
             this.groupReporting.SuspendLayout();
@@ -57,7 +58,7 @@
             // groupSave
             // 
             this.groupSave.Items.Add(this.buttonSave);
-            this.groupSave.Items.Add(this.buttonSaveTpl);
+            this.groupSave.Items.Add(this.buttonSaveAs);
             resources.ApplyResources(this.groupSave, "groupSave");
             this.groupSave.Name = "groupSave";
             // 
@@ -70,33 +71,43 @@
             this.buttonSave.ShowImage = true;
             this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
             // 
-            // buttonSaveTpl
+            // buttonSaveAs
             // 
-            this.buttonSaveTpl.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSaveTpl.Image = global::WordAddIn.Properties.Resources.save;
-            resources.ApplyResources(this.buttonSaveTpl, "buttonSaveTpl");
-            this.buttonSaveTpl.Name = "buttonSaveTpl";
-            this.buttonSaveTpl.ShowImage = true;
-            this.buttonSaveTpl.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveTpl_Click);
+            this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
+            this.buttonSaveAs.Name = "buttonSaveAs";
+            this.buttonSaveAs.ShowImage = true;
+            this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
             // 
             // groupReporting
             // 
-            this.groupReporting.Items.Add(this.checkBoxShowTemplatePane);
+            this.groupReporting.Items.Add(this.buttonRefreshReport);
             this.groupReporting.Items.Add(this.buttonPreview);
+            this.groupReporting.Items.Add(this.checkBoxShowTemplatePane);
             resources.ApplyResources(this.groupReporting, "groupReporting");
             this.groupReporting.Name = "groupReporting";
+            // 
+            // buttonRefreshReport
+            // 
+            this.buttonRefreshReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
+            this.buttonRefreshReport.Name = "buttonRefreshReport";
+            this.buttonRefreshReport.ShowImage = true;
+            this.buttonRefreshReport.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshReport_Click);
+            // 
+            // buttonPreview
+            // 
+            this.buttonPreview.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonPreview, "buttonPreview");
+            this.buttonPreview.Name = "buttonPreview";
+            this.buttonPreview.ShowImage = true;
+            this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
             // 
             // checkBoxShowTemplatePane
             // 
             resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
             this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
             this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
-            // 
-            // buttonPreview
-            // 
-            resources.ApplyResources(this.buttonPreview, "buttonPreview");
-            this.buttonPreview.Name = "buttonPreview";
-            this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
             // 
             // Ribbon
             // 
@@ -121,7 +132,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupReporting;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBoxShowTemplatePane;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSaveTpl;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSaveAs;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

@@ -74,6 +74,67 @@ namespace WordAddIn.Properties {
             }
         }
         
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The document has not been published yet, it will be published as new document. ähnelt.
+        /// </summary>
+        internal static string MSG_DOC_NOT_PUBLISHED {
+            get {
+                return ResourceManager.GetString("MSG_DOC_NOT_PUBLISHED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Not published yet ähnelt.
+        /// </summary>
+        internal static string MSG_DOC_NOT_PUBLISHED_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_DOC_NOT_PUBLISHED_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Unable to access document. ähnelt.
+        /// </summary>
+        internal static string MSG_ERROR_NO_DOC {
+            get {
+                return ResourceManager.GetString("MSG_ERROR_NO_DOC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
+        /// </summary>
+        internal static string MSG_ERROR_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_ERROR_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The document has been saved successfully! ähnelt.
+        /// </summary>
+        internal static string MSG_SAVE_DOC_DONE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_DOC_DONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Saved document ähnelt.
+        /// </summary>
+        internal static string MSG_SAVE_DOC_DONE_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_DOC_DONE_TITLE", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap s_author_light_boolean {
             get {
                 object obj = ResourceManager.GetObject("s_author_light_boolean", resourceCulture);
