@@ -44,7 +44,10 @@ namespace WordAddIn
             }
             return null;
         }
-
+        public void setServerUrl(string url)
+        {
+            setStringProperty(serverUrlProperty, url);
+        }
         public string getServerUrl() 
         {
             return getStringProperty(serverUrlProperty);
