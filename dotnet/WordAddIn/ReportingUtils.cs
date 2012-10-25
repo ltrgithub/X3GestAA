@@ -250,7 +250,10 @@ namespace WordAddIn
                                     continue;
                                 if (lastCollection != null && !t1.collection.Equals(lastCollection))
                                 {
-                                    MessageBox.Show("Two different collections not allowed in one table!");
+                                    CommonUtils.ShowErrorMessage(
+                                        String.Format(global::WordAddIn.Properties.Resources.MSG_ONLY_ONE_COL_PER_TABLE,
+                                            lastCollection, t1.collection
+                                        ));
                                     c.Range.Select();
                                     return;
                                 }
