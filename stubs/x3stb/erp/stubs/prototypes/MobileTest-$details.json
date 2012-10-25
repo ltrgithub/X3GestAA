@@ -16,17 +16,17 @@
             "firstName": {
                 "$title": "First Name",
                 "$type": "application/x-string",
-                "$constraints": {
+                
                     "$maxLength": 30
-                },
+                ,
                 "$capabilities": "sort,filter,alphaTab"
             },
             "lastName": {
                 "$title": "Last Name",
                 "$type": "application/x-string",
-                "$constraints": {
+                
                     "$maxLength": 30
-                },
+                ,
                 "$isMandatory": true,
                 "$capabilities": "sort,filter,alphaTab",
                 "$links": {
@@ -41,7 +41,7 @@
                 "$type": "application/x-choice",
                 "$value": {
                     "$type": "application/x-integer",
-                    "$constraints": {
+                    
                         "$enum": [
                             {
                                 "$value": 1,
@@ -56,8 +56,7 @@
                                 "$title": "Madame"
                             }
                         ]
-                    }
-                },
+                    },
                 "$capabilities": "sort,filter"
             },
             "maritalStatus": {
@@ -65,7 +64,7 @@
                 "$type": "application/x-choice",
                 "$value": {
                     "$type": "application/x-integer",
-                    "$constraints": {
+                    
                         "$enum": [
                             {
                                 "$value": 0,
@@ -104,79 +103,67 @@
                                 "$title": "Non applicable"
                             }
                         ]
-                    }
-                },
+                    },
                 "$capabilities": "sort,filter"
             },
             "birthDate": {
                 "$title": "Birth Date",
                 "$type": "application/x-date",
-                "$constraints": {},
                 "$isMandatory": false,
                 "$capabilities": "sort,filter"
             },
             "testTime": {
                 "$title": "Test Time",
                 "$type": "application/x-time",
-                "$constraints": {},
                 "$isMandatory": false,
                 "$capabilities": "sort,filter"
             },
             "foreignerWorker": {
                 "$title": "Foreigner worker",
                 "$type": "application/x-boolean",
-                "$constraints": {},
                 "$capabilities": "sort,filter"
             },
             "email": {
                 "$title": "Email",
                 "$type": "application/x-string",
                 "$format": "$email",
-                "$constraints": {},
                 "$capabilities": "sort,filter,alphaTab"
             },
             "phoneNumber": {
                 "$title": "Phone Number",
                 "$type": "application/x-string",
                 "$format": "$phone",
-                "$constraints": {},
                 "$capabilities": "sort,filter,alphaTab"
             },
             "photo": {
                 "$title": "Photo",
                 "$type": "image",
                 "$url": "{$baseUrl}/{$pluralType}('{$key}')/photo",
-                "$constraints": {},
                 "$capabilities": "sort,filter"
             },
             "addressStreet": {
                 "$title": "Street",
                 "$type": "application/x-string",
-                "$constraints": {},
                 "$capabilities": "sort,filter,alphaTab"
             },
             "addressZipCode": {
                 "$title": "Zip code",
                 "$type": "application/x-string",
-                "$constraints": {},
                 "$capabilities": "sort,filter,alphaTab"
             },
             "addressCity": {
                 "$title": "City",
                 "$type": "application/x-string",
-                "$constraints": {},
                 "$capabilities": "sort,filter,alphaTab"
             },
             "testInteger": {
                 "$title": "Test Integer",
                 "$type": "application/x-integer",
-                "$constraints": {},
                 "$capabilities": "sort,filter"
             },
             "testDecimal": {
                 "$title": "Test Decimal",
                 "$type": "application/x-decimal",
-                "$constraints": {},
                 "$capabilities": "sort,filter"
             },
             "country": {
@@ -246,17 +233,17 @@
                         "firstName": {
                             "$title": "First Name",
                             "$type": "application/x-string",
-                            "$constraints": {
+                            
                                 "$maxLength": 30
-                            },
+                            ,
                             "$capabilities": "sort,filter,alphaTab"
                         },
                         "lastName": {
                             "$title": "Last Name",
                             "$type": "application/x-string",
-                            "$constraints": {
+                            
                                 "$maxLength": 30
-                            },
+                            ,
                             "$isMandatory": true,
                             "$capabilities": "sort,filter,alphaTab"
                         },
@@ -265,7 +252,7 @@
                             "$type": "application/x-choice",
                             "$value": {
                                 "$type": "application/x-integer",
-                                "$constraints": {
+                                
                                     "$enum": [
                                         {
                                             "$value": 1,
@@ -276,14 +263,12 @@
                                             "$title": "Femme"
                                         }
                                     ]
-                                }
-                            },
+                                },
                             "$capabilities": "sort,filter"
                         },
                         "birthDate": {
                             "$title": "Birth Date",
                             "$type": "application/x-date",
-                            "$constraints": {},
                             "$isMandatory": false,
                             "$capabilities": "sort,filter"
                         },

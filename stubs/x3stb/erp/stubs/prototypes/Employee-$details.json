@@ -17,9 +17,9 @@
         "firstName": {
             "$title": "First Name",
             "$type": "application/x-string",
-            "$constraints": {
+            
                 "$maxLength": 30
-            },
+            ,
             "$capabilities": "sort,filter",
 			"$links": {
 				"$lazyload" :{}
@@ -32,10 +32,9 @@
             "$title": "Array string",
             "$item": {
                 "$type": "application/x-string",
-                "$constraints": {
+                
                     "$maxLength": 20
                 }
-            }
         },
         "arrayEmail": {
             "$type": "application/x-collection",
@@ -45,10 +44,9 @@
             "$item": {
                 "$type": "application/x-string",
                 "$format": "$email",
-                "$constraints": {
+                
                     "$maxLength": 20
                 }
-            }
         },
         "arrayChoice": {
             "$type": "application/x-collection",
@@ -59,7 +57,7 @@
                 "$type": "application/x-choice",
                 "$value": {
                     "$type": "application/x-integer",
-                    "$constraints": {
+                    
                         "$enum": [
                             {
                                 "$value": 1,
@@ -83,7 +81,6 @@
                             }
                         ]
                     }
-                }
             }
         },
         "arrayDate": {
@@ -93,10 +90,9 @@
             "$title": "Array Date",
             "$item": {
                 "$type": "application/x-date",
-                "$constraints": {
+                
                     "$maxLength": 20
                 }
-            }
         },
         "arrayBoolean": {
             "$type": "application/x-collection",
@@ -105,10 +101,9 @@
             "$title": "Array Boolean",
             "$item": {
                 "$type": "application/x-boolean",
-                "$constraints": {
+                
                     "$maxLength": 20
                 }
-            }
         },
         "arrayDecimal": {
             "$type": "application/x-collection",
@@ -117,17 +112,16 @@
             "$title": "Array Decimal",
             "$item": {
                 "$type": "application/x-decimal",
-                "$constraints": {
+                
                     "$maxLength": 20
                 }
-            }
         },
         "lastName": {
             "$title": "Last Name",
             "$type": "application/x-string",
-            "$constraints": {
+            
                 "$maxLength": 30
-            },
+            ,
             "$isMandatory": true,
             "$capabilities": "sort,filter",
             "$links": {
@@ -157,7 +151,7 @@
             "$type": "application/x-choice",
             "$value": {
                 "$type": "application/x-integer",
-                "$constraints": {
+                
                     "$enum": [
                         {
                             "$value": 1,
@@ -172,8 +166,7 @@
                             "$title": "Madame"
                         }
                     ]
-                }
-            },
+                },
             "$capabilities": "sort,filter"
         },
         "maritalStatus": {
@@ -181,7 +174,7 @@
             "$type": "application/x-choice",
             "$value": {
                 "$type": "application/x-integer",
-                "$constraints": {
+                
                     "$enum": [
                         {
                             "$value": 0,
@@ -220,60 +213,51 @@
                             "$title": "Non applicable"
                         }
                     ]
-                }
-            },
+                },
             "$capabilities": "sort,filter"
         },
         "birthDate": {
             "$title": "Birth Date",
             "$type": "application/x-date",
-            "$constraints": {},
             "$isMandatory": false,
             "$capabilities": "sort,filter"
         },
         "foreignerWorker": {
             "$title": "Foreigner worker",
             "$type": "application/x-boolean",
-            "$constraints": {},
             "$capabilities": "sort,filter"
         },
         "email": {
             "$title": "Email",
             "$type": "application/x-string",
             "$format": "$email",
-            "$constraints": {},
             "$capabilities": "sort,filter"
         },
         "phoneNumber": {
             "$title": "Phone Number",
             "$type": "application/x-string",
             "$format": "$phone",
-            "$constraints": {},
             "$capabilities": "sort,filter"
         },
         "photo": {
             "$title": "Photo",
             "$type": "image",
             "$url": "{$baseUrl}/$workingCopies('{$trackingId}')/photo",
-            "$constraints": {},
             "$capabilities": ""
         },
         "addressStreet": {
             "$title": "Street",
             "$type": "application/x-string",
-            "$constraints": {},
             "$capabilities": "sort,filter"
         },
         "addressZipCode": {
             "$title": "Zip code",
             "$type": "application/x-string",
-            "$constraints": {},
             "$capabilities": "sort,filter"
         },
         "addressCity": {
             "$title": "City",
             "$type": "application/x-string",
-            "$constraints": {},
             "$capabilities": "sort,filter"
         },
         "country": {
@@ -343,9 +327,9 @@
                     "firstName": {
                         "$title": "First Name",
                         "$type": "application/x-string",
-                        "$constraints": {
+                        
                             "$maxLength": 30
-                        },
+                        ,
                         "$capabilities": "sort,filter"
                     },
                     "gender": {
@@ -353,7 +337,7 @@
                         "$type": "application/x-choice",
                         "$value": {
                             "$type": "application/x-integer",
-                            "$constraints": {
+                            
                                 "$enum": [
                                     {
                                         "$value": 1,
@@ -364,14 +348,12 @@
                                         "$title": "Femme"
                                     }
                                 ]
-                            }
-                        },
+                            },
                         "$capabilities": "sort,filter"
                     },
                     "birthDate": {
                         "$title": "Birth Date",
                         "$type": "application/x-date",
-                        "$constraints": {},
                         "$isMandatory": false,
                         "$capabilities": "sort,filter"
                     },
@@ -441,7 +423,7 @@
         "$type": "application/x-choice",
         "$value": {
             "$type": "application/x-integer",
-            "$constraints": {
+            
                 "$enum": [
                     {
                         "$value": 1,
@@ -456,8 +438,7 @@
                         "$title": "Madame"
                     }
                 ]
-            }
-        },
+            },
         "$capabilities": "sort,filter"
     },
     "maritalStatus": {
@@ -465,7 +446,7 @@
         "$type": "application/x-choice",
         "$value": {
             "$type": "application/x-integer",
-            "$constraints": {
+            
                 "$enum": [
                     {
                         "$value": 0,
@@ -504,14 +485,12 @@
                         "$title": "Non applicable"
                     }
                 ]
-            }
-        },
+            },
         "$capabilities": "sort,filter"
     },
     "foreignerWorker": {
         "$title": "Foreigner worker",
         "$type": "application/x-boolean",
-        "$constraints": {},
         "$capabilities": "sort,filter"
     },
     "$links": {
@@ -617,15 +596,14 @@
                                 "code": {
                                     "$title": "Code",
                                     "$type": "application/x-string",
-                                    "$constraints": {},
                                     "$capabilities": "sort,alphaTab"
                                 },
                                 "title": {
                                     "$title": "Title",
                                     "$type": "application/x-string",
-                                    "$constraints": {
+                                    
                                         "$isUnique": true
-                                    },
+                                    ,
                                     "$isMandatory": true,
                                     "$capabilities": "sort,alphaTab",
                                     "$links": {
@@ -638,7 +616,6 @@
                                 "description": {
                                     "$title": "Description",
                                     "$type": "application/x-string",
-                                    "$constraints": {},
                                     "$capabilities": "sort,alphaTab"
                                 },
                                 "type": {
@@ -646,7 +623,7 @@
                                     "$type": "application/x-choice",
                                     "$value": {
                                         "$type": "application/x-string",
-                                        "$constraints": {
+                                        
                                             "$enum": [
                                                 {
                                                     "$value": "$menu",
@@ -657,8 +634,7 @@
                                                     "$title": "Page"
                                                 }
                                             ]
-                                        }
-                                    },
+                                        },
                                     "$capabilities": "sort,alphaTab"
                                 },
                                 "application": {
