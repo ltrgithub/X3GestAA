@@ -49,7 +49,7 @@
 						"$type": "application/x-choice",
 						"$value": {
 							"$type": "application/x-integer",
-							"$constraints": {
+							
 								"$enum": [{
 									"$value": 1,
 									"$title": "Tronc commun"
@@ -112,14 +112,13 @@
 									"$title": "#"
 								}]
 							}
-						}
 					},
 					"CLENUM1": {
 						"$title": "Clé primaire de l'objet",
 						"$type": "application/x-string",
-						"$constraints": {
+						
 							"$maxLength": 15
-						},
+						,
 						"$capabilities": "sort,filter",
 						"$isHidden": false,
 						"$isParameter": true
@@ -139,10 +138,9 @@
 							"USR": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
-								"$constraints": {
+								
 									"$maxLength": 5
 								}
-							}
 						}
 					},
 					"CPY": {
@@ -160,10 +158,9 @@
 							"CPY": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
-								"$constraints": {
+								
 									"$maxLength": 5
 								}
-							}
 						}
 					},
 					"CUR": {
@@ -181,10 +178,9 @@
 							"CUR": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
-								"$constraints": {
+								
 									"$maxLength": 3
 								}
-							}
 						}
 					},
 					"amount1": {
