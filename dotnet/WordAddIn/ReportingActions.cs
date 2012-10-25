@@ -100,10 +100,11 @@ namespace WordAddIn
 
         public void CreateWordReportPreview()
         {
-            if (Globals.WordAddIn.Application.Documents.Count <= 0)
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
                 return;
-
-            Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            }
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData == null)
             {
@@ -115,18 +116,18 @@ namespace WordAddIn
                 return;
             }
 
-            if (!browserDialog.connectToServer(customData))
-                return;
-
-            String layout = customData.getLayoutData();
             doc.Range().Copy();
             doc = Globals.WordAddIn.Application.Documents.Add();
             doc.Range().Paste();
+            
+            SyracuseOfficeCustomData customDataPreview = SyracuseOfficeCustomData.getFromDocument(doc, true);
+            customDataPreview.setForceRefresh(false);
+            customDataPreview.setResourceUrl(customData.getResourceUrl());
+            customDataPreview.setServerUrl(customData.getServerUrl());
+            customDataPreview.writeDictionaryToDocument();
+            customDataPreview.setCreateMode(rpt_fill_tpl);
 
-            ReportingUtils.fillTemplate(doc, customData.getLayoutData(), browserDialog);
-
-            // Enable the correct buttons
-            Globals.WordAddIn.on_document_changed();
+            PopulateWordReportTemplate(doc, customDataPreview);
         }
     }
 }
