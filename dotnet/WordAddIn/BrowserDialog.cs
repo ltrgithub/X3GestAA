@@ -49,6 +49,7 @@ namespace WordAddIn
         
         private bool connectToServer(String serverUrl)
         {
+            this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
                 this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
@@ -67,7 +68,7 @@ namespace WordAddIn
         {
             try
             {
-                if (!connectToServer(scriptingObj.getSyracuseOfficeCustomData().getServerUrl()))
+                if (!connectToServer(scriptingObj.getSyracuseOfficeCustomData()))
                     return;
 
                 Uri uri = new Uri(serverUrl + urlPart);
@@ -89,7 +90,7 @@ namespace WordAddIn
                 byte[] bytes = (byte[]) ret;
                 return bytes;
             }
-            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);  };
+            catch (Exception) { };
             return null;
         }
     }
