@@ -18,6 +18,7 @@ namespace WordAddIn
         IMAGE,
         COLLECTION,
         GRAPH,
+        BINARY,
 
         // Only used for accessing icons in layout panel
         BOX,
@@ -49,6 +50,8 @@ namespace WordAddIn
                 return ReportingFieldTypes.COLLECTION;
             if ("application/x-graph".Equals(mimetype))
                 return ReportingFieldTypes.GRAPH;
+            if ("application/x-binary".Equals(mimetype))
+                return ReportingFieldTypes.BINARY;
 
             return ReportingFieldTypes.TEXT;
         }
@@ -77,6 +80,8 @@ namespace WordAddIn
                     return global::WordAddIn.Properties.Resources.s_author_light_collection;
                 case ReportingFieldTypes.GRAPH:
                     return global::WordAddIn.Properties.Resources.s_author_light_graph;
+                case ReportingFieldTypes.BINARY:
+                    return global::WordAddIn.Properties.Resources.s_author_light_string;
 
                     // Dummy icons
                 case ReportingFieldTypes.BOX:
@@ -147,6 +152,9 @@ namespace WordAddIn
                             value = true.ToString();
                         }
                         break;
+                    case ReportingFieldTypes.BINARY:    // Binary not supported
+                        value = "";
+                        break;
                     default:
                         break;
                 }
@@ -158,6 +166,8 @@ namespace WordAddIn
         }
         public static bool isSupportedType(ReportingFieldTypes type) {
             if (ReportingFieldTypes.GRAPH == type)
+                return false;
+            else if (ReportingFieldTypes.BINARY == type)
                 return false;
             return true;
         }
