@@ -65,7 +65,7 @@
             // buttonSave
             // 
             this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::WordAddIn.Properties.Resources.save;
+            this.buttonSave.Image = global::WordAddIn.Properties.Resources.sauvegarder;
             resources.ApplyResources(this.buttonSave, "buttonSave");
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.ShowImage = true;
@@ -74,6 +74,7 @@
             // buttonSaveAs
             // 
             this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonSaveAs.Image = global::WordAddIn.Properties.Resources.sauvegarder2;
             resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
             this.buttonSaveAs.Name = "buttonSaveAs";
             this.buttonSaveAs.ShowImage = true;
@@ -90,6 +91,7 @@
             // buttonRefreshReport
             // 
             this.buttonRefreshReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonRefreshReport.Image = global::WordAddIn.Properties.Resources.refresh;
             resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
             this.buttonRefreshReport.Name = "buttonRefreshReport";
             this.buttonRefreshReport.ShowImage = true;
@@ -98,6 +100,7 @@
             // buttonPreview
             // 
             this.buttonPreview.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonPreview.Image = global::WordAddIn.Properties.Resources.preview;
             resources.ApplyResources(this.buttonPreview, "buttonPreview");
             this.buttonPreview.Name = "buttonPreview";
             this.buttonPreview.ShowImage = true;

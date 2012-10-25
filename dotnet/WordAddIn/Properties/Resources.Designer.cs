@@ -111,6 +111,24 @@ namespace WordAddIn.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die A table can only contain one single collection! Currently the collections {0} and {1} are referenced by the table, please remove one collection. ähnelt.
+        /// </summary>
+        internal static string MSG_ONLY_ONE_COL_PER_TABLE {
+            get {
+                return ResourceManager.GetString("MSG_ONLY_ONE_COL_PER_TABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
+        /// </summary>
+        internal static string MSG_ONLY_ONE_COL_PER_TABLE_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_ONLY_ONE_COL_PER_TABLE_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The document has been saved successfully! ähnelt.
         /// </summary>
         internal static string MSG_SAVE_DOC_DONE {
@@ -125,6 +143,13 @@ namespace WordAddIn.Properties {
         internal static string MSG_SAVE_DOC_DONE_TITLE {
             get {
                 return ResourceManager.GetString("MSG_SAVE_DOC_DONE_TITLE", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap preview {
+            get {
+                object obj = ResourceManager.GetObject("preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -201,6 +226,20 @@ namespace WordAddIn.Properties {
         internal static System.Drawing.Bitmap s_author_light_vignette {
             get {
                 object obj = ResourceManager.GetObject("s_author_light_vignette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap sauvegarder {
+            get {
+                object obj = ResourceManager.GetObject("sauvegarder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap sauvegarder2 {
+            get {
+                object obj = ResourceManager.GetObject("sauvegarder2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
