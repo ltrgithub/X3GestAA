@@ -5,7 +5,7 @@ var x = {
     "$title": "activity Codes CMI!!",
     "$properties": {
         "bA": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$title": "Activity code",
             "$item": {
                 "$properties": {
@@ -29,7 +29,7 @@ var x = {
             }
         },
         "bB": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$title": "Last read",
             "$item": {
                 "$properties": {

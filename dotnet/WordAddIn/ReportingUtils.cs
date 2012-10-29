@@ -268,7 +268,7 @@ namespace WordAddIn
                                         continue;
                                     }
                                     Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t1.collection];
-                                    if ("application/x-collection".Equals(propData["$type"].ToString()))
+                                    if ("application/x-array".Equals(propData["$type"].ToString()))
                                     {
                                         if (propData.ContainsKey("$items"))
                                         {
