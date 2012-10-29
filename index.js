@@ -21,7 +21,7 @@ if(config.streamline) {
 }
 //
 require('coffee-script');
-
+process.chdir('..');
 var crypter = require('syracuse-lic/lib/encrypt').register();
 
 require("streamline").register(config.streamline);
