@@ -26,7 +26,7 @@
 			}
         },
         "arrayString": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$maxItems": 6,
             "$minItems": 1,
             "$title": "Array string",
@@ -37,7 +37,7 @@
                 }
         },
         "arrayEmail": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$maxItems": 4,
             "$minItems": 1,
             "$title": "Array Email",
@@ -49,7 +49,7 @@
                 }
         },
         "arrayChoice": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$maxItems": 3,
             "$minItems": 1,
             "$title": "Array Choice",
@@ -84,7 +84,7 @@
             }
         },
         "arrayDate": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$maxItems": 3,
             "$minItems": 1,
             "$title": "Array Date",
@@ -95,7 +95,7 @@
                 }
         },
         "arrayBoolean": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$maxItems": 3,
             "$minItems": 1,
             "$title": "Array Boolean",
@@ -106,7 +106,7 @@
                 }
         },
         "arrayDecimal": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$maxItems": 3,
             "$minItems": 1,
             "$title": "Array Decimal",
@@ -317,7 +317,7 @@
         "children": {
             "$title": "Children",
             "$capabilities": "sort,filter",
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$item": {
                 "$descriptor": "prototype sprint1.settings.sprint1.employee.$edit,$page",
                 "$type": "application/json",
@@ -584,7 +584,7 @@
                 "$actions": {
                     "$select": {
                         "$title": "Vignettes",
-                        "$type": "application/x-collection",
+                        "$type": "application/x-array",
                         "$url": "{$baseUrl}/employees?representation=employee.$select",
                         "$item": {
                             "$descriptor": "prototype pageData.$edit",
@@ -690,7 +690,7 @@
                                 "items": {
                                     "$title": "Items",
                                     "$capabilities": "sort",
-                                    "$type": "application/x-collection",
+                                    "$type": "application/x-array",
                                     "$item": {
                                         "$type": "application/x-reference",
                                         "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
@@ -743,7 +743,7 @@
                                 "categories": {
                                     "$title": "Categories",
                                     "$capabilities": "sort",
-                                    "$type": "application/x-collection",
+                                    "$type": "application/x-array",
                                     "$item": {
                                         "$type": "application/x-reference",
                                         "$url": "{$baseUrl}/{$pluralType}('{$key}')?representation={$representation}.$thumb",
