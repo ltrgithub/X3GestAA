@@ -46,7 +46,7 @@ namespace WordAddIn
                 return ReportingFieldTypes.DATE;
             if ("application/x-image".Equals(mimetype))
                 return ReportingFieldTypes.IMAGE;
-            if ("application/x-collection".Equals(mimetype))
+            if ("application/x-array".Equals(mimetype))
                 return ReportingFieldTypes.COLLECTION;
             if ("application/x-graph".Equals(mimetype))
                 return ReportingFieldTypes.GRAPH;

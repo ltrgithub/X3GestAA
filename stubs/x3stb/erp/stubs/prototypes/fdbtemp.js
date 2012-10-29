@@ -3,12 +3,12 @@ var x = {
     "$type": "application/json",
     "$url": "http://placeholder",
     "$title": "activity Codes CMI!!",
-    "$": {
+    "$properties": {
         "bA": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$title": "Activity code",
             "$item": {
-                "$": {
+                "$properties": {
                     "bA1": {
                         "$title": "Code",
                         "$type": "application/x-string"
@@ -29,10 +29,10 @@ var x = {
             }
         },
         "bB": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$title": "Last read",
             "$item": {
-                "$": {
+                "$properties": {
                     "bB1": {
                         "$title": "Code",
                         "$type": "application/x-string"
