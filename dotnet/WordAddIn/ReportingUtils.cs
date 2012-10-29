@@ -93,6 +93,9 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                if (!isSupportedType(item))
+                    continue;
+
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
@@ -111,6 +114,9 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                if (!isSupportedType(item))
+                    continue;
+
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
@@ -134,6 +140,9 @@ namespace WordAddIn
             foreach (KeyValuePair<String, object> i in items)
             {
                 Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                if (!isSupportedType(item))
+                    continue;
+
                 String hidden = item["$hidden"].ToString();
                 if (!"true".Equals(hidden))
                 {
@@ -175,6 +184,19 @@ namespace WordAddIn
             return null;
         }
 
+        public static bool isSupportedType(Dictionary<String, Object> item)
+        {
+            try
+            {
+                string type = item["$type"].ToString();
+                ReportingFieldTypes ft = ReportingFieldUtil.getType(type);
+                if (ReportingFieldUtil.isSupportedType(ft))
+                    return true;
+            }
+            catch (Exception) { }
+            return false;
+        }
+
         public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -190,7 +212,7 @@ namespace WordAddIn
                 TagInfo t = TagInfo.create(c);
                 if (t == null)
                     continue;
-                if (t.isSimple && entityData.ContainsKey(t.property))
+                if (t.isSimple)
                 {
                     if (!simpleCcs.Contains(c))
                         simpleCcs.Add(c);
@@ -200,7 +222,11 @@ namespace WordAddIn
             foreach (ContentControl c in simpleCcs)
             {
                 TagInfo t = TagInfo.create(c);
-                Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t.property];
+                Dictionary<String, object> propData = null;
+                if (entityData.ContainsKey(t.property))
+                {
+                    propData = (Dictionary<String, object>)entityData[t.property];
+                }
                 setContentControlValue(doc, c, propData, t, browserDialog);
             }
 
@@ -224,15 +250,25 @@ namespace WordAddIn
                                     continue;
                                 if (lastCollection != null && !t1.collection.Equals(lastCollection))
                                 {
-                                    MessageBox.Show("Two different collections not allowed in one table!");
+                                    CommonUtils.ShowErrorMessage(
+                                        String.Format(global::WordAddIn.Properties.Resources.MSG_ONLY_ONE_COL_PER_TABLE,
+                                            lastCollection, t1.collection
+                                        ));
+                                    c.Range.Select();
                                     return;
                                 }
                                 // only treat table as list if a . is found in the tag - otherwise the table is just a
-                                // flat representation of a single entity for layouting reasons
+                                // flat representation of a single entity's properties for layouting reasons
                                 if (lastCollection == null && !"".Equals(t1.collection))
                                 {
+                                    if (!entityData.ContainsKey(t1.collection))
+                                    {
+                                        // No data for this collection, but remember it anyway so that template lines will be deleted later
+                                        lastCollection = t1.collection;
+                                        continue;
+                                    }
                                     Dictionary<String, object> propData = (Dictionary<String, object>)entityData[t1.collection];
-                                    if ("application/x-collection".Equals(propData["$type"].ToString()))
+                                    if ("application/x-array".Equals(propData["$type"].ToString()))
                                     {
                                         if (propData.ContainsKey("$items"))
                                         {
@@ -454,7 +490,11 @@ namespace WordAddIn
             // Expand range to cover full content control
             r.Start--;
             r.End++;
-            doc.Hyperlinks.Add(r, link);
+            try
+            {
+                doc.Hyperlinks.Add(r, link);
+            }
+            catch (Exception) { };
         }
 
         private static void copyCellContent(Cell src, Cell dest)

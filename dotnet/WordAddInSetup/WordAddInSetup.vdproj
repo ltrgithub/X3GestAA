@@ -598,9 +598,52 @@
         }
         "LaunchCondition"
         {
+            "{836E08B8-0285-4809-BA42-01DB6754A45D}:_2FC69B8ADE3540BD852464BB7391C7D2"
+            {
+            "Name" = "8:Verify VSTO 2010 Runtime availability"
+            "Condition" = "8:VSTORUNTIMEREDIST>=\"10.0.30319\""
+            "Message" = "8:The Visual Studio 2010 Tools for Office Runtime is not installed. Please run Setup.exe."
+            "InstallUrl" = "8:"
+            }
+            "{836E08B8-0285-4809-BA42-01DB6754A45D}:_9BE219E428B745AB81D76506821E1516"
+            {
+            "Name" = "8:Verify Office 2010 Shared PIA availability"
+            "Condition" = "8:HASSHAREDPIA"
+            "Message" = "8:A required component for interacting with Word is not available. Please run setup.exe."
+            "InstallUrl" = "8:"
+            }
+            "{836E08B8-0285-4809-BA42-01DB6754A45D}:_AD863F75855C4ADAB3807FD65A92898D"
+            {
+            "Name" = "8:Verify VSTO 2010 Runtime"
+            "Condition" = "8:VSTORUNTIMEREDIST>=\"10.0.30319\" OR OFFICERUNTIME>=”10.0.21022”"
+            "Message" = "8:The Visual Studio 2010 Tools for Office Runtime is not installed. Please run Setup.exe"
+            "InstallUrl" = "8:"
+            }
         }
         "Locator"
         {
+            "{B8A5E33E-1082-4FE2-AC2E-1197791E9409}:_189A1E43676849289CC84D24F5658F26"
+            {
+            "Name" = "8:Search for Office 2010 Shared PIA"
+            "ComponentId" = "8:{64E2917E-AA13-4CA4-BFFE-EA6EDA3AFCB4}"
+            "Property" = "8:HASSHAREDPIA"
+            }
+            "{CF66B7F7-B7DA-4B08-A67A-233430638C9C}:_673FA0139CBD4A18ACF37287807B0129"
+            {
+            "Name" = "8:Search for Office 2010 VSTO Runtime"
+            "Root" = "2:1"
+            "RegKey" = "8:SOFTWARE\\Microsoft\\VSTO Runtime Setup\\v4"
+            "Value" = "8:Version"
+            "Property" = "8:OFFICERUNTIME"
+            }
+            "{CF66B7F7-B7DA-4B08-A67A-233430638C9C}:_9D363FC0F9F041998497DF463FEAD81A"
+            {
+            "Name" = "8:Search for VSTO 2010 Runtime"
+            "Root" = "2:1"
+            "RegKey" = "8:SOFTWARE\\Microsoft\\VSTO Runtime Setup\\v4R"
+            "Value" = "8:Version"
+            "Property" = "8:VSTORUNTIMEREDIST"
+            }
         }
         "MsiBootstrapper"
         {
@@ -612,7 +655,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Sage X3 for Word"
         "ProductCode" = "8:{1485FC0C-B084-4F3F-BDB3-ED20BBA437F0}"
-        "PackageCode" = "8:{AFAFA6BF-A36E-43C5-8C7B-7AED40F015EC}"
+        "PackageCode" = "8:{8698026C-89D9-4D7E-BE2C-C06400A36E4A}"
         "UpgradeCode" = "8:{EB935FC6-484C-45D4-8D36-243566294F8B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
