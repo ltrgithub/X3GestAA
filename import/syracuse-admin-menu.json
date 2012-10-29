@@ -344,6 +344,44 @@
 		"representation": "sessionInfo",
 		"facet": "$query"
 	},{
+		"$type": "menuItem",
+		"code": "S_AUTOMATES",
+		"title": {
+			"en-US": "Scheduler",
+			"fr-FR": "Automates"
+		},
+		"description": {
+			"en-US": "Scheduler",
+			"fr-FR": "Automates"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "automates",
+		"representation": "automate",
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
+		"code": "S_SERVERLOGS",
+		"title": {
+			"en-US": "Server logs",
+			"fr-FR": "Traces serveur"
+		},
+		"description": {
+			"en-US": "Server logs",
+			"fr-FR": "Traces serveur"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"entity": "serverLogs",
+		"representation": "serverLog",
+		"facet": "$query"
+	},{
 		"$type": "portlet",
 		"title": {
 			"en-US": "Syracuse administration",

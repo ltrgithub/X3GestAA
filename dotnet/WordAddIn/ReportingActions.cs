@@ -46,6 +46,7 @@ namespace WordAddIn
                     {
                         CreateWordReportTemplate(doc, customData);
                     }
+                    Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 }
                 else if (rpt_fill_tpl.Equals(mode))
                 {
@@ -53,6 +54,7 @@ namespace WordAddIn
                     {
                         PopulateWordReportTemplate(doc, customData);
                     }
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 }
                 else if (rpt_is_tpl.Equals(mode))
                 {
@@ -60,33 +62,49 @@ namespace WordAddIn
                     {
                         RefreshWordReportTemplate(doc, customData);
                     }
+                    Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 }
             }
         }
 
         public void CreateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
+            customData.setForceRefresh(false);
+            customData.writeDictionaryToDocument();
             browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         public void RefreshWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
-        {
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
-        }
-
-        public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
             browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
+        public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
+        {
+            // Remove document URL, this has to be done because a template opened from collab. space has already an url stored inside the
+            // document. But afzter the population of the template it is a new independent document!
+            customData.setDocumentUrl("");
+            customData.setDocumentTitle("");
+            customData.setForceRefresh(false);
+            customData.writeDictionaryToDocument();
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+        }
+
+        public void RefreshReport()
+        {
+            // TODO: Implement (Sprint 18?)
+            MessageBox.Show("TODO: Implement this feature!");
+        }
+
         public void CreateWordReportPreview()
         {
-            if (Globals.WordAddIn.Application.Documents.Count <= 0)
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
                 return;
-
-            Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            }
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData == null)
             {
@@ -98,15 +116,18 @@ namespace WordAddIn
                 return;
             }
 
-            if (!browserDialog.connectToServer(customData))
-                return;
-
-            String layout = customData.getLayoutData();
             doc.Range().Copy();
             doc = Globals.WordAddIn.Application.Documents.Add();
             doc.Range().Paste();
+            
+            SyracuseOfficeCustomData customDataPreview = SyracuseOfficeCustomData.getFromDocument(doc, true);
+            customDataPreview.setForceRefresh(false);
+            customDataPreview.setResourceUrl(customData.getResourceUrl());
+            customDataPreview.setServerUrl(customData.getServerUrl());
+            customDataPreview.writeDictionaryToDocument();
+            customDataPreview.setCreateMode(rpt_fill_tpl);
 
-            ReportingUtils.fillTemplate(doc, customData.getLayoutData(), browserDialog);
+            PopulateWordReportTemplate(doc, customDataPreview);
         }
     }
 }

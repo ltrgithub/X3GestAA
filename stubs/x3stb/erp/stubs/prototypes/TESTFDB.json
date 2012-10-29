@@ -3,9 +3,9 @@
     "$type": "application/json",
     "$url": "http://placeholder",
     "$title": "Activity Codes",
-    "$": {
+    "$properties": {
         "bA": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$title": "Liste syra mode row",
             "$capabilities": "sort,filter",
             "$isFieldPager": true,
@@ -22,7 +22,7 @@
                 }
             },
             "$item": {
-                "$": {
+                "$properties": {
                     "bA1": {
                         "$capabilities": "sort,filter",
                         "$title": "Code",
@@ -47,7 +47,7 @@
             }
         },
         "bB": {
-            "$type": "application/x-collection",
+            "$type": "application/x-array",
             "$title": "Liste syra mode multi",
             "$capabilities": "sort,filter",
             "$isFieldPager": true,
@@ -64,7 +64,7 @@
                 }
             },
             "$item": {
-                "$": {
+                "$properties": {
                     "bB1": {
                         "$capabilities": "sort,filter",
                         "$title": "Code",

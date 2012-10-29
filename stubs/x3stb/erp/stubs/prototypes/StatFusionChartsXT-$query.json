@@ -5,9 +5,9 @@
 	"$type": "application/json; vnd.sage=syracuse.presentation=x3.erp.superv/STAT('DOM')",
 	"$methods": "GET",
 	"codeStat": "DOM",
-	"$": {
+	"$properties": {
 		"$resources": {
-			"$type": "application/x-collection",
+			"$type": "application/x-array",
 			"$provType": "PORTALSTA",
 			"$criteria": {
 				"FACILITY": {
@@ -39,7 +39,7 @@
 				"$type": "application/json",
 				"$url": "{$baseUrl}/stats('DOM')?representation=$cube('DOM')&role={$role}",
 				"$title": "Statistiques fichier",
-				"$": {
+				"$properties": {
 					"dateStat": {
 						"$type": "application/x-date",
 						"$capabilities": "sort,filter"
@@ -49,7 +49,7 @@
 						"$type": "application/x-choice",
 						"$value": {
 							"$type": "application/x-integer",
-							"$constraints": {
+							
 								"$enum": [{
 									"$value": 1,
 									"$title": "Tronc commun"
@@ -112,14 +112,13 @@
 									"$title": "#"
 								}]
 							}
-						}
 					},
 					"CLENUM1": {
 						"$title": "Clé primaire de l'objet",
 						"$type": "application/x-string",
-						"$constraints": {
+						
 							"$maxLength": 15
-						},
+						,
 						"$capabilities": "sort,filter",
 						"$isHidden": false,
 						"$isParameter": true
@@ -135,14 +134,13 @@
 								"$url": "{$baseUrl}/AUTILIS('{$key}')?representation=AUTILIS.$details&role={$role}"
 							}
 						},
-						"$": {
+						"$properties": {
 							"USR": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
-								"$constraints": {
+								
 									"$maxLength": 5
 								}
-							}
 						}
 					},
 					"CPY": {
@@ -156,14 +154,13 @@
 								"$url": "{$baseUrl}/COMPANY('{$key}')?representation=COMPANY.$details&role={$role}"
 							}
 						},
-						"$": {
+						"$properties": {
 							"CPY": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
-								"$constraints": {
+								
 									"$maxLength": 5
 								}
-							}
 						}
 					},
 					"CUR": {
@@ -177,14 +174,13 @@
 								"$url": "{$baseUrl}/TABCUR('{$key}')?representation=TABCUR.$details&role={$role}"
 							}
 						},
-						"$": {
+						"$properties": {
 							"CUR": {
 								"$isMandatory": true,
 								"$type": "application/x-string",
-								"$constraints": {
+								
 									"$maxLength": 3
 								}
-							}
 						}
 					},
 					"amount1": {

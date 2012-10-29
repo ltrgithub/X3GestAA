@@ -49,6 +49,7 @@ namespace WordAddIn
         
         private bool connectToServer(String serverUrl)
         {
+            this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
                 this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
@@ -67,7 +68,7 @@ namespace WordAddIn
         {
             try
             {
-                if (!connectToServer(scriptingObj.getSyracuseOfficeCustomData().getServerUrl()))
+                if (!connectToServer(scriptingObj.getSyracuseOfficeCustomData()))
                     return;
 
                 Uri uri = new Uri(serverUrl + urlPart);
@@ -75,65 +76,12 @@ namespace WordAddIn
                 this.webBrowser.ObjectForScripting = scriptingObj;
                 this.webBrowser.Url = uri;
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message + "\n" + e.StackTrace);
-            }
+            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);          }
         }
-
-        /*
-        public void CreateMailMergeDocument(Document doc)
+        public string getServerUrl()
         {
-            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
-
-            this.Show();
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            if (customData == null)
-            {
-                // Create new custom data for document
-                customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
-                customData.setCreateMode("1"); // New empty doc, add all mail merge fields
-                uri = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dmailmergeds.%24dashboard&attachDatasource=true");
-            }
-
-            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
-            this.webBrowser.Url = uri;
+            return serverUrl;
         }
-
-        
-        public void SaveDocumentToX3(Word.Document doc)
-        {
-            Uri uri = new Uri(serverUrl +"/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard");
-
-            this.Show();
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            if (customData == null)
-            {
-                customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
-                customData.setCreateMode("3");
-                customData.setForceRefresh(false); 
-            }
-            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
-            this.webBrowser.Url = uri;
-        }
-
-        public void SaveTemplateToX3(Word.Document doc)
-        {
-            Uri uri = new Uri(serverUrl + "/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard");
-
-            this.Show();
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            if (customData == null)
-            {
-                customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
-                customData.setCreateMode("3");
-                customData.setForceRefresh(false);
-            }
-            this.webBrowser.ObjectForScripting = new WordAddInJSExternal(customData, this);
-            this.webBrowser.Url = uri;
-        }
-        */
-
         public byte[] readBinaryURLContent(String url)
         {
             try
@@ -142,7 +90,7 @@ namespace WordAddIn
                 byte[] bytes = (byte[]) ret;
                 return bytes;
             }
-            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);  };
+            catch (Exception) { };
             return null;
         }
     }
