@@ -167,6 +167,11 @@ namespace ExcelAddIn
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+        //
+        public void onSITablesLoaded()
+        {
+            // SI after load callback
+        }
     }
     public class JsConsole
     {
