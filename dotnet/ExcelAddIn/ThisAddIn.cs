@@ -199,5 +199,14 @@ namespace ExcelAddIn
         
         #endregion
 
+
+        internal void BrowseDocuments(string volumeCode)
+        {
+            var connectUrl = GetServerUrl();
+            if (connectUrl == "") return;
+            DocumentBrowser b = new DocumentBrowser();
+            b.SelectDocument(connectUrl, volumeCode);
+            b.ShowDialog();
+        }
     }
 }

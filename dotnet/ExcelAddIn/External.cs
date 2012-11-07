@@ -66,9 +66,13 @@ namespace ExcelAddIn
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
             return tableHelpers[name].UpdateTable(dataArray, startLine);
         }
-        public bool ResizeTable(String name, String simplePrototype, int linesCount)
+        public bool ResizeTable(String name, String simplePrototype, int linesCount, string cellAddress = "")
         {
-            SyracuseExcelTable table = new SyracuseExcelTable(name, (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype));
+            // resolve cell address
+            Range target = null;
+            if (cellAddress != "")
+                target = Globals.ThisAddIn.Application.Range[cellAddress];
+            SyracuseExcelTable table = new SyracuseExcelTable(name, (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype), target);
             if (tableHelpers.ContainsKey(name))
                 tableHelpers[name] = table;
             else

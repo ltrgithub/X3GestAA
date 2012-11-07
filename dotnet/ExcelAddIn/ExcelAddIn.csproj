@@ -204,6 +204,12 @@
     <Compile Include="ActionPanel.Designer.cs">
       <DependentUpon>ActionPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocumentBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentBrowser.Designer.cs">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnitTest_Tables.cs" />
     <Compile Include="DatasourceMngtForm.cs">
       <SubType>Form</SubType>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatasourceMngtForm.resx">
       <DependentUpon>DatasourceMngtForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.en.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
