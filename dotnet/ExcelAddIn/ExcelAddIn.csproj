@@ -142,7 +142,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>ExcelAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>ExcelAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>  
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -210,6 +210,16 @@
     <Compile Include="DocumentBrowser.Designer.cs">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.en.Designer.cs">
+      <DependentUpon>Resources.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.de.Designer.cs">
+      <DependentUpon>Resources.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="UnitTest_Tables.cs" />
     <Compile Include="DatasourceMngtForm.cs">
       <SubType>Form</SubType>
@@ -245,6 +255,16 @@
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.en.resx" />
+    <EmbeddedResource Include="Properties\Resources.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
