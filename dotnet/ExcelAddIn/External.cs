@@ -158,6 +158,14 @@ namespace ExcelAddIn
             if (onTablesLoadedHandler != null)
                 onTablesLoadedHandler(errorMessage);
         }
+        public delegate void SelectRecordCallback(string prototype, string dataset);
+        public SelectRecordCallback onSelectRecordHandler = null;
+        public void onselectRecord(string prototype, string dataset)
+        {
+            if (onSelectRecordHandler != null)
+                onSelectRecordHandler(prototype, dataset);
+        }
+        //
         public void ShowSettingsForm()
         {
             Globals.ThisAddIn.ShowSettingsForm();

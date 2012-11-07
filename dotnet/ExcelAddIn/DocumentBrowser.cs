@@ -27,11 +27,11 @@ namespace ExcelAddIn
                 if (!Globals.ThisAddIn.ActionPanel.connected)
                     Globals.ThisAddIn.ActionPanel.Connect("");
             };*/
-            /*((External)webBrowser.ObjectForScripting).onSelectHandler = delegate()
+            ((External)webBrowser.ObjectForScripting).onSelectRecordHandler = delegate(string prototype, string dataset)
             {
-                if (!Globals.ThisAddIn.ActionPanel.connected)
-                    Globals.ThisAddIn.ActionPanel.Connect("");
-            };*/
+                MessageBox.Show("Prototype: " + prototype + "; Dataset: " + dataset);
+                Close();
+            };
             webBrowser.Refresh();
         }
     }
