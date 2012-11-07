@@ -77,8 +77,33 @@ namespace WordAddIn
                     string type = "";
                     if (cellData.ContainsKey("$type"))
                         type = cellData["$type"] == null ? "" : cellData["$type"].ToString();
-                    String text = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
-                    dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InsertAfter(text);
+
+                    if (cellData.ContainsKey("$url"))
+                    {
+                        value = cellData["$url"] == null ? "" : cellData["$url"].ToString();
+                      
+                        byte[] image = browserDialog.readBinaryURLContent(value);
+
+                        if (image != null)
+                        {
+                            string imageFile = null;
+                            imageFile = Path.GetTempFileName();
+                            using (FileStream stream = new FileStream(imageFile, FileMode.Create))
+                            {
+                                using (BinaryWriter writer = new BinaryWriter(stream))
+                                {
+                                    writer.Write(image);
+                                    writer.Close();
+                                }
+                            }
+                            dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InlineShapes.AddPicture(imageFile, false);
+                        }
+                    }
+                    else
+                    {
+                        String text = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
+                        dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InsertAfter(text);
+                    }
                 }
             }
 
