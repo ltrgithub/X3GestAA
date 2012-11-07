@@ -69,8 +69,15 @@ namespace WordAddIn
                 int cols = singleRowData.Length;
                 for (int col = 0; col < cols; col++)
                 {
-                    Object cellData = singleRowData[col];
-                    String text = getStringValue(cellData);
+                    object o = singleRowData[col];
+                    Dictionary<String, Object> cellData = (Dictionary<String, Object>)o;
+                    string value = "";
+                    if (cellData.ContainsKey("value"))
+                        value = cellData["value"] == null ? "" : cellData["value"].ToString();
+                    string type = "";
+                    if (cellData.ContainsKey("$type"))
+                        type = cellData["$type"] == null ? "" : cellData["$type"].ToString();
+                    String text = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
                     dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InsertAfter(text);
                 }
             }
