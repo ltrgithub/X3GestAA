@@ -46,6 +46,10 @@ namespace ExcelAddIn
             }
             return null;
         }
+        public Worksheet GetReservedSheet(Boolean withCreate)
+        {
+            return _GetReservedSheet(withCreate);
+        }
         private Worksheet _GetReservedSheet(Boolean withCreate)
         {
             // get store worksheet
