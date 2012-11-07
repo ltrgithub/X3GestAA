@@ -146,8 +146,8 @@ namespace ExcelAddIn
             if (!SaveAsUI)
             {
                 if (((new SyracuseCustomData()).GetCustomDataByName("documentUrlAddress") != "") &&
-                    (MessageBox.Show(String.Format("The workbook is published on X3, it will be saved on X3. If You want to save a copy of it, please use \"Save as\" feature.\nDo You want to proceed with Save ?"),
-                    "Sage X3 for Office", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                    (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS),
+                    global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.Yes))
                 {
                     SaveDocumentToSyracuse();
                     Cancel = true;
