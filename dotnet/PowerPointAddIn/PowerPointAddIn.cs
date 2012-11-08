@@ -85,49 +85,75 @@ namespace PowerPointAddIn
             finally
             {
                 // Close command presentation
-                // args.pres.Close();
+                args.pres.Close();
             }
         }
 
         private void PowerPointAddIn_newSlide(object sender, NewSlideEventArgs args)
         {
             DocumentWindow selectedWindow = null;
+            Presentation selectedPresentation = null;
             List<DocumentWindow> windows = new List<DocumentWindow>();
             foreach (DocumentWindow w in Application.Windows)
             {
-                if (w != args.win)
+                if (w.HWND != args.win.HWND)
                 {
                     windows.Add(w);
                 }
             }
 
-            if (windows.Count == 1)
-            {
-                selectedWindow = windows[0];
-            }
-            else if (windows.Count > -1)
+            if (windows.Count >= 1)
             {
                 PresentationSelectionDialog sel = new PresentationSelectionDialog(windows);
                 DialogResult res = sel.ShowDialog();
                 if (res == DialogResult.OK)
                 {
                     selectedWindow = sel.selectedWindow;
+                    selectedPresentation = selectedWindow.Presentation;
                 }
             }
+            else
+            {
+                // No presentation open yet
+                selectedPresentation = Application.Presentations.Add();
+            }
 
+            if (selectedPresentation == null)
+            {
+                return;
+            }
+            if (selectedWindow == null)
+            {
+                foreach (DocumentWindow win in selectedPresentation.Windows)
+                {
+                    if (win.Active == MsoTriState.msoTrue)
+                    {
+                        selectedWindow = win;
+                        break;
+                    }
+                }
+            }
             if (selectedWindow == null)
             {
                 return;
             }
 
-            addChartTest();
+            addChartSlide(selectedPresentation, selectedWindow, args.customData);
         }
 
-        private void addChartTest()
+        private void addChartSlide(Presentation pres, DocumentWindow win, SyracusePptCustomData cd)
         {
             try
             {
-                Slide sl = Application.ActivePresentation.Slides[1];
+                int idx = 0;
+                try
+                {
+                    idx = win.View.Slide.SlideIndex;
+                }
+                catch (Exception) { };
+
+                Slide sl = pres.Slides.Add(idx + 1, PpSlideLayout.ppLayoutChart);
+
                 Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);//, 0, 0, 10, 10);
                 Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
 
@@ -148,13 +174,22 @@ namespace PowerPointAddIn
                     COMAddIn addin = addins.Item("Sage.Syracuse.ExcelAddIn");
                     if (addin != null && addin.Object != null)
                     {
+                        //MessageBox.Show(cd.getServerUrl());
+                        //MessageBox.Show(cd.getExcelData());
                         addin.Object.connectWorkbook(wb,
-                            "http://localhost:8124", 
-                            "{\"chart\":{\"$uuid\":\"chart\",\"dsName\":\"Sage.X3.DS.syracuse_msoTestEntities\",\"title\":\"Sage.X3.DS.syracuse_msoTestEntities\",\"application\":\"syracuse\",\"contract\":\"collaboration\",\"endpoint\":\"syracuse\",\"entity\":\"msoTestEntities\",\"representation\":\"msoTestEntity\",\"$url\":\"/sdata/syracuse/collaboration/syracuse/msoTestEntities?representation=msoTestEntity.$query&count=100\",\"fetchAll\":true, \"$mustRefresh\":true,\"fetchAll\":true}}"
-                            );
-
-                        c.Refresh();
+                            cd.getServerUrl(),
+                            cd.getExcelData());
+                        //c.Refresh();
                     }
+                    else
+                    {
+                        // happens every 2nd time when addin a chart and closing excel afterwards
+                        MessageBox.Show("no excel addin: " + (addin != null) + " utils: " + (addin.Object != null));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("no excel addin");
                 }
             }
             catch (Exception e)
