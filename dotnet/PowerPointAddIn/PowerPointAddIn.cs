@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Tools.Excel;
 using Microsoft.Office.Core;
 
 namespace PowerPointAddIn
@@ -84,7 +85,7 @@ namespace PowerPointAddIn
             finally
             {
                 // Close command presentation
-                args.pres.Close();
+                // args.pres.Close();
             }
         }
 
@@ -118,6 +119,8 @@ namespace PowerPointAddIn
             {
                 return;
             }
+
+            addChartTest();
         }
 
         private void addChartTest()
@@ -127,15 +130,31 @@ namespace PowerPointAddIn
                 Slide sl = Application.ActivePresentation.Slides[1];
                 Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);//, 0, 0, 10, 10);
                 Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
-                //c.ChartData.BreakLink();
+
                 c.ChartData.Activate();
                 Workbook wb = (Workbook)c.ChartData.Workbook;
                 Worksheet ws = (Worksheet)wb.Worksheets[1];
-                int row;
-                for (row = 1; row <= 12; row++)
+                try
                 {
-                    ws.Cells[row + 1, 1].Value = "" + row + "/2012";
-                    ws.Cells[row + 1, 2].Value = "" + ((new Random()).NextDouble() * 1000000);
+                    ws.ListObjects[1].Delete();
+                    ws.Cells.Clear();
+                    ws.Range["A1"].Select();
+                }
+                catch (Exception) { };
+
+                COMAddIns addins = wb.Application.COMAddIns;
+                if (addins != null)
+                {
+                    COMAddIn addin = addins.Item("Sage.Syracuse.ExcelAddIn");
+                    if (addin != null && addin.Object != null)
+                    {
+                        addin.Object.connectWorkbook(wb,
+                            "http://localhost:8124", 
+                            "{\"chart\":{\"$uuid\":\"chart\",\"dsName\":\"Sage.X3.DS.syracuse_msoTestEntities\",\"title\":\"Sage.X3.DS.syracuse_msoTestEntities\",\"application\":\"syracuse\",\"contract\":\"collaboration\",\"endpoint\":\"syracuse\",\"entity\":\"msoTestEntities\",\"representation\":\"msoTestEntity\",\"$url\":\"/sdata/syracuse/collaboration/syracuse/msoTestEntities?representation=msoTestEntity.$query&count=100\",\"fetchAll\":true, \"$mustRefresh\":true,\"fetchAll\":true}}"
+                            );
+
+                        c.Refresh();
+                    }
                 }
             }
             catch (Exception e)
