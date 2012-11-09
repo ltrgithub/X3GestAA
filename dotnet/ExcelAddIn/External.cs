@@ -66,9 +66,13 @@ namespace ExcelAddIn
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
             return tableHelpers[name].UpdateTable(dataArray, startLine);
         }
-        public bool ResizeTable(String name, String simplePrototype, int linesCount)
+        public bool ResizeTable(String name, String simplePrototype, int linesCount, string cellAddress = "")
         {
-            SyracuseExcelTable table = new SyracuseExcelTable(name, (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype));
+            // resolve cell address
+            Range target = null;
+            if (cellAddress != "")
+                target = Globals.ThisAddIn.Application.Range[cellAddress];
+            SyracuseExcelTable table = new SyracuseExcelTable(name, (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype), target);
             if (tableHelpers.ContainsKey(name))
                 tableHelpers[name] = table;
             else
@@ -154,6 +158,14 @@ namespace ExcelAddIn
             if (onTablesLoadedHandler != null)
                 onTablesLoadedHandler(errorMessage);
         }
+        public delegate void SelectRecordCallback(string prototype, string dataset);
+        public SelectRecordCallback onSelectRecordHandler = null;
+        public void onselectRecord(string prototype, string dataset)
+        {
+            if (onSelectRecordHandler != null)
+                onSelectRecordHandler(prototype, dataset);
+        }
+        //
         public void ShowSettingsForm()
         {
             Globals.ThisAddIn.ShowSettingsForm();
@@ -166,6 +178,11 @@ namespace ExcelAddIn
         public String GetAddinVersion()
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+        //
+        public void onSITablesLoaded()
+        {
+            // SI after load callback
         }
     }
     public class JsConsole

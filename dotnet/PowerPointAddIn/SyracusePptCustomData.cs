@@ -21,6 +21,7 @@ namespace PowerPointAddIn
         private const String createModeProperty     = "createMode";
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
+        private const String excelDataProperty      = "excelData";
 
         private Dictionary<String, object> dictionary;
         private Presentation pres;
@@ -89,6 +90,9 @@ namespace PowerPointAddIn
         public String getDocumentTitle()
         {
             return getStringProperty(documentTitleProperty, false);
+        }
+        public String getExcelData(Boolean required = true) {
+            return getStringProperty(excelDataProperty, required);
         }
         public void setBooleanValue(String name, Boolean status)
         {

@@ -69,9 +69,41 @@ namespace WordAddIn
                 int cols = singleRowData.Length;
                 for (int col = 0; col < cols; col++)
                 {
-                    Object cellData = singleRowData[col];
-                    String text = getStringValue(cellData);
-                    dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InsertAfter(text);
+                    object o = singleRowData[col];
+                    Dictionary<String, Object> cellData = (Dictionary<String, Object>)o;
+                    string value = "";
+                    if (cellData.ContainsKey("value"))
+                        value = cellData["value"] == null ? "" : cellData["value"].ToString();
+                    string type = "";
+                    if (cellData.ContainsKey("$type"))
+                        type = cellData["$type"] == null ? "" : cellData["$type"].ToString();
+
+                    if (cellData.ContainsKey("$url"))
+                    {
+                        value = cellData["$url"] == null ? "" : cellData["$url"].ToString();
+                      
+                        byte[] image = browserDialog.readBinaryURLContent(value);
+
+                        if (image != null)
+                        {
+                            string imageFile = null;
+                            imageFile = Path.GetTempFileName();
+                            using (FileStream stream = new FileStream(imageFile, FileMode.Create))
+                            {
+                                using (BinaryWriter writer = new BinaryWriter(stream))
+                                {
+                                    writer.Write(image);
+                                    writer.Close();
+                                }
+                            }
+                            dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InlineShapes.AddPicture(imageFile, false);
+                        }
+                    }
+                    else
+                    {
+                        String text = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
+                        dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InsertAfter(text);
+                    }
                 }
             }
 

@@ -32,18 +32,41 @@ namespace ExcelAddIn
     {
         ExcelTablePrototypeField[] _fields;
         String _name;
+        ListObject _listObject;
         Dictionary<string, Range> _columnRanges;
         ResourceManager _locRes = new ResourceManager("ExcelAddIn.Messages", typeof(ThisAddIn).Assembly);
 
-        public SyracuseExcelTable(String name, ExcelTablePrototypeField[] fields)
+        public SyracuseExcelTable(String name, ExcelTablePrototypeField[] fields, Range cell = null)
         {
             _name = name;
             _fields = fields;
+            _columnRanges = new Dictionary<string, Range>();
+            _listObject = FindListObject(name);
+            if (_listObject == null)
+            {
+                // initialize the list object to required cell or the active one
+                Range activeCell = cell;
+                if (activeCell == null)
+                    activeCell = Globals.ThisAddIn.Application.ActiveCell;
+                ListObject lo = activeCell.ListObject;
+                // check if same dataset
+                if ((lo != null) && (lo.Name != _name))
+                {
+                    if (MessageBox.Show(String.Format(_locRes.GetString("OverrideTableConfirm"), activeCell.Address, lo.Name), _locRes.GetString("AddinTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        ((Range)lo.Range.Item[1, 1]).Select();
+                        _deleteTable(lo, true);
+                        _listObject = _createListObject(activeCell, _fields, _columnRanges, 1);
+                    }
+                    // !! if user says "No", _listObject must remain null
+                } else
+                    _listObject = _createListObject(activeCell, _fields, _columnRanges, 1);
+            }
         }
 
-        private Dictionary<string, Range> _detectColumnRanges(String actualDatasource)
+        private Dictionary<string, Range> _detectColumnRanges(Range cell, String actualDatasource)
         {
-            Range activeCell = Globals.ThisAddIn.Application.ActiveCell;
+            Range activeCell = cell;
             Worksheet activeWorksheet = activeCell.Worksheet;
             // detect column ranges
             Dictionary<string, Range> actualColumnRanges = null;
@@ -92,14 +115,6 @@ namespace ExcelAddIn
                 return false;
             }
             return true;
-        }
-        private ListObject _findListObject(Worksheet ws, String datasource)
-        {
-            foreach (ListObject o in ws.ListObjects)
-            {
-                if (o.Name == datasource) return o;
-            }
-            return null;
         }
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
@@ -221,7 +236,7 @@ namespace ExcelAddIn
             }
             return resultListObject;
         }
-        private Boolean _updateListObject(Worksheet activeWorksheet, ListObject activeListObject, Dictionary<string, Range> actualColumnRanges, int rowCount)
+        private Boolean _updateListObject(Range cell, Worksheet activeWorksheet, ListObject activeListObject, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
             // ignoring header and total row
             int headerRowCount = activeListObject.ShowHeaders ? 1 : 0;
@@ -255,15 +270,31 @@ namespace ExcelAddIn
                     }
             }
             // data ranges
-            Dictionary<string, Range> oldColumnRanges = _detectColumnRanges(activeListObject.Name);
             // vertical resize ranges
             int dataBodyRow = activeListObject.DataBodyRange.Row;
-            foreach (KeyValuePair<string, Range> namedRange in oldColumnRanges)
+            Dictionary<string, Range> oldColumnRanges = _detectColumnRanges(cell, activeListObject.Name);
+            // vertical resize ranges
+            if (oldColumnRanges.Count != 0)
             {
-                // update map
-                actualColumnRanges.Add(namedRange.Key,
-                    activeWorksheet.Range[activeWorksheet.Cells[dataBodyRow, namedRange.Value.Column],
-                    activeWorksheet.Cells[dataBodyRow + rowCount - 1, namedRange.Value.Column]]);
+                actualColumnRanges.Clear();
+                foreach (KeyValuePair<string, Range> namedRange in oldColumnRanges)
+                {
+                    // update map
+                    actualColumnRanges.Add(namedRange.Key,
+                        activeWorksheet.Range[activeWorksheet.Cells[dataBodyRow, namedRange.Value.Column],
+                        activeWorksheet.Cells[dataBodyRow + rowCount - 1, namedRange.Value.Column]]);
+                }
+            }
+            else
+            {
+                List<String> keys = new List<String>(actualColumnRanges.Keys);
+                foreach (String k in keys)
+                {
+                    // update map
+                    actualColumnRanges[k] =
+                        activeWorksheet.Range[activeWorksheet.Cells[dataBodyRow, actualColumnRanges[k].Column],
+                        activeWorksheet.Cells[dataBodyRow + rowCount - 1, actualColumnRanges[k].Column]];
+                }
             }
             //
             return true;
@@ -298,22 +329,33 @@ namespace ExcelAddIn
             }
         }
 
+        public ListObject FindListObject(String datasource)
+        {
+            foreach (Worksheet s in Globals.ThisAddIn.Application.ActiveWorkbook.Sheets)
+                foreach (ListObject o in s.ListObjects)
+                {
+                    if (o.Name == datasource) return o;
+                }
+            return null;
+        }
         public bool ResizeTable(int linesCount)
         {
+            if (_listObject == null) return false;
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
             try
             {
                 //
-                Range activeCell = Globals.ThisAddIn.Application.ActiveCell;
+                Range activeCell = _listObject.Range[1, 1];
                 Worksheet activeWorksheet = activeCell.Worksheet;
                 //
-                _columnRanges = new Dictionary<string, Range>();
+                //_columnRanges = new Dictionary<string, Range>();
                 // detect actual listobjects
-                ListObject activeListObject = _findListObject(activeWorksheet, _name);
+/*                ListObject activeListObject = FindListObject(_name);
                 if (activeListObject != null)
                 {
                     ((Range)activeListObject.Range.Item[1, 1]).Select();
+                    activeCell = ((Range)activeListObject.Range.Item[1, 1]);
                 }
                 else
                 {
@@ -340,9 +382,12 @@ namespace ExcelAddIn
                 }
                 else
                 {
-                    if (!_updateListObject(activeWorksheet, activeListObject, _columnRanges, linesCount))
+                    if (!_updateListObject(activeCell, activeWorksheet, activeListObject, _columnRanges, linesCount))
                         return false;
                 }
+ */
+                if (!_updateListObject(activeCell, activeWorksheet, _listObject, _columnRanges, linesCount))
+                    return false;
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
                     // make named ranges
@@ -361,11 +406,13 @@ namespace ExcelAddIn
 
         public bool UpdateTable(object[] data, int startLine)
         {
+            if (_listObject == null) return false;
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
             try
             {
-                Range activeCell = Globals.ThisAddIn.Application.ActiveCell;
+                //Range activeCell = cell;
+                Range activeCell = _listObject.Range[1, 1];
                 Worksheet activeWorksheet = activeCell.Worksheet;
                 //
                 object[] resources = data;
@@ -418,7 +465,7 @@ namespace ExcelAddIn
         public bool DeleteTable(String datasourceName, Boolean updateDocumentDatasources = false)
         {
             Worksheet activeWs = (Worksheet)Globals.ThisAddIn.Application.ActiveSheet;
-            ListObject table = _findListObject(activeWs, datasourceName);
+            ListObject table = FindListObject(datasourceName);
             if (table != null)
                 _deleteTable(table, updateDocumentDatasources);
             return true;
