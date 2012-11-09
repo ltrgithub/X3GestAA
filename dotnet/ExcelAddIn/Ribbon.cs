@@ -59,5 +59,17 @@ namespace ExcelAddIn
         {
             Globals.ThisAddIn.SaveDocumentToSyracuse();
         }
+
+        private void button1_Click(object sender, RibbonControlEventArgs e)
+        {
+            // TEST BUTTON: to be deleted
+            Globals.ThisAddIn.BrowseDocuments("SI_TEMPLATES");
+        }
+
+        private void button2_Click(object sender, RibbonControlEventArgs e)
+        {
+            // TEST BUTTON: to be deleted
+            Globals.ThisAddIn.BrowseDocuments("SI_REPORTS");
+        }
     }
 }

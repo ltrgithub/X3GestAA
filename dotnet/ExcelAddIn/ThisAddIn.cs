@@ -12,6 +12,43 @@ namespace ExcelAddIn
 {
     public enum CellsInsertStyle { ShiftCells = 0, InsertRows = 1, DoNothing = 2 }
     public enum CellsDeleteStyle { ShiftCells = 0, DeleteRows = 1, DoNothing = 2 }
+
+    // Functions exposed to other Applications using COM
+    // These functions are called by the powerpoint addin at the moment.
+    // It would be possible to have the code in the ppt-addin, but having it here
+    // is is better since it's not out of sight when modifying the excel addin
+    public class ExposedAddInUtilities
+    {
+
+        public void connectWorkbook(Excel.Workbook wb, String serverUrl, String datasourcesJSON)
+        {
+            Excel.Workbook oldWb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            Excel.Worksheet oldWs = Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet;
+
+            wb.Activate();
+            Excel.Worksheet ws = wb.ActiveSheet;
+            (new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", serverUrl);
+            (new SyracuseCustomData()).StoreCustomDataByName("datasourcesAddress", datasourcesJSON);
+
+            ws.Activate();
+            Globals.ThisAddIn.AutoConnect();
+        }
+        public bool isWorkbookConnected(Workbook wb)
+        {
+            return ((new SyracuseCustomData()).GetReservedSheet(false) != null);
+        }
+        public void refreshWorkbook(Workbook wb)
+        {
+            Excel.Workbook oldWb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            wb.Activate();
+            Globals.ThisAddIn.RefreshAll();
+            if (oldWb != wb)
+            {
+                oldWb.Activate();
+            }
+        }
+    };
+
     public partial class ThisAddIn
     {
         public String x3CustomPropDsPrefix = "Sage.X3.DS";
@@ -20,6 +57,7 @@ namespace ExcelAddIn
         TableUpdateProgress progressForm = null;
         NativeWindow mainHandle = null;
         public bool Aborted = false;
+        private ExposedAddInUtilities utilities;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -185,6 +223,14 @@ namespace ExcelAddIn
             }
         }
 
+        protected override object RequestComAddInAutomationService()
+        {
+            if (utilities == null)
+                utilities = new ExposedAddInUtilities();
+
+            return utilities;
+        }
+
         #region VSTO generated code
 
         /// <summary>
@@ -199,5 +245,14 @@ namespace ExcelAddIn
         
         #endregion
 
+
+        internal void BrowseDocuments(string volumeCode)
+        {
+            var connectUrl = GetServerUrl();
+            if (connectUrl == "") return;
+            DocumentBrowser b = new DocumentBrowser();
+            b.SelectDocument(connectUrl, volumeCode);
+            b.ShowDialog();
+        }
     }
 }

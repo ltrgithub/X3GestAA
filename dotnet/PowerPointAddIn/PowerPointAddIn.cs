@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Tools.Excel;
 using Microsoft.Office.Core;
 
 namespace PowerPointAddIn
@@ -91,51 +92,104 @@ namespace PowerPointAddIn
         private void PowerPointAddIn_newSlide(object sender, NewSlideEventArgs args)
         {
             DocumentWindow selectedWindow = null;
+            Presentation selectedPresentation = null;
             List<DocumentWindow> windows = new List<DocumentWindow>();
             foreach (DocumentWindow w in Application.Windows)
             {
-                if (w != args.win)
+                if (w.HWND != args.win.HWND)
                 {
                     windows.Add(w);
                 }
             }
 
-            if (windows.Count == 1)
-            {
-                selectedWindow = windows[0];
-            }
-            else if (windows.Count > -1)
+            if (windows.Count >= 1)
             {
                 PresentationSelectionDialog sel = new PresentationSelectionDialog(windows);
                 DialogResult res = sel.ShowDialog();
                 if (res == DialogResult.OK)
                 {
                     selectedWindow = sel.selectedWindow;
+                    selectedPresentation = selectedWindow.Presentation;
                 }
             }
+            else
+            {
+                // No presentation open yet
+                selectedPresentation = Application.Presentations.Add();
+            }
 
+            if (selectedPresentation == null)
+            {
+                return;
+            }
+            if (selectedWindow == null)
+            {
+                foreach (DocumentWindow win in selectedPresentation.Windows)
+                {
+                    if (win.Active == MsoTriState.msoTrue)
+                    {
+                        selectedWindow = win;
+                        break;
+                    }
+                }
+            }
             if (selectedWindow == null)
             {
                 return;
             }
+
+            addChartSlide(selectedPresentation, selectedWindow, args.customData);
         }
 
-        private void addChartTest()
+        private void addChartSlide(Presentation pres, DocumentWindow win, SyracusePptCustomData cd)
         {
             try
             {
-                Slide sl = Application.ActivePresentation.Slides[1];
+                int idx = 0;
+                try
+                {
+                    idx = win.View.Slide.SlideIndex;
+                }
+                catch (Exception) { };
+
+                Slide sl = pres.Slides.Add(idx + 1, PpSlideLayout.ppLayoutChart);
+
                 Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);//, 0, 0, 10, 10);
                 Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
-                //c.ChartData.BreakLink();
+
                 c.ChartData.Activate();
                 Workbook wb = (Workbook)c.ChartData.Workbook;
                 Worksheet ws = (Worksheet)wb.Worksheets[1];
-                int row;
-                for (row = 1; row <= 12; row++)
+                try
                 {
-                    ws.Cells[row + 1, 1].Value = "" + row + "/2012";
-                    ws.Cells[row + 1, 2].Value = "" + ((new Random()).NextDouble() * 1000000);
+                    ws.ListObjects[1].Delete();
+                    ws.Cells.Clear();
+                    ws.Range["A1"].Select();
+                }
+                catch (Exception) { };
+
+                COMAddIns addins = wb.Application.COMAddIns;
+                if (addins != null)
+                {
+                    COMAddIn addin = addins.Item("Sage.Syracuse.ExcelAddIn");
+                    if (addin != null && addin.Object != null)
+                    {
+                        //MessageBox.Show(cd.getServerUrl());
+                        //MessageBox.Show(cd.getExcelData());
+                        addin.Object.connectWorkbook(wb,
+                            cd.getServerUrl(),
+                            cd.getExcelData());
+                        //c.Refresh();
+                    }
+                    else
+                    {
+                        // happens every 2nd time when addin a chart and closing excel afterwards
+                        MessageBox.Show("no excel addin: " + (addin != null) + " utils: " + (addin.Object != null));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("no excel addin");
                 }
             }
             catch (Exception e)

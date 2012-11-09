@@ -28,53 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentationSelectionDialog));
             this.listWindows = new System.Windows.Forms.ListBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.radioButtonFirst = new System.Windows.Forms.RadioButton();
+            this.radioButtonAfterCurrent = new System.Windows.Forms.RadioButton();
+            this.radioLast = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listWindows
             // 
             this.listWindows.FormattingEnabled = true;
-            this.listWindows.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.listWindows, "listWindows");
             this.listWindows.Name = "listWindows";
-            this.listWindows.Size = new System.Drawing.Size(399, 134);
-            this.listWindows.TabIndex = 0;
             this.listWindows.SelectedIndexChanged += new System.EventHandler(this.listWindows_SelectedIndexChanged);
             this.listWindows.DoubleClick += new System.EventHandler(this.listWindows_DoubleClick);
             // 
             // buttonOk
             // 
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(135, 152);
+            resources.ApplyResources(this.buttonOk, "buttonOk");
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "Ok";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(216, 152);
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // radioButtonFirst
+            // 
+            resources.ApplyResources(this.radioButtonFirst, "radioButtonFirst");
+            this.radioButtonFirst.Name = "radioButtonFirst";
+            this.radioButtonFirst.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAfterCurrent
+            // 
+            resources.ApplyResources(this.radioButtonAfterCurrent, "radioButtonAfterCurrent");
+            this.radioButtonAfterCurrent.Checked = true;
+            this.radioButtonAfterCurrent.Name = "radioButtonAfterCurrent";
+            this.radioButtonAfterCurrent.TabStop = true;
+            this.radioButtonAfterCurrent.UseVisualStyleBackColor = true;
+            // 
+            // radioLast
+            // 
+            resources.ApplyResources(this.radioLast, "radioLast");
+            this.radioLast.Name = "radioLast";
+            this.radioLast.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listWindows);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioLast);
+            this.groupBox2.Controls.Add(this.radioButtonAfterCurrent);
+            this.groupBox2.Controls.Add(this.radioButtonFirst);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
             // PresentationSelectionDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 190);
-            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonOk);
-            this.Controls.Add(this.listWindows);
+            this.Controls.Add(this.buttonCancel);
             this.Name = "PresentationSelectionDialog";
-            this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -84,5 +122,10 @@
         private System.Windows.Forms.ListBox listWindows;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.RadioButton radioButtonFirst;
+        private System.Windows.Forms.RadioButton radioButtonAfterCurrent;
+        private System.Windows.Forms.RadioButton radioLast;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
