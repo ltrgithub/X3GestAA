@@ -56,7 +56,7 @@ namespace ExcelAddIn
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            Connect("");
+            _connect("");
         }
 
         public void Connect(string connectUrl)

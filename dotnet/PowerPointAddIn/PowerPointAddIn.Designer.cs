@@ -15,7 +15,7 @@ namespace PowerPointAddIn {
     /// 
     [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(0)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class PowerPointAddIn : Microsoft.Office.Tools.AddIn, Microsoft.VisualStudio.Tools.Office.IOfficeEntryPoint {
+    public sealed partial class PowerPointAddIn : Microsoft.Office.Tools.AddInBase {
         
         internal Microsoft.Office.Tools.CustomTaskPaneCollection CustomTaskPanes;
         
@@ -28,8 +28,9 @@ namespace PowerPointAddIn {
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public PowerPointAddIn() : 
-                base("AddIn", "ThisAddIn") {
+        public PowerPointAddIn(global::Microsoft.Office.Tools.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "AddIn", "ThisAddIn") {
+            Globals.Factory = factory;
         }
         
         /// 
@@ -95,7 +96,6 @@ namespace PowerPointAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private void StartCaching(string MemberName) {
             this.DataHost.StartCaching(this, MemberName);
@@ -103,7 +103,6 @@ namespace PowerPointAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private void StopCaching(string MemberName) {
             this.DataHost.StopCaching(this, MemberName);
@@ -111,7 +110,6 @@ namespace PowerPointAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private bool IsCached(string MemberName) {
             return this.DataHost.IsCached(this, MemberName);
@@ -140,7 +138,7 @@ namespace PowerPointAddIn {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.CustomTaskPanes = new Microsoft.Office.Tools.CustomTaskPaneCollection(this.ItemProvider, this.HostContext, "CustomTaskPanes", this, "CustomTaskPanes");
+            this.CustomTaskPanes = Globals.Factory.CreateCustomTaskPaneCollection(null, null, "CustomTaskPanes", "CustomTaskPanes", this);
         }
         
         /// 
@@ -152,7 +150,6 @@ namespace PowerPointAddIn {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         private bool NeedsFill(string MemberName) {
             return this.DataHost.NeedsFill(this, MemberName);
@@ -179,6 +176,8 @@ namespace PowerPointAddIn {
         
         private static PowerPointAddIn _PowerPointAddIn;
         
+        private static global::Microsoft.Office.Tools.Factory _factory;
+        
         private static ThisRibbonCollection _ThisRibbonCollection;
         
         internal static PowerPointAddIn PowerPointAddIn {
@@ -195,10 +194,24 @@ namespace PowerPointAddIn {
             }
         }
         
+        internal static global::Microsoft.Office.Tools.Factory Factory {
+            get {
+                return _factory;
+            }
+            set {
+                if ((_factory == null)) {
+                    _factory = value;
+                }
+                else {
+                    throw new System.NotSupportedException();
+                }
+            }
+        }
+        
         internal static ThisRibbonCollection Ribbons {
             get {
                 if ((_ThisRibbonCollection == null)) {
-                    _ThisRibbonCollection = new ThisRibbonCollection();
+                    _ThisRibbonCollection = new ThisRibbonCollection(_factory.GetRibbonFactory());
                 }
                 return _ThisRibbonCollection;
             }
@@ -208,6 +221,11 @@ namespace PowerPointAddIn {
     /// 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "10.0.0.0")]
-    internal sealed partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection {
+    internal sealed partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonCollectionBase {
+        
+        /// 
+        internal ThisRibbonCollection(global::Microsoft.Office.Tools.Ribbon.RibbonFactory factory) : 
+                base(factory) {
+        }
     }
 }
