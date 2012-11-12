@@ -22,7 +22,7 @@ if(config.streamline) {
 //
 require('coffee-script');
 
-var crypter = require('syracuse-lic/lib/encrypt').register(require);
+require('syracuse-license').register();
 
 require("streamline").register(config.streamline);
 
