@@ -6,11 +6,12 @@ using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace PowerPointAddIn
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class SyracusePptCustomData
+    public class PptCustomXlsData
     {
         private const String sageERPX3JsonTagName   = "SyracusePptCustomData";
         private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;
@@ -18,26 +19,22 @@ namespace PowerPointAddIn
         private const String serverUrlProperty      = "serverUrl";
         private const String resourceUrlProperty    = "resourceUrl";
         private const String forceRefreshProperty   = "forceRefresh";
-        private const String createModeProperty     = "createMode";
-        private const String documentUrlProperty    = "documentUrl";
-        private const String documentTitleProperty  = "documentTitle";
-        private const String excelDataProperty      = "excelData";
 
         private Dictionary<String, object> dictionary;
-        private Presentation pres;
+        private Workbook wb;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
-        public static SyracusePptCustomData getFromDocument(Presentation pres, Boolean create = false)
+        public static PptCustomXlsData getFromDocument(Workbook wb, Boolean create = false)
         {
-            Dictionary<String, object> dict = getDictionaryFromCustomXMLPart(pres);
+            Dictionary<String, object> dict = getDictionaryFromCustomXMLPart(wb);
             if (dict != null)
             {
-                return new SyracusePptCustomData(dict, pres);
+                return new PptCustomXlsData(dict, wb);
             }
             if (create)
             {
                 dict = new Dictionary<String, object>();
-                SyracusePptCustomData cd = new SyracusePptCustomData(dict, pres);
+                PptCustomXlsData cd = new PptCustomXlsData(dict, wb);
                 cd.writeDictionaryToDocument();
                 return cd;
             }
@@ -66,33 +63,6 @@ namespace PowerPointAddIn
         public Boolean isForceRefresh()
         {
             return getBooleanProperty(forceRefreshProperty, false);
-        }
-        public void setCreateMode(String value)
-        {
-            setStringProperty(createModeProperty, value);
-        }
-        public String getCreateMode()
-        {
-            return getStringProperty(createModeProperty, false);
-        }
-        public void setDocumentUrl(String url)
-        {
-            setStringProperty(documentUrlProperty, url);
-        }
-        public String getDocumentUrl()
-        {
-            return getStringProperty(documentUrlProperty, false);
-        }
-        public void setDocumentTitle(String title)
-        {
-            setStringProperty(documentTitleProperty, title);
-        }
-        public String getDocumentTitle()
-        {
-            return getStringProperty(documentTitleProperty, false);
-        }
-        public String getExcelData(Boolean required = true) {
-            return getStringProperty(excelDataProperty, required);
         }
         public void setBooleanValue(String name, Boolean status)
         {
@@ -153,15 +123,15 @@ namespace PowerPointAddIn
             this.dictionary = d;
         }
 
-        public Presentation getPresentation()
+        public Workbook getWorkbook()
         {
-            return pres;
+            return wb;
         }
 
-        private SyracusePptCustomData(Dictionary<String, object> dictionary, Presentation pres)
+        private PptCustomXlsData(Dictionary<String, object> dictionary, Workbook wb)
         {
             this.dictionary = dictionary;
-            this.pres = pres;
+            this.wb = wb;
         }
 
         public void writeDictionaryToDocument()
@@ -169,7 +139,7 @@ namespace PowerPointAddIn
             JavaScriptSerializer ser = new JavaScriptSerializer();
             String json = ser.Serialize(dictionary);
 
-            foreach (CustomXMLPart part in pres.CustomXMLParts)
+            foreach (CustomXMLPart part in wb.CustomXMLParts)
             {
 
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
@@ -180,13 +150,13 @@ namespace PowerPointAddIn
                 }
             }
             string xml = "<" + sageERPX3JsonTagName + ">" + json + "</" + sageERPX3JsonTagName + ">";
-            pres.CustomXMLParts.Add(xml);
+            wb.CustomXMLParts.Add(xml);
         }
 
         //Used by word
-        private static Dictionary<String, object> getDictionaryFromCustomXMLPart(Presentation pres)
+        private static Dictionary<String, object> getDictionaryFromCustomXMLPart(Workbook wb)
         {
-            return getDictionaryFromCustomXMLParts(pres.CustomXMLParts);
+            return getDictionaryFromCustomXMLParts(wb.CustomXMLParts);
         }
 
         private static Dictionary<String, object> getDictionaryFromCustomXMLParts(CustomXMLParts parts)
