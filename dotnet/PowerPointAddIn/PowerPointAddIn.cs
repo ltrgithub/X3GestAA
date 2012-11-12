@@ -61,6 +61,15 @@ namespace PowerPointAddIn
                     PptCustomData cd = PptCustomData.getFromDocument(pres);
                     if (cd != null)
                     {
+                        string docUrl = cd.getDocumentUrl();
+                        if (docUrl != null && !"".Equals(docUrl))
+                        {
+                            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                        }
+                        else
+                        {
+                            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                        }
                         if (pptx_action_new_chart_slide.Equals(cd.getActionType()))
                         {
                             if (cd.isForceRefresh())
@@ -72,6 +81,10 @@ namespace PowerPointAddIn
                                 newSlide.BeginInvoke(this, new NewSlideEventArgs(pres, cd, Wn), null, null);
                             }
                         }
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
                     }
                 }
                 catch (Exception e)
