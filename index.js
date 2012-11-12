@@ -22,9 +22,7 @@ if(config.streamline) {
 //
 require('coffee-script');
 
-console.log(1)
-require('syracuse-patch/lib/license.node').register(require);
-console.log(2)
+require('syracuse-license').register();
 
 require("streamline").register(config.streamline);
 
