@@ -341,6 +341,7 @@ namespace ExcelAddIn
         public bool ResizeTable(int linesCount)
         {
             if (_listObject == null) return false;
+            if (linesCount == 0) linesCount = 1;
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
             try

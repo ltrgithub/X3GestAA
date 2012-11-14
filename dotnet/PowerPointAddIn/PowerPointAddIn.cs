@@ -5,8 +5,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.PowerPoint;
-using Microsoft.Office.Interop.Excel;
-//using Microsoft.Office.Tools.Excel;
 using Microsoft.Office.Core;
 
 namespace PowerPointAddIn
@@ -14,10 +12,10 @@ namespace PowerPointAddIn
     public class NewSlideEventArgs
     {
         public Presentation pres;
-        public SyracusePptCustomData customData;
+        public PptCustomData customData;
         public DocumentWindow win;
 
-        public NewSlideEventArgs(Presentation pres, SyracusePptCustomData customData, DocumentWindow win)
+        public NewSlideEventArgs(Presentation pres, PptCustomData customData, DocumentWindow win)
         {
             this.pres = pres;
             this.customData = customData;
@@ -27,14 +25,21 @@ namespace PowerPointAddIn
 
     public partial class PowerPointAddIn
     {
-        public const string pptx_action_new_slide = "new_slide";
+        public const string pptx_action_new_chart_slide = "new_chart_slide";
 
         public delegate void NewSlideEvent(object sender, NewSlideEventArgs e);
-
         private event NewSlideEvent newSlide;
+
+        public PptActions pptActions;
+        public BrowserDialog browserDialog;
+        public CommonUtils common;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            browserDialog = new BrowserDialog();
+            common = new CommonUtils(browserDialog);
+            pptActions = new PptActions(browserDialog);
+
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             newSlide += new NewSlideEvent(PowerPointAddIn_newSlideEvent);
         }
@@ -53,10 +58,19 @@ namespace PowerPointAddIn
                 try
                 {
                     Presentation pres = w.Presentation;
-                    SyracusePptCustomData cd = SyracusePptCustomData.getFromDocument(pres);
+                    PptCustomData cd = PptCustomData.getFromDocument(pres);
                     if (cd != null)
                     {
-                        if (pptx_action_new_slide.Equals(cd.getCreateMode()))
+                        string docUrl = cd.getDocumentUrl();
+                        if (docUrl != null && !"".Equals(docUrl))
+                        {
+                            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                        }
+                        else
+                        {
+                            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                        }
+                        if (pptx_action_new_chart_slide.Equals(cd.getActionType()))
                         {
                             if (cd.isForceRefresh())
                             {
@@ -67,6 +81,10 @@ namespace PowerPointAddIn
                                 newSlide.BeginInvoke(this, new NewSlideEventArgs(pres, cd, Wn), null, null);
                             }
                         }
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
                     }
                 }
                 catch (Exception e)
@@ -138,64 +156,7 @@ namespace PowerPointAddIn
                 return;
             }
 
-            addChartSlide(selectedPresentation, selectedWindow, args.customData);
-        }
-
-        private void addChartSlide(Presentation pres, DocumentWindow win, SyracusePptCustomData cd)
-        {
-            try
-            {
-                int idx = 0;
-                try
-                {
-                    idx = win.View.Slide.SlideIndex;
-                }
-                catch (Exception) { };
-
-                Slide sl = pres.Slides.Add(idx + 1, PpSlideLayout.ppLayoutChart);
-
-                Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);//, 0, 0, 10, 10);
-                Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
-
-                c.ChartData.Activate();
-                Workbook wb = (Workbook)c.ChartData.Workbook;
-                Worksheet ws = (Worksheet)wb.Worksheets[1];
-                try
-                {
-                    ws.ListObjects[1].Delete();
-                    ws.Cells.Clear();
-                    ws.Range["A1"].Select();
-                }
-                catch (Exception) { };
-
-                COMAddIns addins = wb.Application.COMAddIns;
-                if (addins != null)
-                {
-                    COMAddIn addin = addins.Item("Sage.Syracuse.ExcelAddIn");
-                    if (addin != null && addin.Object != null)
-                    {
-                        //MessageBox.Show(cd.getServerUrl());
-                        //MessageBox.Show(cd.getExcelData());
-                        addin.Object.connectWorkbook(wb,
-                            cd.getServerUrl(),
-                            cd.getExcelData());
-                        //c.Refresh();
-                    }
-                    else
-                    {
-                        // happens every 2nd time when addin a chart and closing excel afterwards
-                        MessageBox.Show("no excel addin: " + (addin != null) + " utils: " + (addin.Object != null));
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("no excel addin");
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message + ":" + e.StackTrace);
-            }
+            pptActions.addChartSlide(selectedPresentation, selectedWindow, args.customData);
         }
 
         #region Von VSTO generierter Code

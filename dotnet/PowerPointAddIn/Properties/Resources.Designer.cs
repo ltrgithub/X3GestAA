@@ -59,5 +59,94 @@ namespace PowerPointAddIn.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap connect {
+            get {
+                object obj = ResourceManager.GetObject("connect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The document has not been published yet, it will be published as new document. ähnelt.
+        /// </summary>
+        internal static string MSG_DOC_NOT_PUBLISHED {
+            get {
+                return ResourceManager.GetString("MSG_DOC_NOT_PUBLISHED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Not published yet ähnelt.
+        /// </summary>
+        internal static string MSG_DOC_NOT_PUBLISHED_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_DOC_NOT_PUBLISHED_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Unable to access presentation ähnelt.
+        /// </summary>
+        internal static string MSG_ERROR_NO_DOC {
+            get {
+                return ResourceManager.GetString("MSG_ERROR_NO_DOC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
+        /// </summary>
+        internal static string MSG_ERROR_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_ERROR_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The document has been saved successfully! ähnelt.
+        /// </summary>
+        internal static string MSG_SAVE_DOC_DONE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_DOC_DONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Saved document ähnelt.
+        /// </summary>
+        internal static string MSG_SAVE_DOC_DONE_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_DOC_DONE_TITLE", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap sauvegarder {
+            get {
+                object obj = ResourceManager.GetObject("sauvegarder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap sauvegarder2 {
+            get {
+                object obj = ResourceManager.GetObject("sauvegarder2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap save {
+            get {
+                object obj = ResourceManager.GetObject("save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap settings {
+            get {
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

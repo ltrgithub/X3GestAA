@@ -196,6 +196,15 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="BrowserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserDialog.Designer.cs">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtils.cs" />
+    <Compile Include="PptCustomXlsData.cs" />
+    <Compile Include="PptActions.cs" />
     <Compile Include="PresentationSelectionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,7 +214,23 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SyracusePptCustomData.cs" />
+    <Compile Include="Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon.Designer.cs">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PptCustomData.cs" />
+    <Compile Include="PptAddInJSExternal.cs" />
+    <Compile Include="ServerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerSettings.Designer.cs">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BrowserDialog.resx">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationSelectionDialog.resx">
       <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +244,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ribbon.en.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.fr.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.en.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.fr.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -238,6 +281,19 @@
       <DependentUpon>PowerPointAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sauvegarder.png" />
+    <Content Include="Resources\sauvegarder2.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
