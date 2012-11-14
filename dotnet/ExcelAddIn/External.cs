@@ -153,7 +153,7 @@ namespace ExcelAddIn
 //        public System.Action onTablesLoadedHandler = null;
         public delegate void TablesLoadedCallback(string errorMessage);
         public TablesLoadedCallback onTablesLoadedHandler = null;
-        public void onTablesLoaded(string errorMessage)
+        public void onTablesLoaded(string errorMessage = "")
         {
             if (onTablesLoadedHandler != null)
                 onTablesLoadedHandler(errorMessage);
@@ -178,11 +178,6 @@ namespace ExcelAddIn
         public String GetAddinVersion()
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        }
-        //
-        public void onSITablesLoaded()
-        {
-            // SI after load callback
         }
     }
     public class JsConsole
