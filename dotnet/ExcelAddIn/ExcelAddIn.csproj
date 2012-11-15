@@ -142,7 +142,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>ExcelAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>  
+    <AssemblyOriginatorKeyFile>ExcelAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -220,6 +220,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="SISettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SISettings.Designer.cs">
+      <DependentUpon>SISettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnitTest_Tables.cs" />
     <Compile Include="DatasourceMngtForm.cs">
       <SubType>Form</SubType>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServerSettings.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SISettings.resx">
+      <DependentUpon>SISettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableUpdateProgress.fr.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
