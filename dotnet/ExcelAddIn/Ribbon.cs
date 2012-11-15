@@ -71,5 +71,10 @@ namespace ExcelAddIn
             // TEST BUTTON: to be deleted
             Globals.ThisAddIn.BrowseDocuments("SI_REPORTS");
         }
+
+        private void button3_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.SISettings();
+        }
     }
 }

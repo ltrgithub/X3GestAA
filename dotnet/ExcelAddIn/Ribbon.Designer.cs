@@ -60,6 +60,7 @@ namespace ExcelAddIn
             this.group4 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
+            this.button3 = this.Factory.CreateRibbonButton();
             this.syracuseTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -183,6 +184,7 @@ namespace ExcelAddIn
             // 
             this.group4.Items.Add(this.button1);
             this.group4.Items.Add(this.button2);
+            this.group4.Items.Add(this.button3);
             resources.ApplyResources(this.group4, "group4");
             this.group4.Name = "group4";
             // 
@@ -197,6 +199,12 @@ namespace ExcelAddIn
             resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
             // 
             // Ribbon
             // 
@@ -237,6 +245,7 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group4;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button3;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection
