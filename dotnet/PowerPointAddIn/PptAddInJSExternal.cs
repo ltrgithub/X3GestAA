@@ -5,6 +5,7 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.PowerPoint;
+using Microsoft.Office.Interop.Excel;
 
 namespace PowerPointAddIn
 {
@@ -40,11 +41,7 @@ namespace PowerPointAddIn
         }
         public void addDataToWorksheet(String data)
         {
-            Globals.PowerPointAddIn.pptActions.addDataToWorksheet(getPptCustomData().getPresentation(), getPptCustomXlsData().getWorkbook().Sheets[1], data);
-        }
-        public void addDataToWorksheetFinished(String data)
-        {
-            Globals.PowerPointAddIn.pptActions.addDataToWorksheetFinished();
+            Globals.PowerPointAddIn.pptActions.addDataToWorksheet(getPptCustomData().getPresentation(), getPptCustomXlsData(), data);
         }
         public void NotifySaveDocumentDone()
         {
