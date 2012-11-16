@@ -1,5 +1,5 @@
 # Welcome to the Syracuse Project
 
-This is the main repository for the Syracuse project's source code and documentation.
+This is the main repository for the Syracuse project's source code.
 
-Click on the [Wiki](https://github.com/Sage-ERP-X3/Syracuse/wiki) link to get started.
+The wiki is on a separate [plaform repository](https://github.com/Sage-ERP-X3/platform/wiki).
