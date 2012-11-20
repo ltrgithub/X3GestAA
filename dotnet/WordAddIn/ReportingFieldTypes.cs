@@ -61,35 +61,35 @@ namespace WordAddIn
             switch (type)
             {
                 case ReportingFieldTypes.TEXT:
-                    return global::WordAddIn.Properties.Resources.s_author_light_string;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_string;
                 case ReportingFieldTypes.DECIMAL:
-                    return global::WordAddIn.Properties.Resources.s_author_light_decimale;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_decimale;
                 case ReportingFieldTypes.INTEGER:
-                    return global::WordAddIn.Properties.Resources.s_author_light_decimale;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_decimale;
                 case ReportingFieldTypes.DATETIME:
-                    return global::WordAddIn.Properties.Resources.s_author_light_datetime;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_datetime;
                 case ReportingFieldTypes.DATE:
-                    return global::WordAddIn.Properties.Resources.s_author_light_date;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_date;
                 case ReportingFieldTypes.BOOL:
-                    return global::WordAddIn.Properties.Resources.s_author_light_boolean;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_boolean;
                 case ReportingFieldTypes.CHOICE:
-                    return global::WordAddIn.Properties.Resources.s_author_light_choice;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_choice;
                 case ReportingFieldTypes.IMAGE:
-                    return global::WordAddIn.Properties.Resources.s_author_light_image;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_image;
                 case ReportingFieldTypes.COLLECTION:
-                    return global::WordAddIn.Properties.Resources.s_author_light_collection;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_collection;
                 case ReportingFieldTypes.GRAPH:
-                    return global::WordAddIn.Properties.Resources.s_author_light_graph;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_graph;
                 case ReportingFieldTypes.BINARY:
-                    return global::WordAddIn.Properties.Resources.s_author_light_string;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_string;
 
                     // Dummy icons
                 case ReportingFieldTypes.BOX:
-                    return global::WordAddIn.Properties.Resources.s_author_light_vignette;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_vignette;
                 case ReportingFieldTypes.TABLE:
-                    return global::WordAddIn.Properties.Resources.s_author_light_collection;
+                    return global::WordAddIn.Properties.Resources.s_aw_light_collection;
             }
-            return global::WordAddIn.Properties.Resources.s_author_light_string;
+            return global::WordAddIn.Properties.Resources.s_aw_light_string;
         }
 
         public static System.Windows.Forms.ImageList getTypeImageList()
