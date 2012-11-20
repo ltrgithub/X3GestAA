@@ -67,7 +67,8 @@ namespace ExcelAddIn
                 Worksheet oldActive = (Worksheet)Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet;
                 x3StoreSheet = (Worksheet)Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets.Add(Type.Missing, Type.Missing, 1, XlSheetType.xlWorksheet);
                 x3StoreSheet.Name = storeWorksheetName;
-//                x3StoreSheet.Visible = XlSheetVisibility.xlSheetVeryHidden;
+                //x3StoreSheet.Visible = XlSheetVisibility.xlSheetVeryHidden;
+                x3StoreSheet.Visible = XlSheetVisibility.xlSheetHidden;
                 // reactivate
                 oldActive.Activate();
             }
