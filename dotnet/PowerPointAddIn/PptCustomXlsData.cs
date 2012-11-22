@@ -23,7 +23,7 @@ namespace PowerPointAddIn
         private Dictionary<String, object> dictionary;
         private Workbook wb;
         private Microsoft.Office.Interop.PowerPoint.Chart chart;
-        private int[] dataToDisplayMapping;
+        private TableInfo tableInfo;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
         public static PptCustomXlsData getFromDocument(Workbook wb, Boolean create = false)
@@ -137,13 +137,13 @@ namespace PowerPointAddIn
         {
             this.chart = chart;
         }
-        public int[] getColumnMapping()
+        public TableInfo getTableInfo()
         {
-            return dataToDisplayMapping;
+            return tableInfo;
         }
-        public void setColumnMapping(int[] mapping)
+        public void setTableInfo(TableInfo ti)
         {
-            dataToDisplayMapping = mapping;
+            tableInfo = ti;
         }
         private PptCustomXlsData(Dictionary<String, object> dictionary, Workbook wb)
         {

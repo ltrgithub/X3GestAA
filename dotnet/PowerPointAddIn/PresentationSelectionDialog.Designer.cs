@@ -34,7 +34,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.radioButtonFirst = new System.Windows.Forms.RadioButton();
             this.radioButtonAfterCurrent = new System.Windows.Forms.RadioButton();
-            this.radioLast = new System.Windows.Forms.RadioButton();
+            this.radioButtonLast = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -79,11 +79,11 @@
             this.radioButtonAfterCurrent.TabStop = true;
             this.radioButtonAfterCurrent.UseVisualStyleBackColor = true;
             // 
-            // radioLast
+            // radioButtonLast
             // 
-            resources.ApplyResources(this.radioLast, "radioLast");
-            this.radioLast.Name = "radioLast";
-            this.radioLast.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.radioButtonLast, "radioButtonLast");
+            this.radioButtonLast.Name = "radioButtonLast";
+            this.radioButtonLast.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -94,7 +94,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioLast);
+            this.groupBox2.Controls.Add(this.radioButtonLast);
             this.groupBox2.Controls.Add(this.radioButtonAfterCurrent);
             this.groupBox2.Controls.Add(this.radioButtonFirst);
             resources.ApplyResources(this.groupBox2, "groupBox2");
@@ -124,7 +124,7 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.RadioButton radioButtonFirst;
         private System.Windows.Forms.RadioButton radioButtonAfterCurrent;
-        private System.Windows.Forms.RadioButton radioLast;
+        private System.Windows.Forms.RadioButton radioButtonLast;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
     }
