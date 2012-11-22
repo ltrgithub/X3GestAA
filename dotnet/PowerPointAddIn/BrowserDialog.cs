@@ -62,7 +62,7 @@ namespace PowerPointAddIn
             this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
-                //this.Visible = true;
+                this.TopLevel = true;
                 this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard");
                 this.serverUrl = serverUrl;
             }
@@ -85,6 +85,7 @@ namespace PowerPointAddIn
                 Uri uri = new Uri(serverUrl + urlPart);
                 this.Show();
                 this.webBrowser.ObjectForScripting = scriptingObj;
+                this.TopLevel = true;
                 this.webBrowser.Url = uri;
             }
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
