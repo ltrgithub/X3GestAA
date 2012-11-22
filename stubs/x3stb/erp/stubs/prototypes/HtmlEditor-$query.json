@@ -8,29 +8,24 @@
 		"plainText": {
 			"$title": "RTF test",
 			"$type": "application/x-string",
-			"$maxLength": 510,
-			"$isBindInputEvent": true
+			"$maxLength": 510
 		},
 		"rtf": {
 			"$title": "RTF test",
 			"$type": "text/rtf",
 			"$maxLength": 510,
-			"$capabilities": "raw",
-			"$isBindInputEvent": true
-		}
+			"$capabilities": "raw"		}
 	},
 	"$article": {
 		"$layout": {
 			"$items": [{
 				"$bind": "plainText",
 				"$isEditMode": true,
-				"$isBindInputEvent": true,
 				"$labelWidth": "auto",
 				"$rows": 5
 			}, {
 				"$bind": "rtf",
 				"$isEditMode": true,
-				"$isBindInputEvent": true,
 				"$labelWidth": "auto"
 			}]
 		}
