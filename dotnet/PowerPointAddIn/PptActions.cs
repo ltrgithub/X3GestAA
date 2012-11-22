@@ -64,7 +64,6 @@ namespace PowerPointAddIn
             }
             return -1;
         }
-
     }
    
     public class PptActions
@@ -77,18 +76,28 @@ namespace PowerPointAddIn
             this.browserDialog = browserDialog;
         }
 
-        public void addChartSlide(Presentation pres, DocumentWindow win, PptCustomData cd)
+        public void addChartSlide(Presentation pres, DocumentWindow win, PptCustomData cd, int newSlideIndex)
         {
             try
             {
                 int idx = 0;
-                try
+                if (newSlideIndex == -1)
                 {
-                    idx = win.View.Slide.SlideIndex;
+                    idx = 0;
                 }
-                catch (Exception) { };
+                else if (newSlideIndex == 1)
+                {
+                    try { idx = pres.Slides.Count; }
+                    catch (Exception) { };
+                }
+                else
+                {
+                    try { idx = win.View.Slide.SlideIndex; }
+                    catch (Exception) { };
+                }
 
                 Slide sl = pres.Slides.Add(idx + 1, PpSlideLayout.ppLayoutChart);
+                win.View.Slide = sl;
 
                 Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);
                 Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
@@ -275,7 +284,6 @@ namespace PowerPointAddIn
                                 break;
                         }
                         s.Name = title;
-                        s.HasDataLabels = true;
                     }
                 }
 
@@ -316,11 +324,17 @@ namespace PowerPointAddIn
                 {
                     chart.ChartType = Microsoft.Office.Core.XlChartType.xlPie;
                     chart.HasLegend = true;
+                    for (int ser = 1; ser <= sc.Count; ser++)
+                    {
+                        Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
+                        si.HasDataLabels = true;
+                    }
                 }
                 chart.HasTitle = true;
                 chart.ChartTitle.Text = header;
 
                 chart.Refresh();
+                chart.ChartData.Workbook.Close();
             }
             catch (Exception e)
             {
