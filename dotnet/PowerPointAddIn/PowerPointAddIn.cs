@@ -119,7 +119,7 @@ namespace PowerPointAddIn
                     windows.Add(w);
                 }
             }
-
+            int slideIndex = 1;
             if (windows.Count >= 1)
             {
                 PresentationSelectionDialog sel = new PresentationSelectionDialog(windows);
@@ -128,6 +128,7 @@ namespace PowerPointAddIn
                 {
                     selectedWindow = sel.selectedWindow;
                     selectedPresentation = selectedWindow.Presentation;
+                    slideIndex = sel.getSlideIndex();
                 }
             }
             else
@@ -156,7 +157,7 @@ namespace PowerPointAddIn
                 return;
             }
 
-            pptActions.addChartSlide(selectedPresentation, selectedWindow, args.customData);
+            pptActions.addChartSlide(selectedPresentation, selectedWindow, args.customData, slideIndex);
         }
 
         #region Von VSTO generierter Code
