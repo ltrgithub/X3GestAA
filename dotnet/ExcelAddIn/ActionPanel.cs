@@ -28,7 +28,7 @@ namespace ExcelAddIn
         }
 
         public HtmlDocument webDocument { get { return webBrowser.Document; } }
-        private void _connect(string serverUrl)
+        private void _connect(string serverUrl, bool withSettings = true)
         {
             // get server url
             var connectUrl = Globals.ThisAddIn.GetServerUrl();
@@ -43,7 +43,7 @@ namespace ExcelAddIn
                         connected = true;
                         // actions after logon
                         // has datasources ?
-                        if ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") == "")
+                        if (withSettings && ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") == ""))
                             Globals.ThisAddIn.ShowSettingsForm();
                     };
                 webBrowser.Refresh();
@@ -59,9 +59,9 @@ namespace ExcelAddIn
             _connect("");
         }
 
-        public void Connect(string connectUrl)
+        public void Connect(string connectUrl, bool withSettings = true)
         {
-            _connect(connectUrl);
+            _connect(connectUrl, withSettings);
         }
 
         public void RefreshAll()

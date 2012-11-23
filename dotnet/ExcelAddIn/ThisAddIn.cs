@@ -254,5 +254,14 @@ namespace ExcelAddIn
             b.SelectDocument(connectUrl, volumeCode);
             b.ShowDialog();
         }
+
+        internal void SISettings()
+        {
+            var connectUrl = GetServerUrl();
+            if (connectUrl == "") return;
+            SISettings s = new SISettings();
+            s.Connect(connectUrl);
+            s.ShowDialog();
+        }
     }
 }

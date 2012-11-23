@@ -5,19 +5,30 @@
 	"$title": "Test CLEditor",
 	"$methods": "GET, POST, PUT, DELETE",
 	"$properties": {
+		"plainText": {
+			"$title": "RTF test",
+			"$type": "application/x-string",
+			"$maxLength": 510
+		},
 		"rtf": {
 			"$title": "RTF test",
 			"$type": "text/rtf",
 			"$maxLength": 510,
-			"$isDualMode": true
+			"$capabilities": "raw"
 		}
 	},
 	"$article": {
 		"$layout": {
 			"$items": [{
+				"$bind": "plainText",
+				"$isEditMode": true,
+				"$labelWidth": "auto",
+				"$rows": 5
+			}, {
 				"$bind": "rtf",
 				"$isEditMode": true,
-				"$labelWidth": "auto"
+				"$labelWidth": "auto",
+				"$textHeight": "480px"
 			}]
 		}
 	}

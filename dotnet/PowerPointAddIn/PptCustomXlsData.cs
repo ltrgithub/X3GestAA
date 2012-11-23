@@ -22,6 +22,8 @@ namespace PowerPointAddIn
 
         private Dictionary<String, object> dictionary;
         private Workbook wb;
+        private Microsoft.Office.Interop.PowerPoint.Chart chart;
+        private TableInfo tableInfo;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
         public static PptCustomXlsData getFromDocument(Workbook wb, Boolean create = false)
@@ -127,13 +129,27 @@ namespace PowerPointAddIn
         {
             return wb;
         }
-
+        public Microsoft.Office.Interop.PowerPoint.Chart getChart()
+        {
+            return chart;
+        }
+        public void setChart(Microsoft.Office.Interop.PowerPoint.Chart chart)
+        {
+            this.chart = chart;
+        }
+        public TableInfo getTableInfo()
+        {
+            return tableInfo;
+        }
+        public void setTableInfo(TableInfo ti)
+        {
+            tableInfo = ti;
+        }
         private PptCustomXlsData(Dictionary<String, object> dictionary, Workbook wb)
         {
             this.dictionary = dictionary;
             this.wb = wb;
         }
-
         public void writeDictionaryToDocument()
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
