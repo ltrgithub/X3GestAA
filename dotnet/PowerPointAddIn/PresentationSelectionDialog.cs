@@ -61,5 +61,14 @@ namespace PowerPointAddIn
                 buttonOk.Enabled = true;
             }
         }
+
+        public int getSlideIndex()
+        {
+            if (radioButtonFirst.Checked)
+                return -1;
+            if (radioButtonLast.Checked)
+                return 1;
+            return 0;
+        }
     }
 }
