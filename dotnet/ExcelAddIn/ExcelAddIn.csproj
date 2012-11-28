@@ -142,7 +142,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>ExcelAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -309,7 +310,6 @@
     <EmbeddedResource Include="TableUpdateProgress.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ExcelAddIn_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
