@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>Mobiscroll</title>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+
+    <script src="js/mobiscroll-2.0.full.min.js" type="text/javascript"></script>
+
+    <link href="css/mobiscroll-2.0.full.min.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        body {
+            font-family: arial, verdana, sans-serif;
+            font-size: 12px;
+        }
+        .inline > div {
+            text-align: center;
+        }
+        #buttons {
+            text-align: left;
+            padding: 1em 0;
+        }
+        @media (min-width:450px) {
+            #buttons {
+                padding-left: 22%;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            var curr = new Date().getFullYear();
+            var opt = {
+                'date': {
+                    preset: 'date',
+                    invalid: { daysOfWeek: [0, 6], daysOfMonth: ['1/1', '5/1', '12/24', '12/25', '12/31'] }
+                },
+                'datetime': {
+                    preset: 'datetime',
+                    minDate: new Date(2012, 3, 10, 9, 22),
+                    maxDate: new Date(2014, 7, 30, 15, 44),
+                    stepMinute: 5
+                },
+                'time': {
+                    preset: 'time'
+                },
+                'credit': {
+                    preset: 'date',
+                    dateOrder: 'mmyy',
+                    dateFormat: 'mm/yy',
+                    startYear: curr,
+                    endYear: curr + 10,
+                    width: 100
+                },
+                'btn': {
+                    preset: 'date',
+                    showOnFocus: false
+                },
+                'inline': {
+                    preset: 'date',
+                    display: 'inline'
+                }
+            }
+
+            $('select').scroller({ preset: 'select' }).bind('change', function() {
+                $('#test').val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: $('#theme').val(), mode: $('#mode').val() }));
+                $('#demo').val() == 'btn' ? $('#buttons').show() : $('#buttons').hide();
+            });
+
+            $('#demo').trigger('change');
+
+            $('#trigger').click(function() {
+                $('#test').scroller('show');
+                return false;
+            });
+
+            $('#clear').click(function() {
+                $('#test').val('');
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div data-role="page" data-theme="b">
+        <div data-role="header" data-theme="a">
+            <h1>Mobiscroll</h1>
+        </div>
+
+        <div data-role="content" data-theme="d">
+            <form id="testform">
+                <div data-role="fieldcontain">
+                    <label for="theme">Theme</label>
+                    <select name="theme" id="theme" data-role="none">
+                        <option value="default">Default</option>
+                        <option value="jqm">jQuery Mobile</option>
+                        <option value="android-ics">Android ICS</option>
+                        <option value="android-ics light">Android ICS Light</option>
+                        <option value="android">Android</option>
+                        <option value="sense-ui">Sense UI</option>
+                        <option value="ios">iOS</option>
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="mode">Mode</label>
+                    <select name="mode" id="mode" data-role="none">
+                        <option value="scroller">Scroller</option>
+                        <option value="clickpick">Clickpick</option>
+                        <option value="mixed">Mixed</option>
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="demo">Demo</label>
+                    <select name="demo" id="demo" data-role="none">
+                        <option value="date">Date</option>
+                        <option value="datetime">Datetime</option>
+                        <option value="time">Time</option>
+                        <option value="credit">Credit card expiration</option>
+                        <option value="btn">Show/Clear buttons</option>
+                        <option value="inline">Inline</option>
+                    </select>
+                </div>
+                <div data-role="fieldcontain" class="inline">
+                    <label for="test">Click here to try</label>
+                    <input type="text" name="test" id="test" />
+                    <div data-role="controlgroup" data-type="horizontal" id="buttons">
+                        <a href="#" id="trigger" data-role="button" data-icon="grid">Choose Date</a>
+                        <a href="#" id="clear" data-role="button" data-icon="delete">Clear</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
