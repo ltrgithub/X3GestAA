@@ -22,6 +22,7 @@ namespace WordAddIn
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
         private const String layoutData             = "layoutData";
+        private const String documentRepresentationProperty = "documentRepresentation";
 
         private Dictionary<String, object> dictionary;
 
@@ -99,6 +100,10 @@ namespace WordAddIn
         public String getLayoutData()
         {
             return getStringProperty(layoutData, false);
+        }
+        public string getDocumentRepresentation()
+        {
+            return getStringProperty(documentRepresentationProperty, false);
         }
         public void setBooleanValue(String name, Boolean status)
         {
