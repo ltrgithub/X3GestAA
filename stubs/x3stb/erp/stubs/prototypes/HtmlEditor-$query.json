@@ -10,6 +10,11 @@
 			"$type": "application/x-string",
 			"$maxLength": 510
 		},
+		"html": {
+			"$title": "HTML test",
+			"$type": "text/html",
+			"$maxLength": 500
+		},
 		"rtf": {
 			"$title": "RTF test",
 			"$type": "text/rtf",
@@ -25,10 +30,15 @@
 				"$labelWidth": "auto",
 				"$rows": 5
 			}, {
+				"$bind": "html",
+				"$isEditMode": true,
+				"$labelWidth": "auto",
+				"$textHeight": "auto"
+			}, {
 				"$bind": "rtf",
 				"$isEditMode": true,
 				"$labelWidth": "auto",
-				"$textHeight": "480px"
+				"$textHeight": "auto"
 			}]
 		}
 	}
