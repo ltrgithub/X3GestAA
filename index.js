@@ -23,9 +23,6 @@ if(config.streamline) {
 require('coffee-script');
 
 require('syracuse-license').register2(function(err, data) {
-	    if (err) console.log(""+err)
-	    else if (!data) console.log("No license")
-	    	
 		require("streamline").register(config.streamline);
 
 		var syracuse = require('syracuse-main/lib/syracuse');
