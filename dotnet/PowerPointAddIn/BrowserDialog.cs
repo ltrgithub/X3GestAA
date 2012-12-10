@@ -40,9 +40,13 @@ namespace PowerPointAddIn
             hideOnCompletion = false;
         }
 
-        public bool connectToServer(PptCustomData customData)
+        public bool connectToServer(PptCustomData customData, string extraServerUrl = null)
         {
-            string serverUrl = customData.getServerUrl();
+            string serverUrl = extraServerUrl;
+            if (serverUrl == null || "".Equals(serverUrl))
+            {
+                serverUrl = customData.getServerUrl();
+            }
             if (serverUrl == null || "".Equals(serverUrl))
             {
                 ServerSettings settings = new ServerSettings(serverUrl);
@@ -69,17 +73,17 @@ namespace PowerPointAddIn
             return true;
         }
 
-        public void loadPage(String urlPart, PptCustomData customData, PptCustomXlsData customXlsData = null)
+        public void loadPage(String urlPart, PptCustomData customData, PptCustomXlsData customXlsData = null, string serverUrl = null)
         {
             PptAddInJSExternal external = new PptAddInJSExternal(customData, customXlsData, this);
-            loadPage(urlPart, external);
+            loadPage(urlPart, external, serverUrl);
         }
 
-        public void loadPage(String urlPart, PptAddInJSExternal scriptingObj)
+        public void loadPage(String urlPart, PptAddInJSExternal scriptingObj, string extraServerUrl = null)
         {
             try
             {
-                if (!connectToServer(scriptingObj.getPptCustomData()))
+                if (!connectToServer(scriptingObj.getPptCustomData(), extraServerUrl))
                     return;
 
                 Uri uri = new Uri(serverUrl + urlPart);
@@ -89,6 +93,10 @@ namespace PowerPointAddIn
                 this.webBrowser.Url = uri;
             }
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
+        }
+        public PptAddInJSExternal getExternal()
+        {
+            return (PptAddInJSExternal) webBrowser.ObjectForScripting;
         }
         public string getServerUrl()
         {

@@ -41,6 +41,7 @@ namespace PowerPointAddIn
             pptActions = new PptActions(browserDialog);
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
+            Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
             newSlide += new NewSlideEvent(PowerPointAddIn_newSlideEvent);
         }
 
@@ -92,6 +93,7 @@ namespace PowerPointAddIn
                     MessageBox.Show(e.Message + ":" + e.StackTrace);
                 }
             }
+            pptActions.checkRefreshButtons();
         }
 
         private void PowerPointAddIn_newSlideEvent(object sender, NewSlideEventArgs args)
@@ -158,6 +160,11 @@ namespace PowerPointAddIn
             }
 
             pptActions.addChartSlide(selectedPresentation, selectedWindow, args.customData, slideIndex);
+        }
+
+        void Application_SlideSelectionChanged(SlideRange SldRange)
+        {
+            pptActions.checkRefreshButtons();
         }
 
         #region Von VSTO generierter Code

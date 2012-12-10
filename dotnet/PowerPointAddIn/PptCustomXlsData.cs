@@ -145,6 +145,10 @@ namespace PowerPointAddIn
         {
             tableInfo = ti;
         }
+        public void setWorkbook(Workbook wb)
+        {
+            this.wb = null;
+        }
         private PptCustomXlsData(Dictionary<String, object> dictionary, Workbook wb)
         {
             this.dictionary = dictionary;
