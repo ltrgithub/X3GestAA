@@ -24,6 +24,7 @@ namespace PowerPointAddIn
 
         private Dictionary<String, object> dictionary;
         private Presentation pres;
+        private List<Chart> chartsArray;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
         public static PptCustomData getFromDocument(Presentation pres, Boolean create = false)
@@ -89,6 +90,14 @@ namespace PowerPointAddIn
         public String getDocumentTitle()
         {
             return getStringProperty(documentTitleProperty, false);
+        }
+        public void setCharts(List<Chart> charts)
+        {
+            chartsArray = charts;
+        }
+        public List<Chart> getCharts()
+        {
+            return chartsArray;
         }
         public void setBooleanValue(String name, Boolean status)
         {
@@ -198,5 +207,6 @@ namespace PowerPointAddIn
             }
             return null;
         }
+
     }
 }
