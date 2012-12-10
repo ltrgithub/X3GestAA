@@ -447,10 +447,15 @@ namespace PowerPointAddIn
                                 s.ChartType = Microsoft.Office.Core.XlChartType.xlXYScatter;
                                 break;
                             case "area":
-                                s.ChartType = Microsoft.Office.Core.XlChartType.xlLine;
+                                s.ChartType = Microsoft.Office.Core.XlChartType.xlArea;
                                 break;
                         }
                         s.Name = title;
+                        try
+                        {
+                            s.AxisGroup = Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary;
+                        }
+                        catch (Exception) { }
                     }
                 }
 
@@ -484,6 +489,12 @@ namespace PowerPointAddIn
                     }
                     firstSeries.XValues = categories;
                 }
+
+                try
+                {
+                    chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlSecondary).Delete();
+                }
+                catch (Exception) { }
                 
                 string header = cube["$title"].ToString();
                 string cstyle = cube["$style"].ToString();
