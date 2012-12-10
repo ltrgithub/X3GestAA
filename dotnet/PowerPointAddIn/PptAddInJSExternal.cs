@@ -39,9 +39,17 @@ namespace PowerPointAddIn
         {
             return customXlsData;
         }
+        public void setPptCustomXlsData(PptCustomXlsData xcd)
+        {
+            this.customXlsData = xcd;
+        }
         public void addDataToWorksheet(String data)
         {
             Globals.PowerPointAddIn.pptActions.addDataToWorksheet(getPptCustomData().getPresentation(), getPptCustomXlsData(), data);
+        }
+        public void refreshNextChart()
+        {
+            Globals.PowerPointAddIn.pptActions.refreshNextChart(getPptCustomData().getPresentation());
         }
         public void NotifySaveDocumentDone()
         {
