@@ -430,6 +430,7 @@ namespace PowerPointAddIn
                         {
                             firstSeries = s;
                         }
+
                         string style = measure["$style"].ToString();
                         switch (style)
                         {
@@ -447,10 +448,16 @@ namespace PowerPointAddIn
                                 s.ChartType = Microsoft.Office.Core.XlChartType.xlXYScatter;
                                 break;
                             case "area":
-                                s.ChartType = Microsoft.Office.Core.XlChartType.xlLine;
+                                s.ChartType = Microsoft.Office.Core.XlChartType.xlArea;
                                 break;
                         }
+
                         s.Name = title;
+                        try
+                        {
+                            s.AxisGroup = Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary;
+                        }
+                        catch (Exception) { }
                     }
                 }
 
@@ -484,6 +491,12 @@ namespace PowerPointAddIn
                     }
                     firstSeries.XValues = categories;
                 }
+
+                try
+                {
+                    chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlSecondary).Delete();
+                }
+                catch (Exception) { }
                 
                 string header = cube["$title"].ToString();
                 string cstyle = cube["$style"].ToString();
@@ -497,6 +510,8 @@ namespace PowerPointAddIn
                         si.HasDataLabels = true;
                     }
                 }
+                applyColors(sc, cstyle, data);
+
                 chart.HasTitle = true;
                 chart.ChartTitle.Text = header;
 
@@ -515,6 +530,56 @@ namespace PowerPointAddIn
             {
                 MessageBox.Show(e.Message + "\n" + e.StackTrace); 
             }
+        }
+
+        private void applyColors(Microsoft.Office.Interop.PowerPoint.SeriesCollection sc, string cstyle, Dictionary<String, object> data)
+        {
+            try
+            {
+                int[] colors = null;
+
+                object[] tmpclr = (object[])data["$colors"];
+                colors = new int[tmpclr.Length];
+                int i = 0;
+                foreach (object c in tmpclr)
+                {
+                    colors[i++] = Convert.ToInt32(c.ToString());
+                }
+
+                if (colors != null)
+                {
+                    if ("pie".Equals(cstyle))
+                    {
+                        for (int ser = 1; ser <= sc.Count; ser++)
+                        {
+                            Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
+                            for (int p = 1; p <= si.Points().Count; p++)
+                            {
+                                int color = colors[(p - 1) % colors.Length];
+                                si.Points(p).Format.Fill.BackColor.RGB = color;
+                                si.Points(p).Format.Fill.ForeColor.RGB = color;
+                                si.Points(p).Format.Line.BackColor.RGB = color;
+                                si.Points(p).Format.Line.ForeColor.RGB = color;
+                                si.Points(p).Format.Fill.Transparency = 0.2f;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int ser = 1; ser <= sc.Count; ser++)
+                        {
+                            Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
+                            int color = colors[ser % colors.Length];
+                            si.Format.Fill.BackColor.RGB = color;
+                            si.Format.Fill.ForeColor.RGB = color;
+                            si.Format.Line.BackColor.RGB = color;
+                            si.Format.Line.ForeColor.RGB = color;
+                            si.Format.Fill.Transparency = 0.2f;
+                        }
+                    }
+                }
+            }
+            catch (Exception) { } // Just coloring, ignore
         }
 
         private bool isSyracuseChartName(string name)
