@@ -25,5 +25,15 @@ namespace PowerPointAddIn
 
             Globals.PowerPointAddIn.common.SaveAs(Globals.PowerPointAddIn.Application.ActivePresentation);
         }
+
+        private void buttonRefresh_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.PowerPointAddIn.pptActions.RefreshChartsCurrentSlide();
+        }
+
+        private void buttonRefreshAll_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.PowerPointAddIn.pptActions.RefreshChartsAllSlides();
+        }
     }
 }

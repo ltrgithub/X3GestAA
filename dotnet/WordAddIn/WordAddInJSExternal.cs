@@ -72,11 +72,17 @@ namespace WordAddIn
                     object o = singleRowData[col];
                     Dictionary<String, Object> cellData = (Dictionary<String, Object>)o;
                     string value = "";
+                    string link = "";
                     if (cellData.ContainsKey("value"))
                         value = cellData["value"] == null ? "" : cellData["value"].ToString();
                     string type = "";
                     if (cellData.ContainsKey("$type"))
                         type = cellData["$type"] == null ? "" : cellData["$type"].ToString();
+
+                    if (cellData.ContainsKey("$link"))
+                    {
+                        link = cellData["$link"] == null ? "" : cellData["$link"].ToString();
+                    }
 
                     if (cellData.ContainsKey("$url"))
                     {
@@ -103,6 +109,18 @@ namespace WordAddIn
                     {
                         String text = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
                         dataDoc.Tables[1].Cell(row + 2, col + 1).Range.InsertAfter(text);
+
+                        if (link.Equals("") != true)
+                        {
+                            Range r = dataDoc.Tables[1].Cell(row + 2, col + 1).Range;
+                            //r.Start--;
+                            //r.End++;
+                            try
+                            {
+                                dataDoc.Hyperlinks.Add(r, link);
+                            }
+                            catch (Exception e) { MessageBox.Show(e.ToString()); };
+                        }
                     }
                 }
             }
