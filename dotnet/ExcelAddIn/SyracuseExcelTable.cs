@@ -438,9 +438,12 @@ namespace ExcelAddIn
                             if (res[col].GetType().IsArray)
                             {
                                 object fieldValue = _fields[col].Parse(((object[])res[col])[0]);
-                                _data[fieldName][r, 0] = fieldValue;
-                                Hyperlink link = (Hyperlink)activeWorksheet.Hyperlinks.Add(_columnRanges[fieldName].Item[r + startLine + 1, 1],
-                                    (String)((object[])res[col])[1], "", Type.Missing, fieldValue);
+                                if (fieldValue != null)
+                                {
+                                    _data[fieldName][r, 0] = fieldValue;
+                                    Hyperlink link = (Hyperlink)activeWorksheet.Hyperlinks.Add(_columnRanges[fieldName].Item[r + startLine + 1, 1],
+                                        (String)((object[])res[col])[1], "", Type.Missing, fieldValue);
+                                }
                             }
                             else
                             {
