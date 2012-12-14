@@ -70,12 +70,98 @@ namespace PowerPointAddIn
     {
         public BrowserDialog browserDialog = null;
         private JavaScriptSerializer ser = new JavaScriptSerializer();
+        private const string SYRACUSE_CHART_PREFIX = "__SYRACUSE_CHART__";
+
+        private int chartCount;
+        private int chartsDone;
 
         public PptActions(BrowserDialog browserDialog)
         {
             this.browserDialog = browserDialog;
         }
 
+        public void RefreshChartsCurrentSlide()
+        {
+            Presentation pres = null;
+            try
+            {
+                pres = Globals.PowerPointAddIn.Application.ActiveWindow.Presentation;
+            }
+            catch (Exception) { }
+            if (pres == null)
+            {
+                return;
+            }
+            List<Microsoft.Office.Interop.PowerPoint.Chart> charts = getChartsOnCurrentSlide();
+            refreshCharts(pres, charts);
+        }
+        public void RefreshChartsAllSlides() 
+        {
+            Presentation pres = null;
+            try
+            {
+                pres = Globals.PowerPointAddIn.Application.ActiveWindow.Presentation;
+            }
+            catch (Exception) { }
+            if (pres == null)
+                return;
+            List<Microsoft.Office.Interop.PowerPoint.Chart> charts = getChartsInCurrentPresentation();
+            refreshCharts(pres, charts);
+        }
+
+        private List<Microsoft.Office.Interop.PowerPoint.Chart> getChartsOnCurrentSlide()
+        {
+            List<Microsoft.Office.Interop.PowerPoint.Chart> charts = new List<Microsoft.Office.Interop.PowerPoint.Chart>();
+            Slide slide = null;
+            try
+            {
+                slide = Globals.PowerPointAddIn.Application.ActiveWindow.View.Slide;
+            }
+            catch (Exception) { }
+            if (slide != null)
+            {
+                listChartsOnSlide(slide, charts);
+            }
+            return charts;
+        }
+        private List<Microsoft.Office.Interop.PowerPoint.Chart> getChartsInCurrentPresentation()
+        {
+            List<Microsoft.Office.Interop.PowerPoint.Chart> charts = new List<Microsoft.Office.Interop.PowerPoint.Chart>();
+            Presentation pres = null;
+            try
+            {
+                pres = Globals.PowerPointAddIn.Application.ActiveWindow.Presentation;
+            }
+            catch (Exception) { }
+            if (pres != null)
+            {
+                listChartsInPresentation(pres, charts);
+            }
+            return charts;
+        }
+
+        private void listChartsInPresentation(Presentation pres, List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
+        {
+            foreach (Slide slide in pres.Slides)
+            {
+                listChartsOnSlide(slide, charts);
+            }
+        }
+        private void listChartsOnSlide(Slide slide, List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
+        {
+            foreach (Microsoft.Office.Interop.PowerPoint.Shape shape in slide.Shapes)
+            {
+                try
+                {
+                    Microsoft.Office.Interop.PowerPoint.Chart chart = shape.Chart;
+                    if (isSyracuseChartName(chart.Name))
+                    {
+                        charts.Add(chart);
+                    }
+                }
+                catch (Exception) { }
+            }
+        }
         public void addChartSlide(Presentation pres, DocumentWindow win, PptCustomData cd, int newSlideIndex)
         {
             try
@@ -113,7 +199,7 @@ namespace PowerPointAddIn
                 xcd.setForceRefresh(false);
                 xcd.writeDictionaryToDocument();
                 xcd.setChart(c);
-                browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", cd, xcd);
+                browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", cd, xcd, xcd.getServerUrl());
             }
             catch (Exception e)
             {
@@ -122,13 +208,93 @@ namespace PowerPointAddIn
             }
         }
 
+        private void refreshCharts(Presentation pres, List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
+        {
+            refreshChartsInit(pres, charts);
+        }
+
+        public void refreshChartsInit(Presentation pres, List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
+        {
+            PptCustomData cd = PptCustomData.getFromDocument(pres, true);
+            cd.setActionType("ppt_refresh_charts");
+            cd.setCharts(charts);
+            chartCount = cd.getCharts().Count;
+            chartsDone = 0;
+            if (chartCount > 0)
+            {
+                Microsoft.Office.Interop.PowerPoint.Chart chart = cd.getCharts()[0];
+
+                chart.ChartData.Activate();
+                Workbook wb = (Workbook)chart.ChartData.Workbook;
+                wb.Application.Visible = false;
+
+                PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
+                xcd.setChart(chart);
+                PptAddInJSExternal external = new PptAddInJSExternal(cd, xcd, browserDialog);
+                browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", external, xcd.getServerUrl());
+            }
+        }
+
+        // Called by JS
+        public void refreshNextChart(Presentation pres)
+        {
+            PptAddInJSExternal external = browserDialog.getExternal();
+            PptCustomData cd = external.getPptCustomData();
+            if (cd == null)
+                return;
+
+            bool tryNext = true;
+            while (tryNext)
+            {
+                tryNext = false;
+                if (cd.getCharts().Count > 0)
+                {
+                    Microsoft.Office.Interop.PowerPoint.Chart chart = cd.getCharts()[0];
+                    cd.getCharts().Remove(chart);
+                }
+
+                if (cd.getCharts().Count > 0)
+                {
+                    try
+                    {
+                        Microsoft.Office.Interop.PowerPoint.Chart chart = cd.getCharts()[0];
+                        chart.ChartData.Activate();
+                        Workbook wb = (Workbook)chart.ChartData.Workbook;
+                        wb.Application.Visible = false;
+
+                        PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
+                        xcd.setChart(chart);
+                        external.setPptCustomXlsData(xcd);
+                        browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", external, xcd.getServerUrl());
+
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        tryNext = true;
+                    }
+                }
+            }
+            CommonUtils.ShowInfoMessage(
+                String.Format(
+                    global::PowerPointAddIn.Properties.Resources.MSG_SAVE_REFRESH_DONE,
+                    chartsDone,
+                    chartCount),
+                    global::PowerPointAddIn.Properties.Resources.MSG_INFO_TITLE);
+
+            browserDialog.Visible = false;
+        }
+
+        // Called by JS
         public void addDataToWorksheet(Presentation pres, PptCustomXlsData customXlsData, String jsonData)
         {
             Workbook wb = customXlsData.getWorkbook();
+            if (wb == null)
+                return;
+
             Worksheet ws = wb.Sheets[1];
             try
             {
-
                 Dictionary<String, object> data = (Dictionary<String, object>)ser.DeserializeObject(jsonData);
                 Object[] listData = (Object[])data["$data"];
 
@@ -179,15 +345,16 @@ namespace PowerPointAddIn
                 if (isLastPage)
                 {
                     Dictionary<String, object> chartExtensions = (Dictionary<String, object>)data["$chartExtensions"];
-                    addingDataFinished(pres, customXlsData, chartExtensions);
+                    addingDataFinished(pres, customXlsData, data, chartExtensions);
+                    customXlsData.setWorkbook(null);
+                    wb.Close();
+                    browserDialog.Visible = false;
                 }
-                browserDialog.Visible = false;
             }
             catch (Exception e) { 
                 MessageBox.Show(e.Message + "\n" + e.StackTrace);
                 browserDialog.Visible = false;
             }
-
         }
 
         private void addHeadersToWorksheet(Presentation pres, Workbook wb, Worksheet ws, PptCustomXlsData customXlsData, Object[] columns) 
@@ -227,7 +394,7 @@ namespace PowerPointAddIn
             }
         }
 
-        private void addingDataFinished(Presentation pres, PptCustomXlsData customXlsData, Dictionary<String, object> chartExtensions)
+        private void addingDataFinished(Presentation pres, PptCustomXlsData customXlsData, Dictionary<String, object> data, Dictionary<String, object> chartExtensions)
         {
             Workbook wb = customXlsData.getWorkbook();
             try
@@ -263,6 +430,7 @@ namespace PowerPointAddIn
                         {
                             firstSeries = s;
                         }
+
                         string style = measure["$style"].ToString();
                         switch (style)
                         {
@@ -283,7 +451,13 @@ namespace PowerPointAddIn
                                 s.ChartType = Microsoft.Office.Core.XlChartType.xlArea;
                                 break;
                         }
+
                         s.Name = title;
+                        try
+                        {
+                            s.AxisGroup = Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary;
+                        }
+                        catch (Exception) { }
                     }
                 }
 
@@ -317,6 +491,12 @@ namespace PowerPointAddIn
                     }
                     firstSeries.XValues = categories;
                 }
+
+                try
+                {
+                    chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlSecondary).Delete();
+                }
+                catch (Exception) { }
                 
                 string header = cube["$title"].ToString();
                 string cstyle = cube["$style"].ToString();
@@ -330,17 +510,92 @@ namespace PowerPointAddIn
                         si.HasDataLabels = true;
                     }
                 }
+                applyColors(sc, cstyle, data);
+
                 chart.HasTitle = true;
                 chart.ChartTitle.Text = header;
 
+                string chartUUid = "unknown";
+                try
+                {
+                    chartUUid = data["$chartUUID"].ToString();
+                }
+                catch (Exception) { }
+                setSyracuseChartName(chart, chartUUid);
+
                 chart.Refresh();
-                chart.ChartData.Workbook.Close();
+                chartsDone++;
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message + "\n" + e.StackTrace); 
             }
-            wb.Application.Visible = false;
+        }
+
+        private void applyColors(Microsoft.Office.Interop.PowerPoint.SeriesCollection sc, string cstyle, Dictionary<String, object> data)
+        {
+            try
+            {
+                int[] colors = null;
+
+                object[] tmpclr = (object[])data["$colors"];
+                colors = new int[tmpclr.Length];
+                int i = 0;
+                foreach (object c in tmpclr)
+                {
+                    colors[i++] = Convert.ToInt32(c.ToString());
+                }
+
+                if (colors != null)
+                {
+                    if ("pie".Equals(cstyle))
+                    {
+                        for (int ser = 1; ser <= sc.Count; ser++)
+                        {
+                            Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
+                            for (int p = 1; p <= si.Points().Count; p++)
+                            {
+                                int color = colors[(p - 1) % colors.Length];
+                                si.Points(p).Format.Fill.BackColor.RGB = color;
+                                si.Points(p).Format.Fill.ForeColor.RGB = color;
+                                si.Points(p).Format.Line.BackColor.RGB = color;
+                                si.Points(p).Format.Line.ForeColor.RGB = color;
+                                si.Points(p).Format.Fill.Transparency = 0.2f;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int ser = 1; ser <= sc.Count; ser++)
+                        {
+                            Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
+                            int color = colors[ser % colors.Length];
+                            si.Format.Fill.BackColor.RGB = color;
+                            si.Format.Fill.ForeColor.RGB = color;
+                            si.Format.Line.BackColor.RGB = color;
+                            si.Format.Line.ForeColor.RGB = color;
+                            si.Format.Fill.Transparency = 0.2f;
+                        }
+                    }
+                }
+            }
+            catch (Exception) { } // Just coloring, ignore
+        }
+
+        private bool isSyracuseChartName(string name)
+        {
+            if (name == null)
+                return false;
+            return name.StartsWith(SYRACUSE_CHART_PREFIX);
+        }
+
+        private void setSyracuseChartName(Microsoft.Office.Interop.PowerPoint.Chart chart, string uuid)
+        {
+            if (isSyracuseChartName(chart.Name))
+            {
+                return;
+            }
+            chart.Name = SYRACUSE_CHART_PREFIX + uuid;
         }
 
         // Helper for debugging
@@ -349,6 +604,26 @@ namespace PowerPointAddIn
             System.IO.StreamWriter file = new System.IO.StreamWriter(fileName);
             file.WriteLine(text);
             file.Close();
+        }
+
+        public void checkRefreshButtons()
+        {
+            if (getChartsInCurrentPresentation().Count > 0)
+            {
+                Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = true;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = false;
+            }
+            if (getChartsOnCurrentSlide().Count > 0)
+            {
+                Globals.Ribbons.Ribbon.buttonRefresh.Enabled = true;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.buttonRefresh.Enabled = false;
+            }
         }
     }
 }
