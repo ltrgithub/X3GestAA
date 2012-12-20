@@ -55,9 +55,11 @@ namespace ExcelAddIn
         {
             Aborted = false;
             Globals.ThisAddIn.ShowProgressForm(true);
+            Globals.ThisAddIn.Application.ScreenUpdating = false;
         }
         public void EndUpdateTable()
         {
+            Globals.ThisAddIn.Application.ScreenUpdating = true;
             Globals.ThisAddIn.ShowProgressForm(false);
         }
         public bool UpdateTable(String name, String simplePrototype, String data, int startLine)
