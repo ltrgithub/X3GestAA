@@ -106,6 +106,7 @@ namespace PowerPointAddIn
             {
                 // Close command presentation
                 args.pres.Close();
+                pptActions.checkRefreshButtons();
             }
         }
 
