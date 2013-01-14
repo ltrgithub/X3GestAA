@@ -191,6 +191,8 @@ namespace PowerPointAddIn
                 c.ChartData.Activate();
                 Workbook wb = (Workbook)c.ChartData.Workbook;
                 wb.Application.Visible = false;
+                wb.Application.ScreenUpdating = false;
+                
                 cd.setActionType("ppt_populate_worksheet");
 
                 PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
@@ -346,6 +348,7 @@ namespace PowerPointAddIn
                 {
                     Dictionary<String, object> chartExtensions = (Dictionary<String, object>)data["$chartExtensions"];
                     addingDataFinished(pres, customXlsData, data, chartExtensions);
+                    checkRefreshButtons();
                     customXlsData.setWorkbook(null);
                     wb.Close();
                     browserDialog.Visible = false;
@@ -403,7 +406,6 @@ namespace PowerPointAddIn
                 TableInfo ti = customXlsData.getTableInfo();
 
                 Microsoft.Office.Interop.PowerPoint.Chart chart = customXlsData.getChart();
-
                 Microsoft.Office.Interop.PowerPoint.SeriesCollection sc = chart.SeriesCollection() as Microsoft.Office.Interop.PowerPoint.SeriesCollection;
 
                 Dictionary<String, object> cube = (Dictionary<String, object>)chartExtensions["$cube"];
@@ -460,12 +462,23 @@ namespace PowerPointAddIn
                         catch (Exception) { }
                     }
                 }
-
-                while (oldSeriesCount-- > 0)
+                int seriesToDelete = oldSeriesCount;
+                while (seriesToDelete-- > 0)
                 {
                     Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(1);
+                    try
+                    {
+                        // copy colors, otherwise colors change on every refresh of the chart
+                        Microsoft.Office.Interop.PowerPoint.Series si_new = sc.Item(1 + oldSeriesCount);
+                        si_new.Format.Fill.BackColor = si.Format.Fill.BackColor;
+                        si_new.Format.Fill.ForeColor = si.Format.Fill.ForeColor;
+                        si_new.Format.Line.BackColor = si.Format.Line.BackColor;
+                        si_new.Format.Line.ForeColor = si.Format.Line.ForeColor;
+                    }
+                    catch (Exception) { }
                     si.Delete();
                 }
+
                 // Highly simplified!!!
                 object[] axes = (object[])chartExtensions["$axes"];
                 Dictionary<String, object> dictAxe = (Dictionary<String, object>)axes[0];
@@ -510,7 +523,6 @@ namespace PowerPointAddIn
                         si.HasDataLabels = true;
                     }
                 }
-                applyColors(sc, cstyle, data);
 
                 chart.HasTitle = true;
                 chart.ChartTitle.Text = header;
@@ -522,7 +534,6 @@ namespace PowerPointAddIn
                 }
                 catch (Exception) { }
                 setSyracuseChartName(chart, chartUUid);
-
                 chart.Refresh();
                 chartsDone++;
             }
@@ -530,56 +541,6 @@ namespace PowerPointAddIn
             {
                 MessageBox.Show(e.Message + "\n" + e.StackTrace); 
             }
-        }
-
-        private void applyColors(Microsoft.Office.Interop.PowerPoint.SeriesCollection sc, string cstyle, Dictionary<String, object> data)
-        {
-            try
-            {
-                int[] colors = null;
-
-                object[] tmpclr = (object[])data["$colors"];
-                colors = new int[tmpclr.Length];
-                int i = 0;
-                foreach (object c in tmpclr)
-                {
-                    colors[i++] = Convert.ToInt32(c.ToString());
-                }
-
-                if (colors != null)
-                {
-                    if ("pie".Equals(cstyle))
-                    {
-                        for (int ser = 1; ser <= sc.Count; ser++)
-                        {
-                            Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
-                            for (int p = 1; p <= si.Points().Count; p++)
-                            {
-                                int color = colors[(p - 1) % colors.Length];
-                                si.Points(p).Format.Fill.BackColor.RGB = color;
-                                si.Points(p).Format.Fill.ForeColor.RGB = color;
-                                si.Points(p).Format.Line.BackColor.RGB = color;
-                                si.Points(p).Format.Line.ForeColor.RGB = color;
-                                si.Points(p).Format.Fill.Transparency = 0.2f;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for (int ser = 1; ser <= sc.Count; ser++)
-                        {
-                            Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
-                            int color = colors[ser % colors.Length];
-                            si.Format.Fill.BackColor.RGB = color;
-                            si.Format.Fill.ForeColor.RGB = color;
-                            si.Format.Line.BackColor.RGB = color;
-                            si.Format.Line.ForeColor.RGB = color;
-                            si.Format.Fill.Transparency = 0.2f;
-                        }
-                    }
-                }
-            }
-            catch (Exception) { } // Just coloring, ignore
         }
 
         private bool isSyracuseChartName(string name)
