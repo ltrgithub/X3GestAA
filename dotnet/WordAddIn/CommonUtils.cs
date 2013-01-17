@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
+using Rb = Microsoft.Office.Tools.Ribbon;
 
 namespace WordAddIn
 {
     public class CommonUtils
     {
         public BrowserDialog browserDialog = null;
+
+        private const string DOC_LOCALE_PROPERTY = "X3-Locale";
 
         public CommonUtils(BrowserDialog browserDialog)
         {
@@ -73,6 +76,84 @@ namespace WordAddIn
         public static void ShowInfoMessage(string text, string title)
         {
             MessageBox.Show(text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void SetDocumentLocale(Document doc, string locale)
+        {
+            Microsoft.Office.Core.DocumentProperty cp = null;
+            try
+            {
+                if (locale == null || "".Equals(locale))
+                    return;
+                cp = doc.CustomDocumentProperties[DOC_LOCALE_PROPERTY];
+            } catch (Exception) {}
+
+            try {
+                if (cp == null)
+                {
+                    doc.CustomDocumentProperties.Add(DOC_LOCALE_PROPERTY, false, Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeString, locale);
+                    cp = doc.CustomDocumentProperties[DOC_LOCALE_PROPERTY];
+                }
+                cp.Value = locale;
+            }
+            catch (Exception) {}
+        }
+
+        public string GetDocumentLocale(Document doc)
+        {
+            try
+            {
+                Microsoft.Office.Core.DocumentProperty cp = doc.CustomDocumentProperties[DOC_LOCALE_PROPERTY];
+                if (cp != null)
+                {
+                    return cp.Value;
+                }
+            }
+            catch (Exception) { }
+            return null;
+        }
+
+        public void SetSupportedLocales(SyracuseOfficeCustomData customData)
+        {
+            Globals.Ribbons.Ribbon.dropDownLocale.Items.Clear();
+            Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem());
+            Globals.Ribbons.Ribbon.dropDownLocale.Items[0].Label = "";
+            if (customData == null)
+            {
+                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
+                return;
+            }
+            try
+            {
+                foreach (Locale locale in customData.getSupportedLocales())
+                {
+                    Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
+                    item.Label = locale.name + " - " + locale.nativeName;
+                    item.Tag = locale.name;
+                    Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(item);
+                }
+            }
+            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
+            Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
+        }
+
+        public void DisplayDocumentLocale(Document doc)
+        {
+            string locale = GetDocumentLocale(doc);
+            if (locale == null)
+            {
+                Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
+                return;
+            }
+            for (int i = 1; i < Globals.Ribbons.Ribbon.dropDownLocale.Items.Count; i++)
+            {
+                if (Globals.Ribbons.Ribbon.dropDownLocale.Items[i].Tag.Equals(locale))
+                {
+                    Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = i;
+                    return;
+                }
+            }
+            Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
         }
     }
 }
