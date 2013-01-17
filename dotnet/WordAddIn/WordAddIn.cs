@@ -5,7 +5,6 @@ using System.Text;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
-//using Microsoft.Office.Tools.Word;
 using System.Windows.Forms;
 
 namespace WordAddIn
@@ -80,6 +79,8 @@ namespace WordAddIn
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
                 }
             }
+            commons.SetSupportedLocales(customData);
+            commons.DisplayDocumentLocale(doc);
         }
 
         private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
