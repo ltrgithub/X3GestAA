@@ -1,0 +1,79 @@
+{
+	"$prototypes": {
+		"role": {
+			"$key": "description"
+		},
+		"group": {
+			"$key": "description",
+			"role": {
+				"$key": "description"
+			}
+		}
+	},
+	"$items": [
+	{
+		"$type": "role",
+		"description": "Super administrator"
+	},{
+		"$type": "role",
+		"description": "Endpoint administrator"
+	},{
+		"$type": "role",
+		"description": "Accountant"
+	},{
+		"$type": "role",
+		"description": "CFO"
+	},{
+		"$type": "role",
+		"description": "Auditor"
+	},{
+		"$type": "role",
+		"description": "Account manager"
+	},{
+		"$type": "role",
+		"description": "Sales manager"
+	},{
+		"$type": "group",
+		"description": "Super administrators",
+		"endPoints": ["Syracuse administration"],
+		"role": "Super administrator"
+	},{
+		"$type": "group",
+		"description": "Endpoint administrators",
+		"role": "Endpoint administrator"
+		
+	},{
+		"$type": "group",
+		"description": "Overseas accountants",
+		"role": "Accountant"
+	},{
+		"$type": "group",
+		"description": "Overseas CFO",
+		"role": "CFO"
+	},{
+		"$type": "group",
+		"description": "Overseas auditors",
+		"role": "Auditor"
+	},{
+		"$type": "group",
+		"description": "French accountants",
+		"role": "Accountant"
+	},{
+		"$type": "group",
+		"description": "French CFO",
+		"role": "CFO"
+	},{
+		"$type": "group",
+		"description": "French auditors",
+		"role": "Auditor"
+	},{
+		"$type": "group",
+		"description": "Account managers",
+		"role": "Account manager"
+	},{
+		"$type": "group",
+		"description": "Sales managers",
+		"role": "Sales manager"
+	}
+	]
+}
