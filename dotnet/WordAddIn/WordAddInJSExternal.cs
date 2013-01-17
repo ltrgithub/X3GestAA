@@ -322,5 +322,15 @@ namespace WordAddIn
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+
+        public string getDocumentLocale()
+        {
+            Document doc = (customData != null) ? customData.getWordDoc() : null;
+            if (doc == null)
+            {
+                return "";
+            }
+            return Globals.WordAddIn.commons.GetDocumentLocale(doc);
+        }
     }
 }
