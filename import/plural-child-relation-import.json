@@ -1,0 +1,53 @@
+{
+	"$prototypes": {
+		"user": {
+			"$key": "lastName",
+                        "locales": {
+                            "$key": "code"
+                          }	
+		},
+		"localePreference": {
+			"$key": "code"
+		}
+	},
+	"$items": [
+	{
+		"$type": "localePreference",
+		"code": "fr-FR",
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " ",
+		"numberGroupSize": 3,
+		"enabled": true
+	},{
+		"$type": "localePreference",
+		"code": "en-US",
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " ",
+		"numberGroupSize": 3,
+		"enabled": true		
+	},{
+		"$type": "user",
+		"login": "admin",
+		"password": "admin",
+		"title": "mr",
+		"lastName": "Super administrator",
+		"locales": ["en-US"]
+	},{
+		"$type": "user",
+		"login": "nalan",
+		"password": "nalan",
+		"title": "mrs",
+		"firstName": "Nancy",
+		"lastName": "Langeais",
+		"locales": ["fr-FR", "en-US"]
+	},
+	{
+      "$type": "user",
+      "login": "guest",
+      "title": "mr",
+      "lastName": "Guest",
+      "password": "guest",
+        "locales": ["fr-FR", "en-US"]
+    }
+	]
+}
