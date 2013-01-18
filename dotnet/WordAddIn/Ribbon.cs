@@ -7,6 +7,8 @@ using Microsoft.Office.Tools;
 using System.Threading;
 using System.Globalization;
 using Word = Microsoft.Office.Interop.Word;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace WordAddIn
 {
@@ -18,7 +20,7 @@ namespace WordAddIn
 
         private void buttonSave_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            Word.Document doc = Globals.WordAddIn.getActiveDocument();
             if (doc != null)
             {
                 Globals.WordAddIn.commons.Save(doc);
@@ -45,6 +47,16 @@ namespace WordAddIn
         private void buttonRefreshReport_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.WordAddIn.reporting.RefreshReport();
+        }
+
+        private void dropDownLocale_SelectionChanged(object sender, RibbonControlEventArgs e)
+        {
+            Word.Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc != null)
+            {
+                string locale = Globals.Ribbons.Ribbon.dropDownLocale.SelectedItem.Tag.ToString();
+                Globals.WordAddIn.commons.SetDocumentLocale(doc, locale);
+            }
         }
     }
 }
