@@ -8,6 +8,13 @@ using System.Windows.Forms;
 
 namespace WordAddIn
 {
+    public class Locale
+    {
+		public string name;
+        public string nativeName;
+        public string englishName;
+    }
+
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public class SyracuseOfficeCustomData
     {
@@ -24,10 +31,12 @@ namespace WordAddIn
         private const String layoutData             = "layoutData";
         private const String documentRepresentationProperty = "documentRepresentation";
         private const String originalFileNameProperty       = "originalFileName";
+        private const String supportedLocalesProperty = "supportedLocales";
 
         private Dictionary<String, object> dictionary;
 
         private Microsoft.Office.Interop.Word.Document doc;
+        private List<Locale> locales = null;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
         public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Word.Document doc, Boolean create = false)
@@ -234,6 +243,29 @@ namespace WordAddIn
                 }
             }
             return null;
+        }
+
+        public List<Locale> getSupportedLocales()
+        {
+            if (locales != null)
+                return locales;
+            locales = new List<Locale>();
+
+            object[] o = (object[]) dictionary[supportedLocalesProperty];
+            foreach (Object l in o)
+            {
+                Dictionary<String, Object> locale = (Dictionary<String, Object>) l;
+                Locale loc = new Locale();
+                try
+                {
+                    loc.name = locale["name"].ToString();
+                    loc.nativeName = locale["nativeName"].ToString();
+                    loc.englishName = locale["englishName"].ToString();
+                }
+                catch (Exception) { };
+                locales.Add(loc);
+            }
+            return locales;
         }
     }
 }

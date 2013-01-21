@@ -52,6 +52,7 @@ exports.config = {
 		"auth": "basic"
 	},
 	x3fusion: {
+// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
 //		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
 //		tracer: console.log,
 //		profiler: console.log

@@ -11,7 +11,10 @@
 		}
 	},
 	"$items": [
-	{
+	 {
+              "$type": "role",
+              "description": "Guest"
+        },{
 		"$type": "role",
 		"description": "Super administrator"
 	},{
@@ -35,7 +38,6 @@
 	},{
 		"$type": "group",
 		"description": "Super administrators",
-		"endPoints": ["Syracuse administration"],
 		"role": "Super administrator"
 	},{
 		"$type": "group",
@@ -74,6 +76,11 @@
 		"$type": "group",
 		"description": "Sales managers",
 		"role": "Sales manager"
-	}
+	},
+	{
+          "$type": "group",
+          "description": "Guests",
+          "role": "Guest"
+        }
 	]
 }
