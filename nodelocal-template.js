@@ -35,6 +35,9 @@ helpers.sageup = {
 };
 
 exports.config = {
+	integrationServer: {
+		port: 8125
+	},
 	session: {
 		timeout: 20, // minutes
 		checkInterval: 60, // secondes
