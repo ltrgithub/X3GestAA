@@ -49,6 +49,9 @@ require('syracuse-license').register(function(err, data) {
 			syracuse.server.listen(function() {
 				console.log('Server running at http://localhost:' + port + '/');
 			}, port);
+			syracuse.integrationServer && syracuse.integrationServer.listen(function() {
+				console.log('Integration server running at http://localhost:' + port + '/');
+			}, syracuse.config.integrationServer.port);
 	}
 });
 
