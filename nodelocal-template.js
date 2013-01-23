@@ -35,6 +35,10 @@ helpers.sageup = {
 };
 
 exports.config = {
+/*	integrationServer: {
+		port: 8125
+	},
+*/
 	session: {
 		timeout: 20, // minutes
 		checkInterval: 60, // secondes
@@ -52,6 +56,7 @@ exports.config = {
 		"auth": "basic"
 	},
 	x3fusion: {
+// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
 //		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
 //		tracer: console.log,
 //		profiler: console.log
