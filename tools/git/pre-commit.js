@@ -19,6 +19,7 @@ function info(msg) {
 } 
 
 function preCommit(file) {
+	return;
 	if (!fs.existsSync(file)) return; // file deleted by commit
 	var contents = fs.readFileSync(file, 'utf8');
 	if (contents.substring(0, 13) !== '"use strict";') error(file + ': "use strict" missing at top of file (must be first line)');
