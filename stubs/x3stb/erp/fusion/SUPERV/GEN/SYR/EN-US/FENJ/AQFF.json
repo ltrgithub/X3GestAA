@@ -500,6 +500,9 @@
 						"$groupName": "A"
 					}
 				}
+			},
+			"$extension":{
+				"$type": "application/x-agenda"
 			}
 		}
 	},
@@ -594,7 +597,7 @@
 								"$layout": {
 									"$items": [{
 										"$isEditMode": true,
-										"$chartType" : "x3flash",
+										"$renderer": "flash",
 										"$selectMode": "multi",
 										"$bind": "BA",
 										"$itemsPerPage": "10",
