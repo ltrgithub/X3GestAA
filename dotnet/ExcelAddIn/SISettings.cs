@@ -17,8 +17,6 @@ namespace ExcelAddIn
         }
         public void Connect(String serverUrl)
         {
-            webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/html/config.html?url=" +
-                Uri.EscapeUriString("excel://excelSIParams('{documentId}')?representation=excelSIParam.$edit"));
             webBrowser.ObjectForScripting = new External();
             ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
             {
@@ -32,7 +30,8 @@ namespace ExcelAddIn
                 else
                     MessageBox.Show("Load Error: " + errorMessage);
             };
-            webBrowser.Refresh();
+            webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/html/config.html?url=" +
+                Uri.EscapeUriString("excel://excelSIParams('{documentId}')?representation=excelSIParam.$edit"));
         }
     }
 }
