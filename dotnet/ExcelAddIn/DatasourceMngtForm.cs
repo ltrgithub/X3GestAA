@@ -18,14 +18,13 @@ namespace ExcelAddIn
         //
         public void Connect(String serverUrl)
         {
-            webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/html/config.html?url=%3Frepresentation%3Dexcelconfig.%24dashboard");
             webBrowser.ObjectForScripting = new External();
             ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
             {
                 if(!Globals.ThisAddIn.ActionPanel.connected)
                  Globals.ThisAddIn.ActionPanel.Connect("");
             };
-            webBrowser.Refresh();
+            webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/html/config.html?url=%3Frepresentation%3Dexcelconfig.%24dashboard");
         }
 
         private void DatasourceMngtForm_FormClosing(object sender, FormClosingEventArgs e)
