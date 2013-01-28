@@ -36,7 +36,6 @@ namespace ExcelAddIn
             //
             try
             {
-                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
                 webBrowser.ObjectForScripting = new External();
                 ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
                     {
@@ -46,7 +45,7 @@ namespace ExcelAddIn
                         if (withSettings && ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") == ""))
                             Globals.ThisAddIn.ShowSettingsForm();
                     };
-                webBrowser.Refresh();
+                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
             }
             catch (Exception ex)
             {
