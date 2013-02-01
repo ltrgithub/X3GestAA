@@ -394,6 +394,17 @@
 						"$groupName": "B"
 					}
 				}
+			},
+			"$extension": {
+				"$type": "application/x-gantt",
+				"$mapping": {		
+					"KEY": "DB2" ,
+					"LIB":"DB3",
+					"DATDI":"DB5",
+					"DURI":"DB6",
+					"TYPDAY":"DB7",
+					"ELAP":"DB8"
+				}
 			}
 		},
 		"EA": {
@@ -500,7 +511,25 @@
 						"$groupName": "A"
 					}
 				}
-			}
+			},
+			"$extension": {
+				"$type": "application/x-agenda",
+				"$mapping": {					
+					"TYPACT": "EA2" ,
+					"KEYACT":"EA3",
+					"DATD":"EA4",
+					"DATDI":"EA5",
+					"DATF":"EA6",
+					"DATFI":"EA7",
+					"HEUD":"EA8",
+					"HEUF":"EA9",
+					"TIER":"EA10",
+					"INT":"EA11",
+					"CAT":"EA12",
+					"OBJ":"EA13",
+					"EXE":"EA14"
+				}
+			}			
 		}
 	},
 	"$links": {},

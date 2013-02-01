@@ -17,6 +17,8 @@ namespace WordAddIn
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutAndData);
             SyracuseOfficeCustomData customData;
+            
+            Globals.WordAddIn.Application.ScreenUpdating = false;
 
             try
             {
@@ -30,6 +32,7 @@ namespace WordAddIn
                     }
 
                     Globals.WordAddIn.refreshReportingFieldsTaskPane(doc.ActiveWindow);
+                    Globals.WordAddIn.Application.ScreenUpdating = true;
                     return;
                 }
             }
@@ -85,6 +88,7 @@ namespace WordAddIn
             {
                 doc.ToggleFormsDesign();
             }
+            Globals.WordAddIn.Application.ScreenUpdating = true;
         }
 
         private static void addTable(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
@@ -199,6 +203,8 @@ namespace WordAddIn
 
         public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
         {
+            Globals.WordAddIn.Application.ScreenUpdating = false;
+
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
 
@@ -332,6 +338,8 @@ namespace WordAddIn
                 }
                 catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
             }
+
+            Globals.WordAddIn.Application.ScreenUpdating = true;
         }
 
         private static List<ContentControl> GetAllContentControls(Document doc)
@@ -499,8 +507,14 @@ namespace WordAddIn
 
         private static void copyCellContent(Cell src, Cell dest)
         {
-            src.Range.Copy();
-            dest.Range.Paste();
+            //src.Range.Copy();
+            //dest.Range.Paste();
+            foreach (ContentControl s in src.Range.ContentControls)
+            {
+                ContentControl d = dest.Range.ContentControls.Add(s.Type);
+                d.Tag = s.Tag;
+                d.Title = s.Title;
+            }
         }
     }
 
