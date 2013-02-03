@@ -47,6 +47,7 @@ namespace WordAddIn
                         CreateWordReportTemplate(doc, customData);
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
+                    Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 }
                 else if (rpt_fill_tpl.Equals(mode))
                 {
@@ -63,6 +64,7 @@ namespace WordAddIn
                         RefreshWordReportTemplate(doc, customData);
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
+                    Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 }
             }
         }
