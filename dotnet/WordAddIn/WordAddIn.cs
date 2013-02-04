@@ -50,6 +50,7 @@ namespace WordAddIn
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
             Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
             Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+            Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
 
             Document doc = getActiveDocument();
             if (doc == null)
@@ -62,7 +63,6 @@ namespace WordAddIn
             // It is ok to save ANY kind of document also as template, because
             // the template can be modified later
             Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
-
             if (MailMergeActions.isMailMergeDocument(doc))
             {
                 mailmerge.ActiveDocumentChanged(doc);
@@ -89,6 +89,10 @@ namespace WordAddIn
             if (taskPane != null)
             {
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = taskPane.Visible;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = false;
             }
         }
 
