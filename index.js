@@ -1,3 +1,16 @@
+// redirect standard output to file in cluster
+if (/^N\d+$/.test(process.argv[2])) {
+	var fs = require('fs')	
+	var name = __dirname+"/"+process.argv[2]+".log";
+    // fs.unlinkSync(name)
+    var stream = fs.createWriteStream(name);
+    process.stdoutOld = process.stdout;
+    process.__defineGetter__("stdout", function() { return stream; });
+    process.__defineGetter__("stderr", function() { return stream; });
+    console.log("Standard output redirected")
+    console.error("STDERR redirected")
+}
+
 var config = {};
 
 try {
