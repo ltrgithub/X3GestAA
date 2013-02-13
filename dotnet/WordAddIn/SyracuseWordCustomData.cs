@@ -61,7 +61,7 @@ namespace WordAddIn
         }
         public string getServerUrl() 
         {
-            return getStringProperty(serverUrlProperty);
+            return getStringProperty(serverUrlProperty, false);
         }
         public void setResourceUrl(String value)
         {
@@ -247,25 +247,34 @@ namespace WordAddIn
 
         public List<Locale> getSupportedLocales()
         {
+            List<Locale> ret = new List<Locale>();
+
             if (locales != null)
                 return locales;
-            locales = new List<Locale>();
-
-            object[] o = (object[]) dictionary[supportedLocalesProperty];
-            foreach (Object l in o)
+            try
             {
-                Dictionary<String, Object> locale = (Dictionary<String, Object>) l;
-                Locale loc = new Locale();
-                try
+                object[] o = (object[])dictionary[supportedLocalesProperty];
+                foreach (Object l in o)
                 {
-                    loc.name = locale["name"].ToString();
-                    loc.nativeName = locale["nativeName"].ToString();
-                    loc.englishName = locale["englishName"].ToString();
+                    Dictionary<String, Object> locale = (Dictionary<String, Object>)l;
+                    Locale loc = new Locale();
+                    try
+                    {
+                        loc.name = locale["name"].ToString();
+                        loc.nativeName = locale["nativeName"].ToString();
+                        loc.englishName = locale["englishName"].ToString();
+                    }
+                    catch (Exception) { };
+                    ret.Add(loc);
                 }
-                catch (Exception) { };
-                locales.Add(loc);
             }
-            return locales;
+            catch (Exception)
+            {
+                return ret;
+            }
+
+            locales = ret;
+            return ret;
         }
     }
 }
