@@ -394,6 +394,17 @@
 						"$groupName": "B"
 					}
 				}
+			},
+			"$decorator":{
+				"$stereotype": "gantt",
+				"$mapping": {					
+					"KEY": "DB2" ,
+					"LIB":"DB3",
+					"DATDI":"DB5",
+					"DURI":"DB6",
+					"TYPDAY":"DB7",
+					"ELAP":"DB8"
+				}
 			}
 		},
 		"EA": {
@@ -501,8 +512,8 @@
 					}
 				}
 			},
-			"$extension": {
-				"$type": "application/x-agenda",
+			"$decorator":{
+				"$stereotype": "agenda",
 				"$mapping": {					
 					"TYPACT": "EA2" ,
 					"KEYACT":"EA3",
