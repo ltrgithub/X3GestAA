@@ -61,7 +61,7 @@ namespace WordAddIn
         }
         public string getServerUrl() 
         {
-            return getStringProperty(serverUrlProperty);
+            return getStringProperty(serverUrlProperty, false);
         }
         public void setResourceUrl(String value)
         {
