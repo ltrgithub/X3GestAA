@@ -1,9 +1,15 @@
 {
 	"$prototypes": {
 		"menuItem": {
-			"$key": "title.en-US",
+			"$key": "code",
+			"$value": "title.en-US",
 			"application":{
 				"$key": ["application", "contract"]
+			},
+			"representationRef": {
+				"application": {
+					"$key": ["application", "contract"]
+				}
 			}
 		},
 		"portlet": {
@@ -12,7 +18,7 @@
 				"$key": ["application", "contract"]
 			},
 			"items":{
-				"$key": "title.en-US"
+				"$key": "code"
 			}
 		},
 		"dashboardDef": {
@@ -39,6 +45,7 @@
 	},
 	"$items": [{
 		"$type": "menuItem",
+		"code": "S_APPLICATIONS",
 		"title": {
 			"en-US": "Applications",
 			"fr-FR": "Applications"
@@ -53,7 +60,7 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "applications",
 			"representation": "application"
 		},
@@ -75,14 +82,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "roles",
 			"representation": "role"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
-		"code": "S_SECURITYPROFILES",
+		"code": "S_SECURITY_PROFILES",
 		"title": {
 			"en-US": "Security profiles",
 			"fr-FR": "Profiles de sécurité"
@@ -97,13 +104,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "securityProfiles",
 			"representation": "securityProfile"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_X3_SERVERS", 
 		"title": {
 			"en-US": "X3 Servers",
 			"fr-FR": "Serveurs X3"
@@ -118,14 +126,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "x3servers",
 			"representation": "x3server"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
-		"code": "S_FRIENDSERVERS",
+		"code": "S_FRIEND_SERVERS",
 		"title": {
 			"en-US": "Friend collaboration servers",
 			"fr-FR": "Serveurs collaboration associés"
@@ -140,13 +148,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "friendServers",
 			"representation": "friendServer"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_ENDPOINTS",
 		"title": {
 			"en-US": "Endpoints",
 			"fr-FR": "Points d'accès"
@@ -161,13 +170,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "endPoints",
 			"representation": "endPoint"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_GROUPES",
 		"title": {
 			"en-US": "Groups",
 			"fr-FR": "Groupes"
@@ -182,13 +192,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "groups",
 			"representation": "group"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_USERS",
 		"title": {
 			"en-US": "Users",
 			"fr-FR": "Utilisateurs"
@@ -203,13 +214,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "users",
 			"representation": "user"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_LOCALES",
 		"title": {
 			"en-US": "Locales",
 			"fr-FR": "Préférences régionnales"
@@ -224,13 +236,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "localePreferences",
 			"representation": "localePreference"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_PAGES",
 		"title": {
 			"en-US": "Pages",
 			"fr-FR": "Pages"
@@ -245,13 +258,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "pageDatas",
 			"representation": "pageData"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_DASHBOARDS",
 		"title": {
 			"en-US": "Dashboards",
 			"fr-FR": "Portails"
@@ -266,13 +280,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "dashboardDefs",
 			"representation": "dashboardDef"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_VIGNETTES",
 		"title": {
 			"en-US": "Vignettes",
 			"fr-FR": "Vignettes"
@@ -287,13 +302,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "portlets",
 			"representation": "portlet"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_MENU_ITEMS",
 		"title": {
 			"en-US": "Menu Items",
 			"fr-FR": "Entrées de menu"
@@ -308,13 +324,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "menuItems",
 			"representation": "menuItem"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_MENU_CATEGORIES",
 		"title": {
 			"en-US": "Menu Categories",
 			"fr-FR": "Catégories de menu"
@@ -329,55 +346,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "menuCategories",
 			"representation": "menuCategory"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
-		"title": {
-			"en-US": "Pages History",
-			"fr-FR": "Historique de pages"
-		},
-		"description": {
-			"en-US": "Pages history management interface",
-			"fr-FR": "Gestion de l'historique de pages"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"dataset": "syracuse",
-			"entity": "pageDataHistories",
-			"representation": "pageDataHistory"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"title": {
-			"en-US": "Configurations",
-			"fr-FR": "Configurations"
-		},
-		"description": {
-			"en-US": "Configurations management interface",
-			"fr-FR": "Gestion des configurations"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"dataset": "syracuse",
-			"entity": "configurations",
-			"representation": "configuration"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
+		"code": "S_IMPORT_TOOL",
 		"title": {
 			"en-US": "Import Tool",
 			"fr-FR": "Outil d'import"
@@ -392,13 +368,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "importTools",
 			"representation": "importTool"
 		},
 		"facet": "$create"
 	},{
 		"$type": "menuItem",
+		"code": "S_SEARCH_ADMIN",
 		"title": {
 			"en-US": "Search Index Management",
 			"fr-FR": "Gestion de l'outil de recherche"
@@ -413,13 +390,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "searchAdmins",
 			"representation": "searchAdmin"
 		},
 		"facet": "$create"
 	},{
 		"$type": "menuItem",
+		"code": "S_SESSIONS",
 		"title": {
 			"en-US": "Syracuse Sessions",
 			"fr-FR": "Gestion de sessions Syracuse"
@@ -434,7 +412,7 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "sessionInfos",
 			"representation": "sessionInfo"
 		},
@@ -456,14 +434,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "automates",
 			"representation": "automate"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
-		"code": "S_SERVERLOGS",
+		"code": "S_SERVER_LOGS",
 		"title": {
 			"en-US": "Server logs",
 			"fr-FR": "Traces serveur"
@@ -478,14 +456,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "serverLogs",
 			"representation": "serverLog"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
-		"code": "S_IMPORTSESSIONS",
+		"code": "S_IMPORT_SESSIONS",
 		"title": {
 			"en-US": "Import sessions",
 			"fr-FR": "Sessions d'import"
@@ -500,7 +478,7 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "importSessions",
 			"representation": "importSession"
 		},
@@ -520,7 +498,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Applications", "Roles", "X3 Servers", "Endpoints", "Groups", "Users", "Locales", "Server logs", "Import sessions", "Security profiles"]
+		"items": ["S_APPLICATIONS", "S_ROLES", "S_X3_SERVERS", "S_FRIEND_SERVERS", "S_AUTOMATES", "S_ENDPOINTS", "S_GROUPS", "S_USERS", "S_LOCALES", "S_SERVER_LOGS", "S_IMPORT_SESSIONS", "S_SECURITY_PROFILES"]
 	},{
 		"$type": "portlet",
 		"title": {
@@ -536,7 +514,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Pages", "Dashboards", "Vignettes", "Menu Items", "Menu Categories", "Pages History", "Configurations"]
+		"items": ["S_PAGES", "S_DASHBOARDS", "S_VIGNETTES", "S_MENU_ITEMS", "S_MENU_CATEGORIES"]
 	},{
 		"$type": "portlet",
 		"title": {
@@ -552,9 +530,10 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Import Tool", "Search Index Management", "Syracuse Sessions"]
+		"items": ["S_IMPORT_TOOL", "S_SEARCH_ADMIN", "S_SESSIONS"]
 	},{
 		"$type": "menuItem",
+		"code": "S_TEAMS",
 		"title": {
 			"en-US": "Teams",
 			"fr-FR": "Collaborateurs"
@@ -568,14 +547,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "teams",
 			"representation": "team"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
-		"code": "S_VOL",
+		"code": "S_VOLUMES",
 		"title": {
 			"en-US": "Volumes",
 			"fr-FR": "Volumes"
@@ -589,13 +568,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "storageVolumes",
 			"representation": "storageVolume"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_DOCUMENTS",
 		"title": {
 			"en-US": "Documents",
 			"fr-FR": "Documents"
@@ -609,13 +589,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "documents",
 			"representation": "document"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_DOCUMENT_TAGS",
 		"title": {
 			"en-US": "Document tags",
 			"fr-FR": "Etiquettes de document"
@@ -629,13 +610,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "documentTags",
 			"representation": "documentTag"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_TAG_CATEGORIES",
 		"title": {
 			"en-US": "Tags categories",
 			"fr-FR": "Categories d'étiquettes de document"
@@ -649,13 +631,14 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "documentTagCategories",
 			"representation": "documentTagCategory"
 		},
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_WORD_TEMPLATES",
 		"title": {
 			"en-US": "Word templates",
 			"fr-FR": "Modèles de document Word"
@@ -669,7 +652,7 @@
 			"contract": "collaboration"
 		},
 		"representationRef": {
-			"dataset": "syracuse",
+			"application": { "application": "syracuse", "contract": "collaboration" },
 			"entity": "msoWordTemplateDocuments",
 			"representation": "msoWordTemplateDocument"
 		},
@@ -689,7 +672,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["Teams", "Volumes", "Documents", "Document tags", "Tags categories", "Word templates"]
+		"items": ["S_TEAMS", "S_VOLUMES", "S_DOCUMENTS", "S_DOCUMENT_TAGS", "S_TAG_CATEGORIES", "S_WORD_TEMPLATES"]
 	},{
 		"$type": "dashboardDef",
 		"title": {
