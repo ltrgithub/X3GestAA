@@ -1,0 +1,1208 @@
+{
+	"$type": "application/json",
+	"$title": "{@W-OALT-25487}",
+	"$properties": {
+		"AA1": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT0_COD",
+			"$links": {
+				"$lookup": {},
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT0-5296}",
+			"$isMandatory": true,
+			"$maxLength": 8,
+			"$groupName": "A"
+		},
+		"AA2": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT0_INTIT",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT0-8}",
+			"$maxLength": 30,
+			"$groupName": "A"
+		},
+		"AA3": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT0_INTITSHO",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$title": "",
+			"$maxLength": 12,
+			"$groupName": "A"
+		},
+		"BA1": {
+			"$type": "application/x-boolean",
+			"$X3Name": "ALT1_ENAFLG",
+			"$title": "{@S-ALT1-188}",
+			"$mnu": "1",
+			"$format": "$check",
+			"$maxLength": 12,
+			"$groupName": "A"
+		},
+		"BB1": {
+			"$type": "application/x-query-designer",
+			"$X3Name": "ALT1_CLBFL",
+			"$title": "",
+			"$maxLength": 262142,
+			"$groupName": "B"
+		},
+		"CA1": {
+			"$type": "application/x-integer",
+			"$X3Name": "ALT2_NBRLIG",
+			"$title": "{@S-ALT2-769}",
+			"$maxLength": 4,
+			"$groupName": "A"
+		},
+		"CA2": {
+			"$type": "application/x-integer",
+			"$X3Name": "ALT2_MAXLIG",
+			"$title": "{@S-ALT2-14002}",
+			"$maxLength": 8,
+			"$groupName": "A"
+		},
+		"CA3": {
+			"$type": "application/x-integer",
+			"$X3Name": "ALT2_NBRCOL",
+			"$title": "{@S-ALT2-11935}",
+			"$maxLength": 2,
+			"$groupName": "A"
+		},
+		"CA4": {
+			"$type": "application/x-integer",
+			"$X3Name": "ALT2_MAXTIM",
+			"$title": "{@S-ALT2-14060}",
+			"$maxLength": 4,
+			"$groupName": "A"
+		},
+		"CA5": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_RPT",
+			"$links": {
+				"$lookup": {},
+				"$tunnel": {},
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT2-13348}",
+			"$maxLength": 15,
+			"$groupName": "A"
+		},
+		"CA6": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_ZRPT",
+			"$title": "",
+			"$isReadOnly": true,
+			"$maxLength": 30,
+			"$groupName": "A"
+		},
+		"CB1": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_SEL",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT2-801}",
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "B"
+		},
+		"CB2": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_SEL",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "B"
+		},
+		"CB3": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_SEL",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "B"
+		},
+		"CB4": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_SEL",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "B"
+		},
+		"CB5": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_SEL",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "B"
+		},
+		"CC1": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_LNK",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT2-988}",
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "C"
+		},
+		"CC2": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_LNK",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "C"
+		},
+		"CC3": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_LNK",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "C"
+		},
+		"CC4": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_LNK",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "C"
+		},
+		"CC5": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT2_LNK",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$maxLength": 120,
+			"$displayLength": 90,
+			"$groupName": "C"
+		},
+		"DA1": {
+			"$type": "application/x-choice",
+			"$X3Name": "ALT3_ALLUSR",
+			"$title": "{@S-ALT3-23082}",
+			"$mnu": "2915",
+			"$format": "$radios",
+			"$maxLength": 20,
+			"$groupName": "A"
+		},
+		"DA2": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT3_GRP",
+			"$title": "{@S-ALT3-616}",
+			"$maxLength": 10,
+			"$groupName": "A"
+		},
+		"DA3": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT3_ACS",
+			"$links": {
+				"$lookup": {},
+				"$tunnel": {},
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT3-71}",
+			"$maxLength": 10,
+			"$groupName": "A"
+		},
+		"DA4": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT3_OBJLNK",
+			"$links": {
+				"$lookup": {},
+				"$tunnel": {},
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT3-1158}",
+			"$maxLength": 8,
+			"$groupName": "A"
+		},
+		"DA5": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT3_ZOBJLNK",
+			"$title": "",
+			"$isReadOnly": true,
+			"$maxLength": 30,
+			"$groupName": "A"
+		},
+		"DA6": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT3_FCTLNK",
+			"$links": {
+				"$lookup": {},
+				"$tunnel": {},
+				"$lazyload": {}
+			},
+			"$title": "{@S-ALT3-103}",
+			"$maxLength": 12,
+			"$groupName": "A"
+		},
+		"DA7": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT3_ZFCTLNK",
+			"$title": "",
+			"$isReadOnly": true,
+			"$maxLength": 30,
+			"$groupName": "A"
+		},
+		"EA1": {
+			"$type": "application/x-choice",
+			"$X3Name": "ALT4_REPGRA",
+			"$title": "{@S-ALT4-23382}",
+			"$mnu": "2930",
+			"$format": "$combo",
+			"$maxLength": 15,
+			"$groupName": "A"
+		},
+		"EA2": {
+			"$type": "application/x-string",
+			"$X3Name": "ALT4_OPTGRA",
+			"$links": {
+				"$lookup": {},
+				"$lazyload": {}
+			},
+			"$title": "",
+			"$maxLength": 10,
+			"$groupName": "A"
+		},
+		"EB1": {
+			"$type": "application/x-choice",
+			"$X3Name": "ALT4_TYPGRA",
+			"$title": "{@S-ALT4-680}",
+			"$mnu": "2932",
+			"$format": "$combo",
+			"$maxLength": 15,
+			"$groupName": "B"
+		},
+		"EB2": {
+			"$type": "application/x-choice",
+			"$X3Name": "ALT4_FSHGRA",
+			"$title": "{@S-ALT4-23382}",
+			"$mnu": "2939",
+			"$format": "$combo",
+			"$maxLength": 15,
+			"$groupName": "B"
+		},
+		"EB3": {
+			"$type": "application/x-choice",
+			"$X3Name": "ALT4_DEFGRA",
+			"$title": "{@S-ALT4-23312}",
+			"$mnu": "2933",
+			"$format": "$combo",
+			"$maxLength": 15,
+			"$groupName": "B"
+		},
+		"EC1": {
+			"$type": "application/octet-stream",
+			"$X3Name": "ALT4_IMAG",
+			"$title": "",
+			"$isReadOnly": true,
+			"$maxByteLength": 524286,
+			"$groupName": "C"
+		},
+		"FA": {
+			"$type": "application/x-array",
+			"$capabilities": "insert,delete",
+			"$item": {
+				"$properties": {
+					"FA2": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_TYPLIG",
+						"$title": "{@S-ALT5-680}",
+						"$capabilities": "frozen",
+						"$maxLength": 1,
+						"$groupName": "A"
+					},
+					"FA3": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_TABLE",
+						"$links": {
+							"$lookup": {},
+							"$tunnel": {},
+							"$lazyload": {}
+						},
+						"$title": "{@S-ALT5-1176}",
+						"$capabilities": "frozen",
+						"$maxLength": 12,
+						"$displayLength": 14,
+						"$groupName": "A"
+					},
+					"FA4": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_ABREV",
+						"$title": "{@S-ALT5-903}",
+						"$capabilities": "frozen",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"FA5": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_LIBTAB",
+						"$title": "{@S-ALT5-24061}",
+						"$capabilities": "frozen",
+						"$maxLength": 30,
+						"$groupName": "A"
+					},
+					"FA6": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_X",
+						"$title": "{@S-ALT5-802}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA7": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_Y",
+						"$title": "{@S-ALT5-802}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA8": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_LARGE",
+						"$title": "{@S-ALT5-3429}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA9": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_HAUT",
+						"$title": "{@S-ALT5-3431}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA10": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_VISFLG",
+						"$title": "{@S-ALT5-17659}",
+						"$mnu": "1",
+						"$format": "$combo",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA11": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_CHAMP",
+						"$title": "{@S-ALT5-1261}",
+						"$maxLength": 25,
+						"$groupName": "A"
+					},
+					"FA12": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_LIBCHP",
+						"$title": "{@S-ALT5-1470}",
+						"$maxLength": 30,
+						"$groupName": "A"
+					},
+					"FA13": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_LNKORG",
+						"$title": "{@S-ALT5-75}",
+						"$maxLength": 20,
+						"$groupName": "A"
+					},
+					"FA14": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_LNKDES",
+						"$title": "{@S-ALT5-75}",
+						"$maxLength": 20,
+						"$groupName": "A"
+					},
+					"FA15": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_LNKTYP",
+						"$title": "{@S-ALT5-24879}",
+						"$mnu": "7823",
+						"$format": "$combo",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"FA16": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_EXPR",
+						"$title": "{@S-ALT5-843}",
+						"$maxLength": 200,
+						"$displayLength": 30,
+						"$groupName": "A"
+					},
+					"FA17": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_BORNE",
+						"$title": "{@S-ALT5-13280}",
+						"$mnu": "1",
+						"$format": "$combo",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"FA18": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_CUMUL",
+						"$title": "{@S-ALT5-840}",
+						"$mnu": "1",
+						"$format": "$combo",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA19": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_TRI",
+						"$title": "{@S-ALT5-147}",
+						"$mnu": "10",
+						"$format": "$combo",
+						"$maxLength": 15,
+						"$groupName": "A"
+					},
+					"FA20": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_GROUPE",
+						"$title": "{@S-ALT5-616}",
+						"$mnu": "1",
+						"$format": "$combo",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"FA21": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_NIV",
+						"$title": "{@S-ALT5-5230}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA22": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_GRA",
+						"$title": "{@S-ALT5-12172}",
+						"$mnu": "2937",
+						"$format": "$combo",
+						"$maxLength": 15,
+						"$groupName": "A"
+					},
+					"FA23": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_REP",
+						"$title": "{@S-ALT5-23382}",
+						"$mnu": "2938",
+						"$format": "$combo",
+						"$maxLength": 15,
+						"$groupName": "A"
+					},
+					"FA24": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_CODTYP",
+						"$links": {
+							"$lookup": {},
+							"$tunnel": {},
+							"$lazyload": {}
+						},
+						"$title": "{@S-ALT5-15}",
+						"$maxLength": 8,
+						"$groupName": "A"
+					},
+					"FA25": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_ZCODTYP",
+						"$title": "{@S-ALT5-8}",
+						"$isReadOnly": true,
+						"$maxLength": 30,
+						"$groupName": "A"
+					},
+					"FA26": {
+						"$type": "application/x-decimal",
+						"$X3Name": "ALT5_LONG",
+						"$title": "{@S-ALT5-24}",
+						"$maxLength": 5,
+						"$groupName": "A"
+					},
+					"FA27": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_NOLIB",
+						"$title": "{@S-ALT5-28}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA28": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_IDENT",
+						"$title": "{@S-ALT5-1377}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA29": {
+						"$type": "application/x-choice",
+						"$X3Name": "ALT5_FORMU",
+						"$title": "{@S-ALT5-4574}",
+						"$mnu": "1",
+						"$format": "$combo",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA30": {
+						"$type": "application/x-integer",
+						"$X3Name": "ALT5_NUMTEX",
+						"$title": "{@S-ALT5-170}",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"FA31": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_VALDEB",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-ALT5-7926}",
+						"$maxLength": 80,
+						"$displayLength": 30,
+						"$groupName": "A"
+					},
+					"FA32": {
+						"$type": "application/x-string",
+						"$X3Name": "ALT5_VALFIN",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-ALT5-7925}",
+						"$maxLength": 80,
+						"$displayLength": 30,
+						"$groupName": "A"
+					}
+				}
+			}
+		},
+		"FB1": {
+			"$type": "text/rtf",
+			"$X3Name": "ALT5_CLBREC",
+			"$capabilities": "raw",
+			"$title": "",
+			"$maxLength": 2046,
+			"$groupName": "B"
+		},
+		"FC1": {
+			"$type": "text/rtf",
+			"$X3Name": "ALT5_CLOB",
+			"$capabilities": "raw",
+			"$title": "",
+			"$maxLength": 262142,
+			"$groupName": "C"
+		},
+		"bA": {
+			"$links": {
+				"$next": {
+					"$title": "{@W-OALT--126031}",
+					"$url": "leftList-Next",
+					"$type": "application/json"
+				},
+				"$previous": {
+					"$title": "{@W-OALT--126030}",
+					"$url": "leftList-Prev",
+					"$type": "application/json"
+				}
+			},
+			"$type": "application/x-array",
+			"$capabilities": "sort,filter",
+			"$isFieldPager": true,
+			"$item": {
+				"$properties": {
+					"bA1": {
+						"$title": "{@O-ALT-5296}",
+						"$capabilities": "sort,filter",
+						"$maxLength": "8",
+						"$type": "application/x-string"
+					},
+					"bA2": {
+						"$title": "{@O-ALT-8}",
+						"$capabilities": "sort,filter",
+						"$maxLength": "30",
+						"$type": "application/x-string"
+					},
+					"bA3": {
+						"$title": "{@O-ALT-4010}",
+						"$capabilities": "sort,filter",
+						"$maxLength": "30",
+						"$type": "application/x-string"
+					}
+				}
+			}
+		},
+		"bB": {
+			"$type": "application/x-array",
+			"$capabilities": "sort,filter",
+			"$isFieldPager": true,
+			"$item": {
+				"$properties": {
+					"bB1": {
+						"$title": "{@O-ALT-5296}",
+						"$capabilities": "sort,filter",
+						"$maxLength": "8",
+						"$type": "application/x-string"
+					},
+					"bB2": {
+						"$title": "{@O-ALT-8}",
+						"$capabilities": "sort,filter",
+						"$maxLength": "30",
+						"$type": "application/x-string"
+					},
+					"bB3": {
+						"$title": "{@O-ALT-4010}",
+						"$capabilities": "sort,filter",
+						"$maxLength": "30",
+						"$type": "application/x-string"
+					}
+				}
+			}
+		}
+	},
+	"$links": {
+		"aB1": {
+			"$title": "{@W-OALT-20106}",
+			"$act": "2825"
+		},
+		"aB2": {
+			"$title": "{@W-OALT-1401}",
+			"$act": "2826"
+		},
+		"aB3": {
+			"$title": "{@W-OALT-15209}",
+			"$act": "2827"
+		}
+	},
+	"$actions": {
+		"aA1": {
+			"$title": "{@W-OALT--123002}",
+			"$act": "1116"
+		},
+		"aA2": {
+			"$title": "{@W-OALT--123003}",
+			"$act": "1117"
+		},
+		"aA3": {
+			"$title": "{@W-OALT--123004}",
+			"$act": "1118"
+		},
+		"aA4": {
+			"$title": "{@W-OALT--123005}",
+			"$act": "2816"
+		},
+		"aA5": {
+			"$title": "{@W-OALT--123065}",
+			"$act": "2845"
+		}
+	},
+	"$article": {
+		"$fusionBar": {
+			"$category": "fusionBar",
+			"$items": [{
+				"$title": "{@W-OALT-16243}",
+				"$selectMode": "row",
+				"$bind": "bA",
+				"$format": "xflgrid",
+				"$isEditMode": false
+			}, {
+				"$title": "{@W-OALT--123196}",
+				"$selectMode": "row",
+				"$bind": "bB",
+				"$format": "xflgrid",
+				"$isEditMode": false
+			}]
+		},
+		"$layout": {
+			"$layoutType": "stack",
+			"$items": [{
+				"$category": "section",
+				"$style": "header",
+				"$XID": "A",
+				"$x3bind": "A",
+				"$layout": {
+					"$layoutType": "stack",
+					"$items": [{
+						"$layoutType": "row",
+						"$items": [{
+							"$title": "",
+							"$category": "block",
+							"$x3bind": "AA",
+							"$layout": {
+								"$items": [{
+									"$layoutType": "row",
+									"$items": [{
+										"$isEditMode": true,
+										"$bind": "AA1"
+									}, {
+										"$isEditMode": true,
+										"$bind": "AA2"
+									}, {
+										"$isEditMode": true,
+										"$bind": "AA3"
+									}]
+								}]
+							}
+						}]
+					}]
+				}
+			}, {
+				"$layoutType": "tabs",
+				"$items": [{
+					"$title": "{@W-OALT-129}",
+					"$category": "section",
+					"$XID": "cB",
+					"$x3bind": "B",
+					"$layout": {
+						"$layoutType": "stack",
+						"$items": [{
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "BA",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "BA1"
+										}]
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "BB",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "BB1"
+										}]
+									}]
+								}
+							}]
+						}]
+					}
+				}, {
+					"$title": "{@W-OALT-13908}",
+					"$category": "section",
+					"$XID": "cC",
+					"$x3bind": "C",
+					"$layout": {
+						"$layoutType": "stack",
+						"$items": [{
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "CA",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CA1"
+										}, {
+											"$isEditMode": true,
+											"$bind": "CA2"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CA3"
+										}, {
+											"$isEditMode": true,
+											"$bind": "CA4"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CA5"
+										}, {
+											"$isEditMode": false,
+											"$isTitleHidden": true,
+											"$bind": "CA6"
+										}]
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "{@S-ALT2-7359}",
+								"$category": "block",
+								"$x3bind": "CB",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CB1"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CB2"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CB3"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CB4"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CB5"
+										}]
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "{@S-ALT2-14059}",
+								"$category": "block",
+								"$x3bind": "CC",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CC1"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CC2"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CC3"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CC4"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "CC5"
+										}]
+									}]
+								}
+							}]
+						}]
+					}
+				}, {
+					"$title": "{@W-OALT-72}",
+					"$category": "section",
+					"$XID": "cD",
+					"$x3bind": "D",
+					"$layout": {
+						"$layoutType": "stack",
+						"$items": [{
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "DA",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "DA1"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "DA2"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "DA3"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "DA4"
+										}, {
+											"$isEditMode": false,
+											"$isTitleHidden": true,
+											"$bind": "DA5"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "DA6"
+										}, {
+											"$isEditMode": false,
+											"$isTitleHidden": true,
+											"$bind": "DA7"
+										}]
+									}]
+								}
+							}]
+						}]
+					}
+				}, {
+					"$title": "{@W-OALT-12870}",
+					"$category": "section",
+					"$XID": "cE",
+					"$x3bind": "E",
+					"$layout": {
+						"$layoutType": "stack",
+						"$items": [{
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "EA",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "EA1"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "EA2"
+										}]
+									}]
+								}
+							}, {
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "EC",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isReadOnly": true,
+											"$bind": "EC1"
+										}]
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "{@S-ALT4-12870}",
+								"$category": "block",
+								"$x3bind": "EB",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "EB1"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "EB2"
+										}]
+									}, {
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "EB3"
+										}]
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "ED",
+								"$layout": {
+									"$items": []
+								}
+							}]
+						}]
+					}
+				}, {
+					"$title": "{@W-OALT-11896}",
+					"$category": "section",
+					"$XID": "cF",
+					"$x3bind": "F",
+					"$layout": {
+						"$layoutType": "stack",
+						"$items": [{
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "",
+								"$category": "block",
+								"$x3bind": "FA",
+								"$layout": {
+									"$items": [{
+										"$isEditMode": true,
+										"$selectMode": "multi",
+										"$bind": "FA",
+										"$itemsPerPage": "10",
+										"$isRowIndexVisible": true
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "{@S-ALT5-6345}",
+								"$category": "block",
+								"$x3bind": "FB",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "FB1"
+										}]
+									}]
+								}
+							}]
+						}, {
+							"$layoutType": "row",
+							"$items": [{
+								"$title": "{@S-ALT5-22570}",
+								"$category": "block",
+								"$x3bind": "FC",
+								"$layout": {
+									"$items": [{
+										"$layoutType": "row",
+										"$items": [{
+											"$isEditMode": true,
+											"$bind": "FC1"
+										}]
+									}]
+								}
+							}]
+						}]
+					}
+				}]
+			}]
+		}
+	},
+	"$localization": {
+		"@S-ALT0-5296": "Code",
+		"@S-ALT0-8": "Intitulé",
+		"@S-ALT1-188": "Actif",
+		"@S-ALT2-769": "Nombre lignes",
+		"@S-ALT2-14002": "Maximum lignes",
+		"@S-ALT2-11935": "Nb colonnes fixes",
+		"@S-ALT2-14060": "Temps maximum",
+		"@S-ALT2-13348": "Etat",
+		"@S-ALT2-801": "Critères de sélection",
+		"@S-ALT2-988": "Expression de lien",
+		"@S-ALT2-7359": "Sélections",
+		"@S-ALT2-14059": "Liens",
+		"@S-ALT3-23082": "Type de requête",
+		"@S-ALT3-616": "Groupe",
+		"@S-ALT3-71": "Code d'accès",
+		"@S-ALT3-1158": "Objet",
+		"@S-ALT3-103": "Fonction",
+		"@S-ALT4-23382": "Représentation",
+		"@S-ALT4-680": "Type",
+		"@S-ALT4-23312": "Graphique par défaut",
+		"@S-ALT4-12870": "Graphique",
+		"@S-ALT5-680": "Type",
+		"@S-ALT5-1176": "Table",
+		"@S-ALT5-903": "Abréviation",
+		"@S-ALT5-24061": "Nom",
+		"@S-ALT5-802": "Position",
+		"@S-ALT5-3429": "Largeur",
+		"@S-ALT5-3431": "Hauteur",
+		"@S-ALT5-17659": "Visible",
+		"@S-ALT5-1261": "Champ",
+		"@S-ALT5-1470": "Libellé",
+		"@S-ALT5-75": "Lien",
+		"@S-ALT5-24879": "Type de jointure",
+		"@S-ALT5-843": "Expression",
+		"@S-ALT5-13280": "Bornes",
+		"@S-ALT5-840": "Cumul",
+		"@S-ALT5-147": "Tri",
+		"@S-ALT5-616": "Groupe",
+		"@S-ALT5-5230": "Niveau",
+		"@S-ALT5-12172": "Type de graphe",
+		"@S-ALT5-23382": "Représentation",
+		"@S-ALT5-15": "Type de données",
+		"@S-ALT5-8": "Intitulé",
+		"@S-ALT5-24": "Longueur champ",
+		"@S-ALT5-28": "No menu local",
+		"@S-ALT5-1377": "Identifiant",
+		"@S-ALT5-4574": "Formule",
+		"@S-ALT5-170": "Numéro de texte",
+		"@S-ALT5-7926": "Valeur par défaut (début)",
+		"@S-ALT5-7925": "Valeur par défaut (fin)",
+		"@S-ALT5-6345": "Réceptions",
+		"@S-ALT5-22570": "Envoi",
+		"@O-ALT-5296": "Code",
+		"@O-ALT-8": "Intitulé",
+		"@O-ALT-4010": "Intitulé court",
+		"@W-OALT-25487": "Requêteur graphique",
+		"@W-OALT--126031": "Suivant",
+		"@W-OALT--126030": "Précédent",
+		"@W-OALT-20106": "Valider",
+		"@W-OALT-1401": "Copie",
+		"@W-OALT-15209": "Exécuter",
+		"@W-OALT--123002": "Enregistrer",
+		"@W-OALT--123003": "Créer",
+		"@W-OALT--123004": "Supprimer",
+		"@W-OALT--123005": "Abandon",
+		"@W-OALT--123065": "Fin",
+		"@W-OALT-16243": "Requêtes",
+		"@W-OALT--123196": "Derniers lus",
+		"@W-OALT-129": "Champs",
+		"@W-OALT-13908": "Avancé",
+		"@W-OALT-72": "Accès",
+		"@W-OALT-12870": "Graphique",
+		"@W-OALT-11896": "Debugger"
+	}
+}
