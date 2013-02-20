@@ -395,8 +395,8 @@
 					}
 				}
 			},
-			"$extension": {
-				"$type": "application/x-gantt",
+			"$decorator":{
+				"$stereotype": "gantt",
 				"$mapping": {
 					"KEY": "DB2",
 					"LIB": "DB3",
@@ -512,8 +512,8 @@
 					}
 				}
 			},
-			"$extension": {
-				"$type": "application/x-agenda",
+			"$decorator":{
+				"$stereotype": "agenda",
 				"$mapping": {
 					"TYPACT": "EA2",
 					"KEYACT": "EA3",
@@ -623,6 +623,7 @@
 								"$layout": {
 									"$items": [{
 										"$isEditMode": true,
+										"$renderer": "flash",
 										"$selectMode": "multi",
 										"$bind": "BA",
 										"$itemsPerPage": "10",
