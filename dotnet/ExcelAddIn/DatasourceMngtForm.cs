@@ -36,5 +36,10 @@ namespace ExcelAddIn
         {
             webBrowser.Refresh();
         }
+
+        private void DatasourceMngtForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
