@@ -203,7 +203,62 @@
 						"$groupName": "B"
 					}
 				}
-			}
+			},
+			"$cube": {
+				"$mode": "table",
+				"$style": "spiderweb",
+				"$displaysOneMeasure": false,
+				"$title": "{@S-AQFF1-3651}",
+				"$hierarchies": {
+					"BB2_h": {
+						"$title": "{@S-AQFF1-3651}",
+						"$properties": ["BB2"],
+						"$members": [],
+						"$isDefault": true
+					}
+				},
+				"$measures": {
+					"BB4": {
+						"$type": "application/x-decimal",
+						"$title": "{@S-AQFF1-23747}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false,
+						"$isDefault": true
+					},
+					"BB5": {
+						"$property": "BB5",
+						"$title": "{@S-AQFF1-23746}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false,
+						"$isDefault": true
+					},
+					"BB6": {
+						"$property": "BB6",
+						"$title": "{@S-AQFF1-23662}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false
+					},
+					"BB7": {
+						"$property": "BB7",
+						"$title": "{@S-AQFF1-23663}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false
+					}
+				}
+			},
+			"$axes": [{
+				"$hierarchies": [
+					["BB2_h"]
+				]
+			}, {
+				"$hierarchies": [
+					["$measures"]
+				]
+			}]
 		},
 		"CA": {
 			"$type": "application/x-array",
@@ -395,7 +450,7 @@
 					}
 				}
 			},
-			"$decorator":{
+			"$decorator": {
 				"$stereotype": "gantt",
 				"$mapping": {
 					"KEY": "DB2",
@@ -512,7 +567,7 @@
 					}
 				}
 			},
-			"$decorator":{
+			"$decorator": {
 				"$stereotype": "agenda",
 				"$mapping": {
 					"TYPACT": "EA2",
@@ -623,7 +678,6 @@
 								"$layout": {
 									"$items": [{
 										"$isEditMode": true,
-										"$renderer": "flash",
 										"$selectMode": "multi",
 										"$bind": "BA",
 										"$itemsPerPage": "10",
