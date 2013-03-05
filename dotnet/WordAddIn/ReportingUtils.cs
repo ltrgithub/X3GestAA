@@ -500,7 +500,8 @@ namespace WordAddIn
             r.End++;
             try
             {
-                doc.Hyperlinks.Add(r, link);
+                //MessageBox.Show("kein HL " + link);
+                //doc.Hyperlinks.Add(r, link);
             }
             catch (Exception) { };
         }
