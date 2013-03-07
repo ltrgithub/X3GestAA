@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Word;
@@ -12,6 +13,7 @@ namespace WordAddIn
         public const string rpt_build_tpl   = "rpt_build_tpl";
         public const string rpt_is_tpl      = "rpt_is_tpl";
         public const string rpt_fill_tpl    = "rpt_fill_tpl";
+        public const string rpt_refresh_tpl = "rpt_refresh_tpl";
 
         public BrowserDialog browserDialog = null;
 
@@ -55,7 +57,6 @@ namespace WordAddIn
                     {
                         PopulateWordReportTemplate(doc, customData);
                     }
-                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 }
                 else if (rpt_is_tpl.Equals(mode))
                 {
@@ -65,6 +66,14 @@ namespace WordAddIn
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
+                }
+                if ((customData.getDocumentTemplateUrl() != null) && (Globals.Ribbons.Ribbon.buttonSave.Enabled == true))
+                {
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
+                }
+                else
+                {
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 }
             }
         }
@@ -85,8 +94,11 @@ namespace WordAddIn
 
         public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
+            // save templateUrl within document for refresh
+            customData.setDocumentTemplateUrl(customData.getDocumentUrl());
+
             // Remove document URL, this has to be done because a template opened from collab. space has already an url stored inside the
-            // document. But afzter the population of the template it is a new independent document!
+            // document. But after the population of the template it is a new independent document!
             customData.setDocumentUrl("");
             customData.setDocumentTitle("");
             customData.setForceRefresh(false);
@@ -96,8 +108,21 @@ namespace WordAddIn
 
         public void RefreshReport()
         {
-            // TODO: Implement (Sprint 18?)
-            MessageBox.Show("TODO: Implement this feature!");
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
+                return;
+            }
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+
+            customData.setCreateMode("rpt_refresh_tpl");
+            customData.writeDictionaryToDocument();
+
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         public void CreateWordReportPreview()

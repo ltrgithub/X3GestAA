@@ -112,14 +112,14 @@ namespace WordAddIn
 
                         if (link.Equals("") != true)
                         {
-                            Range r = dataDoc.Tables[1].Cell(row + 2, col + 1).Range;
-                            //r.Start--;
-                            //r.End++;
-                            try
-                            {
-                                dataDoc.Hyperlinks.Add(r, link);
-                            }
-                            catch (Exception e) { MessageBox.Show(e.ToString()); };
+                                Range r = dataDoc.Tables[1].Cell(row + 2, col + 1).Range;
+                                //r.Start--;
+                                //r.End++;
+                                try
+                                {
+                                    dataDoc.Hyperlinks.Add(r, link);
+                                }
+                                catch (Exception e) { MessageBox.Show(e.ToString()); };
                         }
                     }
                 }
@@ -225,6 +225,87 @@ namespace WordAddIn
             browserDialog.Hide();
         }
 
+        // Refreshing WordReporting Document
+        public void refreshWordDocument(String data)
+        {
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
+                return;
+            }
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+
+            string templateUrl = customData.getDocumentTemplateUrl();
+            if ((templateUrl == null) || (templateUrl == ""))
+            {
+                return;
+            }
+            templateUrl = templateUrl.Replace("?representation=msoReportTemplate.$details", "/content");
+
+            string documentUrl = customData.getDocumentUrl();
+            string documentTitle = customData.getDocumentTitle();
+            string locale = Globals.WordAddIn.commons.GetDocumentLocale(doc);
+            string resourceUrl = customData.getResourceUrl();
+
+            byte[] content = browserDialog.readBinaryURLContent(templateUrl);
+            if (content == null)
+            {
+                return;
+            }
+
+            string newDocumentFile = null;
+            newDocumentFile = Path.GetTempFileName();
+
+            using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
+            {
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    writer.Write(content);
+                    writer.Close();
+                }
+            }
+
+            object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
+
+            Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
+            Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
+            doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
+                return;
+            }
+
+            
+            customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+            
+
+            Globals.WordAddIn.commons.SetDocumentLocale(doc, locale);
+            Globals.WordAddIn.commons.DisplayDocumentLocale(doc);
+            customData.setDocumentTemplateUrl(templateUrl);
+            customData.setDocumentTitle(documentTitle);
+            customData.setDocumentUrl(documentUrl);
+            customData.setResourceUrl(resourceUrl);
+            customData.writeDictionaryToDocument();
+
+            browserDialog.Hide();
+            Globals.WordAddIn.Application.ScreenUpdating = false;
+            ReportingUtils.fillTemplate(doc, data, browserDialog);
+            Globals.WordAddIn.Application.ScreenUpdating = true;
+
+            Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
+            customData.setCreateMode("rpt_fill_tpl");
+            customData.writeDictionaryToDocument();
+        }
+
         public void populateWordTemplate(String data)
         {
             Document doc = customData.getWordDoc();
@@ -307,6 +388,10 @@ namespace WordAddIn
             else if (ReportingActions.rpt_is_tpl.Equals(mode))
             {
                 return "word-report-tpl-refresh";
+            }
+            else if (ReportingActions.rpt_refresh_tpl.Equals(mode))
+            {
+                return "word-report-refresh";
             }
 
             return "word-mailmerge";
