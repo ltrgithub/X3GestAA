@@ -78,6 +78,17 @@ namespace WordAddIn
                 {
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
                 }
+
+                // enable refreshButton, if the document contains a documentTemplateUrl
+                if ((customData.getDocumentTemplateUrl() != "") && (Globals.Ribbons.Ribbon.buttonSave.Enabled == true))
+                {
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
+                }
+                else
+                {
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+                }
+
             }
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);

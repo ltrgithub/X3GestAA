@@ -96,8 +96,8 @@
             // buttonRefreshReport
             // 
             this.buttonRefreshReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonRefreshReport.Image = global::WordAddIn.Properties.Resources.refresh;
             resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
+            this.buttonRefreshReport.Image = global::WordAddIn.Properties.Resources.refresh;
             this.buttonRefreshReport.Name = "buttonRefreshReport";
             this.buttonRefreshReport.ShowImage = true;
             this.buttonRefreshReport.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshReport_Click);
