@@ -462,16 +462,17 @@ namespace WordAddIn
                             //c.Range.InlineShapes[1].Height = height;
 
                             // Image should be displayed in original size but not greater than 16 cm
-                            c.Range.InlineShapes[1].ScaleHeight = 100;
-                            c.Range.InlineShapes[1].ScaleWidth = 100;
+                            float scal = 100;
+                            c.Range.InlineShapes[1].ScaleHeight = scal;
+                            c.Range.InlineShapes[1].ScaleWidth = scal;
                             // maxWith = 160mm
                             // Millimeter 2 Inch = 25.4
                             // Inch 2 Pixel = 72
                             float maxWidth = 454;  // 160 / 25.4 * 72
-                            float scal = 100;
-                            while (c.Range.InlineShapes[1].Width > maxWidth)
+
+                            if (c.Range.InlineShapes[1].Width > maxWidth)
                             {
-                                scal--;
+                                scal = 100 * maxWidth / c.Range.InlineShapes[1].Width;
                                 c.Range.InlineShapes[1].ScaleHeight = scal;
                                 c.Range.InlineShapes[1].ScaleWidth = scal;
                             }
@@ -508,6 +509,10 @@ namespace WordAddIn
                 return;
             }
 
+            if (link.Substring(0, 6) != "mailto")
+            {
+                return;
+            }
             Range r = c.Range;
 
             // Expand range to cover full content control
@@ -515,7 +520,6 @@ namespace WordAddIn
             r.End++;
             try
             {
-                //MessageBox.Show("kein HL " + link);
                 //doc.Hyperlinks.Add(r, link);
             }
             catch (Exception) { };

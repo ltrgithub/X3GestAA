@@ -1,0 +1,1912 @@
+{
+"$type": "application/json",
+"$title": "{@W-WMBAGSTD-24359}",
+"$properties":{
+"AA1": {
+"$type": "application/x-reference",
+"$item": {
+"$title" : "{AA2}",
+"$links": {
+"$lookup": {},
+"$tunnel": {},
+"$lazyload": {}
+ }
+},
+"$X3Name": "CONSBAG1_BPR",
+"$valueStyle": "AFVTUN",
+"$titleStyle": "AFTTUN",
+"$title": "{@S-CONSBAG1-19569}",
+"$maxLength": 15,
+"$groupName": "A"
+},
+"AA2": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_ZBPR",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 30,
+"$groupName": "A"
+},
+"AA3": {
+"$type": "application/x-reference",
+"$item": {
+"$title" : "{AA4}",
+"$links": {
+"$lookup": {},
+"$tunnel": {},
+"$lazyload": {}
+ }
+},
+"$X3Name": "CONSBAG1_BPRPAY",
+"$valueStyle": "AFVTUN",
+"$titleStyle": "AFTTUN",
+"$title": "{@S-CONSBAG1-40811}",
+"$maxLength": 15,
+"$groupName": "A"
+},
+"AA4": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_ZBPRPAY",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 30,
+"$groupName": "A"
+},
+"AA5": {
+"$type": "application/x-reference",
+"$item": {
+"$title" : "{AA6}",
+"$links": {
+"$lookup": {},
+"$tunnel": {},
+"$lazyload": {}
+ }
+},
+"$X3Name": "CONSBAG1_BPRRSK",
+"$valueStyle": "AFVTUN",
+"$titleStyle": "AFTTUN",
+"$title": "{@S-CONSBAG1-27218}",
+"$maxLength": 15,
+"$groupName": "A"
+},
+"AA6": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_ZBPRRSK",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 30,
+"$groupName": "A"
+},
+"AB1": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_CPY",
+"$valueStyle": "AFVSEL",
+"$titleStyle": "AFTSEL",
+"$links": {
+"$lookup": {},
+"$lazyload": {}
+ },
+"$title": "{@S-CONSBAG1-8730}",
+"$maxLength": 5,
+"$groupName": "B"
+},
+"AB2": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_FCY",
+"$valueStyle": "AFVSEL",
+"$titleStyle": "AFTSEL",
+"$links": {
+"$lookup": {},
+"$lazyload": {}
+ },
+"$title": "",
+"$maxLength": 5,
+"$groupName": "B"
+},
+"AB3": {
+"$type": "application/x-date",
+"$X3Name": "CONSBAG1_DAT",
+"$valueStyle": "AFVTUN",
+"$titleStyle": "AFTTUN",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "",
+"$isMandatory" :true,
+"$maxLength": 8,
+"$groupName": "B"
+},
+"AB4": {
+"$type": "application/x-choice",
+"$X3Name": "CONSBAG1_FNCCNT",
+"$title": "{@S-CONSBAG1-103}",
+"$mnu": "233",
+"$format": "$combo",
+"$maxLength": 30,
+"$groupName": "B"
+},
+"AB5": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_CNT",
+"$title": "{@S-CONSBAG1-1824}",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "B"
+},
+"AB6": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG1_TEL",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "B"
+}
+,
+"BA": {
+"$type": "application/x-array",
+"$capabilities": "sort",
+"$item": {
+"$links": {
+"$lazyload": {}  },
+"$properties": {
+"BA2": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_FCY",
+"$title": "{@S-WMBAGSTD-1344}",
+"$capabilities": "frozen,sort",
+"$isReadOnly" :true,
+"$maxLength": 5,
+"$displayLength": 6,
+"$groupName": "A"
+},
+"BA3": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_BPR",
+"$title": "{@S-WMBAGSTD-7005}",
+"$capabilities": "frozen,sort",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$displayLength": 18,
+"$groupName": "A"
+},
+"BA4": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_NUM",
+"$title": "{@S-WMBAGSTD-7736}",
+"$capabilities": "frozen,sort",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$displayLength": 24,
+"$groupName": "A"
+},
+"BA5": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_BPRPAY",
+"$title": "{@S-WMBAGSTD-6730}",
+"$capabilities": "frozen,sort",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$displayLength": 18,
+"$groupName": "A"
+},
+"BA6": {
+"$type": "application/x-date",
+"$X3Name": "WMBAGSTD_DUDDAT",
+"$title": "{@S-WMBAGSTD-2736}",
+"$capabilities": "frozen,sort",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "A"
+},
+"BA7": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_BPRVCR",
+"$title": "{@S-WMBAGSTD-6516}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "A"
+},
+"BA8": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_CUR",
+"$title": "{@S-WMBAGSTD-323}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 3,
+"$groupName": "A"
+},
+"BA9": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTLOC1",
+"$title": "",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA10": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTLOC2",
+"$title": "",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA11": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTLOC3",
+"$title": "",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA12": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTLOC4",
+"$title": "",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA13": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTLOC5",
+"$title": "",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA14": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PAYCUR",
+"$title": "{@S-WMBAGSTD-8339}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA15": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTCUR",
+"$title": "{@S-WMBAGSTD-19616}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA16": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_BPRRSK",
+"$title": "{@S-WMBAGSTD-27218}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$displayLength": 18,
+"$groupName": "A"
+},
+"BA17": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_BPRGRU",
+"$title": "{@S-WMBAGSTD-21399}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$displayLength": 18,
+"$groupName": "A"
+},
+"BA18": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PAYLOC",
+"$title": "{@S-WMBAGSTD-14047}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA19": {
+"$type": "application/x-integer",
+"$X3Name": "WMBAGSTD_ACCNUM",
+"$title": "{@S-WMBAGSTD-4983}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "A"
+},
+"BA20": {
+"$type": "application/x-date",
+"$X3Name": "WMBAGSTD_ACCDAT",
+"$title": "{@S-WMBAGSTD-2512}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "A"
+},
+"BA21": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_TMPCUR",
+"$title": "{@S-WMBAGSTD-7284}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA22": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_TMPLOC",
+"$title": "{@S-WMBAGSTD-19923}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"BA23": {
+"$type": "application/x-date",
+"$X3Name": "WMBAGSTD_BPRDATVCR",
+"$title": "{@S-WMBAGSTD-6517}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "A"
+},
+"BA24": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_TYP",
+"$title": "{@S-WMBAGSTD-680}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 5,
+"$groupName": "A"
+},
+"BA25": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_ZCPY",
+"$title": "{@S-WMBAGSTD-43850}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 30,
+"$groupName": "A"
+}}}
+},
+"BB1": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT1",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB2": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT1",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB3": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER1",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB4": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR1",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB5": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT2",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB6": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT2",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB7": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER2",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB8": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR2",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB9": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT3",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB10": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT3",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB11": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER3",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB12": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR3",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB13": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT4",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB14": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT4",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB15": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER4",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB16": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR4",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB17": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT5",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB18": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT5",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB19": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER5",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB20": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR5",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB21": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT6",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB22": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT6",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB23": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER6",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB24": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR6",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB25": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT7",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB26": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT7",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB27": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_PER7",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 3.1,
+"$groupName": "B"
+},
+"BB28": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POUR7",
+"$maxLength": 2,
+"$groupName": "B"
+},
+"BB29": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOTLOC",
+"$maxLength": 15,
+"$groupName": "B"
+},
+"BB30": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOTLOC",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"BB31": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_POURTOT",
+"$maxLength": 5,
+"$groupName": "B"
+},
+"BB32": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_ACCCUR2",
+"$maxLength": 3,
+"$groupName": "B"
+},
+"BC": {
+"$type": "application/x-array",
+"$capabilities": "sort",
+"$item": {
+"$properties": {
+"BC2": {
+"$type": "application/x-string",
+"$X3Name": "WMBAGSTD_LIBTOT",
+"$title": "{@S-WMBAGSTD-8}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$groupName": "C"
+},
+"BC3": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAGSTD_AMTTOT",
+"$title": "{@S-WMBAGSTD-3603}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 9.2,
+"$groupName": "C"
+}}},
+			"$cube": {
+				"$mode": "table",
+				"$style": "xy",
+				"$displaysOneMeasure": true,
+				"$title": "{@S-WMBAGSTD-8}",
+				"$hierarchies": {
+					"BA2_h": {
+						"$title": "{@S-WMBAGSTD-8}",
+						"$properties": ["BC2"],
+						"$members": [],
+						"$isDefault": true
+					}
+				},
+				"$measures": {
+					"BC3": {
+						"$type": "application/x-decimal",
+						"$title": "{@S-WMBAGSTD-3603}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false,
+						"$isDefault": true
+					}
+				}
+			},
+			"$axes": [{
+				"$hierarchies": [
+					["BA2_h"]
+				]
+			}, {
+				"$hierarchies": [
+					["$measures"]
+				]
+			}]
+},
+"CA1": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_TOTRSK",
+"$title": "{@S-WMBAG3STD-17203}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"CA2": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_OSTAUZ",
+"$title": "{@S-WMBAG3STD-21971}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"CA3": {
+"$type": "application/x-string",
+"$X3Name": "WMBAG3STD_LEVCTL",
+"$maxLength": 20,
+"$groupName": "A"
+},
+"CA4": {
+"$type": "application/x-choice",
+"$X3Name": "WMBAG3STD_OSTCTL",
+"$title": "",
+"$mnu": "234",
+"$format": "$combo",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$groupName": "A"
+},
+"CA5": {
+"$type": "application/x-choice",
+"$X3Name": "WMBAG3STD_OSTCHGTYP",
+"$title": "",
+"$mnu": "2211",
+"$format": "$combo",
+"$isReadOnly" :true,
+"$maxLength": 15,
+"$groupName": "A"
+},
+"CA6": {
+"$type": "application/x-string",
+"$X3Name": "WMBAG3STD_LIBSOL",
+"$title": "{@S-WMBAG3STD-1627}",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "A"
+},
+"CA7": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_OSTTOT",
+"$title": "{@S-WMBAG3STD-6478}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"CA8": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_CDTISR",
+"$title": "{@S-WMBAG3STD-1682}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+},
+"CB1": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_ORDBPIATI",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "{@S-WMBAG3STD-19462}",
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CB2": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_LNDBPIATI",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "",
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CB3": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_DLVOST",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "",
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CB4": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_NIVDLV",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "{@S-WMBAG3STD-19459}",
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CB5": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_LNDDLV",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "",
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CB6": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_NPTINV",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "{@S-WMBAG3STD-19460}",
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CB7": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_OST",
+"$title": "{@S-WMBAG3STD-24284}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"CC1": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_CNONIP",
+"$title": "{@S-WMBAG3STD-25813}",
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC2": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_INV",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "",
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC3": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_INVNBP",
+"$links": {
+"$lazyload": {}
+ },
+"$title": "",
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC4": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_PAYNEX",
+"$title": "{@S-WMBAG3STD-19927}",
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC5": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_NYTBIL1",
+"$title": "{@S-WMBAG3STD-19924}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC6": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_NYTBIL2",
+"$title": "{@S-WMBAG3STD-19925}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC7": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_NYTBIL3",
+"$title": "{@S-WMBAG3STD-19926}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC8": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_BLC",
+"$title": "{@S-WMBAG3STD-24354}",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "C"
+},
+"CC9": {
+"$type": "application/x-string",
+"$X3Name": "WMBAG3STD_ACCCUR3",
+"$maxLength": 3,
+"$groupName": "C"
+},
+"CD": {
+"$type": "application/x-array",
+"$capabilities": "sort,insert,delete",
+"$item": {
+"$properties": {
+"CD2": {
+"$type": "application/x-string",
+"$X3Name": "WMBAG3STD_LIBEL",
+"$title": "{@S-WMBAG3STD-8}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 25,
+"$groupName": "D"
+},
+"CD3": {
+"$type": "application/x-decimal",
+"$X3Name": "WMBAG3STD_AMT",
+"$title": "{@S-WMBAG3STD-3603}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "D"
+}}}
+}
+,
+"DA": {
+"$type": "application/x-array",
+"$capabilities": "sort",
+"$item": {
+"$links": {
+"$lazyload": {}  },
+"$properties": {
+"DA2": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG4_DES",
+"$title": "{@S-CONSBAG4-1470}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 30,
+"$groupName": "A"
+},
+"DA3": {
+"$type": "application/x-date",
+"$X3Name": "CONSBAG4_DAT",
+"$title": "{@S-CONSBAG4-212}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "A"
+},
+"DA4": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG4_NUM",
+"$title": "{@S-CONSBAG4-402}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$displayLength": 24,
+"$groupName": "A"
+},
+"DA5": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_AMT",
+"$title": "{@S-CONSBAG4-3603}",
+"$capabilities": "sort",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "A"
+}}}
+},
+"DB1": {
+"$type": "application/x-integer",
+"$X3Name": "CONSBAG4_UNPNBR",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 2,
+"$groupName": "B"
+},
+"DB2": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_UNP",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "B"
+},
+"DB3": {
+"$type": "application/x-integer",
+"$X3Name": "CONSBAG4_MAXFUPLEV",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 2,
+"$groupName": "B"
+},
+"DB4": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_LTIPAY",
+"$title": "{@S-CONSBAG4-20192}",
+"$isReadOnly" :true,
+"$maxLength": 4.2,
+"$groupName": "B"
+},
+"DB5": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_LATPAY",
+"$title": "{@S-CONSBAG4-26422}",
+"$isReadOnly" :true,
+"$maxLength": 4.2,
+"$groupName": "B"
+},
+"DB6": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_LATPAY2",
+"$title": "{@S-CONSBAG4-20432}",
+"$isReadOnly" :true,
+"$maxLength": 4.2,
+"$groupName": "B"
+},
+"DC1": {
+"$type": "application/x-date",
+"$X3Name": "CONSBAG4_CNTFIRDAT",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "C"
+},
+"DC2": {
+"$type": "application/x-choice",
+"$X3Name": "CONSBAG4_CNTFIRTYP",
+"$title": "",
+"$mnu": "2214",
+"$format": "$combo",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "C"
+},
+"DC3": {
+"$type": "application/x-date",
+"$X3Name": "CONSBAG4_CNTLASDAT",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "C"
+},
+"DC4": {
+"$type": "application/x-choice",
+"$X3Name": "CONSBAG4_CNTLASTYP",
+"$title": "",
+"$mnu": "2214",
+"$format": "$combo",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "C"
+},
+"DC5": {
+"$type": "application/x-date",
+"$X3Name": "CONSBAG4_CNTNEXDAT",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 8,
+"$groupName": "C"
+},
+"DC6": {
+"$type": "application/x-choice",
+"$X3Name": "CONSBAG4_CNTNEXTYP",
+"$title": "",
+"$mnu": "2214",
+"$format": "$combo",
+"$isReadOnly" :true,
+"$maxLength": 20,
+"$groupName": "C"
+},
+"DD1": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_ORDBPCATI",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "D"
+},
+"DD2": {
+"$type": "application/x-decimal",
+"$X3Name": "CONSBAG4_LNDBPCATI",
+"$title": "",
+"$isReadOnly" :true,
+"$maxLength": 13.2,
+"$groupName": "D"
+},
+"DD3": {
+"$type": "application/x-string",
+"$X3Name": "CONSBAG4_ACCCUR4",
+"$maxLength": 3,
+"$groupName": "D"
+}
+},
+"$links": {
+"aB2": {
+"$title": "{@W-WMBAGSTD-7013}",
+"$act": "3025"
+}
+},
+"$actions": {
+"aA1": {
+"$title": "{@W-WMBAGSTD--123027}",
+"$act": "2225"
+},
+"aA2": {
+"$title": "{@W-WMBAGSTD--133182}",
+"$act": "2926"
+},
+"aA3": {
+"$title": "{@W-WMBAGSTD--124144}",
+"$act": "2227"
+},
+"aA4": {
+"$title": "{@W-WMBAGSTD--133183}",
+"$act": "2228"
+},
+"aA5": {
+"$title": "{@W-WMBAGSTD--133184}",
+"$act": "2229"
+},
+"aA6": {
+"$title": "{@W-WMBAGSTD--123065}",
+"$act": "2845"
+}
+},
+"$article": {
+"$menus": {
+"$layout": {
+"$items": [
+{
+"$title": "Menus",
+"$layout": {
+"$items": [
+{"$bind" : "aB2"}
+]}}
+]}},
+"$layout": 
+{"$layoutType": "stack",
+"$items":[
+{"$category": "section",
+"$style": "header",
+"$XID": "A",
+"$x3bind": "A",
+"$layout": {
+"$layoutType": "stack",
+"$items": [
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "",
+"$category": "block",
+"$x3bind": "AA",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "AA1"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "AA3"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "AA5"
+}
+]}
+]
+}
+},
+{
+"$title": "",
+"$category": "block",
+"$x3bind": "AB",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "AB1"
+},
+{
+"$isEditMode" :true,
+"$bind": "AB2"
+},
+{
+"$isEditMode" :true,
+"$bind": "AB3"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "AB4"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "AB5"
+},
+{
+"$isReadOnly" :true,
+"$bind": "AB6"
+}
+]}
+]
+}
+}
+]
+}
+]
+}
+},
+{"$layoutType": "tabs",
+"$items":[
+{"$title":"{@W-WMBAGSTD-25808}","$category": "section",
+"$XID": "cB",
+"$x3bind": "B",
+"$layout": {
+"$layoutType": "stack",
+"$items": [
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "",
+"$category": "block",
+"$x3bind": "BA",
+"$layout": {
+"$items": [
+{
+"$isEditMode" :true,
+"$selectMode": "multi",
+"$bind": "BA",
+"$itemsPerPage": "10",
+"$isRowIndexVisible" :true
+}
+]
+}
+}
+]
+},
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "{@S-WMBAGSTD-8928}",
+"$category": "block",
+"$x3bind": "BB",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB1"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB2"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB3"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB4"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB5"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB6"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB7"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB8"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB9"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB10"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB11"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB12"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB13"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB14"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB15"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB16"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB17"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB18"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB19"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB20"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB21"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB22"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB23"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB24"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB25"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB26"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB27"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB28"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB29"
+},
+{
+"$isReadOnly" :true,
+"$bind": "BB30"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB31"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "BB32"
+}
+]}
+]
+}
+},
+{
+"$title": "{@S-WMBAGSTD-8928}",
+"$category": "block",
+"$x3bind": "BC",
+"$layout": {
+"$items": [
+{
+"$isEditMode" :true,
+"$selectMode": "multi",
+"$bind": "BC",
+"$itemsPerPage": "10",
+"$graphMode": "graph",
+"$isRowIndexVisible" :true
+}
+]
+}
+}
+]
+}
+]
+}
+},
+{"$title":"{@W-WMBAGSTD-17203}","$category": "section",
+"$XID": "cC",
+"$x3bind": "C",
+"$layout": {
+"$layoutType": "stack",
+"$items": [
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "{@S-WMBAG3STD-19451}",
+"$category": "block",
+"$x3bind": "CA",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CA1"
+},
+{
+"$isReadOnly" :true,
+"$bind": "CA2"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "CA3"
+},
+{
+"$isReadOnly" :true,
+"$bind": "CA4"
+},
+{
+"$isReadOnly" :true,
+"$bind": "CA5"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CA6"
+},
+{
+"$isReadOnly" :true,
+"$bind": "CA7"
+},
+{
+"$isReadOnly" :true,
+"$bind": "CA8"
+}
+]}
+]
+}
+}
+]
+},
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "{@S-WMBAG3STD-24284}",
+"$category": "block",
+"$x3bind": "CB",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CB1"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CB2"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CB3"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CB4"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CB5"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CB6"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CB7"
+}
+]}
+]
+}
+},
+{
+"$title": "{@S-WMBAG3STD-24354}",
+"$category": "block",
+"$x3bind": "CC",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CC1"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CC2"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CC3"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isEditMode" :true,
+"$bind": "CC4"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CC5"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CC6"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CC7"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "CC8"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "CC9"
+}
+]}
+]
+}
+},
+{
+"$title": "{@S-WMBAG3STD-29581}",
+"$category": "block",
+"$x3bind": "CD",
+"$layout": {
+"$items": [
+{
+"$isEditMode" :true,
+"$selectMode": "multi",
+"$bind": "CD",
+"$itemsPerPage": "20",
+"$isRowIndexVisible" :true
+}
+]
+}
+}
+]
+}
+]
+}
+},
+{"$title":"{@W-WMBAGSTD-19468}","$category": "section",
+"$XID": "cD",
+"$x3bind": "D",
+"$layout": {
+"$layoutType": "stack",
+"$items": [
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "{@S-CONSBAG4-19468}",
+"$category": "block",
+"$x3bind": "DA",
+"$layout": {
+"$items": [
+{
+"$isEditMode" :true,
+"$selectMode": "multi",
+"$bind": "DA",
+"$itemsPerPage": "15",
+"$isRowIndexVisible" :true
+}
+]
+}
+}
+]
+},
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "",
+"$category": "block",
+"$x3bind": "DB",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "DB1"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DB2"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DB3"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "DB4"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DB5"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DB6"
+}
+]}
+]
+}
+}
+]
+},
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "",
+"$category": "block",
+"$x3bind": "DC",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "DC1"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DC2"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "DC3"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DC4"
+}
+]
+},
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "DC5"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DC6"
+}
+]}
+]
+}
+}
+]
+},
+{"$layoutType": "row",
+"$items": [
+{
+"$title": "",
+"$category": "block",
+"$x3bind": "DD",
+"$layout": {
+"$items": [
+{
+"$layoutType": "row",
+"$items": [
+{
+"$isReadOnly" :true,
+"$bind": "DD1"
+},
+{
+"$isReadOnly" :true,
+"$bind": "DD2"
+},
+{
+"$isEditMode" :false,
+"$isTitleHidden" :true,
+"$bind": "DD3"
+}
+]}
+]
+}
+}
+]
+}
+]
+}
+}]}
+]}
+},
+"$localization": {
+"@S-CONSBAG1-19569": "BP",
+"@S-CONSBAG1-40811": "Payment BP",
+"@S-CONSBAG1-27218": "Risk BP",
+"@S-CONSBAG1-8730": "Company / site",
+"@S-CONSBAG1-103": "Function",
+"@S-CONSBAG1-1824": "Contact"
+,
+"@S-WMBAGSTD-1344": "Site",
+"@S-WMBAGSTD-7005": "Bill-to",
+"@S-WMBAGSTD-7736": "Order number",
+"@S-WMBAGSTD-6730": "Pay-by",
+"@S-WMBAGSTD-2736": "Due date",
+"@S-WMBAGSTD-6516": "Source document",
+"@S-WMBAGSTD-323": "Currency",
+"@S-WMBAGSTD-8339": "Paid",
+"@S-WMBAGSTD-19616": "Transaction currency amount",
+"@S-WMBAGSTD-27218": "Risk BP",
+"@S-WMBAGSTD-21399": "BP group",
+"@S-WMBAGSTD-14047": "Company paid",
+"@S-WMBAGSTD-4983": "Internal number",
+"@S-WMBAGSTD-2512": "Accounting date",
+"@S-WMBAGSTD-7284": "Temporary",
+"@S-WMBAGSTD-19923": "Company provisional",
+"@S-WMBAGSTD-6517": "Document date",
+"@S-WMBAGSTD-680": "Type",
+"@S-WMBAGSTD-43850": "Raison sociale",
+"@S-WMBAGSTD-8": "Description",
+"@S-WMBAGSTD-3603": "Amount",
+"@S-WMBAGSTD-8928": "Totals"
+,
+"@S-WMBAG3STD-17203": "Risk",
+"@S-WMBAG3STD-21971": "Authorized credit limit",
+"@S-WMBAG3STD-1627": "Accounting balance",
+"@S-WMBAG3STD-6478": "Credit control",
+"@S-WMBAG3STD-1682": "Insurance",
+"@S-WMBAG3STD-19462": "On order +",
+"@S-WMBAG3STD-19459": "Shipped not invoiced +",
+"@S-WMBAG3STD-19460": "Invoices not posted +",
+"@S-WMBAG3STD-24284": "Commercial risk",
+"@S-WMBAG3STD-25813": "Non-matched credit notes-",
+"@S-WMBAG3STD-19927": "Provisional payments +",
+"@S-WMBAG3STD-19924": "Draft 1 -",
+"@S-WMBAG3STD-19925": "Draft 2 -",
+"@S-WMBAG3STD-19926": "Draft 3 -",
+"@S-WMBAG3STD-24354": "Financial risk",
+"@S-WMBAG3STD-8": "Description",
+"@S-WMBAG3STD-3603": "Amount",
+"@S-WMBAG3STD-19451": "Global risk",
+"@S-WMBAG3STD-29581": "Graph"
+,
+"@S-CONSBAG4-1470": "Description",
+"@S-CONSBAG4-212": "Date",
+"@S-CONSBAG4-402": "Document no.",
+"@S-CONSBAG4-3603": "Amount",
+"@S-CONSBAG4-20192": "Avg. payment leadtime",
+"@S-CONSBAG4-26422": "Early/late payment",
+"@S-CONSBAG4-20432": "Not paid/av age",
+"@S-CONSBAG4-19468": "Last operation"
+,
+"@W-WMBAGSTD-24359": "BP situation",
+"@W-WMBAGSTD-7013": "Payments",
+"@W-WMBAGSTD--123027": "Search",
+"@W-WMBAGSTD--133182": "Criteria",
+"@W-WMBAGSTD--124144": "Back",
+"@W-WMBAGSTD--133183": "Next",
+"@W-WMBAGSTD--133184": "Last",
+"@W-WMBAGSTD--123065": "End",
+"@W-WMBAGSTD-25808": "Open items",
+"@W-WMBAGSTD-17203": "Risk",
+"@W-WMBAGSTD-19468": "Last operation"
+
+}}
