@@ -27,8 +27,9 @@ namespace WordAddIn
         private const String dataSourceUuidProperty = "dataSourceUuid";
         private const String createModeProperty     = "createMode";
         private const String documentUrlProperty    = "documentUrl";
+        private const String documentTemplateUrl    = "documentTemplateUrl";
         private const String documentTitleProperty  = "documentTitle";
-        private const String layoutData             = "layoutData";
+        private const String layoutData = "layoutData";
         private const String documentRepresentationProperty = "documentRepresentation";
         private const String originalFileNameProperty       = "originalFileName";
         private const String supportedLocalesProperty = "supportedLocales";
@@ -167,6 +168,14 @@ namespace WordAddIn
                 }
                 return "";
             }
+        }
+        public void setDocumentTemplateUrl(String url)
+        {
+            setStringProperty(documentTemplateUrl, url);
+        }
+        public String getDocumentTemplateUrl()
+        {
+            return getStringProperty(documentTemplateUrl, false);
         }
 
         public void debug() 

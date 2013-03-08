@@ -458,8 +458,24 @@ namespace WordAddIn
                         doc.InlineShapes.AddPicture(imageFile, false, true, c.Range);
                         if (c.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
                         {
-                            c.Range.InlineShapes[1].Width = width;
-                            c.Range.InlineShapes[1].Height = height;
+                            //c.Range.InlineShapes[1].Width = width;
+                            //c.Range.InlineShapes[1].Height = height;
+
+                            // Image should be displayed in original size but not greater than 16 cm
+                            float scal = 100;
+                            c.Range.InlineShapes[1].ScaleHeight = scal;
+                            c.Range.InlineShapes[1].ScaleWidth = scal;
+                            // maxWith = 160mm
+                            // Millimeter 2 Inch = 25.4
+                            // Inch 2 Pixel = 72
+                            float maxWidth = 454;  // 160 / 25.4 * 72
+
+                            if (c.Range.InlineShapes[1].Width > maxWidth)
+                            {
+                                scal = 100 * maxWidth / c.Range.InlineShapes[1].Width;
+                                c.Range.InlineShapes[1].ScaleHeight = scal;
+                                c.Range.InlineShapes[1].ScaleWidth = scal;
+                            }
                         }
                         addLinkToContentControl(doc, c, link);
                     }
@@ -492,7 +508,11 @@ namespace WordAddIn
             {
                 return;
             }
-            
+
+            if (link.Substring(0, 6) != "mailto")
+            {
+                return;
+            }
             Range r = c.Range;
 
             // Expand range to cover full content control
@@ -500,7 +520,7 @@ namespace WordAddIn
             r.End++;
             try
             {
-                doc.Hyperlinks.Add(r, link);
+                //doc.Hyperlinks.Add(r, link);
             }
             catch (Exception) { };
         }
