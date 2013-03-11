@@ -117,21 +117,18 @@ var x = {
     },
     "$article": {
         "$layout": {
-            "$layoutType": "columns",
+            "$layoutType": "row",
             "$layoutSubType": "25,75",
             "$items": [{
-                "$layoutType": "stack",
+                "$category": "fusionBar",
                 "$items": [{
-                    "$category": "fusionBar",
-                    "$items": [{
-                        "$bind": "bA",
-                        "$format": "xflgrid",
-                        "$isEditMode": false
-                    }, {
-                        "$bind": "bB",
-                        "$format": "xflgrid",
-                        "$isEditMode": false
-                    }]
+                    "$bind": "bA",
+                    "$format": "xflgrid",
+                    "$isEditMode": false
+                }, {
+                    "$bind": "bB",
+                    "$format": "xflgrid",
+                    "$isEditMode": false
                 }]
             }, {
                 "$layoutType": "stack",
@@ -144,35 +141,27 @@ var x = {
                             "$X3": "...",
                             "$XID": "06553600256",
                             "$title": "Bloc 1",
-                            "$category": "block",
+                            "$category": "section",
                             "$layout": {
-                                "$layoutType": "columns",
-                                "$layoutSubType": "50,50",
+                                "$layoutType": "row",
                                 "$items": [{
-                                    "$layoutType": "stack",
-                                    "$items": [{
-                                        "$isEditMode": true,
-                                        "$bind": "AA1",
-                                        "$X3": "..."
-                                    }]
+                                    "$isEditMode": true,
+                                    "$bind": "AA1",
+                                    "$X3": "..."
                                 }, {
-                                    "$layoutType": "stack",
-                                    "$items": [{
-                                        "$isEditMode": true,
-                                        "$bind": "AA2",
-                                        "$X3": "..."
-                                    }]
+                                    "$isEditMode": true,
+                                    "$bind": "AA2",
+                                    "$X3": "..."
                                 }]
                             }
                         }, {
                             "$X3": "...",
                             "$XID": "06553600512",
-                            "$category": "block",
+                            "$category": "section",
                             "$title": "Bloc 2",
                             "$layout": {
                                 "$items": [{
-                                    "$layoutType": "columns",
-                                    "$layoutSubType": "50,50",
+                                    "$layoutType": "row",
                                     "$items": [{
                                         "$layoutType": "stack",
                                         "$items": [{
