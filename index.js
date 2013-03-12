@@ -1,23 +1,28 @@
-//redirect standard output to file in cluster
-if (/^N\d+$/.test(process.argv[2])) {
-	var fs = require('fs')	
-	var name = __dirname+"/"+process.argv[2]+".log";
-	// fs.unlinkSync(name)
-	var stream = fs.createWriteStream(name);
-	process.stdoutOld = process.stdout;
-	process.__defineGetter__("stdout", function() { return stream; });
-	process.__defineGetter__("stderr", function() { return stream; });
-	console.log("Standard output redirected")
-	console.error("STDERR redirected")
-}
+"use strict";
 
 var config = {};
 
 try {
 	config = require("./nodelocal").config || {};
 } catch (ex) {
-	console.log(ex);
+	console.error(ex);
 }
+
+//redirect standard output to file in cluster
+if (/^N\d+$/.test(process.argv[2])) {
+	var fs = require('fs')
+	var logpath = ((config.collaboration && config.collaboration.logpath) ? config.collaboration.logpath : __dirname) 
+	var name = logpath+"/"+process.argv[2]+".log";
+	// fs.unlinkSync(name)
+	var stream = fs.createWriteStream(name);
+	process.stdoutOld = process.stdout;
+	process.__defineGetter__("stdout", function() { return stream; });
+	process.__defineGetter__("stderr", function() { return stream; });
+	console.log("Standard output redirected")
+	console.error("Standard error redirected")
+}
+
+
 //crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local system account
 if(config.streamline) {
 	if(config.streamline.homedrive)
