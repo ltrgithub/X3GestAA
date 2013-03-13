@@ -458,9 +458,6 @@ namespace WordAddIn
                         doc.InlineShapes.AddPicture(imageFile, false, true, c.Range);
                         if (c.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
                         {
-                            //c.Range.InlineShapes[1].Width = width;
-                            //c.Range.InlineShapes[1].Height = height;
-
                             // Image should be displayed in original size but not greater than 16 cm
                             float scal = 100;
                             c.Range.InlineShapes[1].ScaleHeight = scal;
@@ -482,10 +479,6 @@ namespace WordAddIn
                     catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
                     File.Delete(imageFile);
                 }
-                else
-                {
-                    c.Delete();
-                }
             }
             else if (c.Type == WdContentControlType.wdContentControlText)
             {
@@ -500,6 +493,8 @@ namespace WordAddIn
                 }
                 catch (Exception) { /* MessageBox.Show(e.Message + ":" + e.StackTrace); */}
             }
+
+            try { c.Delete(); } catch (Exception) { };
         }
 
         private static void addLinkToContentControl(Document doc, ContentControl c, String link)
@@ -508,19 +503,16 @@ namespace WordAddIn
             {
                 return;
             }
-
-            if (link.Substring(0, 6) != "mailto")
-            {
-                return;
-            }
             Range r = c.Range;
-
-            // Expand range to cover full content control
-            r.Start--;
-            r.End++;
             try
             {
-                //doc.Hyperlinks.Add(r, link);
+                while (r.Hyperlinks.Count > 0) r.Hyperlinks[1].Delete();
+                c.Delete();
+            }
+            catch (Exception) { };
+            try
+            {
+                r.Hyperlinks.Add(r, link);
             }
             catch (Exception) { };
         }
