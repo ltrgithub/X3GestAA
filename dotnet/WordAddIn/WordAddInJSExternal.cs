@@ -279,14 +279,12 @@ namespace WordAddIn
                 return;
             }
 
-            
             customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData == null)
             {
                 return;
             }
             
-
             Globals.WordAddIn.commons.SetDocumentLocale(doc, locale);
             Globals.WordAddIn.commons.DisplayDocumentLocale(doc);
             customData.setDocumentTemplateUrl(templateUrl);
