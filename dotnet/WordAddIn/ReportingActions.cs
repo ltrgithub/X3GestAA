@@ -67,7 +67,7 @@ namespace WordAddIn
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 }
-                if (customData.getDocumentTemplateUrl() != null)
+                if (customData.getDocumentTemplateUrl() != null && rpt_fill_tpl.Equals(mode))
                 {
                     Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 }
