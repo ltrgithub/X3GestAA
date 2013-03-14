@@ -340,8 +340,13 @@ namespace ExcelAddIn
         }
         public bool ResizeTable(int linesCount)
         {
+            bool cleanFirstDataRow = false;
             if (_listObject == null) return false;
-            if (linesCount == 0) linesCount = 1;
+            if (linesCount == 0)
+            {
+                linesCount = 1;
+                cleanFirstDataRow = true;
+            }
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
             try
@@ -389,6 +394,19 @@ namespace ExcelAddIn
  */
                 if (!_updateListObject(activeCell, activeWorksheet, _listObject, _columnRanges, linesCount))
                     return false;
+                if (cleanFirstDataRow == true)
+                {
+                    try
+                    {
+                        // A TableObject cannot be empty (have zero rows)
+                        // If the resultset is empty, at least clear the data in the last remaining row.
+                        // Otherwise the first row of the last fetch will remain visible, which is wrong, especially when changing filters
+                        _listObject.Range.Rows[2].ClearFormats();
+                        _listObject.Range.Rows[2].Clear();
+                    }
+                    catch (Exception) { };
+                }
+
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
                     // make named ranges
