@@ -22,7 +22,7 @@
 			],
 			"$cube": {
 				"$mode": "table",
-				"$style": "xy",
+				"$style": "column",
 				"$displaysOneMeasure": false,
 				"$title": "Coûts articles",
 				"$hierarchies": {
@@ -38,7 +38,6 @@
 						"$property": "matiere_premiere",
 						"$title": "Matière premiere",
 						"$mode": "sum",
-						"$style": "area",
 						"$isStacked": false,
 						"$isNormalized": false,
 						"$isDefault": true
@@ -47,7 +46,6 @@
 						"$property": "main_oeuvre",
 						"$title": "Main d'oeuvre",
 						"$mode": "sum",
-						"$style": "area",
 						"$isStacked": false,
 						"$isNormalized": false
 					}
@@ -69,18 +67,6 @@
 					},
 					"main_oeuvre": {
 						"$title": "Main d'oeuvre",
-						"$type": "application/x-decimal"
-					},
-					"cout_machine": {
-						"$title": "Coût machine",
-						"$type": "application/x-decimal"
-					},
-					"cout_machine2": {
-						"$title": "Coût machine 2",
-						"$type": "application/x-decimal"
-					},
-					"cout_machine3": {
-						"$title": "Coût machine 3",
 						"$type": "application/x-decimal"
 					}
 				},
