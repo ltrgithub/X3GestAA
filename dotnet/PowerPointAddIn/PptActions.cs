@@ -382,8 +382,8 @@ namespace PowerPointAddIn
                     {
                         dcol++;
                         wsIdx = dcol;
-                        string _title = dictCol["_title"].ToString();
-                        string _type = dictCol["_type"].ToString();
+                        string _title = _orgName;
+                        try { _title = dictCol["_title"].ToString(); } catch (Exception) { };
                         ws.Cells[1, dcol].Value = _title;
                     }
                     ti.addColumn(_orgName, col, wsIdx);
@@ -417,8 +417,11 @@ namespace PowerPointAddIn
                 foreach (string key in measures.Keys)
                 {
                     Dictionary<String, object> measure = (Dictionary<String, object>)measures[key];
-                    string property = measure["$property"].ToString();
-                    string title = measure["$title"].ToString();
+                    string property = key;
+                    try { property = measure["$property"].ToString(); } catch (Exception) { };
+                    
+                    string title = property;
+                    try { title = measure["$title"].ToString(); } catch (Exception) { };
                     int col = ti.nameToWorksheetIdx(property);
                     if (col > 0)
                     {
@@ -433,7 +436,8 @@ namespace PowerPointAddIn
                             firstSeries = s;
                         }
 
-                        string style = measure["$style"].ToString();
+                        string style = "stick";
+                        try { style = measure["$style"].ToString(); } catch (Exception) { }
                         switch (style)
                         {
                             case "line":
@@ -512,7 +516,9 @@ namespace PowerPointAddIn
                 catch (Exception) { }
                 
                 string header = cube["$title"].ToString();
-                string cstyle = cube["$style"].ToString();
+                string cstyle = "stick";
+                try { cube["$style"].ToString(); } catch (Exception) { }
+
                 if ("pie".Equals(cstyle))
                 {
                     chart.ChartType = Microsoft.Office.Core.XlChartType.xlPie;
