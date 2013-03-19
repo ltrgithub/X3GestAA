@@ -34,8 +34,6 @@ namespace ExcelAddIn
         String _name;
         ListObject _listObject;
         Dictionary<string, Range> _columnRanges;
-        ResourceManager _locRes = new ResourceManager("ExcelAddIn.Messages", typeof(ThisAddIn).Assembly);
-
         public SyracuseExcelTable(String name, ExcelTablePrototypeField[] fields, Range cell = null)
         {
             _name = name;
@@ -52,7 +50,7 @@ namespace ExcelAddIn
                 // check if same dataset
                 if ((lo != null) && (lo.Name != _name))
                 {
-                    if (MessageBox.Show(String.Format(_locRes.GetString("OverrideTableConfirm"), activeCell.Address, lo.Name), _locRes.GetString("AddinTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.OverrideTableConfirm, activeCell.Address, lo.Name), global::ExcelAddIn.Properties.Resources.AddinTitle, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         ((Range)lo.Range.Item[1, 1]).Select();
                         _deleteTable(lo, true);
@@ -110,7 +108,7 @@ namespace ExcelAddIn
             }
             catch (Exception e)
             {
-                MessageBox.Show(String.Format("Cannot resize a table with {0} columns and {1} rows. Please check Your insert preferences.\n(Error was: \"{2}\")",
+                MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.ResizeTableError,
                     activeListObject.ListColumns.Count, tableLength, e.Message));
                 return false;
             }
@@ -131,7 +129,7 @@ namespace ExcelAddIn
                     catch (Exception e)
                     {
                         // insert error
-                        MessageBox.Show(String.Format(_locRes.GetString("InsertCellsError"), colCount, rowCount, e.Message, "\n"));
+                        MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.InsertCellsError, colCount, rowCount, e.Message, "\n"));
                         return false;
                     }
                 }
@@ -146,7 +144,7 @@ namespace ExcelAddIn
                         catch (Exception e)
                         {
                             // insert error
-                            MessageBox.Show(String.Format(_locRes.GetString("InsertRowsError"), rowCount, e.Message, "\n"));
+                            MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.InsertRowsError, rowCount, e.Message, "\n"));
                             return false;
                         }
                     }
@@ -165,7 +163,7 @@ namespace ExcelAddIn
                         catch (Exception e)
                         {
                             // delete error
-                            MessageBox.Show(String.Format(_locRes.GetString("DeleteCellsError"), colCount, -rowCount, e.Message, "\n"));
+                            MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.DeleteCellsError, colCount, -rowCount, e.Message, "\n"));
                             toShift.Value2 = "";
                         }
                     }
@@ -180,7 +178,7 @@ namespace ExcelAddIn
                             catch (Exception e)
                             {
                                 // delete error
-                                MessageBox.Show(String.Format(_locRes.GetString("DeleteCellsError"), colCount, -rowCount, e.Message, "\n"));
+                                MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.DeleteCellsError, colCount, -rowCount, e.Message, "\n"));
                                 toShift.Value2 = "";
                             }
                         }
@@ -222,7 +220,7 @@ namespace ExcelAddIn
             }
             catch (Exception e)
             {
-                MessageBox.Show(String.Format(_locRes.GetString("CreateTableError"), headers.Length, rowCount, e.Message, "\n"));
+                MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.CreateTableError, headers.Length, rowCount, e.Message, "\n"));
                 return null;
             }
             resultListObject.Name = _name;
