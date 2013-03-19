@@ -60,10 +60,55 @@ namespace ExcelAddIn.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Sage X3 for Office.
+        /// </summary>
+        internal static string AddinTitle {
+            get {
+                return ResourceManager.GetString("AddinTitle", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap connect {
             get {
                 object obj = ResourceManager.GetObject("connect", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot create a table with {0} columns and {1} rows. Please check your insert preferences.{3}(Error was: &quot;{2}&quot;).
+        /// </summary>
+        internal static string CreateTableError {
+            get {
+                return ResourceManager.GetString("CreateTableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot shift up {0} columns and {1} rows. The range value are cleared.{3}(Error was: &quot;{2}&quot;).
+        /// </summary>
+        internal static string DeleteCellsError {
+            get {
+                return ResourceManager.GetString("DeleteCellsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot shift down {0} columns and {1} rows, the range might overlap another table. Please check your insert preferences.{3}(Error was: &quot;{2}&quot;).
+        /// </summary>
+        internal static string InsertCellsError {
+            get {
+                return ResourceManager.GetString("InsertCellsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot insert {0} rows, the range might overlap another table. Please check your insert preferences.{2}(Error was: &quot;{1}&quot;).
+        /// </summary>
+        internal static string InsertRowsError {
+            get {
+                return ResourceManager.GetString("InsertRowsError", resourceCulture);
             }
         }
         
@@ -86,10 +131,28 @@ namespace ExcelAddIn.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to The reference &quot;{0}&quot; is allready associated with table &quot;{1}&quot;. Do You want to delete table &quot;{1}&quot; and replace its content ?.
+        /// </summary>
+        internal static string OverrideTableConfirm {
+            get {
+                return ResourceManager.GetString("OverrideTableConfirm", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot resize a table with {0} columns and {1} rows. Please check Your insert preferences.\n (Error was: &quot;{2}&quot;).
+        /// </summary>
+        internal static string ResizeTableError {
+            get {
+                return ResourceManager.GetString("ResizeTableError", resourceCulture);
             }
         }
         
