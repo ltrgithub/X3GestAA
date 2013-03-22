@@ -27,7 +27,7 @@ namespace WordAddIn
 
     public class ReportingFieldUtil
     {
-        private static CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+        public static CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
 
         public static ReportingFieldTypes getType(String mimetype) {
             if ("application/x-string".Equals(mimetype))
