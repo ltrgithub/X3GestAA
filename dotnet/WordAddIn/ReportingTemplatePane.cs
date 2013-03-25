@@ -52,6 +52,7 @@ namespace WordAddIn
                 ContentControl c = ReportingUtils.createContentControl(doc, cursor, n.item, n.itemParent);
                 cursor = c.Range;
                 cursor.Collapse(WdCollapseDirection.wdCollapseEnd);
+                cursor.Move(WdUnits.wdCharacter, 1);
                 cursor.Select();
 
                 moveInTable(doc, cursor);
@@ -156,6 +157,7 @@ namespace WordAddIn
                             ReportingFieldTypes tft = ReportingFieldUtil.getType(type);
                             
                             FieldTreeNode child = new FieldTreeNode(ctitle, item);
+                            child.itemParent = node.itemParent;
                             child.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(tft);
                             child.SelectedImageIndex = child.ImageIndex;
 
