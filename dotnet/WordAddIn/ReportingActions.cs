@@ -67,7 +67,7 @@ namespace WordAddIn
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 }
-                if ((customData.getDocumentTemplateUrl() != null) && (Globals.Ribbons.Ribbon.buttonSave.Enabled == true))
+                if (rpt_fill_tpl.Equals(mode))
                 {
                     Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 }
@@ -94,9 +94,6 @@ namespace WordAddIn
 
         public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
-            // save templateUrl within document for refresh
-            customData.setDocumentTemplateUrl(customData.getDocumentUrl());
-
             // Remove document URL, this has to be done because a template opened from collab. space has already an url stored inside the
             // document. But after the population of the template it is a new independent document!
             customData.setDocumentUrl("");
@@ -118,11 +115,7 @@ namespace WordAddIn
             {
                 return;
             }
-
-            customData.setCreateMode("rpt_refresh_tpl");
-            customData.writeDictionaryToDocument();
-
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            PopulateWordReportTemplate(doc, customData);
         }
 
         public void CreateWordReportPreview()
