@@ -233,9 +233,7 @@ namespace WordAddIn
                 doc.ToggleFormsDesign();
             }
             browserDialog.Hide();
-            Globals.WordAddIn.Application.ScreenUpdating = false;
             ReportingUtils.fillTemplate(doc, data, browserDialog);
-            Globals.WordAddIn.Application.ScreenUpdating = true;
         }
 
         private string getStringValue(object cellData)
