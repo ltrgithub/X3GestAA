@@ -206,16 +206,45 @@ namespace WordAddIn
 
         public static void fillTemplate(Document doc, String data, BrowserDialog browserDialog)
         {
-            Globals.WordAddIn.Application.ScreenUpdating = false;
+            WdViewType vt = doc.ActiveWindow.View.Type;
+            bool pagination = doc.Application.Options.Pagination;
+            ProgressDialog pd = new ProgressDialog();
+            pd.Show();
 
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
+            try
+            {
+                Globals.WordAddIn.Application.ScreenUpdating = false;
 
-            Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
-            List<ContentControl> allContentControls = GetAllContentControls(doc);
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
 
-            FillNonCollectionControls(doc, allContentControls, entityData, browserDialog);
-            FillCollectionControls(doc, entityData, browserDialog);
+                Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
+                List<ContentControl> allContentControls = GetAllContentControls(doc);
+
+                Globals.WordAddIn.Application.ScreenUpdating = true;
+                Globals.WordAddIn.Application.ScreenRefresh();
+                Globals.WordAddIn.Application.ScreenUpdating = false;
+
+                doc.ActiveWindow.View.Type = WdViewType.wdNormalView;
+                doc.Application.Options.Pagination = false;
+
+                FillNonCollectionControls(doc, allContentControls, entityData, browserDialog);
+
+                //long ticks = DateTime.Now.Ticks;
+                
+                FillCollectionControls(doc, entityData, browserDialog, pd);
+
+                //long ticks2 = DateTime.Now.Ticks;
+                //long sec = (ticks2-ticks)/10000000;
+                //MessageBox.Show("Table fill time: " + sec + " secs.");
+            }
+            finally
+            {
+                doc.ActiveWindow.View.Type = vt;
+                doc.Application.Options.Pagination = pagination;
+                doc.Application.ScreenUpdating = true;
+                pd.Close();
+            }
 
             Globals.WordAddIn.Application.ScreenUpdating = true;
         }
@@ -248,9 +277,13 @@ namespace WordAddIn
             }
         }
 
-        private static void FillCollectionControls(Document doc, Dictionary<String, object> entityData, BrowserDialog browserDialog)
+        private static void FillCollectionControls(Document doc, Dictionary<String, object> entityData, BrowserDialog browserDialog, ProgressDialog pd)
         {
             List<Table> ts = GetAllTables(doc);
+            int rowsToFill = 0;
+            List<Table> tables = new List<Table>();
+            List<TableInfo> tableInfos = new List<TableInfo>();
+
             foreach (Table table in ts)
             {
                 try
@@ -259,24 +292,38 @@ namespace WordAddIn
                     {
                         continue;
                     }
-
                     List<Row> templateRows = new List<Row>();
-                    DetectTableTemplateSize(doc, table, templateRows);
+                    DetectTableSize(doc, table, templateRows);
 
                     TableInfo tableInfo = GetTableInfo(doc, table, templateRows, entityData);
                     if (tableInfo != null)
                     {
-                        FillTableControls(doc, table, tableInfo, browserDialog);
+                        tables.Add(table);
+                        tableInfos.Add(tableInfo);
+                        rowsToFill += tableInfo.numRows;
                     }
+                }
+                catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
+            }
+
+            int numInfo = 0;
+            pd.SetRowsExpected(rowsToFill);
+            foreach (Table table in tables)
+            {
+                try
+                {
+                    TableInfo tableInfo = tableInfos[numInfo++];
+                    FillTableControls(doc, table, tableInfo, browserDialog, pd);
                 }
                 catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
             }
         }
 
-        private static void DetectTableTemplateSize(Document doc, Table table, List<Row> templateRows)
+        private static void DetectTableSize(Document doc, Table table, List<Row> templateRows)
         {
             List<string> matchedRows = new List<string>();
             List<Row> rowsToRemove = new List<Row>();
+
             foreach (Row row in table.Rows)
             {
                 if (row.Range.ContentControls.Count > 0)
@@ -373,57 +420,70 @@ namespace WordAddIn
             if (info.collectionName == null)
                 return null;
 
+            info.numRows = info.items.Length * info.templateRows.Count;
             return info;
         }
 
         /**
          * Fills all content controls that are in a table and belong to a collection
          */
-        private static void FillTableControls(Document doc, Table table, TableInfo info, BrowserDialog browserDialog)
+        private static void FillTableControls(Document doc, Table table, TableInfo info, BrowserDialog browserDialog, ProgressDialog pd)
         {
             if (info.templateRows.Count <= 0) 
             {
                 return;
             }
-            int startRow = (int) info.templateRows[info.templateRows.Count-1].Range.Information[WdInformation.wdEndOfRangeRowNumber];
-            Row precidingRow = table.Rows[startRow];
 
-            for (int item = 0; item < info.items.Length; item++)
+            // Hide table to make updates faster (ScreenUpdating seems not to work)
+            Globals.WordAddIn.Application.ScreenUpdating = true;
+            Globals.WordAddIn.Application.ScreenRefresh();
+            table.Range.Font.Hidden = 1;
+            Globals.WordAddIn.Application.ScreenUpdating = false;
+
+            int numRows = info.items.Length * info.templateRows.Count;
+            if (numRows > 0)
             {
-                Dictionary<String, object> collectionItem = (Dictionary<String, object>) info.items[item];
-                foreach (Row templateRow in info.templateRows) 
+                Row precidingRow = info.templateRows[info.templateRows.Count - 1];
+                precidingRow.Select();
+                doc.Application.Selection.InsertRowsBelow(numRows);
+                int startRow = (int)info.templateRows[info.templateRows.Count - 1].Range.Information[WdInformation.wdEndOfRangeRowNumber];
+
+                Row firstRow = table.Rows[startRow + 1];
+                Row lastRow = table.Rows[startRow + numRows];
+                Range newRowRange = firstRow.Range;
+                firstRow.Select();
+
+                for (int item = 0; item < info.items.Length; item++)
                 {
-                    Row newRow = null;
-                    if (precidingRow != null)
+                    Dictionary<String, object> collectionItem = (Dictionary<String, object>)info.items[item];
+                    foreach (Row templateRow in info.templateRows)
                     {
-                        newRow = table.Rows.Add(precidingRow);
-                    }
-                    else
-                    {
-                        newRow = table.Rows.Add();
-                    }
-                    startRow++;
-                    foreach (Cell cell in templateRow.Cells)
-                    {
-                        Cell newCell = newRow.Cells[cell.ColumnIndex];
-                        copyCellContent(cell, newCell);
-                        foreach (ContentControl cc in newCell.Range.ContentControls)
+                        startRow++;
+                        Row newRow = table.Rows[startRow];
+                        foreach (Cell cell in templateRow.Cells)
                         {
-                            TagInfo t2 = TagInfo.create(cc);
-                            if (t2.isSimple)
-                                continue;
-                            if (collectionItem.ContainsKey(t2.property))
+                            Cell newCell = newRow.Cells[cell.ColumnIndex];
+                            copyCellContent(cell, newCell);
+                            foreach (ContentControl cc in newCell.Range.ContentControls)
                             {
-                                Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
-                                setContentControl(doc, cc, entity, t2, null, browserDialog);
+                                TagInfo t2 = TagInfo.create(cc);
+                                if (t2.isSimple)
+                                    continue;
+                                if (collectionItem.ContainsKey(t2.property))
+                                {
+                                    Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
+                                    setContentControl(doc, cc, entity, t2, null, browserDialog);
+                                }
                             }
                         }
+                        pd.SignalRowDone();
                     }
-                    newRow.Range.Font.Hidden = 0;
                 }
+
+                table.Range.Font.Hidden = 0;
             }
-            
-            // Template Zeilen verstecken
+
+            // hide template rows
             foreach (Row templateRow in info.templateRows)
             {
                 templateRow.Range.Font.Hidden = 1;
@@ -722,7 +782,9 @@ namespace WordAddIn
         {
             foreach (ContentControl s in src.Range.ContentControls)
             {
-                ContentControl d = dest.Range.ContentControls.Add(s.Type);
+                Range dr = dest.Range;
+                dr.Collapse(WdCollapseDirection.wdCollapseStart);
+                ContentControl d = dr.ContentControls.Add(s.Type);
                 d.Tag = s.Tag;
                 d.Title = s.Title;
             }
@@ -734,6 +796,7 @@ namespace WordAddIn
         public string collectionName;
         public object[] items;
         public List<Row> templateRows;
+        public int numRows;
     }
 
     // Information extracted from a ContentControl tag-property
