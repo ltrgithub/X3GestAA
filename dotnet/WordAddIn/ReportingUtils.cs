@@ -7,11 +7,14 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WordAddIn
 {
     class ReportingUtils
     {
+        public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
+
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -760,12 +763,13 @@ namespace WordAddIn
                     t.display = tag.Substring(0, i);
                     tag = tag.Substring(i + 1);
                 }
-                
-                if (tag.StartsWith("$sum(") && tag.EndsWith(")"))
+
+                Match m = ReportingUtils.sumRegex.Match(tag);
+                if (m.Success)
                 {
                     t.isFormula = true;
                     t.formula = "$sum";
-                    tag = tag.Substring(5, tag.Length - 6);
+                    tag = m.Groups["exp"].Value;
                 }
                 i = tag.IndexOf(".");
                 if (i > -1)
