@@ -118,7 +118,7 @@ var x = {
     "$article": {
         "$layout": {
             "$layoutType": "row",
-            "$layoutSubType": "25,75",
+            "$widths": "25,75",
             "$items": [{
                 "$category": "fusionBar",
                 "$items": [{

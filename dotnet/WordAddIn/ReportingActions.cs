@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Word;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace WordAddIn
 {
@@ -67,7 +68,7 @@ namespace WordAddIn
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 }
-                if (customData.getDocumentTemplateUrl() != null && rpt_fill_tpl.Equals(mode))
+                if (rpt_fill_tpl.Equals(mode))
                 {
                     Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 }
@@ -94,9 +95,6 @@ namespace WordAddIn
 
         public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
-            // save templateUrl within document for refresh
-            customData.setDocumentTemplateUrl(customData.getDocumentUrl());
-
             // Remove document URL, this has to be done because a template opened from collab. space has already an url stored inside the
             // document. But after the population of the template it is a new independent document!
             customData.setDocumentUrl("");
@@ -118,11 +116,7 @@ namespace WordAddIn
             {
                 return;
             }
-
-            customData.setCreateMode("rpt_refresh_tpl");
-            customData.writeDictionaryToDocument();
-
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            PopulateWordReportTemplate(doc, customData);
         }
 
         public void CreateWordReportPreview()
@@ -155,6 +149,64 @@ namespace WordAddIn
             customDataPreview.setCreateMode(rpt_fill_tpl);
 
             PopulateWordReportTemplate(doc, customDataPreview);
+        }
+
+        public void CheckForContentControl(Selection Sel)
+        {
+            Globals.Ribbons.Ribbon.toggleMakeSum.Checked = false;
+            Globals.Ribbons.Ribbon.toggleMakeSum.Enabled = false;
+            Range r = Sel.Range;
+            r.Collapse(WdCollapseDirection.wdCollapseEnd);
+            ContentControl cc = r.ParentContentControl;
+            if (cc == null)
+            {
+                return;
+            }
+            ReportingFieldTypes rft = ReportingFieldUtil.getType(cc.Title);
+            if (rft != ReportingFieldTypes.DECIMAL && rft != ReportingFieldTypes.INTEGER)
+            {
+                return;
+            }
+            if (cc.Tag.IndexOf(".") < 0)
+            {
+                return;
+            }
+            Globals.Ribbons.Ribbon.toggleMakeSum.Enabled = true;
+            Match m = ReportingUtils.sumRegex.Match(cc.Tag);
+            if (m.Success)
+            {
+                Globals.Ribbons.Ribbon.toggleMakeSum.Checked = true;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.toggleMakeSum.Checked = false;
+            }
+        }
+
+        public void ToggleMakeSum(Document doc)
+        {
+            Range r = Globals.WordAddIn.Application.Selection.Range;
+            r.Collapse(WdCollapseDirection.wdCollapseEnd);
+            ContentControl cc = r.ParentContentControl;
+            if (cc == null)
+            {
+                return;
+            }
+            Match m = ReportingUtils.sumRegex.Match(cc.Tag);
+            if (m.Success)
+            {
+                cc.Tag = m.Groups["exp"].Value;
+                Globals.Ribbons.Ribbon.toggleMakeSum.Checked = false;
+            }
+            else
+            {
+                if (cc.Tag.IndexOf(".") < 0)
+                {
+                    return;
+                }
+                cc.Tag = "$sum(" + cc.Tag + ")";
+                Globals.Ribbons.Ribbon.toggleMakeSum.Checked = true;
+            }
         }
     }
 }

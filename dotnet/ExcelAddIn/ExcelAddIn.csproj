@@ -211,6 +211,11 @@
     <Compile Include="DocumentBrowser.Designer.cs">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.fr.Designer.cs">
+      <DependentUpon>Resources.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\Resources.en.Designer.cs">
       <DependentUpon>Resources.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -261,7 +266,11 @@
     <EmbeddedResource Include="DocumentBrowser.resx">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Messages.en.resx" />
+    <EmbeddedResource Include="Properties\Resources.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
@@ -282,7 +291,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Messages.fr.resx" />
     <EmbeddedResource Include="Ribbon.en.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
