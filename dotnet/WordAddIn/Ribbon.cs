@@ -58,5 +58,14 @@ namespace WordAddIn
                 Globals.WordAddIn.commons.SetDocumentLocale(doc, locale);
             }
         }
+
+        private void toggleMakeSum_Click(object sender, RibbonControlEventArgs e)
+        {
+            Word.Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc != null)
+            {
+                Globals.WordAddIn.reporting.ToggleMakeSum(doc);
+            }
+        }
     }
 }
