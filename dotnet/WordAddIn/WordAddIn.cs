@@ -28,6 +28,7 @@ namespace WordAddIn
             this.Application.DocumentChange += new ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
             this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(on_window_deactivate);
+            this.Application.WindowSelectionChange += new ApplicationEvents4_WindowSelectionChangeEventHandler(on_window_selection_changed);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -81,6 +82,18 @@ namespace WordAddIn
             }
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
+        }
+
+        void on_window_selection_changed(Selection Sel)
+        {
+            Document doc = getActiveDocument();
+            if (doc == null)
+            {
+                Globals.Ribbons.Ribbon.toggleMakeSum.Checked = false;
+                Globals.Ribbons.Ribbon.toggleMakeSum.Enabled = false;
+                return;
+            }
+            reporting.CheckForContentControl(Sel);
         }
 
         private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
