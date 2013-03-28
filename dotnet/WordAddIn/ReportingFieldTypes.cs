@@ -135,6 +135,8 @@ namespace WordAddIn
                         value = dt.ToString("d");
                         break;
                     case ReportingFieldTypes.DECIMAL:
+                        // TODO: Datatype Hack for Berlin (Data from X3)
+                        value = value.Replace(",", ".");
                         Decimal d = Decimal.Parse(value, culture);
                         value = d.ToString("N");
                         break;
