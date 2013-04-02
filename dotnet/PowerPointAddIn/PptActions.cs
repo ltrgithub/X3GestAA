@@ -503,7 +503,10 @@ namespace PowerPointAddIn
                     {
                         for (int cat = 2; cat <= ti.rowcount + 1; cat++)
                         {
-                            categories[cat - 2] = ws.Cells[cat, catCol].Value;
+                            if (ws.Cells[cat, catCol].Value() != null)
+                            {
+                                categories[cat - 2] = ws.Cells[cat, catCol].Value.ToString();
+                            }
                         }
                     }
                     firstSeries.XValues = categories;
