@@ -336,7 +336,11 @@ namespace PowerPointAddIn
                         displayIndex = ti.dataToWorksheetIdx(columnIndex);
                         if (displayIndex > 0)
                         {
-                            ws.Cells[row, displayIndex].Value = colDataCol["value"].ToString();
+                            object o = colDataCol["value"];
+                            if (o != null)
+                            {
+                                ws.Cells[row, displayIndex].Value = o;
+                            }
                         }
                         columnIndex++;
                     }
@@ -503,9 +507,10 @@ namespace PowerPointAddIn
                     {
                         for (int cat = 2; cat <= ti.rowcount + 1; cat++)
                         {
-                            if (ws.Cells[cat, catCol].Value() != null)
+                            object o = ws.Cells[cat, catCol].Value;
+                            if (o != null)
                             {
-                                categories[cat - 2] = ws.Cells[cat, catCol].Value.ToString();
+                                categories[cat - 2] = o.ToString();
                             }
                         }
                     }
@@ -532,6 +537,20 @@ namespace PowerPointAddIn
                         si.HasDataLabels = true;
                     }
                 }
+                else
+                {
+                    // Set lowest level of value axis (e.h. for setting it below zero)
+                    // chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlValue, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary).Crosses = Microsoft.Office.Interop.PowerPoint.XlAxisCrosses.xlAxisCrossesMinimum;
+                    // |                           |
+                    // |-----------------     =>   |
+                    // |                           |____________________
+
+                    try
+                    {
+                        chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary).TickLabelPosition = Microsoft.Office.Interop.PowerPoint.XlTickLabelPosition.xlTickLabelPositionLow;
+                    }
+                    catch (Exception) { }
+                }
 
                 chart.HasTitle = true;
                 chart.ChartTitle.Text = header;
@@ -544,6 +563,7 @@ namespace PowerPointAddIn
                 catch (Exception) { }
                 setSyracuseChartName(chart, chartUUid);
                 chart.Refresh();
+
                 chartsDone++;
             }
             catch (Exception e)
