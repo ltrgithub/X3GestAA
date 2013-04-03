@@ -228,6 +228,12 @@ namespace WordAddIn
                 doc.ActiveWindow.View.Type = WdViewType.wdNormalView;
                 doc.Application.Options.Pagination = false;
 
+                string locale = Globals.WordAddIn.commons.GetDocumentLocale(doc);
+                if (locale != null)
+                {
+                    ReportingFieldUtil.SetActiveCulture(locale);
+                }
+
                 FillNonCollectionControls(doc, allContentControls, entityData, browserDialog);
 
                 //long ticks = DateTime.Now.Ticks;
@@ -614,8 +620,7 @@ namespace WordAddIn
                     return "<error>";
                 }
                 ReportingFieldTypes type = ReportingFieldUtil.getType(ctrl.Title);
-                Int64 sumInt = 0;
-                Decimal sumDDecimal = 0;
+                Decimal sumDecimal = 0;
                 string sumString = null;
                 foreach (object record in items)
                 {
@@ -624,12 +629,12 @@ namespace WordAddIn
                     switch (type)
                     {
                         case ReportingFieldTypes.DECIMAL:
-                            Decimal d = Decimal.Parse(value, ReportingFieldUtil.culture);
-                            sumDDecimal += d;
+                            Decimal d = Decimal.Parse(value);
+                            sumDecimal += d;
                             break;
                         case ReportingFieldTypes.INTEGER:
-                            Int64 i = Int64.Parse(value, ReportingFieldUtil.culture);
-                            sumInt += i;
+                            Int64 i = Int64.Parse(value);
+                            sumDecimal += i;
                             break;
                         default:
                             if (sumString != null)
@@ -646,9 +651,8 @@ namespace WordAddIn
                 switch (type)
                 {
                     case ReportingFieldTypes.DECIMAL:
-                        return sumDDecimal.ToString("N");
                     case ReportingFieldTypes.INTEGER:
-                        return sumInt.ToString("N");
+                        return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type);
                     default:
                         return sumString;
                 }
