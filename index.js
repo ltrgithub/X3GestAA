@@ -10,9 +10,10 @@ try {
 
 //redirect standard output to file in cluster
 if (/^N\d+$/.test(process.argv[2])) {
+	var os = require('os');
 	var fs = require('fs')
 	var logpath = ((config.collaboration && config.collaboration.logpath) ? config.collaboration.logpath : __dirname) 
-	var name = logpath+"/"+process.argv[2]+".log";
+	var name = logpath+"/"+os.hostname()+"-"+process.argv[2]+".log";
 	// fs.unlinkSync(name)
 	var stream = fs.createWriteStream(name);
 	process.stdoutOld = process.stdout;
