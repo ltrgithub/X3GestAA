@@ -8,11 +8,13 @@ using System.Windows.Forms;
 using Microsoft.Office.Core;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace WordAddIn
 {
     class ReportingUtils
     {
+        public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
         public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
 
         public static void createWordTemplate(Document doc, String layoutAndData)
@@ -228,6 +230,12 @@ namespace WordAddIn
                 doc.ActiveWindow.View.Type = WdViewType.wdNormalView;
                 doc.Application.Options.Pagination = false;
 
+                string locale = Globals.WordAddIn.commons.GetDocumentLocale(doc);
+                if (locale != null)
+                {
+                    ReportingFieldUtil.SetActiveCulture(locale);
+                }
+
                 FillNonCollectionControls(doc, allContentControls, entityData, browserDialog);
 
                 //long ticks = DateTime.Now.Ticks;
@@ -247,6 +255,30 @@ namespace WordAddIn
             }
 
             Globals.WordAddIn.Application.ScreenUpdating = true;
+        }
+
+        private static string parseValue(Dictionary<String, object> entity, string type)
+        {
+            object o = null;
+            
+            try {
+                o = ((Dictionary<String, object>)entity["$value"])["$value"];
+            } catch (Exception) {
+                return "";
+            }
+            if (o == null)
+            {
+                return "";
+            }
+            if (type != null)
+            {
+
+                if (type.Equals("application/x-decimal") && o.GetType() == typeof(String))
+                {
+                    return Decimal.Parse(o.ToString(), decimalFormat).ToString();
+                }
+            }
+            return o.ToString();
         }
 
         private static void FillNonCollectionControls(Document doc, List<ContentControl> allContentControls, Dictionary<String, object> entityData, BrowserDialog browserDialog)
@@ -588,11 +620,9 @@ namespace WordAddIn
             {
                 try { type = entity["$type"].ToString(); }
                 catch (Exception) { }
-                try { value = ((Dictionary<String, object>)entity["$value"])["$value"].ToString(); }
-                catch (Exception) { }
+                value = parseValue(entity, type);
+                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
             }
-
-            value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
             ctrl.Range.Text = value;
         }
 
@@ -602,7 +632,8 @@ namespace WordAddIn
             {
                 Dictionary<String, object> propData = (Dictionary<String, object>)allData[ti.collection];
                 object[] items = null;
-                if ("application/x-array".Equals(propData["$type"].ToString()))
+                string proptype = propData["$type"].ToString();
+                if ("application/x-array".Equals(proptype))
                 {
                     if (propData.ContainsKey("$items"))
                     {
@@ -613,23 +644,24 @@ namespace WordAddIn
                 {
                     return "<error>";
                 }
-                ReportingFieldTypes type = ReportingFieldUtil.getType(ctrl.Title);
-                Int64 sumInt = 0;
-                Decimal sumDDecimal = 0;
+
+                string itemtype = ctrl.Title;
+                ReportingFieldTypes type = ReportingFieldUtil.getType(itemtype);
+                Decimal sumDecimal = 0;
                 string sumString = null;
                 foreach (object record in items)
                 {
                     Dictionary<String, object> item = (Dictionary<String, object>)((Dictionary<String, object>)record)[ti.property];
-                    string value = ((Dictionary<String, object>)item["$value"])["$value"].ToString();
+                    string value = parseValue(item, itemtype);
                     switch (type)
                     {
                         case ReportingFieldTypes.DECIMAL:
-                            Decimal d = Decimal.Parse(value, ReportingFieldUtil.culture);
-                            sumDDecimal += d;
+                            Decimal d = Decimal.Parse(value);
+                            sumDecimal += d;
                             break;
                         case ReportingFieldTypes.INTEGER:
-                            Int64 i = Int64.Parse(value, ReportingFieldUtil.culture);
-                            sumInt += i;
+                            Int64 i = Int64.Parse(value);
+                            sumDecimal += i;
                             break;
                         default:
                             if (sumString != null)
@@ -646,9 +678,8 @@ namespace WordAddIn
                 switch (type)
                 {
                     case ReportingFieldTypes.DECIMAL:
-                        return sumDDecimal.ToString("N");
                     case ReportingFieldTypes.INTEGER:
-                        return sumInt.ToString("N");
+                        return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type);
                     default:
                         return sumString;
                 }
