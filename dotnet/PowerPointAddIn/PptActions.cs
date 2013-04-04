@@ -537,6 +537,20 @@ namespace PowerPointAddIn
                         si.HasDataLabels = true;
                     }
                 }
+                else
+                {
+                    // Set lowest level of value axis (e.h. for setting it below zero)
+                    // chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlValue, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary).Crosses = Microsoft.Office.Interop.PowerPoint.XlAxisCrosses.xlAxisCrossesMinimum;
+                    // |                           |
+                    // |-----------------     =>   |
+                    // |                           |____________________
+
+                    try
+                    {
+                        chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary).TickLabelPosition = Microsoft.Office.Interop.PowerPoint.XlTickLabelPosition.xlTickLabelPositionLow;
+                    }
+                    catch (Exception) { }
+                }
 
                 chart.HasTitle = true;
                 chart.ChartTitle.Text = header;
@@ -549,6 +563,7 @@ namespace PowerPointAddIn
                 catch (Exception) { }
                 setSyracuseChartName(chart, chartUUid);
                 chart.Refresh();
+
                 chartsDone++;
             }
             catch (Exception e)
