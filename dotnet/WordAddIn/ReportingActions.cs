@@ -56,7 +56,7 @@ namespace WordAddIn
                 {
                     if (customData.isForceRefresh())
                     {
-                        PopulateWordReportTemplate(doc, customData);
+                        PopulateWordReportTemplate(doc, customData, true);
                     }
                 }
                 else if (rpt_is_tpl.Equals(mode))
@@ -93,11 +93,15 @@ namespace WordAddIn
             browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
-        public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
+        public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData, Boolean delUrl)
         {
             // Remove document URL, this has to be done because a template opened from collab. space has already an url stored inside the
             // document. But after the population of the template it is a new independent document!
-            customData.setDocumentUrl("");
+            if (delUrl)
+            {
+                customData.setDocumentUrl("");
+            }
+
             customData.setDocumentTitle("");
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
@@ -116,7 +120,7 @@ namespace WordAddIn
             {
                 return;
             }
-            PopulateWordReportTemplate(doc, customData);
+            PopulateWordReportTemplate(doc, customData, false);
         }
 
         public void CreateWordReportPreview()
@@ -148,7 +152,7 @@ namespace WordAddIn
             customDataPreview.writeDictionaryToDocument();
             customDataPreview.setCreateMode(rpt_fill_tpl);
 
-            PopulateWordReportTemplate(doc, customDataPreview);
+            PopulateWordReportTemplate(doc, customDataPreview, false);
         }
 
         public void CheckForContentControl(Selection Sel)
