@@ -47,21 +47,24 @@ require('syracuse-license').register(function(err, data) {
 
 	require("streamline").register(config.streamline);
 
-	var syracuse = require('syracuse-main/lib/syracuse');
-	var port = syracuse.config.port || 8124;
-	//Port init
-	syracuse.config.sdata.httpRoot = syracuse.config.sdata.httpRoot || "http://localhost:" + port;
-
-	// special mode for patch integration on temp directory
-	if (process.argv[2] && process.argv[2].substr(0, 5) === "PATCH") {
-		syracuse.patchintegration(function(error) {
-			if (error)
-				console.log("Error in patch integration "+error);
-			else
-				console.log("Patch integrated");
-			process.kill(process.pid);
+	var waitData;
+	if (process.argv[2] === "PATCH") {
+		// patchtools are independent of Syracuse modules!
+		console.log("PATCH1121")
+		var patchtools = require('syracuse-patch/lib/patchtools');
+		patchtools.waitfunction(function(err) {
+			if (err) {
+				console.log("Error "+err);
+			} else {
+				var syracuse = require('syracuse-main/lib/syracuse');
+			}
 		});
 	} else {
+		var syracuse = require('syracuse-main/lib/syracuse');
+		console.log("NACH SYR")
+		var port = syracuse.config.port || 8124;
+		//Port init
+		syracuse.config.sdata.httpRoot = syracuse.config.sdata.httpRoot || "http://localhost:" + port;
 		// start http or mock server
 		syracuse.server.listen(function() {
 			console.log('Server running at http://localhost:' + port + '/');
