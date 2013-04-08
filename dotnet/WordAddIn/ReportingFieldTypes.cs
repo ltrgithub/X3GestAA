@@ -128,30 +128,28 @@ namespace WordAddIn
                 {
                     case ReportingFieldTypes.DATETIME:
                         DateTime.TryParse(value, out dt);
-                        value = dt.ToString("g");
+                        value = dt.ToString("g", culture);
                         break;
                     case ReportingFieldTypes.DATE:
                         DateTime.TryParse(value, out dt);
-                        value = dt.ToString("d");
+                        value = dt.ToString("d", culture);
                         break;
                     case ReportingFieldTypes.DECIMAL:
-                        // TODO: Datatype Hack for Berlin (Data from X3)
-                        value = value.Replace(",", ".");
-                        Decimal d = Decimal.Parse(value, culture);
-                        value = d.ToString("N");
+                        Decimal d = Decimal.Parse(value);
+                        value = d.ToString(culture);
                         break;
                     case ReportingFieldTypes.INTEGER:
-                        Int64 i = Int64.Parse(value, culture);
-                        value = i.ToString("N");
+                        Int64 i = Int64.Parse(value);
+                        value = i.ToString(culture);
                         break;
                     case ReportingFieldTypes.BOOL:
                         if ("false".Equals(value.ToLower()) || "0".Equals(value.ToLower()))
                         {
-                            value = false.ToString();
+                            value = false.ToString(culture);
                         }
                         else
                         {
-                            value = true.ToString();
+                            value = true.ToString(culture);
                         }
                         break;
                     case ReportingFieldTypes.BINARY:    // Binary not supported
@@ -172,6 +170,15 @@ namespace WordAddIn
             else if (ReportingFieldTypes.BINARY == type)
                 return false;
             return true;
+        }
+
+        public static void SetActiveCulture(string cultureName)
+        {
+            try
+            {
+                culture = CultureInfo.CreateSpecificCulture(cultureName);
+            }
+            catch (Exception) { };
         }
     }
 }
