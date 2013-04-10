@@ -50,7 +50,6 @@ require('syracuse-license').register(function(err, data) {
 	var waitData;
 	if (process.argv[2] === "PATCH") {
 		// patchtools are independent of Syracuse modules!
-		console.log("PATCH1121")
 		var patchtools = require('syracuse-patch/lib/patchtools');
 		patchtools.waitfunction(function(err) {
 			if (err) {
@@ -61,7 +60,6 @@ require('syracuse-license').register(function(err, data) {
 		});
 	} else {
 		var syracuse = require('syracuse-main/lib/syracuse');
-		console.log("NACH SYR")
 		var port = syracuse.config.port || 8124;
 		//Port init
 		syracuse.config.sdata.httpRoot = syracuse.config.sdata.httpRoot || "http://localhost:" + port;
