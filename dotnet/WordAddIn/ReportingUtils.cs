@@ -8,12 +8,15 @@ using System.Windows.Forms;
 using Microsoft.Office.Core;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace WordAddIn
 {
     class ReportingUtils
     {
+        public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
         public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
+        private static string transparentImageFile = null;
 
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
@@ -228,12 +231,19 @@ namespace WordAddIn
                 doc.ActiveWindow.View.Type = WdViewType.wdNormalView;
                 doc.Application.Options.Pagination = false;
 
+                string locale = Globals.WordAddIn.commons.GetDocumentLocale(doc);
+                if (locale != null)
+                {
+                    ReportingFieldUtil.SetActiveCulture(locale);
+                }
+
                 FillNonCollectionControls(doc, allContentControls, entityData, browserDialog);
 
                 //long ticks = DateTime.Now.Ticks;
                 
                 FillCollectionControls(doc, entityData, browserDialog, pd);
 
+                File.Delete(getTransparentImage());
                 //long ticks2 = DateTime.Now.Ticks;
                 //long sec = (ticks2-ticks)/10000000;
                 //MessageBox.Show("Table fill time: " + sec + " secs.");
@@ -247,6 +257,30 @@ namespace WordAddIn
             }
 
             Globals.WordAddIn.Application.ScreenUpdating = true;
+        }
+
+        private static string parseValue(Dictionary<String, object> entity, string type)
+        {
+            object o = null;
+            
+            try {
+                o = ((Dictionary<String, object>)entity["$value"])["$value"];
+            } catch (Exception) {
+                return "";
+            }
+            if (o == null)
+            {
+                return "";
+            }
+            if (type != null)
+            {
+
+                if (type.Equals("application/x-decimal") && o.GetType() == typeof(String))
+                {
+                    return Decimal.Parse(o.ToString(), decimalFormat).ToString();
+                }
+            }
+            return o.ToString();
         }
 
         private static void FillNonCollectionControls(Document doc, List<ContentControl> allContentControls, Dictionary<String, object> entityData, BrowserDialog browserDialog)
@@ -588,11 +622,9 @@ namespace WordAddIn
             {
                 try { type = entity["$type"].ToString(); }
                 catch (Exception) { }
-                try { value = ((Dictionary<String, object>)entity["$value"])["$value"].ToString(); }
-                catch (Exception) { }
+                value = parseValue(entity, type);
+                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
             }
-
-            value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
             ctrl.Range.Text = value;
         }
 
@@ -602,7 +634,8 @@ namespace WordAddIn
             {
                 Dictionary<String, object> propData = (Dictionary<String, object>)allData[ti.collection];
                 object[] items = null;
-                if ("application/x-array".Equals(propData["$type"].ToString()))
+                string proptype = propData["$type"].ToString();
+                if ("application/x-array".Equals(proptype))
                 {
                     if (propData.ContainsKey("$items"))
                     {
@@ -613,23 +646,24 @@ namespace WordAddIn
                 {
                     return "<error>";
                 }
-                ReportingFieldTypes type = ReportingFieldUtil.getType(ctrl.Title);
-                Int64 sumInt = 0;
-                Decimal sumDDecimal = 0;
+
+                string itemtype = ctrl.Title;
+                ReportingFieldTypes type = ReportingFieldUtil.getType(itemtype);
+                Decimal sumDecimal = 0;
                 string sumString = null;
                 foreach (object record in items)
                 {
                     Dictionary<String, object> item = (Dictionary<String, object>)((Dictionary<String, object>)record)[ti.property];
-                    string value = ((Dictionary<String, object>)item["$value"])["$value"].ToString();
+                    string value = parseValue(item, itemtype);
                     switch (type)
                     {
                         case ReportingFieldTypes.DECIMAL:
-                            Decimal d = Decimal.Parse(value, ReportingFieldUtil.culture);
-                            sumDDecimal += d;
+                            Decimal d = Decimal.Parse(value);
+                            sumDecimal += d;
                             break;
                         case ReportingFieldTypes.INTEGER:
-                            Int64 i = Int64.Parse(value, ReportingFieldUtil.culture);
-                            sumInt += i;
+                            Int64 i = Int64.Parse(value);
+                            sumDecimal += i;
                             break;
                         default:
                             if (sumString != null)
@@ -646,9 +680,8 @@ namespace WordAddIn
                 switch (type)
                 {
                     case ReportingFieldTypes.DECIMAL:
-                        return sumDDecimal.ToString("N");
                     case ReportingFieldTypes.INTEGER:
-                        return sumInt.ToString("N");
+                        return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type);
                     default:
                         return sumString;
                 }
@@ -674,48 +707,65 @@ namespace WordAddIn
             try { url = ((Dictionary<String, object>)entity["$value"])["$url"].ToString(); }
             catch (Exception) { }
 
-            if (ctrl.Type == WdContentControlType.wdContentControlPicture && url != null)
+            bool imageWasSet = false;
+            if (ctrl.Type == WdContentControlType.wdContentControlPicture)
             {
-                string imageFile = downloadImage(url, browserDialog);
-                if (imageFile != null)
+                try
                 {
-                    try
+
+                    string imageFile = null;
+                    if (url != null)
                     {
-                        float width = -1;
-                        float height = -1;
-
-                        if (ctrl.Range.InlineShapes.Count > 0)
+                        imageFile = downloadImage(url, browserDialog);
+                    }
+                    if (imageFile != null && !"".Equals(imageFile))
+                    {
                         {
-                            width = ctrl.Range.InlineShapes[1].Width;
-                            height = ctrl.Range.InlineShapes[1].Height;
-                            ctrl.Range.InlineShapes[1].Delete();
-                        }
+                            float width = -1;
+                            float height = -1;
 
-                        doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
-                        if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
-                        {
-                            InlineShape shape = ctrl.Range.InlineShapes[1];
-                            // Image should be displayed in original size but not greater than 16 cm
-                            float scal = 100;
-                            shape.ScaleHeight = scal;
-                            shape.ScaleWidth = scal;
-                            // maxWith = 160mm
-                            // Millimeter 2 Inch = 25.4
-                            // Inch 2 Pixel = 72
-                            float maxWidth = 454;  // 160 / 25.4 * 72
-
-                            if (shape.Width > maxWidth)
+                            if (ctrl.Range.InlineShapes.Count > 0)
                             {
-                                scal = 100 * maxWidth / shape.Width;
+                                width = ctrl.Range.InlineShapes[1].Width;
+                                height = ctrl.Range.InlineShapes[1].Height;
+                                ctrl.Range.InlineShapes[1].Delete();
+                            }
+
+                            doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
+                            imageWasSet = true;
+                            if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
+                            {
+                                InlineShape shape = ctrl.Range.InlineShapes[1];
+                                // Image should be displayed in original size but not greater than 16 cm
+                                float scal = 100;
                                 shape.ScaleHeight = scal;
                                 shape.ScaleWidth = scal;
+                                // maxWith = 160mm
+                                // Millimeter 2 Inch = 25.4
+                                // Inch 2 Pixel = 72
+                                float maxWidth = 454;  // 160 / 25.4 * 72
+
+                                if (shape.Width > maxWidth)
+                                {
+                                    scal = 100 * maxWidth / shape.Width;
+                                    shape.ScaleHeight = scal;
+                                    shape.ScaleWidth = scal;
+                                }
                             }
+                            addLinkToContentControl(doc, ctrl, entity);
+                            File.Delete(imageFile);
                         }
-                        addLinkToContentControl(doc, ctrl, entity);
                     }
-                    catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
-                    File.Delete(imageFile);
+                    if (!imageWasSet)
+                    {
+                        if (ctrl.Range.InlineShapes.Count > 0)
+                        {
+                            ctrl.Range.InlineShapes[1].Delete();
+                        }
+                        doc.InlineShapes.AddPicture(getTransparentImage(), false, true, ctrl.Range);
+                    }
                 }
+                catch (Exception) { };
             }
         }
 
@@ -739,6 +789,28 @@ namespace WordAddIn
                 }
             }
             catch (Exception) { /*MessageBox.Show(e.Message + ":" + e.StackTrace);*/  };
+            return imageFile;
+        }
+
+        private static string getTransparentImage()
+        {
+            if (transparentImageFile != null)
+            {
+                if (File.Exists(transparentImageFile) == true)
+                {
+                    return transparentImageFile;
+                }
+            }
+            string imageFile = Path.GetTempFileName();
+            using (FileStream stream = new FileStream(imageFile, FileMode.Create))
+            {
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    writer.Write(global::WordAddIn.Properties.Resources.transparent);
+                    writer.Close();
+                }
+            }
+            transparentImageFile = imageFile;
             return imageFile;
         }
 
