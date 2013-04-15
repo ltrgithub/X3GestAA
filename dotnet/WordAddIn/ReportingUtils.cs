@@ -16,6 +16,7 @@ namespace WordAddIn
     {
         public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
         public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
+        private static string transparentImageFile = null;
 
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
@@ -242,6 +243,7 @@ namespace WordAddIn
                 
                 FillCollectionControls(doc, entityData, browserDialog, pd);
 
+                File.Delete(getTransparentImage());
                 //long ticks2 = DateTime.Now.Ticks;
                 //long sec = (ticks2-ticks)/10000000;
                 //MessageBox.Show("Table fill time: " + sec + " secs.");
@@ -705,48 +707,65 @@ namespace WordAddIn
             try { url = ((Dictionary<String, object>)entity["$value"])["$url"].ToString(); }
             catch (Exception) { }
 
-            if (ctrl.Type == WdContentControlType.wdContentControlPicture && url != null)
+            bool imageWasSet = false;
+            if (ctrl.Type == WdContentControlType.wdContentControlPicture)
             {
-                string imageFile = downloadImage(url, browserDialog);
-                if (imageFile != null)
+                try
                 {
-                    try
+
+                    string imageFile = null;
+                    if (url != null)
                     {
-                        float width = -1;
-                        float height = -1;
-
-                        if (ctrl.Range.InlineShapes.Count > 0)
+                        imageFile = downloadImage(url, browserDialog);
+                    }
+                    if (imageFile != null && !"".Equals(imageFile))
+                    {
                         {
-                            width = ctrl.Range.InlineShapes[1].Width;
-                            height = ctrl.Range.InlineShapes[1].Height;
-                            ctrl.Range.InlineShapes[1].Delete();
-                        }
+                            float width = -1;
+                            float height = -1;
 
-                        doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
-                        if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
-                        {
-                            InlineShape shape = ctrl.Range.InlineShapes[1];
-                            // Image should be displayed in original size but not greater than 16 cm
-                            float scal = 100;
-                            shape.ScaleHeight = scal;
-                            shape.ScaleWidth = scal;
-                            // maxWith = 160mm
-                            // Millimeter 2 Inch = 25.4
-                            // Inch 2 Pixel = 72
-                            float maxWidth = 454;  // 160 / 25.4 * 72
-
-                            if (shape.Width > maxWidth)
+                            if (ctrl.Range.InlineShapes.Count > 0)
                             {
-                                scal = 100 * maxWidth / shape.Width;
+                                width = ctrl.Range.InlineShapes[1].Width;
+                                height = ctrl.Range.InlineShapes[1].Height;
+                                ctrl.Range.InlineShapes[1].Delete();
+                            }
+
+                            doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
+                            imageWasSet = true;
+                            if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
+                            {
+                                InlineShape shape = ctrl.Range.InlineShapes[1];
+                                // Image should be displayed in original size but not greater than 16 cm
+                                float scal = 100;
                                 shape.ScaleHeight = scal;
                                 shape.ScaleWidth = scal;
+                                // maxWith = 160mm
+                                // Millimeter 2 Inch = 25.4
+                                // Inch 2 Pixel = 72
+                                float maxWidth = 454;  // 160 / 25.4 * 72
+
+                                if (shape.Width > maxWidth)
+                                {
+                                    scal = 100 * maxWidth / shape.Width;
+                                    shape.ScaleHeight = scal;
+                                    shape.ScaleWidth = scal;
+                                }
                             }
+                            addLinkToContentControl(doc, ctrl, entity);
+                            File.Delete(imageFile);
                         }
-                        addLinkToContentControl(doc, ctrl, entity);
                     }
-                    catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
-                    File.Delete(imageFile);
+                    if (!imageWasSet)
+                    {
+                        if (ctrl.Range.InlineShapes.Count > 0)
+                        {
+                            ctrl.Range.InlineShapes[1].Delete();
+                        }
+                        doc.InlineShapes.AddPicture(getTransparentImage(), false, true, ctrl.Range);
+                    }
                 }
+                catch (Exception) { };
             }
         }
 
@@ -770,6 +789,28 @@ namespace WordAddIn
                 }
             }
             catch (Exception) { /*MessageBox.Show(e.Message + ":" + e.StackTrace);*/  };
+            return imageFile;
+        }
+
+        private static string getTransparentImage()
+        {
+            if (transparentImageFile != null)
+            {
+                if (File.Exists(transparentImageFile) == true)
+                {
+                    return transparentImageFile;
+                }
+            }
+            string imageFile = Path.GetTempFileName();
+            using (FileStream stream = new FileStream(imageFile, FileMode.Create))
+            {
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    writer.Write(global::WordAddIn.Properties.Resources.transparent);
+                    writer.Close();
+                }
+            }
+            transparentImageFile = imageFile;
             return imageFile;
         }
 
