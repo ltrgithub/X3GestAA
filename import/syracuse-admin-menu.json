@@ -353,6 +353,23 @@
 		"facet": "$query"
 	},{
 		"$type": "menuItem",
+		"code": "S_PERS_MNGT",
+		"title": {
+			"en-US": "Personalizations management",
+			"fr-FR": "Gestion de personalisations"
+		},
+		"linkType": "$representation",
+		"application": {
+			"application": "syracuse",
+			"contract": "collaboration"
+		},
+		"representationRef": {
+			"entity": "personalizationManagements",
+			"representation": "personalizationManagement"
+		},
+		"facet": "$query"
+	},{
+		"$type": "menuItem",
 		"code": "S_IMPORT_TOOL",
 		"title": {
 			"en-US": "Import Tool",
@@ -514,7 +531,7 @@
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"items": ["S_PAGES", "S_DASHBOARDS", "S_VIGNETTES", "S_MENU_ITEMS", "S_MENU_CATEGORIES"]
+		"items": ["S_PAGES", "S_DASHBOARDS", "S_VIGNETTES", "S_MENU_ITEMS", "S_MENU_CATEGORIES", "S_PERS_MNGT"]
 	},{
 		"$type": "portlet",
 		"title": {
