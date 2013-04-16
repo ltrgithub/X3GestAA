@@ -353,43 +353,6 @@ namespace ExcelAddIn
                 Range activeCell = _listObject.Range[1, 1];
                 Worksheet activeWorksheet = activeCell.Worksheet;
                 //
-                //_columnRanges = new Dictionary<string, Range>();
-                // detect actual listobjects
-/*                ListObject activeListObject = FindListObject(_name);
-                if (activeListObject != null)
-                {
-                    ((Range)activeListObject.Range.Item[1, 1]).Select();
-                    activeCell = ((Range)activeListObject.Range.Item[1, 1]);
-                }
-                else
-                {
-                    activeListObject = activeCell.ListObject;
-                    // check if same dataset
-                    if ((activeListObject != null) && (activeListObject.Name != _name))
-                    {
-                        if (MessageBox.Show(String.Format(_locRes.GetString("OverrideTableConfirm"), activeCell.Address, activeListObject.Name), _locRes.GetString("AddinTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            ((Range)activeListObject.Range.Item[1, 1]).Select();
-                            _deleteTable(activeListObject, true);
-                            activeListObject = null;
-                        }
-                        else
-                            return false;
-                    }
-                }
-                //
-                if (activeListObject == null)
-                {
-                    activeListObject = _createListObject(activeCell, _fields, _columnRanges, linesCount);
-                    if (activeListObject == null)
-                        return false;
-                }
-                else
-                {
-                    if (!_updateListObject(activeCell, activeWorksheet, activeListObject, _columnRanges, linesCount))
-                        return false;
-                }
- */
                 if (!_updateListObject(activeCell, activeWorksheet, _listObject, _columnRanges, linesCount))
                     return false;
                 if (cleanFirstDataRow == true)
@@ -443,6 +406,14 @@ namespace ExcelAddIn
                     object[,] _colData = new object[resources.Length, 1];
                     _data.Add(namedRange.Key, _colData);
                 }
+                // empty all hyperlink in the range
+                foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
+                {
+                    int startRow = namedRange.Value.Row + startLine;
+                    activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
+                        activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Clear();
+                }
+                // create data
                 for (int r = 0; r < resources.Length; r++)
                 {
                     object[] res = (object[])resources[r];
