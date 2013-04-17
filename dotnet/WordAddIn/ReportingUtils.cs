@@ -513,9 +513,8 @@ namespace WordAddIn
                         pd.SignalRowDone();
                     }
                 }
-
-                table.Range.Font.Hidden = 0;
             }
+            table.Range.Font.Hidden = 0;
 
             // hide template rows
             foreach (Row templateRow in info.templateRows)
@@ -720,41 +719,40 @@ namespace WordAddIn
                     }
                     if (imageFile != null && !"".Equals(imageFile))
                     {
+
+                        float width = -1;
+                        float height = -1;
+
+                        if (ctrl.Range.InlineShapes.Count > 0)
                         {
-                            float width = -1;
-                            float height = -1;
+                            width = ctrl.Range.InlineShapes[1].Width;
+                            height = ctrl.Range.InlineShapes[1].Height;
+                            ctrl.Range.InlineShapes[1].Delete();
+                        }
 
-                            if (ctrl.Range.InlineShapes.Count > 0)
-                            {
-                                width = ctrl.Range.InlineShapes[1].Width;
-                                height = ctrl.Range.InlineShapes[1].Height;
-                                ctrl.Range.InlineShapes[1].Delete();
-                            }
+                        doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
+                        imageWasSet = true;
+                        if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
+                        {
+                            InlineShape shape = ctrl.Range.InlineShapes[1];
+                            // Image should be displayed in original size but not greater than 16 cm
+                            float scal = 100;
+                            shape.ScaleHeight = scal;
+                            shape.ScaleWidth = scal;
+                            // maxWith = 160mm
+                            // Millimeter 2 Inch = 25.4
+                            // Inch 2 Pixel = 72
+                            float maxWidth = 454;  // 160 / 25.4 * 72
 
-                            doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
-                            imageWasSet = true;
-                            if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
+                            if (shape.Width > maxWidth)
                             {
-                                InlineShape shape = ctrl.Range.InlineShapes[1];
-                                // Image should be displayed in original size but not greater than 16 cm
-                                float scal = 100;
+                                scal = 100 * maxWidth / shape.Width;
                                 shape.ScaleHeight = scal;
                                 shape.ScaleWidth = scal;
-                                // maxWith = 160mm
-                                // Millimeter 2 Inch = 25.4
-                                // Inch 2 Pixel = 72
-                                float maxWidth = 454;  // 160 / 25.4 * 72
-
-                                if (shape.Width > maxWidth)
-                                {
-                                    scal = 100 * maxWidth / shape.Width;
-                                    shape.ScaleHeight = scal;
-                                    shape.ScaleWidth = scal;
-                                }
                             }
-                            addLinkToContentControl(doc, ctrl, entity);
-                            File.Delete(imageFile);
                         }
+                        addLinkToContentControl(doc, ctrl, entity);
+                        File.Delete(imageFile);
                     }
                     if (!imageWasSet)
                     {
