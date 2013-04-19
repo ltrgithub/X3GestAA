@@ -336,7 +336,11 @@ namespace PowerPointAddIn
                         displayIndex = ti.dataToWorksheetIdx(columnIndex);
                         if (displayIndex > 0)
                         {
-                            ws.Cells[row, displayIndex].Value = colDataCol["value"].ToString();
+                            object o = colDataCol["value"];
+                            if (o != null)
+                            {
+                                ws.Cells[row, displayIndex].Value = o;
+                            }
                         }
                         columnIndex++;
                     }
@@ -382,8 +386,8 @@ namespace PowerPointAddIn
                     {
                         dcol++;
                         wsIdx = dcol;
-                        string _title = dictCol["_title"].ToString();
-                        string _type = dictCol["_type"].ToString();
+                        string _title = _orgName;
+                        try { _title = dictCol["_title"].ToString(); } catch (Exception) { };
                         ws.Cells[1, dcol].Value = _title;
                     }
                     ti.addColumn(_orgName, col, wsIdx);
@@ -417,8 +421,11 @@ namespace PowerPointAddIn
                 foreach (string key in measures.Keys)
                 {
                     Dictionary<String, object> measure = (Dictionary<String, object>)measures[key];
-                    string property = measure["$property"].ToString();
-                    string title = measure["$title"].ToString();
+                    string property = key;
+                    try { property = measure["$property"].ToString(); } catch (Exception) { };
+                    
+                    string title = property;
+                    try { title = measure["$title"].ToString(); } catch (Exception) { };
                     int col = ti.nameToWorksheetIdx(property);
                     if (col > 0)
                     {
@@ -433,7 +440,8 @@ namespace PowerPointAddIn
                             firstSeries = s;
                         }
 
-                        string style = measure["$style"].ToString();
+                        string style = "stick";
+                        try { style = measure["$style"].ToString(); } catch (Exception) { }
                         switch (style)
                         {
                             case "line":
@@ -499,7 +507,11 @@ namespace PowerPointAddIn
                     {
                         for (int cat = 2; cat <= ti.rowcount + 1; cat++)
                         {
-                            categories[cat - 2] = ws.Cells[cat, catCol].Value;
+                            object o = ws.Cells[cat, catCol].Value;
+                            if (o != null)
+                            {
+                                categories[cat - 2] = o.ToString();
+                            }
                         }
                     }
                     firstSeries.XValues = categories;
@@ -512,7 +524,9 @@ namespace PowerPointAddIn
                 catch (Exception) { }
                 
                 string header = cube["$title"].ToString();
-                string cstyle = cube["$style"].ToString();
+                string cstyle = "stick";
+                try { cube["$style"].ToString(); } catch (Exception) { }
+
                 if ("pie".Equals(cstyle))
                 {
                     chart.ChartType = Microsoft.Office.Core.XlChartType.xlPie;
@@ -522,6 +536,20 @@ namespace PowerPointAddIn
                         Microsoft.Office.Interop.PowerPoint.Series si = sc.Item(ser);
                         si.HasDataLabels = true;
                     }
+                }
+                else
+                {
+                    // Set lowest level of value axis (e.h. for setting it below zero)
+                    // chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlValue, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary).Crosses = Microsoft.Office.Interop.PowerPoint.XlAxisCrosses.xlAxisCrossesMinimum;
+                    // |                           |
+                    // |-----------------     =>   |
+                    // |                           |____________________
+
+                    try
+                    {
+                        chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlPrimary).TickLabelPosition = Microsoft.Office.Interop.PowerPoint.XlTickLabelPosition.xlTickLabelPositionLow;
+                    }
+                    catch (Exception) { }
                 }
 
                 chart.HasTitle = true;
@@ -535,6 +563,7 @@ namespace PowerPointAddIn
                 catch (Exception) { }
                 setSyracuseChartName(chart, chartUUid);
                 chart.Refresh();
+
                 chartsDone++;
             }
             catch (Exception e)

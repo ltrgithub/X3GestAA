@@ -1,0 +1,1 @@
+locale.format(module, "jaja")

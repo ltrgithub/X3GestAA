@@ -1,0 +1,16 @@
+var locale = require('syracuse-core/lib/locale')
+
+locale.format("hugo")
+locale.format(mod, "hugo")
+locale.format(module, "ab"+"cd")
+locale.format(module, abcd)
+locale.format(module, "test1", "a\"'(,5"+a(_)+b(1,"a\"'(,5"))
+locale.format(module, "test2", a(_)+b(1,2))
+locale.format(module, "test4")
+
+var lo = locale.resources(module)
+lo().ltest1
+lo.ltest1
+
+var lo1 = locale.resources(module)()
+lo1.ltest2

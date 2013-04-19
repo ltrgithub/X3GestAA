@@ -37,12 +37,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
             this.tabSageERPX3 = this.Factory.CreateRibbonTab();
             this.groupSave = this.Factory.CreateRibbonGroup();
-            this.groupRefresh = this.Factory.CreateRibbonGroup();
-            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.buttonSave = this.Factory.CreateRibbonButton();
             this.buttonSaveAs = this.Factory.CreateRibbonButton();
+            this.groupRefresh = this.Factory.CreateRibbonGroup();
             this.buttonRefresh = this.Factory.CreateRibbonButton();
             this.buttonRefreshAll = this.Factory.CreateRibbonButton();
+            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
@@ -64,18 +64,6 @@
             resources.ApplyResources(this.groupSave, "groupSave");
             this.groupSave.Name = "groupSave";
             // 
-            // groupRefresh
-            // 
-            this.groupRefresh.Items.Add(this.buttonRefresh);
-            this.groupRefresh.Items.Add(this.buttonRefreshAll);
-            resources.ApplyResources(this.groupRefresh, "groupRefresh");
-            this.groupRefresh.Name = "groupRefresh";
-            // 
-            // checkBoxShowTemplatePane
-            // 
-            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
-            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
-            // 
             // buttonSave
             // 
             this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -94,6 +82,13 @@
             this.buttonSaveAs.ShowImage = true;
             this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
             // 
+            // groupRefresh
+            // 
+            this.groupRefresh.Items.Add(this.buttonRefresh);
+            this.groupRefresh.Items.Add(this.buttonRefreshAll);
+            resources.ApplyResources(this.groupRefresh, "groupRefresh");
+            this.groupRefresh.Name = "groupRefresh";
+            // 
             // buttonRefresh
             // 
             this.buttonRefresh.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -106,11 +101,16 @@
             // buttonRefreshAll
             // 
             this.buttonRefreshAll.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonRefreshAll.Image = global::PowerPointAddIn.Properties.Resources.refresh;
+            this.buttonRefreshAll.Image = global::PowerPointAddIn.Properties.Resources.refresh_all;
             resources.ApplyResources(this.buttonRefreshAll, "buttonRefreshAll");
             this.buttonRefreshAll.Name = "buttonRefreshAll";
             this.buttonRefreshAll.ShowImage = true;
             this.buttonRefreshAll.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshAll_Click);
+            // 
+            // checkBoxShowTemplatePane
+            // 
+            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
+            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
             // 
             // buttonRefreshReport
             // 

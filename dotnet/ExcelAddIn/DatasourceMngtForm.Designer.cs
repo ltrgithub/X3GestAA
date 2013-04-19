@@ -37,7 +37,7 @@
             this.webBrowser.Location = new System.Drawing.Point(0, 0);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(703, 416);
+            this.webBrowser.Size = new System.Drawing.Size(684, 412);
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 
@@ -45,13 +45,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 416);
+            this.ClientSize = new System.Drawing.Size(684, 412);
             this.Controls.Add(this.webBrowser);
             this.Name = "DatasourceMngtForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sage X3";
+            this.Text = "Sage ERP X3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatasourceMngtForm_FormClosing);
+            this.Load += new System.EventHandler(this.DatasourceMngtForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -34,8 +34,6 @@ namespace ExcelAddIn
         String _name;
         ListObject _listObject;
         Dictionary<string, Range> _columnRanges;
-        ResourceManager _locRes = new ResourceManager("ExcelAddIn.Messages", typeof(ThisAddIn).Assembly);
-
         public SyracuseExcelTable(String name, ExcelTablePrototypeField[] fields, Range cell = null)
         {
             _name = name;
@@ -52,7 +50,7 @@ namespace ExcelAddIn
                 // check if same dataset
                 if ((lo != null) && (lo.Name != _name))
                 {
-                    if (MessageBox.Show(String.Format(_locRes.GetString("OverrideTableConfirm"), activeCell.Address, lo.Name), _locRes.GetString("AddinTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.OverrideTableConfirm, activeCell.Address, lo.Name), global::ExcelAddIn.Properties.Resources.AddinTitle, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         ((Range)lo.Range.Item[1, 1]).Select();
                         _deleteTable(lo, true);
@@ -110,7 +108,7 @@ namespace ExcelAddIn
             }
             catch (Exception e)
             {
-                MessageBox.Show(String.Format("Cannot resize a table with {0} columns and {1} rows. Please check Your insert preferences.\n(Error was: \"{2}\")",
+                MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.ResizeTableError,
                     activeListObject.ListColumns.Count, tableLength, e.Message));
                 return false;
             }
@@ -131,7 +129,7 @@ namespace ExcelAddIn
                     catch (Exception e)
                     {
                         // insert error
-                        MessageBox.Show(String.Format(_locRes.GetString("InsertCellsError"), colCount, rowCount, e.Message, "\n"));
+                        MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.InsertCellsError, colCount, rowCount, e.Message, "\n"));
                         return false;
                     }
                 }
@@ -146,7 +144,7 @@ namespace ExcelAddIn
                         catch (Exception e)
                         {
                             // insert error
-                            MessageBox.Show(String.Format(_locRes.GetString("InsertRowsError"), rowCount, e.Message, "\n"));
+                            MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.InsertRowsError, rowCount, e.Message, "\n"));
                             return false;
                         }
                     }
@@ -165,7 +163,7 @@ namespace ExcelAddIn
                         catch (Exception e)
                         {
                             // delete error
-                            MessageBox.Show(String.Format(_locRes.GetString("DeleteCellsError"), colCount, -rowCount, e.Message, "\n"));
+                            MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.DeleteCellsError, colCount, -rowCount, e.Message, "\n"));
                             toShift.Value2 = "";
                         }
                     }
@@ -180,7 +178,7 @@ namespace ExcelAddIn
                             catch (Exception e)
                             {
                                 // delete error
-                                MessageBox.Show(String.Format(_locRes.GetString("DeleteCellsError"), colCount, -rowCount, e.Message, "\n"));
+                                MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.DeleteCellsError, colCount, -rowCount, e.Message, "\n"));
                                 toShift.Value2 = "";
                             }
                         }
@@ -222,7 +220,7 @@ namespace ExcelAddIn
             }
             catch (Exception e)
             {
-                MessageBox.Show(String.Format(_locRes.GetString("CreateTableError"), headers.Length, rowCount, e.Message, "\n"));
+                MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.CreateTableError, headers.Length, rowCount, e.Message, "\n"));
                 return null;
             }
             resultListObject.Name = _name;
@@ -340,8 +338,13 @@ namespace ExcelAddIn
         }
         public bool ResizeTable(int linesCount)
         {
+            bool cleanFirstDataRow = false;
             if (_listObject == null) return false;
-            if (linesCount == 0) linesCount = 1;
+            if (linesCount == 0)
+            {
+                linesCount = 1;
+                cleanFirstDataRow = true;
+            }
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
             try
@@ -350,45 +353,21 @@ namespace ExcelAddIn
                 Range activeCell = _listObject.Range[1, 1];
                 Worksheet activeWorksheet = activeCell.Worksheet;
                 //
-                //_columnRanges = new Dictionary<string, Range>();
-                // detect actual listobjects
-/*                ListObject activeListObject = FindListObject(_name);
-                if (activeListObject != null)
-                {
-                    ((Range)activeListObject.Range.Item[1, 1]).Select();
-                    activeCell = ((Range)activeListObject.Range.Item[1, 1]);
-                }
-                else
-                {
-                    activeListObject = activeCell.ListObject;
-                    // check if same dataset
-                    if ((activeListObject != null) && (activeListObject.Name != _name))
-                    {
-                        if (MessageBox.Show(String.Format(_locRes.GetString("OverrideTableConfirm"), activeCell.Address, activeListObject.Name), _locRes.GetString("AddinTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            ((Range)activeListObject.Range.Item[1, 1]).Select();
-                            _deleteTable(activeListObject, true);
-                            activeListObject = null;
-                        }
-                        else
-                            return false;
-                    }
-                }
-                //
-                if (activeListObject == null)
-                {
-                    activeListObject = _createListObject(activeCell, _fields, _columnRanges, linesCount);
-                    if (activeListObject == null)
-                        return false;
-                }
-                else
-                {
-                    if (!_updateListObject(activeCell, activeWorksheet, activeListObject, _columnRanges, linesCount))
-                        return false;
-                }
- */
                 if (!_updateListObject(activeCell, activeWorksheet, _listObject, _columnRanges, linesCount))
                     return false;
+                if (cleanFirstDataRow == true)
+                {
+                    try
+                    {
+                        // A TableObject cannot be empty (have zero rows)
+                        // If the resultset is empty, at least clear the data in the last remaining row.
+                        // Otherwise the first row of the last fetch will remain visible, which is wrong, especially when changing filters
+                        _listObject.Range.Rows[2].ClearFormats();
+                        _listObject.Range.Rows[2].Clear();
+                    }
+                    catch (Exception) { };
+                }
+
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
                     // make named ranges
@@ -427,6 +406,14 @@ namespace ExcelAddIn
                     object[,] _colData = new object[resources.Length, 1];
                     _data.Add(namedRange.Key, _colData);
                 }
+                // empty all hyperlink in the range
+                foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
+                {
+                    int startRow = namedRange.Value.Row + startLine;
+                    activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
+                        activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Clear();
+                }
+                // create data
                 for (int r = 0; r < resources.Length; r++)
                 {
                     object[] res = (object[])resources[r];

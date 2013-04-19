@@ -39,9 +39,9 @@
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>Sage.Syracuse.WordAddIn</ProductName>
-    <PublisherName />
+    <PublisherName>The Sage Group plc</PublisherName>
     <SupportUrl />
-    <FriendlyName>WordAddIn</FriendlyName>
+    <FriendlyName>Word AddIn for Sage ERP X3</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
@@ -210,6 +210,12 @@
     </Compile>
     <Compile Include="CommonUtils.cs" />
     <Compile Include="MailMergeActions.cs" />
+    <Compile Include="ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportingActions.cs" />
     <Compile Include="ReportingUtils.cs" />
     <Compile Include="ReportingTemplatePane.cs">
@@ -231,6 +237,9 @@
     </Compile>
     <EmbeddedResource Include="BrowserDialog.resx">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -313,6 +322,7 @@
     <Content Include="Resources\s-aw-light-vignette.png" />
     <Content Include="Resources\sauvegarder.png" />
     <Content Include="Resources\sauvegarder2.png" />
+    <None Include="Resources\transparent.file" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\save.png" />
   </ItemGroup>

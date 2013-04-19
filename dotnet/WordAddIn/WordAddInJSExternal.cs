@@ -112,14 +112,14 @@ namespace WordAddIn
 
                         if (link.Equals("") != true)
                         {
-                            Range r = dataDoc.Tables[1].Cell(row + 2, col + 1).Range;
-                            //r.Start--;
-                            //r.End++;
-                            try
-                            {
-                                dataDoc.Hyperlinks.Add(r, link);
-                            }
-                            catch (Exception e) { MessageBox.Show(e.ToString()); };
+                                Range r = dataDoc.Tables[1].Cell(row + 2, col + 1).Range;
+                                //r.Start--;
+                                //r.End++;
+                                try
+                                {
+                                    dataDoc.Hyperlinks.Add(r, link);
+                                }
+                                catch (Exception e) { MessageBox.Show(e.ToString()); };
                         }
                     }
                 }
@@ -233,9 +233,7 @@ namespace WordAddIn
                 doc.ToggleFormsDesign();
             }
             browserDialog.Hide();
-            Globals.WordAddIn.Application.ScreenUpdating = false;
             ReportingUtils.fillTemplate(doc, data, browserDialog);
-            Globals.WordAddIn.Application.ScreenUpdating = true;
         }
 
         private string getStringValue(object cellData)
@@ -308,7 +306,6 @@ namespace WordAddIn
             {
                 return "word-report-tpl-refresh";
             }
-
             return "word-mailmerge";
         }
 

@@ -1,0 +1,34 @@
+Messages for fixtures/entities/test1._js
+Entity resource test1.p4.$title not in resource file
+Entity resource test1.p2.t_two differs. Entity value <T2> resource value <T2wrong>
+Entity resource test1.p2.t_three not in resource file
+Entity resource test1.p2.$title differs. Entity value <Prop2> resource value <Prop2wrong>
+Entity resource test1.$valueTemplate differs. Entity value <{huhu}1> resource value <{huhu}2>
+
+Messages for fixtures/nodecl.js
+Missing declaration of locale
+Key not defined in resource file: jaja
+
+Messages for fixtures/noresource.js
+Line 3: Key not defined in resource file: Test
+
+Messages for fixtures/representations/test2.js
+Missing representation resource @Testlabel3
+
+Messages for fixtures/withdecl.js
+Line 3: Not enough arguments for locale.format: locale.format("hugo")
+Line 4: First argument not 'module' for locale.format: locale.format(mod, "hugo")
+Line 5: Second argument for locale.format is not simple: locale.format(module, "ab"+"cd")
+Line 6: Second argument for locale.format is not simple: locale.format(module, abcd)
+Line 7: Key not defined in resource file: test1
+Line 8: Key test2: Parameters in message 0, parameters in invocation 1
+Line 9: Key test4: Parameters in message 1, parameters in invocation 0
+Line 13: Missing brackets in reference to locale.resources function for ltest1
+Line 15: Static resources access
+Unused key in resource: test3
+
+Resource file fixtures/resources/strings-en.json
+Key not used test1.$valueTitleTemplate
+Key not used test1.p3.$title
+Key not used test1.p2.t_four
+Key word @Testlabel2 not used for representation test2

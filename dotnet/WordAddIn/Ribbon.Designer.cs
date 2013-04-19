@@ -46,6 +46,7 @@
             this.buttonSaveAs = this.Factory.CreateRibbonButton();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
+            this.toggleMakeSum = this.Factory.CreateRibbonToggleButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupSave.SuspendLayout();
             this.groupReporting.SuspendLayout();
@@ -72,6 +73,7 @@
             this.groupReporting.Items.Add(this.buttonRefreshReport);
             this.groupReporting.Items.Add(this.buttonPreview);
             this.groupReporting.Items.Add(this.checkBoxShowTemplatePane);
+            this.groupReporting.Items.Add(this.toggleMakeSum);
             resources.ApplyResources(this.groupReporting, "groupReporting");
             this.groupReporting.Name = "groupReporting";
             // 
@@ -116,8 +118,8 @@
             // buttonRefreshReport
             // 
             this.buttonRefreshReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonRefreshReport.Image = global::WordAddIn.Properties.Resources.refresh;
             resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
+            this.buttonRefreshReport.Image = global::WordAddIn.Properties.Resources.refresh;
             this.buttonRefreshReport.Name = "buttonRefreshReport";
             this.buttonRefreshReport.ShowImage = true;
             this.buttonRefreshReport.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshReport_Click);
@@ -130,6 +132,12 @@
             this.buttonPreview.Name = "buttonPreview";
             this.buttonPreview.ShowImage = true;
             this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
+            // 
+            // toggleMakeSum
+            // 
+            resources.ApplyResources(this.toggleMakeSum, "toggleMakeSum");
+            this.toggleMakeSum.Name = "toggleMakeSum";
+            this.toggleMakeSum.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.toggleMakeSum_Click);
             // 
             // Ribbon
             // 
@@ -160,6 +168,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupLocale;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownLocale;
+        internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton toggleMakeSum;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

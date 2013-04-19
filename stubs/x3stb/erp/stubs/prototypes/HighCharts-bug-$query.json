@@ -1,0 +1,201 @@
+{
+	"$baseUrl": "/sdata/x3/erp/SEED",
+	"$url": "{$baseUrl}/QUERY('XPREV')?representation=QUERY~XPREV.$query&role={$role}",
+	"$title": "",
+	"$type": "application/json; vnd.sage=syracuse.representation={$baseUrl}/QUERY(XPREV)",
+	"$methods": "GET",
+	"codeRequest": "XPREV",
+	"$links": {
+		"Excel": {
+			"$title": "Excel",
+			"$type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+			"$url": "{$baseUrl}/QUERY('XPREV')?representation=QUERY~XPREV~5.$bulk&level=5&role={$role}&cube={ifCube}&startRecord={first_record}"
+		},
+		"Print": {
+			"$title": "Print",
+			"$type": "application/pdf",
+			"$url": "{$baseUrl}/QUERY('XPREV')?representation=QUERY~XPREV~5.$query&level=5&role={$role}"
+		}
+	},
+	"$properties": {
+		"$criteria": {
+			"$type": "application/x-criteria",
+			"$item": {
+				"$properties": {
+					"REP": {},
+					"TSCCOD": {},
+					"BPC": {},
+					"FCY": {},
+					"ITM": {},
+					"DAT": {},
+					"displayLineNum": {},
+					"recordsPerPage": {},
+					"req_id": {},
+					"ifCube": {}
+				}
+			}
+		},
+		"headerMessage": {
+			"$type": "application/x-string",
+			"$title": "Information"
+		},
+		"levelMessage": {
+			"$type": "application/x-string",
+			"$title": "Niveau"
+		},
+		"displayLineNum": {
+			"$type": "application/x-boolean",
+			"$isHidden": true
+		},
+		"recordsPerPage": {
+			"$type": "application/x-integer",
+			"$isHidden": true
+		},
+		"req_id": {
+			"$type": "application/x-string",
+			"$isHidden": true
+		},
+		"first_record": {
+			"$type": "application/x-integer",
+			"$isHidden": true
+		},
+		"ifCube": {
+			"$type": "application/x-boolean",
+			"$isHidden": true
+		},
+		"level_p": {
+			"$type": "application/x-string",
+			"$isHidden": true
+		},
+		"level_m": {
+			"$type": "application/x-string",
+			"$isHidden": true
+		},
+		"$resources": {
+			"$type": "application/x-array",
+			"$item": {
+				"$properties": {
+					"line_no": {
+						"$title": "Line no.",
+						"$type": "application/x-integer",
+						"$isHidden": true
+					},
+					"z_p": {
+						"$type": "application/x-integer",
+						"$isHidden": true
+					},
+					"z_m": {
+						"$type": "application/x-integer",
+						"$isHidden": true
+					},
+					"REP": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 15
+					},
+					"REPNAM": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 10
+					},
+					"TSCCOD": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 20
+					},
+					"BPC": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 15
+					},
+					"BPCNAM": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 10
+					},
+					"FCY": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 5,
+						"$links": {
+							"$details": {
+								"$title": "Detail",
+								"$type": "application/json;vnd.sage=syracuse",
+								"$url": "{$baseUrl}/FACILITY('{FCY}')?representation=FACILITY.$details"
+							}
+						}
+					},
+					"FCYNAM": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 10
+					},
+					"ITM": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 20
+					},
+					"DAT": {
+						"$title": "",
+						"$type": "application/x-date"
+					},
+					"QTY": {
+						"$title": "",
+						"$type": "application/x-decimal",
+						"$format": "0",
+						"$precision": 15,
+						"$scale": 0
+					},
+					"PRI": {
+						"$title": "",
+						"$type": "application/x-decimal",
+						"$format": "0.0000",
+						"$precision": 14,
+						"$scale": 4
+					},
+					"DES1AXX": {
+						"$title": "",
+						"$type": "application/x-string",
+						"$maxlength": 30
+					}
+				},
+				"$links": {
+					"$drillDown": {
+						"$url": "{$baseUrl}/QUERY('XPREV')?representation=QUERY~XPREV~6.$query&startRecord={z_p}&displayLineNum={displayLineNum}&cube={ifCube}&count={recordsPerPage}&requestID='{req_id}'&level={level_p}",
+						"$type": "application/json;vnd.sage=syracuse",
+						"$title": "Level +"
+					},
+					"$drillUp": {
+						"$url": "{$baseUrl}/QUERY('XPREV')?representation=QUERY~XPREV~4.$query&startRecord={z_m}&displayLineNum={displayLineNum}&cube={ifCube}&count={recordsPerPage}&requestID='{req_id}'&level={level_m}",
+						"$title": "Level -"
+					}
+				}
+			},
+			"$cube": {
+				"$mode": "table",
+				"$title": "REQUETE",
+				"$hierarchies": {
+					"ITM": {
+						"$title": "",
+						"$properties": ["ITM"]
+					}
+				},
+				"$measures": {
+					"QTY": {},
+					"PRI": {}
+				}
+			},
+			"$axes": [{
+				"$title": "",
+				"$hierarchies": [
+					["ITM"]
+				]
+			}, {
+				"$title": "$measures",
+				"$hierarchies": [
+					["$measures"]
+				]
+			}]
+		}
+	}
+}

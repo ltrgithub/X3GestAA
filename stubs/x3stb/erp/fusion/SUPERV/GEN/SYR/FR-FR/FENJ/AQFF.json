@@ -203,7 +203,62 @@
 						"$groupName": "B"
 					}
 				}
-			}
+			},
+			"$cube": {
+				"$mode": "table",
+				"$style": "spiderweb",
+				"$displaysOneMeasure": false,
+				"$title": "{@S-AQFF1-3651}",
+				"$hierarchies": {
+					"BB2_h": {
+						"$title": "{@S-AQFF1-3651}",
+						"$properties": ["BB2"],
+						"$members": [],
+						"$isDefault": true
+					}
+				},
+				"$measures": {
+					"BB4": {
+						"$type": "application/x-decimal",
+						"$title": "{@S-AQFF1-23747}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false,
+						"$isDefault": true
+					},
+					"BB5": {
+						"$property": "BB5",
+						"$title": "{@S-AQFF1-23746}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false,
+						"$isDefault": true
+					},
+					"BB6": {
+						"$property": "BB6",
+						"$title": "{@S-AQFF1-23662}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false
+					},
+					"BB7": {
+						"$property": "BB7",
+						"$title": "{@S-AQFF1-23663}",
+						"$style": "stick",
+						"$isStacked": false,
+						"$isNormalized": false
+					}
+				}
+			},
+			"$axes": [{
+				"$hierarchies": [
+					["BB2_h"]
+				]
+			}, {
+				"$hierarchies": [
+					["$measures"]
+				]
+			}]
 		},
 		"CA": {
 			"$type": "application/x-array",
@@ -395,9 +450,9 @@
 					}
 				}
 			},
-			"$extension": {
-				"$type": "application/x-gantt",
-				"$mapping": {
+			"$decorator": {
+				"$stereotype": "gantt",
+				"$bindings": {
 					"KEY": "DB2",
 					"LIB": "DB3",
 					"DATDI": "DB5",
@@ -512,9 +567,9 @@
 					}
 				}
 			},
-			"$extension": {
-				"$type": "application/x-agenda",
-				"$mapping": {
+			"$decorator": {
+				"$stereotype": "agenda",
+				"$bindings": {
 					"TYPACT": "EA2",
 					"KEYACT": "EA3",
 					"DATD": "EA4",
@@ -557,7 +612,7 @@
 						"$layoutType": "row",
 						"$items": [{
 							"$title": "",
-							"$category": "block",
+							"$category": "section",
 							"$x3bind": "AA",
 							"$layout": {
 								"$items": [{
@@ -586,7 +641,7 @@
 							}
 						}, {
 							"$title": "",
-							"$category": "block",
+							"$category": "section",
 							"$x3bind": "AB",
 							"$layout": {
 								"$items": [{
@@ -618,7 +673,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "BA",
 								"$layout": {
 									"$items": [{
@@ -634,7 +689,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "BB",
 								"$layout": {
 									"$items": [{
@@ -659,7 +714,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "CA",
 								"$layout": {
 									"$items": [{
@@ -675,7 +730,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "CB",
 								"$layout": {
 									"$items": [{
@@ -700,7 +755,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "DA",
 								"$layout": {
 									"$items": [{
@@ -722,7 +777,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "{@S-AQFF3-23781}",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "DB",
 								"$layout": {
 									"$items": [{
@@ -747,7 +802,7 @@
 							"$layoutType": "row",
 							"$items": [{
 								"$title": "",
-								"$category": "block",
+								"$category": "section",
 								"$x3bind": "EA",
 								"$layout": {
 									"$items": [{
