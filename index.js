@@ -11,14 +11,38 @@ try {
 //redirect standard output to file in cluster
 if (/^N\d+$/.test(process.argv[2])) {
 	var os = require('os');
-	var fs = require('fs')
+	var fs = require('fs');
+	var util = require('util');
 	var logpath = ((config.collaboration && config.collaboration.logpath) ? config.collaboration.logpath : __dirname) 
 	var name = logpath+"/"+os.hostname()+"-"+process.argv[2]+".log";
 	// fs.unlinkSync(name)
+	var buffer = null;
 	var stream = fs.createWriteStream(name);
-	process.stdoutOld = process.stdout;
+	
+	var stdoutOld = process.stdout;
 	process.__defineGetter__("stdout", function() { return stream; });
-	process.__defineGetter__("stderr", function() { return stream; });
+	if (process.stdout === stdoutOld) {
+		// process.stdout cannot be changed
+		var buffer = null;
+	    stream.on('drain', function() { if (buffer && buffer.length) { buffer = (stream.write(buffer) ? null : ""); } else { buffer = null; } });
+		process.stdoutOld = process.stdout;
+		var output = function() { var content = util.format.apply(this, arguments) + '\n';
+	        if (buffer === null) {
+	            if (!stream.write(content)) buffer = "";
+	        } else {
+	            buffer += content;
+	        }
+	    }
+		var log = console.log;
+	    console.log = console.error = console.info = console.warn = console.trace = output;
+	    if (log === console.log) {
+	    	console.error("Output streams cannot be changed.")
+	    	process.exit(1);
+	    }
+	    console.log("Redefine console.log etc.");
+	} else {
+		process.__defineGetter__("stderr", function() { return stream; });		
+	}
 	console.log("Standard output redirected")
 	console.error("Standard error redirected")
 }
