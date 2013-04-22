@@ -7,6 +7,8 @@ using Microsoft.Office.Tools.Excel.Extensions;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
+using System.Web.Script.Serialization;
+using Microsoft.Office.Core;
 
 namespace ExcelAddIn
 {
@@ -172,6 +174,9 @@ namespace ExcelAddIn
         // EVENTS
         void Application_WorkbookOpen(Excel.Workbook Wb)
         {
+            // Is the document an excel document with embedded data?
+            if (handleCvgDocument(Wb))
+                return;
             AutoConnect();
         }
         void Application_WorkbookActivate(Excel.Workbook Wb)
@@ -262,6 +267,58 @@ namespace ExcelAddIn
             SISettings s = new SISettings();
             s.Connect(connectUrl);
             s.ShowDialog();
+        }
+
+        bool handleCvgDocument(Excel.Workbook wb)
+        {
+            CustomXMLNode foundNode = null;
+            try
+            {
+                foreach (CustomXMLPart part in wb.CustomXMLParts)
+                {
+                    CustomXMLNode node = part.SelectSingleNode("SyracuseOfficeCustomData");
+                    if (node != null)
+                    {
+                        foundNode = node;
+                        break;
+                    }
+                }
+                if (foundNode != null)
+                {
+                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    Dictionary<String, object> dict = (Dictionary<String, object>)ser.DeserializeObject(foundNode.Text);
+
+                    string proto = null;
+                    string data = null;
+                    string styles = null;
+
+                    try { proto = dict["proto"].ToString(); }
+                    catch (Exception) { }
+                    try { data = dict["data"].ToString(); }
+                    catch (Exception) { }
+                    try { styles = dict["styles"].ToString(); }
+                    catch (Exception) { }
+
+                    External ext = new External();
+                    wb.ActiveSheet.Cells.Clear();
+                    ext.ResizeTable("cvg", proto, data.Length, "");
+                    ext.StartUpdateTable();
+                    ext.UpdateTable("cvg", proto, data, 0);
+                    ext.EndUpdateTable();
+
+                    // Remove all custom data since this is a standalone document!
+                    foundNode.Text = "";
+                    SyracuseCustomData cd = new SyracuseCustomData();
+                    Excel.Worksheet ws = cd.GetReservedSheet(false);
+                    if (ws != null)
+                    {
+                        ws.Delete();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+            return false;
         }
     }
 }
