@@ -15,6 +15,7 @@ namespace WordAddIn
         public const string rpt_is_tpl      = "rpt_is_tpl";
         public const string rpt_fill_tpl    = "rpt_fill_tpl";
         public const string rpt_refresh_tpl = "rpt_refresh_tpl";
+        public const string rpt_v6_download = "v6_doc_download";
 
         public BrowserDialog browserDialog = null;
 
@@ -68,6 +69,7 @@ namespace WordAddIn
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 }
+
                 if (rpt_fill_tpl.Equals(mode))
                 {
                     Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;

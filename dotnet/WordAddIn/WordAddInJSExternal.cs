@@ -306,6 +306,10 @@ namespace WordAddIn
             {
                 return "word-report-tpl-refresh";
             }
+            else if (ReportingActions.rpt_v6_download.Equals(mode))
+            {
+                return "word-v6-download";
+            }
             return "word-mailmerge";
         }
 
@@ -328,6 +332,58 @@ namespace WordAddIn
                 return "";
             }
             return Globals.WordAddIn.commons.GetDocumentLocale(doc);
+        }
+
+        public void v6Download(String layoutAndData)
+        {
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData != null)
+            {
+                String documentUrl = customData.getDocumentUrl();
+                String resourceUrl = customData.getResourceUrl();
+
+                byte[] content = browserDialog.readBinaryURLContent(documentUrl);
+                if (content == null)
+                {
+                    return;
+                }
+
+                string newDocumentFile = null;
+                newDocumentFile = Path.GetTempFileName().Replace(".tmp" , ".doc");
+
+                using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
+                {
+                    using (BinaryWriter writer = new BinaryWriter(stream))
+                    {
+                        writer.Write(content);
+                        writer.Close();
+                    }
+                }
+
+                object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
+
+                Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
+                Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
+                doc = Globals.WordAddIn.getActiveDocument();
+                if (doc == null)
+                {
+                    return;
+                }
+                customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
+                if (customData == null)
+                {
+                    return;
+                }
+                customData.setDocumentUrl(documentUrl);
+                customData.setResourceUrl(resourceUrl);
+                resourceUrl = customData.getResourceUrl();
+                customData.writeDictionaryToDocument();
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+            }
+            
+            browserDialog.Hide();
         }
     }
 }
