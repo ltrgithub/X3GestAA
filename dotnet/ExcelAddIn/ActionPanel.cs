@@ -80,13 +80,14 @@ namespace ExcelAddIn
         {
             if (!connected)
                 _connect("");
-            //
-            webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "saveDocument" });
+            if (webBrowser.Document != null)
+                webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "saveDocument" });
         }
 
         internal void onSelectionChange()
         {
-            webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "selectionChanged" });
+            if (webBrowser.Document != null)
+                webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "selectionChanged" });
         }
 
         private void internalLoadTables(string parameters, ExcelAddIn.External.TablesLoadedCallback onTablesLoaded) 

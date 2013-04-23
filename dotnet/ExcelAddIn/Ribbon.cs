@@ -17,6 +17,7 @@ namespace ExcelAddIn
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
             taskPane = Globals.ThisAddIn.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
+            taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
             taskPane.Visible = true;
             checkBox1.Checked = true;
         }
@@ -75,6 +76,18 @@ namespace ExcelAddIn
         private void button3_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.SISettings();
+        }
+        private void ActionPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
+            if (taskPane != null)
+            {
+                Globals.Ribbons.Ribbon.checkBox1.Checked = taskPane.Visible;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.checkBox1.Checked = false;
+            }
         }
     }
 }
