@@ -72,9 +72,21 @@ namespace WordAddIn
             {
                 reporting.ActiveDocumentChanged(doc);
             }
+
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData != null)
             {
+                String mode = customData.getCreateMode();
+                if ("v6_doc_download".Equals(mode))
+                {
+                    //http://localhost:8124/sdata/syracuse/collaboration/syracuse/documents(%27b2ea7081-8426-4e05-b344-5a4a53573a39%27)/content?format=application/syracuse-word-report&v6_doc_url
+
+                    if (customData.isForceRefresh())
+                    {
+                        prepareV6Document(doc, customData);
+                    }
+                }
+
                 if (!"".Equals(customData.getDocumentUrl()))
                 {
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
@@ -82,6 +94,13 @@ namespace WordAddIn
             }
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
+        }
+
+        void prepareV6Document(Document doc, SyracuseOfficeCustomData customData)
+        {
+            customData.setForceRefresh(false);
+            customData.writeDictionaryToDocument();
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         void on_window_selection_changed(Selection Sel)
