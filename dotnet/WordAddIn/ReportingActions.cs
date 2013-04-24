@@ -16,6 +16,7 @@ namespace WordAddIn
         public const string rpt_fill_tpl    = "rpt_fill_tpl";
         public const string rpt_refresh_tpl = "rpt_refresh_tpl";
         public const string rpt_v6_download = "v6_doc_download";
+        public const string rpt_v6_upload   = "v6_doc_upload";
 
         public BrowserDialog browserDialog = null;
 
