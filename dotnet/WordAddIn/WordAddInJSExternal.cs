@@ -306,11 +306,11 @@ namespace WordAddIn
             {
                 return "word-report-tpl-refresh";
             }
-            else if (ReportingActions.rpt_v6_download.Equals(mode))
+            else if ("v6_doc_download".Equals(mode))
             {
                 return "word-v6-download";
             }
-            else if (ReportingActions.rpt_v6_upload.Equals(mode))
+            else if ("v6_doc".Equals(mode))
             {
                 return "word-v6-upload";
             }
@@ -338,14 +338,14 @@ namespace WordAddIn
             return Globals.WordAddIn.commons.GetDocumentLocale(doc);
         }
 
-        public void v6Download()
+        public void downloadV6Document()
         {
             Document doc = Globals.WordAddIn.getActiveDocument();
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData != null)
             {
-                String documentUrl = customData.getDocumentUrl();
-                String resourceUrl = customData.getResourceUrl();
+                String documentUrl  = customData.getDocumentUrl();
+                String serverUrl    = customData.getServerUrl();
 
                 byte[] content = browserDialog.readBinaryURLContent(documentUrl);
                 if (content == null)
@@ -386,12 +386,13 @@ namespace WordAddIn
                 {
                     return;
                 }
+                customData.setServerUrl(serverUrl);
                 customData.setDocumentUrl(documentUrl);
-                customData.setResourceUrl(resourceUrl);
-                customData.setCreateMode(ReportingActions.rpt_v6_upload);
+                customData.setForceRefresh(false);
+                customData.setCreateMode("v6_doc");
                 customData.writeDictionaryToDocument();
                 Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
             }
             
             browserDialog.Hide();
