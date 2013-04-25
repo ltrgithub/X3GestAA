@@ -77,11 +77,11 @@ namespace WordAddIn
             if (customData != null)
             {
                 String mode = customData.getCreateMode();
-                if (ReportingActions.rpt_v6_download.Equals(mode))
+                if ("v6_doc_download".Equals(mode))
                 {
                     if (customData.isForceRefresh())
                     {
-                        prepareV6Document(doc, customData);
+                        downloadV6Document(doc, customData);
                     }
                 }
 
@@ -94,7 +94,7 @@ namespace WordAddIn
             commons.DisplayDocumentLocale(doc);
         }
 
-        void prepareV6Document(Document doc, SyracuseOfficeCustomData customData)
+        void downloadV6Document(Document doc, SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
