@@ -353,15 +353,19 @@ namespace WordAddIn
                     return;
                 }
 
+                object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
+
+                string tempFile = doc.FullName;
+                Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
+                File.Delete(tempFile);
+
                 string ext = ".doc";
                 if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
                 {
                     ext = "docx";
                 }
-
-                string newDocumentFile = null;
-                newDocumentFile = Path.GetTempFileName().Replace(".tmp" , ext);
-
+                string newDocumentFile = tempFile;
+                newDocumentFile = newDocumentFile.Replace(".docx", ext);
                 using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
                 {
                     using (BinaryWriter writer = new BinaryWriter(stream))
@@ -370,12 +374,6 @@ namespace WordAddIn
                         writer.Close();
                     }
                 }
-
-                object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
-
-                string tempFile = doc.FullName;
-                Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
-                File.Delete(tempFile);
 
                 Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
                 doc = Globals.WordAddIn.getActiveDocument();
