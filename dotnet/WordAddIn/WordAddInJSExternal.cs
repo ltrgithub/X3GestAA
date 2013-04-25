@@ -310,6 +310,10 @@ namespace WordAddIn
             {
                 return "word-v6-download";
             }
+            else if (ReportingActions.rpt_v6_upload.Equals(mode))
+            {
+                return "word-v6-upload";
+            }
             return "word-mailmerge";
         }
 
@@ -377,7 +381,7 @@ namespace WordAddIn
                 }
                 customData.setDocumentUrl(documentUrl);
                 customData.setResourceUrl(resourceUrl);
-                resourceUrl = customData.getResourceUrl();
+                customData.setCreateMode(ReportingActions.rpt_v6_upload);
                 customData.writeDictionaryToDocument();
                 Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
