@@ -31,12 +31,6 @@ namespace WordAddIn
                 SaveAs(doc);
                 return;
             }
-            if (ReportingActions.rpt_v6_upload.Equals(customData.getCreateMode()))
-            {
-                SaveV6(doc);
-                return;
-            }
-
             if ("".Equals(customData.getDocumentUrl()))
             {
                 ShowInfoMessage(global::WordAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED, global::WordAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED_TITLE);
@@ -73,16 +67,6 @@ namespace WordAddIn
             }
             customData.writeDictionaryToDocument();
             return customData;
-        }
-
-        // Save v6 office document
-        public void SaveV6(Document doc)
-        {
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            customData.setForceRefresh(false);
-            customData.setCreateMode(ReportingActions.rpt_v6_upload);
-            customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         public static void ShowErrorMessage(string text)
