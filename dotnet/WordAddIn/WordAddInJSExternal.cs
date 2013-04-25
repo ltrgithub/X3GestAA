@@ -338,7 +338,7 @@ namespace WordAddIn
             return Globals.WordAddIn.commons.GetDocumentLocale(doc);
         }
 
-        public void v6Download(String layoutAndData)
+        public void v6Download()
         {
             Document doc = Globals.WordAddIn.getActiveDocument();
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
@@ -353,9 +353,19 @@ namespace WordAddIn
                     return;
                 }
 
-                string newDocumentFile = null;
-                newDocumentFile = Path.GetTempFileName().Replace(".tmp" , ".doc");
+                object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
 
+                string tempFile = doc.FullName;
+                Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
+                File.Delete(tempFile);
+
+                string ext = ".doc";
+                if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
+                {
+                    ext = "docx";
+                }
+                string newDocumentFile = tempFile;
+                newDocumentFile = newDocumentFile.Replace(".docx", ext);
                 using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
                 {
                     using (BinaryWriter writer = new BinaryWriter(stream))
@@ -365,9 +375,6 @@ namespace WordAddIn
                     }
                 }
 
-                object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
-
-                Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
                 Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
                 doc = Globals.WordAddIn.getActiveDocument();
                 if (doc == null)
