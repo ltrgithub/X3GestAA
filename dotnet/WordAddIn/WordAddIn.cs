@@ -84,7 +84,6 @@ namespace WordAddIn
                         downloadV6Document(doc, customData);
                     }
                 }
-
                 if (!"".Equals(customData.getDocumentUrl()))
                 {
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
