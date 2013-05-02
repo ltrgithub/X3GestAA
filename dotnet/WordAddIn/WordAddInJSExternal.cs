@@ -338,6 +338,16 @@ namespace WordAddIn
             return Globals.WordAddIn.commons.GetDocumentLocale(doc);
         }
 
+        public string getDocumentFilename()
+        {
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
+                return "";
+            }
+            return doc.Name;
+        }
+
         public void downloadV6Document()
         {
             Document doc = Globals.WordAddIn.getActiveDocument();
@@ -396,6 +406,15 @@ namespace WordAddIn
             }
             
             browserDialog.Hide();
+        }
+
+        public void signalError(bool closeBrowser, string errorText)
+        {
+            if (browserDialog != null && closeBrowser)
+            {
+                browserDialog.Hide();
+            }
+            MessageBox.Show(errorText);
         }
     }
 }
