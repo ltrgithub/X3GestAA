@@ -353,8 +353,11 @@ namespace PowerPointAddIn
                     Dictionary<String, object> chartExtensions = (Dictionary<String, object>)data["$chartExtensions"];
                     addingDataFinished(pres, customXlsData, data, chartExtensions);
                     checkRefreshButtons();
-                    customXlsData.setWorkbook(null);
+                    customXlsData.setWorkbook(wb);
+                    wb.Application.Visible = true;
+                    wb.Application.ScreenUpdating = true;
                     wb.Close();
+                 
                     browserDialog.Visible = false;
                 }
             }
@@ -516,7 +519,6 @@ namespace PowerPointAddIn
                     }
                     firstSeries.XValues = categories;
                 }
-
                 try
                 {
                     chart.Axes(Microsoft.Office.Interop.PowerPoint.XlAxisType.xlCategory, Microsoft.Office.Interop.PowerPoint.XlAxisGroup.xlSecondary).Delete();
