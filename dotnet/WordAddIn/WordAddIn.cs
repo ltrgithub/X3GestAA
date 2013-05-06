@@ -79,14 +79,11 @@ namespace WordAddIn
                 String mode = customData.getCreateMode();
                 if ("v6_doc_download".Equals(mode))
                 {
-                    //http://localhost:8124/sdata/syracuse/collaboration/syracuse/documents(%27b2ea7081-8426-4e05-b344-5a4a53573a39%27)/content?format=application/syracuse-word-report&v6_doc_url
-
                     if (customData.isForceRefresh())
                     {
-                        prepareV6Document(doc, customData);
+                        downloadV6Document(doc, customData);
                     }
                 }
-
                 if (!"".Equals(customData.getDocumentUrl()))
                 {
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
@@ -96,7 +93,7 @@ namespace WordAddIn
             commons.DisplayDocumentLocale(doc);
         }
 
-        void prepareV6Document(Document doc, SyracuseOfficeCustomData customData)
+        void downloadV6Document(Document doc, SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
