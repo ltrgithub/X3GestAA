@@ -190,9 +190,6 @@ namespace PowerPointAddIn
 
                 c.ChartData.Activate();
                 Workbook wb = (Workbook)c.ChartData.Workbook;
-                wb.Application.Visible = false;
-                wb.Application.ScreenUpdating = false;
-                
                 cd.setActionType("ppt_populate_worksheet");
 
                 PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
@@ -354,10 +351,8 @@ namespace PowerPointAddIn
                     addingDataFinished(pres, customXlsData, data, chartExtensions);
                     checkRefreshButtons();
                     customXlsData.setWorkbook(wb);
-                    wb.Application.Visible = true;
-                    wb.Application.ScreenUpdating = true;
                     wb.Close();
-                 
+                    Globals.PowerPointAddIn.Application.ActiveWindow.Activate();
                     browserDialog.Visible = false;
                 }
             }
@@ -444,7 +439,16 @@ namespace PowerPointAddIn
                         }
 
                         string style = "stick";
+                        bool stacked = false;
+                        bool normalized = false;
+                        string group = "";
+
+                        try { style = cube["$style"].ToString(); } catch (Exception) { }
                         try { style = measure["$style"].ToString(); } catch (Exception) { }
+                        try { stacked = (bool)measure["$isStacked"]; } catch (Exception) { }
+                        try { normalized = (bool)measure["$isNormalized"]; } catch (Exception) { }
+                        try { group = measure["$stackingGroup"].ToString(); } catch (Exception) { }
+
                         switch (style)
                         {
                             case "line":
@@ -454,14 +458,47 @@ namespace PowerPointAddIn
                                 s.ChartType = Microsoft.Office.Core.XlChartType.xlLine;
                                 s.Smooth = true;
                                 break;
+                            case "column":
                             case "stick":
-                                s.ChartType = Microsoft.Office.Core.XlChartType.xlColumnClustered;
+                                if (stacked)
+                                {
+                                    if (normalized)
+                                    {
+                                        s.ChartType = Microsoft.Office.Core.XlChartType.xlColumnStacked100;
+                                    }
+                                    else
+                                    {
+                                        s.ChartType = Microsoft.Office.Core.XlChartType.xlColumnStacked;
+                                    }
+                                }
+                                else
+                                {
+                                    s.ChartType = Microsoft.Office.Core.XlChartType.xlColumnClustered;
+                                }
                                 break;
                             case "point":
                                 s.ChartType = Microsoft.Office.Core.XlChartType.xlXYScatter;
                                 break;
                             case "area":
-                                s.ChartType = Microsoft.Office.Core.XlChartType.xlArea;
+                            case "areaspline": // areaspline not supported yet (no smoothed area available)
+                                if (stacked)
+                                {
+                                    if (normalized)
+                                    {
+                                        s.ChartType = Microsoft.Office.Core.XlChartType.xlAreaStacked100;
+                                    }
+                                    else
+                                    {
+                                        s.ChartType = Microsoft.Office.Core.XlChartType.xlAreaStacked;
+                                    }
+                                }
+                                else
+                                {
+                                    s.ChartType = Microsoft.Office.Core.XlChartType.xlArea;
+                                }
+                                break;
+                            case "spiderweb":
+                                s.ChartType = Microsoft.Office.Core.XlChartType.xlRadar;
                                 break;
                         }
 
