@@ -11,11 +11,11 @@ namespace ExcelAddIn
     {
         // table1 : 2 columns, 4 lines
         String table1_prototype = "[{_name:\"a\", _title: \"A\", _type: \"application/x-string\"}, {_name:\"b\", _title: \"B\", _type: \"application/x-string\"}]";
-        String table1_data = "";
+        //String table1_data = "";
         // table2 : 3 columns, 4 lines
         String table2_prototype = "[{_name:\"a\", _title: \"A\", _type: \"application/x-string\"}, {_name:\"b\", _title: \"B\", _type: \"application/x-string\"}" + 
             ",{_name:\"c\", _title: \"C\", _type: \"application/x-string\"}]";
-        String table2_data = "";
+        //String table2_data = "";
         //
         JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
         //
