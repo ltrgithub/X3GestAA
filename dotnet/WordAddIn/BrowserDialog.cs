@@ -11,6 +11,22 @@ using Microsoft.Office.Tools.Word;
 
 namespace WordAddIn
 {
+    // The only one class/object to be referenced from javascript 'external'
+    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
+    public class WordDownloadData
+    {
+        public byte[] data;
+        public string errorText;
+        public void setData(byte[] data)
+        {
+            this.data = data;
+        }
+        public void setErrorText(string errorText)
+        {
+            this.errorText = errorText;
+        }
+    }
+
     public partial class BrowserDialog : Form
     {
         public string serverUrl = "";
@@ -96,13 +112,24 @@ namespace WordAddIn
         }
         public byte[] readBinaryURLContent(String url)
         {
+            WordDownloadData data = new WordDownloadData();
             try
             {
-                Object ret = this.webBrowser.Document.InvokeScript("readBinaryURLContentIE", new object[] { url });
-                byte[] bytes = (byte[]) ret;
-                return bytes;
-            }
-            catch (Exception) { };
+                object ret = this.webBrowser.Document.InvokeScript("readBinaryURLContentIE", new object[] { url, data});
+                byte[] bytes = data.data;
+
+                if (bytes != null)
+                {
+                    return bytes;
+                }
+            } catch (Exception) { };
+            string error = "?";
+            if (data.errorText != null)
+                error = data.errorText;
+
+            MessageBox.Show(String.Format(global::WordAddIn.Properties.Resources.MSG_ERROR_DOWNLOAD, new object[] { error, url }),
+                global::WordAddIn.Properties.Resources.MSG_ERROR_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             return null;
         }
     }

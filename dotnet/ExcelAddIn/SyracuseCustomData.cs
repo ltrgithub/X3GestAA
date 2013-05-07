@@ -70,7 +70,7 @@ namespace ExcelAddIn
                 //x3StoreSheet.Visible = XlSheetVisibility.xlSheetVeryHidden;
                 x3StoreSheet.Visible = XlSheetVisibility.xlSheetHidden;
                 // reactivate
-                oldActive.Activate();
+                ((Microsoft.Office.Interop.Excel._Worksheet) oldActive).Activate();
             }
             return x3StoreSheet;
         }
