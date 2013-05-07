@@ -26,13 +26,13 @@ namespace ExcelAddIn
         {
             Excel.Workbook oldWb = Globals.ThisAddIn.Application.ActiveWorkbook;
             Excel.Worksheet oldWs = Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet;
-
-            wb.Activate();
+            
+            ((Microsoft.Office.Interop.Excel._Workbook) wb).Activate();
             Excel.Worksheet ws = wb.ActiveSheet;
             (new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", serverUrl);
             (new SyracuseCustomData()).StoreCustomDataByName("datasourcesAddress", datasourcesJSON);
 
-            ws.Activate();
+            ((Microsoft.Office.Interop.Excel._Worksheet) ws).Activate();
             Globals.ThisAddIn.AutoConnect();
         }
         public bool isWorkbookConnected(Workbook wb)
@@ -46,7 +46,7 @@ namespace ExcelAddIn
             Globals.ThisAddIn.RefreshAll();
             if (oldWb != wb)
             {
-                oldWb.Activate();
+                ((Microsoft.Office.Interop.Excel._Workbook)oldWb).Activate();
             }
         }
     };

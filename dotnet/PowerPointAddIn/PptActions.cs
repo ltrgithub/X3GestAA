@@ -190,9 +190,6 @@ namespace PowerPointAddIn
 
                 c.ChartData.Activate();
                 Workbook wb = (Workbook)c.ChartData.Workbook;
-                wb.Application.Visible = false;
-                wb.Application.ScreenUpdating = false;
-                
                 cd.setActionType("ppt_populate_worksheet");
 
                 PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
@@ -354,10 +351,8 @@ namespace PowerPointAddIn
                     addingDataFinished(pres, customXlsData, data, chartExtensions);
                     checkRefreshButtons();
                     customXlsData.setWorkbook(wb);
-                    wb.Application.Visible = true;
-                    wb.Application.ScreenUpdating = true;
                     wb.Close();
-                 
+                    Globals.PowerPointAddIn.Application.ActiveWindow.Activate();
                     browserDialog.Visible = false;
                 }
             }
