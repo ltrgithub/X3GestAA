@@ -5,6 +5,9 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Rb = Microsoft.Office.Tools.Ribbon;
+using System.IO;
+using System.Web.Script.Serialization;
+using Microsoft.Office.Core;
 
 namespace WordAddIn
 {
@@ -154,6 +157,59 @@ namespace WordAddIn
                 }
             }
             Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
+        }
+
+        public void extractV6Document(Document doc, SyracuseOfficeCustomData customData)
+        {
+            String documentUrl = customData.getDocumentUrl();
+            String serverUrl = customData.getServerUrl();
+
+            string tempFile = doc.FullName;
+            byte[] content = Convert.FromBase64String(customData.getDocContent());
+            if (content == null)
+            {
+                ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
+                File.Delete(tempFile);
+                return;
+            }
+
+            ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
+            File.Delete(tempFile);
+
+            string ext = ".doc";
+            if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
+            {
+                ext = "docx";
+            }
+            string newDocumentFile = tempFile;
+            newDocumentFile = newDocumentFile.Replace(".docx", ext);
+            using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
+            {
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    writer.Write(content);
+                    writer.Close();
+                }
+            }
+
+            Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
+            doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
+                return;
+            }
+            customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
+            if (customData == null)
+            {
+                return;
+            }
+            customData.setServerUrl(serverUrl);
+            customData.setDocumentUrl(documentUrl);
+            customData.setForceRefresh(false);
+            customData.setCreateMode("v6_doc");
+            customData.writeDictionaryToDocument();
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
         }
     }
 }
