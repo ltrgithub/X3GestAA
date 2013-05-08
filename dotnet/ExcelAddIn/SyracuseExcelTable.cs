@@ -444,6 +444,19 @@ namespace ExcelAddIn
                     int startRow = namedRange.Value.Row + startLine;
                     activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
                         activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Value = _data[namedRange.Key];
+
+                    // This should not be neccesarry, because excel changes the format of the cells to short date if a DateTime value is asigned to the cell,
+                    // but on some PCs this is not working, so the format for type "date" is applied for safty
+                    if (resources.Length > 0)
+                    {
+                        object colData = _data[namedRange.Key];
+                        if ((((object[,]) colData) [0, 0]) is DateTime)
+                        {
+                            Range fmt = activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column], activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]];
+                            // The pattern m/d/yyyy always sets the date pattern of the current system locale, not to the pattern that is given in the string
+                            fmt.NumberFormat = "m/d/yyyy";
+                        }
+                    }
                 }
                 //
                 return true;
