@@ -348,6 +348,7 @@ namespace WordAddIn
             return doc.Name;
         }
 
+        /* not used any more */
         public void downloadV6Document()
         {
             Document doc = Globals.WordAddIn.getActiveDocument();
