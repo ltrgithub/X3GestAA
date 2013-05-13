@@ -77,12 +77,18 @@ namespace WordAddIn
             if (customData != null)
             {
                 String mode = customData.getCreateMode();
+                /* not used any more
                 if ("v6_doc_download".Equals(mode))
                 {
                     if (customData.isForceRefresh())
                     {
                         downloadV6Document(doc, customData);
                     }
+                }
+                */
+                if ("v6_doc_embedded".Equals(mode))
+                {
+                    commons.extractV6Document(doc, customData);
                 }
                 if (!"".Equals(customData.getDocumentUrl()))
                 {
