@@ -93,6 +93,17 @@ namespace WordAddIn.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloading the document failed. 
+        ///{0}
+        ///URL was: {1}.
+        /// </summary>
+        internal static string MSG_ERROR_DOWNLOAD {
+            get {
+                return ResourceManager.GetString("MSG_ERROR_DOWNLOAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to access document..
         /// </summary>
         internal static string MSG_ERROR_NO_DOC {
