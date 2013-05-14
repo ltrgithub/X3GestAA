@@ -1,7 +1,19 @@
 {
 	"$prototypes": {
+		"localePreference": {
+			"$key": "code"
+		},
+		"storageVolume": {
+			"$key": "code",
+			"$localized": [
+				"description"
+			]
+		},
 		"application": {
-			"$key": ["application", "contract"]
+			"$key": [
+				"application",
+				"contract"
+			]
 		},
 		"role": {
 			"$key": "description"
@@ -9,7 +21,10 @@
 		"endPoint": {
 			"$key": "description",
 			"applicationRef": {
-				"$key": ["application", "contract"]
+				"$key": [
+					"application",
+					"contract"
+				]
 			}
 		},
 		"group": {
@@ -26,139 +41,151 @@
 			"groups": {
 				"$key": "description"
 			}
-		},
-		"localePreference": {
-			"$key": "code"
-		},
-		"storageVolume": {
-			"$key": "code"
 		}
 	},
-	"$includeBefore": [],
+   "$includeBefore": [],
 	"$includeAfter": ["syracuse-admin-menu"],
 	"$items": [
-	{
-		"$type": "localePreference",
-		"code": "fr-FR",
-		"numberDecimalSeparator": ".",
-		"numberGroupSeparator": " ",
-		"enabled": true
-	},{
-		"$type": "localePreference",
-		"code": "en-US",
-		"numberDecimalSeparator": ".",
-		"numberGroupSeparator": " ",
-		"enabled": true
-	},{
-		"$type": "storageVolume",
-		"code": "STD",
-		"storageType": "db_file",
-		"description": {
-			"default": "Standard storage volume",
-			"fr-FR": "Volume standard",
-			"en-US": "Standard storage volume"
-		}
-	},{
-		"$type": "storageVolume",
-		"code": "WORD_TEMPLATE_MAILMERGE",
-		"storageType": "db_file",
-		"description": {
-			"default": "Word templates for mail merge",
-			"fr-FR": "Modèles word pour publipostage",
-			"en-US": "Word templates for mail merge"
-		}
-	},{
-		"$type": "storageVolume",
-		"code": "WORD_TEMPLATE_REPORT",
-		"storageType": "db_file",
-		"description": {
-			"default": "Word templates for reporting",
-			"fr-FR": "Modèles word pour publication",
-			"en-US": "Word templates for reporting"
-		}
-	},{
-		"$type": "storageVolume",
-		"code": "SI_REPORTS",
-		"storageType": "db_file",
-		"description": {
-			"default": "Sage Intelligence reports",
-			"fr-FR": "Etats Sage Intelligence",
-			"en-US": "Sage Intelligence reports"
-		}
-	},{
-		"$type": "storageVolume",
-		"code": "SI_TEMPLATES",
-		"storageType": "db_file",
-		"description": {
-			"default": "Sage Intelligence templates",
-			"fr-FR": "Modèles Sage Intelligence",
-			"en-US": "Sage Intelligence templates"
-		}
-	},{
-		"$type": "application",
-		"description": "Syracuse Collaboration",
-		"application": "syracuse",
-		"contract": "collaboration",
-		"protocol": "syracuse"
-	},{
-		"$type": "application",
-		"description": "X3 ERP",
-		"application": "x3",
-		"contract": "erp",
-		"protocol": "x3"
-	},{
-		"$type": "role",
-		"description": "Super administrator"
-	},{
-		"$type": "role",
-		"description": "Endpoint administrator"
-	},{
-		"$type": "role",
-		"description": "Guest"
-	},{
-		"$type": "endPoint",
-		"description": "Syracuse administration",
-		"applicationRef": {
-			"application": "syracuse",		
+		{
+			"$type": "localePreference",
+			"code": "en-US",
+			"enabled": true,
+			"numberDecimalSeparator": ".",
+			"numberGroupSeparator": " "
+		},
+		{
+			"$type": "localePreference",
+			"code": "fr-FR",
+			"enabled": true,
+			"numberDecimalSeparator": ".",
+			"numberGroupSeparator": " "
+		},
+		{
+			"$type": "storageVolume",
+			"code": "SI_REPORTS",
+			"description": "description_9dcaceda-3e0a-4380-91a3-8a34468fad2f",
+			"storageType": "db_file"
+		},
+		{
+			"$type": "storageVolume",
+			"code": "SI_TEMPLATES",
+			"description": "description_dc8cbb44-115c-40ab-9804-0a7fe363bcfc",
+			"storageType": "db_file"
+		},
+		{
+			"$type": "storageVolume",
+			"code": "STD",
+			"description": "description_83025951-4b3c-4c30-a85e-58876f310075",
+			"storageType": "db_file"
+		},
+		{
+			"$type": "storageVolume",
+			"code": "WORD_TEMPLATE_MAILMERGE",
+			"description": "description_d38c142c-de20-4f84-9004-9becd68a4524",
+			"storageType": "db_file"
+		},
+		{
+			"$type": "storageVolume",
+			"code": "WORD_TEMPLATE_REPORT",
+			"description": "description_eb404ffb-5df0-4612-97b2-0f568f9115a9",
+			"storageType": "db_file"
+		},
+		{
+			"$type": "application",
+			"description": "Syracuse Collaboration",
+			"protocol": "syracuse",
+			"application": "syracuse",
 			"contract": "collaboration"
 		},
-		"dataset": "syracuse",
-		"databaseHost": "localhost",
-		"databaseDriver": "mongodb",
-		"databasePort": 27017
-	},{
-		"$type": "group",
-		"description": "Super administrators",
-		"endPoints": ["Syracuse administration"],
-		"role": "Super administrator"
-	},{
-		"$type": "group",
-		"description": "Endpoint administrators",
-		"role": "Endpoint administrator"
-	},{
-		"$type": "group",
-		"description": "Guests",
-		"endPoints": ["Syracuse administration"],
-		"role": "Guest"
-	},{
-		"$type": "user",
-		"login": "admin",
-		"password": "f5066151ecf0c2511ea0f73306e27a4f",
-		"lastName": "Super administrator",
-		"groups": ["Super administrators"]
-	},{
-		"$type": "user",
-		"login": "guest",
-		"password": "96e17faa8decc76bf385c2ca82bef487",
-		"lastName": "Guest",
-		"groups": ["Guests"]
-	},{
-		"$type": "user",
-		"login": "import",
-		"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
-		"firstName": "Import",
-		"lastName": "Special user",
-		"groups": ["Endpoint administrators"]
+		{
+			"$type": "application",
+			"description": "X3 ERP",
+			"protocol": "x3",
+			"application": "x3",
+			"contract": "erp"
+		},
+		{
+			"$type": "role",
+			"description": "Endpoint administrator"
+		},
+		{
+			"$type": "role",
+			"description": "Guest"
+		},
+		{
+			"$type": "role",
+			"description": "Super administrator"
+		},
+		{
+			"$type": "endPoint",
+			"description": "Syracuse administration",
+			"dataset": "syracuse",
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27017,
+			"applicationRef": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			}
+		},
+		{
+			"$type": "group",
+			"description": "Endpoint administrators",
+			"role": "Endpoint administrator"
+		},
+		{
+			"$type": "group",
+			"description": "Guests",
+			"endPoints": [
+				"Syracuse administration"
+			],
+			"role": "Guest"
+		},
+		{
+			"$type": "group",
+			"description": "Super administrators",
+			"endPoints": [
+				"Syracuse administration"
+			],
+			"role": "Super administrator"
+		},
+		{
+			"$type": "user",
+			"login": "admin",
+			"lastName": "Super administrator",
+			"password": "f5066151ecf0c2511ea0f73306e27a4f",
+			"groups": [
+				"Super administrators"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "guest",
+			"lastName": "Guest",
+			"password": "96e17faa8decc76bf385c2ca82bef487",
+			"groups": [
+				"Guests"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "import",
+			"firstName": "Import",
+			"lastName": "Special user",
+			"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
+			"groups": [
+				"Endpoint administrators"
+			]
+		}
+	],
+	"$localization": {
+		"en-us": {
+			"description_9dcaceda-3e0a-4380-91a3-8a34468fad2f": "Sage Intelligence reports",
+			"description_dc8cbb44-115c-40ab-9804-0a7fe363bcfc": "Sage Intelligence templates",
+			"description_83025951-4b3c-4c30-a85e-58876f310075": "Standard storage volume",
+			"description_d38c142c-de20-4f84-9004-9becd68a4524": "Word templates for mail merge",
+			"description_eb404ffb-5df0-4612-97b2-0f568f9115a9": "Word templates for reporting"
+		},
+		"fr-fr": {}
 	}
-	]
 }
