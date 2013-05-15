@@ -32,6 +32,7 @@ namespace WordAddIn
         private const String documentRepresentationProperty = "documentRepresentation";
         private const String originalFileNameProperty       = "originalFileName";
         private const String supportedLocalesProperty = "supportedLocales";
+        private const string docContentProperty = "docContent";
 
         private Dictionary<String, object> dictionary;
 
@@ -94,6 +95,14 @@ namespace WordAddIn
         public String getDocumentUrl()
         {
             return getStringProperty(documentUrlProperty, false);
+        }
+        public String getDocContent()
+        {
+            return getStringProperty(docContentProperty, false);
+        }
+        public void setDocContent(String c)
+        {
+            setStringProperty(docContentProperty, c);
         }
         public void setDocumentTitle(String title)
         {

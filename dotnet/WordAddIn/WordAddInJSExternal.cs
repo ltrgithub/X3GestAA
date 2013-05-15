@@ -348,6 +348,7 @@ namespace WordAddIn
             return doc.Name;
         }
 
+        /* not used any more */
         public void downloadV6Document()
         {
             Document doc = Globals.WordAddIn.getActiveDocument();
@@ -356,17 +357,18 @@ namespace WordAddIn
             {
                 String documentUrl  = customData.getDocumentUrl();
                 String serverUrl    = customData.getServerUrl();
-
+                
+                string tempFile = doc.FullName;
                 byte[] content = browserDialog.readBinaryURLContent(documentUrl);
                 if (content == null)
                 {
+                    ((Microsoft.Office.Interop.Word._Document) doc).Close(WdSaveOptions.wdDoNotSaveChanges);
+                    browserDialog.Hide();
+                    File.Delete(tempFile);
                     return;
                 }
 
-                object doNotSaveChanges = WdSaveOptions.wdDoNotSaveChanges;
-
-                string tempFile = doc.FullName;
-                Globals.WordAddIn.Application.ActiveWindow.Close(ref doNotSaveChanges);
+                ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
                 File.Delete(tempFile);
 
                 string ext = ".doc";
@@ -389,11 +391,13 @@ namespace WordAddIn
                 doc = Globals.WordAddIn.getActiveDocument();
                 if (doc == null)
                 {
+                    browserDialog.Hide();
                     return;
                 }
                 customData = SyracuseOfficeCustomData.getFromDocument(doc, true);
                 if (customData == null)
                 {
+                    browserDialog.Hide();
                     return;
                 }
                 customData.setServerUrl(serverUrl);
