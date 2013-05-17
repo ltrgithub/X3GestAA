@@ -22,6 +22,8 @@ namespace ExcelAddIn
                 case "application/x-date":
                 case "application/x-datetime":
                 case "application/x-time":
+                    if (value.Equals("0000-00-00") || value.Equals("")) // convergence client may send dates like this
+                        return "";
                     return DateTime.Parse((String)value);
                 default:
                     return value;
