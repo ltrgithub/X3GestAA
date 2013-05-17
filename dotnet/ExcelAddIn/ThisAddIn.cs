@@ -301,7 +301,8 @@ namespace ExcelAddIn
 
                     External ext = new External();
                     wb.ActiveSheet.Cells.Clear();
-                    ext.ResizeTable("cvg", proto, data.Length, "");
+
+                    ext.ResizeTable("cvg", proto, 1, "");
                     ext.StartUpdateTable();
                     ext.UpdateTable("cvg", proto, data, 0);
                     ext.EndUpdateTable();
@@ -312,7 +313,7 @@ namespace ExcelAddIn
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
-                        ws.Delete();
+                        ws.Rows.Clear();
                     }
                     return true;
                 }
