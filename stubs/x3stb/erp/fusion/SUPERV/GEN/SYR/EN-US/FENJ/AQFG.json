@@ -1,5 +1,4 @@
-{
-	"$type": "application/json",
+{"$type": "application/json",
 	"$title": "{@W-AQFG-23586}",
 	"$properties": {
 		"BA": {
@@ -77,16 +76,6 @@
 						"$groupName": "A"
 					}
 				}
-			},
-			"$treeview": {
-				"$mode": "parentKey",
-				"$bindings": {
-					"$parent": "BA2",
-					"$id": "BA3",
-					"$icon": "BA5",
-					"$description": "BA4",
-					"$open": "BA6"
-				}
 			}
 		},
 		"BB1": {
@@ -154,7 +143,17 @@
 						"$groupName": "A"
 					}
 				}
-			}
+			},
+			"$decorator":{
+				"$stereotype": "orgview",
+				"$mode": "parentKey",
+				"$bindings": {
+					"$parent": "CA2",
+					"$id": "CA3",
+					"$image": "CA7",
+					"$description": "CA4"
+				}
+			}			
 		},
 		"CB1": {
 			"$type": "text/rtf",
