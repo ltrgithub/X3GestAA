@@ -13,13 +13,22 @@
 			"$key": [
 				"application",
 				"contract"
+			],
+			"$localized": [
+				"description"
 			]
 		},
 		"role": {
-			"$key": "description"
+			"$key": "description.fr-fr",
+			"$localized": [
+				"description"
+			]
 		},
 		"endPoint": {
-			"$key": "description",
+			"$key": "description.fr-fr",
+			"$localized": [
+				"description"
+			],
 			"applicationRef": {
 				"$key": [
 					"application",
@@ -28,22 +37,25 @@
 			}
 		},
 		"group": {
-			"$key": "description",
+			"$key": "description.fr-fr",
+			"$localized": [
+				"description"
+			],
 			"endPoints": {
-				"$key": "description"
+				"$key": "description.fr-fr"
 			},
 			"role": {
-				"$key": "description"
+				"$key": "description.fr-fr"
 			}
 		},
 		"user": {
 			"$key": "lastName",
 			"groups": {
-				"$key": "description"
+				"$key": "description.fr-fr"
 			}
 		}
 	},
-   "$includeBefore": [],
+  "$includeBefore": [],
 	"$includeAfter": ["syracuse-admin-menu"],
 	"$items": [
 		{
@@ -63,31 +75,31 @@
 		{
 			"$type": "storageVolume",
 			"code": "SI_REPORTS",
-			"description": "description_9dcaceda-3e0a-4380-91a3-8a34468fad2f",
+			"description": "description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd",
 			"storageType": "db_file"
 		},
 		{
 			"$type": "storageVolume",
 			"code": "SI_TEMPLATES",
-			"description": "description_dc8cbb44-115c-40ab-9804-0a7fe363bcfc",
+			"description": "description_22788243-a3df-4e87-8d6d-2c2fd3963ea4",
 			"storageType": "db_file"
 		},
 		{
 			"$type": "storageVolume",
 			"code": "STD",
-			"description": "description_83025951-4b3c-4c30-a85e-58876f310075",
+			"description": "description_cd87a599-ed76-47f0-b1df-98b66cf2bb84",
 			"storageType": "db_file"
 		},
 		{
 			"$type": "storageVolume",
 			"code": "WORD_TEMPLATE_MAILMERGE",
-			"description": "description_d38c142c-de20-4f84-9004-9becd68a4524",
+			"description": "description_e7389c3d-c112-49f6-b5e0-909612726384",
 			"storageType": "db_file"
 		},
 		{
 			"$type": "storageVolume",
 			"code": "WORD_TEMPLATE_REPORT",
-			"description": "description_eb404ffb-5df0-4612-97b2-0f568f9115a9",
+			"description": "description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947",
 			"storageType": "db_file"
 		},
 		{
@@ -102,33 +114,33 @@
 		},
 		{
 			"$type": "application",
-			"description": "Syracuse Collaboration",
+			"description": "description_2ee88384-161f-4f87-b26b-0dff916d799e",
 			"protocol": "syracuse",
 			"application": "syracuse",
 			"contract": "collaboration"
 		},
 		{
 			"$type": "application",
-			"description": "X3 ERP",
+			"description": "description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49",
 			"protocol": "x3",
 			"application": "x3",
 			"contract": "erp"
 		},
 		{
 			"$type": "role",
-			"description": "Endpoint administrator"
+			"description": "description_fff55671-255e-4ebb-8a6e-70acac4fda94"
 		},
 		{
 			"$type": "role",
-			"description": "Guest"
+			"description": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf"
 		},
 		{
 			"$type": "role",
-			"description": "Super administrator"
+			"description": "description_26024776-bbff-4be9-9069-d464a68e0659"
 		},
 		{
 			"$type": "endPoint",
-			"description": "Syracuse administration",
+			"description": "description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4",
 			"dataset": "syracuse",
 			"databaseDriver": "mongodb",
 			"databaseHost": "localhost",
@@ -140,24 +152,24 @@
 		},
 		{
 			"$type": "group",
-			"description": "Endpoint administrators",
-			"role": "Endpoint administrator"
+			"description": "description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e",
+			"role": "description_fff55671-255e-4ebb-8a6e-70acac4fda94"
 		},
 		{
 			"$type": "group",
-			"description": "Guests",
+			"description": "description_a523c2c1-d831-4877-9f0c-95928da43883",
 			"endPoints": [
-				"Syracuse administration"
+				"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4"
 			],
-			"role": "Guest"
+			"role": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf"
 		},
 		{
 			"$type": "group",
-			"description": "Super administrators",
+			"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
 			"endPoints": [
-				"Syracuse administration"
+				"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4"
 			],
-			"role": "Super administrator"
+			"role": "description_26024776-bbff-4be9-9069-d464a68e0659"
 		},
 		{
 			"$type": "user",
@@ -165,7 +177,7 @@
 			"lastName": "Super administrator",
 			"password": "f5066151ecf0c2511ea0f73306e27a4f",
 			"groups": [
-				"Super administrators"
+				"description_702545c4-1bc7-421a-a2f0-68141f183b78"
 			]
 		},
 		{
@@ -174,7 +186,7 @@
 			"lastName": "Guest",
 			"password": "96e17faa8decc76bf385c2ca82bef487",
 			"groups": [
-				"Guests"
+				"description_a523c2c1-d831-4877-9f0c-95928da43883"
 			]
 		},
 		{
@@ -184,18 +196,42 @@
 			"lastName": "Special user",
 			"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
 			"groups": [
-				"Endpoint administrators"
+				"description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e"
 			]
 		}
 	],
 	"$localization": {
 		"en-us": {
-			"description_9dcaceda-3e0a-4380-91a3-8a34468fad2f": "Sage Intelligence reports",
-			"description_dc8cbb44-115c-40ab-9804-0a7fe363bcfc": "Sage Intelligence templates",
-			"description_83025951-4b3c-4c30-a85e-58876f310075": "Standard storage volume",
-			"description_d38c142c-de20-4f84-9004-9becd68a4524": "Word templates for mail merge",
-			"description_eb404ffb-5df0-4612-97b2-0f568f9115a9": "Word templates for reporting"
+			"description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd": "Sage Intelligence reports",
+			"description_22788243-a3df-4e87-8d6d-2c2fd3963ea4": "Sage Intelligence templates",
+			"description_cd87a599-ed76-47f0-b1df-98b66cf2bb84": "Standard storage volume",
+			"description_e7389c3d-c112-49f6-b5e0-909612726384": "Word templates for mail merge",
+			"description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947": "Word templates for reporting",
+			"description_2ee88384-161f-4f87-b26b-0dff916d799e": "Syracuse Collaboration",
+			"description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49": "X3 ERP",
+			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
+			"description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf": "Guest",
+			"description_26024776-bbff-4be9-9069-d464a68e0659": "Super administrator",
+			"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4": "Syracuse administration",
+			"description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e": "Endpoint administrators",
+			"description_a523c2c1-d831-4877-9f0c-95928da43883": "Guests",
+			"description_702545c4-1bc7-421a-a2f0-68141f183b78": "Super administrators"
 		},
-		"fr-fr": {}
+		"fr-fr": {
+			"description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd": "Etats Sage Intelligence",
+			"description_22788243-a3df-4e87-8d6d-2c2fd3963ea4": "Modèles Sage Intelligence",
+			"description_cd87a599-ed76-47f0-b1df-98b66cf2bb84": "Volume standard",
+			"description_e7389c3d-c112-49f6-b5e0-909612726384": "Modèles word pour publipostage",
+			"description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947": "Modèles word pour publication",
+			"description_2ee88384-161f-4f87-b26b-0dff916d799e": "Syracuse Collaboration",
+			"description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49": "X3 ERP",
+			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
+			"description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf": "Guest",
+			"description_26024776-bbff-4be9-9069-d464a68e0659": "Super administrator",
+			"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4": "Syracuse administration",
+			"description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e": "Endpoint administrators",
+			"description_a523c2c1-d831-4877-9f0c-95928da43883": "Guests",
+			"description_702545c4-1bc7-421a-a2f0-68141f183b78": "Super administrators"
+		}
 	}
 }
