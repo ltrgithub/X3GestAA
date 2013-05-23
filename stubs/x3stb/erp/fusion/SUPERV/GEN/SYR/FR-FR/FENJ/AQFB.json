@@ -1,0 +1,731 @@
+{
+	"$type": "application/json",
+	"$title": "{@W-AQFB-23087}",
+	"$x3Facet": "fullscreen",
+	"$properties": {
+		"AA": {
+			"$type": "application/x-array",
+			"$capabilities": "sort",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$item": {
+				"$properties": {
+					"AA2": {
+						"$type": "application/x-boolean",
+						"$X3Name": "AQFB0_SELICO",
+						"$title": "",
+						"$capabilities": "sort",
+						"$mnu": "1",
+						"$format": "$check",
+						"$X3Fmt": "LO:2X",
+						"$maxLength": 2,
+						"$groupName": "A"
+					},
+					"AA3": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB0_SELLIB",
+						"$title": "{@S-AQFB0-6468}",
+						"$capabilities": "sort",
+						"$isReadOnly": true,
+						"$X3Fmt": "KP:30X>30X",
+						"$maxLength": 60,
+						"$displayLength": 30,
+						"$groupName": "A"
+					}
+				}
+			}
+		},
+		"AB": {
+			"$type": "application/x-array",
+			"$capabilities": "sort,insert,delete",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$item": {
+				"$properties": {
+					"AB2": {
+						"$type": "application/x-boolean",
+						"$X3Name": "AQFB0_SELICODET",
+						"$title": "",
+						"$capabilities": "sort",
+						"$mnu": "1",
+						"$format": "$check",
+						"$X3Fmt": "LO:2X",
+						"$maxLength": 2,
+						"$groupName": "B"
+					},
+					"AB3": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB0_AFFLIB",
+						"$title": "{@S-AQFB0-90}",
+						"$capabilities": "sort",
+						"$isReadOnly": true,
+						"$X3Fmt": "KP:30X>10X",
+						"$maxLength": 40,
+						"$displayLength": 30,
+						"$groupName": "B"
+					},
+					"AB4": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB0_AFFACT",
+						"$valueStyle": "ATVSEL",
+						"$titleStyle": "ATTSEL",
+						"$links": {
+							"$lookup": {},
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB0-5296}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "B"
+					},
+					"AB5": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB0_AFFNBL",
+						"$title": "{@S-AQFB0-4362}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "B"
+					},
+					"AB6": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB0_AFFLIG",
+						"$title": "{@S-AQFB0-1242}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "B"
+					},
+					"AB7": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB0_AFFCOL",
+						"$title": "{@S-AQFB0-19956}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "B"
+					},
+					"AB8": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB0_AFFPAR0",
+						"$title": "{@S-AQFB0-881}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:15X",
+						"$maxLength": 15,
+						"$groupName": "B"
+					}
+				}
+			}
+		}
+		,
+		"BA": {
+			"$type": "application/x-array",
+			"$capabilities": "sort,insert,delete",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$item": {
+				"$links": {
+					"$lazyload": {}
+				},
+				"$properties": {
+					"BA2": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB1_COL1",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-24700}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:10X",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"BA3": {
+						"$type": "application/x-date",
+						"$X3Name": "AQFB1_COL2",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-212}",
+						"$capabilities": "sort",
+						"$maxLength": 8,
+						"$groupName": "A"
+					},
+					"BA4": {
+						"$type": "application/x-decimal",
+						"$X3Name": "AQFB1_COL3",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-13155}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:8.2#",
+						"$maxLength": 11,
+						"$groupName": "A"
+					},
+					"BA5": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB1_COL4",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-24701}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"BA6": {
+						"$type": "application/x-decimal",
+						"$X3Name": "AQFB1_COL5",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-13155}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:8.2#",
+						"$maxLength": 11,
+						"$groupName": "A"
+					},
+					"BA7": {
+						"$type": "application/x-date",
+						"$X3Name": "AQFB1_COL6",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-212}",
+						"$capabilities": "sort",
+						"$maxLength": 8,
+						"$groupName": "A"
+					},
+					"BA8": {
+						"$type": "application/x-icon",
+						"$url": "",
+						"$X3Name": "AQFB1_COL7",
+						"$links": {},
+						"$title": "{@S-AQFB1-12937}",
+						"$capabilities": "sort",
+						"$X3Fmt": "KIB:10X",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"BA9": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB1_COL8",
+						"$valueStyle": "ATVSEL",
+						"$titleStyle": "ATTSEL",
+						"$links": {
+							"$lookup": {},
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-6109}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:3c",
+						"$maxLength": 3,
+						"$groupName": "A"
+					},
+					"BA10": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB1_ZCOL8",
+						"$title": "{@S-AQFB1-24061}",
+						"$capabilities": "sort",
+						"$isReadOnly": true,
+						"$X3Fmt": "KP:10X>20X",
+						"$maxLength": 30,
+						"$displayLength": 10,
+						"$groupName": "A"
+					},
+					"BA11": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB1_COL9",
+						"$title": "{@S-AQFB1-24700}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:10X",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"BA12": {
+						"$type": "application/x-boolean",
+						"$X3Name": "AQFB1_COL10",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-27736}",
+						"$capabilities": "sort",
+						"$mnu": "1",
+						"$format": "$check",
+						"$X3Fmt": "LO:1X",
+						"$maxLength": 1,
+						"$groupName": "A"
+					},
+					"BA13": {
+						"$type": "application/x-choice",
+						"$X3Name": "AQFB1_COL11",
+						"$links": {
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB1-225}",
+						"$capabilities": "sort",
+						"$mnu": "10000",
+						"$format": "$combo",
+						"$X3Fmt": "LA10000:15X",
+						"$maxLength": 15,
+						"$groupName": "A"
+					},
+					"BA14": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB1_COL12",
+						"$title": "{@S-AQFB1-641}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"BA15": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB1_COL13",
+						"$title": "{@S-AQFB1-90}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"BA16": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB1_COL14",
+						"$title": "{@S-AQFB1-194}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					}
+				}
+			}
+		}
+		,
+		"CA": {
+			"$type": "application/x-array",
+			"$capabilities": "sort,insert,delete",
+			"$links": {
+				"$lazyload": {}
+			},
+			"$item": {
+				"$properties": {
+					"CA2": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB2_COL1",
+						"$titleStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-24700}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:10X",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"CA3": {
+						"$type": "application/x-date",
+						"$X3Name": "AQFB2_COL2",
+						"$valueStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-212}",
+						"$capabilities": "sort",
+						"$maxLength": 8,
+						"$groupName": "A"
+					},
+					"CA4": {
+						"$type": "application/x-decimal",
+						"$X3Name": "AQFB2_COL3",
+						"$titleStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-13155}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:8.2#",
+						"$maxLength": 11,
+						"$groupName": "A"
+					},
+					"CA5": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB2_COL4",
+						"$valueStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-24701}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"CA6": {
+						"$type": "application/x-decimal",
+						"$X3Name": "AQFB2_COL5",
+						"$titleStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-13155}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:8.2#",
+						"$maxLength": 11,
+						"$groupName": "A"
+					},
+					"CA7": {
+						"$type": "application/x-date",
+						"$X3Name": "AQFB2_COL6",
+						"$valueStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-212}",
+						"$capabilities": "sort",
+						"$maxLength": 8,
+						"$groupName": "A"
+					},
+					"CA8": {
+						"$type": "application/x-icon",
+						"$url": "",
+						"$X3Name": "AQFB2_COL7",
+						"$titleStyle": "BACKORANGE",
+						"$links": {},
+						"$title": "{@S-AQFB2-12937}",
+						"$capabilities": "sort",
+						"$X3Fmt": "KIB:10X",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"CA9": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB2_COL8",
+						"$valueStyle": "BACKORANGE",
+						"$titleStyle": "ATTTUN",
+						"$links": {
+							"$lookup": {},
+							"$lazyload": {}
+						},
+						"$title": "{@S-AQFB2-6109}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:3c",
+						"$maxLength": 3,
+						"$groupName": "A"
+					},
+					"CA10": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB2_ZCOL8",
+						"$title": "{@S-AQFB2-24061}",
+						"$capabilities": "sort",
+						"$isReadOnly": true,
+						"$X3Fmt": "KP:10X>20X",
+						"$maxLength": 30,
+						"$displayLength": 10,
+						"$groupName": "A"
+					},
+					"CA11": {
+						"$type": "application/x-string",
+						"$X3Name": "AQFB2_COL9",
+						"$titleStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-24700}",
+						"$capabilities": "sort",
+						"$X3Fmt": "K:10X",
+						"$maxLength": 10,
+						"$groupName": "A"
+					},
+					"CA12": {
+						"$type": "application/x-boolean",
+						"$X3Name": "AQFB2_COL10",
+						"$valueStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-27736}",
+						"$capabilities": "sort",
+						"$mnu": "1",
+						"$format": "$check",
+						"$X3Fmt": "LO:1X",
+						"$maxLength": 1,
+						"$groupName": "A"
+					},
+					"CA13": {
+						"$type": "application/x-choice",
+						"$X3Name": "AQFB2_COL11",
+						"$titleStyle": "BACKORANGE",
+						"$title": "{@S-AQFB2-225}",
+						"$capabilities": "sort",
+						"$mnu": "10000",
+						"$format": "$combo",
+						"$X3Fmt": "LA10000:15X",
+						"$maxLength": 15,
+						"$groupName": "A"
+					},
+					"CA14": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB2_COL12",
+						"$title": "{@S-AQFB2-641}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"CA15": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB2_COL13",
+						"$title": "{@S-AQFB2-90}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					},
+					"CA16": {
+						"$type": "application/x-integer",
+						"$X3Name": "AQFB2_COL14",
+						"$title": "{@S-AQFB2-194}",
+						"$capabilities": "sort",
+						"$X3Fmt": "N:4#",
+						"$maxLength": 4,
+						"$groupName": "A"
+					}
+				}
+			}
+		}
+	},
+	"$links": {},
+	"$actions": {
+		"aA1": {
+			"$title": "{@W-AQFB--100157}",
+			"$act": "2053"
+		},
+		"aA2": {
+			"$title": "{@W-AQFB-4973}",
+			"$act": 2125
+		},
+		"aA3": {
+			"$title": "{@W-AQFB-25191}",
+			"$act": 2126
+		},
+		"aA4": {
+			"$title": "{@W-AQFB--123065}",
+			"$act": "2845"
+		}
+	},
+	"$article": {
+		"$layout": {
+			"$layoutType": "stack",
+			"$items": [
+				{
+					"$category": "section",
+					"$style": "header",
+					"$XID": "A",
+					"$x3bind": "A",
+					"$layout": {
+						"$layoutType": "stack",
+						"$items": [
+							{
+								"$layoutType": "row",
+								"$items": [
+									{
+										"$title": "{@S-AQFB0-615}",
+										"$category": "block",
+										"$x3bind": "AA",
+										"$layout": {
+											"$items": [
+												{
+													"$isEditMode": true,
+													"$selectMode": "multi",
+													"$bind": "AA",
+													"$itemsPerPage": "10",
+													"$isRowIndexVisible": true,
+													"$selectByRowIndex": true
+												}
+											]
+										}
+									}, {
+										"$title": "{@S-AQFB0-23754}",
+										"$category": "block",
+										"$x3bind": "AB",
+										"$layout": {
+											"$items": [
+												{
+													"$isEditMode": true,
+													"$selectMode": "multi",
+													"$bind": "AB",
+													"$itemsPerPage": "10",
+													"$isRowIndexVisible": true,
+													"$selectByRowIndex": true
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					}
+				}, {
+					"$layoutType": "tabs",
+					"$items": [
+						{
+							"$title": "{@W-AQFB--10001601}",
+							"$category": "section",
+							"$XID": "cB",
+							"$x3bind": "B",
+							"$layout": {
+								"$layoutType": "stack",
+								"$items": [
+									{
+										"$layoutType": "row",
+										"$items": [
+											{
+												"$title": "",
+												"$category": "block",
+												"$x3bind": "BA",
+												"$layout": {
+													"$items": [
+														{
+															"$isEditMode": true,
+															"$selectMode": "multi",
+															"$bind": "BA",
+															"$itemsPerPage": "25",
+															"$isRowIndexVisible": true,
+															"$selectByRowIndex": true,
+															"$cards": {
+																"$position": "popup",
+																"$layout": {
+																	"$items": [
+																		{
+																			"$layoutType": "row",
+																			"$items": [
+																				{
+																					"$bind": "BA2"
+																				}, {
+																					"$bind": "BA3"
+																				}, {
+																					"$bind": "BA4"
+																				}
+																			]
+																		}, {
+																			"$layoutType": "row",
+																			"$items": [
+																				{
+																					"$bind": "BA5"
+																				}, {
+																					"$bind": "BA6"
+																				}, {
+																					"$bind": "BA7"
+																				}
+																			]
+																		}, {
+																			"$layoutType": "row",
+																			"$items": [
+																				{
+																					"$bind": "BA8"
+																				}, {
+																					"$bind": "BA9"
+																				}, {
+																					"$bind": "BA10"
+																				}
+																			]
+																		}, {
+																			"$layoutType": "row",
+																			"$items": [
+																				{
+																					"$bind": "BA11"
+																				}, {
+																					"$bind": "BA12"
+																				}, {
+																					"$bind": "BA13"
+																				}
+																			]
+																		}, {
+																			"$layoutType": "row",
+																			"$items": [
+																				{
+																					"$bind": "BA14"
+																				}, {
+																					"$bind": "BA15"
+																				}, {
+																					"$bind": "BA16"
+																				}
+																			]
+																		}
+																	]
+																}
+															}
+														}
+													]
+												}
+											}
+										]
+									}
+								]
+							}
+						}, {
+							"$title": "{@W-AQFB--10001602}",
+							"$category": "section",
+							"$XID": "cC",
+							"$x3bind": "C",
+							"$layout": {
+								"$layoutType": "stack",
+								"$items": [
+									{
+										"$layoutType": "row",
+										"$items": [
+											{
+												"$title": "",
+												"$category": "block",
+												"$x3bind": "CA",
+												"$layout": {
+													"$items": [
+														{
+															"$isEditMode": true,
+															"$selectMode": "multi",
+															"$bind": "CA",
+															"$itemsPerPage": "25",
+															"$isRowIndexVisible": true,
+															"$selectByRowIndex": true
+														}
+													]
+												}
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	"$localization": {
+		"@S-AQFB0-6468": "Description",
+		"@S-AQFB0-90": "Action",
+		"@S-AQFB0-5296": "Code",
+		"@S-AQFB0-4362": "Nb lig",
+		"@S-AQFB0-1242": "Lig",
+		"@S-AQFB0-19956": "Col",
+		"@S-AQFB0-881": "Paramètres",
+		"@S-AQFB0-615": "Modèle",
+		"@S-AQFB0-23754": "Détail"
+		,
+		"@S-AQFB1-24700": "Alpha",
+		"@S-AQFB1-212": "Date",
+		"@S-AQFB1-13155": "Décimal",
+		"@S-AQFB1-24701": "Entier",
+		"@S-AQFB1-12937": "Icône",
+		"@S-AQFB1-6109": "Sélection",
+		"@S-AQFB1-24061": "Nom",
+		"@S-AQFB1-27736": "Case à cocher",
+		"@S-AQFB1-225": "Menu local",
+		"@S-AQFB1-641": "Ligne",
+		"@S-AQFB1-90": "Action",
+		"@S-AQFB1-194": "Exécution"
+		,
+		"@S-AQFB2-24700": "Alpha",
+		"@S-AQFB2-212": "Date",
+		"@S-AQFB2-13155": "Décimal",
+		"@S-AQFB2-24701": "Entier",
+		"@S-AQFB2-12937": "Icône",
+		"@S-AQFB2-6109": "Sélection",
+		"@S-AQFB2-24061": "Nom",
+		"@S-AQFB2-27736": "Case à cocher",
+		"@S-AQFB2-225": "Menu local",
+		"@S-AQFB2-641": "Ligne",
+		"@S-AQFB2-90": "Action",
+		"@S-AQFB2-194": "Exécution"
+		,
+		"@W-AQFB-23087": "Tableau",
+		"@W-AQFB--100157": "OK",
+		"@W-AQFB-4973": "Simulation",
+		"@W-AQFB-25191": "Annuler",
+		"@W-AQFB--123065": "Fin",
+		"@W-AQFB--10001601": "Page 1",
+		"@W-AQFB--10001602": "Page 2"
+	}
+}
