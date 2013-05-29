@@ -418,7 +418,7 @@ namespace WordAddIn
             {
                 browserDialog.Hide();
             }
-            MessageBox.Show(errorText);
+            MessageBox.Show(errorText, global::WordAddIn.Properties.Resources.MSG_ERROR_TITLE);
         }
     }
 }
