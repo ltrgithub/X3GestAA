@@ -172,9 +172,23 @@ namespace WordAddIn
                 File.Delete(tempFile);
                 return;
             }
-
+            
             ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
-            File.Delete(tempFile);
+
+            // Sometimes the browser seems to lock the file a litte bit too long, so do some retries
+            // if it fails, a new file name is generated later
+            int tries = 0;
+            while (tries++ < 3)
+            {
+                try
+                {
+                    File.Delete(tempFile);
+                }
+                catch (Exception) {
+                    System.Threading.Thread.Sleep(500);
+                }
+                break;
+            }
 
             string ext = ".doc";
             if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
@@ -182,6 +196,11 @@ namespace WordAddIn
                 ext = "docx";
             }
             string newDocumentFile = tempFile;
+            while (File.Exists(tempFile))
+            {
+                tempFile = "_" + tempFile;
+            }
+
             newDocumentFile = newDocumentFile.Replace(".docx", ext);
             using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
             {
