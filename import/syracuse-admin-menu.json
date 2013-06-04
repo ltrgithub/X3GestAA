@@ -1,1020 +1,954 @@
 {
 	"$prototypes": {
-		"x3server": {
-			"$key": "serverName"
-		},
-		"application": {
-			"$key": [
-				"application",
-				"contract"
-			]
-		},
-		"endPoint": {
-			"$key": "description.fr-fr",
-			"$localized": [
-				"description"
-			],
-			"applicationRef": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"x3server": {
-				"$key": "serverName"
-			}
-		},
-		"role": {
-			"$key": "description.fr-fr",
-			"$localized": [
-				"description"
-			]
-		},
-		"representationProxy": {
-			"$key": [
-				"entity",
-				"representation"
-			],
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			}
-		},
-		"menuItem": {
-			"$key": "code",
-			"$localized": [
-				"description",
-				"title"
-			],
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"representationRef": {
-				"$key": [
-					"entity",
-					"representation"
-				],
+		"dashboardDef": {
+			"$key": "dashboardName",
+			"variants": {
+				"$key": "code",
 				"application": {
 					"$key": [
 						"application",
 						"contract"
 					]
-				}
-			}
-		},
-		"portlet": {
-			"$key": "title.fr-fr",
-			"$localized": [
-				"title"
-			],
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"items": {
-				"$key": "code"
-			}
-		},
-		"dashboardVignette": {
-			"$key": [
-				"endpoint",
-				"portlet"
-			],
-			"portlet": {
-				"$key": "title.fr-fr"
-			},
-			"endpoint": {
-				"$key": "description.fr-fr"
-			}
-		},
-		"dashboardVariant": {
-			"$key": "title.fr-fr",
-			"$localized": [
-				"title",
-				"title"
-			],
-			"roles": {
-				"$key": "description.fr-fr"
-			},
-			"vignettes": {
-				"$key": [
-					"endpoint",
-					"portlet"
-				],
-				"portlet": {
-					"$key": "title.fr-fr"
-				},
-				"endpoint": {
-					"$key": "description.fr-fr"
-				}
-			},
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			}
-		},
-		"dashboardDef": {
-			"$key": "title.fr-fr",
-			"$localized": [
-				"title"
-			],
-			"variants": {
-				"$key": "title.fr-fr",
-				"$localized": [
-					"title",
-					"title"
-				],
-				"roles": {
-					"$key": "description.fr-fr"
 				},
 				"vignettes": {
 					"$key": [
-						"endpoint",
-						"portlet"
+						"portlet",
+						"endpoint"
 					],
 					"portlet": {
-						"$key": "title.fr-fr"
+						"$key": "code",
+						"application": {
+							"$key": [
+								"application",
+								"contract"
+							]
+						},
+						"endpoint": {
+							"$key": "dataset"
+						},
+						"items": {
+							"$key": "code",
+							"application": {
+								"$key": [
+									"application",
+									"contract"
+								]
+							},
+							"endpoint": {
+								"$key": "dataset"
+							},
+							"representationRef": {},
+							"$localized": [
+								"title",
+								"description"
+							]
+						},
+						"pageItem": {
+							"$key": "code"
+						},
+						"$localized": [
+							"title",
+							"description"
+						]
 					},
 					"endpoint": {
-						"$key": "description.fr-fr"
+						"$key": "dataset"
 					}
 				},
+				"pageData": {
+					"$key": "code"
+				},
+				"$localized": [
+					"title",
+					"description"
+				]
+			},
+			"$localized": [
+				"title",
+				"description"
+			]
+		},
+		"portlet": {
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"endpoint": {
+				"$key": "dataset"
+			},
+			"items": {
+				"$key": "code",
 				"application": {
 					"$key": [
 						"application",
 						"contract"
 					]
-				}
-			}
+				},
+				"endpoint": {
+					"$key": "dataset"
+				},
+				"representationRef": {},
+				"$localized": [
+					"title",
+					"description"
+				]
+			},
+			"pageItem": {
+				"$key": "code"
+			},
+			"$localized": [
+				"title",
+				"description"
+			]
+		},
+		"menuItem": {
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"endpoint": {
+				"$key": "dataset"
+			},
+			"representationRef": {},
+			"$localized": [
+				"title",
+				"description"
+			]
 		}
 	},
 	"$items": [
 		{
-			"$type": "application",
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		{
-			"$type": "application",
-			"application": "x3",
-			"contract": "erp"
-		},
-		{
-			"$type": "endPoint",
-			"description": "description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4",
-			"applicationRef": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			}
-		},
-		{
-			"$type": "role",
-			"description": "description_fff55671-255e-4ebb-8a6e-70acac4fda94"
-		},
-		{
-			"$type": "role",
-			"description": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf"
-		},
-		{
-			"$type": "role",
-			"description": "description_26024776-bbff-4be9-9069-d464a68e0659"
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_PERS_MNGT",
-			"title": "title_728329f0-2b82-4c38-be17-8532d0bef211",
-			"linkType": "$representation",
-			"entity": "personalizationManagements",
-			"representation": "personalizationManagement",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "personalizationManagement",
-				"entity": "personalizationManagements"
-			}
-		},
-		{
 			"$type": "menuItem",
 			"code": "S_APPLICATIONS",
-			"title": "title_d53a77da-e13b-4de9-97af-81cf178a8a06",
-			"description": "description_d53a77da-e13b-4de9-97af-81cf178a8a06",
+			"title": "title_4f395232-d90b-4b8e-817c-50054f8adb42",
+			"description": "description_4f395232-d90b-4b8e-817c-50054f8adb42",
 			"linkType": "$representation",
-			"entity": "applications",
-			"representation": "application",
+			"applicationMenu": false,
 			"facet": "$query",
+			"target": "self",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"representationRef": {
-				"representation": "application",
+				"$type": "representationProxy",
 				"entity": "applications",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_DASHBOARDS",
-			"title": "title_c4d1bc21-cd29-4d6b-8144-cc542972e7d5",
-			"description": "description_c4d1bc21-cd29-4d6b-8144-cc542972e7d5",
-			"linkType": "$representation",
-			"entity": "dashboardDefs",
-			"representation": "dashboardDef",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "dashboardDef",
-				"entity": "dashboardDefs",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_DOCUMENTS",
-			"title": "title_77a230ac-ff27-428f-abaf-cf913cd22303",
-			"description": "description_77a230ac-ff27-428f-abaf-cf913cd22303",
-			"linkType": "$representation",
-			"entity": "documents",
-			"representation": "document",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "document",
-				"entity": "documents",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_DOCUMENT_TAGS",
-			"title": "title_54136c76-2d3c-4d07-b114-d5ab85f331e5",
-			"description": "description_54136c76-2d3c-4d07-b114-d5ab85f331e5",
-			"linkType": "$representation",
-			"entity": "documentTags",
-			"representation": "documentTag",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "documentTag",
-				"entity": "documentTags",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_FRIEND_SERVERS",
-			"title": "title_ecaca8b0-5f2d-4b3f-98d2-6da1f51c0478",
-			"description": "description_ecaca8b0-5f2d-4b3f-98d2-6da1f51c0478",
-			"linkType": "$representation",
-			"entity": "friendServers",
-			"representation": "friendServer",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "friendServer",
-				"entity": "friendServers",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_IMPORT_SESSIONS",
-			"title": "title_26ba887b-e17f-4341-8874-98c000949155",
-			"description": "description_26ba887b-e17f-4341-8874-98c000949155",
-			"linkType": "$representation",
-			"entity": "importSessions",
-			"representation": "importSession",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "importSession",
-				"entity": "importSessions",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_IMPORT_TOOL",
-			"title": "title_ec104a63-be5b-45ff-a15a-2020b3d21af6",
-			"description": "description_ec104a63-be5b-45ff-a15a-2020b3d21af6",
-			"linkType": "$representation",
-			"entity": "importTools",
-			"representation": "importTool",
-			"facet": "$create",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "importTool",
-				"entity": "importTools",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_LOCALES",
-			"title": "title_51adf668-56a8-49cc-8b2d-87cd2d8fc698",
-			"description": "description_51adf668-56a8-49cc-8b2d-87cd2d8fc698",
-			"linkType": "$representation",
-			"entity": "localePreferences",
-			"representation": "localePreference",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "localePreference",
-				"entity": "localePreferences",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_MENU_CATEGORIES",
-			"title": "title_8b67f891-deaa-4047-8404-b0a4443b9af3",
-			"description": "description_8b67f891-deaa-4047-8404-b0a4443b9af3",
-			"linkType": "$representation",
-			"entity": "menuCategories",
-			"representation": "menuCategory",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "menuCategory",
-				"entity": "menuCategories",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_MENU_ITEMS",
-			"title": "title_27f691bb-113e-401e-bd2e-49129d44372b",
-			"description": "description_27f691bb-113e-401e-bd2e-49129d44372b",
-			"linkType": "$representation",
-			"entity": "menuItems",
-			"representation": "menuItem",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "menuItem",
-				"entity": "menuItems",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_PAGES",
-			"title": "title_3041a481-af81-4089-9e14-cef772c20b91",
-			"description": "description_3041a481-af81-4089-9e14-cef772c20b91",
-			"linkType": "$representation",
-			"entity": "pageDefs",
-			"representation": "pageDef",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "pageDef",
-				"entity": "pageDefs",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_AUTOMATES",
-			"title": "title_2529de11-cc95-478d-8162-8c7f82878e06",
-			"description": "description_2529de11-cc95-478d-8162-8c7f82878e06",
-			"linkType": "$representation",
-			"entity": "automates",
-			"representation": "automate",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "automate",
-				"entity": "automates",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_SEARCH_ADMIN",
-			"title": "title_fdb21b66-8751-4d6d-8180-d30644d637c1",
-			"description": "description_fdb21b66-8751-4d6d-8180-d30644d637c1",
-			"linkType": "$representation",
-			"entity": "searchAdmins",
-			"representation": "searchAdmin",
-			"facet": "$create",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "searchAdmin",
-				"entity": "searchAdmins",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_SECURITY_PROFILES",
-			"title": "title_8692f9f1-97a0-45f2-ac63-02f9bcdafd81",
-			"description": "description_8692f9f1-97a0-45f2-ac63-02f9bcdafd81",
-			"linkType": "$representation",
-			"entity": "securityProfiles",
-			"representation": "securityProfile",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "securityProfile",
-				"entity": "securityProfiles",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_SERVER_LOGS",
-			"title": "title_f59453b2-ea94-4101-b8c1-1830e4e37c8b",
-			"description": "description_f59453b2-ea94-4101-b8c1-1830e4e37c8b",
-			"linkType": "$representation",
-			"entity": "serverLogs",
-			"representation": "serverLog",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "serverLog",
-				"entity": "serverLogs",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_ENDPOINTS",
-			"title": "title_b225666a-f050-4673-a4c1-836af0d2ce8e",
-			"description": "description_b225666a-f050-4673-a4c1-836af0d2ce8e",
-			"linkType": "$representation",
-			"entity": "endPoints",
-			"representation": "endPoint",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "endPoint",
-				"entity": "endPoints",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_VOLUMES",
-			"title": "title_fc2863e8-ca21-4e70-ba3c-23cbffc05663",
-			"description": "description_fc2863e8-ca21-4e70-ba3c-23cbffc05663",
-			"linkType": "$representation",
-			"entity": "storageVolumes",
-			"representation": "storageVolume",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "storageVolume",
-				"entity": "storageVolumes",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_SESSIONS",
-			"title": "title_4c7e31fb-2588-4542-ac38-c0452a23bfff",
-			"description": "description_4c7e31fb-2588-4542-ac38-c0452a23bfff",
-			"linkType": "$representation",
-			"entity": "sessionInfos",
-			"representation": "sessionInfo",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "sessionInfo",
-				"entity": "sessionInfos",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_TAG_CATEGORIES",
-			"title": "title_63afb443-845c-47ba-a418-0edb5d02ec0e",
-			"description": "description_63afb443-845c-47ba-a418-0edb5d02ec0e",
-			"linkType": "$representation",
-			"entity": "documentTagCategories",
-			"representation": "documentTagCategory",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "documentTagCategory",
-				"entity": "documentTagCategories",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_TEAMS",
-			"title": "title_5b05ce46-80d6-423d-9efb-2d9779465697",
-			"description": "description_5b05ce46-80d6-423d-9efb-2d9779465697",
-			"linkType": "$representation",
-			"entity": "teams",
-			"representation": "team",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "team",
-				"entity": "teams",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_GROUPES",
-			"title": "title_aa32fac8-28f3-4837-8208-7ba458a0e163",
-			"description": "description_aa32fac8-28f3-4837-8208-7ba458a0e163",
-			"linkType": "$representation",
-			"entity": "groups",
-			"representation": "group",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "group",
-				"entity": "groups",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
+				"representation": "application"
 			}
 		},
 		{
 			"$type": "menuItem",
 			"code": "S_ROLES",
-			"title": "title_24ecb488-2ce8-4603-8583-0dee3624ac10",
-			"description": "description_24ecb488-2ce8-4603-8583-0dee3624ac10",
+			"title": "title_4b79dea0-27af-427c-bc39-299ca3a2e6e1",
+			"description": "description_4b79dea0-27af-427c-bc39-299ca3a2e6e1",
 			"linkType": "$representation",
-			"entity": "roles",
-			"representation": "role",
+			"applicationMenu": false,
 			"facet": "$query",
+			"target": "self",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"representationRef": {
-				"representation": "role",
+				"$type": "representationProxy",
 				"entity": "roles",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_USERS",
-			"title": "title_b57526b7-c8cb-46cd-b36a-124857f14bea",
-			"description": "description_b57526b7-c8cb-46cd-b36a-124857f14bea",
-			"linkType": "$representation",
-			"entity": "users",
-			"representation": "user",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "user",
-				"entity": "users",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_VIGNETTES",
-			"title": "title_91f06067-b958-4858-9f1c-b72d7e0f4be8",
-			"description": "description_91f06067-b958-4858-9f1c-b72d7e0f4be8",
-			"linkType": "$representation",
-			"entity": "portlets",
-			"representation": "portlet",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "portlet",
-				"entity": "portlets",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "S_WORD_TEMPLATES",
-			"title": "title_1a2f900c-4c76-4224-b51e-c2729242373d",
-			"description": "description_1a2f900c-4c76-4224-b51e-c2729242373d",
-			"linkType": "$representation",
-			"entity": "msoWordTemplateDocuments",
-			"representation": "msoWordTemplateDocument",
-			"facet": "$query",
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"representationRef": {
-				"representation": "msoWordTemplateDocument",
-				"entity": "msoWordTemplateDocuments",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
+				"representation": "role"
 			}
 		},
 		{
 			"$type": "menuItem",
 			"code": "S_X3_SERVERS",
-			"title": "title_fb71e4fd-9ed7-47d0-af75-7de4286c4214",
-			"description": "description_fb71e4fd-9ed7-47d0-af75-7de4286c4214",
+			"title": "title_608a8754-a0f8-4215-b82a-9a4b67622dc9",
+			"description": "description_608a8754-a0f8-4215-b82a-9a4b67622dc9",
 			"linkType": "$representation",
-			"entity": "x3servers",
-			"representation": "x3server",
+			"applicationMenu": false,
 			"facet": "$query",
+			"target": "self",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"representationRef": {
-				"representation": "x3server",
+				"$type": "representationProxy",
 				"entity": "x3servers",
-				"application": {
-					"application": "syracuse",
-					"contract": "collaboration"
-				}
+				"representation": "x3server"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_FRIEND_SERVERS",
+			"title": "title_1af1c627-5729-4840-bad2-7fe6a7637343",
+			"description": "description_1af1c627-5729-4840-bad2-7fe6a7637343",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "friendServers",
+				"representation": "friendServer"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_AUTOMATES",
+			"title": "title_13c75fe9-a9f4-4d64-9f68-aff66b144683",
+			"description": "description_13c75fe9-a9f4-4d64-9f68-aff66b144683",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "automates",
+				"representation": "automate"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_ENDPOINTS",
+			"title": "title_37fdda0d-898a-4579-962e-373462b20628",
+			"description": "description_37fdda0d-898a-4579-962e-373462b20628",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "endPoints",
+				"representation": "endPoint"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_USERS",
+			"title": "title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec",
+			"description": "description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "users",
+				"representation": "user"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_LOCALES",
+			"title": "title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b",
+			"description": "description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "localePreferences",
+				"representation": "localePreference"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SERVER_LOGS",
+			"title": "title_34f76310-924e-42be-bef5-94ccbae24a57",
+			"description": "description_34f76310-924e-42be-bef5-94ccbae24a57",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "serverLogs",
+				"representation": "serverLog"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_IMPORT_SESSIONS",
+			"title": "title_26222845-f2dd-41be-9d5e-32ec5592c8cd",
+			"description": "description_26222845-f2dd-41be-9d5e-32ec5592c8cd",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "importSessions",
+				"representation": "importSession"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SECURITY_PROFILES",
+			"title": "title_d2015519-918f-458c-b268-028ec5921f0a",
+			"description": "description_d2015519-918f-458c-b268-028ec5921f0a",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "securityProfiles",
+				"representation": "securityProfile"
 			}
 		},
 		{
 			"$type": "portlet",
-			"title": "title_21438b15-a42a-42e3-8575-7f3e19978460",
+			"code": "S_ADMIN",
+			"title": "title_aa721890-861c-4e45-8732-262549f71038",
 			"type": "$menu",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"items": [
-				"S_APPLICATIONS",
-				"S_ROLES",
-				"S_X3_SERVERS",
-				"S_FRIEND_SERVERS",
-				"S_AUTOMATES",
-				"S_ENDPOINTS",
-				"S_USERS",
-				"S_LOCALES",
-				"S_SERVER_LOGS",
-				"S_IMPORT_SESSIONS",
-				"S_SECURITY_PROFILES"
-			]
+				{
+					"code": "S_APPLICATIONS"
+				},
+				{
+					"code": "S_ROLES"
+				},
+				{
+					"code": "S_X3_SERVERS"
+				},
+				{
+					"code": "S_FRIEND_SERVERS"
+				},
+				{
+					"code": "S_AUTOMATES"
+				},
+				{
+					"code": "S_ENDPOINTS"
+				},
+				{
+					"code": "S_USERS"
+				},
+				{
+					"code": "S_LOCALES"
+				},
+				{
+					"code": "S_SERVER_LOGS"
+				},
+				{
+					"code": "S_IMPORT_SESSIONS"
+				},
+				{
+					"code": "S_SECURITY_PROFILES"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_TEAMS",
+			"title": "title_94313eb5-d787-4417-9af9-62a27489999f",
+			"description": "description_94313eb5-d787-4417-9af9-62a27489999f",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "teams",
+				"representation": "team"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_VOLUMES",
+			"title": "title_5104c829-a525-43ea-a7d5-99c4fe78edb0",
+			"description": "description_5104c829-a525-43ea-a7d5-99c4fe78edb0",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "storageVolumes",
+				"representation": "storageVolume"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_DOCUMENTS",
+			"title": "title_1054de0b-1a80-417d-a34a-444be76519f4",
+			"description": "description_1054de0b-1a80-417d-a34a-444be76519f4",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "documents",
+				"representation": "document"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_DOCUMENT_TAGS",
+			"title": "title_8ab01f1b-3760-4224-8b96-34a0af3c47e4",
+			"description": "description_8ab01f1b-3760-4224-8b96-34a0af3c47e4",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "documentTags",
+				"representation": "documentTag"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_TAG_CATEGORIES",
+			"title": "title_b93b5cd5-2f10-4204-ba2c-b695d172e7c5",
+			"description": "description_b93b5cd5-2f10-4204-ba2c-b695d172e7c5",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "documentTagCategories",
+				"representation": "documentTagCategory"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_WORD_TEMPLATES",
+			"title": "title_138dc4d0-b5a6-428d-bab7-812a55a0342a",
+			"description": "description_138dc4d0-b5a6-428d-bab7-812a55a0342a",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "msoWordTemplateDocuments",
+				"representation": "msoWordTemplateDocument"
+			}
 		},
 		{
 			"$type": "portlet",
-			"title": "title_7e3f1c45-e185-476d-a79f-558c2cbfc871",
+			"code": "S_COLL",
+			"title": "title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6",
 			"type": "$menu",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"items": [
-				"S_PAGES",
-				"S_DASHBOARDS",
-				"S_VIGNETTES",
-				"S_MENU_ITEMS",
-				"S_MENU_CATEGORIES",
-				"S_PERS_MNGT"
-			]
+				{
+					"code": "S_TEAMS"
+				},
+				{
+					"code": "S_VOLUMES"
+				},
+				{
+					"code": "S_DOCUMENTS"
+				},
+				{
+					"code": "S_DOCUMENT_TAGS"
+				},
+				{
+					"code": "S_TAG_CATEGORIES"
+				},
+				{
+					"code": "S_WORD_TEMPLATES"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_PAGES",
+			"title": "title_254915a4-d18e-4f37-b4e6-bb0bfd9d177b",
+			"description": "description_254915a4-d18e-4f37-b4e6-bb0bfd9d177b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "pageDefs",
+				"representation": "pageDef"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_DASHBOARDS",
+			"title": "title_76c02392-c034-405f-b67a-5fdcd010e948",
+			"description": "description_76c02392-c034-405f-b67a-5fdcd010e948",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "dashboardDefs",
+				"representation": "dashboardDef"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_VIGNETTES",
+			"title": "title_902df049-47cb-4855-960f-e6cf85d59859",
+			"description": "description_902df049-47cb-4855-960f-e6cf85d59859",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "portlets",
+				"representation": "portlet"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_MENU_ITEMS",
+			"title": "title_269142c2-fc47-4df6-83d8-9866c6f6c275",
+			"description": "description_269142c2-fc47-4df6-83d8-9866c6f6c275",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "menuItems",
+				"representation": "menuItem"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_MENU_CATEGORIES",
+			"title": "title_780d8a57-d43a-4855-86fc-e429c7b812d3",
+			"description": "description_780d8a57-d43a-4855-86fc-e429c7b812d3",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "menuCategories",
+				"representation": "menuCategory"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_PERS_MNGT",
+			"title": "title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "personalizationManagements",
+				"representation": "personalizationManagement"
+			}
 		},
 		{
 			"$type": "portlet",
-			"title": "title_3dd8abdd-8fe9-448a-839d-8cfc5adecdd6",
+			"code": "S_PERS",
+			"title": "title_dacaad25-7d83-420d-a644-bae54c353cc5",
 			"type": "$menu",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"items": [
-				"S_TEAMS",
-				"S_VOLUMES",
-				"S_DOCUMENTS",
-				"S_DOCUMENT_TAGS",
-				"S_TAG_CATEGORIES",
-				"S_WORD_TEMPLATES"
-			]
+				{
+					"code": "S_PAGES"
+				},
+				{
+					"code": "S_DASHBOARDS"
+				},
+				{
+					"code": "S_VIGNETTES"
+				},
+				{
+					"code": "S_MENU_ITEMS"
+				},
+				{
+					"code": "S_MENU_CATEGORIES"
+				},
+				{
+					"code": "S_PERS_MNGT"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_IMPORT_TOOL",
+			"title": "title_1b023bbd-1526-4e3b-b496-6357a2eee2be",
+			"description": "description_1b023bbd-1526-4e3b-b496-6357a2eee2be",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "importTools",
+				"representation": "importTool"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SEARCH_ADMIN",
+			"title": "title_d2f48394-9010-407d-992f-e57a7313b87b",
+			"description": "description_d2f48394-9010-407d-992f-e57a7313b87b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "searchAdmins",
+				"representation": "searchAdmin"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SESSIONS",
+			"title": "title_15853b1a-121a-4407-9c51-8e5e0f884cbe",
+			"description": "description_15853b1a-121a-4407-9c51-8e5e0f884cbe",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "sessionInfos",
+				"representation": "sessionInfo"
+			}
 		},
 		{
 			"$type": "portlet",
-			"title": "title_e480d106-22c9-413c-8d32-55eaac6654eb",
+			"code": "S_TOOLS",
+			"title": "title_672a9073-19a8-43e4-9581-e1b4de993e69",
 			"type": "$menu",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
+			"endpoint": null,
 			"items": [
-				"S_IMPORT_TOOL",
-				"S_SEARCH_ADMIN",
-				"S_SESSIONS"
-			]
+				{
+					"code": "S_IMPORT_TOOL"
+				},
+				{
+					"code": "S_SEARCH_ADMIN"
+				},
+				{
+					"code": "S_SESSIONS"
+				}
+			],
+			"pageItem": null
 		},
 		{
 			"$type": "dashboardDef",
-			"title": "title_fb8b84a6-1315-4f74-9356-3c19cfa92442",
+			"title": "title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e",
 			"dashboardName": "home",
+			"mobile": false,
 			"variants": [
 				{
-					"title": "title_bb6e679d-48f3-4b08-ab24-99205902685d",
+					"$type": "dashboardVariant",
+					"code": "S_ADMIN",
+					"title": "title_4260a310-7481-4fd3-96f3-60d99a22ceae",
 					"allApplications": false,
-					"roles": [
-						"description_fff55671-255e-4ebb-8a6e-70acac4fda94",
-						"description_26024776-bbff-4be9-9069-d464a68e0659"
-					],
-					"vignettes": [
-						{
-							"allEndpoints": true,
-							"portlet": "title_21438b15-a42a-42e3-8575-7f3e19978460"
-						},
-						{
-							"allEndpoints": true,
-							"portlet": "title_3dd8abdd-8fe9-448a-839d-8cfc5adecdd6"
-						},
-						{
-							"allEndpoints": true,
-							"portlet": "title_7e3f1c45-e185-476d-a79f-558c2cbfc871"
-						},
-						{
-							"allEndpoints": true,
-							"portlet": "title_e480d106-22c9-413c-8d32-55eaac6654eb"
-						}
-					],
+					"isFactory": true,
 					"application": {
 						"application": "syracuse",
 						"contract": "collaboration"
-					}
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_ADMIN"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_COLL"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_PERS"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_TOOLS"
+							},
+							"endpoint": null
+						}
+					],
+					"pageData": null
 				}
 			]
 		}
 	],
 	"$localization": {
 		"en-us": {
-			"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4": "Syracuse administration",
-			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
-			"description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf": "Guest",
-			"description_26024776-bbff-4be9-9069-d464a68e0659": "Super administrator",
-			"title_728329f0-2b82-4c38-be17-8532d0bef211": "Personalizations management",
-			"title_d53a77da-e13b-4de9-97af-81cf178a8a06": "Applications",
-			"description_d53a77da-e13b-4de9-97af-81cf178a8a06": "Applications management interface",
-			"title_c4d1bc21-cd29-4d6b-8144-cc542972e7d5": "Dashboards",
-			"description_c4d1bc21-cd29-4d6b-8144-cc542972e7d5": "Dashboards management interface",
-			"title_77a230ac-ff27-428f-abaf-cf913cd22303": "Documents",
-			"description_77a230ac-ff27-428f-abaf-cf913cd22303": "Document management",
-			"title_54136c76-2d3c-4d07-b114-d5ab85f331e5": "Document tags",
-			"description_54136c76-2d3c-4d07-b114-d5ab85f331e5": "Document tags",
-			"title_ecaca8b0-5f2d-4b3f-98d2-6da1f51c0478": "Friend collaboration servers",
-			"description_ecaca8b0-5f2d-4b3f-98d2-6da1f51c0478": "Friend collaboration servers",
-			"title_26ba887b-e17f-4341-8874-98c000949155": "Import sessions",
-			"description_26ba887b-e17f-4341-8874-98c000949155": "Import sessions",
-			"title_ec104a63-be5b-45ff-a15a-2020b3d21af6": "Import Tool",
-			"description_ec104a63-be5b-45ff-a15a-2020b3d21af6": "Import tool",
-			"title_51adf668-56a8-49cc-8b2d-87cd2d8fc698": "Locales",
-			"description_51adf668-56a8-49cc-8b2d-87cd2d8fc698": "Locales management interface",
-			"title_8b67f891-deaa-4047-8404-b0a4443b9af3": "Menu Categories",
-			"description_8b67f891-deaa-4047-8404-b0a4443b9af3": "Menu categories management interface",
-			"title_27f691bb-113e-401e-bd2e-49129d44372b": "Menu Items",
-			"description_27f691bb-113e-401e-bd2e-49129d44372b": "Menu items management interface",
-			"title_3041a481-af81-4089-9e14-cef772c20b91": "Pages",
-			"description_3041a481-af81-4089-9e14-cef772c20b91": "Pages management interface",
-			"title_2529de11-cc95-478d-8162-8c7f82878e06": "Scheduler",
-			"description_2529de11-cc95-478d-8162-8c7f82878e06": "Scheduler",
-			"title_fdb21b66-8751-4d6d-8180-d30644d637c1": "Search Index Management",
-			"description_fdb21b66-8751-4d6d-8180-d30644d637c1": "Search Index Management",
-			"title_8692f9f1-97a0-45f2-ac63-02f9bcdafd81": "Security profiles",
-			"description_8692f9f1-97a0-45f2-ac63-02f9bcdafd81": "Security profiles",
-			"title_f59453b2-ea94-4101-b8c1-1830e4e37c8b": "Server logs",
-			"description_f59453b2-ea94-4101-b8c1-1830e4e37c8b": "Server logs",
-			"title_b225666a-f050-4673-a4c1-836af0d2ce8e": "Endpoints",
-			"description_b225666a-f050-4673-a4c1-836af0d2ce8e": "Service access endpoints management",
-			"title_fc2863e8-ca21-4e70-ba3c-23cbffc05663": "Volumes",
-			"description_fc2863e8-ca21-4e70-ba3c-23cbffc05663": "Storage volumes",
-			"title_4c7e31fb-2588-4542-ac38-c0452a23bfff": "Syracuse Sessions",
-			"description_4c7e31fb-2588-4542-ac38-c0452a23bfff": "Syracuse Sessions Management",
-			"title_63afb443-845c-47ba-a418-0edb5d02ec0e": "Tags categories",
-			"description_63afb443-845c-47ba-a418-0edb5d02ec0e": "Tags categories",
-			"title_5b05ce46-80d6-423d-9efb-2d9779465697": "Teams",
-			"description_5b05ce46-80d6-423d-9efb-2d9779465697": "Teams management",
-			"title_aa32fac8-28f3-4837-8208-7ba458a0e163": "Groups",
-			"description_aa32fac8-28f3-4837-8208-7ba458a0e163": "User groups management interface",
-			"title_24ecb488-2ce8-4603-8583-0dee3624ac10": "Roles",
-			"description_24ecb488-2ce8-4603-8583-0dee3624ac10": "User roles management interface",
-			"title_b57526b7-c8cb-46cd-b36a-124857f14bea": "Users",
-			"description_b57526b7-c8cb-46cd-b36a-124857f14bea": "Users management interface",
-			"title_91f06067-b958-4858-9f1c-b72d7e0f4be8": "Vignettes",
-			"description_91f06067-b958-4858-9f1c-b72d7e0f4be8": "Vignettes management interface",
-			"title_1a2f900c-4c76-4224-b51e-c2729242373d": "Word templates",
-			"description_1a2f900c-4c76-4224-b51e-c2729242373d": "Word templates",
-			"title_fb71e4fd-9ed7-47d0-af75-7de4286c4214": "X3 Servers",
-			"description_fb71e4fd-9ed7-47d0-af75-7de4286c4214": "X3 Servers management interface",
-			"title_21438b15-a42a-42e3-8575-7f3e19978460": "Syracuse administration",
-			"title_7e3f1c45-e185-476d-a79f-558c2cbfc871": "Syracuse authoring",
-			"title_3dd8abdd-8fe9-448a-839d-8cfc5adecdd6": "Syracuse collaboration",
-			"title_e480d106-22c9-413c-8d32-55eaac6654eb": "Syracuse tools",
-			"title_fb8b84a6-1315-4f74-9356-3c19cfa92442": "Administration dashboard",
-			"title_bb6e679d-48f3-4b08-ab24-99205902685d": "Administration dashboard"
+			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Administration dashboard",
+			"title_4260a310-7481-4fd3-96f3-60d99a22ceae": "Administration dashboard",
+			"title_aa721890-861c-4e45-8732-262549f71038": "Syracuse administration",
+			"title_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications",
+			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications management interface",
+			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Roles",
+			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "User roles management interface",
+			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers",
+			"description_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers management interface",
+			"title_1af1c627-5729-4840-bad2-7fe6a7637343": "Friend collaboration servers",
+			"description_1af1c627-5729-4840-bad2-7fe6a7637343": "Friend collaboration servers",
+			"title_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Scheduler",
+			"description_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Scheduler",
+			"title_37fdda0d-898a-4579-962e-373462b20628": "Endpoints",
+			"description_37fdda0d-898a-4579-962e-373462b20628": "Service access endpoints management",
+			"title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Users",
+			"description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Users management interface",
+			"title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Locales",
+			"description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Locales management interface",
+			"title_34f76310-924e-42be-bef5-94ccbae24a57": "Server logs",
+			"description_34f76310-924e-42be-bef5-94ccbae24a57": "Server logs",
+			"title_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Import sessions",
+			"description_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Import sessions",
+			"title_d2015519-918f-458c-b268-028ec5921f0a": "Security profiles",
+			"description_d2015519-918f-458c-b268-028ec5921f0a": "Security profiles",
+			"title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6": "Syracuse collaboration",
+			"title_94313eb5-d787-4417-9af9-62a27489999f": "Teams",
+			"description_94313eb5-d787-4417-9af9-62a27489999f": "Teams management",
+			"title_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Volumes",
+			"description_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Storage volumes",
+			"title_1054de0b-1a80-417d-a34a-444be76519f4": "Documents",
+			"description_1054de0b-1a80-417d-a34a-444be76519f4": "Document management",
+			"title_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Document tags",
+			"description_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Document tags",
+			"title_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Tags categories",
+			"description_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Tags categories",
+			"title_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Word templates",
+			"description_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Word templates",
+			"title_dacaad25-7d83-420d-a644-bae54c353cc5": "Syracuse authoring",
+			"title_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Pages",
+			"description_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Pages management interface",
+			"title_76c02392-c034-405f-b67a-5fdcd010e948": "Dashboards",
+			"description_76c02392-c034-405f-b67a-5fdcd010e948": "Dashboards management interface",
+			"title_902df049-47cb-4855-960f-e6cf85d59859": "Vignettes",
+			"description_902df049-47cb-4855-960f-e6cf85d59859": "Vignettes management interface",
+			"title_269142c2-fc47-4df6-83d8-9866c6f6c275": "Menu Items",
+			"description_269142c2-fc47-4df6-83d8-9866c6f6c275": "Menu items management interface",
+			"title_780d8a57-d43a-4855-86fc-e429c7b812d3": "Menu Categories",
+			"description_780d8a57-d43a-4855-86fc-e429c7b812d3": "Menu categories management interface",
+			"title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201": "Personalizations management",
+			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Syracuse tools",
+			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import Tool",
+			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import tool",
+			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
+			"description_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
+			"title_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions",
+			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions Management"
 		},
 		"fr-fr": {
-			"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4": "Syracuse administration",
-			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
-			"description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf": "Guest",
-			"description_26024776-bbff-4be9-9069-d464a68e0659": "Super administrator",
-			"title_728329f0-2b82-4c38-be17-8532d0bef211": "Gestion de personalisations",
-			"title_d53a77da-e13b-4de9-97af-81cf178a8a06": "Applications",
-			"description_d53a77da-e13b-4de9-97af-81cf178a8a06": "Gestion des applications",
-			"title_c4d1bc21-cd29-4d6b-8144-cc542972e7d5": "Portails",
-			"description_c4d1bc21-cd29-4d6b-8144-cc542972e7d5": "Gestion des portails",
-			"title_77a230ac-ff27-428f-abaf-cf913cd22303": "Documents",
-			"description_77a230ac-ff27-428f-abaf-cf913cd22303": "Gestion de documents",
-			"title_54136c76-2d3c-4d07-b114-d5ab85f331e5": "Etiquettes de document",
-			"description_54136c76-2d3c-4d07-b114-d5ab85f331e5": "Gestion des etiquettes",
-			"title_ecaca8b0-5f2d-4b3f-98d2-6da1f51c0478": "Serveurs collaboration associés",
-			"description_ecaca8b0-5f2d-4b3f-98d2-6da1f51c0478": "Serveurs collaboration associés",
-			"title_26ba887b-e17f-4341-8874-98c000949155": "Sessions d'import",
-			"description_26ba887b-e17f-4341-8874-98c000949155": "Sessions d'import",
-			"title_ec104a63-be5b-45ff-a15a-2020b3d21af6": "Outil d'import",
-			"description_ec104a63-be5b-45ff-a15a-2020b3d21af6": "Outil d'import",
-			"title_51adf668-56a8-49cc-8b2d-87cd2d8fc698": "Préférences régionnales",
-			"description_51adf668-56a8-49cc-8b2d-87cd2d8fc698": "Gestion des préférences régionales",
-			"title_8b67f891-deaa-4047-8404-b0a4443b9af3": "Catégories de menu",
-			"description_8b67f891-deaa-4047-8404-b0a4443b9af3": "Gestion des catégories de menu",
-			"title_27f691bb-113e-401e-bd2e-49129d44372b": "Entrées de menu",
-			"description_27f691bb-113e-401e-bd2e-49129d44372b": "Gestion des entrées de menu",
-			"title_3041a481-af81-4089-9e14-cef772c20b91": "Pages",
-			"description_3041a481-af81-4089-9e14-cef772c20b91": "Gestion des pages",
-			"title_2529de11-cc95-478d-8162-8c7f82878e06": "Automates",
-			"description_2529de11-cc95-478d-8162-8c7f82878e06": "Automates",
-			"title_fdb21b66-8751-4d6d-8180-d30644d637c1": "Gestion de l'outil de recherche",
-			"description_fdb21b66-8751-4d6d-8180-d30644d637c1": "Gestion de l'outil de recherche",
-			"title_8692f9f1-97a0-45f2-ac63-02f9bcdafd81": "Profiles de sécurité",
-			"description_8692f9f1-97a0-45f2-ac63-02f9bcdafd81": "Profiles de sécurité",
-			"title_f59453b2-ea94-4101-b8c1-1830e4e37c8b": "Traces serveur",
-			"description_f59453b2-ea94-4101-b8c1-1830e4e37c8b": "Traces serveur",
-			"title_b225666a-f050-4673-a4c1-836af0d2ce8e": "Points d'accès",
-			"description_b225666a-f050-4673-a4c1-836af0d2ce8e": "Gestion des points d'accès au services",
-			"title_fc2863e8-ca21-4e70-ba3c-23cbffc05663": "Volumes",
-			"description_fc2863e8-ca21-4e70-ba3c-23cbffc05663": "Volumes de stockage",
-			"title_4c7e31fb-2588-4542-ac38-c0452a23bfff": "Gestion de sessions Syracuse",
-			"description_4c7e31fb-2588-4542-ac38-c0452a23bfff": "Gestion de sessions Syracuse",
-			"title_63afb443-845c-47ba-a418-0edb5d02ec0e": "Categories d'étiquettes de document",
-			"description_63afb443-845c-47ba-a418-0edb5d02ec0e": "Categories d'étiquettes de document",
-			"title_5b05ce46-80d6-423d-9efb-2d9779465697": "Collaborateurs",
-			"description_5b05ce46-80d6-423d-9efb-2d9779465697": "Gestion de collaborateurs",
-			"title_aa32fac8-28f3-4837-8208-7ba458a0e163": "Groupes",
-			"description_aa32fac8-28f3-4837-8208-7ba458a0e163": "Gestion des groupes d'utilisateur",
-			"title_24ecb488-2ce8-4603-8583-0dee3624ac10": "Rôles",
-			"description_24ecb488-2ce8-4603-8583-0dee3624ac10": "Gestion des rôles utilisateur",
-			"title_b57526b7-c8cb-46cd-b36a-124857f14bea": "Utilisateurs",
-			"description_b57526b7-c8cb-46cd-b36a-124857f14bea": "Gestion des utilisateurs",
-			"title_91f06067-b958-4858-9f1c-b72d7e0f4be8": "Vignettes",
-			"description_91f06067-b958-4858-9f1c-b72d7e0f4be8": "Gestion des vignettes",
-			"title_1a2f900c-4c76-4224-b51e-c2729242373d": "Modèles de document Word",
-			"description_1a2f900c-4c76-4224-b51e-c2729242373d": "Modèles de document Word",
-			"title_fb71e4fd-9ed7-47d0-af75-7de4286c4214": "Serveurs X3",
-			"description_fb71e4fd-9ed7-47d0-af75-7de4286c4214": "Gestion des serveurs X3",
-			"title_21438b15-a42a-42e3-8575-7f3e19978460": "Administration Syracuse",
-			"title_7e3f1c45-e185-476d-a79f-558c2cbfc871": "Personnalisation Syracuse",
-			"title_3dd8abdd-8fe9-448a-839d-8cfc5adecdd6": "Espace collaboratif",
-			"title_e480d106-22c9-413c-8d32-55eaac6654eb": "Outils Syracuse",
-			"title_fb8b84a6-1315-4f74-9356-3c19cfa92442": "Menu d'administration",
-			"title_bb6e679d-48f3-4b08-ab24-99205902685d": "Menu d'administration"
+			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Menu d'administration",
+			"title_4260a310-7481-4fd3-96f3-60d99a22ceae": "Menu d'administration",
+			"title_aa721890-861c-4e45-8732-262549f71038": "Administration Syracuse",
+			"title_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications",
+			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Gestion des applications",
+			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Rôles",
+			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Gestion des rôles utilisateur",
+			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Serveurs X3",
+			"description_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Gestion des serveurs X3",
+			"title_1af1c627-5729-4840-bad2-7fe6a7637343": "Serveurs collaboration associés",
+			"description_1af1c627-5729-4840-bad2-7fe6a7637343": "Serveurs collaboration associés",
+			"title_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Automates",
+			"description_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Automates",
+			"title_37fdda0d-898a-4579-962e-373462b20628": "Points d'accès",
+			"description_37fdda0d-898a-4579-962e-373462b20628": "Gestion des points d'accès au services",
+			"title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Utilisateurs",
+			"description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Gestion des utilisateurs",
+			"title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Préférences régionnales",
+			"description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Gestion des préférences régionales",
+			"title_34f76310-924e-42be-bef5-94ccbae24a57": "Traces serveur",
+			"description_34f76310-924e-42be-bef5-94ccbae24a57": "Traces serveur",
+			"title_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Sessions d'import",
+			"description_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Sessions d'import",
+			"title_d2015519-918f-458c-b268-028ec5921f0a": "Profiles de sécurité",
+			"description_d2015519-918f-458c-b268-028ec5921f0a": "Profiles de sécurité",
+			"title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6": "Espace collaboratif",
+			"title_94313eb5-d787-4417-9af9-62a27489999f": "Collaborateurs",
+			"description_94313eb5-d787-4417-9af9-62a27489999f": "Gestion de collaborateurs",
+			"title_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Volumes",
+			"description_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Volumes de stockage",
+			"title_1054de0b-1a80-417d-a34a-444be76519f4": "Documents",
+			"description_1054de0b-1a80-417d-a34a-444be76519f4": "Gestion de documents",
+			"title_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Etiquettes de document",
+			"description_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Gestion des etiquettes",
+			"title_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Categories d'étiquettes de document",
+			"description_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Categories d'étiquettes de document",
+			"title_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Modèles de document Word",
+			"description_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Modèles de document Word",
+			"title_dacaad25-7d83-420d-a644-bae54c353cc5": "Personnalisation Syracuse",
+			"title_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Pages",
+			"description_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Gestion des pages",
+			"title_76c02392-c034-405f-b67a-5fdcd010e948": "Portails",
+			"description_76c02392-c034-405f-b67a-5fdcd010e948": "Gestion des portails",
+			"title_902df049-47cb-4855-960f-e6cf85d59859": "Vignettes",
+			"description_902df049-47cb-4855-960f-e6cf85d59859": "Gestion des vignettes",
+			"title_269142c2-fc47-4df6-83d8-9866c6f6c275": "Entrées de menu",
+			"description_269142c2-fc47-4df6-83d8-9866c6f6c275": "Gestion des entrées de menu",
+			"title_780d8a57-d43a-4855-86fc-e429c7b812d3": "Catégories de menu",
+			"description_780d8a57-d43a-4855-86fc-e429c7b812d3": "Gestion des catégories de menu",
+			"title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201": "Gestion de personalisations",
+			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Outils Syracuse",
+			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
+			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
+			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
+			"description_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
+			"title_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse",
+			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse"
 		}
 	}
 }
