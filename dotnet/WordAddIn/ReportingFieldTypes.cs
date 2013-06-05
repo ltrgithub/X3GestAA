@@ -136,11 +136,11 @@ namespace WordAddIn
                         break;
                     case ReportingFieldTypes.DECIMAL:
                         Decimal d = Decimal.Parse(value);
-                        value = d.ToString(culture);
+                        value = d.ToString("N", culture);
                         break;
                     case ReportingFieldTypes.INTEGER:
                         Int64 i = Int64.Parse(value);
-                        value = i.ToString(culture);
+                        value = i.ToString("N0", culture);
                         break;
                     case ReportingFieldTypes.BOOL:
                         if ("false".Equals(value.ToLower()) || "0".Equals(value.ToLower()))
