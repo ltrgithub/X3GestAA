@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using System.Resources;
+using System.Globalization;
 
 namespace ExcelAddIn
 {
@@ -14,6 +15,8 @@ namespace ExcelAddIn
         public String _title;
         public String _type;
 
+        public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
+
         public String GetTitle() { return ((_title != null) && (_title != "")) ? _title : _name; }
         public object Parse(object value)
         {
@@ -22,7 +25,13 @@ namespace ExcelAddIn
                 case "application/x-date":
                 case "application/x-datetime":
                 case "application/x-time":
+                    if (value.Equals("0000-00-00") || value.Equals("")) // convergence client may send dates like this
+                        return "";
                     return DateTime.Parse((String)value);
+                case "application/x-decimal":
+                    if (value.Equals("")) // convergence client may send dates like this
+                        return "";
+                    return Decimal.Parse((String)value, decimalFormat);
                 default:
                     return value;
             }
@@ -401,6 +410,7 @@ namespace ExcelAddIn
                     return false;
                 //
                 Dictionary<string, object[,]> _data = new Dictionary<string, object[,]>();
+                Dictionary<string, string> _type = new Dictionary<string, string>();
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
                     object[,] _colData = new object[resources.Length, 1];
@@ -425,6 +435,7 @@ namespace ExcelAddIn
                             if (res[col].GetType().IsArray)
                             {
                                 object fieldValue = _fields[col].Parse(((object[])res[col])[0]);
+                                _type[fieldName] = _fields[col]._type;
                                 if (fieldValue != null)
                                 {
                                     _data[fieldName][r, 0] = fieldValue;
@@ -435,6 +446,7 @@ namespace ExcelAddIn
                             else
                             {
                                 _data[fieldName][r, 0] = _fields[col].Parse(res[col]);
+                                _type[fieldName] = _fields[col]._type;
                             }
                         }
                     }
@@ -449,12 +461,12 @@ namespace ExcelAddIn
                     // but on some PCs this is not working, so the format for type "date" is applied for safty
                     if (resources.Length > 0)
                     {
-                        object colData = _data[namedRange.Key];
-                        if ((((object[,]) colData) [0, 0]) is DateTime)
+                        if (_type.ContainsKey(namedRange.Key) && _data.ContainsKey(namedRange.Key))
                         {
+                            object colData = _data[namedRange.Key];
+                            string colType = _type[namedRange.Key];
                             Range fmt = activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column], activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]];
-                            // The pattern m/d/yyyy always sets the date pattern of the current system locale, not to the pattern that is given in the string
-                            fmt.NumberFormat = "m/d/yyyy";
+                            applyFormat(fmt, colType, colData);
                         }
                     }
                 }
@@ -464,6 +476,24 @@ namespace ExcelAddIn
             finally
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = saveScreenUpd;
+            }
+        }
+
+        private void applyFormat(Range colRange, string _type, object colData)
+        {
+            switch (_type)
+            {
+                case "application/x-date":
+                case "application/x-datetime":
+                case "application/x-time":
+                    colRange.NumberFormat = "m/d/yyyy";
+                    break;
+                case "application/x-decimal":
+                    colRange.NumberFormat = "0.00";
+                    break;
+                case "application/x-integer":
+                    colRange.NumberFormat = "0";
+                    break;
             }
         }
         public bool DeleteTable(String datasourceName, Boolean updateDocumentDatasources = false)

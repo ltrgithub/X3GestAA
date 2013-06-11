@@ -18,8 +18,9 @@ namespace ExcelAddIn
         {
             taskPane = Globals.ThisAddIn.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
-            taskPane.Visible = true;
-            checkBox1.Checked = true;
+            Globals.ThisAddIn.ReadPreferences();
+            taskPane.Visible = Globals.ThisAddIn.GetPrefShowPanel();
+            checkBox1.Checked = Globals.ThisAddIn.GetPrefShowPanel();
         }
 
         private void checkBoxShowPane_Click(object sender, RibbonControlEventArgs e)
@@ -88,6 +89,7 @@ namespace ExcelAddIn
             {
                 Globals.Ribbons.Ribbon.checkBox1.Checked = false;
             }
+            Globals.ThisAddIn.SetPrefShowPanel(taskPane.Visible);
         }
     }
 }

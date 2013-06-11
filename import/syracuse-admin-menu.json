@@ -1,727 +1,954 @@
 {
 	"$prototypes": {
-		"menuItem": {
-			"$key": "code",
-			"$value": "title.en-US",
-			"application":{
-				"$key": ["application", "contract"]
-			},
-			"representationRef": {
-				"application": {
-					"$key": ["application", "contract"]
-				}
-			}
-		},
-		"portlet": {
-			"$key": "title.en-US",
-			"application":{
-				"$key": ["application", "contract"]
-			},
-			"items":{
-				"$key": "code"
-			}
-		},
 		"dashboardDef": {
-			"$key": "title.en-US",
-			"variants":{
-				"$key": "title.en-US",
-				"vignettes":{
-					"$key": ["portlet", "endpoint"],
+			"$key": "dashboardName",
+			"variants": {
+				"$key": "code",
+				"application": {
+					"$key": [
+						"application",
+						"contract"
+					]
+				},
+				"vignettes": {
+					"$key": [
+						"portlet",
+						"endpoint"
+					],
 					"portlet": {
-						"$key": "title.en-US"
+						"$key": "code",
+						"application": {
+							"$key": [
+								"application",
+								"contract"
+							]
+						},
+						"endpoint": {
+							"$key": "dataset"
+						},
+						"items": {
+							"$key": "code",
+							"application": {
+								"$key": [
+									"application",
+									"contract"
+								]
+							},
+							"endpoint": {
+								"$key": "dataset"
+							},
+							"representationRef": {},
+							"$localized": [
+								"title",
+								"description"
+							]
+						},
+						"pageItem": {
+							"$key": "code"
+						},
+						"$localized": [
+							"title",
+							"description"
+						]
 					},
 					"endpoint": {
-						"$key": "description"
+						"$key": "dataset"
 					}
 				},
-				"roles": {
-					"$key": "description"
+				"pageData": {
+					"$key": "code"
 				},
-				"application":{
-					"$key": ["application", "contract"]
-				}
-			}
-		}	
-	},
-	"$items": [{
-		"$type": "menuItem",
-		"code": "S_APPLICATIONS",
-		"title": {
-			"en-US": "Applications",
-			"fr-FR": "Applications"
-		},
-		"description": {
-			"en-US": "Applications management interface",
-			"fr-FR": "Gestion des applications"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "applications",
-			"representation": "application"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_ROLES",
-		"title": {
-			"en-US": "Roles",
-			"fr-FR": "Rôles"
-		},
-		"description": {
-			"en-US": "User roles management interface",
-			"fr-FR": "Gestion des rôles utilisateur"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "roles",
-			"representation": "role"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_SECURITY_PROFILES",
-		"title": {
-			"en-US": "Security profiles",
-			"fr-FR": "Profiles de sécurité"
-		},
-		"description": {
-			"en-US": "Security profiles",
-			"fr-FR": "Profiles de sécurité"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "securityProfiles",
-			"representation": "securityProfile"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_X3_SERVERS", 
-		"title": {
-			"en-US": "X3 Servers",
-			"fr-FR": "Serveurs X3"
-		},
-		"description": {
-			"en-US": "X3 Servers management interface",
-			"fr-FR": "Gestion des serveurs X3"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "x3servers",
-			"representation": "x3server"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_FRIEND_SERVERS",
-		"title": {
-			"en-US": "Friend collaboration servers",
-			"fr-FR": "Serveurs collaboration associés"
-		},
-		"description": {
-			"en-US": "Friend collaboration servers",
-			"fr-FR": "Serveurs collaboration associés"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "friendServers",
-			"representation": "friendServer"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_ENDPOINTS",
-		"title": {
-			"en-US": "Endpoints",
-			"fr-FR": "Points d'accès"
-		},
-		"description": {
-			"en-US": "Service access endpoints management",
-			"fr-FR": "Gestion des points d'accès au services"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "endPoints",
-			"representation": "endPoint"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_GROUPES",
-		"title": {
-			"en-US": "Groups",
-			"fr-FR": "Groupes"
-		},
-		"description": {
-			"en-US": "User groups management interface",
-			"fr-FR": "Gestion des groupes d'utilisateur"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "groups",
-			"representation": "group"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_USERS",
-		"title": {
-			"en-US": "Users",
-			"fr-FR": "Utilisateurs"
-		},
-		"description": {
-			"en-US": "Users management interface",
-			"fr-FR": "Gestion des utilisateurs"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "users",
-			"representation": "user"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_LOCALES",
-		"title": {
-			"en-US": "Locales",
-			"fr-FR": "Préférences régionnales"
-		},
-		"description": {
-			"en-US": "Locales management interface",
-			"fr-FR": "Gestion des préférences régionales"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "localePreferences",
-			"representation": "localePreference"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_PAGES",
-		"title": {
-			"en-US": "Pages",
-			"fr-FR": "Pages"
-		},
-		"description": {
-			"en-US": "Pages management interface",
-			"fr-FR": "Gestion des pages"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "pageDefs",
-			"representation": "pageDef"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_DASHBOARDS",
-		"title": {
-			"en-US": "Dashboards",
-			"fr-FR": "Portails"
-		},
-		"description": {
-			"en-US": "Dashboards management interface",
-			"fr-FR": "Gestion des portails"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "dashboardDefs",
-			"representation": "dashboardDef"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_VIGNETTES",
-		"title": {
-			"en-US": "Vignettes",
-			"fr-FR": "Vignettes"
-		},
-		"description": {
-			"en-US": "Vignettes management interface",
-			"fr-FR": "Gestion des vignettes"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "portlets",
-			"representation": "portlet"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_MENU_ITEMS",
-		"title": {
-			"en-US": "Menu Items",
-			"fr-FR": "Entrées de menu"
-		},
-		"description": {
-			"en-US": "Menu items management interface",
-			"fr-FR": "Gestion des entrées de menu"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "menuItems",
-			"representation": "menuItem"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_MENU_CATEGORIES",
-		"title": {
-			"en-US": "Menu Categories",
-			"fr-FR": "Catégories de menu"
-		},
-		"description": {
-			"en-US": "Menu categories management interface",
-			"fr-FR": "Gestion des catégories de menu"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "menuCategories",
-			"representation": "menuCategory"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_PERS_MNGT",
-		"title": {
-			"en-US": "Personalizations management",
-			"fr-FR": "Gestion de personalisations"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"entity": "personalizationManagements",
-			"representation": "personalizationManagement"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_IMPORT_TOOL",
-		"title": {
-			"en-US": "Import Tool",
-			"fr-FR": "Outil d'import"
-		},
-		"description": {
-			"en-US": "Import tool",
-			"fr-FR": "Outil d'import"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "importTools",
-			"representation": "importTool"
-		},
-		"facet": "$create"
-	},{
-		"$type": "menuItem",
-		"code": "S_SEARCH_ADMIN",
-		"title": {
-			"en-US": "Search Index Management",
-			"fr-FR": "Gestion de l'outil de recherche"
-		},
-		"description": {
-			"en-US": "Search Index Management",
-			"fr-FR": "Gestion de l'outil de recherche"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "searchAdmins",
-			"representation": "searchAdmin"
-		},
-		"facet": "$create"
-	},{
-		"$type": "menuItem",
-		"code": "S_SESSIONS",
-		"title": {
-			"en-US": "Syracuse Sessions",
-			"fr-FR": "Gestion de sessions Syracuse"
-		},
-		"description": {
-			"en-US": "Syracuse Sessions Management",
-			"fr-FR": "Gestion de sessions Syracuse"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "sessionInfos",
-			"representation": "sessionInfo"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_AUTOMATES",
-		"title": {
-			"en-US": "Scheduler",
-			"fr-FR": "Automates"
-		},
-		"description": {
-			"en-US": "Scheduler",
-			"fr-FR": "Automates"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "automates",
-			"representation": "automate"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_SERVER_LOGS",
-		"title": {
-			"en-US": "Server logs",
-			"fr-FR": "Traces serveur"
-		},
-		"description": {
-			"en-US": "Server logs",
-			"fr-FR": "Traces serveur"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "serverLogs",
-			"representation": "serverLog"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_IMPORT_SESSIONS",
-		"title": {
-			"en-US": "Import sessions",
-			"fr-FR": "Sessions d'import"
-		},
-		"description": {
-			"en-US": "Import sessions",
-			"fr-FR": "Sessions d'import"
-		},
-		"linkType": "$representation",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "importSessions",
-			"representation": "importSession"
-		},
-		"facet": "$query"
-	},{
-		"$type": "portlet",
-		"title": {
-			"en-US": "Syracuse administration",
-			"fr-FR": "Administration Syracuse"
-		},
-		"description": {
-			"en-US": "Syracuse administration pages",
-			"fr-FR": "Menus d'administration Syracuse"
-		},
-		"type": "$menu",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"items": ["S_APPLICATIONS", "S_ROLES", "S_X3_SERVERS", "S_FRIEND_SERVERS", "S_AUTOMATES", "S_ENDPOINTS", "S_GROUPS", "S_USERS", "S_LOCALES", "S_SERVER_LOGS", "S_IMPORT_SESSIONS", "S_SECURITY_PROFILES"]
-	},{
-		"$type": "portlet",
-		"title": {
-			"en-US": "Syracuse authoring",
-			"fr-FR": "Personnalisation Syracuse"
-		},
-		"description": {
-			"en-US": "Syracuse authoring tools",
-			"fr-FR": "Outils de personnalisation Syracuse"
-		},
-		"type": "$menu",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"items": ["S_PAGES", "S_DASHBOARDS", "S_VIGNETTES", "S_MENU_ITEMS", "S_MENU_CATEGORIES", "S_PERS_MNGT"]
-	},{
-		"$type": "portlet",
-		"title": {
-			"en-US": "Syracuse tools",
-			"fr-FR": "Outils Syracuse"
-		},
-		"description": {
-			"en-US": "Syracuse tools",
-			"fr-FR": "Outils Syracuse"
-		},
-		"type": "$menu",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"items": ["S_IMPORT_TOOL", "S_SEARCH_ADMIN", "S_SESSIONS"]
-	},{
-		"$type": "menuItem",
-		"code": "S_TEAMS",
-		"title": {
-			"en-US": "Teams",
-			"fr-FR": "Collaborateurs"
-		},
-		"description": {
-			"en-US": "Teams management",
-			"fr-FR": "Gestion de collaborateurs"
-		},
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "teams",
-			"representation": "team"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_VOLUMES",
-		"title": {
-			"en-US": "Volumes",
-			"fr-FR": "Volumes"
-		},
-		"description": {
-			"en-US": "Storage volumes",
-			"fr-FR": "Volumes de stockage"
-		},
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "storageVolumes",
-			"representation": "storageVolume"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_DOCUMENTS",
-		"title": {
-			"en-US": "Documents",
-			"fr-FR": "Documents"
-		},
-		"description": {
-			"en-US": "Document management",
-			"fr-FR": "Gestion de documents"
-		},
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "documents",
-			"representation": "document"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_DOCUMENT_TAGS",
-		"title": {
-			"en-US": "Document tags",
-			"fr-FR": "Etiquettes de document"
-		},
-		"description": {
-			"en-US": "Document tags",
-			"fr-FR": "Gestion des etiquettes"
-		},
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "documentTags",
-			"representation": "documentTag"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_TAG_CATEGORIES",
-		"title": {
-			"en-US": "Tags categories",
-			"fr-FR": "Categories d'étiquettes de document"
-		},
-		"description": {
-			"en-US": "Tags categories",
-			"fr-FR": "Categories d'étiquettes de document"
-		},
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "documentTagCategories",
-			"representation": "documentTagCategory"
-		},
-		"facet": "$query"
-	},{
-		"$type": "menuItem",
-		"code": "S_WORD_TEMPLATES",
-		"title": {
-			"en-US": "Word templates",
-			"fr-FR": "Modèles de document Word"
-		},
-		"description": {
-			"en-US": "Word templates",
-			"fr-FR": "Modèles de document Word"
-		},
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"representationRef": {
-			"application": { "application": "syracuse", "contract": "collaboration" },
-			"entity": "msoWordTemplateDocuments",
-			"representation": "msoWordTemplateDocument"
-		},
-		"facet": "$query"
-	},{
-		"$type": "portlet",
-		"title": {
-			"en-US": "Syracuse collaboration",
-			"fr-FR": "Espace collaboratif"
-		},
-		"description": {
-			"en-US": "Syracuse collaboration",
-			"fr-FR": "Espace collaboratif"
-		},
-		"type": "$menu",
-		"application": {
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		"items": ["S_TEAMS", "S_VOLUMES", "S_DOCUMENTS", "S_DOCUMENT_TAGS", "S_TAG_CATEGORIES", "S_WORD_TEMPLATES"]
-	},{
-		"$type": "dashboardDef",
-		"title": {
-			"en-US": "Administration dashboard",
-			"fr-FR": "Menu d'administration"
-		},
-		"dashboardName": "home",
-		"variants": [{
-			"title": {
-				"en-US": "Administration dashboard",
-				"fr-FR": "Menu d'administration"
+				"$localized": [
+					"title",
+					"description"
+				]
 			},
-			"roles": ["Super administrator", "Endpoint administrator"],		
-			"allApplications": false,
+			"$localized": [
+				"title",
+				"description"
+			]
+		},
+		"portlet": {
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"endpoint": {
+				"$key": "dataset"
+			},
+			"items": {
+				"$key": "code",
+				"application": {
+					"$key": [
+						"application",
+						"contract"
+					]
+				},
+				"endpoint": {
+					"$key": "dataset"
+				},
+				"representationRef": {},
+				"$localized": [
+					"title",
+					"description"
+				]
+			},
+			"pageItem": {
+				"$key": "code"
+			},
+			"$localized": [
+				"title",
+				"description"
+			]
+		},
+		"menuItem": {
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"endpoint": {
+				"$key": "dataset"
+			},
+			"representationRef": {},
+			"$localized": [
+				"title",
+				"description"
+			]
+		}
+	},
+	"$items": [
+		{
+			"$type": "menuItem",
+			"code": "S_APPLICATIONS",
+			"title": "title_4f395232-d90b-4b8e-817c-50054f8adb42",
+			"description": "description_4f395232-d90b-4b8e-817c-50054f8adb42",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
 			"application": {
 				"application": "syracuse",
 				"contract": "collaboration"
 			},
-			"vignettes": [{
-				"portlet": "Syracuse administration",
-				"allEndpoints": true
-			},{
-				"portlet": "Syracuse collaboration",
-				"allEndpoints": true
-			},{
-				"portlet": "Syracuse authoring",
-				"allEndpoints": true
-			},{
-				"portlet": "Syracuse tools",
-				"allEndpoints": true
-			}]
-		}]
-	}	
-	]
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "applications",
+				"representation": "application"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_ROLES",
+			"title": "title_4b79dea0-27af-427c-bc39-299ca3a2e6e1",
+			"description": "description_4b79dea0-27af-427c-bc39-299ca3a2e6e1",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "roles",
+				"representation": "role"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_X3_SERVERS",
+			"title": "title_608a8754-a0f8-4215-b82a-9a4b67622dc9",
+			"description": "description_608a8754-a0f8-4215-b82a-9a4b67622dc9",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "x3servers",
+				"representation": "x3server"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_FRIEND_SERVERS",
+			"title": "title_1af1c627-5729-4840-bad2-7fe6a7637343",
+			"description": "description_1af1c627-5729-4840-bad2-7fe6a7637343",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "friendServers",
+				"representation": "friendServer"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_AUTOMATES",
+			"title": "title_13c75fe9-a9f4-4d64-9f68-aff66b144683",
+			"description": "description_13c75fe9-a9f4-4d64-9f68-aff66b144683",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "automates",
+				"representation": "automate"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_ENDPOINTS",
+			"title": "title_37fdda0d-898a-4579-962e-373462b20628",
+			"description": "description_37fdda0d-898a-4579-962e-373462b20628",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "endPoints",
+				"representation": "endPoint"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_USERS",
+			"title": "title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec",
+			"description": "description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "users",
+				"representation": "user"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_LOCALES",
+			"title": "title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b",
+			"description": "description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "localePreferences",
+				"representation": "localePreference"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SERVER_LOGS",
+			"title": "title_34f76310-924e-42be-bef5-94ccbae24a57",
+			"description": "description_34f76310-924e-42be-bef5-94ccbae24a57",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "serverLogs",
+				"representation": "serverLog"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_IMPORT_SESSIONS",
+			"title": "title_26222845-f2dd-41be-9d5e-32ec5592c8cd",
+			"description": "description_26222845-f2dd-41be-9d5e-32ec5592c8cd",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "importSessions",
+				"representation": "importSession"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SECURITY_PROFILES",
+			"title": "title_d2015519-918f-458c-b268-028ec5921f0a",
+			"description": "description_d2015519-918f-458c-b268-028ec5921f0a",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "securityProfiles",
+				"representation": "securityProfile"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "S_ADMIN",
+			"title": "title_aa721890-861c-4e45-8732-262549f71038",
+			"type": "$menu",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "S_APPLICATIONS"
+				},
+				{
+					"code": "S_ROLES"
+				},
+				{
+					"code": "S_X3_SERVERS"
+				},
+				{
+					"code": "S_FRIEND_SERVERS"
+				},
+				{
+					"code": "S_AUTOMATES"
+				},
+				{
+					"code": "S_ENDPOINTS"
+				},
+				{
+					"code": "S_USERS"
+				},
+				{
+					"code": "S_LOCALES"
+				},
+				{
+					"code": "S_SERVER_LOGS"
+				},
+				{
+					"code": "S_IMPORT_SESSIONS"
+				},
+				{
+					"code": "S_SECURITY_PROFILES"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_TEAMS",
+			"title": "title_94313eb5-d787-4417-9af9-62a27489999f",
+			"description": "description_94313eb5-d787-4417-9af9-62a27489999f",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "teams",
+				"representation": "team"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_VOLUMES",
+			"title": "title_5104c829-a525-43ea-a7d5-99c4fe78edb0",
+			"description": "description_5104c829-a525-43ea-a7d5-99c4fe78edb0",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "storageVolumes",
+				"representation": "storageVolume"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_DOCUMENTS",
+			"title": "title_1054de0b-1a80-417d-a34a-444be76519f4",
+			"description": "description_1054de0b-1a80-417d-a34a-444be76519f4",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "documents",
+				"representation": "document"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_DOCUMENT_TAGS",
+			"title": "title_8ab01f1b-3760-4224-8b96-34a0af3c47e4",
+			"description": "description_8ab01f1b-3760-4224-8b96-34a0af3c47e4",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "documentTags",
+				"representation": "documentTag"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_TAG_CATEGORIES",
+			"title": "title_b93b5cd5-2f10-4204-ba2c-b695d172e7c5",
+			"description": "description_b93b5cd5-2f10-4204-ba2c-b695d172e7c5",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "documentTagCategories",
+				"representation": "documentTagCategory"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_WORD_TEMPLATES",
+			"title": "title_138dc4d0-b5a6-428d-bab7-812a55a0342a",
+			"description": "description_138dc4d0-b5a6-428d-bab7-812a55a0342a",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "msoWordTemplateDocuments",
+				"representation": "msoWordTemplateDocument"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "S_COLL",
+			"title": "title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6",
+			"type": "$menu",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "S_TEAMS"
+				},
+				{
+					"code": "S_VOLUMES"
+				},
+				{
+					"code": "S_DOCUMENTS"
+				},
+				{
+					"code": "S_DOCUMENT_TAGS"
+				},
+				{
+					"code": "S_TAG_CATEGORIES"
+				},
+				{
+					"code": "S_WORD_TEMPLATES"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_PAGES",
+			"title": "title_254915a4-d18e-4f37-b4e6-bb0bfd9d177b",
+			"description": "description_254915a4-d18e-4f37-b4e6-bb0bfd9d177b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "pageDefs",
+				"representation": "pageDef"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_DASHBOARDS",
+			"title": "title_76c02392-c034-405f-b67a-5fdcd010e948",
+			"description": "description_76c02392-c034-405f-b67a-5fdcd010e948",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "dashboardDefs",
+				"representation": "dashboardDef"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_VIGNETTES",
+			"title": "title_902df049-47cb-4855-960f-e6cf85d59859",
+			"description": "description_902df049-47cb-4855-960f-e6cf85d59859",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "portlets",
+				"representation": "portlet"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_MENU_ITEMS",
+			"title": "title_269142c2-fc47-4df6-83d8-9866c6f6c275",
+			"description": "description_269142c2-fc47-4df6-83d8-9866c6f6c275",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "menuItems",
+				"representation": "menuItem"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_MENU_CATEGORIES",
+			"title": "title_780d8a57-d43a-4855-86fc-e429c7b812d3",
+			"description": "description_780d8a57-d43a-4855-86fc-e429c7b812d3",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "menuCategories",
+				"representation": "menuCategory"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_PERS_MNGT",
+			"title": "title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "personalizationManagements",
+				"representation": "personalizationManagement"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "S_PERS",
+			"title": "title_dacaad25-7d83-420d-a644-bae54c353cc5",
+			"type": "$menu",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "S_PAGES"
+				},
+				{
+					"code": "S_DASHBOARDS"
+				},
+				{
+					"code": "S_VIGNETTES"
+				},
+				{
+					"code": "S_MENU_ITEMS"
+				},
+				{
+					"code": "S_MENU_CATEGORIES"
+				},
+				{
+					"code": "S_PERS_MNGT"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_IMPORT_TOOL",
+			"title": "title_1b023bbd-1526-4e3b-b496-6357a2eee2be",
+			"description": "description_1b023bbd-1526-4e3b-b496-6357a2eee2be",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "importTools",
+				"representation": "importTool"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SEARCH_ADMIN",
+			"title": "title_d2f48394-9010-407d-992f-e57a7313b87b",
+			"description": "description_d2f48394-9010-407d-992f-e57a7313b87b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "searchAdmins",
+				"representation": "searchAdmin"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SESSIONS",
+			"title": "title_15853b1a-121a-4407-9c51-8e5e0f884cbe",
+			"description": "description_15853b1a-121a-4407-9c51-8e5e0f884cbe",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "sessionInfos",
+				"representation": "sessionInfo"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "S_TOOLS",
+			"title": "title_672a9073-19a8-43e4-9581-e1b4de993e69",
+			"type": "$menu",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "S_IMPORT_TOOL"
+				},
+				{
+					"code": "S_SEARCH_ADMIN"
+				},
+				{
+					"code": "S_SESSIONS"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "dashboardDef",
+			"title": "title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e",
+			"dashboardName": "home",
+			"mobile": false,
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "S_ADMIN",
+					"title": "title_4260a310-7481-4fd3-96f3-60d99a22ceae",
+					"allApplications": false,
+					"isFactory": true,
+					"application": {
+						"application": "syracuse",
+						"contract": "collaboration"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_ADMIN"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_COLL"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_PERS"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "S_TOOLS"
+							},
+							"endpoint": null
+						}
+					],
+					"pageData": null
+				}
+			]
+		}
+	],
+	"$localization": {
+		"en-us": {
+			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Administration dashboard",
+			"title_4260a310-7481-4fd3-96f3-60d99a22ceae": "Administration dashboard",
+			"title_aa721890-861c-4e45-8732-262549f71038": "Syracuse administration",
+			"title_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications",
+			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications management interface",
+			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Roles",
+			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "User roles management interface",
+			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers",
+			"description_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers management interface",
+			"title_1af1c627-5729-4840-bad2-7fe6a7637343": "Friend collaboration servers",
+			"description_1af1c627-5729-4840-bad2-7fe6a7637343": "Friend collaboration servers",
+			"title_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Scheduler",
+			"description_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Scheduler",
+			"title_37fdda0d-898a-4579-962e-373462b20628": "Endpoints",
+			"description_37fdda0d-898a-4579-962e-373462b20628": "Service access endpoints management",
+			"title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Users",
+			"description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Users management interface",
+			"title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Locales",
+			"description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Locales management interface",
+			"title_34f76310-924e-42be-bef5-94ccbae24a57": "Server logs",
+			"description_34f76310-924e-42be-bef5-94ccbae24a57": "Server logs",
+			"title_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Import sessions",
+			"description_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Import sessions",
+			"title_d2015519-918f-458c-b268-028ec5921f0a": "Security profiles",
+			"description_d2015519-918f-458c-b268-028ec5921f0a": "Security profiles",
+			"title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6": "Syracuse collaboration",
+			"title_94313eb5-d787-4417-9af9-62a27489999f": "Teams",
+			"description_94313eb5-d787-4417-9af9-62a27489999f": "Teams management",
+			"title_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Volumes",
+			"description_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Storage volumes",
+			"title_1054de0b-1a80-417d-a34a-444be76519f4": "Documents",
+			"description_1054de0b-1a80-417d-a34a-444be76519f4": "Document management",
+			"title_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Document tags",
+			"description_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Document tags",
+			"title_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Tags categories",
+			"description_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Tags categories",
+			"title_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Word templates",
+			"description_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Word templates",
+			"title_dacaad25-7d83-420d-a644-bae54c353cc5": "Syracuse authoring",
+			"title_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Pages",
+			"description_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Pages management interface",
+			"title_76c02392-c034-405f-b67a-5fdcd010e948": "Dashboards",
+			"description_76c02392-c034-405f-b67a-5fdcd010e948": "Dashboards management interface",
+			"title_902df049-47cb-4855-960f-e6cf85d59859": "Vignettes",
+			"description_902df049-47cb-4855-960f-e6cf85d59859": "Vignettes management interface",
+			"title_269142c2-fc47-4df6-83d8-9866c6f6c275": "Menu Items",
+			"description_269142c2-fc47-4df6-83d8-9866c6f6c275": "Menu items management interface",
+			"title_780d8a57-d43a-4855-86fc-e429c7b812d3": "Menu Categories",
+			"description_780d8a57-d43a-4855-86fc-e429c7b812d3": "Menu categories management interface",
+			"title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201": "Personalizations management",
+			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Syracuse tools",
+			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import Tool",
+			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import tool",
+			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
+			"description_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
+			"title_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions",
+			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions Management"
+		},
+		"fr-fr": {
+			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Menu d'administration",
+			"title_4260a310-7481-4fd3-96f3-60d99a22ceae": "Menu d'administration",
+			"title_aa721890-861c-4e45-8732-262549f71038": "Administration Syracuse",
+			"title_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications",
+			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Gestion des applications",
+			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Rôles",
+			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Gestion des rôles utilisateur",
+			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Serveurs X3",
+			"description_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Gestion des serveurs X3",
+			"title_1af1c627-5729-4840-bad2-7fe6a7637343": "Serveurs collaboration associés",
+			"description_1af1c627-5729-4840-bad2-7fe6a7637343": "Serveurs collaboration associés",
+			"title_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Automates",
+			"description_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Automates",
+			"title_37fdda0d-898a-4579-962e-373462b20628": "Points d'accès",
+			"description_37fdda0d-898a-4579-962e-373462b20628": "Gestion des points d'accès au services",
+			"title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Utilisateurs",
+			"description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Gestion des utilisateurs",
+			"title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Préférences régionnales",
+			"description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Gestion des préférences régionales",
+			"title_34f76310-924e-42be-bef5-94ccbae24a57": "Traces serveur",
+			"description_34f76310-924e-42be-bef5-94ccbae24a57": "Traces serveur",
+			"title_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Sessions d'import",
+			"description_26222845-f2dd-41be-9d5e-32ec5592c8cd": "Sessions d'import",
+			"title_d2015519-918f-458c-b268-028ec5921f0a": "Profiles de sécurité",
+			"description_d2015519-918f-458c-b268-028ec5921f0a": "Profiles de sécurité",
+			"title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6": "Espace collaboratif",
+			"title_94313eb5-d787-4417-9af9-62a27489999f": "Collaborateurs",
+			"description_94313eb5-d787-4417-9af9-62a27489999f": "Gestion de collaborateurs",
+			"title_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Volumes",
+			"description_5104c829-a525-43ea-a7d5-99c4fe78edb0": "Volumes de stockage",
+			"title_1054de0b-1a80-417d-a34a-444be76519f4": "Documents",
+			"description_1054de0b-1a80-417d-a34a-444be76519f4": "Gestion de documents",
+			"title_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Etiquettes de document",
+			"description_8ab01f1b-3760-4224-8b96-34a0af3c47e4": "Gestion des etiquettes",
+			"title_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Categories d'étiquettes de document",
+			"description_b93b5cd5-2f10-4204-ba2c-b695d172e7c5": "Categories d'étiquettes de document",
+			"title_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Modèles de document Word",
+			"description_138dc4d0-b5a6-428d-bab7-812a55a0342a": "Modèles de document Word",
+			"title_dacaad25-7d83-420d-a644-bae54c353cc5": "Personnalisation Syracuse",
+			"title_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Pages",
+			"description_254915a4-d18e-4f37-b4e6-bb0bfd9d177b": "Gestion des pages",
+			"title_76c02392-c034-405f-b67a-5fdcd010e948": "Portails",
+			"description_76c02392-c034-405f-b67a-5fdcd010e948": "Gestion des portails",
+			"title_902df049-47cb-4855-960f-e6cf85d59859": "Vignettes",
+			"description_902df049-47cb-4855-960f-e6cf85d59859": "Gestion des vignettes",
+			"title_269142c2-fc47-4df6-83d8-9866c6f6c275": "Entrées de menu",
+			"description_269142c2-fc47-4df6-83d8-9866c6f6c275": "Gestion des entrées de menu",
+			"title_780d8a57-d43a-4855-86fc-e429c7b812d3": "Catégories de menu",
+			"description_780d8a57-d43a-4855-86fc-e429c7b812d3": "Gestion des catégories de menu",
+			"title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201": "Gestion de personalisations",
+			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Outils Syracuse",
+			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
+			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
+			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
+			"description_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
+			"title_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse",
+			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse"
+		}
+	}
 }

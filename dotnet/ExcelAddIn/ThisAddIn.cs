@@ -9,6 +9,8 @@ using System.Globalization;
 using System.Threading;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Core;
+using System.IO;
+
 
 namespace ExcelAddIn
 {
@@ -60,6 +62,8 @@ namespace ExcelAddIn
         NativeWindow mainHandle = null;
         public bool Aborted = false;
         private ExposedAddInUtilities utilities;
+        public bool prefShowPanel = true;
+        public String prefUrl = null;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -236,6 +240,79 @@ namespace ExcelAddIn
             return utilities;
         }
 
+        internal void SavePreferences()
+        {
+            String path = GetPreferenceFilePath();
+            String[] props = new String[2];
+            props[0] = "Show=" + prefShowPanel;
+            props[1] = "Url=" + prefUrl;  
+            System.IO.StreamWriter file = new System.IO.StreamWriter(path);
+            try
+            {
+                foreach (String s in props)
+                {
+                    file.WriteLine(s);
+                }
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+            file.Close();
+        }
+
+        public void ReadPreferences()
+        {
+            String path = GetPreferenceFilePath();
+            string sContent = "";
+
+            if (File.Exists(path))
+            {
+                StreamReader myFile = new StreamReader(path, System.Text.Encoding.Default);
+                while (!myFile.EndOfStream)
+                {
+                    sContent = myFile.ReadLine();
+                    if (sContent.Equals("Show=False"))
+                    {
+                        prefShowPanel = false;
+                    }
+                    else if (sContent.Substring(0, 4).Equals("Url="))
+                    {
+                        prefUrl = sContent.Substring(4, sContent.Length - 4);
+                    }
+                }
+                myFile.Close();
+            }
+            return;
+        }
+
+        internal string GetPreferenceFilePath()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Excel.X3.settings";
+        }
+        public bool GetPrefShowPanel()
+        {
+            return prefShowPanel;
+        }
+        public void SetPrefShowPanel(Boolean show)
+        {
+            prefShowPanel = show;
+            SavePreferences();
+        }
+        public void SetPrefUrl(String url)
+        {
+            prefUrl = url;
+            SavePreferences();
+        }
+        public String GetPrefUrl()
+        {
+            return prefUrl;
+        }
+
+        public void removeFiles()
+        {
+            String file = GetPreferenceFilePath();
+            File.Delete(file);
+        }
+
+
         #region VSTO generated code
 
         /// <summary>
@@ -301,7 +378,8 @@ namespace ExcelAddIn
 
                     External ext = new External();
                     wb.ActiveSheet.Cells.Clear();
-                    ext.ResizeTable("cvg", proto, data.Length, "");
+
+                    ext.ResizeTable("cvg", proto, 1, "");
                     ext.StartUpdateTable();
                     ext.UpdateTable("cvg", proto, data, 0);
                     ext.EndUpdateTable();
@@ -312,7 +390,7 @@ namespace ExcelAddIn
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
-                        ws.Delete();
+                        ws.Rows.Clear();
                     }
                     return true;
                 }
