@@ -114,7 +114,7 @@ namespace WordAddIn
             }
             return 0;
         }
-        public static string formatValue(string value, ReportingFieldTypes type)
+        public static string formatValue(string value, ReportingFieldTypes type, WordReportingField field = null)
         {
             if (value == null || "".Equals(value))
             {
@@ -136,7 +136,8 @@ namespace WordAddIn
                         break;
                     case ReportingFieldTypes.DECIMAL:
                         Decimal d = Decimal.Parse(value);
-                        value = d.ToString("N", culture);
+                        int scale = (field != null) ? field.scale : 2;
+                        value = d.ToString("N" + scale, culture);
                         break;
                     case ReportingFieldTypes.INTEGER:
                         Int64 i = Int64.Parse(value);
