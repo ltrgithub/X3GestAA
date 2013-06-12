@@ -14,6 +14,7 @@ namespace ExcelAddIn
         public String _name;
         public String _title;
         public String _type;
+        public int? _scale;
 
         public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
 
@@ -410,7 +411,7 @@ namespace ExcelAddIn
                     return false;
                 //
                 Dictionary<string, object[,]> _data = new Dictionary<string, object[,]>();
-                Dictionary<string, string> _type = new Dictionary<string, string>();
+                Dictionary<string, ExcelTablePrototypeField> _protoField = new Dictionary<string, ExcelTablePrototypeField>();
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
                     object[,] _colData = new object[resources.Length, 1];
@@ -435,7 +436,7 @@ namespace ExcelAddIn
                             if (res[col].GetType().IsArray)
                             {
                                 object fieldValue = _fields[col].Parse(((object[])res[col])[0]);
-                                _type[fieldName] = _fields[col]._type;
+                                _protoField[fieldName] = _fields[col];
                                 if (fieldValue != null)
                                 {
                                     _data[fieldName][r, 0] = fieldValue;
@@ -446,7 +447,7 @@ namespace ExcelAddIn
                             else
                             {
                                 _data[fieldName][r, 0] = _fields[col].Parse(res[col]);
-                                _type[fieldName] = _fields[col]._type;
+                                _protoField[fieldName] = _fields[col];
                             }
                         }
                     }
@@ -461,12 +462,11 @@ namespace ExcelAddIn
                     // but on some PCs this is not working, so the format for type "date" is applied for safty
                     if (resources.Length > 0)
                     {
-                        if (_type.ContainsKey(namedRange.Key) && _data.ContainsKey(namedRange.Key))
+                        if (_protoField.ContainsKey(namedRange.Key) && _data.ContainsKey(namedRange.Key))
                         {
                             object colData = _data[namedRange.Key];
-                            string colType = _type[namedRange.Key];
                             Range fmt = activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column], activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]];
-                            applyFormat(fmt, colType, colData);
+                            applyFormat(fmt, _protoField[namedRange.Key], colData);
                         }
                     }
                 }
@@ -479,9 +479,9 @@ namespace ExcelAddIn
             }
         }
 
-        private void applyFormat(Range colRange, string _type, object colData)
+        private void applyFormat(Range colRange, ExcelTablePrototypeField field, object colData)
         {
-            switch (_type)
+            switch (field._type)
             {
                 case "application/x-date":
                 case "application/x-datetime":
@@ -489,7 +489,22 @@ namespace ExcelAddIn
                     colRange.NumberFormat = "m/d/yyyy";
                     break;
                 case "application/x-decimal":
-                    colRange.NumberFormat = "0.00";
+                    string nf = "0.00";
+                    try
+                    {
+                        int scale = field._scale.GetValueOrDefault(2);
+                        if (scale == 0)
+                        {
+                            nf = "0";
+                        }
+                        else if (scale >= 1 && scale <= 16)
+                        {
+                            nf = "0.0000000000000000".Substring(0, 2 + scale);
+                        }
+                    }
+                    catch (Exception) { }
+
+                    colRange.NumberFormat = nf;
                     break;
                 case "application/x-integer":
                     colRange.NumberFormat = "0";
