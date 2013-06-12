@@ -24,6 +24,6 @@ require("streamline").register(config.streamline);
 
 require("syracuse-load/lib/balancer").start(config, function(err) {
 	if (err) {
-		console.log("Error: "+err+" "+err.stack);
+		console.log("Error: "+err.message+" "+err.stack);
 	}
 });
