@@ -77,18 +77,9 @@ namespace WordAddIn
             if (customData != null)
             {
                 String mode = customData.getCreateMode();
-                /* not used any more
-                if ("v6_doc_download".Equals(mode))
-                {
-                    if (customData.isForceRefresh())
-                    {
-                        downloadV6Document(doc, customData);
-                    }
-                }
-                */
                 if ("v6_doc_embedded".Equals(mode))
                 {
-                    commons.extractV6Document(doc, customData);
+                    commons.ExtractV6Document(doc, customData);
                 }
                 if (!"".Equals(customData.getDocumentUrl()))
                 {
@@ -98,14 +89,6 @@ namespace WordAddIn
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
         }
-        /* not used any more
-        void downloadV6Document(Document doc, SyracuseOfficeCustomData customData)
-        {
-            customData.setForceRefresh(false);
-            customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
-        }
-        */
         void on_window_selection_changed(Selection Sel)
         {
             Document doc = getActiveDocument();
