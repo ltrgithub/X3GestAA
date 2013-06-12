@@ -12,6 +12,11 @@ using System.Globalization;
 
 namespace WordAddIn
 {
+    public class WordReportingField
+    {
+        public string type;
+        public int scale;
+    }
     class ReportingUtils
     {
         public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
@@ -222,6 +227,9 @@ namespace WordAddIn
                 Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
 
                 Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
+
+                Dictionary<String, WordReportingField> fieldInfo = BuildFieldInfo((object[])layout["proto"]);
+
                 List<ContentControl> allContentControls = GetAllContentControls(doc);
 
                 Globals.WordAddIn.Application.ScreenUpdating = true;
@@ -237,11 +245,11 @@ namespace WordAddIn
                     ReportingFieldUtil.SetActiveCulture(locale);
                 }
 
-                FillNonCollectionControls(doc, allContentControls, entityData, browserDialog);
+                FillNonCollectionControls(doc, allContentControls, entityData, fieldInfo, browserDialog);
 
                 //long ticks = DateTime.Now.Ticks;
-                
-                FillCollectionControls(doc, entityData, browserDialog, pd);
+
+                FillCollectionControls(doc, entityData, fieldInfo, browserDialog, pd);
 
                 File.Delete(getTransparentImage());
                 //long ticks2 = DateTime.Now.Ticks;
@@ -257,6 +265,46 @@ namespace WordAddIn
             }
 
             Globals.WordAddIn.Application.ScreenUpdating = true;
+        }
+
+        private static Dictionary<String, WordReportingField> BuildFieldInfo(object[] layout)
+        {
+            Dictionary<String, WordReportingField>  fields = new Dictionary<String, WordReportingField>();
+            foreach (Object o in layout)
+            {
+                try
+                {
+                    Dictionary<String, object> box = (Dictionary<String, object>)o;
+                    if (box.ContainsKey("$items"))
+                    {
+                        Dictionary<String, object> items = (Dictionary<String, object>)box["$items"];
+                        String bind = "";
+                        try
+                        {
+                            bind = box["$bind"].ToString() + ".";
+                        }
+                        catch (Exception) { }
+                        foreach (KeyValuePair<String, object> i in items)
+                        {
+                            Dictionary<String, Object> item = (Dictionary<String, Object>)i.Value;
+                            if (!isSupportedType(item))
+                                continue;
+
+                            String type = item["$type"].ToString();
+                            String bind_i = item["$bind"].ToString();
+                            int? scale = (int?)item["$scale"];
+
+                            WordReportingField field = new WordReportingField();
+                            field.type = type;
+                            field.scale = scale.GetValueOrDefault(2);
+                            fields.Add(bind + bind_i, field);
+                        }
+                    }
+                }
+                catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
+            }
+
+            return fields;
         }
 
         private static string parseValue(Dictionary<String, object> entity, string type)
@@ -283,7 +331,7 @@ namespace WordAddIn
             return o.ToString();
         }
 
-        private static void FillNonCollectionControls(Document doc, List<ContentControl> allContentControls, Dictionary<String, object> entityData, BrowserDialog browserDialog)
+        private static void FillNonCollectionControls(Document doc, List<ContentControl> allContentControls, Dictionary<String, object> entityData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog)
         {
             List<ContentControl> simpleCcs = new List<ContentControl>();
             foreach (ContentControl ctrl in allContentControls)
@@ -307,11 +355,11 @@ namespace WordAddIn
                 {
                     propData = (Dictionary<String, object>)entityData[tag.property];
                 }
-                setContentControl(doc, ctrl, propData, tag, entityData, browserDialog);
+                setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog);
             }
         }
 
-        private static void FillCollectionControls(Document doc, Dictionary<String, object> entityData, BrowserDialog browserDialog, ProgressDialog pd)
+        private static void FillCollectionControls(Document doc, Dictionary<String, object> entityData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog, ProgressDialog pd)
         {
             List<Table> ts = GetAllTables(doc);
             int rowsToFill = 0;
@@ -347,7 +395,7 @@ namespace WordAddIn
                 try
                 {
                     TableInfo tableInfo = tableInfos[numInfo++];
-                    FillTableControls(doc, table, tableInfo, browserDialog, pd);
+                    FillTableControls(doc, table, tableInfo, fieldInfo, browserDialog, pd);
                 }
                 catch (Exception e) { MessageBox.Show(e.Message + ":" + e.StackTrace); };
             }
@@ -461,7 +509,7 @@ namespace WordAddIn
         /**
          * Fills all content controls that are in a table and belong to a collection
          */
-        private static void FillTableControls(Document doc, Table table, TableInfo info, BrowserDialog browserDialog, ProgressDialog pd)
+        private static void FillTableControls(Document doc, Table table, TableInfo info, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog, ProgressDialog pd)
         {
             if (info.templateRows.Count <= 0) 
             {
@@ -506,7 +554,7 @@ namespace WordAddIn
                                 if (collectionItem.ContainsKey(t2.property))
                                 {
                                     Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
-                                    setContentControl(doc, cc, entity, t2, null, browserDialog);
+                                    setContentControl(doc, cc, entity, t2, null, fieldInfo, browserDialog);
                                 }
                             }
                         }
@@ -595,39 +643,42 @@ namespace WordAddIn
             return list;
         }
 
-        private static void setContentControl(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, BrowserDialog browserDialog)
+        private static void setContentControl(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog)
         {
+            WordReportingField field = null;
+            try { field = fieldInfo[ti.tag]; }
+            catch (Exception) { };
             if (ctrl.Type == WdContentControlType.wdContentControlPicture)
             {
                 setContentControlImage(doc, ctrl, entity, ti, allData, browserDialog);
             }
             else if (ctrl.Type == WdContentControlType.wdContentControlText)
             {
-                setContentControlText(doc, ctrl, entity, ti, allData);
+                setContentControlText(doc, ctrl, entity, ti, allData, field);
                 addLinkToContentControl(doc, ctrl, entity);
             }
         }
 
-        private static void setContentControlText(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData)
+        private static void setContentControlText(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, WordReportingField field)
         {
             string value = null;
             string type = null;
 
             if (ti.isFormula && "$sum".Equals(ti.formula))
             {
-                value = calculateSum(doc, ctrl, entity, ti, allData);
+                value = calculateSum(doc, ctrl, entity, ti, allData, field);
             }
             else
             {
                 try { type = entity["$type"].ToString(); }
                 catch (Exception) { }
                 value = parseValue(entity, type);
-                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type));
+                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
             }
             ctrl.Range.Text = value;
         }
 
-        private static string calculateSum(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData)
+        private static string calculateSum(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, WordReportingField field)
         {
             try
             {
@@ -644,6 +695,13 @@ namespace WordAddIn
                 if (items == null)
                 {
                     return "<error>";
+                }
+
+
+                int scale = 2;
+                if (propData.ContainsKey("$scale"))
+                {
+                    scale = (int) propData["$scale"];
                 }
 
                 string itemtype = ctrl.Title;
@@ -679,6 +737,7 @@ namespace WordAddIn
                 switch (type)
                 {
                     case ReportingFieldTypes.DECIMAL:
+                        return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type, field);
                     case ReportingFieldTypes.INTEGER:
                         return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type);
                     default:
@@ -876,6 +935,7 @@ namespace WordAddIn
     // <display>  $title or $value (Display title or value of property) - NOT USED YET
     public class TagInfo
     {
+        public string tag;
         public string property;
         public string collection;
         public string display;
@@ -904,6 +964,7 @@ namespace WordAddIn
                     t.formula = "$sum";
                     tag = m.Groups["exp"].Value;
                 }
+                t.tag = tag;
                 i = tag.IndexOf(".");
                 if (i > -1)
                 {
