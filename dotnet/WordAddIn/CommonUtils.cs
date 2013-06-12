@@ -89,9 +89,11 @@ namespace WordAddIn
                 if (locale == null || "".Equals(locale))
                     return;
                 cp = doc.CustomDocumentProperties[DOC_LOCALE_PROPERTY];
-            } catch (Exception) {}
+            }
+            catch (Exception) { }
 
-            try {
+            try
+            {
                 if (cp == null)
                 {
                     doc.CustomDocumentProperties.Add(DOC_LOCALE_PROPERTY, false, Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeString, locale);
@@ -99,7 +101,7 @@ namespace WordAddIn
                 }
                 cp.Value = locale;
             }
-            catch (Exception) {}
+            catch (Exception) { }
         }
 
         public string GetDocumentLocale(Document doc)
@@ -159,7 +161,7 @@ namespace WordAddIn
             Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
         }
 
-        public void extractV6Document(Document doc, SyracuseOfficeCustomData customData)
+        public void ExtractV6Document(Document doc, SyracuseOfficeCustomData customData)
         {
             String documentUrl = customData.getDocumentUrl();
             String serverUrl = customData.getServerUrl();
@@ -172,28 +174,16 @@ namespace WordAddIn
                 File.Delete(tempFile);
                 return;
             }
-            
+
             ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
 
             // Sometimes the browser seems to lock the file a litte bit too long, so do some retries
             // if it fails, a new file name is generated later
-            int tries = 0;
-            while (tries++ < 3)
-            {
-                try
-                {
-                    File.Delete(tempFile);
-                }
-                catch (Exception) {
-                    System.Threading.Thread.Sleep(500);
-                }
-                break;
-            }
-
+            TryDeleteFile(tempFile);
             string ext = ".doc";
             if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
             {
-                ext = "docx";
+                ext = ".docx";
             }
             string newDocumentFile = tempFile;
             while (File.Exists(tempFile))
@@ -211,8 +201,7 @@ namespace WordAddIn
                 }
             }
 
-            Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
-            doc = Globals.WordAddIn.getActiveDocument();
+            doc = Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
             if (doc == null)
             {
                 return;
@@ -227,8 +216,47 @@ namespace WordAddIn
             customData.setForceRefresh(false);
             customData.setCreateMode("v6_doc");
             customData.writeDictionaryToDocument();
+
+            // Save document after metadata was added
+            if (ext == "docx")
+            {
+                doc.Save();
+            }
+            else
+            {
+                // convert to docx if not yet done
+                tempFile = newDocumentFile;
+                newDocumentFile = newDocumentFile.Replace(ext, ".docx");
+                while (File.Exists(newDocumentFile))
+                {
+                    newDocumentFile = "_" + newDocumentFile;
+                }
+                doc.SaveAs2(newDocumentFile, WdSaveFormat.wdFormatDocumentDefault);
+                ((Microsoft.Office.Interop.Word._Document)doc).Close();
+
+                TryDeleteFile(tempFile);
+                doc = Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
+            }
+
             Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
             Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+        }
+
+        private void TryDeleteFile(string file)
+        {
+            int tries = 0;
+            while (tries++ < 3)
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch (Exception)
+                {
+                    System.Threading.Thread.Sleep(500);
+                }
+                break;
+            }
         }
     }
 }
