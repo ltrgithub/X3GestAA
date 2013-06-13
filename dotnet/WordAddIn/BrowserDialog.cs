@@ -11,22 +11,6 @@ using Microsoft.Office.Tools.Word;
 
 namespace WordAddIn
 {
-    // The only one class/object to be referenced from javascript 'external'
-    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class WordDownloadData
-    {
-        public byte[] data;
-        public string errorText;
-        public void setData(byte[] data)
-        {
-            this.data = data;
-        }
-        public void setErrorText(string errorText)
-        {
-            this.errorText = errorText;
-        }
-    }
-
     public partial class BrowserDialog : Form
     {
         public string serverUrl = "";
@@ -131,6 +115,21 @@ namespace WordAddIn
                 global::WordAddIn.Properties.Resources.MSG_ERROR_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             return null;
+        }
+    }
+    // The only one class/object to be referenced from javascript 'external'
+    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
+    public class WordDownloadData
+    {
+        public byte[] data;
+        public string errorText;
+        public void setData(byte[] data)
+        {
+            this.data = data;
+        }
+        public void setErrorText(string errorText)
+        {
+            this.errorText = errorText;
         }
     }
 }
