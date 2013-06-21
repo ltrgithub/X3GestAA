@@ -492,7 +492,7 @@ namespace ExcelAddIn
                     string nf = "0.00";
                     try
                     {
-                        int scale = field._scale.GetValueOrDefault(2);
+                        int scale = field._scale.GetValueOrDefault(-1);
                         if (scale == 0)
                         {
                             nf = "0";
@@ -500,6 +500,11 @@ namespace ExcelAddIn
                         else if (scale >= 1 && scale <= 16)
                         {
                             nf = "0.0000000000000000".Substring(0, 2 + scale);
+                        }
+                        else if (scale == -1)
+                        {
+                            // not set
+                            nf = "0.00##############";
                         }
                     }
                     catch (Exception) { }
