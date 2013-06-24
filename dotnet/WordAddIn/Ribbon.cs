@@ -9,6 +9,7 @@ using System.Globalization;
 using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace WordAddIn
 {
@@ -16,6 +17,7 @@ namespace WordAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
+            installedVersion.Label = Globals.WordAddIn.getInstalledAddinVersion();
         }
 
         private void buttonSave_Click(object sender, RibbonControlEventArgs e)
@@ -67,5 +69,11 @@ namespace WordAddIn
                 Globals.WordAddIn.reporting.ToggleMakeSum(doc);
             }
         }
+
+        private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.commons.updateAddin();
+        }
+
     }
 }

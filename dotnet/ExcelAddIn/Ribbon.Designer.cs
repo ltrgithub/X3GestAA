@@ -57,11 +57,16 @@ namespace ExcelAddIn
             this.checkBox1 = this.Factory.CreateRibbonCheckBox();
             this.dropDownInsert = this.Factory.CreateRibbonDropDown();
             this.dropDownDelete = this.Factory.CreateRibbonDropDown();
+            this.groupVersion = this.Factory.CreateRibbonGroup();
+            this.installedVersion = this.Factory.CreateRibbonLabel();
+            this.buttonUpdate = this.Factory.CreateRibbonButton();
+            this.version = this.Factory.CreateRibbonLabel();
             this.syracuseTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             this.group3.SuspendLayout();
             this.groupSageX3.SuspendLayout();
+            this.groupVersion.SuspendLayout();
             // 
             // syracuseTab
             // 
@@ -70,6 +75,7 @@ namespace ExcelAddIn
             this.syracuseTab.Groups.Add(this.group2);
             this.syracuseTab.Groups.Add(this.group3);
             this.syracuseTab.Groups.Add(this.groupSageX3);
+            this.syracuseTab.Groups.Add(this.groupVersion);
             resources.ApplyResources(this.syracuseTab, "syracuseTab");
             this.syracuseTab.Name = "syracuseTab";
             // 
@@ -174,6 +180,31 @@ namespace ExcelAddIn
             resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
             this.dropDownDelete.Name = "dropDownDelete";
             // 
+            // groupVersion
+            // 
+            this.groupVersion.Items.Add(this.installedVersion);
+            this.groupVersion.Items.Add(this.buttonUpdate);
+            this.groupVersion.Items.Add(this.version);
+            resources.ApplyResources(this.groupVersion, "groupVersion");
+            this.groupVersion.Name = "groupVersion";
+            // 
+            // installedVersion
+            // 
+            resources.ApplyResources(this.installedVersion, "installedVersion");
+            this.installedVersion.Name = "installedVersion";
+            // 
+            // buttonUpdate
+            // 
+            resources.ApplyResources(this.buttonUpdate, "buttonUpdate");
+            this.buttonUpdate.Image = global::ExcelAddIn.Properties.Resources.refresh;
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.ShowImage = true;
+            // 
+            // version
+            // 
+            resources.ApplyResources(this.version, "version");
+            this.version.Name = "version";
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -190,6 +221,8 @@ namespace ExcelAddIn
             this.group3.PerformLayout();
             this.groupSageX3.ResumeLayout(false);
             this.groupSageX3.PerformLayout();
+            this.groupVersion.ResumeLayout(false);
+            this.groupVersion.PerformLayout();
 
         }
 
@@ -208,6 +241,10 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshAll;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBox1;
         public Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownInsert;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupVersion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel installedVersion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

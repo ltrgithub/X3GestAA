@@ -34,7 +34,7 @@
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
-    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
@@ -239,6 +239,12 @@
     <EmbeddedResource Include="BrowserDialog.resx">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationSelectionDialog.de.resx">
+      <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationSelectionDialog.en.resx">
+      <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationSelectionDialog.resx">
       <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +258,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ribbon.de.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.en.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>

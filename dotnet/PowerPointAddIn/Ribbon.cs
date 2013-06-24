@@ -13,6 +13,7 @@ namespace PowerPointAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
+            installedVersion.Label = Globals.PowerPointAddIn.getInstalledAddinVersion();
         }
 
         private void buttonSave_Click(object sender, RibbonControlEventArgs e)
@@ -34,6 +35,11 @@ namespace PowerPointAddIn
         private void buttonRefreshAll_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.PowerPointAddIn.pptActions.RefreshChartsAllSlides();
+        }
+
+        private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.PowerPointAddIn.common.updateAddin();
         }
     }
 }

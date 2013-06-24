@@ -258,5 +258,22 @@ namespace WordAddIn
                 break;
             }
         }
+
+        public void check4updateAddin()
+        {
+        }
+        public void updateAddin()
+        {
+            MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_RESTART, global::WordAddIn.Properties.Resources.MSG_RESTART_TITLE);
+            Microsoft.Office.Interop.Word.Document doc = Globals.WordAddIn.getActiveDocument();
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+            browserDialog.loadPage("/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE", customData);
+            Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
+            browserDialog.Hide();
+        }
     }
 }
