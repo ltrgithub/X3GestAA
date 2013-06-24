@@ -322,12 +322,6 @@ namespace WordAddIn
             return browserDialog;
         }
         
-        // check version 
-        public String getAddinVersion()
-        {
-            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        }
-
         public string getDocumentLocale()
         {
             Document doc = (customData != null) ? customData.getWordDoc() : null;
@@ -355,6 +349,22 @@ namespace WordAddIn
                 browserDialog.Hide();
             }
             MessageBox.Show(errorText, global::WordAddIn.Properties.Resources.MSG_ERROR_TITLE);
+        }
+
+        public void expectedVersion(String neededVersion)
+        {
+            if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
+            {
+                DialogResult result = MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.Yes)
+                {
+                    Globals.WordAddIn.commons.updateAddin();
+                }
+                else
+                {
+                    Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                }
+            }
         }
     }
 }
