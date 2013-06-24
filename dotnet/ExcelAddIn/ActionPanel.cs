@@ -149,5 +149,18 @@ namespace ExcelAddIn
                     MessageBox.Show("Load Error: " + errorMessage);
             });
         }
-     }
+
+        public void updateAddin()
+        {
+            MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_RESTART, global::ExcelAddIn.Properties.Resources.MSG_RESTART_TITLE);
+            webBrowser.ObjectForScripting = new External();
+            var connectUrl = Globals.ThisAddIn.GetServerUrl();
+            try
+            {
+                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE");
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+            Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
+        }
+    }
 }

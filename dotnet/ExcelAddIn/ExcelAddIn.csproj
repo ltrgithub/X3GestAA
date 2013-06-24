@@ -34,7 +34,7 @@
     <PublishUrl>C:\Users\bruno\dev\syracuse\node_modules\msoffice\lib\excel\addIn\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>0.1.0.0</ApplicationVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -251,6 +251,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="ActionPanel.de.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionPanel.en.resx">
       <DependentUpon>ActionPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +265,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatasourceMngtForm.resx">
       <DependentUpon>DatasourceMngtForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.de.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.en.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocumentBrowser.resx">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
@@ -291,6 +300,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ribbon.de.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.en.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
