@@ -75,5 +75,22 @@ namespace PowerPointAddIn
         {
             MessageBox.Show(text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public void updateAddin()
+        {
+            MessageBox.Show(global::PowerPointAddIn.Properties.Resources.MSG_RESTART, global::PowerPointAddIn.Properties.Resources.MSG_RESTART_TITLE);
+            Presentation pres = Globals.PowerPointAddIn.Application.ActiveWindow.Presentation;
+            PptCustomData customData = PptCustomData.getFromDocument(pres);
+            if (customData == null)
+            {
+                customData = PptCustomData.getFromDocument(pres, true);
+                if (customData == null)
+                {
+                    return;
+                }
+            }
+            browserDialog.loadPage("/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE", customData);
+            Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
+            browserDialog.Hide();
+        }
     }
 }
