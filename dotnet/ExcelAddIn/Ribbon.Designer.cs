@@ -199,6 +199,7 @@ namespace ExcelAddIn
             this.buttonUpdate.Image = global::ExcelAddIn.Properties.Resources.refresh;
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.ShowImage = true;
+            this.buttonUpdate.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonUpdate_Click);
             // 
             // version
             // 
