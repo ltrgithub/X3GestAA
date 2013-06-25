@@ -83,5 +83,21 @@ namespace PowerPointAddIn
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
+
+        public void expectedVersion(String neededVersion)
+        {
+            if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
+            {
+                DialogResult result = MessageBox.Show(global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION, global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.Yes)
+                {
+                    Globals.PowerPointAddIn.common.updateAddin();
+                }
+                else
+                {
+                    Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                }
+            }
+        }
     }
 }

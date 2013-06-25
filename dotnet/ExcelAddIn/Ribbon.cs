@@ -6,6 +6,7 @@ using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using System.Threading;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace ExcelAddIn
 {
@@ -21,6 +22,7 @@ namespace ExcelAddIn
             Globals.ThisAddIn.ReadPreferences();
             taskPane.Visible = Globals.ThisAddIn.GetPrefShowPanel();
             checkBox1.Checked = Globals.ThisAddIn.GetPrefShowPanel();
+            installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
         }
 
         private void checkBoxShowPane_Click(object sender, RibbonControlEventArgs e)
@@ -90,6 +92,11 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBox1.Checked = false;
             }
             Globals.ThisAddIn.SetPrefShowPanel(taskPane.Visible);
+        }
+
+        private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
+        {
+            actionPanel.updateAddin();
         }
     }
 }

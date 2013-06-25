@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Core;
+using Microsoft.Win32;
 
 namespace PowerPointAddIn
 {
@@ -166,6 +167,55 @@ namespace PowerPointAddIn
         void Application_SlideSelectionChanged(SlideRange SldRange)
         {
             pptActions.checkRefreshButtons();
+        }
+
+        public string getInstalledAddinVersion()
+        {
+            String addinVersion = "0.0.0";
+            RegistryKey regCurrentUser = Registry.CurrentUser;
+            RegistryKey installerProductKey = regCurrentUser.OpenSubKey("Software\\Microsoft\\Installer\\Products");
+            foreach (string subKeyName in installerProductKey.GetSubKeyNames())
+            {
+                using (RegistryKey sk = installerProductKey.OpenSubKey(subKeyName))
+                {
+                    foreach (string valueName in sk.GetValueNames())
+                    {
+                        if (valueName == "ProductName")
+                        {
+                            if (sk.GetValue(valueName).ToString() == "Sage ERP X3 Office Addins")
+                            {
+                                Object decVersion = sk.GetValue("Version");
+                                String hxVersion = string.Format("{0:x}", Convert.ToInt32(decVersion.ToString()));
+                                int rel = Convert.ToInt32(hxVersion);
+                                int len = hxVersion.Length;
+                                int r1;
+                                int r2;
+                                int r3;
+                                if (len == 8)
+                                {
+                                    r1 = Convert.ToInt32(hxVersion.Substring(0, 2));
+                                    r2 = Convert.ToInt32(hxVersion.Substring(2, 2));
+                                    r3 = Convert.ToInt32(hxVersion.Substring(4, 4));
+                                }
+                                else
+                                {
+                                    r1 = Convert.ToInt32(hxVersion.Substring(0, 1));
+                                    r2 = Convert.ToInt32(hxVersion.Substring(1, 2));
+                                    r3 = Convert.ToInt32(hxVersion.Substring(3, 4));
+                                }
+                                hxVersion = r1.ToString() + "." + r2.ToString() + "." + r3.ToString();
+                                addinVersion = hxVersion;
+                                break;
+                            }
+                        }
+                        sk.Close();
+                    }
+                }
+            }
+
+            installerProductKey.Close();
+            regCurrentUser.Close();
+            return addinVersion;
         }
 
         #region Von VSTO generierter Code
