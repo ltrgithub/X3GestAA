@@ -42,18 +42,24 @@
             this.groupRefresh = this.Factory.CreateRibbonGroup();
             this.buttonRefresh = this.Factory.CreateRibbonButton();
             this.buttonRefreshAll = this.Factory.CreateRibbonButton();
+            this.groupVersion = this.Factory.CreateRibbonGroup();
+            this.installedVersion = this.Factory.CreateRibbonLabel();
+            this.buttonUpdate = this.Factory.CreateRibbonButton();
+            this.version = this.Factory.CreateRibbonLabel();
             this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupSave.SuspendLayout();
             this.groupRefresh.SuspendLayout();
+            this.groupVersion.SuspendLayout();
             // 
             // tabSageERPX3
             // 
             this.tabSageERPX3.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tabSageERPX3.Groups.Add(this.groupSave);
             this.tabSageERPX3.Groups.Add(this.groupRefresh);
+            this.tabSageERPX3.Groups.Add(this.groupVersion);
             resources.ApplyResources(this.tabSageERPX3, "tabSageERPX3");
             this.tabSageERPX3.Name = "tabSageERPX3";
             // 
@@ -67,8 +73,8 @@
             // buttonSave
             // 
             this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::PowerPointAddIn.Properties.Resources.sauvegarder;
             resources.ApplyResources(this.buttonSave, "buttonSave");
+            this.buttonSave.Image = global::PowerPointAddIn.Properties.Resources.sauvegarder;
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.ShowImage = true;
             this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
@@ -76,8 +82,8 @@
             // buttonSaveAs
             // 
             this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSaveAs.Image = global::PowerPointAddIn.Properties.Resources.sauvegarder2;
             resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
+            this.buttonSaveAs.Image = global::PowerPointAddIn.Properties.Resources.sauvegarder2;
             this.buttonSaveAs.Name = "buttonSaveAs";
             this.buttonSaveAs.ShowImage = true;
             this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
@@ -92,8 +98,8 @@
             // buttonRefresh
             // 
             this.buttonRefresh.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonRefresh.Image = global::PowerPointAddIn.Properties.Resources.refresh;
             resources.ApplyResources(this.buttonRefresh, "buttonRefresh");
+            this.buttonRefresh.Image = global::PowerPointAddIn.Properties.Resources.refresh;
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.ShowImage = true;
             this.buttonRefresh.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefresh_Click);
@@ -101,11 +107,37 @@
             // buttonRefreshAll
             // 
             this.buttonRefreshAll.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonRefreshAll.Image = global::PowerPointAddIn.Properties.Resources.refresh_all;
             resources.ApplyResources(this.buttonRefreshAll, "buttonRefreshAll");
+            this.buttonRefreshAll.Image = global::PowerPointAddIn.Properties.Resources.refresh_all;
             this.buttonRefreshAll.Name = "buttonRefreshAll";
             this.buttonRefreshAll.ShowImage = true;
             this.buttonRefreshAll.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshAll_Click);
+            // 
+            // groupVersion
+            // 
+            this.groupVersion.Items.Add(this.installedVersion);
+            this.groupVersion.Items.Add(this.buttonUpdate);
+            this.groupVersion.Items.Add(this.version);
+            resources.ApplyResources(this.groupVersion, "groupVersion");
+            this.groupVersion.Name = "groupVersion";
+            // 
+            // installedVersion
+            // 
+            resources.ApplyResources(this.installedVersion, "installedVersion");
+            this.installedVersion.Name = "installedVersion";
+            // 
+            // buttonUpdate
+            // 
+            resources.ApplyResources(this.buttonUpdate, "buttonUpdate");
+            this.buttonUpdate.Image = global::PowerPointAddIn.Properties.Resources.refresh;
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.ShowImage = true;
+            this.buttonUpdate.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonUpdate_Click);
+            // 
+            // version
+            // 
+            resources.ApplyResources(this.version, "version");
+            this.version.Name = "version";
             // 
             // checkBoxShowTemplatePane
             // 
@@ -134,6 +166,8 @@
             this.groupSave.PerformLayout();
             this.groupRefresh.ResumeLayout(false);
             this.groupRefresh.PerformLayout();
+            this.groupVersion.ResumeLayout(false);
+            this.groupVersion.PerformLayout();
 
         }
 
@@ -149,6 +183,10 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupRefresh;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefresh;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshAll;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupVersion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel installedVersion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection
