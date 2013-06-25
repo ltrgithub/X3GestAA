@@ -6,6 +6,7 @@ using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using System.Threading;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace ExcelAddIn
 {
