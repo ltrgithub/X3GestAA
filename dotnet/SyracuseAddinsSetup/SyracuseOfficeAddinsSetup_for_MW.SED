@@ -24,7 +24,7 @@ SourceFiles=SourceFiles
 InstallPrompt=
 DisplayLicense=
 FinishMessage=
-TargetName=C:\dev\syracuse\workspace\Syracuse\node_modules\msoffice\lib\general\addIn\SyracuseOfficeAddinsSetup.EXE
+TargetName=C:\dev\syracuse\git\Syracuse\node_modules\msoffice\lib\general\addIn\SyracuseOfficeAddinsSetup.EXE
 FriendlyName=Syracuse Office Addins Setup
 AppLaunched=setup.exe
 PostInstallCmd=<None>
@@ -33,7 +33,7 @@ UserQuietInstCmd=
 FILE0="setup.exe"
 FILE1="SyracuseAddinsSetup.msi"
 [SourceFiles]
-SourceFiles0=C:\dev\syracuse\workspace\Syracuse\dotnet\SyracuseAddinsSetup\Release\
+SourceFiles0=C:\dev\syracuse\git\Syracuse\dotnet\SyracuseAddinsSetup\Release\
 [SourceFiles0]
 %FILE0%=
 %FILE1%=
