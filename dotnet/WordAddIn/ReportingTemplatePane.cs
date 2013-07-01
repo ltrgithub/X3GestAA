@@ -50,6 +50,10 @@ namespace WordAddIn
                 }
 
                 ContentControl c = ReportingUtils.createContentControl(doc, cursor, n.item, n.itemParent);
+                if (c == null)
+                {
+                    return;
+                }
                 cursor = c.Range;
                 cursor.Collapse(WdCollapseDirection.wdCollapseEnd);
                 cursor.Move(WdUnits.wdCharacter, 1);
