@@ -34,6 +34,7 @@ namespace PowerPointAddIn
         public PptActions pptActions;
         public BrowserDialog browserDialog;
         public CommonUtils common;
+        public Boolean newVersionMessage = false;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {

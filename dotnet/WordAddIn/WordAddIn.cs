@@ -17,6 +17,7 @@ namespace WordAddIn
         public ReportingActions reporting = null;
         public MailMergeActions mailmerge = null;
         public CommonUtils commons = null;
+        public Boolean newVersionMessage = false;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -181,6 +182,7 @@ namespace WordAddIn
                                 Object decVersion = sk.GetValue("Version");
                                 String hxVersion = string.Format("{0:x}", Convert.ToInt32(decVersion.ToString()));
                                 int rel = Convert.ToInt32(hxVersion);
+
                                 int len = hxVersion.Length;
                                 int r1;
                                 int r2;
