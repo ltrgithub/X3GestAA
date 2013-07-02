@@ -116,6 +116,11 @@ namespace WordAddIn
                 {
                     colCount++;
                 }
+
+                if (colCount > 15)
+                {
+                    break;
+                }
             }
 
             Range r = doc.Range();
@@ -138,10 +143,13 @@ namespace WordAddIn
                     String title = item["$title"].ToString();
 
                     col++;
-                    r = t.Cell(1, col).Range;
-                    r.Text = title;
-                    r = t.Cell(2, col).Range;
-                    createContentControl(doc, r, item, bind);
+                    if (col <= colCount)
+                    {
+                        r = t.Cell(1, col).Range;
+                        r.Text = title;
+                        r = t.Cell(2, col).Range;
+                        createContentControl(doc, r, item, bind);
+                    }
                 }
             }
 
