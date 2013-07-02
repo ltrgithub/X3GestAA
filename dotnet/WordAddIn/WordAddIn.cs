@@ -17,6 +17,8 @@ namespace WordAddIn
         public ReportingActions reporting = null;
         public MailMergeActions mailmerge = null;
         public CommonUtils commons = null;
+        public Boolean newVersionMessage = false;
+        public int versionNumberBinary = 0;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -179,26 +181,10 @@ namespace WordAddIn
                             if (sk.GetValue(valueName).ToString() == "Sage ERP X3 Office Addins")
                             {
                                 Object decVersion = sk.GetValue("Version");
-                                String hxVersion = string.Format("{0:x}", Convert.ToInt32(decVersion.ToString()));
-                                int rel = Convert.ToInt32(hxVersion);
-                                int len = hxVersion.Length;
-                                int r1;
-                                int r2;
-                                int r3;
-                                if (len == 8)
-                                {
-                                    r1 = Convert.ToInt32(hxVersion.Substring(0, 2));
-                                    r2 = Convert.ToInt32(hxVersion.Substring(2, 2));
-                                    r3 = Convert.ToInt32(hxVersion.Substring(4, 4));
-                                }
-                                else
-                                {
-                                    r1 = Convert.ToInt32(hxVersion.Substring(0, 1));
-                                    r2 = Convert.ToInt32(hxVersion.Substring(1, 2));
-                                    r3 = Convert.ToInt32(hxVersion.Substring(3, 4));
-                                }
-                                hxVersion = r1.ToString() + "." + r2.ToString() + "." + r3.ToString();
-                                addinVersion = hxVersion;
+                                int v = Convert.ToInt32(decVersion.ToString());
+                                versionNumberBinary = v;
+                                String vr = ((v & 0xFF000000) >> 24) + "." + ((v & 0x00FF0000) >> 16) + "." + (v & 0x0000FFFF);
+                                addinVersion = vr;
                                 break;
                             }
                         }
@@ -211,7 +197,6 @@ namespace WordAddIn
             regCurrentUser.Close();
             return addinVersion;
         }
-
         #region Von VSTO generierter Code
 
         /// <summary>
