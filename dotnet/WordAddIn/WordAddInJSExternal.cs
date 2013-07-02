@@ -355,14 +355,18 @@ namespace WordAddIn
         {
             if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
             {
-                DialogResult result = MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.Yes)
+                if (Globals.WordAddIn.newVersionMessage == false)
                 {
-                    Globals.WordAddIn.commons.updateAddin();
-                }
-                else
-                {
-                    Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    DialogResult result = MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Globals.WordAddIn.newVersionMessage = true;
+                    if (result == DialogResult.Yes)
+                    {
+                        Globals.WordAddIn.commons.updateAddin();
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    }
                 }
             }
         }
