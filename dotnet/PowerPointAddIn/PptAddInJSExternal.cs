@@ -86,7 +86,12 @@ namespace PowerPointAddIn
 
         public void expectedVersion(String neededVersion)
         {
-            if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
+            string[] needed = neededVersion.Split('.');
+            int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
+            neddedBinary += (Convert.ToInt32(needed[1]) << 16);
+            neddedBinary += Convert.ToInt32(needed[2]);
+
+            if (neddedBinary > Globals.PowerPointAddIn.versionNumberBinary)
             {
                 if (Globals.PowerPointAddIn.newVersionMessage == false)
                 {
