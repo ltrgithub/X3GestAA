@@ -65,6 +65,7 @@ namespace ExcelAddIn
         private ExposedAddInUtilities utilities;
         public bool prefShowPanel = true;
         public String prefUrl = null;
+        public Boolean newVersionMessage = false;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {

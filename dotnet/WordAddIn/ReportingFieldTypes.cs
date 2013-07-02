@@ -137,7 +137,18 @@ namespace WordAddIn
                     case ReportingFieldTypes.DECIMAL:
                         Decimal d = Decimal.Parse(value);
                         int scale = (field != null) ? field.scale : 2;
-                        value = d.ToString("N" + scale, culture);
+                        string fmt = "N2";
+                        if (scale <= 0)
+                        {
+                            fmt = "N0";
+                        }
+                        else 
+                        {
+                            if (scale > 15)
+                                scale = 15;
+                            fmt = "0." + "###############".Substring(0, scale);
+                        }
+                        value = d.ToString(fmt, culture);
                         break;
                     case ReportingFieldTypes.INTEGER:
                         Int64 i = Int64.Parse(value);

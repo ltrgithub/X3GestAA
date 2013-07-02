@@ -188,15 +188,19 @@ namespace ExcelAddIn
         {
             if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
             {
-                DialogResult result = MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.Yes)
+                if (Globals.ThisAddIn.newVersionMessage == false)
                 {
-                    ActionPanel actionPanel = new ActionPanel();
-                    actionPanel.updateAddin();
-                }
-                else
-                {
-                    Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    DialogResult result = MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Globals.ThisAddIn.newVersionMessage = true;
+                    if (result == DialogResult.Yes)
+                    {
+                        ActionPanel actionPanel = new ActionPanel();
+                        actionPanel.updateAddin();
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    }
                 }
             }
         }
