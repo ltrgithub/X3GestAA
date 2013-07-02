@@ -353,16 +353,25 @@ namespace WordAddIn
 
         public void expectedVersion(String neededVersion)
         {
-            if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
+            string[] needed = neededVersion.Split('.');
+            int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
+            neddedBinary += (Convert.ToInt32(needed[1]) << 16);
+            neddedBinary += Convert.ToInt32(needed[2]);
+
+            if (neddedBinary > Globals.WordAddIn.versionNumberBinary)
             {
-                DialogResult result = MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.Yes)
+                if (Globals.WordAddIn.newVersionMessage == false)
                 {
-                    Globals.WordAddIn.commons.updateAddin();
-                }
-                else
-                {
-                    Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    DialogResult result = MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Globals.WordAddIn.newVersionMessage = true;
+                    if (result == DialogResult.Yes)
+                    {
+                        Globals.WordAddIn.commons.updateAddin();
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    }
                 }
             }
         }
