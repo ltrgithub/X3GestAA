@@ -86,16 +86,25 @@ namespace PowerPointAddIn
 
         public void expectedVersion(String neededVersion)
         {
-            if (neededVersion != Globals.Ribbons.Ribbon.installedVersion.Label)
+            string[] needed = neededVersion.Split('.');
+            int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
+            neddedBinary += (Convert.ToInt32(needed[1]) << 16);
+            neddedBinary += Convert.ToInt32(needed[2]);
+
+            if (neddedBinary > Globals.PowerPointAddIn.versionNumberBinary)
             {
-                DialogResult result = MessageBox.Show(global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION, global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.Yes)
+                if (Globals.PowerPointAddIn.newVersionMessage == false)
                 {
-                    Globals.PowerPointAddIn.common.updateAddin();
-                }
-                else
-                {
-                    Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    DialogResult result = MessageBox.Show(global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION, global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Globals.PowerPointAddIn.newVersionMessage = true;
+                    if (result == DialogResult.Yes)
+                    {
+                        Globals.PowerPointAddIn.common.updateAddin();
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    }
                 }
             }
         }
