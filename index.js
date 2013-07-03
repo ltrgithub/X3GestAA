@@ -70,6 +70,7 @@ require('syracuse-license').register(function(err, data) {
 	else if (!data) console.log("No license")
 
 	require("streamline").register(config.streamline);
+	require("syracuse-core/lib/localeWrapper");
 
 	var waitData;
 	if (process.argv[2] === "PATCH") {
@@ -84,16 +85,7 @@ require('syracuse-license').register(function(err, data) {
 		});
 	} else {
 		var syracuse = require('syracuse-main/lib/syracuse');
-		var port = syracuse.config.port || 8124;
-		//Port init
-		syracuse.config.sdata.httpRoot = syracuse.config.sdata.httpRoot || "http://localhost:" + port;
-		// start http or mock server
-		syracuse.server.listen(function() {
-			console.log('Server running at http://localhost:' + port + '/');
-		}, port);
-		syracuse.integrationServer && syracuse.integrationServer.listen(function() {
-			console.log('Integration server running at http://localhost:' + config.integrationServer.port + '/');
-		}, syracuse.config.integrationServer.port);
+		syracuse.startServers();
 	}
 });
 
