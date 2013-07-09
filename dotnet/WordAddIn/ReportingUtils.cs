@@ -305,7 +305,11 @@ namespace WordAddIn
                             WordReportingField field = new WordReportingField();
                             field.type = type;
                             field.scale = scale.GetValueOrDefault(2);
-                            fields.Add(bind + bind_i, field);
+                            try
+                            {
+                                fields.Add(bind + bind_i, field);
+                            }
+                            catch (Exception) { };
                         }
                     }
                 }
@@ -335,6 +339,25 @@ namespace WordAddIn
                 {
                     return Decimal.Parse(o.ToString(), decimalFormat).ToString();
                 }
+            }
+            return o.ToString();
+        }
+
+        private static string parseValue(Dictionary<String, object> entity, string type, string display)
+        {
+            object o = null;
+
+            try
+            {
+                o = ((Dictionary<String, object>)entity["$value"])[display];
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+            if (o == null)
+            {
+                return "";
             }
             return o.ToString();
         }
@@ -671,17 +694,23 @@ namespace WordAddIn
         {
             string value = null;
             string type = null;
-
-            if (ti.isFormula && "$sum".Equals(ti.formula))
+            if (ti.display == null)
             {
-                value = calculateSum(doc, ctrl, entity, ti, allData, field);
+                if (ti.isFormula && "$sum".Equals(ti.formula))
+                {
+                    value = calculateSum(doc, ctrl, entity, ti, allData, field);
+                }
+                else
+                {
+                    try { type = entity["$type"].ToString(); }
+                    catch (Exception) { }
+                    value = parseValue(entity, type);
+                    value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
+                }
             }
             else
             {
-                try { type = entity["$type"].ToString(); }
-                catch (Exception) { }
-                value = parseValue(entity, type);
-                value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
+                value = parseValue(entity, type, ti.display);
             }
             ctrl.Range.Text = value;
         }
