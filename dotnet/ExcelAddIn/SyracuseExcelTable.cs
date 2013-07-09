@@ -6,7 +6,7 @@ using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using System.Resources;
 using System.Globalization;
-
+ 
 namespace ExcelAddIn
 {
     public class ExcelTablePrototypeField
