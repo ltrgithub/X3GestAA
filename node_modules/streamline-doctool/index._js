@@ -11,7 +11,7 @@
 /// Usage:
 /// 
 /// ```
-/// _node streamline/lib/tools/docTool [path]
+/// _node streamline-doctool [path]
 /// ```
 /// 
 /// Extracts documentation comments from `.js` and `._js` files and generates `API.md` file 
@@ -27,7 +27,7 @@
 /// The tool can also be invoked programatically with:
 /// 
 /// ```
-/// var docTool = require('streamline/lib/tools/docTool')
+/// var docTool = require('streamline-doctool')
 /// ```
 /// 
 var fs = require('streamline-fs');
@@ -139,6 +139,6 @@ exports.generate = function(_, path, options) {
 	// options.verbose = true;
 	_generate(_, path);
 }
-if (process.argv[1] && process.argv[1].indexOf("/docTool") >= 0) exports.generate(_, fsp.join(process.cwd(), process.argv[2] || '.'), {
+if (process.argv[1] && process.argv[1].indexOf("streamline-doctool") >= 0) exports.generate(_, fsp.join(process.cwd(), process.argv[2] || '.'), {
 	verbose: true
 });
