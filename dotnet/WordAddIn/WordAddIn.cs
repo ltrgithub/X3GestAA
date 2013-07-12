@@ -182,7 +182,6 @@ namespace WordAddIn
                             {
                                 Object decVersion = sk.GetValue("Version");
                                 int v = Convert.ToInt32(decVersion.ToString());
-                                versionNumberBinary = v;
                                 String vr = ((v & 0xFF000000) >> 24) + "." + ((v & 0x00FF0000) >> 16) + "." + (v & 0x0000FFFF);
                                 addinVersion = vr;
                                 break;
