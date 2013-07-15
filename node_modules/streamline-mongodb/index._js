@@ -3,41 +3,43 @@ var mongodb = require('mongodb');
 exports = module.exports = Object.create(mongodb);
 
 // We only need the wrapper if running with a fast option. So test and bail out here
-if (!/-fast$/.test(require('streamline/lib/globals').__runtimeDir__)) return;
+if (!/-fast$/.test(require('streamline/lib/globals').runtime)) return;
 
 exports = module.exports = {};
 exports.Server = mongodb.Server;
 
 exports.Db = function(databaseName, serverConfig, options) {
 	this.obj = new mongodb.Db(databaseName, serverConfig, options);
-}
+};
 var dbProto = exports.Db.prototype;
 
 dbProto.open = function(_) {
 	this.obj.open(~_);
 	return this;
-}
+};
 dbProto.collection = function(name, _) {
 	return new Collection(this.obj.collection(name, ~_));
-}
+};
 dbProto.count = function(name, _) {
 	return new Collection(this.obj.collection(name, ~_));
-}
+};
 dbProto.dropDatabase = function(_) {
 	this.obj.dropDatabase(~_);
 	return this;
-}
+};
 dbProto.close = function() {
 	this.obj.close();
 	return this;
-}
+};
 dbProto.ensureIndex = function(collectionName, fieldOrSpec, options, _) {
 	if (typeof options === "function") this.obj.ensureIndex(collectionName, fieldOrSpec, ~_);
 	else this.obj.ensureIndex(collectionName, fieldOrSpec, options, ~_);
 	return this;
-}
+};
 Object.defineProperty(dbProto, "state", {
-	get: function() { return this.obj.state; }
+	get: function() {
+		return this.obj.state;
+	}
 });
 
 function Collection(obj) {
@@ -50,49 +52,44 @@ colProto.insert = function(docs, options, _) {
 	if (typeof options === "function") this.obj.insert(docs, ~_);
 	else this.obj.insert(docs, options, ~_);
 	return this;
-}
+};
 colProto.remove = function(selector, options, _) {
 	if (typeof options === "function") return this.obj.remove(selector, ~_);
 	else return this.obj.remove(selector, options, ~_);
-}
+};
 colProto.save = function(doc, options, _) {
-	if (typeof options === "function") this.obj.save(doc, ~_);
-	else this.obj.save(doc, options, ~_);
-	return this;
-}
+	if (typeof options === "function") return this.obj.save(doc, ~_);
+	else return this.obj.save(doc, options, ~_);
+};
 colProto.update = function(selector, doc, options, _) {
-	if (typeof options === "function") this.obj.update(selector, doc, ~_);
-	else this.obj.update(selector, doc, options, ~_);
-	return this;
-}
+	if (typeof options === "function") return this.obj.update(selector, doc, ~_);
+	else return this.obj.update(selector, doc, options, ~_);
+};
 colProto.distinct = function(key, query, _) {
-	if (typeof query === "function") this.obj.distinct(key, ~_);
-	else this.obj.distinct(key, query, ~_);
-	return this;
-}
+	if (typeof query === "function") return this.obj.distinct(key, ~_);
+	else return this.obj.distinct(key, query, ~_);
+};
 colProto.count = function(query, _) {
 	if (typeof query === "function") return this.obj.count(~_);
 	else return this.obj.count(query, ~_);
-}
+};
 colProto.ensureIndex = function(fieldOrSpec, options, _) {
-	if (typeof options === "function") this.obj.ensureIndex(fieldOrSpec, ~_);
-	else this.obj.ensureIndex(fieldOrSpec, options, ~_);
-	return this;
-}
+	if (typeof options === "function") return this.obj.ensureIndex(fieldOrSpec, ~_);
+	else return this.obj.ensureIndex(fieldOrSpec, options, ~_);
+};
 colProto.drop = function(_) {
-	this.obj.drop(~_);
-	return this;
-}
+	return this.obj.drop(~_);
+};
 colProto.find = function() {
 	var lastArg = arguments[arguments.length - 1];
 	if (typeof lastArg === "function") {
 		var that = this;
 		var args = Array.prototype.slice.call(arguments, 0);
-		return (function(_){
+		return (function(_) {
 			return (function(cb) {
 				args[args.length - 1] = function(err, result) {
 					if (err) return cb(err);
-					cb(null,  new Cursor(result));
+					cb(null, new Cursor(result));
 				};
 				return that.obj.find.apply(that.obj, args);
 			})(~_);
@@ -100,7 +97,7 @@ colProto.find = function() {
 	} else {
 		return new Cursor(this.obj.find.apply(this.obj, arguments));
 	}
-}
+};
 
 function Cursor(obj) {
 	this.obj = obj;
@@ -109,29 +106,29 @@ var curProto = Cursor.prototype;
 
 curProto.toArray = function(_) {
 	return this.obj.toArray(~_);
-}
+};
 
 curProto.nextObject = function(_) {
 	return this.obj.nextObject(~_);
-}
+};
 
 exports.GridStore = function GridStore(db, path, flags) {
 	mongodb.GridStore.call(this, db.obj, path, flags);
-}
+};
 exports.GridStore.prototype = new mongodb.GridStore();
 var gridStoreProto = exports.GridStore.prototype;
 exports.GridStore.exist = function(db, path, _) {
 	return mongodb.GridStore.exist(db.obj, path, ~_);
-}
+};
 exports.GridStore.unlink = function(db, path, _) {
 	return mongodb.GridStore.unlink(db.obj, path, ~_);
-}
+};
 gridStoreProto.open = function(_) {
 	return mongodb.GridStore.prototype.open.call(this, ~_);
-}
+};
 gridStoreProto.close = function(_) {
 	return mongodb.GridStore.prototype.close.call(this, ~_);
-}
+};
 gridStoreProto.write = function(buffer, _) {
 	return mongodb.GridStore.prototype.write.call(this, buffer, ~_);
-}
+};

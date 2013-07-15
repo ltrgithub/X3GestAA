@@ -6,7 +6,7 @@ using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using System.Resources;
 using System.Globalization;
-
+ 
 namespace ExcelAddIn
 {
     public class ExcelTablePrototypeField
@@ -30,9 +30,13 @@ namespace ExcelAddIn
                         return "";
                     return DateTime.Parse((String)value);
                 case "application/x-decimal":
-                    if (value.Equals("")) // convergence client may send dates like this
+                    if (value.Equals("")) 
                         return "";
-                    return Decimal.Parse((String)value, decimalFormat);
+                    if (value is String)
+                    {
+                        return Decimal.Parse((String)value, decimalFormat);
+                    }
+                    return value;
                 default:
                     return value;
             }

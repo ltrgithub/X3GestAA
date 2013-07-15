@@ -351,6 +351,12 @@ namespace WordAddIn
             MessageBox.Show(errorText, global::WordAddIn.Properties.Resources.MSG_ERROR_TITLE);
         }
 
+        // check version
+        public String GetAddinVersion()
+        {
+            //return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            return Globals.WordAddIn.getInstalledAddinVersion();
+        }
         public void expectedVersion(String neededVersion)
         {
             string[] needed = neededVersion.Split('.');
