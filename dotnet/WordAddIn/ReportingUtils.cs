@@ -229,6 +229,7 @@ namespace WordAddIn
 
             try
             {
+                Selection oldSelection = Globals.WordAddIn.Application.Selection;
                 Globals.WordAddIn.Application.ScreenUpdating = false;
 
                 JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -260,6 +261,12 @@ namespace WordAddIn
                 FillCollectionControls(doc, entityData, fieldInfo, browserDialog, pd);
 
                 File.Delete(getTransparentImage());
+
+                doc.Range().Fields.Update();
+                if (oldSelection != null && oldSelection.Range != null)
+                {
+                    oldSelection.Select();
+                }
                 //long ticks2 = DateTime.Now.Ticks;
                 //long sec = (ticks2-ticks)/10000000;
                 //MessageBox.Show("Table fill time: " + sec + " secs.");
