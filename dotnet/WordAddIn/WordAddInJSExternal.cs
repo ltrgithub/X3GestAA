@@ -363,7 +363,6 @@ namespace WordAddIn
             int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
-            MessageBox.Show(neddedBinary + " - " + Globals.WordAddIn.versionNumberBinary);
 
             if (neddedBinary > Globals.WordAddIn.versionNumberBinary)
             {
