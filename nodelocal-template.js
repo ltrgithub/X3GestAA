@@ -21,11 +21,6 @@ helpers.debug.traces = {
 
 helpers.fusionProxyTracer = false;  // true ==> Every client/server exchanges are traced
 
-helpers.proxy ={
-	server: "your_proxy_server",
-	port: 80
-}
-
 helpers.sageup = {
 	format: 'json',  // format can be 'json' or 'xml'
 	debug: false,  // Activate http request traces
