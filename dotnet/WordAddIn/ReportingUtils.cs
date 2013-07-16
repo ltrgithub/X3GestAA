@@ -267,6 +267,7 @@ namespace WordAddIn
                 {
                     oldSelection.Select();
                 }
+                Clipboard.Clear();
                 //long ticks2 = DateTime.Now.Ticks;
                 //long sec = (ticks2-ticks)/10000000;
                 //MessageBox.Show("Table fill time: " + sec + " secs.");
@@ -701,6 +702,7 @@ namespace WordAddIn
         {
             string value = null;
             string type = null;
+
             if (ti.display == null)
             {
                 if (ti.isFormula && "$sum".Equals(ti.formula))
@@ -711,6 +713,13 @@ namespace WordAddIn
                 {
                     try { type = entity["$type"].ToString(); }
                     catch (Exception) { }
+
+                    if (type != null && type.Contains("x-document"))
+                    {
+                        setContentControlClob(doc, ctrl, entity, field);
+                        return;
+                    }
+
                     value = parseValue(entity, type);
                     value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
                 }
@@ -720,6 +729,39 @@ namespace WordAddIn
                 value = parseValue(entity, type, ti.display);
             }
             ctrl.Range.Text = value;
+        }
+
+        private static void setContentControlClob(Document doc, ContentControl ctrl, Dictionary<string, object> entity, WordReportingField field)
+        {
+            object o = null;
+            try
+            {
+                o = ((Dictionary<String, object>)entity["$value"])["$value"];
+            }
+            catch (Exception) {}
+            if (o == null)
+            {
+                ctrl.Range.Text = "";
+                return;
+            }
+            
+            Range r = ctrl.Range;
+            String text = o.ToString();
+            System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
+            if (text.ToLower().StartsWith("{\\rtf"))
+            {
+                rtBox.Rtf = text;
+                r.Text = rtBox.Text;
+            }
+            else if (text.ToLower().StartsWith("<html>"))
+            {
+                // TODO: HTML Does not work at the moment
+                r.Text = text;
+            }
+            else
+            {
+                r.Text = text;
+            }
         }
 
         private static string calculateSum(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, WordReportingField field)
