@@ -19,30 +19,23 @@ if (/^N\d+$/.test(process.argv[2])) {
 	var buffer = null;
 	var stream = fs.createWriteStream(name);
 	
-	var stdoutOld = process.stdout;
-	process.__defineGetter__("stdout", function() { return stream; });
-	if (process.stdout === stdoutOld) {
-		// process.stdout cannot be changed
-		var buffer = null;
-	    stream.on('drain', function() { if (buffer && buffer.length) { buffer = (stream.write(buffer) ? null : ""); } else { buffer = null; } });
-		process.stdoutOld = process.stdout;
-		var output = function() { var content = util.format.apply(this, arguments) + '\n';
-	        if (buffer === null) {
-	            if (!stream.write(content)) buffer = "";
-	        } else {
-	            buffer += content;
-	        }
-	    }
-		var log = console.log;
-	    console.log = console.error = console.info = console.warn = console.trace = output;
-	    if (log === console.log) {
-	    	console.error("Output streams cannot be changed.")
-	    	process.exit(1);
-	    }
-	    console.log("Redefine console.log etc.");
-	} else {
-		process.__defineGetter__("stderr", function() { return stream; });		
-	}
+	// node.js v0.10: process.stdout cannot be changed any more
+	var buffer = null;
+    stream.on('drain', function() { if (buffer && buffer.length) { buffer = (stream.write(buffer) ? null : ""); } else { buffer = null; } });
+	process.stdoutOld = process.stdout;
+	var output = function() { var content = util.format.apply(this, arguments) + '\n';
+        if (buffer === null) {
+            if (!stream.write(content)) buffer = "";
+        } else {
+            buffer += content;
+        }
+    }
+	var log = console.log;
+    console.log = console.error = console.info = console.warn = console.trace = output;
+    if (log === console.log) {
+    	console.error("Output streams cannot be changed.")
+    	process.exit(1);
+    }
 	console.log("Standard output redirected")
 	console.error("Standard error redirected")
 }
