@@ -83,11 +83,21 @@ public class CertTool {
 	boolean actionGiven = false;
 	// (decrypted) key of CA
 	KeyPair caKey;
-	// (decrypted) key of server certificate
-	KeyPair key;
 
 	X509CertificateHolder cert = null;
 
+	// reset variables which should be cleared for the next run
+	private void cleanup() {
+		action = null;
+		pass = null;
+		capass = null;
+		name = null;
+		dn = null;
+		cn = null;
+		validUntil = null;
+		cert = null;
+	}
+	
 	/** Get the public key entry from a certificate.
 	 * (The code can be simplified with BouncyCastle 1.50) */
 	private static PublicKey extractPublicKey(X509CertificateHolder cert)
@@ -183,7 +193,7 @@ public class CertTool {
 				* Integer.parseInt(days));
 	}
 
-	/** throw exception when input from console is required but not allowed because <tt>-cmdline</tt> switch is set */
+	/** throw exception when input from console is required but not allowed because <tt>-batch</tt> switch is set */
 	private void testInteractive(String errorMsg) throws CertToolException {
 		if (!interactive)
 			throw new CertToolException(errorMsg);
@@ -291,7 +301,7 @@ public class CertTool {
 				input = input.toLowerCase();
 				if (certNames.contains(input) ^ newName)
 					return null;
-				exc = "Server name " + input + (newName ? " already exists" : " does not yet exist");
+				exc = "Server name " + input + (newName ? " already exists" : " does not exist");
 			}
 			break;
 		case DN:
@@ -309,7 +319,7 @@ public class CertTool {
 				choice = Integer.parseInt(input);
 			} catch (NumberFormatException ex) {
 			}
-			if (choice < 1 || choice > count) {
+			if (choice < 1 || choice > count+1) {
 				exc = "Please enter a number from 1 to " + count;
 			} else {
 				return null;
@@ -503,7 +513,7 @@ public class CertTool {
 	}
 
 	/** initialize directories and list of available certificates */
-	CertTool() throws IOException {
+	CertTool() throws IOException, CertToolException {
 		
 		File f = new File(PRIVATE);
 		if (!f.exists()) {
@@ -516,6 +526,8 @@ public class CertTool {
 
 		// read CA certificate
 		if (new File(getCertFileName(null)).exists()) {
+			if (!new File(getKeyFileName(null)).exists())
+				throw new CertToolException("No CA private key available");
 			caCert = readCertificate(null);
 			// read files
 			File[] fileArray = new File(OUTPUT).listFiles();
@@ -528,8 +540,9 @@ public class CertTool {
 		}
 	}
 
-	/** read missing data for actions */
-	void prepareAction() throws CertToolException, IOException,
+	/** read missing data for actions 
+	 * Return value: true: finish program */
+	boolean prepareAction() throws CertToolException, IOException,
 			GeneralSecurityException, OperatorCreationException {
 		// if no CA certificate present, generate this first
 		if (caCert == null) {
@@ -549,13 +562,18 @@ public class CertTool {
 			Action[] actions = Action.values();
 			wrapper.println();
 			wrapper.println("Which action do you want to perform?");
-			for (int j = 0; j < actions.length; j++) {
+			int j = 0;
+			for (j = 0; j < actions.length; j++) {
 				wrapper.println("(" + (j + 1) + ") "
 						+ actions[j].getDescription());
 			}
+			wrapper.println("("+(j+1)+") End");
 			act = input("Please enter the number of the option", Check.ACTION,
 					null);
-			action = Action.values()[act.charAt(0) - '1'];
+			j = act.charAt(0) - '1';
+			if (j >= Action.values().length) // special 'End' action
+				return true;
+			action = Action.values()[j];
 		}
 
 		// collect prerequisites for actions
@@ -641,6 +659,7 @@ public class CertTool {
 		if (action == Action.RENEW_KEY) {
 			if (name == null) {
 				newCaPass = true;
+				caKey = null;
 			} else {
 				newPass = true;
 				useCaPass = true;				
@@ -661,8 +680,7 @@ public class CertTool {
 						String ou = input("Organizational unit", Check.DN, findReplace(dn, "OU", null));
 						if (cn == null)
 							cn = input("Name", Check.DN, findReplace(dn, "CN", null));						
-						dn = "CN=" + cn + ",OU=" + ou + ",O=" + o + ",L=" + l
-								+ ",ST=" + st + ",C=" + c;
+						dn = "C=" + c + ",ST=" + st + ",L=" + l+ ",O=" + o + ",OU=" + ou +",CN=" + cn;
 					} else {
 						if (dn == null || cn == null) 
 							testInteractive("No subject given");
@@ -672,9 +690,11 @@ public class CertTool {
 			} else {
 				dn = caCert.getSubject().toString();
 				if (cn == null) {
+					if (!newPass)
+						cert = readCertificate(name);
 					testInteractive("No subject name given");
 					cn = input("Server name for TCP connections", Check.DN,
-							name);
+							cert != null ? findReplace(cert.getSubject().toString(), "CN", null) : name);
 				}
 				dn = findReplace(dn, "CN", cn);
 			}
@@ -706,7 +726,7 @@ public class CertTool {
 		if (newPass) {
 			if (pass == null && name != null) {
 				testInteractive("No passphrase given");
-				pass = readPassphrase("Enter passphrase of private key: ");
+				pass = readPassphrase("Enter passphrase for new private key: ");
 			}
 			if (interactive) {
 				char[] confirm = readPassphrase("Confirm passphrase of private key: ");
@@ -715,7 +735,7 @@ public class CertTool {
 			}
 		}
 
-		if (useCaPass || newCaPass) {
+		if ((useCaPass || newCaPass) && caKey == null) {
 			if (capass == null) {				
 				// use passphrase as CA passphrase for CA certificate
 				if (name == null && pass != null) {
@@ -723,7 +743,7 @@ public class CertTool {
 				} else {
 					testInteractive("No CA passphrase given");
 					while (true) {
-						capass = readPassphrase("Enter passphrase of private key of CA certificate: ");
+						capass = readPassphrase(newCaPass ? "Enter passphrase for new private key of CA certificate: " : "Enter passphrase of private key of CA certificate: ");
 						if (newCaPass) {
 							char[] confirm = readPassphrase("Confirm passphrase of CA private key: ");
 							if (!Arrays.equals(capass, confirm)) 
@@ -752,6 +772,7 @@ public class CertTool {
 				}
 			}
 		}
+		return false;
 	}
 
 
@@ -760,6 +781,8 @@ public class CertTool {
 			GeneralSecurityException, OperatorCreationException {
 
 		String issuer;
+		// (decrypted) key of server certificate
+		KeyPair key;
 
 		// Perform actions
 		switch (action) {
@@ -776,15 +799,25 @@ public class CertTool {
 					validUntil);
 			writeKey(name, key, pass);
 			writeCertificate(name, cert);
+			if (name == null)
+				caCert = cert;
+			else
+				certNames.add(name);
 			wrapper.println("Finished");
 			return;
 		case RENEW_CERT:
-			if (cert == null)
-				cert = readCertificate(name);
+			if (name == null) {
+				cert = caCert;
+			} else {
+				if (cert == null)
+					cert = readCertificate(name);
+			} 
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(cert),
 					validUntil);
 			writeCertificate(name, cert);
+			if (name == null)
+				caCert = cert;
 			wrapper.println("Finished");
 			return;
 		case RENEW_ALL_CERTS:
@@ -811,6 +844,7 @@ public class CertTool {
 			if (name == null) {
 				caKey = key;
 				cert = caCert;
+				pass = capass;
 			} else {
 				if (cert == null) {
 					cert = readCertificate(name);
@@ -820,14 +854,17 @@ public class CertTool {
 					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter());
 			writeCertificate(name, cert);
 			writeKey(name, key, pass);
-			if (name == null && !certNames.isEmpty()) { // also update other certificates
-				wrapper.println("Update server certificates ...");
-				for (String certName : certNames) {
-					cert = readCertificate(certName);
-					cert = generateCertificate(caCert.getSubject().toString(),
-							caKey, cert.getSubject().toString(),
-							extractPublicKey(cert), cert.getNotAfter());
-					writeCertificate(certName, cert);
+			if (name == null) {
+				caCert = cert;
+				if (!certNames.isEmpty()) { // also update other certificates
+					wrapper.println("Update server certificates ...");
+					for (String certName : certNames) {
+						cert = readCertificate(certName);
+						cert = generateCertificate(caCert.getSubject().toString(),
+								caKey, cert.getSubject().toString(),
+								extractPublicKey(cert), cert.getNotAfter());
+						writeCertificate(certName, cert);
+					}
 				}
 			}
 			wrapper.println("Finished");
@@ -843,14 +880,17 @@ public class CertTool {
 			cert = generateCertificate(issuer, caKey, dn,
 					extractPublicKey(cert), cert.getNotAfter());
 			writeCertificate(name, cert);
-			if (name == null && !certNames.isEmpty()) { // also update other certificates
-				wrapper.println("Update server certificates ...");
-				for (String certName : certNames) {
-					cert = readCertificate(certName);
-					cert = generateCertificate(issuer, caKey, cert.getSubject()
-							.toString(), extractPublicKey(cert),
-							cert.getNotAfter());
-					writeCertificate(certName, cert);
+			if (name == null) {
+				caCert = cert;
+				if (!certNames.isEmpty()) { // also update other certificates
+					wrapper.println("Update server certificates ...");
+					for (String certName : certNames) {
+						cert = readCertificate(certName);
+						cert = generateCertificate(issuer, caKey, cert.getSubject()
+								.toString(), extractPublicKey(cert),
+								cert.getNotAfter());
+						writeCertificate(certName, cert);
+					}
 				}
 			}
 			wrapper.println("Finished");
@@ -859,9 +899,11 @@ public class CertTool {
 			if (name == null)
 				throw new CertToolException("Cannot delete CA certificate");
 			if (new File(getKeyFileName(name)).delete()
-					&& new File(getCertFileName(name)).delete())
+					&& new File(getCertFileName(name)).delete()) {
 				wrapper.println("Certificate and private key deleted for "
 						+ name);
+				certNames.remove(name);				
+			}
 			else
 				wrapper.println("Could not delete certificate and private key for "
 						+ name);
@@ -884,7 +926,7 @@ public class CertTool {
 	 * Main function: will read and parse command line options
 	 * @param args command line arguments
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		try {
 
 			CertTool tool = new CertTool();
@@ -905,7 +947,7 @@ public class CertTool {
 							tool.actionGiven = true;
 						continue;
 					} catch (IllegalArgumentException ex) { // other arguments
-						if (argument.equals("-cmdline")) {
+						if (argument.equals("-batch")) {
 							tool.interactive = false;
 							continue ARGS;
 						}
@@ -924,7 +966,7 @@ public class CertTool {
 							wrapper.println("-dn <value> Distinguished name of certificate subject");
 							wrapper.println("-cn <value> Common name within distinguished name");
 							wrapper.println("-days <value> Number of days of certificate validity");
-							wrapper.println("-cmdline  Do not allow input from console");
+							wrapper.println("-batch  Do not allow input from console");
 							wrapper.println("[Name] is the server name. If omitted, action is for the CA certificate");
 							return;
 						}
@@ -976,12 +1018,27 @@ public class CertTool {
 			}
 
 			// check input data, maybe ask for information
-			tool.prepareAction();
-			// do action
-			tool.doAction();
+			do {
+				try {
+					if (tool.prepareAction())
+						break; // finish when 'END' has been chosen
+					// do action
+					tool.doAction();					
+		 		} catch (CertToolException ex) {
+		 			String text = "Error in input data: " + ex.getMessage();
+					if (tool.interactive) {
+						wrapper.println(text);
+						wrapper.readLine("Press ENTER");
+					}
+					else
+						System.err.println(text);
+
+		 		} finally {
+					tool.cleanup();		 			
+		 		}
+			} while (!tool.actionGiven && tool.interactive); // loop once when action has been specified in command line
 		} catch (CertToolException ex) {
 			System.err.println("Error in input data: " + ex.getMessage());
-			System.exit(1);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
