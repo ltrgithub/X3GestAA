@@ -174,8 +174,8 @@ namespace PowerPointAddIn
         public string getInstalledAddinVersion()
         {
             String addinVersion = "0.0.0";
-            RegistryKey regCurrentUser = Registry.CurrentUser;
-            RegistryKey installerProductKey = regCurrentUser.OpenSubKey("Software\\Microsoft\\Installer\\Products");
+            RegistryKey regLM = Registry.LocalMachine;
+            RegistryKey installerProductKey = regLM.OpenSubKey("SOFTWARE\\Classes\\Installer\\Products");
             foreach (string subKeyName in installerProductKey.GetSubKeyNames())
             {
                 using (RegistryKey sk = installerProductKey.OpenSubKey(subKeyName))
@@ -188,18 +188,19 @@ namespace PowerPointAddIn
                             {
                                 Object decVersion = sk.GetValue("Version");
                                 int v = Convert.ToInt32(decVersion.ToString());
+                                versionNumberBinary = v;
                                 String vr = ((v & 0xFF000000) >> 24) + "." + ((v & 0x00FF0000) >> 16) + "." + (v & 0x0000FFFF);
                                 addinVersion = vr;
                                 break;
                             }
                         }
-                        sk.Close();
                     }
+                    sk.Close();
                 }
             }
 
             installerProductKey.Close();
-            regCurrentUser.Close();
+            regLM.Close();
             return addinVersion;
         }
 

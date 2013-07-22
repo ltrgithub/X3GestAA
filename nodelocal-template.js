@@ -10,16 +10,7 @@
 var helpers = require('syracuse-core/lib/helpers');
 
 helpers.stubsPath = "stubs";
-helpers.useInstances = true;
-helpers.useMongodb = true;
 helpers.enableDeveloppementFeatures = true;
-
-helpers.debug.traces = { 
-	//"sql.mapping": true,
-	//"sql.execute": true
-};
-
-helpers.fusionProxyTracer = false;  // true ==> Every client/server exchanges are traced
 
 helpers.sageup = {
 	format: 'json',  // format can be 'json' or 'xml'
@@ -30,6 +21,9 @@ helpers.sageup = {
 };
 
 exports.config = {
+	system: {
+//			memwatch: true
+	},
 /*	integrationServer: {
 		port: 8125
 	},
