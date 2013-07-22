@@ -21,6 +21,9 @@ helpers.sageup = {
 };
 
 exports.config = {
+	system: {
+//			memwatch: true
+	},
 /*	integrationServer: {
 		port: 8125
 	},
