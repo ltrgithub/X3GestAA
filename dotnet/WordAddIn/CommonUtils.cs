@@ -171,10 +171,9 @@ namespace WordAddIn
             if (content == null)
             {
                 ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
-                File.Delete(tempFile);
+                TryDeleteFile(tempFile);
                 return;
             }
-
             ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
 
             // Sometimes the browser seems to lock the file a litte bit too long, so do some retries
@@ -185,22 +184,42 @@ namespace WordAddIn
             {
                 ext = ".docx";
             }
-            string newDocumentFile = tempFile;
-            while (File.Exists(tempFile))
-            {
-                tempFile = "_" + tempFile;
-            }
 
-            newDocumentFile = newDocumentFile.Replace(".docx", ext);
-            using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
+            string newDocumentFile = tempFile;
+            int tryWrite = 0;
+            while (tryWrite < 2)
             {
-                using (BinaryWriter writer = new BinaryWriter(stream))
+                FileInfo fi = new FileInfo(tempFile);
+                newDocumentFile = tempFile;
+
+                // This is for not overwriting existing files
+                int count = 0;
+                while (File.Exists(newDocumentFile))
                 {
-                    writer.Write(content);
-                    writer.Close();
+                    count++;
+                    newDocumentFile = fi.Directory.FullName + "\\" + fi.Name + " (" + count + ")" + fi.Extension;
+                }
+
+                tryWrite++;
+                try
+                {
+                    newDocumentFile = newDocumentFile.Replace(".docx", ext);
+                    using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
+                    {
+                        using (BinaryWriter writer = new BinaryWriter(stream))
+                        {
+                            writer.Write(content);
+                            writer.Close();
+                            tryWrite = 2;
+                        }
+                    }
+                }
+                catch (Exception) {
+                    // This is because during the first try, we may have tried to write to an directory w/o write access, so change path here
+                    tempFile = Path.GetTempPath() + "\\" + fi.Name + fi.Extension;
                 }
             }
-
+            
             doc = Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
             if (doc == null)
             {
@@ -233,7 +252,6 @@ namespace WordAddIn
                 }
                 doc.SaveAs2(newDocumentFile, WdSaveFormat.wdFormatDocumentDefault);
                 ((Microsoft.Office.Interop.Word._Document)doc).Close();
-
                 TryDeleteFile(tempFile);
                 doc = Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
             }
@@ -245,7 +263,7 @@ namespace WordAddIn
         private void TryDeleteFile(string file)
         {
             int tries = 0;
-            while (tries++ < 3)
+            while (tries++ < 3 && File.Exists(file))
             {
                 try
                 {
