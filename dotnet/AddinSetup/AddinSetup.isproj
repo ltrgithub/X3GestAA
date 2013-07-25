@@ -1,0 +1,46 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2012SpringLimited\InstallShield.targets"/>
+	<ItemGroup>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ExcelAddIn\ExcelAddIn.csproj">
+			<Name>ExcelAddIn</Name>
+			<Project>{7CAED4A8-523E-47DA-B5A9-E8FFF57AF193}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\PowerPointAddIn\PowerPointAddIn.csproj">
+			<Name>PowerPointAddIn</Name>
+			<Project>{A7CE283E-42B9-455F-B05C-97D5A2F617C2}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\WordAddIn\WordAddIn.csproj">
+			<Name>WordAddIn</Name>
+			<Project>{6E8D58CA-0CAC-4C2A-BC0E-AB6E1071685D}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>
