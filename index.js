@@ -78,7 +78,7 @@ require('syracuse-license').register(function(err, data) {
 		});
 	} else {
 		var syracuse = require('syracuse-main/lib/syracuse');
-		syracuse.startServers();
+		syracuse.main();
 	}
 });
 
