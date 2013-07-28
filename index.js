@@ -52,11 +52,8 @@ if(config.streamline) {
 			fibers: false,
 			verbose: true,
 			cache: true,
-			trampoline: "nextTick"
 	}
 }
-// hack to avoid init error when trampoline is set to nextTick -- investigate why this is necessary
-delete config.streamline.trampoline;
 
 require('coffee-script');
 
@@ -73,9 +70,12 @@ require('syracuse-license').register(function(err, data) {
 		var patchtools = require('syracuse-patch/lib/patchtools');
 		patchtools.waitfunction(function(err) {
 			if (err) {
-				console.log("Error "+err);
+				console.log("Error "+err.stack);
 			} else {
 				var syracuse = require('syracuse-main/lib/syracuse');
+				syracuse.runPatchCb(function(err) {
+					console.log("Error "+err.stack);
+				});
 			}
 		});
 	} else {
@@ -83,4 +83,3 @@ require('syracuse-license').register(function(err, data) {
 		syracuse.main();
 	}
 });
-
