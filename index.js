@@ -55,6 +55,8 @@ if(config.streamline) {
 			trampoline: "nextTick"
 	}
 }
+// hack to avoid init error when trampoline is set to nextTick -- investigate why this is necessary
+delete config.streamline.trampoline;
 
 require('coffee-script');
 
