@@ -1,5 +1,10 @@
 "use strict";
 
+(function() {
+	var matches = process.version.match(/^v(\d+)\.(\d+).*$/);
+	if (!(matches && (matches[1] > 0 || matches[2] >= 10))) throw new Error("unsupported node version: " + process.version + " - please upgrade to 0.10.x or more recent");	
+})();
+
 var config = {};
 
 try {
