@@ -98,8 +98,8 @@ namespace ExcelAddIn
             // buttonServer
             // 
             this.buttonServer.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonServer.Image = global::ExcelAddIn.Properties.Resources.server_settings;
             resources.ApplyResources(this.buttonServer, "buttonServer");
+            this.buttonServer.Image = global::ExcelAddIn.Properties.Resources.server_settings;
             this.buttonServer.Name = "buttonServer";
             this.buttonServer.ShowImage = true;
             this.buttonServer.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonServer_Click);
@@ -114,8 +114,8 @@ namespace ExcelAddIn
             // buttonSettings
             // 
             this.buttonSettings.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSettings.Image = global::ExcelAddIn.Properties.Resources.settings;
             resources.ApplyResources(this.buttonSettings, "buttonSettings");
+            this.buttonSettings.Image = global::ExcelAddIn.Properties.Resources.settings;
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.ShowImage = true;
             this.buttonSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSettings_Click);
@@ -123,8 +123,8 @@ namespace ExcelAddIn
             // buttonRefreshAll
             // 
             this.buttonRefreshAll.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonRefreshAll.Image = global::ExcelAddIn.Properties.Resources.refresh;
             resources.ApplyResources(this.buttonRefreshAll, "buttonRefreshAll");
+            this.buttonRefreshAll.Image = global::ExcelAddIn.Properties.Resources.refresh;
             this.buttonRefreshAll.Name = "buttonRefreshAll";
             this.buttonRefreshAll.ShowImage = true;
             this.buttonRefreshAll.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshAll_Click);
@@ -138,8 +138,8 @@ namespace ExcelAddIn
             // buttonPublish
             // 
             this.buttonPublish.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonPublish.Image = global::ExcelAddIn.Properties.Resources.save;
             resources.ApplyResources(this.buttonPublish, "buttonPublish");
+            this.buttonPublish.Image = global::ExcelAddIn.Properties.Resources.save;
             this.buttonPublish.Name = "buttonPublish";
             this.buttonPublish.ShowImage = true;
             this.buttonPublish.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPublish_Click);
@@ -160,24 +160,24 @@ namespace ExcelAddIn
             // 
             // dropDownInsert
             // 
+            resources.ApplyResources(this.dropDownInsert, "dropDownInsert");
             resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
             resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
             resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
             this.dropDownInsert.Items.Add(ribbonDropDownItemImpl1);
             this.dropDownInsert.Items.Add(ribbonDropDownItemImpl2);
             this.dropDownInsert.Items.Add(ribbonDropDownItemImpl3);
-            resources.ApplyResources(this.dropDownInsert, "dropDownInsert");
             this.dropDownInsert.Name = "dropDownInsert";
             // 
             // dropDownDelete
             // 
+            resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
             resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
             resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
             resources.ApplyResources(ribbonDropDownItemImpl6, "ribbonDropDownItemImpl6");
             this.dropDownDelete.Items.Add(ribbonDropDownItemImpl4);
             this.dropDownDelete.Items.Add(ribbonDropDownItemImpl5);
             this.dropDownDelete.Items.Add(ribbonDropDownItemImpl6);
-            resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
             this.dropDownDelete.Name = "dropDownDelete";
             // 
             // groupVersion
