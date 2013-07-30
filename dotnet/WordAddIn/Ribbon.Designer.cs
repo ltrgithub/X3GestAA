@@ -77,8 +77,8 @@
             // buttonSave
             // 
             this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::WordAddIn.Properties.Resources.sauvegarder;
             resources.ApplyResources(this.buttonSave, "buttonSave");
+            this.buttonSave.Image = global::WordAddIn.Properties.Resources.sauvegarder;
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.ShowImage = true;
             this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
@@ -86,8 +86,8 @@
             // buttonSaveAs
             // 
             this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSaveAs.Image = global::WordAddIn.Properties.Resources.sauvegarder2;
             resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
+            this.buttonSaveAs.Image = global::WordAddIn.Properties.Resources.sauvegarder2;
             this.buttonSaveAs.Name = "buttonSaveAs";
             this.buttonSaveAs.ShowImage = true;
             this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
@@ -113,8 +113,8 @@
             // buttonPreview
             // 
             this.buttonPreview.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonPreview.Image = global::WordAddIn.Properties.Resources.preview;
             resources.ApplyResources(this.buttonPreview, "buttonPreview");
+            this.buttonPreview.Image = global::WordAddIn.Properties.Resources.preview;
             this.buttonPreview.Name = "buttonPreview";
             this.buttonPreview.ShowImage = true;
             this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
@@ -139,8 +139,9 @@
             // 
             // dropDownLocale
             // 
-            this.dropDownLocale.Items.Add(ribbonDropDownItemImpl1);
             resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
+            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
+            this.dropDownLocale.Items.Add(ribbonDropDownItemImpl1);
             this.dropDownLocale.Name = "dropDownLocale";
             this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
             // 
