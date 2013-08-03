@@ -22,7 +22,7 @@ if(config.streamline) {
 
 require("streamline").register(config.streamline);
 
-require("syracuse-load/lib/balancer").start(config, function(err) {
+require("syracuse-load/lib/balancer").startCb(config, function(err) {
 	if (err) {
 		console.log("Error: "+err.message+" "+err.stack);
 	}
