@@ -19,6 +19,7 @@ if(config.streamline) {
 			trampoline: "nextTick"
 		}
 }
+config.streamline.lines = config.streamline.lines || "preserve";
 
 require("streamline").register(config.streamline);
 
