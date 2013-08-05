@@ -1,5 +1,10 @@
 "use strict";
 
+(function() {
+	var matches = process.version.match(/^v(\d+)\.(\d+).*$/);
+	if (!(matches && (matches[1] > 0 || matches[2] >= 10))) throw new Error("unsupported node version: " + process.version + " - please upgrade to 0.10.x or more recent");	
+})();
+
 var config = {};
 
 try {
@@ -52,9 +57,9 @@ if(config.streamline) {
 			fibers: false,
 			verbose: true,
 			cache: true,
-			trampoline: "nextTick"
 	}
 }
+config.streamline.lines = config.streamline.lines || "preserve";
 
 require('coffee-script');
 
@@ -71,9 +76,12 @@ require('syracuse-license').register(function(err, data) {
 		var patchtools = require('syracuse-patch/lib/patchtools');
 		patchtools.waitfunction(function(err) {
 			if (err) {
-				console.log("Error "+err);
+				console.log("Error "+err.stack);
 			} else {
 				var syracuse = require('syracuse-main/lib/syracuse');
+				syracuse.runPatchCb(function(err) {
+					console.log("Error "+err.stack);
+				});
 			}
 		});
 	} else {
@@ -81,4 +89,3 @@ require('syracuse-license').register(function(err, data) {
 		syracuse.main();
 	}
 });
-
