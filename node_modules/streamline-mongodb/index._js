@@ -8,7 +8,8 @@ if (!/-fast$/.test(require('streamline/lib/globals').runtime)) return;
 exports = module.exports = {};
 exports.Server = mongodb.Server;
 
-exports.Db = function(databaseName, serverConfig, options) {
+exports.Db = function Db(databaseName, serverConfig, options) {
+	if(!(this instanceof Db)) return new Db(databaseName, serverConfig, options);
 	this.obj = new mongodb.Db(databaseName, serverConfig, options);
 };
 var dbProto = exports.Db.prototype;
@@ -36,10 +37,23 @@ dbProto.ensureIndex = function(collectionName, fieldOrSpec, options, _) {
 	else this.obj.ensureIndex(collectionName, fieldOrSpec, options, ~_);
 	return this;
 };
-Object.defineProperty(dbProto, "state", {
-	get: function() {
-		return this.obj.state;
-	}
+dbProto.createCollection = function(collectionName, options, _) {
+	var coln;
+	if (typeof options === "function") coln = this.obj.createCollection(collectionName, ~_);
+	else coln = this.obj.createCollection(collectionName, options, ~_);
+	return new Collection(coln);
+};
+dbProto.eval = function(code, parameters, options, _) {
+	if (typeof parameters === "function") return this.obj.eval(code, ~_);
+	else if (typeof options === "function") return this.obj.eval(code, parameters, ~_);
+	else return this.obj.eval(code, parameters, options, ~_);
+};
+["state", "bsonLib"].forEach(function(key) {
+	Object.defineProperty(dbProto, key, {
+		get: function() {
+			return this.obj[key];
+		}
+	});
 });
 
 function Collection(obj) {
@@ -113,6 +127,7 @@ curProto.nextObject = function(_) {
 };
 
 exports.GridStore = function GridStore(db, path, flags) {
+	if(!(this instanceof GridStore)) return new GridStore(db, path, flags);
 	mongodb.GridStore.call(this, db.obj, path, flags);
 };
 exports.GridStore.prototype = new mongodb.GridStore();

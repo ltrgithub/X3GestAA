@@ -59,6 +59,7 @@ if(config.streamline) {
 			cache: true,
 	}
 }
+config.streamline.lines = config.streamline.lines || "preserve";
 
 require('coffee-script');
 
