@@ -714,7 +714,7 @@ namespace WordAddIn
                     try { type = entity["$type"].ToString(); }
                     catch (Exception) { }
 
-                    if (type != null && type.Contains("x-document"))
+                    if (type != null && (type.Contains("x-document") || type.Contains("text/html") || type.Contains("text/rtf") || type.Contains("text/plain")))
                     {
                         setContentControlClob(doc, ctrl, entity, field);
                         return;
