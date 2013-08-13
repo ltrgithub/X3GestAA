@@ -888,6 +888,14 @@ namespace WordAddIn
                             // Millimeter 2 Inch = 25.4
                             // Inch 2 Pixel = 72
                             float maxWidth = 454;  // 160 / 25.4 * 72
+                            if (ti.display != null)
+                            {
+                                maxWidth = getMaxWidth(ti.display);
+                                if (maxWidth <= 0)
+                                {
+                                    maxWidth = 454;
+                                }
+                            }
 
                             if (shape.Width > maxWidth)
                             {
@@ -909,6 +917,16 @@ namespace WordAddIn
                     }
                 }
                 catch (Exception) { };
+            }
+        }
+
+        private static float getMaxWidth(string display)
+        {
+            try
+            {
+                return Convert.ToInt32(display);
+            } catch (Exception) {
+                return -1;
             }
         }
 
