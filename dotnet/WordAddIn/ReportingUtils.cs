@@ -917,6 +917,11 @@ namespace WordAddIn
             string imageFile = null;
             try
             {
+                // currenty, only syracuse sends protocol, host and port. Add this information for X3 entities
+                if (!(url.StartsWith("http:") || url.StartsWith("https:")))
+                {
+                    url = browserDialog.serverUrl + url;
+                }
                 byte[] image = browserDialog.readBinaryURLContent(url);
                 if (image != null)
                 {
