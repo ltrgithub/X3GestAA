@@ -888,6 +888,14 @@ namespace WordAddIn
                             // Millimeter 2 Inch = 25.4
                             // Inch 2 Pixel = 72
                             float maxWidth = 454;  // 160 / 25.4 * 72
+                            if (ti.display != null)
+                            {
+                                maxWidth = getMaxWidth(ti.display);
+                                if (maxWidth <= 0)
+                                {
+                                    maxWidth = 454;
+                                }
+                            }
 
                             if (shape.Width > maxWidth)
                             {
@@ -912,11 +920,26 @@ namespace WordAddIn
             }
         }
 
+        private static float getMaxWidth(string display)
+        {
+            try
+            {
+                return Convert.ToInt32(display);
+            } catch (Exception) {
+                return -1;
+            }
+        }
+
         private static string downloadImage(string url, BrowserDialog browserDialog)
         {
             string imageFile = null;
             try
             {
+                // currenty, only syracuse sends protocol, host and port. Add this information for X3 entities
+                if (!(url.StartsWith("http:") || url.StartsWith("https:")))
+                {
+                    url = browserDialog.serverUrl + url;
+                }
                 byte[] image = browserDialog.readBinaryURLContent(url);
                 if (image != null)
                 {
