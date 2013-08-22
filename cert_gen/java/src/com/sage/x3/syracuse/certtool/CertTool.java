@@ -135,6 +135,17 @@ public class CertTool {
 
 	}
 
+	private void longDn(String dn) throws IOException {
+		String value = null;
+		if ((value = findReplace(dn, "CN", null)) != null) wrapper.println(" Name: "+value);
+		if ((value = findReplace(dn, "OU", null)) != null) wrapper.println(" Organizational unit: "+value);
+		if ((value = findReplace(dn, "O", null)) != null) wrapper.println(" Organization: "+value);
+		if ((value = findReplace(dn, "L", null)) != null) wrapper.println(" City: "+value);
+		if ((value = findReplace(dn, "ST", null)) != null) wrapper.println(" State: "+value);
+		if ((value = findReplace(dn, "C", null)) != null) wrapper.println(" Country: "+value);
+	}
+	
+	
 	/** Read certificate from file system and show its subject, issuer, not after date, not before date */
 	private void showCertificateData(String name) throws CertToolException,
 			IOException {
@@ -161,8 +172,10 @@ public class CertTool {
 			wrapper.println("Certificate for server " + name + " (" + filename
 					+ ")");
 		}
-		wrapper.println("Subject " + holder.getSubject().toString());
-		wrapper.println("Issuer " + holder.getIssuer().toString());
+		wrapper.println("Subject:");
+		longDn(holder.getSubject().toString());
+		wrapper.println("Issuer:");
+		longDn(holder.getIssuer().toString());
 		wrapper.println("Valid from " + SDF.format(holder.getNotBefore())
 				+ " to " + SDF.format(holder.getNotAfter()));
 	}
@@ -727,11 +740,11 @@ public class CertTool {
 			if (pass == null && name != null) {
 				testInteractive("No passphrase given");
 				pass = readPassphrase("Enter passphrase for new private key: ");
-			}
-			if (interactive) {
-				char[] confirm = readPassphrase("Confirm passphrase of private key: ");
-				if (!Arrays.equals(pass, confirm)) 
-					throw new CertToolException("Passphrase does not match its confirmation");				
+				if (interactive) {
+					char[] confirm = readPassphrase("Confirm passphrase of private key: ");
+					if (!Arrays.equals(pass, confirm)) 
+						throw new CertToolException("Passphrase does not match its confirmation");				
+				}			
 			}
 		}
 
@@ -953,7 +966,7 @@ public class CertTool {
 						}
 						if (argument.equals("-help") || argument.equals("-?")) {
 							// help text
-							wrapper.println("Invocation: java -jar certtool.jar [Action] [Parameters] [Name]");
+							wrapper.println("Invocation: java -jar certgen.jar [Action] [Parameters] [Name]");
 							for (Action act : Action.values()) {
 								wrapper.println("-"
 										+ act.name().replace('_', '-')
