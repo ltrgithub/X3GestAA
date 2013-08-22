@@ -59,6 +59,9 @@ if(config.streamline) {
 			cache: true,
 	}
 }
+if(config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
+	config.streamline.cacheDir = config.collaboration.cacheDir + "/"+ (process.env.USER || process.env.USERNAME || "");
+}
 config.streamline.lines = config.streamline.lines || "preserve";
 
 require('coffee-script');
