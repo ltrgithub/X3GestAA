@@ -1,1 +1,1 @@
-java -jar certgen.jar
+java -jar certgen.jar %*
