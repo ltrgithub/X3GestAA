@@ -894,13 +894,24 @@ public class CertTool {
 					extractPublicKey(cert), cert.getNotAfter());
 			writeCertificate(name, cert);
 			if (name == null) {
+				String oldIssuer = caCert.getSubject().toString();
 				caCert = cert;
 				if (!certNames.isEmpty()) { // also update other certificates
 					wrapper.println("Update server certificates ...");
+					String c = findReplace(oldIssuer, "C", null);
+					String st = findReplace(oldIssuer, "ST", null);
+					String l = findReplace(oldIssuer, "L", null);
+					String o = findReplace(oldIssuer, "O", null);
+					String ou = findReplace(oldIssuer, "OU", null);
 					for (String certName : certNames) {
 						cert = readCertificate(certName);
-						cert = generateCertificate(issuer, caKey, cert.getSubject()
-								.toString(), extractPublicKey(cert),
+						String certDN = cert.getSubject().toString();
+						if (c.equals(findReplace(certDN, "C", null)) && st.equals(findReplace(certDN, "ST", null)) &&
+							l.equals(findReplace(certDN, "L", null)) && o.equals(findReplace(certDN, "O", null)) &&
+							ou.equals(findReplace(certDN, "OU", null))) {
+							certDN = findReplace(issuer, "CN", findReplace(certDN, "CN", null));							
+						}
+						cert = generateCertificate(issuer, caKey, certDN, extractPublicKey(cert),
 								cert.getNotAfter());
 						writeCertificate(certName, cert);
 					}
