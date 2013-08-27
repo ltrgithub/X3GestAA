@@ -200,6 +200,15 @@ public class CertTool {
 		}
 	}
 
+	/** return the relative path of the certificate */
+	static private String getPublicKeyFileName(String name) throws CertToolException {
+		if (name == null) {
+			throw new CertToolException("No public key file for CA");
+		} else {
+			return OUTPUT + name + ".pem";
+		}
+	}
+
 	/** get Date object which corresponds to the given number of days from now in the future */
 	static Date computeValidity(String days) {
 		return new Date(System.currentTimeMillis() + 1000L * 86400L
@@ -814,8 +823,10 @@ public class CertTool {
 			writeCertificate(name, cert);
 			if (name == null)
 				caCert = cert;
-			else
-				certNames.add(name);
+			else {
+				writePublic(name, key.getPublic());
+				certNames.add(name);				
+			}
 			wrapper.println("Finished");
 			return;
 		case RENEW_CERT:
@@ -879,6 +890,8 @@ public class CertTool {
 						writeCertificate(certName, cert);
 					}
 				}
+			} else {
+				writePublic(name, key.getPublic());
 			}
 			wrapper.println("Finished");
 			return;
@@ -926,7 +939,11 @@ public class CertTool {
 					&& new File(getCertFileName(name)).delete()) {
 				wrapper.println("Certificate and private key deleted for "
 						+ name);
-				certNames.remove(name);				
+				if (new File(getPublicKeyFileName(name)).delete()) {
+					wrapper.println("Public key deleted for "
+							+ name);					
+				}
+				certNames.remove(name);
 			}
 			else
 				wrapper.println("Could not delete certificate and private key for "
@@ -945,6 +962,20 @@ public class CertTool {
 		}
 
 	}
+
+	static private void writePublic(String name, PublicKey publicKey) throws IOException, CertToolException {
+		String filename = getPublicKeyFileName(name);
+		wrapper.println("Write public key " + filename + " ...");
+		PEMWriter pemWriter = new PEMWriter(new PrintWriter(new FileWriter(
+				filename)));
+		try {
+			pemWriter.writeObject(publicKey);
+			pemWriter.flush();
+		} finally {
+			pemWriter.close();
+		}
+	}
+
 
 	/**
 	 * Main function: will read and parse command line options
