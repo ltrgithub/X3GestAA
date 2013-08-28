@@ -12,13 +12,6 @@ var helpers = require('syracuse-core/lib/helpers');
 helpers.stubsPath = "stubs";
 helpers.enableDeveloppementFeatures = true;
 
-helpers.sageup = {
-	format: 'json',  // format can be 'json' or 'xml'
-	debug: false,  // Activate http request traces
-	params: {   // add everything as http parameters at url queue ==> ?param1key=param1val&param2key=param2val...
-		//returnDelta: true   
-	}
-};
 
 exports.config = {
 	hosting: {
