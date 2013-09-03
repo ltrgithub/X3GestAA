@@ -87,7 +87,7 @@ namespace WordAddIn
                     if (cellData.ContainsKey("$url"))
                     {
                         value = cellData["$url"] == null ? "" : cellData["$url"].ToString();
-                      
+
                         byte[] image = browserDialog.readBinaryURLContent(value);
 
                         if (image != null)
