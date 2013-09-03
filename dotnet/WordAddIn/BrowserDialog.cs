@@ -111,6 +111,9 @@ namespace WordAddIn
             if (data.errorText != null)
                 error = data.errorText;
 
+            if (error == "NOTFOUND")
+                return null;
+
             MessageBox.Show(String.Format(global::WordAddIn.Properties.Resources.MSG_ERROR_DOWNLOAD, new object[] { error, url }),
                 global::WordAddIn.Properties.Resources.MSG_ERROR_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
