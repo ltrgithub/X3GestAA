@@ -19,6 +19,19 @@ if(config.streamline) {
 			trampoline: "nextTick"
 		}
 }
+
+if (config.streamlineFromCI) {
+	try {
+		var version =  require("./version.json") || {};
+		if (version.streamline) {
+			console.log("Streamline from version file")
+			config.streamline = version.streamline;
+		}
+	} catch (ex) {
+		console.error(ex);
+	}
+}
+
 if(config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/"+ (process.env.USER || process.env.USERNAME || "");
 }

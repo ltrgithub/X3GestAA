@@ -45,6 +45,17 @@ if (/^N\d+$/.test(process.argv[2])) {
 	console.error("Standard error redirected")
 }
 
+if (config.streamlineFromCI) {
+	try {
+		var version =  require("./version.json") || {};
+		if (version.streamline) {
+			console.log("Versionaa")
+			config.streamline = version.streamline;
+		}
+	} catch (ex) {
+		console.error(ex);
+	}
+}
 
 //crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local system account
 if(config.streamline) {
