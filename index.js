@@ -13,8 +13,6 @@ try {
 	console.error(ex);
 }
 
-if (!config.streamline || !(config.streamline.fibers || config.streamline.generators) || !config.streamline.fast)
-	throw new Error('invalid streamline configuration, please set "fibers" and "fast" options to true in nodelocal.js');
 //redirect standard output to file in cluster
 if (/^N\d+$/.test(process.argv[2])) {
 	var os = require('os');
@@ -51,7 +49,7 @@ if (config.streamlineFromCI) {
 	try {
 		var version =  require("./version.json") || {};
 		if (version.streamline) {
-			console.log("Versionaa")
+			console.log("Streamline config from version.json")
 			config.streamline = version.streamline;
 		}
 	} catch (ex) {
@@ -72,6 +70,10 @@ if(config.streamline) {
 			cache: true,
 	}
 }
+
+// if (!config.streamline || !(config.streamline.fibers || config.streamline.generators) || !config.streamline.fast)
+// 	throw new Error('invalid streamline configuration, please set "fibers" and "fast" options to true in nodelocal.js');
+
 if(config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/"+ (process.env.USER || process.env.USERNAME || "");
 }
