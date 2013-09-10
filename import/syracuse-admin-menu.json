@@ -777,6 +777,43 @@
 			"pageItem": null
 		},
 		{
+			"$type": "menuItem",
+			"code": "X3_AMIGPORT",
+			"title": "title_15853b1a-121a-4507-9c51-8e5e0f884cbe",
+			"description": "description_15853b1a-131a-4407-9c51-8e5e0f884cbe",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AMIGPORT",
+				"representation": "AMIGPORT"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "X3_TOOLS",
+			"title": "title_672a9073-19a8-44e4-9581-e1b4de993e69",
+			"type": "$menu",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "X3_AMIGPORT"
+				}
+			],
+			"pageItem": null
+		},
+		{
 			"$type": "dashboardDef",
 			"title": "title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e",
 			"dashboardName": "home",
@@ -822,6 +859,14 @@
 							"allEndpoints": true,
 							"portlet": {
 								"code": "S_TOOLS"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "X3_TOOLS"
 							},
 							"endpoint": null
 						}
@@ -889,7 +934,10 @@
 			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
 			"description_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
 			"title_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions",
-			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions Management"
+			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions Management",
+			"title_15853b1a-121a-4507-9c51-8e5e0f884cbe": "V6 Dashboard Import",
+			"description_15853b1a-131a-4407-9c51-8e5e0f884cbe": "V6 Dashboard Import",
+			"title_672a9073-19a8-44e4-9581-e1b4de993e69": "X3 Tools"
 		},
 		"fr-fr": {
 			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Menu d'administration",
@@ -948,7 +996,10 @@
 			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
 			"description_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
 			"title_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse",
-			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse"
+			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse",
+			"title_15853b1a-121a-4507-9c51-8e5e0f884cbe": "Import des portails V6",
+			"description_15853b1a-131a-4407-9c51-8e5e0f884cbe": "Import des portails V6",
+			"title_672a9073-19a8-44e4-9581-e1b4de993e69": "Outils X3"
 		}
 	}
 }
