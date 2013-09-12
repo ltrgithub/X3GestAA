@@ -99,15 +99,13 @@ colProto.find = function() {
 	if (typeof lastArg === "function") {
 		var that = this;
 		var args = Array.prototype.slice.call(arguments, 0);
-		return (function(_) {
-			return (function(cb) {
-				args[args.length - 1] = function(err, result) {
-					if (err) return cb(err);
-					cb(null, new Cursor(result));
-				};
-				return that.obj.find.apply(that.obj, args);
-			})(~_);
-		})(lastArg);
+		return _(function(cb) {
+			args[args.length - 1] = function(err, result) {
+				if (err) return cb(err);
+				cb(null, new Cursor(result));
+			};
+			return that.obj.find.apply(that.obj, args);
+		}, 0)(lastArg);
 	} else {
 		return new Cursor(this.obj.find.apply(this.obj, arguments));
 	}

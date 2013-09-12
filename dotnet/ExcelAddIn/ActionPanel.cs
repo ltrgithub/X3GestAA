@@ -13,6 +13,7 @@ using System.Web.Script.Serialization;
 using Path = System.IO.Path;
 using System.Threading;
 using System.Globalization;
+using Microsoft.Win32;
 
 namespace ExcelAddIn
 {
@@ -23,8 +24,53 @@ namespace ExcelAddIn
         public ActionPanel()
         {
             connected = false;
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+            setLanguage();
             InitializeComponent();
+        }
+
+        // Equal function for Excel / Word / Powerpoint
+        private void setLanguage()
+        {
+            int languageCode = 0;
+            const string keyEntry = "UILanguage";
+            // 15.0 Office 2013
+            // 14.0 2010
+            // 12.0 2003
+            string[] versions = { "15.0", "14.0", "12.0" };
+            foreach (string version in versions)
+            {
+                string reg = @"Software\Microsoft\Office\" + version + "\\Common\\LanguageResources";
+                try
+                {
+                    RegistryKey k = Registry.CurrentUser.OpenSubKey(reg);
+                    if (k != null && k.GetValue(keyEntry) != null) languageCode = (int)k.GetValue(keyEntry);
+
+                }
+                catch { }
+
+                try
+                {
+                    RegistryKey k = Registry.LocalMachine.OpenSubKey(reg);
+                    if (k != null && k.GetValue(keyEntry) != null) languageCode = (int)k.GetValue(keyEntry);
+                }
+                catch { }
+
+                if (languageCode > 0)
+                {
+                    break;
+                }
+            }
+
+            if (languageCode > 0)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageCode);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+            }
+
+            return;
         }
 
         public HtmlDocument webDocument { get { return webBrowser.Document; } }
