@@ -110,6 +110,7 @@
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.buttonCancel);
             this.Name = "PresentationSelectionDialog";
+            this.Load += new System.EventHandler(this.PresentationSelectionDialog_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
