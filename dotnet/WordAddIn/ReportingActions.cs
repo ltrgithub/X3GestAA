@@ -67,6 +67,7 @@ namespace WordAddIn
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
+                    Globals.Ribbons.Ribbon.buttonCleanup.Enabled = true;
                 }
 
                 if (rpt_fill_tpl.Equals(mode))
@@ -212,6 +213,26 @@ namespace WordAddIn
                 cc.Tag = "$sum(" + cc.Tag + ")";
                 Globals.Ribbons.Ribbon.toggleMakeSum.Checked = true;
             }
+        }
+
+        public void CleanupReportTemplateData()
+        {
+            Document doc = Globals.WordAddIn.getActiveDocument();
+            if (doc == null)
+            {
+                return;
+            }
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
+            if (customData == null)
+            {
+                return;
+            }
+            customData.setServerUrl("");
+            customData.setDocumentUrl("");
+            customData.writeDictionaryToDocument();
+
+            Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
         }
     }
 }
