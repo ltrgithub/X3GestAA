@@ -75,5 +75,9 @@ namespace WordAddIn
             Globals.WordAddIn.commons.updateAddin();
         }
 
+        private void buttonCleanup_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.WordAddIn.reporting.CleanupReportTemplateData();
+        }
     }
 }
