@@ -101,11 +101,14 @@ namespace WordAddIn
             this.installedVersion = this.Factory.CreateRibbonLabel();
             this.buttonUpdate = this.Factory.CreateRibbonButton();
             this.version = this.Factory.CreateRibbonLabel();
+            this.group1 = this.Factory.CreateRibbonGroup();
+            this.buttonCleanup = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupSave.SuspendLayout();
             this.groupReporting.SuspendLayout();
             this.groupLocale.SuspendLayout();
             this.groupVersion.SuspendLayout();
+            this.group1.SuspendLayout();
             // 
             // tabSageERPX3
             // 
@@ -114,6 +117,7 @@ namespace WordAddIn
             this.tabSageERPX3.Groups.Add(this.groupReporting);
             this.tabSageERPX3.Groups.Add(this.groupLocale);
             this.tabSageERPX3.Groups.Add(this.groupVersion);
+            this.tabSageERPX3.Groups.Add(this.group1);
             resources.ApplyResources(this.tabSageERPX3, "tabSageERPX3");
             this.tabSageERPX3.Name = "tabSageERPX3";
             // 
@@ -127,8 +131,8 @@ namespace WordAddIn
             // buttonSave
             // 
             this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonSave, "buttonSave");
             this.buttonSave.Image = global::WordAddIn.Properties.Resources.sauvegarder;
+            resources.ApplyResources(this.buttonSave, "buttonSave");
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.ShowImage = true;
             this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
@@ -136,8 +140,8 @@ namespace WordAddIn
             // buttonSaveAs
             // 
             this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
             this.buttonSaveAs.Image = global::WordAddIn.Properties.Resources.sauvegarder2;
+            resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
             this.buttonSaveAs.Name = "buttonSaveAs";
             this.buttonSaveAs.ShowImage = true;
             this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
@@ -163,8 +167,8 @@ namespace WordAddIn
             // buttonPreview
             // 
             this.buttonPreview.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonPreview, "buttonPreview");
             this.buttonPreview.Image = global::WordAddIn.Properties.Resources.preview;
+            resources.ApplyResources(this.buttonPreview, "buttonPreview");
             this.buttonPreview.Name = "buttonPreview";
             this.buttonPreview.ShowImage = true;
             this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
@@ -189,9 +193,8 @@ namespace WordAddIn
             // 
             // dropDownLocale
             // 
-            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
-            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
             this.dropDownLocale.Items.Add(ribbonDropDownItemImpl1);
+            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
             this.dropDownLocale.Name = "dropDownLocale";
             this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
             // 
@@ -221,6 +224,18 @@ namespace WordAddIn
             resources.ApplyResources(this.version, "version");
             this.version.Name = "version";
             // 
+            // group1
+            // 
+            this.group1.Items.Add(this.buttonCleanup);
+            resources.ApplyResources(this.group1, "group1");
+            this.group1.Name = "group1";
+            // 
+            // buttonCleanup
+            // 
+            resources.ApplyResources(this.buttonCleanup, "buttonCleanup");
+            this.buttonCleanup.Name = "buttonCleanup";
+            this.buttonCleanup.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonCleanup_Click);
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -237,6 +252,8 @@ namespace WordAddIn
             this.groupLocale.PerformLayout();
             this.groupVersion.ResumeLayout(false);
             this.groupVersion.PerformLayout();
+            this.group1.ResumeLayout(false);
+            this.group1.PerformLayout();
 
         }
 
@@ -257,6 +274,8 @@ namespace WordAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel installedVersion;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCleanup;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection
