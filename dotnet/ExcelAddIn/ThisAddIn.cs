@@ -72,7 +72,6 @@ namespace ExcelAddIn
         {
             //
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
             //
             if (this.Application.ActiveWorkbook != null)
                 AutoConnect();
