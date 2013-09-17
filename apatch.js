@@ -33,6 +33,8 @@ if(config.streamline) {
 	}
 }
 
+config.patch = config.patch || {};
+
 if(config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/"+ (process.env.USER || process.env.USERNAME || "");
 }
@@ -43,7 +45,7 @@ require("streamline").register(config.streamline);
 var arg = process.argv[2];
 require('syracuse-patch/lib/patchcreate').cmdLinePatchCb(config, function(err, result) {
 		if (err) {
-			console.error("Error " +err);
+			console.error("Error " +err+" "+err.stack);
 			process.exit(1);
 		} else {
 			process.exit(result || 0);
