@@ -45,6 +45,17 @@ if (/^N\d+$/.test(process.argv[2])) {
 	console.error("Standard error redirected")
 }
 
+if (config.streamlineFromCI) {
+	try {
+		var version =  require("./version.json") || {};
+		if (version.streamline) {
+			console.log("Streamline config from version.json")
+			config.streamline = version.streamline;
+		}
+	} catch (ex) {
+		console.error(ex);
+	}
+}
 
 //crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local system account
 if(config.streamline) {
@@ -59,6 +70,10 @@ if(config.streamline) {
 			cache: true,
 	}
 }
+
+if (!config.streamline || !(config.streamline.fibers || config.streamline.generators) || !config.streamline.fast)
+	throw new Error('invalid streamline configuration, please set "fibers" and "fast" options to true in nodelocal.js');
+
 if(config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/"+ (process.env.USER || process.env.USERNAME || "");
 }
@@ -77,7 +92,7 @@ require('syracuse-license').register(function(err, data) {
 	if (process.argv[2] === "PATCH") {
 		// patchtools are independent of Syracuse modules!
 		var patchtools = require('syracuse-patch/lib/patchtools');
-		patchtools.waitfunction(function(err) {
+		patchtools.waitfunctionCb(function(err) {
 			if (err) {
 				console.log("Error "+err.stack);
 			} else {

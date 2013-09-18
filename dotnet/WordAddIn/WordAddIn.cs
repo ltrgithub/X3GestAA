@@ -55,6 +55,7 @@ namespace WordAddIn
             Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
             Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonCleanup.Enabled = false;
 
             Document doc = getActiveDocument();
             if (doc == null)
