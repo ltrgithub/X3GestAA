@@ -11,5 +11,6 @@ var sys = require("util");
 
 gen.makeChangelog(function(err, res) {
 	if (err) return console.error(err);
-	console.log(sys.inspect(res));
-}, "Sage-ERP-X3", "Syracuse");
+}, {
+	max_tag: process.argv[2]
+});
