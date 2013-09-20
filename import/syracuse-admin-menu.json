@@ -172,6 +172,26 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "S_LICENCES",
+			"title": "title_S_LICENCES",
+			"description": "description_S_LICENCES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "licences",
+				"representation": "licence"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "S_PROXY",
 			"title": "title_S_PROXY",
 			"description": "description_S_PROXY",
@@ -212,6 +232,86 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "S_SOAP_WS",
+			"title": "title_S_SOAP_WS",
+			"description": "description_S_SOAP_WS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "soapWebServices",
+				"representation": "soapWebService"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_HOSTS",
+			"title": "title_S_HOSTS",
+			"description": "description_S_HOSTS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "hosts",
+				"representation": "host"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_CERTIFICATES",
+			"title": "title_S_CERTIFICATES",
+			"description": "description_S_CERTIFICATES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "certificates",
+				"representation": "certificate"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_CA_CERTIFICATES",
+			"title": "title_S_CA_CERTIFICATES",
+			"description": "description_S_CA_CERTIFICATES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "caCertificates",
+				"representation": "caCertificate"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "S_LDAP_SERVERS",
 			"title": "title_S_LDAP_SERVERS",
 			"description": "description_S_LDAPSERVERS",
@@ -247,7 +347,7 @@
 			"representationRef": {
 				"$type": "representationProxy",
 				"entity": "oauth2s",
-				"representation": "oauth"
+				"representation": "oauth2"
 			}
 		},
 		{
@@ -454,7 +554,22 @@
 					"code": "S_BADGES"
 				},
 				{
+					"code": "S_LICENCES"
+				},
+				{
+					"code": "S_CERTIFICATES"
+				},
+				{
+					"code": "S_CA_CERTIFICATES"
+				},
+				{
 					"code": "S_PROXY"
+				},
+				{
+					"code": "S_HOSTS"
+				},
+				{
+					"code": "S_SOAP_WS"
 				},
 				{
 					"code": "S_X3_SERVERS"
@@ -820,12 +935,32 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "S_EXPORT_PROFILES",
+			"title": "title_S_EXPORT_PROFILES",
+			"description": "description_S_EXPORT_PROFILES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "exportProfiles",
+				"representation": "exportProfile"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "S_X3_USERS_IMPORT",
 			"title": "title_S_X3_USERS_IMPORT",
 			"description": "description_S_X3_USERS_IMPORT",
 			"linkType": "$representation",
 			"applicationMenu": false,
-			"facet": "$create",
+			"facet": "$query",
 			"target": "self",
 			"application": {
 				"application": "syracuse",
@@ -891,6 +1026,9 @@
 			"items": [
 				{
 					"code": "S_IMPORT_TOOL"
+				},
+				{
+					"code": "S_EXPORT_PROFILES"
 				},
 				{
 					"code": "S_X3_USERS_IMPORT"
@@ -1017,6 +1155,16 @@
 			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "User roles management interface",
 			"title_S_BADGES": "Badges",
 			"description_S_BADGES": "Badges",
+			"title_S_HOSTS": "Hosts",
+			"description_S_HOSTS": "Hosts",
+			"title_S_SOAP_WS": "Soap Web Services",
+			"description_S_SOAP_WS": "Soap Web Services",
+			"title_S_CERTIFICATES": "Certificates",
+			"description_S_CERTIFICATES": "Certificates",
+			"title_S_CA_CERTIFICATES": "Certificates of Certification Autorities",
+			"description_S_CA_CERTIFICATES": "Certificates of Certification Autorities",
+			"title_S_LICENCES": "Licences",
+			"description_S_LICENCES": "Licences",
 			"title_S_PROXY": "Proxies configuration",
 			"description_S_PROXY": "Proxies configuration interface",
 			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers",
@@ -1071,6 +1219,8 @@
 			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Syracuse tools",
 			"title_S_X3_USERS_IMPORT": "X3 Users import",
 			"description_S_X3_USERS_IMPORT": "X3 Users import",
+			"title_S_EXPORT_PROFILES": "Export profiles",
+			"description_S_EXPORT_PROFILES": "Export profiles",
 			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import Tool",
 			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import tool",
 			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
@@ -1091,8 +1241,18 @@
 			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Gestion des applications",
 			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Rôles",
 			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Gestion des rôles utilisateur",
+			"title_S_LICENCES": "Licences",
+			"description_S_LICENCES": "Licences",
 			"title_S_BADGES": "Badges",
 			"description_S_BADGES": "Badges",
+			"title_S_SOAP_WS": "Services Web Soap",
+			"description_S_SOAP_WS": "Services Web Soap",
+			"title_S_HOSTS": "Serveurs Syracuse",
+			"description_S_HOSTS": "Serveurs Syracuse",
+			"title_S_CERTIFICATES": "Certificats",
+			"description_S_CERTIFICATES": "Certificats",
+			"title_S_CA_CERTIFICATES": "Certificats des Autorités de certification",
+			"description_S_CA_CERTIFICATES": "Certificats des Autorités de certification",
 			"title_S_PROXY": "Configuration des proxy",
 			"description_S_PROXY": "Configuration des proxy",
 			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Serveurs X3",
@@ -1147,6 +1307,8 @@
 			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Outils Syracuse",
 			"title_S_X3_USERS_IMPORT": "Import des utilisateurs X3",
 			"description_S_X3_USERS_IMPORT": "Import des utilisateurs X3",
+			"title_S_EXPORT_PROFILES": "Profiles d'export",
+			"description_S_EXPORT_PROFILES": "Profiles d'export",
 			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
 			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
 			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
