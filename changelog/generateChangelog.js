@@ -1,7 +1,8 @@
 "use strict";
 
 require("streamline").register({
-	fibers: false,
+	fibers: true,
+	fast: true,
 	verbose: true,
 	cache: true
 });
@@ -11,5 +12,6 @@ var sys = require("util");
 
 gen.makeChangelog(function(err, res) {
 	if (err) return console.error(err);
-	console.log(sys.inspect(res));
-}, "Sage-ERP-X3", "Syracuse");
+}, {
+	max_tag: process.argv[2]
+});
