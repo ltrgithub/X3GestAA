@@ -13,4 +13,5 @@ git checkout "v7.0_"$td
 echo "Running Syracuse version tag: v7.0_"$td > node_modules/version.txt
 net start Syracuse_v1.0.0
 net start Agent_Syracuse_v1.0.0
+win32_x64/node changelog/generateChangelog.js "v7.0_"$td
 #read -p "Press any key to exit"
