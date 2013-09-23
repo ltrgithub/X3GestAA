@@ -1,7 +1,8 @@
 "use strict";
 
 require("streamline").register({
-	fibers: false,
+	fibers: true,
+	fast: true,
 	verbose: true,
 	cache: true
 });
