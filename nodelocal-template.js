@@ -40,9 +40,10 @@ exports.config = {
 	streamline: {
 		// "homedrive": "c:", // running node as service
 		// "homepath": "/syracuse", // running node as service
-		"fibers": false,
+		"fibers": true,
 		"cache": true,
-		"verbose": true
+		"verbose": true,
+		"fast": true
 	},
 	session: {
 		"auth": "basic"
