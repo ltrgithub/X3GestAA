@@ -92,6 +92,26 @@
 	"$items": [
 		{
 			"$type": "menuItem",
+			"code": "S_SETTINGS",
+			"title": "title_S_SETTINGS",
+			"description": "description_S_SETTINGS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "settings",
+				"representation": "setting"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "S_APPLICATIONS",
 			"title": "title_4f395232-d90b-4b8e-817c-50054f8adb42",
 			"description": "description_4f395232-d90b-4b8e-817c-50054f8adb42",
@@ -132,6 +152,66 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "S_BADGES",
+			"title": "title_S_BADGES",
+			"description": "description_S_BADGES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "badges",
+				"representation": "badge"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_LICENCES",
+			"title": "title_S_LICENCES",
+			"description": "description_S_LICENCES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "licences",
+				"representation": "licence"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_PROXY",
+			"title": "title_S_PROXY",
+			"description": "description_S_PROXY",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "proxyConfigurations",
+				"representation": "proxyConfiguration"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "S_X3_SERVERS",
 			"title": "title_608a8754-a0f8-4215-b82a-9a4b67622dc9",
 			"description": "description_608a8754-a0f8-4215-b82a-9a4b67622dc9",
@@ -148,6 +228,126 @@
 				"$type": "representationProxy",
 				"entity": "x3servers",
 				"representation": "x3server"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SOAP_WS",
+			"title": "title_S_SOAP_WS",
+			"description": "description_S_SOAP_WS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "soapWebServices",
+				"representation": "soapWebService"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_HOSTS",
+			"title": "title_S_HOSTS",
+			"description": "description_S_HOSTS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "hosts",
+				"representation": "host"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_CERTIFICATES",
+			"title": "title_S_CERTIFICATES",
+			"description": "description_S_CERTIFICATES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "certificates",
+				"representation": "certificate"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_CA_CERTIFICATES",
+			"title": "title_S_CA_CERTIFICATES",
+			"description": "description_S_CA_CERTIFICATES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "caCertificates",
+				"representation": "caCertificate"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_LDAP_SERVERS",
+			"title": "title_S_LDAP_SERVERS",
+			"description": "description_S_LDAPSERVERS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "ldaps",
+				"representation": "ldap"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_OAUTH2_SERVERS",
+			"title": "title_S_OAUTH2_SERVERS",
+			"description": "description_S_OAUTH2_SERVERS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "oauth2s",
+				"representation": "oauth2"
 			}
 		},
 		{
@@ -228,6 +428,26 @@
 				"$type": "representationProxy",
 				"entity": "users",
 				"representation": "user"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_GROUPES",
+			"title": "title_dec7fa24-e88a-46cd-a405-4e2cad92c8ec",
+			"description": "description_dec7fa24-e99a-46ab-a405-4e2cad92c8ec",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "groups",
+				"representation": "group"
 			}
 		},
 		{
@@ -322,13 +542,43 @@
 			"endpoint": null,
 			"items": [
 				{
+					"code": "S_SETTINGS"
+				},
+				{
 					"code": "S_APPLICATIONS"
 				},
 				{
 					"code": "S_ROLES"
 				},
 				{
+					"code": "S_BADGES"
+				},
+				{
+					"code": "S_LICENCES"
+				},
+				{
+					"code": "S_CERTIFICATES"
+				},
+				{
+					"code": "S_CA_CERTIFICATES"
+				},
+				{
+					"code": "S_PROXY"
+				},
+				{
+					"code": "S_HOSTS"
+				},
+				{
+					"code": "S_SOAP_WS"
+				},
+				{
 					"code": "S_X3_SERVERS"
+				},
+				{
+					"code": "S_LDAP_SERVERS"
+				},
+				{
+					"code": "S_OAUTH2_SERVERS"
 				},
 				{
 					"code": "S_FRIEND_SERVERS"
@@ -341,6 +591,9 @@
 				},
 				{
 					"code": "S_USERS"
+				},
+				{
+					"code": "S_GROUPES"
 				},
 				{
 					"code": "S_LOCALES"
@@ -682,6 +935,46 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "S_EXPORT_PROFILES",
+			"title": "title_S_EXPORT_PROFILES",
+			"description": "description_S_EXPORT_PROFILES",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "exportProfiles",
+				"representation": "exportProfile"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_X3_USERS_IMPORT",
+			"title": "title_S_X3_USERS_IMPORT",
+			"description": "description_S_X3_USERS_IMPORT",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "x3UserImports",
+				"representation": "x3UserImport"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "S_SEARCH_ADMIN",
 			"title": "title_d2f48394-9010-407d-992f-e57a7313b87b",
 			"description": "description_d2f48394-9010-407d-992f-e57a7313b87b",
@@ -733,6 +1026,12 @@
 			"items": [
 				{
 					"code": "S_IMPORT_TOOL"
+				},
+				{
+					"code": "S_EXPORT_PROFILES"
+				},
+				{
+					"code": "S_X3_USERS_IMPORT"
 				},
 				{
 					"code": "S_SEARCH_ADMIN"
@@ -848,12 +1147,32 @@
 			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Administration dashboard",
 			"title_4260a310-7481-4fd3-96f3-60d99a22ceae": "Administration dashboard",
 			"title_aa721890-861c-4e45-8732-262549f71038": "Syracuse administration",
+			"title_S_SETTINGS": "Global settings",
+			"description_S_SETTINGS": "Global settings management interface",
 			"title_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications",
 			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications management interface",
 			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Roles",
 			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "User roles management interface",
+			"title_S_BADGES": "Badges",
+			"description_S_BADGES": "Badges",
+			"title_S_HOSTS": "Hosts",
+			"description_S_HOSTS": "Hosts",
+			"title_S_SOAP_WS": "Soap Web Services",
+			"description_S_SOAP_WS": "Soap Web Services",
+			"title_S_CERTIFICATES": "Certificates",
+			"description_S_CERTIFICATES": "Certificates",
+			"title_S_CA_CERTIFICATES": "Certificates of Certification Autorities",
+			"description_S_CA_CERTIFICATES": "Certificates of Certification Autorities",
+			"title_S_LICENCES": "Licences",
+			"description_S_LICENCES": "Licences",
+			"title_S_PROXY": "Proxies configuration",
+			"description_S_PROXY": "Proxies configuration interface",
 			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers",
 			"description_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers management interface",
+			"title_S_OAUTH2_SERVERS": "OAuth2 Servers",
+			"description_S_OAUTH2_SERVERS": "OAuth2 Servers management interface",
+			"title_S_LDAP_SERVERS": "LDAP Servers",
+			"description_S_LDAPSERVERS": "LDAP Servers management interface",
 			"title_1af1c627-5729-4840-bad2-7fe6a7637343": "Friend collaboration servers",
 			"description_1af1c627-5729-4840-bad2-7fe6a7637343": "Friend collaboration servers",
 			"title_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Scheduler",
@@ -862,6 +1181,8 @@
 			"description_37fdda0d-898a-4579-962e-373462b20628": "Service access endpoints management",
 			"title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Users",
 			"description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Users management interface",
+			"title_dec7fa24-e88a-46cd-a405-4e2cad92c8ec": "Groups",
+			"description_dec7fa24-e99a-46ab-a405-4e2cad92c8ec": "Groups management",
 			"title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Locales",
 			"description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Locales management interface",
 			"title_34f76310-924e-42be-bef5-94ccbae24a57": "Server logs",
@@ -896,6 +1217,10 @@
 			"description_780d8a57-d43a-4855-86fc-e429c7b812d3": "Menu categories management interface",
 			"title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201": "Personalizations management",
 			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Syracuse tools",
+			"title_S_X3_USERS_IMPORT": "X3 Users import",
+			"description_S_X3_USERS_IMPORT": "X3 Users import",
+			"title_S_EXPORT_PROFILES": "Export profiles",
+			"description_S_EXPORT_PROFILES": "Export profiles",
 			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import Tool",
 			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Import tool",
 			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Search Index Management",
@@ -910,12 +1235,32 @@
 			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Menu d'administration",
 			"title_4260a310-7481-4fd3-96f3-60d99a22ceae": "Menu d'administration",
 			"title_aa721890-861c-4e45-8732-262549f71038": "Administration Syracuse",
+			"title_S_SETTINGS": "Paramètres",
+			"description_S_SETTINGS": "Gestion des paramètres globaux",
 			"title_4f395232-d90b-4b8e-817c-50054f8adb42": "Applications",
 			"description_4f395232-d90b-4b8e-817c-50054f8adb42": "Gestion des applications",
 			"title_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Rôles",
 			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Gestion des rôles utilisateur",
+			"title_S_LICENCES": "Licences",
+			"description_S_LICENCES": "Licences",
+			"title_S_BADGES": "Badges",
+			"description_S_BADGES": "Badges",
+			"title_S_SOAP_WS": "Services Web Soap",
+			"description_S_SOAP_WS": "Services Web Soap",
+			"title_S_HOSTS": "Serveurs Syracuse",
+			"description_S_HOSTS": "Serveurs Syracuse",
+			"title_S_CERTIFICATES": "Certificats",
+			"description_S_CERTIFICATES": "Certificats",
+			"title_S_CA_CERTIFICATES": "Certificats des Autorités de certification",
+			"description_S_CA_CERTIFICATES": "Certificats des Autorités de certification",
+			"title_S_PROXY": "Configuration des proxy",
+			"description_S_PROXY": "Configuration des proxy",
 			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Serveurs X3",
 			"description_608a8754-a0f8-4215-b82a-9a4b67622dc9": "Gestion des serveurs X3",
+			"title_S_OAUTH2_SERVERS": "Serveurs OAuth2",
+			"description_S_OAUTH2_SERVERS": "Gestion des serveurs OAuth2",
+			"title_S_LDAP_SERVERS": "Serveurs LDAP",
+			"description_S_LDAPSERVERS": "Gestion des serveurs LDAP",
 			"title_1af1c627-5729-4840-bad2-7fe6a7637343": "Serveurs collaboration associés",
 			"description_1af1c627-5729-4840-bad2-7fe6a7637343": "Serveurs collaboration associés",
 			"title_13c75fe9-a9f4-4d64-9f68-aff66b144683": "Automates",
@@ -924,6 +1269,8 @@
 			"description_37fdda0d-898a-4579-962e-373462b20628": "Gestion des points d'accès au services",
 			"title_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Utilisateurs",
 			"description_dec7fa24-e88a-46ab-a405-4e2cad92c8ec": "Gestion des utilisateurs",
+			"title_dec7fa24-e88a-46cd-a405-4e2cad92c8ec": "Groupes",
+			"description_dec7fa24-e99a-46ab-a405-4e2cad92c8ec": "Gestion des groupes d'utilisateur",
 			"title_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Préférences régionnales",
 			"description_978cc4b9-fbf9-45ff-bc85-bbf19dcc195b": "Gestion des préférences régionales",
 			"title_34f76310-924e-42be-bef5-94ccbae24a57": "Traces serveur",
@@ -958,6 +1305,10 @@
 			"description_780d8a57-d43a-4855-86fc-e429c7b812d3": "Gestion des catégories de menu",
 			"title_53a4f721-4bb3-4e8d-a9fb-afbcd157a201": "Gestion de personalisations",
 			"title_672a9073-19a8-43e4-9581-e1b4de993e69": "Outils Syracuse",
+			"title_S_X3_USERS_IMPORT": "Import des utilisateurs X3",
+			"description_S_X3_USERS_IMPORT": "Import des utilisateurs X3",
+			"title_S_EXPORT_PROFILES": "Profiles d'export",
+			"description_S_EXPORT_PROFILES": "Profiles d'export",
 			"title_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
 			"description_1b023bbd-1526-4e3b-b496-6357a2eee2be": "Outil d'import",
 			"title_d2f48394-9010-407d-992f-e57a7313b87b": "Gestion de l'outil de recherche",
