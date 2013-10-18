@@ -1044,7 +1044,7 @@
 		},
 		{
 			"$type": "menuItem",
-			"code": "X3_AMIGPORT",
+			"code": "SUP_AMIGPORT",
 			"title": "title_15853b1a-121a-4507-9c51-8e5e0f884cbe",
 			"description": "description_15853b1a-131a-4407-9c51-8e5e0f884cbe",
 			"linkType": "$representation",
@@ -1063,8 +1063,48 @@
 			}
 		},
 		{
+			"$type": "menuItem",
+			"code": "SUP_APSADX",
+			"title": "title_X3_APSADX",
+			"description": "description_X3_APSADX",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "APSADX",
+				"representation": "APSADX"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "SUP_AVOLUME",
+			"title": "title_X3_AVOLUME",
+			"description": "description_X3_AVOLUME",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AVOLUME",
+				"representation": "AVOLUME"
+			}
+		},
+		{
 			"$type": "portlet",
-			"code": "X3_TOOLS",
+			"code": "SUPERVISOR_ADMIN",
 			"title": "title_672a9073-19a8-44e4-9581-e1b4de993e69",
 			"type": "$menu",
 			"application": {
@@ -1074,7 +1114,13 @@
 			"endpoint": null,
 			"items": [
 				{
-					"code": "X3_AMIGPORT"
+					"code": "SUP_AMIGPORT"
+				},
+				{
+					"code": "SUP_AVOLUME"
+				},
+				{
+					"code": "SUP_APSADX"
 				}
 			],
 			"pageItem": null
@@ -1128,7 +1174,7 @@
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
 							"portlet": {
-								"code": "X3_TOOLS"
+								"code": "SUPERVISOR_ADMIN"
 							},
 							"endpoint": null
 						}
@@ -1225,7 +1271,11 @@
 			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Syracuse Sessions Management",
 			"title_15853b1a-121a-4507-9c51-8e5e0f884cbe": "V6 Dashboard Import",
 			"description_15853b1a-131a-4407-9c51-8e5e0f884cbe": "V6 Dashboard Import",
-			"title_672a9073-19a8-44e4-9581-e1b4de993e69": "X3 Tools"
+			"title_X3_APSADX": "User Monitoring",
+			"description_X3_APSADX": "User Monitoring",
+			"title_X3_AVOLUME": "X3 Storage Areas",
+			"description_X3_AVOLUME": "X3 Storage Areas",
+			"title_672a9073-19a8-44e4-9581-e1b4de993e69": "X3 Administration"
 		},
 		"fr-fr": {
 			"title_ddbd5d6f-8d4a-46c8-b2da-06ed9a26db2e": "Menu d'administration",
@@ -1313,7 +1363,11 @@
 			"description_15853b1a-121a-4407-9c51-8e5e0f884cbe": "Gestion de sessions Syracuse",
 			"title_15853b1a-121a-4507-9c51-8e5e0f884cbe": "Import des portails V6",
 			"description_15853b1a-131a-4407-9c51-8e5e0f884cbe": "Import des portails V6",
-			"title_672a9073-19a8-44e4-9581-e1b4de993e69": "Outils X3"
+			"title_X3_APSADX": "Surveillance utilisateurs",
+			"description_X3_APSADX": "Surveillance utilisateurs",
+			"title_X3_AVOLUME": "Espaces de stockage X3",
+			"description_X3_AVOLUME": "Espaces de stockage X3",
+			"title_672a9073-19a8-44e4-9581-e1b4de993e69": "Administration X3"
 		}
 	}
 }
