@@ -1,7 +1,10 @@
 {
 	"$prototypes": {
 		"application": {
-			"$key": ["application", "contract"]
+			"$key": [
+				"application",
+				"contract"
+			]
 		},
 		"role": {
 			"$key": "description"
@@ -12,7 +15,10 @@
 		"endPoint": {
 			"$key": "description",
 			"applicationRef": {
-				"$key": ["application", "contract"]
+				"$key": [
+					"application",
+					"contract"
+				]
 			},
 			"x3servers": {
 				"$key": "description"
@@ -34,12 +40,21 @@
 			}
 		},
 		"pageData": {
-			"$key": ["application", "representation", "facet", "variant", "roles"],
+			"$key": [
+				"application",
+				"representation",
+				"facet",
+				"variant",
+				"roles"
+			],
 			"roles": {
 				"$key": "description"
 			},
 			"application": {
-				"$key": ["application", "contract"]
+				"$key": [
+					"application",
+					"contract"
+				]
 			}
 		},
 		"localePreference": {
@@ -65,323 +80,448 @@
 			"authors": {
 				"$key": "login"
 			}
-		}	
+		}
 	},
 	"$items": [
-	{
-		"$type": "localePreference",
-		"code": "fr-FR",
-		"numberDecimalSeparator": ".",
-		"numberGroupSeparator": " ",
-		"numberGroupSize": 3,
-		"enabled": true
-	},{
-		"$type": "localePreference",
-		"code": "en-US",
-		"numberDecimalSeparator": ".",
-		"numberGroupSeparator": " ",
-		"numberGroupSize": 3,
-		"enabled": true		
-	},{
-		"$type": "application",
-		"description": "Syracuse Collaboration",
-		"application": "syracuse",
-		"contract": "collaboration",
-		"protocol": "syracuse"
-	},{
-		"$type": "application",
-		"description": "X3 ERP",
-		"application": "x3",
-		"contract": "erp",
-		"protocol": "x3"
-	},{
-		"$type": "application",
-		"description": "X3 Accounting",
-		"application": "x3",
-		"contract": "accounting",
-		"protocol": "syracuse"
-	},{
-		"$type": "application",
-		"description": "X3 Crm",
-		"application": "x3",
-		"contract": "crm",
-		"protocol": "syracuse"
-	},{
-		"$type": "application",
-		"description": "Sprint1",
-		"application": "sprint1",
-		"contract": "settings",
-		"protocol": "syracuse"
-	},{
-		"$type": "role",
-		"description": "Super administrator"
-	},{
-		"$type": "role",
-		"description": "Endpoint administrator"
-	},{
-		"$type": "role",
-		"description": "Accountant"
-	},{
-		"$type": "role",
-		"description": "CFO"
-	},{
-		"$type": "role",
-		"description": "Auditor"
-	},{
-		"$type": "role",
-		"description": "Account manager"
-	},{
-		"$type": "role",
-		"description": "Sales manager"
-	},{
-		"$type": "x3server",
-		"description": "X3 Developpement Server",
-		"serverHost": "172.28.16.106",
-		"serverPort": 17000,
-		"serverTimeout": 60000
-	},{
-		"$type": "endPoint",
-		"description": "Syracuse administration",
-		"applicationRef": {
-			"application": "syracuse",		
-			"contract": "collaboration"
+		{
+			"$type": "localePreference",
+			"code": "fr-FR",
+			"numberDecimalSeparator": ".",
+			"numberGroupSeparator": " ",
+			"numberGroupSize": 3,
+			"enabled": true
 		},
-		"dataset": "syracuse",
-		"enableSearch": false,
-		"databaseDriver": "mongodb",
-		"databaseHost": "localhost",
-		"databasePort": 27000
-	},{
-		"$type": "endPoint",
-		"description": "Overseas trading",
-		"applicationRef": {
-			"application": "x3",		
-			"contract": "accounting"
+		{
+			"$type": "localePreference",
+			"code": "en-US",
+			"numberDecimalSeparator": ".",
+			"numberGroupSeparator": " ",
+			"numberGroupSize": 3,
+			"enabled": true
 		},
-		"dataset": "overseas",
-		"enableSearch": false,
-		"databaseDriver": "mongodb",
-		"databaseHost": "localhost",
-		"databasePort": 27000
-	},{
-		"$type": "endPoint",
-		"description": "The french connection",
-		"applicationRef": {
-			"application": "x3",		
-			"contract": "accounting"
+		{
+			"$type": "application",
+			"description": "Syracuse Collaboration",
+			"application": "syracuse",
+			"contract": "collaboration",
+			"protocol": "syracuse"
 		},
-		"dataset": "french",
-		"enableSearch": false,
-		"databaseDriver": "mongodb",
-		"databaseHost": "localhost",
-		"databasePort": 27000
-	},{
-		"$type": "endPoint",
-		"description": "Global CRM",
-		"applicationRef": {
-			"application": "x3",		
-			"contract": "crm"
+		{
+			"$type": "application",
+			"description": "X3 ERP",
+			"application": "x3",
+			"contract": "erp",
+			"protocol": "x3"
 		},
-		"dataset": "global",
-		"enableSearch": false,
-		"databaseDriver": "mongodb",
-		"databaseHost": "localhost",
-		"databasePort": 27000
-	},{
-		"$type": "endPoint",
-		"description": "ERP X3",
-		"applicationRef": {
-			"application": "x3",		
-			"contract": "erp"
+		{
+			"$type": "application",
+			"description": "X3 Accounting",
+			"application": "x3",
+			"contract": "accounting",
+			"protocol": "syracuse"
 		},
-		"dataset": "SUPERV",
-		"enableSearch": false,
-		"x3server": "X3 Developpement Server",
-		"x3ServerFolder": "SUPERV"
-	},{
-		"$type": "group",
-		"description": "Super administrators",
-		"endPoints": ["Syracuse administration"],
-		"role": "Super administrator"
-	},{
-		"$type": "group",
-		"description": "Endpoint administrators",
-		"role": "Endpoint administrator",
-		"endPoints": ["Global CRM", "Overseas trading", "The french connection"]
-	},{
-		"$type": "group",
-		"description": "Overseas accountants",
-		"endPoints": ["Overseas trading", "Global CRM"],
-		"role": "Accountant"
-	},{
-		"$type": "group",
-		"description": "Overseas CFO",
-		"endPoints": ["Overseas trading", "Global CRM"],
-		"role": "CFO"
-	},{
-		"$type": "group",
-		"description": "Overseas auditors",
-		"endPoints": ["Overseas trading"],
-		"role": "Auditor"
-	},{
-		"$type": "group",
-		"description": "French accountants",
-		"endPoints": ["The french connection", "Global CRM"],
-		"role": "Accountant"
-	},{
-		"$type": "group",
-		"description": "French CFO",
-		"endPoints": ["The french connection", "Global CRM"],
-		"role": "CFO"
-	},{
-		"$type": "group",
-		"description": "French auditors",
-		"endPoints": ["The french connection"],
-		"role": "Auditor"
-	},{
-		"$type": "group",
-		"description": "Account managers",
-		"endPoints": ["Global CRM"],
-		"role": "Account manager"
-	},{
-		"$type": "group",
-		"description": "Sales managers",
-		"endPoints": ["Global CRM", "Overseas trading", "The french connection"],
-		"role": "Sales manager"
-	},{
-		"$type": "user",
-		"login": "admin",
-		"password": "admin",
-		"title": "mr",
-		"lastName": "Super administrator",
-		"groups": ["Super administrators"]
-	},{
-		"$type": "user",
-		"login": "nalan",
-		"password": "nalan",
-		"title": "mrs",
-		"firstName": "Nancy",
-		"lastName": "Langeais",
-		"groups": ["French CFO", "Overseas auditors"]
-	},{
-		"$type": "user",
-		"login": "jglec",
-		"password": "jglec",
-		"title": "mr",
-		"firstName": "Jean-Guy",
-		"lastName": "Lecointre",
-		"groups": ["Overseas CFO", "French auditors"]
-	},{
-		"$type": "user",
-		"login": "hedum",
-		"password": "hedum",
-		"title": "mr",
-		"firstName": "Hervé",
-		"lastName": "Dumont",
-		"groups": ["French accountants", "Overseas accountants"]
-	},{
-		"$type": "user",
-		"login": "symul",
-		"password": "symul",
-		"title": "mr",
-		"firstName": "Sylvain",
-		"lastName": "Muller",
-		"groups": ["French accountants"]
-	},{
-		"$type": "user",
-		"login": "cadbe",
-		"password": "cadbe",
-		"title": "mrs",
-		"firstName": "Carole",
-		"lastName": "Dussier-Belmont",
-		"groups": ["Sales managers"]
-	},{
-		"$type": "user",
-		"login": "jcc",
-		"password": "jcc",
-		"title": "mr",
-		"firstName": "Jean-Claude",
-		"lastName": "Convenant",
-		"groups": ["Account managers"]
-	},{
-		"$type": "user",
-		"login": "phgat",
-		"password": "phgat",
-		"title": "mr",
-		"firstName": "Philippe",
-		"lastName": "Gatin",
-		"groups": ["Endpoint administrators"]
-	},{
-		"$type": "documentTagCategory",
-		"description": "RH"
-	},{
-		"$type": "documentTagCategory",
-		"description": "DAF"
-	},{
-		"$type": "documentTagCategory",
-		"description": "R&D"
-	},{
-		"$type": "documentTagCategory",
-		"description": "Marketing"
-	},{
-		"$type": "documentTag",
-		"description": "Absences",
-		"category": "RH"
-	},{
-		"$type": "documentTag",
-		"description": "Contrats",
-		"category": "RH"
-	},{
-		"$type": "documentTag",
-		"description": "Engagements",
-		"category": "DAF"
-	},{
-		"$type": "documentTag",
-		"description": "Budgets",
-		"category": "DAF"
-	},{
-		"$type": "documentTag",
-		"description": "Chartes",
-		"category": "R&D"
-	},{
-		"$type": "documentTag",
-		"description": "Procedures",
-		"category": "R&D"
-	},{
-		"$type": "documentTag",
-		"description": "Project Management",
-		"category": "R&D"
-	},{
-		"$type": "documentTag",
-		"description": "Presentations",
-		"category": "Marketing"
-	},{
-		"$type": "documentTag",
-		"description": "Plaquettes",
-		"category": "Marketing"
-	},{
-		"$type": "team",
-		"description": "Global Team",
-		"administrator": "phgat",
-		"authors": ["jglec", "nalan"],
-		"members": ["hedum", "jcc", "admin", "symul", "cadbe", "guest"]
-	},{
-		"$type": "team",
-		"description": "Managers",
-		"administrator": "phgat",
-		"authors": ["jglec"],
-		"members": ["cadbe", "nalan"]
-	},{
-		"$type": "team",
-		"description": "Sales",
-		"administrator": "jglec",
-		"authors": ["jcc", "hedum"]
-	},{
-		"$type": "team",
-		"description": "Accounting",
-		"administrator": "nalan",
-		"authors": ["nalan", "cadbe"],
-		"members": ["symul", "guest"]
-	}
+		{
+			"$type": "application",
+			"description": "X3 Crm",
+			"application": "x3",
+			"contract": "crm",
+			"protocol": "syracuse"
+		},
+		{
+			"$type": "application",
+			"description": "Sprint1",
+			"application": "sprint1",
+			"contract": "settings",
+			"protocol": "syracuse"
+		},
+		{
+			"$type": "role",
+			"description": "Super administrator"
+		},
+		{
+			"$type": "role",
+			"description": "Endpoint administrator"
+		},
+		{
+			"$type": "role",
+			"description": "Accountant"
+		},
+		{
+			"$type": "role",
+			"description": "CFO"
+		},
+		{
+			"$type": "role",
+			"description": "Auditor"
+		},
+		{
+			"$type": "role",
+			"description": "Account manager"
+		},
+		{
+			"$type": "role",
+			"description": "Sales manager"
+		},
+		{
+			"$type": "x3server",
+			"description": "X3 Developpement Server",
+			"serverHost": "172.28.16.106",
+			"serverPort": 17000,
+			"serverTimeout": 60000
+		},
+		{
+			"$type": "endPoint",
+			"description": "Syracuse administration",
+			"applicationRef": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"dataset": "syracuse",
+			"enableSearch": false,
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27000
+		},
+		{
+			"$type": "endPoint",
+			"description": "Overseas trading",
+			"applicationRef": {
+				"application": "x3",
+				"contract": "accounting"
+			},
+			"dataset": "overseas",
+			"enableSearch": false,
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27000
+		},
+		{
+			"$type": "endPoint",
+			"description": "The french connection",
+			"applicationRef": {
+				"application": "x3",
+				"contract": "accounting"
+			},
+			"dataset": "french",
+			"enableSearch": false,
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27000
+		},
+		{
+			"$type": "endPoint",
+			"description": "Global CRM",
+			"applicationRef": {
+				"application": "x3",
+				"contract": "crm"
+			},
+			"dataset": "global",
+			"enableSearch": false,
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27000
+		},
+		{
+			"$type": "endPoint",
+			"description": "ERP X3",
+			"applicationRef": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"dataset": "SUPERV",
+			"enableSearch": false,
+			"x3server": "X3 Developpement Server",
+			"x3ServerFolder": "SUPERV"
+		},
+		{
+			"$type": "group",
+			"description": "Super administrators",
+			"endPoints": [
+				"Syracuse administration"
+			],
+			"role": "Super administrator"
+		},
+		{
+			"$type": "group",
+			"description": "Endpoint administrators",
+			"role": "Endpoint administrator",
+			"endPoints": [
+				"Global CRM",
+				"Overseas trading",
+				"The french connection"
+			]
+		},
+		{
+			"$type": "group",
+			"description": "Overseas accountants",
+			"endPoints": [
+				"Overseas trading",
+				"Global CRM"
+			],
+			"role": "Accountant"
+		},
+		{
+			"$type": "group",
+			"description": "Overseas CFO",
+			"endPoints": [
+				"Overseas trading",
+				"Global CRM"
+			],
+			"role": "CFO"
+		},
+		{
+			"$type": "group",
+			"description": "Overseas auditors",
+			"endPoints": [
+				"Overseas trading"
+			],
+			"role": "Auditor"
+		},
+		{
+			"$type": "group",
+			"description": "French accountants",
+			"endPoints": [
+				"The french connection",
+				"Global CRM"
+			],
+			"role": "Accountant"
+		},
+		{
+			"$type": "group",
+			"description": "French CFO",
+			"endPoints": [
+				"The french connection",
+				"Global CRM"
+			],
+			"role": "CFO"
+		},
+		{
+			"$type": "group",
+			"description": "French auditors",
+			"endPoints": [
+				"The french connection"
+			],
+			"role": "Auditor"
+		},
+		{
+			"$type": "group",
+			"description": "Account managers",
+			"endPoints": [
+				"Global CRM"
+			],
+			"role": "Account manager"
+		},
+		{
+			"$type": "group",
+			"description": "Sales managers",
+			"endPoints": [
+				"Global CRM",
+				"Overseas trading",
+				"The french connection"
+			],
+			"role": "Sales manager"
+		},
+		{
+			"$type": "user",
+			"login": "admin",
+			"password": "admin",
+			"title": "mr",
+			"lastName": "Super administrator",
+			"groups": [
+				"Super administrators"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "nalan",
+			"password": "nalan",
+			"title": "mrs",
+			"firstName": "Nancy",
+			"lastName": "Langeais",
+			"groups": [
+				"French CFO",
+				"Overseas auditors"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "jglec",
+			"password": "jglec",
+			"title": "mr",
+			"firstName": "Jean-Guy",
+			"lastName": "Lecointre",
+			"groups": [
+				"Overseas CFO",
+				"French auditors"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "hedum",
+			"password": "hedum",
+			"title": "mr",
+			"firstName": "Hervé",
+			"lastName": "Dumont",
+			"groups": [
+				"French accountants",
+				"Overseas accountants"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "symul",
+			"password": "symul",
+			"title": "mr",
+			"firstName": "Sylvain",
+			"lastName": "Muller",
+			"groups": [
+				"French accountants"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "cadbe",
+			"password": "cadbe",
+			"title": "mrs",
+			"firstName": "Carole",
+			"lastName": "Dussier-Belmont",
+			"groups": [
+				"Sales managers"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "jcc",
+			"password": "jcc",
+			"title": "mr",
+			"firstName": "Jean-Claude",
+			"lastName": "Convenant",
+			"groups": [
+				"Account managers"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "phgat",
+			"password": "phgat",
+			"title": "mr",
+			"firstName": "Philippe",
+			"lastName": "Gatin",
+			"groups": [
+				"Endpoint administrators"
+			]
+		},
+		{
+			"$type": "documentTagCategory",
+			"description": "RH"
+		},
+		{
+			"$type": "documentTagCategory",
+			"description": "DAF"
+		},
+		{
+			"$type": "documentTagCategory",
+			"description": "R&D"
+		},
+		{
+			"$type": "documentTagCategory",
+			"description": "Marketing"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Absences",
+			"category": "RH"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Contrats",
+			"category": "RH"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Engagements",
+			"category": "DAF"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Budgets",
+			"category": "DAF"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Chartes",
+			"category": "R&D"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Procedures",
+			"category": "R&D"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Project Management",
+			"category": "R&D"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Presentations",
+			"category": "Marketing"
+		},
+		{
+			"$type": "documentTag",
+			"description": "Plaquettes",
+			"category": "Marketing"
+		},
+		{
+			"$type": "team",
+			"description": "Global Team",
+			"administrator": "phgat",
+			"authors": [
+				"jglec",
+				"nalan"
+			],
+			"members": [
+				"hedum",
+				"jcc",
+				"admin",
+				"symul",
+				"cadbe",
+				"guest"
+			]
+		},
+		{
+			"$type": "team",
+			"description": "Managers",
+			"administrator": "phgat",
+			"authors": [
+				"jglec"
+			],
+			"members": [
+				"cadbe",
+				"nalan"
+			]
+		},
+		{
+			"$type": "team",
+			"description": "Sales",
+			"administrator": "jglec",
+			"authors": [
+				"jcc",
+				"hedum"
+			]
+		},
+		{
+			"$type": "team",
+			"description": "Accounting",
+			"administrator": "nalan",
+			"authors": [
+				"nalan",
+				"cadbe"
+			],
+			"members": [
+				"symul",
+				"guest"
+			]
+		}
 	]
 }
