@@ -57,6 +57,20 @@ namespace WordAddIn
             string filename = System.IO.Path.GetTempFileName().Replace(".tmp", ".docx");
             doc.MailMerge.CreateDataSource(filename, Type.Missing, Type.Missing, headers);
 
+            WdWindowState ws = doc.Application.WindowState;
+            // if maximized -> minimize to see ProgressDialog
+            if (ws == WdWindowState.wdWindowStateMaximize)
+            {
+                doc.Application.WindowState = WdWindowState.wdWindowStateMinimize;
+            }
+
+            ProgressDialog pd = new ProgressDialog();
+            pd.Show();
+            pd.Refresh(); // to see the label (and not a white bar)
+            pd.SetRowsExpected(numberOfRows);
+
+            doc.Application.ScreenUpdating = false;
+
             dataDoc = Globals.WordAddIn.Application.Documents.Open(filename);
             for (int row = 0; row < numberOfRows; row++)
             {
@@ -123,10 +137,17 @@ namespace WordAddIn
                         }
                     }
                 }
+                pd.SignalRowDone();
             }
+            pd.Close();
 
             dataDoc.Save();
             ((_Document)dataDoc).Close(false);
+            doc.Application.ScreenUpdating = true;
+            if (ws == WdWindowState.wdWindowStateMaximize)
+            {
+                doc.Application.WindowState = ws;
+            }
         }
 
         private void createMailMergeFields(Dictionary<String, object> mailMergeData)
