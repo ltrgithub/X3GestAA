@@ -1,0 +1,83 @@
+{
+	"$type": "application/json",
+	"$title": "{@W-ABIIMP2-25008}",
+	"$generatorVersion": "1",
+	"$x3Facet": "fullscreen",
+	"$properties":{
+		"AA1": {
+			"$type": "application/x-vignette",
+			 "$location" : {
+				"$type":"html"
+			 },
+			"$X3Name": "ABIIMP2_CBL1",
+			"$title": "",
+			"$capabilities": "raw",
+			"$groupName": "A"
+		}
+	},
+	"$links": {
+		"aA1": {
+			"$title": "{@W-ABIIMP2--100157}",
+			"$act": "2053"
+		}
+		,
+			"aA2": {
+				"$title": "{@W-ABIIMP2--9801025}",
+				"$act": "2845"
+			}
+	},
+	"$actions": {
+	},
+	"$menus": {
+		"$layout": {
+			"$items": [
+			{"$style": "main",
+				"$layout": {
+					"$items": [
+					{ "$bind": "aA1"}
+					,
+						{ "$bind": "aA2",
+							"$style" : "end"}
+					]}}
+			]}},
+	"$article": {
+		"$layout": 
+		{"$layoutType": "stack",
+			"$items":[
+			{"$title":"","$category": "section",
+				"$XID": "A",
+				"$layout": {
+					"$layoutType": "stack",
+					"$items": [
+					{"$layoutType": "row",
+						"$items": [
+						{
+							"$title": "",
+							"$category": "block",
+							"$layout": {
+								"$items": [
+								{
+									"$layoutType": "row",
+									"$items": [
+									{
+										"$rows": 20,
+										"$bind": "AA1"
+									}
+									]}
+								]
+							}
+						}
+						]
+					}
+					]
+				}
+			}]}
+	},
+	"$localization": {
+
+		"@W-ABIIMP2-25008": "Execution rapport BO",
+		"@W-ABIIMP2--100157": "OK",
+		"@W-ABIIMP2--9801025": "Fermer"
+
+	}}
+
