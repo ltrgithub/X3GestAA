@@ -69,6 +69,9 @@
 						"$key": "dataset"
 					}
 				},
+				"roles": {
+					"$key": "description.en-us"
+				},
 				"pageData": {
 					"$key": "code"
 				},
@@ -154,6 +157,471 @@
 		}
 	},
 	"$items": [
+		{
+			"$type": "menuItem",
+			"code": "YTECHNO",
+			"title": "title_7e9e4604-86d4-4f6b-9944-fe7a0ba838be",
+			"description": "description_7e9e4604-86d4-4f6b-9944-fe7a0ba838be",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$details",
+			"keyParameter": "YTECHNO",
+			"externalUrl": "http://aysyrindv7:8124/syracuse-main/html/main.html?url=/sdata/x3/erp/SEED/PROCESS('SYRAPRES')?representation=PROCESS~SYRAPRES.$details",
+			"target": "self",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": {
+				"dataset": "SEED"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "PROCESS",
+				"representation": "PROCESS~YTECHNO"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "YTECHNO",
+			"title": "title_7e9e4604-86d4-4f6b-9944-fe7a0ba838be",
+			"description": "description_7e9e4604-86d4-4f6b-9944-fe7a0ba838be",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$details",
+			"keyParameter": "YTECHNO",
+			"externalUrl": "http://aysyrindv7:8124/syracuse-main/html/main.html?url=/sdata/x3/erp/SEED/PROCESS('SYRAPRES')?representation=PROCESS~SYRAPRES.$details",
+			"target": "self",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": {
+				"dataset": "SEED"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "PROCESS",
+				"representation": "PROCESS~YTECHNO"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "YTECHNO",
+			"title": "title_812a3523-c5bf-4a1c-8074-a127ed9a217d",
+			"description": "description_812a3523-c5bf-4a1c-8074-a127ed9a217d",
+			"type": "$page",
+			"application": null,
+			"endpoint": null,
+			"items": [
+				{
+					"code": "YTECHNO"
+				}
+			],
+			"pageItem": {
+				"code": "YTECHNO"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_SESSIONS",
+			"title": "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
+			"description": "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "sessionInfos",
+				"representation": "sessionInfo"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "Gestion de personnalisations",
+			"title": "title_d517721e-5540-4239-8da9-e3b2c52086df",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "personalizationManagements",
+				"representation": "personalizationManagement"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "YTECHNO1",
+			"title": "title_10b84955-b5cf-4085-898f-7591375db9b3",
+			"description": "description_10b84955-b5cf-4085-898f-7591375db9b3",
+			"type": "$menu",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "S_SESSIONS"
+				},
+				{
+					"code": "Gestion de personnalisations"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_GDEV",
+			"title": "title_8268c06d-c460-41f4-91b1-31fcc814e042",
+			"description": "description_8268c06d-c460-41f4-91b1-31fcc814e042",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_GDEV",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MENV",
+			"title": "title_4e7f2b9b-6dc0-4c25-a40b-25836c3ce4ea",
+			"description": "description_4e7f2b9b-6dc0-4c25-a40b-25836c3ce4ea",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MENV",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MDBA",
+			"title": "title_c39b3bfc-a0c7-4041-8651-47c3b6dd984c",
+			"description": "description_c39b3bfc-a0c7-4041-8651-47c3b6dd984c",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MDBA",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MCRM",
+			"title": "title_6901d615-56c6-45ce-9526-faf4ea339c8a",
+			"description": "description_6901d615-56c6-45ce-9526-faf4ea339c8a",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MCRM",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MPUR",
+			"title": "title_66ef53f6-2fac-49ae-927d-f3fb934d7a50",
+			"description": "description_66ef53f6-2fac-49ae-927d-f3fb934d7a50",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MPUR",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MSAL",
+			"title": "title_a4567412-76e2-42a6-aba4-c3d7a3fef8ee",
+			"description": "description_a4567412-76e2-42a6-aba4-c3d7a3fef8ee",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MSAL",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MSTO",
+			"title": "title_3b9781c6-b5a1-40f2-8584-99fda88532de",
+			"description": "description_3b9781c6-b5a1-40f2-8584-99fda88532de",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MSTO",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MMFG",
+			"title": "title_39a991a0-d8b8-4f0a-b9c5-a6ff814524f6",
+			"description": "description_39a991a0-d8b8-4f0a-b9c5-a6ff814524f6",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MMFG",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MCST",
+			"title": "title_6fa3d010-7e11-42ac-82eb-f193ea11a787",
+			"description": "description_6fa3d010-7e11-42ac-82eb-f193ea11a787",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MCST",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_CPTA",
+			"title": "title_2f3fbeec-a0d9-4e4a-8461-c1eba1a807ee",
+			"description": "description_2f3fbeec-a0d9-4e4a-8461-c1eba1a807ee",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_CPTA",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_GTRS",
+			"title": "title_e5a33a8a-c810-4000-a2e7-7fdd7f96b365",
+			"description": "description_e5a33a8a-c810-4000-a2e7-7fdd7f96b365",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_GTRS",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MGDD",
+			"title": "title_4cadfb78-2d03-4eec-b192-97473334a678",
+			"description": "description_4cadfb78-2d03-4eec-b192-97473334a678",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MGDD",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MFASM",
+			"title": "title_86a0a3e6-95fa-4f80-9162-acc575a08656",
+			"description": "description_86a0a3e6-95fa-4f80-9162-acc575a08656",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MFASM",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_VXADC",
+			"title": "title_14eea3e5-5a6c-450a-aac0-9803e7e37b2f",
+			"description": "description_14eea3e5-5a6c-450a-aac0-9803e7e37b2f",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_VXADC",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MTDI",
+			"title": "title_7affa254-fece-4fef-82dc-3b7b8983031e",
+			"description": "description_7affa254-fece-4fef-82dc-3b7b8983031e",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MTDI",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_MIMP",
+			"title": "title_69f4a233-26c2-4545-98aa-cfc7294ecf54",
+			"description": "description_69f4a233-26c2-4545-98aa-cfc7294ecf54",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_MIMP",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "USR_SYREXA_ADMIN_ATRAD",
+			"title": "title_873d92be-9496-493d-8a98-fa42f82dd1aa",
+			"description": "description_873d92be-9496-493d-8a98-fa42f82dd1aa",
+			"linkType": "$dashboard",
+			"applicationMenu": false,
+			"facet": "$query",
+			"dashboard": "USR_SYREXA_ADMIN_ATRAD",
+			"target": "self",
+			"application": null,
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "USR_SYREXA_ADMIN_GENE",
+			"title": "title_f310981f-8211-4af4-97b7-5eb02ad3258e",
+			"description": "description_f310981f-8211-4af4-97b7-5eb02ad3258e",
+			"type": "$menu",
+			"application": null,
+			"endpoint": null,
+			"items": [
+				{
+					"code": "USR_SYREXA_ADMIN_GDEV"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MENV"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MDBA"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MCRM"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MPUR"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MSAL"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MSTO"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MMFG"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MCST"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_CPTA"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_GTRS"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MGDD"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MFASM"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_VXADC"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MTDI"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_MIMP"
+				},
+				{
+					"code": "USR_SYREXA_ADMIN_ATRAD"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "pageData",
+			"code": "b77cce6c-8c3e-44d7-bcdd-c584b0484b48",
+			"content": "{\"$article\":{\"$category\":\"dashboard\",\"$title\":\"Technology presentation\",\"$layout\":{\"$layoutType\":\"stack\",\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"menus\",\"$isHidden\":false,\"$skin\":\"s-mn-h2\",\"$layout\":{\"$items\":[{\"$bind\":\"YTECHNO\",\"$category\":\"field\",\"$isRefreshable\":true,\"$isMaximizable\":true}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isContentLoaded\":true,\"$title\":\"Menus\",\"$isTitleHidden\":true}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"Section\",\"$isBoxCollapsable\":true,\"$isTitleHidden\":true},{\"$category\":\"section\",\"$title\":\"Syracuse tools\",\"$layout\":{\"$items\":[{\"$category\":\"menus\",\"$layout\":{\"$layoutType\":\"row\",\"$items\":[{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"c5ab9acf-f269-4ccc-a882-85cf9ee10a25\",\"$category\":\"link\",\"$skin\":\"s-mn-h2-link\"},{\"$bind\":\"3a906167-54fc-4be5-bd9e-e01205029a71\",\"$category\":\"link\",\"$skin\":\"s-mn-h2-link\"}],\"$widths\":\"100\"},{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"S_SESSIONS\",\"$category\":\"link\",\"$skin\":\"s-mn-h2-link\"},{\"$bind\":\"Gestion de personnalisations\",\"$category\":\"link\",\"$skin\":\"s-mn-h2-link\"}],\"$widths\":\"100\"},{\"$layoutType\":\"stack\",\"$items\":[{\"$category\":\"space\"}],\"$widths\":\"100\"}],\"$widths\":\"33,33,33\"},\"$skin\":\"s-mn-h2\",\"$isHidden\":true,\"$isContentLoaded\":true}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isBoxCollapsable\":true}],\"$widths\":\"100\"},\"$garbageLinks\":[],\"$garbageFields\":[]}}"
+		},
 		{
 			"$type": "menuItem",
 			"code": "USR_X3REFV7_ACHE_MDBA",
@@ -5982,7 +6450,7 @@
 			"representationRef": {
 				"$type": "representationProxy",
 				"entity": "INCOTERMH",
-				"representation": "INCOTERMH"
+				"representation": "INCOTERM"
 			}
 		},
 		{
@@ -13282,6 +13750,46 @@
 			"variants": [
 				{
 					"$type": "dashboardVariant",
+					"code": "YTECHNO",
+					"title": "title_ad5d54e3-db91-449e-991d-c6984343a301",
+					"description": "description_ad5d54e3-db91-449e-991d-c6984343a301",
+					"allApplications": true,
+					"isFactory": true,
+					"application": null,
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "YTECHNO"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"portlet": {
+								"code": "YTECHNO1"
+							},
+							"endpoint": null
+						},
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"isTOC": true,
+							"portlet": {
+								"code": "USR_SYREXA_ADMIN_GENE"
+							},
+							"endpoint": null
+						}
+					],
+					"roles": [],
+					"pageData": {
+						"code": "b77cce6c-8c3e-44d7-bcdd-c584b0484b48"
+					}
+				},
+				{
+					"$type": "dashboardVariant",
 					"code": "USR_X3REFV7_ACHE_",
 					"title": "title_277a9c2b-b625-4878-9a48-f1c6c83341b2",
 					"description": "description_277a9c2b-b625-4878-9a48-f1c6c83341b2",
@@ -13295,6 +13803,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ACHE_GDOC"
 							},
@@ -13333,6 +13842,7 @@
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-PURCHASER","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ACHE"
 					}
@@ -13352,6 +13862,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADVT_GCOD"
 							},
@@ -13390,6 +13901,7 @@
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-SALESADM","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ADVT"
 					}
@@ -13487,6 +13999,7 @@
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-PURCHASER","Super administrator"],
 					"pageData": {
 						"code": "2ae74416-91d8-4571-bb94-574c6700355c"
 					}
@@ -13584,6 +14097,7 @@
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-SALESADM","ERP-SALESENG","Super administrator"],
 					"pageData": {
 						"code": "8c306eed-9a20-4fdc-a251-ef10abf969ea"
 					}
@@ -13603,6 +14117,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_CCPT_GDOC"
 							},
@@ -13611,6 +14126,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CCPTT1M2"
 							},
@@ -13619,6 +14135,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CCPTT1M3"
 							},
@@ -13627,6 +14144,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CCPTT1M4"
 							},
@@ -13635,12 +14153,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CCPTT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-CHIEFACCOUNTANT","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_CCPT"
 					}
@@ -13660,6 +14180,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADDO_GDOC"
 							},
@@ -13668,6 +14189,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ADDOT1M2"
 							},
@@ -13676,6 +14198,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ADDOT1M3"
 							},
@@ -13684,6 +14207,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ADDOT1M4"
 							},
@@ -13692,12 +14216,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ADDOT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-DATAADM","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ADDO"
 					}
@@ -13717,6 +14243,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ETUD_GDOC"
 							},
@@ -13725,6 +14252,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ETUDT1M2"
 							},
@@ -13733,6 +14261,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ETUDT1M3"
 							},
@@ -13741,6 +14270,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ETUDT1M4"
 							},
@@ -13749,12 +14279,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ETUDT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-DESIGNMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ETUD"
 					}
@@ -13774,6 +14306,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPC_GDOC"
 							},
@@ -13782,6 +14315,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPCT1M2"
 							},
@@ -13790,6 +14324,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPCT1M3"
 							},
@@ -13798,6 +14333,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPCT1M4"
 							},
@@ -13806,12 +14342,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPCT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-ARACCMAN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_RCPC"
 					}
@@ -13831,6 +14369,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPF_GDOC"
 							},
@@ -13839,6 +14378,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPFT1M2"
 							},
@@ -13847,6 +14387,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPFT1M3"
 							},
@@ -13855,6 +14396,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPFT1M4"
 							},
@@ -13863,12 +14405,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RCPFT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-APACCMAN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_RCPF"
 					}
@@ -13888,6 +14432,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_COMM_GCOD"
 							},
@@ -13896,6 +14441,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COMMT1M2"
 							},
@@ -13904,6 +14450,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COMMT1M3"
 							},
@@ -13912,6 +14459,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COMMT1M4"
 							},
@@ -13920,12 +14468,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COMMT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-SALESENG","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_COMM"
 					}
@@ -13945,6 +14495,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ATEL_GDOC"
 							},
@@ -13953,6 +14504,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ATELT1M2"
 							},
@@ -13961,6 +14513,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ATELT1M3"
 							},
@@ -13969,6 +14522,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ATELT1M4"
 							},
@@ -13977,12 +14531,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ATELT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-WORKSHOPMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ATEL"
 					}
@@ -14002,6 +14558,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_APPR_GDOC"
 							},
@@ -14010,6 +14567,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APPRT1M2"
 							},
@@ -14018,6 +14576,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APPRT1M3"
 							},
@@ -14026,6 +14585,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APPRT1M4"
 							},
@@ -14034,12 +14594,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APPRT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-MATBUY","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_APPR"
 					}
@@ -14059,6 +14621,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_PLAN_GDOC"
 							},
@@ -14067,6 +14630,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLANT1M2"
 							},
@@ -14075,6 +14639,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLANT1M3"
 							},
@@ -14083,6 +14648,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLANT1M4"
 							},
@@ -14091,12 +14657,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLANT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-PLANMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_PLAN"
 					}
@@ -14116,6 +14684,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_HDK_GCOD"
 							},
@@ -14124,6 +14693,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_HDK0T1M2"
 							},
@@ -14132,6 +14702,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_HDK0T1M3"
 							},
@@ -14140,6 +14711,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_HDK0T1M4"
 							},
@@ -14148,12 +14720,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_HDK0T2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-SUPPMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_HDK0"
 					}
@@ -14173,6 +14747,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_RESS_GDOC"
 							},
@@ -14181,6 +14756,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RESST1M3"
 							},
@@ -14189,6 +14765,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RESST1M4"
 							},
@@ -14197,6 +14774,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RESST2M1"
 							},
@@ -14205,6 +14783,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_SEED_USR15T1M2"
 							},
@@ -14213,12 +14792,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_RESST1M2"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-STOCKMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_RESS"
 					}
@@ -14238,6 +14819,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_MAGA_GDOC"
 							},
@@ -14246,6 +14828,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MAGAT1M2"
 							},
@@ -14254,6 +14837,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MAGAT1M3"
 							},
@@ -14262,6 +14846,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MAGAT1M4"
 							},
@@ -14270,12 +14855,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MAGAT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-MATHANDLER","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_MAGA"
 					}
@@ -14295,6 +14882,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIAFI"
 							},
@@ -14303,6 +14891,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIAAPAR"
 							},
@@ -14311,6 +14900,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIAFA"
 							},
@@ -14319,6 +14909,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIACD"
 							},
@@ -14327,6 +14918,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIAPUR"
 							},
@@ -14335,6 +14927,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIASAL"
 							},
@@ -14343,6 +14936,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIAMAN"
 							},
@@ -14351,12 +14945,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "SYRAPEDIASTO"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": [],
 					"pageData": {
 						"code": "3f5e98ba-31b9-4479-b0bf-df63aa3e9104"
 					}
@@ -14376,6 +14972,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMIN_GENE"
 							},
@@ -14384,12 +14981,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMFRT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-SYSTADMIN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ADMFR"
 					}
@@ -14409,6 +15008,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMIN_GENE"
 							},
@@ -14417,6 +15017,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DIRET1M2"
 							},
@@ -14425,6 +15026,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DIRET1M3"
 							},
@@ -14433,12 +15035,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DIRET1M4"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-DIRECTOR","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_DIRE"
 					}
@@ -14458,6 +15062,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_CS_GCOD"
 							},
@@ -14466,6 +15071,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CST1M2"
 							},
@@ -14474,6 +15080,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CST1M3"
 							},
@@ -14482,6 +15089,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CST1M4"
 							},
@@ -14490,12 +15098,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CST2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-SALESADM","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_CS"
 					}
@@ -14515,6 +15125,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_PUR_GDOC"
 							},
@@ -14523,6 +15134,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PURT1M2"
 							},
@@ -14531,6 +15143,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PURT1M3"
 							},
@@ -14539,6 +15152,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PURT1M5"
 							},
@@ -14547,12 +15161,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PURT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-PURCHASER","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_PUR"
 					}
@@ -14572,6 +15188,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ACCT_GDOC"
 							},
@@ -14580,6 +15197,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ACCTT1M2"
 							},
@@ -14588,6 +15206,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ACCTT1M3"
 							},
@@ -14596,6 +15215,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ACCTT1M4"
 							},
@@ -14604,6 +15224,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ACCTT2M2"
 							},
@@ -14612,12 +15233,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ACCTT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-CHIEFACCOUNTANT","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ACCT"
 					}
@@ -14637,6 +15260,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMIN_GENE"
 							},
@@ -14645,12 +15269,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMNAT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-SYSTADMIN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_ADMNA"
 					}
@@ -14670,6 +15296,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_AP_GDOC"
 							},
@@ -14678,6 +15305,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APT1M4"
 							},
@@ -14686,6 +15314,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APT1M3"
 							},
@@ -14694,6 +15323,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APT1M2"
 							},
@@ -14702,12 +15332,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_APT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-APACCMAN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_AP"
 					}
@@ -14727,6 +15359,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_COST_GDOC"
 							},
@@ -14735,6 +15368,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COSTT1M7"
 							},
@@ -14743,6 +15377,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COSTT1M5"
 							},
@@ -14751,6 +15386,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COSTT1M6"
 							},
@@ -14759,12 +15395,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_COSTT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-CONTROLLER","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_COST"
 					}
@@ -14784,6 +15422,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_SLS_GCOD"
 							},
@@ -14792,6 +15431,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SLST1M2"
 							},
@@ -14800,6 +15440,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SLST1M3"
 							},
@@ -14808,6 +15449,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SLST1M4"
 							},
@@ -14816,12 +15458,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SLST2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-SALESENG","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_SLS"
 					}
@@ -14841,6 +15485,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_SVC_GCOD"
 							},
@@ -14849,6 +15494,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SVCT1M2"
 							},
@@ -14857,6 +15503,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SVCT1M3"
 							},
@@ -14865,6 +15512,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SVCT1M4"
 							},
@@ -14873,12 +15521,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_SVCT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-SUPPORTMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_SVC"
 					}
@@ -14898,6 +15548,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_AR_GDOC"
 							},
@@ -14906,6 +15557,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ART1M2"
 							},
@@ -14914,6 +15566,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ART1M3"
 							},
@@ -14922,6 +15575,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ART1M4"
 							},
@@ -14930,12 +15584,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_ART2M2"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-ARACCMAN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_AR"
 					}
@@ -14955,6 +15611,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_PLN_GDOC"
 							},
@@ -14963,6 +15620,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLNT1M2"
 							},
@@ -14971,6 +15629,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLNT1M3"
 							},
@@ -14979,6 +15638,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLNT1M4"
 							},
@@ -14987,12 +15647,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PLNT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-PRODPLAN","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_PLN"
 					}
@@ -15012,6 +15674,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMIN_GENE"
 							},
@@ -15020,6 +15683,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_EXECT1M2"
 							},
@@ -15028,6 +15692,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_EXECT1M3"
 							},
@@ -15036,12 +15701,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_EXECT1M4"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-DIRECTOR","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_EXEC"
 					}
@@ -15061,6 +15728,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_DES_GDOC"
 							},
@@ -15069,6 +15737,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DEST1M2"
 							},
@@ -15077,6 +15746,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DEST1M3"
 							},
@@ -15085,6 +15755,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DEST1M4"
 							},
@@ -15093,12 +15764,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_DEST2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-DESIGNMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_DES"
 					}
@@ -15118,6 +15791,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_MAT_GDOC"
 							},
@@ -15126,6 +15800,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MATT1M5"
 							},
@@ -15134,6 +15809,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MATT1M3"
 							},
@@ -15142,6 +15818,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MATT1M6"
 							},
@@ -15150,12 +15827,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_MATT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-MATHANDLER","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_MAT"
 					}
@@ -15175,6 +15854,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_WH_GDOC"
 							},
@@ -15183,6 +15863,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_WHT1M5"
 							},
@@ -15191,6 +15872,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_WHT1M3"
 							},
@@ -15199,6 +15881,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_WHT1M4"
 							},
@@ -15207,12 +15890,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_WHT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-STOCKMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_WH"
 					}
@@ -15232,6 +15917,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_PRD_GDOC"
 							},
@@ -15240,6 +15926,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PRDT1M5"
 							},
@@ -15248,6 +15935,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PRDT1M3"
 							},
@@ -15256,6 +15944,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PRDT1M6"
 							},
@@ -15264,12 +15953,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_PRDT2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["NA-WORKSHOPMANA","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_PRD"
 					}
@@ -15289,12 +15980,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3INDV7_X3_GENE"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": [],
 					"pageData": {
 						"code": "USR_X3INDV7_ADMX3"
 					}
@@ -15314,6 +16007,7 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_CGES_GDOC"
 							},
@@ -15322,12 +16016,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": false,
 							"portlet": {
 								"code": "USR_X3REFV7_CGEST2M1"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": ["ERP-CONTROLLER","Super administrator"],
 					"pageData": {
 						"code": "USR_X3REFV7_CGES"
 					}
@@ -15347,12 +16043,14 @@
 						{
 							"$type": "dashboardVignette",
 							"allEndpoints": true,
+							"isTOC": true,
 							"portlet": {
 								"code": "USR_X3REFV7_ADMIN_GENE"
 							},
 							"endpoint": null
 						}
 					],
+					"roles": [],
 					"pageData": null
 				}
 			]
@@ -17610,6 +18308,48 @@
 		"en-us": {
 			"title_5dada210-6056-482a-b198-901510e22a41": "Administration dashboard",
 			"description_5dada210-6056-482a-b198-901510e22a41": "Administration dashboard",
+			"title_ad5d54e3-db91-449e-991d-c6984343a301": "Technology presentation",
+			"description_ad5d54e3-db91-449e-991d-c6984343a301": "Presentation of Syracuse technology",
+			"title_10b84955-b5cf-4085-898f-7591375db9b3": "Syracuse tools",
+			"description_10b84955-b5cf-4085-898f-7591375db9b3": "Syracuse tools",
+			"title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Syracuse Sessions",
+			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Syracuse Sessions Management",
+			"title_f310981f-8211-4af4-97b7-5eb02ad3258e": "Portal of user ADMIN",
+			"description_f310981f-8211-4af4-97b7-5eb02ad3258e": "",
+			"title_8268c06d-c460-41f4-91b1-31fcc814e042": "Development",
+			"description_8268c06d-c460-41f4-91b1-31fcc814e042": "Development",
+			"title_4e7f2b9b-6dc0-4c25-a40b-25836c3ce4ea": "Setup",
+			"description_4e7f2b9b-6dc0-4c25-a40b-25836c3ce4ea": "Setup",
+			"title_c39b3bfc-a0c7-4041-8651-47c3b6dd984c": "Common data",
+			"description_c39b3bfc-a0c7-4041-8651-47c3b6dd984c": "Common data",
+			"title_6901d615-56c6-45ce-9526-faf4ea339c8a": "Customer relation",
+			"description_6901d615-56c6-45ce-9526-faf4ea339c8a": "Customer relation",
+			"title_66ef53f6-2fac-49ae-927d-f3fb934d7a50": "Purchasing",
+			"description_66ef53f6-2fac-49ae-927d-f3fb934d7a50": "Purchasing",
+			"title_a4567412-76e2-42a6-aba4-c3d7a3fef8ee": "Sales",
+			"description_a4567412-76e2-42a6-aba4-c3d7a3fef8ee": "Sales",
+			"title_3b9781c6-b5a1-40f2-8584-99fda88532de": "Stock",
+			"description_3b9781c6-b5a1-40f2-8584-99fda88532de": "Stock",
+			"title_39a991a0-d8b8-4f0a-b9c5-a6ff814524f6": "Manufacturing",
+			"description_39a991a0-d8b8-4f0a-b9c5-a6ff814524f6": "Manufacturing",
+			"title_6fa3d010-7e11-42ac-82eb-f193ea11a787": "Costing",
+			"description_6fa3d010-7e11-42ac-82eb-f193ea11a787": "Costing",
+			"title_2f3fbeec-a0d9-4e4a-8461-c1eba1a807ee": "Financials",
+			"description_2f3fbeec-a0d9-4e4a-8461-c1eba1a807ee": "Financials",
+			"title_e5a33a8a-c810-4000-a2e7-7fdd7f96b365": "A/P-A/R accounting",
+			"description_e5a33a8a-c810-4000-a2e7-7fdd7f96b365": "A/P-A/R accounting",
+			"title_4cadfb78-2d03-4eec-b192-97473334a678": "Operating budgets",
+			"description_4cadfb78-2d03-4eec-b192-97473334a678": "Operating budgets",
+			"title_86a0a3e6-95fa-4f80-9162-acc575a08656": "Fixed assets",
+			"description_86a0a3e6-95fa-4f80-9162-acc575a08656": "Fixed assets",
+			"title_14eea3e5-5a6c-450a-aac0-9803e7e37b2f": "ADCs",
+			"description_14eea3e5-5a6c-450a-aac0-9803e7e37b2f": "ADCs",
+			"title_7affa254-fece-4fef-82dc-3b7b8983031e": "Usage ",
+			"description_7affa254-fece-4fef-82dc-3b7b8983031e": "Usage ",
+			"title_69f4a233-26c2-4545-98aa-cfc7294ecf54": "Reports",
+			"description_69f4a233-26c2-4545-98aa-cfc7294ecf54": "Reports",
+			"title_873d92be-9496-493d-8a98-fa42f82dd1aa": "Translations",
+			"description_873d92be-9496-493d-8a98-fa42f82dd1aa": "Translations",
 			"title_277a9c2b-b625-4878-9a48-f1c6c83341b2": "Buyer",
 			"description_277a9c2b-b625-4878-9a48-f1c6c83341b2": "Buyer",
 			"title_ffd84b3a-5b6f-4b92-a090-d50110c215df": "Portal of user ACHE",
@@ -20007,6 +20747,53 @@
 		"fr-fr": {
 			"title_5dada210-6056-482a-b198-901510e22a41": "Menu d'administration",
 			"description_5dada210-6056-482a-b198-901510e22a41": "Menu d'administration",
+			"title_ad5d54e3-db91-449e-991d-c6984343a301": "Technology presentation",
+			"description_ad5d54e3-db91-449e-991d-c6984343a301": "Presentation of Syracuse technology",
+			"title_812a3523-c5bf-4a1c-8074-a127ed9a217d": "Techno Demo",
+			"description_812a3523-c5bf-4a1c-8074-a127ed9a217d": "Technology demonstration",
+			"title_7e9e4604-86d4-4f6b-9944-fe7a0ba838be": "Demonstration page for technology",
+			"description_7e9e4604-86d4-4f6b-9944-fe7a0ba838be": "Techno demonstration",
+			"title_10b84955-b5cf-4085-898f-7591375db9b3": "Outils Syracuse",
+			"description_10b84955-b5cf-4085-898f-7591375db9b3": "Outils Syracuse",
+			"title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions Syracuse",
+			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions Syracuse",
+			"title_d517721e-5540-4239-8da9-e3b2c52086df": "Gestion de personnalisations",
+			"title_f310981f-8211-4af4-97b7-5eb02ad3258e": "Portail de l'utilisateur ADMIN",
+			"description_f310981f-8211-4af4-97b7-5eb02ad3258e": "",
+			"title_8268c06d-c460-41f4-91b1-31fcc814e042": "Développement",
+			"description_8268c06d-c460-41f4-91b1-31fcc814e042": "Développement",
+			"title_4e7f2b9b-6dc0-4c25-a40b-25836c3ce4ea": "Paramétrage",
+			"description_4e7f2b9b-6dc0-4c25-a40b-25836c3ce4ea": "Paramétrage",
+			"title_c39b3bfc-a0c7-4041-8651-47c3b6dd984c": "Données de base",
+			"description_c39b3bfc-a0c7-4041-8651-47c3b6dd984c": "Données de base",
+			"title_6901d615-56c6-45ce-9526-faf4ea339c8a": "Relation client",
+			"description_6901d615-56c6-45ce-9526-faf4ea339c8a": "Relation client",
+			"title_66ef53f6-2fac-49ae-927d-f3fb934d7a50": "Achats",
+			"description_66ef53f6-2fac-49ae-927d-f3fb934d7a50": "Achats",
+			"title_a4567412-76e2-42a6-aba4-c3d7a3fef8ee": "Ventes",
+			"description_a4567412-76e2-42a6-aba4-c3d7a3fef8ee": "Ventes",
+			"title_3b9781c6-b5a1-40f2-8584-99fda88532de": "Stocks",
+			"description_3b9781c6-b5a1-40f2-8584-99fda88532de": "Stocks",
+			"title_39a991a0-d8b8-4f0a-b9c5-a6ff814524f6": "Production",
+			"description_39a991a0-d8b8-4f0a-b9c5-a6ff814524f6": "Production",
+			"title_6fa3d010-7e11-42ac-82eb-f193ea11a787": "Contrôle de gestion",
+			"description_6fa3d010-7e11-42ac-82eb-f193ea11a787": "Contrôle de gestion",
+			"title_2f3fbeec-a0d9-4e4a-8461-c1eba1a807ee": "Comptabilité",
+			"description_2f3fbeec-a0d9-4e4a-8461-c1eba1a807ee": "Comptabilité",
+			"title_e5a33a8a-c810-4000-a2e7-7fdd7f96b365": "Comptabilité tiers",
+			"description_e5a33a8a-c810-4000-a2e7-7fdd7f96b365": "Comptabilité tiers",
+			"title_4cadfb78-2d03-4eec-b192-97473334a678": "Budgets opérationnels",
+			"description_4cadfb78-2d03-4eec-b192-97473334a678": "Budgets opérationnels",
+			"title_86a0a3e6-95fa-4f80-9162-acc575a08656": "Immobilisations",
+			"description_86a0a3e6-95fa-4f80-9162-acc575a08656": "Immobilisations",
+			"title_14eea3e5-5a6c-450a-aac0-9803e7e37b2f": "Terminaux portables",
+			"description_14eea3e5-5a6c-450a-aac0-9803e7e37b2f": "Terminaux portables",
+			"title_7affa254-fece-4fef-82dc-3b7b8983031e": "Exploitation",
+			"description_7affa254-fece-4fef-82dc-3b7b8983031e": "Exploitation",
+			"title_69f4a233-26c2-4545-98aa-cfc7294ecf54": "Impressions",
+			"description_69f4a233-26c2-4545-98aa-cfc7294ecf54": "Impressions",
+			"title_873d92be-9496-493d-8a98-fa42f82dd1aa": "Traductions",
+			"description_873d92be-9496-493d-8a98-fa42f82dd1aa": "Traductions",
 			"title_277a9c2b-b625-4878-9a48-f1c6c83341b2": "Acheteur",
 			"description_277a9c2b-b625-4878-9a48-f1c6c83341b2": "Acheteur",
 			"title_ffd84b3a-5b6f-4b92-a090-d50110c215df": "Portail de l'utilisateur ACHE",
@@ -20660,12 +21447,15 @@
 			"title_b39966b3-14b1-4a82-90dd-4f892e0bda19": "Catégories articles",
 			"title_4b474024-2da3-4864-9b21-270f606663a3": "Articles - dépôts",
 			"description_4b474024-2da3-4864-9b21-270f606663a3": "ITMWRH",
+			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Incoterm",
+			"description_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Incoterm",
 			"title_8b4fdf82-afa8-4bc4-adfe-66fa25f4dd10": "Achat",
 			"description_8b4fdf82-afa8-4bc4-adfe-66fa25f4dd10": "Syrapedia Achat",
 			"title_3cc1a1a2-5465-4330-a3af-871eb7732b77": "Gestion des retours",
 			"description_3cc1a1a2-5465-4330-a3af-871eb7732b77": "PRETURN",
 			"title_9f608f27-1a43-4f2f-beea-e508d4e2b950": "Ordres de sous-traitance",
 			"title_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "Réceptions",
+			"title_4342f84e-cd3a-4f0f-8e7a-e4e1be3b4cf8": "Commandes",
 			"title_e4a181f7-544f-45d0-8ab5-f3b8faebc157": "Ventes",
 			"description_e4a181f7-544f-45d0-8ab5-f3b8faebc157": "Syrapedia Ventes",
 			"title_2a4b8297-3545-431c-a9df-67176c7e4ed2": "Devis",
