@@ -19,7 +19,7 @@
 			]
 		},
 		"role": {
-			"$key": "description.fr-fr",
+			"$key": "code",
 			"$localized": [
 				"description"
 			],
@@ -57,7 +57,7 @@
 				"$localized": ["description"]
 			},
 			"role": {
-				"$key": "description.fr-fr",
+				"$key": "code",
 				"$localized": ["description"]
 			}
 		},
@@ -240,16 +240,19 @@
 		},
 		{
 			"$type": "role",
+			"code": "EP_ADMIN",
 			"description": "description_fff55671-255e-4ebb-8a6e-70acac4fda94",
 			"securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
+			"code": "GUEST",
 			"description": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf",
 			"securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
+			"code": "ADMIN",
 			"description": "description_26024776-bbff-4be9-9069-d464a68e0659",
 			"securityProfile": "ADMIN"
 		},
@@ -273,7 +276,7 @@
 		{
 			"$type": "group",
 			"description": "description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e",
-			"role": "description_fff55671-255e-4ebb-8a6e-70acac4fda94"
+			"role": "EP_ADMIN"
 		},
 		{
 			"$type": "group",
@@ -281,7 +284,7 @@
 			"endPoints": [
 				"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4"
 			],
-			"role": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf"
+			"role": "GUEST"
 		},
 		{
 			"$type": "group",
@@ -289,7 +292,7 @@
 			"endPoints": [
 				"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4"
 			],
-			"role": "description_26024776-bbff-4be9-9069-d464a68e0659"
+			"role": "ADMIN"
 		},
 		{
 			"$type": "user",
