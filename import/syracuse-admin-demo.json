@@ -7,7 +7,7 @@
 			]
 		},
 		"role": {
-			"$key": "description"
+			"$key": "code"
 		},
 		"x3server": {
 			"$key": "description"
@@ -30,7 +30,7 @@
 				"$key": "description"
 			},
 			"role": {
-				"$key": "description"
+				"$key": "code"
 			}
 		},
 		"user": {
@@ -48,7 +48,7 @@
 				"roles"
 			],
 			"roles": {
-				"$key": "description"
+				"$key": "code"
 			},
 			"application": {
 				"$key": [
@@ -136,30 +136,37 @@
 		},
 		{
 			"$type": "role",
+			"code": "ADMIN",
 			"description": "Super administrator"
 		},
 		{
 			"$type": "role",
+			"code": "EP_ADMIN",
 			"description": "Endpoint administrator"
 		},
 		{
 			"$type": "role",
+			"code": "Accountant",
 			"description": "Accountant"
 		},
 		{
 			"$type": "role",
+			"code": "CFO",
 			"description": "CFO"
 		},
 		{
 			"$type": "role",
+			"code": "Auditor",
 			"description": "Auditor"
 		},
 		{
 			"$type": "role",
+			"code": "Account manager",
 			"description": "Account manager"
 		},
 		{
 			"$type": "role",
+			"code": "Sales manager",
 			"description": "Sales manager"
 		},
 		{
@@ -239,12 +246,12 @@
 			"endPoints": [
 				"Syracuse administration"
 			],
-			"role": "Super administrator"
+			"role": "ADMIN"
 		},
 		{
 			"$type": "group",
 			"description": "Endpoint administrators",
-			"role": "Endpoint administrator",
+			"role": "EP_ADMIN",
 			"endPoints": [
 				"Global CRM",
 				"Overseas trading",
