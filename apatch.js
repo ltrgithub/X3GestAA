@@ -46,7 +46,7 @@ var arg = process.argv[2];
 require('syracuse-patch/lib/patchcreate').cmdLinePatchCb(config, function(err, result) {
 		if (err) {
 			console.error("Error " +err+" "+err.stack);
-			process.exit(1);
+			process.exit(err.special_status || 1);
 		} else {
 			process.exit(result || 0);
 		}

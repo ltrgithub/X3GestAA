@@ -200,11 +200,12 @@ public class CertTool {
 		}
 	}
 
-	/** return the relative path of the certificate */
+	/** return the relative path of the public key with replacement of bad characters */
 	static private String getPublicKeyFileName(String name) throws CertToolException {
 		if (name == null) {
 			throw new CertToolException("No public key file for CA");
 		} else {
+			name = name.replace('@', '_').replace('.', '_').replace('$', '_');
 			return OUTPUT + name + ".pem";
 		}
 	}
@@ -792,6 +793,8 @@ public class CertTool {
 						throw new CertToolException("Error in decryption - probably incorrect passphrase");						
 					}					
 				}
+				if (name == null)
+					pass = capass;
 			}
 		}
 		return false;
@@ -1066,7 +1069,7 @@ public class CertTool {
 				}
 				if (i == args.length - 1) {
 					if (argument.length() > 0)
-						tool.name = argument;
+						tool.name = argument.toLowerCase();
 				}
 				else
 					throw new CertToolException("Error in argument list");
