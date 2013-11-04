@@ -793,6 +793,8 @@ public class CertTool {
 						throw new CertToolException("Error in decryption - probably incorrect passphrase");						
 					}					
 				}
+				if (name == null)
+					pass = capass;
 			}
 		}
 		return false;
@@ -1067,7 +1069,7 @@ public class CertTool {
 				}
 				if (i == args.length - 1) {
 					if (argument.length() > 0)
-						tool.name = argument;
+						tool.name = argument.toLowerCase();
 				}
 				else
 					throw new CertToolException("Error in argument list");
