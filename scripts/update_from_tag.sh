@@ -3,6 +3,7 @@ td=$(date --date="1 day ago" +%F)
 if [ $(date +%w) == 0 ]; then td=$(date --date="2 days ago" +%F); fi;
 if [ $(date +%w) == 1 ]; then td=$(date --date="3 days ago" +%F); fi;
 cd /c/Sage_Syracuse/syracuse/bin
+git stash
 git pull --tags
 if [ $(git tag -l "v7.0_"$td)"" == "" ]; then exit 1; fi;
 net stop Agent_Syracuse_v1.0.0
