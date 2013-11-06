@@ -24,7 +24,7 @@ exports.config = {
 		// this options enables developpement features like extended authoring rights.
 		// it shouldn't be enabled in client configurations as modifications made can be lost 
 		// on patch application, etc.
-		enableDeveloppementFeatures: false,
+		enableDevelopmentFeatures: false,
 		// enables some specific client framework attributes for use with the test robot
 		enableTestRobot: false,
 		// optional: path to some stubs to use in development and tests, relative to index.js
