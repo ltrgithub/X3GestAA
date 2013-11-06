@@ -7,12 +7,6 @@
 // The nodelocal.js file is marked as "ignored" for subversion. 
 // So subversion will not try to add it when you run the subversion Add command. 
 
-var helpers = require('syracuse-core/lib/helpers');
-
-helpers.stubsPath = "stubs";
-helpers.enableDeveloppementFeatures = true;
-
-
 exports.config = {
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
@@ -25,7 +19,16 @@ exports.config = {
 		https: false,
 	},
 	system: {
-//			memwatch: true
+		// enables memwatch module
+		memwatch: false,
+		// this options enables developpement features like extended authoring rights.
+		// it shouldn't be enabled in client configurations as modifications made can be lost 
+		// on patch application, etc.
+		enableDeveloppementFeatures: false,
+		// enables some specific client framework attributes for use with the test robot
+		enableTestRobot: false,
+		// optional: path to some stubs to use in development and tests, relative to index.js
+		// stubsPath = "stubs"
 	},
 /*	integrationServer: {
 		port: 8125
