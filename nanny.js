@@ -1,3 +1,19 @@
+if (process.argv[2] === "-one") {
+	// condense all output in a single console.log message (for PSExec)
+    var stdout = "";
+    process.argv.splice(2, 1); // remove argument
+    var util = require('util');
+    var logOrig = console.log;
+	var output = function() { 
+		var content = util.format.apply(this, arguments) + '\n';
+        stdout += content;
+    }
+    console.log = console.error = console.info = console.warn = console.trace = output;
+    process.on('exit', function() {
+        logOrig(stdout);
+    });
+}
+
 var config = {};
 
 try {
