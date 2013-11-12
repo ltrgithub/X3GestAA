@@ -68,6 +68,7 @@ namespace ExcelAddIn
         public Boolean newVersionMessage = false;
         public int versionNumberBinary = 0;
 
+
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             //
@@ -379,12 +380,21 @@ namespace ExcelAddIn
                     catch (Exception) { }
 
                     External ext = new External();
+                    
+                    if ((proto != null) && (data != null))
+                    {
+                        ext.ResizeTable("cvg", proto, 1, "");
+                        ext.StartUpdateTable();
+                        ext.UpdateTable("cvg", proto, data, 0);
+                        ext.EndUpdateTable();
+                    }
+                    else
+                    {
+                        return true;
+                    }
+
                     wb.ActiveSheet.Cells.Clear();
 
-                    ext.ResizeTable("cvg", proto, 1, "");
-                    ext.StartUpdateTable();
-                    ext.UpdateTable("cvg", proto, data, 0);
-                    ext.EndUpdateTable();
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
