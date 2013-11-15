@@ -48,23 +48,18 @@
 			]
 		},
 		"group": {
-			"$key": "description.fr-fr",
+			"$key": "description.en-us",
 			"$localized": [
 				"description"
 			],
-			"endPoints": {
-				"$key": "description.fr-fr",
-				"$localized": ["description"]
-			},
 			"role": {
-				"$key": "code",
-				"$localized": ["description"]
+				"$key": "code"
 			}
 		},
 		"user": {
 			"$key": "lastName",
 			"groups": {
-				"$key": "description.fr-fr",
+				"$key": "description.en-us",
 				"$localized": ["description"]
 			}
 		},
@@ -88,7 +83,7 @@
 		}
 	},
     "$includeBefore": [],
-	"$includeAfter": ["syracuse-admin-menu"],
+	"$includeAfter": ["syracuse-admin-endpoint", "syracuse-admin-menu"],
 	"$items": [
 		{
 			"$type": "localePreference",
@@ -257,18 +252,6 @@
 			"securityProfile": "ADMIN"
 		},
 		{
-			"$type": "endPoint",
-			"description": "description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4",
-			"dataset": "syracuse",
-			"databaseDriver": "mongodb",
-			"databaseHost": "localhost",
-			"databasePort": 27017,
-			"applicationRef": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			}
-		},
-		{
 			"$type": "setting",
 			"authentication": "basic",
 			"patchLock": false
@@ -281,17 +264,11 @@
 		{
 			"$type": "group",
 			"description": "description_a523c2c1-d831-4877-9f0c-95928da43883",
-			"endPoints": [
-				"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4"
-			],
 			"role": "GUEST"
 		},
 		{
 			"$type": "group",
 			"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
-			"endPoints": [
-				"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4"
-			],
 			"role": "ADMIN"
 		},
 		{
