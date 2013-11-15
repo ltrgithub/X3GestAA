@@ -172,9 +172,7 @@
 				"application": "x3",
 				"contract": "erp"
 			},
-			"endpoint": {
-				"dataset": "SEED"
-			},
+			"endpoint": null,
 			"representationRef": {
 				"$type": "representationProxy",
 				"entity": "PROCESS",
@@ -196,9 +194,7 @@
 				"application": "x3",
 				"contract": "erp"
 			},
-			"endpoint": {
-				"dataset": "SEED"
-			},
+			"endpoint": null,
 			"representationRef": {
 				"$type": "representationProxy",
 				"entity": "PROCESS",
@@ -13842,7 +13838,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-PURCHASER","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-PURCHASER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ACHE"
 					}
@@ -13901,7 +13904,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-SALESADM","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-SALESADM"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ADVT"
 					}
@@ -13999,7 +14009,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-PURCHASER","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-PURCHASER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "2ae74416-91d8-4571-bb94-574c6700355c"
 					}
@@ -14097,7 +14114,17 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-SALESADM","ERP-SALESENG","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-SALESADM"
+						},
+						{
+							"code": "ERP-SALESENG"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "8c306eed-9a20-4fdc-a251-ef10abf969ea"
 					}
@@ -14160,7 +14187,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-CHIEFACCOUNTANT","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-CHIEFACCOUNTANT"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_CCPT"
 					}
@@ -14223,7 +14257,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-DATAADM","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-DATAADM"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ADDO"
 					}
@@ -14286,7 +14327,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-DESIGNMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-DESIGNMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ETUD"
 					}
@@ -14349,7 +14397,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-ARACCMAN","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-ARACCMAN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_RCPC"
 					}
@@ -14412,7 +14467,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-APACCMAN","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-APACCMAN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_RCPF"
 					}
@@ -14475,7 +14537,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-SALESENG","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-SALESENG"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_COMM"
 					}
@@ -14538,7 +14607,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-WORKSHOPMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-WORKSHOPMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ATEL"
 					}
@@ -14601,7 +14677,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-MATBUY","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-MATBUY"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_APPR"
 					}
@@ -14664,7 +14747,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-PLANMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-PLANMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_PLAN"
 					}
@@ -14727,7 +14817,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-SUPPMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-SUPPORTMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_HDK0"
 					}
@@ -14799,7 +14896,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-STOCKMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-STOCKMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_RESS"
 					}
@@ -14862,7 +14966,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-MATHANDLER","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-MATHANDLER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_MAGA"
 					}
@@ -14988,7 +15099,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-SYSTADMIN","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-SYSTADMIN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ADMFR"
 					}
@@ -15042,7 +15160,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-DIRECTOR","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-DIRECTOR"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_DIRE"
 					}
@@ -15105,7 +15230,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-SALESADM","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-SALESADM"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_CS"
 					}
@@ -15168,7 +15300,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-PURCHASER","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-PURCHASER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_PUR"
 					}
@@ -15240,7 +15379,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-CHIEFACCOUNTANT","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-CHIEFACCOUNTANT"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ACCT"
 					}
@@ -15276,7 +15422,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-SYSTADMIN","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-SYSTADMIN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_ADMNA"
 					}
@@ -15339,7 +15492,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-APACCMAN","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-APACCMAN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_AP"
 					}
@@ -15402,7 +15562,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-CONTROLLER","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-CONTROLLER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_COST"
 					}
@@ -15465,7 +15632,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-SALESENG","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-SALESENG"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_SLS"
 					}
@@ -15528,7 +15702,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-SUPPORTMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-SUPPORTMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_SVC"
 					}
@@ -15591,7 +15772,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-ARACCMAN","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-ARACCMAN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_AR"
 					}
@@ -15654,7 +15842,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-PRODPLAN","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-PRODPLAN"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_PLN"
 					}
@@ -15708,7 +15903,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-DIRECTOR","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-DIRECTOR"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_EXEC"
 					}
@@ -15771,7 +15973,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-DESIGNMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-DESIGNMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_DES"
 					}
@@ -15834,7 +16043,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-MATHANDLER","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-MATHANDLER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_MAT"
 					}
@@ -15897,7 +16113,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-STOCKMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-STOCKMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_WH"
 					}
@@ -15960,7 +16183,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["NA-WORKSHOPMANA","ADMIN"],
+					"roles": [
+						{
+							"code": "NA-WORKSHOPMANA"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_PRD"
 					}
@@ -16023,7 +16253,14 @@
 							"endpoint": null
 						}
 					],
-					"roles": ["ERP-CONTROLLER","ADMIN"],
+					"roles": [
+						{
+							"code": "ERP-CONTROLLER"
+						},
+						{
+							"code": "ADMIN"
+						}
+					],
 					"pageData": {
 						"code": "USR_X3REFV7_CGES"
 					}
@@ -18310,6 +18547,8 @@
 			"description_5dada210-6056-482a-b198-901510e22a41": "Administration dashboard",
 			"title_ad5d54e3-db91-449e-991d-c6984343a301": "Technology presentation",
 			"description_ad5d54e3-db91-449e-991d-c6984343a301": "Presentation of Syracuse technology",
+			"title_7e9e4604-86d4-4f6b-9944-fe7a0ba838be": "Demonstration page for technology",
+			"description_7e9e4604-86d4-4f6b-9944-fe7a0ba838be": null,
 			"title_10b84955-b5cf-4085-898f-7591375db9b3": "Syracuse tools",
 			"description_10b84955-b5cf-4085-898f-7591375db9b3": "Syracuse tools",
 			"title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Syracuse Sessions",
