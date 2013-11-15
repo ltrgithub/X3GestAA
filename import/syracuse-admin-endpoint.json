@@ -1,0 +1,46 @@
+{
+	"$prototypes": {
+		"endPoint": {
+			"$key": "dataset",
+			"$localized": ["description"],
+			"applicationRef": {
+				"$key": ["application", "contract"]
+			},
+			"groups": {
+				"$key": "description.en-us",
+				"$localized": ["description"]
+			}
+		}
+	},
+    "$includeBefore": [],
+	"$includeAfter": [],
+	"$items": [
+		{
+			"$type": "endPoint",
+			"description": "description_EP_SYRACUSE",
+			"dataset": "syracuse",
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27017,
+			"applicationRef": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"groups": ["description_GP_GUESTS", "description_GP_ADMIN", "description_GP_EP_ADMIN"]
+		}
+	],
+	"$localization": {
+		"en-us": {
+			"description_EP_SYRACUSE": "Syracuse administration",
+			"description_GP_EP_ADMIN": "Endpoint administrators",
+			"description_GP_GUESTS": "Guests",
+			"description_GP_ADMIN": "Super administrators"
+		},
+		"fr-fr": {
+			"description_EP_SYRACUSE": "Syracuse administration",
+			"description_GP_EP_ADMIN": "Endpoint administrators",
+			"description_GP_GUESTS": "Guests",
+			"description_GP_ADMIN": "Super administrators"
+		}
+	}
+}
