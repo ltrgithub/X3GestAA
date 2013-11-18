@@ -100,3 +100,43 @@ test "try/catch with a reused variable name.", ->
       # nothing
   eq typeof inner, 'undefined'
 
+
+# Allowed to destructure exceptions: #2580
+
+test "try/catch with destructuring the exception object", ->
+
+  result = try
+    missing.object
+  catch {message}
+    message
+
+  eq message, 'missing is not defined'
+
+
+
+test "Try catch finally as implicit arguments", ->
+  first = (x) -> x
+
+  foo = no
+  try
+    first try iamwhoiam() finally foo = yes
+  catch e
+  eq foo, yes
+
+  bar = no
+  try
+    first try iamwhoiam() catch e finally
+    bar = yes
+  catch e
+  eq bar, yes
+
+# Catch Should Not Require Param: #2900
+test "parameter-less catch clause", ->
+  try
+    throw new Error 'failed'
+  catch
+    ok true
+
+  try throw new Error 'failed' catch finally ok true
+
+  ok try throw new Error 'failed' catch then true
