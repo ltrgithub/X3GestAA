@@ -13,16 +13,22 @@ try {
 	console.error(ex);
 }
 
+// make 2-digit number
+function _ext(number) {
+  if (number < 10) return "0"+number;
+  return number;
+}
+
 //redirect standard output to file in cluster
 if (/^N\d+$/.test(process.argv[2])) {
 	var os = require('os');
 	var fs = require('fs');
 	var util = require('util');
 	var logpath = ((config.collaboration && config.collaboration.logpath) ? config.collaboration.logpath : __dirname) 
-	var name = logpath+"/"+os.hostname()+"-"+process.argv[2]+".log";
-	// fs.unlinkSync(name)
+    var now = new Date();
+	var name = logpath+"/"+now.getFullYear()+"-"+_ext(1+now.getMonth())+"-"+_ext(now.getDate())+"_"+os.hostname()+"-"+process.argv[2]+".log";		
 	var buffer = null;
-	var stream = fs.createWriteStream(name);
+	var stream = fs.createWriteStream(name, { flags: 'a' });
 	
 	// node.js v0.10: process.stdout cannot be changed any more
 	var buffer = null;
