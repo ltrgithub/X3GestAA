@@ -260,6 +260,7 @@ namespace WordAddIn
 
         public void populateWordTemplate(String data)
         {
+
             if (checkReadOnly())
             {
                 return;
@@ -428,10 +429,11 @@ namespace WordAddIn
 
             FileInfo filePath = new FileInfo(doc.FullName);
             string fileName = filePath.ToString();
-            FileAttributes attributes = File.GetAttributes(fileName);
-            if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+
+            if (File.Exists(fileName))
             {
-                if (File.Exists(fileName))
+                FileAttributes attributes = File.GetAttributes(fileName);
+                if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
                 {
                     // Make the file RW
                     attributes = RemoveAttribute(attributes, FileAttributes.ReadOnly);
@@ -442,7 +444,6 @@ namespace WordAddIn
                     readOnly = true;
                 }
             }
-
             return readOnly;
         }
 
