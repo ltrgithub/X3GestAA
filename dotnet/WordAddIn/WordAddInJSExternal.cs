@@ -5,6 +5,7 @@ using Microsoft.Office.Interop.Word;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
+using System.Security.AccessControl;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
@@ -55,6 +56,7 @@ namespace WordAddIn
             }
 
             string filename = System.IO.Path.GetTempFileName().Replace(".tmp", ".docx");
+
             doc.MailMerge.CreateDataSource(filename, Type.Missing, Type.Missing, headers);
 
             WdWindowState ws = doc.Application.WindowState;
@@ -168,10 +170,15 @@ namespace WordAddIn
                 wrdSelection.TypeParagraph();
             }
         }
-
         public void createDatasource(String mailMergeDataJSon)
         {
+            if (checkReadOnly())
+            {
+                return;
+            }
+
             Document doc = customData.getWordDoc();
+
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -228,6 +235,11 @@ namespace WordAddIn
 
         public void createWordTemplate(String layoutAndData)
         {
+            if (checkReadOnly())
+            {
+                return;
+            }
+
             Document doc = customData.getWordDoc();
             if (doc.FormsDesign)
             {
@@ -248,6 +260,11 @@ namespace WordAddIn
 
         public void populateWordTemplate(String data)
         {
+            if (checkReadOnly())
+            {
+                return;
+            }
+
             Document doc = customData.getWordDoc();
             if (doc.FormsDesign)
             {
@@ -402,5 +419,37 @@ namespace WordAddIn
                 }
             }
         }
+
+        // Neccessary for Firefox and Office2013
+        private Boolean checkReadOnly()
+        {
+            Document doc = customData.getWordDoc();
+            Boolean readOnly = false;
+
+            FileInfo filePath = new FileInfo(doc.FullName);
+            string fileName = filePath.ToString();
+            FileAttributes attributes = File.GetAttributes(fileName);
+            if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+            {
+                if (File.Exists(fileName))
+                {
+                    // Make the file RW
+                    attributes = RemoveAttribute(attributes, FileAttributes.ReadOnly);
+                    File.SetAttributes(fileName, attributes);
+
+                    ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
+                    doc = Globals.WordAddIn.Application.Documents.Open(filePath.FullName);
+                    readOnly = true;
+                }
+            }
+
+            return readOnly;
+        }
+
+        private static FileAttributes RemoveAttribute(FileAttributes attributes, FileAttributes attributesToRemove)
+        {
+            return attributes & ~attributesToRemove;
+        }
+
     }
 }
