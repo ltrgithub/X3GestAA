@@ -380,9 +380,10 @@ namespace ExcelAddIn
                     catch (Exception) { }
 
                     External ext = new External();
-                    
+
                     if ((proto != null) && (data != null))
                     {
+                        wb.ActiveSheet.Cells.Clear();
                         ext.ResizeTable("cvg", proto, 1, "");
                         ext.StartUpdateTable();
                         ext.UpdateTable("cvg", proto, data, 0);
@@ -392,9 +393,6 @@ namespace ExcelAddIn
                     {
                         return true;
                     }
-
-                    wb.ActiveSheet.Cells.Clear();
-
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
