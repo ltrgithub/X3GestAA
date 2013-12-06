@@ -186,8 +186,28 @@
 			"endpoint": null,
 			"representationRef": {
 				"$type": "representationProxy",
-				"entity": "licences",
-				"representation": "licence"
+				"entity": "licenses",
+				"representation": "license"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "S_LICENCEDATA",
+			"title": "title_S_LICENCEDATA",
+			"description": "description_S_LICENCEDATA",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "licenseDatas",
+				"representation": "licenseData"
 			}
 		},
 		{
@@ -555,6 +575,9 @@
 				},
 				{
 					"code": "S_LICENCES"
+				},
+				{
+					"code": "S_LICENCEDATA"
 				},
 				{
 					"code": "S_CERTIFICATES"
@@ -1203,10 +1226,12 @@
 			"description_S_SOAP_WS": "Soap Web Services",
 			"title_S_CERTIFICATES": "Certificates",
 			"description_S_CERTIFICATES": "Certificates",
-			"title_S_CA_CERTIFICATES": "Certificates of Certification Autorities",
-			"description_S_CA_CERTIFICATES": "Certificates of Certification Autorities",
-			"title_S_LICENCES": "Licences",
-			"description_S_LICENCES": "Licences",
+			"title_S_CA_CERTIFICATES": "Certificates of Certification Authorities",
+			"description_S_CA_CERTIFICATES": "Certificates of Certification Authorities",
+			"title_S_LICENCES": "Licenses",
+			"description_S_LICENCES": "License management",
+			"title_S_LICENCEDATA": "License data",
+			"description_S_LICENCEDATA": "License data",
 			"title_S_PROXY": "Proxies configuration",
 			"description_S_PROXY": "Proxies configuration interface",
 			"title_608a8754-a0f8-4215-b82a-9a4b67622dc9": "X3 Servers",
@@ -1289,6 +1314,8 @@
 			"description_4b79dea0-27af-427c-bc39-299ca3a2e6e1": "Gestion des rôles utilisateur",
 			"title_S_LICENCES": "Licences",
 			"description_S_LICENCES": "Licences",
+			"title_S_LICENCEDATA": "Détail des licences",
+			"description_S_LICENCEDATA": "Détail des licences",
 			"title_S_BADGES": "Badges",
 			"description_S_BADGES": "Badges",
 			"title_S_SOAP_WS": "Services Web Soap",

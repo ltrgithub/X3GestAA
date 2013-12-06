@@ -12,15 +12,9 @@ namespace ExcelAddIn
 {
     public partial class Ribbon
     {
-        ActionPanel actionPanel = new ActionPanel();
-        CustomTaskPane taskPane;
-
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-            taskPane = Globals.ThisAddIn.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
-            taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
             Globals.ThisAddIn.ReadPreferences();
-            taskPane.Visible = Globals.ThisAddIn.GetPrefShowPanel();
             checkBox1.Checked = Globals.ThisAddIn.GetPrefShowPanel();
             installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
         }
@@ -56,7 +50,7 @@ namespace ExcelAddIn
 
         private void checkBox1_Click(object sender, RibbonControlEventArgs e)
         {
-            taskPane.Visible = checkBox1.Checked;
+            Globals.ThisAddIn.ShowActionPanel(checkBox1.Checked);
         }
 
         private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
@@ -80,7 +74,7 @@ namespace ExcelAddIn
         {
             Globals.ThisAddIn.SISettings();
         }
-        private void ActionPanel_VisibleChanged(object sender, EventArgs e)
+ /*       private void ActionPanel_VisibleChanged(object sender, EventArgs e)
         {
             Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
             if (taskPane != null)
@@ -93,10 +87,10 @@ namespace ExcelAddIn
             }
             Globals.ThisAddIn.SetPrefShowPanel(taskPane.Visible);
         }
-
+*/
         private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
         {
-            actionPanel.updateAddin();
+            Globals.ThisAddIn.ActionPanel.updateAddin();
         }
     }
 }
