@@ -67,12 +67,19 @@ namespace ExcelAddIn
         public String prefUrl = null;
         public Boolean newVersionMessage = false;
         public int versionNumberBinary = 0;
-
+        //
+        ActionPanel actionPanel = new ActionPanel();
+        Microsoft.Office.Tools.CustomTaskPane taskPane;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             //
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
+            //
+            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
+            taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
+            this.ReadPreferences();
+            taskPane.Visible = this.GetPrefShowPanel();
             //
             if (this.Application.ActiveWorkbook != null)
                 AutoConnect();
@@ -175,7 +182,8 @@ namespace ExcelAddIn
         }
         public ActionPanel ActionPanel
         {
-            get { return (ActionPanel)this.CustomTaskPanes[0].Control; }
+//            get { return (ActionPanel)this.CustomTaskPanes[0].Control; }
+            get { return actionPanel; }
         }
 
         // EVENTS
@@ -380,9 +388,10 @@ namespace ExcelAddIn
                     catch (Exception) { }
 
                     External ext = new External();
-                    
+
                     if ((proto != null) && (data != null))
                     {
+                        wb.ActiveSheet.Cells.Clear();
                         ext.ResizeTable("cvg", proto, 1, "");
                         ext.StartUpdateTable();
                         ext.UpdateTable("cvg", proto, data, 0);
@@ -392,9 +401,6 @@ namespace ExcelAddIn
                     {
                         return true;
                     }
-
-                    wb.ActiveSheet.Cells.Clear();
-
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
@@ -442,6 +448,25 @@ namespace ExcelAddIn
             installerProductKey.Close();
             regLM.Close();
             return addinVersion;
+        }
+
+        internal void ShowActionPanel(bool state)
+        {
+            taskPane.Visible = state;
+        }
+
+        private void ActionPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
+            if (taskPane != null)
+            {
+                Globals.Ribbons.Ribbon.checkBox1.Checked = taskPane.Visible;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.checkBox1.Checked = false;
+            }
+            this.SetPrefShowPanel(taskPane.Visible);
         }
     }
 }
