@@ -85,7 +85,7 @@ if(config.collaboration && config.collaboration.cacheDir) { // user dependent ca
 }
 config.streamline.lines = config.streamline.lines || "preserve";
 
-require('coffee-script');
+require('coffee-script/lib/coffee-script/extensions');
 
 require('syracuse-license').register(function(err, data) {
 	if (err) console.log(""+err)
