@@ -7,29 +7,94 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace ExcelAddIn
 {
     public partial class ServerSettings : Form
     {
+        private string serverUrl;
+
         public ServerSettings()
         {
             InitializeComponent();
         }
 
-        internal string GetConnectUrl()
+        //internal string GetConnectUrl()
+        //{
+        //    Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
+        //    return textBoxServerAddress.Text;
+        //}
+
+        //private void ServerSettings_Load(object sender, EventArgs e)
+        //{
+        //    textBoxServerAddress.Text = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
+        //    textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
+        //    // TEMP
+        //    if (textBoxServerAddress.Text == "")
+        //        textBoxServerAddress.Text = "http://localhost:8124";
+        //}
+
+
+
+
+        public ServerSettings(string serverUrl)
         {
-            Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
+            InitializeComponent();
+            this.serverUrl = serverUrl;
+        }
+
+        internal string getServerUrl()
+        {
+            SavePreferences(textBoxServerAddress.Text);
             return textBoxServerAddress.Text;
         }
 
         private void ServerSettings_Load(object sender, EventArgs e)
         {
-            textBoxServerAddress.Text = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
-            textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
+            textBoxServerAddress.Text = serverUrl;
+            textBoxServerAddress.Text = ReadPreferences();
             // TEMP
             if (textBoxServerAddress.Text == "")
                 textBoxServerAddress.Text = "http://localhost:8124";
+        }
+
+        internal string GetPreferenceFilePath()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Word.X3.settings";
+        }
+
+        internal string ReadPreferences()
+        {
+            String path = GetPreferenceFilePath();
+            string sContent = "";
+
+            if (File.Exists(path))
+            {
+                StreamReader myFile = new StreamReader(path, System.Text.Encoding.Default);
+                while (!myFile.EndOfStream)
+                {
+                    sContent = myFile.ReadLine();
+                    if (sContent != "")
+                    {
+                        break;
+                    }
+                }
+                myFile.Close();
+            }
+            return sContent;
+        }
+
+        internal void SavePreferences(String url)
+        {
+            String path = GetPreferenceFilePath();
+            System.IO.StreamWriter file = new System.IO.StreamWriter(path);
+            try
+            {
+                file.WriteLine(url);
+            }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+            file.Close();
         }
    }
 }

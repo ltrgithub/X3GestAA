@@ -67,12 +67,22 @@ namespace ExcelAddIn
         public String prefUrl = null;
         public Boolean newVersionMessage = false;
         public int versionNumberBinary = 0;
+
+        public CommonUtils commons = null;
+        private BrowserDialog browserDialog = null;
+        public TemplateActions templateActions = null;
         //
         ActionPanel actionPanel = new ActionPanel();
         Microsoft.Office.Tools.CustomTaskPane taskPane;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            //System.Diagnostics.Debugger.Break();
+
+            browserDialog = new BrowserDialog();
+            templateActions = new TemplateActions(browserDialog);
+            commons = new CommonUtils(browserDialog);
+
             //
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
             //
@@ -95,9 +105,9 @@ namespace ExcelAddIn
             ServerSettings settings = new ServerSettings();
             if (settings.ShowDialog() == DialogResult.OK)
             {
-                String connectUrl = settings.GetConnectUrl();
-                (new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", connectUrl);
-                return connectUrl;
+                //String connectUrl = settings.GetConnectUrl();
+                //(new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", connectUrl);
+                //return connectUrl;
             }
             return "";
         }
@@ -147,10 +157,12 @@ namespace ExcelAddIn
             if(!settingsForm.Visible)
                 settingsForm.Show(mainHandle);
         }
+
         internal void SettingsFormDestroyed()
         {
             settingsForm = null;
         }
+
         internal void ShowProgressForm(bool doShow)
         {
             if (doShow)
@@ -170,6 +182,7 @@ namespace ExcelAddIn
                 }
             }
         }
+
         internal void UpdateProgress(int linesCount)
         {
             if (progressForm != null)
@@ -180,19 +193,60 @@ namespace ExcelAddIn
         {
             get { return (Ribbon)Globals.Ribbons.Ribbon; }
         }
+
         public ActionPanel ActionPanel
         {
 //            get { return (ActionPanel)this.CustomTaskPanes[0].Control; }
             get { return actionPanel; }
         }
 
+
+        //private const String sageERPX3JsonTagName = "SyracuseOfficeCustomData";
+        //private const String sageERPX3JsonTagXPath = "//" + sageERPX3JsonTagName;
+
+        //public static Boolean isExcelTemplate(Excel.Workbook Wb)
+        //{
+        //    return getDictionaryFromCustomXMLPart(Wb) != null;
+        //}
+
+        //private static Dictionary<String, object> getDictionaryFromCustomXMLPart(Microsoft.Office.Interop.Excel.Workbook doc)
+        //{
+        //    return getDictionaryFromCustomXMLParts(doc.CustomXMLParts);
+        //}
+
+        //private static Dictionary<String, object> getDictionaryFromCustomXMLParts(CustomXMLParts parts)
+        //{
+        //    foreach (CustomXMLPart part in parts)
+        //    {
+        //        CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
+        //        if (node != null)
+        //        {
+        //            JavaScriptSerializer ser = new JavaScriptSerializer();
+        //            return (Dictionary<String, object>)ser.DeserializeObject(node.Text);
+        //        }
+        //    }
+        //    return null;
+        //}
+
         // EVENTS
-        void Application_WorkbookOpen(Excel.Workbook Wb)
+        void Application_WorkbookOpen(Excel.Workbook workbook)
         {
+
+            //if (isExcelTemplate(Wb))
+            //    ;
+            //else
             // Is the document an excel document with embedded data?
-            if (handleCvgDocument(Wb))
-                return;
-            AutoConnect();
+
+            if (TemplateActions.isExcelTemplate(workbook))
+            {
+                templateActions.CreateNewExcelTemplate(workbook);
+            }
+            else
+            {
+                if (handleCvgDocument(workbook))
+                    return;
+                AutoConnect();
+            }
         }
         void Application_WorkbookActivate(Excel.Workbook Wb)
         {
@@ -321,6 +375,16 @@ namespace ExcelAddIn
         {
             String file = GetPreferenceFilePath();
             File.Delete(file);
+        }
+
+        public Excel.Workbook getActiveWorkbook()
+        {
+            if (this.Application == null)
+                return null;
+
+            if (this.Application.Workbooks.Count <= 0)
+                return null;
+            return Application.ActiveWorkbook;
         }
 
 

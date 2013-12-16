@@ -210,6 +210,19 @@
     <Compile Include="ActionPanel.Designer.cs">
       <DependentUpon>ActionPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrowserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserDialog.Designer.cs">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtils.cs" />
+    <Compile Include="Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon.Designer.cs">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </Compile>
     <Compile Include="DocumentBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,12 +244,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="ReportingUtils.cs" />
     <Compile Include="SISettings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SISettings.Designer.cs">
       <DependentUpon>SISettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="SyracuseExcelCustomData.cs" />
+    <Compile Include="TemplateActions.cs" />
     <Compile Include="UnitTest_Tables.cs" />
     <Compile Include="DatasourceMngtForm.cs">
       <SubType>Form</SubType>
@@ -256,6 +272,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ExcelAddInJSExternal.cs" />
     <EmbeddedResource Include="ActionPanel.de.resx">
       <DependentUpon>ActionPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -271,7 +288,35 @@
     <EmbeddedResource Include="ActionPanel.resx">
       <DependentUpon>ActionPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource><EmbeddedResource Include="ActionPanel.fr-fr.resx"><DependentUpon>ActionPanel.cs</DependentUpon></EmbeddedResource><EmbeddedResource Include="ActionPanel.en-us.resx"><DependentUpon>ActionPanel.cs</DependentUpon></EmbeddedResource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionPanel.fr-fr.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionPanel.en-us.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowserDialog.resx">
+      <DependentUpon>BrowserDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.de.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.en-us.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.en.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.fr-fr.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.fr.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DatasourceMngtForm.resx">
       <DependentUpon>DatasourceMngtForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -287,7 +332,16 @@
     <EmbeddedResource Include="DocumentBrowser.resx">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource><EmbeddedResource Include="DocumentBrowser.fr.resx"><DependentUpon>DocumentBrowser.cs</DependentUpon></EmbeddedResource><EmbeddedResource Include="DocumentBrowser.fr-fr.resx"><DependentUpon>DocumentBrowser.cs</DependentUpon></EmbeddedResource><EmbeddedResource Include="DocumentBrowser.en-us.resx"><DependentUpon>DocumentBrowser.cs</DependentUpon></EmbeddedResource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.fr.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.fr-fr.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.en-us.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.fr.Designer.cs</LastGenOutput>
@@ -313,18 +367,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ribbon.de.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ribbon.en.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ribbon.fr.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ribbon.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource><EmbeddedResource Include="Ribbon.fr-fr.resx"><DependentUpon>Ribbon.cs</DependentUpon></EmbeddedResource><EmbeddedResource Include="Ribbon.en-us.resx"><DependentUpon>Ribbon.cs</DependentUpon></EmbeddedResource>
     <EmbeddedResource Include="ServerSettings.de.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,7 +378,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServerSettings.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource><EmbeddedResource Include="ServerSettings.fr-fr.resx"><DependentUpon>ServerSettings.cs</DependentUpon></EmbeddedResource><EmbeddedResource Include="ServerSettings.en-us.resx"><DependentUpon>ServerSettings.cs</DependentUpon></EmbeddedResource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.fr-fr.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettings.en-us.resx">
+      <DependentUpon>ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SISettings.resx">
       <DependentUpon>SISettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,7 +393,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TableUpdateProgress.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
-    </EmbeddedResource><EmbeddedResource Include="TableUpdateProgress.fr-fr.resx"><DependentUpon>TableUpdateProgress.cs</DependentUpon></EmbeddedResource><EmbeddedResource Include="TableUpdateProgress.en-us.resx"><DependentUpon>TableUpdateProgress.cs</DependentUpon></EmbeddedResource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableUpdateProgress.fr-fr.resx">
+      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableUpdateProgress.en-us.resx">
+      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -354,12 +408,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Ribbon.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Ribbon.Designer.cs">
-      <DependentUpon>Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="TableUpdateProgress.cs">
       <SubType>Form</SubType>
@@ -398,6 +446,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\server-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sauvegarder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sauvegarder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

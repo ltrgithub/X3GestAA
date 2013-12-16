@@ -7,6 +7,7 @@ using Microsoft.Office.Tools;
 using System.Threading;
 using System.Globalization;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelAddIn
 {
@@ -91,6 +92,30 @@ namespace ExcelAddIn
         private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.ActionPanel.updateAddin();
+        }
+
+        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
+        {
+
+        }
+
+        private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (workbook != null)
+            {
+                Globals.ThisAddIn.commons.SaveAs(workbook);
+            }
+        }
+
+        private void buttonRefreshReport_Click(object sender, RibbonControlEventArgs e)
+        {
+
+        }
+
+        private void buttonPreview_Click(object sender, RibbonControlEventArgs e)
+        {
+
         }
     }
 }
