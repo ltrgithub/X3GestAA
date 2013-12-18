@@ -195,7 +195,7 @@ namespace ExcelAddIn
             {
                 if (Globals.ThisAddIn.newVersionMessage == false)
                 {
-                    DialogResult result = MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    DialogResult result = MessageBox.Show(new Form() { TopMost = true }, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     Globals.ThisAddIn.newVersionMessage = true;
                     if (result == DialogResult.Yes)
                     {
