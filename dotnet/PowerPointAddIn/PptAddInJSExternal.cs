@@ -95,7 +95,7 @@ namespace PowerPointAddIn
             {
                 if (Globals.PowerPointAddIn.newVersionMessage == false)
                 {
-                    DialogResult result = MessageBox.Show(global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION, global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    DialogResult result = MessageBox.Show(new Form() { TopMost = true }, global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION, global::PowerPointAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     Globals.PowerPointAddIn.newVersionMessage = true;
                     if (result == DialogResult.Yes)
                     {

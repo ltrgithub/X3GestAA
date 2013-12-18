@@ -407,7 +407,7 @@ namespace WordAddIn
             {
                 if (Globals.WordAddIn.newVersionMessage == false)
                 {
-                    DialogResult result = MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    DialogResult result = MessageBox.Show(new Form() { TopMost = true }, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION, global::WordAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     Globals.WordAddIn.newVersionMessage = true;
                     if (result == DialogResult.Yes)
                     {
