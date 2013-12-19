@@ -196,6 +196,8 @@ namespace ExcelAddIn
         }
         void Application_WorkbookActivate(Excel.Workbook Wb)
         {
+            checkButton(Wb);
+
             if ((settingsForm != null) && settingsForm.Visible)
                 settingsForm.RefreshBrowser();
         }
@@ -467,6 +469,19 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBox1.Checked = false;
             }
             this.SetPrefShowPanel(taskPane.Visible);
+        }
+
+        // Enable / disable refresh-Button
+        void checkButton(Excel.Workbook Wb)
+        {
+            if ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") != "")
+            {
+                Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = true;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = false;
+            }
         }
     }
 }
