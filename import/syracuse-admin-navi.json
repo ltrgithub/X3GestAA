@@ -12,6 +12,9 @@
 			"submodules": {
 				"$key": "code"
 			},
+			"application": {
+				"$key": ["application", "contract"]
+			},
 			"$localized": ["title", "description"]
 		},
 		"menuBlock": {
@@ -25,6 +28,9 @@
 						"$key": "code"
 					}
 				}
+			},
+			"application": {
+				"$key": ["application", "contract"]
 			},
 			"$localized": ["title", "description"]
 		},
@@ -511,6 +517,10 @@
 			"$type": "menuBlock",
 			"code": "S_ADMIN",
 			"title": "title_aa721890-861c-4e45-8732-262549f71038",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
 			"items": [
 				{
 					"$variantType": "menuItem",
@@ -730,6 +740,10 @@
 			"$type": "menuBlock",
 			"code": "S_COLL",
 			"title": "title_633f65cc-13d0-42e0-b1ae-80f3bf6feec6",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
 			"items": [
 				{
 					"$variantType": "menuItem",
@@ -880,6 +894,10 @@
 			"$type": "menuBlock",
 			"code": "S_PERS",
 			"title": "title_dacaad25-7d83-420d-a644-bae54c353cc5",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
 			"items": [
 				{
 					"$variantType": "menuItem",
@@ -1011,6 +1029,10 @@
 			"$type": "menuBlock",
 			"code": "S_TOOLS",
 			"title": "title_672a9073-19a8-43e4-9581-e1b4de993e69",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
 			"items": [
 				{
 					"$variantType": "menuItem",
@@ -1098,6 +1120,10 @@
 			"$type": "menuBlock",
 			"code": "SUPERVISOR_ADMIN",
 			"title": "title_672a9073-19a8-44e4-9581-e1b4de993e69",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
 			"items": [
 				{
 					"$variantType": "menuItem",
@@ -1117,6 +1143,10 @@
 			"$type": "menuModule",
 			"code": "S_MOD_ADMIN",
 			"title": "title_S_MOD_ADMIN",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
 			"submodules": [
 				{
 					"code": "S_ADMIN"
@@ -1136,6 +1166,10 @@
 			"$type": "menuModule",
 			"code": "S_MOD_SUPERVADMIN",
 			"title": "title_S_MOD_SUPERVADMIN",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
 			"submodules": [
 				{
 					"code": "SUPERVISOR_ADMIN"
