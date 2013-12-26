@@ -474,6 +474,13 @@ namespace ExcelAddIn
         // Enable / disable refresh-Button
         void checkButton(Excel.Workbook Wb)
         {
+            Excel.Worksheet ws = Wb.ActiveSheet;
+            String hl = ws.Hyperlinks[1].Address;
+            if (hl.Contains("SyracuseOfficeAddinsSetup.EXE"))
+            {
+                ws.Cells[1, 1] = "";
+            }
+
             if ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") != "")
             {
                 Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = true;
