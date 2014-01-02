@@ -125,11 +125,11 @@ namespace ExcelAddIn
         }
         public void StoreCustomData(String address, String data)
         {
-            (new SyracuseCustomData()).StoreCustomDataAtAddress(address, data);
+            (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).StoreCustomDataAtAddress(address, data);
         }
         public String GetCustomData(String address)
         {
-            return (new SyracuseCustomData()).GetCustomDataByAddress(address);
+            return (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByAddress(address);
         }
         public String GetDocumentContent()
         {
