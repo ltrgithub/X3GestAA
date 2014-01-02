@@ -475,7 +475,9 @@ namespace ExcelAddIn
         void checkButton(Excel.Workbook Wb)
         {
             Excel.Worksheet ws = Wb.ActiveSheet;
-            String hl = ws.Hyperlinks[1].Address;
+            String hl = "";
+            if (ws.Hyperlinks.Count > 0)
+                hl = ws.Hyperlinks[1].Address;
             if (hl.Contains("SyracuseOfficeAddinsSetup.EXE"))
             {
                 ws.Cells[1, 1] = "";
