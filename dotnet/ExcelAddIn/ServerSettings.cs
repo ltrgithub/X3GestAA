@@ -25,7 +25,7 @@ namespace ExcelAddIn
 
         private void ServerSettings_Load(object sender, EventArgs e)
         {
-            textBoxServerAddress.Text = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
+            textBoxServerAddress.Text = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("serverUrlAddress");
             textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
             // TEMP
             if (textBoxServerAddress.Text == "")
