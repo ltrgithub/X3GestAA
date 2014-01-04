@@ -11,6 +11,7 @@ using System.Web.Script.Serialization;
 using Microsoft.Office.Core;
 using System.IO;
 using Microsoft.Win32;
+using Microsoft.Office.Interop.Excel;
 
 
 namespace ExcelAddIn
@@ -24,7 +25,6 @@ namespace ExcelAddIn
     // is is better since it's not out of sight when modifying the excel addin
     public class ExposedAddInUtilities
     {
-
         public void connectWorkbook(Excel.Workbook wb, String serverUrl, String datasourcesJSON)
         {
             Excel.Workbook oldWb = Globals.ThisAddIn.Application.ActiveWorkbook;
@@ -36,20 +36,24 @@ namespace ExcelAddIn
             (new SyracuseCustomData()).StoreCustomDataByName("datasourcesAddress", datasourcesJSON);
 
             ((Microsoft.Office.Interop.Excel._Worksheet) ws).Activate();
-            Globals.ThisAddIn.AutoConnect();
+            Globals.ThisAddIn.AutoConnect(); 
         }
-        public bool isWorkbookConnected(Workbook wb)
+
+        public bool isWorkbookConnected(Excel.Workbook wb)
         {
             return ((new SyracuseCustomData()).GetReservedSheet(false) != null);
         }
-        public void refreshWorkbook(Workbook wb)
+
+        public void refreshWorkbook(Excel.Workbook workbook)
         {
-            Excel.Workbook oldWb = Globals.ThisAddIn.Application.ActiveWorkbook;
-            wb.Activate();
+            Excel.Workbook oldWorkbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            
+            workbook.Activate();
+            
             Globals.ThisAddIn.RefreshAll();
-            if (oldWb != wb)
+            if (oldWorkbook != workbook)
             {
-                ((Microsoft.Office.Interop.Excel._Workbook)oldWb).Activate();
+                ((Microsoft.Office.Interop.Excel._Workbook)oldWorkbook).Activate();
             }
         }
     };
@@ -83,9 +87,8 @@ namespace ExcelAddIn
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);
 
-            //
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            //
+
             taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
             this.ReadPreferences();
@@ -105,18 +108,28 @@ namespace ExcelAddIn
             ServerSettings settings = new ServerSettings();
             if (settings.ShowDialog() == DialogResult.OK)
             {
-                //String connectUrl = settings.GetConnectUrl();
-                //(new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", connectUrl);
-                //return connectUrl;
+                String connectUrl = settings.GetConnectUrl();
+                (new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", connectUrl);
+                return connectUrl;
             }
             return "";
         }
+
+        public String GetServerUrl()
+        {
+            var connectUrl = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
+            if (connectUrl == "")
+                connectUrl = Globals.ThisAddIn.SetupServerUrl();
+            return connectUrl;
+        }
+
         public void AutoConnect()
         {
             var connectUrl = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
             if (connectUrl != "")
                 Connect();
         }
+
         public void Connect()
         {
             ActionPanel.Connect("");
@@ -127,17 +140,11 @@ namespace ExcelAddIn
             ActionPanel.RefreshAll();
         }
 
-        public String GetServerUrl()
-        {
-            var connectUrl = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
-            if (connectUrl == "")
-                connectUrl = Globals.ThisAddIn.SetupServerUrl();
-            return connectUrl;
-        }
         public CellsInsertStyle GetCellsInsertStyle()
         {
             return (CellsInsertStyle)Ribbon.dropDownInsert.SelectedItemIndex;
         }
+
         public CellsDeleteStyle GetCellsDeleteStyle()
         {
             return (CellsDeleteStyle)Ribbon.dropDownDelete.SelectedItemIndex;
@@ -145,7 +152,6 @@ namespace ExcelAddIn
 
         public void ShowSettingsForm()
         {
-            //
             var connectUrl = GetServerUrl();
             if (connectUrl == "") return;
             if (settingsForm == null)
@@ -196,50 +202,15 @@ namespace ExcelAddIn
 
         public ActionPanel ActionPanel
         {
-//            get { return (ActionPanel)this.CustomTaskPanes[0].Control; }
             get { return actionPanel; }
         }
 
-
-        //private const String sageERPX3JsonTagName = "SyracuseOfficeCustomData";
-        //private const String sageERPX3JsonTagXPath = "//" + sageERPX3JsonTagName;
-
-        //public static Boolean isExcelTemplate(Excel.Workbook Wb)
-        //{
-        //    return getDictionaryFromCustomXMLPart(Wb) != null;
-        //}
-
-        //private static Dictionary<String, object> getDictionaryFromCustomXMLPart(Microsoft.Office.Interop.Excel.Workbook doc)
-        //{
-        //    return getDictionaryFromCustomXMLParts(doc.CustomXMLParts);
-        //}
-
-        //private static Dictionary<String, object> getDictionaryFromCustomXMLParts(CustomXMLParts parts)
-        //{
-        //    foreach (CustomXMLPart part in parts)
-        //    {
-        //        CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
-        //        if (node != null)
-        //        {
-        //            JavaScriptSerializer ser = new JavaScriptSerializer();
-        //            return (Dictionary<String, object>)ser.DeserializeObject(node.Text);
-        //        }
-        //    }
-        //    return null;
-        //}
-
-        // EVENTS
         void Application_WorkbookOpen(Excel.Workbook workbook)
         {
-
-            //if (isExcelTemplate(Wb))
-            //    ;
-            //else
-            // Is the document an excel document with embedded data?
-
             if (TemplateActions.isExcelTemplate(workbook))
             {
-                templateActions.CreateNewExcelTemplate(workbook);
+                addReportingFieldsTaskPane(Application.ActiveWindow);
+                templateActions.ProcessExcelTemplate(workbook);
             }
             else
             {
@@ -248,11 +219,30 @@ namespace ExcelAddIn
                 AutoConnect();
             }
         }
+
         void Application_WorkbookActivate(Excel.Workbook Wb)
         {
             if ((settingsForm != null) && settingsForm.Visible)
                 settingsForm.RefreshBrowser();
+
+            Excel.Workbook workbook = getActiveWorkbook();
+            if (workbook == null)
+            {
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                return;
+            }
+
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                String mode = customData.getCreateMode();
+                if ("".Equals(customData.getDocumentUrl()) == false)
+                {
+                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                }
+            }
         }
+
         void Application_WorkbookBeforeSave(Excel.Workbook wb, bool SaveAsUI, ref bool Cancel)
         {
             if (!SaveAsUI)
@@ -266,8 +256,26 @@ namespace ExcelAddIn
                 }
             }
         }
+
         void Application_SheetChange(object sh, Excel.Range target)
         {
+            Excel.Workbook workbook = getActiveWorkbook();
+            if (workbook == null)
+            {
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                return;
+            }
+
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                String mode = customData.getCreateMode();
+                if ("".Equals(customData.getDocumentUrl()) == false)
+                {
+                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                }
+            }
+            
             Ribbon.buttonPublish.Enabled = true;
         }
 
@@ -288,8 +296,9 @@ namespace ExcelAddIn
         internal void SaveDocumentToSyracuse()
         {
             if ((new SyracuseCustomData()).GetCustomDataByName("documentUrlAddress") != "")
-                //  save by action panel
+            {
                 ActionPanel.SaveDocument();
+            }
             else
             {
                 ActionPanel.Connect("");
@@ -375,6 +384,46 @@ namespace ExcelAddIn
         {
             String file = GetPreferenceFilePath();
             File.Delete(file);
+        }
+
+        private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
+        {
+            Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
+            if (taskPane != null)
+            {
+                Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = taskPane.Visible;
+            }
+            else
+            {
+                Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = false;
+            }
+        }
+
+        private Microsoft.Office.Tools.CustomTaskPane addReportingFieldsTaskPane(Window win)
+        {
+            try
+            {
+                foreach (Microsoft.Office.Tools.CustomTaskPane pane in CustomTaskPanes)
+                {
+                    if (pane.Control is ExcelTemplatePane)
+                        return pane;
+                }
+            }
+            catch (Exception) { }
+
+            Microsoft.Office.Tools.CustomTaskPane p;
+            p = CustomTaskPanes.Add(new ExcelTemplatePane(), "Template fields", win);
+            p.VisibleChanged += ReportingFieldsPane_VisibleChanged;
+            return p;
+        }
+
+        public void showReportingFieldsTaskPane(bool visible)
+        {
+            Excel.Workbook workbook = getActiveWorkbook();
+            Microsoft.Office.Tools.CustomTaskPane pane = addReportingFieldsTaskPane(Application.ActiveWindow);
+            pane.Visible = visible;
+            ExcelTemplatePane t = (ExcelTemplatePane)pane.Control;
+            t.showFields(workbook);
         }
 
         public Excel.Workbook getActiveWorkbook()

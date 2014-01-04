@@ -145,6 +145,15 @@ namespace ExcelAddIn.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to access document..
+        /// </summary>
+        internal static string MSG_ERROR_NO_DOC {
+            get {
+                return ResourceManager.GetString("MSG_ERROR_NO_DOC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string MSG_ERROR_TITLE {
@@ -209,6 +218,24 @@ namespace ExcelAddIn.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The document has been saved successfully!.
+        /// </summary>
+        internal static string MSG_SAVE_DOC_DONE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_DOC_DONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved document.
+        /// </summary>
+        internal static string MSG_SAVE_DOC_DONE_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_DOC_DONE_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The reference &quot;{0}&quot; is allready associated with table &quot;{1}&quot;. Do You want to delete table &quot;{1}&quot; and replace its content ?.
         /// </summary>
         internal static string OverrideTableConfirm {
@@ -244,6 +271,106 @@ namespace ExcelAddIn.Properties {
         internal static string ResizeTableError {
             get {
                 return ResourceManager.GetString("ResizeTableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_boolean {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_boolean", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_choice {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_choice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_collection {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_collection", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_date {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_date", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_datetime {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_datetime", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_decimale {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_decimale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_graph {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_graph", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_image {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_string {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_string", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_aw_light_vignette {
+            get {
+                object obj = ResourceManager.GetObject("s_aw_light_vignette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

@@ -217,6 +217,19 @@
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtils.cs" />
+    <Compile Include="ExcelTemplatePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExcelTemplatePane.Designer.cs">
+      <DependentUpon>ExcelTemplatePane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportingFieldTypes.cs" />
     <Compile Include="Ribbon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -299,6 +312,12 @@
       <DependentUpon>BrowserDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExcelTemplatePane.resx">
+      <DependentUpon>ExcelTemplatePane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.de.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +335,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DatasourceMngtForm.resx">
       <DependentUpon>DatasourceMngtForm.cs</DependentUpon>
@@ -455,6 +475,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailmerge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-boolean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-choice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-collection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-datetime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-decimale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-string.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-aw-light-vignette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sauvegarder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sauvegarder21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings1.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -113,7 +113,7 @@ namespace ExcelAddIn
         {
             if (!connected)
                 _connect("");
-            //
+
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
         }
 

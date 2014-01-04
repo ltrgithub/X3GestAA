@@ -103,7 +103,6 @@ namespace ExcelAddIn
                     }
                 }
             }
-            //
             return actualColumnRanges;
         }
 
@@ -128,6 +127,7 @@ namespace ExcelAddIn
             }
             return true;
         }
+
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
             if (rowCount > 0)
@@ -206,8 +206,63 @@ namespace ExcelAddIn
                 }
             return true;
         }
+
+        private ListObject _createTemplateListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
+        {
+            ListObject resultListObject = null;
+            Worksheet targetWorksheet = activeCell.Worksheet;
+
+            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList(targetWorksheet).GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            var firstTable = orderedPlaceholderTableList.First();
+            var firstPlaceholder = firstTable.First().placeholder;
+            int initialRow = firstPlaceholder.row, initialColumn = firstPlaceholder.column;
+            int columnCount = firstTable.Count();
+
+            if (!_makePlace(targetWorksheet, initialRow, initialColumn, columnCount, rowCount))
+                return null;
+
+            for (int i = 0, j = 0; i < headers.Length; i++)
+            {
+                if (firstTable.Where(item => item.placeholder.name == headers[i]._name).Count() > 0)
+                {
+                    Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, initialColumn + j],
+                            targetWorksheet.Cells[initialRow + rowCount, initialColumn + j]];
+                    actualColumnRanges.Add(headers[i]._name, cells);
+                    j++;
+                }
+            }
+
+            int tableEndColumn = firstTable.Last().placeholder.column;
+
+            resultListObject = targetWorksheet.ListObjects.Add(XlListObjectSourceType.xlSrcRange,
+                                    targetWorksheet.Range[
+                                        targetWorksheet.Cells[initialRow, initialColumn],
+                                        targetWorksheet.Cells[initialRow + 1, tableEndColumn]],
+                                    Type.Missing, XlYesNoGuess.xlYes, Type.Missing);
+
+            resultListObject.Name = _name;
+
+            if (resultListObject.ShowHeaders)
+            {
+                for (int i = 0, j = 0; i < headers.Length; i++)
+                {
+                    if (firstTable.Where(item => item.placeholder.name == headers[i]._name).ToList().Count > 0)
+                    {
+                        int headerColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
+                        ((Range)resultListObject.HeaderRowRange.Item[1, j + 1]).Value2 = headers[i].GetTitle();
+                        j++;
+                    }
+                }
+            }
+
+            return resultListObject;
+        }
+        
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
+            if (TemplateActions.isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+                return _createTemplateListObject(activeCell, headers, actualColumnRanges, rowCount);
+
             ListObject resultListObject = null;
             Worksheet targetWorksheet = activeCell.Worksheet;
             //

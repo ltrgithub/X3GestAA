@@ -20,23 +20,11 @@ namespace ExcelAddIn
             InitializeComponent();
         }
 
-        //internal string GetConnectUrl()
-        //{
-        //    Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
-        //    return textBoxServerAddress.Text;
-        //}
-
-        //private void ServerSettings_Load(object sender, EventArgs e)
-        //{
-        //    textBoxServerAddress.Text = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
-        //    textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
-        //    // TEMP
-        //    if (textBoxServerAddress.Text == "")
-        //        textBoxServerAddress.Text = "http://localhost:8124";
-        //}
-
-
-
+        internal string GetConnectUrl()
+        {
+            Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
+            return textBoxServerAddress.Text;
+        }
 
         public ServerSettings(string serverUrl)
         {
