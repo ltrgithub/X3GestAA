@@ -4,8 +4,8 @@
 // YOUR LOCAL COPY MAY CONTAIN CONFIDENTIAL INFORMATION (passwords for example)
 // SO DO NOT EDIT THE TEMPLATE ITSELF, ONLY EDIT YOUR COPY (nodelocal.js)
 //
-// The nodelocal.js file is marked as "ignored" for subversion. 
-// So subversion will not try to add it when you run the subversion Add command. 
+// The nodelocal.js file is marked as "ignored" for subversion.
+// So subversion will not try to add it when you run the subversion Add command.
 
 exports.config = {
 	hosting: {
@@ -22,7 +22,7 @@ exports.config = {
 		// enables memwatch module
 		memwatch: false,
 		// this options enables developpement features like extended authoring rights.
-		// it shouldn't be enabled in client configurations as modifications made can be lost 
+		// it shouldn't be enabled in client configurations as modifications made can be lost
 		// on patch application, etc.
 		enableDevelopmentFeatures: false,
 		// enables some specific client framework attributes for use with the test robot
@@ -48,13 +48,26 @@ exports.config = {
 		"verbose": true,
 		"fast": true
 	},
-	session: {
-		"auth": "basic"
-	},
 	x3fusion: {
 // 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
 //		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
 //		tracer: console.log,
 //		profiler: console.log
-	}
+	},
+	translation: {
+		// trace: console.log,
+		// redirect diagnosis in the trace
+		traceDiagnosis: true,
+		// skip extraction and updating of the specified resource type
+		skip: {
+			// syracuse: true,
+			// dotnet: true,
+			// admin: true,
+		}
+	},
+	orm: {
+		x3: {
+			// trace: console.log,
+		}
+	},
 };
