@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using VB = Microsoft.Vbe.Interop;
 using System.Web.Script.Serialization;
@@ -74,10 +75,11 @@ namespace ExcelAddIn
         }
 
         public HtmlDocument webDocument { get { return webBrowser.Document; } }
-        private void _connect(string serverUrl, bool withSettings = true)
+        private void _connect(string serverUrl, bool withSettings = true, Excel.Workbook Wb = null)
         {
             // get server url
-            var connectUrl = Globals.ThisAddIn.GetServerUrl();
+            var connectUrl = serverUrl;
+            if (connectUrl == "") connectUrl = Globals.ThisAddIn.GetServerUrl(Wb);
             if (connectUrl == "") return;
             //
             try
@@ -88,7 +90,8 @@ namespace ExcelAddIn
                         connected = true;
                         // actions after logon
                         // has datasources ?
-                        if (withSettings && ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") == ""))
+                        Excel.Workbook thisWb = Wb != null ? Wb : Globals.ThisAddIn.Application.ActiveWorkbook;
+                        if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
                             Globals.ThisAddIn.ShowSettingsForm();
                     };
                 webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
@@ -104,9 +107,9 @@ namespace ExcelAddIn
             _connect("");
         }
 
-        public void Connect(string connectUrl, bool withSettings = true)
+        public void Connect(string connectUrl, bool withSettings = true, Excel.Workbook Wb = null)
         {
-            _connect(connectUrl, withSettings);
+            _connect(connectUrl, withSettings, Wb);
         }
 
         public void RefreshAll()
@@ -145,7 +148,7 @@ namespace ExcelAddIn
         {
             if(!connected) {
                 // get server url
-                var connectUrl = Globals.ThisAddIn.GetServerUrl();
+                var connectUrl = Globals.ThisAddIn.GetServerUrl(Globals.ThisAddIn.Application.ActiveWorkbook);
                 //
                 webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
                 webBrowser.ObjectForScripting = new External();
@@ -200,7 +203,7 @@ namespace ExcelAddIn
         {
             MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_RESTART, global::ExcelAddIn.Properties.Resources.MSG_RESTART_TITLE);
             webBrowser.ObjectForScripting = new External();
-            var connectUrl = Globals.ThisAddIn.GetServerUrl();
+            var connectUrl = Globals.ThisAddIn.GetServerUrl(Globals.ThisAddIn.Application.ActiveWorkbook);
             try
             {
                 webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE");

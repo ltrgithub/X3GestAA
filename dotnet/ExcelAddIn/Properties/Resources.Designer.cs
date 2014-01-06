@@ -98,6 +98,16 @@ namespace ExcelAddIn.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error initializing Excel Addin: {0}..
+        /// </summary>
+        internal static string InitializationError {
+            get {
+                return ResourceManager.GetString("InitializationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+
         ///   Looks up a localized string similar to Cannot shift down {0} columns and {1} rows, the range might overlap another table. Please check your insert preferences.{3}(Error was: &quot;{2}&quot;).
         /// </summary>
         internal static string InsertCellsError {

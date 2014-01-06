@@ -125,11 +125,11 @@ namespace ExcelAddIn
         }
         public void StoreCustomData(String address, String data)
         {
-            (new SyracuseCustomData()).StoreCustomDataAtAddress(address, data);
+            (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).StoreCustomDataAtAddress(address, data);
         }
         public String GetCustomData(String address)
         {
-            return (new SyracuseCustomData()).GetCustomDataByAddress(address);
+            return (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByAddress(address);
         }
         public String GetDocumentContent()
         {
@@ -192,7 +192,7 @@ namespace ExcelAddIn
             {
                 if (Globals.ThisAddIn.newVersionMessage == false)
                 {
-                    DialogResult result = MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    DialogResult result = MessageBox.Show(new Form() { TopMost = true }, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     Globals.ThisAddIn.newVersionMessage = true;
                     if (result == DialogResult.Yes)
                     {

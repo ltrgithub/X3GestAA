@@ -40,8 +40,8 @@ namespace ExcelAddIn
 
         private void ServerSettings_Load(object sender, EventArgs e)
         {
-            textBoxServerAddress.Text = serverUrl;
-            textBoxServerAddress.Text = ReadPreferences();
+            textBoxServerAddress.Text = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("serverUrlAddress");
+            textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
             // TEMP
             if (textBoxServerAddress.Text == "")
                 textBoxServerAddress.Text = "http://localhost:8124";

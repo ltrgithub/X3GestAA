@@ -73,7 +73,7 @@ namespace PowerPointAddIn
         }
         public static void ShowInfoMessage(string text, string title)
         {
-            MessageBox.Show(text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(new Form() { TopMost = true }, text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public void updateAddin()
         {
