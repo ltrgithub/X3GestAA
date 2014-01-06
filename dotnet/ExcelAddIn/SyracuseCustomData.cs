@@ -11,8 +11,10 @@ namespace ExcelAddIn
     class SyracuseCustomData
     {
         String storeWorksheetName = "Sage.X3.ReservedSheet";
-        public SyracuseCustomData()
+        Workbook thisWorkbook = null;
+        public SyracuseCustomData(Workbook Wb)
         {
+            thisWorkbook = Wb;
         }
         //
         private Dictionary<String, object> _GetDictionnary(Boolean withCreate = false)
@@ -54,7 +56,8 @@ namespace ExcelAddIn
         {
             // get store worksheet
             Worksheet x3StoreSheet = null;
-            foreach (Worksheet store in Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets)
+            if (thisWorkbook == null) return null;
+            foreach (Worksheet store in thisWorkbook.Worksheets)
             {
                 if (store.Name == storeWorksheetName)
                 {
@@ -64,8 +67,8 @@ namespace ExcelAddIn
             }
             if (withCreate && (x3StoreSheet == null))
             {
-                Worksheet oldActive = (Worksheet)Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet;
-                x3StoreSheet = (Worksheet)Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets.Add(Type.Missing, Type.Missing, 1, XlSheetType.xlWorksheet);
+                Worksheet oldActive = (Worksheet)thisWorkbook.ActiveSheet;
+                x3StoreSheet = (Worksheet)thisWorkbook.Worksheets.Add(Type.Missing, Type.Missing, 1, XlSheetType.xlWorksheet);
                 x3StoreSheet.Name = storeWorksheetName;
                 //x3StoreSheet.Visible = XlSheetVisibility.xlSheetVeryHidden;
                 x3StoreSheet.Visible = XlSheetVisibility.xlSheetHidden;
