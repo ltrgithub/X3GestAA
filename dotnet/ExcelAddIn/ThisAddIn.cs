@@ -32,15 +32,15 @@ namespace ExcelAddIn
             
             ((Microsoft.Office.Interop.Excel._Workbook) wb).Activate();
             Excel.Worksheet ws = wb.ActiveSheet;
-            (new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", serverUrl);
-            (new SyracuseCustomData()).StoreCustomDataByName("datasourcesAddress", datasourcesJSON);
+            (new SyracuseCustomData(wb)).StoreCustomDataByName("serverUrlAddress", serverUrl);
+            (new SyracuseCustomData(wb)).StoreCustomDataByName("datasourcesAddress", datasourcesJSON);
 
             ((Microsoft.Office.Interop.Excel._Worksheet) ws).Activate();
-            Globals.ThisAddIn.AutoConnect();
+            Globals.ThisAddIn.AutoConnect(wb);
         }
         public bool isWorkbookConnected(Workbook wb)
         {
-            return ((new SyracuseCustomData()).GetReservedSheet(false) != null);
+            return ((new SyracuseCustomData((Excel.Workbook)wb)).GetReservedSheet(false) != null);
         }
         public void refreshWorkbook(Workbook wb)
         {
@@ -82,7 +82,7 @@ namespace ExcelAddIn
             taskPane.Visible = this.GetPrefShowPanel();
             //
             if (this.Application.ActiveWorkbook != null)
-                AutoConnect();
+                AutoConnect(this.Application.ActiveWorkbook);
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
             this.Application.WorkbookActivate += new Excel.AppEvents_WorkbookActivateEventHandler(Application_WorkbookActivate);
             this.Application.WorkbookBeforeSave += new Excel.AppEvents_WorkbookBeforeSaveEventHandler(Application_WorkbookBeforeSave);
@@ -90,26 +90,33 @@ namespace ExcelAddIn
             this.Application.SheetSelectionChange += new Excel.AppEvents_SheetSelectionChangeEventHandler(Application_SheetSelectionChange);
         }
 
-        public String SetupServerUrl()
+        public String SetupServerUrl(Excel.Workbook Wb = null)
         {
+            Excel.Workbook oldWb = null;
+            if (Wb != null)
+            {
+                oldWb = this.Application.ActiveWorkbook;
+                ((Microsoft.Office.Interop.Excel._Workbook)Wb).Activate(); 
+            }
             ServerSettings settings = new ServerSettings();
             if (settings.ShowDialog() == DialogResult.OK)
             {
                 String connectUrl = settings.GetConnectUrl();
-                (new SyracuseCustomData()).StoreCustomDataByName("serverUrlAddress", connectUrl);
+                (new SyracuseCustomData(this.Application.ActiveWorkbook)).StoreCustomDataByName("serverUrlAddress", connectUrl);
                 return connectUrl;
             }
+            if (oldWb != null) ((Microsoft.Office.Interop.Excel._Workbook)oldWb).Activate(); 
             return "";
         }
-        public void AutoConnect()
+        public void AutoConnect(Excel.Workbook Wb = null)
         {
-            var connectUrl = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
+            var connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
             if (connectUrl != "")
-                Connect();
+                Connect(Wb, connectUrl);
         }
-        public void Connect()
+        public void Connect(Excel.Workbook Wb = null, string connectUrl = "")
         {
-            ActionPanel.Connect("");
+            ActionPanel.Connect(connectUrl, true, Wb);
         }
 
         public void RefreshAll()
@@ -117,11 +124,11 @@ namespace ExcelAddIn
             ActionPanel.RefreshAll();
         }
 
-        public String GetServerUrl()
+        public String GetServerUrl(Excel.Workbook Wb)
         {
-            var connectUrl = (new SyracuseCustomData()).GetCustomDataByName("serverUrlAddress");
+            var connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
             if (connectUrl == "")
-                connectUrl = Globals.ThisAddIn.SetupServerUrl();
+                connectUrl = Globals.ThisAddIn.SetupServerUrl(Wb);
             return connectUrl;
         }
         public CellsInsertStyle GetCellsInsertStyle()
@@ -136,7 +143,7 @@ namespace ExcelAddIn
         public void ShowSettingsForm()
         {
             //
-            var connectUrl = GetServerUrl();
+            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
             if (settingsForm == null)
             {
@@ -192,7 +199,7 @@ namespace ExcelAddIn
             // Is the document an excel document with embedded data?
             if (handleCvgDocument(Wb))
                 return;
-            AutoConnect();
+            AutoConnect(Wb);
         }
         void Application_WorkbookActivate(Excel.Workbook Wb)
         {
@@ -205,7 +212,7 @@ namespace ExcelAddIn
         {
             if (!SaveAsUI)
             {
-                if (((new SyracuseCustomData()).GetCustomDataByName("documentUrlAddress") != "") &&
+                if (((new SyracuseCustomData(wb)).GetCustomDataByName("documentUrlAddress") != "") &&
                     (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS),
                     global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.Yes))
                 {
@@ -235,7 +242,7 @@ namespace ExcelAddIn
 
         internal void SaveDocumentToSyracuse()
         {
-            if ((new SyracuseCustomData()).GetCustomDataByName("documentUrlAddress") != "")
+            if ((new SyracuseCustomData(this.Application.ActiveWorkbook)).GetCustomDataByName("documentUrlAddress") != "")
                 //  save by action panel
                 ActionPanel.SaveDocument();
             else
@@ -343,7 +350,7 @@ namespace ExcelAddIn
 
         internal void BrowseDocuments(string volumeCode)
         {
-            var connectUrl = GetServerUrl();
+            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
             DocumentBrowser b = new DocumentBrowser();
             b.SelectDocument(connectUrl, volumeCode);
@@ -352,7 +359,7 @@ namespace ExcelAddIn
 
         internal void SISettings()
         {
-            var connectUrl = GetServerUrl();
+            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
             SISettings s = new SISettings();
             s.Connect(connectUrl);
@@ -406,7 +413,7 @@ namespace ExcelAddIn
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
-                    SyracuseCustomData cd = new SyracuseCustomData();
+                    SyracuseCustomData cd = new SyracuseCustomData(wb);
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
@@ -475,13 +482,15 @@ namespace ExcelAddIn
         void checkButton(Excel.Workbook Wb)
         {
             Excel.Worksheet ws = Wb.ActiveSheet;
-            String hl = ws.Hyperlinks[1].Address;
+            String hl = "";
+            if (ws.Hyperlinks.Count > 0)
+                hl = ws.Hyperlinks[1].Address;
             if (hl.Contains("SyracuseOfficeAddinsSetup.EXE"))
             {
                 ws.Cells[1, 1] = "";
             }
 
-            if ((new SyracuseCustomData()).GetCustomDataByName("datasourcesAddress") != "")
+            if ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") != "")
             {
                 Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = true;
             }

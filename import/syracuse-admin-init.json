@@ -5,53 +5,34 @@
 		},
 		"storageVolume": {
 			"$key": "code",
-			"$localized": [
-				"description"
-			]
+			"$localized": ["description"]
 		},
 		"application": {
-			"$key": [
-				"application",
-				"contract"
-			],
-			"$localized": [
-				"description"
-			]
+			"$key": ["application", "contract"],
+			"$localized": ["description"]
 		},
 		"role": {
 			"$key": "code",
-			"$localized": [
-				"description"
-			],
+			"$localized": ["description"],
 			"securityProfile": {
 				"$key": "code"
 			}
 		},
-		"setting": {
-		},
+		"setting": {},
 		"endPoint": {
 			"$key": "description.fr-fr",
-			"$localized": [
-				"description"
-			],
+			"$localized": ["description"],
 			"applicationRef": {
-				"$key": [
-					"application",
-					"contract"
-				]
+				"$key": ["application", "contract"]
 			}
 		},
 		"notificationEvent": {
 			"$key": "code",
-			"$localized": [
-				"description", "titleTemplate", "textTemplate"
-			]
+			"$localized": ["description", "titleTemplate", "textTemplate"]
 		},
 		"group": {
 			"$key": "description.en-us",
-			"$localized": [
-				"description"
-			],
+			"$localized": ["description"],
 			"role": {
 				"$key": "code"
 			}
@@ -65,304 +46,248 @@
 		},
 		"securityProfile": {
 			"$key": "code",
-			"$localized": [
-				"description"
-			],
+			"$localized": ["description"],
 			"profileItems": {
 				"$key": "code",
-				"$localized": [
-					"description"
-				]
+				"$localized": ["description"]
 			}
 		},
 		"securityProfileItem": {
 			"$key": "code",
-			"$localized": [
-				"description"
-			]
+			"$localized": ["description"]
 		}
 	},
-    "$includeBefore": [],
+	"$includeBefore": [],
 	"$includeAfter": ["syracuse-admin-endpoint", "syracuse-admin-menu"],
-	"$items": [
-		{
-			"$type": "localePreference",
-			"code": "en-US",
-			"enabled": true,
-			"numberDecimalSeparator": ".",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "fr-FR",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "de-DE",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "en-GB",
-			"enabled": true,
-			"numberDecimalSeparator": ".",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "es-ES",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "it-IT",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "pl-PL",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "pt-PT",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "ru-RU",
-			"enabled": true,
-			"numberDecimalSeparator": ",",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "localePreference",
-			"code": "zh-CN",
-			"enabled": true,
-			"numberDecimalSeparator": ".",
-			"numberGroupSeparator": " "
-		},
-		{
-			"$type": "securityProfile",
-			"code": "ADMIN",
-			"description": "description_902f36d7-96d7-4211-8e49-9f2f7aa1cb29",
-			"authoringLevel": "admin",
-			"profileItems": [
-				{
-					"code": "myProfile",
-					"description": "description_29cc9d96-4cbb-4baa-a126-30a890d7aac6",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "users",
-					"description": "description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "technicalSettings",
-					"description": "description_8d0bbe70-5104-4b8b-bf42-0e1ca26d2b69",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "authoring",
-					"description": "description_5bc9b226-9224-434c-a241-80b70d8988bf",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "collaborationArea",
-					"description": "description_42e3da25-7961-452d-9195-ec4c39b0a130",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "maintenanceAndStatus",
-					"description": "description_91993d8a-1a61-4245-8b44-4e7c9612e224",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "importData",
-					"description": "description_5cc4833f-9731-4aef-9c61-4d752bcfad09",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				},
-				{
-					"code": "exportData",
-					"description": "description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17",
-					"canCreate": true,
-					"canRead": true,
-					"canWrite": true,
-					"canDelete": true,
-					"canExecute": true
-				}
-			]
-		},
-		{
-			"$type": "storageVolume",
-			"code": "SI_REPORTS",
-			"description": "description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd",
-			"storageType": "db_file"
-		},
-		{
-			"$type": "storageVolume",
-			"code": "SI_TEMPLATES",
-			"description": "description_22788243-a3df-4e87-8d6d-2c2fd3963ea4",
-			"storageType": "db_file"
-		},
-		{
-			"$type": "storageVolume",
-			"code": "STD",
-			"description": "description_cd87a599-ed76-47f0-b1df-98b66cf2bb84",
-			"storageType": "db_file"
-		},
-		{
-			"$type": "storageVolume",
-			"code": "WORD_TEMPLATE_MAILMERGE",
-			"description": "description_e7389c3d-c112-49f6-b5e0-909612726384",
-			"storageType": "db_file"
-		},
-		{
-			"$type": "storageVolume",
-			"code": "WORD_TEMPLATE_REPORT",
-			"description": "description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947",
-			"storageType": "db_file"
-		},
-		{
-			"$type": "storageVolume",
-			"code": "PRINTS",
-			"storageType": "db_file",
-			"description": {
-				"default": "Temporary volume for prints",
-				"fr-FR": "Volume temporaire pour les impressions",
-				"en-US": "Temporary volume for prints"
-			}
-		},
-		{
-			"$type": "application",
-			"description": "description_2ee88384-161f-4f87-b26b-0dff916d799e",
-			"protocol": "syracuse",
-			"application": "syracuse",
-			"contract": "collaboration"
-		},
-		{
-			"$type": "application",
-			"description": "description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49",
-			"protocol": "x3",
-			"application": "x3",
-			"contract": "erp"
-		},
-		{
-			"$type": "role",
-			"code": "EP_ADMIN",
-			"description": "description_fff55671-255e-4ebb-8a6e-70acac4fda94",
-			"securityProfile": "ADMIN"
-		},
-		{
-			"$type": "role",
-			"code": "GUEST",
-			"description": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf",
-			"securityProfile": "ADMIN"
-		},
-		{
-			"$type": "role",
-			"code": "ADMIN",
-			"description": "description_26024776-bbff-4be9-9069-d464a68e0659",
-			"securityProfile": "ADMIN"
-		},
-		{
-			"$type": "setting",
-			"authentication": "basic",
-			"patchLock": false
-		},
-		{
-			"$type": "group",
-			"description": "description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e",
-			"role": "EP_ADMIN"
-		},
-		{
-			"$type": "group",
-			"description": "description_a523c2c1-d831-4877-9f0c-95928da43883",
-			"role": "GUEST"
-		},
-		{
-			"$type": "group",
-			"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
-			"role": "ADMIN"
-		},
-		{
-			"$type": "user",
-			"login": "admin",
-			"lastName": "Super administrator",
-			"password": "f5066151ecf0c2511ea0f73306e27a4f",
-			"groups": [
-				"description_702545c4-1bc7-421a-a2f0-68141f183b78"
-			]
-		},
-		{
-			"$type": "user",
-			"login": "guest",
-			"lastName": "Guest",
-			"password": "96e17faa8decc76bf385c2ca82bef487",
-			"groups": [
-				"description_a523c2c1-d831-4877-9f0c-95928da43883"
-			]
-		},
-		{
-			"$type": "user",
-			"login": "import",
-			"firstName": "Import",
-			"lastName": "Special user",
-			"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
-			"groups": [
-				"description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e"
-			]
-		},
-		{
-			"$type": "notificationEvent",
-			"code": "license",
-			"description": "description_83f24f48-84f3-485a-b65c-4b0ba7c34cfd",
-			"titleTemplate": "titleTemplate_b3a24f48-84f3-485a-b65c-d7fc2e2fcd0e",
-			"textTemplate": "textTemplate_c3faff08-89f3-475a-b65c-ab0fa7c34cfd"
-		}
-	],
+	"$items": [{
+		"$type": "localePreference",
+		"code": "en-US",
+		"enabled": true,
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "fr-FR",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "de-DE",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "en-GB",
+		"enabled": true,
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "es-ES",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "it-IT",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "pl-PL",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "pt-PT",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "ru-RU",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "localePreference",
+		"code": "zh-CN",
+		"enabled": true,
+		"numberDecimalSeparator": ".",
+		"numberGroupSeparator": " "
+	}, {
+		"$type": "securityProfile",
+		"code": "ADMIN",
+		"description": "description_902f36d7-96d7-4211-8e49-9f2f7aa1cb29",
+		"authoringLevel": "admin",
+		"profileItems": [{
+			"code": "myProfile",
+			"description": "description_29cc9d96-4cbb-4baa-a126-30a890d7aac6",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "users",
+			"description": "description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "technicalSettings",
+			"description": "description_8d0bbe70-5104-4b8b-bf42-0e1ca26d2b69",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "authoring",
+			"description": "description_5bc9b226-9224-434c-a241-80b70d8988bf",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "collaborationArea",
+			"description": "description_42e3da25-7961-452d-9195-ec4c39b0a130",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "maintenanceAndStatus",
+			"description": "description_91993d8a-1a61-4245-8b44-4e7c9612e224",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "importData",
+			"description": "description_5cc4833f-9731-4aef-9c61-4d752bcfad09",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "exportData",
+			"description": "description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}]
+	}, {
+		"$type": "storageVolume",
+		"code": "SI_REPORTS",
+		"description": "description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd",
+		"storageType": "db_file"
+	}, {
+		"$type": "storageVolume",
+		"code": "SI_TEMPLATES",
+		"description": "description_22788243-a3df-4e87-8d6d-2c2fd3963ea4",
+		"storageType": "db_file"
+	}, {
+		"$type": "storageVolume",
+		"code": "STD",
+		"description": "description_cd87a599-ed76-47f0-b1df-98b66cf2bb84",
+		"storageType": "db_file"
+	}, {
+		"$type": "storageVolume",
+		"code": "WORD_TEMPLATE_MAILMERGE",
+		"description": "description_e7389c3d-c112-49f6-b5e0-909612726384",
+		"storageType": "db_file"
+	}, {
+		"$type": "storageVolume",
+		"code": "WORD_TEMPLATE_REPORT",
+		"description": "description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947",
+		"storageType": "db_file"
+	}, {
+		"$type": "storageVolume",
+		"code": "PRINTS",
+		"description": "description_STORAGE_VOLUME_PRINTS",
+		"storageType": "db_file"
+	}, {
+		"$type": "application",
+		"description": "description_2ee88384-161f-4f87-b26b-0dff916d799e",
+		"protocol": "syracuse",
+		"application": "syracuse",
+		"contract": "collaboration"
+	}, {
+		"$type": "application",
+		"description": "description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49",
+		"protocol": "x3",
+		"application": "x3",
+		"contract": "erp"
+	}, {
+		"$type": "role",
+		"code": "EP_ADMIN",
+		"description": "description_fff55671-255e-4ebb-8a6e-70acac4fda94",
+		"securityProfile": "ADMIN"
+	}, {
+		"$type": "role",
+		"code": "GUEST",
+		"description": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf",
+		"securityProfile": "ADMIN"
+	}, {
+		"$type": "role",
+		"code": "ADMIN",
+		"description": "description_26024776-bbff-4be9-9069-d464a68e0659",
+		"securityProfile": "ADMIN"
+	}, {
+		"$type": "setting",
+		"authentication": "basic",
+		"patchLock": false
+	}, {
+		"$type": "group",
+		"description": "description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e",
+		"role": "EP_ADMIN"
+	}, {
+		"$type": "group",
+		"description": "description_a523c2c1-d831-4877-9f0c-95928da43883",
+		"role": "GUEST"
+	}, {
+		"$type": "group",
+		"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
+		"role": "ADMIN"
+	}, {
+		"$type": "user",
+		"login": "admin",
+		"lastName": "Super administrator",
+		"password": "f5066151ecf0c2511ea0f73306e27a4f",
+		"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"]
+	}, {
+		"$type": "user",
+		"login": "guest",
+		"lastName": "Guest",
+		"password": "96e17faa8decc76bf385c2ca82bef487",
+		"groups": ["description_a523c2c1-d831-4877-9f0c-95928da43883"]
+	}, {
+		"$type": "user",
+		"login": "import",
+		"firstName": "Import",
+		"lastName": "Special user",
+		"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
+		"groups": ["description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e"]
+	}, {
+		"$type": "notificationEvent",
+		"code": "license",
+		"description": "description_83f24f48-84f3-485a-b65c-4b0ba7c34cfd",
+		"titleTemplate": "titleTemplate_b3a24f48-84f3-485a-b65c-d7fc2e2fcd0e",
+		"textTemplate": "textTemplate_c3faff08-89f3-475a-b65c-ab0fa7c34cfd"
+	}],
 	"$localization": {
 		"en-us": {
 			"description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd": "Sage Intelligence reports",
@@ -370,6 +295,7 @@
 			"description_cd87a599-ed76-47f0-b1df-98b66cf2bb84": "Standard storage volume",
 			"description_e7389c3d-c112-49f6-b5e0-909612726384": "Word templates for mail merge",
 			"description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947": "Word templates for reporting",
+			"description_STORAGE_VOLUME_PRINTS": "Temporary volume for prints",
 			"description_2ee88384-161f-4f87-b26b-0dff916d799e": "Syracuse Collaboration",
 			"description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49": "X3 ERP",
 			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
@@ -398,6 +324,7 @@
 			"description_cd87a599-ed76-47f0-b1df-98b66cf2bb84": "Volume standard",
 			"description_e7389c3d-c112-49f6-b5e0-909612726384": "Modèles word pour publipostage",
 			"description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947": "Modèles word pour publication",
+			"description_STORAGE_VOLUME_PRINTS": "Volume temporaire pour les impressions",
 			"description_2ee88384-161f-4f87-b26b-0dff916d799e": "Syracuse Collaboration",
 			"description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49": "X3 ERP",
 			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
