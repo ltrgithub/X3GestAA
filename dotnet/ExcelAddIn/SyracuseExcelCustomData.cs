@@ -40,7 +40,7 @@ namespace ExcelAddIn
         private Microsoft.Office.Interop.Excel.Workbook workbook;
         private List<Locale> locales = null;
 
-        // Gets a dictionary from an word document by accessing its customxmlparts
+        // Gets a dictionary from an excel document by accessing its customxmlparts
         public static SyracuseOfficeCustomData getFromDocument(Microsoft.Office.Interop.Excel.Workbook workbook, Boolean create = false)
         {
             Dictionary<String, object> dict = getDictionaryFromCustomXMLPart(workbook);
@@ -57,6 +57,7 @@ namespace ExcelAddIn
             }
             return null;
         }
+
         public void setServerUrl(string url)
         {
             setStringProperty(serverUrlProperty, url);

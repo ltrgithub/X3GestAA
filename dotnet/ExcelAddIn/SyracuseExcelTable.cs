@@ -260,7 +260,7 @@ namespace ExcelAddIn
         
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
-            if (TemplateActions.isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
                 return _createTemplateListObject(activeCell, headers, actualColumnRanges, rowCount);
 
             ListObject resultListObject = null;

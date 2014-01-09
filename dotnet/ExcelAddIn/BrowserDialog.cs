@@ -47,7 +47,6 @@ namespace ExcelAddIn
             string serverUrl = customData.getServerUrl();
             if (serverUrl == null || "".Equals(serverUrl))
             {
-                //ServerSettings settings = new ServerSettings(serverUrl);
                 ServerSettings settings = new ServerSettings(serverUrl);
                 if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {

@@ -52,7 +52,6 @@ namespace ExcelAddIn
         }
 
         public void populateExcelTemplate(String data)
-        //public void populateExcelTemplate()
         {
             if (checkReadOnly())
             {
@@ -67,8 +66,8 @@ namespace ExcelAddIn
             }
 
             browserDialog.Hide();
-            //ReportingUtils.fillTemplate(workbook, data, browserDialog);
-            ReportingUtils.fillTemplate();
+
+            ReportingUtils.fillTemplate(workbook); 
         }
 
         private string getStringValue(object cellData)
@@ -168,36 +167,35 @@ namespace ExcelAddIn
             MessageBox.Show(errorText, global::ExcelAddIn.Properties.Resources.MSG_ERROR_TITLE);
         }
 
-        // check version
         public String GetAddinVersion()
         {
             return Globals.ThisAddIn.getInstalledAddinVersion();
         }
 
-        //public void expectedVersion(String neededVersion)
-        //{
-        //    string[] needed = neededVersion.Split('.');
-        //    int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
-        //    neddedBinary += (Convert.ToInt32(needed[1]) << 16);
-        //    neddedBinary += Convert.ToInt32(needed[2]);
+        public void expectedVersion(String neededVersion)
+        {
+            string[] needed = neededVersion.Split('.');
+            int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
+            neddedBinary += (Convert.ToInt32(needed[1]) << 16);
+            neddedBinary += Convert.ToInt32(needed[2]);
 
-        //    if (neddedBinary > Globals.ThisAddIn.versionNumberBinary)
-        //    {
-        //        if (Globals.ThisAddIn.newVersionMessage == false)
-        //        {
-        //            DialogResult result = MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-        //            Globals.ThisAddIn.newVersionMessage = true;
-        //            if (result == DialogResult.Yes)
-        //            {
-        //                Globals.ThisAddIn.commons.updateAddin();
-        //            }
-        //            else
-        //            {
-        //                Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
-        //            }
-        //        }
-        //    }
-        //}
+            if (neddedBinary > Globals.ThisAddIn.versionNumberBinary)
+            {
+                if (Globals.ThisAddIn.newVersionMessage == false)
+                {
+                    DialogResult result = MessageBox.Show(new Form() { TopMost = true }, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Globals.ThisAddIn.newVersionMessage = true;
+                    if (result == DialogResult.Yes)
+                    {
+                        Globals.ThisAddIn.commons.updateAddin();
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                    }
+                }
+            }
+        }
 
         private Boolean checkReadOnly()
         {

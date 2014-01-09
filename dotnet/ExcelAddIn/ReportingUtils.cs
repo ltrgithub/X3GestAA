@@ -61,13 +61,17 @@ namespace ExcelAddIn
             return false;
         }
 
-        public static void fillTemplate()
+        public static void fillTemplate(Workbook workbook)
         {
             /*
              * We simply need to perform a data refresh here.
              */
+            if (!Globals.ThisAddIn.ActionPanel.connected)
+            {
+                Globals.ThisAddIn.AutoConnect(workbook);
+                return;
+            }
             Globals.ThisAddIn.RefreshAll();
-            return;
         }
 
         #region placeholderHelper
@@ -85,7 +89,7 @@ namespace ExcelAddIn
             public Placeholder placeholder;
         }
 
-        public static void addToPlaceholderTableList(List<PlaceholderTable> placeholderTableList, int id, Placeholder placeholder)
+        private static void addToPlaceholderTableList(List<PlaceholderTable> placeholderTableList, int id, Placeholder placeholder)
         {
             PlaceholderTable placeholderTable;
             placeholderTable.id = id;

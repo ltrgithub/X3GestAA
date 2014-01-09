@@ -212,7 +212,7 @@ namespace ExcelAddIn
 
         void Application_WorkbookOpen(Excel.Workbook workbook)
         {
-            if (TemplateActions.isExcelTemplate(workbook))
+            if (templateActions.isExcelTemplate(workbook))
             {
                 addReportingFieldsTaskPane(Application.ActiveWindow);
                 templateActions.ProcessExcelTemplate(workbook);
@@ -226,7 +226,7 @@ namespace ExcelAddIn
             }
         }
 
-        void Application_WorkbookActivate(Excel.Workbook Wb)
+        public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
             checkButton(Wb);
 
@@ -240,13 +240,18 @@ namespace ExcelAddIn
                 return;
             }
 
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
-            if (customData != null)
+            SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (cd != null)
             {
-                String mode = customData.getCreateMode();
-                if ("".Equals(customData.getDocumentUrl()) == false)
+                String mode = cd.getCreateMode();
+                if ("".Equals(cd.getDocumentUrl()) == false)
                 {
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                }
+
+                if (templateActions.isExcelTemplate(Wb))
+                {
+                    templateActions.ConfigureTemplateRibbon(mode, "".Equals(cd.getDocumentUrl()) == false);
                 }
             }
         }
@@ -397,6 +402,9 @@ namespace ExcelAddIn
 
         private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
         {
+            if (Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled == false)
+                return;
+
             Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
             if (taskPane != null)
             {
@@ -428,11 +436,14 @@ namespace ExcelAddIn
 
         public void showReportingFieldsTaskPane(bool visible)
         {
-            Excel.Workbook workbook = getActiveWorkbook();
             Microsoft.Office.Tools.CustomTaskPane pane = addReportingFieldsTaskPane(Application.ActiveWindow);
             pane.Visible = visible;
-            ExcelTemplatePane t = (ExcelTemplatePane)pane.Control;
-            t.showFields(workbook);
+            if (visible)
+            {
+                ExcelTemplatePane t = (ExcelTemplatePane)pane.Control;
+                Excel.Workbook workbook = getActiveWorkbook();
+                t.showFields(workbook);
+            }
         }
 
         public Excel.Workbook getActiveWorkbook()

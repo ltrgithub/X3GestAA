@@ -22,7 +22,6 @@ namespace WordAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            //System.Diagnostics.Debugger.Break(); 
             browserDialog = new BrowserDialog();
 
             reporting = new ReportingActions(browserDialog);
