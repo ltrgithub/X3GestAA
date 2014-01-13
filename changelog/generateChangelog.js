@@ -13,5 +13,6 @@ var sys = require("util");
 gen.makeChangelog(function(err, res) {
 	if (err) return console.error(err);
 }, {
-	max_tag: process.argv[2]
+//	max_tag: process.argv[2]
+	from_sha: process.argv[2]
 });

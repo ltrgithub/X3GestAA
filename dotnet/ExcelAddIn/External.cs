@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using System.Web.Script.Serialization;
@@ -125,19 +123,17 @@ namespace ExcelAddIn
         }
         public void StoreCustomData(String address, String data)
         {
-            (new SyracuseCustomData()).StoreCustomDataAtAddress(address, data);
+            (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).StoreCustomDataAtAddress(address, data);
         }
         public String GetCustomData(String address)
         {
-            return (new SyracuseCustomData()).GetCustomDataByAddress(address);
+            return (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByAddress(address);
         }
         public String GetDocumentContent()
         {
             String tempFileName = Path.GetTempFileName();
             Globals.ThisAddIn.Application.ActiveWorkbook.SaveCopyAs(tempFileName);
-            //
             byte[] content = System.IO.File.ReadAllBytes(tempFileName);
-            // TODO delete temp file
             return Convert.ToBase64String(content);
         }
         public void DocumentSaved()
@@ -152,7 +148,7 @@ namespace ExcelAddIn
             if (onLogonHandler != null)
                 onLogonHandler();
         }
-//        public System.Action onTablesLoadedHandler = null;
+
         public delegate void TablesLoadedCallback(string errorMessage);
         public TablesLoadedCallback onTablesLoadedHandler = null;
         public void onTablesLoaded(string errorMessage = "")
@@ -179,7 +175,6 @@ namespace ExcelAddIn
         // check version
         public String GetAddinVersion()
         {
-            //return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             return Globals.ThisAddIn.getInstalledAddinVersion();
         }
 
@@ -195,7 +190,7 @@ namespace ExcelAddIn
             {
                 if (Globals.ThisAddIn.newVersionMessage == false)
                 {
-                    DialogResult result = MessageBox.Show(global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    DialogResult result = MessageBox.Show(new Form() { TopMost = true }, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION, global::ExcelAddIn.Properties.Resources.MSG_NEW_VERSION_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     Globals.ThisAddIn.newVersionMessage = true;
                     if (result == DialogResult.Yes)
                     {
@@ -209,8 +204,8 @@ namespace ExcelAddIn
                 }
             }
         }
-
     }
+
     public class JsConsole
     {
         public void log(object obj)
