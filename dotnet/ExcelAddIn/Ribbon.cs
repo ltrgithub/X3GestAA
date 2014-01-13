@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Office.Tools.Ribbon;
-using Microsoft.Office.Tools;
-using System.Threading;
-using System.Globalization;
-using System.Windows.Forms;
+﻿using Microsoft.Office.Tools.Ribbon;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelAddIn
 {
@@ -21,11 +14,6 @@ namespace ExcelAddIn
 
         private void checkBoxShowPane_Click(object sender, RibbonControlEventArgs e)
         {
-        }
-
-        private void btSyraPublish_Click(object sender, RibbonControlEventArgs e)
-        {
-
         }
 
         private void buttonConnect_Click(object sender, RibbonControlEventArgs e)
@@ -58,39 +46,42 @@ namespace ExcelAddIn
             Globals.ThisAddIn.SaveDocumentToSyracuse();
         }
 
-        private void button1_Click(object sender, RibbonControlEventArgs e)
-        {
-            // TEST BUTTON: to be deleted
-            Globals.ThisAddIn.BrowseDocuments("SI_TEMPLATES");
-        }
-
-        private void button2_Click(object sender, RibbonControlEventArgs e)
-        {
-            // TEST BUTTON: to be deleted
-            Globals.ThisAddIn.BrowseDocuments("SI_REPORTS");
-        }
-
-        private void button3_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.ThisAddIn.SISettings();
-        }
- /*       private void ActionPanel_VisibleChanged(object sender, EventArgs e)
-        {
-            Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
-            if (taskPane != null)
-            {
-                Globals.Ribbons.Ribbon.checkBox1.Checked = taskPane.Visible;
-            }
-            else
-            {
-                Globals.Ribbons.Ribbon.checkBox1.Checked = false;
-            }
-            Globals.ThisAddIn.SetPrefShowPanel(taskPane.Visible);
-        }
-*/
         private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.ActionPanel.updateAddin();
+        }
+
+        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (workbook != null)
+            {
+                Globals.ThisAddIn.commons.Save(workbook);
+            }
+        }
+
+        private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (workbook != null)
+            {
+                Globals.ThisAddIn.commons.SaveAs(workbook);
+            }
+        }
+
+        private void buttonRefreshReport_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.templateActions.RefreshExcelReport();
+        }
+
+        private void buttonPreview_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.templateActions.CreateExcelPreview();
+        }
+
+        private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.showReportingFieldsTaskPane(checkBoxShowTemplatePane.Checked);
         }
     }
 }
