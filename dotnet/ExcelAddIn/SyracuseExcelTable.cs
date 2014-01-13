@@ -224,14 +224,16 @@ namespace ExcelAddIn
             if (!_makePlace(targetWorksheet, initialRow, initialColumn, columnCount, rowCount))
                 return null;
 
-            for (int i = 0, j = 0; i < headers.Length; i++)
+            for (int i = 0; i < headers.Length; i++)
             {
                 if (firstTable.Where(item => item.placeholder.name == headers[i]._name).Count() > 0)
                 {
-                    Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, initialColumn + j],
-                            targetWorksheet.Cells[initialRow + rowCount, initialColumn + j]];
+                    int placeholderColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
+
+                    Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, placeholderColumn],
+                            targetWorksheet.Cells[initialRow + rowCount, placeholderColumn]];
+
                     actualColumnRanges.Add(headers[i]._name, cells);
-                    j++;
                 }
             }
 
@@ -247,13 +249,12 @@ namespace ExcelAddIn
 
             if (resultListObject.ShowHeaders)
             {
-                for (int i = 0, j = 0; i < headers.Length; i++)
+                for (int i = 0; i < headers.Length; i++)
                 {
                     if (firstTable.Where(item => item.placeholder.name == headers[i]._name).ToList().Count > 0)
                     {
                         int headerColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
-                        ((Range)resultListObject.HeaderRowRange.Item[1, j + 1]).Value2 = headers[i].GetTitle();
-                        j++;
+                        ((Range)resultListObject.HeaderRowRange.Item[1, headerColumn - firstPlaceholder.column + 1]).Value2 = headers[i].GetTitle();
                     }
                 }
             }
