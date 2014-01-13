@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
-using System.Resources;
 using System.Globalization;
  
 namespace ExcelAddIn
@@ -213,6 +211,11 @@ namespace ExcelAddIn
             Worksheet targetWorksheet = activeCell.Worksheet;
 
             var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList(targetWorksheet).GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            if (orderedPlaceholderTableList.Count == 0)
+            {
+                return null;
+            }
+
             var firstTable = orderedPlaceholderTableList.First();
             var firstPlaceholder = firstTable.First().placeholder;
             int initialRow = firstPlaceholder.row, initialColumn = firstPlaceholder.column;

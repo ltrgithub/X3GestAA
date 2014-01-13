@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using Rb = Microsoft.Office.Tools.Ribbon;
 using System.IO;
-using System.Web.Script.Serialization;
-using Microsoft.Office.Core;
 
 namespace ExcelAddIn
 {

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Excel = Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Tools.Excel;
-using Microsoft.Office.Tools.Excel.Extensions;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;

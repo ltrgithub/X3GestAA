@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Office.Tools.Ribbon;
-using Microsoft.Office.Tools;
-using System.Threading;
-using System.Globalization;
-using System.Windows.Forms;
+﻿using Microsoft.Office.Tools.Ribbon;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelAddIn

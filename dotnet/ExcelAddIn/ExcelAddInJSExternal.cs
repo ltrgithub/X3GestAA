@@ -1,12 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
 using Microsoft.Office.Interop.Excel;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using Microsoft.Office.Core;
-using System.Security.AccessControl;
-using System.Reflection;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.ExcelAddInJSExternal
 namespace ExcelAddIn
@@ -111,7 +106,7 @@ namespace ExcelAddIn
 
         public String getSyracuseDocumentType()
         {
-            Workbook workbook = (customData != null) ? customData.getExcelWorkbook() : null; // : this.doc;
+            Workbook workbook = (customData != null) ? customData.getExcelWorkbook() : null; 
             if (workbook == null)
             {
                 CommonUtils.ShowErrorMessage(global::ExcelAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
@@ -174,6 +169,19 @@ namespace ExcelAddIn
 
         public void expectedVersion(String neededVersion)
         {
+            Workbook workbook = (customData != null) ? customData.getExcelWorkbook() : null;
+            if (workbook != null)
+            {
+                string mode = customData.getCreateMode();
+                if (TemplateActions.rpt_fill_tpl.Equals(mode))
+                {
+                    /*
+                     * If we're populating a template, we don't need to test for an expected version here - this is being tested by the original excel functionality.
+                     */
+                    return;
+                }
+            }
+
             string[] needed = neededVersion.Split('.');
             int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);

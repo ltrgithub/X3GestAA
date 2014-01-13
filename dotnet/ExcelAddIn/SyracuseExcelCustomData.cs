@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExcelAddIn
 {
@@ -142,10 +139,6 @@ namespace ExcelAddIn
                 if (getStringProperty(name, required).Equals("1"))
                 {
                     r = true;
-                }
-                else
-                {
-                    r = false;
                 }
             }
             catch (Exception e)

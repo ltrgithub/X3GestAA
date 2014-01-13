@@ -1,26 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Tools.Excel;
 
 namespace ExcelAddIn
 {
     public partial class BrowserDialog : Form
     {
         public string serverUrl = "";
-        private Boolean hideOnCompletion = false;
 
         public BrowserDialog()
         {
             InitializeComponent();
-
-            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -31,15 +20,6 @@ namespace ExcelAddIn
                 Hide();
             }
             base.OnFormClosing(e);
-        }
-
-        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            if (hideOnCompletion == true)
-            {
-//                this.Hide();
-            }
-            hideOnCompletion = false;
         }
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
@@ -96,7 +76,7 @@ namespace ExcelAddIn
         }
         public byte[] readBinaryURLContent(String url)
         {
-            WordDownloadData data = new WordDownloadData();
+            ExcelDownloadData data = new ExcelDownloadData();
             try
             {
                 object ret = this.webBrowser.Document.InvokeScript("readBinaryURLContentIE", new object[] { url, data});
@@ -122,7 +102,7 @@ namespace ExcelAddIn
     }
     // The only one class/object to be referenced from javascript 'external'
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class WordDownloadData
+    public class ExcelDownloadData
     {
         public byte[] data;
         public string errorText;
