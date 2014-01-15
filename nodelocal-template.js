@@ -29,6 +29,7 @@ exports.config = {
 		enableTestRobot: false,
 		// optional: path to some stubs to use in development and tests, relative to index.js
 		// stubsPath = "stubs"
+		protectSettings: false // internal: true for some production servers to avoid import of initial data
 	},
 /*	integrationServer: {
 		port: 8125
