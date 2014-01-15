@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Interop.Excel;
+using System.Text;
 
 namespace ExcelAddIn
 {
@@ -34,6 +35,10 @@ namespace ExcelAddIn
                 {
                     string fieldName = n.item["$bind"].ToString();
                     Range rng = (Range)Globals.ThisAddIn.Application.ActiveCell;
+                    StringBuilder sb = new StringBuilder("<<");
+                    sb.Append(fieldName);
+                    sb.Append(">>");
+                    rng.Value2 = sb.ToString();
                     workbook.Names.Add(fieldName, rng);
                 }
             }
