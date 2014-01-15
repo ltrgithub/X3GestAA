@@ -2,6 +2,7 @@
 using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Ribbon;
+using System.Collections.Generic;
 
 namespace ExcelAddIn
 {
@@ -179,14 +180,54 @@ namespace ExcelAddIn
                     Excel.Workbook oldWb = workbook;
                     workbook = Globals.ThisAddIn.Application.Workbooks.Add();
 
+                    /*
+                     * Create a list of worksheets in the template worksheet.
+                     */
+                    List<Excel.Worksheet> worksheetList = new List<Excel.Worksheet>();
                     foreach (Excel.Worksheet sheet in oldWb.Worksheets)
                     {
                         if (sheet.Name.Equals("Sage.X3.ReservedSheet"))
                         {
-                            Excel.Worksheet newHiddenWorksheet = workbook.Worksheets[1];
-                            sheet.Copy(newHiddenWorksheet);
+                            Excel.Worksheet reservedSheet = workbook.Worksheets[1];
+                            /*
+                             * Copy the reserved sheet into the new workbook.
+                             */
+                            sheet.Copy(reservedSheet);
+                        }
+                        else
+                        {
+                            worksheetList.Add(sheet);
                         }
                     }
+                    
+                    /*
+                     * Remove the worksheets from the new workbook, keeping the reserved sheet.
+                     * At least one sheet must be visible, so make the reserved sheeet visible.
+                     */
+                    foreach (Excel.Worksheet sheet in workbook.Worksheets)
+                    {
+                        if (sheet.Name.Equals("Sage.X3.ReservedSheet"))
+                        {
+                            sheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
+                        }
+                        else
+                        {
+                            sheet.Application.DisplayAlerts = false;
+                            sheet.Delete();
+                        }
+                    }
+
+                    /*
+                     * Now copy the list of worksheets after the reserved sheet.
+                     */
+                    foreach (Excel.Worksheet sheet in worksheetList.OrderByDescending(s => s.Name))
+                    {
+                        sheet.Copy(Type.Missing, workbook.Worksheets["Sage.X3.ReservedSheet"]);
+                        sheet.Application.DisplayAlerts = true;
+                    }
+
+                    workbook.Worksheets[worksheetList.ElementAt(0).Name].Select();
+                    workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetHidden;
 
                     /*
                      * Copy the workbook's names
