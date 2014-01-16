@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
-using System.Resources;
 using System.Globalization;
  
 namespace ExcelAddIn
@@ -103,7 +101,6 @@ namespace ExcelAddIn
                     }
                 }
             }
-            //
             return actualColumnRanges;
         }
 
@@ -128,6 +125,7 @@ namespace ExcelAddIn
             }
             return true;
         }
+
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
             if (rowCount > 0)
@@ -206,8 +204,69 @@ namespace ExcelAddIn
                 }
             return true;
         }
+
+        private ListObject _createTemplateListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
+        {
+            ListObject resultListObject = null;
+            Worksheet targetWorksheet = activeCell.Worksheet;
+
+            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList(targetWorksheet).GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            if (orderedPlaceholderTableList.Count == 0)
+            {
+                return null;
+            }
+
+            var firstTable = orderedPlaceholderTableList.First();
+            var firstPlaceholder = firstTable.First().placeholder;
+            int initialRow = firstPlaceholder.row, initialColumn = firstPlaceholder.column;
+            int columnCount = firstTable.Count();
+
+            if (!_makePlace(targetWorksheet, initialRow, initialColumn, columnCount, rowCount))
+                return null;
+
+            for (int i = 0; i < headers.Length; i++)
+            {
+                if (firstTable.Where(item => item.placeholder.name == headers[i]._name).Count() > 0)
+                {
+                    int placeholderColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
+
+                    Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, placeholderColumn],
+                            targetWorksheet.Cells[initialRow + rowCount, placeholderColumn]];
+
+                    actualColumnRanges.Add(headers[i]._name, cells);
+                }
+            }
+
+            int tableEndColumn = firstTable.Last().placeholder.column;
+
+            resultListObject = targetWorksheet.ListObjects.Add(XlListObjectSourceType.xlSrcRange,
+                                    targetWorksheet.Range[
+                                        targetWorksheet.Cells[initialRow, initialColumn],
+                                        targetWorksheet.Cells[initialRow + 1, tableEndColumn]],
+                                    Type.Missing, XlYesNoGuess.xlYes, Type.Missing);
+
+            resultListObject.Name = _name;
+
+            if (resultListObject.ShowHeaders)
+            {
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    if (firstTable.Where(item => item.placeholder.name == headers[i]._name).ToList().Count > 0)
+                    {
+                        int headerColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
+                        ((Range)resultListObject.HeaderRowRange.Item[1, headerColumn - firstPlaceholder.column + 1]).Value2 = headers[i].GetTitle();
+                    }
+                }
+            }
+
+            return resultListObject;
+        }
+        
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
+            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+                return _createTemplateListObject(activeCell, headers, actualColumnRanges, rowCount);
+
             ListObject resultListObject = null;
             Worksheet targetWorksheet = activeCell.Worksheet;
             //
