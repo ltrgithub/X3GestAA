@@ -49,6 +49,7 @@ namespace ExcelAddIn
 
         public void ConfigureTemplateRibbon(string mode, Boolean existing)
         {
+            Globals.Ribbons.Ribbon.templateInstalledVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
             if ("rpt_build_tpl".Equals(mode))
             {
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
