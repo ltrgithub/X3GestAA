@@ -200,6 +200,7 @@ namespace ExcelAddIn
                     else
                     {
                         Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
+                        Globals.Ribbons.Ribbon.templateButtonUpdate.Enabled = true;
                     }
                 }
             }
