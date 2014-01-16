@@ -36,9 +36,9 @@ namespace ExcelAddIn
             customData = SyracuseOfficeCustomData.getFromDocument(workbook, false);
             if (customData != null)
             {
-                string datasourcesAddress = customData.getDictionary()["datasourcesAddress"].ToString();
-                (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).StoreCustomDataAtAddress("A5", datasourcesAddress);
-
+                SyracuseCustomData cd = new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook);
+                cd.StoreCustomDataAtAddress("A5", customData.getDictionary()["datasourcesAddress"].ToString());
+                cd.StoreCustomDataAtAddress("A2", customData.getServerUrl());
                 customData.writeDictionaryToDocument();
             }
 
