@@ -128,6 +128,9 @@ namespace ExcelAddIn
 
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
+            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+                return true;
+
             if (rowCount > 0)
             {
                 if (Globals.ThisAddIn.GetCellsInsertStyle() == CellsInsertStyle.ShiftCells)
