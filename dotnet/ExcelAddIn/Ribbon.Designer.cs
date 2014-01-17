@@ -103,7 +103,7 @@ namespace ExcelAddIn
             this.groupLocale = this.Factory.CreateRibbonGroup();
             this.dropDownLocale = this.Factory.CreateRibbonDropDown();
             this.group4 = this.Factory.CreateRibbonGroup();
-            this.label1 = this.Factory.CreateRibbonLabel();
+            this.templateInstalledVersion = this.Factory.CreateRibbonLabel();
             this.label2 = this.Factory.CreateRibbonLabel();
             this.group5 = this.Factory.CreateRibbonGroup();
             this.buttonConnect = this.Factory.CreateRibbonButton();
@@ -117,7 +117,7 @@ namespace ExcelAddIn
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.toggleMakeSum = this.Factory.CreateRibbonToggleButton();
-            this.button1 = this.Factory.CreateRibbonButton();
+            this.templateButtonUpdate = this.Factory.CreateRibbonButton();
             this.buttonCleanup = this.Factory.CreateRibbonButton();
             this.syracuseTab.SuspendLayout();
             this.group1.SuspendLayout();
@@ -249,16 +249,16 @@ namespace ExcelAddIn
             // 
             // group4
             // 
-            this.group4.Items.Add(this.label1);
-            this.group4.Items.Add(this.button1);
+            this.group4.Items.Add(this.templateInstalledVersion);
+            this.group4.Items.Add(this.templateButtonUpdate);
             this.group4.Items.Add(this.label2);
             resources.ApplyResources(this.group4, "group4");
             this.group4.Name = "group4";
             // 
-            // label1
+            // templateInstalledVersion
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.templateInstalledVersion, "templateInstalledVersion");
+            this.templateInstalledVersion.Name = "templateInstalledVersion";
             // 
             // label2
             // 
@@ -365,13 +365,13 @@ namespace ExcelAddIn
             resources.ApplyResources(this.toggleMakeSum, "toggleMakeSum");
             this.toggleMakeSum.Name = "toggleMakeSum";
             // 
-            // button1
+            // templateButtonUpdate
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Image = global::ExcelAddIn.Properties.Resources.refresh;
-            this.button1.Name = "button1";
-            this.button1.ShowImage = true;
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonUpdate_Click);
+            resources.ApplyResources(this.templateButtonUpdate, "templateButtonUpdate");
+            this.templateButtonUpdate.Image = global::ExcelAddIn.Properties.Resources.refresh;
+            this.templateButtonUpdate.Name = "templateButtonUpdate";
+            this.templateButtonUpdate.ShowImage = true;
+            this.templateButtonUpdate.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonUpdate_Click);
             // 
             // buttonCleanup
             // 
@@ -442,8 +442,8 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupLocale;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownLocale;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group4;
-        internal Microsoft.Office.Tools.Ribbon.RibbonLabel label1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel templateInstalledVersion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton templateButtonUpdate;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel label2;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group5;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCleanup;
