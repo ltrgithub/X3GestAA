@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using VB = Microsoft.Vbe.Interop;
 using System.Web.Script.Serialization;
-using Path = System.IO.Path;
 using System.Threading;
 using System.Globalization;
 using Microsoft.Win32;
@@ -70,8 +63,6 @@ namespace ExcelAddIn
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
             }
-
-            return;
         }
 
         public HtmlDocument webDocument { get { return webBrowser.Document; } }
@@ -116,7 +107,7 @@ namespace ExcelAddIn
         {
             if (!connected)
                 _connect("");
-            //
+
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
         }
 
@@ -210,6 +201,7 @@ namespace ExcelAddIn
             }
             catch (Exception e) { MessageBox.Show(e.Message); }
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
+            Globals.Ribbons.Ribbon.templateButtonUpdate.Enabled = false;
         }
     }
 }
