@@ -286,7 +286,6 @@ namespace ExcelAddIn
             }
             browserDialog.loadPage("/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE", customData);
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
-            Globals.Ribbons.Ribbon.templateButtonUpdate.Enabled = false;
             browserDialog.Hide();
         }
     }
