@@ -8,7 +8,7 @@ namespace ExcelAddIn
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
             Globals.ThisAddIn.ReadPreferences();
-            checkBox1.Checked = Globals.ThisAddIn.GetPrefShowPanel();
+            actionPanelCheckBox.Checked = Globals.ThisAddIn.GetPrefShowPanel();
             installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
         }
 
@@ -36,10 +36,10 @@ namespace ExcelAddIn
             Globals.ThisAddIn.RefreshAll();
         }
 
-        private void checkBox1_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.ThisAddIn.ShowActionPanel(checkBox1.Checked);
-        }
+        //private void buttonRefreshAll_Click(object sender, RibbonControlEventArgs e)
+        //{
+        //    Globals.ThisAddIn.RefreshAll();
+        //}
 
         private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
         {
@@ -56,7 +56,10 @@ namespace ExcelAddIn
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
             if (workbook != null)
             {
-                Globals.ThisAddIn.commons.Save(workbook);
+                if (new TemplateActions(null).isExcelTemplate(workbook))
+                    Globals.ThisAddIn.commons.Save(workbook);
+                else
+                    Globals.ThisAddIn.SaveDocumentToSyracuse();
             }
         }
 
@@ -66,12 +69,19 @@ namespace ExcelAddIn
             if (workbook != null)
             {
                 Globals.ThisAddIn.commons.SaveAs(workbook);
-            }
+            } 
         }
 
         private void buttonRefreshReport_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.ThisAddIn.templateActions.RefreshExcelReport();
+            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (workbook != null)
+            {
+                if (new TemplateActions(null).isExcelTemplateType(workbook))
+                    Globals.ThisAddIn.templateActions.RefreshExcelReport();
+                else
+                    Globals.ThisAddIn.RefreshAll();
+            }
         }
 
         private void buttonPreview_Click(object sender, RibbonControlEventArgs e)
@@ -82,6 +92,16 @@ namespace ExcelAddIn
         private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.showReportingFieldsTaskPane(checkBoxShowTemplatePane.Checked);
+        }
+
+        private void actionPanelCheckBox_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.ShowActionPanel(actionPanelCheckBox.Checked);
+        }
+
+        private void buttonCleanup_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.templateActions.CleanupReportTemplateData();
         }
     }
 }
