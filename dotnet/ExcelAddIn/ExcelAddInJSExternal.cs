@@ -199,7 +199,7 @@ namespace ExcelAddIn
                     }
                     else
                     {
-                        Globals.Ribbons.Ribbon.templateButtonUpdate.Enabled = true;
+                        Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
                     }
                 }
             }

@@ -209,8 +209,9 @@ namespace ExcelAddIn
 
         void Application_WorkbookOpen(Excel.Workbook workbook)
         {
-            if (templateActions.isExcelTemplate(workbook))
+            if (templateActions.isExcelTemplateType(workbook))
             {
+
                 addReportingFieldsTaskPane(Application.ActiveWindow);
                 templateActions.ProcessExcelTemplate(workbook);
             }
@@ -246,10 +247,15 @@ namespace ExcelAddIn
                     Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
                 }
 
-                if (templateActions.isExcelTemplate(Wb))
+                if (templateActions.isExcelTemplateType(Wb))
                 {
                     templateActions.ConfigureTemplateRibbon(mode, "".Equals(cd.getDocumentUrl()) == false);
                 }
+            }
+            else
+            {
+                if (templateActions.isExcelTemplateType(Wb) == false)
+                    templateActions.DisableTemplateButtons();
             }
         }
 
@@ -286,7 +292,8 @@ namespace ExcelAddIn
                 }
             }
             
-            Ribbon.buttonPublish.Enabled = true;
+            if (templateActions.isExcelTemplateType(workbook) == false)
+                Ribbon.buttonSave.Enabled = true;
         }
 
         void Application_SheetSelectionChange(object sh, Excel.Range target)
@@ -590,11 +597,11 @@ namespace ExcelAddIn
             Microsoft.Office.Tools.CustomTaskPane taskPane = sender as Microsoft.Office.Tools.CustomTaskPane;
             if (taskPane != null)
             {
-                Globals.Ribbons.Ribbon.checkBox1.Checked = taskPane.Visible;
+                Globals.Ribbons.Ribbon.actionPanelCheckBox.Checked = taskPane.Visible;
             }
             else
             {
-                Globals.Ribbons.Ribbon.checkBox1.Checked = false;
+                Globals.Ribbons.Ribbon.actionPanelCheckBox.Checked = false;
             }
             this.SetPrefShowPanel(taskPane.Visible);
         }
@@ -613,11 +620,11 @@ namespace ExcelAddIn
 
             if ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") != "")
             {
-                Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
             }
             else
             {
-                Globals.Ribbons.Ribbon.buttonRefreshAll.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
             }
         }
     }
