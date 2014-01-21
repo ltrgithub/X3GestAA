@@ -139,8 +139,7 @@ namespace ExcelAddIn
         public void DocumentSaved()
         {
             Globals.ThisAddIn.Application.ActiveWorkbook.Saved = true;
-            //
-            Globals.ThisAddIn.Ribbon.buttonPublish.Enabled = false;
+            Globals.ThisAddIn.Ribbon.buttonSave.Enabled = false;
         }
         public System.Action onLogonHandler = null;
         public void onLogon()
@@ -200,7 +199,6 @@ namespace ExcelAddIn
                     else
                     {
                         Globals.Ribbons.Ribbon.buttonUpdate.Enabled = true;
-                        Globals.Ribbons.Ribbon.templateButtonUpdate.Enabled = true;
                     }
                 }
             }
