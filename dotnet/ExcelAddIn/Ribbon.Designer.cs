@@ -85,146 +85,123 @@ namespace ExcelAddIn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl2 = this.Factory.CreateRibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl3 = this.Factory.CreateRibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl4 = this.Factory.CreateRibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl5 = this.Factory.CreateRibbonDropDownItem();
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl6 = this.Factory.CreateRibbonDropDownItem();
             this.syracuseTab = this.Factory.CreateRibbonTab();
-            this.group1 = this.Factory.CreateRibbonGroup();
-            this.buttonConnect = this.Factory.CreateRibbonButton();
-            this.buttonServer = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
-            this.buttonSettings = this.Factory.CreateRibbonButton();
-            this.buttonRefreshAll = this.Factory.CreateRibbonButton();
-            this.group3 = this.Factory.CreateRibbonGroup();
-            this.buttonPublish = this.Factory.CreateRibbonButton();
+            this.group1 = this.Factory.CreateRibbonGroup();
+            this.group6 = this.Factory.CreateRibbonGroup();
+            this.group7 = this.Factory.CreateRibbonGroup();
+            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
+            this.group8 = this.Factory.CreateRibbonGroup();
+            this.dropDownLocale = this.Factory.CreateRibbonDropDown();
             this.groupSageX3 = this.Factory.CreateRibbonGroup();
-            this.checkBox1 = this.Factory.CreateRibbonCheckBox();
+            this.actionPanelCheckBox = this.Factory.CreateRibbonCheckBox();
             this.dropDownInsert = this.Factory.CreateRibbonDropDown();
             this.dropDownDelete = this.Factory.CreateRibbonDropDown();
             this.groupVersion = this.Factory.CreateRibbonGroup();
             this.installedVersion = this.Factory.CreateRibbonLabel();
-            this.buttonUpdate = this.Factory.CreateRibbonButton();
             this.version = this.Factory.CreateRibbonLabel();
+            this.group3 = this.Factory.CreateRibbonGroup();
+            this.buttonConnect = this.Factory.CreateRibbonButton();
+            this.buttonServer = this.Factory.CreateRibbonButton();
+            this.buttonSettings = this.Factory.CreateRibbonButton();
+            this.buttonSave = this.Factory.CreateRibbonButton();
+            this.buttonSaveAs = this.Factory.CreateRibbonButton();
+            this.buttonRefreshReport = this.Factory.CreateRibbonButton();
+            this.buttonPreview = this.Factory.CreateRibbonButton();
+            this.toggleButton1 = this.Factory.CreateRibbonToggleButton();
+            this.buttonUpdate = this.Factory.CreateRibbonButton();
+            this.buttonCleanup = this.Factory.CreateRibbonButton();
             this.syracuseTab.SuspendLayout();
-            this.group1.SuspendLayout();
             this.group2.SuspendLayout();
-            this.group3.SuspendLayout();
+            this.group1.SuspendLayout();
+            this.group6.SuspendLayout();
+            this.group7.SuspendLayout();
+            this.group8.SuspendLayout();
             this.groupSageX3.SuspendLayout();
             this.groupVersion.SuspendLayout();
+            this.group3.SuspendLayout();
             // 
             // syracuseTab
             // 
-            this.syracuseTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.syracuseTab.Groups.Add(this.group1);
             this.syracuseTab.Groups.Add(this.group2);
-            this.syracuseTab.Groups.Add(this.group3);
+            this.syracuseTab.Groups.Add(this.group1);
+            this.syracuseTab.Groups.Add(this.group6);
+            this.syracuseTab.Groups.Add(this.group7);
+            this.syracuseTab.Groups.Add(this.group8);
             this.syracuseTab.Groups.Add(this.groupSageX3);
             this.syracuseTab.Groups.Add(this.groupVersion);
+            this.syracuseTab.Groups.Add(this.group3);
             resources.ApplyResources(this.syracuseTab, "syracuseTab");
             this.syracuseTab.Name = "syracuseTab";
             // 
-            // group1
-            // 
-            this.group1.Items.Add(this.buttonConnect);
-            this.group1.Items.Add(this.buttonServer);
-            resources.ApplyResources(this.group1, "group1");
-            this.group1.Name = "group1";
-            // 
-            // buttonConnect
-            // 
-            this.buttonConnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonConnect, "buttonConnect");
-            this.buttonConnect.Image = global::ExcelAddIn.Properties.Resources.connect;
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.ShowImage = true;
-            this.buttonConnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonConnect_Click);
-            // 
-            // buttonServer
-            // 
-            this.buttonServer.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonServer, "buttonServer");
-            this.buttonServer.Image = global::ExcelAddIn.Properties.Resources.server_settings;
-            this.buttonServer.Name = "buttonServer";
-            this.buttonServer.ShowImage = true;
-            this.buttonServer.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonServer_Click);
-            // 
             // group2
             // 
-            this.group2.Items.Add(this.buttonSettings);
-            this.group2.Items.Add(this.buttonRefreshAll);
+            this.group2.Items.Add(this.buttonConnect);
+            this.group2.Items.Add(this.buttonServer);
             resources.ApplyResources(this.group2, "group2");
             this.group2.Name = "group2";
             // 
-            // buttonSettings
+            // group1
             // 
-            this.buttonSettings.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonSettings, "buttonSettings");
-            this.buttonSettings.Image = global::ExcelAddIn.Properties.Resources.settings;
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.ShowImage = true;
-            this.buttonSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSettings_Click);
+            this.group1.Items.Add(this.buttonSettings);
+            resources.ApplyResources(this.group1, "group1");
+            this.group1.Name = "group1";
             // 
-            // buttonRefreshAll
+            // group6
             // 
-            this.buttonRefreshAll.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonRefreshAll, "buttonRefreshAll");
-            this.buttonRefreshAll.Image = global::ExcelAddIn.Properties.Resources.refresh;
-            this.buttonRefreshAll.Name = "buttonRefreshAll";
-            this.buttonRefreshAll.ShowImage = true;
-            this.buttonRefreshAll.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshAll_Click);
+            this.group6.Items.Add(this.buttonSave);
+            this.group6.Items.Add(this.buttonSaveAs);
+            resources.ApplyResources(this.group6, "group6");
+            this.group6.Name = "group6";
             // 
-            // group3
+            // group7
             // 
-            this.group3.Items.Add(this.buttonPublish);
-            resources.ApplyResources(this.group3, "group3");
-            this.group3.Name = "group3";
+            this.group7.Items.Add(this.buttonRefreshReport);
+            this.group7.Items.Add(this.buttonPreview);
+            this.group7.Items.Add(this.checkBoxShowTemplatePane);
+            this.group7.Items.Add(this.toggleButton1);
+            resources.ApplyResources(this.group7, "group7");
+            this.group7.Name = "group7";
             // 
-            // buttonPublish
+            // checkBoxShowTemplatePane
             // 
-            this.buttonPublish.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            resources.ApplyResources(this.buttonPublish, "buttonPublish");
-            this.buttonPublish.Image = global::ExcelAddIn.Properties.Resources.save;
-            this.buttonPublish.Name = "buttonPublish";
-            this.buttonPublish.ShowImage = true;
-            this.buttonPublish.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPublish_Click);
+            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
+            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
+            this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
+            // 
+            // group8
+            // 
+            this.group8.Items.Add(this.dropDownLocale);
+            resources.ApplyResources(this.group8, "group8");
+            this.group8.Name = "group8";
+            // 
+            // dropDownLocale
+            // 
+            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
+            this.dropDownLocale.Name = "dropDownLocale";
             // 
             // groupSageX3
             // 
-            this.groupSageX3.Items.Add(this.checkBox1);
+            this.groupSageX3.Items.Add(this.actionPanelCheckBox);
             this.groupSageX3.Items.Add(this.dropDownInsert);
             this.groupSageX3.Items.Add(this.dropDownDelete);
             resources.ApplyResources(this.groupSageX3, "groupSageX3");
             this.groupSageX3.Name = "groupSageX3";
             // 
-            // checkBox1
+            // actionPanelCheckBox
             // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBox1_Click);
+            resources.ApplyResources(this.actionPanelCheckBox, "actionPanelCheckBox");
+            this.actionPanelCheckBox.Name = "actionPanelCheckBox";
+            this.actionPanelCheckBox.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.actionPanelCheckBox_Click);
             // 
             // dropDownInsert
             // 
             resources.ApplyResources(this.dropDownInsert, "dropDownInsert");
-            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
-            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
-            resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl1);
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl2);
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl3);
             this.dropDownInsert.Name = "dropDownInsert";
             // 
             // dropDownDelete
             // 
             resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
-            resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
-            resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
-            resources.ApplyResources(ribbonDropDownItemImpl6, "ribbonDropDownItemImpl6");
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl4);
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl5);
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl6);
             this.dropDownDelete.Name = "dropDownDelete";
             // 
             // groupVersion
@@ -240,6 +217,85 @@ namespace ExcelAddIn
             resources.ApplyResources(this.installedVersion, "installedVersion");
             this.installedVersion.Name = "installedVersion";
             // 
+            // version
+            // 
+            resources.ApplyResources(this.version, "version");
+            this.version.Name = "version";
+            // 
+            // group3
+            // 
+            this.group3.Items.Add(this.buttonCleanup);
+            resources.ApplyResources(this.group3, "group3");
+            this.group3.Name = "group3";
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonConnect, "buttonConnect");
+            this.buttonConnect.Image = global::ExcelAddIn.Properties.Resources.connect;
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.ShowImage = true;
+            this.buttonConnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonConnect_Click);
+            // 
+            // buttonServer
+            // 
+            this.buttonServer.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonServer.Image = global::ExcelAddIn.Properties.Resources.server_settings;
+            resources.ApplyResources(this.buttonServer, "buttonServer");
+            this.buttonServer.Name = "buttonServer";
+            this.buttonServer.ShowImage = true;
+            this.buttonServer.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonServer_Click);
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonSettings.Image = global::ExcelAddIn.Properties.Resources.settings;
+            resources.ApplyResources(this.buttonSettings, "buttonSettings");
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.ShowImage = true;
+            this.buttonSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSettings_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonSave.Image = global::ExcelAddIn.Properties.Resources.sauvegarder2;
+            resources.ApplyResources(this.buttonSave, "buttonSave");
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.ShowImage = true;
+            this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
+            // 
+            // buttonSaveAs
+            // 
+            this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonSaveAs.Image = global::ExcelAddIn.Properties.Resources.sauvegarder2;
+            resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
+            this.buttonSaveAs.Name = "buttonSaveAs";
+            this.buttonSaveAs.ShowImage = true;
+            this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
+            // 
+            // buttonRefreshReport
+            // 
+            this.buttonRefreshReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
+            this.buttonRefreshReport.Image = global::ExcelAddIn.Properties.Resources.refresh;
+            this.buttonRefreshReport.Name = "buttonRefreshReport";
+            this.buttonRefreshReport.ShowImage = true;
+            this.buttonRefreshReport.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRefreshReport_Click);
+            // 
+            // buttonPreview
+            // 
+            this.buttonPreview.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonPreview.Image = global::ExcelAddIn.Properties.Resources.preview;
+            resources.ApplyResources(this.buttonPreview, "buttonPreview");
+            this.buttonPreview.Name = "buttonPreview";
+            this.buttonPreview.ShowImage = true;
+            this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
+            // 
+            // toggleButton1
+            // 
+            resources.ApplyResources(this.toggleButton1, "toggleButton1");
+            this.toggleButton1.Name = "toggleButton1";
+            // 
             // buttonUpdate
             // 
             resources.ApplyResources(this.buttonUpdate, "buttonUpdate");
@@ -248,10 +304,11 @@ namespace ExcelAddIn
             this.buttonUpdate.ShowImage = true;
             this.buttonUpdate.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonUpdate_Click);
             // 
-            // version
+            // buttonCleanup
             // 
-            resources.ApplyResources(this.version, "version");
-            this.version.Name = "version";
+            resources.ApplyResources(this.buttonCleanup, "buttonCleanup");
+            this.buttonCleanup.Name = "buttonCleanup";
+            this.buttonCleanup.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonCleanup_Click);
             // 
             // Ribbon
             // 
@@ -261,38 +318,53 @@ namespace ExcelAddIn
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
             this.syracuseTab.ResumeLayout(false);
             this.syracuseTab.PerformLayout();
-            this.group1.ResumeLayout(false);
-            this.group1.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
-            this.group3.ResumeLayout(false);
-            this.group3.PerformLayout();
+            this.group1.ResumeLayout(false);
+            this.group1.PerformLayout();
+            this.group6.ResumeLayout(false);
+            this.group6.PerformLayout();
+            this.group7.ResumeLayout(false);
+            this.group7.PerformLayout();
+            this.group8.ResumeLayout(false);
+            this.group8.PerformLayout();
             this.groupSageX3.ResumeLayout(false);
             this.groupSageX3.PerformLayout();
             this.groupVersion.ResumeLayout(false);
             this.groupVersion.PerformLayout();
+            this.group3.ResumeLayout(false);
+            this.group3.PerformLayout();
 
         }
 
         #endregion
 
-        internal Microsoft.Office.Tools.Ribbon.RibbonTab syracuseTab;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSageX3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonConnect;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSettings;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonServer;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownDelete;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshAll;
-        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBox1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox actionPanelCheckBox;
         public Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownInsert;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupVersion;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel installedVersion;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
+        private Microsoft.Office.Tools.Ribbon.RibbonTab syracuseTab;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group6;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSave;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSaveAs;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group7;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBoxShowTemplatePane;
+        internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton toggleButton1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group8;
+        internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownLocale;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCleanup;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

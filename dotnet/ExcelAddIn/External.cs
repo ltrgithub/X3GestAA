@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using System.Web.Script.Serialization;
@@ -135,16 +133,13 @@ namespace ExcelAddIn
         {
             String tempFileName = Path.GetTempFileName();
             Globals.ThisAddIn.Application.ActiveWorkbook.SaveCopyAs(tempFileName);
-            //
             byte[] content = System.IO.File.ReadAllBytes(tempFileName);
-            // TODO delete temp file
             return Convert.ToBase64String(content);
         }
         public void DocumentSaved()
         {
             Globals.ThisAddIn.Application.ActiveWorkbook.Saved = true;
-            //
-            Globals.ThisAddIn.Ribbon.buttonPublish.Enabled = false;
+            Globals.ThisAddIn.Ribbon.buttonSave.Enabled = false;
         }
         public System.Action onLogonHandler = null;
         public void onLogon()
@@ -152,7 +147,7 @@ namespace ExcelAddIn
             if (onLogonHandler != null)
                 onLogonHandler();
         }
-//        public System.Action onTablesLoadedHandler = null;
+
         public delegate void TablesLoadedCallback(string errorMessage);
         public TablesLoadedCallback onTablesLoadedHandler = null;
         public void onTablesLoaded(string errorMessage = "")
@@ -179,7 +174,6 @@ namespace ExcelAddIn
         // check version
         public String GetAddinVersion()
         {
-            //return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             return Globals.ThisAddIn.getInstalledAddinVersion();
         }
 
@@ -209,8 +203,8 @@ namespace ExcelAddIn
                 }
             }
         }
-
     }
+
     public class JsConsole
     {
         public void log(object obj)
