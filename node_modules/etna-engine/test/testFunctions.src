@@ -1,0 +1,180 @@
+Call INIT(trtcou,108) From XUNIT
+Call OP_TEST
+Call ARITHM_TEST
+Call STRING_TEST1
+Call DATE_TEST1
+Call COMB_TEST
+Call STATS_TEST
+Call TRIGO_TEST
+Call HYPER_TEST
+Call STRING_TEST2
+Call STRING_TEST3
+Call DATE_TEST2
+Call EVAL_TEST
+Call FINISH From XUNIT
+Return "functions test done"
+
+$ERROR
+	Call CHECKERR(errn, EX, errm) From XUNIT
+	EX = 0
+Resume
+
+SubProg OP_TEST
+	Integer EX
+	Onerrgo ERROR
+	Call CHECK2("2+3", 5) From XUNIT
+	Call CHECK2("'2'+'3'", '23') From XUNIT
+	Call CHECK2("gdat$(24,8,2011)+8", gdat$(1,9,2011)) From XUNIT
+	Call CHECK2("8+gdat$(24,8,2011)", gdat$(1,9,2011)) From XUNIT
+	Call CHECK2("2-3", -1) From XUNIT
+	Call CHECK2("'2'-'3'", '2 3') From XUNIT
+	Call CHECK2("'2  '-'  3'", '2 3') From XUNIT
+	Call CHECK2("gdat$(1,9,2011)-8", gdat$(24,8,2011)) From XUNIT
+	Call CHECK2("gdat$(1,9,2011)-gdat$(24,8,2011)", 8) From XUNIT
+	Call CHECK2("gdat$(1,9,2011)-'20110824'", 8) From XUNIT
+	Call CHECK2("2*3", 6) From XUNIT
+End
+
+SubProg ARITHM_TEST
+    Integer EX
+	Onerrgo ERROR
+	Call CHECK2("abs(3)", 3) From XUNIT 
+	Call CHECK2("abs(-3)", 3) From XUNIT
+	EX = 10 : Call CHECK2("abs('hello')", "!!!") From XUNIT
+	Call CHECK2("mod(100,7)", 2) From XUNIT 
+	Call CHECK2("mod(-100,7)", 5) From XUNIT 
+	# TODO: test rnd
+	Call CHECK2("sgn(0)", 0) From XUNIT 
+	Call CHECK2("sgn(3)", 1) From XUNIT 
+	Call CHECK2("sgn(-3)", -1) From XUNIT 
+	Call CHECK2("sqr(9)", 3) From XUNIT 
+	Call CHECK2("ar2(1.234)", 1.23) From XUNIT 
+	Call CHECK2("ar2(1.235)", 1.24) From XUNIT 
+	Call CHECK2("ar2(1.236)", 1.24) From XUNIT 
+	Call CHECK2("arr(1.236, 1)", 1) From XUNIT 
+	Call CHECK2("arr(1.236, 0.01)", 1.24) From XUNIT 
+	Call CHECK2("arr(1.236, 0.05)", 1.25) From XUNIT 
+	Call CHECK2("fix(pi)", 3) From XUNIT 
+	Call CHECK2("fix(-pi)", -3) From XUNIT 
+	Call CHECK2("int(pi)", 3) From XUNIT 
+	Call CHECK2("int(-pi)", -4) From XUNIT
+End
+
+SubProg STRING_TEST1
+	Call CHECK2("ascii('a')", 97) From XUNIT
+	Call CHECK2("len('abcdef')", 6) From XUNIT
+	# TODO: parse
+	# TODO: pat
+	Call CHECK2("val('3')", 3) From XUNIT
+	Call CHECK2("val('-3')", -3) From XUNIT
+	Call CHECK2("val('3.14')", 3.14) From XUNIT
+	Call CHECK2("val('6.02e23')", 6.02e23) From XUNIT
+	Call CHECK2("val('6.62e-34')", 6.62e-34) From XUNIT
+End
+
+SubProg DATE_TEST1
+	Call CHECK2("day(gdat$(22,8,2011))", 22) From XUNIT
+	Call CHECK2("dayn(gdat$(21,8,2011))", 7) From XUNIT
+	Call CHECK2("dayn(gdat$(22,8,2011))", 1) From XUNIT
+	Call CHECK2("month(gdat$(22,8,2011))", 8) From XUNIT
+	Call CHECK2("nday(gdat$(4,1,1600))", 3) From XUNIT
+	Call CHECK2("week(gdat$(21,8,2011))", 33) From XUNIT
+	Call CHECK2("week(gdat$(22,8,2011))", 34) From XUNIT
+	Call CHECK2("year(gdat$(22,8,2011))", 2011) From XUNIT
+	# TODO: operators on dates
+End
+
+SubProg COMB_TEST
+	Call CHECK2("anp(7,3)", 840) From XUNIT
+	Call CHECK2("cnp(7,3)", 140) From XUNIT
+	Call CHECK2("fac(6)", 720) From XUNIT
+End
+
+SubProg STATS_TEST
+	# TODO: avg, find, min, max, ...
+	Call CHECK2("min(3,5,2,7,9,8)", 2) From XUNIT
+	Call CHECK2("max(3,5,2,7,9,8)", 9) From XUNIT
+	Call CHECK2("sigma(I=1, 10, I)", 55) From XUNIT
+	Call CHECK2("ar2(sigma(I=1, 120, 1/I^2))", ar2(pi^2/6)) From XUNIT
+End
+
+SubProg TRIGO_TEST()
+	Call CHECK2("ar2(pi)", 3.14) From XUNIT
+	Call CHECK2("cos(0)", 1) From XUNIT
+	Call CHECK2("cos(pi)", -1) From XUNIT
+	Call CHECK2("ar2(cos(pi/2))", 0) From XUNIT
+	Call CHECK2("ar2(cos(pi/3))", 0.5) From XUNIT
+	Call CHECK2("ar2(cos(pi/4))", ar2(sqr(2)/2)) From XUNIT
+	Call CHECK2("ar2(cos(pi/6))", ar2(sqr(3)/2)) From XUNIT
+	Call CHECK2("ar2(acos(cos(pi/6)))", ar2(pi/6)) From XUNIT
+	Call CHECK2("cos(pi/6)^2 + sin(pi/6)^2", 1) From XUNIT
+	Call CHECK2("ar2(tan(pi/6))", ar2(sin(pi/6)/cos(pi/6))) From XUNIT
+	Call CHECK2("ar2(asin(sin(pi/6)))", ar2(pi/6)) From XUNIT
+	Call CHECK2("ar2(atan(tan(pi/6)))", ar2(pi/6)) From XUNIT
+End
+
+SubProg HYPER_TEST()
+	Call CHECK2("exp(0)", 1) From XUNIT
+	Call CHECK2("ar2(exp(1))", 2.72) From XUNIT
+	Call CHECK2("ar2(ln(exp(5)))", 5) From XUNIT
+	Call CHECK2("log(10^8)", 8) From XUNIT
+	Call CHECK2("ch(0)", 1) From XUNIT
+	Call CHECK2("sh(0)", 0) From XUNIT
+	Call CHECK2("th(0)", 0) From XUNIT
+	Call CHECK2("ar2(sh(3)/ch(3))", ar2(th(3))) From XUNIT
+	Call CHECK2("ar2(ach(ch(3)))", 3) From XUNIT
+	Call CHECK2("ar2(ash(sh(3)))", 3) From XUNIT
+	Call CHECK2("ar2(ath(th(3)))", 3) From XUNIT
+End
+
+SubProg STRING_TEST2()
+	Call CHECK2("left$('ABCDEFGH', 5)", "ABCDE") From XUNIT
+	Call CHECK2("mid$('ABCDEFGH', 4, 3)", "DEF") From XUNIT
+	Call CHECK2("right$('ABCDEFGH', 4)", "DEFGH") From XUNIT
+	Call CHECK2("seg$('ABCDEFGH', 3, 7)", "CDEFG") From XUNIT
+	# TODO: ctrans
+	Call CHECK2("tolower('Hello')", "hello") From XUNIT
+	Call CHECK2("toupper('Hello')", "HELLO") From XUNIT
+	Call CHECK2("vireblc(' a b  c ', 0)", "a b  c ") From XUNIT
+	Call CHECK2("vireblc(' a b  c ', 1)", " a b  c") From XUNIT
+	Call CHECK2("vireblc(' a b  c ', 2)", "a b  c") From XUNIT
+	Call CHECK2("vireblc(' a b  c ', 3)", "a") From XUNIT
+	Call CHECK2("vireblc(' a b  c ', 4)", "abc") From XUNIT
+	Call CHECK2("vireblc(' a b  c ', 5)", " a b c ") From XUNIT
+	Call CHECK2("chr$(97)", "a") From XUNIT
+	Call CHECK2("graph$(1)", chr$(150)) From XUNIT
+	Call CHECK2("graph$(3, 1)", string$(3, 150)) From XUNIT
+	Call CHECK2("space$(3)", "   ") From XUNIT
+	Call CHECK2("string$(3, 97)", "aaa") From XUNIT
+	Call CHECK2("string$(3, 'ab')", "ababab") From XUNIT
+	Call CHECK2("instr(1, 'ABCDEF', 'CD')", 3) From XUNIT
+End
+
+SubProg STRING_TEST3
+	# Misc string functions (adxmac, adxpam, ...). See later
+End
+
+SubProg DATE_TEST2
+	Call CHECK2("addMonth(gdat$(22,8,2011), 1)", gdat$(22,9,2011)) From XUNIT	
+	Call CHECK2("aweek(34, 2011)", gdat$(22,8,2011)) From XUNIT	
+	Call CHECK2("year(date$) >= 2011", 1) From XUNIT	
+	Call CHECK2("eomonth(gdat$(22,8,2011))", gdat$(31,8,2011)) From XUNIT	
+	Call CHECK2("gdat$(0,8,2011)", gdat$(31,7,2011)) From XUNIT	
+	Call CHECK2("gdat$(22,0,2011)", gdat$(22,12,2010)) From XUNIT	
+	Call CHECK2("nday$(nday(date$))", date$) From XUNIT	
+	Call CHECK2("day$(gdat$(22,8,2011))", "lundi") From XUNIT	
+	Call CHECK2("day$(1)", "lundi") From XUNIT	
+	Call CHECK2("month$(gdat$(22,7,2011))", "juillet") From XUNIT	
+	Call CHECK2("month$(7)", "juillet") From XUNIT	
+End
+
+FunProg SQUARE(X)
+	Variable Decimal X
+End X^2
+
+SubProg EVAL_TEST
+	Call CHECK2("Func SQUARE(7) From testFunctions", 49) From XUNIT
+	Call CHECK2("evalue('1'+'+2')", 3) From XUNIT
+	Call CHECK2("evalue('func SQUARE(7) From testFunctions')", 49) From XUNIT
+End
+
