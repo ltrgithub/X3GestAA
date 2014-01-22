@@ -22,7 +22,7 @@ namespace ExcelAddIn
             this.browserDialog = browserDialog;
         }
 
-        public Boolean isExcelTemplate(Excel.Workbook workbook)
+        public Boolean isExcelTemplateType(Excel.Workbook workbook)
         {
             /*
              * Extract the custom data from the workbook...
@@ -31,16 +31,30 @@ namespace ExcelAddIn
             if (customData != null)
             {
                 return customData.getCreateMode() != null;
+
+                //String mode = customData.getCreateMode();
+                //return mode != null && (mode.Equals("rpt_build_tpl") || mode.Equals("rpt_is_tpl"));
+            }
+            return false;
+        }
+
+        public Boolean isExcelTemplate(Excel.Workbook workbook)
+        {
+            /*
+             * Extract the custom data from the workbook...
+             */
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                String mode = customData.getCreateMode();
+                return mode != null && (mode.Equals("rpt_build_tpl") || mode.Equals("rpt_is_tpl"));
             }
             return false;
         }
 
         public void showRibbonTemplate(Boolean show )
         {
-            Globals.Ribbons.Ribbon.Tabs.Where(t => t.Name.Equals("syracuseTab")).First<RibbonTab>().Visible = false;
-            Globals.Ribbons.Ribbon.Tabs.Where(t => t.Name.Equals("syracuseTemplateTab")).First<RibbonTab>().Visible = show;
-            
-            /*
+             /*
              * If we're hiding the template ribbon, hide the reporting fields pane as well.
              */
             if (!show)
@@ -49,31 +63,67 @@ namespace ExcelAddIn
 
         public void ConfigureTemplateRibbon(string mode, Boolean existing)
         {
-            Globals.Ribbons.Ribbon.templateInstalledVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
+            Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
             if ("rpt_build_tpl".Equals(mode))
             {
+                Globals.Ribbons.Ribbon.buttonConnect.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonServer.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonSettings.Enabled = false;
+                Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = false;
+                Globals.Ribbons.Ribbon.dropDownInsert.Enabled = false;
+                Globals.Ribbons.Ribbon.dropDownDelete.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                Globals.ThisAddIn.ShowActionPanel(false);
+
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
-
             }
             else if ("rpt_fill_tpl".Equals(mode))
             {
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(false);
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = existing;
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                
+                Globals.Ribbons.Ribbon.buttonConnect.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonServer.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonSettings.Enabled = true;
+                Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = true;
+                Globals.Ribbons.Ribbon.dropDownInsert.Enabled = true;
+                Globals.Ribbons.Ribbon.dropDownDelete.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
             }
             else if ("rpt_is_tpl".Equals(mode))
             {
+                Globals.Ribbons.Ribbon.buttonConnect.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonServer.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonSettings.Enabled = false;
+                Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = false;
+                Globals.Ribbons.Ribbon.dropDownInsert.Enabled = false;
+                Globals.Ribbons.Ribbon.dropDownDelete.Enabled = false;
+                Globals.ThisAddIn.ShowActionPanel(false);
+
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;   
             }
+        }
+
+        public void DisableTemplateButtons()
+        {
+            Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
+            Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+
+            //Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+            Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
         }
 
         public void ProcessExcelTemplate(Excel.Workbook workbook)
@@ -265,6 +315,28 @@ namespace ExcelAddIn
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
             browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+        }
+
+        public void CleanupReportTemplateData()
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.getActiveWorkbook();
+            if (workbook == null)
+            {
+                return;
+            }
+
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData == null)
+            {
+                return;
+            }
+
+            customData.setServerUrl("");
+            customData.setDocumentUrl("");
+            customData.writeDictionaryToDocument();
+
+            Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
         }
     }
 }
