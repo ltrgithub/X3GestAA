@@ -52,15 +52,6 @@ namespace ExcelAddIn
             return false;
         }
 
-        public void showRibbonTemplate(Boolean show )
-        {
-             /*
-             * If we're hiding the template ribbon, hide the reporting fields pane as well.
-             */
-            if (!show)
-                Globals.ThisAddIn.showReportingFieldsTaskPane(false);
-        }
-
         public void ConfigureTemplateRibbon(string mode, Boolean existing)
         {
             Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
@@ -121,8 +112,6 @@ namespace ExcelAddIn
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
             Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
-
-            //Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
             Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
         }
 
@@ -137,8 +126,6 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
                 Globals.Ribbons.Ribbon.buttonCleanup.Enabled = false;
                 
-                showRibbonTemplate(true);
-
                 String mode = customData.getCreateMode();
                 if ("rpt_build_tpl".Equals(mode))
                 {

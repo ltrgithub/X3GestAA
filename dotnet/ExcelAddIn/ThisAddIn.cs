@@ -88,7 +88,8 @@ namespace ExcelAddIn
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
             this.ReadPreferences();
             taskPane.Visible = this.GetPrefShowPanel();
-            //
+            templateActions.DisableTemplateButtons();
+
             if (this.Application.ActiveWorkbook != null)
                 AutoConnect(this.Application.ActiveWorkbook);
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
@@ -211,7 +212,6 @@ namespace ExcelAddIn
         {
             if (templateActions.isExcelTemplateType(workbook))
             {
-
                 addReportingFieldsTaskPane(Application.ActiveWindow);
                 templateActions.ProcessExcelTemplate(workbook);
             }
