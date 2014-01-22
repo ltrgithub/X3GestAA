@@ -1,17 +1,21 @@
 {
-    "eqnull"        : true,
-    "es5"           : true,
-    "expr"          : true,
-    "forin"         : false,
-    "curly"         : false,
-    "multistr"      : true,
-    "smarttabs"     : true,
-    "browser"       : true,
-    "jquery"        : true,
-    "node"          : true,
+    "eqnull"        : true,     // true: Tolerate use of `== null`
+    "es5"           : true,     // true: Allow ES5 syntax (ex: getters and setters)
+    "expr"          : true,     // true: Tolerate `ExpressionStatement` as Programs
+    "forin"         : false,    // true: Require filtering for..in loops with obj.hasOwnProperty()
+    "curly"         : false,    // true: Require {} for every new block or scope
+    "multistr"      : true,     // true: Tolerate multi-line strings
+    "smarttabs"     : true,     // true: Tolerate mixed tabs/spaces when used for alignment
+
+	// Environments - set to true to allow environment variables
+    "browser"       : true,     // Web Browser (window, document, etc)
+    "jquery"        : true,     // jQuery
+    "node"          : true,     // Node.js
+
+    // Custom Globals
     "globals" : { "_" : true },
-	"boss": true,
-    "bitwise": false,
-	"evil": true,
-	"noarg": false
+    "boss"          : true,     // true: Tolerate assignments where comparisons would be expected
+    "bitwise"       : false,    // true: Prohibit bitwise operators (&, |, ^, etc.)
+    "evil"          : true,     // true: Tolerate use of `eval` and `new Function()`
+    "noarg"         : false,    // true: Prohibit use of `arguments.caller` and `arguments.callee`
 }
