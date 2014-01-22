@@ -13,5 +13,9 @@
     "node"          : true,     // Node.js
 
     // Custom Globals
-    "globals" : { "_" : true }
+    "globals" : { "_" : true },
+    "boss"          : true,     // true: Tolerate assignments where comparisons would be expected
+    "bitwise"       : false,    // true: Prohibit bitwise operators (&, |, ^, etc.)
+    "evil"          : true,     // true: Tolerate use of `eval` and `new Function()`
+    "noarg"         : false    // true: Prohibit use of `arguments.caller` and `arguments.callee`
 }
