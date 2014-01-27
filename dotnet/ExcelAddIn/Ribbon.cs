@@ -36,11 +36,6 @@ namespace ExcelAddIn
             Globals.ThisAddIn.RefreshAll();
         }
 
-        //private void buttonRefreshAll_Click(object sender, RibbonControlEventArgs e)
-        //{
-        //    Globals.ThisAddIn.RefreshAll();
-        //}
-
         private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.SaveDocumentToSyracuse();
@@ -68,7 +63,10 @@ namespace ExcelAddIn
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
             if (workbook != null)
             {
-                Globals.ThisAddIn.commons.SaveAs(workbook);
+                if (new TemplateActions(null).isExcelTemplate(workbook))
+                    Globals.ThisAddIn.commons.SaveAs(workbook);
+                else
+                    Globals.ThisAddIn.SaveAsDocumentToSyracuse();
             } 
         }
 
@@ -102,6 +100,16 @@ namespace ExcelAddIn
         private void buttonCleanup_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.templateActions.CleanupReportTemplateData();
+        }
+
+        private void dropDownLocale_SelectionChanged(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.getActiveWorkbook();
+            if (workbook != null)
+            {
+                string locale = Globals.Ribbons.Ribbon.dropDownLocale.SelectedItem.Tag.ToString();
+                Globals.ThisAddIn.commons.SetDocumentLocale(workbook, locale);
+            }
         }
     }
 }
