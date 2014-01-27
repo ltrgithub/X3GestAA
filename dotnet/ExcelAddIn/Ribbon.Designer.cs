@@ -85,6 +85,12 @@ namespace ExcelAddIn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl2 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl3 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl4 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl5 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl6 = this.Factory.CreateRibbonDropDownItem();
             this.syracuseTab = this.Factory.CreateRibbonTab();
             this.dataGroup = this.Factory.CreateRibbonGroup();
             this.buttonConnect = this.Factory.CreateRibbonButton();
@@ -247,6 +253,7 @@ namespace ExcelAddIn
             // 
             resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
             this.dropDownLocale.Name = "dropDownLocale";
+            this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
             // 
             // groupSageX3
             // 
@@ -264,11 +271,23 @@ namespace ExcelAddIn
             // 
             // dropDownInsert
             // 
+            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
+            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
+            resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl1);
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl2);
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl3);
             resources.ApplyResources(this.dropDownInsert, "dropDownInsert");
             this.dropDownInsert.Name = "dropDownInsert";
             // 
             // dropDownDelete
             // 
+            resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
+            resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
+            resources.ApplyResources(ribbonDropDownItemImpl6, "ribbonDropDownItemImpl6");
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl4);
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl5);
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl6);
             resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
             this.dropDownDelete.Name = "dropDownDelete";
             // 

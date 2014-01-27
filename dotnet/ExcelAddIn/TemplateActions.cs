@@ -31,9 +31,6 @@ namespace ExcelAddIn
             if (customData != null)
             {
                 return customData.getCreateMode() != null;
-
-                //String mode = customData.getCreateMode();
-                //return mode != null && (mode.Equals("rpt_build_tpl") || mode.Equals("rpt_is_tpl"));
             }
             return false;
         }
@@ -70,6 +67,7 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
             }
             else if ("rpt_fill_tpl".Equals(mode))
@@ -77,7 +75,8 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(false);
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
                 
                 Globals.Ribbons.Ribbon.buttonConnect.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonServer.Enabled = true;
@@ -86,7 +85,7 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.dropDownInsert.Enabled = true;
                 Globals.Ribbons.Ribbon.dropDownDelete.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
             }
             else if ("rpt_is_tpl".Equals(mode))
             {
@@ -97,13 +96,14 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.dropDownInsert.Enabled = false;
                 Globals.Ribbons.Ribbon.dropDownDelete.Enabled = false;
                 Globals.ThisAddIn.ShowActionPanel(false);
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = false; 
 
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;   
             }
         }
 
@@ -111,7 +111,8 @@ namespace ExcelAddIn
         {
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
             Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
         }
 
@@ -150,6 +151,8 @@ namespace ExcelAddIn
                     {
                         RefreshExcelTemplate(customData);
                     }
+
+                    Globals.ThisAddIn.Application.ActiveWorkbook.Saved = true;
 
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
