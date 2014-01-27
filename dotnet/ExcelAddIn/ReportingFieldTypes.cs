@@ -17,7 +17,8 @@ namespace ExcelAddIn
         BINARY,
         // Only used for accessing icons in layout panel
         BOX,
-        TABLE
+        TABLE,
+        REFERENCE
     }
 
     public class ReportingFieldUtil
@@ -47,6 +48,9 @@ namespace ExcelAddIn
                 return ReportingFieldTypes.GRAPH;
             if ("application/x-binary".Equals(mimetype))
                 return ReportingFieldTypes.BINARY;
+            if ("application/x-reference".Equals(mimetype))
+                return ReportingFieldTypes.REFERENCE;
+
 
             return ReportingFieldTypes.TEXT;
         }
@@ -113,8 +117,6 @@ namespace ExcelAddIn
 
          public static bool isSupportedType(ReportingFieldTypes type) {
             if (ReportingFieldTypes.GRAPH == type)
-                return false;
-            else if (ReportingFieldTypes.IMAGE == type)
                 return false;
             else if (ReportingFieldTypes.BINARY == type)
                 return false;

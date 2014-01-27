@@ -112,48 +112,48 @@ namespace ExcelAddIn
             return null;
         }
 
-        //public void SetSupportedLocales(SyracuseOfficeCustomData customData)
-        //{
-            //Globals.Ribbons.Ribbon.dropDownLocale.Items.Clear();
-            //Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem());
-            //Globals.Ribbons.Ribbon.dropDownLocale.Items[0].Label = "";
-            //if (customData == null)
-            //{
-            //    Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
-            //    return;
-            //}
-            //try
-            //{
-            //    foreach (Locale locale in customData.getSupportedLocales())
-            //    {
-            //        Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
-            //        item.Label = locale.name + " - " + locale.nativeName;
-            //        item.Tag = locale.name;
-            //        Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(item);
-            //    }
-            //}
-            //catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
-            //Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
-        //}
+        public void SetSupportedLocales(SyracuseOfficeCustomData customData)
+        {
+            Globals.Ribbons.Ribbon.dropDownLocale.Items.Clear();
+            Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem());
+            Globals.Ribbons.Ribbon.dropDownLocale.Items[0].Label = "";
+            if (customData == null)
+            {
+                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
+                return;
+            }
+            try
+            {
+                foreach (Locale locale in customData.getSupportedLocales())
+                {
+                    Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
+                    item.Label = locale.name + " - " + locale.nativeName;
+                    item.Tag = locale.name;
+                    Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(item);
+                }
+            }
+            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
+            Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
+        }
 
-        //public void DisplayDocumentLocale(Workbook workbook)
-        //{
-        //    string locale = GetDocumentLocale(workbook);
-        //    if (locale == null)
-        //    {
-        //        //Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
-        //        return;
-        //    }
-        //    //for (int i = 1; i < Globals.Ribbons.Ribbon.dropDownLocale.Items.Count; i++)
-        //    //{
-        //    //    if (Globals.Ribbons.Ribbon.dropDownLocale.Items[i].Tag.Equals(locale))
-        //    //    {
-        //    //        Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = i;
-        //    //        return;
-        //    //    }
-        //    //}
-        //    //Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
-        //}
+        public void DisplayDocumentLocale(Workbook workbook)
+        {
+            string locale = GetDocumentLocale(workbook);
+            if (locale == null)
+            {
+                Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
+                return;
+            }
+            for (int i = 1; i < Globals.Ribbons.Ribbon.dropDownLocale.Items.Count; i++)
+            {
+                if (Globals.Ribbons.Ribbon.dropDownLocale.Items[i].Tag.Equals(locale))
+                {
+                    Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = i;
+                    return;
+                }
+            }
+            Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
+        }
 
         //public void ExtractV6Document(Workbook workbook, SyracuseOfficeCustomData customData)
         //{
