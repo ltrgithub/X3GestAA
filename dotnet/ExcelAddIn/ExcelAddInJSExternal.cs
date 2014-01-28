@@ -102,6 +102,7 @@ namespace ExcelAddIn
         {
             browserDialog.Hide();
             CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
         }
 
         public String getSyracuseDocumentType()

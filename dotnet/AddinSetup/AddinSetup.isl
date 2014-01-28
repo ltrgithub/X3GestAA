@@ -4540,9 +4540,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{C9E5350E-DC47-490D-9CB7-8B14CC25F88C}</td><td/></row>
+		<row><td>ProductCode</td><td>{7B7E6796-6353-4B2E-B0F2-435F010E2F88}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Office Addins</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0040</td><td/></row>
+		<row><td>ProductVersion</td><td>1.00.0041</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4554,7 +4554,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4851,6 +4851,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0037</td><td>1.00.0037</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP12</td><td>1.00.0037</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0038</td><td>1.00.0038</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP13</td><td>1.00.0038</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0039</td><td>1.00.0039</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP15</td><td>1.00.0039</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0040</td><td>1.00.0040</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP17</td><td>1.00.0040</td></row>
 	</table>
 
 	<table name="Verb">

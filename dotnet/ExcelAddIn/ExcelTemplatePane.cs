@@ -33,13 +33,13 @@ namespace ExcelAddIn
 
                 if (n.item.ContainsKey("$bind"))
                 {
-                    string fieldName = n.item["$bind"].ToString();
+                    clearPlaceholderName(workbook, n.item["$bind"].ToString());
                     Range rng = (Range)Globals.ThisAddIn.Application.ActiveCell;
                     StringBuilder sb = new StringBuilder("<<");
-                    sb.Append(fieldName);
+                    sb.Append(n.item["$title"].ToString());
                     sb.Append(">>");
                     rng.Value2 = sb.ToString();
-                    workbook.Names.Add(fieldName, rng);
+                    workbook.Names.Add(n.item["$bind"].ToString(), rng);
                 }
             }
             catch (Exception ee)
@@ -47,7 +47,18 @@ namespace ExcelAddIn
                 MessageBox.Show(ee.Message + ":" + ee.StackTrace);
             }
         }
-        
+
+        public void clearPlaceholderName(Workbook workbook, string placeholderName)
+        {
+            foreach (Name name in workbook.Names)
+            {
+                if (name.Name.Equals(placeholderName))
+                {
+                    Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet.Range(name.RefersTo).Value2 = "";
+                }
+            } 
+        }
+
         public void clear()
         {
             treeViewFields.Nodes.Clear();
