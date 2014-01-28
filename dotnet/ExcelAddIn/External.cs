@@ -140,6 +140,7 @@ namespace ExcelAddIn
         {
             Globals.ThisAddIn.Application.ActiveWorkbook.Saved = true;
             Globals.ThisAddIn.Ribbon.buttonSave.Enabled = false;
+            CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
         }
         public System.Action onLogonHandler = null;
         public void onLogon()

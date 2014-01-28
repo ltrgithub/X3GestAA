@@ -200,7 +200,7 @@ namespace ExcelAddIn
                         else
                         {
                             // just empty values
-                            Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow + rowCount, initialCol],
+                            Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow - rowCount, initialCol],
                                 targetWorksheet.Cells[initialRow, initialCol + colCount - 1]];
                             toShift.Value2 = "";
                         }
