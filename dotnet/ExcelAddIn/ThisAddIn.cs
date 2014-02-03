@@ -286,6 +286,8 @@ namespace ExcelAddIn
                 SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
                 if (customData != null)
                 {
+                    CheckForPlaceholderDeletion(workbook);
+
                     if ("".Equals(customData.getDocumentUrl()) == false)
                     {
                         Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
@@ -307,6 +309,33 @@ namespace ExcelAddIn
             {
                 mainHandle.ReleaseHandle();
                 mainHandle = null;
+            }
+        }
+
+        /*
+         * In the absence of a vsto delete cell event, a placeholder will be removed 
+         * from the Name Manager if the placeholder's text is removed in it's entirety. 
+         */
+        private void CheckForPlaceholderDeletion(Excel.Workbook workbook)
+        {
+            foreach (Name name in workbook.Names)
+            {
+                Range range = null;
+                try
+                {
+                     range = workbook.ActiveSheet.Range(name.RefersTo);
+                }
+                catch (Exception)
+                {
+                    /*
+                     * We've got an invalid reference, so just delete the name
+                     */
+                    name.Delete();
+                    continue;
+                }
+
+                if (workbook.ActiveSheet.Range(name.RefersTo).Value2 == null)
+                    name.Delete();
             }
         }
 

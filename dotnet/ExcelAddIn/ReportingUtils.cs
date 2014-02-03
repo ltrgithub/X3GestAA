@@ -102,7 +102,7 @@ namespace ExcelAddIn
             placeholderTableList.Add(placeholderTable);
         }
 
-        public static List<PlaceholderTable> buildPlaceholderTableList(Worksheet worksheet)
+        public static List<PlaceholderTable> buildPlaceholderTableList()
         {
             List<Placeholder> placeholderList = new List<Placeholder>();
             foreach (Name name in Globals.ThisAddIn.Application.ActiveWorkbook.Names)
