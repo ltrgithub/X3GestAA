@@ -200,7 +200,7 @@ namespace ExcelAddIn
                         else
                         {
                             // just empty values
-                            Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow + rowCount, initialCol],
+                            Range toShift = targetWorksheet.Range[targetWorksheet.Cells[initialRow - rowCount, initialCol],
                                 targetWorksheet.Cells[initialRow, initialCol + colCount - 1]];
                             toShift.Value2 = "";
                         }
@@ -213,7 +213,7 @@ namespace ExcelAddIn
             ListObject resultListObject = null;
             Worksheet targetWorksheet = activeCell.Worksheet;
 
-            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList(targetWorksheet).GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
             if (orderedPlaceholderTableList.Count == 0)
             {
                 return null;

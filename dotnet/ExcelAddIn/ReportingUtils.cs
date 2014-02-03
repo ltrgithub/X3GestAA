@@ -45,14 +45,22 @@ namespace ExcelAddIn
             Globals.ThisAddIn.Application.ScreenUpdating = true;
         }
 
+        public static bool isControlColumn(string columnId)
+        {
+            return columnId.Contains("$");
+        }
+
         public static bool isSupportedType(Dictionary<String, Object> item)
         {
             try
             {
-                string type = item["$type"].ToString();
-                ReportingFieldTypes ft = ReportingFieldUtil.getType(type);
-                if (ReportingFieldUtil.isSupportedType(ft))
-                    return true;
+                if (isControlColumn(item["$bind"].ToString()) == false)
+                {
+                    string type = item["$type"].ToString();
+                    ReportingFieldTypes ft = ReportingFieldUtil.getType(type);
+                    if (ReportingFieldUtil.isSupportedType(ft))
+                        return true;
+                }
             }
             catch (Exception) { }
             return false;
@@ -94,7 +102,7 @@ namespace ExcelAddIn
             placeholderTableList.Add(placeholderTable);
         }
 
-        public static List<PlaceholderTable> buildPlaceholderTableList(Worksheet worksheet)
+        public static List<PlaceholderTable> buildPlaceholderTableList()
         {
             List<Placeholder> placeholderList = new List<Placeholder>();
             foreach (Name name in Globals.ThisAddIn.Application.ActiveWorkbook.Names)

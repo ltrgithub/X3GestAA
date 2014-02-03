@@ -88,7 +88,8 @@ namespace ExcelAddIn
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
             this.ReadPreferences();
             taskPane.Visible = this.GetPrefShowPanel();
-            //
+            templateActions.DisableTemplateButtons();
+
             if (this.Application.ActiveWorkbook != null)
                 AutoConnect(this.Application.ActiveWorkbook);
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
@@ -211,7 +212,6 @@ namespace ExcelAddIn
         {
             if (templateActions.isExcelTemplateType(workbook))
             {
-
                 addReportingFieldsTaskPane(Application.ActiveWindow);
                 templateActions.ProcessExcelTemplate(workbook);
             }
@@ -228,29 +228,24 @@ namespace ExcelAddIn
         {
             checkButton(Wb);
 
+            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+
             if ((settingsForm != null) && settingsForm.Visible)
                 settingsForm.RefreshBrowser();
 
             Excel.Workbook workbook = getActiveWorkbook();
             if (workbook == null)
             {
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
                 return;
             }
 
             SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (cd != null)
             {
-                String mode = cd.getCreateMode();
-                if ("".Equals(cd.getDocumentUrl()) == false)
-                {
-                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-                }
-
-                if (templateActions.isExcelTemplateType(Wb))
-                {
-                    templateActions.ConfigureTemplateRibbon(mode, "".Equals(cd.getDocumentUrl()) == false);
-                }
+                templateActions.ConfigureTemplateRibbon(cd.getCreateMode(), "".Equals(cd.getDocumentUrl()) == false);
+                commons.SetSupportedLocales(cd);
+                commons.DisplayDocumentLocale(Wb);
             }
             else
             {
@@ -278,22 +273,29 @@ namespace ExcelAddIn
             Excel.Workbook workbook = getActiveWorkbook();
             if (workbook == null)
             {
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
                 return;
             }
 
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
-            if (customData != null)
+            if (Globals.ThisAddIn.Application.ActiveWorkbook.Saved == false)
             {
-                String mode = customData.getCreateMode();
-                if ("".Equals(customData.getDocumentUrl()) == false)
+                Console.WriteLine("test");
+            }
+
+            if (templateActions.isExcelTemplate(workbook))
+            {
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+                if (customData != null)
                 {
-                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                    CheckForPlaceholderDeletion(workbook);
+
+                    if ("".Equals(customData.getDocumentUrl()) == false)
+                    {
+                        Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                    }
                 }
             }
-            
-            if (templateActions.isExcelTemplateType(workbook) == false)
-                Ribbon.buttonSave.Enabled = true;
+            else if ((new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress") != "")
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
         }
 
         void Application_SheetSelectionChange(object sh, Excel.Range target)
@@ -310,6 +312,33 @@ namespace ExcelAddIn
             }
         }
 
+        /*
+         * In the absence of a vsto delete cell event, a placeholder will be removed 
+         * from the Name Manager if the placeholder's text is removed in it's entirety. 
+         */
+        private void CheckForPlaceholderDeletion(Excel.Workbook workbook)
+        {
+            foreach (Name name in workbook.Names)
+            {
+                Range range = null;
+                try
+                {
+                     range = workbook.ActiveSheet.Range(name.RefersTo);
+                }
+                catch (Exception)
+                {
+                    /*
+                     * We've got an invalid reference, so just delete the name
+                     */
+                    name.Delete();
+                    continue;
+                }
+
+                if (workbook.ActiveSheet.Range(name.RefersTo).Value2 == null)
+                    name.Delete();
+            }
+        }
+
         internal void SaveDocumentToSyracuse()
         {
             if ((new SyracuseCustomData(this.Application.ActiveWorkbook)).GetCustomDataByName("documentUrlAddress") != "")
@@ -322,6 +351,20 @@ namespace ExcelAddIn
                 ActionPanel.Connect("");
                 ShowSettingsForm();
             }
+        }
+
+        internal void SaveAsDocumentToSyracuse()
+        {
+            SyracuseCustomData cd = new SyracuseCustomData(this.Application.ActiveWorkbook);
+            if (cd != null && cd.GetCustomDataByName("documentUrlAddress") != "")
+            {
+                // clear the URL in order to be able to Save the document.
+                cd.StoreCustomDataByName("documentUrlAddress", "");
+                Globals.ThisAddIn.Application.ActiveWorkbook.Saved = false;
+            }
+
+            ActionPanel.Connect("");
+            ShowSettingsForm();
         }
 
         protected override object RequestComAddInAutomationService()
