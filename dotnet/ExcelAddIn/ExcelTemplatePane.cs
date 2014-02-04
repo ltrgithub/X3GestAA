@@ -50,11 +50,30 @@ namespace ExcelAddIn
 
         public void clearPlaceholderName(Workbook workbook, string placeholderName)
         {
+            /*
+             * Remove existing placeholder from the target cell.
+             */
+            Range activeCells = (Range)Globals.ThisAddIn.Application.ActiveCell;
+            foreach (Name name in workbook.Names)
+            {
+                if (workbook.ActiveSheet.Range(name.RefersTo).row == activeCells.Row &&
+                    workbook.ActiveSheet.Range(name.RefersTo).column == activeCells.Column)
+                {
+                    name.Delete();
+                    break;
+                }
+            }
+
+            /*
+             * Clear the text from the old placeholder cell. 
+             */
             foreach (Name name in workbook.Names)
             {
                 if (name.Name.Equals(placeholderName))
                 {
-                    Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet.Range(name.RefersTo).Value2 = "";
+                    Range range = workbook.ActiveSheet.Range(name.RefersTo);
+                    workbook.ActiveSheet.Range(name.RefersTo).Value2 = "";
+                    break;
                 }
             } 
         }
