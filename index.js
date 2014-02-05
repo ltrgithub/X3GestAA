@@ -109,7 +109,10 @@ require('syracuse-license').register(function(err, data) {
 			}
 		});
 	} else {
-		var syracuse = require('syracuse-main/lib/syracuse');
-		syracuse.main();
+		try {
+			var syracuse = require('syracuse-main/lib/syracuse');
+			syracuse.main();
+		} catch (e) { if (!require.extensions['.jsc']) { console.error("Need a license to start"); process.exit(5); } 
+		else { console.log("Error "+e)}}
 	}
 });
