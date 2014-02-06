@@ -115,7 +115,7 @@ require('syracuse-license').register(function(err, data) {
 		} catch (e) {
 			var fs = require('fs');
 			if (fs.existsSync(__dirname+'/node_modules/syracuse-main/lib/syracuse.jsc') && !require.extensions['.jsc']) { 
-				console.error("Need a license to start"); process.exit(5); 
+				console.error("Need a license to start. "+e); process.exit(5); 
 			} 
 		else { console.log("Error "+e)}}
 	}
