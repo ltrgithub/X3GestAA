@@ -30,7 +30,7 @@ namespace ExcelAddIn
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (customData != null)
             {
-                return customData.getCreateMode() != null;
+                return (customData.getCreateMode() != null && customData.getCreateMode() != "");
             }
             return false;
         }
