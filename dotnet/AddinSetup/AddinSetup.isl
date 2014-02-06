@@ -1899,22 +1899,16 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>exceladdin.lokalisierte_ress</td><td>ExcelAddIn.Lokalisierte_Ressourcen1</td><td>ExcelAddIn.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ExcelAddIn&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>exceladdin.prim_re_ausgabe</td><td>ExcelAddIn.Prim_re_Ausgabe1</td><td>ExcelAddIn.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ExcelAddIn&gt;|Built</td><td>3</td><td/></row>
 		<row><td>microsoft.office.tools.commo</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.excel</td><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.word.</td><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.visualstudio.tools</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Program Files\Reference Assemblies\Microsoft\VSTO40\v4.0.Framework\Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>1</td><td/></row>
-		<row><td>powerpointaddin.lokalisierte</td><td>PowerPointAddIn.Lokalisierte_Ressourcen</td><td>PowerPointAddIn.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerPointAddIn&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>powerpointaddin.prim_re_ausg</td><td>PowerPointAddIn.Prim_re_Ausgabe</td><td>PowerPointAddIn.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerPointAddIn&gt;|Built</td><td>3</td><td/></row>
 		<row><td>sage.syracuse.exceladdin.dll</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.MAN|Sage.Syracuse.ExcelAddIn.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Sage.Syracuse.ExcelAddIn.dll.manifest</td><td>1</td><td/></row>
 		<row><td>sage.syracuse.exceladdin.vst</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.VST|Sage.Syracuse.ExcelAddIn.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Sage.Syracuse.ExcelAddIn.vsto</td><td>1</td><td/></row>
 		<row><td>sage.syracuse.powerpointaddi1</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.MAN|Sage.Syracuse.PowerPointAddIn.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\PowerPointAddIn\bin\Release\Sage.Syracuse.PowerPointAddIn.dll.manifest</td><td>1</td><td/></row>
 		<row><td>sage.syracuse.powerpointaddi2</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.VST|Sage.Syracuse.PowerPointAddIn.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\PowerPointAddIn\bin\Release\Sage.Syracuse.PowerPointAddIn.vsto</td><td>1</td><td/></row>
 		<row><td>sage.syracuse.wordaddin.dll.</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.MAN|Sage.Syracuse.WordAddIn.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Sage.Syracuse.WordAddIn.dll.manifest</td><td>1</td><td/></row>
 		<row><td>sage.syracuse.wordaddin.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.VST|Sage.Syracuse.WordAddIn.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Sage.Syracuse.WordAddIn.vsto</td><td>1</td><td/></row>
-		<row><td>wordaddin.lokalisierte_resso</td><td>WordAddIn.Lokalisierte_Ressourcen1</td><td>WordAddIn.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WordAddIn&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>wordaddin.prim_re_ausgabe</td><td>WordAddIn.Prim_re_Ausgabe1</td><td>WordAddIn.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WordAddIn&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -4540,9 +4534,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{7B7E6796-6353-4B2E-B0F2-435F010E2F88}</td><td/></row>
+		<row><td>ProductCode</td><td>{40D2E26B-BF23-4BA7-A54D-090108D7AC23}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Office Addins</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0041</td><td/></row>
+		<row><td>ProductVersion</td><td>1.00.0042</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4554,7 +4548,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4852,6 +4846,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0038</td><td>1.00.0038</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP13</td><td>1.00.0038</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0039</td><td>1.00.0039</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP15</td><td>1.00.0039</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0040</td><td>1.00.0040</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP17</td><td>1.00.0040</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0041</td><td>1.00.0041</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP14</td><td>1.00.0041</td></row>
 	</table>
 
 	<table name="Verb">
