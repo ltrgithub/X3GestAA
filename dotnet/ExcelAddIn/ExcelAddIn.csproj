@@ -126,7 +126,7 @@
   </PropertyGroup>
   <!--
     This section enables pre- and post-build steps. However, in VSTO use
-    MSBuild tasks instead of these properties.       
+    MSBuild tasks instead of these properties.
   -->
   <PropertyGroup>
     <PreBuildEvent>
@@ -195,10 +195,10 @@
   </ItemGroup>
   <!--
     This section defines the user source files that are part of the project.
-     
+
     A "Compile" element specifies a source file to compile.
     An "EmbeddedResource" element specifies an .resx file for embedded resources.
-    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    A "None" element specifies a file that is not to be passed to the compiler (for instance,
     a text file or XML file).
     The "AppDesigner" element specifies the directory where the application properties files
     can be found.
@@ -302,12 +302,6 @@
       <DependentUpon>ActionPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActionPanel.fr-fr.resx">
-      <DependentUpon>ActionPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ActionPanel.en-us.resx">
-      <DependentUpon>ActionPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BrowserDialog.resx">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -322,13 +316,7 @@
       <DependentUpon>Ribbon.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ribbon.en-us.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.en.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ribbon.fr-fr.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.fr.resx">
@@ -355,12 +343,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DocumentBrowser.fr.resx">
-      <DependentUpon>DocumentBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DocumentBrowser.fr-fr.resx">
-      <DependentUpon>DocumentBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DocumentBrowser.en-us.resx">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr.resx">
@@ -400,14 +382,6 @@
     <EmbeddedResource Include="ServerSettings.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.fr-fr.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.en-us.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="SISettings.resx">
       <DependentUpon>SISettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,12 +389,6 @@
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TableUpdateProgress.resx">
-      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TableUpdateProgress.fr-fr.resx">
-      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TableUpdateProgress.en-us.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
