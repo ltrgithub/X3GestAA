@@ -55,6 +55,12 @@ exports.config = {
 //		tracer: console.log,
 //		profiler: console.log
 	},
+
+	help: {
+		// trace: console.log,
+		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
+	},
+
 	translation: {
 		// trace: console.log,
 		// redirect diagnosis in the trace
