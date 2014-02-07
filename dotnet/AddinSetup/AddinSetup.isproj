@@ -31,4 +31,19 @@
 	</ItemGroup>
 	<ItemGroup>
 	</ItemGroup>
-</Project>
+	<ItemGroup>
+		<ProjectReference Include="..\ExcelAddIn\ExcelAddIn.csproj">
+			<Name>ExcelAddIn</Name>
+			<Project>{7CAED4A8-523E-47DA-B5A9-E8FFF57AF193}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\PowerPointAddIn\PowerPointAddIn.csproj">
+			<Name>PowerPointAddIn</Name>
+			<Project>{A7CE283E-42B9-455F-B05C-97D5A2F617C2}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\WordAddIn\WordAddIn.csproj">
+			<Name>WordAddIn</Name>
+			<Project>{6E8D58CA-0CAC-4C2A-BC0E-AB6E1071685D}</Project>
+		</ProjectReference>
+	</ItemGroup>
+
+	</Project>
