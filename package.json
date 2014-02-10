@@ -2,8 +2,15 @@
   "name": "syracuse",
   "description": "Next generation Sage ERP X3",
   "version": "0.1.0",
-  "engines": { "node": ">=0.6.0" },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "private": true,
   "author": "Syracuse Team",
-  "main": "index.js"
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "node task.js --extra-ext _js *.js node_modules/streamline* node_modules/syracuse* node_modules/etna*"
+  }
 }
