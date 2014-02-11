@@ -200,12 +200,11 @@ public class CertTool {
 		}
 	}
 
-	/** return the relative path of the public key with replacement of bad characters */
+	/** return the relative path of the certificate */
 	static private String getPublicKeyFileName(String name) throws CertToolException {
 		if (name == null) {
 			throw new CertToolException("No public key file for CA");
 		} else {
-			name = name.replace('@', '_').replace('.', '_').replace('$', '_');
 			return OUTPUT + name + ".pem";
 		}
 	}
@@ -468,11 +467,13 @@ public class CertTool {
 			KeyPair issuerPair, String subjectDn, PublicKey subjectKey,
 			Date validUntil) throws OperatorCreationException {
 		wrapper.println("Generate certificate ...");
+		issuerDn = sortDn(issuerDn);
+		subjectDn = sortDn(subjectDn);
 		X500Principal issuer = new X500Principal(issuerDn);
 		X500Principal subject = new X500Principal(subjectDn);
 		Date notBefore = new Date();
 		Date notAfter = validUntil;
-		BigInteger serial = new BigInteger("0");
+		BigInteger serial = new BigInteger(""+notBefore.getTime());
 		JcaX509v3CertificateBuilder builder = new JcaX509v3CertificateBuilder(
 				issuer, serial, notBefore, notAfter, subject, subjectKey);
 		ContentSigner cs = new JcaContentSignerBuilder("SHA256withRSA")
@@ -482,6 +483,33 @@ public class CertTool {
 
 	}
 
+	/** sorts the parts of a distinguished name so that the CN will be first and the country the last (important in order to have consistent 
+	 * distinguished names for CA certificate and issuer of server certificate.
+	 * @param dn distinguished name to sort
+	 * @return sorted distinguished name
+	 */
+	private static String sortDn(String dn) {
+		String cn = findReplace(dn, "CN", null);
+		String ou = findReplace(dn, "OU", null);
+		String o = findReplace(dn, "O", null);
+		String l = findReplace(dn, "L", null);
+		String c = findReplace(dn, "C", null);
+		String st = findReplace(dn, "ST", null);
+		String[] parts = new String[6];
+		int index = 0;
+		if (cn != null) parts[index++] = "CN="+cn;
+		if (ou != null) parts[index++] = "OU="+ou;
+		if (o != null) parts[index++] = "O="+o;
+		if (l != null) parts[index++] = "L="+l;
+		if (st != null) parts[index++] = "ST="+st;
+		if (c != null) parts[index++] = "C="+c;
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < index; i++) {
+			if (i > 0) result.append(',');
+			result.append(parts[i]);
+		}
+		return result.toString();
+	}
 
 	/** scans in the given distinguished for the given id, e. g. common name 'CN'.
 	 * if replacement is given, the value for the id will be replaced and the full dn with replacement will be returned
@@ -703,7 +731,7 @@ public class CertTool {
 						String ou = input("Organizational unit", Check.DN, findReplace(dn, "OU", null));
 						if (cn == null)
 							cn = input("Name", Check.DN, findReplace(dn, "CN", null));						
-						dn = "C=" + c + ",ST=" + st + ",L=" + l+ ",O=" + o + ",OU=" + ou +",CN=" + cn;
+						dn = "CN=" + cn + ",OU="+ou + ",O="+o+",L="+l+",ST="+st+",C="+c;
 					} else {
 						if (dn == null || cn == null) 
 							testInteractive("No subject given");
@@ -793,8 +821,6 @@ public class CertTool {
 						throw new CertToolException("Error in decryption - probably incorrect passphrase");						
 					}					
 				}
-				if (name == null)
-					pass = capass;
 			}
 		}
 		return false;
@@ -966,6 +992,11 @@ public class CertTool {
 
 	}
 
+	/** write public key file
+	 * 
+	 * @param name name of server
+	 * @param publicKey content
+	 */
 	static private void writePublic(String name, PublicKey publicKey) throws IOException, CertToolException {
 		String filename = getPublicKeyFileName(name);
 		wrapper.println("Write public key " + filename + " ...");
@@ -1069,7 +1100,7 @@ public class CertTool {
 				}
 				if (i == args.length - 1) {
 					if (argument.length() > 0)
-						tool.name = argument.toLowerCase();
+						tool.name = argument;
 				}
 				else
 					throw new CertToolException("Error in argument list");
