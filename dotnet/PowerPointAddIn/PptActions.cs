@@ -414,7 +414,7 @@ namespace PowerPointAddIn
                 Dictionary<String, object> measures = (Dictionary<String, object>)cube["$measures"];
 
                 int oldSeriesCount = sc.Count;
-                chart.HasLegend = false;
+                chart.HasLegend = true;
                 Microsoft.Office.Interop.PowerPoint.Series firstSeries = null;
                 foreach (string key in measures.Keys)
                 {
