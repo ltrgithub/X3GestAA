@@ -1,16 +1,21 @@
 {
-  "name": "syracuse",
-  "description": "Next generation Sage ERP X3",
-  "version": "0.1.0",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "private": true,
-  "author": "Syracuse Team",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "start": "node index.js",
-    "test": "node task.js --extra-ext _js *.js node_modules/streamline* node_modules/syracuse* node_modules/etna*"
-  }
+	"name": "syracuse",
+	"description": "Next generation Sage ERP X3",
+	"version": "0.1.0",
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"private": true,
+	"author": "Syracuse Team",
+	"main": "index.js",
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-fixmyjs": "~0.1.1",
+		"grunt-contrib-jshint": "~0.8.0",
+		"grunt-contrib-qunit": "~0.4.0",
+		"grunt-jsbeautifier": "~0.2.6"
+	},
+	"scripts": {
+		"test": "grunt test"
+	}
 }
