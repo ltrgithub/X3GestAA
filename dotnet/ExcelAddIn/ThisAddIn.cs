@@ -64,7 +64,7 @@ namespace ExcelAddIn
         NativeWindow mainHandle = null;
         public bool Aborted = false;
         private ExposedAddInUtilities utilities;
-        public bool prefShowPanel = true;
+        public bool prefShowPanel = false;
         public String prefUrl = null;
         public Boolean newVersionMessage = false;
         public int versionNumberBinary = 0;
@@ -404,9 +404,9 @@ namespace ExcelAddIn
                 while (!myFile.EndOfStream)
                 {
                     sContent = myFile.ReadLine();
-                    if (sContent.Equals("Show=False"))
+                    if (sContent.Equals("Show=True"))
                     {
-                        prefShowPanel = false;
+                        prefShowPanel = true;
                     }
                     else if (sContent.Substring(0, 4).Equals("Url="))
                     {
