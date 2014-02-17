@@ -50,6 +50,7 @@ namespace WordAddIn
             catch (Exception) { };
 
             Object[] boxes = (Object[])layout["layout"];
+            String parent = null;
             foreach (Object o in boxes)
             {
                 try
@@ -58,6 +59,11 @@ namespace WordAddIn
                     if (box.ContainsKey("$title"))
                     {
                         int level = Convert.ToInt32(box["$level"].ToString());
+                        if (level == 2)
+                            parent = box["$bind"].ToString();
+                        else
+                            parent = null;
+
                         Range r = doc.Range();
                         r.Collapse(WdCollapseDirection.wdCollapseEnd);
                         r.InsertAfter(box["$title"].ToString());
@@ -80,7 +86,7 @@ namespace WordAddIn
                         }
                         else
                         {
-                            addBox(doc, box, items);
+                            addBox(doc, box, items, parent);
                         }
                     }
                 }
@@ -158,7 +164,7 @@ namespace WordAddIn
             r.InsertParagraph();
         }
 
-        private static void addBox(Document doc, Dictionary<String, object> box, Dictionary<String, object> items)
+        private static void addBox(Document doc, Dictionary<String, object> box, Dictionary<String, object> items, String parent)
         {
             foreach (KeyValuePair<String, object> i in items)
             {
@@ -173,7 +179,7 @@ namespace WordAddIn
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
                     r.Start++;
                     r.End++;
-                    createContentControl(doc, r, item, null);
+                    createContentControl(doc, r, item, parent);
                     r = doc.Range();
                     r.Collapse(WdCollapseDirection.wdCollapseEnd);
                     r.InsertParagraph();
@@ -372,30 +378,86 @@ namespace WordAddIn
 
         private static void FillNonCollectionControls(Document doc, List<ContentControl> allContentControls, Dictionary<String, object> entityData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog)
         {
-            List<ContentControl> simpleCcs = new List<ContentControl>();
+            List<ContentControl> controlsList = new List<ContentControl>();
+            List<String> tableCollectionNames = GetTableCollectionList(doc, entityData);
             foreach (ContentControl ctrl in allContentControls)
             {
-                // Simple properties (no collections)
+
                 TagInfo tag = TagInfo.create(ctrl);
                 if (tag == null)
                     continue;
                 if (tag.isSimple)
                 {
-                    if (!simpleCcs.Contains(ctrl))
-                        simpleCcs.Add(ctrl);
+                    /*
+                     * Simple properties - no collections                     
+                     */
+                    if (!controlsList.Contains(ctrl))
+                        controlsList.Add(ctrl);
+                }
+                else if (tableCollectionNames.Contains(tag.collection) == false)
+                {
+                    /*
+                     * We can have nested content that is non-tabular. An example of this can be found with Locales in User details.
+                     */
+                    if (!controlsList.Contains(ctrl))
+                        controlsList.Add(ctrl);
                 }
             }
 
-            foreach (ContentControl ctrl in simpleCcs)
+            foreach (ContentControl ctrl in controlsList)
             {
                 TagInfo tag = TagInfo.create(ctrl);
                 Dictionary<String, object> propData = null;
+
                 if (entityData.ContainsKey(tag.property))
                 {
                     propData = (Dictionary<String, object>)entityData[tag.property];
                 }
+                else if (tag.isSimple == false)
+                {
+                    propData = GetNonTabularNestedData(entityData, tag);
+                }
                 setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog);
             }
+        }
+
+        private static Dictionary<String, object> GetNonTabularNestedData(Dictionary<String, object> entityData, TagInfo tag)
+        {
+            if (entityData.ContainsKey(tag.collection))
+            {
+                Dictionary<String, object> nonTabularCollection = (Dictionary<String, object>)entityData[tag.collection];
+                if (nonTabularCollection.ContainsKey("$items"))
+                {
+                    Object[] itemsArray = (Object[])nonTabularCollection.Where(key => key.Key.Equals("$items")).First().Value;
+                    Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
+                    if (itemsDictionary.ContainsKey(tag.property))
+                    {
+                        return (Dictionary<String, object>)itemsDictionary[tag.property];
+                    }
+                }
+            }
+            return null;
+        }
+
+        private static List<String> GetTableCollectionList(Document doc, Dictionary<String, object> entityData)
+        {
+            List<Table> ts = GetAllTables(doc);
+            List<String> tableCollectionNames = new List<String>();
+
+            foreach (Table table in ts)
+            {
+                if (table.Range.ContentControls.Count < 0)
+                {
+                    continue;
+                }
+
+                List<Row> templateRows = new List<Row>();
+                DetectTableSize(doc, table, templateRows);
+                TableInfo tableInfo = GetTableInfo(doc, table, templateRows, entityData);
+                tableCollectionNames.Add(tableInfo.collectionName);
+            }
+
+            return tableCollectionNames;
         }
 
         private static void FillCollectionControls(Document doc, Dictionary<String, object> entityData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog, ProgressDialog pd)
