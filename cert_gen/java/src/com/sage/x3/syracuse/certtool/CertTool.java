@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.math.BigInteger;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -1533,7 +1534,7 @@ class Exchange {
 	 * 
 	 * First invocation:
 	 * Request: 0-byte (protocol), challenge (64 bytes), IV1 (8 bytes), Diffie Hellman public key, encrypted with key1 and IV1
-	 * Response: 0-byte (protocol), SHA-256 of challenge string+ip-name+signature of certificate (32 bytes), second challenge (64 bytes), IV2 (8 bytes); Diffie Hellman public key, encrypted with key1 and IV2;
+	 * Response: 0-byte (protocol), SHA-256 of challenge string+public key of certificate (32 bytes), second challenge (64 bytes), IV2 (8 bytes); Diffie Hellman public key, encrypted with key1 and IV2;
 	 * 
 	 * Check whether hash is correct
 	 * Second invocation:
@@ -1563,7 +1564,7 @@ class Exchange {
 				try {
 					response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
 					break;
-				} catch (IOException ex) {
+				} catch (ConnectException ex) {
 					if (--retries > 0) {
 						CertTool.wrapper.println("Try again to connect to server: still "+retries+" attempt(s) ... ");
 						Thread.sleep(1000*certTool.retryTime);
