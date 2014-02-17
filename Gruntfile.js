@@ -1,28 +1,38 @@
 'use strict';
 
 module.exports = function(grunt) {
-	var SRC = ['*.js',
-		'node_modules/streamline*/**',
-		'node_modules/syracuse*/**',
-		'node_modules/etna*/**',
-		'node_modules/ez-streams*/**'
-	];
-	// SRC = 'Gruntfile.js';
+
+	var paths = {
+		src: ['*.js',
+			'node_modules/streamline*/**/*.{js,_js}',
+			'node_modules/syracuse*/**/*.{js,_js}',
+			'node_modules/etna*/**/*.{js,_js}',
+			'node_modules/ez-streams*/**/*.{js,_js}'
+		],
+		test: 'node_modules/*/test/{client,server,common}/*.{js,_js}',
+		images: 'node_modules/*/images/**/*.{png,jpg,gif}'
+	};
 
 	// Project Configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
 			all: {
-				src: SRC,
+				src: paths.src,
 				options: {
 					jshintrc: true,
+					reporter: require('jshint-stylish'),
 					extensions: '_js'
 				}
 			}
 		},
 		fixmyjs: {
-			src: SRC,
+			all: {
+				files: [{
+					expand: true,
+					src: paths.src,
+				}]
+			},
 			options: {
 				indent: 1,
 				indentpref: 'tabs',
@@ -30,7 +40,7 @@ module.exports = function(grunt) {
 			}
 		},
 		jsbeautifier: {
-			src: SRC,
+			src: paths.src,
 			options: {
 				js: {
 					indentWithTabs: true
@@ -47,9 +57,7 @@ module.exports = function(grunt) {
 			}
 		},
 		testrunner: {
-			all: ['node_modules/*/test/{client,server,common}/*.{js,_js}'],
-			client: ['node_modules/*/test/{client,common}/*.{js,_js}'],
-			server: ['node_modules/*/test/{server,common}/*.{js,_js}']
+			all: paths.test
 		}
 	});
 
