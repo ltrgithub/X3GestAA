@@ -3,36 +3,48 @@ package com.sage.x3.syracuse.certtool;
 import java.io.BufferedReader;
 import java.io.Console;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.math.BigInteger;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PublicKey;
 import java.security.SecureRandom;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
+import java.security.Signature;
 import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.crypto.Cipher;
+import javax.crypto.KeyAgreement;
+import javax.crypto.interfaces.DHPublicKey;
+import javax.crypto.spec.DHParameterSpec;
+import javax.crypto.spec.DHPublicKeySpec;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import javax.security.auth.x500.X500Principal;
 
-import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
-import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
-import org.bouncycastle.jcajce.JcaJceHelper;
-import org.bouncycastle.jcajce.NamedJcaJceHelper;
 import org.bouncycastle.openssl.EncryptionException;
 import org.bouncycastle.openssl.PEMEncryptedKeyPair;
 import org.bouncycastle.openssl.PEMEncryptor;
@@ -40,6 +52,7 @@ import org.bouncycastle.openssl.PEMException;
 import org.bouncycastle.openssl.PEMKeyPair;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.PEMWriter;
+import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
 import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
 import org.bouncycastle.openssl.jcajce.JcePEMEncryptorBuilder;
 import org.bouncycastle.operator.ContentSigner;
@@ -59,9 +72,9 @@ public class CertTool {
 	static final private DateFormat SDF = DateFormat.getDateTimeInstance(
 			DateFormat.LONG, DateFormat.LONG);
 	// console
-	static private ConsoleWrapper wrapper = new ConsoleWrapper();
+	static ConsoleWrapper wrapper = new ConsoleWrapper();
 	// interactive
-	private boolean interactive = true;
+	boolean interactive = true;
 	private X509CertificateHolder caCert = null;
 	private Set<String> certNames = new HashSet<String>();
 	// input data
@@ -72,6 +85,8 @@ public class CertTool {
 	char[] pass = null;
 	// password of private key for CA
 	char[] capass = null;
+	// old password of private key for CA (only necessary when generating new key)
+	char[] oldCaPass = null;
 	// distinguished name
 	String dn = null;
 	// common name (only for server certificate, not for CA). The other parts
@@ -83,56 +98,41 @@ public class CertTool {
 	boolean actionGiven = false;
 	// (decrypted) key of CA
 	KeyPair caKey;
+	// port for transfer of certificate to nanny process
+	int port;
+	// (decrypted) key of server
+	KeyPair serverKey;
+	// retry connection
+	int retryCount = 1;
+	// time between two attempts to connect
+	private final static int DEFAULT_WAIT = 2;
+	int retryTime = DEFAULT_WAIT;
 
 	X509CertificateHolder cert = null;
 
+	
 	// reset variables which should be cleared for the next run
 	private void cleanup() {
 		action = null;
 		pass = null;
 		capass = null;
+		oldCaPass = null;
 		name = null;
 		dn = null;
 		cn = null;
 		validUntil = null;
 		cert = null;
+		serverKey = null;
+		if (port >= 0) 
+			port = 0;
 	}
 	
-	/** Get the public key entry from a certificate.
-	 * (The code can be simplified with BouncyCastle 1.50) */
+	/** Get the public key entry from a certificate. */
 	private static PublicKey extractPublicKey(X509CertificateHolder cert)
 			throws IOException, GeneralSecurityException {
-		/*
-		 * does not work yet because of bug in bouncycastle 1.49
-		 * 
-		 * JcaPEMKeyConverter conv = new JcaPEMKeyConverter();
-		 * conv.setProvider("SunJSSE"); return
-		 * return conv.getPublicKey(cert.getSubjectPublicKeyInfo());
-		 */
-		// start of replacement code for the above
-		JcaJceHelper helper = new NamedJcaJceHelper("SunJSSE");
-		SubjectPublicKeyInfo pki = cert.getSubjectPublicKeyInfo();
-		String algorithm = pki.getAlgorithm().getAlgorithm().getId();
-		algorithm = findAlgorithm(algorithm);
-		KeyFactory keyFactory = helper.createKeyFactory(algorithm);
-		return keyFactory.generatePublic(new X509EncodedKeySpec(pki
-				.getEncoded()));
-		// end of replacement code
-	}
-
-	/** convert OID to algorithm  
-	 * (function will not be necessary any more when BouncyCastle 1.50 is used) 
-	 */
-	private static String findAlgorithm(String oid) throws PEMException {
-		if (X9ObjectIdentifiers.id_ecPublicKey.getId().equals(oid)) {
-			return "ECDSA";
-		} else if ("1.2.840.113549.1.1.1".equals(oid)) {
-			return "RSA";
-		} else if ("1.2.840.10040.4.1".equals(oid)) {
-			return "DSA";
-		}
-		throw new PEMException("Cannot find algorithm for " + oid);
-
+		  JcaPEMKeyConverter conv = new JcaPEMKeyConverter();
+		  conv.setProvider("SunJSSE"); 
+		  return conv.getPublicKey(cert.getSubjectPublicKeyInfo());
 	}
 
 	private void longDn(String dn) throws IOException {
@@ -233,8 +233,7 @@ public class CertTool {
 		return pair;
 	}
 
-	/** read private key from file system and decrypt it using the given passphrase
-	 * (The code can be simplified when BouncyCastle 1.50 is used) */
+	/** read private key from file system and decrypt it using the given passphrase */
 	static KeyPair readKey(String name, char[] passphrase) throws IOException {
 		String filename = getKeyFileName(name);
 		wrapper.println("Read private key " + filename+" ...");
@@ -250,33 +249,12 @@ public class CertTool {
 			} else if (p instanceof PEMKeyPair) {
 				keyPair = (PEMKeyPair) p;
 			} else
-				throw new IOException("File does not contain private key");
+				throw new PEMException("File "+filename+" does not contain private key");
 
 			KeyPair kp = null;
-			/*
-			 * does not work yet because of bug in bouncycastle 1.49
-			 * JcaPEMKeyConverter conv = new JcaPEMKeyConverter();
-			 * conv.setProvider("SunJSSE"); kp = conv.getKeyPair(keyPair);
-			 */
-			// start of replacement code for the above
-			JcaJceHelper helper = new NamedJcaJceHelper("SunJSSE");
-			String algorithm = keyPair.getPrivateKeyInfo()
-					.getPrivateKeyAlgorithm().getAlgorithm().getId();
-
-			algorithm = findAlgorithm(algorithm);
-			try {
-				KeyFactory keyFactory = helper.createKeyFactory(algorithm);
-
-				kp = new KeyPair(
-						keyFactory.generatePublic(new X509EncodedKeySpec(
-								keyPair.getPublicKeyInfo().getEncoded())),
-						keyFactory.generatePrivate(new PKCS8EncodedKeySpec(
-								keyPair.getPrivateKeyInfo().getEncoded())));
-			} catch (Exception e) {
-				throw new PEMException("unable to convert key pair: "
-						+ e.getMessage(), e);
-			}
-			// end of replacement code
+			JcaPEMKeyConverter conv = new JcaPEMKeyConverter();
+			conv.setProvider("SunJSSE"); 
+			kp = conv.getKeyPair(keyPair);
 			return kp;
 		} finally {
 			pemParser.close();
@@ -342,7 +320,7 @@ public class CertTool {
 			} catch (NumberFormatException ex) {
 			}
 			if (choice < 1 || choice > count+1) {
-				exc = "Please enter a number from 1 to " + count;
+				exc = "Please enter a number from 1 to " + (count+1);
 			} else {
 				return null;
 			}
@@ -358,6 +336,18 @@ public class CertTool {
 			}
 			if (choice <= 0) {
 				exc = "Please enter a positive number";
+			}
+			break;
+		case PORT:
+		case PORTZERO:
+			try {
+				choice = Integer.parseInt(input);
+			} catch (NumberFormatException ex) {
+			}
+			if (choice == 0 && test == Check.PORTZERO) 
+				break;
+			if (choice <= 0 || choice > 65535) {
+				exc = "Port must be in the range of 1 to 65535";
 			}
 			break;
 		default:
@@ -406,7 +396,7 @@ public class CertTool {
 		try {
 			Object result = pemParser.readObject();
 			if (!(result instanceof X509CertificateHolder))
-				throw new IOException("File does not contain certificate");
+				throw new PEMException("File "+filename+" does not contain certificate");
 			return (X509CertificateHolder) result;
 		} finally {
 			pemParser.close();
@@ -414,13 +404,15 @@ public class CertTool {
 	}
 
 
-	/** write certificate into file system */
-	static void writeCertificate(String name, X509CertificateHolder certificate)
+	/** write certificate into file system or to the given writer (then 'name' parameter will be ignored) */
+	static void writeCertificate(String name, X509CertificateHolder certificate, Writer writer)
 			throws IOException {
-		String filename = getCertFileName(name);
-		wrapper.println("Write certificate " + filename + " ...");
-		PEMWriter pemWriter = new PEMWriter(new PrintWriter(new FileWriter(
-				filename)));
+		if (writer == null) {
+			String filename = getCertFileName(name);
+			wrapper.println("Write certificate " + filename + " ...");
+			writer = new FileWriter(filename);
+		}
+		PEMWriter pemWriter = new PEMWriter(new PrintWriter(writer));
 		try {
 			pemWriter.writeObject(certificate);
 			pemWriter.flush();
@@ -435,16 +427,19 @@ public class CertTool {
 	 * @param name name of certificate
 	 * @param key key pair
 	 * @param passphrase passphrase for encryption
+	 * @param writer optional writer: write to it instead to file
 	 */
-	static void writeKey(String name, KeyPair key, char[] passphrase)
+	static void writeKey(String name, KeyPair key, char[] passphrase, Writer writer)
 			throws IOException {
-		String filename = getKeyFileName(name);
-		wrapper.println("Write private key " + filename + " ...");
+		if (writer == null) {
+			String filename = getKeyFileName(name);
+			wrapper.println("Write private key " + filename + " ...");
+			writer = new FileWriter(filename);
+		}
 		JcePEMEncryptorBuilder jeb = new JcePEMEncryptorBuilder("DES-EDE3-CBC");
 		jeb.setProvider("SunJCE");
 		PEMEncryptor pemEncryptor = jeb.build(passphrase);
-		PEMWriter pemWriter = new PEMWriter(new PrintWriter(new FileWriter(
-				filename)));
+		PEMWriter pemWriter = new PEMWriter(new PrintWriter(writer));
 		try {
 			pemWriter.writeObject(key, pemEncryptor);
 			pemWriter.flush();
@@ -511,6 +506,37 @@ public class CertTool {
 		return result.toString();
 	}
 
+	
+	private char[] readPrivateKey(String name, char[] passphrase, String message) throws CertToolException, IOException {
+		while (true) {
+			if (passphrase == null) { 
+				testInteractive(name == null ? "Passphrase for CA private key missing" : "Passphrase for private key missing");
+				passphrase = readPassphrase(message);
+			}
+			try {
+				KeyPair kp = readKey(name, passphrase);
+				if (name == null) 
+					caKey = kp;
+				else
+					serverKey = kp;
+				return passphrase;
+			} catch (EncryptionException ex) {
+				if (interactive) {
+					wrapper.println("Error in decryption - probably incorrect passphrase");
+					passphrase = null;
+				} else {
+					throw new CertToolException("Error in decryption - probably incorrect passphrase");
+				}
+				// enter new passphrase
+			} catch (FileNotFoundException ex) {
+				throw new CertToolException("Private key file missing: "+ex.getMessage());				
+			} catch (PEMException ex) {
+				throw new CertToolException("Wrong file format: "+ex.getMessage());				
+			}
+		}
+
+	}
+	
 	/** scans in the given distinguished for the given id, e. g. common name 'CN'.
 	 * if replacement is given, the value for the id will be replaced and the full dn with replacement will be returned
 	 * if no replacement is given, only the value for the id will be returned.
@@ -520,7 +546,7 @@ public class CertTool {
 	 * @param replacement replacement text
 	 * @return if replacement text is null, return value of attribute, otherwise return distinguished name with replacement
 	 */	 
-	private static String findReplace(String dn, String id, String replacement) {
+	static String findReplace(String dn, String id, String replacement) {
 		if (dn == null)
 			return null;
 		String findstr = id + "=";
@@ -563,6 +589,8 @@ public class CertTool {
 		} while (true);
 	}
 
+	
+	
 	/** initialize directories and list of available certificates */
 	CertTool() throws IOException, CertToolException {
 		
@@ -575,10 +603,19 @@ public class CertTool {
 			f.mkdirs();
 		}
 
+		Exchange.certTool = this;
+		
 		// read CA certificate
 		if (new File(getCertFileName(null)).exists()) {
-			if (!new File(getKeyFileName(null)).exists())
-				throw new CertToolException("No CA private key available");
+			if (!new File(getKeyFileName(null)).exists()) {
+				if (interactive) {
+					wrapper.confirmMessage("CA private key not available - generate new key");
+					action = Action.RENEW_KEY;
+					name = null;					
+				} else {
+					throw new CertToolException("No CA private key available");					
+				}
+			}
 			caCert = readCertificate(null);
 			// read files
 			File[] fileArray = new File(OUTPUT).listFiles();
@@ -589,8 +626,12 @@ public class CertTool {
 				}
 			}
 		}
+		
+		
+
 	}
 
+	
 	/** read missing data for actions 
 	 * Return value: true: finish program */
 	boolean prepareAction() throws CertToolException, IOException,
@@ -615,13 +656,14 @@ public class CertTool {
 			wrapper.println("Which action do you want to perform?");
 			int j = 0;
 			for (j = 0; j < actions.length; j++) {
-				wrapper.println("(" + (j + 1) + ") "
-						+ actions[j].getDescription());
+				if (port >= 0 || actions[j] != Action.TRANSFER) {
+					wrapper.println("(" + (j + 1) + ") "+ actions[j].getDescription());					
+				}
 			}
 			wrapper.println("("+(j+1)+") End");
 			act = input("Please enter the number of the option", Check.ACTION,
 					null);
-			j = act.charAt(0) - '1';
+			j = Integer.parseInt(act)-1;
 			if (j >= Action.values().length) // special 'End' action
 				return true;
 			action = Action.values()[j];
@@ -644,6 +686,17 @@ public class CertTool {
 		boolean useDn = false;
 		// need validity of certificate
 		boolean useDays = false;
+		// need passphrase for CA key
+		boolean usePass = false;
+		// need port
+		boolean usePort = false;
+		// ask whether transfer (and port) is necessary
+		boolean askPort = false;
+		
+		if (port > 0 && name == null) {
+			wrapper.println("Ignore port "+port+" because no server is set");
+			port = 0;
+		}
 		
 		wrapper.println();
 		wrapper.println("Action: " + action.getDescription());
@@ -656,6 +709,7 @@ public class CertTool {
 				caAllowed = false;				
 				useCaPass = true;
 				newPass = true;
+				askPort = true;
 			} else {
 				newCaPass = true;
 			}
@@ -666,13 +720,16 @@ public class CertTool {
 		case RENEW_CERT:
 			useCaPass = true;
 			useDays = true;
+			askPort = true;
 			break;
 		case RENEW_KEY:
 			// do this later, when name is known
+			askPort = true;
 			break;
 		case CHANGE_NAME:
 			useCaPass = true;
 			useDn = true;
+			askPort = true;
 			break;
 		case SHOW:
 			break;
@@ -682,7 +739,15 @@ public class CertTool {
 		case DELETE:
 			caAllowed = false;
 			break;
+		case TRANSFER:
+			useCaPass = true;
+			caAllowed = false;
+			usePass = true;
+			usePort = true;
+			break;
 		}
+
+		if (usePort && port < 0) throw new CertToolException("Cannot transfer data when -notransfer option is set");
 
 		if (name == null && useName && interactive && caCert != null) {
 			if (newName || !certNames.isEmpty()) {
@@ -699,6 +764,8 @@ public class CertTool {
 					name = name.toLowerCase();
 				}
 
+			} else if (!caAllowed) {
+				throw new CertToolException("No server name yet");
 			}
 		} else
 			check(name, caAllowed ? Check.SERVER_NAME_NONE : Check.SERVER_NAME,
@@ -710,7 +777,14 @@ public class CertTool {
 		if (action == Action.RENEW_KEY) {
 			if (name == null) {
 				newCaPass = true;
-				caKey = null;
+				if (caKey == null && new File(getKeyFileName(null)).exists() && interactive) {
+					try {
+						oldCaPass = readPrivateKey(null, oldCaPass, "Enter passphrase of private key of CA certificate: ");						
+					} catch (IOException ex) {
+						wrapper.println("Cannot read CA private key - please copy ca.cacrt manually to Syracuse servers "+ex.toString());
+						port = -1;
+					}
+				}
 			} else {
 				newPass = true;
 				useCaPass = true;				
@@ -784,48 +858,54 @@ public class CertTool {
 						throw new CertToolException("Passphrase does not match its confirmation");				
 				}			
 			}
+		} else if (usePass && name != null) {
+			pass = readPrivateKey(name, pass, "Please enter passphrase for private key: ");
 		}
 
-		if ((useCaPass || newCaPass) && caKey == null) {
+		if (newCaPass) {
+			if (capass == null) {
+				testInteractive("No passphrase for CA private key given");
+				capass = readPassphrase("Please enter passphrase for new private key of CA certificate: ");
+				char[] confirm = readPassphrase("Confirm passphrase of CA private key: ");
+				if (!Arrays.equals(capass, confirm)) 
+					throw new CertToolException("Passphrase does not match its confirmation");				
+			}
+			if (name == null)
+				pass = capass;
+		}
+		
+		if (useCaPass && caKey == null) {
 			if (capass == null) {				
 				// use passphrase as CA passphrase for CA certificate
 				if (name == null && pass != null) {
 					capass = pass;
-				} else {
-					testInteractive("No CA passphrase given");
-					while (true) {
-						capass = readPassphrase(newCaPass ? "Enter passphrase for new private key of CA certificate: " : "Enter passphrase of private key of CA certificate: ");
-						if (newCaPass) {
-							char[] confirm = readPassphrase("Confirm passphrase of CA private key: ");
-							if (!Arrays.equals(capass, confirm)) 
-								throw new CertToolException("Passphrase does not match its confirmation");
-							break;							
-						} else {
-							try {
-								caKey = readKey(null, capass);
-								break;
-							} catch (EncryptionException ex) {
-								wrapper.println("Error in decryption - probably incorrect passphrase");
-								// enter new passphrase
-							}
-						}
-					}
-					if (name == null)
-						pass = capass;
-				}
-			} else {
-				if (useCaPass) {
-					try {
-						caKey = readKey(null, capass);
-					} catch (EncryptionException ex) {
-						throw new CertToolException("Error in decryption - probably incorrect passphrase");						
-					}					
 				}
 			}
+			capass = readPrivateKey(null, capass, "Enter passphrase of private key of CA certificate: ");
+			if (name == null)
+					pass = capass;
+		}
+		
+		if (name != null && port == 0 && (askPort || usePort) && interactive) {
+			port = askForTransfer(null, askPort);
 		}
 		return false;
 	}
 
+
+	private int askForTransfer(String name, boolean askPort) throws IOException, CertToolException {
+		String port;
+		if (name != null) 
+			name = name+" ";
+		else
+			name = "";
+		if (askPort) {
+			port = input("Port of Syracuse server"+name+" if data should be transferred (no transfer for value 0)", Check.PORTZERO, false, "0");
+		} else {
+			port = input("Port of Syracuse server", Check.PORT, false, null);			
+		}
+		return Integer.parseInt(port);
+	}
 
 	/** perform the chosen action */
 	void doAction() throws IOException, CertToolException,
@@ -834,7 +914,9 @@ public class CertTool {
 		String issuer;
 		// (decrypted) key of server certificate
 		KeyPair key;
-
+		
+		
+		X509CertificateHolder caCertOld;
 		// Perform actions
 		switch (action) {
 		case CREATE:
@@ -848,13 +930,16 @@ public class CertTool {
 			}
 			cert = generateCertificate(issuer, caKey, dn, key.getPublic(),
 					validUntil);
-			writeKey(name, key, pass);
-			writeCertificate(name, cert);
+			writeKey(name, key, pass, null);
+			writeCertificate(name, cert, null);
 			if (name == null)
 				caCert = cert;
 			else {
 				writePublic(name, key.getPublic());
 				certNames.add(name);				
+				if (port > 0) {
+					Exchange.transfer(caCert, caKey, cert, key, pass, port, null);				
+				}
 			}
 			wrapper.println("Finished");
 			return;
@@ -868,18 +953,24 @@ public class CertTool {
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(cert),
 					validUntil);
-			writeCertificate(name, cert);
-			if (name == null)
+			writeCertificate(name, cert, null);
+			if (name == null) {
 				caCert = cert;
+			} else {
+				if (port > 0) {
+					Exchange.transfer(caCert, caKey, cert, null, null, port, null);				
+				}				
+			}
 			wrapper.println("Finished");
 			return;
 		case RENEW_ALL_CERTS:
 			// renew CA certificate
 			wrapper.println("Update CA certificate ...");
+			caCertOld = caCert;
 			caCert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(caCert),
 					validUntil);
-			writeCertificate(null, caCert);
+			writeCertificate(null, caCert, null);
 			if (!certNames.isEmpty()) { // also update other certificates
 				wrapper.println("Update server certificates ...");
 				for (String certName : certNames) {
@@ -887,13 +978,20 @@ public class CertTool {
 					cert = generateCertificate(caCert.getSubject().toString(),
 							caKey, cert.getSubject().toString(),
 							extractPublicKey(cert), validUntil);
-					writeCertificate(certName, cert);
+					writeCertificate(certName, cert, null);
+					if (port >= 0 && caKey != null) {
+						int port2 = askForTransfer(null, true);
+						if (port2 > 0) {
+							Exchange.transfer(caCertOld, caKey, cert, null, null, port2, caCert);
+						}
+					}
 				}
 			}
 			wrapper.println("Finished");
 			return;
 		case RENEW_KEY:
 			key = generateKeyPair();
+			KeyPair caKeyOld =caKey;
 			if (name == null) {
 				caKey = key;
 				cert = caCert;
@@ -905,9 +1003,10 @@ public class CertTool {
 			}
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter());
-			writeCertificate(name, cert);
-			writeKey(name, key, pass);
+			writeCertificate(name, cert, null);
+			writeKey(name, key, pass, null);
 			if (name == null) {
+				caCertOld = caCert;
 				caCert = cert;
 				if (!certNames.isEmpty()) { // also update other certificates
 					wrapper.println("Update server certificates ...");
@@ -916,14 +1015,27 @@ public class CertTool {
 						cert = generateCertificate(caCert.getSubject().toString(),
 								caKey, cert.getSubject().toString(),
 								extractPublicKey(cert), cert.getNotAfter());
-						writeCertificate(certName, cert);
+						writeCertificate(certName, cert, null);
+						if (port >= 0 && caKeyOld != null) {
+							int port2 = askForTransfer(null, true);
+							if (port2 > 0) {
+								Exchange.transfer(caCertOld, caKeyOld, cert, null, null, port2, caCert);
+							}
+						}
 					}
 				}
 			} else {
 				writePublic(name, key.getPublic());
+				if (port > 0) {
+					Exchange.transfer(caCert, caKey, cert, key, pass, port, null);				
+				}
 			}
 			wrapper.println("Finished");
 			return;
+		case TRANSFER:
+			cert = readCertificate(name);
+			Exchange.transfer(caCert, caKey, cert, serverKey, pass, port, null);
+			break;
 		case CHANGE_NAME:
 			if (name == null) {
 				cert = caCert;
@@ -934,9 +1046,10 @@ public class CertTool {
 			}
 			cert = generateCertificate(issuer, caKey, dn,
 					extractPublicKey(cert), cert.getNotAfter());
-			writeCertificate(name, cert);
+			writeCertificate(name, cert, null);
 			if (name == null) {
 				String oldIssuer = caCert.getSubject().toString();
+				caCertOld = caCert;
 				caCert = cert;
 				if (!certNames.isEmpty()) { // also update other certificates
 					wrapper.println("Update server certificates ...");
@@ -955,9 +1068,19 @@ public class CertTool {
 						}
 						cert = generateCertificate(issuer, caKey, certDN, extractPublicKey(cert),
 								cert.getNotAfter());
-						writeCertificate(certName, cert);
+						writeCertificate(certName, cert, null);
+						if (port >= 0 && caKey != null) {
+							int port2 = askForTransfer(null, true);
+							if (port2 > 0) {
+								Exchange.transfer(caCertOld, caKey, cert, null, null, port2, caCert);
+							}
+						}
 					}
 				}
+			} else {
+				if (port > 0) {
+					Exchange.transfer(caCert, caKey, cert, null, null, port, null);				
+				}				
 			}
 			wrapper.println("Finished");
 			return;
@@ -1016,14 +1139,39 @@ public class CertTool {
 	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
+		
 		try {
-
-			CertTool tool = new CertTool();
-
+			CertTool tool = null;
 			// read options from command line
 			ARGS: for (int i = 0; i < args.length; i++) {
 				String argument = args[i];
 				if (argument.length() > 0 && argument.charAt(0) == '-') {
+					if (argument.equals("-help") || argument.equals("-?")) {
+						// help text
+						wrapper.println("Invocation: java -jar certgen.jar [Action] [Parameters] [Name]");
+						for (Action act : Action.values()) {
+							wrapper.println("-"
+									+ act.name().replace('_', '-')
+											.toLowerCase() + "  "
+									+ act.getDescription());
+						}
+						wrapper.println("Parameters for actions:");
+						wrapper.println("-pass <value>   Passphrase for server private key");
+						wrapper.println("-capass <value>  Passphrase for CA private key");
+						wrapper.println("-dn <value> Distinguished name of certificate subject");
+						wrapper.println("-cn <value> Common name within distinguished name");
+						wrapper.println("-days <value> Number of days of certificate validity");
+						wrapper.println("-port <value> Transfer data to this port of a Syracuse server");
+						wrapper.println("-attempts <value> Number of attempts to connect to Syracuse server (default: 1)");
+						wrapper.println("-wait <value> Seconds between attempts to connect to Syracuse server");
+						wrapper.println("              (default: "+DEFAULT_WAIT+")");
+						wrapper.println("-notransfer Do not ask for transfer of data to Syracuse servers");
+						wrapper.println("-batch  Do not allow input from console");
+						wrapper.println("[Name] is the server name. If omitted, action is for the CA certificate");
+						return;
+					}
+					if (tool == null) 
+						tool = new CertTool();
 					// parse option
 					try { // action arguments
 						Action temp = Action.valueOf(argument.substring(1)
@@ -1040,24 +1188,10 @@ public class CertTool {
 							tool.interactive = false;
 							continue ARGS;
 						}
-						if (argument.equals("-help") || argument.equals("-?")) {
-							// help text
-							wrapper.println("Invocation: java -jar certgen.jar [Action] [Parameters] [Name]");
-							for (Action act : Action.values()) {
-								wrapper.println("-"
-										+ act.name().replace('_', '-')
-												.toLowerCase() + "  "
-										+ act.getDescription());
-							}
-							wrapper.println("Parameters for actions:");
-							wrapper.println("-pass <value>   Passphrase for server private key");
-							wrapper.println("-capass <value>  Passphrase for CA private key");
-							wrapper.println("-dn <value> Distinguished name of certificate subject");
-							wrapper.println("-cn <value> Common name within distinguished name");
-							wrapper.println("-days <value> Number of days of certificate validity");
-							wrapper.println("-batch  Do not allow input from console");
-							wrapper.println("[Name] is the server name. If omitted, action is for the CA certificate");
-							return;
+						if (argument.equals("-notransfer")) {
+							if (tool.port > 0) wrapper.println("Warning: Ignore port because -notransfer option is set");
+							tool.port = -1;
+							continue ARGS;
 						}
 						// other options take another argument
 						String arg = null;
@@ -1073,6 +1207,28 @@ public class CertTool {
 							if (arg == null) 
 								throw new CertToolException("Missing CA passphrase");
 							tool.capass = arg.toCharArray();
+							continue ARGS;
+						}
+						if ("-port".equals(argument)) {
+							if (arg == null) 
+								throw new CertToolException("Missing port number");
+							tool.check(arg, Check.PORT, false, true);
+							if (tool.port == -1) wrapper.println("Warning: Ignore port because -notransfer option is set");
+							tool.port = Integer.parseInt(arg);
+							continue ARGS;
+						}
+						if ("-attempts".equals(argument)) {
+							if (arg == null) 
+								throw new CertToolException("Missing number of attempts");
+							tool.check(arg, Check.DAYS, false, true);
+							tool.retryCount = Integer.parseInt(arg);
+							continue ARGS;
+						}
+						if ("-wait".equals(argument)) {
+							if (arg == null) 
+								throw new CertToolException("Missing wait time");
+							tool.check(arg, Check.DAYS, false, true);
+							tool.retryTime = Integer.parseInt(arg);
 							continue ARGS;
 						}
 						if ("-dn".equals(argument)) {
@@ -1105,6 +1261,8 @@ public class CertTool {
 				else
 					throw new CertToolException("Error in argument list");
 			}
+			if (tool == null) 
+				tool = new CertTool();
 
 			// check input data, maybe ask for information
 			do {
@@ -1116,11 +1274,12 @@ public class CertTool {
 		 		} catch (CertToolException ex) {
 		 			String text = "Error in input data: " + ex.getMessage();
 					if (tool.interactive) {
-						wrapper.println(text);
-						wrapper.readLine("Press ENTER");
+						wrapper.confirmMessage(text);
 					}
-					else
+					else {
 						System.err.println(text);
+						System.exit(1);						
+					}
 
 		 		} finally {
 					tool.cleanup();		 			
@@ -1128,11 +1287,17 @@ public class CertTool {
 			} while (!tool.actionGiven && tool.interactive); // loop once when action has been specified in command line
 		} catch (CertToolException ex) {
 			System.err.println("Error in input data: " + ex.getMessage());
+			System.exit(1);
+		} catch (IOException ex) {
+			System.err.println("Error in IO: "+ex.getClass().getSimpleName()+": "+ex.getMessage());
+			System.exit(2);
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			System.exit(3);
 		}
 	}
 }
+
 
 /** Special exception for input errors */
 class CertToolException extends Exception {
@@ -1151,19 +1316,22 @@ enum Check {
 	DN, // check for part of distinguished name (at least 2 characters, no
 		// comma)
 	DAYS, // check for positive integer
-	DAYS_NONE // positive integer or empty
+	DAYS_NONE, // positive integer or empty
+	PORT, // port number 
+	PORTZERO // port number or 0
 }
 
 /** available actions */
 enum Action {
-	CREATE("Create new certificate and key"), 
+	CREATE("Create new certificate and private key"), 
 	RENEW_CERT("Renew the validity of the certificate"), 
 	RENEW_ALL_CERTS("Renew the validity of all certificates"), 
-	RENEW_KEY("Generate new key and create certificate with same subject as before"), 
+	RENEW_KEY("Generate new private key and create certificate with same subject as before"), 
 	CHANGE_NAME("Change the subject of the certificate"), 
 	SHOW("Show certificate data"), 
 	SHOW_ALL("Show certificate data of all certificates"), 
-	DELETE("Delete certificate and private key for the named server");
+	DELETE("Delete certificate and private key for the named server"),
+	TRANSFER("Transfer certificate and private key to the named server");
 
 	private final String description;
 
@@ -1205,6 +1373,11 @@ class ConsoleWrapper {
 		writer.println();
 	}
 
+	void confirmMessage(String text) throws IOException {
+		println(text);
+		readLine("Press RETURN to continue");
+	}
+	
 	String readLine(String text) throws IOException {
 		writer.print(text);
 		writer.flush();
@@ -1223,3 +1396,293 @@ class ConsoleWrapper {
 		return this.readLine(text).toCharArray();
 	}
 }
+
+
+class Exchange {
+	private static final Charset UTF8 = Charset.forName("UTF8");
+	private static SecureRandom sr = new SecureRandom();
+	// Diffie Hellman parameters (modp2)
+	private static final BigInteger p1024 = new BigInteger("FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE649286651ECE65381FFFFFFFFFFFFFFFF", 16);
+	private static final BigInteger g1024 = new BigInteger("2", 10);
+	private static DHParameterSpec dhParams = new DHParameterSpec(p1024, g1024);
+    // key pair for Diffie Hellman exchange
+	private KeyPair diffieHellmanKeyPair;
+	// public Diffie Hellman key (obtained from diffieHallmanKeyPair)
+    private byte[] dhPubKey;
+    // encrypted public Diffie Hellman key (for exchange with Syracuse nanny process)
+    private byte[] encryptedDhPubKey;
+	// Key of public Diffie Hellman key encryption (for exchange with Syracuse nanny process)	
+	private SecretKeySpec spec;
+	// IV of encrypted public Diffie Hellman key (for exchange with Syracuse nanny process)
+	private byte[] ivDhPubKey;
+    // current CA certificate
+	private X509CertificateHolder caCert;
+    // current CA key
+    private KeyPair caKey;
+    // identifier of CA certificate (at the moment: public key hash);
+    private byte[] caCertIdentifier;
+	// singleton
+	private static Exchange instance;
+	static CertTool certTool;
+	
+	Exchange() throws GeneralSecurityException {
+		KeyPairGenerator keyGen = KeyPairGenerator.getInstance("DH");
+		keyGen.initialize(dhParams, sr);
+		diffieHellmanKeyPair = keyGen.generateKeyPair();
+		dhPubKey = ((DHPublicKey) diffieHellmanKeyPair.getPublic()).getY().toByteArray();
+	}	
+	
+	
+	public static void transfer(X509CertificateHolder caCert, KeyPair caKey, X509CertificateHolder crt, KeyPair priv, char[] pass, int port, X509CertificateHolder newCaCert)  throws GeneralSecurityException, IOException, CertToolException {
+		instance(caCert, caKey);
+		instance.transfer(crt, priv, pass, port, newCaCert);
+	}
+	
+	
+	private static void instance(X509CertificateHolder caCert, KeyPair caKey) throws GeneralSecurityException {
+		if (instance == null) {
+			synchronized(sr) {
+				if (instance == null) {
+					instance = new Exchange();
+					instance.init(caCert, caKey);
+				}				
+			}
+		} else {
+			if (caCert != instance.caCert || caKey != instance.caKey) {
+				instance.init(caCert, caKey);
+			}
+		}
+	}
+
+	// sets the CA certificate and CA key and computes depending values
+	void init(X509CertificateHolder caCert, KeyPair caKey) throws GeneralSecurityException {
+		if (caCert == null) throw new RuntimeException("Internal error: no CA certificate");
+		if (caKey == null) throw new RuntimeException("Internal error: no CA key");
+		this.caCert = caCert;
+		this.caKey = caKey;
+	    // make key out of certificate
+		caCertIdentifier = caCert.getSubjectPublicKeyInfo().getPublicKeyData().getBytes();
+		MessageDigest hash = MessageDigest.getInstance("SHA-256");
+		caCertIdentifier = hash.digest(caCertIdentifier);
+		byte[] key = new byte[16];
+		System.arraycopy(caCertIdentifier, 0, key, 0, key.length);
+		spec = new SecretKeySpec(key, "Blowfish");
+
+		// IV1 for DH public key
+		ivDhPubKey = new byte[8]; 
+		sr.nextBytes(ivDhPubKey);
+		IvParameterSpec ivspec = new IvParameterSpec(ivDhPubKey);
+
+		// encryption of DH public key
+		Cipher cipher = Cipher.getInstance("Blowfish/CBC/PKCS5Padding");
+		cipher.init(Cipher.ENCRYPT_MODE, spec, ivspec);
+		encryptedDhPubKey = cipher.doFinal(dhPubKey);
+	}
+
+	// request to Syracuse server
+	private static byte[] request(String hostname, int port, String path, byte[]... inputs) throws IOException {
+		
+		URL url = new URL("http", hostname, port, path);
+		HttpURLConnection conn = null; 
+		try {
+			conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/octet-stream");
+			int length = 0;
+			for (byte[] input: inputs) {
+				length += input.length;
+			}
+			conn.setRequestProperty("Content-Length", Integer.toString(length));
+			conn.setUseCaches(false);
+			conn.setDoInput(true);
+			conn.setDoOutput(true);
+			OutputStream os = conn.getOutputStream();
+			for (byte[] input: inputs) {
+				os.write(input);
+			}
+			os.close();
+			length = conn.getContentLength();
+			if (length < 0) throw new IOException("Laenge");
+			byte[] result = new byte[length];
+			InputStream is = conn.getInputStream();
+			try {
+				is.read(result);				
+			} finally {
+				is.close();				
+			}
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new IOException("Error: "+new String(result));
+			} else {
+				return result;
+			}
+		} finally {
+			if (conn != null) conn.disconnect();
+		}
+	}
+
+	void byteOutput(String text, byte[] b) {
+		System.out.println(text);
+		for (int i = 0; i<b.length; i++) {
+			System.out.print(" "+Integer.toHexString((b[i]+256) % 256));
+		}
+		System.out.println();
+	}
+
+	
+	/* Protocol: 
+	 * key1: is obtained from public subject key of certificate (first 16 bytes of SHA-256)
+	 * 
+	 * First invocation:
+	 * Request: 0-byte (protocol), challenge (64 bytes), IV1 (8 bytes), Diffie Hellman public key, encrypted with key1 and IV1
+	 * Response: 0-byte (protocol), SHA-256 of challenge string+public key of certificate (32 bytes), second challenge (64 bytes), IV2 (8 bytes); Diffie Hellman public key, encrypted with key1 and IV2;
+	 * 
+	 * Check whether hash is correct
+	 * Second invocation:
+	 * Request: 0-byte (protocol), IV (8 bytes);String encrypted with first 16 bytes of SHA-256 of Diffie Hellman private key and IV: digital signature (RSAWith SHA256) as Hex of the following: second challenge;random string;public key;private key;CA certificate[;passphrase] 
+	 * Response: 2
+	 * 
+	 */
+	void transfer(X509CertificateHolder crt, KeyPair priv, char[] pass, int port, X509CertificateHolder newCaCert) throws IOException, CertToolException {
+		HttpURLConnection conn = null;
+		try {
+			String crtDn = crt.getSubject().toString();
+			String tcpHostname = CertTool.findReplace(crtDn, "CN", null);
+			CertTool.wrapper.println("Transfer data to "+tcpHostname+":"+port+" ...");
+
+			// first invocation			
+			
+			// protocol version
+			byte[] protocol = {0};
+			
+			// challenge string
+			byte[] challenge = new byte[64];
+			sr.nextBytes(challenge);
+			
+			int retries = certTool.retryCount;
+			byte[] response = null;
+			do {
+				try {
+					response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
+					break;
+				} catch (ConnectException ex) {
+					if (--retries > 0) {
+						CertTool.wrapper.println("Try again to connect to server: still "+retries+" attempt(s) ... ");
+						Thread.sleep(1000*certTool.retryTime);
+						continue;
+					} else
+						throw ex;
+				}				
+			} while (true);
+			// check response
+			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
+			if (response[0] == 1) {
+				throw new CertToolException("Error on Syracuse during key exchange: "+new String(response, 1, response.length-1, UTF8));
+			}
+			if (response.length < 65) throw new CertToolException("Response too short");
+			// Message digest
+			MessageDigest hash2 = MessageDigest.getInstance("SHA-256");
+			hash2.update(challenge);			
+			byte[] digest = hash2.digest(caCertIdentifier);
+			// test message digest
+			for (int i = 0; i<digest.length; i++)
+				if (digest[i] != response[i+1]) throw new CertToolException("Wrong CA certificate");
+
+			// get challenge bytes
+			byte[] challenge2 = new byte[64];
+			System.arraycopy(response, 33, challenge2, 0, challenge2.length);
+
+			// get Diffie Hellman public key
+			IvParameterSpec ivspec2 = new IvParameterSpec(response, 97, 8);
+			
+			// decryption of DH public key
+			Cipher cipher2 = Cipher.getInstance("Blowfish/CBC/PKCS5Padding");
+			cipher2.init(Cipher.DECRYPT_MODE, spec, ivspec2);
+			byte[] decryptedPublicKey = cipher2.doFinal(response, 105, response.length-105);
+			// compute Diffie Hellman secret
+		    BigInteger bpubkeyb = new BigInteger(1, decryptedPublicKey);
+		    KeyFactory keyFactory = KeyFactory.getInstance("DH");
+		    DHPublicKeySpec dpks = new DHPublicKeySpec(bpubkeyb, p1024, g1024);
+		    DHPublicKey dpk = (DHPublicKey) keyFactory.generatePublic(dpks);
+			KeyAgreement aKeyAgree = KeyAgreement.getInstance("DH");
+			aKeyAgree.init(diffieHellmanKeyPair.getPrivate());
+		    aKeyAgree.doPhase(dpk, true);
+		    byte[] secret = aKeyAgree.generateSecret();
+		    
+		    // second request
+			StringWriter sw = new StringWriter();
+			for (int i = 4; i >= 0; i--) {				
+				sw.append((char) (32+sr.nextInt(95)));
+			}
+			sw.append('\0');
+			CertTool.writeCertificate(null, crt, sw);
+			sw.append('\0');
+			if (priv != null) CertTool.writeKey(null, priv, pass, sw);
+			sw.append('\0');
+			if (newCaCert != null) CertTool.writeCertificate(null, newCaCert, sw);
+			sw.append('\0');
+			if (priv != null && pass != null) {
+				sw.append(new String(pass));				
+			}
+			
+			// encrypt contents with blowfish
+			byte[] key3 = new byte[16];
+			System.arraycopy(secret, 0, key3, 0, key3.length);
+			SecretKeySpec spec3 = new SecretKeySpec(key3, "Blowfish");
+
+			// IV1 for DH public key
+			byte[] iv3 = new byte[8]; 
+			sr.nextBytes(iv3);
+			IvParameterSpec ivspec3 = new IvParameterSpec(iv3);
+
+			// encryption of DH public key
+			cipher2 = Cipher.getInstance("Blowfish/CBC/PKCS5Padding");
+			cipher2.init(Cipher.ENCRYPT_MODE, spec3, ivspec3);
+			byte[] encryptedContent = cipher2.doFinal(sw.toString().getBytes(UTF8));
+			
+			// sign content
+			Signature instance = Signature.getInstance("SHA256withRSA");
+		    instance.initSign(caKey.getPrivate());
+		    instance.update(challenge2);
+		    instance.update(iv3);
+		    instance.update(encryptedContent);
+		    byte[] signature = instance.sign();
+		    
+		    protocol[0] = 1;
+		    byte[] lengthMarker = { (byte) (signature.length/256), (byte) (signature.length % 256) }; 
+
+		    // second request:
+			response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, lengthMarker, signature, iv3, encryptedContent);
+			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
+			if (response[0] == 1) {				
+				throw new CertToolException("Error on Syracuse during certificate transfer: "+new String(response, 1, response.length-1, UTF8));
+			}
+			CertTool.wrapper.println("Data transfer OK");
+			return;
+		
+		} catch (CertToolException e) {
+			if (certTool.interactive) {
+				CertTool.wrapper.confirmMessage(e.getMessage());				
+			} else 
+				throw e;
+			return;
+		} catch (IOException e) {
+			if (certTool.interactive) {
+				CertTool.wrapper.confirmMessage("Cannot connect to server: "+e.toString());				
+			} else
+				throw e;
+			return;
+		} catch (Exception e) {
+			if (certTool.interactive) {
+				e.printStackTrace();				
+				CertTool.wrapper.confirmMessage("Severe internal error");
+			} else
+				throw new RuntimeException(e);
+			return;
+		} finally {
+			if (conn != null) conn.disconnect();
+		}
+		
+	}
+
+}
+
