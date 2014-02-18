@@ -77,7 +77,9 @@ module.exports = function(grunt) {
 			}
 		},
 		testrunner: {
-			all: paths.test
+			all: {
+				src: paths.test.server
+			}
 		}
 	});
 
@@ -94,6 +96,9 @@ module.exports = function(grunt) {
 			started = new Date();
 		var qunit = require('qunit');
 		var log = qunit.log;
+
+		require('streamline').register(require('./nodelocal').config.streamline);
+
 		// Setup Qunit
 		qunit.setup({
 			log: {
@@ -102,41 +107,43 @@ module.exports = function(grunt) {
 			}
 		});
 
-		var harmony = false;
+		var file = "test.js";
+		var files = this.filesSrc;
+
 		try {
 			eval("(function*(){})");
-			harmony = true;
-		} catch (ex) {}
-
-		var files = {};
-
-		this.filesSrc.forEach(function(file) {
-			if (!harmony && /galaxy/.test(file)) return;
-
-			// Run tests
-			files = {
-				code: file,
-				tests: this.filesSrc
-			};
-			qunit.run(files, function(err, result) {
-				if (!result) {
-					throw "Could not get results for Qunit test. Check previous exceptions";
-				}
-				result.started = started;
-				result.completed = new Date();
-				var waitForAsync = false;
-				done = function() {
-					waitForAsync = true;
-					return function(status) {
-						done(typeof status === "undefined" ? (result.failed === 0) : status);
-					};
-				};
-				if (!waitForAsync) {
-					done(result.failed === 0);
-				}
-				log.reset();
+		} catch (ex) {
+			files = this.filesSrc.filter(function(file) {
+				return !/galaxy/.test(file);
 			});
+		}
+
+		// Run tests
+		files = {
+			code: file,
+			tests: files
+		};
+
+		qunit.run(files, function(err, result) {
+			if (!result) {
+				throw "Could not get results for Qunit test. Check previous exceptions";
+			}
+			result.started = started;
+			result.completed = new Date();
+			var waitForAsync = false;
+			done = function() {
+				waitForAsync = true;
+				return function(status) {
+					done(typeof status === "undefined" ? (result.failed === 0) : status);
+					log.reset();
+				};
+			};
+			if (!waitForAsync) {
+				done(result.failed === 0);
+				log.reset();
+			}
 		});
+		// });
 		// }
 		// if (['server', 'all'].contains(this.target)) {
 		// 	var files = this.filesSrc.map(function(file) {
@@ -155,7 +162,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['fixmyjs', 'jsbeautifier', 'jshint']);
 
 	// Test task
-	// grunt.registerTask('test', ['testrunner:all']);
 	grunt.registerTask('test', ['connect', 'qunit']);
 
 	grunt.registerTask('default', ['nodemon']);
