@@ -1,1 +1,1 @@
-require( "test-runner/lib/server/loader");
+require("test-runner/lib/server/loader");

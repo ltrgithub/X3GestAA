@@ -31,14 +31,14 @@ exports.config = {
 		// stubsPath = "stubs"
 		protectSettings: false // internal: true for some production servers to avoid import of initial data
 	},
-/*	integrationServer: {
+	/*	integrationServer: {
 		port: 8125
 	},
-*/
+	*/
 	session: {
 		timeout: 20, // minutes
 		checkInterval: 60, // secondes
-//		ignoreStoreSession: true,
+		//		ignoreStoreSession: true,
 		"auth": "basic"
 	},
 	streamline: {
@@ -50,14 +50,22 @@ exports.config = {
 		"fast": true
 	},
 	x3fusion: {
-// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
-//		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
-//		tracer: console.log,
-//		profiler: console.log
+		// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
+		//		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
+		//		tracer: console.log,
+		//		profiler: console.log
 	},
 
 	help: {
 		// trace: console.log,
+		//
+		// Path to help stored locally
+		// rootDir: c:/help-path/online-doc/DOCV7-X3,
+		//
+		// Override help URL with local path
+		// local: true,
+		//
+		// Override cloud based help URL
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 
