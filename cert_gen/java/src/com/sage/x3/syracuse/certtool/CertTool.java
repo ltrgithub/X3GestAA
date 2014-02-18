@@ -102,11 +102,9 @@ public class CertTool {
 	int port;
 	// (decrypted) key of server
 	KeyPair serverKey;
-	// retry connection
-	int retryCount = 1;
-	// time between two attempts to connect
-	private final static int DEFAULT_WAIT = 2;
-	int retryTime = DEFAULT_WAIT;
+	// timeout for connection
+	private final static int DEFAULT_WAIT = 30;
+	int connectionTimeout = DEFAULT_WAIT;
 
 	X509CertificateHolder cert = null;
 
@@ -1162,9 +1160,7 @@ public class CertTool {
 						wrapper.println("-cn <value> Common name within distinguished name");
 						wrapper.println("-days <value> Number of days of certificate validity");
 						wrapper.println("-port <value> Transfer data to this port of a Syracuse server");
-						wrapper.println("-attempts <value> Number of attempts to connect to Syracuse server (default: 1)");
-						wrapper.println("-wait <value> Seconds between attempts to connect to Syracuse server");
-						wrapper.println("              (default: "+DEFAULT_WAIT+")");
+						wrapper.println("-wait <value> Timeout in seconds to connect to Syracuse server (default: "+DEFAULT_WAIT+")");
 						wrapper.println("-notransfer Do not ask for transfer of data to Syracuse servers");
 						wrapper.println("-batch  Do not allow input from console");
 						wrapper.println("[Name] is the server name. If omitted, action is for the CA certificate");
@@ -1221,14 +1217,13 @@ public class CertTool {
 							if (arg == null) 
 								throw new CertToolException("Missing number of attempts");
 							tool.check(arg, Check.DAYS, false, true);
-							tool.retryCount = Integer.parseInt(arg);
 							continue ARGS;
 						}
 						if ("-wait".equals(argument)) {
 							if (arg == null) 
 								throw new CertToolException("Missing wait time");
 							tool.check(arg, Check.DAYS, false, true);
-							tool.retryTime = Integer.parseInt(arg);
+							tool.connectionTimeout = Integer.parseInt(arg);
 							continue ARGS;
 						}
 						if ("-dn".equals(argument)) {
@@ -1480,12 +1475,13 @@ class Exchange {
 	}
 
 	// request to Syracuse server
-	private static byte[] request(String hostname, int port, String path, byte[]... inputs) throws IOException {
+	private static byte[] request(String hostname, int port, int connectionTimeout, String path, byte[]... inputs) throws IOException {
 		
 		URL url = new URL("http", hostname, port, path);
 		HttpURLConnection conn = null; 
 		try {
 			conn = (HttpURLConnection) url.openConnection();
+			conn.setConnectTimeout(1000*connectionTimeout);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/octet-stream");
 			int length = 0;
@@ -1558,21 +1554,24 @@ class Exchange {
 			byte[] challenge = new byte[64];
 			sr.nextBytes(challenge);
 			
-			int retries = certTool.retryCount;
 			byte[] response = null;
+			long time = System.currentTimeMillis();
 			do {
 				try {
-					response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
+					response = request(tcpHostname, port, certTool.connectionTimeout, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
 					break;
 				} catch (ConnectException ex) {
-					if (--retries > 0) {
-						CertTool.wrapper.println("Try again to connect to server: still "+retries+" attempt(s) ... ");
-						Thread.sleep(1000*certTool.retryTime);
+					long timeNew = System.currentTimeMillis();
+					if (timeNew-time < 1000*certTool.connectionTimeout) {
+						Thread.sleep(2000);
+						CertTool.wrapper.println("Try to connect to server ... ");
 						continue;
 					} else
 						throw ex;
 				}				
 			} while (true);
+
+			response = request(tcpHostname, port, certTool.connectionTimeout, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
 			// check response
 			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
 			if (response[0] == 1) {
@@ -1651,7 +1650,7 @@ class Exchange {
 		    byte[] lengthMarker = { (byte) (signature.length/256), (byte) (signature.length % 256) }; 
 
 		    // second request:
-			response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, lengthMarker, signature, iv3, encryptedContent);
+			response = request(tcpHostname, port, certTool.connectionTimeout, "/nannyCommand/transferCertificate", protocol, lengthMarker, signature, iv3, encryptedContent);
 			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
 			if (response[0] == 1) {				
 				throw new CertToolException("Error on Syracuse during certificate transfer: "+new String(response, 1, response.length-1, UTF8));
