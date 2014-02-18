@@ -58,6 +58,14 @@ exports.config = {
 
 	help: {
 		// trace: console.log,
+		//
+		// Path to help stored locally
+		// rootDir: c:/help-path/online-doc/DOCV7-X3,
+		//
+		// Override help URL with local path
+		// local: true,
+		//
+		// Override cloud based help URL
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 
