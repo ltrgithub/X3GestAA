@@ -250,7 +250,11 @@ namespace ExcelAddIn
             else
             {
                 if (templateActions.isExcelTemplateType(Wb) == false)
+                {
+                    commons.SetSupportedLocales(new SyracuseCustomData(workbook));
+                    commons.DisplayDocumentLocale(Wb);
                     templateActions.DisableTemplateButtons();
+                }
             }
         }
 
