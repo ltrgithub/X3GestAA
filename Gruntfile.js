@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 			all: {
 				files: [{
 					expand: true,
-					src: paths.src,
+					src: paths.src
 				}]
 			},
 			options: {
@@ -63,6 +63,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 9000,
+					debug: true,
 					base: 'node_modules'
 				}
 			}
@@ -77,6 +78,11 @@ module.exports = function(grunt) {
 			}
 		},
 		testrunner: {
+			all: {
+				src: paths.test.server
+			}
+		},
+		testserver: {
 			all: {
 				src: paths.test.server
 			}
@@ -96,8 +102,6 @@ module.exports = function(grunt) {
 			started = new Date();
 		var qunit = require('qunit');
 		var log = qunit.log;
-
-		require('streamline').register(require('./nodelocal').config.streamline);
 
 		// Setup Qunit
 		qunit.setup({
@@ -135,27 +139,28 @@ module.exports = function(grunt) {
 				waitForAsync = true;
 				return function(status) {
 					done(typeof status === "undefined" ? (result.failed === 0) : status);
-					log.reset();
 				};
 			};
 			if (!waitForAsync) {
 				done(result.failed === 0);
-				log.reset();
 			}
+			log.reset();
 		});
-		// });
-		// }
-		// if (['server', 'all'].contains(this.target)) {
-		// 	var files = this.filesSrc.map(function(file) {
-		// 		return file.split("node_modules/").pop();
-		// 	});
-		// 	require('streamline').register(require('./nodelocal').config.streamline);
-		// 	var tester = require('test-runner/lib/server/testServer');
-		// 	files.forEach_(_, function(_, file) {
-		// 		console.log(tester.runUnitTest(_, file, true));
-		// 		done();
-		// 	});
-		// }
+	});
+
+	grunt.registerMultiTask('testserver', function() {
+		var done = this.async();
+		var files = this.filesSrc.map(function(file) {
+			return file.split("node_modules/").pop();
+		});
+		require('streamline').register(require('./nodelocal').config.streamline);
+		var tester = require('test-runner/lib/server/testServer');
+		files.forEach(function(file) {
+			console.log(tester.runUnitTest(_ >> function(err) {
+				if (err) throw err;
+				done();
+			}, file, true));
+		});
 	});
 
 	// Lint and fix
