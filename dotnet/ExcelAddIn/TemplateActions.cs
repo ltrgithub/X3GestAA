@@ -67,7 +67,6 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
-                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
             }
             else if ("rpt_fill_tpl".Equals(mode))
@@ -76,7 +75,6 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(false);
                 Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
-                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
                 
                 Globals.Ribbons.Ribbon.buttonConnect.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonServer.Enabled = true;
@@ -101,7 +99,6 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
-                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
             }
@@ -112,7 +109,6 @@ namespace ExcelAddIn
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
             Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
-            Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
             Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
         }
 

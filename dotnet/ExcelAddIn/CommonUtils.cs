@@ -112,6 +112,31 @@ namespace ExcelAddIn
             return null;
         }
 
+        public void SetSupportedLocales(SyracuseCustomData customData)
+        {
+            Globals.Ribbons.Ribbon.dropDownLocale.Items.Clear();
+            Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem());
+            Globals.Ribbons.Ribbon.dropDownLocale.Items[0].Label = "";
+            if (customData == null)
+            {
+                Globals.Ribbons.Ribbon.dropDownLocale.Enabled = false;
+                return;
+            }
+
+            try
+            {
+                foreach (Locale locale in (customData.getSupportedLocales()))
+                {
+                    Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
+                    item.Label = locale.name + " - " + locale.nativeName;
+                    item.Tag = locale.name;
+                    Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(item);
+                }
+            }
+            catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
+            Globals.Ribbons.Ribbon.dropDownLocale.Enabled = true;
+        }
+
         public void SetSupportedLocales(SyracuseOfficeCustomData customData)
         {
             Globals.Ribbons.Ribbon.dropDownLocale.Items.Clear();
