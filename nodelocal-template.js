@@ -59,10 +59,10 @@ exports.config = {
 	help: {
 		// trace: console.log,
 		//
-		// Path to help stored locally
+		// Path to help stored on local file system
 		// rootDir: c:/help-path/online-doc/DOCV7-X3,
 		//
-		// Override help URL with local path
+		// Override help URL with local file system path
 		// local: true,
 		//
 		// Override cloud based help URL
