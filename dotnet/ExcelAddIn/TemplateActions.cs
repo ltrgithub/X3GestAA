@@ -49,6 +49,20 @@ namespace ExcelAddIn
             return false;
         }
 
+        public Boolean isV6Document(Excel.Workbook workbook)
+        {
+            /*
+             * Extract the custom data from the workbook...
+             */
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                String mode = customData.getCreateMode();
+                return mode != null && mode.Equals("v6_doc_embedded");
+            }
+            return false;
+        }
+
         public void ConfigureTemplateRibbon(string mode, Boolean existing)
         {
             Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();

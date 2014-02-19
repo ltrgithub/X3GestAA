@@ -298,6 +298,14 @@ namespace ExcelAddIn
                     }
                 }
             }
+            else if (templateActions.isV6Document(workbook))
+            {
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+                if (customData != null)
+                {
+                    commons.ExtractV6Document(workbook, customData);
+                }
+            }
             else if ((new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress") != "")
                 Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
         }
