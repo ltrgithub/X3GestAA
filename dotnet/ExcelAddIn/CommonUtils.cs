@@ -180,104 +180,107 @@ namespace ExcelAddIn
             Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
         }
 
-        //public void ExtractV6Document(Workbook workbook, SyracuseOfficeCustomData customData)
-        //{
-        //    String documentUrl = customData.getDocumentUrl();
-        //    String serverUrl = customData.getServerUrl();
+        public void ExtractV6Document(Workbook workbook, SyracuseOfficeCustomData customData)
+        {
+            String documentUrl = customData.getDocumentUrl();
+            String serverUrl = customData.getServerUrl();
 
-        //    string tempFile = workbook.FullName;
-        //    byte[] content = Convert.FromBase64String(customData.getDocContent());
-        //    if (content == null)
-        //    {
-        //        ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close(XlSaveAction.xlDoNotSaveChanges); //WdSaveOptions.wdDoNotSaveChanges);
-        //        TryDeleteFile(tempFile);
-        //        return;
-        //    }
-        //    ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close(XlSaveAction.xlDoNotSaveChanges); //WdSaveOptions.wdDoNotSaveChanges);
+            string tempFile = workbook.FullName;
+            byte[] content = Convert.FromBase64String(customData.getDocContent());
+            if (content == null)
+            {
+                ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close(XlSaveAction.xlDoNotSaveChanges); //WdSaveOptions.wdDoNotSaveChanges);
+                TryDeleteFile(tempFile);
+                return;
+            }
+            ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close(XlSaveAction.xlDoNotSaveChanges); //WdSaveOptions.wdDoNotSaveChanges);
 
-        //    // Sometimes the browser seems to lock the file a litte bit too long, so do some retries
-        //    // if it fails, a new file name is generated later
-        //    TryDeleteFile(tempFile);
-        //    string ext = ".xls";
-        //    if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
-        //    {
-        //        ext = ".xlsx";
-        //    }
+            // Sometimes the browser seems to lock the file a litte bit too long, so do some retries
+            // if it fails, a new file name is generated later
+            TryDeleteFile(tempFile);
+            string ext = ".xls";
+            if (content[0] == 0x50 && content[1] == 0x4b && content[2] == 0x03 && content[3] == 0x04)
+            {
+                ext = ".xlsx";
+            }
 
-        //    string newDocumentFile = tempFile;
-        //    int tryWrite = 0;
-        //    while (tryWrite < 2)
-        //    {
-        //        FileInfo fi = new FileInfo(tempFile);
-        //        newDocumentFile = tempFile;
+            string newDocumentFile = tempFile;
+            int tryWrite = 0;
+            while (tryWrite < 2)
+            {
+                FileInfo fi = new FileInfo(tempFile);
+                newDocumentFile = tempFile;
 
-        //        // This is for not overwriting existing files
-        //        int count = 0;
-        //        while (File.Exists(newDocumentFile))
-        //        {
-        //            count++;
-        //            newDocumentFile = fi.Directory.FullName + "\\" + fi.Name + " (" + count + ")" + fi.Extension;
-        //        }
+                // This is for not overwriting existing files
+                int count = 0;
+                while (File.Exists(newDocumentFile))
+                {
+                    count++;
+                    newDocumentFile = fi.Directory.FullName + "\\" + fi.Name + " (" + count + ")" + fi.Extension;
+                }
 
-        //        tryWrite++;
-        //        try
-        //        {
-        //            newDocumentFile = newDocumentFile.Replace(".xlsx", ext);
-        //            using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
-        //            {
-        //                using (BinaryWriter writer = new BinaryWriter(stream))
-        //                {
-        //                    writer.Write(content);
-        //                    writer.Close();
-        //                    tryWrite = 2;
-        //                }
-        //            }
-        //        }
-        //        catch (Exception) {
-        //            // This is because during the first try, we may have tried to write to an directory w/o write access, so change path here
-        //            tempFile = Path.GetTempPath() + "\\" + fi.Name + fi.Extension;
-        //        }
-        //    }
+                tryWrite++;
+                try
+                {
+                    newDocumentFile = newDocumentFile.Replace(".xlsx", ext);
+                    using (FileStream stream = new FileStream(newDocumentFile, FileMode.Create))
+                    {
+                        using (BinaryWriter writer = new BinaryWriter(stream))
+                        {
+                            writer.Write(content);
+                            writer.Close();
+                            tryWrite = 2;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    // This is because during the first try, we may have tried to write to an directory w/o write access, so change path here
+                    tempFile = Path.GetTempPath() + "\\" + fi.Name + fi.Extension;
+                }
+            }
 
-        //    workbook = Globals.ThisAddIn.Application.Workbooks.Open(newDocumentFile);
-        //    if (workbook == null)
-        //    {
-        //        return;
-        //    }
-        //    customData = SyracuseOfficeCustomData.getFromDocument(workbook, true);
-        //    if (customData == null)
-        //    {
-        //        return;
-        //    }
-        //    customData.setServerUrl(serverUrl);
-        //    customData.setDocumentUrl(documentUrl);
-        //    customData.setForceRefresh(false);
-        //    customData.setCreateMode("v6_doc");
-        //    customData.writeDictionaryToDocument();
+            workbook = Globals.ThisAddIn.Application.Workbooks.Open(newDocumentFile);
+            if (workbook == null)
+            {
+                return;
+            }
+            customData = SyracuseOfficeCustomData.getFromDocument(workbook, true);
+            if (customData == null)
+            {
+                return;
+            }
+            customData.setServerUrl(serverUrl);
+            customData.setDocumentUrl(documentUrl);
+            customData.setForceRefresh(false);
+            customData.setCreateMode("v6_doc");
+            customData.writeDictionaryToDocument();
 
-        //    // Save document after metadata was added
-        //    if (ext == "xlsx")
-        //    {
-        //        workbook.Save();
-        //    }
-        //    else
-        //    {
-        //        // convert to xlsx if not yet done
-        //        tempFile = newDocumentFile;
-        //        newDocumentFile = newDocumentFile.Replace(ext, ".xlsx");
-        //        while (File.Exists(newDocumentFile))
-        //        {
-        //            newDocumentFile = "_" + newDocumentFile;
-        //        }
-        //        workbook.SaveAs(newDocumentFile); // WdSaveFormat.wdFormatDocumentDefault);
-        //        ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close();
-        //        TryDeleteFile(tempFile);
-        //        workbook = Globals.ThisAddIn.Application.Workbooks.Open(newDocumentFile);
-        //    }
+            // Save document after metadata was added
+            if (ext == "xlsx")
+            {
+                workbook.Save();
+            }
+            else
+            {
+                // convert to xlsx if not yet done
+                tempFile = newDocumentFile;
+                newDocumentFile = newDocumentFile.Replace(ext, ".xlsx");
+                while (File.Exists(newDocumentFile))
+                {
+                    newDocumentFile = "_" + newDocumentFile;
+                }
+                workbook.ActiveSheet.Application.DisplayAlerts = false;
+                workbook.SaveAs(newDocumentFile, XlFileFormat.xlOpenXMLWorkbook);
+                workbook.ActiveSheet.Application.DisplayAlerts = true;
+                ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close();
+                TryDeleteFile(tempFile);
+                workbook = Globals.ThisAddIn.Application.Workbooks.Open(newDocumentFile);
+            }
 
-        //    //Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-        //    //Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
-        //}
+            //Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+            //Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+        }
 
         private void TryDeleteFile(string file)
         {
