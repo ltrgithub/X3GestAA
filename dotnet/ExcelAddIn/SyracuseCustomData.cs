@@ -5,7 +5,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace ExcelAddIn
 {
-    class SyracuseCustomData
+    public class SyracuseCustomData
     {
         String storeWorksheetName = "Sage.X3.ReservedSheet";
         Workbook thisWorkbook = null;
@@ -36,6 +36,7 @@ namespace ExcelAddIn
 	                    dic["documentUrlAddress"] = "A3";
 	                    dic["documentTitleAddress"] = "A4";
                         dic["datasourcesAddress"] = "A5";
+                        dic["supportedLocales"] = "A7";
                         // store it
                         JavaScriptSerializer ser = new JavaScriptSerializer();
                         StoreCustomDataAtAddress("A1", ser.Serialize(dic));
@@ -98,6 +99,37 @@ namespace ExcelAddIn
             //
             Range target = (Range)reservedSheet.Range[customDataAddress];
             target.Value2 = customDataValue;
+        }
+
+        public List<Locale> getSupportedLocales()
+        {
+            List<Locale> supportedLocales = new List<Locale>();
+
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                Object[] localesArray = (Object[])ser.DeserializeObject(GetCustomDataByName("supportedLocales"));
+
+                foreach (Object l in localesArray)
+                {
+                    Dictionary<String, Object> locale = (Dictionary<String, Object>)l;
+                    Locale loc = new Locale();
+                    try
+                    {
+                        loc.name = locale["name"].ToString();
+                        loc.nativeName = locale["nativeName"].ToString();
+                        loc.englishName = locale["englishName"].ToString();
+                    }
+                    catch (Exception) 
+                    {
+                        continue;
+                    };
+                    supportedLocales.Add(loc);
+                }
+            }
+            catch(Exception){}
+
+            return supportedLocales;
         }
     }
 }
