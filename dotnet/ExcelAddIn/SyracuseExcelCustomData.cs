@@ -30,7 +30,7 @@ namespace ExcelAddIn
         private const String documentRepresentationProperty = "documentRepresentation";
         private const String originalFileNameProperty       = "originalFileName";
         private const String supportedLocalesProperty = "supportedLocales";
-        //private const string docContentProperty = "docContent";
+        private const string docContentProperty = "docContent";
 
         private Dictionary<String, object> dictionary;
 
@@ -97,7 +97,7 @@ namespace ExcelAddIn
         }
         public String getDocContent()
         {
-            return null; // getStringProperty(docContentProperty, false);
+            return getStringProperty(docContentProperty, false);
         }
         public void setDocContent(String c)
         {
