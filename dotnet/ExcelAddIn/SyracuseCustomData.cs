@@ -55,14 +55,19 @@ namespace ExcelAddIn
             // get store worksheet
             Worksheet x3StoreSheet = null;
             if (thisWorkbook == null) return null;
-            foreach (Worksheet store in thisWorkbook.Worksheets)
+            try
             {
-                if (store.Name == storeWorksheetName)
+                foreach (Worksheet store in thisWorkbook.Worksheets)
                 {
-                    x3StoreSheet = store;
-                    break;
+                    if (store.Name == storeWorksheetName)
+                    {
+                        x3StoreSheet = store;
+                        break;
+                    }
                 }
             }
+            catch (Exception){}
+
             if (withCreate && (x3StoreSheet == null))
             {
                 Worksheet oldActive = (Worksheet)thisWorkbook.ActiveSheet;
