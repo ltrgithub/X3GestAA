@@ -298,7 +298,7 @@ namespace ExcelAddIn
                     }
                 }
             }
-            else if (templateActions.isV6Document(workbook))
+            else if (templateActions.isV6EmbeddedDocument(workbook))
             {
                 SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
                 if (customData != null)
