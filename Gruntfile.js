@@ -75,6 +75,7 @@ module.exports = function(grunt) {
 			dev: {
 				script: 'index.js',
 				options: {
+					delayTime: 1,
 					ext: 'js,_js',
 					ignore: ['Gruntfile.js']
 				}
