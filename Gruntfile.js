@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 			'node_modules/ez-streams*/**/*.{js,_js}'
 		],
 		test: {
-			client: 'node_modules/*/test/{client}/*.{js,_js}',
+			client: 'node_modules/*/test/client/*.{js,_js}',
 			server: 'node_modules/*/test/{server,common}/*.{js,_js}'
 		},
 		images: 'node_modules/*/images/**/*.{png,jpg,gif}'
@@ -54,24 +54,28 @@ module.exports = function(grunt) {
 			all: {
 				options: {
 					urls: [
-						'http://localhost:9000/test-runner/lib/client/testClient.html?rc=html5-binary/test/client/bufferTest'
+						// 'http://localhost:9000/test-runner/lib/client/testClient.html?rc=html5-binary/test/client/bufferTest'
+						// 'http://localhost:8124/html5-binary/test/client/bufferTest'
+						'http://localhost:8124/test-runner/lib/client/testClientCI.html'
 					]
 				}
 			}
 		},
-		connect: {
-			server: {
-				options: {
-					port: 9000,
-					debug: true,
-					base: 'node_modules'
-				}
-			}
-		},
+		// connect: {
+		// 	server: {
+		// 		options: {
+		// 			timeout: 10000,
+		// 			port: 9000,
+		// 			debug: true,
+		// 			base: ['node_modules', '.']
+		// 		}
+		// 	}
+		// },
 		nodemon: {
 			dev: {
 				script: 'index.js',
 				options: {
+					delayTime: 1,
 					ext: 'js,_js',
 					ignore: ['Gruntfile.js']
 				}
@@ -80,11 +84,10 @@ module.exports = function(grunt) {
 		testrunner: {
 			all: {
 				src: paths.test.server
-			}
-		},
-		testserver: {
-			all: {
-				src: paths.test.server
+				// src: [
+				// 	'node_modules/html5-binary/test/client/bufferTest.js',
+				// 	'node_modules/etna-engine/test/server/bcd-test.js'
+				// ]
 			}
 		}
 	});
@@ -94,14 +97,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jsbeautifier');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
-	grunt.loadNpmTasks('grunt-contrib-connect');
+	// grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-nodemon');
 
 	grunt.registerMultiTask("testrunner", "run unit tests", function() {
+		require('streamline').register(require('./nodelocal').config.streamline);
 		var done = this.async(),
 			started = new Date();
 		var qunit = require('qunit');
-		var log = qunit.log;
 
 		// Setup Qunit
 		qunit.setup({
@@ -111,63 +114,60 @@ module.exports = function(grunt) {
 			}
 		});
 
-		var file = "test.js";
-		var files = this.filesSrc;
-
+		var harmony = false;
 		try {
 			eval("(function*(){})");
-		} catch (ex) {
-			files = this.filesSrc.filter(function(file) {
-				return !/galaxy/.test(file);
-			});
-		}
+			harmony = true;
+		} catch (ex) {}
 
-		// Run tests
-		files = {
-			code: file,
-			tests: files
-		};
-
-		qunit.run(files, function(err, result) {
-			if (!result) {
-				throw "Could not get results for Qunit test. Check previous exceptions";
-			}
-			result.started = started;
-			result.completed = new Date();
-			var waitForAsync = false;
-			done = function() {
-				waitForAsync = true;
-				return function(status) {
-					done(typeof status === "undefined" ? (result.failed === 0) : status);
-				};
+		this.filesSrc.filter(function(file) {
+			return harmony || !/galaxy/.test(file);
+		}).forEach(function(test) {
+			var files = {
+				code: test,
+				tests: test
 			};
-			if (!waitForAsync) {
-				done(result.failed === 0);
-			}
-			log.reset();
+
+			qunit.run(files, function(err, result) {
+				if (!result) {
+					throw "Could not get results for Qunit test. Check previous exceptions";
+				}
+				result.started = started;
+				result.completed = new Date();
+				var waitForAsync = false;
+				done = function() {
+					waitForAsync = true;
+					return function(status) {
+						done(typeof status === "undefined" ? (result.failed === 0) : status);
+						qunit.log.reset();
+					};
+				};
+				if (!waitForAsync) {
+					done(result.failed === 0);
+					qunit.log.reset();
+				}
+			});
 		});
 	});
 
-	grunt.registerMultiTask('testserver', function() {
-		var done = this.async();
-		var files = this.filesSrc.map(function(file) {
-			return file.split("node_modules/").pop();
-		});
-		require('streamline').register(require('./nodelocal').config.streamline);
-		var tester = require('test-runner/lib/server/testServer');
-		files.forEach(function(file) {
-			console.log(tester.runUnitTest(_ >> function(err) {
-				if (err) throw err;
-				done();
-			}, file, true));
-		});
-	});
+	// grunt.registerMultiTask('testserver', function() {
+	// 	var done = this.async();
+	// 	require('streamline').register(require('./nodelocal').config.streamline);
+	// 	var tester = require('test-runner/lib/server/testServer');
+	// 	this.filesSrc.map(function(file) {
+	// 		return file.split("node_modules/").pop();
+	// 	}).forEach(function(file) {
+	// 		tester.runUnitTest(_ >> function(err) {
+	// 			done(!err);
+	// 		}, file, true);
+	// 	});
+	// });
 
 	// Lint and fix
 	grunt.registerTask('lint', ['fixmyjs', 'jsbeautifier', 'jshint']);
 
 	// Test task
-	grunt.registerTask('test', ['connect', 'qunit']);
+	grunt.registerTask('test', ['qunit', 'testrunner']);
 
 	grunt.registerTask('default', ['nodemon']);
 };
