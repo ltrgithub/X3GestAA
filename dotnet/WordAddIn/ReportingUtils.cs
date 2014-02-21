@@ -22,6 +22,7 @@ namespace WordAddIn
         public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
         public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
         private static string transparentImageFile = null;
+        private static string officeVersion = Globals.WordAddIn.Application.Version;
 
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
@@ -232,7 +233,7 @@ namespace WordAddIn
             bool pagination = doc.Application.Options.Pagination;
             ProgressDialog pd = new ProgressDialog();
             pd.Show();
-
+            pd.Refresh();
             try
             {
                 Selection oldSelection = Globals.WordAddIn.Application.Selection;
@@ -417,7 +418,7 @@ namespace WordAddIn
                 {
                     propData = GetNonTabularNestedData(entityData, tag);
                 }
-                setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog);
+                setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog, null);
             }
         }
 
@@ -650,12 +651,15 @@ namespace WordAddIn
                             foreach (ContentControl cc in newCell.Range.ContentControls)
                             {
                                 TagInfo t2 = TagInfo.create(cc);
-                                if (t2.isSimple)
-                                    continue;
-                                if (collectionItem.ContainsKey(t2.property))
+                                if (t2 != null)
                                 {
-                                    Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
-                                    setContentControl(doc, cc, entity, t2, null, fieldInfo, browserDialog);
+                                    if (t2.isSimple)
+                                        continue;
+                                    if (collectionItem.ContainsKey(t2.property))
+                                    {
+                                        Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
+                                        setContentControl(doc, cc, entity, t2, null, fieldInfo, browserDialog, table);
+                                    }
                                 }
                             }
                         }
@@ -744,14 +748,23 @@ namespace WordAddIn
             return list;
         }
 
-        private static void setContentControl(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog)
+        private static void setContentControl(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog, Table table)
         {
+
             WordReportingField field = null;
             try { field = fieldInfo[ti.tag]; }
             catch (Exception) { };
             if (ctrl.Type == WdContentControlType.wdContentControlPicture)
             {
+                if ((table != null) && (officeVersion == "15.0"))
+                {
+                    table.Range.Font.Hidden = 0;
+                }
                 setContentControlImage(doc, ctrl, entity, ti, allData, browserDialog);
+                if ((table != null) && (officeVersion == "15.0"))
+                {
+                    table.Range.Font.Hidden = 1;
+                }
             }
             else if (ctrl.Type == WdContentControlType.wdContentControlText)
             {
