@@ -65,6 +65,7 @@ import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
  * it can be invoked via command line or as a console application
  */
 
+
 public class CertTool {
 
 	private final static String PRIVATE = "private/";
@@ -103,7 +104,7 @@ public class CertTool {
 	// (decrypted) key of server
 	KeyPair serverKey;
 	// timeout for connection
-	private final static int DEFAULT_WAIT = 30;
+	private final static int DEFAULT_WAIT = 0;
 	int connectionTimeout = DEFAULT_WAIT;
 
 	X509CertificateHolder cert = null;
@@ -1475,13 +1476,12 @@ class Exchange {
 	}
 
 	// request to Syracuse server
-	private static byte[] request(String hostname, int port, int connectionTimeout, String path, byte[]... inputs) throws IOException {
+	private static byte[] request(String hostname, int port, String path, byte[]... inputs) throws IOException {
 		
 		URL url = new URL("http", hostname, port, path);
 		HttpURLConnection conn = null; 
 		try {
 			conn = (HttpURLConnection) url.openConnection();
-			conn.setConnectTimeout(1000*connectionTimeout);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/octet-stream");
 			int length = 0;
@@ -1558,7 +1558,7 @@ class Exchange {
 			long time = System.currentTimeMillis();
 			do {
 				try {
-					response = request(tcpHostname, port, certTool.connectionTimeout, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
+					response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
 					break;
 				} catch (ConnectException ex) {
 					long timeNew = System.currentTimeMillis();
@@ -1571,7 +1571,7 @@ class Exchange {
 				}				
 			} while (true);
 
-			response = request(tcpHostname, port, certTool.connectionTimeout, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
+			response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
 			// check response
 			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
 			if (response[0] == 1) {
@@ -1650,7 +1650,7 @@ class Exchange {
 		    byte[] lengthMarker = { (byte) (signature.length/256), (byte) (signature.length % 256) }; 
 
 		    // second request:
-			response = request(tcpHostname, port, certTool.connectionTimeout, "/nannyCommand/transferCertificate", protocol, lengthMarker, signature, iv3, encryptedContent);
+			response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, lengthMarker, signature, iv3, encryptedContent);
 			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
 			if (response[0] == 1) {				
 				throw new CertToolException("Error on Syracuse during certificate transfer: "+new String(response, 1, response.length-1, UTF8));
