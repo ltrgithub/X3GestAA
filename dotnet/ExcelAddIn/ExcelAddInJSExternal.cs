@@ -126,6 +126,14 @@ namespace ExcelAddIn
             {
                 return "excel-report-tpl-refresh";
             }
+            else if ("v6_doc_download".Equals(mode))
+            {
+                return "word-v6-download";
+            }
+            else if ("v6_doc".Equals(mode))
+            {
+                return "word-v6-upload";
+            }
             return "excel-report";
         }
 

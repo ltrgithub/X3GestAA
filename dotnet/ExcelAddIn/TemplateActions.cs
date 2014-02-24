@@ -49,6 +49,34 @@ namespace ExcelAddIn
             return false;
         }
 
+        public Boolean isV6EmbeddedDocument(Excel.Workbook workbook)
+        {
+            /*
+             * Extract the custom data from the workbook...
+             */
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                String mode = customData.getCreateMode();
+                return mode != null && mode.Equals("v6_doc_embedded");
+            }
+            return false;
+        }
+
+        public Boolean isV6Document(Excel.Workbook workbook)
+        {
+            /*
+             * Extract the custom data from the workbook...
+             */
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                String mode = customData.getCreateMode();
+                return mode != null && mode.Equals("v6_doc");
+            }
+            return false;
+        }
+
         public void ConfigureTemplateRibbon(string mode, Boolean existing)
         {
             Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
@@ -100,6 +128,11 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
+                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+            }
+            else if ("v6_doc".Equals(mode))
+            {
+                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
             }
         }
