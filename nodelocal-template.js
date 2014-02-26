@@ -68,7 +68,20 @@ exports.config = {
 		// Override cloud based help URL
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
-
+	searchEngine: {
+		//tracer: console.log,
+		
+		// Using a minimal stemmer should only group plurals rather than a
+		// deeper root of the word.
+		stemmer: "minimal",
+		
+		// Leading wildcards can affect search performance
+		allowLeadingWildcard: false,
+		
+		// default configuration options for fuzzy search
+		// minSimilarity: 0.5,
+		// ignoreFrequency: true
+	},
 	translation: {
 		// trace: console.log,
 		// redirect diagnosis in the trace
