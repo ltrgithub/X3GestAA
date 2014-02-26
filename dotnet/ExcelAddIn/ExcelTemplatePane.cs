@@ -33,49 +33,35 @@ namespace ExcelAddIn
 
                 if (n.item.ContainsKey("$bind"))
                 {
-                    clearPlaceholderName(workbook, n.item["$bind"].ToString());
                     Range rng = (Range)Globals.ThisAddIn.Application.ActiveCell;
+                    
                     StringBuilder sb = new StringBuilder("<<");
+                    if (n.titleParent != null && n.titleParent.Equals("") == false)
+                    {
+                        sb.Append(n.titleParent);
+                        sb.Append(".");
+                    }
                     sb.Append(n.item["$title"].ToString());
                     sb.Append(">>");
                     rng.Value2 = sb.ToString();
-                    workbook.Names.Add(n.item["$bind"].ToString(), rng);
+
+                    sb.Clear();
+                    if (n.itemParent != null && n.titleParent.Equals("") == false)
+                    {
+                        sb.Append(n.itemParent);
+                        sb.Append(".");
+                    }
+                    sb.Append(n.item["$bind"].ToString());
+
+                    ReportingUtils.clearPlaceholderName(workbook, sb.ToString());
+
+                    workbook.Names.Add(sb.ToString(), rng);
                 }
             }
             catch (Exception ee)
             {
                 MessageBox.Show(ee.Message + ":" + ee.StackTrace);
             }
-        }
-
-        public void clearPlaceholderName(Workbook workbook, string placeholderName)
-        {
-            /*
-             * Remove existing placeholder from the target cell.
-             */
-            Range activeCells = (Range)Globals.ThisAddIn.Application.ActiveCell;
-            foreach (Name name in workbook.Names)
-            {
-                if (workbook.ActiveSheet.Range(name.RefersTo).row == activeCells.Row &&
-                    workbook.ActiveSheet.Range(name.RefersTo).column == activeCells.Column)
-                {
-                    name.Delete();
-                    break;
-                }
-            }
-
-            /*
-             * Clear the text from the old placeholder cell. 
-             */
-            foreach (Name name in workbook.Names)
-            {
-                if (name.Name.Equals(placeholderName))
-                {
-                    Range range = workbook.ActiveSheet.Range(name.RefersTo);
-                    workbook.ActiveSheet.Range(name.RefersTo).Value2 = "";
-                    break;
-                }
-            } 
         }
 
         public void clear()
@@ -96,16 +82,32 @@ namespace ExcelAddIn
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
 
+            String title = String.Empty;
+            String boxParent = String.Empty;
+
             Object[] boxes = (Object[])layout["layout"];
             foreach (Object o in boxes)
             {
                 try
                 {
                     Dictionary<String, object> box = (Dictionary<String, object>)o;
-                    String title = "<unknown>";
                     if (box.ContainsKey("$title"))
                     {
                         title = box["$title"].ToString();
+                    }
+
+                    if (box.ContainsKey("$level"))
+                    {
+                        int level = Convert.ToInt32(box["$level"].ToString());
+                        if (level == 1)
+                        {
+                            boxParent = null;
+                        }
+                        else if (level == 2)
+                        {
+                            if (box.ContainsKey("$bind"))
+                                boxParent = box["$bind"].ToString();
+                        }
                     }
 
                     FieldTreeNode node;
@@ -122,14 +124,12 @@ namespace ExcelAddIn
                         node = new FieldTreeNode(title);
                         if (container.Equals("table"))
                         {
-                            node.itemParent = box["$bind"].ToString();
-                            node.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(ReportingFieldTypes.TABLE);
+                                node.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(ReportingFieldTypes.TABLE);
                         }
                         else
                         {
                             node.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(ReportingFieldTypes.BOX);
                         }
-                        
                         
                         node.SelectedImageIndex = node.ImageIndex;
 
@@ -147,7 +147,9 @@ namespace ExcelAddIn
                             ReportingFieldTypes tft = ReportingFieldUtil.getType(type);
                             
                             FieldTreeNode child = new FieldTreeNode(ctitle, item);
-                            child.itemParent = node.itemParent;
+                            child.titleParent = boxParent != null ? title : null;
+                            child.itemParent = boxParent;
+
                             child.ImageIndex = ReportingFieldUtil.getTypeImageListIndex(tft);
                             child.SelectedImageIndex = child.ImageIndex;
 
@@ -160,7 +162,6 @@ namespace ExcelAddIn
                 }
                 catch (Exception) { }
             }
-
             treeViewFields.ExpandAll();
         }
     }
@@ -169,6 +170,7 @@ namespace ExcelAddIn
     {
         public Dictionary<String, Object> item;
         public String itemParent;
+        public String titleParent;
 
         public FieldTreeNode(String title)
             : base(title)
