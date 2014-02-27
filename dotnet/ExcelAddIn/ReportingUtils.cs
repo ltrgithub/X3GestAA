@@ -98,6 +98,7 @@ namespace ExcelAddIn
         {
             ProgressDialog pd = new ProgressDialog();
             pd.Show();
+            pd.Refresh();
 
             try
             {
@@ -118,7 +119,7 @@ namespace ExcelAddIn
 
                 FillNonCollectionControls(workbook, entityData, fieldsInfo, browserDialog);
 
-                FillCollectionControls(workbook, entityData, fieldsInfo, browserDialog);
+                FillCollectionControls(workbook, entityData, fieldsInfo, browserDialog, pd);
             }
             finally
             {
@@ -128,7 +129,7 @@ namespace ExcelAddIn
             Globals.ThisAddIn.Application.ScreenUpdating = true;
         }
 
-        private static void FillCollectionControls(Workbook workbook, Dictionary<String, object> entityData, Dictionary<String, ExcelReportingField> fieldsInfo, BrowserDialog browserDialog)
+        private static void FillCollectionControls(Workbook workbook, Dictionary<String, object> entityData, Dictionary<String, ExcelReportingField> fieldsInfo, BrowserDialog browserDialog, ProgressDialog pd)
         {
             /*
              * Iterate through the list of placeholder groups. Populate only non-tabular placeholders within each group.
@@ -150,11 +151,11 @@ namespace ExcelAddIn
                             if (nonTabularCollection.ContainsKey("$items"))
                             {
                                 Object[] itemsArray = (Object[])nonTabularCollection["$items"];
+                                pd.SetRowsExpected(itemsArray.Count());
 
-                                if (GetTableListObjectName(workbook.Name, collection) == false)
+                                if (ListObjectExists(workbook, collection) == false)
                                 {
                                     new SyracuseExcelTable().createDiscreteTemplateObject(collection, orderedPlaceholderTables, itemsArray.Count());
-                                    AddTableListObjectName(workbook.Name, collection);
                                 }
 
                                 int row = 1;
@@ -169,6 +170,7 @@ namespace ExcelAddIn
                                         PopulatePlaceholderCell(placeholderTable.placeholder, propData, row++);
                                     }
                                 }
+                                pd.SignalRowDone();
                             }
                             else
                             {
@@ -336,41 +338,22 @@ namespace ExcelAddIn
             return s;
         }
 
-        private static Dictionary<String, List<String>> _tableListObjectDictionary = new Dictionary<String, List<String>>();
-
-        public static Boolean GetTableListObjectName(String workbookName, String collection)
+        public static Boolean ListObjectExists(Workbook workbook, String collection)
         {
-            if (_tableListObjectDictionary.ContainsKey(workbookName))
+            Worksheet activeSheet = workbook.ActiveSheet;
+            if (activeSheet != null && activeSheet.ListObjects != null)
             {
-                return _tableListObjectDictionary[workbookName].Contains(collection);
-            }            
+                foreach (ListObject listObject in activeSheet.ListObjects)
+                {
+                    if (listObject.Name.Equals(collection))
+                        return true;
+                }
+            }
             return false;
-        }
-
-        public static void AddTableListObjectName(String workbookName, String collection)
-        {
-            if (_tableListObjectDictionary.ContainsKey(workbookName) == false)
-            {
-                _tableListObjectDictionary.Add(workbookName, new List<String>());
-            }
-
-            if (GetTableListObjectName(workbookName, collection) == false)
-            {
-                _tableListObjectDictionary[workbookName].Add(collection);
-            }
-        }
-
-        //public static void RemoveTableListObjectName(String workbookName)
-        //{
-        //    if (_tableListObjectDictionary.ContainsKey(workbookName))
-        //    {
-        //        _tableListObjectDictionary.Remove(workbookName);
-        //    }
-        //}
-
+         }
+ 
         #endregion
-
-
+        
         #region placeholderHelper
 
         public struct Placeholder
