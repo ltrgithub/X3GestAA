@@ -74,6 +74,10 @@ namespace ExcelAddIn
             }
         }
 
+        public SyracuseExcelTable()
+        {
+        }
+
         private Dictionary<string, Range> _detectColumnRanges(Range cell, String actualDatasource)
         {
             Range activeCell = cell;
@@ -208,30 +212,55 @@ namespace ExcelAddIn
             return true;
         }
 
-        private ListObject _createTemplateListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
+        public ListObject createDiscreteTemplateObject(String listObjectName, IGrouping<Object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable, int rowCount)
         {
-            ListObject resultListObject = null;
-            Worksheet targetWorksheet = activeCell.Worksheet;
+            Range activeCell = Globals.ThisAddIn.Application.ActiveCell;
+            Dictionary<string, Range> actualColumnRanges = new Dictionary<string, Range>();
 
+            List<ExcelTablePrototypeField> headers = new List<ExcelTablePrototypeField>();
+
+            foreach (ExcelAddIn.ReportingUtils.PlaceholderTable item in placeholderTable)
+            {
+                    ExcelTablePrototypeField prototypeField = new ExcelTablePrototypeField();
+                    prototypeField._name = item.placeholder.name;
+                    prototypeField._title = item.placeholder.title;
+                    headers.Add(prototypeField);
+            }
+
+            return _createTemplateListObject(listObjectName, activeCell, placeholderTable, headers.ToArray(), actualColumnRanges, rowCount);
+        }
+
+        private ListObject _createTemplateListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount, ListObject listObject = null)
+        {
             var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
             if (orderedPlaceholderTableList.Count == 0)
             {
                 return null;
             }
 
-            var firstTable = orderedPlaceholderTableList.First();
-            var firstPlaceholder = firstTable.First().placeholder;
-            int initialRow = firstPlaceholder.row, initialColumn = firstPlaceholder.column;
-            int columnCount = firstTable.Count();
+            IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable = (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable>)orderedPlaceholderTableList.First();
 
-            if (!_makePlace(targetWorksheet, initialRow, initialColumn, columnCount, rowCount))
+            return _createTemplateListObject(_name, activeCell, placeholderTable, headers, actualColumnRanges, rowCount, null);
+        }
+
+        private ListObject _createTemplateListObject(String listObjectName, Range activeCell, IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable, 
+                                    ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount, ListObject listObject = null)
+        {
+            ListObject resultListObject = null;
+            Worksheet targetWorksheet = activeCell.Worksheet;
+
+            var firstPlaceholder = placeholderTable.First().placeholder;
+            int initialRow = firstPlaceholder.row, initialColumn = firstPlaceholder.column;
+            int columnCount = placeholderTable.Count();
+
+            if (listObject == null && !_makePlace(targetWorksheet, initialRow, initialColumn, columnCount, rowCount))
                 return null;
 
             for (int i = 0; i < headers.Length; i++)
             {
-                if (firstTable.Where(item => item.placeholder.name == headers[i]._name).Count() > 0)
+                if (placeholderTable.Where(item => item.placeholder.name == headers[i]._name).Count() > 0)
                 {
-                    int placeholderColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
+                    int placeholderColumn = placeholderTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
 
                     Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, placeholderColumn],
                             targetWorksheet.Cells[initialRow + rowCount, placeholderColumn]];
@@ -240,7 +269,7 @@ namespace ExcelAddIn
                 }
             }
 
-            int tableEndColumn = firstTable.Last().placeholder.column;
+            int tableEndColumn = placeholderTable.Last().placeholder.column;
 
             resultListObject = targetWorksheet.ListObjects.Add(XlListObjectSourceType.xlSrcRange,
                                     targetWorksheet.Range[
@@ -248,15 +277,15 @@ namespace ExcelAddIn
                                         targetWorksheet.Cells[initialRow + 1, tableEndColumn]],
                                     Type.Missing, XlYesNoGuess.xlYes, Type.Missing);
 
-            resultListObject.Name = _name;
+            resultListObject.Name = listObjectName;
 
             if (resultListObject.ShowHeaders)
             {
                 for (int i = 0; i < headers.Length; i++)
                 {
-                    if (firstTable.Where(item => item.placeholder.name == headers[i]._name).ToList().Count > 0)
+                    if (placeholderTable.Where(item => item.placeholder.name == headers[i]._name).ToList().Count > 0)
                     {
-                        int headerColumn = firstTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
+                        int headerColumn = placeholderTable.Where(item => item.placeholder.name == headers[i]._name).First().placeholder.column;
                         ((Range)resultListObject.HeaderRowRange.Item[1, headerColumn - firstPlaceholder.column + 1]).Value2 = headers[i].GetTitle();
                     }
                 }
