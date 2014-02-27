@@ -1,5 +1,7 @@
 'use strict';
 
+var fs = require('fs');
+
 module.exports = function(grunt) {
 
 	var paths = {
@@ -11,7 +13,8 @@ module.exports = function(grunt) {
 		],
 		test: {
 			client: 'node_modules/*/test/client/*.{js,_js}',
-			server: 'node_modules/*/test/{server,common}/*.{js,_js}'
+			// server: 'node_modules/*/test/{server,common}/*.{js,_js}'
+			server: 'node_modules/syracuse-*/test/{server,common}/*.{js,_js}'
 		},
 		images: 'node_modules/*/images/**/*.{png,jpg,gif}'
 	};
@@ -54,23 +57,11 @@ module.exports = function(grunt) {
 			all: {
 				options: {
 					urls: [
-						// 'http://localhost:9000/test-runner/lib/client/testClient.html?rc=html5-binary/test/client/bufferTest'
-						// 'http://localhost:8124/html5-binary/test/client/bufferTest'
 						'http://localhost:8124/test-runner/lib/client/testClientCI.html'
 					]
 				}
 			}
 		},
-		// connect: {
-		// 	server: {
-		// 		options: {
-		// 			timeout: 10000,
-		// 			port: 9000,
-		// 			debug: true,
-		// 			base: ['node_modules', '.']
-		// 		}
-		// 	}
-		// },
 		nodemon: {
 			dev: {
 				script: 'index.js',
@@ -84,10 +75,6 @@ module.exports = function(grunt) {
 		testrunner: {
 			all: {
 				src: paths.test.server
-				// src: [
-				// 	'node_modules/html5-binary/test/client/bufferTest.js',
-				// 	'node_modules/etna-engine/test/server/bcd-test.js'
-				// ]
 			}
 		}
 	});
@@ -97,7 +84,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jsbeautifier');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
-	// grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-nodemon');
 
 	grunt.registerMultiTask("testrunner", "run unit tests", function() {
@@ -110,8 +96,10 @@ module.exports = function(grunt) {
 		qunit.setup({
 			log: {
 				summary: true,
-				errors: true
-			}
+				errors: true,
+				coverage: true
+			},
+			coverage: true
 		});
 
 		var harmony = false;
@@ -123,8 +111,11 @@ module.exports = function(grunt) {
 		this.filesSrc.filter(function(file) {
 			return harmony || !/galaxy/.test(file);
 		}).forEach(function(test) {
+			var codeMatch = fs.readFileSync(test, 'utf8').match(new RegExp('["\'](' + test.split('/')[1] + '.+)["\']'));
+			if (!codeMatch) console.log("code for?", test);
+			var code = codeMatch ? 'node_modules/' + codeMatch[1] + test.substr(test.lastIndexOf('.')) : test;
 			var files = {
-				code: test,
+				code: code,
 				tests: test
 			};
 
@@ -149,19 +140,6 @@ module.exports = function(grunt) {
 			});
 		});
 	});
-
-	// grunt.registerMultiTask('testserver', function() {
-	// 	var done = this.async();
-	// 	require('streamline').register(require('./nodelocal').config.streamline);
-	// 	var tester = require('test-runner/lib/server/testServer');
-	// 	this.filesSrc.map(function(file) {
-	// 		return file.split("node_modules/").pop();
-	// 	}).forEach(function(file) {
-	// 		tester.runUnitTest(_ >> function(err) {
-	// 			done(!err);
-	// 		}, file, true);
-	// 	});
-	// });
 
 	// Lint and fix
 	grunt.registerTask('lint', ['fixmyjs', 'jsbeautifier', 'jshint']);
