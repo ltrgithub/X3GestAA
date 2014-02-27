@@ -242,6 +242,8 @@ namespace ExcelAddIn
                 return;
             }
 
+            Globals.ThisAddIn.Application.ScreenUpdating = false;
+
             String mode = customData.getCreateMode();
             if (rpt_is_tpl.Equals(mode) || rpt_build_tpl.Equals(mode))
             {
@@ -319,6 +321,7 @@ namespace ExcelAddIn
                     PopulateExcelTemplate(customDataPreview, false);
                 }
             }
+            Globals.ThisAddIn.Application.ScreenUpdating = true;
         }
 
         public void PopulateExcelTemplate(SyracuseOfficeCustomData customData, Boolean delUrl)
