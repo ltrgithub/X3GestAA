@@ -53,7 +53,7 @@ namespace ExcelAddIn
                     }
                     sb.Append(n.item["$bind"].ToString());
 
-                    ReportingUtils.clearPlaceholderName(workbook, sb.ToString());
+                    ReportingUtils.clearPlaceholderName(workbook, sb.ToString(), rng);
 
                     workbook.Names.Add(sb.ToString(), rng);
                 }
