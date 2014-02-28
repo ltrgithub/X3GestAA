@@ -38,13 +38,27 @@ namespace ExcelAddIn
         public Boolean isExcelTemplate(Excel.Workbook workbook)
         {
             /*
-             * Extract the custom data from the workbook...
+             * Extract the customisExcelDetailFacetType data from the workbook...
              */
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (customData != null)
             {
                 String mode = customData.getCreateMode();
                 return mode != null && (mode.Equals("rpt_build_tpl") || mode.Equals("rpt_is_tpl"));
+            }
+            return false;
+        }
+
+        public Boolean isExcelDetailFacetType (Excel.Workbook workbook)
+        {
+            /*
+             * Extract the custom data from the workbook...
+             */
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                return customData.getResourceUrl() != null && customData.getResourceUrl().Contains(".$details") != false;
+
             }
             return false;
         }
@@ -77,7 +91,7 @@ namespace ExcelAddIn
             return false;
         }
 
-        public void ConfigureTemplateRibbon(string mode, Boolean existing)
+        public void ConfigureTemplateRibbon(Excel.Workbook workbook, string mode, Boolean existing)
         {
             Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
             if ("rpt_build_tpl".Equals(mode))
@@ -103,13 +117,14 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(false);
                 Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
-                
-                Globals.Ribbons.Ribbon.buttonConnect.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonServer.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonSettings.Enabled = true;
-                Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = true;
-                Globals.Ribbons.Ribbon.dropDownInsert.Enabled = true;
-                Globals.Ribbons.Ribbon.dropDownDelete.Enabled = true;
+
+                Boolean isDetailFacetType = isExcelDetailFacetType(workbook);
+                Globals.Ribbons.Ribbon.buttonConnect.Enabled = isDetailFacetType == false;
+                Globals.Ribbons.Ribbon.buttonServer.Enabled = isDetailFacetType == false;
+                Globals.Ribbons.Ribbon.buttonSettings.Enabled = isDetailFacetType == false;
+                Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = isDetailFacetType == false;
+                Globals.Ribbons.Ribbon.dropDownInsert.Enabled = isDetailFacetType == false;
+                Globals.Ribbons.Ribbon.dropDownDelete.Enabled = isDetailFacetType == false;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
             }
@@ -309,7 +324,7 @@ namespace ExcelAddIn
                         workbook.Names.Add(name.Name, name.RefersTo);
                     }
 
-                    ConfigureTemplateRibbon(rpt_fill_tpl, false);
+                    ConfigureTemplateRibbon(workbook, rpt_fill_tpl, false);
 
                     SyracuseOfficeCustomData customDataPreview = SyracuseOfficeCustomData.getFromDocument(workbook, true);
                     customDataPreview.setForceRefresh(false);
