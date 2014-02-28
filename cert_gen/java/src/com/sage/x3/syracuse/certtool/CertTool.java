@@ -65,7 +65,6 @@ import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
  * it can be invoked via command line or as a console application
  */
 
-
 public class CertTool {
 
 	private final static String PRIVATE = "private/";
@@ -1606,6 +1605,10 @@ class Exchange {
 			aKeyAgree.init(diffieHellmanKeyPair.getPrivate());
 		    aKeyAgree.doPhase(dpk, true);
 		    byte[] secret = aKeyAgree.generateSecret();
+		    // compute hash of secret
+			hash2 = MessageDigest.getInstance("SHA-256");
+			secret = hash2.digest(secret);
+		    
 		    
 		    // second request
 			StringWriter sw = new StringWriter();
@@ -1625,7 +1628,7 @@ class Exchange {
 			
 			// encrypt contents with blowfish
 			byte[] key3 = new byte[16];
-			System.arraycopy(secret, 0, key3, 0, key3.length);
+			System.arraycopy(secret, 1, key3, 0, key3.length);
 			SecretKeySpec spec3 = new SecretKeySpec(key3, "Blowfish");
 
 			// IV1 for DH public key
@@ -1646,7 +1649,7 @@ class Exchange {
 		    instance.update(encryptedContent);
 		    byte[] signature = instance.sign();
 		    
-		    protocol[0] = 1;
+		    protocol[0] = 2;
 		    byte[] lengthMarker = { (byte) (signature.length/256), (byte) (signature.length % 256) }; 
 
 		    // second request:
