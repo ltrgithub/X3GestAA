@@ -137,14 +137,24 @@ namespace ExcelAddIn
             var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
             foreach (IGrouping<object, PlaceholderTable> orderedPlaceholderTables in orderedPlaceholderTableList)
             {
+                String placeholderTableName = orderedPlaceholderTables.First().placeholder.name;
+                if (entityData.ContainsKey("$resources"))
+                    placeholderTableName = "$resources." + placeholderTableName;
+
                 foreach (var placeholderTable in orderedPlaceholderTables)
                 {
-                    if (GetTabularFieldsList(fieldsInfo).Count(pair => pair.Key.Contains(placeholderTable.placeholder.name)) > 0)
+
+                    if (GetTabularFieldsList(fieldsInfo).Count(pair => pair.Key.Equals(placeholderTable.placeholder.name)) > 0)
                     {
                         /*
                          * The placeholder is present in the tabular fields list...
                          */
-                        String collection = placeholderTable.placeholder.name.Split('.')[0];
+
+                        String placeholderName = placeholderTable.placeholder.name;
+                        if (entityData.ContainsKey("$resources"))
+                            placeholderName = "$resources." + placeholderName;
+
+                        String collection = placeholderTableName.Split('.')[0];
                         if (collection != null && entityData.ContainsKey(collection))
                         {
                             Dictionary<String, object> nonTabularCollection = (Dictionary<String, object>)entityData[collection];
@@ -153,20 +163,24 @@ namespace ExcelAddIn
                                 Object[] itemsArray = (Object[])nonTabularCollection["$items"];
                                 pd.SetRowsExpected(itemsArray.Count());
 
-                                if (ListObjectExists(workbook, collection) == false)
+                                /*
+                                 * We'll use the first placeholder in the placeholder group to name the  listObject.
+                                 * This allows us to split the table into sub-tables.
+                                 */
+                                if (ListObjectExists(workbook, placeholderTableName) == false)
                                 {
-                                    new SyracuseExcelTable().createDiscreteTemplateObject(collection, orderedPlaceholderTables, itemsArray.Count());
+                                    new SyracuseExcelTable().createDiscreteTemplateObject(placeholderTableName, orderedPlaceholderTables, itemsArray.Count());
                                 }
 
                                 int row = 1;
                                 foreach (Object item in itemsArray)
                                 {
                                     Dictionary<String, Object> itemsDictionary = (Dictionary<String, Object>)item;
-                                    String field = placeholderTable.placeholder.name.Split('.')[1];
+                                    String field = placeholderName.Split('.')[1];
                                     if (field != null && itemsDictionary.ContainsKey(field))
                                     {
                                         Dictionary<String, object> fieldItem = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
-                                        String propData = fieldItem.First().Value.ToString();
+                                        String propData = fieldItem.Count() > 0 ? fieldItem.First().Value.ToString() : String.Empty;
                                         PopulatePlaceholderCell(placeholderTable.placeholder, propData, row++);
                                     }
                                 }
@@ -202,7 +216,7 @@ namespace ExcelAddIn
             {
                 foreach (var placeholderTable in placeholderTables)
                 {
-                    if (GetNonTabularFieldsList(fieldsInfo).Count(pair => pair.Key.Contains(placeholderTable.placeholder.name)) > 0)
+                    if (GetNonTabularFieldsList(fieldsInfo).Count(pair => pair.Key.Equals(placeholderTable.placeholder.name)) > 0)
                     {
                         /*
                          * We have a valid non-tabular placeholder, so populate it with the relevant data...
@@ -265,7 +279,7 @@ namespace ExcelAddIn
                     {
                         Dictionary<String, object> items = (Dictionary<String, object>)container["$items"];
 
-                        if (container.ContainsKey("$bind"))
+                        if (container.ContainsKey("$bind") && container["$bind"].ToString().Equals("$resources") == false)
                             bind = container["$bind"].ToString() + ".";
 
                         String containerType = String.Empty;
@@ -400,7 +414,7 @@ namespace ExcelAddIn
                             placeholder.title = title.Substring(0, title.Length - 2);
                         }
                         else
-                            placeholder.title = title;
+                            placeholder.title = title.Substring(2, title.Length - 4); ;
                     }
 
                     placeholderList.Add(placeholder);
@@ -456,7 +470,7 @@ namespace ExcelAddIn
             return placeholderTableList;
         }
 
-        public static void clearPlaceholderName(Workbook workbook, string placeholderName)
+        public static void clearPlaceholderName(Workbook workbook, string placeholderName, Range activeCell = null)
         {
             /*
              * Clear the text from the old placeholder cell. 
@@ -474,14 +488,24 @@ namespace ExcelAddIn
             /*
              * Remove existing placeholder from the target cell.
              */
-            Range activeCells = (Range)Globals.ThisAddIn.Application.ActiveCell;
             foreach (Name name in workbook.Names)
             {
-                if (workbook.ActiveSheet.Range(name.RefersTo).row == activeCells.Row &&
-                    workbook.ActiveSheet.Range(name.RefersTo).column == activeCells.Column)
+                if (activeCell != null)
                 {
-                    name.Delete();
-                    break;
+                    if (workbook.ActiveSheet.Range(name.RefersTo).row == activeCell.Row &&
+                        workbook.ActiveSheet.Range(name.RefersTo).column == activeCell.Column)
+                    {
+                        name.Delete();
+                        break;
+                    }
+                }
+                else
+                {
+                    if (name.Name.Equals(placeholderName))
+                    {
+                        name.Delete();
+                        break;
+                    }
                 }
             }
         }
