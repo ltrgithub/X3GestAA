@@ -62,11 +62,10 @@ namespace ExcelAddIn
 
             browserDialog.Hide();
 
-            if (customData.getResourceUrl().Contains(".$details"))
-                ReportingUtils.fillTemplate(workbook, data, browserDialog); 
+            if (new TemplateActions(null).isExcelDetailFacetType(workbook))
+                ReportingUtils.fillTemplate(workbook, data, browserDialog);
             else
                 ReportingUtils.fillTemplate(workbook); 
-
         }
 
         private string getStringValue(object cellData)
