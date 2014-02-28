@@ -157,10 +157,10 @@ namespace ExcelAddIn
                         String collection = placeholderTableName.Split('.')[0];
                         if (collection != null && entityData.ContainsKey(collection))
                         {
-                            Dictionary<String, object> nonTabularCollection = (Dictionary<String, object>)entityData[collection];
-                            if (nonTabularCollection.ContainsKey("$items"))
+                            Dictionary<String, object> tabularCollection = (Dictionary<String, object>)entityData[collection];
+                            if (tabularCollection.ContainsKey("$items"))
                             {
-                                Object[] itemsArray = (Object[])nonTabularCollection["$items"];
+                                Object[] itemsArray = (Object[])tabularCollection["$items"];
                                 pd.SetRowsExpected(itemsArray.Count());
 
                                 /*
@@ -181,7 +181,7 @@ namespace ExcelAddIn
                                     {
                                         Dictionary<String, object> fieldItem = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
                                         String propData = fieldItem.Count() > 0 ? fieldItem.First().Value.ToString() : String.Empty;
-                                        PopulatePlaceholderCell(placeholderTable.placeholder, propData, row++);
+                                        PopulatePlaceholderCell(placeholderTable.placeholder, propData, null, row++);
                                     }
                                 }
                                 pd.SignalRowDone();
@@ -224,10 +224,14 @@ namespace ExcelAddIn
                         if (entityData.ContainsKey(placeholderTable.placeholder.name))
                         {
                             Dictionary<String, Object> item = (Dictionary<String, Object>)((Dictionary<String, object>)entityData[placeholderTable.placeholder.name])["$value"];
+                            String link = null;
+                            if (((Dictionary<String, object>)entityData[placeholderTable.placeholder.name]).ContainsKey("$link"))
+                                link = (String)((Dictionary<String, object>)entityData[placeholderTable.placeholder.name])["$link"];
+
                             if (item != null && item.Count() > 0)
                             {
                                 String propData = item.First().Value.ToString();
-                                PopulatePlaceholderCell(placeholderTable.placeholder, propData);
+                                PopulatePlaceholderCell(placeholderTable.placeholder, propData, link);
                             }
                             else
                             {
@@ -255,8 +259,13 @@ namespace ExcelAddIn
                                     if (field != null && itemsDictionary.ContainsKey(field))
                                     {
                                         Dictionary<String, object> item = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
+
+                                        String link = null;
+                                        if (((Dictionary<String, object>)itemsDictionary[field]).ContainsKey("$link"))
+                                            link = (String)((Dictionary<String, object>)itemsDictionary[field])["$link"];
+
                                         String propData = item.First().Value.ToString();
-                                        PopulatePlaceholderCell(placeholderTable.placeholder, propData);
+                                        PopulatePlaceholderCell(placeholderTable.placeholder, propData, link);
                                     }
                                 }
                             }
@@ -323,13 +332,15 @@ namespace ExcelAddIn
             return fields;
         }
 
-        private static void PopulatePlaceholderCell(Placeholder placeholder, String propData, int rowOffset = 0)
+        private static void PopulatePlaceholderCell(Placeholder placeholder, String propData, String link, int rowOffset = 0)
         {
             Range activeCell = Globals.ThisAddIn.Application.ActiveCell;
             Worksheet targetWorksheet = activeCell.Worksheet;
 
             Range cell = targetWorksheet.Range[targetWorksheet.Cells[placeholder.row + rowOffset, placeholder.column],
                                                 targetWorksheet.Cells[placeholder.row + rowOffset, placeholder.column]];
+            if (link != null)
+                targetWorksheet.Hyperlinks.Add(cell, link);
             cell.Value2 = propData;
         }
 
