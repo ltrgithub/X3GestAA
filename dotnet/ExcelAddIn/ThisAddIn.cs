@@ -240,15 +240,20 @@ namespace ExcelAddIn
                 return;
             }
 
+            if (isSyracuseWorkbook(Wb))
+                Ribbon.RibbonUI.ActivateTab("syracuseTab");
+
             SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (cd != null)
             {
-                templateActions.ConfigureTemplateRibbon(cd.getCreateMode(), "".Equals(cd.getDocumentUrl()) == false);
+                templateActions.ConfigureTemplateRibbon(workbook, cd.getCreateMode(), "".Equals(cd.getDocumentUrl()) == false);
                 commons.SetSupportedLocales(cd);
                 commons.DisplayDocumentLocale(Wb);
             }
             else
             {
+
+
                 if (templateActions.isExcelTemplateType(Wb) == false)
                 {
                     commons.SetSupportedLocales(new SyracuseCustomData(workbook));
@@ -681,6 +686,11 @@ namespace ExcelAddIn
             {
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
             }
+        }
+
+        private Boolean isSyracuseWorkbook(Workbook Wb)
+        {
+            return new SyracuseCustomData(Wb).GetReservedSheet(false) != null;
         }
     }
 }

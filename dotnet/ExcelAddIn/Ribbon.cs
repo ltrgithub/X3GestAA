@@ -51,7 +51,7 @@ namespace ExcelAddIn
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
             if (workbook != null)
             {
-                if (new TemplateActions(null).isExcelTemplate(workbook))
+                if (new TemplateActions(null).isExcelTemplate(workbook) || new TemplateActions(null).isExcelDetailFacetType(workbook))
                     Globals.ThisAddIn.commons.Save(workbook);
                 else
                     Globals.ThisAddIn.SaveDocumentToSyracuse();
@@ -63,7 +63,7 @@ namespace ExcelAddIn
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
             if (workbook != null)
             {
-                if (new TemplateActions(null).isExcelTemplate(workbook))
+                if (new TemplateActions(null).isExcelTemplate(workbook) || new TemplateActions(null).isExcelDetailFacetType(workbook))
                     Globals.ThisAddIn.commons.SaveAs(workbook);
                 else
                     Globals.ThisAddIn.SaveAsDocumentToSyracuse();
