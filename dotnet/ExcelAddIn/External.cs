@@ -6,6 +6,7 @@ using System.Web.Script.Serialization;
 using Path = System.IO.Path;
 using VB = Microsoft.Vbe.Interop;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace ExcelAddIn
 {
@@ -64,6 +65,20 @@ namespace ExcelAddIn
         {
             var dataArray = (object[])jsSerializer.DeserializeObject(data);
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
+
+            /*
+             * If we have placeholders, we may have multiple tables and therefore multiple list objects.
+             */
+            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            if (orderedPlaceholderTableList.Count > 0)
+            {
+                foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+                {
+                    tableHelpers[name].UpdateTable(dataArray, startLine, placeholderTable);
+                }
+                return true;
+            }
+
             return tableHelpers[name].UpdateTable(dataArray, startLine);
         }
         public bool ResizeTable(String name, String simplePrototype, int linesCount, string cellAddress = "")
@@ -78,6 +93,17 @@ namespace ExcelAddIn
             else
                 tableHelpers.Add(name, table);
             table = tableHelpers[name];
+
+            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            if (orderedPlaceholderTableList.Count > 0)
+            {
+                foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+                {
+                    table.ResizeTable(linesCount, placeholderTable.First().placeholder.name);
+                }
+                return true;
+            }
+  
             return table.ResizeTable(linesCount);
         }
         public bool DeleteTable(String name)
