@@ -237,9 +237,20 @@ namespace ExcelAddIn
                 return null;
             }
 
-            IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable = (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable>)orderedPlaceholderTableList.First();
+            ListObject lastListObject = null;
+            foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+            {
+                /*
+                 * Get the name of the first placeholder in the group...
+                 */
+                String listObjectName = placeholderTable.First().placeholder.name;
 
-            return _createTemplateListObject(_name, activeCell, placeholderTable, headers, actualColumnRanges, rowCount, null);
+                if (lastListObject == null)
+                    lastListObject = _createTemplateListObject(listObjectName, activeCell, placeholderTable, headers, actualColumnRanges, rowCount);
+                else
+                    _createTemplateListObject(listObjectName, activeCell, placeholderTable, headers, actualColumnRanges, rowCount);
+            }
+            return lastListObject;
         }
 
         private ListObject _createTemplateListObject(String listObjectName, Range activeCell, IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable, 
@@ -447,6 +458,13 @@ namespace ExcelAddIn
                 }
             return null;
         }
+
+        public bool ResizeTable(int linesCount, String placeholderName)
+        {
+            _listObject = FindListObject(placeholderName);
+            return ResizeTable(linesCount);
+        }
+
         public bool ResizeTable(int linesCount)
         {
             bool cleanFirstDataRow = false;
@@ -495,8 +513,11 @@ namespace ExcelAddIn
             }
         }
 
-        public bool UpdateTable(object[] data, int startLine)
+        public bool UpdateTable(object[] data, int startLine, IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable = null)
         {
+            if (placeholderTable != null)
+                _listObject = FindListObject(placeholderTable.First().placeholder.name);
+
             if (_listObject == null) return false;
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
@@ -515,12 +536,18 @@ namespace ExcelAddIn
                 Dictionary<string, ExcelTablePrototypeField> _protoField = new Dictionary<string, ExcelTablePrototypeField>();
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
+                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false)
+                        continue;
+
                     object[,] _colData = new object[resources.Length, 1];
                     _data.Add(namedRange.Key, _colData);
                 }
                 // empty all hyperlink in the range
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
+                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false)
+                        continue;
+
                     int startRow = namedRange.Value.Row + startLine;
                     activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
                         activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Clear();
@@ -532,6 +559,9 @@ namespace ExcelAddIn
                     for (int col = 0; col < _fields.Length; col++)
                     {
                         String fieldName = _fields[col]._name;
+                        if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, fieldName) == false) 
+                            continue;
+
                         if ((_columnRanges.ContainsKey(fieldName)) && (res[col] != null))
                         {
                             if (res[col].GetType().IsArray)
@@ -555,6 +585,9 @@ namespace ExcelAddIn
                 }
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
+                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false) 
+                        continue;
+
                     int startRow = namedRange.Value.Row + startLine;
                     activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
                         activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Value = _data[namedRange.Key];

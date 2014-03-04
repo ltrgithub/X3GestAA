@@ -521,6 +521,11 @@ namespace ExcelAddIn
             }
         }
 
+        public static Boolean isPlaceholderInTable(IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable, String placeholderName)
+        {
+            return placeholderTable.Where(x => x.placeholder.name.Equals(placeholderName)).Count() > 0;
+        }
+
         //public static void test()
         //{
         //    var orderedPlaceholderTableList = buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
