@@ -58,7 +58,6 @@ namespace ExcelAddIn
             if (customData != null)
             {
                 return customData.getResourceUrl() != null && customData.getResourceUrl().Contains(".$details") != false;
-
             }
             return false;
         }
@@ -324,14 +323,14 @@ namespace ExcelAddIn
                         workbook.Names.Add(name.Name, name.RefersTo);
                     }
 
-                    ConfigureTemplateRibbon(workbook, rpt_fill_tpl, false);
-
                     SyracuseOfficeCustomData customDataPreview = SyracuseOfficeCustomData.getFromDocument(workbook, true);
                     customDataPreview.setForceRefresh(false);
                     customDataPreview.setResourceUrl(customData.getResourceUrl());
                     customDataPreview.setServerUrl(customData.getServerUrl());
                     customDataPreview.writeDictionaryToDocument();
                     customDataPreview.setCreateMode(rpt_fill_tpl);
+
+                    ConfigureTemplateRibbon(workbook, rpt_fill_tpl, false);
 
                     PopulateExcelTemplate(customDataPreview, false);
                 }
