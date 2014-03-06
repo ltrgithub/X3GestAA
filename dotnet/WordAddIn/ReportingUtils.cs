@@ -59,8 +59,7 @@ namespace WordAddIn
                     Dictionary<String, object> box = (Dictionary<String, object>)o;
                     if (box.ContainsKey("$title"))
                     {
-                        int level = Convert.ToInt32(box["$level"].ToString());
-                        if (level == 2)
+                        if (box.ContainsKey("$bind"))
                             parent = box["$bind"].ToString();
                         else
                             parent = null;
