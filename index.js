@@ -1,4 +1,3 @@
-"use strict";
 
 (function() {
 	var matches = process.version.match(/^v(\d+)\.(\d+).*$/);
@@ -13,12 +12,20 @@ try {
 	console.error(ex);
 }
 
+(function() {
+	if (config.concurix) {
+		var cx = require('concurix-monitor')({
+		   accountKey: config.concurix.accountKey,
+		});
+		cx.start();
+	}
+})();
+
 // make 2-digit number
 function _ext(number) {
 	if (number < 10) return "0" + number;
 	return number;
 }
-
 //redirect standard output to file in cluster
 if (/^N\d+$/.test(process.argv[2])) {
 	var os = require('os');
