@@ -1,6 +1,11 @@
 'use strict';
 
 var fs = require('fs');
+var harmony = false;
+try {
+	eval("(function*(){})");
+	harmony = true;
+} catch (ex) {}
 
 module.exports = function(grunt) {
 
@@ -14,9 +19,9 @@ module.exports = function(grunt) {
 		test: {
 			client: 'node_modules/*/test/client/*.{js,_js}',
 			// server: 'node_modules/*/test/{server,common}/*.{js,_js}'
-			server: 'node_modules/syracuse-*/test/{server,common}/*.{js,_js}'
-		},
-		images: 'node_modules/*/images/**/*.{png,jpg,gif}'
+			// server: 'node_modules/syracuse-*/test/{server,common}/*.{js,_js}'
+			server: 'node_modules/syracuse-core/test/{server,common}/*.{js,_js}'
+		}
 	};
 
 	// Project Configuration
@@ -74,7 +79,19 @@ module.exports = function(grunt) {
 		},
 		testrunner: {
 			all: {
-				src: paths.test.server
+				src: paths.test.server,
+				filter: function(file) {
+					return harmony || !/galaxy/.test(file);
+				},
+				options: {
+					log: {
+						assertions: true,
+						errors: true,
+						summary: true,
+						// coverage: true
+					},
+					// coverage: true
+				}
 			}
 		}
 	});
@@ -85,60 +102,20 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-nodemon');
+	grunt.loadNpmTasks('grunt-nodequnit');
 
-	grunt.registerMultiTask("testrunner", "run unit tests", function() {
+	grunt.registerMultiTask('testrunner', 'run unit tests', function() {
 		require('streamline').register(require('./nodelocal').config.streamline);
-		var done = this.async(),
-			started = new Date();
-		var qunit = require('qunit');
+		var data = this.data;
 
-		// Setup Qunit
-		qunit.setup({
-			log: {
-				summary: true,
-				errors: true,
-				coverage: true
-			},
-			coverage: true
-		});
-
-		var harmony = false;
-		try {
-			eval("(function*(){})");
-			harmony = true;
-		} catch (ex) {}
-
-		this.filesSrc.filter(function(file) {
-			return harmony || !/galaxy/.test(file);
-		}).forEach(function(test) {
-			var codeMatch = fs.readFileSync(test, 'utf8').match(new RegExp('["\'](' + test.split('/')[1] + '.+)["\']'));
-			if (!codeMatch) console.log("code for?", test);
-			var code = codeMatch ? 'node_modules/' + codeMatch[1] + test.substr(test.lastIndexOf('.')) : test;
-			var files = {
-				code: code,
-				tests: test
-			};
-
-			qunit.run(files, function(err, result) {
-				if (!result) {
-					throw "Could not get results for Qunit test. Check previous exceptions";
-				}
-				result.started = started;
-				result.completed = new Date();
-				var waitForAsync = false;
-				done = function() {
-					waitForAsync = true;
-					return function(status) {
-						done(typeof status === "undefined" ? (result.failed === 0) : status);
-						qunit.log.reset();
-					};
-				};
-				if (!waitForAsync) {
-					done(result.failed === 0);
-					qunit.log.reset();
-				}
-			});
-		});
+		// this.filesSrc.forEach(function(test) {
+			// var codeMatch = fs.readFileSync(test, 'utf8').match(new RegExp('["\'](' + test.split('/')[1] + '.+)["\']'));
+			// var code = codeMatch ? 'node_modules/' + codeMatch[1] + test.substr(test.lastIndexOf('.')) : test;
+			// if (code.slice(-3) === '_js' && !fs.exists(code)) code = code.substr(0, code.lastIndexOf('.')) + '.js';
+			// data.options.code = code;
+			grunt.config.set('nodequnit.all', data);
+			grunt.task.run('nodequnit');
+		// });
 	});
 
 	// Lint and fix
