@@ -304,12 +304,15 @@ public class CertTool {
 			break;
 		case DN:
 			if (input != null && input.length() >= 2) {
-				if (input.indexOf(',') >= 0)
-					exc = "Entry must not contain a comma";
-				else
-					return null;
+				return null;
 			} else
 				exc = "Entry must have at least length 2";
+			break;
+		case C:
+			if (input != null && input.length() == 2) {
+				return null;
+			} else
+				exc = "Entry must have length 2";
 			break;
 		case ACTION:
 			int count = Action.values().length;
@@ -482,12 +485,12 @@ public class CertTool {
 	 * @return sorted distinguished name
 	 */
 	private static String sortDn(String dn) {
-		String cn = findReplace(dn, "CN", null);
-		String ou = findReplace(dn, "OU", null);
-		String o = findReplace(dn, "O", null);
-		String l = findReplace(dn, "L", null);
-		String c = findReplace(dn, "C", null);
-		String st = findReplace(dn, "ST", null);
+		String cn = escape(findReplace(dn, "CN", null));
+		String ou = escape(findReplace(dn, "OU", null));
+		String o = escape(findReplace(dn, "O", null));
+		String l = escape(findReplace(dn, "L", null));
+		String c = escape(findReplace(dn, "C", null));
+		String st = escape(findReplace(dn, "ST", null));
 		String[] parts = new String[6];
 		int index = 0;
 		if (cn != null) parts[index++] = "CN="+cn;
@@ -535,6 +538,63 @@ public class CertTool {
 
 	}
 	
+	
+	private static String escape(String input) {
+		StringBuilder result = new StringBuilder(input);
+		for (int i=result.length()-1; i>= 0; i--) {
+			char c =result.charAt(i);
+			switch (c) {
+			case '\\':
+			case '>':
+			case '<':
+			case '#':
+			case '"':
+			case '=':
+			case ',':
+			case '+':
+			case ';':
+				result.insert(i,  '\\');
+				break;
+			default:
+				break;
+			}
+		}
+		return result.toString();
+	}
+
+	private static String unescape(String input) {
+		boolean backsl = false;
+		StringBuilder result = new StringBuilder(input);
+		for (int i=0; i<result.length(); i++) {
+			char c =result.charAt(i);
+			switch (c) {
+			case '\\':
+				if (!backsl) {
+					backsl = true;
+					break;
+				}
+				// no break!
+			case '=':
+			case '>':
+			case '<':
+			case '"':
+			case '#':
+			case ',':
+			case '+':
+			case ';':
+				if (backsl) {
+					result.deleteCharAt(--i);
+					backsl = false;					
+				}
+				break;
+			default:
+				backsl = false;
+				break;
+			}
+		}
+		return result.toString();
+	}
+
 	/** scans in the given distinguished for the given id, e. g. common name 'CN'.
 	 * if replacement is given, the value for the id will be replaced and the full dn with replacement will be returned
 	 * if no replacement is given, only the value for the id will be returned.
@@ -557,18 +617,34 @@ public class CertTool {
 			}
 		}
 		if (index >= 0) {
-			int index2 = dn.indexOf(',', index);
+			int index2 = -1;
+			boolean backsl = false;
+			LOOP: for (int i = index; i<dn.length(); i++) {
+				switch (dn.charAt(i)) {
+				case '\\':
+					backsl = !backsl;
+					break;
+				case ',': if (!backsl) {
+					index2 = i; 
+					break LOOP;
+					};
+					break;				
+				default:
+					backsl = false;
+					break;
+				}
+			}
 			if (index2 >= 0) {
 				if (replacement == null)
-					return dn.substring(index, index2);
+					return unescape(dn.substring(index, index2));
 				else
-					return dn.substring(0, index)+replacement+dn.substring(index2);
+					return dn.substring(0, index)+escape(replacement)+dn.substring(index2);
 			}
 			else {
 				if (replacement == null)
-					return dn.substring(index);
+					return unescape(dn.substring(index));
 				else
-					return dn.substring(0, index)+replacement;
+					return dn.substring(0, index)+escape(replacement);
 			}
 		}
 		return (replacement == null ? null : dn);
@@ -796,14 +872,14 @@ public class CertTool {
 						dn = caCert.getSubject().toString();
 					}
 					if (interactive) {
-						String c = input("Country", Check.DN, findReplace(dn, "C", null));
+						String c = input("Country", Check.C, findReplace(dn, "C", null));
 						String st = input("State", Check.DN, findReplace(dn, "ST", null));
 						String l = input("City", Check.DN, findReplace(dn, "L", null));
 						String o = input("Organization", Check.DN, findReplace(dn, "O", null));
 						String ou = input("Organizational unit", Check.DN, findReplace(dn, "OU", null));
 						if (cn == null)
 							cn = input("Name", Check.DN, findReplace(dn, "CN", null));						
-						dn = "CN=" + cn + ",OU="+ou + ",O="+o+",L="+l+",ST="+st+",C="+c;
+						dn = "CN=" + escape(cn) + ",OU="+escape(ou) + ",O="+escape(o)+",L="+escape(l)+",ST="+escape(st)+",C="+escape(c);
 					} else {
 						if (dn == null || cn == null) 
 							testInteractive("No subject given");
@@ -1132,6 +1208,7 @@ public class CertTool {
 	}
 
 
+	
 	/**
 	 * Main function: will read and parse command line options
 	 * @param args command line arguments
@@ -1229,7 +1306,13 @@ public class CertTool {
 						if ("-dn".equals(argument)) {
 							if (arg == null) 
 								throw new CertToolException("Missing distinguished name");
-							tool.dn = arg;
+							try {
+								X500Principal p1 = new X500Principal(arg);
+								arg = p1.getName();
+								tool.dn = arg;
+							} catch (Exception e) {
+								throw new CertToolException("Distinguished name has wrong format: "+e.toString());
+							}
 							continue ARGS;
 						}
 						if ("-cn".equals(argument)) {
@@ -1310,6 +1393,7 @@ enum Check {
 	ACTION, // number of action
 	DN, // check for part of distinguished name (at least 2 characters, no
 		// comma)
+	C, // check for two letter country code
 	DAYS, // check for positive integer
 	DAYS_NONE, // positive integer or empty
 	PORT, // port number 
