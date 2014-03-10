@@ -66,17 +66,20 @@ namespace ExcelAddIn
             var dataArray = (object[])jsSerializer.DeserializeObject(data);
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
 
-            /*
-             * If we have placeholders, we may have multiple tables and therefore multiple list objects.
-             */
-            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
-            if (orderedPlaceholderTableList.Count > 0)
+            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
             {
-                foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+                /*
+                 * If we have placeholders, we may have multiple tables and therefore multiple list objects.
+                 */
+                var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+                if (orderedPlaceholderTableList.Count > 0)
                 {
-                    tableHelpers[name].UpdateTable(dataArray, startLine, placeholderTable);
+                    foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+                    {
+                        tableHelpers[name].UpdateTable(dataArray, startLine, placeholderTable);
+                    }
+                    return true;
                 }
-                return true;
             }
 
             return tableHelpers[name].UpdateTable(dataArray, startLine);
