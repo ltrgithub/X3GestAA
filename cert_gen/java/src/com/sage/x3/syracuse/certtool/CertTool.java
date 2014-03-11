@@ -135,14 +135,27 @@ public class CertTool {
 		  return conv.getPublicKey(cert.getSubjectPublicKeyInfo());
 	}
 
+	
+	private String escapeChars(String input) {
+		StringBuilder result = new StringBuilder(input);
+		for (int i=result.length()-1; i>= 0; i--) {
+			char c =result.charAt(i);
+			if (c < ' ') {
+				result.replace(i, i+1, "\\x"+(c < 16 ? "0" : "")+Integer.toHexString(c));
+			} 
+		}
+		return result.toString();
+
+	}
+	
 	private void longDn(String dn) throws IOException {
 		String value = null;
-		if ((value = findReplace(dn, "CN", null)) != null) wrapper.println(" Name: "+value);
-		if ((value = findReplace(dn, "OU", null)) != null) wrapper.println(" Organizational unit: "+value);
-		if ((value = findReplace(dn, "O", null)) != null) wrapper.println(" Organization: "+value);
-		if ((value = findReplace(dn, "L", null)) != null) wrapper.println(" City: "+value);
-		if ((value = findReplace(dn, "ST", null)) != null) wrapper.println(" State: "+value);
-		if ((value = findReplace(dn, "C", null)) != null) wrapper.println(" Country: "+value);
+		if ((value = findReplace(dn, "CN", null)) != null) wrapper.println(" Name: "+escapeChars(value));
+		if ((value = findReplace(dn, "OU", null)) != null) wrapper.println(" Organizational unit: "+escapeChars(value));
+		if ((value = findReplace(dn, "O", null)) != null) wrapper.println(" Organization: "+escapeChars(value));
+		if ((value = findReplace(dn, "L", null)) != null) wrapper.println(" City: "+escapeChars(value));
+		if ((value = findReplace(dn, "ST", null)) != null) wrapper.println(" State: "+escapeChars(value));
+		if ((value = findReplace(dn, "C", null)) != null) wrapper.println(" Country: "+escapeChars(value));
 	}
 	
 	
@@ -592,6 +605,14 @@ public class CertTool {
 				}
 				break;
 			default:
+				if (backsl && i < result.length()-1) {
+					try {
+						byte[] val = {Byte.parseByte(result.substring(i, i+2), 16) };
+						result.replace(i-1, i+2, new String(val));
+					} catch (NumberFormatException e) {
+						// ignore
+					}
+				}
 				backsl = false;
 				break;
 			}
@@ -1290,6 +1311,8 @@ public class CertTool {
 							hex = false;
 							String arg = "C="+parts[0]+",ST="+parts[1]+",L="+parts[2]+",O="+parts[3]+",OU="+parts[4]+",CN="+parts[5];
 							tool.checkDn(arg);							
+							X500Principal p1 = new X500Principal(arg);
+							arg = p1.getName();
 							tool.dn = arg;
 							continue ARGS;
 						}
