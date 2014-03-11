@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.math.BigInteger;
 import java.net.ConnectException;
@@ -29,6 +30,7 @@ import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.Signature;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
@@ -304,12 +306,15 @@ public class CertTool {
 			break;
 		case DN:
 			if (input != null && input.length() >= 2) {
-				if (input.indexOf(',') >= 0)
-					exc = "Entry must not contain a comma";
-				else
-					return null;
+				return null;
 			} else
 				exc = "Entry must have at least length 2";
+			break;
+		case C:
+			if (input != null && input.length() == 2) {
+				return null;
+			} else
+				exc = "Entry must have length 2";
 			break;
 		case ACTION:
 			int count = Action.values().length;
@@ -482,12 +487,12 @@ public class CertTool {
 	 * @return sorted distinguished name
 	 */
 	private static String sortDn(String dn) {
-		String cn = findReplace(dn, "CN", null);
-		String ou = findReplace(dn, "OU", null);
-		String o = findReplace(dn, "O", null);
-		String l = findReplace(dn, "L", null);
-		String c = findReplace(dn, "C", null);
-		String st = findReplace(dn, "ST", null);
+		String cn = escape(findReplace(dn, "CN", null));
+		String ou = escape(findReplace(dn, "OU", null));
+		String o = escape(findReplace(dn, "O", null));
+		String l = escape(findReplace(dn, "L", null));
+		String c = escape(findReplace(dn, "C", null));
+		String st = escape(findReplace(dn, "ST", null));
 		String[] parts = new String[6];
 		int index = 0;
 		if (cn != null) parts[index++] = "CN="+cn;
@@ -535,6 +540,65 @@ public class CertTool {
 
 	}
 	
+	
+	private static String escape(String input) {
+		if (input == null) return null;
+		StringBuilder result = new StringBuilder(input);
+		for (int i=result.length()-1; i>= 0; i--) {
+			char c =result.charAt(i);
+			switch (c) {
+			case '\\':
+			case '>':
+			case '<':
+			case '#':
+			case '"':
+			case '=':
+			case ',':
+			case '+':
+			case ';':
+				result.insert(i,  '\\');
+				break;
+			default:
+				break;
+			}
+		}
+		return result.toString();
+	}
+
+	private static String unescape(String input) {
+		if (input == null) return null;
+		boolean backsl = false;
+		StringBuilder result = new StringBuilder(input);
+		for (int i=0; i<result.length(); i++) {
+			char c =result.charAt(i);
+			switch (c) {
+			case '\\':
+				if (!backsl) {
+					backsl = true;
+					break;
+				}
+				// no break!
+			case '=':
+			case '>':
+			case '<':
+			case '"':
+			case '#':
+			case ',':
+			case '+':
+			case ';':
+				if (backsl) {
+					result.deleteCharAt(--i);
+					backsl = false;					
+				}
+				break;
+			default:
+				backsl = false;
+				break;
+			}
+		}
+		return result.toString();
+	}
+
 	/** scans in the given distinguished for the given id, e. g. common name 'CN'.
 	 * if replacement is given, the value for the id will be replaced and the full dn with replacement will be returned
 	 * if no replacement is given, only the value for the id will be returned.
@@ -557,18 +621,34 @@ public class CertTool {
 			}
 		}
 		if (index >= 0) {
-			int index2 = dn.indexOf(',', index);
+			int index2 = -1;
+			boolean backsl = false;
+			LOOP: for (int i = index; i<dn.length(); i++) {
+				switch (dn.charAt(i)) {
+				case '\\':
+					backsl = !backsl;
+					break;
+				case ',': if (!backsl) {
+					index2 = i; 
+					break LOOP;
+					};
+					break;				
+				default:
+					backsl = false;
+					break;
+				}
+			}
 			if (index2 >= 0) {
 				if (replacement == null)
-					return dn.substring(index, index2);
+					return unescape(dn.substring(index, index2));
 				else
-					return dn.substring(0, index)+replacement+dn.substring(index2);
+					return dn.substring(0, index)+escape(replacement)+dn.substring(index2);
 			}
 			else {
 				if (replacement == null)
-					return dn.substring(index);
+					return unescape(dn.substring(index));
 				else
-					return dn.substring(0, index)+replacement;
+					return dn.substring(0, index)+escape(replacement);
 			}
 		}
 		return (replacement == null ? null : dn);
@@ -796,14 +876,14 @@ public class CertTool {
 						dn = caCert.getSubject().toString();
 					}
 					if (interactive) {
-						String c = input("Country", Check.DN, findReplace(dn, "C", null));
+						String c = input("Country", Check.C, findReplace(dn, "C", null));
 						String st = input("State", Check.DN, findReplace(dn, "ST", null));
 						String l = input("City", Check.DN, findReplace(dn, "L", null));
 						String o = input("Organization", Check.DN, findReplace(dn, "O", null));
 						String ou = input("Organizational unit", Check.DN, findReplace(dn, "OU", null));
 						if (cn == null)
 							cn = input("Name", Check.DN, findReplace(dn, "CN", null));						
-						dn = "CN=" + cn + ",OU="+ou + ",O="+o+",L="+l+",ST="+st+",C="+c;
+						dn = "CN=" + escape(cn) + ",OU="+escape(ou) + ",O="+escape(o)+",L="+escape(l)+",ST="+escape(st)+",C="+escape(c);
 					} else {
 						if (dn == null || cn == null) 
 							testInteractive("No subject given");
@@ -1132,6 +1212,7 @@ public class CertTool {
 	}
 
 
+	
 	/**
 	 * Main function: will read and parse command line options
 	 * @param args command line arguments
@@ -1140,6 +1221,7 @@ public class CertTool {
 		
 		try {
 			CertTool tool = null;
+			boolean hex = false; // hex input from command line
 			// read options from command line
 			ARGS: for (int i = 0; i < args.length; i++) {
 				String argument = args[i];
@@ -1157,12 +1239,14 @@ public class CertTool {
 						wrapper.println("-pass <value>   Passphrase for server private key");
 						wrapper.println("-capass <value>  Passphrase for CA private key");
 						wrapper.println("-dn <value> Distinguished name of certificate subject");
+						wrapper.println("-dn2 <values> Values for C, ST, L, O, OU, CN for name of certificate subject in this order");
 						wrapper.println("-cn <value> Common name within distinguished name");
 						wrapper.println("-days <value> Number of days of certificate validity");
 						wrapper.println("-port <value> Transfer data to this port of a Syracuse server");
 						wrapper.println("-wait <value> Timeout in seconds to connect to Syracuse server (default: "+DEFAULT_WAIT+")");
 						wrapper.println("-notransfer Do not ask for transfer of data to Syracuse servers");
 						wrapper.println("-batch  Do not allow input from console");
+						wrapper.println("-hex  Value of next parameter will be decoded from Hex string");
 						wrapper.println("[Name] is the server name. If omitted, action is for the CA certificate");
 						return;
 					}
@@ -1189,10 +1273,36 @@ public class CertTool {
 							tool.port = -1;
 							continue ARGS;
 						}
+						if (argument.equals("-hex")) {
+							hex = true;
+							continue ARGS;
+						}
+						if ("-dn2".equals(argument)) {
+							if (i >= args.length-6) 
+								throw new CertToolException("Not enough arguments for distinguished name parts");
+							String[] parts = new String[6];
+							for (int j = 0; j<6; j++) {
+								if (hex)
+									parts[j] = escape(hexdecode(args[++i]));
+								else
+									parts[j] = escape(args[++i]);
+							}
+							hex = false;
+							String arg = "C="+parts[0]+",ST="+parts[1]+",L="+parts[2]+",O="+parts[3]+",OU="+parts[4]+",CN="+parts[5];
+							tool.checkDn(arg);							
+							tool.dn = arg;
+							continue ARGS;
+						}
 						// other options take another argument
 						String arg = null;
 						if (i < args.length - 1)
+						{
 							arg = args[++i];
+							if (hex) {								
+								hex = false;
+								arg = hexdecode(arg);
+							}							
+						}
 						if ("-pass".equals(argument)) {
 							if (arg == null) 
 								throw new CertToolException("Missing passphrase");
@@ -1229,6 +1339,13 @@ public class CertTool {
 						if ("-dn".equals(argument)) {
 							if (arg == null) 
 								throw new CertToolException("Missing distinguished name");
+							try {
+								X500Principal p1 = new X500Principal(arg);
+								arg = p1.getName();
+							} catch (Exception e) {
+								throw new CertToolException("Distinguished name has wrong format: "+e.toString());
+							}
+							tool.checkDn(arg);							
 							tool.dn = arg;
 							continue ARGS;
 						}
@@ -1291,6 +1408,70 @@ public class CertTool {
 			System.exit(3);
 		}
 	}
+
+	private static String hexdecode(String arg) throws UnsupportedEncodingException {
+		byte[] temp = new byte[arg.length()/2];
+		for (int j = arg.length()/2-1; j>= 0; j--) {
+			temp[j] = Byte.parseByte(arg.substring(2*j, 2*j+2), 16);
+		}
+		arg = new String(temp, "UTF-8");
+		return arg;
+	}
+
+	// test whether each required attribute appears at least once
+	private void checkDn(String arg) throws CertToolException {
+		boolean backsl = false;
+		int index = arg.indexOf('=');
+		ArrayList<String> list = new ArrayList<String>();
+		String attr = arg.substring(0, index);
+		list.add(attr);
+		for (int i=index+1; i<arg.length(); i++) {
+			char c =arg.charAt(i);
+			switch (c) {
+			case '\\':
+				backsl = !backsl;
+				break;
+			case ',':
+				if (!backsl) {					
+					checkValue(attr, arg.substring(index+1, i));
+					index = arg.indexOf('=', i);
+					attr = arg.substring(i+1, index);
+					list.add(attr);
+					i = index;
+					break;
+				}
+				// no break!
+			default:
+				backsl = false;
+			}
+		}
+		checkValue(attr, arg.substring(index+1));
+		
+		checkDn1(list, "C", "country");
+		checkDn1(list, "CN", "common name");
+		checkDn1(list, "L", "city");
+		checkDn1(list, "ST", "state");
+		checkDn1(list, "O", "organization");
+		checkDn1(list, "OU", "organizational unit");
+		if (list.size() > 0) throw new CertToolException("Unknown attribute "+list.get(0)+" in distinguished name");
+	}
+	
+	private void checkValue(String attr, String val) throws CertToolException {
+		String value = unescape(val);
+		String error;
+		if (attr.equals("C")) {
+			error = check(value, Check.C, false, false);
+		} else {
+			error = check(value, Check.DN, false, false);			
+		}
+		if (error != null) 
+			throw new CertToolException("Error in value '"+value+"' of attribute "+attr+" of distinguished name: "+error);
+	}
+
+	private static void checkDn1(ArrayList<String> arg, String attribute, String longName) throws CertToolException {
+		if (!arg.remove(attribute)) throw new CertToolException("Missing "+longName+" in distinguished name");
+		if (arg.remove(attribute)) throw new CertToolException("Double "+longName+" in distinguished name");
+	}
 }
 
 
@@ -1310,6 +1491,7 @@ enum Check {
 	ACTION, // number of action
 	DN, // check for part of distinguished name (at least 2 characters, no
 		// comma)
+	C, // check for two letter country code
 	DAYS, // check for positive integer
 	DAYS_NONE, // positive integer or empty
 	PORT, // port number 
