@@ -51,7 +51,8 @@ namespace ExcelAddIn
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
             if (workbook != null)
             {
-                if (new TemplateActions(null).isExcelTemplate(workbook) || new TemplateActions(null).isExcelDetailFacetType(workbook))
+                TemplateActions templateActions = new TemplateActions(null);
+                if (templateActions.isExcelTemplate(workbook) || templateActions.isExcelDetailFacetType(workbook) || templateActions.isV6Document(workbook))
                     Globals.ThisAddIn.commons.Save(workbook);
                 else
                     Globals.ThisAddIn.SaveDocumentToSyracuse();
