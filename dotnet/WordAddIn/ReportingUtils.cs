@@ -454,7 +454,8 @@ namespace WordAddIn
                 List<Row> templateRows = new List<Row>();
                 DetectTableSize(doc, table, templateRows);
                 TableInfo tableInfo = GetTableInfo(doc, table, templateRows, entityData);
-                tableCollectionNames.Add(tableInfo.collectionName);
+                if (tableInfo != null)
+                    tableCollectionNames.Add(tableInfo.collectionName);
             }
 
             return tableCollectionNames;
