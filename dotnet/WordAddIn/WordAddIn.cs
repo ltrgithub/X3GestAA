@@ -42,8 +42,6 @@ namespace WordAddIn
         public void on_window_activate(Document doc, Window win)
         {
             addReportingFieldsTaskPane(win);
-
-            Globals.Ribbons.Ribbon.RibbonUI.ActivateTab(Globals.Ribbons.Ribbon.Tabs[0].ControlId.ToString());
         }
 
         public void on_window_deactivate(Document doc, Window win)
