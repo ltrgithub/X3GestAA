@@ -54,32 +54,31 @@ db.open(function(err, db) {
 		if (process.argv[2] === 'drop') {
 			return collection.remove({}, function(err, count) {
 				if (err) return finish(err);
-				console.log("Removed	" + count + "	row(s).	Please	copy	a	valid	license	file	to	" + path.join(__dirname, "temp/license.json") + "	before	restarting	Syracuse.");
+				console.log("Removed " + count + " row(s). Please copy a valid license file to " + path.join(__dirname, "temp/license.json") + " before restarting Syracuse.");
 				return finish();
 			});
 		}
 		return collection.find().toArray(function(err, docs) {
 			if (err) return finish(err);
-			if (docs.length === 0) console.log("No	information	available");
+			if (docs.length === 0) console.log("No information available");
 			var full = (process.argv[2] === 'full');
 			docs.forEach(function(doc) {
 				var content = doc.text;
 				if (content) {
 					var obj = JSON.parse(content);
-					//	console.log("DOC2	"+util.format(obj))
-					var output = obj.fileType + "	file	from	" + (obj.partnerId ? "'" + obj.partnerId + "'" : "SAGE");
+					var output = obj.fileType + " file from " + (obj.partnerId ? "'" + obj.partnerId + "'" : "SAGE");
 					if (obj.product) {
-						output += "	for	" + obj.product.code + "	version	" + obj.product.version;
+						output += " for " + obj.product.code + " version " + obj.product.version;
 					}
 					if (obj.policy) {
-						output += "	policy	" + obj.policy.code + "	version	" + obj.policy.version;
+						output += " policy " + obj.policy.code + " version " + obj.policy.version;
 					}
 					console.log(output);
 					if (full) console.log(util.inspect(obj, {
 						depth: 5
 					}) + "\n");
 				} else {
-					console.error("Wrong	content	" + util.format(doc));
+					console.error("Wrong content " + util.format(doc));
 				}
 			});
 			return finish();
