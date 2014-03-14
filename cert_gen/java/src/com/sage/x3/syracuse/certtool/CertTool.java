@@ -747,12 +747,12 @@ public class CertTool {
 		}
 
 		if (action == null) {
-			testInteractive("No action given");
+			testInteractive("No task given");
 			// ask for action interactively
 			String act = null;
 			Action[] actions = Action.values();
 			wrapper.println();
-			wrapper.println("Which action do you want to perform?");
+			wrapper.println("Which task do you want to perform?");
 			int j = 0;
 			for (j = 0; j < actions.length; j++) {
 				if (port >= 0 || actions[j] != Action.TRANSFER) {
@@ -798,7 +798,7 @@ public class CertTool {
 		}
 		
 		wrapper.println();
-		wrapper.println("Action: " + action.getDescription());
+		wrapper.println("Task: " + action.getDescription());
 		switch (action) {
 		case CREATE:
 			useDn = true;
@@ -1249,14 +1249,14 @@ public class CertTool {
 				if (argument.length() > 0 && argument.charAt(0) == '-') {
 					if (argument.equals("-help") || argument.equals("-?")) {
 						// help text
-						wrapper.println("Invocation: java -jar certgen.jar [Action] [Parameters] [Name]");
+						wrapper.println("Invocation: java -jar certgen.jar [Task] [Parameters] [Name]");
 						for (Action act : Action.values()) {
 							wrapper.println("-"
 									+ act.name().replace('_', '-')
 											.toLowerCase() + "  "
 									+ act.getDescription());
 						}
-						wrapper.println("Parameters for actions:");
+						wrapper.println("Parameters for tasks:");
 						wrapper.println("-pass <value>   Passphrase for server private key");
 						wrapper.println("-capass <value>  Passphrase for CA private key");
 						wrapper.println("-dn <value> Distinguished name of certificate subject");
@@ -1391,7 +1391,7 @@ public class CertTool {
 				}
 				if (i == args.length - 1) {
 					if (argument.length() > 0)
-						tool.name = argument;
+						tool.name = argument.toLowerCase();
 				}
 				else
 					throw new CertToolException("Error in argument list");
