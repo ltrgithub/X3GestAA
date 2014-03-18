@@ -1775,7 +1775,7 @@ class Exchange {
 				}				
 			} while (true);
 
-			response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
+			// response = request(tcpHostname, port, "/nannyCommand/transferCertificate", protocol, challenge, ivDhPubKey, encryptedDhPubKey);
 			// check response
 			if (response[0] != 0 && response[0] != 1) throw new CertToolException("Wrong protocol");
 			if (response[0] == 1) {
