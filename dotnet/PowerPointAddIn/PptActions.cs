@@ -420,7 +420,7 @@ namespace PowerPointAddIn
                 {
                     Dictionary<String, object> measure = (Dictionary<String, object>)measures[key];
                     string property = key;
-                    try { property = measure["$property"].ToString(); } catch (Exception) { };
+                    try { property = measure["$property"].ToString(); } catch (Exception) {chart.HasLegend = false; };
                     
                     string title = property;
                     try { title = measure["$title"].ToString(); } catch (Exception) { };
