@@ -60,7 +60,7 @@ namespace ExcelAddIn
                     activeCell = Globals.ThisAddIn.Application.ActiveCell;
                 ListObject lo = activeCell.ListObject;
                 // check if same dataset
-                if ((lo != null) && (lo.Name != _name))
+                if ((lo != null) && (lo.Name != _name) && new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook) == false)
                 {
                     if (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.OverrideTableConfirm, activeCell.Address, lo.Name), global::ExcelAddIn.Properties.Resources.AddinTitle, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
