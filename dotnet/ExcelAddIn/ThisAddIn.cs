@@ -205,7 +205,16 @@ namespace ExcelAddIn
 
         public ActionPanel ActionPanel
         {
-            get { return actionPanel; }
+            get {
+                if (actionPanel.IsDisposed)
+                {
+                    /*
+                     * IE9 + Excel 2013 in protected mode issue.
+                     */
+                    actionPanel = new ActionPanel();
+                }
+                return actionPanel;
+            }
         }
 
         void Application_WorkbookOpen(Excel.Workbook workbook)
@@ -487,7 +496,18 @@ namespace ExcelAddIn
                 foreach (Microsoft.Office.Tools.CustomTaskPane pane in CustomTaskPanes)
                 {
                     if (pane.Control is ExcelTemplatePane)
+                    {
+                        if (pane.Control.IsDisposed == true)
+                        {
+                            /*
+                             * IE9 + Excel 2013 in protected mode issue.
+                             */
+                            CustomTaskPanes.Remove(pane);
+                            break;
+                        }
+
                         return pane;
+                    }
                 }
             }
             catch (Exception) { }
@@ -649,6 +669,16 @@ namespace ExcelAddIn
 
         internal void ShowActionPanel(bool state)
         {
+            if (taskPane.Control.IsDisposed && taskPane.Control is ActionPanel)
+            {
+                /*
+                 * With IE9 + Excel 2013 in protected mode, the add-in is unloaded after selecting Enable Editing.
+                 * To prevent exceptions being thrown, we'll create a new ActionPanel and add it to the CustomTaskPanes.
+                 */
+                CustomTaskPanes.Remove(taskPane);
+                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage ERP X3");
+                taskPane.VisibleChanged += ActionPanel_VisibleChanged;
+            }
             taskPane.Visible = state;
         }
 
