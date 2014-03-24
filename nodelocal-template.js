@@ -17,9 +17,6 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
-		// host is the public host, including port (if necessary), for redirect of Sage Exchange request
-		// Hope to find another way around this in the near future.
-		// host: "x3.sky.peach.com",
 	},
 	system: {
 		// enables memwatch module
