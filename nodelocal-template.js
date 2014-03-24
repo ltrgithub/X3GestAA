@@ -17,6 +17,9 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
+		// host is the public host, including port (if necessary), for redirect of Sage Exchange request
+		// Hope to find another way around this in the near future.
+		// host: "x3.sky.peach.com",
 	},
 	system: {
 		// enables memwatch module
@@ -70,14 +73,14 @@ exports.config = {
 	},
 	searchEngine: {
 		//tracer: console.log,
-		
+
 		// Using a minimal stemmer should only group plurals rather than a
 		// deeper root of the word.
 		stemmer: "minimal",
-		
+
 		// Leading wildcards can affect search performance
 		allowLeadingWildcard: false,
-		
+
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true
