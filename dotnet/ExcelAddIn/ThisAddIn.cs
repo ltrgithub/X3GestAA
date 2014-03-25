@@ -75,6 +75,7 @@ namespace ExcelAddIn
         //
         ActionPanel actionPanel = new ActionPanel();
         Microsoft.Office.Tools.CustomTaskPane taskPane;
+        private Boolean handleWorkbookOpen = false;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -219,22 +220,32 @@ namespace ExcelAddIn
 
         void Application_WorkbookOpen(Excel.Workbook workbook)
         {
-            if (templateActions.isExcelTemplateType(workbook))
-            {
-                addReportingFieldsTaskPane(Application.ActiveWindow);
-                templateActions.ProcessExcelTemplate(workbook);
-            }
-            else
-            {
-                // Is the document an excel document with embedded data?
-                if (handleCvgDocument(workbook))
-                    return;
-                AutoConnect(workbook);
-            }
+            handleWorkbookOpen = true;
         }
 
         public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
+            if (handleWorkbookOpen)
+            {
+                /*
+                 * Processing this functionality here, as opposed to in WorkbookOpen, 
+                 * ensures that Globals.ThisAddIn.Application.ActiveWorkbook is not null.
+                 */
+                handleWorkbookOpen = false;
+
+                if (templateActions.isExcelTemplateType(Wb))
+                {
+                    addReportingFieldsTaskPane(Application.ActiveWindow);
+                    templateActions.ProcessExcelTemplate(Wb);
+                }
+                else
+                {
+                    // Is the document an excel document with embedded data?
+                    if (handleCvgDocument(Wb) == false)
+                        AutoConnect(Wb);
+                }
+            }
+
             checkButton(Wb);
 
             Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
@@ -261,8 +272,6 @@ namespace ExcelAddIn
             }
             else
             {
-
-
                 if (templateActions.isExcelTemplateType(Wb) == false)
                 {
                     commons.SetSupportedLocales(new SyracuseCustomData(workbook));
