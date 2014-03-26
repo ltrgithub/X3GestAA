@@ -19,8 +19,12 @@ module.exports = function(grunt) {
 		test: {
 			client: 'node_modules/*/test/client/*.{js,_js}',
 			// server: 'node_modules/*/test/{server,common}/*.{js,_js}'
-			// server: 'node_modules/syracuse-*/test/{server,common}/*.{js,_js}'
+			// server: ['node_modules/syracuse-*/test/{server,common}/*.{js,_js}', "!syracuse-license/test/server/parseLicenseTest"]
+			// server: 'node_modules/syracuse-*/test/{server,common}/*.{js,_js}',
 			server: 'node_modules/syracuse-core/test/{server,common}/*.{js,_js}'
+			// server: 'node_modules/syracuse-core/test/{server,common}/bigintTest.{js,_js}'
+			// server: 'node_modules/syracuse-core/test/{server,common}/timeTest.{js,_js}'
+			// server: 'node_modules/bundles/test/{server,common}/dotTest.{js,_js}'
 		}
 	};
 
@@ -105,16 +109,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-nodequnit');
 
 	grunt.registerMultiTask('testrunner', 'run unit tests', function() {
-		require('streamline').register(require('./nodelocal').config.streamline);
 		var data = this.data;
 
+		// for coverage
 		// this.filesSrc.forEach(function(test) {
-			// var codeMatch = fs.readFileSync(test, 'utf8').match(new RegExp('["\'](' + test.split('/')[1] + '.+)["\']'));
-			// var code = codeMatch ? 'node_modules/' + codeMatch[1] + test.substr(test.lastIndexOf('.')) : test;
-			// if (code.slice(-3) === '_js' && !fs.exists(code)) code = code.substr(0, code.lastIndexOf('.')) + '.js';
-			// data.options.code = code;
-			grunt.config.set('nodequnit.all', data);
-			grunt.task.run('nodequnit');
+		// var codeMatch = fs.readFileSync(test, 'utf8').match(new RegExp('["\'](' + test.split('/')[1] + '.+)["\']'));
+		// var code = codeMatch ? 'node_modules/' + codeMatch[1] + test.substr(test.lastIndexOf('.')) : test;
+		// if (code.slice(-3) === '_js' && !fs.exists(code)) code = code.substr(0, code.lastIndexOf('.')) + '.js';
+		// data.options.code = code;
+		grunt.config.set('nodequnit.all', data);
+		grunt.task.run('nodequnit');
 		// });
 	});
 
