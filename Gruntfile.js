@@ -19,12 +19,7 @@ module.exports = function(grunt) {
 		test: {
 			client: 'node_modules/*/test/client/*.{js,_js}',
 			// server: 'node_modules/*/test/{server,common}/*.{js,_js}'
-			// server: ['node_modules/syracuse-*/test/{server,common}/*.{js,_js}', "!syracuse-license/test/server/parseLicenseTest"]
-			// server: 'node_modules/syracuse-*/test/{server,common}/*.{js,_js}',
 			server: 'node_modules/syracuse-core/test/{server,common}/*.{js,_js}'
-			// server: 'node_modules/syracuse-core/test/{server,common}/bigintTest.{js,_js}'
-			// server: 'node_modules/syracuse-core/test/{server,common}/timeTest.{js,_js}'
-			// server: 'node_modules/bundles/test/{server,common}/dotTest.{js,_js}'
 		}
 	};
 
@@ -81,7 +76,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		testrunner: {
+		nodequnit: {
 			all: {
 				src: paths.test.server,
 				filter: function(file) {
@@ -89,7 +84,6 @@ module.exports = function(grunt) {
 				},
 				options: {
 					log: {
-						assertions: true,
 						errors: true,
 						summary: true,
 						// coverage: true
@@ -108,10 +102,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-nodequnit');
 
+	// TODO: figure out code coverage
 	grunt.registerMultiTask('testrunner', 'run unit tests', function() {
 		var data = this.data;
 
-		// for coverage
 		// this.filesSrc.forEach(function(test) {
 		// var codeMatch = fs.readFileSync(test, 'utf8').match(new RegExp('["\'](' + test.split('/')[1] + '.+)["\']'));
 		// var code = codeMatch ? 'node_modules/' + codeMatch[1] + test.substr(test.lastIndexOf('.')) : test;
@@ -126,7 +120,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['fixmyjs', 'jsbeautifier', 'jshint']);
 
 	// Test task
-	grunt.registerTask('test', ['qunit', 'testrunner']);
+	// grunt.registerTask('test', ['qunit', 'testrunner']);
+	grunt.registerTask('test', ['nodequnit']);
 
 	grunt.registerTask('default', ['nodemon']);
 };
