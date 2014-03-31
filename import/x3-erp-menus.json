@@ -2130,43 +2130,6 @@
 		},
 		{
 			"$type": "menuItem",
-			"code": "X3_ERP_RACH019",
-			"title": "title_28a8399e-45ac-4f73-ae5d-0a40587b54ba",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"requestName": "ACH019",
-			"requestLevel": "4",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "X3_ERP_MPUR"
-			},
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "forcedExecution",
-					"title": "title_5ffad1d5-4122-41ed-96ec-bf80679269cd",
-					"prompt": false,
-					"value": "1"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_a5c2f882-9905-437f-afcc-64372c86266b",
-					"prompt": false,
-					"value": "RACH019"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
 			"code": "X3_ERP_RACH022",
 			"title": "title_681cfe8c-2b33-489f-852a-cf6556e202bd",
 			"linkType": "$request",
@@ -4039,43 +4002,6 @@
 					"title": "title_f400acfe-d2b4-462a-b4b7-1fa2afc1d3c0",
 					"prompt": false,
 					"value": "NARACH033"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "X3_ERP_RVEN035",
-			"title": "title_f8416289-c875-48b1-96b8-0b0c9f90ca04",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"requestName": "VEN035",
-			"requestLevel": "2",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "X3_ERP_MSAL"
-			},
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "forcedExecution",
-					"title": "title_b0196374-2c06-4d0e-839b-b9af0d64d236",
-					"prompt": false,
-					"value": "1"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_640479ec-ea44-4184-b9ae-9e32ca861ffc",
-					"prompt": false,
-					"value": "RVEN035"
 				}
 			]
 		},
@@ -12547,6 +12473,94 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "X3_ERP_RACH019",
+			"title": "title_28a8399e-45ac-4f73-ae5d-0a40587b54ba",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"requestName": "ACH019",
+			"requestLevel": "4",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": {
+				"code": "X3_ERP_MPUR"
+			},
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "forcedExecution",
+					"title": "title_5ffad1d5-4122-41ed-96ec-bf80679269cd",
+					"prompt": false,
+					"value": "1"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_a5c2f882-9905-437f-afcc-64372c86266b",
+					"prompt": false,
+					"value": "RACH019"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_265523d7-b97f-4e33-97dc-b30023fa5d19",
+					"prompt": true,
+					"value": "true"
+				}
+			]
+		},
+		{
+			"$type": "menuItem",
+			"code": "X3_ERP_RVEN035",
+			"title": "title_f8416289-c875-48b1-96b8-0b0c9f90ca04",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"requestName": "VEN035",
+			"requestLevel": "2",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": {
+				"code": "X3_ERP_MSAL"
+			},
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "forcedExecution",
+					"title": "title_b0196374-2c06-4d0e-839b-b9af0d64d236",
+					"prompt": false,
+					"value": "1"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_640479ec-ea44-4184-b9ae-9e32ca861ffc",
+					"prompt": false,
+					"value": "RVEN035"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_769dc275-6e2d-492d-b629-971a9a9f170a",
+					"prompt": false,
+					"value": "true"
+				}
+			]
+		},
+		{
+			"$type": "menuItem",
 			"code": "X3_ERP_ACHETEUR",
 			"title": "title_18f4d92e-c030-4eca-9205-ecac25cc2c2e",
 			"description": "description_18f4d92e-c030-4eca-9205-ecac25cc2c2e",
@@ -14558,9 +14572,6 @@
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Zu erhaltend. Best./Lieferant",
 			"title_3a797d2d-ef1e-40df-9ae8-6a4ebd0f5382": "forcedExecution",
 			"title_6c542876-63da-48e5-a20a-35c019a618db": "portview",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Zu erhalt. Best. / Lieferant",
-			"title_5ffad1d5-4122-41ed-96ec-bf80679269cd": "forcedExecution",
-			"title_a5c2f882-9905-437f-afcc-64372c86266b": "portview",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "Zu deck. Bedarfe",
 			"title_dafee5e3-6728-43bc-82b7-5e7c5542ed0c": "forcedExecution",
 			"title_5ee69af3-9320-42e4-aa0e-84c7d75bebeb": "portview",
@@ -14700,9 +14711,6 @@
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "X3_ERP_NARACH033",
 			"title_15bf7599-3ddd-404c-aef0-007784fda7ec": "forcedExecution",
 			"title_f400acfe-d2b4-462a-b4b7-1fa2afc1d3c0": "portview",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Bestellungen in Verzug/Kunde",
-			"title_b0196374-2c06-4d0e-839b-b9af0d64d236": "forcedExecution",
-			"title_640479ec-ea44-4184-b9ae-9e32ca861ffc": "portview",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "Retour. Artik. / Kunde",
 			"title_3b19d1d8-7ece-436f-91b1-34e275a4e92a": "forcedExecution",
 			"title_55ff54ce-1ce7-4930-9332-d3533f7c9af0": "portview",
@@ -15307,6 +15315,12 @@
 			"title_b5b136b1-4d00-451f-98f1-fb950502e0b5": "portview",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "Faktur. Umsatz/Kundenkategorie",
 			"title_739bc3d3-6f87-420a-80af-a2bde0a35645": "portview",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Zu erhalt. Best. / Lieferant",
+			"title_5ffad1d5-4122-41ed-96ec-bf80679269cd": "forcedExecution",
+			"title_a5c2f882-9905-437f-afcc-64372c86266b": "portview",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Bestellungen in Verzug/Kunde",
+			"title_b0196374-2c06-4d0e-839b-b9af0d64d236": "forcedExecution",
+			"title_640479ec-ea44-4184-b9ae-9e32ca861ffc": "portview",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "Einkauf",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "Stammdatenadmin",
@@ -15518,7 +15532,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Open Contracts/Product",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Open Contracts/Supplier",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Receivable orders/Product",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Receivable orders/Supplier",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "Requirements to Cover",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "Unpaid prepayments",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "Unvalidated returns",
@@ -15576,7 +15589,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "Reference Folder Switzerland",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Receipts not Invoiced",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Late Orders / Customers",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "Returned Product / Customer",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "Delivery Note to Invoice",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "Financial Invoices / Customer",
@@ -15843,6 +15855,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "Remainders / Order / Customer",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "Workflow Tracking History",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "Invoic. Turnover/Cust category",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Receivable orders/Supplier",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Late Orders / Customers",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "Buyer",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "Data administrator",
@@ -16035,7 +16049,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Open Contracts/Product",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Open Contracts/Supplier",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Orders to Receive by Supplier",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Orders to Receive by Product",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "Purchase Requirements",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "Open Prepayment Requests",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "Supplier Returns not Validated",
@@ -16093,7 +16106,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "Reference Folder Switzerland",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Receipts not Invoiced",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Orders with Late Ship Date ",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "Customer Returns ",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "Shipments Not Invoiced ",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "Adjustment Invoice ",
@@ -16360,6 +16372,10 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "Remaining Qty to Ship",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "Workflow Tracking History",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "Invoic. Turnover/Cust category",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Orders to Receive by Product",
+			"title_265523d7-b97f-4e33-97dc-b30023fa5d19": "cube",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Orders with Late Ship Date ",
+			"title_769dc275-6e2d-492d-b629-971a9a9f170a": "cube",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "Buyer",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "Data administrator",
@@ -16557,7 +16573,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Pedidos abiertos/artic",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Pedidos abiertos/provee",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Pedidos a recibir/artic.",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Pedidos a recibir/provee",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "Necesidades a cubrir",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "Anticipos no cobrados",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "Devoluciones no validadas",
@@ -16615,7 +16630,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "Dossier de referencia suizo",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Recepciones no facturadas",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Pedidos retrasados/cliente",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "Artículos devueltos/cliente",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "Vale de entrega a facturar",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "Facturas financieras / cliente",
@@ -16882,6 +16896,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "Saldos / Pedido / Cliente",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "Histórico seguimiento Workflow",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "CV Fac/Categ.Cliente",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Pedidos a recibir/provee",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Pedidos retrasados/cliente",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "Comprador",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "Administrador de datos",
@@ -17073,7 +17089,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Contrats ouverts / article",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Contrats ouverts / fournisseur",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Commandes à recevoir / article",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Commandes à recevoir / fourn.",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "Besoins à couvrir",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "Acomptes non réglés",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "Retours non validés",
@@ -17131,7 +17146,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "Reference Folder Suisse",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Réceptions non facturées NA",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Commandes en retard / client",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "Articles retournés / client",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "Bons de livraison à facturer",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "Factures financières / client",
@@ -17398,6 +17412,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "Reliquats / commande / client",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "Historique suivi Workflow",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "CA facturé / catégorie client",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Commandes à recevoir / fourn.",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Commandes en retard / client",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "Administrateur des données",
 			"description_19329531-5b3c-410d-9558-4547e28b70d7": "ADMINDON",
@@ -17589,7 +17605,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "X3_ERP_RACH016",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "X3_ERP_RACH017",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "X3_ERP_RACH018",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "X3_ERP_RACH019",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "X3_ERP_RACH022",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "X3_ERP_RACH023",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "X3_ERP_RACH024",
@@ -17647,7 +17662,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "X3_ERP_REFCH",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "X3_ERP_BAIDU",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "X3_ERP_NARACH033",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "X3_ERP_RVEN035",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "X3_ERP_RVEN038",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "X3_ERP_RVEN039",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "X3_ERP_RVEN043",
@@ -17914,6 +17928,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "X3_ERP_RVEN036",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "X3_ERP_RWOR001",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "X3_ERP_WCACATCL",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "X3_ERP_RACH019",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "X3_ERP_RVEN035",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "X3_ERP_ACHETEUR",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "X3_ERP_ADMINDON",
@@ -18105,7 +18121,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "X3_ERP_RACH016",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "X3_ERP_RACH017",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "X3_ERP_RACH018",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "X3_ERP_RACH019",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "X3_ERP_RACH022",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "X3_ERP_RACH023",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "X3_ERP_RACH024",
@@ -18163,7 +18178,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "X3_ERP_REFCH",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "X3_ERP_BAIDU",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "X3_ERP_NARACH033",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "X3_ERP_RVEN035",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "X3_ERP_RVEN038",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "X3_ERP_RVEN039",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "X3_ERP_RVEN043",
@@ -18430,6 +18444,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "X3_ERP_RVEN036",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "X3_ERP_RWOR001",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "X3_ERP_WCACATCL",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "X3_ERP_RACH019",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "X3_ERP_RVEN035",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "X3_ERP_ACHETEUR",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "X3_ERP_ADMINDON",
@@ -18621,7 +18637,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Encomendas abertas / artigo",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Encomendas abertas / fornecedo",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Encomendas a receber / artigo",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Encomendas a receber / fornec.",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "Necessidades a cobrir",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "Ped.Pagamento não pagos",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "Devoluções não validadas",
@@ -18679,7 +18694,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "X3_ERP_REFCH",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "X3_ERP_BAIDU",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "X3_ERP_NARACH033",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Encomendas em atraso / cliente",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "artigos devolvidos / cliente",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "guias de expedição p/ facturar",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "Débitos financ./ cliente",
@@ -18946,6 +18960,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "em falta / encomenda / cliente",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "Seguim. histor. Workflow",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "CA facturado / categoria clien",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Encomendas a receber / fornec.",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Encomendas em atraso / cliente",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "Comprador",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "Administrador dados",
@@ -19137,7 +19153,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "X3_ERP_RACH016",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "X3_ERP_RACH017",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "X3_ERP_RACH018",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "X3_ERP_RACH019",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "X3_ERP_RACH022",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "X3_ERP_RACH023",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "X3_ERP_RACH024",
@@ -19195,7 +19210,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "X3_ERP_REFCH",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "X3_ERP_BAIDU",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "X3_ERP_NARACH033",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "X3_ERP_RVEN035",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "X3_ERP_RVEN038",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "X3_ERP_RVEN039",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "X3_ERP_RVEN043",
@@ -19462,6 +19476,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "X3_ERP_RVEN036",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "X3_ERP_RWOR001",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "X3_ERP_WCACATCL",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "X3_ERP_RACH019",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "X3_ERP_RVEN035",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "X3_ERP_ACHETEUR",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "X3_ERP_ADMINDON",
@@ -19653,7 +19669,6 @@
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "合同 / 产品",
 			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "合同 / 供应商",
 			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "应收订单 / 产品",
-			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "应收订单 / 供应商",
 			"title_681cfe8c-2b33-489f-852a-cf6556e202bd": "待覆盖的需求",
 			"title_0b9db8ca-4044-4899-8051-ae65f8579171": "未支付的预付款",
 			"title_222e11dc-6bfc-49f4-a6d5-92b6b73b40ca": "未审核的退货",
@@ -19711,7 +19726,6 @@
 			"title_b78dd7f0-a88e-4723-b51f-d0011b9bdab3": "X3_ERP_REFCH",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "百度",
 			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "X3_ERP_NARACH033",
-			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "逾期订单 / 客户",
 			"title_8fdbf790-1490-447d-ba7a-e43701b0b187": "退回的产品 / 客户",
 			"title_7c4aa157-2474-4f4f-bb54-bb85f4db19ff": "待开票的发货单",
 			"title_4f99c990-fac5-4ba1-af4f-524f43c9884f": "财务发票 / 客户",
@@ -19978,6 +19992,8 @@
 			"title_9611fe93-b9ae-4534-9a3a-08ca4725cc3f": "结欠 / 订单 / 客户",
 			"title_e3486f8b-4b2f-4868-acbe-9f2fdc2af6a9": "工作流追踪历史记录",
 			"title_85baec1b-87e0-424d-8a06-7eaf69524907": "已开票营业额 / 客户类别",
+			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "应收订单 / 供应商",
+			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "逾期订单 / 客户",
 			"title_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "采购员",
 			"description_18f4d92e-c030-4eca-9205-ecac25cc2c2e": "ACHETEUR",
 			"title_19329531-5b3c-410d-9558-4547e28b70d7": "数据管理员",
