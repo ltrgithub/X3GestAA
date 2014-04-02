@@ -80,7 +80,8 @@ exports.config = {
 
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
-		// ignoreFrequency: true
+		// ignoreFrequency: true,
+        // offStemmer : true // desactivation of the stemmer for the search indexation
 	},
 	translation: {
 		// trace: console.log,
