@@ -239,6 +239,7 @@ namespace WordAddIn
                 Globals.WordAddIn.Application.ScreenUpdating = false;
 
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = Int32.MaxValue;
                 Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
 
                 Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];
