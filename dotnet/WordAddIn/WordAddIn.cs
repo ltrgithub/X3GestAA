@@ -7,6 +7,7 @@ using Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using System.Globalization;
 
 namespace WordAddIn
 {
@@ -19,6 +20,7 @@ namespace WordAddIn
         public CommonUtils commons = null;
         public Boolean newVersionMessage = false;
         public int versionNumberBinary = 0;
+        bool allowLanguageIDUpdate = false;  
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -32,6 +34,7 @@ namespace WordAddIn
             this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(on_window_deactivate);
             this.Application.WindowSelectionChange += new ApplicationEvents4_WindowSelectionChangeEventHandler(on_window_selection_changed);
+            this.Application.DocumentBeforeSave += new ApplicationEvents4_DocumentBeforeSaveEventHandler(on_document_before_save);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -42,6 +45,7 @@ namespace WordAddIn
         public void on_window_activate(Document doc, Window win)
         {
             addReportingFieldsTaskPane(win);
+            
         }
 
         public void on_window_deactivate(Document doc, Window win)
@@ -92,7 +96,19 @@ namespace WordAddIn
             }
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
+
+            if (allowLanguageIDUpdate == false)
+                commons.SetDocumentLanguageID(doc);
         }
+
+        void on_document_before_save (Document doc, ref bool SaveAsUI, ref bool Cancel)
+        {
+            /*
+             * Don't update the language ID during a Save, as this will change the document and require another save!
+             */
+            allowLanguageIDUpdate = true;
+        }
+
         void on_window_selection_changed(Selection Sel)
         {
             Document doc = getActiveDocument();
