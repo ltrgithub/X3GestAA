@@ -8,6 +8,7 @@ using Rb = Microsoft.Office.Tools.Ribbon;
 using System.IO;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Core;
+using System.Globalization;
 
 namespace WordAddIn
 {
@@ -102,6 +103,8 @@ namespace WordAddIn
                 cp.Value = locale;
             }
             catch (Exception) { }
+
+            SetDocumentLanguageID(doc);
         }
 
         public string GetDocumentLocale(Document doc)
@@ -159,6 +162,41 @@ namespace WordAddIn
                 }
             }
             Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
+        }
+
+        public void SetDocumentLanguageID(Document doc)
+        {
+            String documentLocale = GetDocumentLocale(doc);
+            if (documentLocale != null)
+            {
+                /*
+                 * If we have a document locale already set, use it to set the language ID of the document.
+                 */
+                CultureInfo cultureInfo = new CultureInfo(GetDocumentLocale(doc), false);
+                if (cultureInfo != null)
+                {
+                    Globals.WordAddIn.Application.ActiveDocument.Content.LanguageID = (Microsoft.Office.Interop.Word.WdLanguageID)cultureInfo.LCID;
+                }
+            }
+            else
+            {
+                /*
+                 * We don't have a document locale set, so set the language ID of the document to Word's default language. 
+                 */
+                Globals.WordAddIn.Application.ActiveDocument.Content.LanguageID = (Microsoft.Office.Interop.Word.WdLanguageID)System.Threading.Thread.CurrentThread.CurrentCulture.LCID;
+
+                /*
+                 * Now attempt to set the dropdown to Word's default language.
+                 */
+                for (int i = 1; i < Globals.Ribbons.Ribbon.dropDownLocale.Items.Count; i++)
+                {
+                    if (Globals.Ribbons.Ribbon.dropDownLocale.Items[i].Tag.Equals(System.Threading.Thread.CurrentThread.CurrentCulture.Name))
+                    {
+                        Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = i;
+                        break;
+                    }
+                }
+            }
         }
 
         public void ExtractV6Document(Document doc, SyracuseOfficeCustomData customData)
