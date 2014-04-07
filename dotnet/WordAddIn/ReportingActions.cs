@@ -51,6 +51,7 @@ namespace WordAddIn
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
+                    new CommonUtils(browserDialog).SetDocumentLanguageID(doc);
                 }
                 else if (rpt_fill_tpl.Equals(mode))
                 {
