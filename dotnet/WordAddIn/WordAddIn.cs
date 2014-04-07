@@ -42,6 +42,7 @@ namespace WordAddIn
         public void on_window_activate(Document doc, Window win)
         {
             addReportingFieldsTaskPane(win);
+            
         }
 
         public void on_window_deactivate(Document doc, Window win)
@@ -93,6 +94,7 @@ namespace WordAddIn
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
         }
+
         void on_window_selection_changed(Selection Sel)
         {
             Document doc = getActiveDocument();

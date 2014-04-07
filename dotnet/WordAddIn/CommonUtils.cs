@@ -8,6 +8,7 @@ using Rb = Microsoft.Office.Tools.Ribbon;
 using System.IO;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Core;
+using System.Globalization;
 
 namespace WordAddIn
 {
@@ -159,6 +160,45 @@ namespace WordAddIn
                 }
             }
             Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = 0;
+        }
+
+        public void SetDocumentLanguageID(Document doc)
+        {
+            /*
+             * The document language ID is only set during template creation, and sets the language ID for the whole document.
+             */
+            String documentLocale = GetDocumentLocale(doc);
+            if (documentLocale == null)
+            {
+                /*
+                 * We don't have a document locale set, so set the language ID to the default language. 
+                 */
+                Globals.WordAddIn.Application.ActiveDocument.Content.LanguageID = (Microsoft.Office.Interop.Word.WdLanguageID)System.Threading.Thread.CurrentThread.CurrentCulture.LCID;
+
+                /*
+                 * Now set the dropdown to the default language.
+                 */
+                for (int i = 1; i < Globals.Ribbons.Ribbon.dropDownLocale.Items.Count; i++)
+                {
+                    if (Globals.Ribbons.Ribbon.dropDownLocale.Items[i].Tag.Equals(System.Threading.Thread.CurrentThread.CurrentCulture.Name))
+                    {
+                        Globals.Ribbons.Ribbon.dropDownLocale.SelectedItemIndex = i;
+                        SetDocumentLocale(doc, Globals.Ribbons.Ribbon.dropDownLocale.Items[i].Tag.ToString());
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                /*
+                 * If we have a document locale already set, use it to set the language ID of the document.
+                 */
+                CultureInfo cultureInfo = new CultureInfo(GetDocumentLocale(doc), false);
+                if (cultureInfo != null)
+                {
+                    Globals.WordAddIn.Application.ActiveDocument.Content.LanguageID = (Microsoft.Office.Interop.Word.WdLanguageID)cultureInfo.LCID;
+                }
+            }
         }
 
         public void ExtractV6Document(Document doc, SyracuseOfficeCustomData customData)
