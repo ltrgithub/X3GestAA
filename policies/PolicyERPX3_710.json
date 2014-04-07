@@ -1,6 +1,6 @@
 {
 "fileType": "Policy",
-   "generationStamp": "2014-03-31T13:51:35Z",
+   "generationStamp": "2014-04-07T07:11:34Z",
 "partnerId": "",
 "product":{
    "code": "1",
@@ -87,7 +87,7 @@
          ,"LETTRAGE"
          ,"LETTRAUTO"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "3",
    "title":{
@@ -110,7 +110,7 @@
          ,"PAYPROPAL"
          ,"RELBANK"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "4",
    "title":{
@@ -154,7 +154,7 @@
          ,"GESSOH"
          ,"GESSQH"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "6",
    "title":{
@@ -177,7 +177,7 @@
          ,"GESPTH"
          ,"GESSCO"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "7",
    "title":{
@@ -198,7 +198,7 @@
          ,"GESSMX"
          ,"GESSTQ"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "8",
    "title":{
@@ -291,7 +291,7 @@
          ,"GESMAC"
          ,"GESSRE"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "13",
    "title":{
@@ -311,7 +311,7 @@
          ,"GESOPP"
          ,"GESTSK"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "14",
    "title":{
@@ -330,7 +330,7 @@
          "GESFAS"
          ,"GESLOF"
          ],
-   "condition": "license"
+   "condition": "always"
    }, {
    "code": "15",
    "title":{
@@ -441,7 +441,7 @@
       "pt-PT":"Terminais portáteis",
       "es-ES":"Terminales móviles",
       "en-GB":"ADCs",
-      "de-DE":"Tragbare Terminals",
+      "de-DE":"Mobile Datenerfassung",
       "pl-PL":"ADC",
       "ZH-CN":"ADCs",
       "ru-RU":"ADCs"
@@ -2848,7 +2848,7 @@
       "pt-PT":"All sessions",
       "es-ES":"All sessions",
       "en-GB":"All sessions",
-      "de-DE":"All sessions",
+      "de-DE":"Alle Sessions",
       "pl-PL":"All sessions",
       "ZH-CN":"All sessions",
       "ru-RU":"All sessions"
@@ -3133,9 +3133,9 @@
       "es-ES":"Gantt",
       "en-GB":"Gantt",
       "de-DE":"Gantt",
-      "pl-PL":"Gantt",
-      "ZH-CN":"Gantt",
-      "ru-RU":"Gantt"
+      "pl-PL":"Wykres Gantta",
+      "ZH-CN":"甘特图",
+      "ru-RU":"Гант"
       },
    "type": "boolean"
    }, {
@@ -3143,14 +3143,44 @@
    "title":{
       "fr-FR":"Nombre d'immobilisations",
       "en-US":"Fixed assets number",
-      "it-IT":"Nombre d'immobilisations",
-      "pt-PT":"Nombre d'immobilisations",
-      "es-ES":"Nombre d'immobilisations",
-      "en-GB":"Nombre d'immobilisations",
-      "de-DE":"Nombre d'immobilisations",
-      "pl-PL":"Nombre d'immobilisations",
-      "ZH-CN":"Nombre d'immobilisations",
-      "ru-RU":"Nombre d'immobilisations"
+      "it-IT":"Numero di cespiti",
+      "pt-PT":"Número de ativos",
+      "es-ES":"Número de inmovilizados",
+      "en-GB":"Fixed assets number",
+      "de-DE":"Anlagennummer",
+      "pl-PL":"Ilość środków trwałych",
+      "ZH-CN":"固定资产数量",
+      "ru-RU":"Номер внеоборотного актива"
+      },
+   "type": "integer"
+   }, {
+   "code": "MAXTERMINALRF",
+   "title":{
+      "fr-FR":"Nombre de Terminaux portables",
+      "en-US":"Number of ADCs",
+      "it-IT":"Numero di terminali portatili",
+      "pt-PT":"Número de terminais portateis",
+      "es-ES":"Número de terminales móviles",
+      "en-GB":"Number of ADCs",
+      "de-DE":"Anzahl MDEs",
+      "pl-PL":"Ilość terminali przenośnych",
+      "ZH-CN":"ADCs数量",
+      "ru-RU":"Номер настольного терминала"
+      },
+   "type": "integer"
+   }, {
+   "code": "MAXWEBSERVICES",
+   "title":{
+      "fr-FR":"Nombre de Web Services",
+      "en-US":"Number of Web Services",
+      "it-IT":"Numero di Web Services",
+      "pt-PT":"Número de Web services",
+      "es-ES":"Número de Web Services",
+      "en-GB":"Number of Web Services",
+      "de-DE":"Anzahl Webservices",
+      "pl-PL":"Ilość dostępów Web Service",
+      "ZH-CN":"Web Service数量",
+      "ru-RU":"Номер Веб-сервисов"
       },
    "type": "integer"
    }, {
@@ -3170,6 +3200,6 @@
    "type": "integer"
    }
 ],
-"signature": "CVmhJAQ4Uv5Ll6wAQ4wrDk8cbrbFWpwzYujYOp/NH9TsayjIL+4EaAX4tLnGFqESD94oEMzZN9efEjDz68dxB523dTX6eZMD2ja6+9eVMZbNNjx8fFA33wnPrO4Sfc4jpmLTNlTfOl00BGGMv6oPUtkaY6DOs287Lx7eCP3m7v8OBbXLF3We0qsk1g4c+8TJCuPfr8pna5c4j1m7Y10LP0a63+kbVX1VUtMHMjlngbOJFr4W3JsekXGigOj28NBACuX1xeoJvMu80gHQJrJHjx/K1UjkJK6ZrioPAOAcXYqamgDKZGOR7bVk1ad2kBPAGdB9sBYWwjdeA+zYq7WUek7aggkrpkO+Mn/FDm94Jzov/Fwgtrts/nnDHXkrqDz6N8pXDR/HvzrpBiz+AhPpQv1zYVKQm9PudSA+COmLf3rrCo0MWZYcYBrP70O6zCq/MaLcLtQt71s9rYPV9iVNAB/oN5+gepWINbLYPkWXWye7No74T52qk3Xz/tskBo7JP8/F3SiqYNGM46zpwj05WY2f4a89UakAMSk7f+VvLcgWTGMHhbyxTAtRyUArej9X7uKlcF8cwrp48MaoWUyYOvk2ea2b2LjTbnY9LB1zXHBLdR8VGbz0vV98bW38LQ7tL+0xM+y7vQ9fGpqH2+sggBQRtxqpcq8tAmjr+h/WqAw=",
+"signature": "FG/18y4Kj1P5Brj4hL94Ry6aItkuFlSCwnQw51cXQFIOUa28pGBodntlIat0DYxexfGHTxWY1yg5BiJN9q0DB/ChY7T3C2Lrvmtdu6Y0XMIV+718Oc3HxAeBxhwKrcwQxfvVUY2q2MpBGne2RYh21BiL8uGoghE3W8gU8MsGrhZR1xg7VWGpyjSbedwlTFUWWpcr8xaG//vDG9WbP1DYpgYLCRWZa6FY5erU1LsL+0WvfFEy6X5EM5pFW45IqTL/u4azJd8UOBQ5BXN4J3F2mGTOjzWFGFpMN6oXOmfc3P68MfVuXZ4XHanMsKaYmiFvroQwqmPSMcLqBRoMo9kfOl6r1MSVXWbmcAvHS78iQ0WBoN6xsCCqeveGknbF5HqEShcrnmgQF2NtH2sVz/KQR4LCZG85zk0FlhWqu9fcPuRa0icHIMNbZidSZhboJhxl5QB/WNiAsMD3gPH8i9a0dl/7y33XfO0DnfDpaJtr4cEOL7AqE75Pj2L+dv0P1EaiYUmE7vShK4N8RXxsJVTyR6e5bPq5BFKNPld9eeMl1UKs9D/5ywL/UOsoYxn9QSeDra5P+pamWVwb98n7I6BqnGgPD1ln/OVAoAWlMrCRBhMopNRy208wYnr6G2jnnLzmbznX9ONHyUGm+05ehkr0hU1xPYscN5teFQNSy/7rmX8=",
 "signatureText": "SAGE SAS"
 }
