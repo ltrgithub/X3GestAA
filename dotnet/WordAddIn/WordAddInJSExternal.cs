@@ -303,6 +303,11 @@ namespace WordAddIn
                 return "";
             }
 
+            /*
+             * Force the focus to the current document to ensure that the current document is indeed the active document.
+             */
+            doc.ActiveWindow.SetFocus();
+
             // MailMerge-Query entfernen
             doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdNotAMergeDocument;
             // Datei schließen, codiert einlesen und wieder öffnen
@@ -310,6 +315,7 @@ namespace WordAddIn
             doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
 
             Globals.WordAddIn.Application.ActiveWindow.Close();
+
             byte[] content = System.IO.File.ReadAllBytes(tempFileName);
 
             String base64string = Convert.ToBase64String(content);
