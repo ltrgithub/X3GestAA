@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T08:41:41.000Z",
-		"$lastModified": "2014-04-08T10:22:06.000Z",
+		"$lastModified": "2014-04-08T15:35:12.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -10,15 +10,15 @@
 			"$exclude": [
 				"node_modules/syracuse-core/lib/types/resources/date"
 			],
-			"$count": 3360,
-			"$lastModified": "2014-02-26T08:37:07Z",
+			"$count": 3579,
+			"$lastModified": "2014-04-08T15:35:12Z",
 			"$current": 10032,
 			"$": {
 				"10031": {
 					"$nextId": 2000
 				},
 				"10032": {
-					"$nextId": 1362
+					"$nextId": 1581
 				}
 			}
 		},
@@ -5630,7 +5630,7 @@
 			"chp": 10031,
 			"id": 559,
 			"text": {
-				"en-us": "cvgClient id",
+				"en-us": "Client id",
 				"fr-fr": "ID cvgClient"
 			},
 			"$key": "31E77F4DA51F819ABC7EBC0A670F9A316DB5BC76"
@@ -11514,7 +11514,7 @@
 			"chp": 10031,
 			"id": 1195,
 			"text": {
-				"en-us": "Personnalizations management",
+				"en-us": "Personalizations management",
 				"fr-fr": "Personalization management"
 			},
 			"$key": "7447E9E31C5A06C3D1B5DBF04D3A82BD5A64044D"
@@ -16971,7 +16971,7 @@
 			"id": 1711,
 			"text": {
 				"en-us": "Authentication error\nPlease relogin or contact the administrator to check your configuration",
-				"fr-fr": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
+				"fr-fr": "Erreur authentication.\nVeuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
 				"en-gb": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
 				"zh-cn": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
 				"it-it": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
@@ -18491,6 +18491,17 @@
 				"fr-fr": "Samedi"
 			},
 			"$key": "13868FC92D6B8DC6E20E02EE4ACF1C36B8A64F3E"
+		},
+		"newVersion": {
+			"chp": 10032,
+			"id": [
+				1362,
+				1363
+			],
+			"text": {
+				"en-us": "There is a newer version '{0}' available than the one that is currently in use: '{1}'\n\nPlease touch OK to upgrade your client."
+			},
+			"$key": "F3AE084540B36C7F7ACC6F5DEC705FD0B79AA937"
 		}
 	},
 	"node_modules/syracuse-orm/lib/dbHandles/resources/mongoDbHandle": {
@@ -23451,7 +23462,7 @@
 			"id": 437,
 			"text": {
 				"en-us": "Unexpected script error caught in method",
-				"fr-fr": "Une erreur de script inattendue a �t� rencontr�e dans la m�thode "
+				"fr-fr": "Une erreur de script inattendue a été rencontrée dans la méthode "
 			},
 			"$key": "064CE7110E1C368046736C412CB945F7E95C6F88"
 		},
@@ -23460,7 +23471,7 @@
 			"id": 438,
 			"text": {
 				"en-us": "Your server connexion should not be released properly.",
-				"fr-fr": "Votre connexion serveur n'a peut-�tre pas �t� lib�r�e correctement."
+				"fr-fr": "Votre connexion serveur n'a peut-être pas été libérée correctement."
 			},
 			"$key": "D22ACE0799A59D12809F980163BF924DEF16C124"
 		},
@@ -23469,7 +23480,7 @@
 			"id": 439,
 			"text": {
 				"en-us": "Could not open a new session. No data received from web server.",
-				"fr-fr": "Impossible d'ouvrir une nouvelle session. Aucune donn�e re�ue du serveur web."
+				"fr-fr": "Impossible d'ouvrir une nouvelle session. Aucune donnée reçue du serveur web."
 			},
 			"$key": "D108BD5579A3202C83FA6548508B57BF3F3E140B"
 		},
@@ -23478,7 +23489,7 @@
 			"id": 440,
 			"text": {
 				"en-us": "Could not open a new session. Unexpected data received from web server.",
-				"fr-fr": "Impossible d'ouvrir une nouvelle session. Des donn�es inattendue ont �t� re�ues du serveur web."
+				"fr-fr": "Impossible d'ouvrir une nouvelle session. Des données inattendue ont été reçues du serveur web."
 			},
 			"$key": "0802F1A5438ECE611A6809A32C35B08286E35473"
 		},
@@ -23487,7 +23498,7 @@
 			"id": 441,
 			"text": {
 				"en-us": "Can't get resource on web server.",
-				"fr-fr": "Impossible de r�cup�rer la ressource sur le serveur web."
+				"fr-fr": "Impossible de récupérer la ressource sur le serveur web."
 			},
 			"$key": "CADCDF9328716BC89CD574FF44F7F116B869C48A"
 		},
@@ -23514,7 +23525,7 @@
 			"id": 444,
 			"text": {
 				"en-us": "Can't retrieve session shared resources on web server. Your session will be closed.",
-				"fr-fr": "Impossible de r�cup�rer les ressources partag�es sur le serveur web. Votre session va �tre ferm�e."
+				"fr-fr": "Impossible de récupérer les ressources partagées sur le serveur web. Votre session va être fermée."
 			},
 			"$key": "EC5B7941C0FFC773593CFD4B124158C3E2658B04"
 		},
@@ -23523,7 +23534,7 @@
 			"id": 445,
 			"text": {
 				"en-us": "Unexpected error while sending request to web server.",
-				"fr-fr": "Une erreur inattendue a �t� rencontr�e lors de l'envoi d'une requ�te � destination du serveur web."
+				"fr-fr": "Une erreur inattendue a été rencontrée lors de l'envoi d'une requête à destination du serveur web."
 			},
 			"$key": "63947328A70FA38AB1D581A06030222D6FEDB1CE"
 		},
@@ -23541,7 +23552,7 @@
 			"id": 447,
 			"text": {
 				"en-us": "connexion refused. Detail",
-				"fr-fr": "Le serveur a refus� d'�tablir une nouvelle session. D�tail : "
+				"fr-fr": "Le serveur a refusé d'établir une nouvelle session. Détail : "
 			},
 			"$key": "F26401CE891159D68F50EE24CF128546A54021D8"
 		},
@@ -23550,7 +23561,7 @@
 			"id": 448,
 			"text": {
 				"en-us": "connexion refused without reason. Please try again.",
-				"fr-fr": "Pour une raison inconnue, le serveur a refus� d'�tablir une nouvelle session."
+				"fr-fr": "Pour une raison inconnue, le serveur a refusé d'établir une nouvelle session."
 			},
 			"$key": "B6ACB0B2949273FC3A0265F0837EA825A81217D6"
 		},
@@ -23559,7 +23570,7 @@
 			"id": 449,
 			"text": {
 				"en-us": "An unexpected javascript error has been detected. Your current session must be closed. Please, log in again.",
-				"fr-fr": "Une erreur javascript inattendue a �t� d�tect�e. Votre session va �tre ferm�e. Veuillez vous reconnecter � nouveau."
+				"fr-fr": "Une erreur javascript inattendue a été détectée. Votre session va être fermée. Veuillez vous reconnecter à nouveau."
 			},
 			"$key": "C499B20324C93D9C9EC997B43526B459310BF8FC"
 		},
@@ -23568,7 +23579,7 @@
 			"id": 450,
 			"text": {
 				"en-us": "An unexpected error occured in response to the last web server request.",
-				"fr-fr": "Une erreur inattendue s'est produite suite � l'envoi d'une requ�te au serveur web."
+				"fr-fr": "Une erreur inattendue s'est produite suite à l'envoi d'une requête au serveur web."
 			},
 			"$key": "97588F96949BDFC70E7DC04164098AD3D5A4C4F5"
 		},
@@ -23586,7 +23597,7 @@
 			"id": 452,
 			"text": {
 				"en-us": "A thrown and not caught Javascript error occured. Your current session must be closed",
-				"fr-fr": "Une exception Javascript non captur�e s'est produite. Votre session va devoir �tre ferm�e."
+				"fr-fr": "Une exception Javascript non capturée s'est produite. Votre session va devoir être fermée."
 			},
 			"$key": "5C34B0DA60125F396F3CE3CF9574867B75C7735D"
 		},
@@ -23604,7 +23615,7 @@
 			"id": 454,
 			"text": {
 				"en-us": "If the problem persists, please contact your local IT correspondent.",
-				"fr-fr": "Si le probl�me persiste, nous vous invitons � contacter votre correspondant informatique."
+				"fr-fr": "Si le problème persiste, nous vous invitons à contacter votre correspondant informatique."
 			},
 			"$key": "C6A3BCFB50D60F122D7C97D9B3CA6B9739A71D7D"
 		},
@@ -23613,7 +23624,7 @@
 			"id": 455,
 			"text": {
 				"en-us": "Server response is incomplete or inconsistent. Unable to establich the session.",
-				"fr-fr": "La r�ponse du serveur est incompl�te ou inconsistante. La session ne peut pas �tre �tablie."
+				"fr-fr": "La réponse du serveur est incomplète ou inconsistante. La session ne peut pas être établie."
 			},
 			"$key": "D0D6E6C09AFC39B70B63C979638C894A7FB1B5D3"
 		},
@@ -23622,7 +23633,7 @@
 			"id": 456,
 			"text": {
 				"en-us": "Error while processing last server response (polling mode).",
-				"fr-fr": "Une erreur bloquante est survenue lors du traitement de la derni�re r�ponse re�ue (mode polling)."
+				"fr-fr": "Une erreur bloquante est survenue lors du traitement de la dernière réponse reçue (mode polling)."
 			},
 			"$key": "8E030127AEAD6407D91A0DCBC72B0F3E33A7C101"
 		},
@@ -23631,7 +23642,7 @@
 			"id": 457,
 			"text": {
 				"en-us": "Error while processing last server response.",
-				"fr-fr": "Une erreur inattendue est survenue lors du traitement de la derni�re r�ponse re�ue."
+				"fr-fr": "Une erreur inattendue est survenue lors du traitement de la dernière réponse reçue."
 			},
 			"$key": "8D9C559832431FB467B763EA2C8EB84F833768C4"
 		},
@@ -23640,7 +23651,7 @@
 			"id": 458,
 			"text": {
 				"en-us": "Request was aborted because current operation has timed out",
-				"fr-fr": "La requ�te a �t� annul�e car l'op�ration courante a expir�"
+				"fr-fr": "La requête a été annulée car l'opération courante a expiré"
 			},
 			"$key": "C15A349C9EC16B3262A14021B0F1614D6E14BCCF"
 		},
@@ -23649,7 +23660,7 @@
 			"id": 459,
 			"text": {
 				"en-us": "We recommand you to consult the technical detail to get more informations about this issue.",
-				"fr-fr": "Veuillez consulter le d�tail technique afin d'obtenir de plus amples informations sur l'origine du probl�me."
+				"fr-fr": "Veuillez consulter le détail technique afin d'obtenir de plus amples informations sur l'origine du problème."
 			},
 			"$key": "24AA39040502690ACB601BE69C562C095008D1C4"
 		},
@@ -23878,7 +23889,7 @@
 			"id": 482,
 			"text": {
 				"en-us": "Location",
-				"fr-fr": "Localiation"
+				"fr-fr": "Localisation"
 			},
 			"$key": "EEE060A62E4422E6AE5A51EA4C2D25095375F589"
 		},
@@ -24049,7 +24060,7 @@
 			"id": 501,
 			"text": {
 				"en-us": "Printer properties",
-				"fr-fr": "Propriete de l'imprimpante"
+				"fr-fr": "Propriéte de l'imprimante"
 			},
 			"$key": "55CD13CB9B6DC87F7155C0105041E7CAF2431BD2"
 		},
@@ -24205,7 +24216,7 @@
 			"id": 518,
 			"text": {
 				"en-us": "Logout",
-				"fr-fr": "Logout"
+				"fr-fr": "Quitter"
 			},
 			"$key": "701A12E5B6FCFF75A7201E6571736A152D7F3259"
 		},
@@ -24223,7 +24234,7 @@
 			"id": 520,
 			"text": {
 				"en-us": "Parameters",
-				"fr-fr": "Parameters"
+				"fr-fr": "Paramètres"
 			},
 			"$key": "AE59B562C5AB6B78A12F5072115C2A4BF4EDAC30"
 		},
@@ -24277,7 +24288,7 @@
 			"id": 526,
 			"text": {
 				"en-us": "more ...",
-				"fr-fr": "more ..."
+				"fr-fr": "Plus ..."
 			},
 			"$key": "D8567E7DF81C63829A98B5B606AD353E65E3349E"
 		},
@@ -24286,7 +24297,7 @@
 			"id": 527,
 			"text": {
 				"en-us": "Add new tab",
-				"fr-fr": "Add new tab"
+				"fr-fr": "Ajouter un nouvel onglet"
 			},
 			"$key": "AA8E18BC9DA6797556996927641FBB117E824DEC"
 		},
@@ -24295,7 +24306,7 @@
 			"id": 528,
 			"text": {
 				"en-us": "New Tab",
-				"fr-fr": "New Tab"
+				"fr-fr": "Nouvel onglet"
 			},
 			"$key": "0B01AC39840E88D12F92D592F1E1A31AF7A9AB12"
 		},
@@ -24303,7 +24314,7 @@
 			"chp": 10032,
 			"id": 529,
 			"text": {
-				"en-us": "Add vignette",
+				"en-us": "Add gadget",
 				"fr-fr": "Add vignette"
 			},
 			"$key": "A2D029316FBE44176AA3A8F21A8C83E2F5B0EE46"
@@ -24313,7 +24324,7 @@
 			"id": 530,
 			"text": {
 				"en-us": "Refresh",
-				"fr-fr": "Refresh"
+				"fr-fr": "Actualiser"
 			},
 			"$key": "F9683D9B7AE3742803E19076FD0DC96B62CD9790"
 		},
@@ -24321,7 +24332,7 @@
 			"chp": 10032,
 			"id": 531,
 			"text": {
-				"en-us": "Customize Landing Page",
+				"en-us": "Personalize Landing Page",
 				"fr-fr": "Customize Landing Page"
 			},
 			"$key": "80B2284849D5A97FE79CE9329AF0C331CD2BBBFC"
@@ -24331,7 +24342,7 @@
 			"id": 532,
 			"text": {
 				"en-us": "No page created",
-				"fr-fr": "No page created"
+				"fr-fr": "Aucune page créée"
 			},
 			"$key": "D4E87E32BCC0A12518B702DBCD7B5CC3F263E1FC"
 		},
@@ -24340,7 +24351,7 @@
 			"id": 533,
 			"text": {
 				"en-us": "The page '{title}' will be deleted",
-				"fr-fr": "The page '{title}' will be deleted"
+				"fr-fr": "La page '{title}' va être supprimée"
 			},
 			"$key": "1DACF5564FBBB9803D79F7748313145663A69AEC"
 		},
@@ -24357,7 +24368,7 @@
 			"chp": 10032,
 			"id": 535,
 			"text": {
-				"en-us": "Location not found for vignette {0}",
+				"en-us": "Location not found for gadget {0}",
 				"fr-fr": "Location not found for vignette {0}"
 			},
 			"$key": "EB63AEB2A8A5968B23003EEDF8839D0A1358D67E"
@@ -24366,7 +24377,7 @@
 			"chp": 10032,
 			"id": 536,
 			"text": {
-				"en-us": "New vignette",
+				"en-us": "Add new gadgets",
 				"fr-fr": "New vignette"
 			},
 			"$key": "895C0A00DB140A6CB9D010A7A320681305071C73"
@@ -24421,7 +24432,7 @@
 			"id": 542,
 			"text": {
 				"en-us": "Function",
-				"fr-fr": "Function"
+				"fr-fr": "Fonction"
 			},
 			"$key": "E4E3FBD17A160DDF933C0906CA07BA18CC92975B"
 		},
@@ -24430,7 +24441,7 @@
 			"id": 543,
 			"text": {
 				"en-us": "Entity",
-				"fr-fr": "Entity"
+				"fr-fr": "Entité"
 			},
 			"$key": "11624DA1313F36896D114F5F97B33335DF2C8ADE"
 		},
@@ -24439,7 +24450,7 @@
 			"id": 544,
 			"text": {
 				"en-us": "Representation",
-				"fr-fr": "Representation"
+				"fr-fr": "Représentation"
 			},
 			"$key": "7594704362C4708CCB80275D564FED45397C4453"
 		},
@@ -24546,7 +24557,7 @@
 			"chp": 10032,
 			"id": 556,
 			"text": {
-				"en-us": "Vignette",
+				"en-us": "Gadget",
 				"fr-fr": "Vignette"
 			},
 			"$key": "4A2F3BE1CFC2DEBF7C22BD08E0F3C2C97690A1CA"
@@ -24628,7 +24639,7 @@
 			"id": 565,
 			"text": {
 				"en-us": "Customize page",
-				"fr-fr": "Customize page"
+				"fr-fr": "Personnaliser la page"
 			},
 			"$key": "8C3A821AC3A18296BA8912243322FCD8254F719A"
 		},
@@ -24637,7 +24648,7 @@
 			"id": 566,
 			"text": {
 				"en-us": "New content has been applied",
-				"fr-fr": "New content has been applied"
+				"fr-fr": "Un nouveau contenu a été appliqué"
 			},
 			"$key": "99E92C582126D2FDD85FD19B84043785C90EE611"
 		},
@@ -24646,7 +24657,7 @@
 			"id": 567,
 			"text": {
 				"en-us": "Save as",
-				"fr-fr": "Save as"
+				"fr-fr": "Sauvegarder sous"
 			},
 			"$key": "ACC993BE1CFC41F794D1A910F23EAF72888E848D"
 		},
@@ -24655,7 +24666,7 @@
 			"id": 568,
 			"text": {
 				"en-us": "Save",
-				"fr-fr": "Save"
+				"fr-fr": "Sauvegarder"
 			},
 			"$key": "84B929EB04D57AD246AC6D6BEF3EA072FD9FACD4"
 		},
@@ -24664,7 +24675,7 @@
 			"id": 569,
 			"text": {
 				"en-us": "Restore",
-				"fr-fr": "Restore"
+				"fr-fr": "Rétablir"
 			},
 			"$key": "C660645D69136C2924C16FF266895AE665969CE8"
 		},
@@ -24673,7 +24684,7 @@
 			"id": 570,
 			"text": {
 				"en-us": "Forget",
-				"fr-fr": "Forget"
+				"fr-fr": "Oublier"
 			},
 			"$key": "6CFF0240050C1B3277A7DF0FFAD43D45FC623E5F"
 		},
@@ -24691,7 +24702,7 @@
 			"id": 572,
 			"text": {
 				"en-us": "Value must be unique",
-				"fr-fr": "Value must be unique"
+				"fr-fr": "La valeur doit être unique"
 			},
 			"$key": "89B810E1A611D95BA8F935B890A777A73E627A03"
 		},
@@ -24700,7 +24711,7 @@
 			"id": 573,
 			"text": {
 				"en-us": "Invalid date",
-				"fr-fr": "Invalid date"
+				"fr-fr": "Date non valide"
 			},
 			"$key": "8D3636581D99880713980B1F62512496F2D60BF8"
 		},
@@ -24709,7 +24720,7 @@
 			"id": 574,
 			"text": {
 				"en-us": "Invalid time",
-				"fr-fr": "Invalid time"
+				"fr-fr": "Heure non valide"
 			},
 			"$key": "51EC236E2DEA737369548B503135B338095C1307"
 		},
@@ -24718,7 +24729,7 @@
 			"id": 575,
 			"text": {
 				"en-us": "Invalid number",
-				"fr-fr": "Invalid number"
+				"fr-fr": "Nombre non valide"
 			},
 			"$key": "93B2BEDAFB98E92122BBE96805074029113410FA"
 		},
@@ -24772,7 +24783,7 @@
 			"id": 581,
 			"text": {
 				"en-us": "Unknown type",
-				"fr-fr": "Unknown type"
+				"fr-fr": "Type inconnue"
 			},
 			"$key": "EF152703C2D3FC7DB180AC9E3CE7A57AEF7B6E39"
 		},
@@ -24781,7 +24792,7 @@
 			"id": 582,
 			"text": {
 				"en-us": "Not defined",
-				"fr-fr": "Not defined"
+				"fr-fr": "Non défini"
 			},
 			"$key": "177EE3C0ADAB2CA5EF16878FF14A5DB2A44D1EEE"
 		},
@@ -24790,7 +24801,7 @@
 			"id": 583,
 			"text": {
 				"en-us": "Field",
-				"fr-fr": "Field"
+				"fr-fr": "Champ"
 			},
 			"$key": "DBCDDC5A2B8A1E0EE6861EFE7569631AD514F0A2"
 		},
@@ -24799,7 +24810,7 @@
 			"id": 584,
 			"text": {
 				"en-us": "Invalid Value",
-				"fr-fr": "Invalid Value"
+				"fr-fr": "Valeur incorrecte"
 			},
 			"$key": "0F237BF23454308527ECEB3D2C236A860FA62CF9"
 		},
@@ -24808,7 +24819,7 @@
 			"id": 585,
 			"text": {
 				"en-us": "value is mandatory",
-				"fr-fr": "value is mandatory"
+				"fr-fr": "La valeur est obligatoire"
 			},
 			"$key": "A0B7DDF03D0E472F746030EA715D4D0AB2A79678"
 		},
@@ -24853,7 +24864,7 @@
 			"id": 590,
 			"text": {
 				"en-us": "Jump to",
-				"fr-fr": "Jump to"
+				"fr-fr": "Aller à"
 			},
 			"$key": "5C712146D57FA8C165016C8C262B652A5DFF6698"
 		},
@@ -24889,7 +24900,7 @@
 			"id": 594,
 			"text": {
 				"en-us": "Confirm password",
-				"fr-fr": "Confirm password"
+				"fr-fr": "Confirmer le mot de passe"
 			},
 			"$key": "DB7C93F3367262FC5072C6ECB425434F3405C9EC"
 		},
@@ -24898,7 +24909,7 @@
 			"id": 595,
 			"text": {
 				"en-us": "Password",
-				"fr-fr": "Password"
+				"fr-fr": "Mot de passe"
 			},
 			"$key": "EA27971014A919BAB6BF383558C5DCF7A1291D25"
 		},
@@ -24907,7 +24918,7 @@
 			"id": 596,
 			"text": {
 				"en-us": "Password does not match",
-				"fr-fr": "Password does not match"
+				"fr-fr": "Les deux nouveaux mots de passe sont différents"
 			},
 			"$key": "2718284379B0F4F35B912AE34FB8034960228D38"
 		},
@@ -24916,7 +24927,7 @@
 			"id": 597,
 			"text": {
 				"en-us": "Please confirm password",
-				"fr-fr": "Please confirm password"
+				"fr-fr": "Veuillez confirmer le mot de passe"
 			},
 			"$key": "407D285A21E491600F2585442227A679B30D4E02"
 		},
@@ -25078,7 +25089,7 @@
 			"id": 615,
 			"text": {
 				"en-us": "Cancel",
-				"fr-fr": "Cancel"
+				"fr-fr": "Annuler"
 			},
 			"$key": "A85D2467E477CDF1E78711F1F1698DA800278E31"
 		},
@@ -25141,7 +25152,7 @@
 			"id": 622,
 			"text": {
 				"en-us": "Customize list",
-				"fr-fr": "Customize list"
+				"fr-fr": "Personnaliser la liste"
 			},
 			"$key": "3C009DB0BB78F83C96897E5A35D5693CA4797875"
 		},
@@ -25150,7 +25161,7 @@
 			"id": 623,
 			"text": {
 				"en-us": "Cancel sort",
-				"fr-fr": "Cancel sort"
+				"fr-fr": "Annuler le tri"
 			},
 			"$key": "49B8FFBD9536188F9929633FB7B7E4C56C7CD6EA"
 		},
@@ -25177,7 +25188,7 @@
 			"id": 626,
 			"text": {
 				"en-us": "Filters",
-				"fr-fr": "Filters"
+				"fr-fr": "Filtres"
 			},
 			"$key": "52F637F4A320A4E1B48A9B2D11713E3927DAECD3"
 		},
@@ -25195,7 +25206,7 @@
 			"id": 628,
 			"text": {
 				"en-us": "record",
-				"fr-fr": "record"
+				"fr-fr": "enregistrement"
 			},
 			"$key": "78C304B6B29A86C84EB4978D5935041C38218237"
 		},
@@ -25204,7 +25215,7 @@
 			"id": 629,
 			"text": {
 				"en-us": "records",
-				"fr-fr": "records"
+				"fr-fr": "enregistrements"
 			},
 			"$key": "37664BB12D8E5755D85EA81EA2BCCB5643BD9C8E"
 		},
@@ -25573,7 +25584,7 @@
 			"id": 670,
 			"text": {
 				"en-us": "Cancel",
-				"fr-fr": "Cancel"
+				"fr-fr": "Annuler"
 			},
 			"$key": "D9C2A94F0B37B1BD33A29D12E7E8F7056078EC1F"
 		},
@@ -25600,7 +25611,7 @@
 			"id": 673,
 			"text": {
 				"en-us": "Warning",
-				"fr-fr": "Warning"
+				"fr-fr": "Avertissment"
 			},
 			"$key": "26ABFC96501905029F33F396452549B859AB9CA3"
 		},
@@ -25618,7 +25629,7 @@
 			"id": 675,
 			"text": {
 				"en-us": "Show technical detail",
-				"fr-fr": "Show technical detail"
+				"fr-fr": "Afficher les détails techniques"
 			},
 			"$key": "BB9A58AF672EF977F3F608EB280543D9B6693471"
 		},
@@ -25627,7 +25638,7 @@
 			"id": 676,
 			"text": {
 				"en-us": "Hide technical detail",
-				"fr-fr": "Hide technical detail"
+				"fr-fr": "Masquer les détails techniques"
 			},
 			"$key": "2F2C227D2C8280D7EAC31AFC34941735C3C9B893"
 		},
@@ -25636,7 +25647,7 @@
 			"id": 677,
 			"text": {
 				"en-us": "Your attention is required",
-				"fr-fr": "Your attention is required"
+				"fr-fr": "Votre attention est requise"
 			},
 			"$key": "BD29E6A3989844497B535A7CE6FA4B3409A2293E"
 		},
@@ -25654,7 +25665,7 @@
 			"id": 679,
 			"text": {
 				"en-us": "Your attention is required",
-				"fr-fr": "Your attention is required"
+				"fr-fr": "Votre attention est requise"
 			},
 			"$key": "C75B78A00DBF5A2773852A5F59BBEC8C4728DA83"
 		},
@@ -25897,7 +25908,7 @@
 			"id": 706,
 			"text": {
 				"en-us": "Close",
-				"fr-fr": "Close"
+				"fr-fr": "Fermer"
 			},
 			"$key": "B45CD7DB4FCC830979F52FFBD1DA04EC1E5722B5"
 		},
@@ -25905,8 +25916,8 @@
 			"chp": 10032,
 			"id": 707,
 			"text": {
-				"en-us": "Customize",
-				"fr-fr": "Customize"
+				"en-us": "Personalize",
+				"fr-fr": "Personnaliser"
 			},
 			"$key": "B24305EC985ED914D71CCDE602F9FDBE517C6100"
 		},
@@ -25915,7 +25926,7 @@
 			"id": 708,
 			"text": {
 				"en-us": "Refresh",
-				"fr-fr": "Refresh"
+				"fr-fr": "Actualiser"
 			},
 			"$key": "0C9B22AA261BCDE6B876FD513BFA208C408DF737"
 		},
@@ -25924,7 +25935,7 @@
 			"id": 709,
 			"text": {
 				"en-us": "Show advanced fields",
-				"fr-fr": "Show advanced fields"
+				"fr-fr": "Afficher les champs avancés"
 			},
 			"$key": "F485568D40501A7FAAE36AC9179AFC412E8B0C0B"
 		},
@@ -25933,7 +25944,7 @@
 			"id": 710,
 			"text": {
 				"en-us": "Hide advanced fields",
-				"fr-fr": "Hide advanced fields"
+				"fr-fr": "Masquer les champs avancés"
 			},
 			"$key": "79AE42057E88A02279E552182B8F20AEB10F20BD"
 		},
@@ -26617,7 +26628,7 @@
 			"id": 786,
 			"text": {
 				"en-us": "Formula wizard",
-				"fr-fr": "Formula wizard"
+				"fr-fr": "Editeur de formules"
 			},
 			"$key": "68347D18616266DE184383501E0769B1D7F5F7AF"
 		},
@@ -26626,7 +26637,7 @@
 			"id": 787,
 			"text": {
 				"en-us": "Formula",
-				"fr-fr": "Formula"
+				"fr-fr": "Formule"
 			},
 			"$key": "1FA1132BE0108EB91213F7CD114E38DC6191D144"
 		},
@@ -26635,7 +26646,7 @@
 			"id": 788,
 			"text": {
 				"en-us": "Fields and variables",
-				"fr-fr": "Fields and variables"
+				"fr-fr": "Champs et variables"
 			},
 			"$key": "6C47AC4E876939DCDBBE27CB90396C003D1D7947"
 		},
@@ -26644,7 +26655,7 @@
 			"id": 789,
 			"text": {
 				"en-us": "Operators",
-				"fr-fr": "Operators"
+				"fr-fr": "Operateurs"
 			},
 			"$key": "F15EA13024F7361B1D898D2739E9CC8481BEEB4A"
 		},
@@ -26653,7 +26664,7 @@
 			"id": 790,
 			"text": {
 				"en-us": "Functions",
-				"fr-fr": "Functions"
+				"fr-fr": "Fonctions"
 			},
 			"$key": "3F92F2D55BC66028747645D72B457613B2EABC81"
 		},
@@ -26671,7 +26682,7 @@
 			"id": 792,
 			"text": {
 				"en-us": "Cancel",
-				"fr-fr": "Cancel"
+				"fr-fr": "Annuler"
 			},
 			"$key": "852360DC2A2620E995AA2F7694E71CF74708457B"
 		},
@@ -26680,7 +26691,7 @@
 			"id": 793,
 			"text": {
 				"en-us": "Verify",
-				"fr-fr": "Verify"
+				"fr-fr": "Vérifer"
 			},
 			"$key": "59E9232BEC22F3302C1A4ED076CD5430F8A95CF0"
 		},
@@ -27020,7 +27031,7 @@
 			"chp": 10032,
 			"id": 831,
 			"text": {
-				"en-us": "Customize page",
+				"en-us": "Personalize page",
 				"fr-fr": "Customize page"
 			},
 			"$key": "ABC56987170C7CF0FFBFDECFF508AC2CA98F1A41"
@@ -27066,7 +27077,7 @@
 			"id": 836,
 			"text": {
 				"en-us": "You are logged as",
-				"fr-fr": "You are logged as"
+				"fr-fr": "Vous êtes identifié comme"
 			},
 			"$key": "80049743258F252312EECC06213B9DB2F8B22AA1"
 		},
@@ -27075,7 +27086,7 @@
 			"id": 837,
 			"text": {
 				"en-us": "Your current endpoint is",
-				"fr-fr": "Your current endpoint is"
+				"fr-fr": "Votre service actuel est"
 			},
 			"$key": "0047042E89408EE7833EFDD0A12A003F9E8CBBCC"
 		},
@@ -27084,7 +27095,7 @@
 			"id": 838,
 			"text": {
 				"en-us": "Your locale setting is",
-				"fr-fr": "Your locale setting is"
+				"fr-fr": "Vos paramètres régionaux sont"
 			},
 			"$key": "DEA11B52E41CCAA4D8A52AE153C618C6BF327032"
 		},
@@ -27147,7 +27158,7 @@
 			"id": 845,
 			"text": {
 				"en-us": "Convergence Session Timeout",
-				"fr-fr": "Convergence Session Timeout"
+				"fr-fr": "Délai d'expiration atteint"
 			},
 			"$key": "7208B73988AF9F4F96D47C3AE9711220484E925F"
 		},
@@ -27156,7 +27167,7 @@
 			"id": 846,
 			"text": {
 				"en-us": "Your convergence sessions have been closed because of timeout",
-				"fr-fr": "Your convergence sessions have been closed because of timeout"
+				"fr-fr": "Votre session classic a été fermée en raison du délai d'expiration"
 			},
 			"$key": "108005A4D097E15C8F72457065BE1D6757C2FB3D"
 		},
@@ -27165,7 +27176,7 @@
 			"id": 847,
 			"text": {
 				"en-us": "Select one or more values",
-				"fr-fr": "Select one or more values"
+				"fr-fr": "Sélectionner une ou plusieurs valeurs"
 			},
 			"$key": "F8CBD3CF7374DDAC4D63C25A126AAC1684E81C3C"
 		},
@@ -27183,7 +27194,7 @@
 			"id": 849,
 			"text": {
 				"en-us": "Cancel",
-				"fr-fr": "Cancel"
+				"fr-fr": "Annuler"
 			},
 			"$key": "2553D412F2F711F072EF5C56914F90955DFEBC3C"
 		},
@@ -27191,8 +27202,8 @@
 			"chp": 10032,
 			"id": 850,
 			"text": {
-				"en-us": "A Propos",
-				"fr-fr": "About"
+				"en-us": "About",
+				"fr-fr": "À propos"
 			},
 			"$key": "7593C0CFA32AFA43ACFF4F0DCC65C8C2E357D92C"
 		},
@@ -27200,8 +27211,8 @@
 			"chp": 10032,
 			"id": 851,
 			"text": {
-				"en-us": "Tableau de bord",
-				"fr-fr": "Dashboard"
+				"en-us": "Dashboard",
+				"fr-fr": "Tableau de bord"
 			},
 			"$key": "088A370C932CC0FF611E1CE4BFD02F22C159F3AD"
 		},
@@ -27252,6 +27263,1742 @@
 				"en-us": "Template"
 			},
 			"$key": "DF8E5B94E11F476B0ABB344E01B7DE5D944D9899"
+		},
+		"ldpDesignTitle": {
+			"chp": 10032,
+			"id": 1364,
+			"text": {
+				"en-us": "Title"
+			},
+			"$key": "C851FFCE4FBE75A847107583E84DBCB780E1E8EB"
+		},
+		"ldpDesignTranslation": {
+			"chp": 10032,
+			"id": 1365,
+			"text": {
+				"en-us": "Translations"
+			},
+			"$key": "2451E3EB654E4EFADEDFB9DE0B4AB5AA8679663C"
+		},
+		"ldpDelete": {
+			"chp": 10032,
+			"id": 1366,
+			"text": {
+				"en-us": "Delete tab"
+			},
+			"$key": "7429E44070EEF3861F6441DF19523167D3961585"
+		},
+		"ldpUserPages": {
+			"chp": 10032,
+			"id": 1367,
+			"text": {
+				"en-us": "My Landing pages"
+			},
+			"$key": "4BFBBAE183D2050DB02EDD31EB53A1AC23557B35"
+		},
+		"ldpDeleteVignette": {
+			"chp": 10032,
+			"id": 1368,
+			"text": {
+				"en-us": "Delete"
+			},
+			"$key": "7E128E798693A30FA3BCDA1D72B91373BBB340A6"
+		},
+		"ldpConfirmDeleteVignette": {
+			"chp": 10032,
+			"id": 1369,
+			"text": {
+				"en-us": "The gadget '{0}' will be deleted. Confirm?"
+			},
+			"$key": "4DF7670DE242F763C88C8577165E6ADAB7CD9953"
+		},
+		"ldpConfirmTabDeleteVignette": {
+			"chp": 10032,
+			"id": 1370,
+			"text": {
+				"en-us": "The gadgets in '{0}' will be deleted. Confirm?"
+			},
+			"$key": "C63D3D68D1C6AA4BF66889713778084924210676"
+		},
+		"ldpSearch": {
+			"chp": 10032,
+			"id": 1371,
+			"text": {
+				"en-us": "Search gadget"
+			},
+			"$key": "8FD409518BED09CD2A85D153FD27A882C082AEDD"
+		},
+		"ldpSelectedVignettes": {
+			"chp": 10032,
+			"id": 1372,
+			"text": {
+				"en-us": "Selected gadgets"
+			},
+			"$key": "78B5A53DEDBEC320B978829FF061A1C69CEC47C3"
+		},
+		"ldpSearchResultTitle": {
+			"chp": 10032,
+			"id": 1373,
+			"text": {
+				"en-us": "Title"
+			},
+			"$key": "12D267431616B2F727B24F6188AD9A670A37ED08"
+		},
+		"ldpSearchResultCategories": {
+			"chp": 10032,
+			"id": 1374,
+			"text": {
+				"en-us": "Categories"
+			},
+			"$key": "41C4B1B2FDA50E768C7AC4DBB72FF40770A36B10"
+		},
+		"ldpSearchResultModule": {
+			"chp": 10032,
+			"id": 1375,
+			"text": {
+				"en-us": "Module"
+			},
+			"$key": "DC49BB3A4B6D7A4E1DEE65D5A46841D44935ED76"
+		},
+		"ldpModulesTitle": {
+			"chp": 10032,
+			"id": 1376,
+			"text": {
+				"en-us": "Modules"
+			},
+			"$key": "FB1716756B2EFDDAF74051A23E515EFAFDD882AB"
+		},
+		"ldpCategoriesTitle": {
+			"chp": 10032,
+			"id": 1377,
+			"text": {
+				"en-us": "Categories"
+			},
+			"$key": "B6278994E4851EB1C0DF9850E1ACAF9981455585"
+		},
+		"ldpVignettesTitle": {
+			"chp": 10032,
+			"id": 1378,
+			"text": {
+				"en-us": "Gadgets"
+			},
+			"$key": "CBFF1A0A3CF40207728EA9EE7675A428B00BF0F2"
+		},
+		"ldpNoModule": {
+			"chp": 10032,
+			"id": 1379,
+			"text": {
+				"en-us": "No Module"
+			},
+			"$key": "6694C1DDCB2E7370E58E4BE3D82DFBC324F87DC1"
+		},
+		"ldpNoCategory": {
+			"chp": 10032,
+			"id": 1380,
+			"text": {
+				"en-us": "No Category"
+			},
+			"$key": "30813581ACA6A30DC1F5EBC42752F3F6E042CBC6"
+		},
+		"ldpNoTitle": {
+			"chp": 10032,
+			"id": 1381,
+			"text": {
+				"en-us": "No title defined"
+			},
+			"$key": "8BF31C29F1122E67950448A1C089F0DCC7594BED"
+		},
+		"ldpSelectEndpoint": {
+			"chp": 10032,
+			"id": 1382,
+			"text": {
+				"en-us": "1. Please select endpoint"
+			},
+			"$key": "4F0998DDBC040616346757A4BB8A56FB8E711633"
+		},
+		"ldpBrowseCategory": {
+			"chp": 10032,
+			"id": 1383,
+			"text": {
+				"en-us": "2. Browse category"
+			},
+			"$key": "DDB23F3E7748DC6B8EB4611D738ED390D7BB3C7B"
+		},
+		"ldpUseSearch": {
+			"chp": 10032,
+			"id": 1384,
+			"text": {
+				"en-us": "Use the search engine to directly find gadgets"
+			},
+			"$key": "66E3D3592D232E20B92343F8B24ED471E32AB215"
+		},
+		"ldpNoVignetteSelected": {
+			"chp": 10032,
+			"id": 1385,
+			"text": {
+				"en-us": "No gadget selected or set"
+			},
+			"$key": "04DCCFDD3F2D5FA7EE493A50D5CFB83EFA80BBB2"
+		},
+		"ldpNoVignetteFounds": {
+			"chp": 10032,
+			"id": 1386,
+			"text": {
+				"en-us": "Gadgets founds"
+			},
+			"$key": "B145F9E4B53DAC4D90DA658222D1B082FDD96C4C"
+		},
+		"flDesign": {
+			"chp": 10032,
+			"id": 1387,
+			"text": {
+				"en-us": "Personalize list"
+			},
+			"$key": "08BD7D6D435CF7157A85155281123CE91BB1056A"
+		},
+		"flDesignGraph": {
+			"chp": 10032,
+			"id": 1388,
+			"text": {
+				"en-us": "Personalize graph"
+			},
+			"$key": "A8C9D231F8097BD6B590F560AD7EB181631D3C37"
+		},
+		"dlg_ok": {
+			"chp": 10032,
+			"id": 1389,
+			"text": {
+				"en-us": "Ok"
+			},
+			"$key": "6B6BA69600FF53A250A57A985BAA7D8348AA0C2E"
+		},
+		"dlg_close": {
+			"chp": 10032,
+			"id": 1390,
+			"text": {
+				"en-us": "Close"
+			},
+			"$key": "12E7C3BC2236B55954EE669A3FE9A976D380EE46"
+		},
+		"box_edit": {
+			"chp": 10032,
+			"id": 1391,
+			"text": {
+				"en-us": "Edit title"
+			},
+			"$key": "E69B6813BF46779F13B850D8B3313900F56EE335"
+		},
+		"box_delete": {
+			"chp": 10032,
+			"id": 1392,
+			"text": {
+				"en-us": "Delete"
+			},
+			"$key": "06CE3837E3C18C1349C388CF19D1F4C9430B3075"
+		},
+		"searchFieldTitle": {
+			"chp": 10032,
+			"id": 1393,
+			"text": {
+				"en-us": "Search"
+			},
+			"$key": "7C87048E6DC112E2A6B3C0EC1593C9F8CA8B2539"
+		},
+		"searchAdvanceLabel": {
+			"chp": 10032,
+			"id": 1394,
+			"text": {
+				"en-us": "See more results"
+			},
+			"$key": "6A0D3798F6D0C9BAEA038A3B6204328B52852935"
+		},
+		"searchAdvanceResults": {
+			"chp": 10032,
+			"id": 1395,
+			"text": {
+				"en-us": "See more results"
+			},
+			"$key": "BA5E1909815C6536464D3B772D2E5BC6D99937AC"
+		},
+		"searchAdvanceDetails": {
+			"chp": 10032,
+			"id": 1396,
+			"text": {
+				"en-us": "See details"
+			},
+			"$key": "B219F0E5C22FE012A6FD70125D4A55A53773A14A"
+		},
+		"searchPageTitle": {
+			"chp": 10032,
+			"id": 1397,
+			"text": {
+				"en-us": "Search results starting with '{query}'"
+			},
+			"$key": "E18F86F7865A7A4C3387EFA9EE4FCD3D08C8ECC1"
+		},
+		"searchQueryData": {
+			"chp": 10032,
+			"id": 1398,
+			"text": {
+				"en-us": "Data"
+			},
+			"$key": "C2E4B4F430E2A8B7A3748FF06A8C0EDD6405C7E1"
+		},
+		"searchQueryFunctions": {
+			"chp": 10032,
+			"id": 1399,
+			"text": {
+				"en-us": "Functions"
+			},
+			"$key": "BDE418B88FB04F9CAA58DA8DA3F4BCB4F0BCB77A"
+		},
+		"searchDescription": {
+			"chp": 10032,
+			"id": 1400,
+			"text": {
+				"en-us": "Description"
+			},
+			"$key": "003C430F2543884386DC6A86659BAA7E7234EBFF"
+		},
+		"searchResultType": {
+			"chp": 10032,
+			"id": 1401,
+			"text": {
+				"en-us": "Result type title"
+			},
+			"$key": "705BF012C422762A52AE154CF6FC1C8816E05BD6"
+		},
+		"searchOptionLabel": {
+			"chp": 10032,
+			"id": 1402,
+			"text": {
+				"en-us": "Search option:"
+			},
+			"$key": "BFC4A5289660BB0E5348D9F37A76B211A17F88D4"
+		},
+		"searchStartingWith": {
+			"chp": 10032,
+			"id": 1403,
+			"text": {
+				"en-us": "Return to previous result set"
+			},
+			"$key": "07602CE7C34B6610DE449ECA084F5C8A2ED88122"
+		},
+		"searchSimilar": {
+			"chp": 10032,
+			"id": 1404,
+			"text": {
+				"en-us": "Widen result set to similar results"
+			},
+			"$key": "750BE8FD7094788DB2B9CD01C5181B85E533EB53"
+		},
+		"searchFacetFilters": {
+			"chp": 10032,
+			"id": 1405,
+			"text": {
+				"en-us": "Filters for data"
+			},
+			"$key": "52A9D717BDE7FBE0437386B05F25D5E08C3D02EB"
+		},
+		"autoInsertNotBound": {
+			"chp": 10032,
+			"id": 1406,
+			"text": {
+				"en-us": "field has not been inserted because it is not bound to a layout"
+			},
+			"$key": "CA86871F7FEEB9FA64AD6314A7C536DEE0A612E2"
+		},
+		"autoInsertLytLess": {
+			"chp": 10032,
+			"id": 1407,
+			"text": {
+				"en-us": "field has not been inserted because corresponding layout doesn't exist"
+			},
+			"$key": "4805853D9F391C59FDCC2C7C8A46E8A6268A63DF"
+		},
+		"autoInsertBlockInLastSec": {
+			"chp": 10032,
+			"id": 1408,
+			"text": {
+				"en-us": "block has been inserted by default in the last available slot of the last available section"
+			},
+			"$key": "86A53AE3A275FF245D93BD4301FBB4DC5EC2F853"
+		},
+		"autoInsertSectionFailed": {
+			"chp": 10032,
+			"id": 1409,
+			"text": {
+				"en-us": "section insertion failed"
+			},
+			"$key": "099FE21C63263EBE3451A1832A8A568DC415B5E8"
+		},
+		"autoInsertSectionSuccess": {
+			"chp": 10032,
+			"id": 1410,
+			"text": {
+				"en-us": "section has been inserted successfully"
+			},
+			"$key": "8999C7FF6312DF557856A7E017F97B60EAD4AA3C"
+		},
+		"autoInsertSectionUnexpected": {
+			"chp": 10032,
+			"id": 1411,
+			"text": {
+				"en-us": "an unexpected error occured while trying to insert new sections"
+			},
+			"$key": "8E45555406C83E603CF1672C592FD4C0E7AC8538"
+		},
+		"autoInsertSectionInNearestSlot": {
+			"chp": 10032,
+			"id": 1412,
+			"text": {
+				"en-us": "section has been inserted in the nearest slot"
+			},
+			"$key": "D583A69839E60C17013A80BEA0424EE0B8C6AD11"
+		},
+		"autoInsertSectionWarnLayout": {
+			"chp": 10032,
+			"id": 1413,
+			"text": {
+				"en-us": "le layout de la section à insérer est en inadéquation avec le layout de la reprrésentation personnalisée"
+			},
+			"$key": "BDFE8888E1CC9D9913464F4602B997BA6ADEEE6A"
+		},
+		"highCharts_showHideLegend": {
+			"chp": 10032,
+			"id": 1414,
+			"text": {
+				"en-us": "Show / Hide legend"
+			},
+			"$key": "8DDCD37C4487D797A5942FF08D2236B98E1C0EB3"
+		},
+		"aw_showAs": {
+			"chp": 10032,
+			"id": 1415,
+			"text": {
+				"en-us": "Show as"
+			},
+			"$key": "539AC3BE6F5D7BAD506A4BC5CC2821B95546CD21"
+		},
+		"aw_appearance": {
+			"chp": 10032,
+			"id": 1416,
+			"text": {
+				"en-us": "Appearance"
+			},
+			"$key": "77ED64102736C33385D249F6843ADC0916C766FB"
+		},
+		"aw_template": {
+			"chp": 10032,
+			"id": 1417,
+			"text": {
+				"en-us": "Templates"
+			},
+			"$key": "3E3E957C20EB24D8859346214D80DF61F9BE953D"
+		},
+		"aw_section_tabs": {
+			"chp": 10032,
+			"id": 1418,
+			"text": {
+				"en-us": "tabs"
+			},
+			"$key": "BAFEF62FE267E9BA85896BE0489530F50E551EEA"
+		},
+		"aw_section_panels": {
+			"chp": 10032,
+			"id": 1419,
+			"text": {
+				"en-us": "panels"
+			},
+			"$key": "4BEDF96534A805B3B1CD872C39AEB73AF312A098"
+		},
+		"aw_layoutRow": {
+			"chp": 10032,
+			"id": 1420,
+			"text": {
+				"en-us": "row"
+			},
+			"$key": "7E4D45E5069BABAC0B2B3F84E1503B5B021F3918"
+		},
+		"aw_sectionAppearance": {
+			"chp": 10032,
+			"id": 1421,
+			"text": {
+				"en-us": "Title"
+			},
+			"$key": "6631F912BF0FCC12A60934F42B2AA1E4B484AB80"
+		},
+		"aw_sectionBehaviour": {
+			"chp": 10032,
+			"id": 1422,
+			"text": {
+				"en-us": "Behaviour"
+			},
+			"$key": "A8136B54310D7C7B4DE5E77087ED0D22C5860886"
+		},
+		"aw_sectionFields": {
+			"chp": 10032,
+			"id": 1423,
+			"text": {
+				"en-us": "Fields Label"
+			},
+			"$key": "12C07CDFDDE61304867AF7CAB35CAD00D91372B2"
+		},
+		"aw_labelPosition": {
+			"chp": 10032,
+			"id": 1424,
+			"text": {
+				"en-us": "Position"
+			},
+			"$key": "9874CF20E6EB98F634469F2D25A91EAA377E758C"
+		},
+		"aw_labelPositionTop": {
+			"chp": 10032,
+			"id": 1425,
+			"text": {
+				"en-us": "at top"
+			},
+			"$key": "84A49605F31E368CE95F046EA6D46930EBE17D19"
+		},
+		"aw_labelPositionLeftLeft": {
+			"chp": 10032,
+			"id": 1426,
+			"text": {
+				"en-us": "at left & left aligned"
+			},
+			"$key": "71434C1F5C31FE8D9CC4B0C0F98F762DE81E2C25"
+		},
+		"aw_labelPositionLeftRight": {
+			"chp": 10032,
+			"id": 1427,
+			"text": {
+				"en-us": "at left & right aligned"
+			},
+			"$key": "759AA2581EF41C0DFC7D52A47896877852A7189E"
+		},
+		"aw_rowAlign": {
+			"chp": 10032,
+			"id": 1428,
+			"text": {
+				"en-us": "align content to"
+			},
+			"$key": "2AC0116C1E3D5BBEA55274E829BC0D9329B012D4"
+		},
+		"aw_rowAlignTop": {
+			"chp": 10032,
+			"id": 1429,
+			"text": {
+				"en-us": "top"
+			},
+			"$key": "4C2AC1B5A5F1D9061389BF3AE893ACBE81019FE8"
+		},
+		"aw_rowAlignBottom": {
+			"chp": 10032,
+			"id": 1430,
+			"text": {
+				"en-us": "bottom"
+			},
+			"$key": "476B0A8564EE5927BBEA8E6C209BD06AD9756E69"
+		},
+		"aw_titleVisible": {
+			"chp": 10032,
+			"id": 1431,
+			"text": {
+				"en-us": "show title"
+			},
+			"$key": "6B621E423C8FA96C1C6EACDDEE243EB24F438E8E"
+		},
+		"aw_titleLocalization": {
+			"chp": 10032,
+			"id": 1432,
+			"text": {
+				"en-us": "this title"
+			},
+			"$key": "C5D984E23F42103C72CCD113397B4131470B6C5A"
+		},
+		"aw_titleBlank": {
+			"chp": 10032,
+			"id": 1433,
+			"text": {
+				"en-us": "blank title"
+			},
+			"$key": "E48DE0F85A98586C3843D6414161D09203D0CFC2"
+		},
+		"aw_titleHidden": {
+			"chp": 10032,
+			"id": 1434,
+			"text": {
+				"en-us": "no title"
+			},
+			"$key": "DAC66C36D6B8A4D1BA217A1FF195CA4476D934E7"
+		},
+		"aw_isBoxCollapsable": {
+			"chp": 10032,
+			"id": 1435,
+			"text": {
+				"en-us": "collapsible"
+			},
+			"$key": "AA3925B8DE87B1BB05BDC35D43A4CE5FECF036EB"
+		},
+		"aw_excludeMe": {
+			"chp": 10032,
+			"id": 1436,
+			"text": {
+				"en-us": "Exclude me"
+			},
+			"$key": "192427D30C4EFA5ADC17CB395910C622DA71E20F"
+		},
+		"aw_isAdvanced": {
+			"chp": 10032,
+			"id": 1437,
+			"text": {
+				"en-us": "advanced field"
+			},
+			"$key": "64366321B7E674021E516CB45EC546068B8DA2D8"
+		},
+		"aw_isMaximizable": {
+			"chp": 10032,
+			"id": 1438,
+			"text": {
+				"en-us": "maximizable"
+			},
+			"$key": "D6D84F2BB6655CCC2572FC0141932E2167A53FA3"
+		},
+		"aw_isLabelHidden": {
+			"chp": 10032,
+			"id": 1439,
+			"text": {
+				"en-us": "no label"
+			},
+			"$key": "A3403CA8314BB63F1BBDF10E7A8C25A22C1408E7"
+		},
+		"aw_isTitleHidden": {
+			"chp": 10032,
+			"id": 1440,
+			"text": {
+				"en-us": "hide title"
+			},
+			"$key": "6264E938EBD94DE9A7440F2F05F1C1F2BA304527"
+		},
+		"aw_drop_new_section": {
+			"chp": 10032,
+			"id": 1441,
+			"text": {
+				"en-us": "drop new section / block"
+			},
+			"$key": "49889134FDBA2A483CE8F7FD974D52E3B40FBF9E"
+		},
+		"aw_addBlock": {
+			"chp": 10032,
+			"id": 1442,
+			"text": {
+				"en-us": "Block"
+			},
+			"$key": "8F1968F9AA1D6F64D9600687BCABED7A0CA0B9F8"
+		},
+		"aw_addMenus": {
+			"chp": 10032,
+			"id": 1443,
+			"text": {
+				"en-us": "Menus"
+			},
+			"$key": "CED06610086ABB626354754BCFB0E95519CBCAB1"
+		},
+		"aw_listUnFixeColumn": {
+			"chp": 10032,
+			"id": 1444,
+			"text": {
+				"en-us": "unfixe column"
+			},
+			"$key": "5DF5450409B2B081369CD1C438B5845C0B4BEC6E"
+		},
+		"aw_listFixeColumn": {
+			"chp": 10032,
+			"id": 1445,
+			"text": {
+				"en-us": "fixe column"
+			},
+			"$key": "6D01A569F9FE77EAD9B41C782A130AE748FD2C3F"
+		},
+		"aw_listHideColumn": {
+			"chp": 10032,
+			"id": 1446,
+			"text": {
+				"en-us": "hide column"
+			},
+			"$key": "E9B4EEF932DE30CFF17C3778860EDE127D347469"
+		},
+		"aw_sectionFieldLabel": {
+			"chp": 10032,
+			"id": 1447,
+			"text": {
+				"en-us": "Label"
+			},
+			"$key": "B082F9C040FE28769F5DDEC747B90A2819DA865A"
+		},
+		"aw_sectionFieldLabelPosition": {
+			"chp": 10032,
+			"id": 1448,
+			"text": {
+				"en-us": "Position"
+			},
+			"$key": "D4626C43CF9CA14C7863555B8B8EE516955D6911"
+		},
+		"aw_viewTypeStructure": {
+			"chp": 10032,
+			"id": 1449,
+			"text": {
+				"en-us": "Structure"
+			},
+			"$key": "F48A96920B6FF24E0C9AB676565DCE7E8C87A6E8"
+		},
+		"aw_viewTypeContent": {
+			"chp": 10032,
+			"id": 1450,
+			"text": {
+				"en-us": "Content"
+			},
+			"$key": "9F7A5144E56A43363A225480FFABE90778E4A15D"
+		},
+		"aw_viewTypeLayout": {
+			"chp": 10032,
+			"id": 1451,
+			"text": {
+				"en-us": "Display"
+			},
+			"$key": "8173E254F2746BB1F60425DDE1AB5D6C020DF458"
+		},
+		"aw_viewTypePreview": {
+			"chp": 10032,
+			"id": 1452,
+			"text": {
+				"en-us": "Preview"
+			},
+			"$key": "8C9123E7BFC526573420B333F418C7117BD886A1"
+		},
+		"aw_viewTypeJSON": {
+			"chp": 10032,
+			"id": 1453,
+			"text": {
+				"en-us": "JSON"
+			},
+			"$key": "2A4C5C5040463EF0BDACED3DDE9B2B5A39AA7C89"
+		},
+		"aw_previousLayout": {
+			"chp": 10032,
+			"id": 1454,
+			"text": {
+				"en-us": "Previous layout"
+			},
+			"$key": "053E1165BF22E4788AD431BDC260F93EE5E05DEF"
+		},
+		"aw_previousLayoutOn": {
+			"chp": 10032,
+			"id": 1455,
+			"text": {
+				"en-us": "Previous layout ({0} / {1})"
+			},
+			"$key": "794BAE8A117020D87E5A322C45831EAF4D3A5A60"
+		},
+		"aw_nextLayout": {
+			"chp": 10032,
+			"id": 1456,
+			"text": {
+				"en-us": "Next layout"
+			},
+			"$key": "AA021906A5055A071F138A4C546FF0A3D8CE2861"
+		},
+		"aw_nextLayoutOn": {
+			"chp": 10032,
+			"id": 1457,
+			"text": {
+				"en-us": "Next layout ({0} / {1})"
+			},
+			"$key": "41B4409DF3628D5781A8A84D66449FDC48A83A81"
+		},
+		"aw_undoAllLayout": {
+			"chp": 10032,
+			"id": 1458,
+			"text": {
+				"en-us": "Undo all"
+			},
+			"$key": "B9B9353705060AA26D8814732F06C21566D02E72"
+		},
+		"aw_help": {
+			"chp": 10032,
+			"id": 1459,
+			"text": {
+				"en-us": "Help"
+			},
+			"$key": "B5C4AFA2129272C51A14FE15AD805B4E0913EA5C"
+		},
+		"aw_save": {
+			"chp": 10032,
+			"id": 1460,
+			"text": {
+				"en-us": "Save"
+			},
+			"$key": "ABB6C4949B7285CAEE66F41F4FE1746AAB671ED8"
+		},
+		"aw_quit": {
+			"chp": 10032,
+			"id": 1461,
+			"text": {
+				"en-us": "Leave authoring mode"
+			},
+			"$key": "5DB8CACB607506EBF18F41D394169A36F325F4C8"
+		},
+		"aw_insert": {
+			"chp": 10032,
+			"id": 1462,
+			"text": {
+				"en-us": "Insert"
+			},
+			"$key": "26D6A61B1B98C4F01A7F27717367F9D5C08BECF4"
+		},
+		"aw_sectionFieldWidget": {
+			"chp": 10032,
+			"id": 1463,
+			"text": {
+				"en-us": "Widget"
+			},
+			"$key": "410AA9E19CB451CD8358C3159C9702A38AD71257"
+		},
+		"aw_title": {
+			"chp": 10032,
+			"id": 1464,
+			"text": {
+				"en-us": "Authoring mode"
+			},
+			"$key": "0C08C329C2B9B00AC8D29F03A5940D733096825B"
+		},
+		"aw_close": {
+			"chp": 10032,
+			"id": 1465,
+			"text": {
+				"en-us": "Close"
+			},
+			"$key": "8C1BBA980987EE7F8AD496A9B5C5BE166CFFB367"
+		},
+		"aw_card_detail_title": {
+			"chp": 10032,
+			"id": 1466,
+			"text": {
+				"en-us": "Design of detail view"
+			},
+			"$key": "C0FE3C8510D4188F661220FF14DE113CF92D0F7D"
+		},
+		"aw_card_card_title": {
+			"chp": 10032,
+			"id": 1467,
+			"text": {
+				"en-us": "Design of card view"
+			},
+			"$key": "9EFB20251F724E84E46AB6AB99ABA3B73B227972"
+		},
+		"aw_updateMessageTitle": {
+			"chp": 10032,
+			"id": 1468,
+			"text": {
+				"en-us": "Page layout has been updated"
+			},
+			"$key": "3BADC38AE10CEB90F0660AF4A2FEFACCDAB9535A"
+		},
+		"aw_cancelMessageText": {
+			"chp": 10032,
+			"id": 1469,
+			"text": {
+				"en-us": "Save Update before quit"
+			},
+			"$key": "4FB075EDE6675A5A867366E4C3A2D2FDAF5523AE"
+		},
+		"aw_deleteMessageTitle": {
+			"chp": 10032,
+			"id": 1470,
+			"text": {
+				"en-us": "Delete"
+			},
+			"$key": "E19B3BBEE86FA94FE3DC390E54008C51239CE3DE"
+		},
+		"aw_deleteMessageText": {
+			"chp": 10032,
+			"id": 1471,
+			"text": {
+				"en-us": "The view {0} will be deleted.Confirm ?"
+			},
+			"$key": "AC7967810933EC071AD61E33B60D288E184B37C5"
+		},
+		"aw_isDeletedMessageText": {
+			"chp": 10032,
+			"id": 1472,
+			"text": {
+				"en-us": "The view {0} has been deleted"
+			},
+			"$key": "46C708F1BB80B1CF0841BC3C5E9B934FC01EC2D5"
+		},
+		"aw_saveMessageText": {
+			"chp": 10032,
+			"id": 1473,
+			"text": {
+				"en-us": "Page design is saved."
+			},
+			"$key": "F84101071B5E764CB97B952FFFB552F396B42F78"
+		},
+		"aw_page": {
+			"chp": 10032,
+			"id": 1474,
+			"text": {
+				"en-us": "Page"
+			},
+			"$key": "01668941D0BA6334910F99D3BCE79733E57133F0"
+		},
+		"aw_section": {
+			"chp": 10032,
+			"id": 1475,
+			"text": {
+				"en-us": "Section"
+			},
+			"$key": "DC0F84016BFF609016F2AD02B5DE3BE2B0BA44E3"
+		},
+		"aw_block": {
+			"chp": 10032,
+			"id": 1476,
+			"text": {
+				"en-us": "Block"
+			},
+			"$key": "C456882FE14B1E500F4B2899533DEF073174EC4C"
+		},
+		"aw_field": {
+			"chp": 10032,
+			"id": 1477,
+			"text": {
+				"en-us": "Field"
+			},
+			"$key": "A244BCF641224DDECD24B59C6034424793847966"
+		},
+		"aw_menuItem": {
+			"chp": 10032,
+			"id": 1478,
+			"text": {
+				"en-us": "Menu"
+			},
+			"$key": "EEF7E513E7E8E2AFB3CAFC6BA1D44E1256970E13"
+		},
+		"aw_model_smart": {
+			"chp": 10032,
+			"id": 1479,
+			"text": {
+				"en-us": "Smart"
+			},
+			"$key": "BF284F7F76D1E4DD73F082FF7FB0B152A68E6E3A"
+		},
+		"aw_model_factory": {
+			"chp": 10032,
+			"id": 1480,
+			"text": {
+				"en-us": "Default"
+			},
+			"$key": "1CFFF2838CEEAE68C06FEA468AB07D3CFA322BF8"
+		},
+		"aw_model_rows": {
+			"chp": 10032,
+			"id": 1481,
+			"text": {
+				"en-us": "Rows"
+			},
+			"$key": "5DB59B56E8C4069B21ACFEAA953EA8666A114942"
+		},
+		"aw_model_3cols": {
+			"chp": 10032,
+			"id": 1482,
+			"text": {
+				"en-us": "3 Columns"
+			},
+			"$key": "A496FB4F3FE92C2560A88EEB24BC999476F5DCBE"
+		},
+		"aw_model_4cols": {
+			"chp": 10032,
+			"id": 1483,
+			"text": {
+				"en-us": "4 Columns"
+			},
+			"$key": "E5E57D806D8DC2F9A0BC1BB7725BD40BBA387A63"
+		},
+		"aw_model_mixt": {
+			"chp": 10032,
+			"id": 1484,
+			"text": {
+				"en-us": "Mixt"
+			},
+			"$key": "39AFB57E9FC6C0251F66EBA98893BDFC40BA8898"
+		},
+		"aw_model_tabs": {
+			"chp": 10032,
+			"id": 1485,
+			"text": {
+				"en-us": "Tabs"
+			},
+			"$key": "1950FEA25442ACC173BAB632196EB287AF399C39"
+		},
+		"aw_model_default_title": {
+			"chp": 10032,
+			"id": 1486,
+			"text": {
+				"en-us": "Switch to template"
+			},
+			"$key": "0551BAEF06FF7D8F2F8A3DF0626A7A44500697ED"
+		},
+		"aw_selectTemplate": {
+			"chp": 10032,
+			"id": 1487,
+			"text": {
+				"en-us": "apply template"
+			},
+			"$key": "E8D2BE2A11890250C80B59B43FB76D102712B225"
+		},
+		"aw_defaultFieldTitle": {
+			"chp": 10032,
+			"id": 1488,
+			"text": {
+				"en-us": "Field"
+			},
+			"$key": "2A52E23613BC270E01F0136DC74577B09327D10E"
+		},
+		"aw_deleteColumn": {
+			"chp": 10032,
+			"id": 1489,
+			"text": {
+				"en-us": "Delete"
+			},
+			"$key": "230E780385963BBD86BADD3FC673C5597FF50234"
+		},
+		"dd_nodrop": {
+			"chp": 10032,
+			"id": 1490,
+			"text": {
+				"en-us": "can not drop"
+			},
+			"$key": "46ADFF15DE74AD984DE6BDBDFA03EF040EFEF18E"
+		},
+		"dd_addItem_top": {
+			"chp": 10032,
+			"id": 1491,
+			"text": {
+				"en-us": "add '{0}' above '{1}'"
+			},
+			"$key": "A314CACD3F7C10229130F7D4C5E6D806F0F2C2AA"
+		},
+		"dd_addItem_bottom": {
+			"chp": 10032,
+			"id": 1492,
+			"text": {
+				"en-us": "add '{0}' below '{1}'"
+			},
+			"$key": "54854602E7AEEFBBE71D910A8AB81BBECAA56FF5"
+		},
+		"dd_addItem_left": {
+			"chp": 10032,
+			"id": 1493,
+			"text": {
+				"en-us": "add '{0}' at left of '{1}'"
+			},
+			"$key": "4ED3C097B77D906BC700229B6636876484AB5878"
+		},
+		"dd_addItem_right": {
+			"chp": 10032,
+			"id": 1494,
+			"text": {
+				"en-us": "add '{0}' at right of '{1}'"
+			},
+			"$key": "99FF9D3F82B41260DBDCFA4750D0614358E45AE2"
+		},
+		"dd_moveItem_top": {
+			"chp": 10032,
+			"id": 1495,
+			"text": {
+				"en-us": "move '{0}' above '{1}'"
+			},
+			"$key": "5BE9DE8CDF88A5DC309593261C494C889B070922"
+		},
+		"dd_moveItem_bottom": {
+			"chp": 10032,
+			"id": 1496,
+			"text": {
+				"en-us": "move '{0}' below '{1}'"
+			},
+			"$key": "1C0A93BF3B0DCB05A8DAEDD29BC7A3B7EFA76936"
+		},
+		"dd_moveItem_left": {
+			"chp": 10032,
+			"id": 1497,
+			"text": {
+				"en-us": "move '{0}' at left of '{1}'"
+			},
+			"$key": "DA907912857AA23C8284A5EA2B9BF36F880893AC"
+		},
+		"dd_moveItem_right": {
+			"chp": 10032,
+			"id": 1498,
+			"text": {
+				"en-us": "move '{0}' at right of '{1}'"
+			},
+			"$key": "016F935DBECC444BA4812F4AA0D9C01C60711E14"
+		},
+		"dd_moveFields": {
+			"chp": 10032,
+			"id": 1499,
+			"text": {
+				"en-us": "move fields of '{0}'"
+			},
+			"$key": "30DBE0A79600A2D26242B2625F54E7E3051E8F2F"
+		},
+		"aw_confirmUndoAll": {
+			"chp": 10032,
+			"id": 1500,
+			"text": {
+				"en-us": "Do you really want to undo all your changes?"
+			},
+			"$key": "EB9FE9BFAF3E37AC4072801D59125272008F16D1"
+		},
+		"aw_columns": {
+			"chp": 10032,
+			"id": 1501,
+			"text": {
+				"en-us": "Columns"
+			},
+			"$key": "3637BF78C0E3A9CDD747662C395DF6651190BAEC"
+		},
+		"aw_addrow": {
+			"chp": 10032,
+			"id": 1502,
+			"text": {
+				"en-us": "Add a row"
+			},
+			"$key": "785C25EE075E346421DFD7647F74301C1DCBB2D1"
+		},
+		"aw_addRowBefore": {
+			"chp": 10032,
+			"id": 1503,
+			"text": {
+				"en-us": "before"
+			},
+			"$key": "AE6C8B9522E4BF6890329D3D9C67B158784B5353"
+		},
+		"aw_addRowAfter": {
+			"chp": 10032,
+			"id": 1504,
+			"text": {
+				"en-us": "after"
+			},
+			"$key": "23E1C6A1863D6F5C0F825382A38335A0F05B3DD7"
+		},
+		"aw_rowLayout": {
+			"chp": 10032,
+			"id": 1505,
+			"text": {
+				"en-us": "Row"
+			},
+			"$key": "EC66F09CF761ECB9D453C2C33198F3EEE789BB6E"
+		},
+		"aw_drop_section": {
+			"chp": 10032,
+			"id": 1506,
+			"text": {
+				"en-us": "drop section here"
+			},
+			"$key": "CA2660694901B1D744DE451982B3670E028F3F1E"
+		},
+		"aw_drop_block": {
+			"chp": 10032,
+			"id": 1507,
+			"text": {
+				"en-us": "drop block here"
+			},
+			"$key": "6FDE5C00A059A334453220CD5EE8BD5580244D01"
+		},
+		"aw_drop_field": {
+			"chp": 10032,
+			"id": 1508,
+			"text": {
+				"en-us": "drop field here"
+			},
+			"$key": "2FD75EC5F4CEBD6D94EF4652FB988C30F07793E7"
+		},
+		"aw_drop_layout": {
+			"chp": 10032,
+			"id": 1509,
+			"text": {
+				"en-us": "drop row here"
+			},
+			"$key": "8F852F8D6ADB1D3CBD515F62A5B8871DBD908910"
+		},
+		"lw_mode_grid": {
+			"chp": 10032,
+			"id": 1510,
+			"text": {
+				"en-us": "Grid"
+			},
+			"$key": "57EA02595D0507F5A72CB5DBCD44D277D6749623"
+		},
+		"lw_mode_detailgrid": {
+			"chp": 10032,
+			"id": 1511,
+			"text": {
+				"en-us": "Grid + detailed view"
+			},
+			"$key": "BF9B1208407243D458CBC0F8723991D2A01AE3BE"
+		},
+		"lw_mode_cards": {
+			"chp": 10032,
+			"id": 1512,
+			"text": {
+				"en-us": "Cards"
+			},
+			"$key": "1635FA21C6062DD843506CC45551178F1A3E7E4B"
+		},
+		"lw_mode_grid_title": {
+			"chp": 10032,
+			"id": 1513,
+			"text": {
+				"en-us": "Grid"
+			},
+			"$key": "36770CBB50971ED9288B9BD557C750C0AD67AD2F"
+		},
+		"lw_mode_detailgrid_title": {
+			"chp": 10032,
+			"id": 1514,
+			"text": {
+				"en-us": "Detailed view"
+			},
+			"$key": "DC95EB88185EC97169320EB7094FF446C41B6CE9"
+		},
+		"lw_mode_cards_title": {
+			"chp": 10032,
+			"id": 1515,
+			"text": {
+				"en-us": "Cards"
+			},
+			"$key": "BE54DDED7319650B819A656995B547A22D2DD8AE"
+		},
+		"lw_designDetailView": {
+			"chp": 10032,
+			"id": 1516,
+			"text": {
+				"en-us": "design detail view"
+			},
+			"$key": "DC5A36B75179F2362589BFF06A700AC04464DC9B"
+		},
+		"lw_designCard": {
+			"chp": 10032,
+			"id": 1517,
+			"text": {
+				"en-us": "design card"
+			},
+			"$key": "0B7E86725AACDD523EECD08A97C303BE65F7FE0E"
+		},
+		"lw_showPager": {
+			"chp": 10032,
+			"id": 1518,
+			"text": {
+				"en-us": "Show pager"
+			},
+			"$key": "822CC319F2F20A3B8181073234D0A7ABE5A92F90"
+		},
+		"lw_hidePager": {
+			"chp": 10032,
+			"id": 1519,
+			"text": {
+				"en-us": "Hide pager"
+			},
+			"$key": "BD13894DCA9ABA86A76675FD53B16BEDA4C2EE1F"
+		},
+		"lw_presentation": {
+			"chp": 10032,
+			"id": 1520,
+			"text": {
+				"en-us": "Presentation"
+			},
+			"$key": "AB49A5ECCDE3A117A02C022182E545EAF2937104"
+		},
+		"lw_cardPosition": {
+			"chp": 10032,
+			"id": 1521,
+			"text": {
+				"en-us": "Record Card"
+			},
+			"$key": "867E07F915E4EC2ADD6C1065F23C982AE3C140B2"
+		},
+		"lw_cardPositionNo": {
+			"chp": 10032,
+			"id": 1522,
+			"text": {
+				"en-us": "no"
+			},
+			"$key": "AA6228C250737BB7BBFEA0FB0A7BAA7C78F37332"
+		},
+		"lw_cardPositionRow": {
+			"chp": 10032,
+			"id": 1523,
+			"text": {
+				"en-us": "row"
+			},
+			"$key": "9B97E1E5D273DE12703C96171FD99FDF534CD4EE"
+		},
+		"lw_cardPositionTop": {
+			"chp": 10032,
+			"id": 1524,
+			"text": {
+				"en-us": "top"
+			},
+			"$key": "1C869E0EC4080DF74DDC8C3B0555742F222C34AB"
+		},
+		"lw_cardPositionLeft": {
+			"chp": 10032,
+			"id": 1525,
+			"text": {
+				"en-us": "left"
+			},
+			"$key": "4178F6745B3BA7F535E29DEB213F027AC0BC9FC3"
+		},
+		"lw_cardPositionRight": {
+			"chp": 10032,
+			"id": 1526,
+			"text": {
+				"en-us": "right"
+			},
+			"$key": "C036237E1DCC75F80C1445F7ADEC146E00E2848B"
+		},
+		"lw_cardPositionBottom": {
+			"chp": 10032,
+			"id": 1527,
+			"text": {
+				"en-us": "bottom"
+			},
+			"$key": "145160E40C345B625F15A965C1CF554B30F36137"
+		},
+		"lw_graphIntegration": {
+			"chp": 10032,
+			"id": 1528,
+			"text": {
+				"en-us": "Graph"
+			},
+			"$key": "9F48A3A1D6C225CAB70B3F9344AE5F0D62568284"
+		},
+		"lw_graphPosition": {
+			"chp": 10032,
+			"id": 1529,
+			"text": {
+				"en-us": "Chart position"
+			},
+			"$key": "1DA91CCAF9CB3847A591A787EFAF0BF01B1846D0"
+		},
+		"lw_graphPositionTop": {
+			"chp": 10032,
+			"id": 1530,
+			"text": {
+				"en-us": "top"
+			},
+			"$key": "973D114BFAAE0B5808FAC65807193FFDFECBB0C7"
+		},
+		"lw_graphPositionLeft": {
+			"chp": 10032,
+			"id": 1531,
+			"text": {
+				"en-us": "left"
+			},
+			"$key": "FF4727D3A1FAFA42CDBECBC4A6C3BDC898D60C17"
+		},
+		"lw_graphPositionRight": {
+			"chp": 10032,
+			"id": 1532,
+			"text": {
+				"en-us": "right"
+			},
+			"$key": "23E3417E327F934A8A89B0E017773501BCE30332"
+		},
+		"lw_graphPositionBottom": {
+			"chp": 10032,
+			"id": 1533,
+			"text": {
+				"en-us": "bottom"
+			},
+			"$key": "C5BB7D89AEF96A4E15C51C6FC4055516E296AF53"
+		},
+		"lw_graphPositionFront": {
+			"chp": 10032,
+			"id": 1534,
+			"text": {
+				"en-us": "front"
+			},
+			"$key": "872F7A6143ABE60998125779F56E8ED531414C96"
+		},
+		"lw_graphPositionBehind": {
+			"chp": 10032,
+			"id": 1535,
+			"text": {
+				"en-us": "behind"
+			},
+			"$key": "B6E20FD7F810B9CEA59B7D8056D047BEF3C06B1C"
+		},
+		"lw_graphAxis": {
+			"chp": 10032,
+			"id": 1536,
+			"text": {
+				"en-us": "Axis"
+			},
+			"$key": "FD4E46AF4701F0497CF2DF0A54978368D1C20659"
+		},
+		"lw_linkOk": {
+			"chp": 10032,
+			"id": 1537,
+			"text": {
+				"en-us": "Ok"
+			},
+			"$key": "176A2DA65B321CE1CB9A1D526BA46774C31FA0AB"
+		},
+		"lw_linkCancel": {
+			"chp": 10032,
+			"id": 1538,
+			"text": {
+				"en-us": "Cancel"
+			},
+			"$key": "454BC1F9CD5D58DA0C29293FBE245C16E8604CA8"
+		},
+		"lw_addSection": {
+			"chp": 10032,
+			"id": 1539,
+			"text": {
+				"en-us": "add a section"
+			},
+			"$key": "EEBA859066B069156F60261F703FBE3C7F793614"
+		},
+		"lw_addBlock": {
+			"chp": 10032,
+			"id": 1540,
+			"text": {
+				"en-us": "add a block"
+			},
+			"$key": "CD90F55EDF248256A0F6B97B99D978825F2779FA"
+		},
+		"lw_isTitleHidden": {
+			"chp": 10032,
+			"id": 1541,
+			"text": {
+				"en-us": "hide my title"
+			},
+			"$key": "1A7A2C1AD7BA34DD440D2D59E49287D6106E04F6"
+		},
+		"lw_updateMessageTitle": {
+			"chp": 10032,
+			"id": 1542,
+			"text": {
+				"en-us": "List design has been updated"
+			},
+			"$key": "0753D4827AE42F71FCC2F78079BED9E84B1EA023"
+		},
+		"lw_cancelMessageText": {
+			"chp": 10032,
+			"id": 1543,
+			"text": {
+				"en-us": "Save Update before quit"
+			},
+			"$key": "B5FBDB824B83894631EC5C049B5DB8E3EB809330"
+		},
+		"lw_title_columns": {
+			"chp": 10032,
+			"id": 1544,
+			"text": {
+				"en-us": "Columns"
+			},
+			"$key": "CEAA31C0E5CB53FF8384D467873BAA5CF12459CB"
+		},
+		"fchoice_formatTitle": {
+			"chp": 10032,
+			"id": 1545,
+			"text": {
+				"en-us": "Format"
+			},
+			"$key": "197B6481ED437FD82EF6C8C8D5A3121DA4B0986B"
+		},
+		"fchoice_formatList": {
+			"chp": 10032,
+			"id": 1546,
+			"text": {
+				"en-us": "Drop down list"
+			},
+			"$key": "BE153AB45392D02C0970993FE9BC12BEC7CE7076"
+		},
+		"fchoice_formatRadios": {
+			"chp": 10032,
+			"id": 1547,
+			"text": {
+				"en-us": "Radio buttons"
+			},
+			"$key": "959D85C9805576F9FE4D5AC06AC567F8E38E6A64"
+		},
+		"fchoice_layout_title": {
+			"chp": 10032,
+			"id": 1548,
+			"text": {
+				"en-us": "Show on"
+			},
+			"$key": "ADC07F56F9FB494CE0F87A9C30167F79D60AD272"
+		},
+		"fchoice_layout_1_row": {
+			"chp": 10032,
+			"id": 1549,
+			"text": {
+				"en-us": "1 row"
+			},
+			"$key": "1DF7B864419A8454B1EADF925FC1B0C6A7C8E5A8"
+		},
+		"fchoice_layout_1_col": {
+			"chp": 10032,
+			"id": 1550,
+			"text": {
+				"en-us": "1 column"
+			},
+			"$key": "3E28911290F18CD7F53F98F72700A7398838DFDD"
+		},
+		"fchoice_layout_2_col": {
+			"chp": 10032,
+			"id": 1551,
+			"text": {
+				"en-us": "2 columns"
+			},
+			"$key": "D56E0247657947D0DE3B8ABE02D579065A537178"
+		},
+		"fchoice_layout_3_col": {
+			"chp": 10032,
+			"id": 1552,
+			"text": {
+				"en-us": "3 columns"
+			},
+			"$key": "CB836C317112B453783DE3F7F1484064CF149402"
+		},
+		"fchoice_layout_4_col": {
+			"chp": 10032,
+			"id": 1553,
+			"text": {
+				"en-us": "4 columns"
+			},
+			"$key": "C867ED19E1C86C83144448F7E56F6EDD43A15E3E"
+		},
+		"fdoc_width": {
+			"chp": 10032,
+			"id": 1554,
+			"text": {
+				"en-us": "width"
+			},
+			"$key": "0F0AC2E2D48935E69605EE6D543DFABE1CA8B206"
+		},
+		"fdoc_height": {
+			"chp": 10032,
+			"id": 1555,
+			"text": {
+				"en-us": "height"
+			},
+			"$key": "66F4E053281C62CC8741E605BB2CB3F1E4D78242"
+		},
+		"fdoc_isAutoHeight": {
+			"chp": 10032,
+			"id": 1556,
+			"text": {
+				"en-us": "auto height"
+			},
+			"$key": "382E6637DA7F7421040B441B6D912CA0D4147F72"
+		},
+		"fdoc_isEmbedded": {
+			"chp": 10032,
+			"id": 1557,
+			"text": {
+				"en-us": "is embedded"
+			},
+			"$key": "EB8D221690876FD892C57F72FB71D5BDCBFB2251"
+		},
+		"htmlVignetteTitle": {
+			"chp": 10032,
+			"id": 1558,
+			"text": {
+				"en-us": "Title"
+			},
+			"$key": "0E095BECD1480A0C9BCEBA968710E32F8D8A57C5"
+		},
+		"htmlVignetteUrl": {
+			"chp": 10032,
+			"id": 1559,
+			"text": {
+				"en-us": "url"
+			},
+			"$key": "E5533849002721830D9EB0D11399F514F00E751D"
+		},
+		"htmlVignetteHeight": {
+			"chp": 10032,
+			"id": 1560,
+			"text": {
+				"en-us": "Height"
+			},
+			"$key": "37F4BEC006E6AB80754601B123A00E28728058C0"
+		},
+		"siteUserProfile": {
+			"chp": 10032,
+			"id": 1561,
+			"text": {
+				"en-us": "User Profile"
+			},
+			"$key": "FC30AB0950B7E91B8565C4922483354CF4F387CA"
+		},
+		"siteHomeLink": {
+			"chp": 10032,
+			"id": 1562,
+			"text": {
+				"en-us": "Home"
+			},
+			"$key": "0CF755ED61A5EC2980CB9EB1AF3FEF3D4D6FBD2E"
+		},
+		"siteNavigationLink": {
+			"chp": 10032,
+			"id": 1563,
+			"text": {
+				"en-us": "Navigation"
+			},
+			"$key": "FBCD19001FB5699B29B721C18D6D2A65A718B3F1"
+		},
+		"siteLogoutLink": {
+			"chp": 10032,
+			"id": 1564,
+			"text": {
+				"en-us": "Log out"
+			},
+			"$key": "1807360A1E5734394F9B20673803509C0D66BC21"
+		},
+		"siteSearchLink": {
+			"chp": 10032,
+			"id": 1565,
+			"text": {
+				"en-us": "Run search"
+			},
+			"$key": "D928A5885CEBDC31862F47B058C205ECAC9B7BDC"
+		},
+		"siteHelpLink": {
+			"chp": 10032,
+			"id": 1566,
+			"text": {
+				"en-us": "Help"
+			},
+			"$key": "FF9F0FF98F758253C85D4CDF43789EC337AF950E"
+		},
+		"siteHelpDocumentationLink": {
+			"chp": 10032,
+			"id": 1567,
+			"text": {
+				"en-us": "Documentation portal"
+			},
+			"$key": "BF07CA9C1A385C9E3DEBC62BC5CC8C153AA27CAF"
+		},
+		"siteHelpShortcutsLink": {
+			"chp": 10032,
+			"id": 1568,
+			"text": {
+				"en-us": "Shortcuts"
+			},
+			"$key": "87293B4D74E318BADE0B8458D2494101A4A945C4"
+		},
+		"siteHelpLegalLink": {
+			"chp": 10032,
+			"id": 1569,
+			"text": {
+				"en-us": "Legal mention"
+			},
+			"$key": "241DFD617F50CC7A48C2E455B64B1071667E2150"
+		},
+		"fusionHeaderFunctionLink": {
+			"chp": 10032,
+			"id": 1570,
+			"text": {
+				"en-us": "Go to function..."
+			},
+			"$key": "68A2387D63F1ACEBDE87A875499E85159E063752"
+		},
+		"fusionHeaderHomeLink": {
+			"chp": 10032,
+			"id": 1571,
+			"text": {
+				"en-us": "New tab home"
+			},
+			"$key": "EF9D8D4F5E31C17DFCEEDA514C28AC2B546EA414"
+		},
+		"onuserprofilechange_title": {
+			"chp": 10032,
+			"id": 1572,
+			"text": {
+				"en-us": "Configuration change"
+			},
+			"$key": "4F0E45BBD7DE5F9819C435E024EEF920C7A42639"
+		},
+		"onuserprofilechange_titlelogout": {
+			"chp": 10032,
+			"id": 1573,
+			"text": {
+				"en-us": "Session logout"
+			},
+			"$key": "A460A6AC32FDC6D13FF1F66B49ED9FFB1034660A"
+		},
+		"onuserprofilechange_mark": {
+			"chp": 10032,
+			"id": 1574,
+			"text": {
+				"en-us": "If you proceed, you could lose your current modifications."
+			},
+			"$key": "B95471D27BA4EB764EE2C86B8DBC6C598541AAA5"
+		},
+		"onuserprofilechange_confirm": {
+			"chp": 10032,
+			"id": 1575,
+			"text": {
+				"en-us": "Do you still want to proceed?"
+			},
+			"$key": "A10C508689D52687B2A842F46A8DC88CCA4C209B"
+		},
+		"onuserprofilechange_defaultmess": {
+			"chp": 10032,
+			"id": 1576,
+			"text": {
+				"en-us": "Changing your current configuration will require you to leave the current function."
+			},
+			"$key": "75031A910CCB474EA4D21E59FDF512683DE28BDB"
+		},
+		"onuserprofilechange_selectedLocale": {
+			"chp": 10032,
+			"id": 1577,
+			"text": {
+				"en-us": "Changing your regional preferences will require you to leave the current function."
+			},
+			"$key": "BE6F1DEA9EE5B373E2AEF978130836A5C4021207"
+		},
+		"onuserprofilechange_selectedRole": {
+			"chp": 10032,
+			"id": 1578,
+			"text": {
+				"en-us": "Changing your role will require you to leave the current function."
+			},
+			"$key": "BC3AA3E4A67CBDA307C30E23365EB5B50F8BAA51"
+		},
+		"onuserprofilechange_selectedEndpoint": {
+			"chp": 10032,
+			"id": 1579,
+			"text": {
+				"en-us": "Changing endpoints will require you to leave the current function"
+			},
+			"$key": "1FB7D8D93F3FCA0AC008FC2AF2907D844C30ECD9"
+		},
+		"onuserprofilechange_logout": {
+			"chp": 10032,
+			"id": 1580,
+			"text": {
+				"en-us": "Your changes will be lost if you disconnect from your current session."
+			},
+			"$key": "D2BAAFE58D40D1847D8F1A060E4F4E3E85148CFA"
 		}
 	},
 	"node_modules/syracuse-ui/lib/tablet/resources/hacks": {
@@ -30006,7 +31753,7 @@
 			"id": 1161,
 			"text": {
 				"en-us": "Can't retrieve licence manifest",
-				"fr-fr": "Impossible de r�cup�rer le fichier manifeste de la licence"
+				"fr-fr": "Impossible de récupérer le fichier manifeste de la licence"
 			},
 			"$key": "EBC96D3C04DCAA7F36B08C67BDEC1A56A9691CA6"
 		},
@@ -30015,7 +31762,7 @@
 			"id": 1162,
 			"text": {
 				"en-us": "Unexcepted error while retrieving licence manifest",
-				"fr-fr": "Une erreur inattendue s'est produite lors de la r�cup�ration du fichier manifeste de la licence"
+				"fr-fr": "Une erreur inattendue s'est produite lors de la récupération du fichier manifeste de la licence"
 			},
 			"$key": "6275B610921634C756F9DCDA3F738BF9C2CFB729"
 		}
