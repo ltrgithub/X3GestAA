@@ -30,10 +30,12 @@ namespace WordAddIn
         private void ServerSettings_Load(object sender, EventArgs e)
         {
             textBoxServerAddress.Text = serverUrl;
-            textBoxServerAddress.Text = ReadPreferences();
-            // TEMP
             if (textBoxServerAddress.Text == "")
-                textBoxServerAddress.Text = "http://localhost:8124";
+            {
+                textBoxServerAddress.Text = ReadPreferences();
+                if (textBoxServerAddress.Text == "")
+                    textBoxServerAddress.Text = "http://localhost:8124";
+            }
         }
 
         internal string GetPreferenceFilePath()

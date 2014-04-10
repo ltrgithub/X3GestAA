@@ -34,10 +34,12 @@ namespace ExcelAddIn
         private void ServerSettings_Load(object sender, EventArgs e)
         {
             textBoxServerAddress.Text = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("serverUrlAddress");
-            textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
-            // TEMP
             if (textBoxServerAddress.Text == "")
-                textBoxServerAddress.Text = "http://localhost:8124";
+            {
+                textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
+                if (textBoxServerAddress.Text == "")
+                    textBoxServerAddress.Text = "http://localhost:8124";
+            }
         }
 
         internal string GetPreferenceFilePath()
