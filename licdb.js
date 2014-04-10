@@ -28,11 +28,13 @@ try {
 	console.error("Error when reading configuration: " + e);
 	process.exit(1);
 }
-if (!config.collaboration || !config.collaboration.hostname || !config.collaboration.dataset || !config.collaboration.port) {
-	console.error("Missing configuration data for database connection");
+config.collaboration = config.collaboration || {};
+if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
+	console.error("Only MongoDB supported at the moment");
 	process.exit(1);
 }
-var db = new mongodb.Db(config.collaboration.dataset, new mongodb.Server(config.collaboration.hostname, config.collaboration.port, {}), {
+
+var db = new mongodb.Db(config.collaboration.dataset || "syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
 	w: "majority"
 });
 
