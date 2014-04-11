@@ -563,6 +563,10 @@ namespace PowerPointAddIn
                 catch (Exception) { }
                 
                 string header = cube["$title"].ToString();
+                if (htitle != "")
+                {
+                    header = header + " / " + htitle;
+                }
                 string cstyle = "stick";
                 try { cube["$style"].ToString(); } catch (Exception) { }
 
