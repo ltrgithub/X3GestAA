@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T08:41:41.000Z",
-		"$lastModified": "2014-04-10T08:23:39.000Z",
+		"$lastModified": "2014-04-10T15:10:32.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -10,15 +10,15 @@
 			"$exclude": [
 				"node_modules/syracuse-core/lib/types/resources/date"
 			],
-			"$count": 3593,
-			"$lastModified": "2014-04-10T08:23:40Z",
+			"$count": 3600,
+			"$lastModified": "2014-04-10T15:10:32Z",
 			"$current": 10032,
 			"$": {
 				"10031": {
 					"$nextId": 2000
 				},
 				"10032": {
-					"$nextId": 1595
+					"$nextId": 1602
 				}
 			}
 		},
@@ -11955,8 +11955,8 @@
 			"chp": 10031,
 			"id": 1244,
 			"text": {
-				"en-us": "Search indexes administration",
-				"fr-fr": "Administration des index de recherche"
+				"en-us": "Search index management",
+				"fr-fr": "Gestion des index de recherche"
 			},
 			"$key": "37438EE43CDB360D07E9197AE78DE8EE5650A9AC"
 		},
@@ -18523,7 +18523,7 @@
 			"chp": 10032,
 			"id": 1583,
 			"text": {
-				"en-us": "Expiry date:"
+				"en-us": "Expiration date:"
 			},
 			"$key": "AADB352B3C42E65846813283233273E03E25A540"
 		},
@@ -18547,7 +18547,7 @@
 			"chp": 10032,
 			"id": 1586,
 			"text": {
-				"en-us": "Legal notes"
+				"en-us": "Legal notice"
 			},
 			"$key": "05CC7F42908CE52232DE584006B6F6E165F7414B"
 		},
@@ -18577,6 +18577,54 @@
 				"en-us": "Update to {0}"
 			},
 			"$key": "A1C9BF371EE6F8C1790AAA00A0F07867F5B4BB71"
+		},
+		"license.registrationNumber": {
+			"chp": 10032,
+			"id": 1595,
+			"text": {
+				"en-us": "Company registration number:"
+			},
+			"$key": "9E683D442F613FF2CBC493D724D058F3114AFF72"
+		},
+		"license.reference": {
+			"chp": 10032,
+			"id": 1596,
+			"text": {
+				"en-us": "Sage Customer number:"
+			},
+			"$key": "173C81C55CBD34C13327AB2C4334A1437483801D"
+		},
+		"license.userLicense": {
+			"chp": 10032,
+			"id": 1597,
+			"text": {
+				"en-us": "User License:"
+			},
+			"$key": "9CBD78A2068510948A8C475AE113EF5C08D64B61"
+		},
+		"license.installedBy": {
+			"chp": 10032,
+			"id": 1598,
+			"text": {
+				"en-us": "Installed by:"
+			},
+			"$key": "BDB28B54A8B78CA7529BFA1BC3CB7D617228224C"
+		},
+		"license.server": {
+			"chp": 10032,
+			"id": 1599,
+			"text": {
+				"en-us": "Server:"
+			},
+			"$key": "C6BB8C91B31918256811A098FDE13ACC9764FFA1"
+		},
+		"license.expiryDateValue": {
+			"chp": 10032,
+			"id": 1600,
+			"text": {
+				"en-us": "From {0} to {1}"
+			},
+			"$key": "0B8E2A335EBE4D91CF9D7E104AA24563034AA85C"
 		}
 	},
 	"node_modules/syracuse-orm/lib/dbHandles/resources/mongoDbHandle": {
@@ -20255,7 +20303,7 @@
 			"chp": 10032,
 			"id": 1594,
 			"text": {
-				"en-us": "The search engine is not available (As you administrator to check the configuration or start the search engine service)"
+				"en-us": "The search engine is not available (Ask your administrator to check the configuration or start the search engine service)"
 			},
 			"$key": "8EBD89874AA3D6C73E99F7B401699C27093D5E79"
 		}
@@ -27767,7 +27815,8 @@
 			"chp": 10032,
 			"id": 1415,
 			"text": {
-				"en-us": "Show as"
+				"en-us": "Show as",
+				"fr-fr": "Afficher comme"
 			},
 			"$key": "539AC3BE6F5D7BAD506A4BC5CC2821B95546CD21"
 		},
@@ -27775,7 +27824,8 @@
 			"chp": 10032,
 			"id": 1416,
 			"text": {
-				"en-us": "Appearance"
+				"en-us": "Appearance",
+				"fr-fr": "Apparance"
 			},
 			"$key": "77ED64102736C33385D249F6843ADC0916C766FB"
 		},
@@ -27783,7 +27833,8 @@
 			"chp": 10032,
 			"id": 1417,
 			"text": {
-				"en-us": "Templates"
+				"en-us": "Templates",
+				"fr-fr": "Modèle"
 			},
 			"$key": "3E3E957C20EB24D8859346214D80DF61F9BE953D"
 		},
@@ -27791,7 +27842,8 @@
 			"chp": 10032,
 			"id": 1418,
 			"text": {
-				"en-us": "tabs"
+				"en-us": "Tabs",
+				"fr-fr": "Onglets"
 			},
 			"$key": "BAFEF62FE267E9BA85896BE0489530F50E551EEA"
 		},
@@ -27799,7 +27851,8 @@
 			"chp": 10032,
 			"id": 1419,
 			"text": {
-				"en-us": "panels"
+				"en-us": "Panels",
+				"fr-fr": "Panneaux"
 			},
 			"$key": "4BEDF96534A805B3B1CD872C39AEB73AF312A098"
 		},
@@ -29090,6 +29143,15 @@
 				"en-us": "Your changes will be lost if you disconnect from your current session."
 			},
 			"$key": "D2BAAFE58D40D1847D8F1A060E4F4E3E85148CFA"
+		},
+		"aw_section_stack": {
+			"chp": 10032,
+			"id": 1601,
+			"text": {
+				"en-us": "Stack",
+				"fr-fr": "Empilement"
+			},
+			"$key": "EBE0C67FA061BF3BC8D31CC97F660C9441E36FCE"
 		}
 	},
 	"node_modules/syracuse-ui/lib/tablet/resources/hacks": {
