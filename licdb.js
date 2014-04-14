@@ -6,15 +6,21 @@ var util = require('util');
 var path = require('path');
 var fs = require('fs');
 var helptext = true;
+var command;
+if (process.argv[2] === "--command") {
+	command = process.argv[3];
+	process.argv.splice(2,2);
+}
 if (process.argv[2] === "--nohelp") {
 	helptext = false;
 	process.argv.splice(2, 1);
 }
 if (process.argv[2] !== "full" && process.argv[2] !== "short" && process.argv[2] !== "drop") {
 	if (helptext) {
-		console.error("Usage: Overview of stored licenses and policies: node " + process.argv[1] + " short");
-		console.error("Full data of stored licenses and policies: node " + process.argv[1] + " full");
-		console.error("Remove all data of stored licenses and policies: node " + process.argv[1] + " drop");
+		command = command || "node licdb";
+		console.error("Usage: Overview of stored licenses and policies: "+command+" short");
+		console.error("Full data of stored licenses and policies: "+command+" full");
+		console.error("Remove all data of stored licenses and policies: "+command+" drop");
 	} else {
 		console.error("Wrong option: " + process.argv[2]);
 	}
@@ -28,11 +34,13 @@ try {
 	console.error("Error when reading configuration: " + e);
 	process.exit(1);
 }
-if (!config.collaboration || !config.collaboration.hostname || !config.collaboration.dataset || !config.collaboration.port) {
-	console.error("Missing configuration data for database connection");
+config.collaboration = config.collaboration || {};
+if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
+	console.error("Only MongoDB supported at the moment");
 	process.exit(1);
 }
-var db = new mongodb.Db(config.collaboration.dataset, new mongodb.Server(config.collaboration.hostname, config.collaboration.port, {}), {
+
+var db = new mongodb.Db(config.collaboration.dataset || "syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
 	w: "majority"
 });
 
