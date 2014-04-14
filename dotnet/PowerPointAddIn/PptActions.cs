@@ -185,20 +185,25 @@ namespace PowerPointAddIn
                 Slide sl = pres.Slides.Add(idx + 1, PpSlideLayout.ppLayoutChart);
                 win.View.Slide = sl;
 
-                Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);
-                Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
+                try
+                {
+                    Microsoft.Office.Interop.PowerPoint.Shape sh = sl.Shapes.AddChart(Microsoft.Office.Core.XlChartType.xl3DColumn);
+                    Microsoft.Office.Interop.PowerPoint.Chart c = sh.Chart;
+                    c.ChartData.Activate();
+                    Workbook wb = (Workbook)c.ChartData.Workbook;                
+                    wb.Application.Visible = false;
+                    wb.Application.ScreenUpdating = false;
+                    cd.setActionType("ppt_populate_worksheet");
 
-                c.ChartData.Activate();
-                Workbook wb = (Workbook)c.ChartData.Workbook;
-                cd.setActionType("ppt_populate_worksheet");
-
-                PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
-                xcd.setServerUrl(cd.getServerUrl());
-                xcd.setResourceUrl(cd.getResourceUrl());
-                xcd.setForceRefresh(false);
-                xcd.writeDictionaryToDocument();
-                xcd.setChart(c);
-                browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", cd, xcd, xcd.getServerUrl());
+                    PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
+                    xcd.setServerUrl(cd.getServerUrl());
+                    xcd.setResourceUrl(cd.getResourceUrl());
+                    xcd.setForceRefresh(false);
+                    xcd.writeDictionaryToDocument();
+                    xcd.setChart(c);
+                    browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", cd, xcd, xcd.getServerUrl());
+                }
+                catch (Exception) { }
             }
             catch (Exception e)
             {
@@ -226,6 +231,7 @@ namespace PowerPointAddIn
                 chart.ChartData.Activate();
                 Workbook wb = (Workbook)chart.ChartData.Workbook;
                 wb.Application.Visible = false;
+                wb.Application.ScreenUpdating = false;
 
                 PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
                 xcd.setChart(chart);
@@ -350,10 +356,21 @@ namespace PowerPointAddIn
                     Dictionary<String, object> chartExtensions = (Dictionary<String, object>)data["$chartExtensions"];
                     addingDataFinished(pres, customXlsData, data, chartExtensions);
                     checkRefreshButtons();
-                    customXlsData.setWorkbook(wb);
+                    int anz = wb.Application.Workbooks.Count;
+                    if (anz >= 1)
+                    {
+                        wb.Application.Visible = true;
+                        wb.Application.ScreenUpdating = true;
+                    }
+                    customXlsData.setWorkbook(null);
                     wb.Close();
+                    if (anz == 1)
+                    {
+                        wb.Application.Quit();
+                    }                    
                     Globals.PowerPointAddIn.Application.ActiveWindow.Activate();
                     browserDialog.Visible = false;
+                    Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
                 }
             }
             catch (Exception e) { 
