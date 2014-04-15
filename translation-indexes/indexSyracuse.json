@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T08:41:41.000Z",
-		"$lastModified": "2014-04-14T20:08:53.000Z",
+		"$lastModified": "2014-04-15T12:51:58.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -10,7 +10,7 @@
 			"$exclude": [
 				"node_modules/syracuse-core/lib/types/resources/date"
 			],
-			"$count": 3641,
+			"$count": 3647,
 			"$lastModified": "",
 			"$current": 10032,
 			"$": {
@@ -18,7 +18,7 @@
 					"$nextId": 2000
 				},
 				"10032": {
-					"$nextId": 1643
+					"$nextId": 1649
 				}
 			}
 		},
@@ -447,8 +447,8 @@
 			"chp": 10031,
 			"id": 34,
 			"text": {
-				"en-us": "New password:",
-				"fr-fr": "Nouveau mot de passe :",
+				"en-us": "New password: ",
+				"fr-fr": "Nouveau mot de passe : ",
 				"en-gb": "New password:"
 			},
 			"$key": "8C6B21ECF3156A6DCF4EE3177E93799D48AA8EF5"
@@ -467,8 +467,8 @@
 			"chp": 10031,
 			"id": 36,
 			"text": {
-				"en-us": "Retype new password:",
-				"fr-fr": "Retaper le nouveau mot de passe :",
+				"en-us": "Retype new password: ",
+				"fr-fr": "Retaper le nouveau mot de passe : ",
 				"en-gb": "Retype new password:"
 			},
 			"$key": "DB50C710BF6DBF13F33AD8E2104BCA9590E7E7B7"
@@ -980,8 +980,8 @@
 			"chp": 10031,
 			"id": 77,
 			"text": {
-				"en-us": "Requests",
-				"fr-fr": "Demandes",
+				"en-us": "Queries",
+				"fr-fr": "Requêtes",
 				"en-gb": "Requests"
 			},
 			"$key": "32EEF8EE003FC141DD81D683668AC433008B68EC"
@@ -1879,6 +1879,14 @@
 				"en-us": "Folder name '{0}' does not appear in FOLDERS.json"
 			},
 			"$key": "92851BE123BD6D9EDB0C2E4B69BA21601621A488"
+		},
+		"errorGetRight": {
+			"chp": 10032,
+			"id": 1643,
+			"text": {
+				"en-us": "Can't get right access from endpoint {0}"
+			},
+			"$key": "07D4E99E739C663AC8297320DE8EEFB744D05906"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/resources/entity": {
@@ -4033,10 +4041,10 @@
 			"chp": 10031,
 			"id": 353,
 			"text": {
-				"en-us": "Node.JS",
-				"en-gb": "Node.JS",
+				"en-us": "Node.js",
+				"en-gb": "Node.js",
 				"zh-cn": "Node.js",
-				"fr-fr": "Node.JS",
+				"fr-fr": "Node.js",
 				"it-it": "Node.js",
 				"pt-pt": "Node.js",
 				"es-es": "Node.js"
@@ -6156,9 +6164,9 @@
 			"chp": 10031,
 			"id": 559,
 			"text": {
-				"en-us": "cvgClient ID",
-				"fr-fr": "ID cvgClient",
-				"en-gb": "cvgClient ID"
+				"en-us": "Client id",
+				"fr-fr": "ID Client",
+				"en-gb": "Client id"
 			},
 			"$key": "31E77F4DA51F819ABC7EBC0A670F9A316DB5BC76"
 		},
@@ -7223,7 +7231,7 @@
 			"id": 664,
 			"text": {
 				"en-us": "SUPERV",
-				"fr-fr": "superv",
+				"fr-fr": "SUPERV",
 				"en-gb": "SUPERV",
 				"zh-cn": "SUPERV",
 				"it-it": "SUPERV",
@@ -9620,9 +9628,9 @@
 			"chp": 10031,
 			"id": 899,
 			"text": {
-				"en-us": "URL,",
+				"en-us": "URL",
 				"fr-fr": "URL",
-				"en-gb": "URL,",
+				"en-gb": "URL",
 				"zh-cn": "URL",
 				"it-it": "URL",
 				"pt-pt": "URL",
@@ -9754,9 +9762,9 @@
 			"chp": 10031,
 			"id": 912,
 			"text": {
-				"en-us": "Function (convergence)",
-				"fr-fr": "Fonction (convergence)",
-				"en-gb": "Function (convergence)"
+				"en-us": "Function (classic)",
+				"fr-fr": "Fonction (classic)",
+				"en-gb": "Function (classic)"
 			},
 			"$key": "972034AFEEFDCA2AA7AF18E21F4827BAAB0FD4DC"
 		},
@@ -13134,8 +13142,8 @@
 			"chp": 10031,
 			"id": 1244,
 			"text": {
-				"en-us": "Search indexes administration",
-				"fr-fr": "Administration des index de recherche",
+				"en-us": "Search index management",
+				"fr-fr": "Gestion des index de recherche",
 				"en-gb": "Search indexes administration"
 			},
 			"$key": "37438EE43CDB360D07E9197AE78DE8EE5650A9AC"
@@ -13525,7 +13533,7 @@
 			"id": 1283,
 			"text": {
 				"en-us": "Friend server direct transfer",
-				"fr-fr": "Transfert direct à un serveur ami",
+				"fr-fr": "Transfert direct sur un serveur ami",
 				"en-gb": "Friend server direct transfer"
 			},
 			"$key": "3501783CA241FCCFB169C7553F9CAA39BC012301"
@@ -16451,6 +16459,36 @@
 				"fr-fr": "Standard licence"
 			},
 			"$key": "D8203FBBA29B7E849864413348544653601CA0FA"
+		},
+		"menuItem.linkType.$process": {
+			"chp": 10032,
+			"id": 1644,
+			"text": {
+				"en-us": "Process",
+				"en-gb": "Process",
+				"fr-fr": "Processus"
+			},
+			"$key": "E03BDDC08F1A15EBA0F668766B3D33F1C1C69B81"
+		},
+		"menuItem.linkType.$request": {
+			"chp": 10032,
+			"id": 1645,
+			"text": {
+				"en-us": "Query",
+				"en-gb": "Query",
+				"fr-fr": "Requête"
+			},
+			"$key": "0F2D5746B8E1AFB6776D4C2543B6799D72E79EA4"
+		},
+		"menuItem.linkType.$stats": {
+			"chp": 10032,
+			"id": 1646,
+			"text": {
+				"en-us": "Statistics",
+				"en-gb": "Statistics",
+				"fr-fr": "Statistiques"
+			},
+			"$key": "E3BF7C71E3121BB78562AA63BB69940CD48D64AB"
 		}
 	},
 	"node_modules/syracuse-core/lib/types/resources/decimal": {
@@ -17035,7 +17073,7 @@
 				"en-us": "Prototype pointer type not found \"{0}\"",
 				"en-gb": "Prototype pointer type not found \"{0}\"",
 				"zh-cn": "Type pointeur prototype non trouvé \"{0}\"",
-				"fr-fr": "Type pointeur prototype non trouvé\"{0}\"",
+				"fr-fr": "Type pointeur prototype non trouvé \"{0}\"",
 				"it-it": "Type pointeur prototype non trouvé \"{0}\"",
 				"pt-pt": "Type pointeur prototype non trouvé \"{0}\"",
 				"es-es": "Type pointeur prototype non trouvé \"{0}\""
@@ -17252,7 +17290,9 @@
 				1547
 			],
 			"text": {
-				"en-us": "Due to license restrictions, access to the following badges has not been granted: {0}. You may try again when there are less users."
+				"en-us": "Due to license restrictions, access to the following badges has not been granted: {0}. You may try again when there are less users.",
+				"en-gb": "Due to license restrictions, access to the following badges has not been granted: {0}. You may try again when there are less users.",
+				"fr-fr": "En raison de restrictions de licence, l'accès aux badges suivants a été refusé : {0}. Vous pourrez réessayer lorsqu'il y aura moins d'utilisateurs."
 			},
 			"$key": "EFE91353E33FC2198577A048A4FB3DFF6FE67F4B"
 		},
@@ -17313,7 +17353,9 @@
 				1554
 			],
 			"text": {
-				"en-us": "License for partner {0} and product {1} version {2} and policy {3} version {4} does not fit to an installed base product but to {5}"
+				"en-us": "License for partner {0} and product {1} version {2} and policy {3} version {4} does not fit to an installed base product but to {5}",
+				"en-gb": "License for partner {0} and product {1} version {2} and policy {3} version {4} does not fit to an installed base product but to {5}",
+				"fr-fr": "La license pour le partenaire {0} et le produit {1} version {2} et les règles {3} version {4} ne correspondent pas à un produit de base installé mais à {5}"
 			},
 			"$key": "1AEB5188784CD382B38B04E027CAFCF9B63B319C"
 		},
@@ -18305,9 +18347,9 @@
 			"chp": 10031,
 			"id": 1650,
 			"text": {
-				"en-us": "Sage ERP X3 Syracuse",
+				"en-us": "Sage ERP X3",
 				"fr-fr": "Sage ERP X3",
-				"en-gb": "Sage ERP X3 Syracuse",
+				"en-gb": "Sage ERP X3",
 				"zh-cn": "Sage ERP X3",
 				"it-it": "Sage ERP X3",
 				"pt-pt": "Sage ERP X3",
@@ -18616,7 +18658,7 @@
 			"id": 1679,
 			"text": {
 				"en-us": "AM",
-				"fr-fr": "AM",
+				"fr-fr": " ",
 				"en-gb": "AM",
 				"zh-cn": "AM",
 				"it-it": "AM",
@@ -18870,7 +18912,7 @@
 			"id": 1704,
 			"text": {
 				"en-us": "PM",
-				"fr-fr": "PM",
+				"fr-fr": " ",
 				"en-gb": "PM"
 			},
 			"$key": "1B4CB08D6F12DA3BF20BE598F44486755EA51AA0"
@@ -18939,9 +18981,9 @@
 			"chp": 10031,
 			"id": 1711,
 			"text": {
-				"en-us": "Authentication error",
-				"fr-fr": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
-				"en-gb": "Authentication error",
+				"en-us": "Authentication error\nPlease relogin or contact the administrator to check your configuration",
+				"fr-fr": "Erreur authentication.\nVeuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
+				"en-gb": "Authentication error\nPlease relogin or contact the administrator to check your configuration",
 				"zh-cn": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
 				"it-it": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
 				"pt-pt": "Erreur authentication.Veuillez-vous reconnecter ou contacter l'administrateur système pour vérifier votre configuration.",
@@ -18967,9 +19009,9 @@
 			"chp": 10031,
 			"id": 1713,
 			"text": {
-				"en-us": "Javascript error",
-				"fr-fr": "Erreur javascript.",
-				"en-gb": "Javascript error",
+				"en-us": "Javascript error\nPlease contact the administrator",
+				"fr-fr": "Erreur javascript.\nVeuillez contacter l'administrateur système.",
+				"en-gb": "Javascript error\nPlease contact the administrator",
 				"zh-cn": "Erreur javascript. \nVeuillez contacter l'administrateur système.",
 				"it-it": "Erreur javascript. \nVeuillez contacter l'administrateur système.",
 				"pt-pt": "Erreur javascript. \nVeuillez contacter l'administrateur système.",
@@ -19001,7 +19043,7 @@
 			"chp": 10031,
 			"id": 1716,
 			"text": {
-				"en-us": "Equals",
+				"en-us": "Equal",
 				"fr-fr": "Égal",
 				"en-gb": "Equals"
 			},
@@ -19011,7 +19053,7 @@
 			"chp": 10031,
 			"id": 1717,
 			"text": {
-				"en-us": "Greater than or equals",
+				"en-us": "Greater than or equal",
 				"fr-fr": "Supérieur ou égal à",
 				"en-gb": "Greater than or equals"
 			},
@@ -19031,7 +19073,7 @@
 			"chp": 10031,
 			"id": 1719,
 			"text": {
-				"en-us": "Less than or equals",
+				"en-us": "Less than or equal",
 				"fr-fr": "Inférieur ou égal à",
 				"en-gb": "Less than or equals"
 			},
@@ -19071,7 +19113,7 @@
 			"chp": 10031,
 			"id": 1723,
 			"text": {
-				"en-us": "Not equals",
+				"en-us": "Not equal",
 				"fr-fr": "Pas égaux",
 				"en-gb": "Not equals"
 			},
@@ -19455,7 +19497,7 @@
 			"chp": 10031,
 			"id": 1761,
 			"text": {
-				"en-us": "Build date:",
+				"en-us": "Build date: ",
 				"fr-fr": "Build date:",
 				"en-gb": "Build date:"
 			},
@@ -19595,9 +19637,9 @@
 			"chp": 10031,
 			"id": 1775,
 			"text": {
-				"en-us": "The server is not responding or cannot be reached.\\nFor help, contact your network administrator.",
-				"fr-fr": "Le serveur ne répond pas ou n'est pas accessible.\\nPour obtenir de l'aide, contacter votre administrateur réseau.",
-				"en-gb": "The server is not responding or cannot be reached.\\nFor help, contact your network administrator."
+				"en-us": "The server is not responding or cannot be reached.\nFor help, contact your network administrator.",
+				"fr-fr": "Le serveur ne répond pas ou n'est pas accessible.\nPour obtenir de l'aide, contacter votre administrateur réseau.",
+				"en-gb": "The server is not responding or cannot be reached.\nFor help, contact your network administrator."
 			},
 			"$key": "2776D9EF53BCF5D2D1A1E34C17025BC7BB173827"
 		},
@@ -21296,8 +21338,8 @@
 			"chp": 10031,
 			"id": 1931,
 			"text": {
-				"en-us": "Data corruption: collection element having no $uuid, $key or $url; Relation: {0}",
-				"fr-fr": "Corruption de données : élément de collection n'ayant aucun $uuid, $key ou $url; Relation: {0}",
+				"en-us": "Data corruption: collection element having no $uuid, $key or $url",
+				"fr-fr": "Corruption de données : élément de collection n'ayant aucun $uuid, $key ou $url",
 				"en-gb": "Data corruption: collection element having no $uuid, $key or $url; Relation: {0}"
 			},
 			"$key": "8B73F81B5A4CE17471A4E091B3782086884FEC3C"
@@ -21896,7 +21938,7 @@
 			"id": 1989,
 			"text": {
 				"en-us": "Error while checking object",
-				"fr-fr": "Erreur lors de la vérification d'objets",
+				"fr-fr": "Erreur lors de la vérification d'objets ",
 				"en-gb": "Error while checking object"
 			},
 			"$key": "38E2EEB8D57727324552F5D7BDBFFE8B4DDCCF59"
@@ -21908,9 +21950,9 @@
 			"chp": 10031,
 			"id": 1990,
 			"text": {
-				"en-us": "An error has occured while creating attachment: {0} \\nRollback has been applied!",
-				"fr-fr": "Une erreur s'est produite en création de pièce jointe : {0} \\nLe rollback a été appliqué !",
-				"en-gb": "An error has occured while creating attachment: {0} \\nRollback has been applied!"
+				"en-us": "An error has occured while creating attachment: {0}\nRollback has been applied!",
+				"fr-fr": "Une erreur s'est produite en création de pièce jointe : {0}\nLe rollback a été appliqué !",
+				"en-gb": "An error has occured while creating attachment: {0}\nRollback has been applied!"
 			},
 			"$key": "104ADB4D8119AA61BBFB5C67DF05D0C44A9C0BC8"
 		},
@@ -21928,7 +21970,7 @@
 			"chp": 10031,
 			"id": 1992,
 			"text": {
-				"en-us": "Signature appearance creation failed :",
+				"en-us": "Signature appearance creation failed : ",
 				"fr-fr": "La création du format de signature a échoué :",
 				"en-gb": "Signature appearance creation failed :"
 			},
@@ -21968,9 +22010,9 @@
 			"chp": 10031,
 			"id": 1996,
 			"text": {
-				"en-us": "An error has occurred while signing document: {0} \\nRollback has been applied!",
-				"fr-fr": "Une erreur s'est produite lors de la signature du document : {0} \\nLe rollback a été appliqué !",
-				"en-gb": "An error has occurred while signing document: {0} \\nRollback has been applied!"
+				"en-us": "An error has occurred while signing document: {0}\nRollback has been applied!",
+				"fr-fr": "Une erreur s'est produite lors de la signature du document : {0}\nLe rollback a été appliqué !",
+				"en-gb": "An error has occurred while signing document: {0}\nRollback has been applied!"
 			},
 			"$key": "72BAB23DB6728DBEC6CB7741D70AC250C3488F3E"
 		},
@@ -21978,7 +22020,7 @@
 			"chp": 10031,
 			"id": 1997,
 			"text": {
-				"en-us": "Writing of TOC failed:",
+				"en-us": "Writing of TOC failed: ",
 				"fr-fr": "L'écriture de la table des matières a échoué :",
 				"en-gb": "Writing of TOC failed:"
 			},
@@ -22520,7 +22562,7 @@
 			"chp": 10032,
 			"id": 51,
 			"text": {
-				"en-us": "Indexing entity",
+				"en-us": "{0} : Indexing entity",
 				"en-gb": "Indexing entity",
 				"fr-fr": "Entité d'indexation"
 			},
@@ -22631,6 +22673,22 @@
 				"en-us": "Current configuration does not allow leading wildcard characters in the search string (Contact your system administrator): {0}"
 			},
 			"$key": "C70D7994340644A5A836DA907C27BAE06B450DC5"
+		},
+		"X3Right": {
+			"chp": 10032,
+			"id": 1647,
+			"text": {
+				"en-us": "Can't execute search query. Please check your configuration \n {0}"
+			},
+			"$key": "1482C11D9927F8022F32E61D883EFF77009BED37"
+		},
+		"noSelectedEndpoint": {
+			"chp": 10032,
+			"id": 1648,
+			"text": {
+				"en-us": "Please select an endpoint in your user profile panel"
+			},
+			"$key": "065FD7A9925E58FB38511832CABF70642374BA94"
 		}
 	},
 	"node_modules/syracuse-search/lib/resources/helpers": {
@@ -23243,9 +23301,9 @@
 			"chp": 10032,
 			"id": 116,
 			"text": {
-				"en-us": "An error has occurred in convertValue: '{0}' of type: '{1}' \\n{2}",
-				"en-gb": "An error has occurred in convertValue: '{0}' of type: '{1}' \\n{2}",
-				"fr-fr": "Une erreur s'est produite avec convertValue : '{0}' de type : '{1}' \\n{2}"
+				"en-us": "An error has occurred in convertValue: '{0}' of type: '{1}'\n{2}",
+				"en-gb": "An error has occurred in convertValue: '{0}' of type: '{1}'\n{2}",
+				"fr-fr": "Une erreur s'est produite avec convertValue : '{0}' de type : '{1}'\n{2}"
 			},
 			"$key": "6AFE507BF5724EFC8942A4662FA1EFF5E3E2D993"
 		},
@@ -23372,9 +23430,9 @@
 			"chp": 10032,
 			"id": 128,
 			"text": {
-				"en-us": "An error has occurred in SoapHelper convertValue: '{0}' of type: '{1}' \\n{2}",
-				"en-gb": "An error has occurred in SoapHelper convertValue: '{0}' of type: '{1}' \\n{2}",
-				"fr-fr": "Une erreur s'est produite dans SoapHelper convertValue: '{0}' de type : '{1}' \\n{2}"
+				"en-us": "An error has occurred in SoapHelper convertValue: '{0}' of type: '{1}'\n{2}",
+				"en-gb": "An error has occurred in SoapHelper convertValue: '{0}' of type: '{1}'\n{2}",
+				"fr-fr": "Une erreur s'est produite dans SoapHelper convertValue: '{0}' de type : '{1}'\n{2}"
 			},
 			"$key": "F70F740F01FC42F8EA20DE9C3F09A2CD50AE7FEA"
 		},
@@ -23564,9 +23622,9 @@
 			"chp": 10032,
 			"id": 146,
 			"text": {
-				"en-us": "An error has occurred while retrieving {0} prototype: {1}.{2} \\n{3}",
-				"en-gb": "An error has occurred while retrieving {0} prototype: {1}.{2} \\n{3}",
-				"fr-fr": "Une erreur s'est produite lors de la récupération du prototype {0} : {1}.{2} \\n{3}"
+				"en-us": "An error has occurred while retrieving {0} prototype: {1}.{2}\n{3}",
+				"en-gb": "An error has occurred while retrieving {0} prototype: {1}.{2}\n{3}",
+				"fr-fr": "Une erreur s'est produite lors de la récupération du prototype {0} : {1}.{2}\n{3}"
 			},
 			"$key": "630907B8044DEDFBFE4C22E54993703712482035"
 		},
@@ -23880,9 +23938,9 @@
 			"chp": 10032,
 			"id": 177,
 			"text": {
-				"en-us": "Conflict {0}: {1} \\ns='{2}' \\nt='{3}' \\ni='{4}'",
-				"en-gb": "Conflict {0}: {1} \\ns='{2}' \\nt='{3}' \\ni='{4}'",
-				"fr-fr": "Conflit {0} : {1} \\ns='{2}' \\nt='{3}' \\ni='{4}'"
+				"en-us": "Conflict {0}: {1}\ns='{2}'\nt='{3}'\ni='{4}'",
+				"en-gb": "Conflict {0}: {1}\ns='{2}'\nt='{3}'\ni='{4}'",
+				"fr-fr": "Conflit {0} : {1}\ns='{2}'\nt='{3}'\ni='{4}'"
 			},
 			"$key": "71C4F1E7AE2034F18EF577939448D846963EF57B"
 		},
@@ -26159,9 +26217,9 @@
 			"chp": 10032,
 			"id": 404,
 			"text": {
-				"en-us": "All formatting will be lost.",
-				"fr-fr": "Toute la mise en forme sera perdue. Voulez-vous réellement basculer ?",
-				"en-gb": "All formatting will be lost."
+				"en-us": "All formatting will be lost.\nDo you really want to switch?",
+				"fr-fr": "Toute la mise en forme sera perdue.\nVoulez-vous réellement basculer ?",
+				"en-gb": "All formatting will be lost.\nDo you really want to switch?"
 			},
 			"$key": "243483D2FDE91C5842AF0F98A2183131BDD4EC73"
 		},
@@ -26601,7 +26659,7 @@
 			"id": 447,
 			"text": {
 				"en-us": "connexion refused. Detail",
-				"fr-fr": "Le serveur a refusé d'établir une nouvelle session. Détail :",
+				"fr-fr": "Le serveur a refusé d'établir une nouvelle session. Détail : ",
 				"en-gb": "connexion refused. Detail"
 			},
 			"$key": "F26401CE891159D68F50EE24CF128546A54021D8"
@@ -26640,8 +26698,8 @@
 			"chp": 10032,
 			"id": 451,
 			"text": {
-				"en-us": "Resource :",
-				"fr-fr": "Ressource :",
+				"en-us": "Resource: ",
+				"fr-fr": "Ressource : ",
 				"en-gb": "Resource :"
 			},
 			"$key": "42A36C06A79EE575CDAD201F3388B7DD38C33C73"
@@ -26978,7 +27036,7 @@
 			"id": 482,
 			"text": {
 				"en-us": "Location",
-				"fr-fr": "Localiation",
+				"fr-fr": "Localisation",
 				"en-gb": "Location"
 			},
 			"$key": "EEE060A62E4422E6AE5A51EA4C2D25095375F589"
@@ -27167,7 +27225,7 @@
 			"id": 501,
 			"text": {
 				"en-us": "Printer properties",
-				"fr-fr": "Propriete de l'imprimpante",
+				"fr-fr": "Propriéte de l'imprimante",
 				"en-gb": "Printer properties"
 			},
 			"$key": "55CD13CB9B6DC87F7155C0105041E7CAF2431BD2"
@@ -27469,8 +27527,8 @@
 			"chp": 10032,
 			"id": 531,
 			"text": {
-				"en-us": "Customize Landing Page",
-				"fr-fr": "Customiser la page d'accueil",
+				"en-us": "Personalize Landing Page",
+				"fr-fr": "Personnaliser la page d'accueil",
 				"en-gb": "Customize Landing Page"
 			},
 			"$key": "80B2284849D5A97FE79CE9329AF0C331CD2BBBFC"
@@ -27519,7 +27577,7 @@
 			"chp": 10032,
 			"id": 536,
 			"text": {
-				"en-us": "New gadget",
+				"en-us": "Add new gadgets",
 				"fr-fr": "Nouvelle vignette",
 				"en-gb": "New gadget"
 			},
@@ -27719,7 +27777,7 @@
 			"chp": 10032,
 			"id": 556,
 			"text": {
-				"en-us": "Vignette",
+				"en-us": "Gadget",
 				"fr-fr": "Vignette",
 				"en-gb": "Vignette"
 			},
@@ -28380,8 +28438,8 @@
 			"id": 622,
 			"text": {
 				"en-us": "Customize list",
-				"fr-fr": "Customiser la liste",
-				"en-gb": "Customize list"
+				"fr-fr": "Personnaliser la liste",
+				"en-gb": "Personalize list"
 			},
 			"$key": "3C009DB0BB78F83C96897E5A35D5693CA4797875"
 		},
@@ -28439,9 +28497,9 @@
 			"chp": 10032,
 			"id": 628,
 			"text": {
-				"en-us": "Record",
-				"fr-fr": "Enregistrement",
-				"en-gb": "Record"
+				"en-us": "Result",
+				"fr-fr": "Résultat",
+				"en-gb": "Result"
 			},
 			"$key": "78C304B6B29A86C84EB4978D5935041C38218237"
 		},
@@ -28449,9 +28507,9 @@
 			"chp": 10032,
 			"id": 629,
 			"text": {
-				"en-us": "Records",
-				"fr-fr": "Enregistrements",
-				"en-gb": "Records"
+				"en-us": "Results",
+				"fr-fr": "Résultats",
+				"en-gb": "Results"
 			},
 			"$key": "37664BB12D8E5755D85EA81EA2BCCB5643BD9C8E"
 		},
@@ -28509,9 +28567,9 @@
 			"chp": 10032,
 			"id": 635,
 			"text": {
-				"en-us": "Page size",
-				"fr-fr": "Taille de page",
-				"en-gb": "Page size"
+				"en-us": "Display",
+				"fr-fr": "Afficher",
+				"en-gb": "Display"
 			},
 			"$key": "35E08DE77409E02699A67B75B2F4A428A9E667ED"
 		},
@@ -28939,8 +28997,8 @@
 			"chp": 10032,
 			"id": 678,
 			"text": {
-				"en-us": "From:",
-				"fr-fr": "De :",
+				"en-us": "From : ",
+				"fr-fr": "De : ",
 				"en-gb": "From:"
 			},
 			"$key": "F44596F7D7A53B9E25FDB8BDD5416B0FF9C3812C"
@@ -28979,8 +29037,8 @@
 			"chp": 10032,
 			"id": 682,
 			"text": {
-				"en-us": "Application  code:",
-				"fr-fr": "Code de l'application :",
+				"en-us": "Application Code : ",
+				"fr-fr": "Code de l'application : ",
 				"en-gb": "Application  code:"
 			},
 			"$key": "1EC93DF70409E3F6352C59B26ED9531AA335C93A"
@@ -29229,8 +29287,8 @@
 			"chp": 10032,
 			"id": 707,
 			"text": {
-				"en-us": "Customize",
-				"fr-fr": "Customiser",
+				"en-us": "Personalize",
+				"fr-fr": "Personnaliser",
 				"en-gb": "Customize"
 			},
 			"$key": "B24305EC985ED914D71CCDE602F9FDBE517C6100"
@@ -29649,8 +29707,8 @@
 			"chp": 10032,
 			"id": 749,
 			"text": {
-				"en-us": "Showing :",
-				"fr-fr": "Showing :",
+				"en-us": "Showing : ",
+				"fr-fr": "Showing : ",
 				"en-gb": "Showing :"
 			},
 			"$key": "8BB776D0C3E8882A159F4A94543D43CE86EA880D"
@@ -29669,7 +29727,7 @@
 			"chp": 10032,
 			"id": 751,
 			"text": {
-				"en-us": "There are ongoing jobs. If you confirm, you won't be able to track their progress. Do you confirm ?",
+				"en-us": "There are ongoing jobs. If you confirm, you won't be able to track their progress. Do you confirm?",
 				"fr-fr": "Certaines tâches sont en cours. Si vous confirmez, vous ne serez pas en mesure de suivre leur progression. Confirmer ?",
 				"en-gb": "There are ongoing jobs. If you confirm, you won't be able to track their progress. Do you confirm ?"
 			},
@@ -29729,7 +29787,7 @@
 			"chp": 10032,
 			"id": 757,
 			"text": {
-				"en-us": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort ?",
+				"en-us": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort?",
 				"fr-fr": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort ?",
 				"en-gb": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort ?"
 			},
@@ -30469,8 +30527,8 @@
 			"chp": 10032,
 			"id": 831,
 			"text": {
-				"en-us": "Customize page",
-				"fr-fr": "Customiser la page",
+				"en-us": "Personalize page",
+				"fr-fr": "Personnaliser la page",
 				"en-gb": "Customize page"
 			},
 			"$key": "ABC56987170C7CF0FFBFDECFF508AC2CA98F1A41"
@@ -30659,8 +30717,8 @@
 			"chp": 10032,
 			"id": 850,
 			"text": {
-				"en-us": "A Propos",
-				"fr-fr": "About",
+				"en-us": "About",
+				"fr-fr": "À propos",
 				"en-gb": "A Propos"
 			},
 			"$key": "7593C0CFA32AFA43ACFF4F0DCC65C8C2E357D92C"
@@ -30669,8 +30727,8 @@
 			"chp": 10032,
 			"id": 851,
 			"text": {
-				"en-us": "Tableau de bord",
-				"fr-fr": "Dashboard",
+				"en-us": "Dashboard",
+				"fr-fr": "Tableau de bord",
 				"en-gb": "Tableau de bord"
 			},
 			"$key": "088A370C932CC0FF611E1CE4BFD02F22C159F3AD"
@@ -31508,7 +31566,7 @@
 			"chp": 10032,
 			"id": 1461,
 			"text": {
-				"en-us": "Leave authoring mode"
+				"en-us": "Quit"
 			},
 			"$key": "5DB8CACB607506EBF18F41D394169A36F325F4C8"
 		},
@@ -34194,7 +34252,7 @@
 			"chp": 10032,
 			"id": 1023,
 			"text": {
-				"fr-fr": "-",
+				"fr-fr": "Indice incorrect",
 				"en-us": "-",
 				"en-gb": "-"
 			},
@@ -34204,7 +34262,7 @@
 			"chp": 10032,
 			"id": 1024,
 			"text": {
-				"fr-fr": "-",
+				"fr-fr": "Clé inexistante dans cette table",
 				"en-us": "-",
 				"en-gb": "-"
 			},
@@ -34214,7 +34272,7 @@
 			"chp": 10032,
 			"id": 1025,
 			"text": {
-				"fr-fr": "-",
+				"fr-fr": "Fonction non implémentée !",
 				"en-us": "-",
 				"en-gb": "-"
 			},
@@ -34224,7 +34282,7 @@
 			"chp": 10032,
 			"id": 1026,
 			"text": {
-				"fr-fr": "-",
+				"fr-fr": "Trop de dimensions",
 				"en-us": "-",
 				"en-gb": "-"
 			},
@@ -34234,7 +34292,7 @@
 			"chp": 10032,
 			"id": 1027,
 			"text": {
-				"fr-fr": "-",
+				"fr-fr": "Erreur sur le fichier message",
 				"en-us": "-",
 				"en-gb": "-"
 			},
@@ -34244,7 +34302,7 @@
 			"chp": 10032,
 			"id": 1028,
 			"text": {
-				"fr-fr": "-",
+				"fr-fr": "Erreur SQL Server",
 				"en-us": "-",
 				"en-gb": "-"
 			},
@@ -35219,8 +35277,8 @@
 			"chp": 10032,
 			"id": 1130,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "La valeur de l'entité [{0}] a été mise à jour [{1}] fois.",
+				"fr-fr": "La valeur de l'entité [{0}] a été mise à jour [{1}] fois.",
 				"en-gb": "-"
 			},
 			"$key": "7C9FE0B699678183376185A5E400FE6E838CB421"
@@ -35229,8 +35287,8 @@
 			"chp": 10032,
 			"id": 1131,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Une exception [{0}] à été levée pendant la tentative de connexion.",
+				"fr-fr": "Une exception [{0}] à été levée pendant la tentative de connexion.",
 				"en-gb": "-"
 			},
 			"$key": "E0F54CB2C8F6BF93E4A9DC7400073FA295EFBFA2"
@@ -35269,8 +35327,8 @@
 			"chp": 10032,
 			"id": 1135,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Chargement de fenêtre",
+				"fr-fr": "Chargement de fenêtre",
 				"en-gb": "-"
 			},
 			"$key": "858A19064CB1329B47AB54563F96213909827C7B"
@@ -35279,8 +35337,8 @@
 			"chp": 10032,
 			"id": 1136,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "La fenêtre [{0}] est en cours de chargement depuis le serveur X3, veuillez patienter.",
+				"fr-fr": "La fenêtre [{0}] est en cours de chargement depuis le serveur X3, veuillez patienter.",
 				"en-gb": "-"
 			},
 			"$key": "5FF67798FC320DC067E0C3180BB69E759089CA3B"
@@ -35299,8 +35357,8 @@
 			"chp": 10032,
 			"id": 1138,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Une Exception à été levée pendant l'attente de la description de la fenêtre [{0}] de l'application [{1}] .",
+				"fr-fr": "Une Exception à été levée pendant l'attente de la description de la fenêtre [{0}] de l'application [{1}] .",
 				"en-gb": "-"
 			},
 			"$key": "EF40EE1366B10899C53A2AEC195609E1D5867A34"
@@ -35321,8 +35379,8 @@
 			"chp": 10032,
 			"id": 1141,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Le fichier de description a été demandé [{0}] fois au serveur de cache.  L'état de cette ressource est [{1}] .",
+				"fr-fr": "Le fichier de description a été demandé [{0}] fois au serveur de cache.  L'état de cette ressource est [{1}] .",
 				"en-gb": "-"
 			},
 			"$key": "AB927C89F6F591BE631BA9A5F3577D8E12307C6B"
@@ -35343,8 +35401,8 @@
 			"chp": 10032,
 			"id": 1144,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Le document xml de description a été demandé [{0}] fois au gestionnaire de fenêtre.",
+				"fr-fr": "Le document xml de description a été demandé [{0}] fois au gestionnaire de fenêtre.",
 				"en-gb": "-"
 			},
 			"$key": "85EE438BED21A35CBEEE6BD2292C029FD3A71175"
@@ -35353,8 +35411,8 @@
 			"chp": 10032,
 			"id": 1145,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Une demande auprés du serveur de cache à été émise il y a [{0}] millièmes de seconde.",
+				"fr-fr": "Une demande auprés du serveur de cache à été émise il y a [{0}] millièmes de seconde.",
 				"en-gb": "-"
 			},
 			"$key": "29DF4DCB86D76202A405E273557D9C651CCF6476"
@@ -35375,8 +35433,8 @@
 			"chp": 10032,
 			"id": 1148,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "La requête [{0}] est en cours d'exécution sur le serveur applicatif. Elle a été créée il y a [{1}] millisecs.",
+				"fr-fr": "La requête [{0}] est en cours d'exécution sur le serveur applicatif. Elle a été créée il y a [{1}] millisecs.",
 				"en-gb": "-"
 			},
 			"$key": "916B97EC1CAB9DD7A79F9EA7D56D2C48DD699529"
@@ -35385,8 +35443,8 @@
 			"chp": 10032,
 			"id": 1149,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Il n'y a pas de requête en cours d'exécution.",
+				"fr-fr": "Il n'y a pas de requête en cours d'exécution.",
 				"en-gb": "-"
 			},
 			"$key": "19081565A238BC599036A5F39A49063CC674977F"
@@ -35395,8 +35453,8 @@
 			"chp": 10032,
 			"id": 1150,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "La date pivot [{0}] envoyée par le serveur X3 n'est pas valide.",
+				"fr-fr": "La date pivot [{0}] envoyée par le serveur X3 n'est pas valide.",
 				"en-gb": "-"
 			},
 			"$key": "4837EA198A7726A8BE2BFB334BDBC50F7F83C152"
@@ -35405,8 +35463,8 @@
 			"chp": 10032,
 			"id": 1151,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Aucune colonne n'est définie dans la liste gauche [{0}].",
+				"fr-fr": "Aucune colonne n'est définie dans la liste gauche [{0}].",
 				"en-gb": "-"
 			},
 			"$key": "1CB9D0D8758AAAB12D3636A1AB79B77DF0B992EF"
@@ -35415,8 +35473,8 @@
 			"chp": 10032,
 			"id": 1152,
 			"text": {
-				"en-us": "-",
-				"fr-fr": "-",
+				"en-us": "Le contexte de connexion au serveur X3 est invalide : {0}.",
+				"fr-fr": "Le contexte de connexion au serveur X3 est invalide : {0}.",
 				"en-gb": "-"
 			},
 			"$key": "09E8F0B108F3EB27727F847D38982CE44A4086A8"
@@ -35425,7 +35483,7 @@
 			"chp": 10032,
 			"id": 1153,
 			"text": {
-				"en-us": "-",
+				"en-us": "Une erreur est survenue dans le service de gestion des Blobs.",
 				"en-gb": "-",
 				"fr-fr": "-"
 			},
@@ -36120,9 +36178,9 @@
 			"chp": 10032,
 			"id": 1223,
 			"text": {
-				"en-us": "Convergence session not found on this server ({0}).",
-				"fr-fr": "session Convergence non trouvée ({0}).",
-				"en-gb": "Convergence session not found on this server ({0})."
+				"en-us": "Convergence session not found on this server ({0}).\nThis can due to an unscheduled server restart.",
+				"fr-fr": "session Convergence non trouvée ({0}).\nCette erreur est probablement due à un redémarrage serveur non planifié.",
+				"en-gb": "Convergence session not found on this server ({0}).\nThis can due to an unscheduled server restart."
 			},
 			"$key": "9E921C832F748057F0593354DCE26429E2D3649A"
 		}
@@ -36154,7 +36212,7 @@
 			"id": 1226,
 			"text": {
 				"en-us": "No session is available when there are too many badges for named users",
-				"fr-fr": "Aucune session n'est disponible.",
+				"fr-fr": "Aucune session n'est disponible.\nLe nombre de badges alloués à l'utilisatueur a été atteint",
 				"en-gb": "No session is available when there are too many badges for named users"
 			},
 			"$key": "2A723AAAC57AE59D93FF3623D827ED03B878143E"
