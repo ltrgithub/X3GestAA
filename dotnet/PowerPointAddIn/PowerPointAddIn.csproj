@@ -125,7 +125,7 @@
   </PropertyGroup>
   <!--
     This section enables pre- and post-build steps. However, in VSTO use
-    MSBuild tasks instead of these properties.       
+    MSBuild tasks instead of these properties.
   -->
   <PropertyGroup>
     <PreBuildEvent>
@@ -195,10 +195,10 @@
   </ItemGroup>
   <!--
     This section defines the user source files that are part of the project.
-     
+
     A "Compile" element specifies a source file to compile.
     An "EmbeddedResource" element specifies an .resx file for embedded resources.
-    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    A "None" element specifies a file that is not to be passed to the compiler (for instance,
     a text file or XML file).
     The "AppDesigner" element specifies the directory where the application properties files
     can be found.
@@ -248,10 +248,6 @@
     <EmbeddedResource Include="PresentationSelectionDialog.resx">
       <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationSelectionDialog.en-gb.resx">
-      <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="PresentationSelectionDialog.fr.resx">
       <DependentUpon>PresentationSelectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,10 +273,6 @@
     <EmbeddedResource Include="Ribbon.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ribbon.en-gb.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ServerSettings.de.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,10 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServerSettings.resx">
       <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.en-gb.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
