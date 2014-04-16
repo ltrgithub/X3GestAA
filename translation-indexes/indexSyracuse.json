@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T08:41:41.000Z",
-		"$lastModified": "2014-04-15T12:51:58.000Z",
+		"$lastModified": "2014-04-16T15:35:25.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -10,7 +10,7 @@
 			"$exclude": [
 				"node_modules/syracuse-core/lib/types/resources/date"
 			],
-			"$count": 3647,
+			"$count": 3648,
 			"$lastModified": "",
 			"$current": 10032,
 			"$": {
@@ -18,7 +18,7 @@
 					"$nextId": 2000
 				},
 				"10032": {
-					"$nextId": 1649
+					"$nextId": 1650
 				}
 			}
 		},
@@ -2017,11 +2017,21 @@
 			"chp": 10031,
 			"id": 168,
 			"text": {
-				"en-us": "License file does not exist",
-				"fr-fr": "Fichier de licence inexistant",
-				"en-gb": "License file does not exist"
+				"en-us": "License file '{0}' does not exist",
+				"fr-fr": "Fichier de licence '{0}' inexistant",
+				"en-gb": "License file '{0}' does not exist"
 			},
 			"$key": "206606A6A70A2F4C62DB2A409E4584191F5128BD"
+		},
+		"noContent": {
+			"chp": 10032,
+			"id": 1649,
+			"text": {
+				"en-us": "No license content",
+				"fr-fr": "Pas de contenu de licence",
+				"en-gb": "No license content"
+			},
+			"$key": "83195AB0E31088C22C0612667E899043C67F702E"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/resources/licenseData": {
@@ -8820,9 +8830,9 @@
 			"chp": 10031,
 			"id": 819,
 			"text": {
-				"en-us": "License",
-				"fr-fr": "Licence",
-				"en-gb": "License"
+				"en-us": "License upload",
+				"fr-fr": "Téléchargement de la licence",
+				"en-gb": "License upload"
 			},
 			"$key": "6E8136435E81BE0DC030A5F4E5BC2F85AF422429"
 		},
@@ -8830,9 +8840,9 @@
 			"chp": 10031,
 			"id": 820,
 			"text": {
-				"en-us": "Load license",
-				"fr-fr": "Charger la licence",
-				"en-gb": "Load license"
+				"en-us": "Upload license",
+				"fr-fr": "Téléchargement de la licence",
+				"en-gb": "Upload license"
 			},
 			"$key": "25E7FEA418508C6227CEAD6AB8AAE6814DADBCC9"
 		},
@@ -8850,9 +8860,9 @@
 			"chp": 10031,
 			"id": 822,
 			"text": {
-				"en-us": "License",
-				"fr-fr": "Licence",
-				"en-gb": "License"
+				"en-us": "License upload",
+				"fr-fr": "Téléchargement de la licence",
+				"en-gb": "License upload"
 			},
 			"$key": "C1B6590D6A5D5D344E59A019C51DE27F3F244365"
 		},
@@ -8860,9 +8870,9 @@
 			"chp": 10031,
 			"id": 823,
 			"text": {
-				"en-us": "License",
-				"fr-fr": "Licence",
-				"en-gb": "License"
+				"en-us": "License upload",
+				"fr-fr": "Téléchargement de la licence",
+				"en-gb": "License upload"
 			},
 			"$key": "6068A7090681738866589112A80328CFFF88889F"
 		},
@@ -12752,9 +12762,9 @@
 			"chp": 10031,
 			"id": 1205,
 			"text": {
-				"en-us": "Page gadget filter",
-				"fr-fr": "Filtre des vignettes de la page",
-				"en-gb": "Page gadget filter"
+				"en-us": "Page variants filter",
+				"fr-fr": "Filtre des variants de la page",
+				"en-gb": "Page variants filter"
 			},
 			"$key": "7F806CA497DAFC37CACC34EEA0D05FF78DED02A0"
 		},
@@ -22678,7 +22688,9 @@
 			"chp": 10032,
 			"id": 1647,
 			"text": {
-				"en-us": "Can't execute search query. Please check your configuration \n {0}"
+				"en-us": "Can't execute search query: \n {0}",
+				"fr-fr": "Impossible d'exécuter la requête de recherche : \n {0}",
+				"en-gb": "Can't execute search query: \n {0}"
 			},
 			"$key": "1482C11D9927F8022F32E61D883EFF77009BED37"
 		},
@@ -30737,7 +30749,9 @@
 			"chp": 10032,
 			"id": 1355,
 			"text": {
-				"en-us": "Manage bookmarks"
+				"en-us": "Manage bookmarks",
+				"fr-fr": "Gérer les signets",
+				"en-gb": "Manage bookmarks"
 			},
 			"$key": "346B054E749FC2976A581E8F81D6CD0615C37286"
 		},
@@ -30745,7 +30759,9 @@
 			"chp": 10032,
 			"id": 1356,
 			"text": {
-				"en-us": "Edit"
+				"en-us": "Edit",
+				"fr-fr": "Modifier",
+				"en-gb": "Edit"
 			},
 			"$key": "5FBCDCA8CB8FD589C57FD6079C1F488FB4436BCA"
 		},
@@ -30753,7 +30769,8 @@
 			"chp": 10032,
 			"id": 1357,
 			"text": {
-				"en-us": "Close Editor"
+				"en-us": "Close Editor",
+				"fr-fr": "Fermer l'éditeur"
 			},
 			"$key": "8768F6C90F9F9056D20422ED4924983AF11AFA13"
 		},
@@ -30761,7 +30778,8 @@
 			"chp": 10032,
 			"id": 1358,
 			"text": {
-				"en-us": "More bookmarks"
+				"en-us": "More bookmarks",
+				"fr-fr": "Plus de signets"
 			},
 			"$key": "7703D452C611B80C9423ABD1A05EBB01365EE9AA"
 		},
@@ -30769,7 +30787,8 @@
 			"chp": 10032,
 			"id": 1359,
 			"text": {
-				"en-us": "New Tab"
+				"en-us": "New Tab",
+				"fr-fr": "Nouvel onglet"
 			},
 			"$key": "F385386F2F3E0C464C9E5F14DC3774BD9B3C5EBD"
 		},
@@ -30777,7 +30796,8 @@
 			"chp": 10032,
 			"id": 1360,
 			"text": {
-				"en-us": "Template"
+				"en-us": "Template",
+				"fr-fr": "Modèle"
 			},
 			"$key": "DF8E5B94E11F476B0ABB344E01B7DE5D944D9899"
 		},
@@ -30785,7 +30805,8 @@
 			"chp": 10032,
 			"id": 1364,
 			"text": {
-				"en-us": "Title"
+				"en-us": "Title",
+				"fr-fr": "Titre"
 			},
 			"$key": "C851FFCE4FBE75A847107583E84DBCB780E1E8EB"
 		},
@@ -30793,7 +30814,8 @@
 			"chp": 10032,
 			"id": 1365,
 			"text": {
-				"en-us": "Translations"
+				"en-us": "Translations",
+				"fr-fr": "Traductions"
 			},
 			"$key": "2451E3EB654E4EFADEDFB9DE0B4AB5AA8679663C"
 		},
@@ -30801,7 +30823,8 @@
 			"chp": 10032,
 			"id": 1366,
 			"text": {
-				"en-us": "Delete tab"
+				"en-us": "Delete tab",
+				"fr-fr": "Supprimer l'onglet"
 			},
 			"$key": "7429E44070EEF3861F6441DF19523167D3961585"
 		},
@@ -30809,7 +30832,8 @@
 			"chp": 10032,
 			"id": 1367,
 			"text": {
-				"en-us": "My Landing pages"
+				"en-us": "My Landing pages",
+				"fr-fr": "Ma page de d'accueil"
 			},
 			"$key": "4BFBBAE183D2050DB02EDD31EB53A1AC23557B35"
 		},
@@ -30817,7 +30841,8 @@
 			"chp": 10032,
 			"id": 1368,
 			"text": {
-				"en-us": "Delete"
+				"en-us": "Delete",
+				"fr-fr": "Supprimer"
 			},
 			"$key": "7E128E798693A30FA3BCDA1D72B91373BBB340A6"
 		},
@@ -30825,7 +30850,8 @@
 			"chp": 10032,
 			"id": 1369,
 			"text": {
-				"en-us": "The gadget '{0}' will be deleted. Confirm?"
+				"en-us": "The gadget '{0}' will be deleted. Confirm?",
+				"fr-fr": "La vignette '{0}' va être supprimer. Veuillez confirmer ?"
 			},
 			"$key": "4DF7670DE242F763C88C8577165E6ADAB7CD9953"
 		},
@@ -30833,7 +30859,8 @@
 			"chp": 10032,
 			"id": 1370,
 			"text": {
-				"en-us": "The gadgets in '{0}' will be deleted. Confirm?"
+				"en-us": "The gadgets in '{0}' will be deleted. Confirm?",
+				"fr-fr": "La vignette '{0}' va être supprimer. Veuillez confirmer ?"
 			},
 			"$key": "C63D3D68D1C6AA4BF66889713778084924210676"
 		},
@@ -30841,7 +30868,8 @@
 			"chp": 10032,
 			"id": 1371,
 			"text": {
-				"en-us": "Search gadget"
+				"en-us": "Search gadget",
+				"fr-fr": "Rechercher une vignette"
 			},
 			"$key": "8FD409518BED09CD2A85D153FD27A882C082AEDD"
 		},
@@ -30849,7 +30877,8 @@
 			"chp": 10032,
 			"id": 1372,
 			"text": {
-				"en-us": "Selected gadgets"
+				"en-us": "Selected gadgets",
+				"fr-fr": "Vignettes sélectionnées"
 			},
 			"$key": "78B5A53DEDBEC320B978829FF061A1C69CEC47C3"
 		},
@@ -30857,7 +30886,8 @@
 			"chp": 10032,
 			"id": 1373,
 			"text": {
-				"en-us": "Title"
+				"en-us": "Title",
+				"fr-fr": "Titre"
 			},
 			"$key": "12D267431616B2F727B24F6188AD9A670A37ED08"
 		},
@@ -30865,7 +30895,8 @@
 			"chp": 10032,
 			"id": 1374,
 			"text": {
-				"en-us": "Categories"
+				"en-us": "Categories",
+				"fr-fr": "Catégories"
 			},
 			"$key": "41C4B1B2FDA50E768C7AC4DBB72FF40770A36B10"
 		},
@@ -30873,7 +30904,8 @@
 			"chp": 10032,
 			"id": 1375,
 			"text": {
-				"en-us": "Module"
+				"en-us": "Module",
+				"fr-fr": "Module"
 			},
 			"$key": "DC49BB3A4B6D7A4E1DEE65D5A46841D44935ED76"
 		},
@@ -30881,7 +30913,8 @@
 			"chp": 10032,
 			"id": 1376,
 			"text": {
-				"en-us": "Modules"
+				"en-us": "Modules",
+				"fr-fr": "Modules"
 			},
 			"$key": "FB1716756B2EFDDAF74051A23E515EFAFDD882AB"
 		},
@@ -30889,7 +30922,8 @@
 			"chp": 10032,
 			"id": 1377,
 			"text": {
-				"en-us": "Categories"
+				"en-us": "Categories",
+				"fr-fr": "Catégories"
 			},
 			"$key": "B6278994E4851EB1C0DF9850E1ACAF9981455585"
 		},
@@ -30897,7 +30931,8 @@
 			"chp": 10032,
 			"id": 1378,
 			"text": {
-				"en-us": "Gadgets"
+				"en-us": "Gadgets",
+				"fr-fr": "Vignettes"
 			},
 			"$key": "CBFF1A0A3CF40207728EA9EE7675A428B00BF0F2"
 		},
@@ -30905,7 +30940,8 @@
 			"chp": 10032,
 			"id": 1379,
 			"text": {
-				"en-us": "No Module"
+				"en-us": "No Module",
+				"fr-fr": "Pas de module"
 			},
 			"$key": "6694C1DDCB2E7370E58E4BE3D82DFBC324F87DC1"
 		},
@@ -30913,7 +30949,8 @@
 			"chp": 10032,
 			"id": 1380,
 			"text": {
-				"en-us": "No Category"
+				"en-us": "No Category",
+				"fr-fr": "Pas de catégorie"
 			},
 			"$key": "30813581ACA6A30DC1F5EBC42752F3F6E042CBC6"
 		},
@@ -30921,7 +30958,8 @@
 			"chp": 10032,
 			"id": 1381,
 			"text": {
-				"en-us": "No title defined"
+				"en-us": "No title defined",
+				"fr-fr": "Pas de titre renseigné"
 			},
 			"$key": "8BF31C29F1122E67950448A1C089F0DCC7594BED"
 		},
@@ -30929,7 +30967,8 @@
 			"chp": 10032,
 			"id": 1382,
 			"text": {
-				"en-us": "1. Please select endpoint"
+				"en-us": "1. Please select endpoint",
+				"fr-fr": "1. Veuillez sélectionner un endpoint"
 			},
 			"$key": "4F0998DDBC040616346757A4BB8A56FB8E711633"
 		},
@@ -30937,7 +30976,8 @@
 			"chp": 10032,
 			"id": 1383,
 			"text": {
-				"en-us": "2. Browse category"
+				"en-us": "2. Browse category",
+				"fr-fr": "2. Parcourir la catégorie"
 			},
 			"$key": "DDB23F3E7748DC6B8EB4611D738ED390D7BB3C7B"
 		},
@@ -31009,7 +31049,8 @@
 			"chp": 10032,
 			"id": 1392,
 			"text": {
-				"en-us": "Delete"
+				"en-us": "Delete",
+				"fr-fr": "Supprimer"
 			},
 			"$key": "06CE3837E3C18C1349C388CF19D1F4C9430B3075"
 		},
@@ -31017,7 +31058,8 @@
 			"chp": 10032,
 			"id": 1393,
 			"text": {
-				"en-us": "Search"
+				"en-us": "Search",
+				"fr-fr": "Rechercher"
 			},
 			"$key": "7C87048E6DC112E2A6B3C0EC1593C9F8CA8B2539"
 		},
@@ -31185,7 +31227,8 @@
 			"chp": 10032,
 			"id": 1414,
 			"text": {
-				"en-us": "Show / Hide legend"
+				"en-us": "Show / Hide legend",
+				"fr-fr": "Montrer / cacher la légende"
 			},
 			"$key": "8DDCD37C4487D797A5942FF08D2236B98E1C0EB3"
 		},
@@ -31238,7 +31281,8 @@
 			"chp": 10032,
 			"id": 1420,
 			"text": {
-				"en-us": "row"
+				"en-us": "row",
+				"fr-fr": "ligne"
 			},
 			"$key": "7E4D45E5069BABAC0B2B3F84E1503B5B021F3918"
 		},
@@ -31246,7 +31290,8 @@
 			"chp": 10032,
 			"id": 1421,
 			"text": {
-				"en-us": "Title"
+				"en-us": "Title",
+				"fr-fr": "Titre"
 			},
 			"$key": "6631F912BF0FCC12A60934F42B2AA1E4B484AB80"
 		},
@@ -31254,7 +31299,8 @@
 			"chp": 10032,
 			"id": 1422,
 			"text": {
-				"en-us": "Behavior"
+				"en-us": "Behavior",
+				"fr-fr": "Comportement"
 			},
 			"$key": "A8136B54310D7C7B4DE5E77087ED0D22C5860886"
 		},
@@ -31262,7 +31308,8 @@
 			"chp": 10032,
 			"id": 1423,
 			"text": {
-				"en-us": "Fields Label"
+				"en-us": "Fields Label",
+				"fr-fr": "Intitulé des champs"
 			},
 			"$key": "12C07CDFDDE61304867AF7CAB35CAD00D91372B2"
 		},
@@ -31270,7 +31317,8 @@
 			"chp": 10032,
 			"id": 1424,
 			"text": {
-				"en-us": "Position"
+				"en-us": "Position",
+				"fr-fr": "Position"
 			},
 			"$key": "9874CF20E6EB98F634469F2D25A91EAA377E758C"
 		},
@@ -31278,7 +31326,8 @@
 			"chp": 10032,
 			"id": 1425,
 			"text": {
-				"en-us": "at top"
+				"en-us": "at top",
+				"fr-fr": "En haut"
 			},
 			"$key": "84A49605F31E368CE95F046EA6D46930EBE17D19"
 		},
@@ -31286,7 +31335,8 @@
 			"chp": 10032,
 			"id": 1426,
 			"text": {
-				"en-us": "at left & left aligned"
+				"en-us": "at left & left aligned",
+				"fr-fr": "A gauche et aligné à gauche"
 			},
 			"$key": "71434C1F5C31FE8D9CC4B0C0F98F762DE81E2C25"
 		},
@@ -31294,7 +31344,8 @@
 			"chp": 10032,
 			"id": 1427,
 			"text": {
-				"en-us": "at left & right aligned"
+				"en-us": "at left & right aligned",
+				"fr-fr": "A gauche et aligné à droite"
 			},
 			"$key": "759AA2581EF41C0DFC7D52A47896877852A7189E"
 		},
@@ -31302,7 +31353,8 @@
 			"chp": 10032,
 			"id": 1428,
 			"text": {
-				"en-us": "align content to"
+				"en-us": "align content to",
+				"fr-fr": "aligner le contenu sur"
 			},
 			"$key": "2AC0116C1E3D5BBEA55274E829BC0D9329B012D4"
 		},
@@ -31310,7 +31362,8 @@
 			"chp": 10032,
 			"id": 1429,
 			"text": {
-				"en-us": "top"
+				"en-us": "top",
+				"fr-fr": "haut"
 			},
 			"$key": "4C2AC1B5A5F1D9061389BF3AE893ACBE81019FE8"
 		},
@@ -31318,7 +31371,8 @@
 			"chp": 10032,
 			"id": 1430,
 			"text": {
-				"en-us": "bottom"
+				"en-us": "bottom",
+				"fr-fr": "bas"
 			},
 			"$key": "476B0A8564EE5927BBEA8E6C209BD06AD9756E69"
 		},
@@ -31638,7 +31692,8 @@
 			"chp": 10032,
 			"id": 1470,
 			"text": {
-				"en-us": "Delete"
+				"en-us": "Delete",
+				"fr-fr": "Supprimer"
 			},
 			"$key": "E19B3BBEE86FA94FE3DC390E54008C51239CE3DE"
 		},
@@ -31790,7 +31845,8 @@
 			"chp": 10032,
 			"id": 1489,
 			"text": {
-				"en-us": "Delete"
+				"en-us": "Delete",
+				"fr-fr": "Supprimer"
 			},
 			"$key": "230E780385963BBD86BADD3FC673C5597FF50234"
 		},
@@ -32102,7 +32158,8 @@
 			"chp": 10032,
 			"id": 1528,
 			"text": {
-				"en-us": "Graph"
+				"en-us": "Graph",
+				"fr-fr": "Graphique"
 			},
 			"$key": "9F48A3A1D6C225CAB70B3F9344AE5F0D62568284"
 		},
@@ -32110,7 +32167,8 @@
 			"chp": 10032,
 			"id": 1529,
 			"text": {
-				"en-us": "Chart position"
+				"en-us": "Chart position",
+				"fr-fr": "Position du graphique"
 			},
 			"$key": "1DA91CCAF9CB3847A591A787EFAF0BF01B1846D0"
 		},
@@ -32118,7 +32176,8 @@
 			"chp": 10032,
 			"id": 1530,
 			"text": {
-				"en-us": "top"
+				"en-us": "Top",
+				"fr-fr": "Haut"
 			},
 			"$key": "973D114BFAAE0B5808FAC65807193FFDFECBB0C7"
 		},
@@ -32126,7 +32185,8 @@
 			"chp": 10032,
 			"id": 1531,
 			"text": {
-				"en-us": "left"
+				"en-us": "Left",
+				"fr-fr": "Gauche"
 			},
 			"$key": "FF4727D3A1FAFA42CDBECBC4A6C3BDC898D60C17"
 		},
@@ -32134,7 +32194,8 @@
 			"chp": 10032,
 			"id": 1532,
 			"text": {
-				"en-us": "right"
+				"en-us": "Right",
+				"fr-fr": "Droite"
 			},
 			"$key": "23E3417E327F934A8A89B0E017773501BCE30332"
 		},
@@ -32142,7 +32203,8 @@
 			"chp": 10032,
 			"id": 1533,
 			"text": {
-				"en-us": "bottom"
+				"en-us": "Bottom",
+				"fr-fr": "Bas"
 			},
 			"$key": "C5BB7D89AEF96A4E15C51C6FC4055516E296AF53"
 		},
@@ -32150,7 +32212,8 @@
 			"chp": 10032,
 			"id": 1534,
 			"text": {
-				"en-us": "front"
+				"en-us": "Front",
+				"fr-fr": "Devant"
 			},
 			"$key": "872F7A6143ABE60998125779F56E8ED531414C96"
 		},
@@ -32158,7 +32221,8 @@
 			"chp": 10032,
 			"id": 1535,
 			"text": {
-				"en-us": "behind"
+				"en-us": "Behind",
+				"fr-fr": "Derrière"
 			},
 			"$key": "B6E20FD7F810B9CEA59B7D8056D047BEF3C06B1C"
 		},
@@ -32166,7 +32230,8 @@
 			"chp": 10032,
 			"id": 1536,
 			"text": {
-				"en-us": "Axis"
+				"en-us": "Axis",
+				"fr-fr": "Axe"
 			},
 			"$key": "FD4E46AF4701F0497CF2DF0A54978368D1C20659"
 		},
@@ -32174,7 +32239,8 @@
 			"chp": 10032,
 			"id": 1537,
 			"text": {
-				"en-us": "Ok"
+				"en-us": "Ok",
+				"fr-fr": "Ok"
 			},
 			"$key": "176A2DA65B321CE1CB9A1D526BA46774C31FA0AB"
 		},
@@ -32182,7 +32248,8 @@
 			"chp": 10032,
 			"id": 1538,
 			"text": {
-				"en-us": "Cancel"
+				"en-us": "Cancel",
+				"fr-fr": "Annuler"
 			},
 			"$key": "454BC1F9CD5D58DA0C29293FBE245C16E8604CA8"
 		},
@@ -32190,7 +32257,8 @@
 			"chp": 10032,
 			"id": 1539,
 			"text": {
-				"en-us": "add a section"
+				"en-us": "add a section",
+				"fr-fr": "Ajouter une section"
 			},
 			"$key": "EEBA859066B069156F60261F703FBE3C7F793614"
 		},
@@ -32198,7 +32266,8 @@
 			"chp": 10032,
 			"id": 1540,
 			"text": {
-				"en-us": "add a block"
+				"en-us": "add a block",
+				"fr-fr": "Ajouter un bloc"
 			},
 			"$key": "CD90F55EDF248256A0F6B97B99D978825F2779FA"
 		},
@@ -32206,7 +32275,8 @@
 			"chp": 10032,
 			"id": 1541,
 			"text": {
-				"en-us": "hide my title"
+				"en-us": "hide my title",
+				"fr-fr": "Masquer mon intitulé"
 			},
 			"$key": "1A7A2C1AD7BA34DD440D2D59E49287D6106E04F6"
 		},
@@ -32214,7 +32284,8 @@
 			"chp": 10032,
 			"id": 1542,
 			"text": {
-				"en-us": "List design has been updated"
+				"en-us": "List design has been updated",
+				"fr-fr": "Le design de la liste a été mis à jour"
 			},
 			"$key": "0753D4827AE42F71FCC2F78079BED9E84B1EA023"
 		},
@@ -32222,7 +32293,8 @@
 			"chp": 10032,
 			"id": 1543,
 			"text": {
-				"en-us": "Save Update before quit"
+				"en-us": "Save Update before quit",
+				"fr-fr": "Enregistrer la mise à jour avant de quitter"
 			},
 			"$key": "B5FBDB824B83894631EC5C049B5DB8E3EB809330"
 		},
@@ -32230,7 +32302,8 @@
 			"chp": 10032,
 			"id": 1544,
 			"text": {
-				"en-us": "Columns"
+				"en-us": "Columns",
+				"fr-fr": "Colonnes"
 			},
 			"$key": "CEAA31C0E5CB53FF8384D467873BAA5CF12459CB"
 		},
@@ -32238,7 +32311,8 @@
 			"chp": 10032,
 			"id": 1545,
 			"text": {
-				"en-us": "Format"
+				"en-us": "Format",
+				"fr-fr": "Format"
 			},
 			"$key": "197B6481ED437FD82EF6C8C8D5A3121DA4B0986B"
 		},
@@ -32246,7 +32320,8 @@
 			"chp": 10032,
 			"id": 1546,
 			"text": {
-				"en-us": "Drop down list"
+				"en-us": "Drop down list",
+				"fr-fr": "Liste déroulante"
 			},
 			"$key": "BE153AB45392D02C0970993FE9BC12BEC7CE7076"
 		},
@@ -32254,7 +32329,8 @@
 			"chp": 10032,
 			"id": 1547,
 			"text": {
-				"en-us": "Radio buttons"
+				"en-us": "Radio buttons",
+				"fr-fr": "Boutons radio"
 			},
 			"$key": "959D85C9805576F9FE4D5AC06AC567F8E38E6A64"
 		},
@@ -32270,7 +32346,8 @@
 			"chp": 10032,
 			"id": 1549,
 			"text": {
-				"en-us": "1 row"
+				"en-us": "1 row",
+				"fr-fr": "1 ligne"
 			},
 			"$key": "1DF7B864419A8454B1EADF925FC1B0C6A7C8E5A8"
 		},
@@ -32278,7 +32355,8 @@
 			"chp": 10032,
 			"id": 1550,
 			"text": {
-				"en-us": "1 column"
+				"en-us": "1 column",
+				"fr-fr": "1 colonne"
 			},
 			"$key": "3E28911290F18CD7F53F98F72700A7398838DFDD"
 		},
@@ -32286,7 +32364,8 @@
 			"chp": 10032,
 			"id": 1551,
 			"text": {
-				"en-us": "2 columns"
+				"en-us": "2 columns",
+				"fr-fr": "2 colonnes"
 			},
 			"$key": "D56E0247657947D0DE3B8ABE02D579065A537178"
 		},
@@ -32294,7 +32373,8 @@
 			"chp": 10032,
 			"id": 1552,
 			"text": {
-				"en-us": "3 columns"
+				"en-us": "3 columns",
+				"fr-fr": "3 colonnes"
 			},
 			"$key": "CB836C317112B453783DE3F7F1484064CF149402"
 		},
@@ -32302,7 +32382,8 @@
 			"chp": 10032,
 			"id": 1553,
 			"text": {
-				"en-us": "4 columns"
+				"en-us": "4 columns",
+				"fr-fr": "4 colonnes"
 			},
 			"$key": "C867ED19E1C86C83144448F7E56F6EDD43A15E3E"
 		},
@@ -32310,7 +32391,8 @@
 			"chp": 10032,
 			"id": 1554,
 			"text": {
-				"en-us": "width"
+				"en-us": "width",
+				"fr-fr": "largeur"
 			},
 			"$key": "0F0AC2E2D48935E69605EE6D543DFABE1CA8B206"
 		},
@@ -32318,7 +32400,8 @@
 			"chp": 10032,
 			"id": 1555,
 			"text": {
-				"en-us": "height"
+				"en-us": "height",
+				"fr-fr": "hauteur"
 			},
 			"$key": "66F4E053281C62CC8741E605BB2CB3F1E4D78242"
 		},
@@ -32326,7 +32409,8 @@
 			"chp": 10032,
 			"id": 1556,
 			"text": {
-				"en-us": "auto height"
+				"en-us": "auto height",
+				"fr-fr": "hauteur automatique"
 			},
 			"$key": "382E6637DA7F7421040B441B6D912CA0D4147F72"
 		},
@@ -32334,7 +32418,8 @@
 			"chp": 10032,
 			"id": 1557,
 			"text": {
-				"en-us": "is embedded"
+				"en-us": "is embedded",
+				"fr-fr": "est intégré"
 			},
 			"$key": "EB8D221690876FD892C57F72FB71D5BDCBFB2251"
 		},
@@ -32342,7 +32427,8 @@
 			"chp": 10032,
 			"id": 1558,
 			"text": {
-				"en-us": "Title"
+				"en-us": "Title",
+				"fr-fr": "Titre"
 			},
 			"$key": "0E095BECD1480A0C9BCEBA968710E32F8D8A57C5"
 		},
@@ -32350,7 +32436,8 @@
 			"chp": 10032,
 			"id": 1559,
 			"text": {
-				"en-us": "url"
+				"en-us": "url",
+				"fr-fr": "url"
 			},
 			"$key": "E5533849002721830D9EB0D11399F514F00E751D"
 		},
@@ -32358,7 +32445,8 @@
 			"chp": 10032,
 			"id": 1560,
 			"text": {
-				"en-us": "Height"
+				"en-us": "Height",
+				"fr-fr": "Hauteur"
 			},
 			"$key": "37F4BEC006E6AB80754601B123A00E28728058C0"
 		},
@@ -32366,7 +32454,8 @@
 			"chp": 10032,
 			"id": 1561,
 			"text": {
-				"en-us": "User Profile"
+				"en-us": "User Profile",
+				"fr-fr": "Profil utilisateur"
 			},
 			"$key": "FC30AB0950B7E91B8565C4922483354CF4F387CA"
 		},
@@ -32374,7 +32463,8 @@
 			"chp": 10032,
 			"id": 1562,
 			"text": {
-				"en-us": "Home"
+				"en-us": "Home",
+				"fr-fr": "Accueil"
 			},
 			"$key": "0CF755ED61A5EC2980CB9EB1AF3FEF3D4D6FBD2E"
 		},
@@ -32382,7 +32472,8 @@
 			"chp": 10032,
 			"id": 1563,
 			"text": {
-				"en-us": "Navigation"
+				"en-us": "Navigation",
+				"fr-fr": "Navigation"
 			},
 			"$key": "FBCD19001FB5699B29B721C18D6D2A65A718B3F1"
 		},
@@ -32390,7 +32481,8 @@
 			"chp": 10032,
 			"id": 1564,
 			"text": {
-				"en-us": "Log out"
+				"en-us": "Log out",
+				"fr-fr": "Déconnexion"
 			},
 			"$key": "1807360A1E5734394F9B20673803509C0D66BC21"
 		},
@@ -32398,7 +32490,8 @@
 			"chp": 10032,
 			"id": 1565,
 			"text": {
-				"en-us": "Run search"
+				"en-us": "Run search",
+				"fr-fr": "Lancer la recherche"
 			},
 			"$key": "D928A5885CEBDC31862F47B058C205ECAC9B7BDC"
 		},
@@ -32406,7 +32499,8 @@
 			"chp": 10032,
 			"id": 1566,
 			"text": {
-				"en-us": "Help"
+				"en-us": "Help",
+				"fr-fr": "Aide"
 			},
 			"$key": "FF9F0FF98F758253C85D4CDF43789EC337AF950E"
 		},
@@ -32422,7 +32516,8 @@
 			"chp": 10032,
 			"id": 1568,
 			"text": {
-				"en-us": "Shortcuts"
+				"en-us": "Shortcuts",
+				"fr-fr": "Raccourcis"
 			},
 			"$key": "87293B4D74E318BADE0B8458D2494101A4A945C4"
 		},
@@ -32430,7 +32525,8 @@
 			"chp": 10032,
 			"id": 1569,
 			"text": {
-				"en-us": "Legal mention"
+				"en-us": "Legal mention",
+				"fr-fr": "Mention légale"
 			},
 			"$key": "241DFD617F50CC7A48C2E455B64B1071667E2150"
 		},
@@ -32438,7 +32534,8 @@
 			"chp": 10032,
 			"id": 1570,
 			"text": {
-				"en-us": "Go to function..."
+				"en-us": "Go to function...",
+				"fr-fr": "Aller à la fonction"
 			},
 			"$key": "68A2387D63F1ACEBDE87A875499E85159E063752"
 		},
