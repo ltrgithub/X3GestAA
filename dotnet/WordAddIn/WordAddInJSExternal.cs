@@ -275,6 +275,11 @@ namespace WordAddIn
             ReportingUtils.fillTemplate(doc, data, browserDialog);
         }
 
+        public String getSyracuseRole()
+        {
+            return customData.getSyracuseRole(); 
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)
