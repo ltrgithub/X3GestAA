@@ -45,6 +45,7 @@
 												"$key": "code"
 											},
 											"parameters": {
+												"$key": "name",
 												"$localized": [
 													"title"
 												]
@@ -76,6 +77,7 @@
 									"$key": "code"
 								},
 								"parameters": {
+									"$key": "name",
 									"$localized": [
 										"title"
 									]
@@ -145,6 +147,7 @@
 											"$key": "code"
 										},
 										"parameters": {
+											"$key": "name",
 											"$localized": [
 												"title"
 											]
@@ -176,6 +179,7 @@
 								"$key": "code"
 							},
 							"parameters": {
+								"$key": "name",
 								"$localized": [
 									"title"
 								]
@@ -232,6 +236,7 @@
 										"$key": "code"
 									},
 									"parameters": {
+										"$key": "name",
 										"$localized": [
 											"title"
 										]
@@ -263,6 +268,7 @@
 							"$key": "code"
 						},
 						"parameters": {
+							"$key": "name",
 							"$localized": [
 								"title"
 							]
@@ -295,6 +301,7 @@
 				"$key": "code"
 			},
 			"parameters": {
+				"$key": "name",
 				"$localized": [
 					"title"
 				]
@@ -306,30 +313,6 @@
 		}
 	},
 	"$items": [
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "S_SETTINGS",
-			"title": "title_27ef47f6-ee4b-418d-8a2f-b32597585e04",
-			"description": "description_27ef47f6-ee4b-418d-8a2f-b32597585e04",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "settings",
-				"representation": "setting"
-			},
-			"module": null,
-			"parameters": []
-		},
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
@@ -350,6 +333,30 @@
 				"$type": "representationProxy",
 				"entity": "applications",
 				"representation": "application"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_SETTINGS",
+			"title": "title_27ef47f6-ee4b-418d-8a2f-b32597585e04",
+			"description": "description_27ef47f6-ee4b-418d-8a2f-b32597585e04",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "settings",
+				"representation": "setting"
 			},
 			"module": null,
 			"parameters": []
@@ -870,11 +877,11 @@
 			},
 			"items": [
 				{
-					"code": "S_SETTINGS",
+					"code": "S_APPLICATIONS",
 					"$variantType": "menuItem"
 				},
 				{
-					"code": "S_APPLICATIONS",
+					"code": "S_SETTINGS",
 					"$variantType": "menuItem"
 				},
 				{
@@ -1170,54 +1177,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "S_DASHBOARDS",
-			"title": "title_91de5567-a656-4dbb-90f7-a53a8cba6f64",
-			"description": "description_91de5567-a656-4dbb-90f7-a53a8cba6f64",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "dashboardDefs",
-				"representation": "dashboardDef"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "S_VIGNETTES",
-			"title": "title_fe5e6387-d4dc-4ca0-8bdb-0a37a575598e",
-			"description": "description_fe5e6387-d4dc-4ca0-8bdb-0a37a575598e",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "portlets",
-				"representation": "portlet"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "S_MENU_ITEMS",
 			"title": "title_ebde23b7-7942-4b84-8a23-594b5c010f2d",
 			"description": "description_ebde23b7-7942-4b84-8a23-594b5c010f2d",
@@ -1400,14 +1359,6 @@
 			"items": [
 				{
 					"code": "S_PAGES",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "S_DASHBOARDS",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "S_VIGNETTES",
 					"$variantType": "menuItem"
 				},
 				{
@@ -1619,14 +1570,16 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "SUP_AMIGPORT",
-			"title": "title_f913bad0-87e3-4265-941a-df5832e6f92d",
-			"description": "description_f913bad0-87e3-4265-941a-df5832e6f92d",
+			"code": "AVISULIC",
+			"title": "title_c76b5d2a-fe99-482d-8933-574e9e3869cc",
+			"description": "description_c76b5d2a-fe99-482d-8933-574e9e3869cc",
 			"linkType": "$representation",
 			"applicationMenu": false,
-			"facet": "$query",
+			"facet": "$details",
+			"keyParameter": "\" \"",
 			"target": "self",
-			"isFactory": false,
+			"isFactory": true,
+			"requestLevel": "99",
 			"application": {
 				"application": "x3",
 				"contract": "erp"
@@ -1634,8 +1587,8 @@
 			"endpoint": null,
 			"representationRef": {
 				"$type": "representationProxy",
-				"entity": "AMIGPORT",
-				"representation": "AMIGPORT"
+				"entity": "AVISULIC",
+				"representation": "AVISULIC"
 			},
 			"module": null,
 			"parameters": []
@@ -1699,7 +1652,7 @@
 			},
 			"items": [
 				{
-					"code": "SUP_AMIGPORT",
+					"code": "AVISULIC",
 					"$variantType": "menuItem"
 				},
 				{
@@ -34652,9 +34605,7 @@
 				"application": "x3",
 				"contract": "erp"
 			},
-			"endpoint": {
-				"dataset": "X3INDV7"
-			},
+			"endpoint": null,
 			"representationRef": null,
 			"module": {
 				"code": "X3_ERP_CPTA"
@@ -39706,9 +39657,7 @@
 				"application": "x3",
 				"contract": "erp"
 			},
-			"endpoint": {
-				"dataset": "X3INDV7"
-			},
+			"endpoint": null,
 			"representationRef": null,
 			"module": {
 				"code": "X3_ERP_FISDE"
@@ -42361,6 +42310,237 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
+			"code": "STD_LOFVATREG",
+			"title": "title_6dd139cf-92be-4471-96ed-03f373d89acb",
+			"description": "description_6dd139cf-92be-4471-96ed-03f373d89acb",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "LOFVATREG",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_FASVATREG",
+			"title": "title_b03d8689-b039-4cf7-af2d-04bb3dfd3501",
+			"description": "description_b03d8689-b039-4cf7-af2d-04bb3dfd3501",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "FASVATREG",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_FASVATRGG",
+			"title": "title_eb95233c-7b20-4548-86df-80b1991efa3b",
+			"description": "description_eb95233c-7b20-4548-86df-80b1991efa3b",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "FASVATRGG",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuBlock",
+			"title": "title_d2d6cdca-dd1c-464b-b348-165a3737c478",
+			"isFactory": true,
+			"code": "X3_ERP_MFAST",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"items": [
+				{
+					"code": "STD_SAISTACPY",
+					"$variantType": "menuItem"
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "X3_ERP_MFSTA",
+					"title": "title_8f2b5a22-e421-4dcf-ac45-d56ce9fac76b",
+					"isFactory": true,
+					"items": [
+						{
+							"code": "STD_FASRVAM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASCALC",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASSIMU",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASIMLM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASFLXM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASCLOTURE",
+							"$variantType": "menuItem"
+						}
+					]
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "X3_ERP_MFSTM",
+					"title": "title_77f8f45b-3f68-46ef-bedf-239a4fff6a95",
+					"isFactory": true,
+					"items": [
+						{
+							"code": "STD_LOFGRPFAS",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASTRFCM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASMTCM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASTRFM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASSPLM",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASISSM",
+							"$variantType": "menuItem"
+						},
+						{
+							"$type": "menuSubblock",
+							"$variantType": "menuBlock",
+							"code": "X3_ERP_MFFXM",
+							"title": "title_580b9a7a-8bc0-4e92-b15e-3b3aff9894bc",
+							"isFactory": true,
+							"items": [
+								{
+									"code": "STD_GESFXM",
+									"$variantType": "menuItem"
+								},
+								{
+									"code": "STD_FXDINT",
+									"$variantType": "menuItem"
+								}
+							]
+						}
+					]
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "X3_ERP_MFSTC",
+					"title": "title_4636c5f7-5f52-4624-92ac-ad6426ceed50",
+					"isFactory": true,
+					"items": [
+						{
+							"code": "STD_TRTCPTINT",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_GESGPC",
+							"$variantType": "menuItem"
+						}
+					]
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "X3_ERP_MFASC",
+					"title": "title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f",
+					"isFactory": true,
+					"items": []
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "X3_ERP_MFSTR",
+					"title": "title_2005c162-c24d-46b5-b9dd-d68c7140da9a",
+					"isFactory": true,
+					"items": [
+						{
+							"code": "STD_LOFVATREG",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASVATREG",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_FASVATRGG",
+							"$variantType": "menuItem"
+						}
+					]
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "X3_ERP_MFSTU",
+					"title": "title_e985466f-4f0e-4414-ba6f-5699e47de52a",
+					"isFactory": true,
+					"items": []
+				}
+			]
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
 			"code": "STD_GESCIG",
 			"title": "title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9",
 			"description": "description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9",
@@ -42489,522 +42669,34 @@
 			"parameters": []
 		},
 		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_LOFVATREG",
-			"title": "title_6dd139cf-92be-4471-96ed-03f373d89acb",
-			"description": "description_6dd139cf-92be-4471-96ed-03f373d89acb",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "LOFVATREG",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_FASVATREG",
-			"title": "title_b03d8689-b039-4cf7-af2d-04bb3dfd3501",
-			"description": "description_b03d8689-b039-4cf7-af2d-04bb3dfd3501",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "FASVATREG",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_FASVATRGG",
-			"title": "title_eb95233c-7b20-4548-86df-80b1991efa3b",
-			"description": "description_eb95233c-7b20-4548-86df-80b1991efa3b",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "FASVATRGG",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_FASMIGV5",
-			"title": "title_1918f0b6-5c1b-4b54-b9a6-731df13c082e",
-			"description": "description_1918f0b6-5c1b-4b54-b9a6-731df13c082e",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "FASMIGV5",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_GESREC",
-			"title": "title_b761b761-c242-42d6-9d0c-7bc37528bbb0",
-			"description": "description_b761b761-c242-42d6-9d0c-7bc37528bbb0",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "GESREC",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_UPDWAITRT",
-			"title": "title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b",
-			"description": "description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "UPDWAITRT",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_REPRISEAE",
-			"title": "title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3",
-			"description": "description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "REPRISEAE",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_FASCNXSYNC",
-			"title": "title_e25d5241-e960-4643-8633-5fd95c736f61",
-			"description": "description_e25d5241-e960-4643-8633-5fd95c736f61",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "FASCNXSYNC",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_UCREDEPCUM",
-			"title": "title_19691bae-a254-4c25-8cca-b24be30eaafc",
-			"description": "description_19691bae-a254-4c25-8cca-b24be30eaafc",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "UCREDEPCUM",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_UMAJDEROG",
-			"title": "title_c27188e4-92ff-4b73-8f6f-febacc7bf46f",
-			"description": "description_c27188e4-92ff-4b73-8f6f-febacc7bf46f",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "UMAJDEROG",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_UDELPLN",
-			"title": "title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd",
-			"description": "description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "UDELPLN",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "UMAJSUIV",
-			"title": "title_d2dfe77f-f06b-45ad-a997-7b2c61696b00",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "UMAJSUIV",
-			"target": "self",
-			"isFactory": true,
-			"requestLevel": "99",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
 			"$type": "menuBlock",
-			"title": "title_d2d6cdca-dd1c-464b-b348-165a3737c478",
+			"title": "title_5b749479-71b9-4d99-9a79-4a692be704be",
 			"isFactory": true,
-			"code": "X3_ERP_MFAST",
+			"code": "X3_ERP_MFACIG",
 			"application": {
 				"application": "x3",
 				"contract": "erp"
 			},
 			"items": [
 				{
-					"code": "STD_SAISTACPY",
+					"code": "STD_GESCIG",
 					"$variantType": "menuItem"
 				},
 				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MFSTA",
-					"title": "title_8f2b5a22-e421-4dcf-ac45-d56ce9fac76b",
-					"isFactory": true,
-					"items": [
-						{
-							"code": "STD_FASRVAM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASCALC",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASSIMU",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASIMLM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASFLXM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASCLOTURE",
-							"$variantType": "menuItem"
-						}
-					]
+					"code": "STD_GESCIT",
+					"$variantType": "menuItem"
 				},
 				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MFSTM",
-					"title": "title_77f8f45b-3f68-46ef-bedf-239a4fff6a95",
-					"isFactory": true,
-					"items": [
-						{
-							"code": "STD_LOFGRPFAS",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASTRFCM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASMTCM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASTRFM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASSPLM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASISSM",
-							"$variantType": "menuItem"
-						},
-						{
-							"$type": "menuSubblock",
-							"$variantType": "menuBlock",
-							"code": "X3_ERP_MFFXM",
-							"title": "title_580b9a7a-8bc0-4e92-b15e-3b3aff9894bc",
-							"isFactory": true,
-							"items": [
-								{
-									"code": "STD_GESFXM",
-									"$variantType": "menuItem"
-								},
-								{
-									"code": "STD_FXDINT",
-									"$variantType": "menuItem"
-								}
-							]
-						}
-					]
+					"code": "STD_GESCIB",
+					"$variantType": "menuItem"
 				},
 				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MFSTC",
-					"title": "title_4636c5f7-5f52-4624-92ac-ad6426ceed50",
-					"isFactory": true,
-					"items": [
-						{
-							"code": "STD_TRTCPTINT",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_GESGPC",
-							"$variantType": "menuItem"
-						}
-					]
+					"code": "STD_GESCII",
+					"$variantType": "menuItem"
 				},
 				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MFASC",
-					"title": "title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f",
-					"isFactory": true,
-					"items": [
-						{
-							"code": "STD_GESCIG",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_GESCIT",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_GESCIB",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_GESCII",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_GESCIS",
-							"$variantType": "menuItem"
-						}
-					]
-				},
-				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MFSTR",
-					"title": "title_2005c162-c24d-46b5-b9dd-d68c7140da9a",
-					"isFactory": true,
-					"items": [
-						{
-							"code": "STD_LOFVATREG",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASVATREG",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASVATRGG",
-							"$variantType": "menuItem"
-						}
-					]
-				},
-				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MFSTU",
-					"title": "title_e985466f-4f0e-4414-ba6f-5699e47de52a",
-					"isFactory": true,
-					"items": [
-						{
-							"code": "STD_FASMIGV5",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_GESREC",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_UPDWAITRT",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_REPRISEAE",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_FASCNXSYNC",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_UCREDEPCUM",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_UMAJDEROG",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "STD_UDELPLN",
-							"$variantType": "menuItem"
-						},
-						{
-							"code": "UMAJSUIV",
-							"$variantType": "menuItem"
-						}
-					]
+					"code": "STD_GESCIS",
+					"$variantType": "menuItem"
 				}
 			]
 		},
@@ -43201,6 +42893,285 @@
 			]
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_UPDWAITRT",
+			"title": "title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b",
+			"description": "description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "UPDWAITRT",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_FASCNXSYNC",
+			"title": "title_e25d5241-e960-4643-8633-5fd95c736f61",
+			"description": "description_e25d5241-e960-4643-8633-5fd95c736f61",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "FASCNXSYNC",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_GESREC",
+			"title": "title_b761b761-c242-42d6-9d0c-7bc37528bbb0",
+			"description": "description_b761b761-c242-42d6-9d0c-7bc37528bbb0",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "GESREC",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_FASMIGV5",
+			"title": "title_1918f0b6-5c1b-4b54-b9a6-731df13c082e",
+			"description": "description_1918f0b6-5c1b-4b54-b9a6-731df13c082e",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "FASMIGV5",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_REPRISEAE",
+			"title": "title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3",
+			"description": "description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "REPRISEAE",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_UCREDEPCUM",
+			"title": "title_19691bae-a254-4c25-8cca-b24be30eaafc",
+			"description": "description_19691bae-a254-4c25-8cca-b24be30eaafc",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "UCREDEPCUM",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_UMAJDEROG",
+			"title": "title_c27188e4-92ff-4b73-8f6f-febacc7bf46f",
+			"description": "description_c27188e4-92ff-4b73-8f6f-febacc7bf46f",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "UMAJDEROG",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_UDELPLN",
+			"title": "title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd",
+			"description": "description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "UDELPLN",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "UMAJSUIV",
+			"title": "title_d2dfe77f-f06b-45ad-a997-7b2c61696b00",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "UMAJSUIV",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": {
+				"code": "X3_ERP_MFASM"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuBlock",
+			"title": "title_5794e143-2c8b-4691-b5a9-48eb0a725a50",
+			"isFactory": true,
+			"code": "X3_ERP_MFAUTIL",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"items": [
+				{
+					"code": "STD_UPDWAITRT",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_FASCNXSYNC",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_GESREC",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_FASMIGV5",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_REPRISEAE",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_UCREDEPCUM",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_UMAJDEROG",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "STD_UDELPLN",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "UMAJSUIV",
+					"$variantType": "menuItem"
+				}
+			]
+		},
+		{
 			"$type": "menuModule",
 			"title": "title_c1d9ef5a-c452-45e1-8fd0-97dc13c4b9f5",
 			"isFactory": true,
@@ -43226,7 +43197,13 @@
 					"code": "X3_ERP_MFAST"
 				},
 				{
+					"code": "X3_ERP_MFACIG"
+				},
+				{
 					"code": "X3_ERP_MFCNS"
+				},
+				{
+					"code": "X3_ERP_MFAUTIL"
 				}
 			]
 		},
@@ -48537,54 +48514,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "SYBUDVER",
-			"title": "title_f8939df3-83ab-484a-bdcd-4d31f7c286fb",
-			"description": "description_f8939df3-83ab-484a-bdcd-4d31f7c286fb",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BUDVER",
-				"representation": "BUDVER"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYENVELOPPE",
-			"title": "title_7682399d-ffb5-4416-8757-98234d16b9b0",
-			"description": "description_7682399d-ffb5-4416-8757-98234d16b9b0",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ENVELOPPE",
-				"representation": "ENVELOPPE"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "SYCADISTMP",
 			"title": "title_1975fa53-48e7-41dd-b4eb-794b615aa61c",
 			"description": "description_1975fa53-48e7-41dd-b4eb-794b615aa61c",
@@ -48633,6 +48562,30 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
+			"code": "SYGDIE",
+			"title": "title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9",
+			"description": "description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "GDIE",
+				"representation": "GDIE"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
 			"code": "SYBUDAPP",
 			"title": "title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9",
 			"description": "description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9",
@@ -48657,6 +48610,55 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
+			"code": "SYBUDVER",
+			"title": "title_f8939df3-83ab-484a-bdcd-4d31f7c286fb",
+			"description": "description_f8939df3-83ab-484a-bdcd-4d31f7c286fb",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "BUDVER",
+				"representation": "BUDVER"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "SYENVELOPPE",
+			"title": "title_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b",
+			"description": "description_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"requestLevel": "99",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "ENVELOPPE",
+				"representation": "ENVELOPPE"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
 			"code": "SYGLED",
 			"title": "title_48d675c6-4b28-4a83-af91-87280d71da4d",
 			"description": "description_48d675c6-4b28-4a83-af91-87280d71da4d",
@@ -48674,30 +48676,6 @@
 				"$type": "representationProxy",
 				"entity": "GLED",
 				"representation": "GLED"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGDIE",
-			"title": "title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9",
-			"description": "description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GDIE",
-				"representation": "GDIE"
 			},
 			"module": null,
 			"parameters": []
@@ -48737,14 +48715,6 @@
 					"$variantType": "menuItem"
 				},
 				{
-					"code": "SYBUDVER",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "SYENVELOPPE",
-					"$variantType": "menuItem"
-				},
-				{
 					"code": "SYCADISTMP",
 					"$variantType": "menuItem"
 				},
@@ -48753,7 +48723,19 @@
 					"$variantType": "menuItem"
 				},
 				{
+					"code": "SYGDIE",
+					"$variantType": "menuItem"
+				},
+				{
 					"code": "SYBUDAPP",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "SYBUDVER",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "SYENVELOPPE",
 					"$variantType": "menuItem"
 				},
 				{
@@ -48761,8 +48743,20 @@
 					"$variantType": "menuItem"
 				},
 				{
-					"code": "SYGDIE",
-					"$variantType": "menuItem"
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "2214db2b-a40c-430d-b9da-c603dae6e752",
+					"isFactory": false,
+					"items": [
+						{
+							"$type": "menuSubblock",
+							"$variantType": "menuBlock",
+							"code": "68494199-589a-4a0a-a600-64254c0d6390",
+							"title": "title_68494199-589a-4a0a-a600-64254c0d6390",
+							"isFactory": false,
+							"items": []
+						}
+					]
 				}
 			]
 		},
@@ -48865,30 +48859,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "SYLAYOUTFAS",
-			"title": "title_543dd069-1092-4069-8896-da0ad9d544d2",
-			"description": "description_543dd069-1092-4069-8896-da0ad9d544d2",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "LAYOUTFAS",
-				"representation": "LAYOUTFAS"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "CAI",
 			"title": "title_1038a023-aa7c-442b-9d5b-3198a63fe74c",
 			"description": "description_1038a023-aa7c-442b-9d5b-3198a63fe74c",
@@ -48934,10 +48904,6 @@
 				},
 				{
 					"code": "SYFACTOR",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "SYLAYOUTFAS",
 					"$variantType": "menuItem"
 				},
 				{
@@ -53476,6 +53442,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Buchhaltungsbelege",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Konzerninterne Veräußerungen",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "USt.-Ausgleich",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Ausgaben",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Güter",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Gesamt",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Tools",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Definition Arbeitsgang",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Vorläufiger Abgangsdatensatz",
@@ -53486,30 +53460,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Parameter Güterauswahl",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "USt.-Ausgleich",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Ausgaben",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Güter",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Gesamt",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Tools",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migration Anlagen",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Sammel-Umschlüsselung",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Ausgesetzte Änderungen",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Wiederherstellung Abel Enterprise",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Synchronisierung Kontexte",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Aktuelle DEPREC-Erzeugung",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Aktualisierung Abschreibung",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Löschen Abschreibungsplan",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Abfragen",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Steuerpflichtiges Frachtelement",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -53523,6 +53473,22 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Rückverfolgung Belege",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Ausgesetzte Änderungen",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Synchronisierung Kontexte",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Sammel-Umschlüsselung",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migration Anlagen",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Wiederherstellung Abel Enterprise",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Aktuelle DEPREC-Erzeugung",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Aktualisierung Abschreibung",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Löschen Abschreibungsplan",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Tragbare Terminals",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "Tragbare Terminals",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Definition Standort",
@@ -53882,20 +53848,19 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Budgettyp",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budgetversionen",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Budgetpool",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Saisonale Gewichtung Budgetcod",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Organisationseinheit",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Genehmigung Budget",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Buchungskreis",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Dimensionen",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Genehmigung Budget",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budgetversionen",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Buchungskreis",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
+			"title_68494199-589a-4a0a-a600-64254c0d6390": "Mein Menü",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Buchhaltung Personenkonten",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Empfängerkonto",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -53905,13 +53870,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factoring-Unternehmen",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Ausgaben",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Kassen",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Anlagen",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Kontexte",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Ausgaben",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Inventarartikel",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Inventar",
@@ -56747,6 +56712,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Journal Entry",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Intra-group sales",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "VAT adjustment",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Expenses",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Assets",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilities",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Operation definition",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Pre-recording of issues",
@@ -56757,31 +56730,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Parameterisation of the asset selection",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "VAT adjustment",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Expenses",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Assets",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilities",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FRP Fixed Assets migration",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Mass recoding",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Pending modificatons",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Abel Enterprise recovery",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Context synchronization",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Current DEPREC creation",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Book vs Tax depreciation update",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Depreciation plan deletion",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
-			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Tracking synchronization",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Enquiries",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Depreciation simulation",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -56795,6 +56743,23 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Journal traceability",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Pending modificatons",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Context synchronization",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Mass recoding",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FRP Fixed Assets migration",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Abel Enterprise recovery",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Current DEPREC creation",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Book vs Tax depreciation update",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Depreciation plan deletion",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
+			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Tracking synchronization",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "ADCs",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Define the site",
@@ -57137,20 +57102,18 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Budget type",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budget versions",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Budget envelopes",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Budget weighting codes",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entities",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approval list",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Ledgers",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Dimension type",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approval list",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budget versions",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Ledgers",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "A/P-A/R accounting",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Payment attributes",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -57160,13 +57123,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factors",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Expenses",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Cash",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Fixed Assets",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contexts",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Expenses",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Fixed assets",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Physical elements",
@@ -57238,10 +57201,10 @@
 			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard",
 			"title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Syracuse administration",
 			"title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Syracuse administration",
-			"title_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Global settings",
-			"description_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Global settings management interface",
 			"title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
 			"description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications management interface",
+			"title_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Global settings",
+			"description_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Global settings management interface",
 			"title_8c21528d-cc97-42be-ade6-34f0ea1e09ad": "Roles",
 			"description_8c21528d-cc97-42be-ade6-34f0ea1e09ad": "User roles management interface",
 			"title_59fe9e45-b131-494c-8afa-466474edd7af": "Badges",
@@ -57300,10 +57263,6 @@
 			"title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Syracuse authoring",
 			"title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages",
 			"description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages management interface",
-			"title_91de5567-a656-4dbb-90f7-a53a8cba6f64": "Dashboards",
-			"description_91de5567-a656-4dbb-90f7-a53a8cba6f64": "Dashboards management interface",
-			"title_fe5e6387-d4dc-4ca0-8bdb-0a37a575598e": "Vignettes",
-			"description_fe5e6387-d4dc-4ca0-8bdb-0a37a575598e": "Vignettes management interface",
 			"title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menu Items",
 			"description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menu items management interface",
 			"title_ca835319-466c-4f49-a0f1-00092983d7e9": "Menu Categories",
@@ -57324,8 +57283,6 @@
 			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Syracuse Sessions Management",
 			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_cad14e74-6787-4a10-8599-25e040f0bf81": "X3 Administration",
-			"title_f913bad0-87e3-4265-941a-df5832e6f92d": "V6 Dashboard Import",
-			"description_f913bad0-87e3-4265-941a-df5832e6f92d": "V6 Dashboard Import",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
@@ -60071,6 +60028,15 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Accounting entries  ",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Intra-group sales",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "VAT adjustment",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Expenses",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Assets",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilities",
+			"title_5b749479-71b9-4d99-9a79-4a692be704be": "Intra-group sales",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Operation definition",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Pre-recording of issues",
@@ -60081,30 +60047,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Setup - selection of assets",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "VAT adjustment",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Expenses",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Assets",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilities",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FRP fixed assets migration",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Mass recoding",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Pending modificatons",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Abel Enterprise recovery",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Context synchronization",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Current DEPREC creation",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Book vs Tax depreciation update",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Depreciation plan deletion",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Inquiries",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Depreciation simulation",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -60118,6 +60060,23 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Journal traceability",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_5794e143-2c8b-4691-b5a9-48eb0a725a50": "Utilities",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Pending modificatons",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Context synchronization",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Mass recoding",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FRP fixed assets migration",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Abel Enterprise recovery",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Current DEPREC creation",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Book vs Tax depreciation update",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Depreciation plan deletion",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "ADCs",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Set site",
@@ -60445,7 +60404,7 @@
 			"description_9320c97f-5a8a-4156-8eda-24c2e6e4735b": "ADOCEXT",
 			"title_c60d6c63-cd0f-4d8e-9b77-d5dbafc933a3": "Import documentation",
 			"description_c60d6c63-cd0f-4d8e-9b77-d5dbafc933a3": "ADOCIMP",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "View pages",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Financials",
 			"title_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "Analytical dimensions",
 			"description_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "CACCE",
@@ -60459,20 +60418,19 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Budget type",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budget versions",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Budget envelopes",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Budget weighting codes",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entities",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approval list",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Ledgers",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Dimension type",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approval list",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budget versions",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Ledgers",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
+			"title_68494199-589a-4a0a-a600-64254c0d6390": "My menu",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "A/P-A/R accounting",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Payment attributes",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -60482,13 +60440,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factors",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Expenses",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Cash",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Fixed Assets",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contexts",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Expenses",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Fixed assets",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Physical elements",
@@ -63326,6 +63284,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Asientos contables",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Cesiones intragrupo",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Regularización IVA",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Gastos",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Bienes",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilidades",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Definición de la operación",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Preregistro de las bajas",
@@ -63336,31 +63302,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Parametrización de las selecciones de bienes",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Regularización IVA",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Gastos",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Bienes",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilidades",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migración FRP Fixed Assets",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Recodificaciones masivas",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Cambios en espera",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Recuparación Abel Entreprise",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Sincronización contextos",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Creación DEPREC actual",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Actualización del derogatorio",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Borrado plan amortización",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
-			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Sincronización de seguimientos",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Consultas",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Simulación amortizaciones",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -63374,6 +63315,23 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Trazabilidad documentos",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Cambios en espera",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Sincronización contextos",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Recodificaciones masivas",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migración FRP Fixed Assets",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Recuparación Abel Entreprise",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Creación DEPREC actual",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Actualización del derogatorio",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Borrado plan amortización",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
+			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Sincronización de seguimientos",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminales móviles",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "Terminales móviles",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Definir la planta",
@@ -63718,20 +63676,18 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Tipo de presupuesto",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versiones de presupuestos",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Partida pptaria.",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Distribuciones temporales",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entidad",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Aprobación pptaria.",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Referencial",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Ejes",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Aprobación pptaria.",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versiones de presupuestos",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Referencial",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Contabilidad tercero",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Sección ana.contable",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -63741,13 +63697,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factoring",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Gastos",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Cajas",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Inmovilizados",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contextos",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Gastos",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Bien contable",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Bienes",
@@ -63868,10 +63824,10 @@
 			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration",
 			"title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration Syracuse",
 			"title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administration Syracuse",
-			"title_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Paramètres",
-			"description_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Gestion des paramètres globaux",
 			"title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
 			"description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Gestion des applications",
+			"title_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Paramètres",
+			"description_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Gestion des paramètres globaux",
 			"title_8c21528d-cc97-42be-ade6-34f0ea1e09ad": "Rôles",
 			"description_8c21528d-cc97-42be-ade6-34f0ea1e09ad": "Gestion des rôles utilisateur",
 			"title_59fe9e45-b131-494c-8afa-466474edd7af": "Badges",
@@ -63930,10 +63886,6 @@
 			"title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personnalisation Syracuse",
 			"title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages",
 			"description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestion des pages",
-			"title_91de5567-a656-4dbb-90f7-a53a8cba6f64": "Portails",
-			"description_91de5567-a656-4dbb-90f7-a53a8cba6f64": "Gestion des portails",
-			"title_fe5e6387-d4dc-4ca0-8bdb-0a37a575598e": "Vignettes",
-			"description_fe5e6387-d4dc-4ca0-8bdb-0a37a575598e": "Gestion des vignettes",
 			"title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Entrées de menu",
 			"description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Gestion des entrées de menu",
 			"title_ca835319-466c-4f49-a0f1-00092983d7e9": "Catégories de menu",
@@ -63954,8 +63906,8 @@
 			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions Syracuse",
 			"title_c0956863-a637-4699-8c3c-b2785df97832": "Administration X3",
 			"title_cad14e74-6787-4a10-8599-25e040f0bf81": "Administration X3",
-			"title_f913bad0-87e3-4265-941a-df5832e6f92d": "Import des portails V6",
-			"description_f913bad0-87e3-4265-941a-df5832e6f92d": "Import des portails V6",
+			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
+			"description_c76b5d2a-fe99-482d-8933-574e9e3869cc": "AVISULIC",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaces de stockage X3",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaces de stockage X3",
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
@@ -64145,8 +64097,6 @@
 			"description_5977c7cb-a493-4a41-8c4c-9d5492940fae": "SQLDICO",
 			"title_3391eadd-9d4d-471a-8ac9-6c76346353a0": "Analyse mémos",
 			"description_3391eadd-9d4d-471a-8ac9-6c76346353a0": "ANAMEMO",
-			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
-			"description_c76b5d2a-fe99-482d-8933-574e9e3869cc": "AVISULIC",
 			"title_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "Vérification des sources",
 			"description_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "AVERIFSRC",
 			"title_716873e1-c2e0-4536-9912-1944868bf1f3": "Dictionnaire",
@@ -66713,6 +66663,15 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Pièces comptables",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Cessions intra-groupe",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Régularisation TVA",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Dépenses",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Biens",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Globale",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilitaires",
+			"title_5b749479-71b9-4d99-9a79-4a692be704be": "Cessions intra-groupe",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Définition de l'opération",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Pré-enregistrement des sorties",
@@ -66723,31 +66682,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Paramétrage des sélections de biens",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Régularisation TVA",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Dépenses",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Biens",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Globale",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilitaires",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migration FRP Fixed Assets",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Recodifications massives",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Modifications en attente",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Reprise Abel Entreprise",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Synchronisation contextes",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Création DEPREC courant",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Mise à jour du dérogatoire",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Suppression plan amortissement",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
-			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Synchronisation des suivis",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Consultations",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Simulation amortissements",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -66761,6 +66695,24 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Traçabilité pièces",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_5794e143-2c8b-4691-b5a9-48eb0a725a50": "Utilitaires",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Modifications en attente",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Synchronisation contextes",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Recodifications massives",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migration FRP Fixed Assets",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Reprise Abel Entreprise",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Création DEPREC courant",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Mise à jour du dérogatoire",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Suppression plan amortissement",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
+			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Synchronisation des suivis",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminaux portables",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "Terminaux portables",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Définir le site",
@@ -67092,6 +67044,7 @@
 			"description_9320c97f-5a8a-4156-8eda-24c2e6e4735b": "ADOCEXT",
 			"title_c60d6c63-cd0f-4d8e-9b77-d5dbafc933a3": "Import documentation",
 			"description_c60d6c63-cd0f-4d8e-9b77-d5dbafc933a3": "ADOCIMP",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Pages en lecture seule",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Comptabilité",
 			"title_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "Sections analytiques",
 			"description_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "CACCE",
@@ -67105,20 +67058,20 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Types de budgets",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versions de budgets",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Enveloppes budgétaires",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Répartitions temporelles",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entités",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Liste des approbations",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Référentiels",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Axes",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Liste des approbations",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versions de budgets",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b": "Enveloppe",
+			"description_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b": "Enveloppe",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Référentiels",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Comptabilité tiers",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Destinations comptables",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -67128,13 +67081,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factors",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Dépenses",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Caisses",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Immobilisations",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contextes d'amortissements",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Dépenses",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Immobilisations",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Eléments physiques",
@@ -69941,6 +69894,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Movimenti contabili",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Cessioni infragruppo",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Regolarizzazione IVA",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Spese",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Beni",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Globale",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Strumenti",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Definizione operazione",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Pre-registrazioni disinvestimenti",
@@ -69951,30 +69912,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Parametrizzazione selezioni beni",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Regolarizzazione IVA",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Spese",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Beni",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Globale",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Strumenti",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migrazione FRP Fixed Assets",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Ricodifiche di massa",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Modifiche in attesa",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Ripresa Abel Entreprise",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Sincronizzazione contesti",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Creazione DEPREC corrente",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Aggiornamento reversal",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Eliminazione piano ammortamento",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Consultazioni",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Simulazione ammortamenti",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -69988,6 +69925,22 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Tracciabilità movimenti",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Modifiche in attesa",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Sincronizzazione contesti",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Ricodifiche di massa",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migrazione FRP Fixed Assets",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Ripresa Abel Entreprise",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Creazione DEPREC corrente",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Aggiornamento reversal",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Eliminazione piano ammortamento",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminali RF",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "Terminali RF",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Definisci sito",
@@ -70324,20 +70277,18 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Tipo budget",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versioni di budget",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Stanziamento",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Ripartizione temporale",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entità",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approvazione budget",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Riferimento",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Assi",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approvazione budget",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versioni di budget",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Riferimento",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Contabilità terzi",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Destinazione contabile",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -70347,13 +70298,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factor",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Spese",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Cassa",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Cespiti",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contesti",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Spese",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Bene contabile",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Elementi fisici",
@@ -73212,6 +73163,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Wprowadzanie dowodów księgowych",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Sprzedaż wewnątrz grupy",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Korekta VAT",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Nakłady",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Środki Trwałe",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Globalne",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Narzędzia",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Definicja operacji",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Wstępna rejestracja wydań",
@@ -73222,31 +73181,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Ustawienia parametrów - wybór dóbr",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Korekta VAT",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Nakłady",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Środki Trwałe",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Globalne",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Narzędzia",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migracja ST FRP",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Przekodowanie zbiorcze",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Oczekujące zmiany",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Kopia Abel Enterprise",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Synchronizacja kontekstu",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Tworzenie waluty DEPREC",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Uaktualnienie amortyzacji księgowej i podatkowej",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Usuwanie planu amortyzacji",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
-			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Synchronizacja śledzenia",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Zapytania",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Symulacja umorzenia",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -73260,6 +73194,23 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Historia zapisu",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Oczekujące zmiany",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Synchronizacja kontekstu",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Przekodowanie zbiorcze",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migracja ST FRP",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Kopia Abel Enterprise",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Tworzenie waluty DEPREC",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Uaktualnienie amortyzacji księgowej i podatkowej",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Usuwanie planu amortyzacji",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
+			"title_d2dfe77f-f06b-45ad-a997-7b2c61696b00": "Synchronizacja śledzenia",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADC",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "ADC",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Ustaw lokalizację",
@@ -73603,19 +73554,17 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Typ budżetu",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Wersje budżetu",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Budżety",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Jednostki",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Lista zatwierdzeń",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Księgi",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Widoki wymiarów",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Lista zatwierdzeń",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Wersje budżetu",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Księgi",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Rozrachunki",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Atrybuty płatności",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -73625,13 +73574,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Firmy faktoringowe",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Wydatki",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Gotówka",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Środki trwałe",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Księgi środków trwałych",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Wydatki",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Środki trwałe",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Elementy fizyczne",
@@ -76440,6 +76389,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Docs. contabilísticos",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Cessões intragrupo",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Regularização IVA",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Despesas",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Bens",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilitários",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Definição da operação",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Préregisto das saídas",
@@ -76450,30 +76407,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Parametriz. das selecções de bens",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Regularização IVA",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Despesas",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Bens",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Global",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Utilitários",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migração FRP Fixed Assets",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Recodificações em série",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Modificações em espera",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Recuperação Abel Entreprise",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Sincronização contextos",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Criação DEPREC corrente",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Atualização da derrogatória",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Supressão plano amortização",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Consultas",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "Simulação amortizações",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -76487,6 +76420,22 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Rastreab. docs.",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Modificações em espera",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "Sincronização contextos",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Recodificações em série",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Migração FRP Fixed Assets",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Recuperação Abel Entreprise",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "Criação DEPREC corrente",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "Atualização da derrogatória",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "Supressão plano amortização",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminais portáteis",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "Terminais portáteis",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Definir o estab.",
@@ -76824,20 +76773,18 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Tipo de orçam.",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versões de orçamento",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Pac. orç.",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Repartições temporárias",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entidade",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Aprovação orçamental",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Referencial",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Eixos",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Aprovação orçamental",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Versões de orçamento",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Referencial",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Contabilidade terceiros",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Destino contabilistico",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -76847,13 +76794,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factoring",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Despesas",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Caixa",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Imobilizações",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contextos",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Despesas",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Bem contab.",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Elementos físicos",
@@ -79597,6 +79544,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "Журнальные записи",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "Перемещение в рамках компании",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Корректировка НДС",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Затраты",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Объекты ВА",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Глобально",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Инструменты",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "Определение операции",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "Предварит. документ выбытия",
@@ -79607,25 +79562,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "Параметры - Выбор товаров",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "Корректировка НДС",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "Затраты",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "Объекты ВА",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "Глобально",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "Инструменты",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Миграция Внеоборотных Активов",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Массовая запись",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Отложенные изменения",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "Запросы",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
 			"description_660dfbfe-a1c3-4f60-add1-dc074ea42d89": "FAS246G",
@@ -79634,6 +79570,17 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "Поток документов",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "Отложенные изменения",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "Массовая запись",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "Миграция Внеоборотных Активов",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "ADCs",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "Установить подразделение",
@@ -79951,19 +79898,17 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Типы бюджета",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Версии бюджета",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "Конверты бюджета",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Орг. единицы",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Лист утверждений",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Книги",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Типы аналитик",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Лист утверждений",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Версии бюджета",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Книги",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Учет по дебиторам и кредиторам",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Атрибуты платежей",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -79973,13 +79918,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Факторы",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Затраты",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Наличные",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Внеоборотные активы",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Контексты",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Затраты",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Внеоборотные активы",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "Физические элементы",
@@ -82828,6 +82773,14 @@
 			"title_b2839180-d65e-480d-b16e-e38ab7d69f83": "会计凭证",
 			"description_b2839180-d65e-480d-b16e-e38ab7d69f83": "GESGPC",
 			"title_a59c1617-9f22-4670-953e-1c4bfe1a4a6f": "集团内转让",
+			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "增值税调整",
+			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "费用",
+			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
+			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "资产",
+			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
+			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "全局",
+			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
+			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "工具",
 			"title_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "工序规定",
 			"description_4a15bd1d-cabd-47a8-ac94-7be69ede09a9": "GESCIG",
 			"title_a9bba364-b3a0-4267-bfa5-487a068213ad": "转出项预登记",
@@ -82838,30 +82791,6 @@
 			"description_703ff18a-e334-45bf-be03-60c998b462d5": "GESCII",
 			"title_a534934e-20a1-42d2-98ec-4ba50e64fe34": "产品选择参数设置",
 			"description_a534934e-20a1-42d2-98ec-4ba50e64fe34": "GESCIS",
-			"title_2005c162-c24d-46b5-b9dd-d68c7140da9a": "增值税调整",
-			"title_6dd139cf-92be-4471-96ed-03f373d89acb": "费用",
-			"description_6dd139cf-92be-4471-96ed-03f373d89acb": "LOFVATREG",
-			"title_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "资产",
-			"description_b03d8689-b039-4cf7-af2d-04bb3dfd3501": "FASVATREG",
-			"title_eb95233c-7b20-4548-86df-80b1991efa3b": "全局",
-			"description_eb95233c-7b20-4548-86df-80b1991efa3b": "FASVATRGG",
-			"title_e985466f-4f0e-4414-ba6f-5699e47de52a": "工具",
-			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FRP固定资产迁移 ",
-			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
-			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "批量重编码",
-			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
-			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "待处理修改",
-			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
-			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Abel企业恢复",
-			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
-			"title_e25d5241-e960-4643-8633-5fd95c736f61": "范围同步",
-			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
-			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "当前DEPREC创建",
-			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
-			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "会计与税法折旧差异更新",
-			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
-			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "折旧计划删除",
-			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_779b3ef9-c42f-4d12-b201-e154fcbf556f": "查询",
 			"title_a9ba13f4-1190-4723-b51e-a21feb683528": "折旧模拟",
 			"description_a9ba13f4-1190-4723-b51e-a21feb683528": "CONSSIM",
@@ -82875,6 +82804,22 @@
 			"description_ca496d5e-2274-43ea-8894-5d0530b05fb0": "FASLISTDEP",
 			"title_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "凭证追溯",
 			"description_cd1c4c2f-6317-43b2-ab90-51247fa071dd": "CONSPIF",
+			"title_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "待处理修改",
+			"description_86615d1d-a9b6-4c2c-9171-cb70d9f7bf1b": "UPDWAITRT",
+			"title_e25d5241-e960-4643-8633-5fd95c736f61": "范围同步",
+			"description_e25d5241-e960-4643-8633-5fd95c736f61": "FASCNXSYNC",
+			"title_b761b761-c242-42d6-9d0c-7bc37528bbb0": "批量重编码",
+			"description_b761b761-c242-42d6-9d0c-7bc37528bbb0": "GESREC",
+			"title_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FRP固定资产迁移 ",
+			"description_1918f0b6-5c1b-4b54-b9a6-731df13c082e": "FASMIGV5",
+			"title_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "Abel企业恢复",
+			"description_8ccfb260-846a-4f88-8f4f-7d24377c2bb3": "REPRISEAE",
+			"title_19691bae-a254-4c25-8cca-b24be30eaafc": "当前DEPREC创建",
+			"description_19691bae-a254-4c25-8cca-b24be30eaafc": "UCREDEPCUM",
+			"title_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "会计与税法折旧差异更新",
+			"description_c27188e4-92ff-4b73-8f6f-febacc7bf46f": "UMAJDEROG",
+			"title_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "折旧计划删除",
+			"description_e4ac7755-c9e9-42e6-bcc3-fa7624f381bd": "UDELPLN",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
 			"title_18a3723a-33d6-4e32-a455-71e24887a500": "ADCs",
 			"title_1d678c75-b69e-4f0d-9102-e86b4af25907": "规定地点",
@@ -83223,20 +83168,18 @@
 			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "预算类型",
 			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
-			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "预算版本",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
-			"title_7682399d-ffb5-4416-8757-98234d16b9b0": "预算拨款",
-			"description_7682399d-ffb5-4416-8757-98234d16b9b0": "ENVELOPPE",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "预算加权分摊",
 			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "实体",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
-			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "核准列表",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
-			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "账簿",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "分析元类型",
 			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "核准列表",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "预算版本",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "账簿",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "应收/应付会计",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "付款属性",
 			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
@@ -83246,13 +83189,13 @@
 			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "代理人",
 			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
-			"title_543dd069-1092-4069-8896-da0ad9d544d2": "费用",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "现金",
 			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "固定资产",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "折旧范围",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
+			"title_543dd069-1092-4069-8896-da0ad9d544d2": "费用",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "固定资产",
 			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_64168b7f-74bd-48e3-a34d-1acf899d6a86": "实物元素",
