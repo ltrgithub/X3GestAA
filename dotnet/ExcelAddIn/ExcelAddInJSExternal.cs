@@ -68,6 +68,11 @@ namespace ExcelAddIn
                 ReportingUtils.fillTemplate(workbook); 
         }
 
+        public String getSyracuseRole()
+        {
+            return customData.getSyracuseRole();
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)

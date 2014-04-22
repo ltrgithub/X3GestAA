@@ -321,7 +321,7 @@ namespace ExcelAddIn
             //
             int initialRow = activeCell.Row, initialCol = activeCell.Column;
             // make place for the table
-            if (!_makePlace(targetWorksheet, initialRow, initialCol, headers.Length, rowCount))
+            if (headers == null || !_makePlace(targetWorksheet, initialRow, initialCol, headers.Length, rowCount))
                 return null;
             // make new column ranges, wo header line !!
             for (int i = 0; i < headers.Length; i++)
