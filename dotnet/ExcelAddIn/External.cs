@@ -207,6 +207,22 @@ namespace ExcelAddIn
             return Globals.ThisAddIn.getInstalledAddinVersion();
         }
 
+        public String getSyracuseRole()
+        {
+            String syracuseRole = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("syracuseRole");
+            if (syracuseRole.Equals(String.Empty))
+            {
+                Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+                if (wb != null)
+                {
+                    SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(wb); 
+                    if (customData != null)
+                        syracuseRole = customData.getSyracuseRole();
+                }
+            }
+            return syracuseRole;
+        }
+
         // needed version (from JS)
         public void expectedVersion(String neededVersion)
         {
