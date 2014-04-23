@@ -228,16 +228,6 @@
 		"contract": "erp"
 	}, {
 		"$type": "role",
-		"code": "EP_ADMIN",
-		"description": "description_fff55671-255e-4ebb-8a6e-70acac4fda94",
-		"securityProfile": "ADMIN"
-	}, {
-		"$type": "role",
-		"code": "GUEST",
-		"description": "description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf",
-		"securityProfile": "ADMIN"
-	}, {
-		"$type": "role",
 		"code": "ADMIN",
 		"description": "description_26024776-bbff-4be9-9069-d464a68e0659",
 		"securityProfile": "ADMIN"
@@ -245,14 +235,6 @@
 		"$type": "setting",
 		"authentication": "basic",
 		"patchLock": false
-	}, {
-		"$type": "group",
-		"description": "description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e",
-		"role": "EP_ADMIN"
-	}, {
-		"$type": "group",
-		"description": "description_a523c2c1-d831-4877-9f0c-95928da43883",
-		"role": "GUEST"
 	}, {
 		"$type": "group",
 		"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
@@ -263,12 +245,6 @@
 		"lastName": "Super administrator",
 		"password": "f5066151ecf0c2511ea0f73306e27a4f",
 		"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"]
-	}, {
-		"$type": "user",
-		"login": "guest",
-		"lastName": "Guest",
-		"password": "96e17faa8decc76bf385c2ca82bef487",
-		"groups": ["description_a523c2c1-d831-4877-9f0c-95928da43883"]
 	}, {
 		"$type": "user",
 		"login": "import",
@@ -293,11 +269,9 @@
 			"description_2ee88384-161f-4f87-b26b-0dff916d799e": "Syracuse Collaboration",
 			"description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49": "X3 ERP",
 			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
-			"description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf": "Guest",
 			"description_26024776-bbff-4be9-9069-d464a68e0659": "Super administrator",
 			"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4": "Syracuse administration",
 			"description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e": "Endpoint administrators",
-			"description_a523c2c1-d831-4877-9f0c-95928da43883": "Guests",
 			"description_702545c4-1bc7-421a-a2f0-68141f183b78": "Super administrators",
 			"description_83f24f48-84f3-485a-b65c-4b0ba7c34cfd": "License expiry notification",
 			"titleTemplate_b3a24f48-84f3-485a-b65c-d7fc2e2fcd0e": "License expiry of {productTitle} {productVersion}",
@@ -321,11 +295,9 @@
 			"description_2ee88384-161f-4f87-b26b-0dff916d799e": "Syracuse Collaboration",
 			"description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49": "X3 ERP",
 			"description_fff55671-255e-4ebb-8a6e-70acac4fda94": "Endpoint administrator",
-			"description_9d34aafc-11f0-4dbe-abd8-1ce08e7b0edf": "Guest",
 			"description_26024776-bbff-4be9-9069-d464a68e0659": "Super administrator",
 			"description_388387b9-4bdd-41f9-aa45-1fe90b6b77b4": "Syracuse administration",
 			"description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e": "Endpoint administrators",
-			"description_a523c2c1-d831-4877-9f0c-95928da43883": "Guests",
 			"description_702545c4-1bc7-421a-a2f0-68141f183b78": "Super administrators",
 			"description_83f24f48-84f3-485a-b65c-4b0ba7c34cfd": "Licence expiration notification",
 			"titleTemplate_b3a24f48-84f3-485a-b65c-d7fc2e2fcd0e": "Expiration de la licence de produit {productTitle} {productVersion}",
