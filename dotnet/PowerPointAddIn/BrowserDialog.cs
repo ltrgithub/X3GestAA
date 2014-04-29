@@ -35,9 +35,20 @@ namespace PowerPointAddIn
         {
             if (hideOnCompletion == true)
             {
-//                this.Hide();
+                //this.Hide();
             }
             hideOnCompletion = false;
+
+            try
+            {
+                String title = ((WebBrowser)sender).DocumentTitle;
+                if (title == null || title.Equals("Syracuse") == false)
+                {
+                    this.Hide();
+                    CommonUtils.ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::PowerPointAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
+                }
+            }
+            catch (Exception) { }
         }
 
         public bool connectToServer(PptCustomData customData, string extraServerUrl = null)
@@ -89,6 +100,7 @@ namespace PowerPointAddIn
                 Uri uri = new Uri(serverUrl + urlPart);
                 this.Show();
                 this.webBrowser.ObjectForScripting = scriptingObj;
+              
                 this.TopLevel = true;
                 this.webBrowser.Url = uri;
             }
