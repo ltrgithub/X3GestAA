@@ -76,6 +76,7 @@ namespace ExcelAddIn
             try
             {
                 webBrowser.ObjectForScripting = new External();
+                webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
                 ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
                     {
                         connected = true;
@@ -91,6 +92,19 @@ namespace ExcelAddIn
             {
                 MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
+        }
+
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            String title = ((WebBrowser)sender).DocumentTitle;
+            if (title == null || title.Equals("Syracuse") == false)
+            {
+                CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
+            }
+            /*
+             * Remove the event handler to avoid multiple invocations of the delegate method.
+             */
+            webBrowser.DocumentCompleted -= new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
