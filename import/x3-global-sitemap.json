@@ -652,30 +652,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "S_FRIEND_SERVERS",
-			"title": "title_724bc00a-efd7-496d-b477-67ff913e78f9",
-			"description": "description_724bc00a-efd7-496d-b477-67ff913e78f9",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "syracuse",
-				"contract": "collaboration"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "friendServers",
-				"representation": "friendServer"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "S_AUTOMATES",
 			"title": "title_692c782c-b203-46fc-bfe4-1069ee8c1c04",
 			"description": "description_692c782c-b203-46fc-bfe4-1069ee8c1c04",
@@ -766,6 +742,54 @@
 				"$type": "representationProxy",
 				"entity": "groups",
 				"representation": "group"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_BO_PROFILE",
+			"title": "title_a19681c9-bdef-4751-b38c-d126dc5f663b",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "boProfiles",
+				"representation": "boProfile"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_BO_SERVER",
+			"title": "title_7366d800-1b3c-4d21-b22c-d74d00906965",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "boServers",
+				"representation": "boServer"
 			},
 			"module": null,
 			"parameters": []
@@ -867,9 +891,33 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_X3_SESSION_CFG",
+			"title": "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "x3SessionConfigs",
+				"representation": "x3SessionConfig"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_1a147185-cb29-424a-abc1-8b271c3bcdee",
-			"isFactory": false,
+			"isFactory": true,
 			"code": "S_ADMIN",
 			"application": {
 				"application": "syracuse",
@@ -933,10 +981,6 @@
 					"$variantType": "menuItem"
 				},
 				{
-					"code": "S_FRIEND_SERVERS",
-					"$variantType": "menuItem"
-				},
-				{
 					"code": "S_AUTOMATES",
 					"$variantType": "menuItem"
 				},
@@ -953,6 +997,14 @@
 					"$variantType": "menuItem"
 				},
 				{
+					"code": "S_BO_PROFILE",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_BO_SERVER",
+					"$variantType": "menuItem"
+				},
+				{
 					"code": "S_LOCALES",
 					"$variantType": "menuItem"
 				},
@@ -966,6 +1018,10 @@
 				},
 				{
 					"code": "S_SECURITY_PROFILES",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_X3_SESSION_CFG",
 					"$variantType": "menuItem"
 				}
 			]
@@ -1117,7 +1173,7 @@
 		{
 			"$type": "menuBlock",
 			"title": "title_cd32aa93-2610-4307-8af4-dcfa823a27d7",
-			"isFactory": false,
+			"isFactory": true,
 			"code": "S_COLL",
 			"application": {
 				"application": "syracuse",
@@ -1512,6 +1568,54 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_MENU_PROFILE_IMPORT",
+			"title": "title_7d78e9fb-65a6-4e4e-9139-01fddffff479",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "profileMenuImports",
+				"representation": "profileMenuImport"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_PATCH_INTEG",
+			"title": "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "patches",
+				"representation": "patch"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874",
 			"isFactory": false,
@@ -1540,6 +1644,82 @@
 				{
 					"code": "S_SESSIONS",
 					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_MENU_PROFILE_IMPORT",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_PATCH_INTEG",
+					"$variantType": "menuItem"
+				}
+			]
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_CVG_SESSION",
+			"title": "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "cvgSessions",
+				"representation": "cvgSession"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_CVG_REUSE",
+			"title": "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "cvgReuseClients",
+				"representation": "cvgReuseClient"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuBlock",
+			"title": "title_22cbcdd6-7b7d-44e1-857e-21affe65c767",
+			"isFactory": true,
+			"code": "S_CLASSIC_CLIENT",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"items": [
+				{
+					"code": "S_CVG_SESSION",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_CVG_REUSE",
+					"$variantType": "menuItem"
 				}
 			]
 		},
@@ -1564,6 +1744,9 @@
 				},
 				{
 					"code": "S_TOOLS"
+				},
+				{
+					"code": "S_CLASSIC_CLIENT"
 				}
 			]
 		},
@@ -5793,32 +5976,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "STD_CONSAJE",
-			"title": "title_c523ab92-a888-46d0-bb7e-a04c7cacfc68",
-			"description": "description_c523ab92-a888-46d0-bb7e-a04c7cacfc68",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "CONSAJE",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_GDEV"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "STD_AJSLINK",
 			"title": "title_b11c4877-fc6a-4bfc-b385-a2eef7419696",
 			"description": "description_b11c4877-fc6a-4bfc-b385-a2eef7419696",
@@ -6785,10 +6942,6 @@
 							"$variantType": "menuItem"
 						},
 						{
-							"code": "STD_CONSAJE",
-							"$variantType": "menuItem"
-						},
-						{
 							"code": "STD_AJSLINK",
 							"$variantType": "menuItem"
 						}
@@ -7171,32 +7324,6 @@
 			"applicationMenu": false,
 			"facet": "$query",
 			"fusionFunction": "GESAYL",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_GDEV"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_GESAYO",
-			"title": "title_f69311ec-181a-41e1-a32b-34b8a38de849",
-			"description": "description_f69311ec-181a-41e1-a32b-34b8a38de849",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "GESAYO",
 			"fusionKey": "",
 			"target": "self",
 			"isFactory": true,
@@ -7722,10 +7849,6 @@
 					"title": "title_a9e36061-97af-423e-9bdb-b117e05a186a",
 					"isFactory": true,
 					"items": [
-						{
-							"code": "STD_GESAYO",
-							"$variantType": "menuItem"
-						},
 						{
 							"code": "STD_GESAYI",
 							"$variantType": "menuItem"
@@ -45175,6 +45298,58 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
+			"code": "STD_GESSZP",
+			"title": "title_a9ec8204-eb37-44ad-982b-2a7081066cfa",
+			"description": "description_a9ec8204-eb37-44ad-982b-2a7081066cfa",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "GESSZP",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MTDI"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_SCMAINT",
+			"title": "title_4b12c68b-f8ec-4c1b-821d-d93806d8f643",
+			"description": "description_4b12c68b-f8ec-4c1b-821d-d93806d8f643",
+			"linkType": "$function",
+			"applicationMenu": false,
+			"facet": "$query",
+			"fusionFunction": "SCMAINT",
+			"fusionKey": "",
+			"target": "self",
+			"isFactory": true,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "X3_ERP_MTDI"
+			},
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
 			"code": "STD_GESORP",
 			"title": "title_456e7d60-89ac-46b8-abd6-8511c1e1c753",
 			"description": "description_456e7d60-89ac-46b8-abd6-8511c1e1c753",
@@ -45323,107 +45498,6 @@
 			"representationRef": {
 				"$type": "representationProxy"
 			},
-			"module": {
-				"code": "X3_ERP_MTDI"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_GESSZP",
-			"title": "title_a9ec8204-eb37-44ad-982b-2a7081066cfa",
-			"description": "description_a9ec8204-eb37-44ad-982b-2a7081066cfa",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "GESSZP",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MTDI"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_SCMAINT",
-			"title": "title_4b12c68b-f8ec-4c1b-821d-d93806d8f643",
-			"description": "description_4b12c68b-f8ec-4c1b-821d-d93806d8f643",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "SCMAINT",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MTDI"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_GESSMP",
-			"title": "title_ce44dfa9-651b-4d2e-bc42-2917a89ec966",
-			"description": "description_ce44dfa9-651b-4d2e-bc42-2917a89ec966",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "GESSMP",
-			"fusionKey": "",
-			"target": "self",
-			"isFactory": true,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "X3_ERP_MTDI"
-			},
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SCMDINT",
-			"title": "title_6f512523-3397-483b-b61d-0caeb94751b7",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "SCMDINT",
-			"target": "self",
-			"isFactory": true,
-			"requestLevel": "99",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
 			"module": {
 				"code": "X3_ERP_MTDI"
 			},
@@ -45688,6 +45762,23 @@
 				{
 					"$type": "menuSubblock",
 					"$variantType": "menuBlock",
+					"code": "X3_ERP_MSCMA",
+					"title": "title_5e427446-27b1-4db9-953f-601c54a6cfeb",
+					"isFactory": true,
+					"items": [
+						{
+							"code": "STD_GESSZP",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_SCMAINT",
+							"$variantType": "menuItem"
+						}
+					]
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
 					"code": "X3_ERP_MAPS",
 					"title": "title_706b53e8-c574-4441-b349-74ef7e21b4e0",
 					"isFactory": true,
@@ -45742,49 +45833,6 @@
 						{
 							"code": "STD_MMSINT",
 							"$variantType": "menuItem"
-						}
-					]
-				},
-				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "X3_ERP_MSCM",
-					"title": "title_12b733f3-688e-4ccc-a253-7ddafb00ed1d",
-					"isFactory": true,
-					"items": [
-						{
-							"$type": "menuSubblock",
-							"$variantType": "menuBlock",
-							"code": "X3_ERP_MSCMA",
-							"title": "title_5e427446-27b1-4db9-953f-601c54a6cfeb",
-							"isFactory": true,
-							"items": [
-								{
-									"code": "STD_GESSZP",
-									"$variantType": "menuItem"
-								},
-								{
-									"code": "STD_SCMAINT",
-									"$variantType": "menuItem"
-								}
-							]
-						},
-						{
-							"$type": "menuSubblock",
-							"$variantType": "menuBlock",
-							"code": "X3_ERP_MSCMD",
-							"title": "title_61227e22-b7b8-4c37-b9d5-deae61d3bc3b",
-							"isFactory": true,
-							"items": [
-								{
-									"code": "STD_GESSMP",
-									"$variantType": "menuItem"
-								},
-								{
-									"code": "SCMDINT",
-									"$variantType": "menuItem"
-								}
-							]
 						}
 					]
 				},
@@ -50692,6 +50740,13 @@
 	],
 	"$localization": {
 		"de-de": {
+			"title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Syracuse Administration",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 Administration",
+			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Lizenzanzeige",
+			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche",
+			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche zur Dateiablage",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Entwicklung",
 			"title_930688fe-1b23-4e6d-9ae1-5cd9eaf91e58": "Data Dictionary",
 			"title_535b7296-1106-4b19-85a5-418dc06e7186": "Tabellen",
@@ -51008,7 +51063,6 @@
 			"title_9bc4376e-2bae-41ac-af02-38af62c69d32": "SData",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Synchronisationstabelle",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Initalisier. Synchronisation",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Sonstiges",
@@ -51075,7 +51129,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Dynamische Links",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "Link SAFE X3",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Schnittstelle",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Organisationseinheit",
@@ -51617,6 +51670,7 @@
 			"description_69d85123-629e-4d1d-96df-f7b2e3dd864f": "GESRRB",
 			"title_6f7ca5ed-bbfb-4afb-b323-650d040b7d6e": "Kommunikationstypen",
 			"description_6f7ca5ed-bbfb-4afb-b323-650d040b7d6e": "GESTYC",
+			"title_62d7a6e4-5b8f-4e7a-a19c-e7c273916c41": "Typen Liquiditätsvorschau / Unternehmen",
 			"title_97b25a3e-b502-42f1-a418-0005614ae69b": "Betriebliche Budgets",
 			"title_e4d3dcfc-7eb1-4db4-8836-09bb6aea3ff4": "Budgettyp",
 			"description_e4d3dcfc-7eb1-4db4-8836-09bb6aea3ff4": "GESBUT",
@@ -53037,6 +53091,8 @@
 			"title_8d82a2e3-c5b8-414a-ae72-2a9e3c82f666": "Anzahlungen Lieferanten (Vorauszahlungen)",
 			"description_8d82a2e3-c5b8-414a-ae72-2a9e3c82f666": "IPTACPTFOU",
 			"title_8a682788-6447-4b3a-bd2f-1ac023d42b86": "Saldierung Personenkonten",
+			"title_3ddcf273-7289-445d-852c-b88fb8352bb8": "Liquiditätsvorschau erstellen",
+			"title_64885a03-1e6e-4f37-962a-e8b87ffa8428": "Liquiditätsvorschau verwalten",
 			"title_f92f1668-cc95-44d3-9629-aae5cdc4168f": "Zahlungen",
 			"title_487ae4f2-b4fd-42fb-b0f5-603851ad3d10": "Zahlungsvorschlag(sliste)",
 			"description_487ae4f2-b4fd-42fb-b0f5-603851ad3d10": "PAYPROPAL",
@@ -53195,11 +53251,14 @@
 			"title_bf3911fd-512b-4643-8f2a-b675764251b2": "Portugal",
 			"title_2c1de913-cbae-4c30-82f0-a2882a95df39": "Parameter",
 			"title_36a5b36b-6201-47c3-8aea-2121468636ae": "Steuercode",
+			"title_a4eb18b6-c23c-4203-9e8d-603108880f0a": "Parameter USt.",
 			"title_a4c1c374-27be-4678-b11a-f891e5455e70": "Verarbeitungen",
 			"title_cff47475-8386-4ba8-9cc6-8c557f046d05": "Europ. Dienstleistungserklär.",
+			"title_aa98e8c6-217b-45b1-8373-b537a269e66f": "Periodische Meldung",
 			"title_d6314391-b0bc-4a7e-a2e9-7e9bc80d26d1": "Jährliche USt.",
 			"title_d2e35fbe-bd03-4466-a555-687560f7cbed": "Export- / Einfuhrdeklaration",
 			"description_d2e35fbe-bd03-4466-a555-687560f7cbed": "DCLVATPORI",
+			"title_18fe658e-c1d7-4463-9d9d-e4741f8bd96d": "Auswertung Steuerregelung",
 			"title_8ec76a11-b680-481c-b675-e20543f05558": "Vereinigte Staaten",
 			"title_a7f15896-ff5f-4853-bb15-a820176c2363": "Schnittstelle Sage Sales Tax",
 			"description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
@@ -53627,32 +53686,27 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Aufruf MES-Schnittstelle",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "Planung APS",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parameter Planung APS",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Start Schnittst. Planung APS",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_706b53e8-c574-4441-b349-74ef7e21b4e0": "APS",
 			"title_1675b0f0-85d0-4b2b-b7d8-fb37b19f0464": "PREACTOR",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "PREACTOR Parameter",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Schnittstelle PREACTOR",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_89144a5d-3c36-4dd4-b532-6d8acad378fe": "ORTEMS",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametrierung ORTEMS",
+			"title_89144a5d-3c36-4dd4-b532-6d8acad378fe": "APS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametrierung APS",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Schnittstelle ORTEMS",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Schnittstelle APS",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_8f1ae715-c0ce-43cb-a77b-92df438f09bf": "MMS",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "MMS-Parameter",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "Aufruf MMS Interface",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_12b733f3-688e-4ccc-a253-7ddafb00ed1d": "SCM",
-			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "AZAP",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "SCM AZAP Parameter",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Schnittstellenaufruf SCM AZAP",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_61227e22-b7b8-4c37-b9d5-deae61d3bc3b": "DYNASYS",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "SCM SKEP Parameter",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Schnittstellenaufr SCM-n.SKEP",
 			"title_539834c4-9609-4b23-9684-277c81db29a0": "PYR",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "HRMS Lohn NA Parameter",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
@@ -53835,6 +53889,7 @@
 			"description_9320c97f-5a8a-4156-8eda-24c2e6e4735b": "ADOCEXT",
 			"title_c60d6c63-cd0f-4d8e-9b77-d5dbafc933a3": "Import Dokumentation",
 			"description_c60d6c63-cd0f-4d8e-9b77-d5dbafc933a3": "ADOCIMP",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Anzeigeseiten",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Buchhaltung",
 			"title_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "Sektoren",
 			"description_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "CACCE",
@@ -54302,7 +54357,6 @@
 			"title_9bc4376e-2bae-41ac-af02-38af62c69d32": "Sdata",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Synchronization table",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Synchronization initialization",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Miscellaneous",
@@ -54366,7 +54420,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Dynamic links",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "SAFE X3 link",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interface",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Number",
@@ -56895,25 +56948,23 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Launch MES interface",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "APS forecast",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "APS Forecast setup",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "APS Forecast interface launch",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "PREACTOR parameters",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Launch PREACTOR interface",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "ORTEMS setup",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "APS setup",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "ORTEMS interface launch",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "APS interface launch",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "MMS setup",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "MMS interface launch",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "SCM AZAP setup",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCM AZAP interface start",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "SCM n.SKEP setup",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "SCM n.SKEP interface start",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "HRMS payroll NA setup",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "HRMS payroll NA interface",
@@ -57229,8 +57280,6 @@
 			"description_d6affc29-40d1-41bd-b209-f4f2160401ae": "LDAP Servers management interface",
 			"title_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2 Servers",
 			"description_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2 Servers management interface",
-			"title_724bc00a-efd7-496d-b477-67ff913e78f9": "Friend collaboration servers",
-			"description_724bc00a-efd7-496d-b477-67ff913e78f9": "Friend collaboration servers",
 			"title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
 			"description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
 			"title_8a761057-1f59-4f43-9434-1af6dd6d79ae": "Endpoints",
@@ -57239,6 +57288,8 @@
 			"description_234de8fb-57cf-4333-8956-d608d215734a": "Users management interface",
 			"title_a3b6ea6c-c980-4e1a-b1e7-ff700523bdcc": "Groups",
 			"description_a3b6ea6c-c980-4e1a-b1e7-ff700523bdcc": "Groups management",
+			"title_a19681c9-bdef-4751-b38c-d126dc5f663b": "BO Profiles",
+			"title_7366d800-1b3c-4d21-b22c-d74d00906965": "BO Servers",
 			"title_13d182ef-dc57-4737-b563-4142632925ca": "Locales",
 			"description_13d182ef-dc57-4737-b563-4142632925ca": "Locales management interface",
 			"title_daf5f986-b5eb-4b96-9d6d-23a1845e004a": "Server logs",
@@ -57247,6 +57298,7 @@
 			"description_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
 			"title_61d7bb36-9698-4969-93bd-957b05ee8343": "Security profiles",
 			"description_61d7bb36-9698-4969-93bd-957b05ee8343": "Security profiles",
+			"title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "X3 session configuration",
 			"title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Syracuse collaboration",
 			"title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Teams",
 			"description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Teams management",
@@ -57281,8 +57333,14 @@
 			"description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
 			"title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Syracuse Sessions",
 			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Syracuse Sessions Management",
+			"title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Menu profile import",
+			"title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Patch integration",
+			"title_22cbcdd6-7b7d-44e1-857e-21affe65c767": "Classic client",
+			"title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
+			"title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
 			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_cad14e74-6787-4a10-8599-25e040f0bf81": "X3 Administration",
+			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
@@ -57603,7 +57661,6 @@
 			"title_9bc4376e-2bae-41ac-af02-38af62c69d32": "Sdata",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Synchronization table",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Synchronization initialization",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Miscellaneous",
@@ -57667,7 +57724,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Dynamic links",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "SAFE X3 link",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interface",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Entity",
@@ -58203,6 +58259,7 @@
 			"description_69d85123-629e-4d1d-96df-f7b2e3dd864f": "GESRRB",
 			"title_6f7ca5ed-bbfb-4afb-b323-650d040b7d6e": "Communication types",
 			"description_6f7ca5ed-bbfb-4afb-b323-650d040b7d6e": "GESTYC",
+			"title_62d7a6e4-5b8f-4e7a-a19c-e7c273916c41": "Cash forecast types / company",
 			"title_97b25a3e-b502-42f1-a418-0005614ae69b": "Operating budgets",
 			"title_e4d3dcfc-7eb1-4db4-8836-09bb6aea3ff4": "Budget type",
 			"description_e4d3dcfc-7eb1-4db4-8836-09bb6aea3ff4": "GESBUT",
@@ -59783,8 +59840,10 @@
 			"description_57b23f41-1d41-4caf-9ce5-cd11c726cd59": "CONSVSP",
 			"title_2c1de913-cbae-4c30-82f0-a2882a95df39": "Setup",
 			"title_36a5b36b-6201-47c3-8aea-2121468636ae": "Tax codes",
+			"title_a4eb18b6-c23c-4203-9e8d-603108880f0a": "Paramètre TVA",
 			"title_a4c1c374-27be-4678-b11a-f891e5455e70": "Processings",
 			"title_cff47475-8386-4ba8-9cc6-8c557f046d05": "European Services Declaration",
+			"title_aa98e8c6-217b-45b1-8373-b537a269e66f": "Déclaration périodique",
 			"title_d6314391-b0bc-4a7e-a2e9-7e9bc80d26d1": "Annual VAT",
 			"title_d2e35fbe-bd03-4466-a555-687560f7cbed": "Export / Import declaration",
 			"description_d2e35fbe-bd03-4466-a555-687560f7cbed": "DCLVATPORI",
@@ -60212,25 +60271,24 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Launch MES interface",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "APS forecast",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "APS Forecast setup",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "APS Forecast interface launch",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "PREACTOR parameters",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Launch PREACTOR interface",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "ORTEMS setup",
+			"title_89144a5d-3c36-4dd4-b532-6d8acad378fe": "APS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "APS setup",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "ORTEMS interface launch",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "APS interface launch",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "MMS setup",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "MMS interface launch",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "SCM AZAP setup",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCM AZAP interface start",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "SCM n.skep setup",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "SCM n.skep interface start",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "HRMS payroll NA setup",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "HRMS payroll NA interface",
@@ -60863,7 +60921,6 @@
 			"description_c2377505-44fb-44b9-a064-0e2457a53d05": "GACCDUP",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Tabla de resincronización",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Inicialización sincronización",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Varios",
@@ -60928,7 +60985,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Enlaces dinámicos",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "Enlace SAFE X3",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interface",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Entidad",
@@ -63468,25 +63524,23 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Lanzamiento interfaz MES",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "Previsión APS",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parametrización Previsión APS",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lanzamiento interface Prev. APS",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "Parametrización PREACTOR",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Lanzamiento interfacce PREACTOR",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametrización ORTEMS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametrización APS",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lanzamiento interface ORTEMS",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lanzamiento interface APS",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "Parametrización MMS",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "Lanzamiento interfase MMS",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parametrización SCM AZAP",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lanzamiento interface SCM AZAP",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "Parametrización SCM n.SKEP",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Lanzamiento interface SCM n.SKEP",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "Pametrización HRMS NA",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "Interface HRMS NA",
@@ -63852,8 +63906,6 @@
 			"description_d6affc29-40d1-41bd-b209-f4f2160401ae": "Gestion des serveurs LDAP",
 			"title_4d9e892a-82cf-4759-961c-4ae6da834577": "Serveurs OAuth2",
 			"description_4d9e892a-82cf-4759-961c-4ae6da834577": "Gestion des serveurs OAuth2",
-			"title_724bc00a-efd7-496d-b477-67ff913e78f9": "Serveurs collaboration associés",
-			"description_724bc00a-efd7-496d-b477-67ff913e78f9": "Serveurs collaboration associés",
 			"title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
 			"description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
 			"title_8a761057-1f59-4f43-9434-1af6dd6d79ae": "Points d'accès",
@@ -63890,7 +63942,7 @@
 			"description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Gestion des entrées de menu",
 			"title_ca835319-466c-4f49-a0f1-00092983d7e9": "Catégories de menu",
 			"description_ca835319-466c-4f49-a0f1-00092983d7e9": "Gestion des catégories de menu",
-			"title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestion des personnalisations",
+			"title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestion de personalisations",
 			"title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigation pages",
 			"title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Home pages",
 			"title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Outils Syracuse",
@@ -64198,6 +64250,7 @@
 			"description_a26cd792-ab76-4831-b510-f9a5605b0192": "DOSEXTRA",
 			"title_809e3f44-69de-428d-85cf-f940995c2416": "Intégration données",
 			"description_809e3f44-69de-428d-85cf-f940995c2416": "DOSINTEG",
+			"title_e79f3166-eb0e-4ec9-be82-aad95d3b2bf7": "Euro",
 			"title_b887e2f0-a30e-40c4-b383-9be275b24a4b": "Patchs",
 			"title_790ba122-35a7-450d-b9ce-6a3e6ecb47df": "Intégration de patchs",
 			"description_790ba122-35a7-450d-b9ce-6a3e6ecb47df": "PATCH",
@@ -64223,9 +64276,9 @@
 			"description_e7147c98-2ea8-4524-a33d-9bf7a4b80b25": "GACCDEL",
 			"title_c2377505-44fb-44b9-a064-0e2457a53d05": "Duplication comptes en masse",
 			"description_c2377505-44fb-44b9-a064-0e2457a53d05": "GACCDUP",
+			"title_9bc4376e-2bae-41ac-af02-38af62c69d32": "SData",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Table synchronisation",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Initialisation synchronisation",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Divers",
@@ -64279,6 +64332,7 @@
 			"description_e127d93b-5501-4a96-9cd6-a18d6193b421": "GESAYS",
 			"title_ba1fce1c-7a5f-475c-9bd2-239f0ab28917": "Profils site Web",
 			"description_ba1fce1c-7a5f-475c-9bd2-239f0ab28917": "GESAYD",
+			"title_ad1282b4-2b04-4f42-a55a-6edda0847d57": "Tokens",
 			"title_46dc75eb-31e5-4356-a744-d23d7d0aa4e3": "Pages Web",
 			"description_46dc75eb-31e5-4356-a744-d23d7d0aa4e3": "GESAYG",
 			"title_e8a06e60-8b42-4873-b27c-8f9afc67dc07": "Champs",
@@ -64290,7 +64344,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Liens dynamiques",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "Lien SAFE X3",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interface",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Entité",
@@ -64326,6 +64379,7 @@
 			"description_98e53379-2ece-4257-a643-799be0df59e3": "PRHBATCH",
 			"title_db7f657a-466e-435a-a4a3-a763448ff474": "Visualisation site web",
 			"description_db7f657a-466e-435a-a4a3-a763448ff474": "VISUAYS",
+			"title_e580d9cf-e1b4-4119-b0a9-0d150eeafdeb": "Tests",
 			"title_ffeff6f1-d6a5-4f1b-9efe-b61117f5ebeb": "Test site Web",
 			"description_ffeff6f1-d6a5-4f1b-9efe-b61117f5ebeb": "GESAYT",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Paramétrage",
@@ -66840,45 +66894,53 @@
 			"title_54c9420c-de60-4986-9226-e9608a2aded2": "Connecteurs métier",
 			"title_3d5b2424-1e25-437e-902d-c93a8741d883": "Pivots",
 			"description_3d5b2424-1e25-437e-902d-c93a8741d883": "GESPIT",
+			"title_ad0d152e-6276-4965-a20f-3dcf75eec0c5": "PLM",
 			"title_a119b9f9-8d8d-4876-9321-45ad78b594d7": "Paramétrage PLM",
 			"description_a119b9f9-8d8d-4876-9321-45ad78b594d7": "GESPLM",
 			"title_a9a53bfa-856b-4b65-98b0-965164a1452e": "Lancement interface PLM",
 			"description_a9a53bfa-856b-4b65-98b0-965164a1452e": "PLMINT",
+			"title_48f5a09e-c291-4257-8722-22430bd381a8": "MES",
 			"title_2d935622-194e-4828-84d4-5432b506b992": "Paramétrage MES",
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Lancement interface MES",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "Prévision APS",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Paramétrage prévision APS",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lancement interface prév. APS",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
+			"title_706b53e8-c574-4441-b349-74ef7e21b4e0": "APS",
+			"title_1675b0f0-85d0-4b2b-b7d8-fb37b19f0464": "PREACTOR",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "Paramétrage PREACTOR",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Lancement interface PREACTOR",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Paramétrage ORTEMS",
+			"title_89144a5d-3c36-4dd4-b532-6d8acad378fe": "APS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Paramétrage APS",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lancement interface ORTEMS",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lancement interface APS",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
+			"title_8f1ae715-c0ce-43cb-a77b-92df438f09bf": "MMS",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "Paramétrage MMS",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "Lancement interface MMS",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Paramétrage SCM AZAP",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lancement interface SCM AZAP",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "Paramétrage SCM n.SKEP",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Lancement interface SCM n.SKEP",
+			"title_539834c4-9609-4b23-9684-277c81db29a0": "PYR",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "Paramétrage HRMS NA",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "Interface HRMS NA",
 			"description_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "PYRAINT",
+			"title_fd7e5fcb-9f39-4119-acff-d817c7c38b38": "REACH",
 			"title_ca3f5792-4b7d-4943-ad84-ea658a1e1f45": "Paramétrage REACH",
 			"description_ca3f5792-4b7d-4943-ad84-ea658a1e1f45": "GESRPA",
 			"title_fcbb47a9-2487-4216-a6a7-aafd4b54b47d": "Lancement interface REACH",
 			"description_fcbb47a9-2487-4216-a6a7-aafd4b54b47d": "RPAINT",
+			"title_49aa4181-1ef6-4152-af4b-f3d27a16c686": "ENERGY",
 			"title_740142ac-1186-4b17-9162-2729e2317629": "Paramétrage ENERGY",
 			"description_740142ac-1186-4b17-9162-2729e2317629": "GESNRY",
 			"title_66861791-5171-4e89-96a2-d077cada4d88": "Lancement interface ENERGY",
 			"description_66861791-5171-4e89-96a2-d077cada4d88": "NRYINT",
+			"title_4a816d2d-414d-444f-9de0-8ebcef94e563": "SFA",
 			"title_88d1d710-478a-486a-a9a2-ad91113eb119": "Paramétrage SFA NA",
 			"description_88d1d710-478a-486a-a9a2-ad91113eb119": "GESSFA",
 			"title_c11629c0-dc84-407d-b42e-f55c646b6b19": "Connecteur SFA NA",
@@ -67505,7 +67567,6 @@
 			"description_c2377505-44fb-44b9-a064-0e2457a53d05": "GACCDUP",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Tabella sincronizzazzione",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Inizializzazione sincronizzazione",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Diversi",
@@ -67569,7 +67630,6 @@
 			"description_9992d248-a508-49c2-b61d-f2b98d2e8f2c": "GESAYW",
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Link dinamici",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interfaccia",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Entità",
@@ -70076,25 +70136,23 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Lancio interfaccia MES",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "Previsioni APS",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Configurazione Previsioni APS",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lancio interfaccia prev. APS",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "Parametrizzazione PREACTOR",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Lancio interfaccia PREACTOR",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametrizzazione ORTEMS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametrizzazione APS",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lancio interfaccia ORTEMS",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lancio interfaccia APS",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "Parametrizzazione MMS",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "Lancio interfaccia MMS",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parametrizzazione SCM AZAP",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lancio interfaccia SCM AZAP",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "Parametrizzazione SCM n.SKEP",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Lancio interfaccia SCM n.SKEP",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "Parametrizzazione HRMS NA",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "Interfaccia HRMS NA",
@@ -70740,7 +70798,6 @@
 			"title_9bc4376e-2bae-41ac-af02-38af62c69d32": "Sdata",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Synchronizacja tabel",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Synchronizacja indeksacji",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Inne",
@@ -70806,7 +70863,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Łącza dynamiczne",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "Połączenie SAFE X3",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interfejs",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Jednostka",
@@ -73347,25 +73403,23 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Uruchomianie interfejsu MES",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "Prognoza APS",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Ustawienia prognozy APS",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Uruchomienie interfejsu prognozy APS",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "Parametry PREACTOR",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Uruchomianie interfejsu Preactor",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametry ORTEMS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametry APS",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Uruchomianie interfejsu ORTEMS",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Uruchomianie interfejsu APS",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "Ustawienie MMS",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "Uruchomianie interfejsu MMS",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parametry SCM AZAP",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Uruchomianie interfejsu SCM AZAP",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "Parametry SCM n.SKEP",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Uruchomianie interfejsu SCM n.SKEP",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "Ustawienie HRMS NA",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "Intefejsu HRMS NA",
@@ -73989,7 +74043,6 @@
 			"description_c2377505-44fb-44b9-a064-0e2457a53d05": "GACCDUP",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Tabela sincronização",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "Iniciação sincronização",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Diversos",
@@ -74054,7 +74107,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Ligs. dinâmicas",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "Lig. SAFE X3",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Interface",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Entidade",
@@ -76571,25 +76623,23 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "Lançamento interface MES",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "Previsão APS",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parametrização previsão APS",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lançamento interface prev. APS",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "Parametrização PREACTOR",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "Lançamento interface PREACTOR",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametriz. ORTEMS",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Parametriz. APS",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lançamento interface ORTEMS",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Lançamento interface APS",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "Parametriz. MMS",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "Lançamento interface MMS",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Parametrização SCM AZAP",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Lançamento interface SCM AZAP",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "Parametrização SCM n.SKEP",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Lançamento interface SCM n.SKEP",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "Parametrização HRMS NA",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "Interface HRMS NA",
@@ -77230,7 +77280,6 @@
 			"title_9bc4376e-2bae-41ac-af02-38af62c69d32": "SДанные",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "Таблица синхронизации",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "Прочее",
 			"title_d282ffdc-d073-4ae3-b2fa-3ad4ba46a078": "Управление порталом",
@@ -77294,7 +77343,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "Динамические связи",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "SAFE X3 связь",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "Интерфейс",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "Орг.единица",
@@ -79710,21 +79758,19 @@
 			"title_2d935622-194e-4828-84d4-5432b506b992": "параметры MES",
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
-			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
-			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Настройка ORTEMS",
-			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Запуск интерфейса ORTEMS",
-			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
-			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
-			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "APS forecast",
 			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "Настройка SCM AZAP",
 			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
 			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "Запуск интерфейса SCM AZAP",
 			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "Настройка SCM n.SKEP",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "Запуск интерфейса SCM n.SKEP",
+			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
+			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "Настройка APS",
+			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "Запуск интерфейса APS",
+			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
+			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
+			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"description_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "PYRAINT",
 			"description_ca3f5792-4b7d-4943-ad84-ea658a1e1f45": "GESRPA",
@@ -80342,7 +80388,6 @@
 			"description_c2377505-44fb-44b9-a064-0e2457a53d05": "GACCDUP",
 			"title_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "同步表",
 			"description_113da75b-2b4a-42a3-96b8-bdd11ecf6f71": "AJSSYNC",
-			"description_c523ab92-a888-46d0-bb7e-a04c7cacfc68": "CONSAJE",
 			"title_b11c4877-fc6a-4bfc-b385-a2eef7419696": "同步启动",
 			"description_b11c4877-fc6a-4bfc-b385-a2eef7419696": "AJSLINK",
 			"title_ea6316d1-da1b-414f-a7c5-52ac56f12c32": "其他",
@@ -80408,7 +80453,6 @@
 			"title_37a3330d-2622-4e9a-9f4f-b142e524e72a": "动态链接",
 			"description_37a3330d-2622-4e9a-9f4f-b142e524e72a": "GESAYL",
 			"title_a9e36061-97af-423e-9bdb-b117e05a186a": "SAFE X3链接",
-			"description_f69311ec-181a-41e1-a32b-34b8a38de849": "GESAYO",
 			"title_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "接口",
 			"description_76136cdc-83ae-4789-b561-3cd7e3cf01c1": "GESAYI",
 			"title_1933df61-4304-4da2-a527-059e3ed82424": "主体",
@@ -82956,26 +83000,24 @@
 			"description_2d935622-194e-4828-84d4-5432b506b992": "GESMES",
 			"title_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "启动MES接口",
 			"description_1c72a2c7-30cc-47e7-ab28-7c4058f2dea6": "MESINT",
+			"title_5e427446-27b1-4db9-953f-601c54a6cfeb": "APS预测",
+			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "APS预测参数设置",
+			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
+			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "APS预测接口启动",
+			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
 			"title_456e7d60-89ac-46b8-abd6-8511c1e1c753": "PREACTOR参数",
 			"description_456e7d60-89ac-46b8-abd6-8511c1e1c753": "GESORP",
 			"title_10a93876-949c-4a74-a7e5-cefaa382979c": "启动PREACTOR接口",
 			"description_10a93876-949c-4a74-a7e5-cefaa382979c": "ORPINT",
-			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "ORTEMS参数设置",
+			"title_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "APS参数设置",
 			"description_f86949fb-9eb3-42ab-8c38-d5ab092a3952": "GESORO",
-			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "启动ORTEMS接口",
+			"title_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "启动APS接口",
 			"description_fe833a45-36bc-443a-ab7d-1b81e7dc5a13": "OROINT",
 			"title_8f1ae715-c0ce-43cb-a77b-92df438f09bf": "维护管理系统",
 			"title_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "MMS参数设置",
 			"description_eef48e0f-ca80-4b44-a05c-9bffe26b7627": "GESMMS",
 			"title_5189b008-f303-40f6-99d0-035ba33429a2": "启动MMS接口",
 			"description_5189b008-f303-40f6-99d0-035ba33429a2": "MMSINT",
-			"title_a9ec8204-eb37-44ad-982b-2a7081066cfa": "SCM AZAP参数设置",
-			"description_a9ec8204-eb37-44ad-982b-2a7081066cfa": "GESSZP",
-			"title_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCM AZAP 接口启动",
-			"description_4b12c68b-f8ec-4c1b-821d-d93806d8f643": "SCMAINT",
-			"title_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "SCM n.SKEP参数设置",
-			"description_ce44dfa9-651b-4d2e-bc42-2917a89ec966": "GESSMP",
-			"title_6f512523-3397-483b-b61d-0caeb94751b7": "SCM n.SKEP 接口启动",
 			"title_50a763a4-685c-47a7-b9e7-aa46ad504c86": "HRMS NA  PYR参数设置",
 			"description_50a763a4-685c-47a7-b9e7-aa46ad504c86": "GESPYRA",
 			"title_e52ded9c-7641-4ab6-973d-1e11ad2ac247": "HRMS NA接口起动",
