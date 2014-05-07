@@ -10,26 +10,9 @@ using Microsoft.Win32;
 
 namespace PowerPointAddIn
 {
-    public class NewSlideEventArgs
-    {
-        public Presentation pres;
-        public PptCustomData customData;
-        public DocumentWindow win;
-
-        public NewSlideEventArgs(Presentation pres, PptCustomData customData, DocumentWindow win)
-        {
-            this.pres = pres;
-            this.customData = customData;
-            this.win = win;
-        }
-    }
-
     public partial class PowerPointAddIn
     {
         public const string pptx_action_new_chart_slide = "new_chart_slide";
-
-        public delegate void NewSlideEvent(object sender, NewSlideEventArgs e);
-        private event NewSlideEvent newSlide;
 
         public PptActions pptActions;
         public BrowserDialog browserDialog;
@@ -45,7 +28,6 @@ namespace PowerPointAddIn
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
-            newSlide += new NewSlideEvent(PowerPointAddIn_newSlideEvent);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -56,7 +38,8 @@ namespace PowerPointAddIn
         // but contains some kind of "command list" describing what actions have to be done inside PPT.
         // It is this way, because one probably never creates a whole new presentation based on an entity.
         // It is more likely, that one creates a new slide and attaches it to an already existing presentation.
-        private void Application_WindowActivate(Presentation Pres, DocumentWindow Wn) {
+        private void Application_WindowActivate(Presentation Pres, DocumentWindow Wn) 
+        {
             foreach (DocumentWindow w in Application.Windows)
             {
                 try
@@ -81,8 +64,7 @@ namespace PowerPointAddIn
                                 cd.setForceRefresh(false);
                                 cd.writeDictionaryToDocument();
 
-                                // Invoke async outside the WindowActivate event, since not all operations are permitted in here 
-                                newSlide.BeginInvoke(this, new NewSlideEventArgs(pres, cd, Wn), null, null);
+                                PowerPointAddIn_newSlide(pres, cd, Wn);
                             }
                         }
                     }
@@ -99,28 +81,37 @@ namespace PowerPointAddIn
             pptActions.checkRefreshButtons();
         }
 
-        private void PowerPointAddIn_newSlideEvent(object sender, NewSlideEventArgs args)
+        private void PowerPointAddIn_newSlide(Presentation pres, PptCustomData customData, DocumentWindow win)
         {
             try
             {
-                PowerPointAddIn_newSlide(sender, args);
+                PowerPointAddIn_addNewSlide(pres, customData, win);
             }
             finally
             {
-                // Close command presentation
-                args.pres.Close();
                 pptActions.checkRefreshButtons();
+
+                // We can't close the presentation on from the main thread, so close it on this new thread.
+                System.Threading.Thread t = new System.Threading.Thread(() => PowerPointAddIn_closePresentation(pres));
+                t.SetApartmentState(System.Threading.ApartmentState.STA);
+                t.Start();
             }
         }
 
-        private void PowerPointAddIn_newSlide(object sender, NewSlideEventArgs args)
+        private void PowerPointAddIn_closePresentation(Presentation pres)
+        {
+            // Close command presentation
+            pres.Close();
+        }
+
+        private void PowerPointAddIn_addNewSlide(Presentation pres, PptCustomData customData, DocumentWindow win)
         {
             DocumentWindow selectedWindow = null;
             Presentation selectedPresentation = null;
             List<DocumentWindow> windows = new List<DocumentWindow>();
             foreach (DocumentWindow w in Application.Windows)
             {
-                if (w.HWND != args.win.HWND)
+                if (w.HWND != win.HWND)
                 {
                     windows.Add(w);
                 }
@@ -149,11 +140,11 @@ namespace PowerPointAddIn
             }
             if (selectedWindow == null)
             {
-                foreach (DocumentWindow win in selectedPresentation.Windows)
+                foreach (DocumentWindow docWin in selectedPresentation.Windows)
                 {
-                    if (win.Active == MsoTriState.msoTrue)
+                    if (docWin.Active == MsoTriState.msoTrue)
                     {
-                        selectedWindow = win;
+                        selectedWindow = docWin;
                         break;
                     }
                 }
@@ -163,7 +154,7 @@ namespace PowerPointAddIn
                 return;
             }
 
-            pptActions.addChartSlide(selectedPresentation, selectedWindow, args.customData, slideIndex);
+            pptActions.addChartSlide(selectedPresentation, selectedWindow, customData, slideIndex);
         }
 
         void Application_SlideSelectionChanged(SlideRange SldRange)
