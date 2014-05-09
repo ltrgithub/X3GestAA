@@ -35,15 +35,14 @@
             // webBrowser
             // 
             resources.ApplyResources(this.webBrowser, "webBrowser");
-            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
             // 
-            // documentBrowser
+            // DocumentBrowser
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.webBrowser);
-            this.Name = "documentBrowser";
+            this.Name = "DocumentBrowser";
             this.ResumeLayout(false);
 
         }
