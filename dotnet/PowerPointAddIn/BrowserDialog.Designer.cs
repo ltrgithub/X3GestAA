@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserDialog));
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(684, 412);
             this.Controls.Add(this.webBrowser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BrowserDialog";
             this.Text = "Sage ERP X3";
             this.ResumeLayout(false);
