@@ -41,8 +41,14 @@ namespace PowerPointAddIn
 
             try
             {
-                String title = ((WebBrowser)sender).DocumentTitle;
-                if (title == null || title.Equals("Syracuse") == false)
+                HtmlDocument doc = ((WebBrowser)sender).Document;
+                String title = doc.GetElementsByTagName("title")[0].InnerText;
+
+                /*
+                 * Under certain circumstances, the document title is different from that contained in the document text.
+                 * We therefore need to test for both if the title is not equal to Syracuse.
+                 */
+                if (!(title != null && (title.Equals("Syracuse") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
                 {
                     this.Hide();
                     CommonUtils.ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::PowerPointAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
