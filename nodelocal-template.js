@@ -81,6 +81,7 @@ exports.config = {
             trace : console.log,
             info : true
         }*/
+        //deactivateRight: true,
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
