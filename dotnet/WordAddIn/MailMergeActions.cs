@@ -45,6 +45,7 @@ namespace WordAddIn
                     {
                         CreateMailMerge(doc, customData);
                     }
+                    Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
                 }
             }
         }

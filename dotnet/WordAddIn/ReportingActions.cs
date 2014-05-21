@@ -37,6 +37,12 @@ namespace WordAddIn
             return false;
         }
 
+        public void ActivationsForReportTemplate()
+        {
+            Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
+            Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = true;
+            Globals.WordAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
+        }
         public void ActiveDocumentChanged(Document doc)
         {
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
@@ -48,6 +54,7 @@ namespace WordAddIn
                     if (customData.isForceRefresh())
                     {
                         CreateWordReportTemplate(doc, customData);
+                        ActivationsForReportTemplate();
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
@@ -58,6 +65,7 @@ namespace WordAddIn
                     if (customData.isForceRefresh())
                     {
                         PopulateWordReportTemplate(doc, customData, true);
+                        Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
                     }
                 }
                 else if (rpt_is_tpl.Equals(mode))
@@ -65,6 +73,7 @@ namespace WordAddIn
                     if (customData.isForceRefresh())
                     {
                         RefreshWordReportTemplate(doc, customData);
+                        ActivationsForReportTemplate();
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
