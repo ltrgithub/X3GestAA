@@ -127,7 +127,8 @@ require('syracuse-license').register(function(err, data) {
 	} else {
 		try {
 			var syracuse = require('syracuse-main/lib/syracuse');
-			syracuse.main();
+
+            syracuse.main();
 		} catch (e) {
 			var fs = require('fs');
 			if (fs.existsSync(__dirname + '/node_modules/syracuse-main/lib/syracuse.jsc') && !require.extensions['.jsc']) {
