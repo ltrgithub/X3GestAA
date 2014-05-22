@@ -897,7 +897,7 @@
 			"title": "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2",
 			"linkType": "$representation",
 			"applicationMenu": false,
-			"facet": "$query",
+			"facet": "$create",
 			"target": "self",
 			"isFactory": true,
 			"requestLevel": "99",
@@ -1747,119 +1747,6 @@
 				},
 				{
 					"code": "S_CLASSIC_CLIENT"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "AVISULIC",
-			"title": "title_c76b5d2a-fe99-482d-8933-574e9e3869cc",
-			"description": "description_c76b5d2a-fe99-482d-8933-574e9e3869cc",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$details",
-			"keyParameter": "\" \"",
-			"target": "self",
-			"isFactory": true,
-			"requestLevel": "99",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVISULIC",
-				"representation": "AVISULIC"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SUP_AVOLUME",
-			"title": "title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d",
-			"description": "description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVOLUME",
-				"representation": "AVOLUME"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SUP_APSADX",
-			"title": "title_760c2401-5feb-4d81-ae65-cc6dc051010a",
-			"description": "description_760c2401-5feb-4d81-ae65-cc6dc051010a",
-			"linkType": "$representation",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": false,
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "APSADX",
-				"representation": "APSADX"
-			},
-			"module": null,
-			"parameters": []
-		},
-		{
-			"$type": "menuBlock",
-			"title": "title_cad14e74-6787-4a10-8599-25e040f0bf81",
-			"isFactory": false,
-			"code": "SUPERVISOR_ADMIN",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"items": [
-				{
-					"code": "AVISULIC",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "SUP_AVOLUME",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "SUP_APSADX",
-					"$variantType": "menuItem"
-				}
-			]
-		},
-		{
-			"$type": "menuModule",
-			"title": "title_c0956863-a637-4699-8c3c-b2785df97832",
-			"isFactory": true,
-			"code": "S_MOD_SUPERVADMIN",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"submodules": [
-				{
-					"code": "SUPERVISOR_ADMIN"
 				}
 			]
 		},
@@ -4237,6 +4124,30 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
+			"code": "SUP_APSADX",
+			"title": "title_760c2401-5feb-4d81-ae65-cc6dc051010a",
+			"description": "description_760c2401-5feb-4d81-ae65-cc6dc051010a",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "APSADX",
+				"representation": "APSADX"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
 			"code": "STD_ADXD",
 			"title": "title_f4148c17-992c-4ae8-bfa3-da3b17ebfc32",
 			"description": "description_f4148c17-992c-4ae8-bfa3-da3b17ebfc32",
@@ -6544,6 +6455,10 @@
 							"items": [
 								{
 									"code": "STD_PSADX",
+									"$variantType": "menuItem"
+								},
+								{
+									"code": "SUP_APSADX",
 									"$variantType": "menuItem"
 								},
 								{
@@ -44870,6 +44785,30 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "SUP_AVOLUME",
+			"title": "title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d",
+			"description": "description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": false,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AVOLUME",
+				"representation": "AVOLUME"
+			},
+			"module": null,
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_7d653a44-b7f4-4207-84e8-fc6aa82e7944",
 			"isFactory": true,
@@ -44885,6 +44824,10 @@
 				},
 				{
 					"code": "STD_SAIWRKPLN",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "SUP_AVOLUME",
 					"$variantType": "menuItem"
 				}
 			]
@@ -50676,9 +50619,6 @@
 					"code": "S_MOD_ADMIN"
 				},
 				{
-					"code": "S_MOD_SUPERVADMIN"
-				},
-				{
 					"code": "X3_ERP_GDEV"
 				},
 				{
@@ -50741,12 +50681,6 @@
 	"$localization": {
 		"de-de": {
 			"title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Syracuse Administration",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 Administration",
-			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Lizenzanzeige",
-			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche",
-			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche zur Dateiablage",
-			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
-			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Entwicklung",
 			"title_930688fe-1b23-4e6d-9ae1-5cd9eaf91e58": "Data Dictionary",
 			"title_535b7296-1106-4b19-85a5-418dc06e7186": "Tabellen",
@@ -50918,6 +50852,8 @@
 			"title_873bc631-c0cb-4dc1-983e-96604821cba7": "Monitorings",
 			"title_f90cc350-f276-4bd1-ae8d-dd127435b393": "Benutzer",
 			"description_f90cc350-f276-4bd1-ae8d-dd127435b393": "PSADX",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
 			"title_f4148c17-992c-4ae8-bfa3-da3b17ebfc32": "Services",
 			"description_f4148c17-992c-4ae8-bfa3-da3b17ebfc32": "ADXD",
 			"title_25bf132d-5705-4ec5-b1e3-92b5df926048": "Datenbank",
@@ -50933,6 +50869,7 @@
 			"description_5977c7cb-a493-4a41-8c4c-9d5492940fae": "SQLDICO",
 			"title_3391eadd-9d4d-471a-8ac9-6c76346353a0": "Memo-Analyse",
 			"description_3391eadd-9d4d-471a-8ac9-6c76346353a0": "ANAMEMO",
+			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Lizenzanzeige",
 			"title_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "Quellenprüfung",
 			"description_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "AVERIFSRC",
 			"title_716873e1-c2e0-4536-9912-1944868bf1f3": "Dictionary",
@@ -53654,6 +53591,8 @@
 			"description_94a0c911-7fa0-495b-a4bd-be4b8001af50": "AHISTO",
 			"title_3dad5a08-5019-4429-be0b-c81bc3d4a7d5": "Workflow-Überwachung",
 			"description_3dad5a08-5019-4429-be0b-c81bc3d4a7d5": "SAIWRKPLN",
+			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche",
+			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche zur Dateiablage",
 			"title_e230e674-951b-4d5b-a1d6-d39f9090809c": "Migrationen",
 			"title_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "Migrationsprozess",
 			"description_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "GESAM3",
@@ -57338,13 +57277,6 @@
 			"title_22cbcdd6-7b7d-44e1-857e-21affe65c767": "Classic client",
 			"title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
 			"title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
-			"title_cad14e74-6787-4a10-8599-25e040f0bf81": "X3 Administration",
-			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
-			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
-			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
-			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
-			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Development",
 			"title_930688fe-1b23-4e6d-9ae1-5cd9eaf91e58": "Data and parameters",
 			"title_535b7296-1106-4b19-85a5-418dc06e7186": "Tables",
@@ -57516,6 +57448,8 @@
 			"title_873bc631-c0cb-4dc1-983e-96604821cba7": "System monitor",
 			"title_f90cc350-f276-4bd1-ae8d-dd127435b393": "Users",
 			"description_f90cc350-f276-4bd1-ae8d-dd127435b393": "PSADX",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
 			"title_f4148c17-992c-4ae8-bfa3-da3b17ebfc32": "Services",
 			"description_f4148c17-992c-4ae8-bfa3-da3b17ebfc32": "ADXD",
 			"title_25bf132d-5705-4ec5-b1e3-92b5df926048": "Database",
@@ -57531,6 +57465,7 @@
 			"description_5977c7cb-a493-4a41-8c4c-9d5492940fae": "SQLDICO",
 			"title_3391eadd-9d4d-471a-8ac9-6c76346353a0": "Analyse memos",
 			"description_3391eadd-9d4d-471a-8ac9-6c76346353a0": "ANAMEMO",
+			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
 			"title_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "Source verification",
 			"description_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "AVERIFSRC",
 			"title_716873e1-c2e0-4536-9912-1944868bf1f3": "Dictionary",
@@ -60242,6 +60177,8 @@
 			"description_94a0c911-7fa0-495b-a4bd-be4b8001af50": "AHISTO",
 			"title_3dad5a08-5019-4429-be0b-c81bc3d4a7d5": "Workflow monitor",
 			"description_3dad5a08-5019-4429-be0b-c81bc3d4a7d5": "SAIWRKPLN",
+			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
+			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"title_e230e674-951b-4d5b-a1d6-d39f9090809c": "Migrations",
 			"title_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "Migration process",
 			"description_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "GESAM3",
@@ -63956,14 +63893,6 @@
 			"description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion de l'outil de recherche",
 			"title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions Syracuse",
 			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions Syracuse",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "Administration X3",
-			"title_cad14e74-6787-4a10-8599-25e040f0bf81": "Administration X3",
-			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
-			"description_c76b5d2a-fe99-482d-8933-574e9e3869cc": "AVISULIC",
-			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaces de stockage X3",
-			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaces de stockage X3",
-			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
-			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Développement",
 			"title_930688fe-1b23-4e6d-9ae1-5cd9eaf91e58": "Dictionnaire données",
 			"title_535b7296-1106-4b19-85a5-418dc06e7186": "Tables",
@@ -64134,6 +64063,8 @@
 			"title_873bc631-c0cb-4dc1-983e-96604821cba7": "Surveillances",
 			"title_f90cc350-f276-4bd1-ae8d-dd127435b393": "Utilisateurs",
 			"description_f90cc350-f276-4bd1-ae8d-dd127435b393": "PSADX",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
 			"title_f4148c17-992c-4ae8-bfa3-da3b17ebfc32": "Services",
 			"description_f4148c17-992c-4ae8-bfa3-da3b17ebfc32": "ADXD",
 			"title_25bf132d-5705-4ec5-b1e3-92b5df926048": "Base de données",
@@ -64149,6 +64080,8 @@
 			"description_5977c7cb-a493-4a41-8c4c-9d5492940fae": "SQLDICO",
 			"title_3391eadd-9d4d-471a-8ac9-6c76346353a0": "Analyse mémos",
 			"description_3391eadd-9d4d-471a-8ac9-6c76346353a0": "ANAMEMO",
+			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualisation licence",
+			"description_c76b5d2a-fe99-482d-8933-574e9e3869cc": "AVISULIC",
 			"title_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "Vérification des sources",
 			"description_ece475fb-23cd-40a9-a5ac-f344b3b3c5b0": "AVERIFSRC",
 			"title_716873e1-c2e0-4536-9912-1944868bf1f3": "Dictionnaire",
@@ -66873,6 +66806,8 @@
 			"description_94a0c911-7fa0-495b-a4bd-be4b8001af50": "AHISTO",
 			"title_3dad5a08-5019-4429-be0b-c81bc3d4a7d5": "Moniteur Workflow",
 			"description_3dad5a08-5019-4429-be0b-c81bc3d4a7d5": "SAIWRKPLN",
+			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaces de stockage X3",
+			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaces de stockage X3",
 			"title_e230e674-951b-4d5b-a1d6-d39f9090809c": "Migrations",
 			"title_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "Procédures de migration",
 			"description_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "GESAM3",
