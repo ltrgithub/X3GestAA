@@ -21,6 +21,13 @@ try {
 	}
 })();
 
+(function() {
+    if (config.look) {
+        var look = require('look');
+        look.start(3000, '127.0.0.1');
+    }
+})();
+
 // make 2-digit number
 function _ext(number) {98483
 	if (number < 10) return "0" + number;
