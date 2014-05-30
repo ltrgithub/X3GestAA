@@ -29,7 +29,7 @@ try {
 })();
 
 // make 2-digit number
-function _ext(number) {98483
+function _ext(number) {
 	if (number < 10) return "0" + number;
 	return number;
 }
