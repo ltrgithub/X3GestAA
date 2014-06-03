@@ -40,6 +40,7 @@ namespace WordAddIn
         public void ActivationsForReportTemplate()
         {
             Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
+            Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked = true;
             Globals.WordAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
         }
