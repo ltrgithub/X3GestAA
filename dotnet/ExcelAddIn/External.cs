@@ -63,6 +63,9 @@ namespace ExcelAddIn
         }
         public bool UpdateTable(String name, String simplePrototype, String data, int startLine)
         {
+            if (tableHelpers == null || tableHelpers.ContainsKey(name) == false)
+                return false;
+
             var dataArray = (object[])jsSerializer.DeserializeObject(data);
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
 

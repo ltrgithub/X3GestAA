@@ -60,20 +60,24 @@ namespace PowerPointAddIn
         public bool connectToServer(PptCustomData customData, string extraServerUrl = null)
         {
             string serverUrl = extraServerUrl;
-            if (serverUrl == null || "".Equals(serverUrl))
+            if (String.IsNullOrEmpty(serverUrl))
             {
                 serverUrl = customData.getServerUrl();
-            }
-            if (serverUrl == null || "".Equals(serverUrl))
-            {
-                ServerSettings settings = new ServerSettings(serverUrl);
-                if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (String.IsNullOrEmpty(serverUrl))
                 {
-                    serverUrl = settings.getServerUrl();
+                    serverUrl = getServerUrl();
+                    if (String.IsNullOrEmpty(serverUrl))
+                    {
+                        ServerSettings settings = new ServerSettings(serverUrl);
+                        if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            serverUrl = settings.getServerUrl();
+                            if (String.IsNullOrEmpty(serverUrl))
+                                return false;
+                        }
+                    }
                 }
             }
-            if (serverUrl == null || "".Equals(serverUrl))
-                return false;
             customData.setServerUrl(serverUrl);
             return connectToServer(serverUrl);
         }
