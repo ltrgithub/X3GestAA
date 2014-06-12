@@ -213,11 +213,12 @@ public class CertTool {
 		}
 	}
 
-	/** return the relative path of the certificate */
+	/** return the relative path of the public key file */
 	static private String getPublicKeyFileName(String name) throws CertToolException {
 		if (name == null) {
 			throw new CertToolException("No public key file for CA");
 		} else {
+			name = name.replace('@', '_').replace('.', '_').replace('$', '_');
 			return OUTPUT + name + ".pem";
 		}
 	}
