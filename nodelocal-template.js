@@ -54,6 +54,24 @@ exports.config = {
 		//		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
 		//		tracer: console.log,
 		//		profiler: console.log
+		// protocol tracing
+		protocol: {
+			// trace: console.log,
+		},
+		// session tracing
+		sessions: {
+			// trace: console.log,
+		},
+		// enable perfmon logging
+		perfmon: {
+			// activate: true,
+			// more details
+			// detail: true
+		},
+		// cache tracing
+		cache:{
+			// trace: console.log,
+		}
 	},
 
 	help: {
