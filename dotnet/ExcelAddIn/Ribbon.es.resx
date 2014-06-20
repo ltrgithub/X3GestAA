@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonConnect.Description" xml:space="preserve">
+    <value>Conexión a Sage ERP X3 Server</value>
+  </data>
+  <data name="buttonConnect.Label" xml:space="preserve">
+    <value>Conectarse</value>
+  </data>
+  <data name="&gt;&gt;buttonConnect.Name" xml:space="preserve">
+    <value>buttonConnect</value>
+  </data>
+  <data name="&gt;&gt;buttonConnect.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonConnect.Parent" xml:space="preserve">
+    <value>dataGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonConnect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonServer.Label" xml:space="preserve">
+    <value>Ajustes servidor</value>
+  </data>
+  <data name="&gt;&gt;buttonServer.Name" xml:space="preserve">
+    <value>buttonServer</value>
+  </data>
+  <data name="&gt;&gt;buttonServer.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonServer.Parent" xml:space="preserve">
+    <value>dataGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonServer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dataGroup.Label" xml:space="preserve">
+    <value>Datos</value>
+  </data>
+  <data name="&gt;&gt;dataGroup.Name" xml:space="preserve">
+    <value>dataGroup</value>
+  </data>
+  <data name="&gt;&gt;dataGroup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;dataGroup.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;dataGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonSettings.Label" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="&gt;&gt;buttonSettings.Name" xml:space="preserve">
+    <value>buttonSettings</value>
+  </data>
+  <data name="&gt;&gt;buttonSettings.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonSettings.Parent" xml:space="preserve">
+    <value>settingsGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="settingsGroup.Label" xml:space="preserve">
+    <value>Sage ERP X3</value>
+  </data>
+  <data name="&gt;&gt;settingsGroup.Name" xml:space="preserve">
+    <value>settingsGroup</value>
+  </data>
+  <data name="&gt;&gt;settingsGroup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;settingsGroup.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;settingsGroup.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonSave.Label" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.Name" xml:space="preserve">
+    <value>buttonSave</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.Parent" xml:space="preserve">
+    <value>saveDocumentGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonSaveAs.Label" xml:space="preserve">
+    <value>Guardar como ...</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveAs.Name" xml:space="preserve">
+    <value>buttonSaveAs</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveAs.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveAs.Parent" xml:space="preserve">
+    <value>saveDocumentGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveAs.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="saveDocumentGroup.Label" xml:space="preserve">
+    <value>Guardar el documento</value>
+  </data>
+  <data name="&gt;&gt;saveDocumentGroup.Name" xml:space="preserve">
+    <value>saveDocumentGroup</value>
+  </data>
+  <data name="&gt;&gt;saveDocumentGroup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;saveDocumentGroup.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;saveDocumentGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonRefreshReport.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonRefreshReport.Label" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshReport.Name" xml:space="preserve">
+    <value>buttonRefreshReport</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshReport.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshReport.Parent" xml:space="preserve">
+    <value>reportingGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonPreview.Label" xml:space="preserve">
+    <value>Vista previa</value>
+  </data>
+  <data name="&gt;&gt;buttonPreview.Name" xml:space="preserve">
+    <value>buttonPreview</value>
+  </data>
+  <data name="&gt;&gt;buttonPreview.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonPreview.Parent" xml:space="preserve">
+    <value>reportingGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonPreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxShowTemplatePane.Label" xml:space="preserve">
+    <value>Visualizar los campos</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowTemplatePane.Name" xml:space="preserve">
+    <value>checkBoxShowTemplatePane</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowTemplatePane.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowTemplatePane.Parent" xml:space="preserve">
+    <value>reportingGroup</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowTemplatePane.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="calculateSumButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="calculateSumButton.Label" xml:space="preserve">
+    <value>Calcular la suma</value>
+  </data>
+  <data name="calculateSumButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;calculateSumButton.Name" xml:space="preserve">
+    <value>calculateSumButton</value>
+  </data>
+  <data name="&gt;&gt;calculateSumButton.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;calculateSumButton.Parent" xml:space="preserve">
+    <value>reportingGroup</value>
+  </data>
+  <data name="&gt;&gt;calculateSumButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="reportingGroup.Label" xml:space="preserve">
+    <value>Reporting</value>
+  </data>
+  <data name="&gt;&gt;reportingGroup.Name" xml:space="preserve">
+    <value>reportingGroup</value>
+  </data>
+  <data name="&gt;&gt;reportingGroup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;reportingGroup.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;reportingGroup.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dropDownLocale.Label" xml:space="preserve">
+    <value>Parámetros regionales</value>
+  </data>
+  <data name="dropDownLocale.SizeString" xml:space="preserve">
+    <value>Español (España) es-ES</value>
+  </data>
+  <data name="&gt;&gt;dropDownLocale.Name" xml:space="preserve">
+    <value>dropDownLocale</value>
+  </data>
+  <data name="&gt;&gt;dropDownLocale.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.DropDownView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;dropDownLocale.Parent" xml:space="preserve">
+    <value>localeGroup</value>
+  </data>
+  <data name="&gt;&gt;dropDownLocale.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="localeGroup.Label" xml:space="preserve">
+    <value>Parámetros regionales</value>
+  </data>
+  <data name="&gt;&gt;localeGroup.Name" xml:space="preserve">
+    <value>localeGroup</value>
+  </data>
+  <data name="&gt;&gt;localeGroup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;localeGroup.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;localeGroup.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="actionPanelCheckBox.Label" xml:space="preserve">
+    <value>Visualizar el panel acciones</value>
+  </data>
+  <data name="&gt;&gt;actionPanelCheckBox.Name" xml:space="preserve">
+    <value>actionPanelCheckBox</value>
+  </data>
+  <data name="&gt;&gt;actionPanelCheckBox.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;actionPanelCheckBox.Parent" xml:space="preserve">
+    <value>groupSageX3</value>
+  </data>
+  <data name="&gt;&gt;actionPanelCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ribbonDropDownItemImpl1.Label" xml:space="preserve">
+    <value>Desplazar las celdas hacia abajo</value>
+  </data>
+  <data name="ribbonDropDownItemImpl2.Label" xml:space="preserve">
+    <value>Insertar líneas</value>
+  </data>
+  <data name="ribbonDropDownItemImpl3.Label" xml:space="preserve">
+    <value>No hacer nada</value>
+  </data>
+  <data name="dropDownInsert.Label" xml:space="preserve">
+    <value>Ampliar la tabla</value>
+  </data>
+  <data name="&gt;&gt;dropDownInsert.Name" xml:space="preserve">
+    <value>dropDownInsert</value>
+  </data>
+  <data name="&gt;&gt;dropDownInsert.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.DropDownView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;dropDownInsert.Parent" xml:space="preserve">
+    <value>groupSageX3</value>
+  </data>
+  <data name="&gt;&gt;dropDownInsert.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ribbonDropDownItemImpl4.Label" xml:space="preserve">
+    <value>Borrar las celdas</value>
+  </data>
+  <data name="ribbonDropDownItemImpl5.Label" xml:space="preserve">
+    <value>Borrar las líneas</value>
+  </data>
+  <data name="ribbonDropDownItemImpl6.Label" xml:space="preserve">
+    <value>No hacer nada</value>
+  </data>
+  <data name="dropDownDelete.Label" xml:space="preserve">
+    <value>Reducir la tabla</value>
+  </data>
+  <data name="&gt;&gt;dropDownDelete.Name" xml:space="preserve">
+    <value>dropDownDelete</value>
+  </data>
+  <data name="&gt;&gt;dropDownDelete.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.DropDownView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;dropDownDelete.Parent" xml:space="preserve">
+    <value>groupSageX3</value>
+  </data>
+  <data name="&gt;&gt;dropDownDelete.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupSageX3.Label" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="&gt;&gt;groupSageX3.Name" xml:space="preserve">
+    <value>groupSageX3</value>
+  </data>
+  <data name="&gt;&gt;groupSageX3.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupSageX3.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;groupSageX3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="installedVersion.Label" xml:space="preserve">
+    <value>0.0.0</value>
+  </data>
+  <data name="&gt;&gt;installedVersion.Name" xml:space="preserve">
+    <value>installedVersion</value>
+  </data>
+  <data name="&gt;&gt;installedVersion.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.LabelView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;installedVersion.Parent" xml:space="preserve">
+    <value>groupVersion</value>
+  </data>
+  <data name="&gt;&gt;installedVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonUpdate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonUpdate.Label" xml:space="preserve">
+    <value>Actualizar el Add-in</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.Name" xml:space="preserve">
+    <value>buttonUpdate</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.Parent" xml:space="preserve">
+    <value>groupVersion</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;version.Name" xml:space="preserve">
+    <value>version</value>
+  </data>
+  <data name="&gt;&gt;version.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.LabelView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;version.Parent" xml:space="preserve">
+    <value>groupVersion</value>
+  </data>
+  <data name="&gt;&gt;version.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupVersion.Label" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="&gt;&gt;groupVersion.Name" xml:space="preserve">
+    <value>groupVersion</value>
+  </data>
+  <data name="&gt;&gt;groupVersion.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupVersion.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;groupVersion.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonCleanup.Label" xml:space="preserve">
+    <value>Limpiar los metadatos del modelo</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanup.Name" xml:space="preserve">
+    <value>buttonCleanup</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanup.Parent" xml:space="preserve">
+    <value>cleanupTemplateGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonCleanup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cleanupTemplateGroup.Label" xml:space="preserve">
+    <value>Avanzado</value>
+  </data>
+  <data name="cleanupTemplateGroup.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cleanupTemplateGroup.Name" xml:space="preserve">
+    <value>cleanupTemplateGroup</value>
+  </data>
+  <data name="&gt;&gt;cleanupTemplateGroup.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;cleanupTemplateGroup.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;cleanupTemplateGroup.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="syracuseTab.Label" xml:space="preserve">
+    <value>Sage ERP X3</value>
+  </data>
+  <data name="&gt;&gt;syracuseTab.Name" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;syracuseTab.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;Ribbon.OfficeMenu.Name" xml:space="preserve">
+    <value>Ribbon.OfficeMenu</value>
+  </data>
+  <data name="&gt;&gt;Ribbon.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;Ribbon.OfficeMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Ribbon.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonRefreshAll.Label" xml:space="preserve">
+    <value>Actualizar todo</value>
+  </data>
+  <data name="buttonPublish.Label" xml:space="preserve">
+    <value>Guardar en X3</value>
+  </data>
+  <data name="ribbonDropDownItem1.Label" xml:space="preserve">
+    <value>Desplazar las celdas hacia abajo</value>
+  </data>
+  <data name="ribbonDropDownItem2.Label" xml:space="preserve">
+    <value>Insertar líneas</value>
+  </data>
+  <data name="ribbonDropDownItem3.Label" xml:space="preserve">
+    <value>No hacer nada</value>
+  </data>
+  <data name="ribbonDropDownItem5.Label" xml:space="preserve">
+    <value>Borrar las líneas</value>
+  </data>
+  <data name="ribbonDropDownItem4.Label" xml:space="preserve">
+    <value>Borrar las celdas</value>
+  </data>
+  <data name="ribbonDropDownItem6.Label" xml:space="preserve">
+    <value>No hacer nada</value>
+  </data>
+</root>
