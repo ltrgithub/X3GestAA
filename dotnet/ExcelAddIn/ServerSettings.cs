@@ -44,7 +44,7 @@ namespace ExcelAddIn
 
         internal string GetPreferenceFilePath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Word.X3.settings";
+            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Excel.X3.settings";
         }
 
         internal string ReadPreferences()
