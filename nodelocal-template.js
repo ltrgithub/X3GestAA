@@ -37,6 +37,7 @@ exports.config = {
 	*/
 	session: {
 		timeout: 20, // minutes
+		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
 		checkInterval: 60, // secondes
 		//		ignoreStoreSession: true,
 		"auth": "basic"
