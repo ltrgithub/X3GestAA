@@ -358,6 +358,34 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
+			"code": "S_ABOUT",
+			"title": "title_8543b70c-2dff-4e77-99e2-d4df1f214f09",
+			"description": "description_8543b70c-2dff-4e77-99e2-d4df1f214f09",
+			"linkType": "$representation",
+			"icon": "",
+			"applicationMenu": false,
+			"facet": "$details",
+			"keyParameter": "ALL",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "abouts",
+				"representation": "about"
+			},
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
 			"code": "S_APPLICATIONS",
 			"title": "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
 			"description": "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
@@ -991,6 +1019,10 @@
 				"contract": "collaboration"
 			},
 			"items": [
+				{
+					"code": "S_ABOUT",
+					"$variantType": "menuItem"
+				},
 				{
 					"code": "S_APPLICATIONS",
 					"$variantType": "menuItem"
@@ -1729,6 +1761,25 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_OFFICE_ADDINS",
+			"title": "title_d90e3b9a-8323-4b95-b086-0175ef798592",
+			"linkType": "$external",
+			"applicationMenu": false,
+			"facet": "$query",
+			"externalUrl": "/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": null,
+			"endpoint": null,
+			"representationRef": null,
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874",
 			"isFactory": false,
@@ -1768,6 +1819,10 @@
 				},
 				{
 					"code": "S_PATCH_INTEG",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_OFFICE_ADDINS",
 					"$variantType": "menuItem"
 				}
 			]
@@ -58862,6 +58917,7 @@
 			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard",
 			"title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
 			"title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administration",
+			"title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Version informations",
 			"title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
 			"description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications management interface",
 			"title_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Global settings",
@@ -58946,6 +59002,7 @@
 			"description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions Management",
 			"title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Menu profile import",
 			"title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Patch integration",
+			"title_d90e3b9a-8323-4b95-b086-0175ef798592": "Install addins for Office",
 			"title_22cbcdd6-7b7d-44e1-857e-21affe65c767": "Classic client",
 			"title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
 			"title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
@@ -65497,6 +65554,7 @@
 			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration",
 			"title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
 			"title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administration",
+			"title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Informations version",
 			"title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
 			"description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Gestion des applications",
 			"title_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Paramètres",
