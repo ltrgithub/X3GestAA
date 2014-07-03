@@ -1,0 +1,435 @@
+{
+    "$type": "application/json",
+    "$title": "{@W_ZCC51}",
+    "$generatorVersion": "1",
+    "$generatorBuild": "3",
+    "$x3Facet": "fullscreen",
+    "$properties": {
+      "AA1": {
+        "$type": "application/x-string",
+        "$X3Name": "ZC11_NOM",
+        "$title": "{@F_ZC11_NOM}",
+        "$X3Fmt": "K:20X",
+        "$maxLength": 20,
+        "$groupName": "A"
+      },
+      "AA2": {
+        "$type": "application/x-string",
+        "$X3Name": "ZC11_PRENOM",
+        "$title": "{@F_ZC11_PRENOM}",
+        "$X3Fmt": "K:20X",
+        "$maxLength": 20,
+        "$groupName": "A"
+      },
+      "AB1": {
+        "$type": "image",
+        "$url": "",
+        "$X3Name": "ZC11_PHOTO",
+        "$title": "",
+        "$isReadOnly": true,
+        "$X3Fmt": "KI3P{-1,-1,-1,48}:9X",
+        "$maxByteLength": 524286,
+        "$groupName": "B"
+      },
+      "BA": {
+        "$type": "application/x-array",
+        "$X3Name": "ZCC123_ARRAY_NBDAY",
+        "$capabilities": "sort,search",
+        "$links": {
+          "$lazyload": {}
+        },
+        "$item": {
+          "$links": {
+            "$lazyload": {}
+          },
+          "$properties": {
+            "BA2": {
+              "$type": "application/x-date",
+              "$X3Name": "ZCC123_DATEC",
+              "$title": "{@F_ZCC123_DATEC}",
+              "$capabilities": "sort",
+              "$isReadOnly": true,
+              "$maxLength": 8,
+              "$groupName": "A"
+            },
+            "BA3": {
+              "$type": "application/x-string",
+              "$X3Name": "ZCC123_TECDAT",
+              "$isExcluded": true,
+              "$title": "{@F_ZCC123_TECDAT}",
+              "$capabilities": "sort",
+              "$X3Fmt": "KiP:15X",
+              "$maxLength": 15,
+              "$groupName": "A"
+            },
+            "BA4": {
+              "$type": "application/x-integer",
+              "$X3Name": "ZCC123_TYPDAY",
+              "$title": "{@F_ZCC123_TYPDAY}",
+              "$capabilities": "sort",
+              "$isReadOnly": true,
+              "$X3Fmt": "NP:4#",
+              "$maxLength": 4,
+              "$groupName": "A"
+            },
+            "BA5": {
+              "$type": "application/x-integer",
+              "$X3Name": "ZCC123_PLAG1",
+              "$title": "{@F_ZCC123_PLAG1}",
+              "$capabilities": "sort",
+              "$X3Fmt": "N:4#",
+              "$maxLength": 4,
+              "$groupName": "A"
+            },
+            "BA6": {
+              "$type": "application/x-integer",
+              "$X3Name": "ZCC123_PLAG2",
+              "$title": "{@F_ZCC123_PLAG2}",
+              "$capabilities": "sort",
+              "$X3Fmt": "N:4#",
+              "$maxLength": 4,
+              "$groupName": "A"
+            }
+          }
+        },
+        "$decorator": {
+          "$stereotype": "calendar",
+          "$style": "year",
+          "$events": [
+            "{@M_9837_1}",
+            "{@M_9837_2}",
+            "{@M_9837_3}",
+            "{@M_9837_4}",
+            "{@M_9837_5}"
+          ],
+          "$bindings": {
+            "TECDAT": "BA3",
+            "TYPDAY": "BA4",
+            "SLOT": [
+              "BA5",
+              "BA6"
+            ]
+          }
+        }
+      },
+      "BC1": {
+        "$type": "application/x-decimal",
+        "$X3Name": "ZCC123_TOTTYP1",
+        "$title": "",
+        "$isReadOnly": true,
+        "$X3Fmt": "NP:3.2#",
+        "$maxLength": 6,
+        "$groupName": "C"
+      },
+      "BC2": {
+        "$type": "application/x-decimal",
+        "$X3Name": "ZCC123_TOTTYP2",
+        "$title": "",
+        "$isReadOnly": true,
+        "$X3Fmt": "NP:3.2#",
+        "$maxLength": 6,
+        "$groupName": "C"
+      },
+      "BC3": {
+        "$type": "application/x-decimal",
+        "$X3Name": "ZCC123_TOTTYP3",
+        "$title": "",
+        "$isReadOnly": true,
+        "$X3Fmt": "NP:3.2#",
+        "$maxLength": 6,
+        "$groupName": "C"
+      },
+      "BC4": {
+        "$type": "application/x-decimal",
+        "$X3Name": "ZCC123_TOTTYP4",
+        "$title": "",
+        "$isReadOnly": true,
+        "$X3Fmt": "NP:3.2#",
+        "$maxLength": 6,
+        "$groupName": "C"
+      },
+      "BC5": {
+        "$type": "application/x-decimal",
+        "$X3Name": "ZCC123_TOTTYP5",
+        "$title": "",
+        "$isReadOnly": true,
+        "$X3Fmt": "NP:3.2#",
+        "$maxLength": 6,
+        "$groupName": "C"
+      }
+    },
+    "$links": {
+      "aA1": {
+        "$title": "{@L_2053}",
+        "$act": "2053"
+      },
+      "aA2": {
+        "$title": "{@L_2845}",
+        "$act": "2845"
+      }
+    },
+    "$actions": {},
+    "$menus": {
+      "$layout": {
+        "$items": [
+          {
+            "$style": "main",
+            "$layout": {
+              "$items": [
+                {
+                  "$bind": "aA1"
+                },
+                {
+                  "$bind": "aA2",
+                  "$style": "end"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "$article": {
+      "$layout": {
+        "$layoutType": "stack",
+        "$items": [
+          {
+            "$category": "section",
+            "$style": "header",
+            "$XID": "A",
+            "$layout": {
+              "$layoutType": "stack",
+              "$items": [
+                {
+                  "$layoutType": "row",
+                  "$items": [
+                    {
+                      "$title": "",
+                      "$category": "block",
+                      "$layout": {
+                        "$items": [
+                          {
+                            "$layoutType": "row",
+                            "$items": [
+                              {
+                                "$isEditMode": true,
+                                "$bind": "AA1"
+                              }
+                            ]
+                          },
+                          {
+                            "$layoutType": "row",
+                            "$items": [
+                              {
+                                "$isEditMode": true,
+                                "$bind": "AA2"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "$title": "",
+                      "$category": "block",
+                      "$layout": {
+                        "$items": [
+                          {
+                            "$layoutType": "row",
+                            "$items": [
+                              {
+                                "$isReadOnly": true,
+                                "$rows": 6,
+                                "$bind": "AB1"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "$layoutType": "tabs",
+            "$items": [
+              {
+                "$title": "{@S_ZCC123}",
+                "$category": "section",
+                "$XID": "cB",
+                "$layout": {
+                  "$layoutType": "stack",
+                  "$items": [
+                    {
+                      "$layoutType": "row",
+                      "$items": [
+                        {
+                          "$title": "",
+                          "$category": "block",
+                          "$layout": {
+                            "$items": [
+                              {
+                                "$isEditMode": true,
+                                "$selectMode": "row",
+                                "$bind": "BA",
+                                "$graphMode": "both",
+                                "$graphPosition": "front",
+                                "$itemsPerPage": "20",
+                                "$isRowIndexVisible": true,
+                                "$selectByRowIndex": true,
+                                "$layout": {
+                                  "$items": [
+                                    {
+                                      "$bind": "BA2"
+                                    },
+                                    {
+                                      "$bind": "BA4"
+                                    },
+                                    {
+                                      "$bind": "BA5"
+                                    },
+                                    {
+                                      "$bind": "BA6"
+                                    }
+                                  ]
+                                },
+                                "$cards": {
+                                  "$position": "popup",
+                                  "$layout": {
+                                    "$items": [
+                                      {
+                                        "$layoutType": "row",
+                                        "$items": [
+                                          {
+                                            "$bind": "BA2"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "$layoutType": "row",
+                                        "$items": [
+                                          {
+                                            "$bind": "BA4"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "$layoutType": "row",
+                                        "$items": [
+                                          {
+                                            "$bind": "BA5"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "$layoutType": "row",
+                                        "$items": [
+                                          {
+                                            "$bind": "BA6"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "$layoutType": "row",
+                      "$items": [
+                        {
+                          "$title": "{@B_ZCC123_15}",
+                          "$category": "block",
+                          "$layout": {
+                            "$items": [
+                              {
+                                "$layoutType": "row",
+                                "$items": [
+                                  {
+                                    "$isReadOnly": true,
+                                    "$bind": "BC1"
+                                  },
+                                  {
+                                    "$isReadOnly": true,
+                                    "$bind": "BC2"
+                                  },
+                                  {
+                                    "$isReadOnly": true,
+                                    "$bind": "BC3"
+                                  }
+                                ]
+                              },
+                              {
+                                "$layoutType": "row",
+                                "$items": [
+                                  {
+                                    "$isReadOnly": true,
+                                    "$bind": "BC4"
+                                  },
+                                  {
+                                    "$isReadOnly": true,
+                                    "$bind": "BC5"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "$localization": {
+      "@F_ZC11_NOM": "Name",
+      "@F_ZC11_PRENOM": "First name",
+      "@F_ZCC123_DATEC": "Date",
+      "@F_ZCC123_TECDAT": "Date technique",
+      "@F_ZCC123_TYPDAY": "Day type",
+      "@F_ZCC123_PLAG1": "Plage 1",
+      "@F_ZCC123_PLAG2": "Plage 2",
+      "@M_9837_1": "Work",
+      "@M_9837_2": "Paid holidays",
+      "@M_9837_3": "Recuperation time",
+      "@M_9837_4": "Sickness",
+      "@M_9837_5": "Training",
+      "@B_ZCC123_15": "Number of days",
+      "@W_ZCC51": "Planning 1",
+      "@L_2053": "OK",
+      "@L_2845": "Quitter la fonction",
+      "@S_ZCC123": "Planning"
+    },
+    "$hackLocalization": {
+      "dummy_A": "dummy",
+      "@F_ZC11_NOM": "@S-ZC11-55",
+      "@F_ZC11_PRENOM": "@S-ZC11-1825",
+      "dummy_B": "dummy",
+      "@F_ZCC123_DATEC": "@S-ZCC123-212",
+      "@F_ZCC123_TECDAT": "@S-ZCC123-24544",
+      "@F_ZCC123_TYPDAY": "@S-ZCC123-23782",
+      "@F_ZCC123_PLAG1": "@S-ZCC123-24540",
+      "@F_ZCC123_PLAG2": "@S-ZCC123-24541",
+      "@M_9837_1": "@S-ZCC123--9837001",
+      "@M_9837_2": "@S-ZCC123--9837002",
+      "@M_9837_3": "@S-ZCC123--9837003",
+      "@M_9837_4": "@S-ZCC123--9837004",
+      "@M_9837_5": "@S-ZCC123--9837005",
+      "@B_ZCC123_15": "@S-ZCC123-14897",
+      "@W_ZCC51": "@W-ZCC51-23790",
+      "@L_2053": "@W-ZCC51--100157",
+      "@L_2845": "@W-ZCC51--9801040",
+      "@S_ZCC123": "@W-ZCC51-23781"
+    },
+    "$baseHelpUrl": "/help/en-US/x3/erp/SUPERV/{$category}/{$keyword}"
+  }
