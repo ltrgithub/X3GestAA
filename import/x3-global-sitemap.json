@@ -1010,6 +1010,64 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_HRM_SITE",
+			"title": "title_72454731-49a9-4d6b-ab74-bd189b0bde20",
+			"description": "description_72454731-49a9-4d6b-ab74-bd189b0bde20",
+			"linkType": "$representation",
+			"icon": "",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": {
+				"dataset": "syracuse"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "hrmSites",
+				"representation": "hrmSite"
+			},
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "S_HRM_SERVER",
+			"title": "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c",
+			"description": "description_f0cd2a5c-3c57-4695-830f-1434970e3e4c",
+			"linkType": "$representation",
+			"icon": "",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": {
+				"dataset": "syracuse"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "hrmServers",
+				"representation": "hrmServer"
+			},
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_1a147185-cb29-424a-abc1-8b271c3bcdee",
 			"isFactory": true,
@@ -1121,6 +1179,14 @@
 				},
 				{
 					"code": "S_X3_SESSION_CFG",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_HRM_SITE",
+					"$variantType": "menuItem"
+				},
+				{
+					"code": "S_HRM_SERVER",
 					"$variantType": "menuItem"
 				}
 			]
@@ -52333,6 +52399,32 @@
 			]
 		},
 		{
+			"$type": "menuBlock",
+			"title": "title_b4018244-2b61-49fd-a892-c5012f10e662",
+			"isFactory": true,
+			"code": "STD_X3_HRM_SITE",
+			"application": {
+				"application": "x3",
+				"contract": "hrm"
+			},
+			"items": []
+		},
+		{
+			"$type": "menuModule",
+			"title": "title_1548b05d-b8f5-4284-8d66-d9df5ee3d619",
+			"isFactory": true,
+			"code": "STD_X3_HRM_SITES",
+			"application": {
+				"application": "x3",
+				"contract": "hrm"
+			},
+			"submodules": [
+				{
+					"code": "STD_X3_HRM_SITE"
+				}
+			]
+		},
+		{
 			"$type": "navigationPage",
 			"title": "title_f9daedd5-fd98-4461-b309-2b9bf796360a",
 			"isFactory": false,
@@ -52397,6 +52489,9 @@
 				},
 				{
 					"code": "Viewpages"
+				},
+				{
+					"code": "STD_X3_HRM_SITES"
 				}
 			]
 		}
@@ -58965,6 +59060,10 @@
 			"title_61d7bb36-9698-4969-93bd-957b05ee8343": "Security profiles",
 			"description_61d7bb36-9698-4969-93bd-957b05ee8343": "Security profiles",
 			"title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "X3 session configuration",
+			"title_72454731-49a9-4d6b-ab74-bd189b0bde20": "HRM Sites",
+			"description_72454731-49a9-4d6b-ab74-bd189b0bde20": "HRM Sites",
+			"title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM Servers",
+			"description_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM Servers",
 			"title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Collaboration",
 			"title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Teams",
 			"description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Teams management",
@@ -62279,7 +62378,9 @@
 			"title_2bfd794e-a640-44e9-b038-cc07b720c2ea": "Technical sheet",
 			"description_2bfd794e-a640-44e9-b038-cc07b720c2ea": "QLYCRD",
 			"title_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "Responses",
-			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Packages"
+			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Packages",
+			"title_1548b05d-b8f5-4284-8d66-d9df5ee3d619": "HRM Sites",
+			"title_b4018244-2b61-49fd-a892-c5012f10e662": "Sites"
 		},
 		"es-es": {
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Desarrollo",
