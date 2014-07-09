@@ -420,6 +420,30 @@ namespace WordAddIn
                 }
                 setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog, null);
             }
+
+            // looking for fields with QR code
+            Range aRange;
+            foreach (Field aField in doc.Fields)
+            {
+                aRange = aField.Code;
+                if (aRange.Text.Contains("DISPLAYBARCODE"))
+                {
+                    var prop1 = Regex.Match(aRange.Text, "\"<[^\"]*>\"");
+                    string property = prop1.ToString().Replace("\"<" , "").Replace(">\"" , "");
+                    Dictionary<String, object> propData2 = null;
+
+                    WordReportingField field = null;
+                    try { field = fieldInfo[property]; }
+                    catch (Exception) { };
+
+                    if (entityData.ContainsKey(property))
+                    {
+                        propData2 = (Dictionary<String, object>)entityData[property];
+                        setBarcode(doc, aRange, propData2, property, entityData, field);
+                        aRange.Fields.Update();
+                    }
+                }
+            }
         }
 
         private static Dictionary<String, object> GetNonTabularNestedData(Dictionary<String, object> entityData, TagInfo tag)
@@ -804,7 +828,23 @@ namespace WordAddIn
             {
                 value = parseValue(entity, type, ti.display);
             }
+
             ctrl.Range.Text = value;
+        }
+
+        private static void setBarcode(Document doc, Range aRange, Dictionary<String, object> entity, string ti, Dictionary<String, object> allData, WordReportingField field)
+        {
+            string value = null;
+            string type = null;
+
+            value = parseValue(entity, type);
+            value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
+
+            try
+            {
+                aRange.Text = aRange.Text.Replace(ti, value);
+            }
+            catch (Exception) { }
         }
 
         private static void setContentControlClob(Document doc, ContentControl ctrl, Dictionary<string, object> entity, WordReportingField field)
