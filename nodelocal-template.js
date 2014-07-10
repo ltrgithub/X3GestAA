@@ -29,7 +29,9 @@ exports.config = {
 		enableTestRobot: false,
 		// optional: path to some stubs to use in development and tests, relative to index.js
 		// stubsPath = "stubs"
-		protectSettings: false // internal: true for some production servers to avoid import of initial data
+		protectSettings: false, // internal: true for some production servers to avoid import of initial data
+        // limit memory usage
+        memoryLimit: 500 // strategy to limit memory usage: limit is an indication; 0 means no limit
 	},
 	/*	integrationServer: {
 		port: 8125
