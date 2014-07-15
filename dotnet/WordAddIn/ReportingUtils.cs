@@ -842,7 +842,7 @@ namespace WordAddIn
 
             try
             {
-                aRange.Text = aRange.Text.Replace(ti, value);
+                aRange.Text = aRange.Text.Replace("<" + ti + ">", value);
             }
             catch (Exception) { }
         }
