@@ -301,6 +301,7 @@ namespace WordAddIn
             // TODO: Original file will be closed, this is wrong
             // find a way to save a copy of the current doc. w/o
             // closing and reopening.
+            // Word can't read an open file (locked)!
             Document doc = (customData != null) ? customData.getWordDoc() : null; // this.doc;
             if (doc == null)
             {
@@ -316,9 +317,19 @@ namespace WordAddIn
             // MailMerge-Query entfernen
             doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdNotAMergeDocument;
             // Datei schließen, codiert einlesen und wieder öffnen
-            String tempFileName = Path.GetTempFileName();
+            String tempFileName;
+            if (doc.Path != "")
+            {
+                tempFileName = doc.FullName;
+            }
+            else
+            {
+                tempFileName = Path.GetTempFileName();
+            }
             doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
 
+            Boolean formsDesign = doc.FormsDesign;  
+           
             Globals.WordAddIn.Application.ActiveWindow.Close();
 
             byte[] content = System.IO.File.ReadAllBytes(tempFileName);
@@ -326,6 +337,12 @@ namespace WordAddIn
             String base64string = Convert.ToBase64String(content);
 
             Globals.WordAddIn.Application.Documents.Open(tempFileName);
+            if (formsDesign)
+            {
+                doc = Globals.WordAddIn.getActiveDocument();
+                doc.ToggleFormsDesign();
+            }
+            Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
             return base64string;
         }
 
