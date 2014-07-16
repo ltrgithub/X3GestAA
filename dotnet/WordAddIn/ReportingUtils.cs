@@ -405,6 +405,7 @@ namespace WordAddIn
                 }
             }
 
+            doc.ActiveWindow.View.ShowFieldCodes = true;
             foreach (ContentControl ctrl in controlsList)
             {
                 TagInfo tag = TagInfo.create(ctrl);
@@ -420,30 +421,7 @@ namespace WordAddIn
                 }
                 setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog, null);
             }
-
-            // looking for fields with QR code
-            Range aRange;
-            foreach (Field aField in doc.Fields)
-            {
-                aRange = aField.Code;
-                if (aRange.Text.Contains("DISPLAYBARCODE"))
-                {
-                    var prop1 = Regex.Match(aRange.Text, "\"<[^\"]*>\"");
-                    string property = prop1.ToString().Replace("\"<" , "").Replace(">\"" , "");
-                    Dictionary<String, object> propData2 = null;
-
-                    WordReportingField field = null;
-                    try { field = fieldInfo[property]; }
-                    catch (Exception) { };
-
-                    if (entityData.ContainsKey(property))
-                    {
-                        propData2 = (Dictionary<String, object>)entityData[property];
-                        setBarcode(doc, aRange, propData2, property, entityData, field);
-                        aRange.Fields.Update();
-                    }
-                }
-            }
+            doc.ActiveWindow.View.ShowFieldCodes = false;
         }
 
         private static Dictionary<String, object> GetNonTabularNestedData(Dictionary<String, object> entityData, TagInfo tag)
@@ -829,7 +807,19 @@ namespace WordAddIn
                 value = parseValue(entity, type, ti.display);
             }
 
-            ctrl.Range.Text = value;
+            if (ctrl.Range.Text.Contains("DISPLAYBARCODE"))
+            {
+                // to make the field code changeable
+                doc.ToggleFormsDesign();
+                Range aFieldCode = ((Field)ctrl.Range.Fields[1]).Code;
+                var prop1 = Regex.Match(aFieldCode.Text, "\"[^\"]*\"");
+                aFieldCode.Text = aFieldCode.Text.Replace(prop1.ToString(), "\"" + value + "\"");
+                doc.ToggleFormsDesign();
+            }
+            else
+            {
+                ctrl.Range.Text = value;
+            }
         }
 
         private static void setBarcode(Document doc, Range aRange, Dictionary<String, object> entity, string ti, Dictionary<String, object> allData, WordReportingField field)
