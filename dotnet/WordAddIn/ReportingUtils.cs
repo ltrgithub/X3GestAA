@@ -405,6 +405,7 @@ namespace WordAddIn
                 }
             }
 
+            doc.ActiveWindow.View.ShowFieldCodes = true;
             foreach (ContentControl ctrl in controlsList)
             {
                 TagInfo tag = TagInfo.create(ctrl);
@@ -420,6 +421,7 @@ namespace WordAddIn
                 }
                 setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog, null);
             }
+            doc.ActiveWindow.View.ShowFieldCodes = false;
         }
 
         private static Dictionary<String, object> GetNonTabularNestedData(Dictionary<String, object> entityData, TagInfo tag)
@@ -804,7 +806,35 @@ namespace WordAddIn
             {
                 value = parseValue(entity, type, ti.display);
             }
-            ctrl.Range.Text = value;
+
+            if (ctrl.Range.Text.Contains("DISPLAYBARCODE"))
+            {
+                // to make the field code changeable
+                doc.ToggleFormsDesign();
+                Range aFieldCode = ((Field)ctrl.Range.Fields[1]).Code;
+                var prop1 = Regex.Match(aFieldCode.Text, "\"[^\"]*\"");
+                aFieldCode.Text = aFieldCode.Text.Replace(prop1.ToString(), "\"" + value + "\"");
+                doc.ToggleFormsDesign();
+            }
+            else
+            {
+                ctrl.Range.Text = value;
+            }
+        }
+
+        private static void setBarcode(Document doc, Range aRange, Dictionary<String, object> entity, string ti, Dictionary<String, object> allData, WordReportingField field)
+        {
+            string value = null;
+            string type = null;
+
+            value = parseValue(entity, type);
+            value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
+
+            try
+            {
+                aRange.Text = aRange.Text.Replace("<" + ti + ">", value);
+            }
+            catch (Exception) { }
         }
 
         private static void setContentControlClob(Document doc, ContentControl ctrl, Dictionary<string, object> entity, WordReportingField field)
