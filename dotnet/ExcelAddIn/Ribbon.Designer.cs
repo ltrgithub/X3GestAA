@@ -190,7 +190,7 @@ namespace ExcelAddIn
             // buttonSave
             // 
             this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::ExcelAddIn.Properties.Resources.sauvegarder2;
+            this.buttonSave.Image = global::ExcelAddIn.Properties.Resources.sauvegarder;
             resources.ApplyResources(this.buttonSave, "buttonSave");
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.ShowImage = true;
