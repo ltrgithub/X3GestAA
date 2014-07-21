@@ -813,7 +813,14 @@ namespace WordAddIn
                 doc.ToggleFormsDesign();
                 Range aFieldCode = ((Field)ctrl.Range.Fields[1]).Code;
                 var prop1 = Regex.Match(aFieldCode.Text, "\"[^\"]*\"");
-                aFieldCode.Text = aFieldCode.Text.Replace(prop1.ToString(), "\"" + value + "\"");
+                if ((prop1.ToString() != "") && (value != " "))
+                {
+                    aFieldCode.Text = aFieldCode.Text.Replace(prop1.ToString(), "\"" + value + "\"");
+                }
+                else
+                {
+                    aFieldCode.Text = "";
+                }
                 doc.ToggleFormsDesign();
             }
             else
