@@ -225,6 +225,7 @@
 	<table name="AppSearch">
 		<col key="yes" def="s72">Property</col>
 		<col key="yes" def="s72">Signature_</col>
+		<row><td>IE9FOUND</td><td>sigMsHtml90</td></row>
 	</table>
 
 	<table name="BBControl">
@@ -1192,6 +1193,7 @@
 		<col key="yes" def="S72">Parent</col>
 		<col key="yes" def="S255">Path</col>
 		<col def="I2">Depth</col>
+		<row><td>sigMsHtml90</td><td></td><td>[SystemFolder]</td><td>0</td></row>
 	</table>
 
 	<table name="DuplicateFile">
@@ -2841,6 +2843,7 @@
 		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>346096104</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE9FOUND</td><td>1033</td><td>Internet Explorer 9 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-475893974</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
@@ -4244,6 +4247,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 	<table name="LaunchCondition">
 		<col key="yes" def="s255">Condition</col>
 		<col def="l255">Description</col>
+		<row><td>IE9FOUND</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_IE9FOUND##</td></row>
 	</table>
 
 	<table name="ListBox">
@@ -4572,7 +4576,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE9FOUND</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4745,6 +4749,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="I4">MinDate</col>
 		<col def="I4">MaxDate</col>
 		<col def="S255">Languages</col>
+		<row><td>sigMsHtml90</td><td>mshtml.dll</td><td>9.0.0</td><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="TextStyle">
