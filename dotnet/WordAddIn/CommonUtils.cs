@@ -333,5 +333,22 @@ namespace WordAddIn
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
             browserDialog.Hide();
         }
+
+        public void publishDocument()
+        {
+            PublishDocument pd = new PublishDocument();
+            if (pd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+            }
+        }
+
+        public void publishReportTemplate()
+        {
+
+        }
+        public void publishMailmergeTemplate()
+        {
+
+        }
     }
 }

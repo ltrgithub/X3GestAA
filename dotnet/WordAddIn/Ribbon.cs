@@ -79,5 +79,29 @@ namespace WordAddIn
         {
             Globals.WordAddIn.reporting.CleanupReportTemplateData();
         }
+
+        private void gallery1_Click(object sender, RibbonControlEventArgs e)
+        {
+            int index = ((RibbonGallery)sender).SelectedItemIndex;
+            switch (index)
+            {
+                case 0:
+                    Globals.WordAddIn.commons.publishDocument();
+                    break;
+                case 1:
+                    Globals.WordAddIn.commons.publishMailmergeTemplate();
+                    break;
+                case 2:
+                    Globals.WordAddIn.commons.publishReportTemplate();
+                    break;
+            }
+        }
+
+        private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
+        {
+            string url = ((RibbonComboBox)sender).Text;
+
+
+        }
     }
 }
