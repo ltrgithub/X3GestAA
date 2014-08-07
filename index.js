@@ -115,6 +115,8 @@ require('syracuse-license').register(function(err, data) {
 	else if (!data) console.log("No license");
 
 	require("streamline").register(config.streamline);
+	var flamegraph = config.flamegraph && require('streamline-flamegraph/lib/record').create(config.flamegraph);
+
 	require("syracuse-core/lib/localeWrapper");
 
 	var waitData;
@@ -136,6 +138,7 @@ require('syracuse-license').register(function(err, data) {
 			var syracuse = require('syracuse-main/lib/syracuse');
 
             syracuse.main();
+            if (flamegraph) flamegraph.start();
 		} catch (e) {
 			var fs = require('fs');
 			if (fs.existsSync(__dirname + '/node_modules/syracuse-main/lib/syracuse.jsc') && !require.extensions['.jsc']) {
