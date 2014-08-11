@@ -97,8 +97,9 @@ namespace CommonDialogs.CredentialsDialog
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CredentialsDialog";
-            this.Load += new System.EventHandler(this.CredentialsDialog_Load);
             this.groupBoxDescription.ResumeLayout(false);
             this.groupBoxDescription.PerformLayout();
             this.ResumeLayout(false);

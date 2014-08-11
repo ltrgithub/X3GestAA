@@ -7,6 +7,7 @@ using Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using CommonDataHelper;
 
 namespace WordAddIn
 {
@@ -79,6 +80,8 @@ namespace WordAddIn
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData != null)
             {
+                BaseUrlHelper.CustomData = customData;
+
                 String mode = customData.getCreateMode();
                 if ("v6_doc_embedded".Equals(mode))
                 {

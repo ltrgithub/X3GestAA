@@ -18,10 +18,7 @@ namespace CommonDialogs.CredentialsDialog
         public CredentialsDialog()
         {
             InitializeComponent();
-        }
-
-        private void CredentialsDialog_Load(object sender, EventArgs e)
-        {
+            textBoxUserName.Select();
         }
 
         private NetworkCredential _credentials = null;

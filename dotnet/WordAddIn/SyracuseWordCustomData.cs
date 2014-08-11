@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 namespace WordAddIn
 {
@@ -16,7 +17,7 @@ namespace WordAddIn
     }
 
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class SyracuseOfficeCustomData
+    public class SyracuseOfficeCustomData : ISyracuseOfficeCustomData
     {
         private const String sageERPX3JsonTagName   = "SyracuseOfficeCustomData";
         private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;

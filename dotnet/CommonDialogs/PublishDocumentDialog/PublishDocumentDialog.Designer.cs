@@ -115,6 +115,8 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.groupBoxDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PublishDocumentDialog";
             this.Load += new System.EventHandler(this.PublishDocument_Load);
             this.groupBoxDescription.ResumeLayout(false);

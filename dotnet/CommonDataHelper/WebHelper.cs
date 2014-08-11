@@ -19,7 +19,10 @@ namespace CommonDataHelper
             NetworkCredential nc = CredentialsHelper.UserCredentials;
             if (nc == null && CredentialsHelper.Retries == 0)
             {
-                statusCode = HttpStatusCode.OK;
+                /*
+                 * We've cancelled the entry of credentials, so just return an error condition.
+                 */
+                statusCode = HttpStatusCode.InternalServerError;
                 return responseJson;
             }
 

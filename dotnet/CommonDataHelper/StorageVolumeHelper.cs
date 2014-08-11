@@ -13,9 +13,13 @@ namespace CommonDataHelper
     {
         public List<string> createStorageVolumeList()
         {
-            string page = 
-                
-                "http://localhost:8124/sdata/syracuse/collaboration/syracuse/storageVolumes?representation=storageVolumes.$query&count=200";
+            Uri baseUrl = BaseUrlHelper.BaseUrl;
+            if (baseUrl == null)
+            {
+                return null; 
+            }
+
+            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/storageVolumes?representation=storageVolumes.$query&count=200";
 
             List<string> storageVolumeList = new List<string>();
             WebHelper cd = new WebHelper();
@@ -29,7 +33,7 @@ namespace CommonDataHelper
                 return null;
             }
 
-            if (httpStatusCode == HttpStatusCode.OK)
+            if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
             {
                 Dictionary<String, object> data = (Dictionary<String, object>)ser.DeserializeObject(responseJson);
                 Object[] listData = (Object[])data["$resources"];

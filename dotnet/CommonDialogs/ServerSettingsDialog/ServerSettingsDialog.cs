@@ -6,85 +6,50 @@ namespace CommonDialogs.ServerSettingsDialog
 {
     public partial class ServerSettingsDialog : Form, IServerSettingsDialog
     {
-        private string serverUrl;
-
         public ServerSettingsDialog()
         {
             InitializeComponent();
         }
 
-        private Uri _baseUrl = null;
-        public Uri BaseUrl
+        private string _baseUrl = null;
+        public string BaseUrl
         {
-            get { return _baseUrl; }
-            set { _baseUrl = value; }
+            //get { return _baseUrl;  }
+            //set { _baseUrl = value; }
+            get { return textBoxServerAddress.Text; }
+            set { textBoxServerAddress.Text = value; }
         }
 
-        internal string GetConnectUrl()
+        private void textBoxServerAddress_TextChanged(object sender, EventArgs e)
         {
-            //Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
-            return textBoxServerAddress.Text;
-        }
+            Uri baseUrl = null;
 
-        public ServerSettingsDialog(string serverUrl)
-        {
-            InitializeComponent();
-            this.serverUrl = serverUrl;
-        }
-
-        internal string getServerUrl()
-        {
-            SavePreferences(textBoxServerAddress.Text);
-            return textBoxServerAddress.Text;
-        }
-
-        private void ServerSettings_Load(object sender, EventArgs e)
-        {
-            //textBoxServerAddress.Text = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("serverUrlAddress");
-            if (textBoxServerAddress.Text == "")
+            if (string.IsNullOrEmpty(textBoxServerAddress.Text))
             {
-                //textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
-                if (textBoxServerAddress.Text == "")
-                    textBoxServerAddress.Text = "http://localhost:8124";
+                button1.Enabled = false;
             }
-        }
-
-        internal string GetPreferenceFilePath()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Excel.X3.settings";
-        }
-
-        internal string ReadPreferences()
-        {
-            String path = GetPreferenceFilePath();
-            string sContent = "";
-
-            if (File.Exists(path))
+            else
             {
-                StreamReader myFile = new StreamReader(path, System.Text.Encoding.Default);
-                while (!myFile.EndOfStream)
+                try
                 {
-                    sContent = myFile.ReadLine();
-                    if (sContent != "")
-                    {
-                        break;
-                    }
+                    baseUrl = new Uri(textBoxServerAddress.Text);
+                    button1.Enabled = true;
                 }
-                myFile.Close();
+                catch (Exception)
+                {
+                    /*
+                     * We've entered an invalid base URL, so disable the OK button.
+                     */
+                    button1.Enabled = false;
+                }
             }
-            return sContent;
         }
 
-        internal void SavePreferences(String url)
+        private void ServerSettingsDialog_Load(object sender, EventArgs e)
         {
-            String path = GetPreferenceFilePath();
-            System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-            try
-            {
-                file.WriteLine(url);
-            }
-            catch (Exception e) { MessageBox.Show(e.Message); }
-            file.Close();
+            textBoxServerAddress_TextChanged(null, null);
         }
    }
 }
+
+

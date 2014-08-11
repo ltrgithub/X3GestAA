@@ -37,12 +37,15 @@ namespace CommonDialogs.ServerSettingsDialog
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBoxDescription = new System.Windows.Forms.GroupBox();
+            this.groupBoxDescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxServerAddress
             // 
             resources.ApplyResources(this.textBoxServerAddress, "textBoxServerAddress");
             this.textBoxServerAddress.Name = "textBoxServerAddress";
+            this.textBoxServerAddress.TextChanged += new System.EventHandler(this.textBoxServerAddress_TextChanged);
             // 
             // label1
             // 
@@ -73,21 +76,32 @@ namespace CommonDialogs.ServerSettingsDialog
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // ServerSettings
+            // groupBoxDescription
+            // 
+            this.groupBoxDescription.Controls.Add(this.label1);
+            this.groupBoxDescription.Controls.Add(this.label3);
+            this.groupBoxDescription.Controls.Add(this.textBoxServerAddress);
+            this.groupBoxDescription.Controls.Add(this.label2);
+            resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
+            this.groupBoxDescription.Name = "groupBoxDescription";
+            this.groupBoxDescription.TabStop = false;
+            // 
+            // ServerSettingsDialog
             // 
             this.AcceptButton = this.button1;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBoxDescription);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxServerAddress);
-            this.Name = "ServerSettings";
-            this.Load += new System.EventHandler(this.ServerSettings_Load);
+            this.Controls.Add(this.button2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ServerSettingsDialog";
+            this.Load += new System.EventHandler(this.ServerSettingsDialog_Load);
+            this.groupBoxDescription.ResumeLayout(false);
+            this.groupBoxDescription.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -99,5 +113,6 @@ namespace CommonDialogs.ServerSettingsDialog
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBoxDescription;
     }
 }

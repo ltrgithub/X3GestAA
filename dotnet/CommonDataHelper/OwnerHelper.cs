@@ -11,7 +11,13 @@ namespace CommonDataHelper
     {
         public List<string> createOwnerList()
         {
-            string page = "http://localhost:8124/sdata/syracuse/collaboration/syracuse/users?representation=user.$query&count=200";
+            Uri baseUrl = BaseUrlHelper.BaseUrl;
+            if (baseUrl == null)
+            {
+                return null;
+            }
+
+            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/users?representation=user.$query&count=200";
 
             List<string> ownerList = new List<string>();
             WebHelper cd = new WebHelper();
@@ -19,7 +25,12 @@ namespace CommonDataHelper
 
             HttpStatusCode httpStatusCode;
             string responseJson = cd.getServerJson(page, out httpStatusCode);
-            if (httpStatusCode == HttpStatusCode.OK)
+            if (httpStatusCode == HttpStatusCode.InternalServerError)
+            {
+                return null;
+            }
+
+            if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
             {
                 Dictionary<String, object> data = (Dictionary<String, object>)ser.DeserializeObject(responseJson);
                 Object[] listData = (Object[])data["$resources"];
