@@ -1,21 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Threading;
 using System.IO;
 
-namespace WordAddIn
+namespace CommonDialogs.ServerSettingsDialog
 {
-    public partial class ServerSettings : Form
+    public partial class ServerSettingsDialog : Form, IServerSettingsDialog
     {
         private string serverUrl;
 
-        public ServerSettings(string serverUrl)
+        public ServerSettingsDialog()
+        {
+            InitializeComponent();
+        }
+
+        private Uri _baseUrl = null;
+        public Uri BaseUrl
+        {
+            get { return _baseUrl; }
+            set { _baseUrl = value; }
+        }
+
+        internal string GetConnectUrl()
+        {
+            //Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
+            return textBoxServerAddress.Text;
+        }
+
+        public ServerSettingsDialog(string serverUrl)
         {
             InitializeComponent();
             this.serverUrl = serverUrl;
@@ -29,10 +40,10 @@ namespace WordAddIn
 
         private void ServerSettings_Load(object sender, EventArgs e)
         {
-            textBoxServerAddress.Text = serverUrl;
+            //textBoxServerAddress.Text = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("serverUrlAddress");
             if (textBoxServerAddress.Text == "")
             {
-                textBoxServerAddress.Text = ReadPreferences();
+                //textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
                 if (textBoxServerAddress.Text == "")
                     textBoxServerAddress.Text = "http://localhost:8124";
             }
@@ -40,7 +51,7 @@ namespace WordAddIn
 
         internal string GetPreferenceFilePath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Word.X3.settings";
+            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Excel.X3.settings";
         }
 
         internal string ReadPreferences()
@@ -75,6 +86,5 @@ namespace WordAddIn
             catch (Exception e) { MessageBox.Show(e.Message); }
             file.Close();
         }
-
-    }
+   }
 }

@@ -9,6 +9,9 @@ using System.IO;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Core;
 using System.Globalization;
+//using CommonDialogs;
+using CommonDialogs.PublishDocumentDialog;
+using CommonDataHelper;
 
 namespace WordAddIn
 {
@@ -320,6 +323,7 @@ namespace WordAddIn
         public void check4updateAddin()
         {
         }
+
         public void updateAddin()
         {
             MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_RESTART, global::WordAddIn.Properties.Resources.MSG_RESTART_TITLE);
@@ -336,9 +340,23 @@ namespace WordAddIn
 
         public void publishDocument()
         {
-            PublishDocument pd = new PublishDocument();
-            if (pd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            CredentialsHelper.resetRetries();
+
+            IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
+
+            publishDocumentDialog.StorageVolumeList = new StorageVolumeHelper().createStorageVolumeList();
+
+            /*
+             * Don't attempt to get the Owner list if the user isn't logged on at this point
+             */
+            if (CommonDataHelper.CredentialsHelper.isUserLoggedOn())
             {
+                publishDocumentDialog.OwnerList = new OwnerHelper().createOwnerList();
+
+                if (publishDocumentDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    String s = publishDocumentDialog.Description;
+                }
             }
         }
 

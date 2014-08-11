@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Word;
+using CommonDialogs;
 
 namespace WordAddIn
 {
@@ -44,19 +45,20 @@ namespace WordAddIn
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
-            string serverUrl = customData.getServerUrl();
-            if (serverUrl == null || "".Equals(serverUrl))
-            {
-                ServerSettings settings = new ServerSettings(serverUrl);
-                if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    serverUrl = settings.getServerUrl();
-                }
-            }
-            if (serverUrl == null || "".Equals(serverUrl))
-                return false;
-            customData.setServerUrl(serverUrl);
-            return connectToServer(serverUrl);
+            //string serverUrl = customData.getServerUrl();
+            //if (serverUrl == null || "".Equals(serverUrl))
+            //{
+            //    ServerSettings settings = new ServerSettings(serverUrl);
+            //    if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        serverUrl = settings.getServerUrl();
+            //    }
+            //}
+            //if (serverUrl == null || "".Equals(serverUrl))
+            //    return false;
+            //customData.setServerUrl(serverUrl);
+            //return connectToServer(serverUrl);
+            return false;
         }
         
         private bool connectToServer(String serverUrl)

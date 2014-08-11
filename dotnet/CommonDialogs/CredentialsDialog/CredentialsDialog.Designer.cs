@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Globalization;
 
-namespace WordAddIn
+namespace CommonDialogs.CredentialsDialog
 {
-    partial class Credentials
+    partial class CredentialsDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,15 @@ namespace WordAddIn
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Credentials));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CredentialsDialog));
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.groupBoxDescription = new System.Windows.Forms.GroupBox();
+            this.groupBoxDescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOk
@@ -46,7 +48,7 @@ namespace WordAddIn
             resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.Name = "btnOk";
             this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click_1);
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -54,42 +56,52 @@ namespace WordAddIn
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
-            // label1
+            // labelUser
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.labelUser, "labelUser");
+            this.labelUser.Name = "labelUser";
             // 
-            // label2
+            // labelPassword
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.labelPassword, "labelPassword");
+            this.labelPassword.Name = "labelPassword";
             // 
             // textBoxUserName
             // 
             resources.ApplyResources(this.textBoxUserName, "textBoxUserName");
             this.textBoxUserName.Name = "textBoxUserName";
+            this.textBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
             // 
             // textBoxPassword
             // 
             resources.ApplyResources(this.textBoxPassword, "textBoxPassword");
             this.textBoxPassword.Name = "textBoxPassword";
             // 
-            // Credentials
+            // groupBoxDescription
+            // 
+            this.groupBoxDescription.Controls.Add(this.labelUser);
+            this.groupBoxDescription.Controls.Add(this.textBoxPassword);
+            this.groupBoxDescription.Controls.Add(this.textBoxUserName);
+            this.groupBoxDescription.Controls.Add(this.labelPassword);
+            resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
+            this.groupBoxDescription.Name = "groupBoxDescription";
+            this.groupBoxDescription.TabStop = false;
+            // 
+            // CredentialsDialog
             // 
             this.AcceptButton = this.btnOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUserName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBoxDescription);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
-            this.Name = "Credentials";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "CredentialsDialog";
+            this.Load += new System.EventHandler(this.CredentialsDialog_Load);
+            this.groupBoxDescription.ResumeLayout(false);
+            this.groupBoxDescription.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -97,9 +109,10 @@ namespace WordAddIn
 
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.GroupBox groupBoxDescription;
     }
 }

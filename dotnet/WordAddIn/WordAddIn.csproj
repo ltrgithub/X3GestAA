@@ -212,26 +212,7 @@
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtils.cs" />
-    <Compile Include="CommonData.cs" />
-    <Compile Include="Credentials.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Credentials.Designer.cs">
-      <DependentUpon>Credentials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PublishDocument.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PublishDocument.Designer.cs">
-      <DependentUpon>PublishDocument.cs</DependentUpon>
-    </Compile>
     <Compile Include="MailMergeActions.cs" />
-    <Compile Include="ProgressDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProgressDialog.Designer.cs">
-      <DependentUpon>ProgressDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReportingActions.cs" />
     <Compile Include="ReportingUtils.cs" />
     <Compile Include="ReportingTemplatePane.cs">
@@ -241,12 +222,6 @@
       <DependentUpon>ReportingTemplatePane.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportingFieldTypes.cs" />
-    <Compile Include="ServerSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ServerSettings.Designer.cs">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="WordAddInJSExternal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -255,23 +230,8 @@
       <DependentUpon>BrowserDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Credentials.en.resx">
-      <DependentUpon>Credentials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Credentials.resx">
-      <DependentUpon>Credentials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PublishDocument.en.resx">
-      <DependentUpon>PublishDocument.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PublishDocument.resx">
-      <DependentUpon>PublishDocument.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProgressDialog.resx">
-      <DependentUpon>ProgressDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -304,26 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportingTemplatePane.resx">
       <DependentUpon>ReportingTemplatePane.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.de.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.en.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.fr.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.es.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.pt.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -378,6 +318,16 @@
     <None Include="Resources\transparent.file" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonDataHelper\CommonDataHelper.csproj">
+      <Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
+      <Name>CommonDataHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonDialogs\CommonDialogs.csproj">
+      <Project>{341E57EE-7F9A-4408-A29F-D4A4340039EE}</Project>
+      <Name>CommonDialogs</Name>
+    </ProjectReference>
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

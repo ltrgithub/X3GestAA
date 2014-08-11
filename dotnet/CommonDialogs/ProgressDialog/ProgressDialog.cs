@@ -20,7 +20,7 @@ namespace WordAddIn
             this.progressBar.Maximum = 1;
         }
 
-        internal void SignalRowDone()
+        public void SignalRowDone()
         {
             try
             {
@@ -30,7 +30,7 @@ namespace WordAddIn
             } catch (Exception) {}
         }
 
-        internal void SetRowsExpected(int rowsToFill)
+        public void SetRowsExpected(int rowsToFill)
         {
             try {
                 this.progressBar.Maximum = rowsToFill;
