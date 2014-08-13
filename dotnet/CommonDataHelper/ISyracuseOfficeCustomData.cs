@@ -8,5 +8,7 @@ namespace CommonDataHelper
     public interface ISyracuseOfficeCustomData
     {
         string getServerUrl();
+        string getDocumentRepresentation();
+        string getResourceUrl();
     }
 }

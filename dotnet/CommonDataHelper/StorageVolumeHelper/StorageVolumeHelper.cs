@@ -22,12 +22,12 @@ namespace CommonDataHelper
             string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/storageVolumes?representation=storageVolumes.$query&count=200";
 
             List<string> storageVolumeList = new List<string>();
-            WebHelper cd = new WebHelper();
+            WebHelper webHelper = new WebHelper();
             JavaScriptSerializer ser = new JavaScriptSerializer();
 
             HttpStatusCode httpStatusCode;
 
-            string responseJson = cd.getServerJson(page, out httpStatusCode);
+            string responseJson = webHelper.getServerJson(page, out httpStatusCode);
             if (httpStatusCode == HttpStatusCode.InternalServerError)
             {
                 return null;

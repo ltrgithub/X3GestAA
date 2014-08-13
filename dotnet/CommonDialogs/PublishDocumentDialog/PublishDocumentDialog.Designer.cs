@@ -39,7 +39,13 @@
             this.labelDescription = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
+            this.groupBoxTagsAndTeams = new System.Windows.Forms.GroupBox();
+            this.labelTeams = new System.Windows.Forms.Label();
+            this.comboBoxTeam = new System.Windows.Forms.ComboBox();
+            this.labelTags = new System.Windows.Forms.Label();
+            this.comboBoxTag = new System.Windows.Forms.ComboBox();
             this.groupBoxDescription.SuspendLayout();
+            this.groupBoxTagsAndTeams.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxDescription
@@ -106,21 +112,55 @@
             resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.Name = "btnOk";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // groupBoxTagsAndTeams
+            // 
+            this.groupBoxTagsAndTeams.Controls.Add(this.labelTeams);
+            this.groupBoxTagsAndTeams.Controls.Add(this.comboBoxTeam);
+            this.groupBoxTagsAndTeams.Controls.Add(this.labelTags);
+            this.groupBoxTagsAndTeams.Controls.Add(this.comboBoxTag);
+            resources.ApplyResources(this.groupBoxTagsAndTeams, "groupBoxTagsAndTeams");
+            this.groupBoxTagsAndTeams.Name = "groupBoxTagsAndTeams";
+            this.groupBoxTagsAndTeams.TabStop = false;
+            // 
+            // labelTeams
+            // 
+            resources.ApplyResources(this.labelTeams, "labelTeams");
+            this.labelTeams.Name = "labelTeams";
+            // 
+            // comboBoxTeam
+            // 
+            this.comboBoxTeam.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxTeam, "comboBoxTeam");
+            this.comboBoxTeam.Name = "comboBoxTeam";
+            // 
+            // labelTags
+            // 
+            resources.ApplyResources(this.labelTags, "labelTags");
+            this.labelTags.Name = "labelTags";
+            // 
+            // comboBoxTag
+            // 
+            this.comboBoxTag.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxTag, "comboBoxTag");
+            this.comboBoxTag.Name = "comboBoxTag";
             // 
             // PublishDocumentDialog
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBoxTagsAndTeams);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.groupBoxDescription);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PublishDocumentDialog";
-            this.Load += new System.EventHandler(this.PublishDocument_Load);
             this.groupBoxDescription.ResumeLayout(false);
             this.groupBoxDescription.PerformLayout();
+            this.groupBoxTagsAndTeams.ResumeLayout(false);
+            this.groupBoxTagsAndTeams.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +177,10 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.GroupBox groupBoxTagsAndTeams;
+        private System.Windows.Forms.Label labelTags;
+        private System.Windows.Forms.ComboBox comboBoxTag;
+        private System.Windows.Forms.ComboBox comboBoxTeam;
+        private System.Windows.Forms.Label labelTeams;
     }
 }

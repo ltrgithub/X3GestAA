@@ -16,17 +16,7 @@ namespace CommonDialogs.PublishDocumentDialog
         {
             InitializeComponent();
         }
-
-        private void PublishDocument_Load(object sender, EventArgs e)
-        {
-            //this.Text = Properties.Resources.PUBLISH_DOCUMENT_DIALOG_LABEL;
-            //groupBoxDescription.Text = Properties.Resources.PUBLISH_DOCUMENT_GROUPBOX;
-            //labelDescription.Text = Properties.Resources.PUBLISH_DOCUMENT_DESCRIPTION_LABEL;
-            //labelStorageVolume.Text = Properties.Resources.PUBLISH_DOCUMENT_STORAGE_VOLUME_LABEL;
-            //labelOwner.Text = Properties.Resources.PUBLISH_DOCUMENT_OWNER_LABEL;
-            //checkBoxReadOnly.Text = Properties.Resources.PUBLISH_DOCUMENT_READONLY_LABEL;
-        }
-        
+      
         public string Description
         {
             get { return textBoxDescription.Text; }
@@ -45,6 +35,18 @@ namespace CommonDialogs.PublishDocumentDialog
             set { comboBoxOwner.Text = value; }
         }
 
+        public new string Tag
+        {
+            get { return comboBoxTag.Text; }
+            set { comboBoxTag.Text = value; }
+        }
+
+        public string Team
+        {
+            get { return comboBoxTeam.Text; }
+            set { comboBoxTeam.Text = value; }
+        }
+
         public List<string> StorageVolumeList
         {
             get { return null; }
@@ -57,9 +59,36 @@ namespace CommonDialogs.PublishDocumentDialog
             set { comboBoxOwner.DataSource = new BindingSource(value, null).DataSource; }
         }
 
-        public DialogResult DialogShow()
+        public List<string> TagList
         {
-            return ShowDialog();
+            get { return null; }
+            set { comboBoxTag.DataSource = new BindingSource(value, null).DataSource; }
         }
+
+        public List<string> TeamList
+        {
+            get { return null; }
+            set { comboBoxTeam.DataSource = new BindingSource(value, null).DataSource; }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            _publisherDelegate();
+        }
+
+        PublisherDelegate _publisherDelegate = null;
+        public void Publisher(PublisherDelegate publisherDelegate) 
+        {
+            _publisherDelegate = publisherDelegate;
+        }
+
+        //private ISyracuseOfficeCustomData _syracuseCustomData = null;
+        
+
+
+        //public DialogResult DialogShow()
+        //{
+        //    return ShowDialog();
+        //}
     }
 }
