@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using CommonDialogs;
 using System.Windows.Forms;
 using CommonDialogs.CredentialsDialog;
+using System.Net.Cache;
 
 
 namespace CommonDataHelper
@@ -14,7 +15,12 @@ namespace CommonDataHelper
         public string getServerJson(string uri, out HttpStatusCode statusCode)
         {
             string responseJson = null;
-            HttpWebRequest http = (HttpWebRequest)HttpWebRequest.Create(uri);
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+
+            if (CookieHelper.CookieContainer == null)
+            {
+                CookieHelper.InitialiseCookies();
+            }
 
             NetworkCredential nc = CredentialsHelper.UserCredentials;
             if (nc == null && CredentialsHelper.Retries == 0)
@@ -26,16 +32,23 @@ namespace CommonDataHelper
                 return responseJson;
             }
 
-            http.Credentials = nc;
+            request.Credentials = nc;
+            
+            request.CookieContainer = CookieHelper.CookieContainer;
 
             try
             {
-                HttpWebResponse response = (HttpWebResponse)http.GetResponse();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                 {
                     responseJson = sr.ReadToEnd();
                 }
                 statusCode = HttpStatusCode.OK;
+
+                /*
+                 * We've had a successfull connection, so do a do a one-time only fetch of the cookie
+                 */
+                CookieHelper.setCookies(request, response);
             }
             catch (Exception ex)
             {
@@ -71,7 +84,7 @@ namespace CommonDataHelper
         public string setServerJson(Uri uri, string method, string data, out HttpStatusCode statusCode)
         {
             string responseJson = null;
-            HttpWebRequest http = (HttpWebRequest)HttpWebRequest.Create(uri);
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
 
             NetworkCredential nc = CredentialsHelper.UserCredentials;
             if (nc == null && CredentialsHelper.Retries == 0)
@@ -83,17 +96,20 @@ namespace CommonDataHelper
                 return responseJson;
             }
 
-            http.Credentials = nc;
+            request.Credentials = nc;
 
-            http.Method = method;
-            http.ContentLength = data.Length;
-            http.ContentType = "application/json";
-            StreamWriter writer = new StreamWriter(http.GetRequestStream());
+            request.Method = method;
+            request.ContentLength = data.Length;
+            request.ContentType = "application/json";
+
+            request.CookieContainer = CookieHelper.CookieContainer;
+
+            StreamWriter writer = new StreamWriter(request.GetRequestStream());
             writer.Write(data);
             writer.Close();
             try
             {
-                HttpWebResponse response = (HttpWebResponse)http.GetResponse();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                 {
                     responseJson = sr.ReadToEnd();
@@ -127,55 +143,5 @@ namespace CommonDataHelper
             }
             return responseJson;
         }
-
-        //    public string setServerJson(string uri, string data, NetworkCredential nc)
-        //    {
-        //        string responseJson = "-1";
-        //        HttpWebRequest http = (HttpWebRequest)HttpWebRequest.Create(uri);
-
-        //        if (nc == null)
-        //        {
-        //            nc = CredentialsHelper.UserCredentials;
-        //        }
-
-        //        if (nc != null)
-        //        {
-        //            http.Credentials = nc;
-        //        }
-
-        //        http.Method = WebRequestMethods.Http.Post;
-        //        http.ContentLength = data.Length;
-        //        http.ContentType = "application/json";
-        //        StreamWriter writer = new StreamWriter(http.GetRequestStream());
-        //        writer.Write(data);
-        //        writer.Close();
-        //        try
-        //        {
-        //            HttpWebResponse response = (HttpWebResponse)http.GetResponse();
-        //            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-        //            {
-        //                responseJson = sr.ReadToEnd();
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            HttpWebResponse wre = ((HttpWebResponse)(((WebException)ex).Response));
-        //            if (wre.StatusCode == HttpStatusCode.Unauthorized || wre.StatusCode == HttpStatusCode.Forbidden)
-        //            {
-        //                //Credentials cred = new Credentials();
-        //                //if (cred.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-        //                //{
-        //                    //nc = cred.getCredentials();
-        //                    nc = CredentialsHelper.UserCredentials;
-        //                    return setServerJson(uri, data, nc);
-        //                //}
-        //            }
-
-        //            MessageBox.Show(ex.Message);
-        //        }
-        //        return responseJson;
-        //    }
-        //}
-
     }    
 }

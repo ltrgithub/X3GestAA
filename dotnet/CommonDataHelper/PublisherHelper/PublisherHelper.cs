@@ -6,6 +6,7 @@ using CommonDataHelper.PublisherHelper.Model.Word;
 using System.Net;
 using System.Web;
 using System.Collections.Specialized;
+using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper
 {
@@ -17,8 +18,53 @@ namespace CommonDataHelper.PublisherHelper
 
             WordWorkingCopyPrototype wordWorkingCopyPrototype = getWordWorkingCopyPrototype(wordSaveNewDocumentPrototype);
 
-            initialiseWorkingCopy(wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData);
-        }   
+            publishDocument(wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData);
+        }
+
+        private void publishDocument(WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData)
+        {
+            string workingCopyInitialisationResponse = initialiseWorkingCopy(wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData);
+            if (string.IsNullOrEmpty(workingCopyInitialisationResponse))
+                return;
+
+            WordWorkingCopyPrototype workingCopyResponseJson = Newtonsoft.Json.JsonConvert.DeserializeObject<WordWorkingCopyPrototype>(workingCopyInitialisationResponse);
+
+            /*
+             * To do:
+             * 
+             * Update working copy:
+             * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')?representation=msoWordDocument.$edit&templateClass=user.%24query&volumeCode=STD&representationName=user.%24bulk&className=users&x3Keys=&officeEndpoint=syracuse&trackingId=126ef1f4-60ef-4896-9f07-56af2df15a85 HTTP/1.1
+             * 
+             * Update working copy (on save):
+             * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')?representation=msoWordDocument.$edit&templateClass=user.%24query&volumeCode=STD&representationName=user.%24bulk&className=users&x3Keys=&officeEndpoint=syracuse&trackingId=126ef1f4-60ef-4896-9f07-56af2df15a85 HTTP/1.1
+             * 
+             * Save to document:
+             * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')/content 
+             * JSON - Content_Types + base64 representation of document
+             */
+
+            Uri baseUrl = BaseUrlHelper.BaseUrl;
+            if (baseUrl == null)
+            {
+                return;
+            }
+
+            HttpStatusCode httpStatusCode;
+            if (string.IsNullOrEmpty(workingCopyResponseJson.url) == false)
+            {
+                WebHelper webHelper = new WebHelper();
+                WordPublishDocumentJson wordPublishDocumentJson = new WordPublishDocumentJson();
+                wordPublishDocumentJson.etag = workingCopyResponseJson.etag;
+                wordPublishDocumentJson.url = workingCopyResponseJson.url;
+                wordPublishDocumentJson.uuid = workingCopyResponseJson.uuid;
+
+                wordPublishDocumentJson.description = "yyy";
+
+                string json = JsonConvert.SerializeObject(wordPublishDocumentJson, Formatting.Indented);
+
+                string test = webHelper.setServerJson(new Uri(workingCopyResponseJson.url), "PUT", json, out httpStatusCode);
+            }
+        }
 
         private WordDocumentPrototypes getWordSaveDocumentPrototypes()
         {
@@ -60,28 +106,31 @@ namespace CommonDataHelper.PublisherHelper
             return null;
         }
 
-        private void initialiseWorkingCopy(WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData)
+        private string initialiseWorkingCopy(WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData)
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
             {
-                return;
+                return string.Empty;
             }
-            
+
             string templateClass = syracuseCustomData.getDocumentRepresentation(); //"user.$query";
             string locale = String.Empty;
             string volumeCode = "STD";
  
-            string representationName = HttpUtility.ParseQueryString(new Uri(baseUrl, syracuseCustomData.getResourceUrl()).Query).Get("representation"); // "user.$bulk"; 
+            Uri resourceUri = new Uri(baseUrl, syracuseCustomData.getResourceUrl());
+            string representationName = HttpUtility.ParseQueryString(resourceUri.Query).Get("representation"); // "user.$bulk"; 
 
-            string className = "users";
-            string x3Keys = String.Empty;
-            string officeEndpoint = "syracuse";
+            string[] urlSegments = resourceUri.Segments.Select( segment => segment.TrimEnd('/')).ToArray();
+
+            string className = urlSegments[urlSegments.Length - 1]; //"users";
+
+            string x3Keys = String.Empty; // TODO: see _setLinkingProperties for more details.
+
+            string officeEndpoint = urlSegments[4]; //  "syracuse";
             string trackingId = wordWorkingCopyPrototype.trackingId;
 
             StringBuilder queryParameters = new StringBuilder(wordSaveNewDocumentPrototype.url);
-
-            queryParameters.Append("?");
 
             queryParameters.Append("&templateClass=");
             queryParameters.Append(templateClass);
@@ -113,7 +162,7 @@ namespace CommonDataHelper.PublisherHelper
             WebHelper webHelper = new WebHelper();
 
             HttpStatusCode httpStatusCode;
-            string test = webHelper.setServerJson(new Uri(baseUrl, queryParameters.ToString()), "POST", String.Empty, out httpStatusCode);
+            return webHelper.setServerJson(new Uri(baseUrl, queryParameters.ToString()), "POST", String.Empty, out httpStatusCode);
         }
     }
 }

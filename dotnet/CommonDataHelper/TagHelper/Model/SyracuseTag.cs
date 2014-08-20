@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using CommonDataHelper.TagHelper.Model;
 
 namespace CommonDataHelper.SyracuseTagHelper.Model
 {
@@ -12,6 +13,6 @@ namespace CommonDataHelper.SyracuseTagHelper.Model
         public String description;
 
         [JsonProperty("category")]
-        public String category;
+        public SyracuseCategory category;
     }
 }

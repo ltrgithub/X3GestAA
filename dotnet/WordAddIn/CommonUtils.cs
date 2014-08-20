@@ -365,91 +365,16 @@ namespace WordAddIn
 
         public void publisher()
         {
-            Console.WriteLine("hello from delegate");
-
             IDocumentPublisher publisher = new PublisherHelper();
             publisher.PublishDocument(SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument()));
         }
 
         public void publishReportTemplate()
         {
-            //new TeamHelper().createTeamList();
-            ////getTeams();
         }
 
         public void publishMailmergeTemplate()
         {
-
         }
-
-        //private void getTeams()
-        //{
-        //    string page = "http://localhost:8124/sdata/syracuse/collaboration/syracuse/teams?representation=teams.$query&count=200";
-
-        //    System.Diagnostics.Debugger.Launch();
-
-        //    System.Net.HttpStatusCode httpStatusCode;
-
-        //    WebHelper webHelper = new WebHelper();
-        //    string responseJson = webHelper.getServerJson(page, out httpStatusCode);
-
-        //    //responseJson = "'$resources': [{'$uuid': 'de5697a4-be75-4b03-a7c8-6e45bf1e2d6c','$key': 'de5697a4-be75-4b03-a7c8-6e45bf1e2d6c','$etag': 1,'$creUser': 'admin','$creDate': '2014-08-11T15:55:17.835Z','$updUser': 'admin',$updDate': '2014-08-11T15:55:17.835Z','$properties': {},'$url': '/sdata/syracuse/collaboration/syracuse/teams('de5697a4-be75-4b03-a7c8-6e45bf1e2d6c')?representation=team.$details','$shortUrl': '/sdata/syracuse/collaboration/syracuse/teams('de5697a4-be75-4b03-a7c8-6e45bf1e2d6c')','description': 'The A team','isPublic': false,'explorer': {'$url': '{$baseUrl}/{$pluralType}('{$key}')/$graphs/explorer'," +
-        //    //    "'$type': 'graph'},'tags': {'$url': '{$baseUrl}/{$pluralType}('{$key}')/$tagClouds/tags','$type': 'tag-cloud'},'administrator': {'$uuid': 'bbf277e4-1a20-4c1e-aabd-776d925833bc','$key': 'bbf277e4-1a20-4c1e-aabd-776d925833bc','login': 'admin','firstName': '','lastName': 'Super administrator'},'$value': 'The A team'}'" ;
-
-        //    //string responseJson = "'$resources': [{'$uuid': 'de5697a4-be75-4b03-a7c8-6e45bf1e2d6c'}, {'$uuid': 'fg5697a4-be75-4b03-a7c8-6e45bf1e2d6c'}]";
-
-
-
-        //    //var teams = new SyracuseTeams().ToString();
-            
-        //    //SyracuseTeam team = new SyracuseTeam();
-        //    //Object o = Newtonsoft.Json.JsonConvert.DeserializeObject(List<SyracuseTeam>(team));
-
-        //   // using (System.Net.WebClient wc = new System.Net.WebClient())
-        //    {
-        //        //var json = wc.DownloadString("http://coderwall.com/mdeiters.json");
-        //        var user = Newtonsoft.Json.JsonConvert.DeserializeObject<Resource>(responseJson);
-        //    }
-
-
-        //    //DataContractJsonSerializer ser2 = new DataContractJsonSerializer(typeof(SyracuseTeam));
-        //    //JavaScriptSerializer ser3 = new JavaScriptSerializer(typeof(SyracuseTeam));
-        //    //var team = (List<SyracuseTeam>)ser2.Deserialize(responseJson);
-
-        //    if (responseJson != "-1")
-        //    {
-        //        //responseJson = "{\"$resources\":[{\"$uuid\":\"uid123\",\"description\":\"des123\",\"isPublic\":true},{\"$uuid\":\"uid456\",\"description\":\"des456\",\"isPublic\":false}]}";
-        //        Newtonsoft.Json.Linq.JObject jss = Newtonsoft.Json.Linq.JObject.Parse(responseJson);
-
-        //        //Object sTeams = (Object)jss["$resources"];
-        //        IList<object> sTeams = jss["$resources"].Select(t => (object)t).ToList();
-
-        //       // IList<object> sTeams = jss["$resources"].Select(t => (object)t).ToList();
-
-
-        //        //SyracuseTeam[] aTeam = (SyracuseTeam[])sTeams;
-
-        //        //JavaScriptSerializer ser = new JavaScriptSerializer();
-        //        //Dictionary<String, object> data = (Dictionary<String, object>)ser.DeserializeObject(responseJson);
-        //        //Object[] listData = (Object[])data["$resources"];
-        //        foreach (Object rowData in sTeams)
-        //        {
-        //            try
-        //            {
-        //                Dictionary<String, object> rowDataArray = (Dictionary<String, object>)rowData;
-        //                foreach (Object key in rowDataArray.Keys)
-        //                {
-        //                    if (key.ToString() == "code")
-        //                    {
-        //                        string val = rowDataArray["code"].ToString();
-        //                        //comboBoxStorageVolume.Items.Add(val);
-        //                    }
-        //                }
-
-        //            }
-        //            catch { }
-        //        }
-        //    }
-        //}
     }
 }
