@@ -7,41 +7,30 @@ using System.Net;
 using System.Web;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
+using CommonDialogs.PublishDocumentDialog;
+using CommonDataHelper.PublisherHelper.Model.Common;
+using CommonDataHelper.TagHelper;
 
 namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherHelper : IDocumentPublisher
     {
-        public void PublishDocument(ISyracuseOfficeCustomData syracuseCustomData)
+        public void PublishDocument(byte[] base64DocumentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
             WordSavePrototype wordSaveNewDocumentPrototype = getWordSaveDocumentPrototypes().links.wordSaveNewDocumentPrototype;
 
             WordWorkingCopyPrototype wordWorkingCopyPrototype = getWordWorkingCopyPrototype(wordSaveNewDocumentPrototype);
 
-            publishDocument(wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData);
+            publishDocument(base64DocumentContent, wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData, publishDocumentParameters);
         }
 
-        private void publishDocument(WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData)
+        private void publishDocument(byte[] base64DocumentContent, WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
             string workingCopyInitialisationResponse = initialiseWorkingCopy(wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData);
             if (string.IsNullOrEmpty(workingCopyInitialisationResponse))
                 return;
 
             WordWorkingCopyPrototype workingCopyResponseJson = Newtonsoft.Json.JsonConvert.DeserializeObject<WordWorkingCopyPrototype>(workingCopyInitialisationResponse);
-
-            /*
-             * To do:
-             * 
-             * Update working copy:
-             * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')?representation=msoWordDocument.$edit&templateClass=user.%24query&volumeCode=STD&representationName=user.%24bulk&className=users&x3Keys=&officeEndpoint=syracuse&trackingId=126ef1f4-60ef-4896-9f07-56af2df15a85 HTTP/1.1
-             * 
-             * Update working copy (on save):
-             * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')?representation=msoWordDocument.$edit&templateClass=user.%24query&volumeCode=STD&representationName=user.%24bulk&className=users&x3Keys=&officeEndpoint=syracuse&trackingId=126ef1f4-60ef-4896-9f07-56af2df15a85 HTTP/1.1
-             * 
-             * Save to document:
-             * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')/content 
-             * JSON - Content_Types + base64 representation of document
-             */
 
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -58,11 +47,48 @@ namespace CommonDataHelper.PublisherHelper
                 wordPublishDocumentJson.url = workingCopyResponseJson.url;
                 wordPublishDocumentJson.uuid = workingCopyResponseJson.uuid;
 
-                wordPublishDocumentJson.description = "yyy";
+                wordPublishDocumentJson.description = publishDocumentParameters.Description;
 
-                string json = JsonConvert.SerializeObject(wordPublishDocumentJson, Formatting.Indented);
+                SyracuseUuid storageVolumeUuid = new SyracuseUuid();
+                storageVolumeUuid.uuid = publishDocumentParameters.StorageVolume;
+                wordPublishDocumentJson.storageVolume = storageVolumeUuid;
 
-                string test = webHelper.setServerJson(new Uri(workingCopyResponseJson.url), "PUT", json, out httpStatusCode);
+                SyracuseUuid ownerUuid = new SyracuseUuid();
+                ownerUuid.uuid = publishDocumentParameters.Owner;
+                wordPublishDocumentJson.owner = ownerUuid;
+
+//              foreach (TagItem tagItem in publishDocumentParameters.Tag)
+                //{
+                //}
+
+
+                string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocumentJson, Formatting.Indented);
+
+                string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseJson.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
+                if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
+                {
+                    /*
+                     * We've updated the working copy, so we can now save the document...
+                     * Save to document:
+                     * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')/content 
+                     * JSON - Content_Types + base64 representation of document
+                     */
+
+                    string workingCopyUrlPath = new Uri(workingCopyResponseJson.url).GetLeftPart(UriPartial.Path);
+                    Uri contentUrl = new Uri(workingCopyUrlPath + "/content");
+
+                    //string x = Convert.FromBase64CharArray(base64DocumentContent);
+
+                   // string test = webHelper.setServerJson(contentUrl, "PUT", /*base64DocumentContent*/"", out httpStatusCode);
+
+                    //webHelper.UploadFilesToRemoteUrl(contentUrl.ToString(), @"c:\temp\user.docx");
+
+
+                    //NameValueCollection nvc = new NameValueCollection();
+                    //nvc.Add("id", "TTR");
+                    //nvc.Add("btn-submit-photo", "Upload");
+                    //webHelper.HttpUploadFile(contentUrl.ToString(), @"c:\temp\user.docx", "file", "image/jpeg", nvc);
+                }
             }
         }
 
@@ -127,7 +153,7 @@ namespace CommonDataHelper.PublisherHelper
 
             string x3Keys = String.Empty; // TODO: see _setLinkingProperties for more details.
 
-            string officeEndpoint = urlSegments[4]; //  "syracuse";
+            string officeEndpoint = urlSegments.Count<string>() > 4 ? urlSegments[4] : null;
             string trackingId = wordWorkingCopyPrototype.trackingId;
 
             StringBuilder queryParameters = new StringBuilder(wordSaveNewDocumentPrototype.url);

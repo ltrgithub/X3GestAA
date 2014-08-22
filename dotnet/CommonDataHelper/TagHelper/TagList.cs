@@ -5,11 +5,12 @@ using System.Text;
 using System.Net;
 using CommonDataHelper.SyracuseTagHelper.Model;
 
+
 namespace CommonDataHelper.TagHelper
 {
-    public class TagHelper
+    public class TagList
     {
-        public List<string> createTagList()
+        public List<TagItem> createTagList()
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -29,14 +30,19 @@ namespace CommonDataHelper.TagHelper
                 return null;
             }
 
-            List<string> tagsList = new List<string>();
+            List<TagItem> tagsList = new List<TagItem>();
             if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
             {
-                var syracuseTags = Newtonsoft.Json.JsonConvert.DeserializeObject<SyracuseTags>(responseJson);
+                /*
+                 * When one or more tags are selected, the payload sent to the server includes the entire tag item json, and not just the Uuid
+                 * We'll therefore get the json for each tag item, then extract the description separately for displaying in the drop down.
+                 */
+                var tags = Newtonsoft.Json.JsonConvert.DeserializeObject<TagsModel>(responseJson);
 
-                foreach (SyracuseTag syracuseTag in syracuseTags.tags)
+                foreach (object tag in tags.tags)
                 {
-                    tagsList.Add(syracuseTag.description);
+                    string tagDescription = Newtonsoft.Json.JsonConvert.DeserializeObject<TagModel>(tag.ToString()).description;
+                    tagsList.Add(new TagItem(tagDescription, tag.ToString()));
                 }
             }
             return tagsList;

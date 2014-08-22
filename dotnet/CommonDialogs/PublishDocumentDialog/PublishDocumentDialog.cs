@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CommonDialogs.PublishDocumentDialog;
+using System.Collections;
 
 namespace CommonDialogs.PublishDocumentDialog
 {
@@ -25,70 +26,82 @@ namespace CommonDialogs.PublishDocumentDialog
 
         public string StorageVolume
         {
-            get { return comboBoxStorageVolume.Text; }
+            get { return comboBoxStorageVolume.SelectedValue.ToString(); }
             set { comboBoxStorageVolume.Text = value; }
         }
 
         public new string Owner
         {
-            get { return comboBoxOwner.Text; }
+            get { return comboBoxOwner.SelectedValue.ToString(); }
             set { comboBoxOwner.Text = value; }
         }
 
-        public new string Tag
+        public new CheckedListBox.CheckedItemCollection Tag
         {
-            get { return comboBoxTag.Text; }
-            set { comboBoxTag.Text = value; }
+            get { return checkedListBoxTags.CheckedItems; }
         }
 
-        public string Team
+        public CheckedListBox.CheckedItemCollection Team
         {
-            get { return comboBoxTeam.Text; }
-            set { comboBoxTeam.Text = value; }
+            get { return checkedListBoxTeams.CheckedItems; }
         }
 
-        public List<string> StorageVolumeList
+        public object StorageVolumeList
         {
             get { return null; }
-            set { comboBoxStorageVolume.DataSource = new BindingSource( value, null).DataSource; }
+            set { 
+                comboBoxStorageVolume.DataSource = value;
+                comboBoxStorageVolume.DisplayMember = "Code";
+                comboBoxStorageVolume.ValueMember = "Uuid";
+            } 
         }
 
-        public List<string> OwnerList
+        public object OwnerList
         {
             get { return null; }
-            set { comboBoxOwner.DataSource = new BindingSource(value, null).DataSource; }
+            set {
+                comboBoxOwner.DataSource = value;
+                comboBoxOwner.DisplayMember = "Login";
+                comboBoxOwner.ValueMember = "Uuid";
+            }
         }
 
-        public List<string> TagList
+        public object TagList
         {
             get { return null; }
-            set { comboBoxTag.DataSource = new BindingSource(value, null).DataSource; }
+            set
+            {
+                checkedListBoxTags.DataSource = value;
+                checkedListBoxTags.DisplayMember = "Description";
+                checkedListBoxTags.ValueMember = "TagJson";
+            }
         }
 
-        public List<string> TeamList
+        public object TeamList
         {
             get { return null; }
-            set { comboBoxTeam.DataSource = new BindingSource(value, null).DataSource; }
+            set
+            {
+                checkedListBoxTeams.DataSource = value;
+                checkedListBoxTeams.DisplayMember = "Description";
+                checkedListBoxTeams.ValueMember = "TeamJson";
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            _publisherDelegate();
+            _publisherDelegate(this);
         }
 
-        PublisherDelegate _publisherDelegate = null;
-        public void Publisher(PublisherDelegate publisherDelegate) 
+        PublisherDocumentDelegate _publisherDelegate = null;
+        public void Publisher(PublisherDocumentDelegate publisherDelegate) 
         {
             _publisherDelegate = publisherDelegate;
         }
 
-        //private ISyracuseOfficeCustomData _syracuseCustomData = null;
-        
-
-
-        //public DialogResult DialogShow()
-        //{
-        //    return ShowDialog();
-        //}
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
+        {
+            btnOk.Enabled = !string.IsNullOrEmpty(textBoxDescription.Text);
+        }
     }
 }

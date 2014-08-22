@@ -11,11 +11,8 @@ namespace CommonDialogs.ServerSettingsDialog
             InitializeComponent();
         }
 
-        private string _baseUrl = null;
         public string BaseUrl
         {
-            //get { return _baseUrl;  }
-            //set { _baseUrl = value; }
             get { return textBoxServerAddress.Text; }
             set { textBoxServerAddress.Text = value; }
         }

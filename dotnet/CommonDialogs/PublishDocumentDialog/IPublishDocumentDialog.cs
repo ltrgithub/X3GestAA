@@ -6,22 +6,25 @@ using System.Windows.Forms;
 
 namespace CommonDialogs.PublishDocumentDialog
 {
-    public delegate void PublisherDelegate ();
+    public delegate void PublisherDocumentDelegate(IPublishDocument publishDocumentParameters);
 
-    public interface IPublishDocumentDialog
+    public interface IPublishDocument
     {
         string Description { get; set; }
         string StorageVolume { get; set; }
         string Owner { get; set; }
-        string Tag { get; set; }
-        string Team { get; set; }
+        CheckedListBox.CheckedItemCollection Tag { get; }
+        CheckedListBox.CheckedItemCollection Team { get; }
+    }
 
-        List<string> StorageVolumeList { set; }
-        List<string> OwnerList { set; }
-        List<string> TagList { set; }
-        List<string> TeamList { set; }
+    public interface IPublishDocumentDialog : IPublishDocument
+    {
+        object StorageVolumeList { set; }
+        object OwnerList { set; }
+        object TagList { set; }
+        object TeamList { set; }
 
         DialogResult ShowDialog();
-        void Publisher (PublisherDelegate publisherDelegate);
+        void Publisher (PublisherDocumentDelegate publisherDelegate);
     }
 }

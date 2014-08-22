@@ -1,6 +1,6 @@
-﻿namespace CommonDialogs.PublishDocumentDialog
+﻿namespace CommonDialogs.PublishDocumentTemplateDialog
 {
-    partial class PublishDocumentDialog
+    partial class PublishDocumentTemplateDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentTemplateDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
-            this.comboBoxStorageVolume = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
             this.labelOwner = new System.Windows.Forms.Label();
-            this.labelStorageVolume = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -44,17 +42,27 @@
             this.checkedListBoxTags = new System.Windows.Forms.CheckedListBox();
             this.labelTeams = new System.Windows.Forms.Label();
             this.labelTags = new System.Windows.Forms.Label();
+            this.groupBoxRelatedTo = new System.Windows.Forms.GroupBox();
+            this.labelActivityCode = new System.Windows.Forms.Label();
+            this.labelLegislation = new System.Windows.Forms.Label();
+            this.labelCompany = new System.Windows.Forms.Label();
+            this.comboBoxActivityCode = new System.Windows.Forms.ComboBox();
+            this.comboBoxLegislation = new System.Windows.Forms.ComboBox();
+            this.comboBoxCompany = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxEndpoint = new System.Windows.Forms.ComboBox();
+            this.labelPurpose = new System.Windows.Forms.Label();
+            this.comboBoxPurpose = new System.Windows.Forms.ComboBox();
             this.groupBoxDescription.SuspendLayout();
             this.groupBoxTagsAndTeams.SuspendLayout();
+            this.groupBoxRelatedTo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxDescription
             // 
             this.groupBoxDescription.Controls.Add(this.comboBoxOwner);
-            this.groupBoxDescription.Controls.Add(this.comboBoxStorageVolume);
             this.groupBoxDescription.Controls.Add(this.checkBoxReadOnly);
             this.groupBoxDescription.Controls.Add(this.labelOwner);
-            this.groupBoxDescription.Controls.Add(this.labelStorageVolume);
             this.groupBoxDescription.Controls.Add(this.textBoxDescription);
             this.groupBoxDescription.Controls.Add(this.labelDescription);
             resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
@@ -68,13 +76,6 @@
             resources.ApplyResources(this.comboBoxOwner, "comboBoxOwner");
             this.comboBoxOwner.Name = "comboBoxOwner";
             // 
-            // comboBoxStorageVolume
-            // 
-            this.comboBoxStorageVolume.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStorageVolume.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBoxStorageVolume, "comboBoxStorageVolume");
-            this.comboBoxStorageVolume.Name = "comboBoxStorageVolume";
-            // 
             // checkBoxReadOnly
             // 
             resources.ApplyResources(this.checkBoxReadOnly, "checkBoxReadOnly");
@@ -85,11 +86,6 @@
             // 
             resources.ApplyResources(this.labelOwner, "labelOwner");
             this.labelOwner.Name = "labelOwner";
-            // 
-            // labelStorageVolume
-            // 
-            resources.ApplyResources(this.labelStorageVolume, "labelStorageVolume");
-            this.labelStorageVolume.Name = "labelStorageVolume";
             // 
             // textBoxDescription
             // 
@@ -149,11 +145,88 @@
             resources.ApplyResources(this.labelTags, "labelTags");
             this.labelTags.Name = "labelTags";
             // 
-            // PublishDocumentDialog
+            // groupBoxRelatedTo
+            // 
+            this.groupBoxRelatedTo.Controls.Add(this.labelActivityCode);
+            this.groupBoxRelatedTo.Controls.Add(this.labelLegislation);
+            this.groupBoxRelatedTo.Controls.Add(this.labelCompany);
+            this.groupBoxRelatedTo.Controls.Add(this.comboBoxActivityCode);
+            this.groupBoxRelatedTo.Controls.Add(this.comboBoxLegislation);
+            this.groupBoxRelatedTo.Controls.Add(this.comboBoxCompany);
+            this.groupBoxRelatedTo.Controls.Add(this.label1);
+            this.groupBoxRelatedTo.Controls.Add(this.comboBoxEndpoint);
+            this.groupBoxRelatedTo.Controls.Add(this.labelPurpose);
+            this.groupBoxRelatedTo.Controls.Add(this.comboBoxPurpose);
+            resources.ApplyResources(this.groupBoxRelatedTo, "groupBoxRelatedTo");
+            this.groupBoxRelatedTo.Name = "groupBoxRelatedTo";
+            this.groupBoxRelatedTo.TabStop = false;
+            // 
+            // labelActivityCode
+            // 
+            resources.ApplyResources(this.labelActivityCode, "labelActivityCode");
+            this.labelActivityCode.Name = "labelActivityCode";
+            // 
+            // labelLegislation
+            // 
+            resources.ApplyResources(this.labelLegislation, "labelLegislation");
+            this.labelLegislation.Name = "labelLegislation";
+            // 
+            // labelCompany
+            // 
+            resources.ApplyResources(this.labelCompany, "labelCompany");
+            this.labelCompany.Name = "labelCompany";
+            // 
+            // comboBoxActivityCode
+            // 
+            this.comboBoxActivityCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxActivityCode.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxActivityCode, "comboBoxActivityCode");
+            this.comboBoxActivityCode.Name = "comboBoxActivityCode";
+            // 
+            // comboBoxLegislation
+            // 
+            this.comboBoxLegislation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLegislation.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxLegislation, "comboBoxLegislation");
+            this.comboBoxLegislation.Name = "comboBoxLegislation";
+            // 
+            // comboBoxCompany
+            // 
+            this.comboBoxCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCompany.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxCompany, "comboBoxCompany");
+            this.comboBoxCompany.Name = "comboBoxCompany";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // comboBoxEndpoint
+            // 
+            this.comboBoxEndpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEndpoint.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxEndpoint, "comboBoxEndpoint");
+            this.comboBoxEndpoint.Name = "comboBoxEndpoint";
+            // 
+            // labelPurpose
+            // 
+            resources.ApplyResources(this.labelPurpose, "labelPurpose");
+            this.labelPurpose.Name = "labelPurpose";
+            // 
+            // comboBoxPurpose
+            // 
+            this.comboBoxPurpose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPurpose.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
+            this.comboBoxPurpose.Name = "comboBoxPurpose";
+            // 
+            // PublishDocumentTemplateDialog
             // 
             this.AcceptButton = this.btnOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBoxRelatedTo);
             this.Controls.Add(this.groupBoxTagsAndTeams);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -161,11 +234,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PublishDocumentDialog";
+            this.Name = "PublishDocumentTemplateDialog";
             this.groupBoxDescription.ResumeLayout(false);
             this.groupBoxDescription.PerformLayout();
             this.groupBoxTagsAndTeams.ResumeLayout(false);
             this.groupBoxTagsAndTeams.PerformLayout();
+            this.groupBoxRelatedTo.ResumeLayout(false);
+            this.groupBoxRelatedTo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -174,10 +249,8 @@
 
         private System.Windows.Forms.GroupBox groupBoxDescription;
         private System.Windows.Forms.ComboBox comboBoxOwner;
-        private System.Windows.Forms.ComboBox comboBoxStorageVolume;
         private System.Windows.Forms.CheckBox checkBoxReadOnly;
         private System.Windows.Forms.Label labelOwner;
-        private System.Windows.Forms.Label labelStorageVolume;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Button btnCancel;
@@ -185,7 +258,18 @@
         private System.Windows.Forms.GroupBox groupBoxTagsAndTeams;
         private System.Windows.Forms.Label labelTags;
         private System.Windows.Forms.Label labelTeams;
-        private System.Windows.Forms.CheckedListBox checkedListBoxTeams;
+        private System.Windows.Forms.GroupBox groupBoxRelatedTo;
+        private System.Windows.Forms.Label labelPurpose;
+        private System.Windows.Forms.ComboBox comboBoxPurpose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxEndpoint;
+        private System.Windows.Forms.ComboBox comboBoxActivityCode;
+        private System.Windows.Forms.ComboBox comboBoxLegislation;
+        private System.Windows.Forms.ComboBox comboBoxCompany;
+        private System.Windows.Forms.Label labelCompany;
+        private System.Windows.Forms.Label labelActivityCode;
+        private System.Windows.Forms.Label labelLegislation;
         private System.Windows.Forms.CheckedListBox checkedListBoxTags;
+        private System.Windows.Forms.CheckedListBox checkedListBoxTeams;
     }
 }

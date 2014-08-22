@@ -129,7 +129,7 @@ namespace CommonDataHelper
                     }
                     else
                     {
-                        newLines.Add(line);
+                        // Don't add. As we're likely to be storing more user preferences in future, we'll need to look at this again...
                     }
                 }
             }

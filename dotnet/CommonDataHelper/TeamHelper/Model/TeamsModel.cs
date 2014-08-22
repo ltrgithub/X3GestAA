@@ -6,15 +6,9 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.SyracuseTeamHelper.Model
 {
-    public class SyracuseTeams
+    public class TeamsModel
     {
-        [JsonProperty("$url")]
-        public String url;
-
-        [JsonProperty("$descriptor")]
-        public String descriptor;
-
         [JsonProperty("$resources")]
-        public List<SyracuseTeam> teams { get; set; }
+        public List<object> teams { get; set; }
     }
 }

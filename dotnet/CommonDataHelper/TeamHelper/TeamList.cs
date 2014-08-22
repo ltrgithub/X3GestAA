@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using CommonDataHelper.SyracuseTeamHelper.Model;
+using CommonDataHelper.TeamHelper;
 
 namespace CommonDataHelper
 {
-    public class TeamHelper
+    public class TeamList
     {
-        public List<string> createTeamList()
+        public List<TeamItem> createTeamList()
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -29,14 +30,19 @@ namespace CommonDataHelper
                 return null;
             }
 
-            List<string> teamsList = new List<string>();
+            List<TeamItem> teamsList = new List<TeamItem>();
             if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
             {
-                var syracuseTeams = Newtonsoft.Json.JsonConvert.DeserializeObject<SyracuseTeams>(responseJson);
+                /*
+                 * When one or more teams are selected, the payload sent to the server includes the entire team item json, and not just the Uuid
+                 * We'll therefore get the json for each team item, then extract the description separately for displaying in the drop down.
+                 */
+                var teams = Newtonsoft.Json.JsonConvert.DeserializeObject<TeamsModel>(responseJson);
 
-                foreach (SyracuseTeam syracuseTeam in syracuseTeams.teams)
+                foreach (object team in teams.teams)
                 {
-                    teamsList.Add(syracuseTeam.description);
+                    string teamDescription = Newtonsoft.Json.JsonConvert.DeserializeObject<TeamModel>(team.ToString()).description;
+                    teamsList.Add(new TeamItem(teamDescription, team.ToString()));
                 }
 
             }

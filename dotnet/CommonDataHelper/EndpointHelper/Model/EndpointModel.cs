@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace CommonDataHelper.TagHelper.Model
+namespace CommonDataHelper.EndpointHelper.Model
 {
-    public class SyracuseCategory
+    public class EndpointModel
     {
-        [JsonProperty("$uuid")]
-        public String uuid;
-
         [JsonProperty("description")]
         public String description;
+
+        [JsonProperty("$uuid")]
+        public String uuid;
     }
 }

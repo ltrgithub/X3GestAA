@@ -6,15 +6,9 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.SyracuseTagHelper.Model
 {
-    public class SyracuseTags
+    public class TagsModel
     {
-        [JsonProperty("$url")]
-        public String url;
-
-        [JsonProperty("$descriptor")]
-        public String descriptor;
-
         [JsonProperty("$resources")]
-        public List<SyracuseTag> tags { get; set; }
+        public List<object> tags { get; set; }
     }
 }

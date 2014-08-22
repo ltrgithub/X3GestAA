@@ -20,6 +20,14 @@ namespace CommonDataHelper
             if (CookieHelper.CookieContainer == null)
             {
                 CookieHelper.InitialiseCookies();
+                if (CredentialsHelper.Retries == 0)
+                {
+                    /*
+                     * We've cancelled the entry of credentials, so just return an error condition.
+                     */
+                    statusCode = HttpStatusCode.InternalServerError;
+                    return responseJson;
+                }
             }
 
             NetworkCredential nc = CredentialsHelper.UserCredentials;
