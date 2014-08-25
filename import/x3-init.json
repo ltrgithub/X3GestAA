@@ -6,12 +6,33 @@
 				"title"
 			]
 		},
+		"securityProfile": {
+			"$key": "code",
+			"$localized": [
+				"description"
+			],
+			"profileItems": {
+				"$key": "code",
+				"$localized": [
+					"description"
+				]
+			}
+		},
+		"securityProfileItem": {
+			"$key": "code",
+			"$localized": [
+				"description"
+			]
+		},
 		"role": {
 			"$key": "code",
 			"$localized": [
 				"description"
 			],
 			"badges": {
+				"$key": "code"
+			},
+			"securityProfile": {
 				"$key": "code"
 			}
 		}
@@ -60,12 +81,173 @@
 			"keyFunction2": "APATCH, APATCHA, BUDAPP, CPTQUIT, FIYEND, FUNAUTINVC, FUNAUTINVD, FUNAUTINVO, FUNAUTINVS, FUNAUTINVT, FUNCFMINV, FUNMAUTR, FUNPIH, GESACLA, GESACTX, GESAFC, GESAMK, GESAOB, GESARP, GESASU, GESASW, GESATB, GESATY, GESAWI, GESBAP, GESBIC, GESCON, GESENV, GESEXS, GESFAS, GESGAS, GESLOF, GESMAC, GESMFG, GESMTK, GESOPP, GESPAY, GESPIH, GESPOH, GESPSH, GESPTH, GESROU, GESSCO, GESSDH, GESSIH, GESSMO, GESSMR, GESSMX, GESSOH, GESSQH, GESSRE, GESSTQ, GESTSK, LETTRAGE, LETTRAUTO, PAYPROPAL, RELBANK, VXAPT"
 		},
 		{
+			"$type": "securityProfile",
+			"code": "ADMIN",
+			"description": "description_4b2771fa-6eb1-499d-9718-631f7db54b2b",
+			"authoringLevel": "sage",
+			"profileItems": [
+				{
+					"code": "myProfile",
+					"description": "description_92d76531-f2b7-4d0d-98c9-1eef93224c56",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "users",
+					"description": "description_29e34a17-3407-4426-adfb-9e8efa5ef41c",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "technicalSettings",
+					"description": "description_fabbf768-692d-4102-a442-cbfe791138bd",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "authoring",
+					"description": "description_308b92b1-5ba5-4348-883b-27915ddcc648",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "collaborationArea",
+					"description": "description_a98559c2-7b45-42a3-bf60-f10098265de0",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "maintenanceAndStatus",
+					"description": "description_f87863c2-7bad-4cb4-bb6a-41c06de1392e",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "importData",
+					"description": "description_a689558f-f50b-4acb-b0d1-f10472e68998",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				},
+				{
+					"code": "exportData",
+					"description": "description_688ad295-7a4f-4a6f-818f-0209a8280138",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": true
+				}
+			]
+		},
+		{
+			"$type": "securityProfile",
+			"code": "User",
+			"description": "description_a84c663c-e01a-4e5d-a18a-ed1281095a0f",
+			"authoringLevel": "user",
+			"profileItems": [
+				{
+					"code": "myProfile",
+					"description": "description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e",
+					"canCreate": false,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": false,
+					"canExecute": false
+				},
+				{
+					"code": "users",
+					"description": "description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6",
+					"canCreate": false,
+					"canRead": false,
+					"canWrite": false,
+					"canDelete": false,
+					"canExecute": false
+				},
+				{
+					"code": "technicalSettings",
+					"description": "description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5",
+					"canCreate": false,
+					"canRead": false,
+					"canWrite": false,
+					"canDelete": false,
+					"canExecute": false
+				},
+				{
+					"code": "authoring",
+					"description": "description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee",
+					"canCreate": false,
+					"canRead": false,
+					"canWrite": false,
+					"canDelete": false,
+					"canExecute": false
+				},
+				{
+					"code": "collaborationArea",
+					"description": "description_81d3a18c-b570-42fb-b4a2-35c09bb45fac",
+					"canCreate": true,
+					"canRead": true,
+					"canWrite": true,
+					"canDelete": true,
+					"canExecute": false
+				},
+				{
+					"code": "maintenanceAndStatus",
+					"description": "description_62678f95-9dcc-4603-9582-7242f2c7726e",
+					"canCreate": false,
+					"canRead": false,
+					"canWrite": false,
+					"canDelete": false,
+					"canExecute": false
+				},
+				{
+					"code": "importData",
+					"description": "description_11f49077-322f-48c0-b17a-e592d5f7db7f",
+					"canCreate": false,
+					"canRead": false,
+					"canWrite": false,
+					"canDelete": false,
+					"canExecute": false
+				},
+				{
+					"code": "exportData",
+					"description": "description_46bb92e2-c0f3-41f6-b6cf-a32398595110",
+					"canCreate": false,
+					"canRead": false,
+					"canWrite": false,
+					"canDelete": false,
+					"canExecute": false
+				}
+			]
+		},
+		{
 			"$type": "role",
 			"code": "ERP-APACCMAN",
 			"description": "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -73,7 +255,8 @@
 			"description": "description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -81,7 +264,8 @@
 			"description": "description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -89,7 +273,8 @@
 			"description": "description_bfe89a0d-f6c9-4c46-8870-52edca1a36a8",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -97,7 +282,8 @@
 			"description": "description_af5873ae-5c5a-4e15-b058-55a73f7a42b5",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -105,7 +291,8 @@
 			"description": "description_21875af0-7fb3-46b1-9c7a-d2f38254922a",
 			"badges": [
 				"ERPMAN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -113,7 +300,8 @@
 			"description": "description_121bf969-1712-4230-8173-9153e2110b9d",
 			"badges": [
 				"ERPFULL"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -121,7 +309,8 @@
 			"description": "description_fd8f141c-963c-4eb9-8846-1599f2063d5e",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -129,7 +318,8 @@
 			"description": "description_47677de4-3074-4087-9166-97ec3bc6c6c8",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -137,7 +327,8 @@
 			"description": "description_f61b5a2d-8e3d-4866-a339-dddb2eb2ddbb",
 			"badges": [
 				"ERPMAN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -145,7 +336,8 @@
 			"description": "description_2b628528-65ce-400c-bfa4-2042a23a45fc",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -153,7 +345,8 @@
 			"description": "description_d3a515c9-59c8-41b3-a553-105e408cdda2",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -161,7 +354,8 @@
 			"description": "description_1161bd84-59e5-44c3-8a7f-85194b6ecb3b",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -169,7 +363,8 @@
 			"description": "description_2afb3b1d-10bd-4184-841b-6df9b57b5caf",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -177,18 +372,17 @@
 			"description": "description_7a7555ea-4b35-4903-9b31-e6f939d34691",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
 			"code": "ERP-SYSTADMIN",
 			"description": "description_489b2241-48bb-4eb9-b2b0-425c798ccfd0",
 			"badges": [
-				"ERPFULL",
-				"ERPDEV",
-				"ERPTRAN",
-				"ERPFIN"
-			]
+				"ERPFULL"
+			],
+			"securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
@@ -196,7 +390,8 @@
 			"description": "description_f7fef015-82f1-45b1-96d9-4eb4f5b0de00",
 			"badges": [
 				"ERPMAN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -204,7 +399,8 @@
 			"description": "description_b912d3de-cccc-4d49-bd9a-e25869a8eecf",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -212,7 +408,8 @@
 			"description": "description_6e8c382b-5e8a-4430-ad4c-5bfb211f8832",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -220,7 +417,8 @@
 			"description": "description_e88078ef-431a-486b-b5ac-f524793072ce",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -228,7 +426,8 @@
 			"description": "description_2baa4d21-88d7-475d-a061-7248f9ab1f03",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -236,7 +435,8 @@
 			"description": "description_52ce4f78-5db6-4dfc-9e35-46dbcc4a26c7",
 			"badges": [
 				"ERPMAN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -244,7 +444,8 @@
 			"description": "description_d7e134da-ff1d-4a6c-bcb2-b79c7872cd71",
 			"badges": [
 				"ERPFULL"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -252,7 +453,8 @@
 			"description": "description_e0369a65-64bc-4b49-9a4f-e122afa1cea1",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -260,7 +462,8 @@
 			"description": "description_f51ce667-b27e-41fe-bec3-0e656c198dd2",
 			"badges": [
 				"ERPMAN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -268,7 +471,8 @@
 			"description": "description_6679e746-35f1-45dd-bfbf-6f9c252cf8ec",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -276,7 +480,8 @@
 			"description": "description_71b03aa1-395d-47fc-a795-bd83948da5bb",
 			"badges": [
 				"ERPFIN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -284,7 +489,8 @@
 			"description": "description_80a6606e-febd-4bbf-b755-5c5b28175d49",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -292,7 +498,8 @@
 			"description": "description_46aaf428-b92c-4f92-b2f6-eaad254d2319",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -300,7 +507,8 @@
 			"description": "description_e028644e-8d4e-4896-8657-51502aecae1a",
 			"badges": [
 				"ERPDIS"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -308,7 +516,8 @@
 			"description": "description_29b6c0b8-c8d9-458a-ba9a-e55610b22fca",
 			"badges": [
 				"ERPFULL"
-			]
+			],
+			"securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
@@ -316,7 +525,8 @@
 			"description": "description_d890c626-fd4b-4f1e-ab9c-eaf825083dcb",
 			"badges": [
 				"ERPMAN"
-			]
+			],
+			"securityProfile": "User"
 		},
 		{
 			"$type": "role",
@@ -324,7 +534,8 @@
 			"description": "description_5491d848-54b4-43f8-a7e5-d52899314112",
 			"badges": [
 				"ERPDEV"
-			]
+			],
+			"securityProfile": "ADMIN"
 		}
 	],
 	"$localization": {
@@ -335,6 +546,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Benutzer Finanzen",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Benutzer Distribution",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Entwickler",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -376,6 +605,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utilisateur Op. - Finance",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Operation User - Distribution",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Developer",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -417,6 +664,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Operation User - Finance",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Operation User - Distribution",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Developer",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -458,6 +723,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Usuario Op. - Finanzas",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Usuario Op. - Distribución",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Desarrollador",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -499,6 +782,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utilisateur Op. - Finance",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Utilisateur Op. - Distribution",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Développeur",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "Utilisateur",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -540,6 +841,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utente applicativo Finance",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Utente applicat. Distribution",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Sviluppatore",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -581,6 +900,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Uż. operacyjny - finanse",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Uż. operacyjny - dystrybucja",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Deweloper",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -622,6 +959,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utilizador - Finanças",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Utilizador - Distribuição",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Programador",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -663,6 +1018,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Operation User - Finance",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "Operation User - Distribution",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Developer",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
@@ -704,6 +1077,24 @@
 			"title_9ab4d64f-5814-4d91-8c5c-796267beb686": "操作用户 - 财务模块",
 			"title_7f61c80b-60be-4a43-8175-f9f739508b08": "操作用户 - 分销模块",
 			"title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "开发人员",
+			"description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
+			"description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
+			"description_29e34a17-3407-4426-adfb-9e8efa5ef41c": "Users, groups and roles management",
+			"description_fabbf768-692d-4102-a442-cbfe791138bd": "Setup servers, endpoints, schedulers and authentication",
+			"description_308b92b1-5ba5-4348-883b-27915ddcc648": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_a98559c2-7b45-42a3-bf60-f10098265de0": "Teams, documents and storage, Office integration",
+			"description_f87863c2-7bad-4cb4-bb6a-41c06de1392e": "System status and logs, maintainance actions",
+			"description_a689558f-f50b-4acb-b0d1-f10472e68998": "Import data",
+			"description_688ad295-7a4f-4a6f-818f-0209a8280138": "Export data",
+			"description_a84c663c-e01a-4e5d-a18a-ed1281095a0f": "User",
+			"description_7c20fcce-edd3-4017-a6a3-36e3d8650b9e": "Personal user profile",
+			"description_9e93f98f-57c7-451f-83f2-4f0fd5b868c6": "Users, groups and roles management",
+			"description_5d4d58ee-afe5-4d5a-a419-c48e498f22d5": "Setup servers, endpoints, schedulers and authentication",
+			"description_78ea9a4a-b7c6-4c63-bf89-93a2e031a1ee": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_81d3a18c-b570-42fb-b4a2-35c09bb45fac": "Teams, documents and storage, Office integration",
+			"description_62678f95-9dcc-4603-9582-7242f2c7726e": "System status and logs, maintainance actions",
+			"description_11f49077-322f-48c0-b17a-e592d5f7db7f": "Import data",
+			"description_46bb92e2-c0f3-41f6-b6cf-a32398595110": "Export data",
 			"description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
 			"description_9fcb1e24-f59a-4a3d-991b-6e4e94bcf893": "ERP-ARACCMAN",
 			"description_4ff52e5f-525f-4b47-9a6b-28dd88bdd3e2": "ERP-CHIEFACCOUNTANT",
