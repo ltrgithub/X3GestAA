@@ -37,6 +37,44 @@ exports.config = {
 		port: 8125
 	},
 	*/
+    traceConfig: {
+        logErrorsToConsole: false,
+        search : {
+            enabled: true,
+            level: "debug",
+            transport: "console"
+        },
+        help: {
+            enabled: true,
+            level: "debug",
+            transport: "storagearea"
+        },
+        hrm: {
+            enabled: false,
+            level: "info",
+            transport: "console"
+        },
+        collaboration: {
+            enabled: false,
+            level: "error",
+            transport: "console"
+        },
+        classicAction: {
+            enabled: false,
+            level: "error",
+            transport: "console"
+        },
+        classicProtocol: {
+            enabled: false,
+            level: "error",
+            transport: "console"
+        },
+        classicSession: {
+            enabled: false,
+            level: "error",
+            transport: "console"
+        }
+    },
 	session: {
 		timeout: 20, // minutes
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
