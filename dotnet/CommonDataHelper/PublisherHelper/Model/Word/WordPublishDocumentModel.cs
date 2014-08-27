@@ -7,7 +7,7 @@ using CommonDataHelper.PublisherHelper.Model.Common;
 
 namespace CommonDataHelper.PublisherHelper.Model.Word
 {
-    public class WordPublishDocumentJson
+    public class WordPublishDocumentModel
     {
         [JsonProperty("$etag")]
         public int etag;
@@ -19,10 +19,10 @@ namespace CommonDataHelper.PublisherHelper.Model.Word
         public string description;
 
         [JsonProperty("volume")]
-        public SyracuseUuid storageVolume;
+        public SyracuseUuidModel storageVolume;
 
         [JsonProperty("owner")]
-        public SyracuseUuid owner;
+        public SyracuseUuidModel owner;
 
         [JsonProperty("$url")]
         public string url;

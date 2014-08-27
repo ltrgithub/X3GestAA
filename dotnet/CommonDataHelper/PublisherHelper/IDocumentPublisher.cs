@@ -8,6 +8,6 @@ namespace CommonDataHelper.PublisherHelper
 {
     public interface IDocumentPublisher
     {
-        void PublishDocument(byte[] base64DocumentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters); 
+        void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters);
     }
 }

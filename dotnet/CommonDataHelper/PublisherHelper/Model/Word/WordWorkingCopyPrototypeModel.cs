@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper.Model.Word
 {
-    public class WordWorkingCopyPrototype
+    public class WordWorkingCopyPrototypeModel
     {
         [JsonProperty("$uuid")]
         public string uuid;

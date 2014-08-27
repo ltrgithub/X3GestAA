@@ -375,7 +375,7 @@ namespace WordAddIn
                      * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
                      * A tidier solution needs to be found here...
                      */
-                    _documentContent = null; // new WordAddInJSExternal(customData, null).GetNonBase64DocumentContent();
+                    _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
                     //_base64DocumentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
 
                     publishDocumentDialog.ShowDialog();
@@ -388,7 +388,7 @@ namespace WordAddIn
             IDocumentPublisher publisher = new PublisherHelper();
             
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-            publisher.PublishDocument(_documentContent, customData, publishDocumentParameters);
+            publisher.publishDocument(_documentContent, customData, publishDocumentParameters);
         }
 
         public void publishReportTemplate()

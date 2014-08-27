@@ -16,7 +16,6 @@ namespace WordAddIn
     {
         private SyracuseOfficeCustomData customData;
         private BrowserDialog browserDialog;
-//        private Document doc;
 
         public WordAddInJSExternal(SyracuseOfficeCustomData customData, BrowserDialog browserDialog)
         {
@@ -170,6 +169,7 @@ namespace WordAddIn
                 wrdSelection.TypeParagraph();
             }
         }
+
         public void createDatasource(String mailMergeDataJSon)
         {
             if (checkReadOnly())
@@ -296,7 +296,7 @@ namespace WordAddIn
             return text;
         }
 
-        public string GetDocumentContent()
+        public byte[] GetDocumentContent()
         {
             // TODO: Original file will be closed, this is wrong
             // find a way to save a copy of the current doc. w/o
@@ -306,7 +306,7 @@ namespace WordAddIn
             if (doc == null)
             {
                 CommonUtils.ShowErrorMessage(global::WordAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
-                return "";
+                return null;
             }
 
             /*
@@ -343,7 +343,8 @@ namespace WordAddIn
                 doc.ToggleFormsDesign();
             }
             Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
-            return base64string;
+
+            return System.Text.Encoding.UTF8.GetBytes(rawDecode(base64string)); 
         }
 
         public void NotifySaveDocumentDone()
@@ -480,5 +481,42 @@ namespace WordAddIn
             return attributes & ~attributesToRemove;
         }
 
+        private string rawDecode(string input)
+        {
+            string output = string.Empty;
+
+            int chr1, chr2, chr3;
+            int enc1, enc2, enc3, enc4;
+            var i = 0;
+
+            System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(@"/[^A-Za-z0-9\+\/\=]/g");
+            input = rgx.Replace(input, "");
+
+            string _keyStr = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+            while (i < input.Length)
+            {
+                enc1 = _keyStr.IndexOf(input[i++]);
+                enc2 = _keyStr.IndexOf(input[i++]);
+                enc3 = _keyStr.IndexOf(input[i++]);
+                enc4 = _keyStr.IndexOf(input[i++]);
+
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+
+                output = output + char.ConvertFromUtf32(chr1);
+
+                if (enc3 != 64)
+                {
+                    output = output + char.ConvertFromUtf32(chr2);
+                }
+                if (enc4 != 64)
+                {
+                    output = output + char.ConvertFromUtf32(chr3);
+                }
+            }
+            return output;
+        }
     }
 }

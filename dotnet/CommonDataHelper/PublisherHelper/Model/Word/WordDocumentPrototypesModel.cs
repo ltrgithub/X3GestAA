@@ -6,9 +6,9 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper.Model.Word
 {
-    public class WordDocumentPrototypes
+    public class WordDocumentPrototypesModel
     {
         [JsonProperty("$links")]
-        public WordSavePrototypes links;
+        public WordSavePrototypesModel links;
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper.Model.Word
 {
-    public class WordSavePrototype
+    public class WordSavePrototypeModel
     {
         [JsonProperty("$title")]
         public string title;

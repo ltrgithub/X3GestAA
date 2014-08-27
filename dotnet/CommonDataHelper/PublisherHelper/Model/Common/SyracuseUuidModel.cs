@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper.Model.Common
 {
-    public class SyracuseUuid
+    public class SyracuseUuidModel
     {
         [JsonProperty("$uuid")]
         public string uuid;

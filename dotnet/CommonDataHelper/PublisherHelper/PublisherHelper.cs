@@ -10,27 +10,29 @@ using Newtonsoft.Json;
 using CommonDialogs.PublishDocumentDialog;
 using CommonDataHelper.PublisherHelper.Model.Common;
 using CommonDataHelper.TagHelper;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherHelper : IDocumentPublisher
     {
-        public void PublishDocument(byte[] base64DocumentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
+        public void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
-            WordSavePrototype wordSaveNewDocumentPrototype = getWordSaveDocumentPrototypes().links.wordSaveNewDocumentPrototype;
+            WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = getWordSaveDocumentPrototypes().links.wordSaveNewDocumentPrototype;
 
-            WordWorkingCopyPrototype wordWorkingCopyPrototype = getWordWorkingCopyPrototype(wordSaveNewDocumentPrototype);
+            WordWorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = getWordWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel);
 
-            publishDocument(base64DocumentContent, wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData, publishDocumentParameters);
+            publishDocument(documentContent, wordSaveNewDocumentPrototypeModel, wordWorkingCopyPrototypeModel, syracuseCustomData, publishDocumentParameters);
         }
 
-        private void publishDocument(byte[] base64DocumentContent, WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
+        private void publishDocument(byte[] documentContent, WordSavePrototypeModel wordSaveNewDocumentPrototype, WordWorkingCopyPrototypeModel wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
             string workingCopyInitialisationResponse = initialiseWorkingCopy(wordSaveNewDocumentPrototype, wordWorkingCopyPrototype, syracuseCustomData);
             if (string.IsNullOrEmpty(workingCopyInitialisationResponse))
                 return;
 
-            WordWorkingCopyPrototype workingCopyResponseJson = Newtonsoft.Json.JsonConvert.DeserializeObject<WordWorkingCopyPrototype>(workingCopyInitialisationResponse);
+            WordWorkingCopyPrototypeModel workingCopyResponseModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WordWorkingCopyPrototypeModel>(workingCopyInitialisationResponse);
 
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -39,60 +41,66 @@ namespace CommonDataHelper.PublisherHelper
             }
 
             HttpStatusCode httpStatusCode;
-            if (string.IsNullOrEmpty(workingCopyResponseJson.url) == false)
+            if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
             {
                 WebHelper webHelper = new WebHelper();
-                WordPublishDocumentJson wordPublishDocumentJson = new WordPublishDocumentJson();
-                wordPublishDocumentJson.etag = workingCopyResponseJson.etag;
-                wordPublishDocumentJson.url = workingCopyResponseJson.url;
-                wordPublishDocumentJson.uuid = workingCopyResponseJson.uuid;
 
-                wordPublishDocumentJson.description = publishDocumentParameters.Description;
+                SyracuseUuidModel storageVolumeUuid = new SyracuseUuidModel()
+                {
+                    uuid = publishDocumentParameters.StorageVolume
+                };
 
-                SyracuseUuid storageVolumeUuid = new SyracuseUuid();
-                storageVolumeUuid.uuid = publishDocumentParameters.StorageVolume;
-                wordPublishDocumentJson.storageVolume = storageVolumeUuid;
+                SyracuseUuidModel ownerUuid = new SyracuseUuidModel
+                {
+                    uuid = publishDocumentParameters.Owner
+                };
 
-                SyracuseUuid ownerUuid = new SyracuseUuid();
-                ownerUuid.uuid = publishDocumentParameters.Owner;
-                wordPublishDocumentJson.owner = ownerUuid;
+                WordPublishDocumentModel wordPublishDocument = new WordPublishDocumentModel
+                {
+                    etag = workingCopyResponseModel.etag,
+                    url = workingCopyResponseModel.url,
+                    uuid = workingCopyResponseModel.uuid,
+                    description = publishDocumentParameters.Description,
+                    storageVolume = storageVolumeUuid,
+                    owner = ownerUuid
+                };
 
-//              foreach (TagItem tagItem in publishDocumentParameters.Tag)
-                //{
-                //}
+                string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocument, Formatting.Indented);
 
-
-                string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocumentJson, Formatting.Indented);
-
-                string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseJson.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
+                string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                 if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                 {
-                    /*
-                     * We've updated the working copy, so we can now save the document...
-                     * Save to document:
-                     * PUT /sdata/syracuse/collaboration/syracuse/$workingCopies('126ef1f4-60ef-4896-9f07-56af2df15a85')/content 
-                     * JSON - Content_Types + base64 representation of document
-                     */
+                    string contentUrl = new Uri(workingCopyResponseModel.url).GetLeftPart(UriPartial.Path) + "/content";
 
-                    string workingCopyUrlPath = new Uri(workingCopyResponseJson.url).GetLeftPart(UriPartial.Path);
-                    Uri contentUrl = new Uri(workingCopyUrlPath + "/content");
+                    string contentResponseJson = webHelper.uploadFile(new Uri(contentUrl), "PUT", documentContent, out httpStatusCode, publishDocumentParameters.Description);
 
-                    //string x = Convert.FromBase64CharArray(base64DocumentContent);
+                    if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(contentResponseJson) == false)
+                    {
+                        /*
+                         * The document has been uploaded successfully, so complete the save operation...
+                         */
+                        SaveDocumentModel saveDocumentModel = new SaveDocumentModel
+                        {
+                            etag = wordPublishDocument.etag + 1,
+                            url = wordPublishDocument.url,
+                            uuid = wordPublishDocument.uuid,
+                            actions = new SaveActionModel
+                            {
+                                saveRequest = new SaveRequestModel
+                                {
+                                    isRequested = true
+                                }
+                            }
+                        };
 
-                   // string test = webHelper.setServerJson(contentUrl, "PUT", /*base64DocumentContent*/"", out httpStatusCode);
-
-                    //webHelper.UploadFilesToRemoteUrl(contentUrl.ToString(), @"c:\temp\user.docx");
-
-
-                    //NameValueCollection nvc = new NameValueCollection();
-                    //nvc.Add("id", "TTR");
-                    //nvc.Add("btn-submit-photo", "Upload");
-                    //webHelper.HttpUploadFile(contentUrl.ToString(), @"c:\temp\user.docx", "file", "image/jpeg", nvc);
+                        string saveDocumentJson = JsonConvert.SerializeObject(saveDocumentModel, Formatting.Indented);
+                        string test = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", saveDocumentJson, out httpStatusCode);
+                    }
                 }
             }
         }
 
-        private WordDocumentPrototypes getWordSaveDocumentPrototypes()
+        private WordDocumentPrototypesModel getWordSaveDocumentPrototypes()
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -108,12 +116,12 @@ namespace CommonDataHelper.PublisherHelper
             string prototypeJson = webHelper.getServerJson(pageUrl.ToString(), out httpStatusCode);
 
             if (httpStatusCode == HttpStatusCode.OK)
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<WordDocumentPrototypes>(prototypeJson);
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<WordDocumentPrototypesModel>(prototypeJson);
 
             return null;
         }
 
-        private WordWorkingCopyPrototype getWordWorkingCopyPrototype(WordSavePrototype wordSaveNewDocumentPrototype)
+        private WordWorkingCopyPrototypeModel getWordWorkingCopyPrototype(WordSavePrototypeModel wordSaveNewDocumentPrototype)
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -127,12 +135,12 @@ namespace CommonDataHelper.PublisherHelper
             string wordWorkingCopyPrototypeJson = webHelper.setServerJson(new Uri(baseUrl, wordSaveNewDocumentPrototype.url), wordSaveNewDocumentPrototype.method, String.Empty, out httpStatusCode);
 
             if (httpStatusCode == HttpStatusCode.OK)
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<WordWorkingCopyPrototype>(wordWorkingCopyPrototypeJson);
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<WordWorkingCopyPrototypeModel>(wordWorkingCopyPrototypeJson);
 
             return null;
         }
 
-        private string initialiseWorkingCopy(WordSavePrototype wordSaveNewDocumentPrototype, WordWorkingCopyPrototype wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData)
+        private string initialiseWorkingCopy(WordSavePrototypeModel wordSaveNewDocumentPrototype, WordWorkingCopyPrototypeModel wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData)
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -140,16 +148,16 @@ namespace CommonDataHelper.PublisherHelper
                 return string.Empty;
             }
 
-            string templateClass = syracuseCustomData.getDocumentRepresentation(); //"user.$query";
+            string templateClass = syracuseCustomData.getDocumentRepresentation(); 
             string locale = String.Empty;
             string volumeCode = "STD";
  
             Uri resourceUri = new Uri(baseUrl, syracuseCustomData.getResourceUrl());
-            string representationName = HttpUtility.ParseQueryString(resourceUri.Query).Get("representation"); // "user.$bulk"; 
+            string representationName = HttpUtility.ParseQueryString(resourceUri.Query).Get("representation");
 
             string[] urlSegments = resourceUri.Segments.Select( segment => segment.TrimEnd('/')).ToArray();
 
-            string className = urlSegments[urlSegments.Length - 1]; //"users";
+            string className = urlSegments[urlSegments.Length - 1]; 
 
             string x3Keys = String.Empty; // TODO: see _setLinkingProperties for more details.
 

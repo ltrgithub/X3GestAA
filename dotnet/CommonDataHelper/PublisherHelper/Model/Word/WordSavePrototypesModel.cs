@@ -6,15 +6,15 @@ using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper.Model.Word
 {
-    public class WordSavePrototypes
+    public class WordSavePrototypesModel
     {
         [JsonProperty("saveNewDocument")]
-        public WordSavePrototype wordSaveNewDocumentPrototype;
+        public WordSavePrototypeModel wordSaveNewDocumentPrototype;
 
         [JsonProperty("saveMailMergeTemplate")]
-        public WordSavePrototype wordSaveMailMergeTemplatePrototype;
+        public WordSavePrototypeModel wordSaveMailMergeTemplatePrototype;
 
         [JsonProperty("saveReportTemplate")]
-        public WordSavePrototype wordSaveReportTemplatePrototype;
+        public WordSavePrototypeModel wordSaveReportTemplatePrototype;
     }
 }
