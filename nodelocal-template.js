@@ -39,6 +39,11 @@ exports.config = {
 	*/
     traceConfig: {
         logErrorsToConsole: false,
+        boProxy: {
+            enabled: false,
+            level: "error",
+            transport: "console"
+        },
         search : {
             enabled: true,
             level: "debug",
@@ -49,7 +54,12 @@ exports.config = {
             level: "debug",
             transport: "storagearea"
         },
-        hrm: {
+        hrmLoadBalancer: {
+            enabled: false,
+            level: "info",
+            transport: "console"
+        },
+        hrmProxy: {
             enabled: false,
             level: "info",
             transport: "console"
