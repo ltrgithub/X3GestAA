@@ -355,6 +355,7 @@ namespace WordAddIn
             if (storageVolumeList != null)
             {
                 publishDocumentDialog.StorageVolumeList = new BindingList<StorageVolumeItem>(storageVolumeList);
+                publishDocumentDialog.StorageVolume = "STD";
 
                 /*
                  * Don't attempt to get the Owner list if the user isn't logged-in at this point
@@ -362,6 +363,7 @@ namespace WordAddIn
                 if (CommonDataHelper.CredentialsHelper.isUserLoggedOn())
                 {
                     publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(new OwnerList().createOwnerList());
+                    publishDocumentDialog.Owner = CredentialsHelper.UserCredentials.UserName;
                     publishDocumentDialog.TagList = new TagList().createTagList();
                     publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
