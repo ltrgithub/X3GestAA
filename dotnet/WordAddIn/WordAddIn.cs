@@ -23,6 +23,8 @@ namespace WordAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            browserDialog = new BrowserDialog();
+
             reporting = new ReportingActions(browserDialog);
             mailmerge = new MailMergeActions(browserDialog);
             commons = new CommonUtils(browserDialog);

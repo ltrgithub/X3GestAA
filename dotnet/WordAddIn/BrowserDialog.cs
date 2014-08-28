@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Word;
 using CommonDialogs;
+using CommonDataHelper;
 
 namespace WordAddIn
 {
@@ -58,7 +59,10 @@ namespace WordAddIn
             //    return false;
             //customData.setServerUrl(serverUrl);
             //return connectToServer(serverUrl);
-            return false;
+
+            string baseUrl = BaseUrlHelper.BaseUrl.ToString();
+            customData.setServerUrl(baseUrl);
+            return connectToServer(baseUrl);
         }
         
         private bool connectToServer(String serverUrl)
