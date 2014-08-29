@@ -83,6 +83,11 @@ exports.config = {
             enabled: false,
             level: "error",
             transport: "console"
+        },
+        jsRunner: {
+            enabled: true,
+            level: "info",
+            transport: "console"
         }
     },
 	session: {
