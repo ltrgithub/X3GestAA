@@ -35,6 +35,7 @@ namespace WordAddIn
         private const String supportedLocalesProperty = "supportedLocales";
         private const String syracuseRoleProperty = "syracuseRole";
         private const string docContentProperty = "docContent";
+        private const string cookieProperty = "cookie";
 
         private Dictionary<String, object> dictionary;
 
@@ -133,6 +134,10 @@ namespace WordAddIn
         public string getOriginalFileName()
         {
             return getStringProperty(originalFileNameProperty, false);
+        }
+        public String getCookie()
+        {
+            return getStringProperty(cookieProperty, false);
         }
         public void setBooleanValue(String name, Boolean status)
         {

@@ -343,7 +343,8 @@ namespace WordAddIn
             browserDialog.Hide();
         }
 
-        //private string _base64DocumentContent = null;
+
+
         private byte[] _documentContent = null;
         public void publishDocument()
         {
@@ -360,38 +361,26 @@ namespace WordAddIn
                 /*
                  * Don't attempt to get the Owner list if the user isn't logged-in at this point
                  */
-                if (CommonDataHelper.CredentialsHelper.isUserLoggedOn())
-                {
-                    publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(new OwnerList().createOwnerList());
-                    publishDocumentDialog.Owner = CredentialsHelper.UserCredentials.UserName;
-                    publishDocumentDialog.TagList = new TagList().createTagList();
-                    publishDocumentDialog.TeamList = new TeamList().createTeamList();
+                publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(new OwnerList().createOwnerList());
+                publishDocumentDialog.TagList = new TagList().createTagList();
+                publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
-                    SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-                    if (customData == null)
-                        customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+                if (customData == null)
+                    customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
 
-                    publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher));
+                publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher));
 
-                    /*
-                     * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
-                     * A tidier solution needs to be found here...
-                     */
-                    _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
-                    //_base64DocumentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+                /*
+                 * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
+                 * A tidier solution needs to be found here...
+                 */
+                _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
 
-                    publishDocumentDialog.ShowDialog();
-                }
+                publishDocumentDialog.ShowDialog();
             }
         }
 
-        public void publisher(IPublishDocument publishDocumentParameters)
-        {
-            IDocumentPublisher publisher = new PublisherHelper();
-            
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-            publisher.publishDocument(_documentContent, customData, publishDocumentParameters);
-        }
 
         public void publishReportTemplate()
         {
@@ -404,35 +393,43 @@ namespace WordAddIn
             {
                 publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
 
+                publishDocumentTemplateDialog.TagList = new TagList().createTagList();
+                publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
+
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+                if (customData == null)
+                    customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+
+                publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
+                publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation());
+
+                publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher));
+
                 /*
-                 * Don't attempt to get the Owner list if the user isn't logged-in at this point
+                 * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
+                 * A tidier solution needs to be found here...
                  */
-                if (CommonDataHelper.CredentialsHelper.isUserLoggedOn())
-                {
+                _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
 
-                    publishDocumentTemplateDialog.TagList = new TagList().createTagList();
-                    publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
-
-                    SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-                    if (customData == null)
-                        customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
-
-                    publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
-                    publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation());
-
-                    //publishDocumentTemplateDialog.Publisher(new PublisherDelegate(publisher));
-
-                    /*
-                     * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
-                     * A tidier solution needs to be found here...
-                     */
-
-                    _documentContent = null; // new WordAddInJSExternal(customData, null).GetNonBase64DocumentContent();
-                    //_base64DocumentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
-
-                    publishDocumentTemplateDialog.ShowDialog();
-                }
+                publishDocumentTemplateDialog.ShowDialog();
             }
+        }
+
+        public void publisher(IPublishDocument publishDocumentParameters)
+        {
+            IDocumentPublisher publisher = new PublisherHelper();
+
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+            publisher.publishDocument(_documentContent, customData, publishDocumentParameters);
+        }
+
+
+        public void publisher(IPublishDocumentTemplate publishDocumentParameters)
+        {
+            IDocumentTemplatePublisher publisher = new PublisherHelper();
+
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+            publisher.publishDocument(_documentContent, customData, publishDocumentParameters);
         }
 
         public void publishMailmergeTemplate()
@@ -440,3 +437,4 @@ namespace WordAddIn
         }
     }
 }
+

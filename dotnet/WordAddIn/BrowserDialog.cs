@@ -46,20 +46,6 @@ namespace WordAddIn
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
-            //string serverUrl = customData.getServerUrl();
-            //if (serverUrl == null || "".Equals(serverUrl))
-            //{
-            //    ServerSettings settings = new ServerSettings(serverUrl);
-            //    if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //    {
-            //        serverUrl = settings.getServerUrl();
-            //    }
-            //}
-            //if (serverUrl == null || "".Equals(serverUrl))
-            //    return false;
-            //customData.setServerUrl(serverUrl);
-            //return connectToServer(serverUrl);
-
             string baseUrl = BaseUrlHelper.BaseUrl.ToString();
             customData.setServerUrl(baseUrl);
             return connectToServer(baseUrl);

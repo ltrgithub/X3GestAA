@@ -22,29 +22,18 @@ namespace CommonDataHelper
 
             if (CookieHelper.CookieContainer == null)
             {
-                CookieHelper.InitialiseCookies();
-                if (CredentialsHelper.Retries == 0)
-                {
-                    /*
-                     * We've cancelled the entry of credentials, so just return an error condition.
-                     */
-                    statusCode = HttpStatusCode.InternalServerError;
-                    return responseJson;
-                }
-            }
-
-            NetworkCredential nc = CredentialsHelper.UserCredentials;
-            if (nc == null && CredentialsHelper.Retries == 0)
-            {
                 /*
-                 * We've cancelled the entry of credentials, so just return an error condition.
+                 * We're not logged on, so use the ConnectionDialog to force a logon.
+                 * We need this mechanism in order to obtain the cookie. 
+                 * We'll then maintain these cookie details in the CookieHelper.
                  */
-                statusCode = HttpStatusCode.InternalServerError;
-                return responseJson;
+
+                /*
+                 * Really messy, but we need to force a 401 here...
+                 */
+                new ConnectionDialog().connectToServer(new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html" + "?officeLogon=" + Guid.NewGuid()));
             }
 
-            request.Credentials = nc;
-            
             request.CookieContainer = CookieHelper.CookieContainer;
 
             try
@@ -55,11 +44,6 @@ namespace CommonDataHelper
                     responseJson = sr.ReadToEnd();
                 }
                 statusCode = HttpStatusCode.OK;
-
-                /*
-                 * We've had a successfull connection, so do a do a one-time only fetch of the cookie
-                 */
-                CookieHelper.setCookies(request, response);
             }
             catch (Exception ex)
             {
@@ -74,12 +58,14 @@ namespace CommonDataHelper
                     statusCode = wre.StatusCode;
                     if (wre.StatusCode == HttpStatusCode.Unauthorized || wre.StatusCode == HttpStatusCode.Forbidden)
                     {
-                        CredentialsHelper.UserCredentials = null;
-
                         if (CredentialsHelper.Retries > 0)
                         {
                             CredentialsHelper.Retries--;
-                            nc = CredentialsHelper.UserCredentials;
+
+                            /*
+                             * Clear the cookie cache. This will force a re-login.
+                             */
+                            CookieHelper.CookieContainer = null;
 
                             return getServerJson(uri, out statusCode);
                         }
@@ -96,18 +82,6 @@ namespace CommonDataHelper
         {
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-
-            NetworkCredential nc = CredentialsHelper.UserCredentials;
-            if (nc == null && CredentialsHelper.Retries == 0)
-            {
-                /*
-                 * We've cancelled the entry of credentials, so just return an error condition.
-                 */
-                statusCode = HttpStatusCode.InternalServerError;
-                return responseJson;
-            }
-
-            request.Credentials = nc;
 
             request.Method = method;
             request.ContentLength = data.Length;
@@ -143,7 +117,11 @@ namespace CommonDataHelper
                         if (CredentialsHelper.Retries > 0)
                         {
                             CredentialsHelper.Retries--;
-                            nc = CredentialsHelper.UserCredentials;
+
+                            /*
+                             * Clear the cookie cache. This will force a re-login.
+                             */
+                            CookieHelper.CookieContainer = null;
 
                             return setServerJson(uri, method, data, out statusCode);
                         }
@@ -159,18 +137,6 @@ namespace CommonDataHelper
         {
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-
-            NetworkCredential nc = CredentialsHelper.UserCredentials;
-            if (nc == null && CredentialsHelper.Retries == 0)
-            {
-                /*
-                 * We've cancelled the entry of credentials, so just return an error condition.
-                 */
-                statusCode = HttpStatusCode.InternalServerError;
-                return responseJson;
-            }
-
-            request.Credentials = nc;
 
             request.Method = method;
             request.ContentLength = data.Length;
@@ -218,7 +184,11 @@ namespace CommonDataHelper
                         if (CredentialsHelper.Retries > 0)
                         {
                             CredentialsHelper.Retries--;
-                            nc = CredentialsHelper.UserCredentials;
+
+                            /*
+                             * Clear the cookie cache. This will force a re-login.
+                             */
+                            CookieHelper.CookieContainer = null;
 
                             return uploadFile(uri, method, data, out statusCode);
                         }

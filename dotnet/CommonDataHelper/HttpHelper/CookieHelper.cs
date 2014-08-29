@@ -16,38 +16,62 @@ namespace CommonDataHelper
             set { _cookieContainer = value; }
         }
 
-        public static void InitialiseCookies()
+        public static void setCookies(string cookies)
         {
-            Uri baseUrl = BaseUrlHelper.BaseUrl;
-            if (baseUrl == null)
+            string[] cookiesArray = cookies.Split(';');
+            for (int i = 0; i < cookiesArray.Count(); i++)
             {
-                return;
-            }
+                string rawCookie = cookiesArray[i];
 
-            CookieContainer = new CookieContainer();
-            Uri mainUri = new Uri(baseUrl, "syracuse-main/html/main.html");
-
-            HttpStatusCode statusCode;
-            string test = new WebHelper().getServerJson(mainUri.ToString(), out statusCode);
-        }
-
-        private static Boolean _cookiesSet = false;
-        public static void setCookies(HttpWebRequest request, HttpWebResponse response)
-        {
-            if (_cookiesSet == false)
-            {
-                fixCookies(request, response);
-                CookieCollection cookieCollection = response.Cookies;
-                
-                Uri baseUrl = BaseUrlHelper.BaseUrl;
-                if (baseUrl == null)
+                if (rawCookie.Contains(","))
                 {
-                    return;
+                    //regexp for Date format per RFC http://www.w3.org/Protocols/rfc2109/rfc2109 Wdy, DD-Mon-YY HH:MM:SS GMT
+                    string dateRegExp = @"(?<day>expires=[A-Z,a-z]{3}),(?<date>\s\d{2}-[A-Z,a-z]{3}-\d{4}\s\d{2}:\d{2}:\d{2}\sgmt)";
+                    string replaceDateExp = @"${day}${date}";
+                    rawCookie = Regex.Replace(rawCookie, dateRegExp, replaceDateExp, RegexOptions.IgnoreCase);
                 }
+                string[] multipleCookies = rawCookie.Split(new char[] { ',' });
 
-                CookieContainer.Add(baseUrl, cookieCollection);
+                for (int j = 0; j < multipleCookies.Length; j++)
+                {
+                    Cookie cookie = new Cookie();
+                    string[] cookieValues = multipleCookies[j].Split(new char[] { ';' });
 
-                _cookiesSet = true;
+                    string[] paramNameVale;
+                    foreach (string param in cookieValues)
+                    {
+                        paramNameVale = param.Trim().Split(new char[] { '=' });
+                        paramNameVale[0] = paramNameVale[0].ToLower();
+
+                        if (paramNameVale[0] == "domain")
+                            cookie.Domain = param.Split(new char[] { '=' })[1];
+                        else if (paramNameVale[0] == "expires")
+                        {
+                            string date = paramNameVale[1];
+                            //Date format per RFC http://www.w3.org/Protocols/rfc2109/rfc2109 Wdy, DD-Mon-YY HH:MM:SS GMT
+                            date = Regex.Replace(date, @"(?<day>(sun
+                                            mon
+                                            tue
+                                            wed
+                                            thu
+                                            fri
+                                            sat))", @"${day},", RegexOptions.IgnoreCase);
+                            cookie.Expires = Convert.ToDateTime(date);
+                        }
+                        else if (paramNameVale[0] == "path")
+                            cookie.Path = paramNameVale[1];
+                    }
+                    cookieValues[0] = cookieValues[0].Trim();
+
+                    cookie.Name = cookieValues[0].Split(new char[] { '=' })[0];
+                    cookie.Value = cookieValues[0].Split(new char[] { '=' })[1];
+                    cookie.Domain = BaseUrlHelper.BaseUrl.Host; 
+
+                    if (CookieContainer == null)
+                        CookieContainer = new CookieContainer();
+
+                    CookieContainer.Add(cookie);
+                }
             }
         }
 

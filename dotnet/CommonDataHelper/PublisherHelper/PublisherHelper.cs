@@ -12,10 +12,11 @@ using CommonDataHelper.PublisherHelper.Model.Common;
 using CommonDataHelper.TagHelper;
 using System.IO;
 using System.Text.RegularExpressions;
+using CommonDialogs.PublishDocumentTemplateDialog;
 
 namespace CommonDataHelper.PublisherHelper
 {
-    public class PublisherHelper : IDocumentPublisher
+    public class PublisherHelper : IDocumentPublisher, IDocumentTemplatePublisher
     {
         public void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
@@ -24,6 +25,10 @@ namespace CommonDataHelper.PublisherHelper
             WordWorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = getWordWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel);
 
             publishDocument(documentContent, wordSaveNewDocumentPrototypeModel, wordWorkingCopyPrototypeModel, syracuseCustomData, publishDocumentParameters);
+        }
+
+        public void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters)
+        {
         }
 
         private void publishDocument(byte[] documentContent, WordSavePrototypeModel wordSaveNewDocumentPrototype, WordWorkingCopyPrototypeModel wordWorkingCopyPrototype, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
