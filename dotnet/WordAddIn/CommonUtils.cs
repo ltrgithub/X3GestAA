@@ -361,7 +361,10 @@ namespace WordAddIn
                 /*
                  * Don't attempt to get the Owner list if the user isn't logged-in at this point
                  */
-                publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(new OwnerList().createOwnerList());
+                List<OwnerItem> ownerList = new OwnerList().createOwnerList();
+                publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
+                publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+
                 publishDocumentDialog.TagList = new TagList().createTagList();
                 publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
