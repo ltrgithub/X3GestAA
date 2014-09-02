@@ -5,35 +5,33 @@ using System.Text;
 using System.Net;
 using CommonDataHelper.ActivityCodeHelper;
 using CommonDataHelper.ActivityCodeHelper.Model;
+using CommonDataHelper.EndpointHelper.Model;
 
 namespace CommonDataHelper
 {
     public class ActivityCodeList
     {
-        public List<ActivityCodeItem> createActivityCodeList(string endpoint)
+        public List<ActivityCodeItem> createActivityCodeList(EndpointModel endpointModel, out HttpStatusCode httpStatusCode)
         {
-            Uri baseUrl = BaseUrlHelper.BaseUrl;
-            if (baseUrl == null)
-            {
-                return null;
-            }
-
-            StringBuilder page = new StringBuilder (baseUrl.ToString());
-            page.Append(@"sdata/x3/erp/");
-            page.Append(endpoint); // X3TESTV7
-            page.Append(@"/$prototypes('ACTIV.$lookup')");
+            StringBuilder page = new StringBuilder(BaseUrlHelper.BaseUrl.ToString());
+            page.Append(@"sdata/");
+            page.Append(endpointModel.application);
+            page.Append(@"/");
+            page.Append(endpointModel.contract);
+            page.Append(@"/");
+            page.Append(endpointModel.dataset);
+            page.Append(@"/ACTIV?representation=ACTIV.$lookup");
             
             List<ActivityCodeItem> activityCodeList = new List<ActivityCodeItem>();
-            WebHelper cd = new WebHelper();
+            WebHelper webHelper = new WebHelper();
 
-            HttpStatusCode httpStatusCode;
-            string responseJson = cd.getServerJson(page.ToString(), out httpStatusCode);
+            string responseJson = webHelper.getServerJson(page.ToString(), out httpStatusCode);
             if (httpStatusCode == HttpStatusCode.InternalServerError)
             {
                 return null;
             }
 
-            if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
+            if (httpStatusCode == HttpStatusCode.OK && !string.IsNullOrEmpty(responseJson))
             {
                 /*
                  * No activityCode is chosen by default, so add a blank entry to facilitate this.

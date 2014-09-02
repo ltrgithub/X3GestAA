@@ -107,7 +107,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             set
             {
                 comboBoxCompany.DataSource = value;
-                comboBoxCompany.DisplayMember = "Code";
+                comboBoxCompany.DisplayMember = "Description";
                 comboBoxCompany.ValueMember = "Uuid";
             }
         }
@@ -118,7 +118,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             set
             {
                 comboBoxLegislation.DataSource = value;
-                comboBoxLegislation.DisplayMember = "Code";
+                comboBoxLegislation.DisplayMember = "Description";
                 comboBoxLegislation.ValueMember = "Uuid";
             }
         }
@@ -129,7 +129,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             set
             {
                 comboBoxActivityCode.DataSource = value;
-                comboBoxActivityCode.DisplayMember = "Code";
+                comboBoxActivityCode.DisplayMember = "Description";
                 comboBoxActivityCode.ValueMember = "Uuid";
             }
         }
@@ -170,6 +170,33 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
             btnOk.Enabled = !string.IsNullOrEmpty(textBoxDescription.Text);
+        }
+
+        private void comboBoxEndpoint_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool isEndpointSelected = comboBoxEndpoint.SelectedIndex != 0;
+
+            comboBoxCompany.Enabled = isEndpointSelected;
+            comboBoxLegislation.Enabled = isEndpointSelected;
+            comboBoxActivityCode.Enabled = isEndpointSelected;
+
+            /*
+             * Call the endpoint delegate to signal that the endpoint has been changed.
+             */
+            if (comboBoxEndpoint.SelectedIndex != 0)
+                _endpointDelegate(comboBoxEndpoint.SelectedValue.ToString(), _syracuseCustomDataDelegate(), this);
+        }
+
+        private EndpointDelegate _endpointDelegate = null;
+        public void setEndpointDelegate(EndpointDelegate endpointDelegate)
+        {
+            _endpointDelegate = endpointDelegate;
+        }
+
+        private SyracuseCustomDataDelegate _syracuseCustomDataDelegate = null;
+        public void setSyracuseCustomDataDelegate(SyracuseCustomDataDelegate syracuseCustomDataDelegate)
+        {
+            _syracuseCustomDataDelegate = syracuseCustomDataDelegate;
         }
     }
 }

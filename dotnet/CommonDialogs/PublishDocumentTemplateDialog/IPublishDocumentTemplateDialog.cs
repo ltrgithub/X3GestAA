@@ -7,6 +7,8 @@ using System.Windows.Forms;
 namespace CommonDialogs.PublishDocumentTemplateDialog
 {
     public delegate void PublisherDocumentTemplateDelegate(IPublishDocumentTemplate publishDocumentParameters);
+    public delegate void EndpointDelegate(string uuid, object syracuseCustomData, object publishTemplateDialog);
+    public delegate object SyracuseCustomDataDelegate();
 
     public interface IPublishDocumentTemplate
     {
@@ -19,6 +21,9 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         string ActivityCode { get; set; }
         CheckedListBox.CheckedItemCollection Tag { get; }
         CheckedListBox.CheckedItemCollection Team { get; }
+
+        void setEndpointDelegate(EndpointDelegate endpointDelegate);
+        void setSyracuseCustomDataDelegate(SyracuseCustomDataDelegate syracuseCustomDataDelegate);
     }
 
     public interface IPublishDocumentTemplateDialog : IPublishDocumentTemplate
@@ -28,6 +33,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         object EndpointList { set; }
         object CompanyList { set; }
         object ActivityCodeList { set; }
+        object LegislationList { set; }
         object TagList { set; }
         object TeamList { set; }
 

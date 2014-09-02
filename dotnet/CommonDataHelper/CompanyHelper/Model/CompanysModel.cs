@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace CommonDataHelper.EndpointHelper.Model
+namespace CommonDataHelper.CompanyHelper.Model
 {
-    public class EndpointsModel
+    public class CompanysModel
     {
         [JsonProperty("$resources")]
-        public List<EndpointModel> endpoints { get; set; }
+        public List<CompanyModel> companies { get; set; }
     }
 }

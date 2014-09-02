@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace CommonDataHelper.ActivityCodeHelper.Model
+namespace CommonDataHelper.EndpointHelper.Model
 {
-    public class ActivityCodeModel
+    public class EndpointLookupModel
     {
-        [JsonProperty("LIBACT")]
+        [JsonProperty("description")]
         public String description;
 
         [JsonProperty("$uuid")]

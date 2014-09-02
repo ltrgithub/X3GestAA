@@ -17,6 +17,7 @@ using CommonDataHelper.StorageVolumeHelper;
 using System.ComponentModel;
 using CommonDataHelper.OwnerHelper;
 using CommonDialogs.PublishDocumentTemplateDialog;
+using CommonDataHelper.EndpointHelper;
 
 namespace WordAddIn
 {
@@ -343,7 +344,7 @@ namespace WordAddIn
             browserDialog.Hide();
         }
 
-
+        #region publisher
 
         private byte[] _documentContent = null;
         public void publishDocument()
@@ -383,8 +384,7 @@ namespace WordAddIn
                 publishDocumentDialog.ShowDialog();
             }
         }
-
-
+        
         public void publishReportTemplate()
         {
             CredentialsHelper.resetRetries();
@@ -395,16 +395,18 @@ namespace WordAddIn
             if (ownerList != null)
             {
                 publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
+                publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
                 publishDocumentTemplateDialog.TagList = new TagList().createTagList();
                 publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
 
-                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-                if (customData == null)
-                    customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+                SyracuseOfficeCustomData customData = getSyracuseCustomData();
 
                 publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
                 publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation());
+                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
+
+                publishDocumentTemplateDialog.setSyracuseCustomDataDelegate(getSyracuseCustomData);
 
                 publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher));
 
@@ -438,6 +440,17 @@ namespace WordAddIn
         public void publishMailmergeTemplate()
         {
         }
+
+        public SyracuseOfficeCustomData getSyracuseCustomData()
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+            if (customData == null)
+                customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+
+            return customData;
+        }
+
+        #endregion // publisher
     }
 }
 

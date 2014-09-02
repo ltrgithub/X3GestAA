@@ -179,22 +179,22 @@
             // comboBoxActivityCode
             // 
             this.comboBoxActivityCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxActivityCode.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxActivityCode, "comboBoxActivityCode");
+            this.comboBoxActivityCode.FormattingEnabled = true;
             this.comboBoxActivityCode.Name = "comboBoxActivityCode";
             // 
             // comboBoxLegislation
             // 
             this.comboBoxLegislation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLegislation.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxLegislation, "comboBoxLegislation");
+            this.comboBoxLegislation.FormattingEnabled = true;
             this.comboBoxLegislation.Name = "comboBoxLegislation";
             // 
             // comboBoxCompany
             // 
             this.comboBoxCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCompany.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxCompany, "comboBoxCompany");
+            this.comboBoxCompany.FormattingEnabled = true;
             this.comboBoxCompany.Name = "comboBoxCompany";
             // 
             // label1
@@ -208,6 +208,7 @@
             this.comboBoxEndpoint.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxEndpoint, "comboBoxEndpoint");
             this.comboBoxEndpoint.Name = "comboBoxEndpoint";
+            this.comboBoxEndpoint.SelectedIndexChanged += new System.EventHandler(this.comboBoxEndpoint_SelectedIndexChanged);
             // 
             // labelPurpose
             // 

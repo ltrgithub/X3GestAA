@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace CommonDataHelper.ActivityCodeHelper.Model
+namespace CommonDataHelper.CompanyHelper.Model
 {
-    public class ActivityCodeModel
+    public class CompanyModel
     {
         [JsonProperty("LIBACT")]
         public String description;

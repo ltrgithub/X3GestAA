@@ -51,8 +51,15 @@
     <Compile Include="ActivityCodeHelper\ActivityCodeList.cs" />
     <Compile Include="ActivityCodeHelper\Model\ActivityCodeModel.cs" />
     <Compile Include="ActivityCodeHelper\Model\ActivityCodesModel.cs" />
+    <Compile Include="CompanyHelper\CompanyItem.cs" />
+    <Compile Include="CompanyHelper\CompanyList.cs" />
+    <Compile Include="CompanyHelper\Model\CompanyModel.cs" />
+    <Compile Include="CompanyHelper\Model\CompanysModel.cs" />
+    <Compile Include="EndpointHelper\EndpointCallback.cs" />
+    <Compile Include="EndpointHelper\Model\EndpointLookupModel.cs" />
     <Compile Include="EndpointHelper\Model\EndpointModel.cs" />
-    <Compile Include="EndpointHelper\Model\EndpointsModel.cs" />
+    <Compile Include="EndpointHelper\Model\EndpointRequestModel.cs" />
+    <Compile Include="EndpointHelper\Model\EndpointsLookupModel.cs" />
     <Compile Include="EndpointHelper\EndpointItem.cs" />
     <Compile Include="EndpointHelper\EndpointList.cs" />
     <Compile Include="HttpHelper\ConnectionDialog.cs">
@@ -61,10 +68,15 @@
     <Compile Include="HttpHelper\ConnectionDialog.Designer.cs">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="LegislationHelper\LegislationItem.cs" />
+    <Compile Include="LegislationHelper\LegislationList.cs" />
+    <Compile Include="LegislationHelper\Model\LegislationModel.cs" />
+    <Compile Include="LegislationHelper\Model\LegislationsModel.cs" />
     <Compile Include="PublisherHelper\IDocumentTemplatePublisher.cs" />
     <Compile Include="PublisherHelper\Model\Common\SaveActionModel.cs" />
     <Compile Include="PublisherHelper\Model\Common\SaveDocumentModel.cs" />
     <Compile Include="PublisherHelper\Model\Common\SaveRequestModel.cs" />
+    <Compile Include="PublisherHelper\RequestHelper.cs" />
     <Compile Include="PurposeHelper\Model\PurposeModel.cs" />
     <Compile Include="PurposeHelper\Model\PurposesModel.cs" />
     <Compile Include="PurposeHelper\PurposeItem.cs" />
@@ -81,7 +93,7 @@
     <Compile Include="PublisherHelper\Model\Word\WordPublishDocumentModel.cs" />
     <Compile Include="PublisherHelper\Model\Word\WordSavePrototypeModel.cs" />
     <Compile Include="PublisherHelper\Model\Word\WordSavePrototypesModel.cs" />
-    <Compile Include="PublisherHelper\Model\Word\WordWorkingCopyPrototypeModel.cs" />
+    <Compile Include="PublisherHelper\Model\Common\WorkingCopyPrototypeModel.cs" />
     <Compile Include="PublisherHelper\PublisherHelper.cs" />
     <Compile Include="StorageVolumeHelper\Model\StorageVolumeModel.cs" />
     <Compile Include="StorageVolumeHelper\Model\StorageVolumesModel.cs" />

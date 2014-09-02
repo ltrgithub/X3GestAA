@@ -49,7 +49,7 @@ namespace CommonDataHelper
                 cookieValue = cookieValue.Remove(0, 1);
 
                 /*
-                 * Remove the outer and end curly braces
+                 * Remove the start and end curly braces
                  */
                 cookieValue = cookieValue.Remove(cookieValue.IndexOf('('), 1);
                 cookieValue = cookieValue.Remove(cookieValue.Length-1);
@@ -151,8 +151,6 @@ namespace CommonDataHelper
                 }
             }
         }
-
- 
 
         //private static void fixCookies(HttpWebRequest request, HttpWebResponse response)
         //{

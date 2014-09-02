@@ -38,9 +38,9 @@ namespace CommonDataHelper
                  */
                 endpointList.Add(new EndpointItem(String.Empty, String.Empty));
 
-                var endpoints = Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointsModel>(responseJson);
+                var endpoints = Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointsLookupModel>(responseJson);
 
-                foreach (EndpointModel endpoint in endpoints.endpoints)
+                foreach (EndpointLookupModel endpoint in endpoints.endpoints)
                 {
                     endpointList.Add(new EndpointItem(endpoint.description, endpoint.uuid));
                 }

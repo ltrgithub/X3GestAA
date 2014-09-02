@@ -34,6 +34,10 @@ namespace CommonDataHelper
                 new ConnectionDialog().connectToServer(new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html" + "?officeLogon=" + Guid.NewGuid()));
             }
 
+            request.ContentType = @"application/json";
+            request.Accept = @"application/json;vnd.sage=syracuse; charset=utf-8";
+            request.Referer = uri.ToString();
+
             request.CookieContainer = CookieHelper.CookieContainer;
 
             try
