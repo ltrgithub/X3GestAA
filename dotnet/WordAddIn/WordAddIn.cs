@@ -96,6 +96,7 @@ namespace WordAddIn
             }
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
+            commons.DisplayServerLocations();
         }
 
         void on_window_selection_changed(Selection Sel)

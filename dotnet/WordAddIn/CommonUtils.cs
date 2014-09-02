@@ -438,6 +438,19 @@ namespace WordAddIn
         public void publishMailmergeTemplate()
         {
         }
+
+        public void DisplayServerLocations()
+        {
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Clear();
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = BaseUrlHelper.BaseUrl.ToString();
+            List<Uri> _urls = BaseUrlHelper.getBaseUrlsFromUserPreferenceFile;
+            foreach (Uri _uri in _urls)
+            {
+                Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
+                item.Label = _uri.ToString();
+                Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Add(item);
+            }
+        }
     }
 }
 
