@@ -10,6 +10,7 @@ using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using CommonDataHelper;
 
 namespace WordAddIn
 {
@@ -99,9 +100,8 @@ namespace WordAddIn
 
         private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
         {
-            string url = ((RibbonComboBox)sender).Text;
-
-
+            Uri url = new Uri(((RibbonComboBox)sender).Text);
+            BaseUrlHelper.BaseUrl = url;
         }
     }
 }

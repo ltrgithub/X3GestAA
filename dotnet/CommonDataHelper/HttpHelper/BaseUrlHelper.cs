@@ -5,6 +5,7 @@ using System.Text;
 using CommonDialogs.ServerSettingsDialog;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace CommonDataHelper
 {
@@ -15,11 +16,21 @@ namespace CommonDataHelper
          * This may change with Excel, as different base URLs may be required 
          * where more than one datasource is present in a worksheet.
          */
+        private static List<Uri> _prefUrls = new List<Uri>();
+        public static List<Uri> getBaseUrlsFromUserPreferenceFile
+        {
+            get
+            {
+                return _prefUrls;
+            }
+        }
+
         private static Uri _baseUrl = null;
         public static Uri BaseUrl
         {
             get
             {
+                _baseUrl = null;
                 if (_baseUrl == null)
                 {
                     Uri baseUrl = getBaseUrlFromCustomData();
@@ -28,28 +39,23 @@ namespace CommonDataHelper
                     {
                         baseUrl = getBaseUrlFromUserPreferenceFile();
                     }
-
-                    if (baseUrl == null)
+                    else
                     {
-                        baseUrl = new Uri(@"http://localhost:8124");
+                        Uri _dummy = getBaseUrlFromUserPreferenceFile();
+                        if (!_prefUrls.Contains(baseUrl))
+                        {
+                            _prefUrls.Add(baseUrl);
+                        }
                     }
-
-                    ServerSettingsDialog serverSettingsDialog = new ServerSettingsDialog();
-                    serverSettingsDialog.BaseUrl = baseUrl.ToString();
-
-                    if (serverSettingsDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        _baseUrl = new Uri(serverSettingsDialog.BaseUrl);
-                        saveUrlPreference(_baseUrl);
-                    }
-
-                    /*
-                     * If we cancel, we return null to indicate that we're aborting the logon.
-                     * This needs to be rationalised, as setting the server details and 
-                     * adding credentials should really be part of the same operation...
-                     */
+                    _baseUrl = baseUrl;
+                    saveUrlPreference(_baseUrl);
                 }
                 return _baseUrl;
+            }
+            set 
+            { 
+                _baseUrl = value;
+                saveUrlPreference(_baseUrl);
             }
         }
 
@@ -72,12 +78,14 @@ namespace CommonDataHelper
             return null;
         }
 
+
 #region preferencefile
 
         private static Uri getBaseUrlFromUserPreferenceFile()
         {
             String path = getPreferenceFilePath();
             Uri preferenceUrl = null;
+            _prefUrls.Clear();
 
             if (File.Exists(path))
             {
@@ -92,6 +100,7 @@ namespace CommonDataHelper
                         try
                         {
                             preferenceUrl = new Uri(sContent.Substring(4, sContent.Length - 4));
+                            _prefUrls.Add(preferenceUrl);
                         }
                         catch (Exception)
                         {
@@ -100,32 +109,44 @@ namespace CommonDataHelper
                 }
                 preferencesFile.Close();
             }
+            else
+            {
+                preferenceUrl = new Uri(@"http://localhost:8124");
+                _prefUrls.Add(preferenceUrl);
+            }
 
             return preferenceUrl;
         }
  
         private static string getPreferenceFilePath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Word.X3.settings";
+            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\" + Process.GetCurrentProcess().ProcessName + ".X3.settings";
         }
 
         private static void saveUrlPreference(Uri url)
         {
-            String path = getPreferenceFilePath();
-            List<string> lines = new List<string>(System.IO.File.ReadAllLines(path));
-            List<string> newLines = new List<string>();
-
-            if (lines.Count == 0)
+            if (url.Equals(@"http://localhost:8124"))
             {
-                newLines.Add("Url=" + url.ToString());
+                return;
             }
-            else
+
+            String path = getPreferenceFilePath();
+            String urlFromFile = null;
+            Boolean urlExists = false;
+            List<string> lines = new List<string>();
+            if (File.Exists(path))
             {
+                lines = new List<string>(System.IO.File.ReadAllLines(path));
                 foreach (string line in lines)
                 {
                     if (line.StartsWith("Url="))
                     {
-                        newLines.Add("Url=" + url.ToString());
+                        urlFromFile = line.Substring(4);
+                        if (urlFromFile.Equals(url.ToString()))
+                        {
+                            urlExists = true;
+                            break;
+                        }
                     }
                     else
                     {
@@ -133,7 +154,12 @@ namespace CommonDataHelper
                     }
                 }
             }
-            System.IO.File.WriteAllLines(path, newLines);
+
+            if (urlExists == false)
+            {
+                lines.Add("Url=" + url.ToString());
+            }
+            System.IO.File.WriteAllLines(path, lines);
         }
     }
 

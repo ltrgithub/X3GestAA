@@ -92,21 +92,21 @@ namespace WordAddIn
             this.groupSettings = this.Factory.CreateRibbonGroup();
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
             this.groupSave = this.Factory.CreateRibbonGroup();
-            this.gallery1 = this.Factory.CreateRibbonGallery();
-            this.buttonSave = this.Factory.CreateRibbonButton();
-            this.buttonSaveAs = this.Factory.CreateRibbonButton();
             this.groupReporting = this.Factory.CreateRibbonGroup();
-            this.buttonRefreshReport = this.Factory.CreateRibbonButton();
-            this.buttonPreview = this.Factory.CreateRibbonButton();
             this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
-            this.toggleMakeSum = this.Factory.CreateRibbonToggleButton();
             this.groupLocale = this.Factory.CreateRibbonGroup();
             this.dropDownLocale = this.Factory.CreateRibbonDropDown();
             this.groupVersion = this.Factory.CreateRibbonGroup();
             this.installedVersion = this.Factory.CreateRibbonLabel();
-            this.buttonUpdate = this.Factory.CreateRibbonButton();
             this.version = this.Factory.CreateRibbonLabel();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.gallery1 = this.Factory.CreateRibbonGallery();
+            this.buttonSave = this.Factory.CreateRibbonButton();
+            this.buttonSaveAs = this.Factory.CreateRibbonButton();
+            this.buttonRefreshReport = this.Factory.CreateRibbonButton();
+            this.buttonPreview = this.Factory.CreateRibbonButton();
+            this.toggleMakeSum = this.Factory.CreateRibbonToggleButton();
+            this.buttonUpdate = this.Factory.CreateRibbonButton();
             this.buttonCleanup = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupSettings.SuspendLayout();
@@ -148,6 +148,57 @@ namespace WordAddIn
             resources.ApplyResources(this.groupSave, "groupSave");
             this.groupSave.Name = "groupSave";
             // 
+            // groupReporting
+            // 
+            this.groupReporting.Items.Add(this.buttonRefreshReport);
+            this.groupReporting.Items.Add(this.buttonPreview);
+            this.groupReporting.Items.Add(this.checkBoxShowTemplatePane);
+            this.groupReporting.Items.Add(this.toggleMakeSum);
+            resources.ApplyResources(this.groupReporting, "groupReporting");
+            this.groupReporting.Name = "groupReporting";
+            // 
+            // checkBoxShowTemplatePane
+            // 
+            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
+            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
+            this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
+            // 
+            // groupLocale
+            // 
+            this.groupLocale.Items.Add(this.dropDownLocale);
+            resources.ApplyResources(this.groupLocale, "groupLocale");
+            this.groupLocale.Name = "groupLocale";
+            // 
+            // dropDownLocale
+            // 
+            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
+            this.dropDownLocale.Name = "dropDownLocale";
+            this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
+            // 
+            // groupVersion
+            // 
+            this.groupVersion.Items.Add(this.installedVersion);
+            this.groupVersion.Items.Add(this.buttonUpdate);
+            this.groupVersion.Items.Add(this.version);
+            resources.ApplyResources(this.groupVersion, "groupVersion");
+            this.groupVersion.Name = "groupVersion";
+            // 
+            // installedVersion
+            // 
+            resources.ApplyResources(this.installedVersion, "installedVersion");
+            this.installedVersion.Name = "installedVersion";
+            // 
+            // version
+            // 
+            resources.ApplyResources(this.version, "version");
+            this.version.Name = "version";
+            // 
+            // group1
+            // 
+            this.group1.Items.Add(this.buttonCleanup);
+            resources.ApplyResources(this.group1, "group1");
+            this.group1.Name = "group1";
+            // 
             // gallery1
             // 
             this.gallery1.ColumnCount = 1;
@@ -182,15 +233,6 @@ namespace WordAddIn
             this.buttonSaveAs.ShowImage = true;
             this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
             // 
-            // groupReporting
-            // 
-            this.groupReporting.Items.Add(this.buttonRefreshReport);
-            this.groupReporting.Items.Add(this.buttonPreview);
-            this.groupReporting.Items.Add(this.checkBoxShowTemplatePane);
-            this.groupReporting.Items.Add(this.toggleMakeSum);
-            resources.ApplyResources(this.groupReporting, "groupReporting");
-            this.groupReporting.Name = "groupReporting";
-            // 
             // buttonRefreshReport
             // 
             this.buttonRefreshReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -209,42 +251,11 @@ namespace WordAddIn
             this.buttonPreview.ShowImage = true;
             this.buttonPreview.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPreview_Click);
             // 
-            // checkBoxShowTemplatePane
-            // 
-            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
-            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
-            this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
-            // 
             // toggleMakeSum
             // 
             resources.ApplyResources(this.toggleMakeSum, "toggleMakeSum");
             this.toggleMakeSum.Name = "toggleMakeSum";
             this.toggleMakeSum.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.toggleMakeSum_Click);
-            // 
-            // groupLocale
-            // 
-            this.groupLocale.Items.Add(this.dropDownLocale);
-            resources.ApplyResources(this.groupLocale, "groupLocale");
-            this.groupLocale.Name = "groupLocale";
-            // 
-            // dropDownLocale
-            // 
-            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
-            this.dropDownLocale.Name = "dropDownLocale";
-            this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
-            // 
-            // groupVersion
-            // 
-            this.groupVersion.Items.Add(this.installedVersion);
-            this.groupVersion.Items.Add(this.buttonUpdate);
-            this.groupVersion.Items.Add(this.version);
-            resources.ApplyResources(this.groupVersion, "groupVersion");
-            this.groupVersion.Name = "groupVersion";
-            // 
-            // installedVersion
-            // 
-            resources.ApplyResources(this.installedVersion, "installedVersion");
-            this.installedVersion.Name = "installedVersion";
             // 
             // buttonUpdate
             // 
@@ -253,17 +264,6 @@ namespace WordAddIn
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.ShowImage = true;
             this.buttonUpdate.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonUpdate_Click);
-            // 
-            // version
-            // 
-            resources.ApplyResources(this.version, "version");
-            this.version.Name = "version";
-            // 
-            // group1
-            // 
-            this.group1.Items.Add(this.buttonCleanup);
-            resources.ApplyResources(this.group1, "group1");
-            this.group1.Name = "group1";
             // 
             // buttonCleanup
             // 
