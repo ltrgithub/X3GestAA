@@ -124,6 +124,12 @@ exports.config = {
 			// trace: console.log,
 		}
 	},
+	upload: {
+		// White list of media types that we allow in upload operations
+		// This entry is mandatory when hosting.multiTenant is true.
+		// The white list may be specified as a single regular expression or an array or regular expressions.
+	    allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+	},
 	sage_id: {
 		// base URL of sage ID service - this one is staging, not prod
 		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
