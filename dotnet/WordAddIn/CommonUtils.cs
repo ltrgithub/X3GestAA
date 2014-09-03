@@ -349,74 +349,92 @@ namespace WordAddIn
         private byte[] _documentContent = null;
         public void publishDocument()
         {
-            CredentialsHelper.resetRetries();
-
-            IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
-
-            List<StorageVolumeItem> storageVolumeList = new StorageVolumeList().createStorageVolumeList();
-            if (storageVolumeList != null)
+            try
             {
-                publishDocumentDialog.StorageVolumeList = new BindingList<StorageVolumeItem>(storageVolumeList);
-                publishDocumentDialog.StorageVolume = "STD";
+                CredentialsHelper.resetRetries();
 
-                /*
-                 * Don't attempt to get the Owner list if the user isn't logged-in at this point
-                 */
-                List<OwnerItem> ownerList = new OwnerList().createOwnerList();
-                publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
 
-                publishDocumentDialog.TagList = new TagList().createTagList();
-                publishDocumentDialog.TeamList = new TeamList().createTeamList();
+                List<StorageVolumeItem> storageVolumeList = new StorageVolumeList().createStorageVolumeList();
+                if (storageVolumeList != null)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
 
-                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-                if (customData == null)
-                    customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+                    publishDocumentDialog.StorageVolumeList = new BindingList<StorageVolumeItem>(storageVolumeList);
+                    publishDocumentDialog.StorageVolume = "STD";
 
-                publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher));
+                    /*
+                     * Don't attempt to get the Owner list if the user isn't logged-in at this point
+                     */
+                    List<OwnerItem> ownerList = new OwnerList().createOwnerList();
+                    publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
+                    publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
-                /*
-                 * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
-                 * A tidier solution needs to be found here...
-                 */
-                _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+                    publishDocumentDialog.TagList = new TagList().createTagList();
+                    publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
-                publishDocumentDialog.ShowDialog();
+                    SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+                    if (customData == null)
+                        customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+
+                    publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher));
+
+                    /*
+                     * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
+                     * A tidier solution needs to be found here...
+                     */
+                    _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+
+                    publishDocumentDialog.ShowDialog();
+                }
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
         
         public void publishReportTemplate()
         {
-            CredentialsHelper.resetRetries();
-
-            IPublishDocumentTemplateDialog publishDocumentTemplateDialog = new PublishDocumentTemplateDialog();
-
-            List<OwnerItem> ownerList = new OwnerList().createOwnerList();
-            if (ownerList != null)
+            try
             {
-                publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                CredentialsHelper.resetRetries();
 
-                publishDocumentTemplateDialog.TagList = new TagList().createTagList();
-                publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
+                IPublishDocumentTemplateDialog publishDocumentTemplateDialog = new PublishDocumentTemplateDialog();
 
-                SyracuseOfficeCustomData customData = getSyracuseCustomData();
+                List<OwnerItem> ownerList = new OwnerList().createOwnerList();
+                if (ownerList != null)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
 
-                publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
-                publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation());
-                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
+                    publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
+                    publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
-                publishDocumentTemplateDialog.setSyracuseCustomDataDelegate(getSyracuseCustomData);
+                    publishDocumentTemplateDialog.TagList = new TagList().createTagList();
+                    publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
 
-                publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher));
+                    SyracuseOfficeCustomData customData = getSyracuseCustomData();
 
-                /*
-                 * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
-                 * A tidier solution needs to be found here...
-                 */
-                _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+                    publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
+                    publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation());
+                    publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
 
-                publishDocumentTemplateDialog.ShowDialog();
+                    publishDocumentTemplateDialog.setSyracuseCustomDataDelegate(getSyracuseCustomData);
+
+                    publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher));
+
+                    /*
+                     * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
+                     * A tidier solution needs to be found here...
+                     */
+                    _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+
+                    publishDocumentTemplateDialog.ShowDialog();
+                }
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
 

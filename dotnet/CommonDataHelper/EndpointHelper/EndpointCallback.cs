@@ -12,6 +12,7 @@ using CommonDataHelper.ActivityCodeHelper;
 using CommonDialogs.PublishDocumentTemplateDialog;
 using CommonDataHelper.LegislationHelper;
 using CommonDataHelper.CompanyHelper;
+using System.Windows.Forms;
 
 namespace CommonDataHelper.EndpointHelper
 {
@@ -21,44 +22,55 @@ namespace CommonDataHelper.EndpointHelper
         {
             if (!string.IsNullOrEmpty(uuid))
             {
-                WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = new RequestHelper().getWordSaveDocumentPrototypes().links.wordSaveReportTemplatePrototype;
-
-                WorkingCopyPrototypeModel workingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
-
-                RequestHelper requestHelper = new RequestHelper();
-                Uri workingCopyUrl = requestHelper.addUrlQueryParameters(wordSaveNewDocumentPrototypeModel.url, workingCopyPrototypeModel.trackingId, (ISyracuseOfficeCustomData)syracuseCustomData, string.Empty);
-
-                WebHelper webHelper = new WebHelper();
-                HttpStatusCode httpStatusCode;
-                string workingCopyResponseJson = webHelper.setServerJson(workingCopyUrl, "POST", string.Empty, out httpStatusCode);
-
-                if (string.IsNullOrEmpty(workingCopyResponseJson))
-                    return;
-
-                WorkingCopyPrototypeModel workingCopyResponseModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WorkingCopyPrototypeModel>(workingCopyResponseJson);
-
-                EndpointRequestModel endpointRequestModel = new EndpointRequestModel
+                try
                 {
-                    etag = workingCopyPrototypeModel.etag,
-                    url = workingCopyResponseModel.url,
-                    uuid = workingCopyResponseModel.key,
-                    endpointUuid = new SyracuseUuidModel
+                    Cursor.Current = Cursors.WaitCursor;
+
+                    WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = new RequestHelper().getWordSaveDocumentPrototypes().links.wordSaveReportTemplatePrototype;
+
+                    WorkingCopyPrototypeModel workingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
+
+                    RequestHelper requestHelper = new RequestHelper();
+                    Uri workingCopyUrl = requestHelper.addUrlQueryParameters(wordSaveNewDocumentPrototypeModel.url, workingCopyPrototypeModel.trackingId, (ISyracuseOfficeCustomData)syracuseCustomData, string.Empty);
+
+                    WebHelper webHelper = new WebHelper();
+                    HttpStatusCode httpStatusCode;
+                    string workingCopyResponseJson = webHelper.setServerJson(workingCopyUrl, "POST", string.Empty, out httpStatusCode);
+
+                    if (string.IsNullOrEmpty(workingCopyResponseJson))
                     {
-                        uuid = uuid
+                        return;
                     }
-                };
 
-                string endPointRequestJson = JsonConvert.SerializeObject(endpointRequestModel, Formatting.Indented);
-                string endpointJson = new WebHelper().setServerJson(new Uri(workingCopyResponseModel.url), "PUT", endPointRequestJson, out httpStatusCode);
+                    WorkingCopyPrototypeModel workingCopyResponseModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WorkingCopyPrototypeModel>(workingCopyResponseJson);
 
-                ((IPublishDocumentTemplateDialog)publishTemplateDialog).ActivityCodeList = new ActivityCodeList().createActivityCodeList(Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointModel>(endpointJson), out httpStatusCode);
-                if (httpStatusCode == HttpStatusCode.OK)
-                {
-                    ((IPublishDocumentTemplateDialog)publishTemplateDialog).LegislationList = new LegislationList().createLegislationList(Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointModel>(endpointJson), out httpStatusCode);
+                    EndpointRequestModel endpointRequestModel = new EndpointRequestModel
+                    {
+                        etag = workingCopyPrototypeModel.etag,
+                        url = workingCopyResponseModel.url,
+                        uuid = workingCopyResponseModel.key,
+                        endpointUuid = new SyracuseUuidModel
+                        {
+                            uuid = uuid
+                        }
+                    };
+
+                    string endPointRequestJson = JsonConvert.SerializeObject(endpointRequestModel, Formatting.Indented);
+                    string endpointJson = new WebHelper().setServerJson(new Uri(workingCopyResponseModel.url), "PUT", endPointRequestJson, out httpStatusCode);
+
+                    ((IPublishDocumentTemplateDialog)publishTemplateDialog).ActivityCodeList = new ActivityCodeList().createActivityCodeList(Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointModel>(endpointJson), out httpStatusCode);
                     if (httpStatusCode == HttpStatusCode.OK)
                     {
-                        ((IPublishDocumentTemplateDialog)publishTemplateDialog).CompanyList = new CompanyList().createCompanyList(Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointModel>(endpointJson), out httpStatusCode);
+                        ((IPublishDocumentTemplateDialog)publishTemplateDialog).LegislationList = new LegislationList().createLegislationList(Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointModel>(endpointJson), out httpStatusCode);
+                        if (httpStatusCode == HttpStatusCode.OK)
+                        {
+                            ((IPublishDocumentTemplateDialog)publishTemplateDialog).CompanyList = new CompanyList().createCompanyList(Newtonsoft.Json.JsonConvert.DeserializeObject<EndpointModel>(endpointJson), out httpStatusCode);
+                        }
                     }
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
                 }
             }
         }

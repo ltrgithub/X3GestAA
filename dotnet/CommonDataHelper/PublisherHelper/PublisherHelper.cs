@@ -13,6 +13,8 @@ using CommonDataHelper.TagHelper;
 using System.IO;
 using System.Text.RegularExpressions;
 using CommonDialogs.PublishDocumentTemplateDialog;
+using System.Windows.Forms;
+using CommonDialogs;
 
 namespace CommonDataHelper.PublisherHelper
 {
@@ -20,11 +22,20 @@ namespace CommonDataHelper.PublisherHelper
     {
         public void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
-            WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = new RequestHelper().getWordSaveDocumentPrototypes().links.wordSaveNewDocumentPrototype;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
 
-            WorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
+                WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = new RequestHelper().getWordSaveDocumentPrototypes().links.wordSaveNewDocumentPrototype;
 
-            publishDocument(documentContent, wordSaveNewDocumentPrototypeModel, wordWorkingCopyPrototypeModel, syracuseCustomData, publishDocumentParameters);
+                WorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
+
+                publishDocument(documentContent, wordSaveNewDocumentPrototypeModel, wordWorkingCopyPrototypeModel, syracuseCustomData, publishDocumentParameters);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         public void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters)
@@ -44,32 +55,16 @@ namespace CommonDataHelper.PublisherHelper
 
             WorkingCopyPrototypeModel workingCopyResponseModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WorkingCopyPrototypeModel>(workingCopyResponseJson);
 
-            Uri baseUrl = BaseUrlHelper.BaseUrl;
-            if (baseUrl == null)
-            {
-                return;
-            }
-
             if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
             {
-                SyracuseUuidModel storageVolumeUuid = new SyracuseUuidModel()
-                {
-                    uuid = publishDocumentParameters.StorageVolume
-                };
-
-                SyracuseUuidModel ownerUuid = new SyracuseUuidModel
-                {
-                    uuid = publishDocumentParameters.Owner
-                };
-
                 WordPublishDocumentModel wordPublishDocument = new WordPublishDocumentModel
                 {
                     etag = workingCopyResponseModel.etag,
                     url = workingCopyResponseModel.url,
                     uuid = workingCopyResponseModel.uuid,
                     description = publishDocumentParameters.Description,
-                    storageVolume = storageVolumeUuid,
-                    owner = ownerUuid
+                    storageVolume = new SyracuseUuidModel() { uuid = publishDocumentParameters.StorageVolume },
+                    owner = new SyracuseUuidModel { uuid = publishDocumentParameters.Owner }
                 };
 
                 string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocument, Formatting.Indented);
@@ -101,7 +96,9 @@ namespace CommonDataHelper.PublisherHelper
                         };
 
                         string saveDocumentJson = JsonConvert.SerializeObject(saveDocumentModel, Formatting.Indented);
-                        string test = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", saveDocumentJson, out httpStatusCode);
+                        string saveDocumentResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", saveDocumentJson, out httpStatusCode);
+                        if (httpStatusCode == HttpStatusCode.OK && !string.IsNullOrEmpty(saveDocumentResponseJson))
+                            InfoMessageBox.ShowInfoMessage(global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE, global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE_TITLE);
                     }
                 }
             }

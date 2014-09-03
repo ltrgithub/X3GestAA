@@ -36,6 +36,11 @@ namespace CommonDataHelper
 
             if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
             {
+                /*
+                 * No purpose is chosen by default, so add a blank entry to facilitate this.
+                 */
+                purposeList.Add(new PurposeItem(String.Empty, String.Empty));
+
                 var purposes = Newtonsoft.Json.JsonConvert.DeserializeObject<PurposesModel>(responseJson);
 
                 foreach (PurposeModel purpose in purposes.purposes)

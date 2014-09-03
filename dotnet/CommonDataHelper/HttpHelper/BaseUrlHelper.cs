@@ -71,7 +71,7 @@ namespace CommonDataHelper
             if (CustomData != null)
             {
                 string serverUrl = CustomData.getServerUrl();
-                if (serverUrl != null)
+                if (!string.IsNullOrEmpty(serverUrl))
                     return new Uri(serverUrl);
             }
 

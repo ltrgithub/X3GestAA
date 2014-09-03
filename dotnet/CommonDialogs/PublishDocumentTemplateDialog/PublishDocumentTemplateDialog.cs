@@ -183,8 +183,18 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             /*
              * Call the endpoint delegate to signal that the endpoint has been changed.
              */
+            ActivityCodeList = null;
+            CompanyList = null;
+            LegislationList = null;
+
+            ActivityCode = string.Empty;
+            Company = string.Empty;
+            Legislation = string.Empty;
+
             if (comboBoxEndpoint.SelectedIndex != 0)
+            {
                 _endpointDelegate(comboBoxEndpoint.SelectedValue.ToString(), _syracuseCustomDataDelegate(), this);
+            }
         }
 
         private EndpointDelegate _endpointDelegate = null;
