@@ -40,6 +40,7 @@ for(var i = 0; i < entries.length; i++) {
     for(var ti = 0; ti < entries[i].tags.length; ti++) { 
       // Get the current tag
       var tag = entries[i].tags[ti];    
+      
       // If we have a parameter render it
       if(tag.type == 'param') {
         // Unpack the tag
@@ -115,6 +116,28 @@ for(var i = 0; i < entries.length; i++) {
 
 for(var i = 0; i < entries.length; i++) {
   if(isProperty(entries[i])) {
+
+    // If we have a class property
+    if(entries[i].tags[0].type == 'class') {
+%>
+.. csv-table:: 
+   :header: "Property"
+   :widths: 30
+
+<%
+
+      // Write out all of the properties
+      for(var j = 0; j < entries[i].tags.length; j++) {
+        if(entries[i].tags[j].type == 'property') {
+          %><%- format("   \"%s\"\n", entries[i].tags[j].string) %><%
+        }
+      }
+
+      // Skip to next entry
+      continue;
+    }
+
+
     // Extract values
     var attributeName = "";
     var getterSetters = [];
@@ -200,7 +223,7 @@ for(var i = 0; i < entries.length; i++) {
   }
 }
 
-for(var i = 0; i < entries.length; i++) {  
+for(var i = 0; i < entries.length; i++) {    
   // If it's a function parse it
   if(isFunction(entries[i])) {
     var paramsStrings = [];
@@ -209,6 +232,7 @@ for(var i = 0; i < entries.length; i++) {
     for(var ti = 0; ti < entries[i].tags.length; ti++) { 
       // Get the current tag
       var tag = entries[i].tags[ti];    
+      
       // If we have a parameter render it
       if(tag.type == 'param') {
         // Unpack the tag
@@ -230,6 +254,7 @@ for(var i = 0; i < entries.length; i++) {
         
     // Reformat any optional parameters from ,[] to [,]
     var paramsString = paramNames.join(", ").replace(/\, \[/, "[, ");
+    
     // Write out the methods
     var fullDescription = entries[i].description.full;
     
@@ -246,7 +271,7 @@ for(var i = 0; i < entries.length; i++) {
     var examplesName = entries[i].ctx.name;
         
     // Write header depending on if it's class or instance level
-    if(entries[i].ctx.receiver != null) {
+    if(entries[i].ctx.receiver != null && entries[i].ctx.receiver != "this") {   
       // Change examples Name to include class name
       var examplesName = format("%s.%s", className, entries[i].ctx.name);      
       var _length = format("%s.%s", className, entries[i].ctx.name).length;      
@@ -266,10 +291,13 @@ for(var i = 0; i < entries.length; i++) {
     if(examples != null && examples[examplesName]) {
       %><%= format("\n**Examples**\n\n") %><%      
       var examplesArray = examples[examplesName];
+      
       // Iterate over all the examples
       for(var ei = 0; ei < examplesArray.length; ei++) {
+        
         // Fetch an example
         var example = examplesArray[ei];
+        
         var code = example.code;        
         code = code.replace(", ssl:useSSL", "")
           .replace("native_parser: native_parser", "native_parser: false")
