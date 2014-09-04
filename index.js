@@ -151,7 +151,7 @@ require('syracuse-license').register(function(err, data) {
 				console.error("Need a license to start. " + e);
 				process.exit(5);
 			} else {
-				console.log("Error " + e);
+				console.log("Error " + e.stack);
 			}
 		}
 	}
