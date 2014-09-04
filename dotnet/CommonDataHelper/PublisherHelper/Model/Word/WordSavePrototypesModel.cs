@@ -9,12 +9,12 @@ namespace CommonDataHelper.PublisherHelper.Model.Word
     public class WordSavePrototypesModel
     {
         [JsonProperty("saveNewDocument")]
-        public WordSavePrototypeModel wordSaveNewDocumentPrototype;
+        public WordSavePrototypeModel wordSaveNewDocumentPrototype { get; set; }
 
         [JsonProperty("saveMailMergeTemplate")]
-        public WordSavePrototypeModel wordSaveMailMergeTemplatePrototype;
+        public WordSavePrototypeModel wordSaveMailMergeTemplatePrototype { get; set; }
 
         [JsonProperty("saveReportTemplate")]
-        public WordSavePrototypeModel wordSaveReportTemplatePrototype;
+        public WordSavePrototypeModel wordSaveReportTemplatePrototype { get; set; }
     }
 }

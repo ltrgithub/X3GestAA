@@ -37,6 +37,26 @@ namespace CommonDataHelper
             }
         }
 
+        private static string _role = null;
+        public static string Role
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_role))
+                {
+                    foreach (Cookie cookie in CookieContainer.GetCookies(BaseUrlHelper.BaseUrl))
+                    {
+                        if (cookie.Name.StartsWith("user.profile"))
+                        {
+                            _role = extractRole(cookie.Value);
+                            break;
+                        }
+                    }
+                }
+                return _role;
+            }
+        }
+
         private static string extractUserUuid(string cookieValue)
         {
             /*
@@ -59,6 +79,30 @@ namespace CommonDataHelper
                 userUuid = userProfileDictionary["user"];
             }
             return userUuid; ;
+        }
+
+        private static string extractRole(string cookieValue)
+        {
+            /*
+            * Ideally we should have a .net implementation of JSURL.
+            */
+            string role = string.Empty;
+
+            if (cookieValue.StartsWith("~"))
+            {
+                cookieValue = cookieValue.Remove(0, 1);
+
+                /*
+                 * Remove the start and end curly braces
+                 */
+                cookieValue = cookieValue.Remove(cookieValue.IndexOf('('), 1);
+                cookieValue = cookieValue.Remove(cookieValue.Length - 1);
+
+                Dictionary<string, string> userProfileDictionary = new Dictionary<string, string>();
+                buildUserProfileDictionary(cookieValue, userProfileDictionary);
+                role = userProfileDictionary["role"];
+            }
+            return role;
         }
 
 
