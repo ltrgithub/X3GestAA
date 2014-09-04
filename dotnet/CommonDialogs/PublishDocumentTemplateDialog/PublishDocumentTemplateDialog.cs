@@ -16,7 +16,13 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         {
             InitializeComponent();
         }
-      
+
+        public string Code
+        {
+            get { return textBoxCode.Text; }
+            set { textBoxCode.Text = value; }
+        }
+
         public string Description
         {
             get { return textBoxDescription.Text; }
@@ -169,7 +175,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
-            btnOk.Enabled = !string.IsNullOrEmpty(textBoxDescription.Text);
+            btnOk_enable();
         }
 
         private void comboBoxEndpoint_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,6 +213,15 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         public void setSyracuseCustomDataDelegate(SyracuseCustomDataDelegate syracuseCustomDataDelegate)
         {
             _syracuseCustomDataDelegate = syracuseCustomDataDelegate;
+        }
+
+        private void textBoxCode_TextChanged(object sender, EventArgs e)
+        {
+            btnOk_enable();
+        }
+        private void btnOk_enable()
+        {
+            btnOk.Enabled = (!string.IsNullOrEmpty(textBoxDescription.Text) && !string.IsNullOrEmpty(textBoxCode.Text));
         }
     }
 }

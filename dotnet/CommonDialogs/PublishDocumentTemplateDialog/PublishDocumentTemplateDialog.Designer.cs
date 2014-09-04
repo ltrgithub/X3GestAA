@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentTemplateDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
+            this.textBoxCode = new System.Windows.Forms.TextBox();
+            this.labelCode = new System.Windows.Forms.Label();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
             this.labelOwner = new System.Windows.Forms.Label();
@@ -60,6 +62,8 @@
             // 
             // groupBoxDescription
             // 
+            this.groupBoxDescription.Controls.Add(this.textBoxCode);
+            this.groupBoxDescription.Controls.Add(this.labelCode);
             this.groupBoxDescription.Controls.Add(this.comboBoxOwner);
             this.groupBoxDescription.Controls.Add(this.checkBoxReadOnly);
             this.groupBoxDescription.Controls.Add(this.labelOwner);
@@ -68,6 +72,17 @@
             resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
+            // 
+            // textBoxCode
+            // 
+            resources.ApplyResources(this.textBoxCode, "textBoxCode");
+            this.textBoxCode.Name = "textBoxCode";
+            this.textBoxCode.TextChanged += new System.EventHandler(this.textBoxCode_TextChanged);
+            // 
+            // labelCode
+            // 
+            resources.ApplyResources(this.labelCode, "labelCode");
+            this.labelCode.Name = "labelCode";
             // 
             // comboBoxOwner
             // 
@@ -272,5 +287,7 @@
         private System.Windows.Forms.Label labelLegislation;
         private System.Windows.Forms.CheckedListBox checkedListBoxTags;
         private System.Windows.Forms.CheckedListBox checkedListBoxTeams;
+        private System.Windows.Forms.TextBox textBoxCode;
+        private System.Windows.Forms.Label labelCode;
     }
 }
