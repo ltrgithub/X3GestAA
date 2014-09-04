@@ -374,7 +374,8 @@ namespace WordAddIn
                      */
                     List<OwnerItem> ownerList = new OwnerList().createOwnerList();
                     publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                    publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                    if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
+                        publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
                     publishDocumentDialog.TagList = new TagList().createTagList();
                     publishDocumentDialog.TeamList = new TeamList().createTeamList();
@@ -416,7 +417,8 @@ namespace WordAddIn
                     Cursor.Current = Cursors.WaitCursor;
 
                     publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                    publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                    if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
+                        publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
                     publishDocumentTemplateDialog.TagList = new TagList().createTagList();
                     publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();

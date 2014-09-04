@@ -12,6 +12,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
     public interface IPublishDocumentTemplate
     {
+        string Code { get; set; }
         string Description { get; set; }
         string Owner { get; set; }
         string Purpose { get; set; }
