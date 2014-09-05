@@ -20,7 +20,7 @@ namespace CommonDataHelper
             page.Append(endpointModel.contract);
             page.Append(@"/");
             page.Append(endpointModel.dataset);
-            page.Append(@"/ACTIV?representation=ACTIV.$lookup");
+            page.Append(@"/ACTIV?representation=ACTIV.$bulk");
             
             List<ActivityCodeItem> activityCodeList = new List<ActivityCodeItem>();
             WebHelper webHelper = new WebHelper();
@@ -42,7 +42,7 @@ namespace CommonDataHelper
 
                 foreach (ActivityCodeModel activityCode in activityCodes.activityCodes)
                 {
-                    activityCodeList.Add(new ActivityCodeItem(activityCode.description, activityCode.uuid));
+                    activityCodeList.Add(new ActivityCodeItem(activityCode.description, activityCode.codeact));
                 }
             }
             return activityCodeList;

@@ -8,10 +8,10 @@ namespace CommonDataHelper.CompanyHelper.Model
 {
     public class CompanyModel
     {
-        [JsonProperty("LIBACT")]
-        public String description;
+        [JsonProperty("CPYNAM")]
+        public String cpynam;
 
-        [JsonProperty("$uuid")]
-        public String uuid;
+        [JsonProperty("CPY")]
+        public String cpy;
     }
 }

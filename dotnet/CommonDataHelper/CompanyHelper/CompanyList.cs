@@ -41,7 +41,7 @@ namespace CommonDataHelper.CompanyHelper
 
                 foreach (CompanyModel company in companys.companies)
                 {
-                    companyList.Add(new CompanyItem(company.description, company.uuid));
+                    companyList.Add(new CompanyItem(company.cpynam, company.cpy));
                 }
             }
             return companyList;

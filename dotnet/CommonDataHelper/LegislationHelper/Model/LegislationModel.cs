@@ -11,7 +11,7 @@ namespace CommonDataHelper.LegislationHelper.Model
         [JsonProperty("LNGDES")]
         public String description;
 
-        [JsonProperty("$uuid")]
-        public String uuid;
+        [JsonProperty("CODE")]
+        public String code;
     }
 }

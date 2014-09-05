@@ -7,23 +7,30 @@ namespace CommonDataHelper.CompanyHelper
 {
     public class CompanyItem
     {
-        private string _description;
-        private string _uuid;
+        private string _cpynam;
+        private string _cpy;
 
-        public CompanyItem(string description, string uuid)
+        public CompanyItem(string cpynam, string cpy)
         {
-            _description = description;
-            _uuid = uuid;
+            if (cpynam.Equals(String.Empty) && cpy.Equals(String.Empty))
+            {
+                _cpynam = cpynam;
+            }
+            else
+            {
+                _cpynam = cpy + ": " + cpynam;
+            }
+            _cpy = cpy;
         }
 
-        public string Description
+        public string Cpynam
         {
-            get { return _description; }
+            get { return _cpynam; }
         }
 
-        public string Uuid
+        public string Cpy
         {
-            get { return _uuid; }
+            get { return _cpy; }
         }
     }
 }

@@ -8,12 +8,19 @@ namespace CommonDataHelper.ActivityCodeHelper
     public class ActivityCodeItem
     {
         private string _description;
-        private string _uuid;
+        private string _codeact;
 
-        public ActivityCodeItem(string description, string uuid)
+        public ActivityCodeItem(string description, string codeact)
         {
-            _description = description;
-            _uuid = uuid;
+            if (description.Equals(String.Empty) && codeact.Equals(String.Empty))
+            {
+                _description = description;
+            }
+            else
+            {
+                _description = codeact + ": " + description;
+            }
+            _codeact = codeact;
         }
 
         public string Description
@@ -21,9 +28,9 @@ namespace CommonDataHelper.ActivityCodeHelper
             get { return _description; }
         }
 
-        public string Uuid
+        public string Codeact
         {
-            get { return _uuid; }
+            get { return _codeact; }
         }
     }
 }

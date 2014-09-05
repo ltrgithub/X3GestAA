@@ -113,8 +113,8 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             set
             {
                 comboBoxCompany.DataSource = value;
-                comboBoxCompany.DisplayMember = "Description";
-                comboBoxCompany.ValueMember = "Uuid";
+                comboBoxCompany.DisplayMember = "Cpynam";
+                comboBoxCompany.ValueMember = "Cpy";
             }
         }
 
@@ -125,7 +125,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             {
                 comboBoxLegislation.DataSource = value;
                 comboBoxLegislation.DisplayMember = "Description";
-                comboBoxLegislation.ValueMember = "Uuid";
+                comboBoxLegislation.ValueMember = "Code";
             }
         }
 
@@ -136,7 +136,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             {
                 comboBoxActivityCode.DataSource = value;
                 comboBoxActivityCode.DisplayMember = "Description";
-                comboBoxActivityCode.ValueMember = "Uuid";
+                comboBoxActivityCode.ValueMember = "Codeact";
             }
         }
 

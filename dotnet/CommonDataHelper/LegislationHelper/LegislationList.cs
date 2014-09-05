@@ -19,7 +19,7 @@ namespace CommonDataHelper.LegislationHelper
             page.Append(endpointModel.contract);
             page.Append(@"/");
             page.Append(endpointModel.dataset);
-            page.Append(@"/ATABDIV?representation=ATABDIV.$lookup");
+            page.Append(@"/ATABDIV?representation=ATABDIV.$lookup&where=(NUMTAB eq 909)");
 
             List<LegislationItem> legislationList = new List<LegislationItem>();
             WebHelper webHelper = new WebHelper();
@@ -41,7 +41,7 @@ namespace CommonDataHelper.LegislationHelper
 
                 foreach (LegislationModel legislation in legislations.legislations)
                 {
-                    legislationList.Add(new LegislationItem(legislation.description, legislation.uuid));
+                    legislationList.Add(new LegislationItem(legislation.description, legislation.code));
                 }
             }
             return legislationList;

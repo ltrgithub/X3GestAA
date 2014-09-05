@@ -113,28 +113,30 @@ namespace CommonDataHelper.PublisherHelper
 
                 if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
                 {
-                    /*
-                    SyracuseUuidModel storageVolumeUuid = new SyracuseUuidModel()
-                    {
-                        uuid = publishDocumentParameters.StorageVolume
-                    };
-                     */
-
                     SyracuseUuidModel ownerUuid = new SyracuseUuidModel
                     {
                         uuid = publishDocumentParameters.Owner
                     };
 
+                    SyracuseUuidModel endpointUuid = new SyracuseUuidModel
+                    {
+                        uuid = publishDocumentParameters.Endpoint
+                    };
+
                     if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
                     {
-                        WordPublishDocumentModel wordPublishDocument = new WordPublishDocumentModel
+                        WordPublishTemplateModel wordPublishDocument = new WordPublishTemplateModel
                         {
+                            code = publishDocumentParameters.Code,
                             etag = workingCopyResponseModel.etag,
                             url = workingCopyResponseModel.url,
                             uuid = workingCopyResponseModel.uuid,
                             description = publishDocumentParameters.Description,
-                            //storageVolume = new SyracuseUuidModel() { uuid = publishDocumentParameters.StorageVolume },
-                            owner = new SyracuseUuidModel { uuid = publishDocumentParameters.Owner }
+                            owner = new SyracuseUuidModel { uuid = publishDocumentParameters.Owner },                            
+                            leg = publishDocumentParameters.Legislation,
+                            cpy = publishDocumentParameters.Company,
+                            activ = publishDocumentParameters.ActivityCode,
+                            endpoint = endpointUuid
                         };
 
                         string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocument, Formatting.Indented);

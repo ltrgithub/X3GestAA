@@ -24,6 +24,18 @@ namespace CommonDataHelper.PublisherHelper.Model.Word
         [JsonProperty("owner")]
         public SyracuseUuidModel owner;
 
+        [JsonProperty("endpoint")]
+        public SyracuseUuidModel endpoint;
+
+        [JsonProperty("activ")]
+        public string activ;
+
+        [JsonProperty("leg")]
+        public string leg;
+
+        [JsonProperty("cpy")]
+        public string cpy;
+
         [JsonProperty("$url")]
         public string url;
     }

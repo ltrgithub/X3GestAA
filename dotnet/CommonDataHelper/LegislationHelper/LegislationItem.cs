@@ -8,12 +8,19 @@ namespace CommonDataHelper.LegislationHelper
     public class LegislationItem
     {
         private string _description;
-        private string _uuid;
+        private string _code;
 
-        public LegislationItem(string description, string uuid)
+        public LegislationItem(string description, string code)
         {
-            _description = description;
-            _uuid = uuid;
+            if (description.Equals(String.Empty) && code.Equals(String.Empty))
+            {
+                _description = description;
+            }
+            else
+            {
+                _description = code + ": " + description;
+            }
+            _code = code;
         }
 
         public string Description
@@ -21,9 +28,9 @@ namespace CommonDataHelper.LegislationHelper
             get { return _description; }
         }
 
-        public string Uuid
+        public string Code
         {
-            get { return _uuid; }
+            get { return _code; }
         }
     }
 }

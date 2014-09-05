@@ -11,7 +11,7 @@ namespace CommonDataHelper.ActivityCodeHelper.Model
         [JsonProperty("LIBACT")]
         public String description;
 
-        [JsonProperty("$uuid")]
-        public String uuid;
+        [JsonProperty("CODACT")]
+        public String codeact;
     }
 }
