@@ -18,6 +18,10 @@ using System.ComponentModel;
 using CommonDataHelper.OwnerHelper;
 using CommonDialogs.PublishDocumentTemplateDialog;
 using CommonDataHelper.EndpointHelper;
+using CommonDataHelper.PublisherHelper.Model.Word;
+using CommonDataHelper.PublisherHelper.Model.Common;
+using System.Net;
+using System.Reflection;
 
 namespace WordAddIn
 {
@@ -355,6 +359,8 @@ namespace WordAddIn
 
                 IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
 
+                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy("wordSaveNewDocumentPrototype");
+
                 List<StorageVolumeItem> storageVolumeList = new StorageVolumeList().createStorageVolumeList();
                 if (storageVolumeList != null)
                 {
@@ -368,7 +374,8 @@ namespace WordAddIn
                      */
                     List<OwnerItem> ownerList = new OwnerList().createOwnerList();
                     publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                    publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                    if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
+                        publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
                     publishDocumentDialog.TagList = new TagList().createTagList();
                     publishDocumentDialog.TeamList = new TeamList().createTeamList();
@@ -377,7 +384,7 @@ namespace WordAddIn
                     if (customData == null)
                         customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
 
-                    publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher));
+                    publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher), workingCopyPrototypeModel);
 
                     /*
                      * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
@@ -402,13 +409,16 @@ namespace WordAddIn
 
                 IPublishDocumentTemplateDialog publishDocumentTemplateDialog = new PublishDocumentTemplateDialog();
 
+                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy("wordSaveReportTemplatePrototype");
+
                 List<OwnerItem> ownerList = new OwnerList().createOwnerList();
                 if (ownerList != null)
                 {
                     Cursor.Current = Cursors.WaitCursor;
 
                     publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                    publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                    if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
+                        publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
                     publishDocumentTemplateDialog.TagList = new TagList().createTagList();
                     publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
@@ -416,7 +426,7 @@ namespace WordAddIn
                     SyracuseOfficeCustomData customData = getSyracuseCustomData();
 
                     publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
-                    publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation());
+                    publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
                     publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
 
                     publishDocumentTemplateDialog.setSyracuseCustomDataDelegate(getSyracuseCustomData);
@@ -438,12 +448,34 @@ namespace WordAddIn
             }
         }
 
-        public void publisher(IPublishDocument publishDocumentParameters)
+        private WorkingCopyPrototypeModel initialiseWorkingCopy(string wordSavePrototypeName) 
+        {
+            RequestHelper requestHelper = new RequestHelper();
+            WordSavePrototypesModel wordSavePrototypesModel = requestHelper.getWordSaveDocumentPrototypes().links;
+
+            WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = (WordSavePrototypeModel)wordSavePrototypesModel.GetType().GetProperty(wordSavePrototypeName).GetValue(wordSavePrototypesModel, null);
+
+            WorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
+
+            Uri workingCopyUrl = new RequestHelper().addUrlQueryParameters(wordSaveNewDocumentPrototypeModel.url, wordWorkingCopyPrototypeModel.trackingId, getSyracuseCustomData(), string.Empty);
+
+            WebHelper webHelper = new WebHelper();
+            HttpStatusCode httpStatusCode;
+
+            string workingCopyResponseJson = webHelper.setServerJson(workingCopyUrl, "POST", string.Empty, out httpStatusCode);
+
+            WorkingCopyPrototypeModel workingCopyResponseModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WorkingCopyPrototypeModel>(workingCopyResponseJson);
+
+            return workingCopyResponseModel;
+        }
+
+        public void publisher(IPublishDocument publishDocumentParameters, object workingCopyPrototypeModel)
         {
             IDocumentPublisher publisher = new PublisherHelper();
 
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-            publisher.publishDocument(_documentContent, customData, publishDocumentParameters);
+
+            publisher.publishDocument(_documentContent, (WorkingCopyPrototypeModel)workingCopyPrototypeModel, customData, publishDocumentParameters);
         }
 
 

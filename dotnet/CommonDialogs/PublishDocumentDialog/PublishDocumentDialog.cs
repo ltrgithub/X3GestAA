@@ -90,13 +90,15 @@ namespace CommonDialogs.PublishDocumentDialog
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            _publisherDelegate(this);
+            _publisherDelegate(this, _workingCopyPrototypeModel);
         }
 
-        PublisherDocumentDelegate _publisherDelegate = null;
-        public void Publisher(PublisherDocumentDelegate publisherDelegate) 
+        private PublisherDocumentDelegate _publisherDelegate = null;
+        private object _workingCopyPrototypeModel = null;
+        public void Publisher(PublisherDocumentDelegate publisherDelegate, object workingCopyPrototypeModel) 
         {
             _publisherDelegate = publisherDelegate;
+            _workingCopyPrototypeModel = workingCopyPrototypeModel;
         }
 
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
