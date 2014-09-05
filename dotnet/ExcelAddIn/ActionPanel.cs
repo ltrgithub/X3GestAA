@@ -8,6 +8,8 @@ using System.Web.Script.Serialization;
 using System.Threading;
 using System.Globalization;
 using Microsoft.Win32;
+using CommonDataHelper;
+
 
 namespace ExcelAddIn
 {
@@ -72,6 +74,17 @@ namespace ExcelAddIn
             var connectUrl = serverUrl;
             if (connectUrl == "") connectUrl = Globals.ThisAddIn.GetServerUrl(Wb);
             if (connectUrl == "") return;
+
+            /*
+             * Force a login using a forms-based webBrowser. 
+             * This prevent focus going to an existing open Excel document in Excel 2013.
+             * 
+             * NOTE: The ConnectionDialog class used here should be changed to use the ConnectionDialog class
+             * that will (likely) be introduced as part of the .net Save dialog project (SAM95698).
+             */
+            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main.html" + "?officeLogon=" + Guid.NewGuid())))
+                return;
+
             //
             try
             {
