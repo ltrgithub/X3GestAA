@@ -82,7 +82,7 @@ namespace ExcelAddIn
              * NOTE: The ConnectionDialog class used here should be changed to use the ConnectionDialog class
              * that will (likely) be introduced as part of the .net Save dialog project (SAM95698).
              */
-            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main.html" + "?officeLogon=" + Guid.NewGuid())))
+            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main.html")))
                 return;
 
             //

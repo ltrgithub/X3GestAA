@@ -30,10 +30,8 @@ namespace CommonDataHelper
         {
             Text = url.ToString();
 
-            webBrowser.Url = url;
-            if (webBrowser.Document != null)
-            {
-            }
+            string header = "If-None-Match: 0";
+            webBrowser.Navigate(url, "", null, header);
 
             /*
              * We need this to be synchronous...
