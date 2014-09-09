@@ -50,7 +50,10 @@ exports.config = {
 		"fibers": true,
 		"cache": true,
 		"verbose": true,
-		"fast": true
+		"fast": true,
+        // comment out the flamegraph block to activate flame graphs
+        // rate is the rate at which stack traces are sampled (1 ms by default)
+		// flamegraph: { rate: 1, },	
 	},
 	x3fusion: {
 		// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
