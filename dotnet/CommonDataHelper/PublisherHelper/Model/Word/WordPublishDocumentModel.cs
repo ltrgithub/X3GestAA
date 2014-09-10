@@ -26,5 +26,11 @@ namespace CommonDataHelper.PublisherHelper.Model.Word
 
         [JsonProperty("$url")]
         public string url;
+
+        [JsonProperty("teams")]
+        public List<SyracuseUuidModel> teams;
+
+        [JsonProperty("tags")]
+        public List<SyracuseUuidModel> tags;
     }
 }

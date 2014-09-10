@@ -41,6 +41,20 @@ namespace CommonDataHelper.PublisherHelper
 
                 if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
                 {
+                    List<SyracuseUuidModel> templateTags = new List<SyracuseUuidModel>();
+                    foreach (TagItem o in publishDocumentParameters.Tag)
+                    {
+                        TagModel tagModel = Newtonsoft.Json.JsonConvert.DeserializeObject<TagModel>(o.TagJson);
+                        templateTags.Add(new SyracuseUuidModel { uuid = tagModel.uuid });
+                    }
+
+                    List<SyracuseUuidModel> templateTeams = new List<SyracuseUuidModel>();
+                    foreach (TeamItem t in publishDocumentParameters.Team)
+                    {
+                        TeamModel teamModel = Newtonsoft.Json.JsonConvert.DeserializeObject<TeamModel>(t.TeamJson);
+                        templateTeams.Add(new SyracuseUuidModel { uuid = teamModel.uuid });
+                    }
+
                     WordPublishDocumentModel wordPublishDocument = new WordPublishDocumentModel
                     {
                         etag = workingCopyResponseModel.etag,
@@ -48,6 +62,8 @@ namespace CommonDataHelper.PublisherHelper
                         uuid = workingCopyResponseModel.uuid,
                         description = publishDocumentParameters.Description,
                         storageVolume = new SyracuseUuidModel() { uuid = publishDocumentParameters.StorageVolume },
+                        teams = templateTeams,
+                        tags = templateTags,
                         owner = new SyracuseUuidModel { uuid = publishDocumentParameters.Owner }
                     };
 
