@@ -29,9 +29,12 @@ namespace CommonDataHelper
                  */
 
                 /*
-                 * Really messy, but we need to force a 401 here...
+                 * We need to force a 401 here...
                  */
-                new ConnectionDialog().connectToServer(new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html" + "?officeLogon=" + Guid.NewGuid()));
+                if (new ConnectionDialog().connectToServer() == false)
+                {
+                    throw (new WebException(global::CommonDataHelper.Properties.Resources.MSG_CANNOT_CONNECT_TO_SERVER));
+                }
             }
 
             request.ContentType = @"application/json";
@@ -40,44 +43,12 @@ namespace CommonDataHelper
 
             request.CookieContainer = CookieHelper.CookieContainer;
 
-            try
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
             {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-                {
-                    responseJson = sr.ReadToEnd();
-                }
-                statusCode = HttpStatusCode.OK;
+                responseJson = sr.ReadToEnd();
             }
-            catch (Exception ex)
-            {
-                HttpWebResponse wre = ((HttpWebResponse)(((WebException)ex).Response));
-                if (wre == null)
-                {
-                    statusCode = HttpStatusCode.InternalServerError;
-                    CredentialsHelper.clear(); // No point in trying different credentials if we can't even connect!
-                }
-                else
-                {
-                    statusCode = wre.StatusCode;
-                    if (wre.StatusCode == HttpStatusCode.Unauthorized || wre.StatusCode == HttpStatusCode.Forbidden)
-                    {
-                        if (CredentialsHelper.Retries > 0)
-                        {
-                            CredentialsHelper.Retries--;
-
-                            /*
-                             * Clear the cookie cache. This will force a re-login.
-                             */
-                            CookieHelper.CookieContainer = null;
-
-                            return getServerJson(uri, out statusCode);
-                        }
-                        statusCode = wre.StatusCode;
-                    }
-                }
-                MessageBox.Show(ex.Message);
-            }
+            statusCode = HttpStatusCode.OK;
 
             return responseJson;
         }
@@ -96,44 +67,14 @@ namespace CommonDataHelper
             StreamWriter writer = new StreamWriter(request.GetRequestStream());
             writer.Write(data);
             writer.Close();
-            try
-            {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-                {
-                    responseJson = sr.ReadToEnd();
-                }
-                statusCode = HttpStatusCode.OK;
-            }
-            catch (Exception ex)
-            {
-                HttpWebResponse wre = ((HttpWebResponse)(((WebException)ex).Response));
-                if (wre == null)
-                {
-                    statusCode = HttpStatusCode.InternalServerError;
-                    CredentialsHelper.clear(); // No point in trying different credentials if we can't even connect!
-                }
-                else
-                {
-                    statusCode = wre.StatusCode;
-                    if (wre.StatusCode == HttpStatusCode.Unauthorized || wre.StatusCode == HttpStatusCode.Forbidden)
-                    {
-                        if (CredentialsHelper.Retries > 0)
-                        {
-                            CredentialsHelper.Retries--;
 
-                            /*
-                             * Clear the cookie cache. This will force a re-login.
-                             */
-                            CookieHelper.CookieContainer = null;
-
-                            return setServerJson(uri, method, data, out statusCode);
-                        }
-                        statusCode = wre.StatusCode;
-                    }
-                    MessageBox.Show(ex.Message);
-                }
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+            {
+                responseJson = sr.ReadToEnd();
             }
+            statusCode = HttpStatusCode.OK;
+
             return responseJson;
         }
 
@@ -163,44 +104,14 @@ namespace CommonDataHelper
             BinaryWriter writer = new BinaryWriter(request.GetRequestStream());
             writer.Write(data);
             writer.Close();
-            try
-            {
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-                {
-                    responseJson = sr.ReadToEnd();
-                }
-                statusCode = HttpStatusCode.OK;
-            }
-            catch (Exception ex)
-            {
-                HttpWebResponse wre = ((HttpWebResponse)(((WebException)ex).Response));
-                if (wre == null)
-                {
-                    statusCode = HttpStatusCode.InternalServerError;
-                    CredentialsHelper.clear(); // No point in trying different credentials if we can't even connect!
-                }
-                else
-                {
-                    statusCode = wre.StatusCode;
-                    if (wre.StatusCode == HttpStatusCode.Unauthorized || wre.StatusCode == HttpStatusCode.Forbidden)
-                    {
-                        if (CredentialsHelper.Retries > 0)
-                        {
-                            CredentialsHelper.Retries--;
 
-                            /*
-                             * Clear the cookie cache. This will force a re-login.
-                             */
-                            CookieHelper.CookieContainer = null;
-
-                            return uploadFile(uri, method, data, out statusCode);
-                        }
-                        statusCode = wre.StatusCode;
-                    }
-                    MessageBox.Show(ex.Message);
-                }
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+            {
+                responseJson = sr.ReadToEnd();
             }
+            statusCode = HttpStatusCode.OK;
+
             return responseJson;
         }
     }    

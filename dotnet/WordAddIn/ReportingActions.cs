@@ -56,7 +56,7 @@ namespace WordAddIn
                     CookieHelper.setCookies(customData.getCookie());
                     if (CookieHelper.CookieContainer.Count != 0)
                     {
-                        new ConnectionDialog().connectToServer(BaseUrlHelper.BaseUrl);
+                        new ConnectionDialog().connectToServer();
                     }
                 }
 

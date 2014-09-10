@@ -362,38 +362,40 @@ namespace WordAddIn
                 WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy("wordSaveNewDocumentPrototype");
 
                 List<StorageVolumeItem> storageVolumeList = new StorageVolumeList().createStorageVolumeList();
-                if (storageVolumeList != null)
-                {
-                    Cursor.Current = Cursors.WaitCursor;
 
-                    publishDocumentDialog.StorageVolumeList = new BindingList<StorageVolumeItem>(storageVolumeList);
-                    publishDocumentDialog.StorageVolume = "STD";
+                Cursor.Current = Cursors.WaitCursor;
 
-                    /*
-                     * Don't attempt to get the Owner list if the user isn't logged-in at this point
-                     */
-                    List<OwnerItem> ownerList = new OwnerList().createOwnerList();
-                    publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                    if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
-                        publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                publishDocumentDialog.StorageVolumeList = new BindingList<StorageVolumeItem>(storageVolumeList);
+                publishDocumentDialog.StorageVolume = "STD";
 
-                    publishDocumentDialog.TagList = new TagList().createTagList();
-                    publishDocumentDialog.TeamList = new TeamList().createTeamList();
+                /*
+                 * Don't attempt to get the Owner list if the user isn't logged-in at this point
+                 */
+                List<OwnerItem> ownerList = new OwnerList().createOwnerList();
+                publishDocumentDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
+                if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
+                    publishDocumentDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
-                    SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
-                    if (customData == null)
-                        customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+                publishDocumentDialog.TagList = new TagList().createTagList();
+                publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
-                    publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher), workingCopyPrototypeModel);
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+                if (customData == null)
+                    customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
 
-                    /*
-                     * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
-                     * A tidier solution needs to be found here...
-                     */
-                    _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+                publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher), workingCopyPrototypeModel);
 
-                    publishDocumentDialog.ShowDialog();
-                }
+                /*
+                 * We'll get the document content here, as we can't get it while a dialog is open.
+                 * A tidier solution needs to be found here...
+                 */
+                _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+
+                publishDocumentDialog.ShowDialog();
+            }
+            catch (WebException webEx)
+            {
+                MessageBox.Show(webEx.Message);
             }
             finally
             {
@@ -412,35 +414,37 @@ namespace WordAddIn
                 WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy("wordSaveReportTemplatePrototype");
 
                 List<OwnerItem> ownerList = new OwnerList().createOwnerList();
-                if (ownerList != null)
-                {
-                    Cursor.Current = Cursors.WaitCursor;
 
-                    publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
-                    if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
-                        publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
+                Cursor.Current = Cursors.WaitCursor;
 
-                    publishDocumentTemplateDialog.TagList = new TagList().createTagList();
-                    publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
+                publishDocumentTemplateDialog.OwnerList = new BindingList<OwnerItem>(ownerList);
+                if (ownerList.Where(owner => owner.Uuid == CookieHelper.UserUuid).Count() > 0)
+                    publishDocumentTemplateDialog.Owner = ownerList.Single(owner => owner.Uuid == CookieHelper.UserUuid).Login;
 
-                    SyracuseOfficeCustomData customData = getSyracuseCustomData();
+                publishDocumentTemplateDialog.TagList = new TagList().createTagList();
+                publishDocumentTemplateDialog.TeamList = new TeamList().createTeamList();
 
-                    publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
-                    publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
-                    publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
+                SyracuseOfficeCustomData customData = getSyracuseCustomData();
 
-                    publishDocumentTemplateDialog.setSyracuseCustomDataDelegate(getSyracuseCustomData);
+                publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
+                publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
+                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
 
-                    publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher));
+                publishDocumentTemplateDialog.setSyracuseCustomDataDelegate(getSyracuseCustomData);
 
-                    /*
-                     * We'll get the base64DocumentContent here, as we can't get it while a dialog is open.
-                     * A tidier solution needs to be found here...
-                     */
-                    _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+                publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher));
 
-                    publishDocumentTemplateDialog.ShowDialog();
-                }
+                /*
+                 * We'll get the document content here, as we can't get it while a dialog is open.
+                 * A tidier solution needs to be found here...
+                 */
+                _documentContent = new WordAddInJSExternal(customData, null).GetDocumentContent();
+
+                publishDocumentTemplateDialog.ShowDialog();
+            }
+            catch (WebException webEx)
+            {
+                MessageBox.Show(webEx.Message);
             }
             finally
             {

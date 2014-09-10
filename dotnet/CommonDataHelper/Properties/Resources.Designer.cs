@@ -61,6 +61,15 @@ namespace CommonDataHelper.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot connect to server.
+        /// </summary>
+        internal static string MSG_CANNOT_CONNECT_TO_SERVER {
+            get {
+                return ResourceManager.GetString("MSG_CANNOT_CONNECT_TO_SERVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The document has been published successfully!.
         /// </summary>
         internal static string MSG_PUBLISH_DOC_DONE {

@@ -28,11 +28,13 @@ namespace CommonDataHelper
             base.OnFormClosing(e);
         }
 
-        public void connectToServer(Uri url)
+        public bool connectToServer()
         {
             Text = BaseUrlHelper.BaseUrl.ToString();
 
-            webBrowser.Url = url;
+            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html");
+
+            webBrowser.Navigate(url, "", null, "If-None-Match: 0");
             if (webBrowser.Document != null)
             {
                 webBrowser.Document.Cookie = CookieHelper.CookieContainer.GetCookieHeader(BaseUrlHelper.BaseUrl);
@@ -44,7 +46,16 @@ namespace CommonDataHelper
             while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 Application.DoEvents();
 
-            CookieHelper.setCookies(webBrowser.Document.Cookie);
+            /*
+             * In the absence of an http response code, we'll check against the document title.
+             */
+            if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && (webBrowser.DocumentTitle.Equals("Syracuse") || webBrowser.DocumentTitle.Equals("Sage ERP X3")))
+            {
+                CookieHelper.setCookies(webBrowser.Document.Cookie);
+                return true;
+            }
+
+            return false;
         }
     }
 }

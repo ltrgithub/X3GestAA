@@ -84,6 +84,10 @@ namespace CommonDataHelper.PublisherHelper
                     }
                 }
             }
+            catch (WebException webEx)
+            {
+                MessageBox.Show(webEx.Message);
+            }
             finally
             {
                 Cursor.Current = Cursors.Default;
