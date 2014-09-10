@@ -10,5 +10,8 @@ namespace CommonDataHelper.SyracuseTagHelper.Model
     {
         [JsonProperty("$value")]
         public String description;
+
+        [JsonProperty("$uuid")]
+        public String uuid;
     }
 }

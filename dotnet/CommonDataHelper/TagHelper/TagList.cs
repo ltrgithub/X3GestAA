@@ -41,6 +41,7 @@ namespace CommonDataHelper.TagHelper
 
                 foreach (object tag in tags.tags)
                 {
+                    TagModel tagModel = Newtonsoft.Json.JsonConvert.DeserializeObject<TagModel>(tag.ToString());
                     string tagDescription = Newtonsoft.Json.JsonConvert.DeserializeObject<TagModel>(tag.ToString()).description;
                     tagsList.Add(new TagItem(tagDescription, tag.ToString()));
                 }

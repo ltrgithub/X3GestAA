@@ -41,6 +41,7 @@ namespace CommonDataHelper
 
                 foreach (object team in teams.teams)
                 {
+                    TeamModel teamModel = Newtonsoft.Json.JsonConvert.DeserializeObject<TeamModel>(team.ToString());
                     string teamDescription = Newtonsoft.Json.JsonConvert.DeserializeObject<TeamModel>(team.ToString()).description;
                     teamsList.Add(new TeamItem(teamDescription, team.ToString()));
                 }

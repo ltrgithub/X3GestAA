@@ -30,7 +30,7 @@ namespace CommonDataHelper
         {
             get
             {
-                _baseUrl = null;
+                //_baseUrl = null;
                 if (_baseUrl == null)
                 {
                     Uri baseUrl = getBaseUrlFromCustomData();
@@ -53,7 +53,7 @@ namespace CommonDataHelper
                 return _baseUrl;
             }
             set 
-            { 
+            {
                 _baseUrl = value;
                 saveUrlPreference(_baseUrl);
             }

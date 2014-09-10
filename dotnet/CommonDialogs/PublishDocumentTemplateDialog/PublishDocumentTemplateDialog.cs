@@ -49,19 +49,49 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
         public string Company
         {
-            get { return comboBoxCompany.SelectedValue.ToString(); }
+            get 
+            {
+                if (comboBoxCompany.Items.Count > 0)
+                {
+                    return comboBoxCompany.SelectedValue.ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
             set { comboBoxCompany.Text = value; }
         }
 
         public string Legislation
         {
-            get { return comboBoxLegislation.SelectedValue.ToString(); }
+            get 
+            {
+                if (comboBoxLegislation.Items.Count > 0)
+                {
+                    return comboBoxLegislation.SelectedValue.ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
             set { comboBoxLegislation.Text = value; }
         }
 
         public string ActivityCode
         {
-            get { return comboBoxActivityCode.SelectedValue.ToString(); }
+            get 
+            {
+                if (comboBoxActivityCode.Items.Count > 0)
+                {
+                    return comboBoxActivityCode.SelectedValue.ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
             set { comboBoxActivityCode.Text = value; }
         }
 
@@ -120,7 +150,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
         public object LegislationList
         {
-            get { return null; }
+            get { return ""; }
             set
             {
                 comboBoxLegislation.DataSource = value;

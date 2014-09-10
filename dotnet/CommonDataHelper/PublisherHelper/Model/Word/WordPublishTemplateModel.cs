@@ -27,6 +27,12 @@ namespace CommonDataHelper.PublisherHelper.Model.Word
         [JsonProperty("endpoint")]
         public SyracuseUuidModel endpoint;
 
+        [JsonProperty("teams")]
+        public List<SyracuseUuidModel> teams;
+
+        [JsonProperty("tags")]
+        public List<SyracuseUuidModel> tags;
+
         [JsonProperty("activ")]
         public string activ;
 

@@ -143,6 +143,7 @@
             // 
             resources.ApplyResources(this.labelTeams, "labelTeams");
             this.labelTeams.Name = "labelTeams";
+            this.labelTeams.Click += new System.EventHandler(this.labelTeams_Click);
             // 
             // labelTags
             // 

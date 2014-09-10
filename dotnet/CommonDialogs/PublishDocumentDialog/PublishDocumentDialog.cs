@@ -105,5 +105,10 @@ namespace CommonDialogs.PublishDocumentDialog
         {
             btnOk.Enabled = !string.IsNullOrEmpty(textBoxDescription.Text);
         }
+
+        private void labelTeams_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
