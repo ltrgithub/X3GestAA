@@ -44,5 +44,8 @@ namespace CommonDataHelper.PublisherHelper.Model.Word
 
         [JsonProperty("$url")]
         public string url;
+
+        [JsonProperty("templatePurpose")]
+        public string templatePurpose;
     }
 }

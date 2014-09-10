@@ -165,6 +165,7 @@ namespace CommonDataHelper.PublisherHelper
                             activ = publishDocumentParameters.ActivityCode,
                             teams = templateTeams,
                             tags = templateTags,
+                            templatePurpose = publishDocumentParameters.Purpose,
                             endpoint = new SyracuseUuidModel { uuid = publishDocumentParameters.Endpoint }
                         };
 

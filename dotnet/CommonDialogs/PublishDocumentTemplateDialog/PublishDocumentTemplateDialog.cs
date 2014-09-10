@@ -37,7 +37,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
         public string Purpose
         {
-            get { return comboBoxPurpose.SelectedValue.ToString(); }
+            get { return comboBoxPurpose.Text; }
             set { comboBoxPurpose.Text = value; }
         }
 
