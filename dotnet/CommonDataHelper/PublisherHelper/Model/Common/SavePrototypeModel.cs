@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace CommonDataHelper.PublisherHelper.Model.Word
+namespace CommonDataHelper.PublisherHelper.Model.Common
 {
-    public class WordSavePrototypeModel
+    public class SavePrototypeModel
     {
         [JsonProperty("$title")]
         public string title;

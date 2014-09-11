@@ -194,13 +194,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            _publisherDelegate(this);
-        }
-
-        PublisherDocumentTemplateDelegate _publisherDelegate = null;
-        public void Publisher(PublisherDocumentTemplateDelegate publisherDelegate) 
-        {
-            _publisherDelegate = publisherDelegate;
+            _publisherDelegate(this, _workingCopyPrototypeModel, _customData, _documentContent);
         }
 
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
@@ -229,7 +223,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
             if (comboBoxEndpoint.SelectedIndex != 0)
             {
-                _endpointDelegate(comboBoxEndpoint.SelectedValue.ToString(), _syracuseCustomDataDelegate(), this);
+                _endpointDelegate(comboBoxEndpoint.SelectedValue.ToString(), _customData, this);
             }
         }
 
@@ -239,19 +233,26 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             _endpointDelegate = endpointDelegate;
         }
 
-        private SyracuseCustomDataDelegate _syracuseCustomDataDelegate = null;
-        public void setSyracuseCustomDataDelegate(SyracuseCustomDataDelegate syracuseCustomDataDelegate)
-        {
-            _syracuseCustomDataDelegate = syracuseCustomDataDelegate;
-        }
-
         private void textBoxCode_TextChanged(object sender, EventArgs e)
         {
             btnOk_enable();
         }
+
         private void btnOk_enable()
         {
             btnOk.Enabled = (!string.IsNullOrEmpty(textBoxDescription.Text) && !string.IsNullOrEmpty(textBoxCode.Text));
+        }
+
+        PublisherDocumentTemplateDelegate _publisherDelegate = null;
+        private object _workingCopyPrototypeModel = null;
+        private object _customData = null;
+        private byte[] _documentContent = null;
+        public void Publisher(PublisherDocumentTemplateDelegate publisherDelegate, object workingCopyPrototypeModel, object customData, byte[] documentContent)
+        {
+            _publisherDelegate = publisherDelegate;
+            _workingCopyPrototypeModel = workingCopyPrototypeModel;
+            _customData = customData;
+            _documentContent = documentContent;
         }
     }
 }

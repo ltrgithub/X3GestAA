@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CommonDataHelper.PublisherHelper.Model.Word;
 using System.Net;
 using System.Web;
 using System.Collections.Specialized;
@@ -23,15 +22,6 @@ namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherHelper : IDocumentPublisher, IDocumentTemplatePublisher
     {
-        public void publishDocument(byte[] documentContent, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters)
-        {
-            WordSavePrototypeModel wordSaveNewDocumentPrototypeModel = new RequestHelper().getWordSaveDocumentPrototypes().links.wordSaveReportTemplatePrototype;
-
-            WorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
-
-            publishDocumentTemplate(documentContent, wordSaveNewDocumentPrototypeModel, wordWorkingCopyPrototypeModel, syracuseCustomData, publishDocumentParameters);
-        }
-
         public void publishDocument(byte[] documentContent, WorkingCopyPrototypeModel workingCopyResponseModel, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocument publishDocumentParameters)
         {
             try
@@ -41,7 +31,7 @@ namespace CommonDataHelper.PublisherHelper
 
                 if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
                 {
-                    WordPublishDocumentModel wordPublishDocument = new WordPublishDocumentModel
+                    PublishDocumentModel publishDocument = new PublishDocumentModel
                     {
                         etag = workingCopyResponseModel.etag,
                         url = workingCopyResponseModel.url,
@@ -53,7 +43,7 @@ namespace CommonDataHelper.PublisherHelper
                         owner = new SyracuseUuidModel { uuid = publishDocumentParameters.Owner }
                     };
 
-                    string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocument, Formatting.Indented);
+                    string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(publishDocument, Formatting.Indented);
 
                     string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                     if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
@@ -69,9 +59,9 @@ namespace CommonDataHelper.PublisherHelper
                              */
                             SaveDocumentModel saveDocumentModel = new SaveDocumentModel
                             {
-                                etag = wordPublishDocument.etag + 1,
-                                url = wordPublishDocument.url,
-                                uuid = wordPublishDocument.uuid,
+                                etag = publishDocument.etag + 1,
+                                url = publishDocument.url,
+                                uuid = publishDocument.uuid,
                                 actions = new SaveActionModel
                                 {
                                     saveRequest = new SaveRequestModel
@@ -98,33 +88,18 @@ namespace CommonDataHelper.PublisherHelper
                 Cursor.Current = Cursors.Default;
             }
         }
-
-        private void publishDocumentTemplate(byte[] documentContent, WordSavePrototypeModel wordSaveNewDocumentModel, WorkingCopyPrototypeModel wordWorkingCopyModel, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters)
+               
+        public void publishDocument(byte[] documentContent, WorkingCopyPrototypeModel workingCopyResponseModel, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters)
         {
-            Uri workingCopyUrl = new RequestHelper().addUrlQueryParameters(wordSaveNewDocumentModel.url, wordWorkingCopyModel.trackingId, syracuseCustomData, string.Empty);
-
+            WebHelper webHelper = new WebHelper();
+            HttpStatusCode httpStatusCode;
             try
             {
-                WebHelper webHelper = new WebHelper();
-                HttpStatusCode httpStatusCode;
-                string workingCopyResponseJson = webHelper.setServerJson(workingCopyUrl, "POST", string.Empty, out httpStatusCode);
-
-                if (string.IsNullOrEmpty(workingCopyResponseJson))
-                    return;
-
-                WorkingCopyPrototypeModel workingCopyResponseModel = JsonConvert.DeserializeObject<WorkingCopyPrototypeModel>(workingCopyResponseJson);
-
-                Uri baseUrl = BaseUrlHelper.BaseUrl;
-                if (baseUrl == null)
-                {
-                    return;
-                }
-
                 if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
                 {
                     if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
                     {
-                        WordPublishTemplateModel wordPublishDocument = new WordPublishTemplateModel
+                        PublishTemplateModel publishTemplate = new PublishTemplateModel
                         {
                             code = publishDocumentParameters.Code,
                             etag = workingCopyResponseModel.etag,
@@ -141,7 +116,7 @@ namespace CommonDataHelper.PublisherHelper
                             endpoint = new SyracuseUuidModel { uuid = publishDocumentParameters.Endpoint }
                         };
 
-                        string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(wordPublishDocument, Formatting.Indented);
+                        string workingCopyUpdateRequestJson = JsonConvert.SerializeObject(publishTemplate, Formatting.Indented);
 
                         string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                         if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
@@ -157,9 +132,9 @@ namespace CommonDataHelper.PublisherHelper
                                  */
                                 SaveDocumentModel saveDocumentModel = new SaveDocumentModel
                                 {
-                                    etag = wordPublishDocument.etag + 1,
-                                    url = wordPublishDocument.url,
-                                    uuid = wordPublishDocument.uuid,
+                                    etag = publishTemplate.etag + 1,
+                                    url = publishTemplate.url,
+                                    uuid = publishTemplate.uuid,
                                     actions = new SaveActionModel
                                     {
                                         saveRequest = new SaveRequestModel

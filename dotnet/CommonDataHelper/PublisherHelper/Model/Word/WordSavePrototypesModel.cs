@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using CommonDataHelper.PublisherHelper.Model.Common;
 
 namespace CommonDataHelper.PublisherHelper.Model.Word
 {
     public class WordSavePrototypesModel
     {
         [JsonProperty("saveNewDocument")]
-        public WordSavePrototypeModel wordSaveNewDocumentPrototype { get; set; }
+        public SavePrototypeModel wordSaveNewDocumentPrototype { get; set; }
 
         [JsonProperty("saveMailMergeTemplate")]
-        public WordSavePrototypeModel wordSaveMailMergeTemplatePrototype { get; set; }
+        public SavePrototypeModel wordSaveMailMergeTemplatePrototype { get; set; }
 
         [JsonProperty("saveReportTemplate")]
-        public WordSavePrototypeModel wordSaveReportTemplatePrototype { get; set; }
+        public SavePrototypeModel wordSaveReportTemplatePrototype { get; set; }
     }
 }

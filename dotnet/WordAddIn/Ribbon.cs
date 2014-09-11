@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using CommonDataHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace WordAddIn
 {
@@ -87,13 +88,14 @@ namespace WordAddIn
             switch (index)
             {
                 case 0:
-                    Globals.WordAddIn.commons.publishDocument();
+                    new PublisherDialogHelper().showPublisherDocumentDialog("wordSaveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
                     break;
                 case 1:
-                    Globals.WordAddIn.commons.publishMailmergeTemplate();
+                    //Globals.WordAddIn.commons.publishMailmergeTemplate();
                     break;
                 case 2:
-                    Globals.WordAddIn.commons.publishReportTemplate();
+                    new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                    //Globals.WordAddIn.commons.publishReportTemplate("wordSaveReportTemplatePrototype");
                     break;
             }
         }

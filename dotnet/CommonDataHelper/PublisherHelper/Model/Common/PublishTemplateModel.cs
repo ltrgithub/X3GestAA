@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
-using CommonDataHelper.PublisherHelper.Model.Common;
 
-namespace CommonDataHelper.PublisherHelper.Model.Word
+namespace CommonDataHelper.PublisherHelper.Model.Common
 {
-    public class WordPublishTemplateModel
+    public class PublishTemplateModel
     {
         [JsonProperty("$etag")]
         public int etag;

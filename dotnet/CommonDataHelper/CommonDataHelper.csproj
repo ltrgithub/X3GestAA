@@ -77,11 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="PublisherHelper\PublisherDialogHelper.cs" />
     <Compile Include="PublisherHelper\IDocumentTemplatePublisher.cs" />
     <Compile Include="PublisherHelper\Model\Common\SaveActionModel.cs" />
     <Compile Include="PublisherHelper\Model\Common\SaveDocumentModel.cs" />
     <Compile Include="PublisherHelper\Model\Common\SaveRequestModel.cs" />
-    <Compile Include="PublisherHelper\Model\Word\WordPublishTemplateModel.cs" />
+    <Compile Include="PublisherHelper\Model\Common\PublishTemplateModel.cs" />
     <Compile Include="PublisherHelper\RequestHelper.cs" />
     <Compile Include="PurposeHelper\Model\PurposeModel.cs" />
     <Compile Include="PurposeHelper\Model\PurposesModel.cs" />
@@ -96,8 +97,8 @@
     <Compile Include="PublisherHelper\IDocumentPublisher.cs" />
     <Compile Include="PublisherHelper\Model\Common\SyracuseUuidModel.cs" />
     <Compile Include="PublisherHelper\Model\Word\WordDocumentPrototypesModel.cs" />
-    <Compile Include="PublisherHelper\Model\Word\WordPublishDocumentModel.cs" />
-    <Compile Include="PublisherHelper\Model\Word\WordSavePrototypeModel.cs" />
+    <Compile Include="PublisherHelper\Model\Common\PublishDocumentModel.cs" />
+    <Compile Include="PublisherHelper\Model\Common\SavePrototypeModel.cs" />
     <Compile Include="PublisherHelper\Model\Word\WordSavePrototypesModel.cs" />
     <Compile Include="PublisherHelper\Model\Common\WorkingCopyPrototypeModel.cs" />
     <Compile Include="PublisherHelper\PublisherHelper.cs" />
