@@ -94,7 +94,7 @@ namespace WordAddIn
                         new PublisherDialogHelper().showPublisherDocumentDialog("wordSaveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
                         break;
                     case 1:
-                        //Globals.WordAddIn.commons.publishMailmergeTemplate();
+                        new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
                         break;
                     case 2:
                         new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
