@@ -62,14 +62,14 @@ namespace WordAddIn
             Document doc = getActiveDocument();
             if (doc == null)
             {
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = false;
                 return;
             }
 
             // Enable save buttons as soon as there is a document
             // It is ok to save ANY kind of document also as template, because
             // the template can be modified later
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+            Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             if (MailMergeActions.isMailMergeDocument(doc))
             {
                 mailmerge.ActiveDocumentChanged(doc);

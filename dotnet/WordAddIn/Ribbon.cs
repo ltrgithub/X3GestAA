@@ -84,19 +84,22 @@ namespace WordAddIn
 
         private void gallery1_Click(object sender, RibbonControlEventArgs e)
         {
-            int index = ((RibbonGallery)sender).SelectedItemIndex;
-            switch (index)
+            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            if (doc != null)
             {
-                case 0:
-                    new PublisherDialogHelper().showPublisherDocumentDialog("wordSaveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
-                    break;
-                case 1:
-                    //Globals.WordAddIn.commons.publishMailmergeTemplate();
-                    break;
-                case 2:
-                    new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
-                    //Globals.WordAddIn.commons.publishReportTemplate("wordSaveReportTemplatePrototype");
-                    break;
+                int index = ((RibbonGallery)sender).SelectedItemIndex;
+                switch (index)
+                {
+                    case 0:
+                        new PublisherDialogHelper().showPublisherDocumentDialog("wordSaveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        break;
+                    case 1:
+                        //Globals.WordAddIn.commons.publishMailmergeTemplate();
+                        break;
+                    case 2:
+                        new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        break;
+                }
             }
         }
 
@@ -104,6 +107,7 @@ namespace WordAddIn
         {
             Uri url = new Uri(((RibbonComboBox)sender).Text);
             BaseUrlHelper.BaseUrl = url;
+
         }
     }
 }

@@ -232,7 +232,6 @@
             // 
             // comboBoxPurpose
             // 
-            this.comboBoxPurpose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPurpose.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
             this.comboBoxPurpose.Name = "comboBoxPurpose";
