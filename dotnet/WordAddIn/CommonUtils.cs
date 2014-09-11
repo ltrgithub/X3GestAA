@@ -310,7 +310,7 @@ namespace WordAddIn
             }
 
             Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+            Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
         }
 
         private void TryDeleteFile(string file)

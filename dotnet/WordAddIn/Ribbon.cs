@@ -83,18 +83,22 @@ namespace WordAddIn
 
         private void gallery1_Click(object sender, RibbonControlEventArgs e)
         {
-            int index = ((RibbonGallery)sender).SelectedItemIndex;
-            switch (index)
+            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            if (doc != null)
             {
-                case 0:
-                    Globals.WordAddIn.commons.publishDocument();
-                    break;
-                case 1:
-                    Globals.WordAddIn.commons.publishMailmergeTemplate();
-                    break;
-                case 2:
-                    Globals.WordAddIn.commons.publishReportTemplate();
-                    break;
+                int index = ((RibbonGallery)sender).SelectedItemIndex;
+                switch (index)
+                {
+                    case 0:
+                        Globals.WordAddIn.commons.publishDocument();
+                        break;
+                    case 1:
+                        Globals.WordAddIn.commons.publishMailmergeTemplate();
+                        break;
+                    case 2:
+                        Globals.WordAddIn.commons.publishReportTemplate();
+                        break;
+                }
             }
         }
 
@@ -102,6 +106,7 @@ namespace WordAddIn
         {
             Uri url = new Uri(((RibbonComboBox)sender).Text);
             BaseUrlHelper.BaseUrl = url;
+
         }
     }
 }
