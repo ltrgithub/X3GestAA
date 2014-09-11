@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 namespace ExcelAddIn
 {
@@ -14,7 +15,7 @@ namespace ExcelAddIn
     }
 
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class SyracuseOfficeCustomData
+    public class SyracuseOfficeCustomData : ISyracuseOfficeCustomData
     {
         private const String sageERPX3JsonTagName   = "SyracuseOfficeCustomData";
         private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;

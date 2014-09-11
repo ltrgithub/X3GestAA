@@ -84,6 +84,7 @@ namespace CommonDataHelper
 
         public string uploadFile(Uri uri, string method, byte[] data, out HttpStatusCode statusCode, string fileName = null)
         {
+
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
 
@@ -100,12 +101,12 @@ namespace CommonDataHelper
             request.Headers.Add(HttpRequestHeader.Pragma, "no-cache");
             
             request.Referer = uri.ToString();
-            request.Headers.Add("X-Content-Type-Override", "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+            request.Headers.Add("X-Content-Type-Override", getContentType());
 
             request.Timeout = 10000; 
 
             if (string.IsNullOrEmpty(fileName) == false)
-                request.Headers.Add("x-file-name", fileName.EndsWith(".docx") ? fileName : fileName + ".docx");
+                request.Headers.Add("x-file-name", getFileNameAndExtension(fileName));
 
             BinaryWriter writer = new BinaryWriter(request.GetRequestStream());
             writer.Write(data);
@@ -119,6 +120,46 @@ namespace CommonDataHelper
             statusCode = HttpStatusCode.OK;
 
             return responseJson;
+        }
+
+        private string getContentType()
+        {
+            string applicationName = System.AppDomain.CurrentDomain.FriendlyName;
+            string contentType = string.Empty;
+
+            if (applicationName.StartsWith(@"Sage.Syracuse.WordAddIn"))
+            {
+                contentType = @"application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.ExcelAddIn"))
+            {
+                contentType = @"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.PowerPointAddIn"))
+            {
+                contentType = @"application/vnd.openxmlformats-officedocument.presentationml.presentation";
+            }
+            return contentType;
+        }
+
+        private string getFileNameAndExtension(string fileName)
+        {
+            string applicationName = System.AppDomain.CurrentDomain.FriendlyName;
+            string fileNameAndExtension = string.Empty;
+
+            if (applicationName.StartsWith(@"Sage.Syracuse.WordAddIn"))
+            {
+                fileNameAndExtension = fileName.EndsWith(".docx") ? fileName : fileName + ".docx";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.ExcelAddIn"))
+            {
+                fileNameAndExtension = fileName.EndsWith(".xlsx") ? fileName : fileName + ".xlsx";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.PowerPointAddIn"))
+            {
+                fileNameAndExtension = fileName.EndsWith(".pptx") ? fileName : fileName + ".pptx";
+            }
+            return fileNameAndExtension;
         }
     }    
 }

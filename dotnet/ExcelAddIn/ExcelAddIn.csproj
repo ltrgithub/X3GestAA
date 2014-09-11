@@ -533,6 +533,12 @@
   <ItemGroup>
     <None Include="Resources\settings1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonDataHelper\CommonDataHelper.csproj">
+      <Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
+      <Name>CommonDataHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

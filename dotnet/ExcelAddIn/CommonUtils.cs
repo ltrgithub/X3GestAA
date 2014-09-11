@@ -299,6 +299,20 @@ namespace ExcelAddIn
             }
         }
 
+        public SyracuseOfficeCustomData getSyracuseCustomData()
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.ThisAddIn.getActiveWorkbook());
+            if (customData == null)
+                customData = PrepareToSaveNewDoc(Globals.ThisAddIn.getActiveWorkbook());
+
+            return customData;
+        }
+
+        public byte[] getDocumentContent()
+        {
+            return new ExcelAddInJSExternal(getSyracuseCustomData(), null).GetDocumentContent();
+        }
+
         public void check4updateAddin()
         {
         }
