@@ -5,16 +5,12 @@ using System.Text;
 using CommonDataHelper.PublisherHelper.Model.Common;
 using System.Net;
 using System.Web;
-using CommonDataHelper.PublisherHelper.Model.Word;
 
 namespace CommonDataHelper.PublisherHelper
 {
     public class RequestHelper
     {
-
-        #region word
-
-        public WordDocumentPrototypesModel getWordSaveDocumentPrototypes()
+        public DocumentPrototypesModel getSaveNewDocumentPrototypes(string officeApplication)
         {
             Uri baseUrl = BaseUrlHelper.BaseUrl;
             if (baseUrl == null)
@@ -22,7 +18,10 @@ namespace CommonDataHelper.PublisherHelper
                 return null;
             }
 
-            Uri pageUrl = new Uri(baseUrl, @"/sdata/syracuse/collaboration/syracuse/$prototypes('msoWordDocument.$query')");
+            StringBuilder urlPart = new StringBuilder(@"/sdata/syracuse/collaboration/syracuse/$prototypes('");
+            urlPart.Append(officeApplication);
+            urlPart.Append(".$query')");
+            Uri pageUrl = new Uri(baseUrl, urlPart.ToString());
 
             WebHelper webHelper = new WebHelper();
             HttpStatusCode httpStatusCode;
@@ -30,12 +29,10 @@ namespace CommonDataHelper.PublisherHelper
             string prototypeJson = webHelper.getServerJson(pageUrl.ToString(), out httpStatusCode);
 
             if (httpStatusCode == HttpStatusCode.OK)
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<WordDocumentPrototypesModel>(prototypeJson);
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<DocumentPrototypesModel>(prototypeJson);
 
             return null;
         }
-
-        #endregion
 
         public WorkingCopyPrototypeModel getWorkingCopyPrototype(string url, string method)
         {

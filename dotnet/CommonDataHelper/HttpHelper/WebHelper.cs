@@ -43,6 +43,8 @@ namespace CommonDataHelper
 
             request.CookieContainer = CookieHelper.CookieContainer;
 
+            request.Timeout = 10000; 
+
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             using (StreamReader sr = new StreamReader(response.GetResponseStream()))
             {
@@ -63,6 +65,8 @@ namespace CommonDataHelper
             request.ContentType = "application/json";
 
             request.CookieContainer = CookieHelper.CookieContainer;
+
+            request.Timeout = 10000; 
 
             StreamWriter writer = new StreamWriter(request.GetRequestStream());
             writer.Write(data);
@@ -97,6 +101,8 @@ namespace CommonDataHelper
             
             request.Referer = uri.ToString();
             request.Headers.Add("X-Content-Type-Override", "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+
+            request.Timeout = 10000; 
 
             if (string.IsNullOrEmpty(fileName) == false)
                 request.Headers.Add("x-file-name", fileName.EndsWith(".docx") ? fileName : fileName + ".docx");

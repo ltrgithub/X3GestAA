@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using CommonDialogs.PublishDocumentDialog;
 using CommonDataHelper.PublisherHelper.Model.Common;
-using CommonDataHelper.PublisherHelper.Model.Word;
 using CommonDataHelper.StorageVolumeHelper;
 using System.Windows.Forms;
 using System.ComponentModel;
@@ -18,7 +17,7 @@ namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherDialogHelper
     {
-        public void showPublisherDocumentDialog(string documentType, ISyracuseOfficeCustomData customData, byte[] documentContent)
+        public void showPublisherDocumentDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData, byte[] documentContent)
         {
             try
             {
@@ -26,7 +25,7 @@ namespace CommonDataHelper.PublisherHelper
 
                 IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
 
-                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(documentType, customData);
+                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(officeApplication, documentType, customData);
 
                 List<StorageVolumeItem> storageVolumeList = new StorageVolumeList().createStorageVolumeList();
 
@@ -57,7 +56,7 @@ namespace CommonDataHelper.PublisherHelper
             }
         }
 
-        public void showPublisherTemplateDialog(string documentType, ISyracuseOfficeCustomData customData, byte[] documentContent)
+        public void showPublisherTemplateDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData, byte[] documentContent)
         {
             try
             {
@@ -65,7 +64,7 @@ namespace CommonDataHelper.PublisherHelper
 
                 IPublishDocumentTemplateDialog publishDocumentTemplateDialog = new PublishDocumentTemplateDialog();
 
-                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(documentType, customData);
+                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(officeApplication, documentType, customData);
 
                 List<OwnerItem> ownerList = new OwnerList().createOwnerList();
 
@@ -80,7 +79,7 @@ namespace CommonDataHelper.PublisherHelper
 
                 publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
                 publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
-                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies));
+                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies), officeApplication, documentType);
 
                 publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher), workingCopyPrototypeModel, customData, documentContent);
 
@@ -106,16 +105,16 @@ namespace CommonDataHelper.PublisherHelper
             new PublisherHelper().publishDocument(documentContent, (WorkingCopyPrototypeModel)workingCopyPrototypeModel, (ISyracuseOfficeCustomData)customData, publishDocumentParameters);
         }
 
-        private WorkingCopyPrototypeModel initialiseWorkingCopy(string wordSavePrototypeName, ISyracuseOfficeCustomData customData)
+        private WorkingCopyPrototypeModel initialiseWorkingCopy(string officeApplication, string savePrototypeName, ISyracuseOfficeCustomData customData)
         {
             RequestHelper requestHelper = new RequestHelper();
-            WordSavePrototypesModel wordSavePrototypesModel = requestHelper.getWordSaveDocumentPrototypes().links;
+            SavePrototypesModel savePrototypesModel = requestHelper.getSaveNewDocumentPrototypes(officeApplication).links;
 
-            SavePrototypeModel wordSaveNewDocumentPrototypeModel = (SavePrototypeModel)wordSavePrototypesModel.GetType().GetProperty(wordSavePrototypeName).GetValue(wordSavePrototypesModel, null);
+            SavePrototypeModel saveNewDocumentPrototypeModel = (SavePrototypeModel)savePrototypesModel.GetType().GetProperty(savePrototypeName).GetValue(savePrototypesModel, null);
 
-            WorkingCopyPrototypeModel wordWorkingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
+            WorkingCopyPrototypeModel workingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(saveNewDocumentPrototypeModel.url, saveNewDocumentPrototypeModel.method);
 
-            Uri workingCopyUrl = new RequestHelper().addUrlQueryParameters(wordSaveNewDocumentPrototypeModel.url, wordWorkingCopyPrototypeModel.trackingId, customData, string.Empty);
+            Uri workingCopyUrl = new RequestHelper().addUrlQueryParameters(saveNewDocumentPrototypeModel.url, workingCopyPrototypeModel.trackingId, customData, string.Empty);
 
             WebHelper webHelper = new WebHelper();
             HttpStatusCode httpStatusCode;

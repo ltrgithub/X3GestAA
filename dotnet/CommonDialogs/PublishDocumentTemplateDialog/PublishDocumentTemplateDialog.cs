@@ -223,14 +223,18 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
             if (comboBoxEndpoint.SelectedIndex != 0)
             {
-                _endpointDelegate(comboBoxEndpoint.SelectedValue.ToString(), _customData, this);
+                _endpointDelegate(_officeApplication, _savePrototypeName, comboBoxEndpoint.SelectedValue.ToString(), _customData, this);
             }
         }
 
         private EndpointDelegate _endpointDelegate = null;
-        public void setEndpointDelegate(EndpointDelegate endpointDelegate)
+        private string _officeApplication = string.Empty;
+        private string _savePrototypeName = string.Empty;
+        public void setEndpointDelegate(EndpointDelegate endpointDelegate, string officeApplication, string savePrototypeName)
         {
             _endpointDelegate = endpointDelegate;
+            _officeApplication = officeApplication;
+            _savePrototypeName = savePrototypeName;
         }
 
         private void textBoxCode_TextChanged(object sender, EventArgs e)

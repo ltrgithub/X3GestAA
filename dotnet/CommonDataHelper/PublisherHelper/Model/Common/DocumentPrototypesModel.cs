@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace CommonDataHelper.PublisherHelper.Model.Word
+namespace CommonDataHelper.PublisherHelper.Model.Common
 {
-    public class WordDocumentPrototypesModel
+    public class DocumentPrototypesModel
     {
         [JsonProperty("$links")]
-        public WordSavePrototypesModel links;
+        public SavePrototypesModel links;
     }
 }

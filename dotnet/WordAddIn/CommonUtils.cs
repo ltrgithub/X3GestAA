@@ -18,7 +18,6 @@ using System.ComponentModel;
 using CommonDataHelper.OwnerHelper;
 using CommonDialogs.PublishDocumentTemplateDialog;
 using CommonDataHelper.EndpointHelper;
-using CommonDataHelper.PublisherHelper.Model.Word;
 using CommonDataHelper.PublisherHelper.Model.Common;
 using System.Net;
 using System.Reflection;

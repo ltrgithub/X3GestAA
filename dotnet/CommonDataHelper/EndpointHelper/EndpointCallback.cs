@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CommonDataHelper.PublisherHelper.Model.Word;
 using System.Net;
 using CommonDataHelper.PublisherHelper;
 using CommonDataHelper.PublisherHelper.Model.Common;
@@ -18,7 +17,7 @@ namespace CommonDataHelper.EndpointHelper
 {
     public static class EndpointCallback
     {
-        public static void buildEndpointDependencies(string uuid, object syracuseCustomData, object publishTemplateDialog )
+        public static void buildEndpointDependencies(string officeApplication, string savePrototypeName, string uuid, object syracuseCustomData, object publishTemplateDialog)
         {
             if (!string.IsNullOrEmpty(uuid))
             {
@@ -26,12 +25,15 @@ namespace CommonDataHelper.EndpointHelper
                 {
                     Cursor.Current = Cursors.WaitCursor;
 
-                    SavePrototypeModel wordSaveNewDocumentPrototypeModel = new RequestHelper().getWordSaveDocumentPrototypes().links.wordSaveReportTemplatePrototype;
-
-                    WorkingCopyPrototypeModel workingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(wordSaveNewDocumentPrototypeModel.url, wordSaveNewDocumentPrototypeModel.method);
-
                     RequestHelper requestHelper = new RequestHelper();
-                    Uri workingCopyUrl = requestHelper.addUrlQueryParameters(wordSaveNewDocumentPrototypeModel.url, workingCopyPrototypeModel.trackingId, (ISyracuseOfficeCustomData)syracuseCustomData, string.Empty);
+
+                    SavePrototypesModel savePrototypesModel = requestHelper.getSaveNewDocumentPrototypes(officeApplication).links;
+
+                    SavePrototypeModel saveNewDocumentPrototypeModel = (SavePrototypeModel)savePrototypesModel.GetType().GetProperty(savePrototypeName).GetValue(savePrototypesModel, null);
+
+                    WorkingCopyPrototypeModel workingCopyPrototypeModel = new RequestHelper().getWorkingCopyPrototype(saveNewDocumentPrototypeModel.url, saveNewDocumentPrototypeModel.method);
+
+                    Uri workingCopyUrl = requestHelper.addUrlQueryParameters(saveNewDocumentPrototypeModel.url, workingCopyPrototypeModel.trackingId, (ISyracuseOfficeCustomData)syracuseCustomData, string.Empty);
 
                     WebHelper webHelper = new WebHelper();
                     HttpStatusCode httpStatusCode;

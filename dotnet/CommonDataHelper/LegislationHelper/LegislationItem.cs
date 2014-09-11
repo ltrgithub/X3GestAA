@@ -12,7 +12,7 @@ namespace CommonDataHelper.LegislationHelper
 
         public LegislationItem(string description, string code)
         {
-            if (description.Equals(String.Empty) && code.Equals(String.Empty))
+            if (string.IsNullOrEmpty(description) && string.IsNullOrEmpty(code))
             {
                 _description = description;
             }

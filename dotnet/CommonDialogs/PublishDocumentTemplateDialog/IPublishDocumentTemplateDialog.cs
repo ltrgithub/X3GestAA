@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace CommonDialogs.PublishDocumentTemplateDialog
 {
     public delegate void PublisherDocumentTemplateDelegate(IPublishDocumentTemplate publishDocumentParameters, object workingCopyPrototypeModel, object customData, byte[] documentContent);
-    public delegate void EndpointDelegate(string uuid, object syracuseCustomData, object publishTemplateDialog);
+    public delegate void EndpointDelegate(string officeApplication, string savePrototypeName, string uuid, object syracuseCustomData, object publishTemplateDialog);
 
     public interface IPublishDocumentTemplate
     {
@@ -22,7 +22,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         CheckedListBox.CheckedItemCollection Tag { get; }
         CheckedListBox.CheckedItemCollection Team { get; }
 
-        void setEndpointDelegate(EndpointDelegate endpointDelegate);
+        void setEndpointDelegate(EndpointDelegate endpointDelegate, string officeApplication, string savePrototypeName);
     }
 
     public interface IPublishDocumentTemplateDialog : IPublishDocumentTemplate

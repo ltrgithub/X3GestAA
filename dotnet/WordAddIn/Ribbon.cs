@@ -91,13 +91,13 @@ namespace WordAddIn
                 switch (index)
                 {
                     case 0:
-                        new PublisherDialogHelper().showPublisherDocumentDialog("wordSaveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        new PublisherDialogHelper().showPublisherDocumentDialog("msoWordDocument", "saveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
                         break;
                     case 1:
-                        new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
                         break;
                     case 2:
-                        new PublisherDialogHelper().showPublisherTemplateDialog("wordSaveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
                         break;
                 }
             }
