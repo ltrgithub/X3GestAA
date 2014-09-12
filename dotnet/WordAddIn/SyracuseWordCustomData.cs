@@ -6,6 +6,8 @@ using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using CommonDataHelper;
+using Microsoft.Office.Interop.Word;
+using System.IO;
 
 namespace WordAddIn
 {
@@ -135,10 +137,11 @@ namespace WordAddIn
         {
             return getStringProperty(originalFileNameProperty, false);
         }
-        public String getCookie()
+        public string getCookie()
         {
             return getStringProperty(cookieProperty, false);
         }
+ 
         public void setBooleanValue(String name, Boolean status)
         {
             dictionary[forceRefreshProperty] = (status ? "1" : "0");
@@ -187,6 +190,74 @@ namespace WordAddIn
                 }
                 return "";
             }
+        }
+
+        public byte[] GetDocumentContent()
+        {
+            Document doc = getWordDoc();
+            if (doc == null)
+            {
+                CommonUtils.ShowErrorMessage(global::WordAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
+                return null;
+            }
+
+            String originalDocumentName = doc.FullName;
+            String tempFileName = Path.GetTempFileName();
+            string tempFileName2 = Path.GetTempPath() + Guid.NewGuid();
+
+            doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
+
+            File.Copy(tempFileName, tempFileName2);
+
+            byte[] content = System.IO.File.ReadAllBytes(tempFileName2);
+            String base64string = Convert.ToBase64String(content);
+
+            doc.SaveAs2(originalDocumentName, WdSaveFormat.wdFormatDocumentDefault);
+
+            Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
+
+            File.Delete(tempFileName);
+            File.Delete(tempFileName2);
+
+            return System.Text.Encoding.UTF8.GetBytes(rawDecode(base64string));
+        }
+
+        private string rawDecode(string input)
+        {
+            string output = string.Empty;
+
+            int chr1, chr2, chr3;
+            int enc1, enc2, enc3, enc4;
+            var i = 0;
+
+            System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(@"/[^A-Za-z0-9\+\/\=]/g");
+            input = rgx.Replace(input, "");
+
+            string _keyStr = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+            while (i < input.Length)
+            {
+                enc1 = _keyStr.IndexOf(input[i++]);
+                enc2 = _keyStr.IndexOf(input[i++]);
+                enc3 = _keyStr.IndexOf(input[i++]);
+                enc4 = _keyStr.IndexOf(input[i++]);
+
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+
+                output = output + char.ConvertFromUtf32(chr1);
+
+                if (enc3 != 64)
+                {
+                    output = output + char.ConvertFromUtf32(chr2);
+                }
+                if (enc4 != 64)
+                {
+                    output = output + char.ConvertFromUtf32(chr3);
+                }
+            }
+            return output;
         }
 
         public void debug() 

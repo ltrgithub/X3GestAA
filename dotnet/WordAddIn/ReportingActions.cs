@@ -254,7 +254,7 @@ namespace WordAddIn
             customData.writeDictionaryToDocument();
 
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
         }
     }
 }

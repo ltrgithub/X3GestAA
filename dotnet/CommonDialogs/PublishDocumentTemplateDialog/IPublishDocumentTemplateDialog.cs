@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CommonDialogs.PublishDocumentTemplateDialog
 {
-    public delegate void PublisherDocumentTemplateDelegate(IPublishDocumentTemplate publishDocumentParameters, object workingCopyPrototypeModel, object customData, byte[] documentContent);
+    public delegate void PublisherDocumentTemplateDelegate(IPublishDocumentTemplate publishDocumentParameters, object workingCopyPrototypeModel, object customData);
     public delegate void EndpointDelegate(string officeApplication, string savePrototypeName, string uuid, object syracuseCustomData, object publishTemplateDialog);
 
     public interface IPublishDocumentTemplate
@@ -37,6 +37,6 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         object TeamList { set; }
 
         DialogResult ShowDialog();
-        void Publisher(PublisherDocumentTemplateDelegate publisherDelegate, object workingCopyPrototypeModel, object customData, byte[] documentContent);
+        void Publisher(PublisherDocumentTemplateDelegate publisherDelegate, object workingCopyPrototypeModel, object customData);
     }
 }

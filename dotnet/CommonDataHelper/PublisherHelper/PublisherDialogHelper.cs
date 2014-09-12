@@ -12,12 +12,13 @@ using CommonDataHelper.TagHelper;
 using System.Net;
 using CommonDialogs.PublishDocumentTemplateDialog;
 using CommonDataHelper.EndpointHelper;
+using CommonDialogs;
 
 namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherDialogHelper
     {
-        public void showPublisherDocumentDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData, byte[] documentContent)
+        public void showPublisherDocumentDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData)
         {
             try
             {
@@ -42,7 +43,7 @@ namespace CommonDataHelper.PublisherHelper
                 publishDocumentDialog.TagList = new TagList().createTagList();
                 publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
-                publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher), workingCopyPrototypeModel, customData, documentContent);
+                publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher), workingCopyPrototypeModel, customData);
 
                 publishDocumentDialog.ShowDialog();
             }
@@ -56,7 +57,7 @@ namespace CommonDataHelper.PublisherHelper
             }
         }
 
-        public void showPublisherTemplateDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData, byte[] documentContent)
+        public void showPublisherTemplateDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData)
         {
             try
             {
@@ -81,7 +82,7 @@ namespace CommonDataHelper.PublisherHelper
                 publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
                 publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies), officeApplication, documentType);
 
-                publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher), workingCopyPrototypeModel, customData, documentContent);
+                publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher), workingCopyPrototypeModel, customData);
 
                 publishDocumentTemplateDialog.ShowDialog();
             }
@@ -95,14 +96,40 @@ namespace CommonDataHelper.PublisherHelper
             }
         }
 
-        public void publisher(IPublishDocument publishDocumentParameters, object workingCopyPrototypeModel, object customData, byte[] documentContent)
+        public void publisher(IPublishDocument publishDocumentParameters, object workingCopyPrototypeModel, object customData)
         {
-            new PublisherHelper().publishDocument(documentContent, (WorkingCopyPrototypeModel)workingCopyPrototypeModel, (ISyracuseOfficeCustomData)customData, publishDocumentParameters);
+            try
+            {
+                bool success = new PublisherHelper().publishDocumentAs((WorkingCopyPrototypeModel)workingCopyPrototypeModel, (ISyracuseOfficeCustomData)customData, publishDocumentParameters);
+                if (success)
+                    InfoMessageBox.ShowInfoMessage(global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE, global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE_TITLE);
+            }
+            catch (WebException webEx)
+            {
+                MessageBox.Show(webEx.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
-        public void publisher(IPublishDocumentTemplate publishDocumentParameters, object workingCopyPrototypeModel, object customData, byte[] documentContent)
+        public void publisher(IPublishDocumentTemplate publishDocumentParameters, object workingCopyPrototypeModel, object customData)
         {
-            new PublisherHelper().publishDocument(documentContent, (WorkingCopyPrototypeModel)workingCopyPrototypeModel, (ISyracuseOfficeCustomData)customData, publishDocumentParameters);
+            try
+            {
+                bool success = new PublisherHelper().publishDocumentAs((WorkingCopyPrototypeModel)workingCopyPrototypeModel, (ISyracuseOfficeCustomData)customData, publishDocumentParameters);
+                if (success)
+                    InfoMessageBox.ShowInfoMessage(global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE, global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE_TITLE);
+            }
+            catch (WebException webEx)
+            {
+                MessageBox.Show(webEx.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private WorkingCopyPrototypeModel initialiseWorkingCopy(string officeApplication, string savePrototypeName, ISyracuseOfficeCustomData customData)

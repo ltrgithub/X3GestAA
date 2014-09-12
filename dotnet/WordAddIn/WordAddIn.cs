@@ -54,7 +54,7 @@ namespace WordAddIn
         public void on_document_changed()
         {
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
             Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
             Globals.Ribbons.Ribbon.buttonCleanup.Enabled = false;
@@ -89,9 +89,10 @@ namespace WordAddIn
                 {
                     commons.ExtractV6Document(doc, customData);
                 }
-                if (!"".Equals(customData.getDocumentUrl()))
+   
+                if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
                 {
-                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
                 }
             }
             commons.SetSupportedLocales(customData);

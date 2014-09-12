@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CommonDialogs.PublishDocumentDialog
 {
-    public delegate void PublisherDocumentDelegate(IPublishDocument publishDocumentParameters, object workingCopyPrototypeModel, object customData, byte[] documentContent);
+    public delegate void PublisherDocumentDelegate(IPublishDocument publishDocumentParameters, object workingCopyPrototypeModel, object customData);
 
     public interface IPublishDocument
     {
@@ -25,6 +25,6 @@ namespace CommonDialogs.PublishDocumentDialog
         object TeamList { set; }
 
         DialogResult ShowDialog();
-        void Publisher(PublisherDocumentDelegate publisherDelegate, object workingCopyPrototypeModel, object customData, byte[] documentContent);
+        void Publisher(PublisherDocumentDelegate publisherDelegate, object workingCopyPrototypeModel, object customData);
     }
 }

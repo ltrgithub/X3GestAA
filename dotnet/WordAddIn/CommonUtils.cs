@@ -308,7 +308,7 @@ namespace WordAddIn
                 doc = Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
             }
 
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
             Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
         }
 
@@ -355,12 +355,6 @@ namespace WordAddIn
 
             return customData;
         }
-
-        public byte[] getDocumentContent()
-        {
-            return new WordAddInJSExternal(getSyracuseCustomData(), null).GetDocumentContent();
-        }
-
 
         public void DisplayServerLocations()
         {

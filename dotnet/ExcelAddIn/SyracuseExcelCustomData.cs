@@ -4,6 +4,8 @@ using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using CommonDataHelper;
+using Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace ExcelAddIn
 {
@@ -33,6 +35,7 @@ namespace ExcelAddIn
         private const String supportedLocalesProperty = "supportedLocales";
         private const String syracuseRoleProperty = "syracuseRole";
         private const string docContentProperty = "docContent";
+        private const string publishedDocumentJsonProperty = "publishedDocumentJson";
 
         private Dictionary<String, object> dictionary;
 
@@ -133,6 +136,16 @@ namespace ExcelAddIn
         {
             return getStringProperty(originalFileNameProperty, false);
         }
+
+        public string getPublishedDocumentJson()
+        {
+            return getStringProperty(publishedDocumentJsonProperty, false);
+        }
+        public void setPublishedDocumentJson(string publishedDocumentJson)
+        {
+            setStringProperty(publishedDocumentJsonProperty, publishedDocumentJson);
+        }
+
         public void setBooleanValue(String name, Boolean status)
         {
             dictionary[forceRefreshProperty] = (status ? "1" : "0");
@@ -209,7 +222,7 @@ namespace ExcelAddIn
             this.dictionary = dictionary;
             this.workbook = workbook;
         }
-
+        
         public void writeDictionaryToDocument()
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -279,6 +292,61 @@ namespace ExcelAddIn
 
             locales = ret;
             return ret;
+        }
+
+        public byte[] GetDocumentContent()
+        {
+            Workbook workbook = getExcelWorkbook(); // (customData != null) ? customData.getExcelWorkbook() : null; // this.doc;
+            if (workbook == null)
+            {
+                CommonUtils.ShowErrorMessage(global::ExcelAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
+                return null;
+            }
+
+            String tempFileName = Path.GetTempFileName();
+            workbook.SaveCopyAs(tempFileName);
+            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
+            String base64string = Convert.ToBase64String(content);
+            workbook.Save();
+            return System.Text.Encoding.UTF8.GetBytes(rawDecode(base64string));
+        }
+
+        private string rawDecode(string input)
+        {
+            string output = string.Empty;
+
+            int chr1, chr2, chr3;
+            int enc1, enc2, enc3, enc4;
+            var i = 0;
+
+            System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(@"/[^A-Za-z0-9\+\/\=]/g");
+            input = rgx.Replace(input, "");
+
+            string _keyStr = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+            while (i < input.Length)
+            {
+                enc1 = _keyStr.IndexOf(input[i++]);
+                enc2 = _keyStr.IndexOf(input[i++]);
+                enc3 = _keyStr.IndexOf(input[i++]);
+                enc4 = _keyStr.IndexOf(input[i++]);
+
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+
+                output = output + char.ConvertFromUtf32(chr1);
+
+                if (enc3 != 64)
+                {
+                    output = output + char.ConvertFromUtf32(chr2);
+                }
+                if (enc4 != 64)
+                {
+                    output = output + char.ConvertFromUtf32(chr3);
+                }
+            }
+            return output;
         }
     }
 }

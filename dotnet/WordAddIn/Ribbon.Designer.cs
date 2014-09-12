@@ -92,8 +92,8 @@ namespace WordAddIn
             this.groupSettings = this.Factory.CreateRibbonGroup();
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
             this.groupSave = this.Factory.CreateRibbonGroup();
+            this.buttonPublish = this.Factory.CreateRibbonButton();
             this.galleryPublishAs = this.Factory.CreateRibbonGallery();
-            this.buttonSave = this.Factory.CreateRibbonButton();
             this.groupReporting = this.Factory.CreateRibbonGroup();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
@@ -141,10 +141,19 @@ namespace WordAddIn
             // 
             // groupSave
             // 
-            this.groupSave.Items.Add(this.buttonSave);
+            this.groupSave.Items.Add(this.buttonPublish);
             this.groupSave.Items.Add(this.galleryPublishAs);
             resources.ApplyResources(this.groupSave, "groupSave");
             this.groupSave.Name = "groupSave";
+            // 
+            // buttonPublish
+            // 
+            this.buttonPublish.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonPublish.Image = global::WordAddIn.Properties.Resources.sauvegarder;
+            resources.ApplyResources(this.buttonPublish, "buttonPublish");
+            this.buttonPublish.Name = "buttonPublish";
+            this.buttonPublish.ShowImage = true;
+            this.buttonPublish.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPublish_Click);
             // 
             // galleryPublishAs
             // 
@@ -161,15 +170,6 @@ namespace WordAddIn
             this.galleryPublishAs.Name = "galleryPublishAs";
             this.galleryPublishAs.ShowImage = true;
             this.galleryPublishAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gallery1_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::WordAddIn.Properties.Resources.sauvegarder;
-            resources.ApplyResources(this.buttonSave, "buttonSave");
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.ShowImage = true;
-            this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
             // 
             // groupReporting
             // 
@@ -287,7 +287,7 @@ namespace WordAddIn
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tabSageERPX3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSave;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSave;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupReporting;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBoxShowTemplatePane;

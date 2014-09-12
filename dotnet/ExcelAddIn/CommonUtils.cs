@@ -308,11 +308,6 @@ namespace ExcelAddIn
             return customData;
         }
 
-        public byte[] getDocumentContent()
-        {
-            return new ExcelAddInJSExternal(getSyracuseCustomData(), null).GetDocumentContent();
-        }
-
         public void check4updateAddin()
         {
         }

@@ -90,7 +90,7 @@ namespace CommonDialogs.PublishDocumentDialog
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            _publisherDelegate(this, _workingCopyPrototypeModel, _customData, _documentContent);
+            _publisherDelegate(this, _workingCopyPrototypeModel, _customData);
         }
 
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
@@ -105,13 +105,11 @@ namespace CommonDialogs.PublishDocumentDialog
         private PublisherDocumentDelegate _publisherDelegate = null;
         private object _workingCopyPrototypeModel = null;
         private object _customData = null;
-        private byte[] _documentContent = null;
-        public void Publisher(PublisherDocumentDelegate publisherDelegate, object workingCopyPrototypeModel, object customData, byte[] documentContent)
+        public void Publisher(PublisherDocumentDelegate publisherDelegate, object workingCopyPrototypeModel, object customData)
         {
             _publisherDelegate = publisherDelegate;
             _workingCopyPrototypeModel = workingCopyPrototypeModel;
             _customData = customData;
-            _documentContent = documentContent;
         }
     }
 }

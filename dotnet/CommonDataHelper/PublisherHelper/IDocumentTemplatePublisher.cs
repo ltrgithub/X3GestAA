@@ -9,6 +9,6 @@ namespace CommonDataHelper.PublisherHelper
 {
     public interface IDocumentTemplatePublisher
     {
-        void publishDocument(byte[] documentContent, WorkingCopyPrototypeModel workingCopyResponseModel, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters);
+        bool publishDocumentAs(WorkingCopyPrototypeModel workingCopyResponseModel, ISyracuseOfficeCustomData syracuseCustomData, IPublishDocumentTemplate publishDocumentParameters);
     }
 }

@@ -20,22 +20,7 @@ namespace CommonDataHelper
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
 
-            if (CookieHelper.CookieContainer == null)
-            {
-                /*
-                 * We're not logged on, so use the ConnectionDialog to force a logon.
-                 * We need this mechanism in order to obtain the cookie. 
-                 * We'll then maintain these cookie details in the CookieHelper.
-                 */
-
-                /*
-                 * We need to force a 401 here...
-                 */
-                if (new ConnectionDialog().connectToServer() == false)
-                {
-                    throw (new WebException(global::CommonDataHelper.Properties.Resources.MSG_CANNOT_CONNECT_TO_SERVER));
-                }
-            }
+            checkCookie();
 
             request.ContentType = @"application/json";
             request.Accept = @"application/json;vnd.sage=syracuse; charset=utf-8";
@@ -60,6 +45,8 @@ namespace CommonDataHelper
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
 
+            checkCookie();
+  
             request.Method = method;
             request.ContentLength = data.Length;
             request.ContentType = "application/json";
@@ -87,6 +74,8 @@ namespace CommonDataHelper
 
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+
+            checkCookie();
 
             request.Method = method;
             request.ContentLength = data.Length;
@@ -160,6 +149,26 @@ namespace CommonDataHelper
                 fileNameAndExtension = fileName.EndsWith(".pptx") ? fileName : fileName + ".pptx";
             }
             return fileNameAndExtension;
+        }
+
+        private void checkCookie()
+        {
+            if (CookieHelper.CookieContainer == null)
+            {
+                /*
+                 * We're not logged on, so use the ConnectionDialog to force a logon.
+                 * We need this mechanism in order to obtain the cookie. 
+                 * We'll then maintain these cookie details in the CookieHelper.
+                 */
+
+                /*
+                 * We need to force a 401 here...
+                 */
+                if (new ConnectionDialog().connectToServer() == false)
+                {
+                    throw (new WebException(global::CommonDataHelper.Properties.Resources.MSG_CANNOT_CONNECT_TO_SERVER));
+                }
+            }
         }
     }    
 }

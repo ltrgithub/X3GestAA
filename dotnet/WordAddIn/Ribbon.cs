@@ -22,14 +22,6 @@ namespace WordAddIn
             installedVersion.Label = Globals.WordAddIn.getInstalledAddinVersion();
         }
 
-        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
-        {
-            Word.Document doc = Globals.WordAddIn.getActiveDocument();
-            if (doc != null)
-            {
-                Globals.WordAddIn.commons.Save(doc);
-            }
-        }
         private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
         {
             Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
@@ -91,13 +83,13 @@ namespace WordAddIn
                 switch (index)
                 {
                     case 0:
-                        new PublisherDialogHelper().showPublisherDocumentDialog("msoWordDocument", "saveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        new PublisherDialogHelper().showPublisherDocumentDialog("msoWordDocument", "saveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                     case 1:
-                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                     case 2:
-                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData(), Globals.WordAddIn.commons.getDocumentContent());
+                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                 }
             }
@@ -108,6 +100,11 @@ namespace WordAddIn
             Uri url = new Uri(((RibbonComboBox)sender).Text);
             BaseUrlHelper.BaseUrl = url;
 
+        }
+
+        private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
+        {
+            new PublisherHelper().publishDocument("msoWordDocument", "saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
         }
     }
 }
