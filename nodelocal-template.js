@@ -105,7 +105,7 @@ exports.config = {
 		"verbose": true,
 		"fast": true,
         // comment out the flamegraph block to activate flame graphs
-        // rate is the rate at which stack traces are sampled (1 ms by default)
+        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
 		// flamegraph: { rate: 1, },	
 	},
 	x3fusion: {
