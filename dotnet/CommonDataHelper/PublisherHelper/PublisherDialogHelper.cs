@@ -13,6 +13,7 @@ using System.Net;
 using CommonDialogs.PublishDocumentTemplateDialog;
 using CommonDataHelper.EndpointHelper;
 using CommonDialogs;
+using Newtonsoft.Json;
 
 namespace CommonDataHelper.PublisherHelper
 {
@@ -83,6 +84,8 @@ namespace CommonDataHelper.PublisherHelper
                 publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
                 publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
                 publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies), getOfficeApplicationType(), documentType);
+
+                publishDocumentTemplateDialog.setDialogCheckerDelegate(new DialogCheckerDelegate(DialogCheckerCallback.checkPublishTemplateDialog));
 
                 publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher), workingCopyPrototypeModel, customData);
 
