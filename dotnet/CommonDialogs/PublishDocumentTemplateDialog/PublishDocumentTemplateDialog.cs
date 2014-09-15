@@ -192,6 +192,13 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             }
         }
 
+        private string _documentType = string.Empty;
+        public string DocumentType
+        {
+            get { return _documentType; }
+            set { _documentType = value; }
+        }
+
         private void btnOk_Click(object sender, EventArgs e)
         {
             _publisherDelegate(this, _workingCopyPrototypeModel, _customData);

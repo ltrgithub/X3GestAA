@@ -22,18 +22,38 @@ namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherHelper : IDocumentPublisher, IDocumentTemplatePublisher
     {
-        public bool publishDocument(string officeApplication, string documentType, ISyracuseOfficeCustomData syracuseCustomData)
+        public void publishDocument(ISyracuseOfficeCustomData syracuseCustomData)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                bool success = doPublishDocument(syracuseCustomData);
+                if (success)
+                    InfoMessageBox.ShowInfoMessage(global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE, global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE_TITLE);
+            }
+            catch (WebException webEx)
+            {
+                MessageBox.Show(webEx.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        public bool doPublishDocument(ISyracuseOfficeCustomData syracuseCustomData)
         {
             WebHelper webHelper = new WebHelper();
             HttpStatusCode httpStatusCode;
             bool success = false;
 
-            string contentUrl = syracuseCustomData.getDocumentUrl(); // new Uri(publishDocument.url).GetLeftPart(UriPartial.Path) + "/content";
+            string contentUrl = syracuseCustomData.getDocumentUrl(); 
 
             byte[] documentContent = syracuseCustomData.GetDocumentContent();
 
             string contentResponseJson = webHelper.uploadFile(new Uri(contentUrl), "PUT", documentContent, out httpStatusCode, syracuseCustomData.getDocumentTitle());
-            success = httpStatusCode == HttpStatusCode.OK && !string.IsNullOrEmpty(contentResponseJson);
+
+            success = httpStatusCode == HttpStatusCode.OK;
 
             return success;
         }
@@ -63,7 +83,7 @@ namespace CommonDataHelper.PublisherHelper
                 string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                 if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                 {
-                    syracuseCustomData.setDocumentUrl(buildDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid));
+                    syracuseCustomData.setDocumentUrl(getDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
                     syracuseCustomData.writeDictionaryToDocument();
 
                     string contentUrl = new Uri(workingCopyResponseModel.url).GetLeftPart(UriPartial.Path) + "/content";
@@ -132,7 +152,7 @@ namespace CommonDataHelper.PublisherHelper
                     string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                     if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                     {
-                        syracuseCustomData.setDocumentUrl(buildDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid));
+                        syracuseCustomData.setDocumentUrl(getDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
                         syracuseCustomData.writeDictionaryToDocument();
 
                         string contentUrl = new Uri(workingCopyResponseModel.url).GetLeftPart(UriPartial.Path) + "/content";
@@ -170,17 +190,39 @@ namespace CommonDataHelper.PublisherHelper
             return success;
         }
 
-        private string buildDocumentUrl(Uri uri, string uuid)
+        private string getDocumentUrl(Uri uri, string uuid, string documentType)
         {
-            string path = uri.GetLeftPart(UriPartial.Path);
-            path = path.Substring(0, path.IndexOf(@"$workingCopies"));
-
-            //StringBuilder url = new StringBuilder(path);
-            StringBuilder url = new StringBuilder(@"http://localhost:8125/sdata/syracuse/collaboration/syracuse/msoWordTemplateDocuments('");
+            StringBuilder url = new StringBuilder(uri.GetLeftPart(UriPartial.Authority));
+            url.Append(@"/sdata/syracuse/collaboration/syracuse/");
+            url.Append(getRepository(documentType));
+            url.Append("('");
             url.Append(uuid);
             url.Append(@"')/content");
 
             return url.ToString();
+        }
+
+        private string getRepository(string documentType)
+        {
+            string applicationName = System.AppDomain.CurrentDomain.FriendlyName;
+            string repository = string.Empty;
+
+            if (applicationName.StartsWith(@"Sage.Syracuse.WordAddIn"))
+            {
+                if (documentType.Equals("saveMailMergeTemplatePrototype") || documentType.Equals("saveReportTemplatePrototype"))
+                    repository = "msoWordTemplateDocuments";
+                else
+                    repository = "documents";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.ExcelAddIn"))
+            {
+                repository = "documents";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.PowerPointAddIn"))
+            {
+                repository = "documents";
+            }
+            return repository;
         }
     }
 }

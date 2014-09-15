@@ -22,6 +22,8 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         CheckedListBox.CheckedItemCollection Tag { get; }
         CheckedListBox.CheckedItemCollection Team { get; }
 
+        string DocumentType { get; set; }
+
         void setEndpointDelegate(EndpointDelegate endpointDelegate, string officeApplication, string savePrototypeName);
     }
 

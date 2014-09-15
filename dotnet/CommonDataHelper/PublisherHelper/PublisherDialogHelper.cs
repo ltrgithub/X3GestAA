@@ -18,7 +18,7 @@ namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherDialogHelper
     {
-        public void showPublisherDocumentDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData)
+        public void showPublisherDocumentDialog(string documentType, ISyracuseOfficeCustomData customData)
         {
             try
             {
@@ -26,7 +26,8 @@ namespace CommonDataHelper.PublisherHelper
 
                 IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
 
-                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(officeApplication, documentType, customData);
+                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(getOfficeApplicationType(), documentType, customData);
+                publishDocumentDialog.DocumentType = documentType;
 
                 List<StorageVolumeItem> storageVolumeList = new StorageVolumeList().createStorageVolumeList();
 
@@ -57,7 +58,7 @@ namespace CommonDataHelper.PublisherHelper
             }
         }
 
-        public void showPublisherTemplateDialog(string officeApplication, string documentType, ISyracuseOfficeCustomData customData)
+        public void showPublisherTemplateDialog(string documentType, ISyracuseOfficeCustomData customData)
         {
             try
             {
@@ -65,7 +66,8 @@ namespace CommonDataHelper.PublisherHelper
 
                 IPublishDocumentTemplateDialog publishDocumentTemplateDialog = new PublishDocumentTemplateDialog();
 
-                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(officeApplication, documentType, customData);
+                WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(getOfficeApplicationType(), documentType, customData);
+                publishDocumentTemplateDialog.DocumentType = documentType;
 
                 List<OwnerItem> ownerList = new OwnerList().createOwnerList();
 
@@ -80,7 +82,7 @@ namespace CommonDataHelper.PublisherHelper
 
                 publishDocumentTemplateDialog.PurposeList = new PurposeList().createPurposeList(customData.getDocumentRepresentation());
                 publishDocumentTemplateDialog.EndpointList = new EndpointList().createEndpointList(customData.getDocumentRepresentation(), workingCopyPrototypeModel.trackingId);
-                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies), officeApplication, documentType);
+                publishDocumentTemplateDialog.setEndpointDelegate(new EndpointDelegate(EndpointCallback.buildEndpointDependencies), getOfficeApplicationType(), documentType);
 
                 publishDocumentTemplateDialog.Publisher(new PublisherDocumentTemplateDelegate(publisher), workingCopyPrototypeModel, customData);
 
@@ -151,6 +153,18 @@ namespace CommonDataHelper.PublisherHelper
             WorkingCopyPrototypeModel workingCopyResponseModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WorkingCopyPrototypeModel>(workingCopyResponseJson);
 
             return workingCopyResponseModel;
+        }
+
+        private string getOfficeApplicationType()
+        {
+            string applicationName = System.AppDomain.CurrentDomain.FriendlyName;
+            string officeApplicationType = string.Empty;
+
+            if (applicationName.StartsWith(@"Sage.Syracuse.WordAddIn"))
+            {
+                officeApplicationType = "msoWordDocument";
+            }
+            return officeApplicationType;
         }
     }
 }

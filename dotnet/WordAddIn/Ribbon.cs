@@ -83,13 +83,13 @@ namespace WordAddIn
                 switch (index)
                 {
                     case 0:
-                        new PublisherDialogHelper().showPublisherDocumentDialog("msoWordDocument", "saveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+                        new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                     case 1:
-                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+                        new PublisherDialogHelper().showPublisherTemplateDialog("saveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                     case 2:
-                        new PublisherDialogHelper().showPublisherTemplateDialog("msoWordDocument", "saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+                        new PublisherDialogHelper().showPublisherTemplateDialog("saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                 }
             }
@@ -104,7 +104,7 @@ namespace WordAddIn
 
         private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
         {
-            new PublisherHelper().publishDocument("msoWordDocument", "saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+            new PublisherHelper().publishDocument(Globals.WordAddIn.commons.getSyracuseCustomData());
         }
     }
 }

@@ -15,6 +15,8 @@ namespace CommonDialogs.PublishDocumentDialog
         string Owner { get; set; }
         CheckedListBox.CheckedItemCollection Tag { get; }
         CheckedListBox.CheckedItemCollection Team { get; }
+
+        string DocumentType { get; set; }
     }
 
     public interface IPublishDocumentDialog : IPublishDocument
