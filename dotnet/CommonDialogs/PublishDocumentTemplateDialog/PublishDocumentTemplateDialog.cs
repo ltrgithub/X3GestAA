@@ -204,11 +204,6 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             _publisherDelegate(this, _workingCopyPrototypeModel, _customData);
         }
 
-        private void textBoxDescription_TextChanged(object sender, EventArgs e)
-        {
-            btnOk_enable();
-        }
-
         private void comboBoxEndpoint_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool isEndpointSelected = comboBoxEndpoint.SelectedIndex != 0;
@@ -234,13 +229,8 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             }
         }
 
-        private void textBoxCode_TextChanged(object sender, EventArgs e)
-        {
-            btnOk_enable();
-        }
-
         private string _errorCodeText = string.Empty;
-        private void textBoxCode_Leave(object sender, EventArgs e)
+        private void textBoxCode_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCode.Text.Length > 0 && (textBoxCode.Text.Equals(_errorCodeText) == true || !_dialogCheckerDelegate("code", _workingCopyPrototypeModel, this)))
             {
@@ -254,9 +244,9 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             }
             btnOk_enable();
         }
-        
+
         private string _errorDescriptionText = string.Empty;
-        private void textBoxDescription_Leave(object sender, EventArgs e)
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
             if (textBoxDescription.Text.Length > 0 && (textBoxDescription.Text.Equals(_errorDescriptionText) == true || !_dialogCheckerDelegate("description", _workingCopyPrototypeModel, this)))
             {

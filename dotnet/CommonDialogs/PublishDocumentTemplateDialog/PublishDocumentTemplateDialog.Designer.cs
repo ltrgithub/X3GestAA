@@ -78,7 +78,6 @@
             resources.ApplyResources(this.textBoxCode, "textBoxCode");
             this.textBoxCode.Name = "textBoxCode";
             this.textBoxCode.TextChanged += new System.EventHandler(this.textBoxCode_TextChanged);
-            this.textBoxCode.Leave += new System.EventHandler(this.textBoxCode_Leave);
             // 
             // labelCode
             // 
@@ -108,7 +107,6 @@
             resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
-            this.textBoxDescription.Leave += new System.EventHandler(this.textBoxDescription_Leave);
             // 
             // labelDescription
             // 
