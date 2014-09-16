@@ -137,7 +137,7 @@ namespace CommonDataHelper.PublisherHelper
             }
         }
 
-        private WorkingCopyPrototypeModel initialiseWorkingCopy(string officeApplication, string savePrototypeName, ISyracuseOfficeCustomData customData)
+        public WorkingCopyPrototypeModel initialiseWorkingCopy(string officeApplication, string savePrototypeName, ISyracuseOfficeCustomData customData)
         {
             RequestHelper requestHelper = new RequestHelper();
             SavePrototypesModel savePrototypesModel = requestHelper.getSaveNewDocumentPrototypes(officeApplication).links;
