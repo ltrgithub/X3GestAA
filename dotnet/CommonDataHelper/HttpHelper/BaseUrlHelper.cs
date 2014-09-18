@@ -26,6 +26,16 @@ namespace CommonDataHelper
         }
 
         private static Uri _baseUrl = null;
+        private static Boolean _showActionPanel = false;
+        public static Boolean ShowActionPanel
+        {
+            get { return _showActionPanel; }
+            set 
+            {
+                _showActionPanel = value;
+                saveActionPanelPreference(_showActionPanel);
+            }
+        }
         public static Uri BaseUrl
         {
             get
@@ -106,6 +116,11 @@ namespace CommonDataHelper
                         {
                         }
                     }
+                    else if (sContent.Equals("Show=True"))
+                    {
+                        _showActionPanel = true;
+                    }
+
                 }
                 preferencesFile.Close();
             }
@@ -158,6 +173,26 @@ namespace CommonDataHelper
             if (urlExists == false)
             {
                 lines.Add("Url=" + url.ToString());
+            }
+            System.IO.File.WriteAllLines(path, lines);
+        }
+
+        private static void saveActionPanelPreference(Boolean showActionPanel)
+        {
+            String path = getPreferenceFilePath();
+            List<string> lines = new List<string>();
+            if (File.Exists(path))
+            {
+                lines = new List<string>(System.IO.File.ReadAllLines(path));
+                int idx = lines.FindIndex(x => x.StartsWith("Show="));
+                if (idx >= 0)
+                {
+                    lines[idx] = "Show=" + showActionPanel.ToString();
+                }
+                else
+                {
+                    lines.Add("Show=" + showActionPanel.ToString());
+                }
             }
             System.IO.File.WriteAllLines(path, lines);
         }

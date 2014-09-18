@@ -171,7 +171,7 @@ namespace ExcelAddIn
         public void DocumentSaved()
         {
             Globals.ThisAddIn.Application.ActiveWorkbook.Saved = true;
-            Globals.ThisAddIn.Ribbon.buttonSave.Enabled = false;
+            Globals.ThisAddIn.Ribbon.buttonPublish.Enabled = false;
             CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
         }
         public System.Action onLogonHandler = null;

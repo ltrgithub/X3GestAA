@@ -117,6 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxServerLocation.Label" xml:space="preserve">
+    <value>Server location</value>
+  </data>
+  <data name="comboBoxServerLocation.ScreenTip" xml:space="preserve">
+    <value>Enter the server URL as http(s)://servername:port.</value>
+  </data>
+  <data name="comboBoxServerLocation.SizeString" xml:space="preserve">
+    <value>http://sosyrgx3app.sagefr.adinternal.com:8124</value>
+  </data>
+  <data name="comboBoxServerLocation.SuperTip" xml:space="preserve">
+    <value>If you do not know this information, contact your system administrator.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboBoxServerLocation.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="&gt;&gt;comboBoxServerLocation.Name" xml:space="preserve">
+    <value>comboBoxServerLocation</value>
+  </data>
+  <data name="&gt;&gt;comboBoxServerLocation.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ComboBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;comboBoxServerLocation.Parent" xml:space="preserve">
+    <value>groupSettings</value>
+  </data>
+  <data name="&gt;&gt;comboBoxServerLocation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupSettings.Label" xml:space="preserve">
+    <value>Server settings</value>
+  </data>
+  <data name="&gt;&gt;groupSettings.Name" xml:space="preserve">
+    <value>groupSettings</value>
+  </data>
+  <data name="&gt;&gt;groupSettings.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupSettings.Parent" xml:space="preserve">
+    <value>syracuseTab</value>
+  </data>
+  <data name="&gt;&gt;groupSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="buttonConnect.Description" xml:space="preserve">
     <value>Connect to Sage ERP X3 Server</value>
   </data>
@@ -163,7 +206,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;dataGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="buttonSettings.Label" xml:space="preserve">
     <value>Settings</value>
@@ -193,7 +236,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;settingsGroup.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonSave.Label" xml:space="preserve">
     <value>Save</value>
@@ -225,8 +268,44 @@
   <data name="&gt;&gt;buttonSaveAs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="buttonPublish.Label" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="&gt;&gt;buttonPublish.Name" xml:space="preserve">
+    <value>buttonPublish</value>
+  </data>
+  <data name="&gt;&gt;buttonPublish.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonPublish.Parent" xml:space="preserve">
+    <value>saveDocumentGroup</value>
+  </data>
+  <data name="&gt;&gt;buttonPublish.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ribbonDropDownItemImpl1.Label" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="ribbonDropDownItemImpl2.Label" xml:space="preserve">
+    <value>Excel report template</value>
+  </data>
+  <data name="galleryPublishAs.Label" xml:space="preserve">
+    <value>Publish as...</value>
+  </data>
+  <data name="&gt;&gt;galleryPublishAs.Name" xml:space="preserve">
+    <value>galleryPublishAs</value>
+  </data>
+  <data name="&gt;&gt;galleryPublishAs.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GalleryView, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;galleryPublishAs.Parent" xml:space="preserve">
+    <value>saveDocumentGroup</value>
+  </data>
+  <data name="&gt;&gt;galleryPublishAs.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="saveDocumentGroup.Label" xml:space="preserve">
-    <value>Save document</value>
+    <value>Publish to Sage ERP X3</value>
   </data>
   <data name="&gt;&gt;saveDocumentGroup.Name" xml:space="preserve">
     <value>saveDocumentGroup</value>
@@ -238,7 +317,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;saveDocumentGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonRefreshReport.Enabled" type="System.Boolean, mscorlib">
@@ -323,7 +402,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;reportingGroup.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="dropDownLocale.Label" xml:space="preserve">
     <value>Locale</value>
@@ -356,7 +435,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;localeGroup.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="actionPanelCheckBox.Label" xml:space="preserve">
     <value>Show action panel</value>
@@ -373,13 +452,13 @@
   <data name="&gt;&gt;actionPanelCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ribbonDropDownItemImpl1.Label" xml:space="preserve">
+  <data name="ribbonDropDownItemImpl3.Label" xml:space="preserve">
     <value>Shift cells down</value>
   </data>
-  <data name="ribbonDropDownItemImpl2.Label" xml:space="preserve">
+  <data name="ribbonDropDownItemImpl4.Label" xml:space="preserve">
     <value>Insert rows</value>
   </data>
-  <data name="ribbonDropDownItemImpl3.Label" xml:space="preserve">
+  <data name="ribbonDropDownItemImpl5.Label" xml:space="preserve">
     <value>Do nothing</value>
   </data>
   <data name="dropDownInsert.Label" xml:space="preserve">
@@ -397,13 +476,13 @@
   <data name="&gt;&gt;dropDownInsert.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ribbonDropDownItemImpl4.Label" xml:space="preserve">
+  <data name="ribbonDropDownItemImpl6.Label" xml:space="preserve">
     <value>Delete cells</value>
   </data>
-  <data name="ribbonDropDownItemImpl5.Label" xml:space="preserve">
+  <data name="ribbonDropDownItemImpl7.Label" xml:space="preserve">
     <value>Delete rows</value>
   </data>
-  <data name="ribbonDropDownItemImpl6.Label" xml:space="preserve">
+  <data name="ribbonDropDownItemImpl8.Label" xml:space="preserve">
     <value>Do nothing</value>
   </data>
   <data name="dropDownDelete.Label" xml:space="preserve">
@@ -434,7 +513,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;groupSageX3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="installedVersion.Label" xml:space="preserve">
     <value>0.0.0</value>
@@ -469,9 +548,6 @@
   <data name="&gt;&gt;buttonUpdate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="version.Label" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;version.Name" xml:space="preserve">
     <value>version</value>
   </data>
@@ -497,7 +573,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;groupVersion.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="buttonCleanup.Label" xml:space="preserve">
     <value>Cleanup template metadata</value>
@@ -530,7 +606,7 @@
     <value>syracuseTab</value>
   </data>
   <data name="&gt;&gt;cleanupTemplateGroup.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="syracuseTab.Label" xml:space="preserve">
     <value>Sage ERP X3</value>

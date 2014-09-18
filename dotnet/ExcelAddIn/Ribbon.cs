@@ -1,5 +1,8 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
 using Excel = Microsoft.Office.Interop.Excel;
+using System;
+using CommonDataHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace ExcelAddIn
 {
@@ -111,6 +114,48 @@ namespace ExcelAddIn
                 string locale = Globals.Ribbons.Ribbon.dropDownLocale.SelectedItem.Tag.ToString();
                 Globals.ThisAddIn.commons.SetDocumentLocale(workbook, locale);
             }
+        }
+
+        private void buttonPublish_Click_1(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (workbook != null)
+            {
+                /*
+                TemplateActions templateActions = new TemplateActions(null);
+                if (templateActions.isExcelTemplate(workbook) || templateActions.isExcelDetailFacetType(workbook) || templateActions.isV6Document(workbook))
+                    Globals.ThisAddIn.commons.Save(workbook);
+                else
+                    Globals.ThisAddIn.SaveDocumentToSyracuse();
+                 */
+                new PublisherHelper().publishDocument(Globals.ThisAddIn.commons.getSyracuseCustomData());
+
+            }
+        }
+
+        private void galleryPublishAs_Click(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (workbook != null)
+            {
+                int index = ((RibbonGallery)sender).SelectedItemIndex;
+                switch (index)
+                {
+                    case 0:
+                        new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", Globals.ThisAddIn.commons.getSyracuseCustomData());
+                        break;
+                    case 1:
+                        new PublisherDialogHelper().showPublisherTemplateDialog("saveReportTemplatePrototype", Globals.ThisAddIn.commons.getSyracuseCustomData());
+                        break;
+                }
+            }
+
+        }
+
+        private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
+        {
+            Uri url = new Uri(((RibbonComboBox)sender).Text);
+            BaseUrlHelper.BaseUrl = url;
         }
     }
 }

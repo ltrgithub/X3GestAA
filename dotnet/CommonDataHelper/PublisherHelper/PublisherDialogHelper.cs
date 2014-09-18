@@ -167,6 +167,14 @@ namespace CommonDataHelper.PublisherHelper
             {
                 officeApplicationType = "msoWordDocument";
             }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.ExcelAddIn"))
+            {
+                officeApplicationType = "msoExcelDocument";
+            }
+            else if (applicationName.StartsWith(@"Sage.Syracuse.PowerPointAddIn"))
+            {
+                officeApplicationType = "msoPptDocument";
+            }
             return officeApplicationType;
         }
     }

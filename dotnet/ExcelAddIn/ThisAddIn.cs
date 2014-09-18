@@ -9,6 +9,7 @@ using Microsoft.Office.Core;
 using System.IO;
 using Microsoft.Win32;
 using Microsoft.Office.Interop.Excel;
+using CommonDataHelper;
 
 
 namespace ExcelAddIn
@@ -84,11 +85,13 @@ namespace ExcelAddIn
             commons = new CommonUtils(browserDialog);
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-
+            //System.Diagnostics.Debugger.Launch();
+            /*
             taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
             this.ReadPreferences();
             taskPane.Visible = this.GetPrefShowPanel();
+             */
             templateActions.DisableTemplateButtons();
 
             if (this.Application.ActiveWorkbook != null)
@@ -123,7 +126,10 @@ namespace ExcelAddIn
         {
             var connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
             if (connectUrl != "")
+            {
+                BaseUrlHelper.BaseUrl = new Uri(connectUrl);
                 Connect(Wb, connectUrl);
+            }
         }
 
         public void Connect(Excel.Workbook Wb = null, string connectUrl = "")
@@ -248,8 +254,8 @@ namespace ExcelAddIn
 
             checkButton(Wb);
 
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
 
             if ((settingsForm != null) && settingsForm.Visible)
                 settingsForm.RefreshBrowser();
@@ -279,6 +285,9 @@ namespace ExcelAddIn
                     templateActions.DisableTemplateButtons();
                 }
             }
+            commons.DisplayServerLocations();
+            //workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetVisible;
+
         }
 
         void Application_WorkbookBeforeSave(Excel.Workbook wb, bool SaveAsUI, ref bool Cancel)
@@ -317,7 +326,7 @@ namespace ExcelAddIn
 
                     if ("".Equals(customData.getDocumentUrl()) == false)
                     {
-                        Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
                     }
                 }
             }
@@ -330,7 +339,7 @@ namespace ExcelAddIn
                 }
             }
             else if ((new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress") != "")
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
         }
 
         void Application_SheetSelectionChange(object sh, Excel.Range target)

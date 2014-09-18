@@ -95,19 +95,16 @@ namespace ExcelAddIn
             Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
             if ("rpt_build_tpl".Equals(mode))
             {
-                Globals.Ribbons.Ribbon.buttonConnect.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonServer.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonSettings.Enabled = false;
                 Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = false;
                 Globals.Ribbons.Ribbon.dropDownInsert.Enabled = false;
                 Globals.Ribbons.Ribbon.dropDownDelete.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                 Globals.ThisAddIn.ShowActionPanel(false);
 
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+                Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
             }
             else if ("rpt_fill_tpl".Equals(mode))
@@ -115,39 +112,33 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(false);
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
 
                 Boolean isDetailFacetType = isExcelDetailFacetType(workbook);
-                Globals.Ribbons.Ribbon.buttonConnect.Enabled = isDetailFacetType == false;
-                Globals.Ribbons.Ribbon.buttonServer.Enabled = isDetailFacetType == false;
-                Globals.Ribbons.Ribbon.buttonSettings.Enabled = isDetailFacetType == false;
                 Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = isDetailFacetType == false;
                 Globals.Ribbons.Ribbon.dropDownInsert.Enabled = isDetailFacetType == false;
                 Globals.Ribbons.Ribbon.dropDownDelete.Enabled = isDetailFacetType == false;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+                Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             }
             else if ("rpt_is_tpl".Equals(mode))
             {
-                Globals.Ribbons.Ribbon.buttonConnect.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonServer.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonSettings.Enabled = false;
                 Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = false;
                 Globals.Ribbons.Ribbon.dropDownInsert.Enabled = false;
                 Globals.Ribbons.Ribbon.dropDownDelete.Enabled = false;
                 Globals.ThisAddIn.ShowActionPanel(false);
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = false; 
+                Globals.Ribbons.Ribbon.buttonPublish.Enabled = false; 
 
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+                Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             }
             else if ("v6_doc".Equals(mode))
             {
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             }
         }
 
@@ -155,7 +146,7 @@ namespace ExcelAddIn
         {
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
             Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
         }
 
@@ -165,7 +156,7 @@ namespace ExcelAddIn
             if (customData != null) 
             {
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
                 Globals.Ribbons.Ribbon.buttonCleanup.Enabled = false;
@@ -372,7 +363,7 @@ namespace ExcelAddIn
             customData.writeDictionaryToDocument();
 
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using Rb = Microsoft.Office.Tools.Ribbon;
 using System.IO;
+using CommonDataHelper;
+using System.Collections.Generic;
 
 namespace ExcelAddIn
 {
@@ -277,9 +279,6 @@ namespace ExcelAddIn
                 TryDeleteFile(tempFile);
                 workbook = Globals.ThisAddIn.Application.Workbooks.Open(newDocumentFile);
             }
-
-            //Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-            //Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
         }
 
         private void TryDeleteFile(string file)
@@ -299,6 +298,19 @@ namespace ExcelAddIn
             }
         }
 
+        /*
+        public SyracuseCustomData getSyracuseCustomData()
+        {
+            SyracuseCustomData customData = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            if (customData == null)
+            {
+                new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook()).StoreCustomDataByName("documentUrlAddress", string.Empty);
+                customData = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            }
+
+            return customData;
+        }
+        */
         public SyracuseOfficeCustomData getSyracuseCustomData()
         {
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.ThisAddIn.getActiveWorkbook());
@@ -325,5 +337,19 @@ namespace ExcelAddIn
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
             browserDialog.Hide();
         }
+
+        public void DisplayServerLocations()
+        {
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Clear();
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = BaseUrlHelper.BaseUrl.ToString();
+            List<Uri> _urls = BaseUrlHelper.getBaseUrlsFromUserPreferenceFile;
+            foreach (Uri _uri in _urls)
+            {
+                Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
+                item.Label = _uri.ToString();
+                Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Add(item);
+            }
+        }
+
     }
 }

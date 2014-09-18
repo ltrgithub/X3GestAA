@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 namespace ExcelAddIn
 {
@@ -24,15 +25,7 @@ namespace ExcelAddIn
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
-            string serverUrl = customData.getServerUrl();
-            if (serverUrl == null || "".Equals(serverUrl))
-            {
-                ServerSettings settings = new ServerSettings(serverUrl);
-                if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    serverUrl = settings.getServerUrl();
-                }
-            }
+            string serverUrl = BaseUrlHelper.BaseUrl.ToString();
             if (serverUrl == null || "".Equals(serverUrl))
                 return false;
             customData.setServerUrl(serverUrl);
