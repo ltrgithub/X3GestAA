@@ -7,7 +7,10 @@
 			]
 		},
 		"role": {
-			"$key": "code"
+			"$key": "code",
+			"securityProfile": {
+				"$key": "code"
+			}
 		},
 		"x3server": {
 			"$key": "description"
@@ -137,37 +140,44 @@
 		{
 			"$type": "role",
 			"code": "ADMIN",
-			"description": "Super administrator"
+			"description": "Super administrator",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
 			"code": "EP_ADMIN",
-			"description": "Endpoint administrator"
+			"description": "Endpoint administrator",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
 			"code": "Accountant",
-			"description": "Accountant"
+			"description": "Accountant",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
 			"code": "CFO",
-			"description": "CFO"
+			"description": "CFO",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
 			"code": "Auditor",
-			"description": "Auditor"
+			"description": "Auditor",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
 			"code": "Account manager",
-			"description": "Account manager"
+			"description": "Account manager",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "role",
 			"code": "Sales manager",
-			"description": "Sales manager"
+			"description": "Sales manager",
+		      "securityProfile": "ADMIN"
 		},
 		{
 			"$type": "x3server",
