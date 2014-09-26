@@ -196,7 +196,19 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         public string DocumentType
         {
             get { return _documentType; }
-            set { _documentType = value; }
+            set 
+            { 
+                _documentType = value;
+                switch (_documentType)
+                {
+                    case "saveMailMergeTemplatePrototype":
+                        this.Text = CommonDialogs.Properties.Resources.PUBLISH_DOCUMENT_TEMPLATE_MAIL_MERGE;
+                        break;
+                    case "saveReportTemplatePrototype":
+                        this.Text = CommonDialogs.Properties.Resources.PUBLISH_DOCUMENT_TEMPLATE_REPORT;
+                        break;
+                }
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
