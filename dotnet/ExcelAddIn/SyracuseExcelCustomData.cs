@@ -37,6 +37,8 @@ namespace ExcelAddIn
         private const String syracuseRoleProperty = "syracuseRole";
         private const string docContentProperty = "docContent";
         private const string publishedDocumentJsonProperty = "publishedDocumentJson";
+        private const String documentUrlAddressProperty = "documentUrlAddress";
+        private const String documentTitleAddressProperty = "documentTitleAddress";
 
         private Dictionary<String, object> dictionary;
 
@@ -100,6 +102,8 @@ namespace ExcelAddIn
         public void setDocumentUrl(String url)
         {
             setStringProperty(documentUrlProperty, url);
+            SyracuseCustomData scd = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            scd.StoreCustomDataByName("documentUrlAddress", url);
         }
         public String getDocumentUrl()
         {
@@ -305,11 +309,36 @@ namespace ExcelAddIn
             }
 
             String tempFileName = Path.GetTempFileName();
-            workbook.SaveCopyAs(tempFileName);
+            try
+            {
+                workbook.SaveCopyAs(tempFileName);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
             byte[] content = System.IO.File.ReadAllBytes(tempFileName);
             String base64string = Convert.ToBase64String(content);
-            workbook.Save();
+            //workbook.Save();
             return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
         }
+
+        public void setDocumentUrlAddress(String url)
+        {
+            SyracuseCustomData customData = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            if (customData != null)
+            {
+                customData.StoreCustomDataByName(documentUrlAddressProperty, url);
+            }
+        }
+        public void setDocumentTitleAddress(String title)
+        {
+            SyracuseCustomData customData = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            if (customData != null)
+            {
+                customData.StoreCustomDataByName(documentTitleAddressProperty, title);
+            }
+        }
+
     }
 }

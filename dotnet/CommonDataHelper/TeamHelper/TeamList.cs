@@ -18,7 +18,7 @@ namespace CommonDataHelper
                 return null;
             }
 
-            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/teams?representation=teams.$query&count=200";
+            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/teams?representation=teams.$query&count=1000";
 
             WebHelper webHelper = new WebHelper();
 

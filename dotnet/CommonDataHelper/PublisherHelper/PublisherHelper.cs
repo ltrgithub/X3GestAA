@@ -84,6 +84,8 @@ namespace CommonDataHelper.PublisherHelper
                 if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                 {
                     syracuseCustomData.setDocumentUrl(getDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
+                    syracuseCustomData.setDocumentUrlAddress(getDocumentUrlAddress(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
+                    syracuseCustomData.setDocumentTitleAddress(publishDocumentParameters.Description);
                     syracuseCustomData.writeDictionaryToDocument();
 
                     string contentUrl = new Uri(workingCopyResponseModel.url).GetLeftPart(UriPartial.Path) + "/content";
@@ -198,6 +200,19 @@ namespace CommonDataHelper.PublisherHelper
             url.Append("('");
             url.Append(uuid);
             url.Append(@"')/content");
+
+            return url.ToString();
+        }
+
+        private string getDocumentUrlAddress(Uri uri, string uuid, string documentType)
+        {
+            StringBuilder url = new StringBuilder(uri.GetLeftPart(UriPartial.Authority));
+            url.Append(@"/sdata/syracuse/collaboration/syracuse/");
+            url.Append(getRepository(documentType));
+            url.Append("('");
+            url.Append(uuid);
+            string [] rep = HttpUtility.ParseQueryString(uri.Query).Get("representation").Split(new Char [] {'.'});
+            url.Append(@"')?representation=" + rep[0]);
 
             return url.ToString();
         }

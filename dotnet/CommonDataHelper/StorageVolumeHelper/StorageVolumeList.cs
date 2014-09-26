@@ -20,7 +20,7 @@ namespace CommonDataHelper
                 return null;
             }
 
-            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/storageVolumes?representation=storageVolumes.$query&count=200";
+            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/storageVolumes?representation=storageVolumes.$query&count=1000";
 
             List<StorageVolumeItem> storageVolumeList = new List<StorageVolumeItem>();
             WebHelper webHelper = new WebHelper();

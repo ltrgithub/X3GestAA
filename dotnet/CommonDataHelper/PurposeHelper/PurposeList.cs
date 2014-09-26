@@ -22,7 +22,7 @@ namespace CommonDataHelper
             page.Append(@"sdata/syracuse/collaboration/syracuse/lookupTemplatePurposeses?representation=lookupTemplatePurposes.$lookup");
             page.Append(@"&templateClass=");
             page.Append(templateClass); //user.$query");
-            page.Append(@"&templateType=report&count=50"); 
+            page.Append(@"&templateType=report&count=1000"); 
             
             List<PurposeItem> purposeList = new List<PurposeItem>();
             WebHelper cd = new WebHelper();

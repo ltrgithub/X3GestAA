@@ -332,5 +332,13 @@ namespace WordAddIn
             locales = ret;
             return ret;
         }
+
+        public void setDocumentUrlAddress(String url)
+        {
+        }
+        public void setDocumentTitleAddress(String title)
+        {
+        }
+
     }
 }

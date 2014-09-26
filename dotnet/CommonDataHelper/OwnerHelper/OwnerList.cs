@@ -18,7 +18,7 @@ namespace CommonDataHelper
                 return null;
             }
 
-            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/users?representation=user.$query&count=200";
+            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/users?representation=user.$query&count=1000";
 
             List<OwnerItem> ownerList = new List<OwnerItem>();
             WebHelper cd = new WebHelper();

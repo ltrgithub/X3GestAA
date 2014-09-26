@@ -18,7 +18,7 @@ namespace CommonDataHelper.TagHelper
                 return null;
             }
 
-            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/documentTags?representation=documentTag.$query&count=200";
+            string page = baseUrl.ToString() + @"sdata/syracuse/collaboration/syracuse/documentTags?representation=documentTag.$query&count=1000";
 
             WebHelper webHelper = new WebHelper();
 

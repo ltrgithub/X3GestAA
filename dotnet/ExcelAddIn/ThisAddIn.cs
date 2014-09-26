@@ -111,15 +111,13 @@ namespace ExcelAddIn
                 oldWb = this.Application.ActiveWorkbook;
                 ((Microsoft.Office.Interop.Excel._Workbook)Wb).Activate(); 
             }
-            ServerSettings settings = new ServerSettings();
-            if (settings.ShowDialog() == DialogResult.OK)
+
+            String connectUrl = BaseUrlHelper.BaseUrl.ToString();
+            if (connectUrl != "")
             {
-                String connectUrl = settings.GetConnectUrl();
                 (new SyracuseCustomData(this.Application.ActiveWorkbook)).StoreCustomDataByName("serverUrlAddress", connectUrl);
-                return connectUrl;
             }
-            if (oldWb != null) ((Microsoft.Office.Interop.Excel._Workbook)oldWb).Activate(); 
-            return "";
+            return connectUrl;
         }
         
         public void AutoConnect(Excel.Workbook Wb = null)
@@ -286,7 +284,7 @@ namespace ExcelAddIn
                 }
             }
             commons.DisplayServerLocations();
-            //workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetVisible;
+            workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetVisible;
 
         }
 

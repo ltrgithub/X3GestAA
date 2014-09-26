@@ -19,7 +19,7 @@ namespace CommonDataHelper.CompanyHelper
             page.Append(endpointModel.contract);
             page.Append(@"/");
             page.Append(endpointModel.dataset);
-            page.Append(@"/COMPANY?representation=COMPANY.$lookup");
+            page.Append(@"/COMPANY?representation=COMPANY.$lookup&count=1000");
 
             List<CompanyItem> companyList = new List<CompanyItem>();
             WebHelper webHelper = new WebHelper();

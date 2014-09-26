@@ -24,7 +24,7 @@ namespace CommonDataHelper
             page.Append(CookieHelper.Role);
             page.Append(@"&trackingId=");
             page.Append(trackingId);
-            page.Append(@"&binding=endpoint&count=50");
+            page.Append(@"&binding=endpoint&count=1000");
             
             List<EndpointItem> endpointList = new List<EndpointItem>();
             WebHelper cd = new WebHelper();

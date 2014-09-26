@@ -8,6 +8,8 @@ namespace CommonDataHelper
     public interface ISyracuseOfficeCustomData
     {
         void setDocumentUrl(String url);
+        void setDocumentUrlAddress(String url);
+        void setDocumentTitleAddress(String title);
         String getDocumentUrl();
         string getServerUrl();
         string getDocumentRepresentation();
