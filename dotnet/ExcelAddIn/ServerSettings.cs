@@ -15,7 +15,7 @@ namespace ExcelAddIn
 
         internal string GetConnectUrl()
         {
-            Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
+            //Globals.ThisAddIn.SetPrefUrl(textBoxServerAddress.Text);
             return textBoxServerAddress.Text;
         }
 
@@ -36,7 +36,7 @@ namespace ExcelAddIn
             textBoxServerAddress.Text = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("serverUrlAddress");
             if (textBoxServerAddress.Text == "")
             {
-                textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
+                //textBoxServerAddress.Text = Globals.ThisAddIn.GetPrefUrl();
                 if (textBoxServerAddress.Text == "")
                     textBoxServerAddress.Text = "http://localhost:8124";
             }

@@ -85,13 +85,10 @@ namespace ExcelAddIn
             commons = new CommonUtils(browserDialog);
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            //System.Diagnostics.Debugger.Launch();
-            /*
             taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
-            this.ReadPreferences();
-            taskPane.Visible = this.GetPrefShowPanel();
-             */
+            this.commons.DisplayServerLocations();
+            taskPane.Visible = BaseUrlHelper.ShowActionPanel;
             templateActions.DisableTemplateButtons();
 
             if (this.Application.ActiveWorkbook != null)
@@ -417,53 +414,6 @@ namespace ExcelAddIn
             return utilities;
         }
 
-        internal void SavePreferences()
-        {
-            String path = GetPreferenceFilePath();
-            String[] props = new String[2];
-            props[0] = "Show=" + prefShowPanel;
-            props[1] = "Url=" + prefUrl;  
-            System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-            try
-            {
-                foreach (String s in props)
-                {
-                    file.WriteLine(s);
-                }
-            }
-            catch (Exception e) { MessageBox.Show(e.Message); }
-            file.Close();
-        }
-
-        public void ReadPreferences()
-        {
-            String path = GetPreferenceFilePath();
-            string sContent = "";
-
-            if (File.Exists(path))
-            {
-                StreamReader myFile = new StreamReader(path, System.Text.Encoding.Default);
-                while (!myFile.EndOfStream)
-                {
-                    sContent = myFile.ReadLine();
-                    if (sContent.Equals("Show=True"))
-                    {
-                        prefShowPanel = true;
-                    }
-                    else if (sContent.Substring(0, 4).Equals("Url="))
-                    {
-                        prefUrl = sContent.Substring(4, sContent.Length - 4);
-                    }
-                }
-                myFile.Close();
-            }
-            return;
-        }
-
-        internal string GetPreferenceFilePath()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Excel.X3.settings";
-        }
         public bool GetPrefShowPanel()
         {
             return prefShowPanel;
@@ -471,24 +421,8 @@ namespace ExcelAddIn
         public void SetPrefShowPanel(Boolean show)
         {
             prefShowPanel = show;
-            SavePreferences();
+            BaseUrlHelper.ShowActionPanel = show;
         }
-        public void SetPrefUrl(String url)
-        {
-            prefUrl = url;
-            SavePreferences();
-        }
-        public String GetPrefUrl()
-        {
-            return prefUrl;
-        }
-
-        public void removeFiles()
-        {
-            String file = GetPreferenceFilePath();
-            File.Delete(file);
-        }
-
         private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
         {
             if (Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled == false)

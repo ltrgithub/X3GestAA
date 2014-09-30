@@ -114,11 +114,6 @@ namespace ExcelAddIn
             webBrowser.DocumentCompleted -= new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
-        private void buttonConnect_Click(object sender, EventArgs e)
-        {
-            _connect("");
-        }
-
         public void Connect(string connectUrl, bool withSettings = true, Excel.Workbook Wb = null)
         {
             _connect(connectUrl, withSettings, Wb);
@@ -130,11 +125,6 @@ namespace ExcelAddIn
                 _connect("");
 
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
-        }
-
-        private void buttonSettings_Click(object sender, EventArgs e)
-        {
-            Globals.ThisAddIn.ShowSettingsForm();
         }
 
         internal void SaveDocument()

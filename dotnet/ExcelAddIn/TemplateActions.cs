@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Tools.Ribbon;
 using System.Collections.Generic;
 
 namespace ExcelAddIn
@@ -30,7 +29,7 @@ namespace ExcelAddIn
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (customData != null)
             {
-                return (customData.getCreateMode() != null && customData.getCreateMode() != "");
+                return (customData.getCreateMode() != null && customData.getCreateMode() != "" && customData.getCreateMode() != "plain_doc");
             }
             return false;
         }

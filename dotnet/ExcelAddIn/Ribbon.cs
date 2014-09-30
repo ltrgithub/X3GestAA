@@ -10,8 +10,6 @@ namespace ExcelAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-            Globals.ThisAddIn.ReadPreferences();
-            actionPanelCheckBox.Checked = Globals.ThisAddIn.GetPrefShowPanel();
             installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
         }
 

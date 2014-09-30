@@ -26,10 +26,17 @@ namespace CommonDataHelper
         }
 
         private static Uri _baseUrl = null;
-        private static Boolean _showActionPanel = false;
+        private static Boolean _showActionPanel;
         public static Boolean ShowActionPanel
         {
-            get { return _showActionPanel; }
+            get 
+            {
+                if (_showActionPanel == null)
+                {
+                    readUserPreferenceFile();
+                }
+                return _showActionPanel; 
+            }
             set 
             {
                 _showActionPanel = value;
@@ -93,9 +100,20 @@ namespace CommonDataHelper
 
         private static Uri getBaseUrlFromUserPreferenceFile()
         {
+            if (_prefUrls.Count == 0)
+            {
+                readUserPreferenceFile();
+            }
+
+            return _prefUrls[0];
+        }
+
+        private static void readUserPreferenceFile()
+        {
             String path = getPreferenceFilePath();
             Uri preferenceUrl = null;
             _prefUrls.Clear();
+            _showActionPanel = false;
 
             if (File.Exists(path))
             {
@@ -120,7 +138,6 @@ namespace CommonDataHelper
                     {
                         _showActionPanel = true;
                     }
-
                 }
                 preferencesFile.Close();
             }
@@ -130,9 +147,9 @@ namespace CommonDataHelper
                 _prefUrls.Add(preferenceUrl);
             }
 
-            return preferenceUrl;
+            return;
         }
- 
+
         private static string getPreferenceFilePath()
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\" + Process.GetCurrentProcess().ProcessName + ".X3.settings";
