@@ -281,7 +281,7 @@ namespace ExcelAddIn
                 }
             }
             commons.DisplayServerLocations();
-            workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetVisible;
+            //workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetVisible;
 
         }
 
