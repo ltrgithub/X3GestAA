@@ -155,6 +155,7 @@ namespace ExcelAddIn
             Uri url = new Uri(((RibbonComboBox)sender).Text);
             BaseUrlHelper.BaseUrl = url;
             CookieHelper.CookieContainer = null;
+            buttonPublish.Enabled = false;
         }
     }
 }

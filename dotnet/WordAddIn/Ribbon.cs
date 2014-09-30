@@ -100,6 +100,7 @@ namespace WordAddIn
             Uri url = new Uri(((RibbonComboBox)sender).Text);
             BaseUrlHelper.BaseUrl = url;
             CookieHelper.CookieContainer = null;
+            buttonPublish.Enabled = false;
         }
 
         private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
