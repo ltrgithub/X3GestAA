@@ -119,7 +119,7 @@ require('syracuse-license').register(function(err, data) {
 	else if (!data) console.log("No license");
 
 	require("streamline").register(config.streamline);
-	var flamegraph = config.streamline.flamegraph && require('streamline-flamegraph/lib/record').create(config.streamline.flamegraph);
+	if (config.streamline.flamegraph) require("streamline/lib/globals").emitter = new (require('events').EventEmitter)();
 
 	require("syracuse-core/lib/localeWrapper");
 
@@ -143,7 +143,8 @@ require('syracuse-license').register(function(err, data) {
 
             syracuse.main(function(err) {
             	if (err) throw err;
-	            if (flamegraph) flamegraph.start();
+	            if (config.streamline.flamegraph) 
+	            	require('streamline-flamegraph/lib/record').create(config.streamline.flamegraph).run();
             });
 		} catch (e) {
 			var fs = require('fs');
