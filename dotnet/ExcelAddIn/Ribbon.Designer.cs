@@ -102,8 +102,6 @@ namespace ExcelAddIn
             this.settingsGroup = this.Factory.CreateRibbonGroup();
             this.buttonSettings = this.Factory.CreateRibbonButton();
             this.saveDocumentGroup = this.Factory.CreateRibbonGroup();
-            this.buttonSave = this.Factory.CreateRibbonButton();
-            this.buttonSaveAs = this.Factory.CreateRibbonButton();
             this.buttonPublish = this.Factory.CreateRibbonButton();
             this.galleryPublishAs = this.Factory.CreateRibbonGallery();
             this.reportingGroup = this.Factory.CreateRibbonGroup();
@@ -202,30 +200,10 @@ namespace ExcelAddIn
             // 
             // saveDocumentGroup
             // 
-            this.saveDocumentGroup.Items.Add(this.buttonSave);
-            this.saveDocumentGroup.Items.Add(this.buttonSaveAs);
             this.saveDocumentGroup.Items.Add(this.buttonPublish);
             this.saveDocumentGroup.Items.Add(this.galleryPublishAs);
             resources.ApplyResources(this.saveDocumentGroup, "saveDocumentGroup");
             this.saveDocumentGroup.Name = "saveDocumentGroup";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::ExcelAddIn.Properties.Resources.sauvegarder;
-            resources.ApplyResources(this.buttonSave, "buttonSave");
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.ShowImage = true;
-            this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
-            // 
-            // buttonSaveAs
-            // 
-            this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSaveAs.Image = global::ExcelAddIn.Properties.Resources.sauvegarder2;
-            resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
-            this.buttonSaveAs.Name = "buttonSaveAs";
-            this.buttonSaveAs.ShowImage = true;
-            this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
             // 
             // buttonPublish
             // 
@@ -420,8 +398,6 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
         private Microsoft.Office.Tools.Ribbon.RibbonTab syracuseTab;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup saveDocumentGroup;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSave;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSaveAs;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup reportingGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;

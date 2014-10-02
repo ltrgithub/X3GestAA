@@ -47,31 +47,6 @@ namespace ExcelAddIn
             Globals.ThisAddIn.ActionPanel.updateAddin();
         }
 
-        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
-        {
-            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
-            if (workbook != null)
-            {
-                TemplateActions templateActions = new TemplateActions(null);
-                if (templateActions.isExcelTemplate(workbook) || templateActions.isExcelDetailFacetType(workbook) || templateActions.isV6Document(workbook))
-                    Globals.ThisAddIn.commons.Save(workbook);
-                else
-                    Globals.ThisAddIn.SaveDocumentToSyracuse();
-            }
-        }
-
-        private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
-        {
-            Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
-            if (workbook != null)
-            {
-                if (new TemplateActions(null).isExcelTemplate(workbook) || new TemplateActions(null).isExcelDetailFacetType(workbook))
-                    Globals.ThisAddIn.commons.SaveAs(workbook);
-                else
-                    Globals.ThisAddIn.SaveAsDocumentToSyracuse();
-            } 
-        }
-
         private void buttonRefreshReport_Click(object sender, RibbonControlEventArgs e)
         {
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
