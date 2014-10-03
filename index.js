@@ -143,8 +143,6 @@ require('syracuse-license').register(function(err, data) {
 
             syracuse.main(function(err) {
             	if (err) throw err;
-	            if (config.streamline.flamegraph) 
-	            	require('streamline-flamegraph/lib/record').create(config.streamline.flamegraph).run();
             });
 		} catch (e) {
 			var fs = require('fs');
