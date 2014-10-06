@@ -230,7 +230,6 @@ namespace ExcelAddIn
             }
             catch (Exception e) { MessageBox.Show(e.Message); }
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
         }
     }
 }

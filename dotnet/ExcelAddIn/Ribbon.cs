@@ -17,16 +17,6 @@ namespace ExcelAddIn
         {
         }
 
-        private void buttonConnect_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.ThisAddIn.Connect();
-        }
-
-        private void buttonServer_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.ThisAddIn.SetupServerUrl();
-        }
-
         private void buttonSettings_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.ShowSettingsForm();
