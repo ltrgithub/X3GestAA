@@ -94,14 +94,14 @@ namespace ExcelAddIn
             Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl7 = this.Factory.CreateRibbonDropDownItem();
             Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl8 = this.Factory.CreateRibbonDropDownItem();
             this.syracuseTab = this.Factory.CreateRibbonTab();
-            this.publishDocumentGroup = this.Factory.CreateRibbonGroup();
+            this.groupPublishDocument = this.Factory.CreateRibbonGroup();
             this.buttonPublish = this.Factory.CreateRibbonButton();
             this.galleryPublishAs = this.Factory.CreateRibbonGallery();
-            this.reportingGroup = this.Factory.CreateRibbonGroup();
+            this.groupReporting = this.Factory.CreateRibbonGroup();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.calculateSumButton = this.Factory.CreateRibbonToggleButton();
-            this.templateGroup = this.Factory.CreateRibbonGroup();
+            this.groupTemplate = this.Factory.CreateRibbonGroup();
             this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.dropDownLocale = this.Factory.CreateRibbonDropDown();
             this.groupSettings = this.Factory.CreateRibbonGroup();
@@ -119,9 +119,9 @@ namespace ExcelAddIn
             this.cleanupTemplateGroup = this.Factory.CreateRibbonGroup();
             this.buttonCleanup = this.Factory.CreateRibbonButton();
             this.syracuseTab.SuspendLayout();
-            this.publishDocumentGroup.SuspendLayout();
-            this.reportingGroup.SuspendLayout();
-            this.templateGroup.SuspendLayout();
+            this.groupPublishDocument.SuspendLayout();
+            this.groupReporting.SuspendLayout();
+            this.groupTemplate.SuspendLayout();
             this.groupSettings.SuspendLayout();
             this.dataSourcesGroup.SuspendLayout();
             this.groupSageX3.SuspendLayout();
@@ -130,9 +130,9 @@ namespace ExcelAddIn
             // 
             // syracuseTab
             // 
-            this.syracuseTab.Groups.Add(this.publishDocumentGroup);
-            this.syracuseTab.Groups.Add(this.reportingGroup);
-            this.syracuseTab.Groups.Add(this.templateGroup);
+            this.syracuseTab.Groups.Add(this.groupPublishDocument);
+            this.syracuseTab.Groups.Add(this.groupReporting);
+            this.syracuseTab.Groups.Add(this.groupTemplate);
             this.syracuseTab.Groups.Add(this.groupSettings);
             this.syracuseTab.Groups.Add(this.dataSourcesGroup);
             this.syracuseTab.Groups.Add(this.groupSageX3);
@@ -141,12 +141,12 @@ namespace ExcelAddIn
             resources.ApplyResources(this.syracuseTab, "syracuseTab");
             this.syracuseTab.Name = "syracuseTab";
             // 
-            // publishDocumentGroup
+            // groupPublishDocument
             // 
-            this.publishDocumentGroup.Items.Add(this.buttonPublish);
-            this.publishDocumentGroup.Items.Add(this.galleryPublishAs);
-            resources.ApplyResources(this.publishDocumentGroup, "publishDocumentGroup");
-            this.publishDocumentGroup.Name = "publishDocumentGroup";
+            this.groupPublishDocument.Items.Add(this.buttonPublish);
+            this.groupPublishDocument.Items.Add(this.galleryPublishAs);
+            resources.ApplyResources(this.groupPublishDocument, "groupPublishDocument");
+            this.groupPublishDocument.Name = "groupPublishDocument";
             // 
             // buttonPublish
             // 
@@ -171,13 +171,13 @@ namespace ExcelAddIn
             this.galleryPublishAs.ShowImage = true;
             this.galleryPublishAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.galleryPublishAs_Click);
             // 
-            // reportingGroup
+            // groupReporting
             // 
-            this.reportingGroup.Items.Add(this.buttonRefreshReport);
-            this.reportingGroup.Items.Add(this.buttonPreview);
-            this.reportingGroup.Items.Add(this.calculateSumButton);
-            resources.ApplyResources(this.reportingGroup, "reportingGroup");
-            this.reportingGroup.Name = "reportingGroup";
+            this.groupReporting.Items.Add(this.buttonRefreshReport);
+            this.groupReporting.Items.Add(this.buttonPreview);
+            this.groupReporting.Items.Add(this.calculateSumButton);
+            resources.ApplyResources(this.groupReporting, "groupReporting");
+            this.groupReporting.Name = "groupReporting";
             // 
             // buttonRefreshReport
             // 
@@ -202,12 +202,12 @@ namespace ExcelAddIn
             resources.ApplyResources(this.calculateSumButton, "calculateSumButton");
             this.calculateSumButton.Name = "calculateSumButton";
             // 
-            // templateGroup
+            // groupTemplate
             // 
-            this.templateGroup.Items.Add(this.checkBoxShowTemplatePane);
-            this.templateGroup.Items.Add(this.dropDownLocale);
-            resources.ApplyResources(this.templateGroup, "templateGroup");
-            this.templateGroup.Name = "templateGroup";
+            this.groupTemplate.Items.Add(this.checkBoxShowTemplatePane);
+            this.groupTemplate.Items.Add(this.dropDownLocale);
+            resources.ApplyResources(this.groupTemplate, "groupTemplate");
+            this.groupTemplate.Name = "groupTemplate";
             // 
             // checkBoxShowTemplatePane
             // 
@@ -330,12 +330,12 @@ namespace ExcelAddIn
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
             this.syracuseTab.ResumeLayout(false);
             this.syracuseTab.PerformLayout();
-            this.publishDocumentGroup.ResumeLayout(false);
-            this.publishDocumentGroup.PerformLayout();
-            this.reportingGroup.ResumeLayout(false);
-            this.reportingGroup.PerformLayout();
-            this.templateGroup.ResumeLayout(false);
-            this.templateGroup.PerformLayout();
+            this.groupPublishDocument.ResumeLayout(false);
+            this.groupPublishDocument.PerformLayout();
+            this.groupReporting.ResumeLayout(false);
+            this.groupReporting.PerformLayout();
+            this.groupTemplate.ResumeLayout(false);
+            this.groupTemplate.PerformLayout();
             this.groupSettings.ResumeLayout(false);
             this.groupSettings.PerformLayout();
             this.dataSourcesGroup.ResumeLayout(false);
@@ -362,13 +362,13 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
         private Microsoft.Office.Tools.Ribbon.RibbonTab syracuseTab;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup publishDocumentGroup;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup reportingGroup;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupPublishDocument;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupReporting;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBoxShowTemplatePane;
         internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton calculateSumButton;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup templateGroup;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupTemplate;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownLocale;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup cleanupTemplateGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCleanup;
