@@ -19,7 +19,7 @@ namespace CommonDataHelper.LegislationHelper
             page.Append(endpointModel.contract);
             page.Append(@"/");
             page.Append(endpointModel.dataset);
-            page.Append(@"/ATABDIV?representation=ATABDIV.$lookupcount=1000&where=(NUMTAB eq 909)");
+            page.Append(@"/ATABDIV?representation=ATABDIV.$lookup&count=1000&where=(NUMTAB eq 909)");
 
             List<LegislationItem> legislationList = new List<LegislationItem>();
             WebHelper webHelper = new WebHelper();
