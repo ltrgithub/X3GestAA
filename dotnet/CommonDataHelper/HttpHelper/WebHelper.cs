@@ -28,7 +28,7 @@ namespace CommonDataHelper
 
             request.CookieContainer = CookieHelper.CookieContainer;
 
-            request.Timeout = 10000; 
+            request.Timeout = 20000; 
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             using (StreamReader sr = new StreamReader(response.GetResponseStream()))
