@@ -104,7 +104,6 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
-                Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
             }
             else if ("rpt_fill_tpl".Equals(mode))
             {
@@ -131,7 +130,6 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
-                Globals.ThisAddIn.showReportingFieldsTaskPane(Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Checked);
                 Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             }
             else if ("v6_doc".Equals(mode))

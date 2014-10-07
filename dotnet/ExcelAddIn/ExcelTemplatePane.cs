@@ -78,6 +78,8 @@ namespace ExcelAddIn
             if (customData == null)
                 return;
             String layoutData = customData.getLayoutData();
+            if (layoutData.Equals(String.Empty))
+                return;
 
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
