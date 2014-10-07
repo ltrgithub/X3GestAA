@@ -25,7 +25,15 @@ namespace ExcelAddIn
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
-            string serverUrl = BaseUrlHelper.BaseUrl.ToString();
+            string serverUrl = customData.getServerUrl();
+            if (serverUrl != null)
+            {
+                BaseUrlHelper.BaseUrl = new Uri(serverUrl);
+            }
+            else
+            {
+                serverUrl = BaseUrlHelper.BaseUrl.ToString();
+            }
             if (serverUrl == null || "".Equals(serverUrl))
                 return false;
             customData.setServerUrl(serverUrl);
