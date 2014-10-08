@@ -494,7 +494,7 @@ public class CertTool {
 				issuer, serial, notBefore, notAfter, subject, subjectKey);
 		// Need this extension to signify that this certificate is a CA and
 		// can issue certificates. (Extension is marked as critical)
-		builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
+		if (ca) builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
 
 		ContentSigner cs = new JcaContentSignerBuilder("SHA256withRSA")
 				.build(issuerPair.getPrivate());
