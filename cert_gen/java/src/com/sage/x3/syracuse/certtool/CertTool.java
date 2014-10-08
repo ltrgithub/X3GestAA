@@ -45,6 +45,9 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.security.auth.x500.X500Principal;
 
+import org.bouncycastle.asn1.x509.BasicConstraints;
+import org.bouncycastle.asn1.x509.Extension;
+import org.bouncycastle.cert.CertIOException;
 import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.openssl.EncryptionException;
@@ -213,12 +216,11 @@ public class CertTool {
 		}
 	}
 
-	/** return the relative path of the public key file */
+	/** return the relative path of the certificate */
 	static private String getPublicKeyFileName(String name) throws CertToolException {
 		if (name == null) {
 			throw new CertToolException("No public key file for CA");
 		} else {
-			name = name.replace('@', '_').replace('.', '_').replace('$', '_');
 			return OUTPUT + name + ".pem";
 		}
 	}
@@ -472,12 +474,14 @@ public class CertTool {
 	 * @param subjectDn distinguished name of subject
 	 * @param subjectKey public key of subject 
 	 * @param validUntil certificate should be valid until this date
+	 * @param ca include basic constraint extension for CA
 	 * @return created certificate
 	 * @throws OperatorCreationException
+	 * @throws CertIOException 
 	 */
 	static X509CertificateHolder generateCertificate(String issuerDn,
 			KeyPair issuerPair, String subjectDn, PublicKey subjectKey,
-			Date validUntil) throws OperatorCreationException {
+			Date validUntil, boolean ca) throws OperatorCreationException, CertIOException {
 		wrapper.println("Generate certificate ...");
 		issuerDn = sortDn(issuerDn);
 		subjectDn = sortDn(subjectDn);
@@ -488,6 +492,10 @@ public class CertTool {
 		BigInteger serial = new BigInteger(""+notBefore.getTime());
 		JcaX509v3CertificateBuilder builder = new JcaX509v3CertificateBuilder(
 				issuer, serial, notBefore, notAfter, subject, subjectKey);
+		// Need this extension to signify that this certificate is a CA and
+		// can issue certificates. (Extension is marked as critical)
+		builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
+
 		ContentSigner cs = new JcaContentSignerBuilder("SHA256withRSA")
 				.build(issuerPair.getPrivate());
 		X509CertificateHolder holder = builder.build(cs);
@@ -987,7 +995,7 @@ public class CertTool {
 		}
 		
 		if (name != null && port == 0 && (askPort || usePort) && interactive) {
-			port = askForTransfer(null, askPort);
+			port = askForTransfer(name, askPort);
 		}
 		return false;
 	}
@@ -996,7 +1004,7 @@ public class CertTool {
 	private int askForTransfer(String name, boolean askPort) throws IOException, CertToolException {
 		String port;
 		if (name != null) 
-			name = name+" ";
+			name = " '"+name+"'";
 		else
 			name = "";
 		if (askPort) {
@@ -1029,7 +1037,7 @@ public class CertTool {
 				issuer = dn;
 			}
 			cert = generateCertificate(issuer, caKey, dn, key.getPublic(),
-					validUntil);
+					validUntil, name == null);
 			writeKey(name, key, pass, null);
 			writeCertificate(name, cert, null);
 			if (name == null)
@@ -1052,7 +1060,7 @@ public class CertTool {
 			} 
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(cert),
-					validUntil);
+					validUntil, name == null);
 			writeCertificate(name, cert, null);
 			if (name == null) {
 				caCert = cert;
@@ -1069,7 +1077,7 @@ public class CertTool {
 			caCertOld = caCert;
 			caCert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(caCert),
-					validUntil);
+					validUntil, true);
 			writeCertificate(null, caCert, null);
 			if (!certNames.isEmpty()) { // also update other certificates
 				wrapper.println("Update server certificates ...");
@@ -1077,10 +1085,10 @@ public class CertTool {
 					cert = readCertificate(certName);
 					cert = generateCertificate(caCert.getSubject().toString(),
 							caKey, cert.getSubject().toString(),
-							extractPublicKey(cert), validUntil);
+							extractPublicKey(cert), validUntil, false);
 					writeCertificate(certName, cert, null);
 					if (port >= 0 && caKey != null) {
-						int port2 = askForTransfer(null, true);
+						int port2 = askForTransfer(certName, true);
 						if (port2 > 0) {
 							Exchange.transfer(caCertOld, caKey, cert, null, null, port2, caCert);
 						}
@@ -1102,7 +1110,7 @@ public class CertTool {
 				}
 			}
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
-					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter());
+					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter(), name == null);
 			writeCertificate(name, cert, null);
 			writeKey(name, key, pass, null);
 			if (name == null) {
@@ -1114,10 +1122,10 @@ public class CertTool {
 						cert = readCertificate(certName);
 						cert = generateCertificate(caCert.getSubject().toString(),
 								caKey, cert.getSubject().toString(),
-								extractPublicKey(cert), cert.getNotAfter());
+								extractPublicKey(cert), cert.getNotAfter(), false);
 						writeCertificate(certName, cert, null);
 						if (port >= 0 && caKeyOld != null) {
-							int port2 = askForTransfer(null, true);
+							int port2 = askForTransfer(certName, true);
 							if (port2 > 0) {
 								Exchange.transfer(caCertOld, caKeyOld, cert, null, null, port2, caCert);
 							}
@@ -1145,7 +1153,7 @@ public class CertTool {
 				issuer = caCert.getSubject().toString();
 			}
 			cert = generateCertificate(issuer, caKey, dn,
-					extractPublicKey(cert), cert.getNotAfter());
+					extractPublicKey(cert), cert.getNotAfter(), name == null);
 			writeCertificate(name, cert, null);
 			if (name == null) {
 				String oldIssuer = caCert.getSubject().toString();
@@ -1167,10 +1175,10 @@ public class CertTool {
 							certDN = findReplace(issuer, "CN", findReplace(certDN, "CN", null));							
 						}
 						cert = generateCertificate(issuer, caKey, certDN, extractPublicKey(cert),
-								cert.getNotAfter());
+								cert.getNotAfter(), false);
 						writeCertificate(certName, cert, null);
 						if (port >= 0 && caKey != null) {
-							int port2 = askForTransfer(null, true);
+							int port2 = askForTransfer(certName, true);
 							if (port2 > 0) {
 								Exchange.transfer(caCertOld, caKey, cert, null, null, port2, caCert);
 							}
