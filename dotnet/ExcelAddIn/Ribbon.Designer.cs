@@ -204,8 +204,8 @@ namespace ExcelAddIn
             // 
             // groupTemplate
             // 
-            this.groupTemplate.Items.Add(this.checkBoxShowTemplatePane);
             this.groupTemplate.Items.Add(this.dropDownLocale);
+            this.groupTemplate.Items.Add(this.checkBoxShowTemplatePane);
             resources.ApplyResources(this.groupTemplate, "groupTemplate");
             this.groupTemplate.Name = "groupTemplate";
             // 
