@@ -13,5 +13,11 @@ namespace CommonDataHelper.OwnerHelper.Model
 
         [JsonProperty("$uuid")]
         public String uuid;
+
+        [JsonProperty("firstName")]
+        public String firstName;
+
+        [JsonProperty("lastName")]
+        public String lastName;
     }
 }

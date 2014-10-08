@@ -36,7 +36,7 @@ namespace CommonDataHelper
 
                 foreach (OwnerModel owner in owners.owners)
                 {
-                    ownerList.Add(new OwnerItem(owner.login, owner.uuid));
+                    ownerList.Add(new OwnerItem(owner.login, owner.uuid, owner.firstName, owner.lastName));
                 }
             }
             return ownerList;

@@ -10,9 +10,9 @@ namespace CommonDataHelper.OwnerHelper
         private string _login;
         private string _uuid;
 
-        public OwnerItem(string login, string uuid)
+        public OwnerItem(string login, string uuid, string firstName, string lastName)
         {
-            _login = login;
+            _login = login + ": " + firstName + " " + lastName ;
             _uuid = uuid;
         }
 
