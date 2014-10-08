@@ -97,8 +97,8 @@ namespace WordAddIn
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.toggleMakeSum = this.Factory.CreateRibbonToggleButton();
             this.groupTemplate = this.Factory.CreateRibbonGroup();
-            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.dropDownLocale = this.Factory.CreateRibbonDropDown();
+            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.groupSettings = this.Factory.CreateRibbonGroup();
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
             this.groupVersion = this.Factory.CreateRibbonGroup();
@@ -137,7 +137,7 @@ namespace WordAddIn
             // buttonPublish
             // 
             this.buttonPublish.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonPublish.Image = global::WordAddIn.Properties.Resources.sauvegarder;
+            this.buttonPublish.Image = global::WordAddIn.Properties.Resources.save;
             resources.ApplyResources(this.buttonPublish, "buttonPublish");
             this.buttonPublish.Name = "buttonPublish";
             this.buttonPublish.ShowImage = true;
@@ -147,7 +147,7 @@ namespace WordAddIn
             // 
             this.galleryPublishAs.ColumnCount = 1;
             this.galleryPublishAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.galleryPublishAs.Image = global::WordAddIn.Properties.Resources.sauvegarder2;
+            this.galleryPublishAs.Image = global::WordAddIn.Properties.Resources.sauvegarder1;
             resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
             resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
             resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
@@ -198,17 +198,17 @@ namespace WordAddIn
             resources.ApplyResources(this.groupTemplate, "groupTemplate");
             this.groupTemplate.Name = "groupTemplate";
             // 
-            // checkBoxShowTemplatePane
-            // 
-            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
-            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
-            this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
-            // 
             // dropDownLocale
             // 
             resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
             this.dropDownLocale.Name = "dropDownLocale";
             this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
+            // 
+            // checkBoxShowTemplatePane
+            // 
+            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
+            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
+            this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
             // 
             // groupSettings
             // 
