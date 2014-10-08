@@ -30,8 +30,8 @@ exports.config = {
 		// optional: path to some stubs to use in development and tests, relative to index.js
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
-        // limit memory usage
-        memoryLimit: 500 // strategy to limit memory usage: limit is an indication; 0 means no limit
+		// limit memory usage
+		memoryLimit: 500 // strategy to limit memory usage: limit is an indication; 0 means no limit
 	},
 	/*	integrationServer: {
 		port: 8125
@@ -67,6 +67,7 @@ exports.config = {
 		// protocol tracing
 		protocol: {
 			// trace: console.log,
+			LBFChunkSize: 64 // in Kb
 		},
 		// session tracing
 		sessions: {
@@ -79,7 +80,7 @@ exports.config = {
 			// detail: true
 		},
 		// cache tracing
-		cache:{
+		cache: {
 			// trace: console.log,
 		}
 	},
@@ -105,15 +106,15 @@ exports.config = {
 
 		// Leading wildcards can affect search performance
 		allowLeadingWildcard: false,
-        /*tracer : {
+		/*tracer : {
             trace : console.log,
             info : true
         }*/
-        //deactivateRight: true,
+		//deactivateRight: true,
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
-        // offStemmer : true // desactivation of the stemmer for the search indexation
+		// offStemmer : true // desactivation of the stemmer for the search indexation
 	},
 	translation: {
 		// trace: console.log,
@@ -132,4 +133,3 @@ exports.config = {
 		}
 	},
 };
-
