@@ -71,6 +71,17 @@ namespace UnitTests
         {
             //throw new NotImplementedException();
         }
+
+
+        public void setDocumentUrlAddress(string url)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setDocumentTitleAddress(string title)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class DummyPublishDocument : IPublishDocument

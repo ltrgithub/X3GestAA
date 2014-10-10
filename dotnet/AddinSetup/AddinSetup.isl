@@ -341,6 +341,8 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>CommonDataHelper.dll</td><td>{35D10D00-4AE9-4B0D-9085-3FFE4B94B5AB}</td><td>INSTALLDIR</td><td>2</td><td/><td>commondatahelper.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>CommonDialogs.dll</td><td>{92074FEE-D684-4210-817C-BCF8C7B330BB}</td><td>INSTALLDIR</td><td>2</td><td/><td>commondialogs.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ExcelAddIn.Lokalisierte_Ressourcen</td><td>{5946CB27-A608-4F18-A95C-65A3E180D242}</td><td>INSTALLDIR</td><td>2</td><td/><td>exceladdin.lokalisierte_ress</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ExcelAddIn.Lokalisierte_Ressourcen1</td><td>{ECECD6C6-35F7-4D23-A537-8EBADFA105A5}</td><td>INSTALLDIR</td><td>2</td><td/><td>exceladdin.lokalisierte_ress</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ExcelAddIn.Lokalisierte_Ressourcen2</td><td>{9E0EC6C4-3515-4257-88CD-B7BAA9D4128C}</td><td>INSTALLDIR</td><td>2</td><td/><td>exceladdin.lokalisierte_ress</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -352,6 +354,7 @@
 		<row><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>{2F0EEA49-54DF-4327-8453-E4C7A5EAA130}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.excel</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>{69937D42-F563-47EA-B87F-DD7781F8841D}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.word.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>{1DA4DB09-250F-4016-8007-B4892BB5B617}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.visualstudio.tools</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Newtonsoft.Json.dll</td><td>{047F22F6-2E3F-49B6-8E57-7C86B00A2180}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PowerPointAddIn.Lokalisierte_Ressourcen</td><td>{5CAC0C72-94EB-4FDD-A340-306ADD2854CF}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerpointaddin.lokalisierte</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PowerPointAddIn.Lokalisierte_Ressourcen1</td><td>{6F4FF1D5-8623-4AAF-8145-5548CD725AC3}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerpointaddin.lokalisierte</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PowerPointAddIn.Prim_re_Ausgabe</td><td>{A9AE0CAD-46E2-45D6-8AB9-CCCB5783F67F}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerpointaddin.prim_re_ausg</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1878,6 +1881,8 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>CommonDataHelper.dll</td></row>
+		<row><td>AlwaysInstall</td><td>CommonDialogs.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ExcelAddIn.Lokalisierte_Ressourcen</td></row>
 		<row><td>AlwaysInstall</td><td>ExcelAddIn.Lokalisierte_Ressourcen1</td></row>
 		<row><td>AlwaysInstall</td><td>ExcelAddIn.Lokalisierte_Ressourcen2</td></row>
@@ -1889,6 +1894,7 @@
 		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td></row>
+		<row><td>AlwaysInstall</td><td>Newtonsoft.Json.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PowerPointAddIn.Lokalisierte_Ressourcen</td></row>
 		<row><td>AlwaysInstall</td><td>PowerPointAddIn.Lokalisierte_Ressourcen1</td></row>
 		<row><td>AlwaysInstall</td><td>PowerPointAddIn.Prim_re_Ausgabe</td></row>
@@ -1913,12 +1919,15 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>commondatahelper.dll</td><td>CommonDataHelper.dll</td><td>COMMON~1.DLL|CommonDataHelper.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\CommonDataHelper\bin\Release\CommonDataHelper.dll</td><td>1</td><td/></row>
+		<row><td>commondialogs.dll</td><td>CommonDialogs.dll</td><td>COMMON~1.DLL|CommonDialogs.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\CommonDialogs\bin\Release\CommonDialogs.dll</td><td>1</td><td/></row>
 		<row><td>exceladdin.lokalisierte_ress</td><td>ExcelAddIn.Lokalisierte_Ressourcen2</td><td>ExcelAddIn.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ExcelAddIn&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>exceladdin.prim_re_ausgabe</td><td>ExcelAddIn.Prim_re_Ausgabe2</td><td>ExcelAddIn.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ExcelAddIn&gt;|Built</td><td>3</td><td/></row>
 		<row><td>microsoft.office.tools.commo</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.excel</td><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.word.</td><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.visualstudio.tools</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Program Files\Reference Assemblies\Microsoft\VSTO40\v4.0.Framework\Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>1</td><td/></row>
+		<row><td>newtonsoft.json.dll</td><td>Newtonsoft.Json.dll</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\CommonDataHelper\bin\Release\Newtonsoft.Json.dll</td><td>1</td><td/></row>
 		<row><td>powerpointaddin.lokalisierte</td><td>PowerPointAddIn.Lokalisierte_Ressourcen1</td><td>PowerPointAddIn.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerPointAddIn&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>powerpointaddin.prim_re_ausg</td><td>PowerPointAddIn.Prim_re_Ausgabe1</td><td>PowerPointAddIn.Primäre Ausgabe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerPointAddIn&gt;|Built</td><td>3</td><td/></row>
 		<row><td>sage.syracuse.exceladdin.dll</td><td>ISX_DEFAULTCOMPONENT</td><td>SAGESY~1.MAN|Sage.Syracuse.ExcelAddIn.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Sage.Syracuse.ExcelAddIn.dll.manifest</td><td>1</td><td/></row>
@@ -2186,6 +2195,8 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>CommonDataHelper.dll</td><td/><td/><td>_B96A6FEB_6A0B_4E62_B690_20795A46C407_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>CommonDialogs.dll</td><td/><td/><td>_D13B515B_36C8_4BBF_9B17_6E8155852A89_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ExcelAddIn.Lokalisierte_Ressourcen</td><td/><td/><td>_DF6E3B40_3210_4CB4_9E21_4899B3BA2A5F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ExcelAddIn.Lokalisierte_Ressourcen1</td><td/><td/><td>_23161558_E473_47BD_BEDE_58BEA0E2AECD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ExcelAddIn.Lokalisierte_Ressourcen2</td><td/><td/><td>_A6FCFC46_E401_4383_B72A_1D7006BB0BBF_FILTER</td><td/><td/><td/><td/></row>
@@ -2197,6 +2208,7 @@
 		<row><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td/><td/><td>_AADA948A_F8EA_487A_9DDD_8827A5011647_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td/><td/><td>_D3ACDF17_1848_4FB6_B8D9_C65D79DCF8D6_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td/><td/><td>_788377E2_CDBF_4FDA_BE83_DCD82EDC98A2_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_D6719DF7_3571_4393_A1A8_AE297E34C09F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PowerPointAddIn.Lokalisierte_Ressourcen</td><td/><td/><td>_38768A9D_351F_49E0_8CF8_856CC11FDEFE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PowerPointAddIn.Lokalisierte_Ressourcen1</td><td/><td/><td>_0B1E5D16_1248_487B_B904_661F3102395B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PowerPointAddIn.Prim_re_Ausgabe</td><td/><td/><td>_5CF1280D_CCD2_4DA0_87F3_575B097BF192_FILTER</td><td/><td/><td/><td/></row>
