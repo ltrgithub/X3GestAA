@@ -131,5 +131,44 @@ exports.config = {
 			// trace: console.log,
 		}
 	},
+	// Levels specified here will be used for default traces settings
+	// Valid levels are : 'info', 'debug', 'warn', and 'error'
+	// Levels not specified will be initialized with 'error' level
+	tracesLevels: {
+		// Object-relational mapping
+		orm: {
+			factory: "error", // Syracuse entities management
+			x3: "error", // X3 ERP entities management
+			mongodb: "error", // MongoDB interactions
+		},
+		// Elastic search communication
+		search: "error",
+		// X3 ERP communication layer
+		x3Comm: {
+			jsRunner: "error", // Syracuse calls from 4GL processes
+			pool: "error", // X3 clients pools
+			print: "error", // Print server comunication layer
+		},
+		// Classic server
+		classic: {
+			srvCache: "error", // Cache management with Web application server
+			protocol: "error", // Protocol communication layer
+			std: "error", // Basic traces
+			action: "error", // Sent actions
+			session: "error", // Sessions management
+		},
+		businessObjects: "error", // Business Objects integration
+		// X3 HRM portal integration 
+		hrm: {
+			loadBalancer: "error", // Load balancer
+			proxy: "error", // Proxy calls
+		},
+		// Online help integation
+		help: "error",
+		test: {
+			1: "error",
+			2: "error"
+		}
+    },
 };
 
