@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentTemplateDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
+            this.labelDescriptionErrorText = new System.Windows.Forms.Label();
+            this.labelCodeErrorText = new System.Windows.Forms.Label();
             this.labelCode = new System.Windows.Forms.Label();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
@@ -53,10 +55,8 @@
             this.comboBoxEndpoint = new System.Windows.Forms.ComboBox();
             this.labelPurpose = new System.Windows.Forms.Label();
             this.comboBoxPurpose = new System.Windows.Forms.ComboBox();
-            this.labelCodeErrorText = new System.Windows.Forms.Label();
-            this.labelDescriptionErrorText = new System.Windows.Forms.Label();
-            this.textBoxDescription = new CustomComponents.UniqueTextBox();
-            this.textBoxCode = new CustomComponents.UniqueTextBox();
+            this.textBoxDescription = new CustomComponents.RichTextBox();
+            this.textBoxCode = new CustomComponents.RichTextBox();
             this.groupBoxDescription.SuspendLayout();
             this.groupBoxTagsAndTeams.SuspendLayout();
             this.groupBoxRelatedTo.SuspendLayout();
@@ -76,6 +76,20 @@
             resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
+            // 
+            // labelDescriptionErrorText
+            // 
+            resources.ApplyResources(this.labelDescriptionErrorText, "labelDescriptionErrorText");
+            this.labelDescriptionErrorText.ForeColor = System.Drawing.Color.Red;
+            this.labelDescriptionErrorText.Name = "labelDescriptionErrorText";
+            this.labelDescriptionErrorText.Tag = "";
+            // 
+            // labelCodeErrorText
+            // 
+            resources.ApplyResources(this.labelCodeErrorText, "labelCodeErrorText");
+            this.labelCodeErrorText.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeErrorText.Name = "labelCodeErrorText";
+            this.labelCodeErrorText.Tag = "";
             // 
             // labelCode
             // 
@@ -228,20 +242,6 @@
             resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
             this.comboBoxPurpose.Name = "comboBoxPurpose";
             // 
-            // labelCodeErrorText
-            // 
-            resources.ApplyResources(this.labelCodeErrorText, "labelCodeErrorText");
-            this.labelCodeErrorText.ForeColor = System.Drawing.Color.Red;
-            this.labelCodeErrorText.Name = "labelCodeErrorText";
-            this.labelCodeErrorText.Tag = "";
-            // 
-            // labelDescriptionErrorText
-            // 
-            resources.ApplyResources(this.labelDescriptionErrorText, "labelDescriptionErrorText");
-            this.labelDescriptionErrorText.ForeColor = System.Drawing.Color.Red;
-            this.labelDescriptionErrorText.Name = "labelDescriptionErrorText";
-            this.labelDescriptionErrorText.Tag = "";
-            // 
             // textBoxDescription
             // 
             resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
@@ -306,9 +306,9 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxTags;
         private System.Windows.Forms.CheckedListBox checkedListBoxTeams;
         private System.Windows.Forms.Label labelCode;
-        private CustomComponents.UniqueTextBox textBoxCode;
+        private CustomComponents.RichTextBox textBoxCode;
         private System.Windows.Forms.Label labelCodeErrorText;
         private System.Windows.Forms.Label labelDescriptionErrorText;
-        private CustomComponents.UniqueTextBox textBoxDescription;
+        private CustomComponents.RichTextBox textBoxDescription;
     }
 }

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace CustomComponents
 {
-    public class UniqueTextBox : TextBox
+    public class RichTextBox : TextBox
     {
         [DllImport("user32")]
         private static extern IntPtr GetWindowDC(IntPtr hwnd);
@@ -32,8 +32,10 @@ namespace CustomComponents
         {
             base.WndProc(ref m);
 
-          //We have to change the clientsize to make room for borders
-          //if not, the border is limited in how thick it is.
+          /*
+           * We have to change the clientsize to make room for borders
+           * if not, the border is limited in how thick it is.
+           */
           if (m.Msg == 0x83) //WM_NCCALCSIZE   
           {
             if (m.WParam == IntPtr.Zero)
@@ -77,14 +79,7 @@ namespace CustomComponents
             set 
             { 
                 _showError = value;
-
                 borderColor = _showError ? Color.Red : SystemColors.ActiveBorder;
-
-                //if (_showError)
-                //    borderColor = Color.Red;
-                //else
-                //    borderColor = SystemColors.ActiveBorder;
-
                 _forcePaint = true;
             }
         }
