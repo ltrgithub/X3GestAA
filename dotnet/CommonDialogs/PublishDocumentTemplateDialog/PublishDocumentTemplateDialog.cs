@@ -244,32 +244,36 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         private string _errorCodeText = string.Empty;
         private void textBoxCode_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxCode.Text.Length > 0 && (textBoxCode.Text.Equals(_errorCodeText) == true || !_dialogCheckerDelegate("code", _workingCopyPrototypeModel, this)))
+            string errorMessage = string.Empty;
+            if (textBoxCode.Text.Length > 0 && (textBoxCode.Text.Equals(_errorCodeText) == true || !_dialogCheckerDelegate("code", _workingCopyPrototypeModel, this, out errorMessage)))
             {
-                textBoxCode.BackColor = Color.Red;
+                textBoxCode.ShowError = true;
                 _errorCodeText = textBoxCode.Text;
             }
             else
             {
-                textBoxCode.BackColor = SystemColors.Window;
+                textBoxCode.ShowError = false;
                 _errorCodeText = string.Empty;
             }
+            labelCodeErrorText.Text = errorMessage; 
             btnOk_enable();
         }
 
         private string _errorDescriptionText = string.Empty;
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxDescription.Text.Length > 0 && (textBoxDescription.Text.Equals(_errorDescriptionText) == true || !_dialogCheckerDelegate("description", _workingCopyPrototypeModel, this)))
+            string errorMessage = string.Empty;
+            if (textBoxDescription.Text.Length > 0 && (textBoxDescription.Text.Equals(_errorDescriptionText) == true || !_dialogCheckerDelegate("description", _workingCopyPrototypeModel, this, out errorMessage)))
             {
-                textBoxDescription.BackColor = Color.Red;
+                textBoxDescription.ShowError = true;
                 _errorDescriptionText = textBoxDescription.Text;
             }
             else
             {
-                textBoxDescription.BackColor = SystemColors.Window;
+                textBoxDescription.ShowError = false;
                 _errorDescriptionText = string.Empty;
             }
+            labelDescriptionErrorText.Text = errorMessage; 
             btnOk_enable();
         }
 

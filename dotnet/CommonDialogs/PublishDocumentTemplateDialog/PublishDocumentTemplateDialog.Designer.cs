@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentTemplateDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
-            this.textBoxCode = new System.Windows.Forms.TextBox();
             this.labelCode = new System.Windows.Forms.Label();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
             this.labelOwner = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -55,6 +53,10 @@
             this.comboBoxEndpoint = new System.Windows.Forms.ComboBox();
             this.labelPurpose = new System.Windows.Forms.Label();
             this.comboBoxPurpose = new System.Windows.Forms.ComboBox();
+            this.labelCodeErrorText = new System.Windows.Forms.Label();
+            this.labelDescriptionErrorText = new System.Windows.Forms.Label();
+            this.textBoxDescription = new CustomComponents.UniqueTextBox();
+            this.textBoxCode = new CustomComponents.UniqueTextBox();
             this.groupBoxDescription.SuspendLayout();
             this.groupBoxTagsAndTeams.SuspendLayout();
             this.groupBoxRelatedTo.SuspendLayout();
@@ -62,22 +64,18 @@
             // 
             // groupBoxDescription
             // 
+            this.groupBoxDescription.Controls.Add(this.textBoxDescription);
+            this.groupBoxDescription.Controls.Add(this.labelDescriptionErrorText);
+            this.groupBoxDescription.Controls.Add(this.labelCodeErrorText);
             this.groupBoxDescription.Controls.Add(this.textBoxCode);
             this.groupBoxDescription.Controls.Add(this.labelCode);
             this.groupBoxDescription.Controls.Add(this.comboBoxOwner);
             this.groupBoxDescription.Controls.Add(this.checkBoxReadOnly);
             this.groupBoxDescription.Controls.Add(this.labelOwner);
-            this.groupBoxDescription.Controls.Add(this.textBoxDescription);
             this.groupBoxDescription.Controls.Add(this.labelDescription);
             resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
-            // 
-            // textBoxCode
-            // 
-            resources.ApplyResources(this.textBoxCode, "textBoxCode");
-            this.textBoxCode.Name = "textBoxCode";
-            this.textBoxCode.TextChanged += new System.EventHandler(this.textBoxCode_TextChanged);
             // 
             // labelCode
             // 
@@ -101,12 +99,6 @@
             // 
             resources.ApplyResources(this.labelOwner, "labelOwner");
             this.labelOwner.Name = "labelOwner";
-            // 
-            // textBoxDescription
-            // 
-            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // labelDescription
             // 
@@ -236,6 +228,34 @@
             resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
             this.comboBoxPurpose.Name = "comboBoxPurpose";
             // 
+            // labelCodeErrorText
+            // 
+            resources.ApplyResources(this.labelCodeErrorText, "labelCodeErrorText");
+            this.labelCodeErrorText.ForeColor = System.Drawing.Color.Red;
+            this.labelCodeErrorText.Name = "labelCodeErrorText";
+            this.labelCodeErrorText.Tag = "";
+            // 
+            // labelDescriptionErrorText
+            // 
+            resources.ApplyResources(this.labelDescriptionErrorText, "labelDescriptionErrorText");
+            this.labelDescriptionErrorText.ForeColor = System.Drawing.Color.Red;
+            this.labelDescriptionErrorText.Name = "labelDescriptionErrorText";
+            this.labelDescriptionErrorText.Tag = "";
+            // 
+            // textBoxDescription
+            // 
+            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ShowError = false;
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
+            // 
+            // textBoxCode
+            // 
+            resources.ApplyResources(this.textBoxCode, "textBoxCode");
+            this.textBoxCode.Name = "textBoxCode";
+            this.textBoxCode.ShowError = false;
+            this.textBoxCode.TextChanged += new System.EventHandler(this.textBoxCode_TextChanged);
+            // 
             // PublishDocumentTemplateDialog
             // 
             this.AcceptButton = this.btnOk;
@@ -266,7 +286,6 @@
         private System.Windows.Forms.ComboBox comboBoxOwner;
         private System.Windows.Forms.CheckBox checkBoxReadOnly;
         private System.Windows.Forms.Label labelOwner;
-        private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
@@ -286,7 +305,10 @@
         private System.Windows.Forms.Label labelLegislation;
         private System.Windows.Forms.CheckedListBox checkedListBoxTags;
         private System.Windows.Forms.CheckedListBox checkedListBoxTeams;
-        private System.Windows.Forms.TextBox textBoxCode;
         private System.Windows.Forms.Label labelCode;
+        private CustomComponents.UniqueTextBox textBoxCode;
+        private System.Windows.Forms.Label labelCodeErrorText;
+        private System.Windows.Forms.Label labelDescriptionErrorText;
+        private CustomComponents.UniqueTextBox textBoxDescription;
     }
 }

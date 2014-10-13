@@ -12,12 +12,14 @@ namespace CommonDataHelper.PublisherHelper
 {
     public static class DialogCheckerCallback
     {
-        public static bool checkPublishTemplateDialog(string field, object workingCopyResponseModel, object publishDocumentParameters)
+        public static bool checkPublishTemplateDialog(string field, object workingCopyResponseModel, object publishDocumentParameters, out string errorMessage)
         {
+            errorMessage = string.Empty;
+
             bool isUnique = true;
             try
             {
-                isUnique = doCheckPublishTemplateDialog(field, (WorkingCopyPrototypeModel)workingCopyResponseModel, (IPublishDocumentTemplate)publishDocumentParameters);
+                isUnique = doCheckPublishTemplateDialog(field, (WorkingCopyPrototypeModel)workingCopyResponseModel, (IPublishDocumentTemplate)publishDocumentParameters, out errorMessage);
             }
             catch (WebException webEx)
             {
@@ -26,11 +28,13 @@ namespace CommonDataHelper.PublisherHelper
             return isUnique;
         }
 
-        public static bool doCheckPublishTemplateDialog(string field, WorkingCopyPrototypeModel workingCopyResponseModel, IPublishDocumentTemplate publishDocumentParameters)
+        public static bool doCheckPublishTemplateDialog(string field, WorkingCopyPrototypeModel workingCopyResponseModel, IPublishDocumentTemplate publishDocumentParameters, out string errorMessage)
         {
             bool isUnique = true;
             WebHelper webHelper = new WebHelper();
             HttpStatusCode httpStatusCode;
+
+            errorMessage = string.Empty;
                 
             if (string.IsNullOrEmpty(workingCopyResponseModel.url) == false)
             {
@@ -53,9 +57,17 @@ namespace CommonDataHelper.PublisherHelper
                         var diagnoses = Newtonsoft.Json.JsonConvert.DeserializeObject<CommonDataHelper.PublisherHelper.Model.FieldValidation.PublishTemplateModel>(workingCopyUpdateResponseJson);
 
                         if (field.Equals("code"))
-                            isUnique = diagnoses.properties.code.diagnoses. Count == 0;
+                        {
+                            isUnique = diagnoses.properties.code.diagnoses.Count == 0;
+                            if (!isUnique)
+                                errorMessage = diagnoses.properties.code.diagnoses[0].message;
+                        }
                         else
+                        {
                             isUnique = diagnoses.properties.description.diagnoses.Count == 0;
+                            if (!isUnique)
+                                errorMessage = diagnoses.properties.description.diagnoses[0].message;
+                        }
                     }
                 }
             }

@@ -135,7 +135,12 @@
       <DependentUpon>ServerSettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CustomComponents\CustomComponents.csproj">
+      <Project>{A07CF3DA-504F-421F-93D4-293DBE52B20E}</Project>
+      <Name>CustomComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

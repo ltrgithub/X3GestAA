@@ -8,7 +8,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 {
     public delegate void PublisherDocumentTemplateDelegate(IPublishDocumentTemplate publishDocumentParameters, object workingCopyPrototypeModel, object customData);
     public delegate void EndpointDelegate(string officeApplication, string savePrototypeName, string uuid, object syracuseCustomData, object publishTemplateDialog);
-    public delegate bool DialogCheckerDelegate(string field, object workingCopyResponseModel, object publishDocumentParameters);
+    public delegate bool DialogCheckerDelegate(string field, object workingCopyResponseModel, object publishDocumentParameters, out string errorMessage);
 
     public interface IPublishDocumentTemplate
     {
