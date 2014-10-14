@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Core;
 using Microsoft.Win32;
+using CommonDataHelper;
 
 namespace PowerPointAddIn
 {
@@ -45,17 +46,19 @@ namespace PowerPointAddIn
                 try
                 {
                     Presentation pres = w.Presentation;
-                    PptCustomData cd = PptCustomData.getFromDocument(pres);
+                    SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(pres);
                     if (cd != null)
                     {
+                        BaseUrlHelper.CustomData = cd;
+                        BaseUrlHelper.BaseUrl = new Uri(cd.getServerUrl());
                         string docUrl = cd.getDocumentUrl();
                         if (docUrl != null && !"".Equals(docUrl))
                         {
-                            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
                         }
                         else
                         {
-                            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                         }
                         if (pptx_action_new_chart_slide.Equals(cd.getActionType()))
                         {
@@ -70,7 +73,7 @@ namespace PowerPointAddIn
                     }
                     else
                     {
-                        Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                     }
                 }
                 catch (Exception e)
@@ -79,9 +82,10 @@ namespace PowerPointAddIn
                 }
             }
             pptActions.checkRefreshButtons();
+            common.DisplayServerLocations();
         }
 
-        private void PowerPointAddIn_newSlide(Presentation pres, PptCustomData customData, DocumentWindow win)
+        private void PowerPointAddIn_newSlide(Presentation pres, SyracuseOfficeCustomData customData, DocumentWindow win)
         {
             try
             {
@@ -104,7 +108,7 @@ namespace PowerPointAddIn
             pres.Close();
         }
 
-        private void PowerPointAddIn_addNewSlide(Presentation pres, PptCustomData customData, DocumentWindow win)
+        private void PowerPointAddIn_addNewSlide(Presentation pres, SyracuseOfficeCustomData customData, DocumentWindow win)
         {
             DocumentWindow selectedWindow = null;
             Presentation selectedPresentation = null;

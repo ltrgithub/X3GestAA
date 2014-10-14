@@ -162,7 +162,7 @@ namespace PowerPointAddIn
                 catch (Exception) { }
             }
         }
-        public void addChartSlide(Presentation pres, DocumentWindow win, PptCustomData cd, int newSlideIndex)
+        public void addChartSlide(Presentation pres, DocumentWindow win, SyracuseOfficeCustomData cd, int newSlideIndex)
         {
             try
             {
@@ -219,7 +219,7 @@ namespace PowerPointAddIn
 
         public void refreshChartsInit(Presentation pres, List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
         {
-            PptCustomData cd = PptCustomData.getFromDocument(pres, true);
+            SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(pres, true);
             cd.setActionType("ppt_refresh_charts");
             cd.setCharts(charts);
             chartCount = cd.getCharts().Count;
@@ -244,7 +244,7 @@ namespace PowerPointAddIn
         public void refreshNextChart(Presentation pres)
         {
             PptAddInJSExternal external = browserDialog.getExternal();
-            PptCustomData cd = external.getPptCustomData();
+            SyracuseOfficeCustomData cd = external.getPptCustomData();
             if (cd == null)
                 return;
 

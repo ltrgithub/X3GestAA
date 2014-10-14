@@ -13,24 +13,24 @@ namespace PowerPointAddIn
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public class PptAddInJSExternal
     {
-        private PptCustomData customData;
+        private SyracuseOfficeCustomData customData;
         private PptCustomXlsData customXlsData;
         private BrowserDialog browserDialog;
 
-        public PptAddInJSExternal(PptCustomData customData, BrowserDialog browserDialog)
+        public PptAddInJSExternal(SyracuseOfficeCustomData customData, BrowserDialog browserDialog)
         {
             this.customData = customData;
             this.browserDialog = browserDialog;
         }
 
-        public PptAddInJSExternal(PptCustomData customData, PptCustomXlsData customXlsData, BrowserDialog browserDialog)
+        public PptAddInJSExternal(SyracuseOfficeCustomData customData, PptCustomXlsData customXlsData, BrowserDialog browserDialog)
         {
             this.customData = customData;
             this.customXlsData = customXlsData;
             this.browserDialog = browserDialog;
         }
 
-        public PptCustomData getPptCustomData()
+        public SyracuseOfficeCustomData getPptCustomData()
         {
             return customData;
         }
@@ -57,22 +57,6 @@ namespace PowerPointAddIn
             CommonUtils.ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::PowerPointAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
         }
 
-        public string GetDocumentContent()
-        {
-            Presentation pres = (customData != null) ? customData.getPresentation() : null; // this.doc;
-            if (pres == null)
-            {
-                CommonUtils.ShowErrorMessage(global::PowerPointAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
-                return "";
-            }
-
-            String tempFileName = Path.GetTempFileName();
-            pres.SaveCopyAs(tempFileName);
-            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
-            String base64string = Convert.ToBase64String(content);
-            return base64string;
-        }
-          
         public BrowserDialog getBrowserDialog()
         {
             return browserDialog;

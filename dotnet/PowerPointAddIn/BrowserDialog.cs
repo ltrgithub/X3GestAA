@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CommonDialogs;
+using CommonDataHelper;
 
 namespace PowerPointAddIn
 {
@@ -57,7 +59,7 @@ namespace PowerPointAddIn
             catch (Exception) { }
         }
 
-        public bool connectToServer(PptCustomData customData, string extraServerUrl = null)
+        public bool connectToServer(SyracuseOfficeCustomData customData, string extraServerUrl = null)
         {
             string serverUrl = extraServerUrl;
             if (String.IsNullOrEmpty(serverUrl))
@@ -65,16 +67,10 @@ namespace PowerPointAddIn
                 serverUrl = customData.getServerUrl();
                 if (String.IsNullOrEmpty(serverUrl))
                 {
-                    serverUrl = getServerUrl();
+                    serverUrl = BaseUrlHelper.BaseUrl.ToString();
                     if (String.IsNullOrEmpty(serverUrl))
                     {
-                        ServerSettings settings = new ServerSettings(serverUrl);
-                        if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                        {
-                            serverUrl = settings.getServerUrl();
-                            if (String.IsNullOrEmpty(serverUrl))
-                                return false;
-                        }
+                        return false;
                     }
                 }
             }
@@ -94,7 +90,7 @@ namespace PowerPointAddIn
             return true;
         }
 
-        public void loadPage(String urlPart, PptCustomData customData, PptCustomXlsData customXlsData = null, string serverUrl = null)
+        public void loadPage(String urlPart, SyracuseOfficeCustomData customData, PptCustomXlsData customXlsData = null, string serverUrl = null)
         {
             PptAddInJSExternal external = new PptAddInJSExternal(customData, customXlsData, this);
             loadPage(urlPart, external, serverUrl);

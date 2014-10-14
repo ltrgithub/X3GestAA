@@ -6,11 +6,16 @@ using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using CommonDataHelper;
+using Microsoft.Office.Interop.Excel;
+using System.IO;
+using CommonDataHelper.UtilityHelper;
+
 
 namespace PowerPointAddIn
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class PptCustomData
+    public class SyracuseOfficeCustomData : ISyracuseOfficeCustomData
     {
         private const String sageERPX3JsonTagName   = "SyracusePptCustomData";
         private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;
@@ -21,23 +26,24 @@ namespace PowerPointAddIn
         private const String actionTypeProperty     = "actionType";
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
+        private const string publishedDocumentJsonProperty = "publishedDocumentJson";
 
         private Dictionary<String, object> dictionary;
         private Presentation pres;
-        private List<Chart> chartsArray;
+        private List<Microsoft.Office.Interop.PowerPoint.Chart> chartsArray;
 
         // Gets a dictionary from an word document by accessing its customxmlparts
-        public static PptCustomData getFromDocument(Presentation pres, Boolean create = false)
+        public static SyracuseOfficeCustomData getFromDocument(Presentation pres, Boolean create = false)
         {
             Dictionary<String, object> dict = getDictionaryFromCustomXMLPart(pres);
             if (dict != null)
             {
-                return new PptCustomData(dict, pres);
+                return new SyracuseOfficeCustomData(dict, pres);
             }
             if (create)
             {
                 dict = new Dictionary<String, object>();
-                PptCustomData cd = new PptCustomData(dict, pres);
+                SyracuseOfficeCustomData cd = new SyracuseOfficeCustomData(dict, pres);
                 cd.writeDictionaryToDocument();
                 return cd;
             }
@@ -75,6 +81,16 @@ namespace PowerPointAddIn
         {
             return getStringProperty(actionTypeProperty, false);
         }
+
+        public string getPublishedDocumentJson()
+        {
+            return getStringProperty(publishedDocumentJsonProperty, false);
+        }
+        public void setPublishedDocumentJson(string publishedDocumentJson)
+        {
+            setStringProperty(publishedDocumentJsonProperty, publishedDocumentJson);
+        }
+
         public void setDocumentUrl(String url)
         {
             setStringProperty(documentUrlProperty, url);
@@ -91,11 +107,11 @@ namespace PowerPointAddIn
         {
             return getStringProperty(documentTitleProperty, false);
         }
-        public void setCharts(List<Chart> charts)
+        public void setCharts(List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
         {
             chartsArray = charts;
         }
-        public List<Chart> getCharts()
+        public List<Microsoft.Office.Interop.PowerPoint.Chart> getCharts()
         {
             return chartsArray;
         }
@@ -163,7 +179,7 @@ namespace PowerPointAddIn
             return pres;
         }
 
-        private PptCustomData(Dictionary<String, object> dictionary, Presentation pres)
+        private SyracuseOfficeCustomData(Dictionary<String, object> dictionary, Presentation pres)
         {
             this.dictionary = dictionary;
             this.pres = pres;
@@ -208,5 +224,39 @@ namespace PowerPointAddIn
             return null;
         }
 
+
+        public byte[] GetDocumentContent()
+        {
+            Presentation pres = Globals.PowerPointAddIn.Application.ActiveWindow.Presentation;
+            //PptCustomData customData = PptCustomData.getFromDocument(pres, true);
+            //Presentation pres = (customData != null) ? customData.getPresentation() : null; // this.doc;
+            if (pres == null)
+            {
+                CommonUtils.ShowErrorMessage(global::PowerPointAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
+                return null;
+            }
+
+            String tempFileName = Path.GetTempFileName();
+            pres.SaveCopyAs(tempFileName);
+            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
+            String base64string = Convert.ToBase64String(content);
+            pres.Save();
+            return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
+        }
+
+
+
+        public void setDocumentUrlAddress(string url)
+        {
+        }
+
+        public void setDocumentTitleAddress(string title)
+        {
+        }
+
+        public string getDocumentRepresentation()
+        {
+            return String.Empty;
+        }
     }
 }

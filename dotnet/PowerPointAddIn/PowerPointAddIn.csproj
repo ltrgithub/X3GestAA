@@ -344,6 +344,16 @@
     <Content Include="Resources\sauvegarder.png" />
     <Content Include="Resources\sauvegarder2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonDataHelper\CommonDataHelper.csproj">
+      <Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
+      <Name>CommonDataHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonDialogs\CommonDialogs.csproj">
+      <Project>{341E57EE-7F9A-4408-A29F-D4A4340039EE}</Project>
+      <Name>CommonDialogs</Name>
+    </ProjectReference>
+  </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

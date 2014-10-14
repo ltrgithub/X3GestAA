@@ -6,6 +6,9 @@ using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using System.Threading;
 using System.Globalization;
+using CommonDataHelper;
+using CommonDataHelper.PublisherHelper;
+using Microsoft.Office.Interop.PowerPoint;
 
 namespace PowerPointAddIn
 {
@@ -14,17 +17,6 @@ namespace PowerPointAddIn
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
             installedVersion.Label = Globals.PowerPointAddIn.getInstalledAddinVersion();
-        }
-
-        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
-        {
-            Globals.PowerPointAddIn.common.Save(Globals.PowerPointAddIn.Application.ActivePresentation);
-        }
-
-        private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
-        {
-
-            Globals.PowerPointAddIn.common.SaveAs(Globals.PowerPointAddIn.Application.ActivePresentation);
         }
 
         private void buttonRefresh_Click(object sender, RibbonControlEventArgs e)
@@ -40,6 +32,28 @@ namespace PowerPointAddIn
         private void buttonUpdate_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.PowerPointAddIn.common.updateAddin();
+        }
+
+        private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
+        {
+            new PublisherHelper().publishDocument(Globals.PowerPointAddIn.common.getSyracuseCustomData());
+        }
+
+        private void galleryPublishAs_Click(object sender, RibbonControlEventArgs e)
+        {
+            Presentation pres = Globals.PowerPointAddIn.Application.ActivePresentation;
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(pres, true);
+            customData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
+            customData.writeDictionaryToDocument();
+            new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", customData);
+        }
+
+        private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
+        {
+            Uri url = new Uri(((RibbonComboBox)sender).Text);
+            BaseUrlHelper.BaseUrl = url;
+            CookieHelper.CookieContainer = null;
+            buttonPublish.Enabled = false;
         }
     }
 }
