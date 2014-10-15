@@ -50,7 +50,14 @@ exports.config = {
 		"fibers": true,
 		"cache": true,
 		"verbose": true,
-		"fast": true
+		"fast": true,
+        // comment out the flamegraph block to activate flame graphs
+        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
+		// flamegraph: { rate: 1, },	
+	},
+	docTool: {
+		"verbose": false,
+		"disabled": false // do not generate doc at startup. Useful for having cleaner flame graph.
 	},
 	x3fusion: {
 		// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",

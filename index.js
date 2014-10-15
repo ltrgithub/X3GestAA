@@ -107,6 +107,10 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/" + (process.env.USER || process.env.USERNAME || "");
 }
 config.streamline.lines = config.streamline.lines || "preserve";
+if (config.streamline.flamegraph && config.streamline.fast) {
+	console.log("Warning: streamline's fast mode is incompatible with flamegraph option - turning fast mode off");
+	config.streamline.fast = false;
+}
 
 require('coffee-script/lib/coffee-script/extensions');
 
@@ -115,6 +119,8 @@ require('syracuse-license').register(function(err, data) {
 	else if (!data) console.log("No license");
 
 	require("streamline").register(config.streamline);
+	if (config.streamline.flamegraph) require("streamline/lib/globals").emitter = new (require('events').EventEmitter)();
+
 	require("syracuse-core/lib/localeWrapper");
 
 	var waitData;
@@ -135,14 +141,18 @@ require('syracuse-license').register(function(err, data) {
 		try {
 			var syracuse = require('syracuse-main/lib/syracuse');
 
-            syracuse.main();
+            syracuse.main(function(err) {
+            	if (err) throw err;
+	            if (config.streamline.flamegraph) 
+	            	require('streamline-flamegraph/lib/record').create(config.streamline.flamegraph).run();
+            });
 		} catch (e) {
 			var fs = require('fs');
 			if (fs.existsSync(__dirname + '/node_modules/syracuse-main/lib/syracuse.jsc') && !require.extensions['.jsc']) {
 				console.error("Need a license to start. " + e);
 				process.exit(5);
 			} else {
-				console.log("Error " + e);
+				console.log("Error " + e.stack);
 			}
 		}
 	}
