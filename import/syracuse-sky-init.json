@@ -1,0 +1,154 @@
+{
+	"$prototypes": {
+		"role": {
+			"$key": "code",
+			"$localized": ["description"],
+			"securityProfile": {
+				"$key": "code"
+			}
+		},
+		"group": {
+			"$key": "description.en-us",
+			"$localized": ["description"],
+			"role": {
+				"$key": "code"
+			}
+		},
+		"user": {
+			"$key": "lastName",
+			"groups": {
+				"$key": "description.en-us",
+				"$localized": ["description"]
+			}
+		},
+		"securityProfile": {
+			"$key": "code",
+			"$localized": ["description"],
+			"profileItems": {
+				"$key": "code",
+				"$localized": ["description"]
+			}
+		},
+		"securityProfileItem": {
+			"$key": "code",
+			"$localized": ["description"]
+		}
+	},
+	"$includeBefore": [],
+	"$includeAfter": ["syracuse-admin-init"],
+	"$items": [{
+		"$type": "securityProfile",
+		"code": "CADMIN",
+		"description": "description_814daedc-1f04-4e20-97ad-ceb67c43ecd8",
+		"authoringLevel": "none",
+		"securityLevel": 1,
+		"profileItems": [{
+			"code": "myProfile",
+			"description": "description_29cc9d96-4cbb-4baa-a126-30a890d7aac6",
+			"canCreate": false,
+			"canRead": true,
+			"canWrite": false,
+			"canDelete": false,
+			"canExecute": false
+		}, {
+			"code": "users",
+			"description": "description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "technicalSettings",
+			"description": "description_8d0bbe70-5104-4b8b-bf42-0e1ca26d2b69",
+			"canCreate": false,
+			"canRead": false,
+			"canWrite": false,
+			"canDelete": false,
+			"canExecute": false
+		}, {
+			"code": "authoring",
+			"description": "description_5bc9b226-9224-434c-a241-80b70d8988bf",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "collaborationArea",
+			"description": "description_42e3da25-7961-452d-9195-ec4c39b0a130",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "maintenanceAndStatus",
+			"description": "description_91993d8a-1a61-4245-8b44-4e7c9612e224",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		}, {
+			"code": "importData",
+			"description": "description_5cc4833f-9731-4aef-9c61-4d752bcfad09",
+			"canCreate": false,
+			"canRead": false,
+			"canWrite": false,
+			"canDelete": false,
+			"canExecute": false
+		}, {
+			"code": "exportData",
+			"description": "description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17",
+			"canCreate": false,
+			"canRead": false,
+			"canWrite": false,
+			"canDelete": false,
+			"canExecute": false
+		}]
+	}, {
+		"$type": "role",
+		"code": "CADMIN",
+		"description": "description_4a921978-2f34-454f-a781-aae1667ba16a",
+		"securityProfile": "CADMIN"
+	}, {
+		"$type": "group",
+		"description": "description_59cfa737-d988-4a70-9615-27e60fd94335",
+		"role": "CADMIN"
+	}, {
+		"$type": "user",
+		"login": "cadmin",
+		"lastName": "Customer administrator",
+		"password": "cadmin",
+		"groups": ["description_59cfa737-d988-4a70-9615-27e60fd94335"]
+	}],
+	"$localization": {
+		"en-us": {
+			"description_4a921978-2f34-454f-a781-aae1667ba16a": "Customer administrator",
+			"description_59cfa737-d988-4a70-9615-27e60fd94335": "Customer administrators",
+			"description_814daedc-1f04-4e20-97ad-ceb67c43ecd8": "Customer admin security profile",
+			"description_29cc9d96-4cbb-4baa-a126-30a890d7aac6": "Personal user profile",
+			"description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c": "Users, groups and roles management",
+			"description_8d0bbe70-5104-4b8b-bf42-0e1ca26d2b69": "Setup servers, endpoints, schedulers and authentication",
+			"description_5bc9b226-9224-434c-a241-80b70d8988bf": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_42e3da25-7961-452d-9195-ec4c39b0a130": "Teams, documents and storage, Office integration",
+			"description_91993d8a-1a61-4245-8b44-4e7c9612e224": "System status and logs, maintainance actions",
+			"description_5cc4833f-9731-4aef-9c61-4d752bcfad09": "Import data",
+			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data"
+		},
+		"fr-fr": {
+			"description_4a921978-2f34-454f-a781-aae1667ba16a": "Customer administrator",
+			"description_59cfa737-d988-4a70-9615-27e60fd94335": "Customer administrators",
+			"description_814daedc-1f04-4e20-97ad-ceb67c43ecd8": "Customer admin security profile",
+			"description_29cc9d96-4cbb-4baa-a126-30a890d7aac6": "Personal user profile",
+			"description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c": "Users, groups and roles management",
+			"description_8d0bbe70-5104-4b8b-bf42-0e1ca26d2b69": "Setup servers, endpoints, schedulers and authentication",
+			"description_5bc9b226-9224-434c-a241-80b70d8988bf": "Navigation and Authoring: dashboards, vignettes, menus, pages",
+			"description_42e3da25-7961-452d-9195-ec4c39b0a130": "Teams, documents and storage, Office integration",
+			"description_91993d8a-1a61-4245-8b44-4e7c9612e224": "System status and logs, maintainance actions",
+			"description_5cc4833f-9731-4aef-9c61-4d752bcfad09": "Import data",
+			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data"
+		}
+	}
+}
