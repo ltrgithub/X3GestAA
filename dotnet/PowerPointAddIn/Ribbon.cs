@@ -43,9 +43,17 @@ namespace PowerPointAddIn
         {
             Presentation pres = Globals.PowerPointAddIn.Application.ActivePresentation;
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(pres, true);
-            customData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
-            customData.writeDictionaryToDocument();
-            new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", customData);
+            if (customData != null)
+            {
+                customData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
+                customData.writeDictionaryToDocument();
+                new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", customData);
+                customData = SyracuseOfficeCustomData.getFromDocument(pres);
+                if (customData.getDocumentUrl() != null && !customData.getDocumentUrl().Equals(String.Empty))
+                {
+                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                }
+            }
         }
 
         private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
