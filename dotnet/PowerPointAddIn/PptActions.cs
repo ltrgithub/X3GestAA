@@ -7,6 +7,8 @@ using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
 using Microsoft.VisualBasic;
+using System.Diagnostics;
+
 
 namespace PowerPointAddIn
 {
@@ -71,6 +73,7 @@ namespace PowerPointAddIn
         public BrowserDialog browserDialog = null;
         private JavaScriptSerializer ser = new JavaScriptSerializer();
         private const string SYRACUSE_CHART_PREFIX = "__SYRACUSE_CHART__";
+        private Microsoft.Office.Interop.Excel.Application _excelApp = null;
 
         private int chartCount;
         private int chartsDone;
@@ -226,6 +229,13 @@ namespace PowerPointAddIn
             chartsDone = 0;
             if (chartCount > 0)
             {
+                Process[] processlist = Process.GetProcessesByName("EXCEL");
+                if (processlist.Count() == 0)
+                {
+                    _excelApp = new Microsoft.Office.Interop.Excel.Application();
+                    _excelApp.Workbooks.Add();
+                }
+
                 Microsoft.Office.Interop.PowerPoint.Chart chart = cd.getCharts()[0];
 
                 chart.ChartData.Activate();
@@ -279,6 +289,11 @@ namespace PowerPointAddIn
                         tryNext = true;
                     }
                 }
+            }
+
+            if (_excelApp != null)
+            {
+                _excelApp.Quit();
             }
             CommonUtils.ShowInfoMessage(
                 String.Format(
