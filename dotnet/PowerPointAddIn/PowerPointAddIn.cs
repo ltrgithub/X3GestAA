@@ -29,6 +29,8 @@ namespace PowerPointAddIn
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
+        
+            common.DisplayServerLocations();
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -105,7 +107,11 @@ namespace PowerPointAddIn
         private void PowerPointAddIn_closePresentation(Presentation pres)
         {
             // Close command presentation
-            pres.Close();
+            try
+            {
+                pres.Close();
+            }
+            catch (Exception) { }
         }
 
         private void PowerPointAddIn_addNewSlide(Presentation pres, SyracuseOfficeCustomData customData, DocumentWindow win)
