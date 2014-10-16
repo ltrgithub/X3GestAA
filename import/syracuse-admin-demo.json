@@ -108,6 +108,13 @@
 		},
 		{
 			"$type": "application",
+			"description": "Syracuse Support",
+			"application": "syracuse",
+			"contract": "support",
+			"protocol": "syracuse"
+		},
+		{
+			"$type": "application",
 			"description": "X3 ERP",
 			"application": "x3",
 			"contract": "erp",
@@ -188,6 +195,20 @@
 			"databaseDriver": "mongodb",
 			"databaseHost": "localhost",
 			"databasePort": 27000
+		},
+				{
+			"$type": "endPoint",
+			"description": "Syracuse support tools",
+			"applicationRef": {
+				"application": "syracuse",
+				"contract": "support"
+			},
+			"dataset": "support",
+			"enableSearch": false,
+			"databaseDriver": "mongodb",
+			"databaseHost": "localhost",
+			"databasePort": 27000,
+			"databaseName": "support"
 		},
 		{
 			"$type": "endPoint",
