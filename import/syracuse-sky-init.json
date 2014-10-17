@@ -3,6 +3,9 @@
 		"role": {
 			"$key": "code",
 			"$localized": ["description"],
+      "badges": {
+	"$key": "code"
+      },
 			"securityProfile": {
 				"$key": "code"
 			}
@@ -34,22 +37,22 @@
 			"$localized": ["description"]
 		}
 	},
-	"$includeBefore": [],
-	"$includeAfter": ["syracuse-admin-init"],
+	"$includeBefore": ["x3-init", "syracuse-admin-init"],
+	"$includeAfter": [],
 	"$items": [{
 		"$type": "securityProfile",
 		"code": "CADMIN",
 		"description": "description_814daedc-1f04-4e20-97ad-ceb67c43ecd8",
-		"authoringLevel": "none",
+		"authoringLevel": "admin",
 		"securityLevel": 1,
 		"profileItems": [{
 			"code": "myProfile",
 			"description": "description_29cc9d96-4cbb-4baa-a126-30a890d7aac6",
-			"canCreate": false,
+			"canCreate": true,
 			"canRead": true,
-			"canWrite": false,
-			"canDelete": false,
-			"canExecute": false
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
 		}, {
 			"code": "users",
 			"description": "description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c",
@@ -111,6 +114,9 @@
 		"$type": "role",
 		"code": "CADMIN",
 		"description": "description_4a921978-2f34-454f-a781-aae1667ba16a",
+		"badges": [
+			"ERPDEV"
+		],
 		"securityProfile": "CADMIN"
 	}, {
 		"$type": "group",
