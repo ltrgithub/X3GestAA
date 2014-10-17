@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.ExcelAddInJSExternal
 namespace ExcelAddIn
@@ -164,7 +165,7 @@ namespace ExcelAddIn
 
         public String GetAddinVersion()
         {
-            return Globals.ThisAddIn.getInstalledAddinVersion();
+            return VersionHelper.getInstalledAddinVersion();
         }
 
         public void expectedVersion(String neededVersion)
@@ -187,7 +188,7 @@ namespace ExcelAddIn
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
 
-            if (neddedBinary > Globals.ThisAddIn.versionNumberBinary)
+            if (neddedBinary > VersionHelper.versionNumberBinary)
             {
                 if (Globals.ThisAddIn.newVersionMessage == false)
                 {

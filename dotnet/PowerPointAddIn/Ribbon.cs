@@ -16,7 +16,7 @@ namespace PowerPointAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-            installedVersion.Label = Globals.PowerPointAddIn.getInstalledAddinVersion();
+            installedVersion.Label = VersionHelper.getInstalledAddinVersion();
         }
 
         private void buttonRefresh_Click(object sender, RibbonControlEventArgs e)

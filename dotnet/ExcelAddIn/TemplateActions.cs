@@ -2,6 +2,7 @@
 using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
+using CommonDataHelper;
 
 namespace ExcelAddIn
 {
@@ -91,7 +92,7 @@ namespace ExcelAddIn
 
         public void ConfigureTemplateRibbon(Excel.Workbook workbook, string mode, Boolean existing)
         {
-            Globals.Ribbons.Ribbon.installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
+            Globals.Ribbons.Ribbon.installedVersion.Label = VersionHelper.getInstalledAddinVersion();
             if ("rpt_build_tpl".Equals(mode))
             {
                 Globals.Ribbons.Ribbon.actionPanelCheckBox.Enabled = false;

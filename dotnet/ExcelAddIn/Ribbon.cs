@@ -10,7 +10,7 @@ namespace ExcelAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-            installedVersion.Label = Globals.ThisAddIn.getInstalledAddinVersion();
+            installedVersion.Label = VersionHelper.getInstalledAddinVersion();
         }
 
         private void checkBoxShowPane_Click(object sender, RibbonControlEventArgs e)

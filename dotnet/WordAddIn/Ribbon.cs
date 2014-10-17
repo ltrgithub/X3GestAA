@@ -19,7 +19,7 @@ namespace WordAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-            installedVersion.Label = Globals.WordAddIn.getInstalledAddinVersion();
+            installedVersion.Label = VersionHelper.getInstalledAddinVersion();
         }
 
         private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)

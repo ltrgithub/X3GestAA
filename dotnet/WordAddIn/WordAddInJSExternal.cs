@@ -6,6 +6,7 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
 using System.Security.AccessControl;
+using CommonDataHelper;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
@@ -371,8 +372,7 @@ namespace WordAddIn
         // check version
         public String GetAddinVersion()
         {
-            //return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            return Globals.WordAddIn.getInstalledAddinVersion();
+            return VersionHelper.getInstalledAddinVersion();
         }
         public void expectedVersion(String neededVersion)
         {
@@ -381,7 +381,7 @@ namespace WordAddIn
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
 
-            if (neddedBinary > Globals.WordAddIn.versionNumberBinary)
+            if (neddedBinary > VersionHelper.versionNumberBinary)
             {
                 if (Globals.WordAddIn.newVersionMessage == false)
                 {

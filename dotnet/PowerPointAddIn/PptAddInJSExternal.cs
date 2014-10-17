@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Interop.Excel;
+using CommonDataHelper;
 
 namespace PowerPointAddIn
 {
@@ -65,7 +66,7 @@ namespace PowerPointAddIn
         // check version 
         public String getAddinVersion()
         {
-            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            return VersionHelper.getInstalledAddinVersion();
         }
 
         public void expectedVersion(String neededVersion)
@@ -75,7 +76,7 @@ namespace PowerPointAddIn
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
 
-            if (neddedBinary > Globals.PowerPointAddIn.versionNumberBinary)
+            if (neddedBinary > VersionHelper.versionNumberBinary)
             {
                 if (Globals.PowerPointAddIn.newVersionMessage == false)
                 {

@@ -7,6 +7,7 @@ using Path = System.IO.Path;
 using VB = Microsoft.Vbe.Interop;
 using System.Windows.Forms;
 using System.Linq;
+using CommonDataHelper;
 
 namespace ExcelAddIn
 {
@@ -207,7 +208,7 @@ namespace ExcelAddIn
         // check version
         public String GetAddinVersion()
         {
-            return Globals.ThisAddIn.getInstalledAddinVersion();
+            return VersionHelper.getInstalledAddinVersion();
         }
 
         public String getSyracuseRole()
@@ -234,7 +235,7 @@ namespace ExcelAddIn
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
 
-            if (neddedBinary > Globals.ThisAddIn.versionNumberBinary)
+            if (neddedBinary > VersionHelper.versionNumberBinary)
             {
                 if (Globals.ThisAddIn.newVersionMessage == false)
                 {
