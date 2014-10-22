@@ -37,59 +37,6 @@ exports.config = {
 		port: 8125
 	},
 	*/
-    traceConfig: {
-        logErrorsToConsole: false,
-        boProxy: {
-            enabled: false,
-            level: "error",
-            transport: "console"
-        },
-        search : {
-            enabled: true,
-            level: "debug",
-            transport: "console"
-        },
-        help: {
-            enabled: true,
-            level: "debug",
-            transport: "storagearea"
-        },
-        hrmLoadBalancer: {
-            enabled: false,
-            level: "info",
-            transport: "console"
-        },
-        hrmProxy: {
-            enabled: false,
-            level: "info",
-            transport: "console"
-        },
-        collaboration: {
-            enabled: false,
-            level: "error",
-            transport: "console"
-        },
-        classicAction: {
-            enabled: false,
-            level: "error",
-            transport: "console"
-        },
-        classicProtocol: {
-            enabled: false,
-            level: "error",
-            transport: "console"
-        },
-        classicSession: {
-            enabled: false,
-            level: "error",
-            transport: "console"
-        },
-        jsRunner: {
-            enabled: true,
-            level: "info",
-            transport: "console"
-        }
-    },
 	session: {
 		timeout: 20, // minutes
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
@@ -105,8 +52,12 @@ exports.config = {
 		"verbose": true,
 		"fast": true,
         // comment out the flamegraph block to activate flame graphs
-        // rate is the rate at which stack traces are sampled (1 ms by default)
+        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
 		// flamegraph: { rate: 1, },	
+	},
+	docTool: {
+		"verbose": false,
+		"disabled": false // do not generate doc at startup. Useful for having cleaner flame graph.
 	},
 	x3fusion: {
 		// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
@@ -180,5 +131,44 @@ exports.config = {
 			// trace: console.log,
 		}
 	},
+	// Levels specified here will be used for default traces settings
+	// Valid levels are : 'info', 'debug', 'warn', and 'error'
+	// Levels not specified will be initialized with 'error' level
+	tracesLevels: {
+		// Object-relational mapping
+		orm: {
+			factory: "error", // Syracuse entities management
+			x3: "error", // X3 ERP entities management
+			mongodb: "error", // MongoDB interactions
+		},
+		// Elastic search communication
+		search: "error",
+		// X3 ERP communication layer
+		x3Comm: {
+			jsRunner: "error", // Syracuse calls from 4GL processes
+			pool: "error", // X3 clients pools
+			print: "error", // Print server comunication layer
+		},
+		// Classic server
+		classic: {
+			srvCache: "error", // Cache management with Web application server
+			protocol: "error", // Protocol communication layer
+			std: "error", // Basic traces
+			action: "error", // Sent actions
+			session: "error", // Sessions management
+		},
+		businessObjects: "error", // Business Objects integration
+		// X3 HRM portal integration 
+		hrm: {
+			loadBalancer: "error", // Load balancer
+			proxy: "error", // Proxy calls
+		},
+		// Online help integation
+		help: "error",
+		test: {
+			1: "error",
+			2: "error"
+		}
+    },
 };
 
