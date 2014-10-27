@@ -51,6 +51,15 @@ namespace PowerPointAddIn
                     if (cd != null)
                     {
                         BaseUrlHelper.CustomData = cd;
+                        if (string.IsNullOrEmpty(cd.getCookie()) == false)
+                        {
+                            CookieHelper.setCookies(cd.getCookie());
+                            if (CookieHelper.CookieContainer.Count != 0)
+                            {
+                                new ConnectionDialog().connectToServer();
+                            }
+                        }
+
                         BaseUrlHelper.BaseUrl = new Uri(cd.getServerUrl());
                         string docUrl = cd.getDocumentUrl();
                         if (docUrl != null && !"".Equals(docUrl))
