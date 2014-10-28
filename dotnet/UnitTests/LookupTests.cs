@@ -19,12 +19,26 @@ namespace UnitTests
         public void ownerLookupTest()
         {
             Assert.DoesNotThrow(ownerLookup);
-            Assert.DoesNotThrow(storageVolumeLookup);
-            Assert.DoesNotThrow(tagLookup);
-            Assert.DoesNotThrow(teamLookup);
         }
 
         [Test, RequiresSTA]
+        public void storageVolumeLookupTest()
+        {
+            Assert.DoesNotThrow(storageVolumeLookup);
+        }
+
+        [Test, RequiresSTA]
+        public void tagLookupTest()
+        {
+            Assert.DoesNotThrow(tagLookup);
+        }
+
+        [Test, RequiresSTA]
+        public void teamLookupTest()
+        {
+            Assert.DoesNotThrow(teamLookup);
+        }
+
         public void ownerLookup()
         {
             List<OwnerItem> list = new OwnerList().createOwnerList();
@@ -32,7 +46,6 @@ namespace UnitTests
             Assert.IsNotEmpty(list);
         }
 
-        [Test, RequiresSTA]
         public void storageVolumeLookup() 
         {
             List<StorageVolumeItem> list = new StorageVolumeList().createStorageVolumeList();
@@ -40,7 +53,6 @@ namespace UnitTests
             Assert.IsNotEmpty(list);
         }
 
-        [Test, RequiresSTA]
         public void tagLookup()
         {
             List<TagItem> list = new TagList().createTagList();
@@ -48,7 +60,6 @@ namespace UnitTests
             Assert.IsNotEmpty(list);
         }
 
-        [Test, RequiresSTA]
         public void teamLookup()
         {
             List<TeamItem> list = new TeamList().createTeamList();
