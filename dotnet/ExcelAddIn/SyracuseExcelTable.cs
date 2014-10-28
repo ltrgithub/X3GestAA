@@ -589,8 +589,6 @@ namespace ExcelAddIn
                         continue;
 
                     int startRow = namedRange.Value.Row + startLine;
-                    activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
-                        activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Value = _data[namedRange.Key];
 
                     // This should not be neccesarry, because excel changes the format of the cells to short date if a DateTime value is asigned to the cell,
                     // but on some PCs this is not working, so the format for type "date" is applied for safty
@@ -603,8 +601,10 @@ namespace ExcelAddIn
                             applyFormat(fmt, _protoField[namedRange.Key], colData);
                         }
                     }
+
+                    activeWorksheet.Range[  activeWorksheet.Cells[startRow, namedRange.Value.Column],
+                                            activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Value = _data[namedRange.Key];
                 }
-                //
                 return true;
             }
             finally
@@ -617,6 +617,9 @@ namespace ExcelAddIn
         {
             switch (field._type)
             {
+                case "application/x-string":
+                    colRange.NumberFormat = "@";
+                    break;
                 case "application/x-date":
                 case "application/x-datetime":
                 case "application/x-time":
