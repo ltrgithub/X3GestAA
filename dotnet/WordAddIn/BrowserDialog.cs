@@ -82,6 +82,30 @@ namespace WordAddIn
             }
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);          }
         }
+
+        public void postPage(String urlPart, SyracuseOfficeCustomData customData)
+        {
+            WordDownloadData data = new WordDownloadData();
+            if ((data != null) && (!serverUrl.Equals(String.Empty)))
+            {
+                try
+                {
+                    String uri = serverUrl + urlPart;
+                    object ret = this.webBrowser.Document.InvokeScript("postUrl", new object[] { uri, data });
+                    byte[] bytes = data.data;
+
+                    if (bytes != null)
+                    {
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                };
+            }
+        }
+
         public string getServerUrl()
         {
             return serverUrl;

@@ -170,5 +170,31 @@ namespace CommonDataHelper
                 }
             }
         }
+    
+        public void logout()
+        {
+            Uri baseUrl = BaseUrlHelper.BaseUrl;
+            if (baseUrl == null)
+            {
+                return;
+            }
+
+            string page = baseUrl.ToString() + @"logout";
+            if (CookieHelper.CookieContainer != null)
+            {
+                HttpStatusCode httpStatusCode;
+                string responseJson = getServerJson(page, out httpStatusCode);
+                if (httpStatusCode == HttpStatusCode.InternalServerError)
+                {
+                    return;
+                }
+
+                if (httpStatusCode == HttpStatusCode.OK && responseJson != null)
+                {
+                    CookieHelper.CookieContainer = null;
+                }
+            }
+            return;
+        }
     }    
 }

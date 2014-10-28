@@ -27,6 +27,7 @@ namespace PowerPointAddIn
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
         private const string publishedDocumentJsonProperty = "publishedDocumentJson";
+        private const string cookieProperty = "cookie";
 
         private Dictionary<String, object> dictionary;
         private Presentation pres;
@@ -257,6 +258,11 @@ namespace PowerPointAddIn
         public string getDocumentRepresentation()
         {
             return String.Empty;
+        }
+
+        public string getCookie()
+        {
+            return getStringProperty(cookieProperty, false);
         }
     }
 }
