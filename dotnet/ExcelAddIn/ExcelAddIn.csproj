@@ -217,6 +217,12 @@
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtils.cs" />
+    <Compile Include="ConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionDialog.designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExcelTemplatePane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,6 +319,9 @@
     <EmbeddedResource Include="BrowserDialog.resx">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionDialog.resx">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelTemplatePane.resx">
       <DependentUpon>ExcelTemplatePane.cs</DependentUpon>
