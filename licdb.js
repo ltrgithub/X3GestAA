@@ -40,7 +40,8 @@ if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
 	process.exit(1);
 }
 
-var db = new mongodb.Db(config.collaboration.dataset || "syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
+var tenantId = process.argv[3]; // optional tenantId
+var db = new mongodb.Db(config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
 	w: "majority"
 });
 
