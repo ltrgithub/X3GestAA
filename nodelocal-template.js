@@ -31,7 +31,9 @@ exports.config = {
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
         // limit memory usage
-        memoryLimit: 500 // strategy to limit memory usage: limit is an indication; 0 means no limit
+        memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit
+        // flag to expose stack traces to the UI (off by default for security)
+        exposeStacktrace: false,
 	},
 	/*	integrationServer: {
 		port: 8125
@@ -131,52 +133,19 @@ exports.config = {
 			// trace: console.log,
 		}
 	},
-
-	traces: {
-		console: false, // For developers
-		maxSize: "5m",
-		maxFiles: 3,
-		// Levels specified here will be used for default traces settings
-		// Valid levels are : 'info', 'debug', 'warn', and 'error'
-		// Levels not specified will be initialized with 'error' level
-		levels: {
-			// Object-relational mapping
-			orm: {
-				factory: "error", // Syracuse entities management
-				x3: "error", // X3 ERP entities management
-				mongodb: "error", // MongoDB interactions
-			},
-
-			// Elastic search communication
-			search: "error",
-			// X3 ERP communication layer
-			x3Comm: {
-				jsRunner: "error", // Syracuse calls from 4GL processes
-				pool: "error", // X3 clients pools
-				print: "error", // Print server comunication layer
-				adxwhat: "debug"
-			},
-			// Classic server
-			classic: {
-				srvCache: "error", // Cache management with Web application server
-				protocol: "error", // Protocol communication layer
-				std: "error", // Basic traces
-				action: "error", // Sent actions
-				session: "error", // Sessions management
-			},
-			businessObjects: "error", // Business Objects integration
-			// X3 HRM portal integration 
-			hrm: {
-				loadBalancer: "error", // Load balancer
-				proxy: "error", // Proxy calls
-			},
-			// Online help integation
-			help: "error",
-			test: {
-				1: "debug",
-				2: "debug"
-			}
-		}
-    },
+	upload: {
+		// White list of media types that we allow in upload operations
+		// This entry is mandatory when hosting.multiTenant is true.
+		// The white list may be specified as a single regular expression or an array or regular expressions.
+	    allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+	},
+	sage_id: {
+		// base URL of sage ID service - this one is staging, not prod
+		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
+		// absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
+		pfxFile: __dirname + "/node_modules/streamline-auth/test/certificates/Sage_ERP_X3_Development.pfx",
+		// passphrase for the certificate file. This one works with the staging test certificate
+		passphrase: "as985k3bZ8p2",
+	},
 };
 
