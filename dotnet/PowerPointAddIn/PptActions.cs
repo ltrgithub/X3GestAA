@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Web.Script.Serialization;
 using Microsoft.VisualBasic;
 using System.Diagnostics;
-
+using CommonDataHelper;
 
 namespace PowerPointAddIn
 {
@@ -688,6 +688,57 @@ namespace PowerPointAddIn
             else
             {
                 Globals.Ribbons.Ribbon.buttonRefresh.Enabled = false;
+            }
+        }
+
+        public void closeConnectionsAllSlides()
+        {
+            Presentation pres = null;
+            try
+            {
+                pres = Globals.PowerPointAddIn.Application.ActiveWindow.Presentation;
+            }
+            catch (Exception) { }
+            if (pres == null)
+                return;
+            List<Microsoft.Office.Interop.PowerPoint.Chart> charts = getChartsInCurrentPresentation();
+            closeConnectionsCharts(pres, charts);
+        }
+
+        private void closeConnectionsCharts(Presentation pres, List<Microsoft.Office.Interop.PowerPoint.Chart> charts)
+        {
+            SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(pres, true);
+            cd.setCharts(charts);
+            chartCount = cd.getCharts().Count;
+            chartsDone = 0;
+            if (chartCount > 0)
+            {
+                List <String> urls = new List<String>();
+                String url;
+                foreach (Microsoft.Office.Interop.PowerPoint.Chart chart in cd.getCharts())
+                {
+                    chart.ChartData.Activate();
+                    Workbook wb = (Workbook)chart.ChartData.Workbook;
+                    wb.Application.Visible = false;
+                    wb.Application.ScreenUpdating = false;
+
+                    PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
+                    xcd.setChart(chart);
+                    url = xcd.getServerUrl();
+                    
+                    if (!urls.Contains(url))
+                    {
+                        urls.Add(url);
+                    }
+                }
+
+                foreach (String surl in urls)
+                {
+                    browserDialog.postPage("/logout", surl);
+                }
+
+                WebHelper webHelper = new WebHelper();
+                webHelper.logout();
             }
         }
     }

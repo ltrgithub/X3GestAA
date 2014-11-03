@@ -28,7 +28,8 @@ namespace PowerPointAddIn
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
-        
+            Application.PresentationBeforeClose += new EApplication_PresentationBeforeCloseEventHandler(on_PresentationBeforeClose);
+
             common.DisplayServerLocations();
         }
 
@@ -48,7 +49,7 @@ namespace PowerPointAddIn
                 {
                     Presentation pres = w.Presentation;
                     SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(pres);
-                    if (cd != null)
+                    if ((cd != null) && (!cd.getServerUrl().Equals(String.Empty)))
                     {
                         BaseUrlHelper.CustomData = cd;
                         if (string.IsNullOrEmpty(cd.getCookie()) == false)
@@ -178,6 +179,11 @@ namespace PowerPointAddIn
         void Application_SlideSelectionChanged(SlideRange SldRange)
         {
             pptActions.checkRefreshButtons();
+        }
+
+        public void on_PresentationBeforeClose(Presentation pres, ref bool Cancel)
+        {
+            pptActions.closeConnectionsAllSlides();
         }
 
         #region Von VSTO generierter Code

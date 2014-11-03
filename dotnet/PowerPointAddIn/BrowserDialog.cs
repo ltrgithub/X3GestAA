@@ -131,5 +131,41 @@ namespace PowerPointAddIn
             catch (Exception) { };
             return null;
         }
+    
+        public void postPage(String urlPart, String serverUrl)
+        {
+            if (!serverUrl.Equals(String.Empty))
+            {
+                PowerPointDownloadData data = new PowerPointDownloadData();
+                try
+                {
+                    String uri = serverUrl + urlPart;
+                    object ret = this.webBrowser.Document.InvokeScript("postUrl", new object[] { uri, data });
+                    byte[] bytes = (byte[])data.data;
+
+                    if (bytes != null)
+                    {
+                        return;
+                    }
+                }
+                catch (Exception) { };
+            }
+        }
+    }
+
+    // The only one class/object to be referenced from javascript 'external'
+    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
+    public class PowerPointDownloadData
+    {
+        public byte[] data;
+        public string errorText;
+        public void setData(byte[] data)
+        {
+            this.data = data;
+        }
+        public void setErrorText(string errorText)
+        {
+            this.errorText = errorText;
+        }
     }
 }
