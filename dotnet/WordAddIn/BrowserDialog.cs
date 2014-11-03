@@ -99,10 +99,7 @@ namespace WordAddIn
                         return;
                     }
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                };
+                catch (Exception) { };
             }
         }
 
