@@ -97,6 +97,7 @@ namespace ExcelAddIn
             this.Application.WorkbookBeforeSave += new Excel.AppEvents_WorkbookBeforeSaveEventHandler(Application_WorkbookBeforeSave);
             this.Application.SheetChange += new Excel.AppEvents_SheetChangeEventHandler(Application_SheetChange);
             this.Application.SheetSelectionChange += new Excel.AppEvents_SheetSelectionChangeEventHandler(Application_SheetSelectionChange);
+            this.Application.WorkbookBeforeClose += new AppEvents_WorkbookBeforeCloseEventHandler(Application_WorkbookBeforeClose);
         }
 
         public String SetupServerUrl(Excel.Workbook Wb = null)
@@ -638,5 +639,18 @@ namespace ExcelAddIn
         {
             return new SyracuseCustomData(Wb).GetReservedSheet(false) != null;
         }
+    
+        void Application_WorkbookBeforeClose(Workbook Wb, ref bool Cancel)
+        {
+            String connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
+            if (connectUrl != String.Empty)
+            {
+                ActionPanel.postPage("/logout", connectUrl);
+
+                WebHelper webHelper = new WebHelper();
+                webHelper.logout();
+            }
+        }
+
     }
 }
