@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentTemplateDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
+            this.textBoxDescription = new CustomComponents.RichTextBox();
             this.labelDescriptionErrorText = new System.Windows.Forms.Label();
             this.labelCodeErrorText = new System.Windows.Forms.Label();
+            this.textBoxCode = new CustomComponents.RichTextBox();
             this.labelCode = new System.Windows.Forms.Label();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
@@ -55,8 +57,6 @@
             this.comboBoxEndpoint = new System.Windows.Forms.ComboBox();
             this.labelPurpose = new System.Windows.Forms.Label();
             this.comboBoxPurpose = new System.Windows.Forms.ComboBox();
-            this.textBoxDescription = new CustomComponents.RichTextBox();
-            this.textBoxCode = new CustomComponents.RichTextBox();
             this.groupBoxDescription.SuspendLayout();
             this.groupBoxTagsAndTeams.SuspendLayout();
             this.groupBoxRelatedTo.SuspendLayout();
@@ -77,6 +77,13 @@
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
             // 
+            // textBoxDescription
+            // 
+            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ShowError = false;
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
+            // 
             // labelDescriptionErrorText
             // 
             resources.ApplyResources(this.labelDescriptionErrorText, "labelDescriptionErrorText");
@@ -90,6 +97,13 @@
             this.labelCodeErrorText.ForeColor = System.Drawing.Color.Red;
             this.labelCodeErrorText.Name = "labelCodeErrorText";
             this.labelCodeErrorText.Tag = "";
+            // 
+            // textBoxCode
+            // 
+            resources.ApplyResources(this.textBoxCode, "textBoxCode");
+            this.textBoxCode.Name = "textBoxCode";
+            this.textBoxCode.ShowError = false;
+            this.textBoxCode.TextChanged += new System.EventHandler(this.textBoxCode_TextChanged);
             // 
             // labelCode
             // 
@@ -241,20 +255,6 @@
             this.comboBoxPurpose.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
             this.comboBoxPurpose.Name = "comboBoxPurpose";
-            // 
-            // textBoxDescription
-            // 
-            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ShowError = false;
-            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
-            // 
-            // textBoxCode
-            // 
-            resources.ApplyResources(this.textBoxCode, "textBoxCode");
-            this.textBoxCode.Name = "textBoxCode";
-            this.textBoxCode.ShowError = false;
-            this.textBoxCode.TextChanged += new System.EventHandler(this.textBoxCode_TextChanged);
             // 
             // PublishDocumentTemplateDialog
             // 
