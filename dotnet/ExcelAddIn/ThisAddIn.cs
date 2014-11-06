@@ -291,9 +291,8 @@ namespace ExcelAddIn
             {
                 if (((new SyracuseCustomData(wb)).GetCustomDataByName("documentUrlAddress") != "") &&
                     (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS),
-                    global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.Yes))
+                    global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.No))
                 {
-                    SaveDocumentToSyracuse();
                     Cancel = true;
                 }
             }

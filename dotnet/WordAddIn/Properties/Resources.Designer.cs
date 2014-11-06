@@ -182,6 +182,25 @@ namespace WordAddIn.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warning, the document will be saved on your workstation but not in the X3 base. To publish it in the X3 base, click “No” then use the “Publish” button. 
+        ///Do you wish to continue?  ähnelt.
+        /// </summary>
+        public static string MSG_SAVE_AS {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_AS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
+        /// </summary>
+        public static string MSG_SAVE_AS_TITLE {
+            get {
+                return ResourceManager.GetString("MSG_SAVE_AS_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The document has been saved successfully! ähnelt.
         /// </summary>
         public static string MSG_SAVE_DOC_DONE {
