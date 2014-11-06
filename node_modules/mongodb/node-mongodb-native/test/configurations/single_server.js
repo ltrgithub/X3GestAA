@@ -25,6 +25,9 @@ var single_server_config = function(options) {
       server_options[name] = options[name];
     }
 
+    // No journal set
+    server_options.journal = false;
+
     // Server manager
     var serverManager = new ServerManager(server_options);
     var dbs = [];
@@ -37,8 +40,14 @@ var single_server_config = function(options) {
       });
     }
 
-    this.restart = function(callback) {
-      serverManager.start(true, function(err) {
+    this.restart = function(options, callback) {
+      if(typeof options == 'function') {
+        callback = options;
+        options = {}
+      }
+
+      // Restart servers
+      serverManager.start(true, options, function(err) {
         if(err) throw err;
         callback();
       });
