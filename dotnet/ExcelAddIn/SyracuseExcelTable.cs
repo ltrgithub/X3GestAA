@@ -572,7 +572,7 @@ namespace ExcelAddIn
                                 {
                                     _data[fieldName][r, 0] = fieldValue;
                                     Hyperlink link = (Hyperlink)activeWorksheet.Hyperlinks.Add(_columnRanges[fieldName].Item[r + startLine + 1, 1],
-                                        (String)((object[])res[col])[1], "", Type.Missing, fieldValue);
+                                        (String)((object[])res[col])[1], Type.Missing, Type.Missing, fieldValue.ToString());
                                 }
                             }
                             else
