@@ -645,7 +645,14 @@ namespace ExcelAddIn
             String connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
             if (connectUrl != String.Empty)
             {
-                ActionPanel.postPage("/logout", connectUrl);
+                if (templateActions.isExcelTemplateType(Wb))
+                {
+                    browserDialog.postPage("/logout", null);
+                }
+                else
+                {
+                    ActionPanel.postPage("/logout", connectUrl);
+                }
 
                 WebHelper webHelper = new WebHelper();
                 webHelper.logout();
