@@ -29,8 +29,23 @@ namespace PowerPointAddIn
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
             Application.PresentationBeforeClose += new EApplication_PresentationBeforeCloseEventHandler(on_PresentationBeforeClose);
+            Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(on_PresentationBeforeSave);
 
             common.DisplayServerLocations();
+        }
+
+        public void on_PresentationBeforeSave(Presentation Pres, ref bool Cancel)
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Pres);
+            if (customData != null)
+            {
+                if ((!string.IsNullOrEmpty(customData.getDocumentUrl())) &&
+                    (MessageBox.Show(String.Format(global::PowerPointAddIn.Properties.Resources.MSG_SAVE_AS),
+                    global::PowerPointAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.No))
+                {
+                    Cancel = true;
+                }
+            }
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)

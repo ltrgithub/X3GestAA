@@ -33,6 +33,29 @@ namespace WordAddIn
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(on_window_deactivate);
             this.Application.WindowSelectionChange += new ApplicationEvents4_WindowSelectionChangeEventHandler(on_window_selection_changed);
             this.Application.DocumentBeforeClose += new ApplicationEvents4_DocumentBeforeCloseEventHandler(on_DocumentBeforeClose);
+            this.Application.DocumentBeforeSave += new ApplicationEvents4_DocumentBeforeSaveEventHandler(Application_DocumentBeforeSave);
+        }
+
+        void Application_DocumentBeforeSave(Document Doc, ref bool SaveAsUI, ref bool Cancel)
+        {
+            if (!SaveAsUI)
+            {
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Doc);
+                if (customData != null)
+                {
+                    if ((!string.IsNullOrEmpty(customData.getDocumentUrl())) &&
+                        (MessageBox.Show(String.Format(global::WordAddIn.Properties.Resources.MSG_SAVE_AS),
+                        global::WordAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.No))
+                    {
+                        Cancel = true;
+                    }
+
+                    if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                }
+            }
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -101,7 +124,7 @@ namespace WordAddIn
                 {
                     commons.ExtractV6Document(doc, customData);
                 }
-   
+
                 if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
                 {
                     Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;

@@ -61,42 +61,6 @@ namespace CommonDialogs.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die User details ähnelt.
-        /// </summary>
-        internal static string CREDENTIALS_DIALOG_GROUPBOX {
-            get {
-                return ResourceManager.GetString("CREDENTIALS_DIALOG_GROUPBOX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Sage ERP X3 - Credentials ähnelt.
-        /// </summary>
-        internal static string CREDENTIALS_DIALOG_LABEL {
-            get {
-                return ResourceManager.GetString("CREDENTIALS_DIALOG_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Password ähnelt.
-        /// </summary>
-        internal static string CREDENTIALS_DIALOG_PASSWORD_LABEL {
-            get {
-                return ResourceManager.GetString("CREDENTIALS_DIALOG_PASSWORD_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die User name ähnelt.
-        /// </summary>
-        internal static string CREDENTIALS_DIALOG_USER_LABEL {
-            get {
-                return ResourceManager.GetString("CREDENTIALS_DIALOG_USER_LABEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Description ähnelt.
         /// </summary>
         internal static string PUBLISH_DOCUMENT_DESCRIPTION_LABEL {
@@ -165,6 +129,31 @@ namespace CommonDialogs.Properties {
         internal static string PUBLISH_DOCUMENT_TEMPLATE_REPORT {
             get {
                 return ResourceManager.GetString("PUBLISH_DOCUMENT_TEMPLATE_REPORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;root&gt;
+        ///  &lt;!-- 
+        ///    Microsoft ResX Schema 
+        ///    
+        ///    Version 2.0
+        ///    
+        ///    The primary goals of this format is to allow a simple XML format 
+        ///    that is mostly human readable. The generation and parsing of the 
+        ///    various data types are done through the TypeConverter classes 
+        ///    associated with the data types.
+        ///    
+        ///    Example:
+        ///    
+        ///    ... ado.net/XML headers &amp; schema ...
+        ///    &lt;resheader name=&quot;resmimetype&quot;&gt;text/microsoft-resx&lt;/resheader&gt;
+        ///    &lt;resheader n [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        internal static string Resources_de {
+            get {
+                return ResourceManager.GetString("Resources_de", resourceCulture);
             }
         }
     }

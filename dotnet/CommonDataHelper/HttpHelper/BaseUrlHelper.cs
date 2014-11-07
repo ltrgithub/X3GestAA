@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CommonDialogs.ServerSettingsDialog;
 using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;

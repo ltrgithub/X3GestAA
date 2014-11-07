@@ -23,8 +23,6 @@ namespace CommonDataHelper.PublisherHelper
         {
             try
             {
-                CredentialsHelper.resetRetries();
-
                 IPublishDocumentDialog publishDocumentDialog = new PublishDocumentDialog();
 
                 WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(getOfficeApplicationType(), documentType, customData);
@@ -63,8 +61,6 @@ namespace CommonDataHelper.PublisherHelper
         {
             try
             {
-                CredentialsHelper.resetRetries();
-
                 IPublishDocumentTemplateDialog publishDocumentTemplateDialog = new PublishDocumentTemplateDialog();
 
                 WorkingCopyPrototypeModel workingCopyPrototypeModel = initialiseWorkingCopy(getOfficeApplicationType(), documentType, customData);

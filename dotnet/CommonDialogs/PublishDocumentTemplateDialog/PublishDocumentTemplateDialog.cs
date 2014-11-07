@@ -307,5 +307,10 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
         {
             _dialogCheckerDelegate = dialogCheckerDelegate;
         }
+
+        private void groupBoxRelatedTo_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

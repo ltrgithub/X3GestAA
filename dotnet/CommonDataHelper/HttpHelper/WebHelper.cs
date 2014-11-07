@@ -4,7 +4,6 @@ using System.Net;
 using Newtonsoft.Json;
 using CommonDialogs;
 using System.Windows.Forms;
-using CommonDialogs.CredentialsDialog;
 using System.Net.Cache;
 using System.Web;
 using System.Collections.Specialized;

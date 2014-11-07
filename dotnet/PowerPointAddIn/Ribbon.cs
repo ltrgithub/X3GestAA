@@ -36,11 +36,19 @@ namespace PowerPointAddIn
 
         private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
         {
+            // disable eventhandler for BeforeSave, because it for publishing it must be saved to read the document content
+            Globals.PowerPointAddIn.Application.PresentationBeforeSave -= new EApplication_PresentationBeforeSaveEventHandler(Globals.PowerPointAddIn.on_PresentationBeforeSave);
+            
             new PublisherHelper().publishDocument(Globals.PowerPointAddIn.common.getSyracuseCustomData());
+            
+            Globals.PowerPointAddIn.Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(Globals.PowerPointAddIn.on_PresentationBeforeSave);
         }
 
         private void galleryPublishAs_Click(object sender, RibbonControlEventArgs e)
         {
+            // disable eventhandler for BeforeSave, because it for publishing it must be saved to read the document content
+            Globals.PowerPointAddIn.Application.PresentationBeforeSave -= new EApplication_PresentationBeforeSaveEventHandler(Globals.PowerPointAddIn.on_PresentationBeforeSave);
+            
             Presentation pres = Globals.PowerPointAddIn.Application.ActivePresentation;
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(pres, true);
             if (customData != null)
@@ -54,6 +62,7 @@ namespace PowerPointAddIn
                     Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
                 }
             }
+            Globals.PowerPointAddIn.Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(Globals.PowerPointAddIn.on_PresentationBeforeSave);
         }
 
         private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
