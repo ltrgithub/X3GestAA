@@ -72,7 +72,7 @@ namespace ExcelAddIn
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);          }
         }
 
-        public void postPage(String urlPart, SyracuseOfficeCustomData customData)
+        public void postPage(String urlPart)
         {
             ExcelDownloadData data = new ExcelDownloadData();
             if ((data != null) && (!serverUrl.Equals(String.Empty)))

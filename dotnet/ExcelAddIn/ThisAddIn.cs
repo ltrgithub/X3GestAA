@@ -646,7 +646,7 @@ namespace ExcelAddIn
             {
                 if (templateActions.isExcelTemplateType(Wb))
                 {
-                    browserDialog.postPage("/logout", null);
+                    browserDialog.postPage("/logout");
                 }
                 else
                 {
