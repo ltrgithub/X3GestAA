@@ -5,6 +5,7 @@ using System.Text;
 using CommonDataHelper.PublisherHelper.Model.Common;
 using System.Net;
 using System.Web;
+using System.Text.RegularExpressions;
 
 namespace CommonDataHelper.PublisherHelper
 {
@@ -73,6 +74,19 @@ namespace CommonDataHelper.PublisherHelper
             string className = urlSegments[urlSegments.Length - 1];
 
             string x3Keys = String.Empty; // TODO: see _setLinkingProperties for more details.
+            if (urlSegments.Count<string>() > 1)
+            {
+                string classNameKeys = urlSegments[urlSegments.Count<string>() -1].Split('?')[0];
+                className = classNameKeys.Split('(')[0];
+                MatchCollection matches = Regex.Matches(classNameKeys, @"\('(.*)'\)");
+                if (matches.Count > 0)
+                {
+                    Match match = matches[0];
+                    string keys = match.Value;
+                    keys = keys.Replace("('", String.Empty).Replace("')", String.Empty);
+                    x3Keys = keys;
+                }
+            }
 
             string officeEndpoint = urlSegments.Count<string>() > 4 ? urlSegments[4] : null;
 
