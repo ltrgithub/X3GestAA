@@ -1,1198 +1,1200 @@
 {
-	"$prototypes": {
-		"dashboardDef": {
-			"$key": "dashboardName",
-			"variants": {
-				"$key": "code",
-				"application": {
-					"$key": [
-						"application",
-						"contract"
-					]
-				},
-				"vignettes": {
-					"$key": [
-						"portlet",
-						"endpoint"
-					],
-					"portlet": {
-						"$key": "code",
-						"application": {
-							"$key": [
-								"application",
-								"contract"
-							]
-						},
-						"endpoint": {
-							"$key": "dataset"
-						},
-						"items": {
-							"$key": "code",
-							"application": {
-								"$key": [
-									"application",
-									"contract"
-								]
-							},
-							"endpoint": {
-								"$key": "dataset"
-							},
-							"representationRef": {},
-							"module": {
-								"$key": "code",
-								"application": {
-									"$key": [
-										"application",
-										"contract"
-									]
-								},
-								"$localized": [
-									"title"
-								]
-							},
-							"$localized": [
-								"title",
-								"description"
-							]
-						},
-						"pageItem": {
-							"$key": "code",
-							"application": {
-								"$key": [
-									"application",
-									"contract"
-								]
-							},
-							"endpoint": {
-								"$key": "dataset"
-							},
-							"representationRef": {},
-							"module": {
-								"$key": "code",
-								"application": {
-									"$key": [
-										"application",
-										"contract"
-									]
-								},
-								"$localized": [
-									"title"
-								]
-							},
-							"$localized": [
-								"title",
-								"description"
-							]
-						},
-						"$localized": [
-							"title",
-							"description"
-						]
-					},
-					"endpoint": {
-						"$key": "dataset"
-					}
-				},
-				"roles": {
-					"$key": "code"
-				},
-				"users": {
-					"$key": "login"
-				},
-				"pageData": {
-					"$key": "code"
-				},
-				"$localized": [
-					"title",
-					"description"
-				]
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		},
-		"portlet": {
-			"$key": "code",
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"endpoint": {
-				"$key": "dataset"
-			},
-			"items": {
-				"$key": "code",
-				"application": {
-					"$key": [
-						"application",
-						"contract"
-					]
-				},
-				"endpoint": {
-					"$key": "dataset"
-				},
-				"representationRef": {},
-				"module": {
-					"$key": "code",
-					"application": {
-						"$key": [
-							"application",
-							"contract"
-						]
-					},
-					"$localized": [
-						"title"
-					]
-				},
-				"$localized": [
-					"title",
-					"description"
-				]
-			},
-			"pageItem": {
-				"$key": "code",
-				"application": {
-					"$key": [
-						"application",
-						"contract"
-					]
-				},
-				"endpoint": {
-					"$key": "dataset"
-				},
-				"representationRef": {},
-				"module": {
-					"$key": "code",
-					"application": {
-						"$key": [
-							"application",
-							"contract"
-						]
-					},
-					"$localized": [
-						"title"
-					]
-				},
-				"$localized": [
-					"title",
-					"description"
-				]
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		},
-		"menuItem": {
-			"$key": "code",
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"endpoint": {
-				"$key": "dataset"
-			},
-			"representationRef": {},
-			"module": {
-				"$key": "code",
-				"application": {
-					"$key": [
-						"application",
-						"contract"
-					]
-				},
-				"$localized": [
-					"title"
-				]
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		}
-	},
-	"$items": [
-		{
-			"$type": "menuItem",
-			"code": "EXPENENTSM",
-			"title": "title_49528cbe-5962-40b9-8208-4358f82430e1",
-			"description": "description_49528cbe-5962-40b9-8208-4358f82430e1",
-			"linkType": "$representation",
-			"icon": "custom.expense-entry",
-			"applicationMenu": false,
-			"facet": "$create",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "EXPENSES",
-				"representation": "EXPENENTM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "EXPENENTM",
-			"title": "title_424693b0-ccce-439e-95d1-551d9f831cc4",
-			"description": "description_424693b0-ccce-439e-95d1-551d9f831cc4",
-			"linkType": "$representation",
-			"icon": "custom.non-validated-approved-expenses",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "EXPENSES",
-				"representation": "EXPENENTM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "EXPENCNSM",
-			"title": "title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7",
-			"description": "description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7",
-			"linkType": "$representation",
-			"icon": "custom.expenses",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "EXPENSES",
-				"representation": "EXPENCNSM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "expenses",
-			"title": "title_28676e5f-732d-42eb-8549-7dd773a15f22",
-			"description": "description_28676e5f-732d-42eb-8549-7dd773a15f22",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "EXPENENTSM"
-				},
-				{
-					"code": "EXPENENTM"
-				},
-				{
-					"code": "EXPENCNSM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_938090e7-f520-4630-87a3-cb66479efb23",
-			"description": "description_938090e7-f520-4630-87a3-cb66479efb23",
-			"dashboardName": "EXPENSES",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"isTOC": false,
-							"portlet": {
-								"code": "expenses"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "BPCUSTOMERM",
-			"title": "title_98e35768-5f99-4a9b-9dab-5ef7019c1684",
-			"description": "description_98e35768-5f99-4a9b-9dab-5ef7019c1684",
-			"linkType": "$representation",
-			"icon": "custom.customers",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPCUSTOMER",
-				"representation": "BPCUSTOMERM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "customers",
-			"title": "title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3",
-			"description": "description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "BPCUSTOMERM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_c335f485-8c69-4a5a-b266-2cf6e28bce54",
-			"description": "description_c335f485-8c69-4a5a-b266-2cf6e28bce54",
-			"dashboardName": "SALES_MYCLIENTS",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"portlet": {
-								"code": "customers"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "PSHTOSIGM",
-			"title": "title_76c9652a-d39a-4391-ba28-df4c9abc0714",
-			"description": "description_76c9652a-d39a-4391-ba28-df4c9abc0714",
-			"linkType": "$representation",
-			"icon": "custom.quotes-tosign",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "PSHTOSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "POHTOSIGM",
-			"title": "title_84ad4902-8de8-4343-8039-5b7b624a9dbb",
-			"description": "description_84ad4902-8de8-4343-8039-5b7b624a9dbb",
-			"linkType": "$representation",
-			"icon": "custom.orders-tosign",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "POHTOSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "POCTOSIGM",
-			"title": "title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d",
-			"description": "description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d",
-			"linkType": "$representation",
-			"icon": "custom.openorders-tosign",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "POCTOSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "PSHSIGM",
-			"title": "title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7",
-			"description": "description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7",
-			"linkType": "$representation",
-			"icon": "custom.quotes-signed",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "PSHSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "POHSIGM",
-			"title": "title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0",
-			"description": "description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0",
-			"linkType": "$representation",
-			"icon": "custom.orders-signed",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "POHSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "POCSIGM",
-			"title": "title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd",
-			"description": "description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd",
-			"linkType": "$representation",
-			"icon": "custom.openorders-signed",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "POCSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "purchase_my_actions",
-			"title": "title_96fd3df3-a39a-4609-ba87-5f074dd60a88",
-			"description": "description_96fd3df3-a39a-4609-ba87-5f074dd60a88",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "PSHTOSIGM"
-				},
-				{
-					"code": "POHTOSIGM"
-				},
-				{
-					"code": "POCTOSIGM"
-				},
-				{
-					"code": "PSHSIGM"
-				},
-				{
-					"code": "POHSIGM"
-				},
-				{
-					"code": "POCSIGM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a",
-			"description": "description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a",
-			"dashboardName": "PURCHASE_MYACTIONS",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"portlet": {
-								"code": "purchase_my_actions"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "SQHTOSIGM",
-			"title": "title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad",
-			"description": "description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad",
-			"linkType": "$representation",
-			"icon": "custom.quotes-tosign",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "SQHTOSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "SOHTOSIGM",
-			"title": "title_f2bec910-61a9-45b7-bad5-ff41e97f431e",
-			"description": "description_f2bec910-61a9-45b7-bad5-ff41e97f431e",
-			"linkType": "$representation",
-			"icon": "custom.orders-tosign",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "SOHTOSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "SOCTOSIGM",
-			"title": "title_6e6fb0e1-d944-4686-b601-4a35e03d82bc",
-			"description": "description_6e6fb0e1-d944-4686-b601-4a35e03d82bc",
-			"linkType": "$representation",
-			"icon": "custom.openorders-tosign",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "SOCTOSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "SQHSIGM",
-			"title": "title_e4d91aa8-97c6-49d9-afbb-c060af6999d3",
-			"description": "description_e4d91aa8-97c6-49d9-afbb-c060af6999d3",
-			"linkType": "$representation",
-			"icon": "custom.quotes-signed",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "SQHSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "SOHSIGM",
-			"title": "title_e0243649-e29c-4b81-b4e6-116a45d12f9c",
-			"description": "description_e0243649-e29c-4b81-b4e6-116a45d12f9c",
-			"linkType": "$representation",
-			"icon": "custom.orders-signed",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "SOHSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "menuItem",
-			"code": "SOCSIGM",
-			"title": "title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882",
-			"description": "description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882",
-			"linkType": "$representation",
-			"icon": "custom.openorders-signed",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TCAWRKHISSUI",
-				"representation": "SOCSIGM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "sales_my_actions",
-			"title": "title_72d5f477-16a0-46de-b662-af2c98e11ee5",
-			"description": "description_72d5f477-16a0-46de-b662-af2c98e11ee5",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "SQHTOSIGM"
-				},
-				{
-					"code": "SOHTOSIGM"
-				},
-				{
-					"code": "SOCTOSIGM"
-				},
-				{
-					"code": "SQHSIGM"
-				},
-				{
-					"code": "SOHSIGM"
-				},
-				{
-					"code": "SOCSIGM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02",
-			"description": "description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02",
-			"dashboardName": "SALES_MYACTIONS",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"portlet": {
-								"code": "sales_my_actions"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "SPRICESEAM",
-			"title": "title_ba2b8e96-323b-460c-b01c-cda50ba13271",
-			"description": "description_ba2b8e96-323b-460c-b01c-cda50ba13271",
-			"linkType": "$representation",
-			"icon": ".custom.sales-prices-search",
-			"applicationMenu": false,
-			"facet": "$create",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "SPRICESEARCH",
-				"representation": "SPRICESEAM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "sales-prices-search",
-			"title": "title_9d0ed06a-56ff-4091-873c-e526881fc6f8",
-			"description": "description_9d0ed06a-56ff-4091-873c-e526881fc6f8",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "SPRICESEAM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_33da5e15-246a-423c-ad97-ff35124885d3",
-			"description": "description_33da5e15-246a-423c-ad97-ff35124885d3",
-			"dashboardName": "SALES_MYINQUIRIES",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"isTOC": false,
-							"portlet": {
-								"code": "sales-prices-search"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "PPRICSEARCHM",
-			"title": "title_d4aef320-167b-4702-b22b-1170f16cb090",
-			"description": "description_d4aef320-167b-4702-b22b-1170f16cb090",
-			"linkType": "$representation",
-			"icon": ".custom.purchase-prices-search",
-			"applicationMenu": false,
-			"facet": "$create",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PPRICESEARCH",
-				"representation": "PPRICSEARCHM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "purchase-prices-search",
-			"title": "title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e",
-			"description": "description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "PPRICSEARCHM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_a6915960-92bf-4173-8891-7c6d9840557d",
-			"description": "description_a6915960-92bf-4173-8891-7c6d9840557d",
-			"dashboardName": "PURCHASES_MYINQUIRIES",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"isTOC": false,
-							"portlet": {
-								"code": "purchase-prices-search"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "STKCNSSDIM",
-			"title": "title_7e8efef8-7666-461e-98d6-66dd287899af",
-			"description": "description_7e8efef8-7666-461e-98d6-66dd287899af",
-			"linkType": "$representation",
-			"icon": ".custom.stocks",
-			"applicationMenu": false,
-			"facet": "$create",
-			"target": "blank",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "STKCNSSDI",
-				"representation": "STKCNSSDIM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "stocks",
-			"title": "title_d306d33d-9861-4ad0-bb2e-f0063365354b",
-			"description": "description_d306d33d-9861-4ad0-bb2e-f0063365354b",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "STKCNSSDIM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_c2fed12c-20e5-4dcf-aacf-f198feb87774",
-			"description": "description_c2fed12c-20e5-4dcf-aacf-f198feb87774",
-			"dashboardName": "STOCK_MOBILE",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"isTOC": false,
-							"portlet": {
-								"code": "stocks"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		}
-	],
-	"$localization": {
-		"de-de": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Anzeige Preise",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
-		},
-		"en-gb": {
-			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
-			"description_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
-			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
-			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
-			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
-			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
-			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
-			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price search",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
-		},
-		"en-us": {
-			"title_938090e7-f520-4630-87a3-cb66479efb23": "Expenses",
-			"description_938090e7-f520-4630-87a3-cb66479efb23": "Expenses",
-			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
-			"description_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
-			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
-			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
-			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
-			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
-			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
-			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
-			"title_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Sales - My customers",
-			"description_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Mobile Sales Customers Queries",
-			"title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Sales - My customers",
-			"description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Sales - My cutomer Mobility",
-			"title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Customers",
-			"description_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Customers",
-			"title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Purchase - My actions",
-			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Mobile Sales Signature Actions",
-			"title_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Purchase - My actions",
-			"description_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Purchase - My actions",
-			"title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Purchase requests",
-			"description_76c9652a-d39a-4391-ba28-df4c9abc0714": "To sign",
-			"title_84ad4902-8de8-4343-8039-5b7b624a9dbb": "Orders",
-			"description_84ad4902-8de8-4343-8039-5b7b624a9dbb": "To sign",
-			"title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "Open orders",
-			"description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "To sign",
-			"title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "My purchase requests",
-			"description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Signed",
-			"title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "My orders",
-			"description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Signed",
-			"title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "My open orders",
-			"description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Signed",
-			"title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Sales - My actions",
-			"description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Mobile Sales Signature Actions",
-			"title_72d5f477-16a0-46de-b662-af2c98e11ee5": "Sales - My actions",
-			"description_72d5f477-16a0-46de-b662-af2c98e11ee5": "Sales - My actions",
-			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Quotes",
-			"description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "To sign",
-			"title_f2bec910-61a9-45b7-bad5-ff41e97f431e": "Orders",
-			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "To sign",
-			"title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Open orders",
-			"description_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "To sign",
-			"title_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "My quotes",
-			"description_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Signed",
-			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "My orders",
-			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signed",
-			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "My open orders",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signed",
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Sales - My inquiries",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobile Sales Inquiries",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries - Mobile",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Price inquiry",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price inquiry",
-			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Purchases - My inquiries",
-			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobile Purchase Inquiries",
-			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Purchases - My inquiries",
-			"description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Purchases - My inquiries",
-			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Price inquiry",
-			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Purchase price inquiry",
-			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Available Stock",
-			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Available Stock",
-			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Available Stock"
-		},
-		"es-es": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
-		},
-		"fr-fr": {
-			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "Mes frais",
-			"description_28676e5f-732d-42eb-8549-7dd773a15f22": "Mes frais",
-			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Saisie frais",
-			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Saisie frais",
-			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Frais non visés",
-			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Frais non visés",
-			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consulter mes frais",
-			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consulter mes frais",
-			"title_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Ventes - Mes clients",
-			"description_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Consultation client - Mobilité",
-			"title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Ventes - Mes clients",
-			"description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Ventes - Mes clients - Mobilité",
-			"title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Clients",
-			"description_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Clients",
-			"title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Achats - Mes actions",
-			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Actions de signature achats en mobilité",
-			"title_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Achats - Mes actions",
-			"description_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Achats - Mes actions",
-			"title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Demandes d'achat",
-			"description_76c9652a-d39a-4391-ba28-df4c9abc0714": "A signer",
-			"title_84ad4902-8de8-4343-8039-5b7b624a9dbb": "Commandes",
-			"description_84ad4902-8de8-4343-8039-5b7b624a9dbb": "A signer",
-			"title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "Commandes ouvertes",
-			"description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "A signer",
-			"title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Mes demandes d'achat",
-			"description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Signées",
-			"title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Mes commandes",
-			"description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Signées",
-			"title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Mes commandes ouvertes",
-			"description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Signées",
-			"title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Ventes - Mes actions",
-			"description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Actions de signature ventes en mobilité",
-			"title_72d5f477-16a0-46de-b662-af2c98e11ee5": "Ventes - Mes actions",
-			"description_72d5f477-16a0-46de-b662-af2c98e11ee5": "Ventes - Mes actions",
-			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Devis",
-			"description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "A signer",
-			"title_f2bec910-61a9-45b7-bad5-ff41e97f431e": "Commandes",
-			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "A signer",
-			"title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Commandes ouvertes",
-			"description_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "A signer",
-			"title_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Mes devis",
-			"description_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Signés",
-			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Mes commandes",
-			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signées",
-			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Mes commandes ouvertes",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signées",
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventes - Mes consultations",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultations - Mobilité",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventes - Mes consultations",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventes - Mes consultatons - Mobilité",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs vente",
-			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Achats - Mes consultations",
-			"description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Achats - Mes consultations",
-			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consultation tarifs",
-			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consultation tarifs achat",
-			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock Disponible",
-			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock Disponible",
-			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
-			"description_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
-			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible",
-			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible"
-		},
-		"it-it": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultazione listini",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
-		},
-		"pl-pl": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Zapytanie o cenę"
-		},
-		"pt-pt": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
-		},
-		"ru-ru": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Запрос цены",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
-		},
-		"zh-cn": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "价格查询"
-		}
-	}
+  "$prototypes": {
+    "dashboardDef": {
+      "$key": "dashboardName",
+      "variants": {
+        "$key": "code",
+        "application": {
+          "$key": [
+            "application",
+            "contract"
+          ]
+        },
+        "vignettes": {
+          "$key": [
+            "portlet",
+            "endpoint"
+          ],
+          "portlet": {
+            "$key": "code",
+            "application": {
+              "$key": [
+                "application",
+                "contract"
+              ]
+            },
+            "endpoint": {
+              "$key": "dataset"
+            },
+            "items": {
+              "$key": "code",
+              "application": {
+                "$key": [
+                  "application",
+                  "contract"
+                ]
+              },
+              "endpoint": {
+                "$key": "dataset"
+              },
+              "representationRef": {},
+              "module": {
+                "$key": "code",
+                "application": {
+                  "$key": [
+                    "application",
+                    "contract"
+                  ]
+                },
+                "$localized": [
+                  "title"
+                ]
+              },
+              "$localized": [
+                "title",
+                "description"
+              ]
+            },
+            "pageItem": {
+              "$key": "code",
+              "application": {
+                "$key": [
+                  "application",
+                  "contract"
+                ]
+              },
+              "endpoint": {
+                "$key": "dataset"
+              },
+              "representationRef": {},
+              "module": {
+                "$key": "code",
+                "application": {
+                  "$key": [
+                    "application",
+                    "contract"
+                  ]
+                },
+                "$localized": [
+                  "title"
+                ]
+              },
+              "$localized": [
+                "title",
+                "description"
+              ]
+            },
+            "$localized": [
+              "title",
+              "description"
+            ]
+          },
+          "endpoint": {
+            "$key": "dataset"
+          }
+        },
+        "roles": {
+          "$key": "code"
+        },
+        "users": {
+          "$key": "login"
+        },
+        "pageData": {
+          "$key": "code"
+        },
+        "$localized": [
+          "title",
+          "description"
+        ]
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    },
+    "portlet": {
+      "$key": "code",
+      "application": {
+        "$key": [
+          "application",
+          "contract"
+        ]
+      },
+      "endpoint": {
+        "$key": "dataset"
+      },
+      "items": {
+        "$key": "code",
+        "application": {
+          "$key": [
+            "application",
+            "contract"
+          ]
+        },
+        "endpoint": {
+          "$key": "dataset"
+        },
+        "representationRef": {},
+        "module": {
+          "$key": "code",
+          "application": {
+            "$key": [
+              "application",
+              "contract"
+            ]
+          },
+          "$localized": [
+            "title"
+          ]
+        },
+        "$localized": [
+          "title",
+          "description"
+        ]
+      },
+      "pageItem": {
+        "$key": "code",
+        "application": {
+          "$key": [
+            "application",
+            "contract"
+          ]
+        },
+        "endpoint": {
+          "$key": "dataset"
+        },
+        "representationRef": {},
+        "module": {
+          "$key": "code",
+          "application": {
+            "$key": [
+              "application",
+              "contract"
+            ]
+          },
+          "$localized": [
+            "title"
+          ]
+        },
+        "$localized": [
+          "title",
+          "description"
+        ]
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    },
+    "menuItem": {
+      "$key": "code",
+      "application": {
+        "$key": [
+          "application",
+          "contract"
+        ]
+      },
+      "endpoint": {
+        "$key": "dataset"
+      },
+      "representationRef": {},
+      "module": {
+        "$key": "code",
+        "application": {
+          "$key": [
+            "application",
+            "contract"
+          ]
+        },
+        "$localized": [
+          "title"
+        ]
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    }
+  },
+  "$items": [
+    {
+      "$type": "menuItem",
+      "code": "EXPENENTSM",
+      "title": "title_49528cbe-5962-40b9-8208-4358f82430e1",
+      "description": "description_49528cbe-5962-40b9-8208-4358f82430e1",
+      "linkType": "$representation",
+      "icon": "custom.expense-entry",
+      "applicationMenu": false,
+      "facet": "$create",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EXPENSES",
+        "representation": "EXPENENTM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "EXPENENTM",
+      "title": "title_424693b0-ccce-439e-95d1-551d9f831cc4",
+      "description": "description_424693b0-ccce-439e-95d1-551d9f831cc4",
+      "linkType": "$representation",
+      "icon": "custom.non-validated-approved-expenses",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EXPENSES",
+        "representation": "EXPENENTM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "EXPENCNSM",
+      "title": "title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7",
+      "description": "description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7",
+      "linkType": "$representation",
+      "icon": "custom.expenses",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EXPENSES",
+        "representation": "EXPENCNSM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "expenses",
+      "title": "title_28676e5f-732d-42eb-8549-7dd773a15f22",
+      "description": "description_28676e5f-732d-42eb-8549-7dd773a15f22",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "EXPENENTSM"
+        },
+        {
+          "code": "EXPENENTM"
+        },
+        {
+          "code": "EXPENCNSM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_938090e7-f520-4630-87a3-cb66479efb23",
+      "description": "description_938090e7-f520-4630-87a3-cb66479efb23",
+      "dashboardName": "EXPENSES",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "isTOC": false,
+              "portlet": {
+                "code": "expenses"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "BPCUSTOMERM",
+      "title": "title_98e35768-5f99-4a9b-9dab-5ef7019c1684",
+      "description": "description_98e35768-5f99-4a9b-9dab-5ef7019c1684",
+      "linkType": "$representation",
+      "icon": "custom.customers",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "BPCUSTOMER",
+        "representation": "BPCUSTOMERM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "customers",
+      "title": "title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3",
+      "description": "description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "BPCUSTOMERM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_c335f485-8c69-4a5a-b266-2cf6e28bce54",
+      "description": "description_c335f485-8c69-4a5a-b266-2cf6e28bce54",
+      "dashboardName": "SALES_MYCLIENTS",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "portlet": {
+                "code": "customers"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "PSHTOSIGM",
+      "title": "title_76c9652a-d39a-4391-ba28-df4c9abc0714",
+      "description": "description_76c9652a-d39a-4391-ba28-df4c9abc0714",
+      "linkType": "$representation",
+      "icon": "custom.quotes-tosign",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "PSHTOSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "POHTOSIGM",
+      "title": "title_84ad4902-8de8-4343-8039-5b7b624a9dbb",
+      "description": "description_84ad4902-8de8-4343-8039-5b7b624a9dbb",
+      "linkType": "$representation",
+      "icon": "custom.orders-tosign",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "POHTOSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "POCTOSIGM",
+      "title": "title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d",
+      "description": "description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d",
+      "linkType": "$representation",
+      "icon": "custom.openorders-tosign",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "POCTOSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "PSHSIGM",
+      "title": "title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7",
+      "description": "description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7",
+      "linkType": "$representation",
+      "icon": "custom.quotes-signed",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "PSHSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "POHSIGM",
+      "title": "title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0",
+      "description": "description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0",
+      "linkType": "$representation",
+      "icon": "custom.orders-signed",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "POHSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "POCSIGM",
+      "title": "title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd",
+      "description": "description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd",
+      "linkType": "$representation",
+      "icon": "custom.openorders-signed",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "POCSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "purchase_my_actions",
+      "title": "title_96fd3df3-a39a-4609-ba87-5f074dd60a88",
+      "description": "description_96fd3df3-a39a-4609-ba87-5f074dd60a88",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "PSHTOSIGM"
+        },
+        {
+          "code": "POHTOSIGM"
+        },
+        {
+          "code": "POCTOSIGM"
+        },
+        {
+          "code": "PSHSIGM"
+        },
+        {
+          "code": "POHSIGM"
+        },
+        {
+          "code": "POCSIGM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a",
+      "description": "description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a",
+      "dashboardName": "PURCHASE_MYACTIONS",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "portlet": {
+                "code": "purchase_my_actions"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "SQHTOSIGM",
+      "title": "title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad",
+      "description": "description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad",
+      "linkType": "$representation",
+      "icon": "custom.quotes-tosign",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "SQHTOSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "SOHTOSIGM",
+      "title": "title_f2bec910-61a9-45b7-bad5-ff41e97f431e",
+      "description": "description_f2bec910-61a9-45b7-bad5-ff41e97f431e",
+      "linkType": "$representation",
+      "icon": "custom.orders-tosign",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "SOHTOSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "SOCTOSIGM",
+      "title": "title_6e6fb0e1-d944-4686-b601-4a35e03d82bc",
+      "description": "description_6e6fb0e1-d944-4686-b601-4a35e03d82bc",
+      "linkType": "$representation",
+      "icon": "custom.openorders-tosign",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "SOCTOSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "SQHSIGM",
+      "title": "title_e4d91aa8-97c6-49d9-afbb-c060af6999d3",
+      "description": "description_e4d91aa8-97c6-49d9-afbb-c060af6999d3",
+      "linkType": "$representation",
+      "icon": "custom.quotes-signed",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "SQHSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "SOHSIGM",
+      "title": "title_e0243649-e29c-4b81-b4e6-116a45d12f9c",
+      "description": "description_e0243649-e29c-4b81-b4e6-116a45d12f9c",
+      "linkType": "$representation",
+      "icon": "custom.orders-signed",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "SOHSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "menuItem",
+      "code": "SOCSIGM",
+      "title": "title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882",
+      "description": "description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882",
+      "linkType": "$representation",
+      "icon": "custom.openorders-signed",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TCAWRKHISSUI",
+        "representation": "SOCSIGM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "sales_my_actions",
+      "title": "title_72d5f477-16a0-46de-b662-af2c98e11ee5",
+      "description": "description_72d5f477-16a0-46de-b662-af2c98e11ee5",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "SQHTOSIGM"
+        },
+        {
+          "code": "SOHTOSIGM"
+        },
+        {
+          "code": "SOCTOSIGM"
+        },
+        {
+          "code": "SQHSIGM"
+        },
+        {
+          "code": "SOHSIGM"
+        },
+        {
+          "code": "SOCSIGM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02",
+      "description": "description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02",
+      "dashboardName": "SALES_MYACTIONS",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "portlet": {
+                "code": "sales_my_actions"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "SPRICESEAM",
+      "title": "title_ba2b8e96-323b-460c-b01c-cda50ba13271",
+      "description": "description_ba2b8e96-323b-460c-b01c-cda50ba13271",
+      "linkType": "$representation",
+      "icon": ".custom.sales-prices-search",
+      "applicationMenu": false,
+      "facet": "$create",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "SPRICESEARCH",
+        "representation": "SPRICESEAM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "sales-prices-search",
+      "title": "title_9d0ed06a-56ff-4091-873c-e526881fc6f8",
+      "description": "description_9d0ed06a-56ff-4091-873c-e526881fc6f8",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "SPRICESEAM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_33da5e15-246a-423c-ad97-ff35124885d3",
+      "description": "description_33da5e15-246a-423c-ad97-ff35124885d3",
+      "dashboardName": "SALES_MYINQUIRIES",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "isTOC": false,
+              "portlet": {
+                "code": "sales-prices-search"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "PPRICSEARCHM",
+      "title": "title_d4aef320-167b-4702-b22b-1170f16cb090",
+      "description": "description_d4aef320-167b-4702-b22b-1170f16cb090",
+      "linkType": "$representation",
+      "icon": ".custom.purchase-prices-search",
+      "applicationMenu": false,
+      "facet": "$create",
+      "target": "self",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "PPRICESEARCH",
+        "representation": "PPRICSEARCHM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "purchase-prices-search",
+      "title": "title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e",
+      "description": "description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "PPRICSEARCHM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_a6915960-92bf-4173-8891-7c6d9840557d",
+      "description": "description_a6915960-92bf-4173-8891-7c6d9840557d",
+      "dashboardName": "PURCHASES_MYINQUIRIES",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "isTOC": false,
+              "portlet": {
+                "code": "purchase-prices-search"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STKCNSSDIM",
+      "title": "title_7e8efef8-7666-461e-98d6-66dd287899af",
+      "description": "description_7e8efef8-7666-461e-98d6-66dd287899af",
+      "linkType": "$representation",
+      "icon": ".custom.stocks",
+      "applicationMenu": false,
+      "facet": "$create",
+      "target": "blank",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "STKCNSSDI",
+        "representation": "STKCNSSDIM"
+      },
+      "module": null
+    },
+    {
+      "$type": "portlet",
+      "code": "stocks",
+      "title": "title_d306d33d-9861-4ad0-bb2e-f0063365354b",
+      "description": "description_d306d33d-9861-4ad0-bb2e-f0063365354b",
+      "type": "$menu",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "items": [
+        {
+          "code": "STKCNSSDIM"
+        }
+      ],
+      "pageItem": null
+    },
+    {
+      "$type": "dashboardDef",
+      "title": "title_c2fed12c-20e5-4dcf-aacf-f198feb87774",
+      "description": "description_c2fed12c-20e5-4dcf-aacf-f198feb87774",
+      "dashboardName": "STOCK_MOBILE",
+      "mobile": true,
+      "variants": [
+        {
+          "$type": "dashboardVariant",
+          "code": "DEFAULT",
+          "allApplications": false,
+          "isFactory": true,
+          "application": {
+            "application": "x3",
+            "contract": "erp"
+          },
+          "vignettes": [
+            {
+              "$type": "dashboardVignette",
+              "allEndpoints": true,
+              "isTOC": false,
+              "portlet": {
+                "code": "stocks"
+              },
+              "endpoint": null
+            }
+          ],
+          "roles": [],
+          "users": [],
+          "pageData": null
+        }
+      ]
+    }
+  ],
+  "$localization": {
+    "de-de": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Anzeige Preise",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
+    },
+    "en-gb": {
+      "title_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
+      "description_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
+      "title_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
+      "description_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
+      "title_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
+      "description_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
+      "title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
+      "description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
+      "title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Sales - My customers",
+      "description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Sales - My customer Mobility",
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price search",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
+    },
+    "en-us": {
+      "title_938090e7-f520-4630-87a3-cb66479efb23": "Expenses",
+      "description_938090e7-f520-4630-87a3-cb66479efb23": "Expenses",
+      "title_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
+      "description_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
+      "title_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
+      "description_49528cbe-5962-40b9-8208-4358f82430e1": "Expense entry",
+      "title_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
+      "description_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
+      "title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
+      "description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
+      "title_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Sales - My customers",
+      "description_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Mobile Sales Customers Queries",
+      "title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Sales - My customers",
+      "description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Sales - My customer Mobility",
+      "title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Customers",
+      "description_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Customers",
+      "title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Purchase - My actions",
+      "description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Mobile Sales Signature Actions",
+      "title_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Purchase - My actions",
+      "description_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Purchase - My actions",
+      "title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Purchase requests",
+      "description_76c9652a-d39a-4391-ba28-df4c9abc0714": "To sign",
+      "title_84ad4902-8de8-4343-8039-5b7b624a9dbb": "Orders",
+      "description_84ad4902-8de8-4343-8039-5b7b624a9dbb": "To sign",
+      "title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "Open orders",
+      "description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "To sign",
+      "title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "My purchase requests",
+      "description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Signed",
+      "title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "My orders",
+      "description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Signed",
+      "title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "My open orders",
+      "description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Signed",
+      "title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Sales - My actions",
+      "description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Mobile Sales Signature Actions",
+      "title_72d5f477-16a0-46de-b662-af2c98e11ee5": "Sales - My actions",
+      "description_72d5f477-16a0-46de-b662-af2c98e11ee5": "Sales - My actions",
+      "title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Quotes",
+      "description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "To sign",
+      "title_f2bec910-61a9-45b7-bad5-ff41e97f431e": "Orders",
+      "description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "To sign",
+      "title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Open orders",
+      "description_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "To sign",
+      "title_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "My quotes",
+      "description_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Signed",
+      "title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "My orders",
+      "description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signed",
+      "title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "My open orders",
+      "description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signed",
+      "title_33da5e15-246a-423c-ad97-ff35124885d3": "Sales - My inquiries",
+      "description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobile Sales Inquiries",
+      "title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries",
+      "description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries - Mobile",
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Price inquiry",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price inquiry",
+      "title_a6915960-92bf-4173-8891-7c6d9840557d": "Purchases - My inquiries",
+      "description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobile Purchase Inquiries",
+      "title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Purchases - My inquiries",
+      "description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Purchases - My inquiries",
+      "title_d4aef320-167b-4702-b22b-1170f16cb090": "Price inquiry",
+      "description_d4aef320-167b-4702-b22b-1170f16cb090": "Purchase price inquiry",
+      "title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Available Stock",
+      "title_7e8efef8-7666-461e-98d6-66dd287899af": "Available Stock",
+      "description_7e8efef8-7666-461e-98d6-66dd287899af": "Available Stock"
+    },
+    "es-es": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
+    },
+    "fr-fr": {
+      "title_28676e5f-732d-42eb-8549-7dd773a15f22": "Mes frais",
+      "description_28676e5f-732d-42eb-8549-7dd773a15f22": "Mes frais",
+      "title_49528cbe-5962-40b9-8208-4358f82430e1": "Saisie frais",
+      "description_49528cbe-5962-40b9-8208-4358f82430e1": "Saisie frais",
+      "title_424693b0-ccce-439e-95d1-551d9f831cc4": "Frais non visés",
+      "description_424693b0-ccce-439e-95d1-551d9f831cc4": "Frais non visés",
+      "title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consulter mes frais",
+      "description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consulter mes frais",
+      "title_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Ventes - Mes clients",
+      "description_c335f485-8c69-4a5a-b266-2cf6e28bce54": "Consultation client - Mobilité",
+      "title_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Ventes - Mes clients",
+      "description_c9fb2476-a6a5-442b-aa91-6d8662cb06d3": "Ventes - Mes clients - Mobilité",
+      "title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Clients",
+      "description_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Clients",
+      "title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Achats - Mes actions",
+      "description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Actions de signature achats en mobilité",
+      "title_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Achats - Mes actions",
+      "description_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Achats - Mes actions",
+      "title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Demandes d'achat",
+      "description_76c9652a-d39a-4391-ba28-df4c9abc0714": "A signer",
+      "title_84ad4902-8de8-4343-8039-5b7b624a9dbb": "Commandes",
+      "description_84ad4902-8de8-4343-8039-5b7b624a9dbb": "A signer",
+      "title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "Commandes ouvertes",
+      "description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "A signer",
+      "title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Mes demandes d'achat",
+      "description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Signées",
+      "title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Mes commandes",
+      "description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Signées",
+      "title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Mes commandes ouvertes",
+      "description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Signées",
+      "title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Ventes - Mes actions",
+      "description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Actions de signature ventes en mobilité",
+      "title_72d5f477-16a0-46de-b662-af2c98e11ee5": "Ventes - Mes actions",
+      "description_72d5f477-16a0-46de-b662-af2c98e11ee5": "Ventes - Mes actions",
+      "title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Devis",
+      "description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "A signer",
+      "title_f2bec910-61a9-45b7-bad5-ff41e97f431e": "Commandes",
+      "description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "A signer",
+      "title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Commandes ouvertes",
+      "description_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "A signer",
+      "title_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Mes devis",
+      "description_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Signés",
+      "title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Mes commandes",
+      "description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signées",
+      "title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Mes commandes ouvertes",
+      "description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signées",
+      "title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventes - Mes consultations",
+      "description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultations - Mobilité",
+      "title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventes - Mes consultations",
+      "description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventes - Mes consultatons - Mobilité",
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs vente",
+      "title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Achats - Mes consultations",
+      "description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Achats - Mes consultations",
+      "title_d4aef320-167b-4702-b22b-1170f16cb090": "Consultation tarifs",
+      "description_d4aef320-167b-4702-b22b-1170f16cb090": "Consultation tarifs achat",
+      "title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock Disponible",
+      "description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock Disponible",
+      "title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
+      "description_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
+      "title_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible",
+      "description_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible"
+    },
+    "it-it": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultazione listini",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
+    },
+    "pl-pl": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Zapytanie o cenę"
+    },
+    "pt-pt": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
+    },
+    "ru-ru": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Запрос цены",
+      "description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM"
+    },
+    "zh-cn": {
+      "title_ba2b8e96-323b-460c-b01c-cda50ba13271": "价格查询"
+    }
+  }
 }
