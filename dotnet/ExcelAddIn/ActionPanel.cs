@@ -74,6 +74,7 @@ namespace ExcelAddIn
             var connectUrl = serverUrl;
             if (connectUrl == "") connectUrl = Globals.ThisAddIn.GetServerUrl(Wb);
             if (connectUrl == "") return;
+            if (connectUrl.EndsWith("/")) connectUrl = connectUrl.Substring(0 , connectUrl.Length - 1);
 
             /*
              * Force a login using a forms-based webBrowser. 
@@ -82,8 +83,13 @@ namespace ExcelAddIn
              * NOTE: The ConnectionDialog class used here should be changed to use the ConnectionDialog class
              * that will (likely) be introduced as part of the .net Save dialog project (SAM95698).
              */
-            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main.html")))
+            
+            /*
+            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main_notify.html")))
                 return;
+            */
+
+            new CommonDataHelper.ConnectionDialog().connectToServer();
 
             //
             try

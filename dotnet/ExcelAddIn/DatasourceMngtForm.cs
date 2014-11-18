@@ -18,7 +18,9 @@ namespace ExcelAddIn
                 if(!Globals.ThisAddIn.ActionPanel.connected)
                  Globals.ThisAddIn.ActionPanel.Connect("");
             };
-            webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/html/config.html?url=%3Frepresentation%3Dexcelconfig.%24dashboard");
+
+            if (!serverUrl.EndsWith("/")) serverUrl += "/";
+            webBrowser.Url = new Uri(serverUrl + "msoffice/lib/excel/html/config.html?url=%3Frepresentation%3Dexcelconfig.%24dashboard");
         }
 
         private void DatasourceMngtForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -11,8 +11,10 @@ using CommonDataHelper;
 
 namespace CommonDataHelper
 {
+    [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class ConnectionDialog : Form
     {
+        Boolean loggedIn = false;
         public ConnectionDialog()
         {
             InitializeComponent();
@@ -32,7 +34,10 @@ namespace CommonDataHelper
         {
             Text = BaseUrlHelper.BaseUrl.ToString();
 
-            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html");
+            Show();
+            webBrowser.ObjectForScripting = this;
+            
+            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
 
             webBrowser.Navigate(url, "", null, "If-None-Match: 0");
             if (webBrowser.Document != null)
@@ -46,6 +51,12 @@ namespace CommonDataHelper
             while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 Application.DoEvents();
 
+            loggedIn = false;
+            while (!loggedIn)
+            {
+                Application.DoEvents();
+            }
+
             /*
              * In the absence of an http response code, we'll check against the document title.
              */
@@ -56,6 +67,12 @@ namespace CommonDataHelper
             }
 
             return false;
+        }
+
+        public void onLoginOk()
+        {
+            loggedIn = true;
+            Hide();
         }
     }
 }

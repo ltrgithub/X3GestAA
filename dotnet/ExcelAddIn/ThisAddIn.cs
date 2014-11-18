@@ -11,7 +11,6 @@ using Microsoft.Win32;
 using Microsoft.Office.Interop.Excel;
 using CommonDataHelper;
 
-
 namespace ExcelAddIn
 {
     public enum CellsInsertStyle { ShiftCells = 0, InsertRows = 1, DoNothing = 2 }
@@ -79,6 +78,8 @@ namespace ExcelAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            //System.Diagnostics.Debugger.Launch();
+
             browserDialog = new BrowserDialog();
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);

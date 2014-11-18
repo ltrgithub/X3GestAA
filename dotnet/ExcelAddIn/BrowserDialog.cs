@@ -45,7 +45,7 @@ namespace ExcelAddIn
             this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
-                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard");
+                this.webBrowser.Url = new Uri(serverUrl + "msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard");
                 this.serverUrl = serverUrl;
             }
             return true;
