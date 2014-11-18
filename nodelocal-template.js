@@ -31,7 +31,9 @@ exports.config = {
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
         // limit memory usage
-        memoryLimit: 500 // strategy to limit memory usage: limit is an indication; 0 means no limit
+        memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit
+        // flag to expose stack traces to the UI (off by default for security)
+        exposeStacktrace: false,
 	},
 	/*	integrationServer: {
 		port: 8125
@@ -50,7 +52,14 @@ exports.config = {
 		"fibers": true,
 		"cache": true,
 		"verbose": true,
-		"fast": true
+		"fast": true,
+        // comment out the flamegraph block to activate flame graphs
+        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
+		// flamegraph: { rate: 1, },	
+	},
+	docTool: {
+		"verbose": false,
+		"disabled": false // do not generate doc at startup. Useful for having cleaner flame graph.
 	},
 	x3fusion: {
 		// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
@@ -60,6 +69,7 @@ exports.config = {
 		// protocol tracing
 		protocol: {
 			// trace: console.log,
+			LBFChunkSize: 64 // in Kb
 		},
 		// session tracing
 		sessions: {
@@ -72,7 +82,7 @@ exports.config = {
 			// detail: true
 		},
 		// cache tracing
-		cache:{
+		cache: {
 			// trace: console.log,
 		}
 	},
@@ -98,15 +108,15 @@ exports.config = {
 
 		// Leading wildcards can affect search performance
 		allowLeadingWildcard: false,
-        /*tracer : {
+		/*tracer : {
             trace : console.log,
             info : true
         }*/
-        //deactivateRight: true,
+		//deactivateRight: true,
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
-        // offStemmer : true // desactivation of the stemmer for the search indexation
+		// offStemmer : true // desactivation of the stemmer for the search indexation
 	},
 	translation: {
 		// trace: console.log,
@@ -123,6 +133,20 @@ exports.config = {
 		x3: {
 			// trace: console.log,
 		}
+	},
+	upload: {
+		// White list of media types that we allow in upload operations
+		// This entry is mandatory when hosting.multiTenant is true.
+		// The white list may be specified as a single regular expression or an array or regular expressions.
+	    allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+	},
+	sage_id: {
+		// base URL of sage ID service - this one is staging, not prod
+		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
+		// absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
+		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
+		// passphrase for the certificate file. This one works with the staging test certificate
+		passphrase: "as985k3bZ8p2",
 	},
 };
 
