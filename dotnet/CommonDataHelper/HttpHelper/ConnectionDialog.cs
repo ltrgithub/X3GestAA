@@ -35,8 +35,10 @@ namespace CommonDataHelper
             Text = BaseUrlHelper.BaseUrl.ToString();
 
             Show();
+            loggedIn = false;
+     
             webBrowser.ObjectForScripting = this;
-            
+
             Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
 
             webBrowser.Navigate(url, "", null, "If-None-Match: 0");
@@ -48,10 +50,19 @@ namespace CommonDataHelper
             /*
              * We need this to be synchronous...
              */
-            while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
-                Application.DoEvents();
 
-            loggedIn = false;
+            while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+            {
+                Application.DoEvents();
+            }
+
+            // e.g. if URL is wrong or server not available
+            if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && !webBrowser.DocumentTitle.Equals("Syracuse") && !webBrowser.DocumentTitle.Equals("Sage ERP X3"))
+            {
+                Hide();
+                return false;
+            }
+
             while (!loggedIn)
             {
                 Application.DoEvents();
@@ -62,7 +73,10 @@ namespace CommonDataHelper
              */
             if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && (webBrowser.DocumentTitle.Equals("Syracuse") || webBrowser.DocumentTitle.Equals("Sage ERP X3")))
             {
-                CookieHelper.setCookies(webBrowser.Document.Cookie);
+                if (webBrowser.Document.Cookie != null)
+                {
+                    CookieHelper.setCookies(webBrowser.Document.Cookie);
+                }
                 return true;
             }
 
