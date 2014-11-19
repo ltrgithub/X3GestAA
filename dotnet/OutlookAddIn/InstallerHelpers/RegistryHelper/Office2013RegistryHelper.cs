@@ -36,12 +36,6 @@ namespace RegistryHelper
             }
         }
 
-        private static void DeleteSubKeyTree(RegistryKey key, string subkey, bool throwOnMissingSubKey)
-        {
-            if (!throwOnMissingSubKey && key.OpenSubKey(subkey) == null) { return; }
-            key.DeleteSubKeyTree(subkey);
-        }
-
         private static Boolean registerAssembly(string installDirectory)
         {
             Assembly asm = Assembly.LoadFile(installDirectory + "AdxOLNetv2s0-2013.dll");

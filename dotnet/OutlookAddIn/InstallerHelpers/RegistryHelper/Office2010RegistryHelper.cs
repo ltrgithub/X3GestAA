@@ -11,7 +11,6 @@ namespace RegistryHelper
 {
     public static class Office2010RegistryHelper
     {
-        private const string _userRoot = "HKEY_CURRENT_USER";
         private const string _localMachineRoot = "HKEY_LOCAL_MACHINE";
 
         public static Boolean isOffice2010Installed()
@@ -28,14 +27,6 @@ namespace RegistryHelper
 
         public static void registerAddIn(String installDirectory)
         {
-            StringBuilder keyName = new StringBuilder(_localMachineRoot);
-            keyName.Append(@"\");
-            keyName.Append(@"Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect");
-
-            Registry.SetValue(keyName.ToString(), "Description", "Link between Sage CRM and OutLook", RegistryValueKind.String);
-            Registry.SetValue(keyName.ToString(), "FriendlyName", "Sage CRM Add-in", RegistryValueKind.String);
-            Registry.SetValue(keyName.ToString(), "LoadBehavior", 3, RegistryValueKind.DWord);
-
             Boolean success = registerAssembly(installDirectory);
             if (success)
             {
