@@ -8,6 +8,10 @@
 // So subversion will not try to add it when you run the subversion Add command.
 
 exports.config = {
+	// Partner feature correspond actually to factory creation capability.
+	// This option allow to partners to set a factory ID on security 
+	// profiles and then flag some data as factory to protect them.
+	enablePartnerFeatures: false,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
