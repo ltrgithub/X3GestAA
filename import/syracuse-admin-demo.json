@@ -180,6 +180,12 @@
 		      "securityProfile": "ADMIN"
 		},
 		{
+			"$type": "role",
+			"code": "Partner",
+			"description": "Partner",
+			"securityProfile": "ADMIN"
+		},
+		{
 			"$type": "x3server",
 			"description": "X3 Developpement Server",
 			"serverHost": "172.28.16.106",
@@ -258,6 +264,14 @@
 				"Syracuse administration"
 			],
 			"role": "ADMIN"
+		},
+		{
+			"$type": "group",
+			"description": "Partner",
+			"endPoints": [
+				"Syracuse administration"
+			],
+			"role": "Partner"
 		},
 		{
 			"$type": "group",
@@ -438,6 +452,17 @@
 			"lastName": "Gatin",
 			"groups": [
 				"Endpoint administrators"
+			]
+		},
+		{
+			"$type": "user",
+			"login": "partner",
+			"password": "partner",
+			"title": "mr",
+			"firstName": "Renaud",
+			"lastName": "Durand",
+			"groups": [
+				"Partner"
 			]
 		},
 		{
