@@ -8,13 +8,16 @@ using System.Text;
 using System.Windows.Forms;
 using CommonDialogs;
 using CommonDataHelper;
+using System.Runtime.InteropServices;
+using System.Net;
 
 namespace CommonDataHelper
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class ConnectionDialog : Form
     {
-        Boolean loggedIn = false;
+        private Boolean _loggedIn = false;
+
         public ConnectionDialog()
         {
             InitializeComponent();
@@ -34,11 +37,44 @@ namespace CommonDataHelper
         {
             Text = BaseUrlHelper.BaseUrl.ToString();
 
-            Show();
+            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html");
+
+            HttpStatusCode statusCode = HttpStatusCode.Unauthorized;
+            HttpWebResponse response = null;
+            Boolean rememberMeLogin = true;
+            try
+            {
+                response = new WebHelper().getInitialConnectionJson(url.ToString(), out statusCode);
+
+            }
+            catch (WebException)
+            {
+                CookieHelper.CookieContainer = null;
+                rememberMeLogin = false;
+            }
+
+            if (rememberMeLogin)
+            {
+                if (statusCode == HttpStatusCode.TemporaryRedirect)
+                {
+                    url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
+                }
+                else if (statusCode == HttpStatusCode.OK)
+                {
+                    CookieHelper.CookieContainer = new CookieContainer();
+
+                    foreach (Cookie c in response.Cookies)
+                    {
+                        CookieHelper.CookieContainer.Add(c);
+                    }
+                    return true;
+                }
+
+                Show();
+            }
+
             webBrowser.ObjectForScripting = this;
             
-            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
-
             webBrowser.Navigate(url, "", null, "If-None-Match: 0");
             if (webBrowser.Document != null)
             {
@@ -51,27 +87,23 @@ namespace CommonDataHelper
             while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 Application.DoEvents();
 
-            loggedIn = false;
-            while (!loggedIn)
+            if (rememberMeLogin)
             {
-                Application.DoEvents();
+                _loggedIn = false;
+                while (!_loggedIn)
+                {
+                    Application.DoEvents();
+                }
+
+                CookieHelper.setCookies(new WebHelper().GetUriCookieContainer(url.ToString()).GetCookieHeader(url));
             }
 
-            /*
-             * In the absence of an http response code, we'll check against the document title.
-             */
-            if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && (webBrowser.DocumentTitle.Equals("Syracuse") || webBrowser.DocumentTitle.Equals("Sage ERP X3")))
-            {
-                CookieHelper.setCookies(webBrowser.Document.Cookie);
-                return true;
-            }
-
-            return false;
+            return true;
         }
 
         public void onLoginOk()
         {
-            loggedIn = true;
+            _loggedIn = true;
             Hide();
         }
     }

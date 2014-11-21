@@ -642,21 +642,21 @@ namespace ExcelAddIn
     
         void Application_WorkbookBeforeClose(Workbook Wb, ref bool Cancel)
         {
-            String connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
-            if (connectUrl != String.Empty)
-            {
-                if (templateActions.isExcelTemplateType(Wb))
-                {
-                    browserDialog.postPage("/logout");
-                }
-                else
-                {
-                    ActionPanel.postPage("/logout", connectUrl);
-                }
+            //String connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
+            //if (connectUrl != String.Empty)
+            //{
+            //    if (templateActions.isExcelTemplateType(Wb))
+            //    {
+            //        browserDialog.postPage("/logout");
+            //    }
+            //    else
+            //    {
+            //        ActionPanel.postPage("/logout", connectUrl);
+            //    }
 
-                WebHelper webHelper = new WebHelper();
-                webHelper.logout();
-            }
+            //    WebHelper webHelper = new WebHelper();
+            //    webHelper.logout();
+            //}
         }
 
     }
