@@ -56,7 +56,7 @@ namespace WordAddIn
             this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
-                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
+                this.webBrowser.Url = new Uri(serverUrl + "msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
                 this.serverUrl = serverUrl;
             }
             return true;

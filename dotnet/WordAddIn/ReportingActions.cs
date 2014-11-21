@@ -107,14 +107,14 @@ namespace WordAddIn
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         public void RefreshWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData, Boolean delUrl)
@@ -129,7 +129,7 @@ namespace WordAddIn
             customData.setDocumentTitle("");
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
         }
 
         public void RefreshReport()
