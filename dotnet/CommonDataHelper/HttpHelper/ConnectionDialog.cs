@@ -74,7 +74,7 @@ namespace CommonDataHelper
             }
 
             webBrowser.ObjectForScripting = this;
-            
+
             webBrowser.Navigate(url, "", null, "If-None-Match: 0");
             if (webBrowser.Document != null)
             {
@@ -84,8 +84,18 @@ namespace CommonDataHelper
             /*
              * We need this to be synchronous...
              */
+
             while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+            {
                 Application.DoEvents();
+            }
+
+            // e.g. if URL is wrong or server not available
+            if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && !webBrowser.DocumentTitle.Equals("Syracuse") && !webBrowser.DocumentTitle.Equals("Sage ERP X3"))
+            {
+                Hide();
+                return false;
+            }
 
             if (rememberMeLogin)
             {
