@@ -28,7 +28,7 @@ namespace PowerPointAddIn
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
-            Application.PresentationBeforeClose += new EApplication_PresentationBeforeCloseEventHandler(on_PresentationBeforeClose);
+            //Application.PresentationBeforeClose += new EApplication_PresentationBeforeCloseEventHandler(on_PresentationBeforeClose);
             Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(on_PresentationBeforeSave);
 
             common.DisplayServerLocations();

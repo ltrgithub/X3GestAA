@@ -22,7 +22,12 @@ namespace CommonDataHelper
         {
             InitializeComponent();
         }
-
+        /*
+        void Hide()
+        {
+            MessageBox.Show("Oje");
+        }
+         */
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -35,9 +40,11 @@ namespace CommonDataHelper
 
         public bool connectToServer()
         {
+            _loggedIn = false;
+            DateTime dummy = DateTime.Now;
             Text = BaseUrlHelper.BaseUrl.ToString();
 
-            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html");
+            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html?url=dummy=" + dummy.ToString());
 
             HttpStatusCode statusCode = HttpStatusCode.Unauthorized;
             HttpWebResponse response = null;
@@ -57,7 +64,8 @@ namespace CommonDataHelper
             {
                 if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
-                    url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
+                    url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html?url=dummy=" + dummy.ToString());
+                    //url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
                 }
                 else if (statusCode == HttpStatusCode.OK)
                 {
@@ -99,7 +107,6 @@ namespace CommonDataHelper
 
             if (rememberMeLogin)
             {
-                _loggedIn = false;
                 while (!_loggedIn)
                 {
                     Application.DoEvents();
@@ -108,6 +115,7 @@ namespace CommonDataHelper
                 CookieHelper.setCookies(new WebHelper().GetUriCookieContainer(url.ToString()).GetCookieHeader(url));
             }
 
+            Hide();
             return true;
         }
 

@@ -54,9 +54,11 @@ namespace WordAddIn
         private bool connectToServer(String serverUrl)
         {
             this.Text = serverUrl;
-            if (!this.serverUrl.Equals(serverUrl)) 
+            if (!this.serverUrl.Equals(serverUrl))
             {
-                this.webBrowser.Url = new Uri(serverUrl + "msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
+                // Workaround for require.js bound problem
+                DateTime dummy = DateTime.Now;
+                this.webBrowser.Url = new Uri(serverUrl + "msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
                 this.serverUrl = serverUrl;
             }
             return true;

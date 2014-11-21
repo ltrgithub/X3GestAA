@@ -19,8 +19,6 @@ namespace PowerPointAddIn
         public BrowserDialog()
         {
             InitializeComponent();
-
-            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -31,32 +29,6 @@ namespace PowerPointAddIn
                 Hide();
             }
             base.OnFormClosing(e);
-        }
-
-        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            if (hideOnCompletion == true)
-            {
-                //this.Hide();
-            }
-            hideOnCompletion = false;
-
-            try
-            {
-                HtmlDocument doc = ((WebBrowser)sender).Document;
-                String title = doc.GetElementsByTagName("title")[0].InnerText;
-
-                /*
-                 * Under certain circumstances, the document title is different from that contained in the document text.
-                 * We therefore need to test for both if the title is not equal to Syracuse.
-                 */
-                if (!(title != null && (title.Equals("Syracuse") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
-                {
-                    this.Hide();
-                    CommonUtils.ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::PowerPointAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
-                }
-            }
-            catch (Exception) { }
         }
 
         public bool connectToServer(SyracuseOfficeCustomData customData, string extraServerUrl = null)
@@ -83,8 +55,7 @@ namespace PowerPointAddIn
             this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
-                this.TopLevel = true;
-                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard");
+                new CommonDataHelper.ConnectionDialog().connectToServer();
                 this.serverUrl = serverUrl;
             }
             return true;

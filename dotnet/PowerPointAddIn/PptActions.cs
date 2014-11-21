@@ -246,7 +246,9 @@ namespace PowerPointAddIn
                 PptCustomXlsData xcd = PptCustomXlsData.getFromDocument(wb, true);
                 xcd.setChart(chart);
                 PptAddInJSExternal external = new PptAddInJSExternal(cd, xcd, browserDialog);
-                browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", external, xcd.getServerUrl());
+                // Workaround for require.js bound problem
+                DateTime dummy = DateTime.Now;
+                browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard%26dummy=" + dummy.ToString(), external, xcd.getServerUrl());
             }
         }
 
