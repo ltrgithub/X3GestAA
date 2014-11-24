@@ -27,7 +27,7 @@ namespace CommonDataHelper
         {
             MessageBox.Show("Oje");
         }
-         */
+        */
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -44,7 +44,7 @@ namespace CommonDataHelper
             DateTime dummy = DateTime.Now;
             Text = BaseUrlHelper.BaseUrl.ToString();
 
-            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html?url=dummy=" + dummy.ToString());
+            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html?dummy=" + dummy.ToString());
 
             HttpStatusCode statusCode = HttpStatusCode.Unauthorized;
             HttpWebResponse response = null;
@@ -64,8 +64,7 @@ namespace CommonDataHelper
             {
                 if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
-                    url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html?url=dummy=" + dummy.ToString());
-                    //url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html");
+                    url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html?dummy=" + dummy.ToString());
                 }
                 else if (statusCode == HttpStatusCode.OK)
                 {
