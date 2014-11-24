@@ -1,3 +1,276 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-    <Messages language="Chinois Simplifié    " Menu="9913" Version="V1.0" Extract="20061214">
+    <Messages language="中文" Menu="9913" Version="V1.0" Extract="20141020">
+     <data id="cManageGui_eError_VersionsNotCompatibleTitle" AdxLine="1">不兼容版本</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg" AdxLine="2">Sage X3 CRM组件版本{1}和这个工作站Outlook 版本{0}不兼容</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg2" AdxLine="3">不想看到这个消息，请使用“添加/删除程序”卸载这个组件。</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg2_1" AdxLine="4">Windows控制面板</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg1" AdxLine="5">你应当购买并安装合适的组件，这样可以获益于CRM X3同步功能。</data>
+     <data id="cRessourcesOl_eWarning_StoreNotAccessible" AdxLine="70">无法存储：{0}-Outlook 消息：{1}(Hresult:{2})</data>
+     <data id="cXmlManage_eError_XmlFileNotFound" AdxLine="80">文件找不到-{0}</data>
+     <data id="cXmlManage_eError_XmlInvalid" AdxLine="81">不合适的XML-{0}</data>
+     <data id="cXmlManage_eError_XmlStringInvalid" AdxLine="82">载入XML流出错</data>
+     <data id="cXmlManage_eError_DirectoryNotFoundException" AdxLine="83">字典不存在 - {0}</data>
+     <data id="cXmlManage_eError_XmlLoad" AdxLine="84">载入XML出错 - {0}</data>
+     <data id="cRessources_eInfo_Yes" AdxLine="90">是</data>
+     <data id="cRessources_eInfo_No" AdxLine="91">否</data>
+     <data id="cRessources_eInfo_CleanTempDirectory" AdxLine="92">清除临时文件{0}</data>
+     <data id="cRessourcesParameters_eStep_SynchroTraceSet" AdxLine="100">同步化追踪-{0}到{1}</data>
+     <data id="cRessourcesParameters_eStep_GuiTraceSet" AdxLine="101">图像界面追踪-{0}到{1}</data>
+     <data id="cRessourcesParameters_eStep_PCCTraceSet" AdxLine="102">赛捷通讯包追踪-{0}到{1}</data>
+     <data id="cRessourcesParameters_eError_BadParameterValue" AdxLine="103">参数{0}-无效值{1}</data>
+     <data id="cRessourcesParameters_eError_BadDialogPrgrmInfos" AdxLine="104">{0}-错误的远程服务器信息-进程{1}-子程序{2}</data>
+     <data id="cRessourcesParameters_eError_DialogPrgmUnKnow" AdxLine="105">对话未受管理{0}</data>
+     <data id="cRessourcesParameters_eError_Load" AdxLine="106">不可能载入AddIn参数文件</data>
+     <data id="cRessourcesParameters_eWarning_CreateFromScratch" AdxLine="107">初始化AddIn参数文件</data>
+     <data id="cRessourcesParameters_eInfo_TraceToFile" AdxLine="108">追踪文件:{0}</data>
+     <data id="cRessourcesParameters_eGui_InitParameters" AdxLine="109">CRM X3同步化</data>
+     <data id="cRessourcesParameters_eGui_FirstLaunch" AdxLine="110">第一次使用-初始化AddIn参数文件</data>
+     <data id="cParameter_eError_CtorWithNullXmlElement" AdxLine="120">以无效XML要素呼叫建设器</data>
+     <data id="cPccConnection_eStep_OpenStoreConnexion" AdxLine="130">打开到远程服务器的存储连接</data>
+     <data id="cPccConnection_eError_AdonixConnexionParameters" AdxLine="132">无效连接参数</data>
+     <data id="cPccConnection_eError_CannotAccessAdonix" AdxLine="133">不可能进入服务器</data>
+     <data id="cPccConnection_eError_LoadError" AdxLine="134">载入赛捷通讯包时出错</data>
+     <data id="cPccConnection_eInfo_OpenAdxConnexion" AdxLine="135">打开连接</data>
+     <data id="cPccConnection_eInfo_CloseAdxConnexion" AdxLine="136">关闭连接</data>
+     <data id="cPccConnection_eInfo_TestStoreConnexion" AdxLine="137">测试连接</data>
+     <data id="cPccConnection_eInfo_AdxConnexionParameters" AdxLine="138">文件夹{0}赛捷用户{1},语言{2},应用服务器{3}</data>
+     <data id="cPccConnection_eInfo_AdxConnexionParameters_1" AdxLine="139">处理服务器:{4}，端口{5}，用户{6};进程类型:{7}</data>
+     <data id="cPccSubProgRequest_eError_TooMuchValues" AdxLine="150">参数{0}-数值过多{1}</data>
+     <data id="cPccSubProgRequest_eError_NullValue" AdxLine="151">参数{0}-无数值{null}!</data>
+     <data id="cPccSubProgRequest_eError_ParNotDefined" AdxLine="152">未定义的参数{0}</data>
+     <data id="cPccSubProgRequest_eError_BadParKeyDef" AdxLine="153">键参数被错误定义-名称{0}-分析元{1}-尺寸{2}</data>
+     <data id="cPccSubProgRequest_eError_BadParCharDef" AdxLine="154">串类型参数被错误定义-名称{0}-分析元{1}-尺寸{2}</data>
+     <data id="cPccSubProgRequest_eError_BadParIntDef" AdxLine="155">INT类型参数被错误定义-名称{0}-分析元{1}-尺寸{2}</data>
+     <data id="cPccSubProgRequest_eError_BadParClobDef" AdxLine="156">图像文件类型参数被错误定义-名称{0}-分析元{1}-尺寸{2}</data>
+     <data id="cPccSubProgRequest_eError_BadParDecDef" AdxLine="157">十进制类型参数被错误定义-名称{0}-分析元{1}</data>
+     <data id="cPccSubProgRequest_eError_BadParDateDef" AdxLine="158">日期时间类型参数被错误定义-名称{0}-分析元{1}</data>
+     <data id="cPccSubProgRequest_eError_InvalidType" AdxLine="159">类型未被管理:{0}</data>
+     <data id="cPccSubProgRequest_eError_ParAlreadyDefined" AdxLine="160">参数已被定义{0}</data>
+     <data id="cPccSubProgRequest_eError_AddWrongType" AdxLine="161">类型{2}的参数{3}的值被错误添加到类型{0}集合</data>
+     <data id="cPccSubProgRequest_eError_KeyNotDefinedInKeysList" AdxLine="162">键{1}未在列表{0}中找到</data>
+     <data id="cPccSubProgRequest_eError_GetValueWithBadType" AdxLine="163">从类型集合{0}中无法获取类型{3}的参数{2}的值</data>
+     <data id="cPccSubProgRequest_eError_BadStringForDate" AdxLine="167">字符串{0}无法被转换为日期或时间（预期格式为yyyyMMddHHmmss）</data>
+     <data id="cPccSubProgRequest_eError_SendRequestFailed" AdxLine="168">处理请求{0}/{1}时错误</data>
+     <data id="cPccSubProgRequest_eStep_SendRequest" AdxLine="169">对服务器的请求{0}/{1}</data>
+     <data id="cPccSubProgRequest_eError_SendRequestProgramFailed" AdxLine="170">服务器进程错误-请求{0}/{1}-异常{2}</data>
+     <data id="cPccSubProgRequest_eError_SendRequestCnxFailed" AdxLine="171">服务器对话错误-请求{0}/{1}-异常{2}</data>
+     <data id="cStrucParameter_eError_GetValueWithBadPos" AdxLine="180">用来获得在集合{0}中的分析元{1}的值的索引错误{2}</data>
+     <data id="cStrucParameter_eError_SetValueWithBadPos" AdxLine="181">用来定位在集合{0}中的分析元{1}的值的索引错误{2}</data>
+     <data id="cWrpOneExplorer_eGui_BtnSynchro" AdxLine="200">同步</data>
+     <data id="cWrpOneExplorer_eGui_BtnOptions" AdxLine="201">选项</data>
+     <data id="cWrpOneExplorer_eGui_MenuName" AdxLine="202">CRM X3同步</data>
+     <data id="cWrpOneExplorer_eInfo_BtnClick" AdxLine="203">点击{0}-浏览器{1}</data>
+     <data id="cWrpOneExplorer_eInfo_OlExplorerActivate" AdxLine="204">启动新浏览器-识别器{0}</data>
+     <data id="cWrpOneExplorer_eInfo_GuiSynchroRelease" AdxLine="205">同步再次给了图形界面控制</data>
+     <data id="cWrpItem_eError_GetStrFromProperty" AdxLine="220">得到串类型的错误标准属性 名称{0} 类别{1}-{2}</data>
+     <data id="cWrpItem_eError_GetStrFromUserProperty" AdxLine="221">得到字串类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_GetIntFromProperty" AdxLine="222">得到INT类型的错误标准属性-名称{0}-类别{1}-{2}</data>
+     <data id="cWrpItem_eError_GetIntFromUserProperty" AdxLine="223">得到INT类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_GetDecFromProperty" AdxLine="224">得到十进制类型的错误标准属性-名称{0},类别{1}-{2}</data>
+     <data id="cWrpItem_eError_GetDecFromUserProperty" AdxLine="225">得到十进制类型的错误用户属性-,名称{0}</data>
+     <data id="cWrpItem_eError_GetDateTimeFromProperty" AdxLine="226">得到日期时间类型的错误标准属性-名称{0}-类别{1}-{2}</data>
+     <data id="cWrpItem_eError_GetDateTimeFromUserProperty" AdxLine="227">得到日期时间类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_SetStrToUserProperty" AdxLine="228">设定字串类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_SetIntToUserProperty" AdxLine="229">设定INT类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_SetDecToUserProperty" AdxLine="230">设定十进制类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_SetDateTimeToUserProperty" AdxLine="231">设定日期时间类型的错误用户属性-名称{0}</data>
+     <data id="cWrpItem_eError_InvalidUserPropertyExistInStandard" AdxLine="232">不可能定义此属性为用户,因为它已经作为标准存在-{0}</data>
+     <data id="cWrpItem_eError_SecurityGetProperty" AdxLine="233">对类别{1}的属性{0}的访问未经许可</data>
+     <data id="cStores_eError_DirectoryDoesNotExist" AdxLine="280">目录不存在{0}</data>
+     <data id="cStores_eWarning_RetrieveStoreFromDiskInfos" AdxLine="281">存储未被处理,因为它无法在OUTLOOK-DISK信息中找到{0}</data>
+     <data id="cStores_eInfo_NumberOfStores" AdxLine="282">有同步信息（碟）的存储数目{0}</data>
+     <data id="cStores_eInfo_AddIStoreInStoreShortList" AdxLine="283">添加到存储{0}的列表-激活同步化{1}-在OUTLOOK进程中打开{2}-PST类型{3}</data>
+     <data id="cStoresJob_eStep_MainTitle" AdxLine="300">存储同步化</data>
+     <data id="cStoresJob_eStep_Preparation" AdxLine="301">准备</data>
+     <data id="cStoresJob_eStep_ScanStoresToSynchro" AdxLine="302">处理待同步化存储</data>
+     <data id="cStoresJob_eInfo_TimeStart" AdxLine="303">同步化开始的日期时间{0}</data>
+     <data id="cStoresJob_eInfo_TimeEnd" AdxLine="304">同步化结束的日期时间{0}</data>
+     <data id="cStoresJob_eInfo_LaunchSynchroForStore" AdxLine="305">开始存储同步{0}（识别器{1}）</data>
+     <data id="cStoresJob_eInfo_AddInVersion" AdxLine="306">Addin参考{0}-版本{1}</data>
+     <data id="cStoresJob_eInfo_AddInDirectory" AdxLine="307">安装引导{0}</data>
+     <data id="cStoresJob_eInfo_DataDirectory" AdxLine="308">数据根引导{0}</data>
+     <data id="cStore_eError_NullStore" AdxLine="330">构造-OUTLOOK文件夹参数(MapiFolder)为零</data>
+     <data id="cStore_eError_NotOlStore" AdxLine="331">存储构造- OUTLOOK文件夹参数(MapiFolder){0}不是根目录</data>
+     <data id="cStore_eError_OlStoreNotFound" AdxLine="332">存储构造-不可能在   中找到Outlook文件夹(MapiFolder)</data>
+     <data id="cStore_eError_OlStoreNotFound_1" AdxLine="333">硬碟信息{0}文件夹ID{1} 存储ID{1}</data>
+     <data id="cStoreParameters_eInfo_NewStore" AdxLine="340">存储参数构造-为{0}在库位{1}创建新参数</data>
+     <data id="cStoreParameters_eInfo_AdxServer" AdxLine="341">处理服务器参数-名称{0}端口{1]用户{2}编码密码{3}</data>
+     <data id="cStoreParameters_eInfo_AdxFolder" AdxLine="342">应用文件参数-名称{0}端口{1}帐套{2}用户{3}编码密码{4}</data>
+     <data id="cStoreParameters_eInfo_GetDialogContext" AdxLine="343">配置语境(cDlgContext)-X3用户和语言</data>
+     <data id="cStoreParameters_eInfo_GetPccConnexion" AdxLine="344">通讯配置(cDlgContext)</data>
+     <data id="cStoreParameters_eInfo_Save" AdxLine="345">保存存储参数化{0}-{1}</data>
+     <data id="cStoreParameters_eError_ParametersAlreadyExits" AdxLine="346">参数已经存在于地点{0}</data>
+     <data id="cStoreParameters_eError_InvalidAdxSrvTrtPar" AdxLine="347">无效的进程服务器参数-名称{0}端口{1}用户{2}</data>
+     <data id="cStoreParameters_eError_InvalidAdxFolderPar" AdxLine="348">应用文件参数-名称{0}端口{1}帐套{2}用户{3}编码密码{4}</data>
+     <data id="cStoreParameters_eError_InvalidAdxCnxPar" AdxLine="349">赛捷连接参数不可访问</data>
+     <data id="cStoreParameters_eError_DefaultFolderNotSet" AdxLine="350">默认目录未对类型{0}的条目进行定义</data>
+     <data id="cStoreSteps_eStep_MainTitle" AdxLine="360">存储{0}</data>
+     <data id="cStoreSteps_eStep_ScanOlItems" AdxLine="361">草创OUTLOOK项目的列表</data>
+     <data id="cStoreSteps_eStep_ScanListToUpdateSynchroInfos" AdxLine="362">升级同步信息</data>
+     <data id="cStoreSteps_eStep_OpenAdxCnx" AdxLine="363">打开到远程服务器的连接</data>
+     <data id="cStoreSteps_eStep_LastSynchroInfos" AdxLine="364">访问上一次同步信息</data>
+     <data id="cStoreSteps_eStep_SynchroTask" AdxLine="365">任务处理呼叫</data>
+     <data id="cStoreSteps_eStep_SynchroContact" AdxLine="366">联系人处理呼叫</data>
+     <data id="cStoreSteps_eStep_EndSynchro" AdxLine="367">同步结束</data>
+     <data id="cStoreSteps_eWarning_LastSynchroNotEnded" AdxLine="368">上一次同步未完成</data>
+     <data id="cStoreSteps_eWarning_NoSynchroLastFile" AdxLine="369">没有上一次同步的文件</data>
+     <data id="cStoreSteps_eInfo_SynchroTaskModeOff" AdxLine="370">任务同步未被请求</data>
+     <data id="cStoreSteps_eInfo_SynchroContactModeOff" AdxLine="371">联系人同步未被请求</data>
+     <data id="cStoreSteps_eInfo_FisrtSynchro" AdxLine="372">第一次同步</data>
+     <data id="cStoreSteps_eInfo_UseSynchroRecoveryPointInfos" AdxLine="373">使用上一个恢复点的结果</data>
+     <data id="cStoreSteps_eInfo_UseLastSynchroInfos" AdxLine="374">使用上一完成的同步</data>
+     <data id="cStoreSteps_eInfo_SynchroInfos" AdxLine="375">内部参考日期{0} PST类型的存储{1}</data>
+     <data id="cStoreSteps_eStep_SynchroAppointment" AdxLine="376">指定处理呼叫</data>
+     <data id="cStoreSteps_eInfo_SynchroAppointmentModeOff" AdxLine="377">同步化未被请求的指定</data>
+     <data id="cStoreSteps_eInfo_RemoteServerTrace" AdxLine="378">---远程服务器追踪码{0}---</data>
+     <data id="cStoreSteps_eInfo_EndServerSynchro" AdxLine="379">调出服务器上同步化结束</data>
+     <data id="cStoreSteps_eInfo_EndOlSynchro" AdxLine="380">在OUTLOOK关闭同步化</data>
+     <data id="cSynchroBase_eStep_CreateOrUpdateOnRemoteServer" AdxLine="400">OUTLOOK到远程服务器 创建或修改</data>
+     <data id="cSynchroBase_eStep_DeleteOnRemoteServer" AdxLine="401">OUTLOOK到远程服务器 删除</data>
+     <data id="cSynchroBase_eStep_UpdateOnLocalComputer" AdxLine="402">远程服务器到OUTLOOK 创建或修改删除</data>
+     <data id="cSynchroBase_eError_AplToAdxUpdate_CreateOrUpdate" AdxLine="405">不可能创建或修改项目-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_AplToAdxUpdate_Delete" AdxLine="406">不可能删除项目-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_CannotRetrieveDlgDesc" AdxLine="407">不可访问{0}的描述</data>
+     <data id="cSynchroBase_eError_CannotSetValid" AdxLine="408">当激活升级请求到远程服务器时异常 赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_CannotGetValid" AdxLine="409">激活升级请求到OUTLOOK时异常 赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_InvalidRemoteUpdFlg" AdxLine="410">从远程服务器的升级标记无效{0}</data>
+     <data id="cSynchroBase_eError_CreateAdxIdAlreadyExistInOl" AdxLine="411">为已存在的项目（执行过修改）创建请求赛捷识别器{0]</data>
+     <data id="cSynchroBase_eError_UpdateAdxIdNotExistInOl" AdxLine="412">为已存的项目（修改拒绝）请求修改 赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_RemoteServerBadAdxId" AdxLine="413">被赛捷服务器退回的识别器尚未生效:{0}</data>
+     <data id="cSynchroBase_eError_InvalidChangeOfAdxId" AdxLine="414">修改被禁止的赛捷识别器:{0}</data>
+     <data id="cSynchroBase_eInfo_SetLocalAdxID" AdxLine="415">利用识别器更新项目{0}</data>
+     <data id="cSynchroBase_eError_CannotGetDefaultFolder" AdxLine="416">{0}:默认目录没有指定</data>
+     <data id="cSynchroBase_eError_CancelLoopOnGetNext" AdxLine="419">阻止GetNext循环因为远程服务器不断返还同样的赛捷识别器{0}</data>
+     <data id="cSynchroBase_eInfo_DeleteAdxIdAlreadyNotExistInOl" AdxLine="420">请求删除现有项目-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eInfo_AplToAdxUpdate" AdxLine="421">远程服务器到OUTLOOK处理</data>
+     <data id="cSynchroBase_eWarning_ItemRestoreNoCreateAllowed" AdxLine="422">恢复：项目因是未授权的创建而拒绝-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eWarning_ItemRestoreNoUpdateAllowed" AdxLine="423">恢复：项目因是未授权的修改而拒绝-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_CannotGetNext" AdxLine="424">无法从服务器获得下一个要升级的项目</data>
+     <data id="cSynchroBase_eError_CannotSetOnServerOneItem" AdxLine="425">无法在远程服务器升级项目-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_CannotDeleteOnServerOneItem" AdxLine="426">无法在远程服务器删除项目-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_CannotGetItem" AdxLine="427">无法在远程服务器获得项目-赛捷识别器{0}</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgCreAndPermission" AdxLine="428">尽管用户参数不允许还是由服务器请求创建#</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgUpdAndPermission" AdxLine="429">尽管用户参数不允许还是由服务器请求修改#</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgDelAndPermission" AdxLine="430">尽管用户参数不允许还是由服务器请求删除#</data>
+     <data id="cSynchroTasks_eStep_MainTitle" AdxLine="440">处理任务</data>
+     <data id="cSynchroTasks_eInfo_ItemName" AdxLine="441">任务</data>
+     <data id="cSynchroAppointments_eStep_MainTitle" AdxLine="450">处理指定</data>
+     <data id="cSynchroAppointments_eInfo_ItemName" AdxLine="451">指定</data>
+     <data id="cSynchroContacts_eStep_MainTitle" AdxLine="460">处理联系人</data>
+     <data id="cSynchroContacts_eInfo_ItemName" AdxLine="461">联系人</data>
+     <data id="cManageThreadSteps_eInfo_End" AdxLine="500">结束</data>
+     <data id="cManageThreadSteps_eInfo_Beginning" AdxLine="501">开始</data>
+     <data id="cManageThreadSteps_eError_AdxConnexion" AdxLine="502">无法连接远程服务器</data>
+     <data id="cManageThread_eInfo_PCCErrorWhy" AdxLine="520">被服务器{0}-代码{1}对话功能退回的错误</data>
+     <data id="cExternalSupport_eError_InvalidWrpItemType" AdxLine="550">类型未被管理{0}</data>
+     <data id="cDlgBase_eInfo_NoMessageFromRemoteServer" AdxLine="560">服务器未返还信息</data>
+     <data id="cDlgBase_eInfo_RemoteMsgPrefixe" AdxLine="561">远程服务器信息</data>
+     <data id="cDlgBase_eInfo_StatusBeforeRequest" AdxLine="562">服务器要求前状态{0}</data>
+     <data id="cDlgBase_eInfo_StatusAfterRequest" AdxLine="563">服务器要求后状态{0}</data>
+     <data id="cDlgDescription_eInfo_Description" AdxLine="605">描述-进程{0}-子程序{1} –版本{2}</data>
+     <data id="cDlgDescription_eInfo_AdxIdLibValue" AdxLine="606">用户字段名确认赛捷X3数据:{0}</data>
+     <data id="cDlgDescription_eInfo_AdxIdLibValueNA" AdxLine="607">没有用户字段名确认赛捷X3数据</data>
+     <data id="cDlgDescriptionField_eError_NullLineNode" AdxLine="608">零节点无效</data>
+     <data id="cDlgDescriptionField_eError_NullNode" AdxLine="609">在{1}中找不到节点{0}</data>
+     <data id="cDlgBaseDynPar_eError_CannotRetrieveNode" AdxLine="610">无法访问类型{0}的节点</data>
+     <data id="cDlgBaseDynPar_eError_InvalidDim" AdxLine="612">无效的分析元-XML内容{0}</data>
+     <data id="cDlgBaseDynPar_eError_InvalidSize" AdxLine="613">无效的尺寸-XML内容{0}</data>
+     <data id="cDlgBaseDynParSetSync_eInfo_SetToRemoteServer" AdxLine="622">发送项目-识别器{0}-升级类型{1}</data>
+     <data id="cDlgBaseDynParGetSync_eError_RemoteServerBadAdxId" AdxLine="630">赛捷服务器找到的识别器无效{0}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_GetFromRemoteServer" AdxLine="631">请求下一项目</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_GetFromRemoteServerInfos" AdxLine="632">接收项目-识别器{0}-升级状态{1}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_NoMoreItems" AdxLine="633">再没有项目了</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_UpdateItem" AdxLine="634">更新带有识别器{1}的项目</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_CreateItem" AdxLine="635">创建带有识别器{0}的项目</data>
+     <data id="cDlgBaseSetOrGetValid_eInfo_SendValid" AdxLine="640">确认升级-识别器{0}-升级状态{1}</data>
+     <data id="cDlgBaseInitSync_eInfo_SynchroInfos" AdxLine="650">同步化:{0}-到服务器:创建{1},修改{2},删除{3}</data>
+     <data id="cDlgBaseInitSync_eInfo_SynchroInfos_1" AdxLine="651">-到OUTLOOK 创建{4} 修改{5} 删除{6}</data>
+     <data id="cDlgEmbeddedLinksGet_eError_ContactWithAdxIdNotFound" AdxLine="670">同步化的联系人未找到{0 }识别器{1}</data>
+     <data id="cDlgEmbeddedLinksGet_eWarning_ContactNotFound" AdxLine="671">在条目{0}中未找到脱离同步联系人</data>
+     <data id="cDlgEmbeddedLinksGet_eInfo_ContactsChange" AdxLine="672">联系人列表已改变</data>
+     <data id="cDlgEmbeddedLinksGet_eInfo_ContactsNoChange" AdxLine="673">联系人列表中没有改变</data>
+     <data id="cDlgBaseValid_eInfo_SendValid" AdxLine="690">激活到服务器的请求-识别器{0 }-状态{1}</data>
+     <data id="cShortItemsList_eInfo_CptInStore" AdxLine="700">存储{0 }查找最后评估{1} 任务{2} 接触{3} 管理的指定</data>
+     <data id="cShortItemsList_eInfo_CptInStore_1" AdxLine="701">.{7}指定未被管理{4} 未辨认 {6} 个人项目 {5} 比初始日期早</data>
+     <data id="cShortItemsList_eInfo_CptInRootFolder" AdxLine="702">根目录{0 {查找最后评估{1} 任务{2}接触{3}管理的指定</data>
+     <data id="cShortItemsList_eInfo_CptInRootFolder_1" AdxLine="703">。{7}指定未被管理{4} 未辨认{6 }个人项目{5} 比初始日期早</data>
+     <data id="cShortItemsList_eInfo_StoreSynchroDates" AdxLine="704">初始同步的日期{0}最后同步的日期{1}</data>
+     <data id="cShortItemsList_eInfo_ScanListToUpdateSynchroInfos" AdxLine="705">解析清单以决定将升级的项目</data>
+     <data id="cShortItemsList_eInfo_SetListFromOl" AdxLine="706">建立项目清单</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseAllItems" AdxLine="740">查找主文件夹中的条目{0}</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseFolders" AdxLine="741">进程文件夹：{0}</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseSubFolder" AdxLine="742">进程次文件夹-{0}到{1}</data>
+     <data id="cFrmParameters_eGui_FrmName" AdxLine="750">在OUTLOOK和CRM X3间的同步选项</data>
+     <data id="cFrmParameters_eGui_tabpageStores" AdxLine="751">储存</data>
+     <data id="cFrmParameters_eGui_tabpageFolders" AdxLine="752">通用</data>
+     <data id="cFrmParameters_eGui_chkSynchroActive" AdxLine="753">存储同步化已启动</data>
+     <data id="cFrmParameters_eGui_tabpageDefaultFolders" AdxLine="754">默认文件夹</data>
+     <data id="cFrmParameters_eGui_lblDefaultTask" AdxLine="755">在任务创建中</data>
+     <data id="cFrmParameters_eGui_lblDefaultContact" AdxLine="756">在联系人创建中</data>
+     <data id="cFrmParameters_eGui_lblDefaultAppointment" AdxLine="757">在指示物创建中</data>
+     <data id="cFrmParameters_eGui_tabpageRemoteServer" AdxLine="758">远程连接</data>
+     <data id="cFrmParameters_eGui_grpRemoteFolder" AdxLine="759">文件夹入口</data>
+     <data id="cFrmParameters_eGui_lblFldName" AdxLine="760">文件夹</data>
+     <data id="cFrmParameters_eGui_lblFldAppliServer" AdxLine="761">应用服务器</data>
+     <data id="cFrmParameters_eGui_lblFldUser" AdxLine="762">用户</data>
+     <data id="cFrmParameters_eGui_lblFldPwd" AdxLine="763">密码</data>
+     <data id="cFrmParameters_eGui_grpRemoteServer" AdxLine="764">处理服务器入口</data>
+     <data id="cFrmParameters_eGui_lblRmtServer" AdxLine="765">处理服务器</data>
+     <data id="cFrmParameters_eGui_lblRmtPort" AdxLine="766">端口</data>
+     <data id="cFrmParameters_eGui_lblRmtUser" AdxLine="767">用户</data>
+     <data id="cFrmParameters_eGui_lblRmtPwd" AdxLine="768">密码</data>
+     <data id="cFrmParameters_eGui_btnCnxTest" AdxLine="769">测试连接</data>
+     <data id="cFrmParameters_eGui_tabpageSpecial" AdxLine="770">杂项</data>
+     <data id="cFrmParameters_eGui_lblInitialSynchroDate" AdxLine="771">一项目参加同步的起始日期</data>
+     <data id="cFrmParameters_eGui_lblLastSuccessSynchroDate" AdxLine="772">上一次成功同步的日期</data>
+     <data id="cFrmParameters_eGui_chkIntermediateDebugFile" AdxLine="773">写入中间文件（调试）</data>
+     <data id="cFrmParameters_eGui_btnSaveStore" AdxLine="774">保存</data>
+     <data id="cFrmParameters_eGui_btnCancelStore" AdxLine="775">放弃</data>
+     <data id="cFrmParameters_eGui_tabpageAddIn" AdxLine="776">通用选项</data>
+     <data id="cFrmParameters_eGui_lblTimeOut" AdxLine="777">向服务器请求的最大等待时间（秒）</data>
+     <data id="cFrmParameters_eGui_chkDebugGui" AdxLine="778">图形界面追踪(Gui.tra file)</data>
+     <data id="cFrmParameters_eGui_chkDebugSynchro" AdxLine="779">同步引擎追踪(Synchro.tra file)</data>
+     <data id="cFrmParameters_eGui_btnSaveAddIn" AdxLine="780">保存</data>
+     <data id="cFrmParameters_eGui_LstFoldersName" AdxLine="781">将同步化的文件夹</data>
+     <data id="cFrmParameters_eGui_LstStoresName" AdxLine="782">用存储标号管理存储</data>
+     <data id="cFrmParameters_eGui_grpAddIn" AdxLine="783">Addln 选项</data>
+     <data id="cFrmParameters_eGui_lblFldLan" AdxLine="784">语言</data>
+     <data id="cFrmParameters_eInfo_LoadGrpStore" AdxLine="800">读取存储信息：{0}</data>
+     <data id="cFrmParameters_eInfo_NewStore" AdxLine="801">创造一个新同步化存储{0}</data>
+     <data id="cFrmParameters_eInfo_TestConnexion" AdxLine="802">请求连接测试</data>
+     <data id="cFrmParameters_eInfo_TestConnexionOk" AdxLine="803">连接建立</data>
+     <data id="cFrmParameters_eInfo_TestConnexionKo" AdxLine="804">测试失败！</data>
+     <data id="cFrmParameters_eInfo_SaveStore" AdxLine="805">保存存储{0}</data>
+     <data id="cFrmParameters_eWarning_NoStoreToSave" AdxLine="810">没有保存的存储</data>
+     <data id="cFrmParameters_eGui_btnForceSync" AdxLine="811">重新同步化</data>
+     <data id="cFrmParameters_eInfo_ForceSynchro" AdxLine="812">在下一同步中，所有有升级日期项目比该日期晚</data>
+     <data id="cFrmParameters_eInfo_ForceSynchro_1" AdxLine="813">关于上一次同步将被传送到服务器，你是否确认？</data>
+     <data id="cFrmParameters_eInfo_ForceSynchroTitle" AdxLine="814">强行同步到该服务器</data>
+     <data id="cFrmParameters_eInfo_SaveOk" AdxLine="815">保存完成</data>
+     <data id="cFrmSynchro_eInfo_StepMsg" AdxLine="900">{0}-{1}[前一阶段的信息：{4} 延续时间{2} 毫秒.-{3}]</data>
+     <data id="cFrmSynchro_eInfo_SynchroError" AdxLine="901">同频完成但有错误</data>
+     <data id="cFrmSynchro_eInfo_SynchroWarning" AdxLine="902">同频完成但有警告</data>
+     <data id="cFrmSynchro_eInfo_BtnClick" AdxLine="903">点击按钮{0}-{1}</data>
+     <data id="cFrmSynchro_eInfo_CancelSynchroBefore" AdxLine="904">关闭窗体前请先停止同步化</data>
+     <data id="cFrmSynchro_eInfo_SynchroEnded" AdxLine="905">同步化完成</data>
+     <data id="cFrmSynchro_eGui_FrmName" AdxLine="910">CRM X3 同步化</data>
+     <data id="cFrmSynchro_eGui_tabPageMain" AdxLine="911">储存</data>
+     <data id="cFrmSynchro_eGui_tabPageLog" AdxLine="912">日志</data>
+     <data id="cFrmSynchro_eGui_btnStart" AdxLine="913">同步化</data>
+     <data id="cFrmSynchro_eGui_btnCancel" AdxLine="914">放弃</data>
+     <data id="cFrmSynchro_eGui_lblProgress" AdxLine="915">进程</data>
+     <data id="cFrmSynchro_eGui_StoresName" AdxLine="916">同步化的存储</data>
+     <data id="cFrmSynchro_eGui_LogColStoreId" AdxLine="917">在线储存ID</data>
+     <data id="cFrmSynchro_eGui_LogColOlId" AdxLine="918">在线分录ID</data>
+     <data id="cFrmSynchro_eGui_LogColMsg" AdxLine="919">信息</data>
+     <data id="cFrmSynchro_eGui_CopyLog" AdxLine="920">将日志插到剪贴板</data>
+     <data id="cFrmSynchro_eError_ThreadNotResponding" AdxLine="921">你的中断请求还未被计入同步处理中</data>
+     <data id="cFrmSynchro_eInfo_WaitAgain" AdxLine="922">您是否希望继续等待{0}秒？</data>
+     <data id="cFrmSynchro_eInfo_CancelledByUser" AdxLine="923">用户停止</data>
+     <data id="cFrmSynchro_eWarning_OLItemNotFound" AdxLine="924">记录已不存在</data>
+     <data id="cFrmSynchro_eInfo_SynchroAbort" AdxLine="925">同步已取消</data>
+     <data id="cFrmSynchro_eInfo_Warning" AdxLine="926">出现警告</data>
+     <data id="cFrmSynchro_eInfo_Error" AdxLine="927">出现错误</data>
+     <data id="cFrmSynchro_eInfo_Abort" AdxLine="928">出现阻断错误</data>
+     <data id="cFrmSynchro_eGui_tabException" AdxLine="929">例外</data>
 </Messages>

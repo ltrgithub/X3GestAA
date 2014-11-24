@@ -1,3 +1,276 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-    <Messages language="Italien   " Menu="9913" Version="V1.0" Extract="20061214">
+    <Messages language="Italiano" Menu="9913" Version="V1.0" Extract="20141020">
+     <data id="cManageGui_eError_VersionsNotCompatibleTitle" AdxLine="1">Versioni non compatibili</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg" AdxLine="2">Versione {1} del componente Sage X3 Synchronisation Outlook non compatibile con la versione Outlook {0} di questo PC</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg2" AdxLine="3">Affinché questo messaggio non compaia più, disinstallare questo componente con 'Aggiungi/Rimuovi componenti' accessibile da</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg2_1" AdxLine="4">Pannello di controllo Windows.</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg1" AdxLine="5">Procurarsi ed installare il componente adeguato per avvalersi della sincronizzazione del CRM Sage X3 Entreprise.</data>
+     <data id="cRessourcesOl_eWarning_StoreNotAccessible" AdxLine="70">Archivio non accessibile {0} - Messaggio Outlook: {1} (HResult: {2})</data>
+     <data id="cXmlManage_eError_XmlFileNotFound" AdxLine="80">File non trovato - {0}</data>
+     <data id="cXmlManage_eError_XmlInvalid" AdxLine="81">Xml non valido - {0}</data>
+     <data id="cXmlManage_eError_XmlStringInvalid" AdxLine="82">Errore caricamento del flusso Xml - {0}</data>
+     <data id="cXmlManage_eError_DirectoryNotFoundException" AdxLine="83">Directory non trovata - {0}</data>
+     <data id="cXmlManage_eError_XmlLoad" AdxLine="84">Errore caricamento Xml - {0}</data>
+     <data id="cRessources_eInfo_Yes" AdxLine="90">Si</data>
+     <data id="cRessources_eInfo_No" AdxLine="91">No</data>
+     <data id="cRessources_eInfo_CleanTempDirectory" AdxLine="92">Pulizia dossier temporaneo {0}</data>
+     <data id="cRessourcesParameters_eStep_SynchroTraceSet" AdxLine="100">Traccia della sincronizzazione - da {0} a: {1}</data>
+     <data id="cRessourcesParameters_eStep_GuiTraceSet" AdxLine="101">Traccia dell'interfaccia grafica - da {0} a {1}</data>
+     <data id="cRessourcesParameters_eStep_PCCTraceSet" AdxLine="102">Traccia del Pack di Communication Sage Entreprise - da {0} a {1}</data>
+     <data id="cRessourcesParameters_eError_BadParameterValue" AdxLine="103">Parametro {0} - Valore non valido {1}</data>
+     <data id="cRessourcesParameters_eError_BadDialogPrgrmInfos" AdxLine="104">{0} - Informazioni server remoto non corrette - Programma {1} - Sotto-programma {2}</data>
+     <data id="cRessourcesParameters_eError_DialogPrgmUnKnow" AdxLine="105">Dialogo non gestito {0}</data>
+     <data id="cRessourcesParameters_eError_Load" AdxLine="106">Caricamento impossibile del file dei parametri dell'Addln</data>
+     <data id="cRessourcesParameters_eWarning_CreateFromScratch" AdxLine="107">Inizializzazione del file dei parametri dell'Addln</data>
+     <data id="cRessourcesParameters_eInfo_TraceToFile" AdxLine="108">File di traccia: {0}</data>
+     <data id="cRessourcesParameters_eGui_InitParameters" AdxLine="109">Sage X3 Entreprise Synchronisation Outlook</data>
+     <data id="cRessourcesParameters_eGui_FirstLaunch" AdxLine="110">Primo utilizzo - Inizializzazione del file dei parametri dell'Addln</data>
+     <data id="cParameter_eError_CtorWithNullXmlElement" AdxLine="120">Generatore richiamato con un elemento Xml nullo.</data>
+     <data id="cPccConnection_eStep_OpenStoreConnexion" AdxLine="130">Apertura della connessione dell'archivio sul server remoto</data>
+     <data id="cPccConnection_eError_AdonixConnexionParameters" AdxLine="132">Parametri di connessione non validi</data>
+     <data id="cPccConnection_eError_CannotAccessAdonix" AdxLine="133">Impossibile accedere al server</data>
+     <data id="cPccConnection_eError_LoadError" AdxLine="134">Errore nel caricamento del Pack di Communication Sage Entreprise</data>
+     <data id="cPccConnection_eInfo_OpenAdxConnexion" AdxLine="135">Apertura della connessione</data>
+     <data id="cPccConnection_eInfo_CloseAdxConnexion" AdxLine="136">Chiusura della connessione</data>
+     <data id="cPccConnection_eInfo_TestStoreConnexion" AdxLine="137">Test della connessione</data>
+     <data id="cPccConnection_eInfo_AdxConnexionParameters" AdxLine="138">Dossier: {0}, Utente X3: {1}, Lingua: {2}, Server applicazione: {3},</data>
+     <data id="cPccConnection_eInfo_AdxConnexionParameters_1" AdxLine="139">Server di elaborazione: {4}, Porta: {5}, Utente: {6}, Tipo sessione: {7}</data>
+     <data id="cPccSubProgRequest_eError_TooMuchValues" AdxLine="150">Parametro: {0} - Troppi valori: {1}</data>
+     <data id="cPccSubProgRequest_eError_NullValue" AdxLine="151">Parametro {0} - Valore nullo (nullo) !</data>
+     <data id="cPccSubProgRequest_eError_ParNotDefined" AdxLine="152">Parametro non definito {0}</data>
+     <data id="cPccSubProgRequest_eError_BadParKeyDef" AdxLine="153">Parametro chiave mal definito - Nome {0} - Dim {1} - Size {2}</data>
+     <data id="cPccSubProgRequest_eError_BadParCharDef" AdxLine="154">Parametro di tipo string mal definito - Nome {0} - Dim {1} - Size {2}</data>
+     <data id="cPccSubProgRequest_eError_BadParIntDef" AdxLine="155">Parametro di tipo int mal definito - Nome {0} - Dim {1}</data>
+     <data id="cPccSubProgRequest_eError_BadParClobDef" AdxLine="156">Parametro di tipo clob mal definito- Nome {0} - Dim {1} - Size {2}</data>
+     <data id="cPccSubProgRequest_eError_BadParDecDef" AdxLine="157">Parametro di tipo decimale mal definito - Nome {0} - Dim {1}</data>
+     <data id="cPccSubProgRequest_eError_BadParDateDef" AdxLine="158">Parametro di tipo DateTime mal definito - Nome {0} - Dim {1}</data>
+     <data id="cPccSubProgRequest_eError_InvalidType" AdxLine="159">Tipo non gestito: {0}</data>
+     <data id="cPccSubProgRequest_eError_ParAlreadyDefined" AdxLine="160">Parametro già definito: {0}</data>
+     <data id="cPccSubProgRequest_eError_AddWrongType" AdxLine="161">IValore parametro {3} di tipo {2} aggiunto erroneamente nel set di tipo {0}</data>
+     <data id="cPccSubProgRequest_eError_KeyNotDefinedInKeysList" AdxLine="162">Chiave {1} non trovata nella lista {0}</data>
+     <data id="cPccSubProgRequest_eError_GetValueWithBadType" AdxLine="163">La valore del parametro {2} di tipo {3} non può essere ottenenuto a partire dal set di tipo {0}</data>
+     <data id="cPccSubProgRequest_eError_BadStringForDate" AdxLine="167">Stringa {0} non convertibile in data e ora (formato atteso yyyyMMddHHmmss)</data>
+     <data id="cPccSubProgRequest_eError_SendRequestFailed" AdxLine="168">Errore durante l'elaborazione della richiesta {0} / {1}</data>
+     <data id="cPccSubProgRequest_eStep_SendRequest" AdxLine="169">Richiesta al server {0} / {1}</data>
+     <data id="cPccSubProgRequest_eError_SendRequestProgramFailed" AdxLine="170">Errore di elaborazione sul server - Richiesta: {0} / {1} - Anomalia: {2}</data>
+     <data id="cPccSubProgRequest_eError_SendRequestCnxFailed" AdxLine="171">Errore di dialogo con il server - Richiesta: {0} / {1} - Anomalia: {2}</data>
+     <data id="cStrucParameter_eError_GetValueWithBadPos" AdxLine="180">Indice errato {2} per ottenere un valore nel set {0} di dimensione {1}</data>
+     <data id="cStrucParameter_eError_SetValueWithBadPos" AdxLine="181">Indice errato {2} per posizionare un valore nel set {0} di dimensione {1}</data>
+     <data id="cWrpOneExplorer_eGui_BtnSynchro" AdxLine="200">Synchro</data>
+     <data id="cWrpOneExplorer_eGui_BtnOptions" AdxLine="201">Opzioni</data>
+     <data id="cWrpOneExplorer_eGui_MenuName" AdxLine="202">Sage X3 Synchronisation Outlook</data>
+     <data id="cWrpOneExplorer_eInfo_BtnClick" AdxLine="203">Clik su {0} - Explorer {1}</data>
+     <data id="cWrpOneExplorer_eInfo_OlExplorerActivate" AdxLine="204">Attivazione nuovo esploratore - Identificativo {0}</data>
+     <data id="cWrpOneExplorer_eInfo_GuiSynchroRelease" AdxLine="205">La sincronizzazione terminata verso l'interfaccia grafica.</data>
+     <data id="cWrpItem_eError_GetStrFromProperty" AdxLine="220">Errore get proprietà standard di tipo string - Nome: {0} - Classe: {1} - {2}</data>
+     <data id="cWrpItem_eError_GetStrFromUserProperty" AdxLine="221">Errore get proprietà utente di tipo string - Nome {0}</data>
+     <data id="cWrpItem_eError_GetIntFromProperty" AdxLine="222">Errore get proprietà standard  di tipo int - Nome: {0} - Classe :{1} - {2}</data>
+     <data id="cWrpItem_eError_GetIntFromUserProperty" AdxLine="223">Errore get proprietà utente di tipo int - Nome {0}</data>
+     <data id="cWrpItem_eError_GetDecFromProperty" AdxLine="224">Errore get proprietà standard di tipo decimale - Nome: {0} - Classe :{1} - {2}</data>
+     <data id="cWrpItem_eError_GetDecFromUserProperty" AdxLine="225">Errore get proprietà utente di tipo decimale - Nome {0}</data>
+     <data id="cWrpItem_eError_GetDateTimeFromProperty" AdxLine="226">Errore get proprietà standard di tipo DateTime - Nome: {0} - Classe :{1} - {2}</data>
+     <data id="cWrpItem_eError_GetDateTimeFromUserProperty" AdxLine="227">Errore get proprietà utente di tipo DateTime - Nome {0}</data>
+     <data id="cWrpItem_eError_SetStrToUserProperty" AdxLine="228">Errore set proprietà utente di tipo string - Nome {0}</data>
+     <data id="cWrpItem_eError_SetIntToUserProperty" AdxLine="229">Errore set proprietà utente di tipo int - Nome {0}</data>
+     <data id="cWrpItem_eError_SetDecToUserProperty" AdxLine="230">Errore set proprietà utente di tipo decimale- Nome {0}</data>
+     <data id="cWrpItem_eError_SetDateTimeToUserProperty" AdxLine="231">Errore set proprietà utente di tipo DateTime - Nome {0}</data>
+     <data id="cWrpItem_eError_InvalidUserPropertyExistInStandard" AdxLine="232">Impossibile definire questa proprietà come utente poiché esiste già in standard - {0}</data>
+     <data id="cWrpItem_eError_SecurityGetProperty" AdxLine="233">Accesso non autorizzato sulla proprietà {0} della classe {1}</data>
+     <data id="cStores_eError_DirectoryDoesNotExist" AdxLine="280">Directory inesistente: {0}</data>
+     <data id="cStores_eWarning_RetrieveStoreFromDiskInfos" AdxLine="281">Archivio non elaborato poiché non ritrovato in Outlook - Informazioni disco: {0}</data>
+     <data id="cStores_eInfo_NumberOfStores" AdxLine="282">Numero di archivi con informazioni di sincronizzazione (disco): {0}</data>
+     <data id="cStores_eInfo_AddIStoreInStoreShortList" AdxLine="283">Aggiunta alla lista degli archivi di {0} - Sincronizzazione attiva: {1} - Aperto nella sessione Outlook: {2} - Tipo PST: {3</data>
+     <data id="cStoresJob_eStep_MainTitle" AdxLine="300">Sincronizzazione archivi</data>
+     <data id="cStoresJob_eStep_Preparation" AdxLine="301">Preparazione</data>
+     <data id="cStoresJob_eStep_ScanStoresToSynchro" AdxLine="302">Elaborazione degli archivi da sincronizzare</data>
+     <data id="cStoresJob_eInfo_TimeStart" AdxLine="303">Data e ora di inizio della sincronizzazione: {0}</data>
+     <data id="cStoresJob_eInfo_TimeEnd" AdxLine="304">Data e ora di fine sincronizzazione: {0}</data>
+     <data id="cStoresJob_eInfo_LaunchSynchroForStore" AdxLine="305">Lancio sincronizzazione dell'archivio {0} (Identificativo {1})</data>
+     <data id="cStoresJob_eInfo_AddInVersion" AdxLine="306">Riferimento Addin: {0} - Versione: {1}</data>
+     <data id="cStoresJob_eInfo_AddInDirectory" AdxLine="307">Directory d'installazione: {0}</data>
+     <data id="cStoresJob_eInfo_DataDirectory" AdxLine="308">Directory radice dei dati {0}</data>
+     <data id="cStore_eError_NullStore" AdxLine="330">Generatore - Parametro Dossier Outlook (MapiFolder) nullo</data>
+     <data id="cStore_eError_NotOlStore" AdxLine="331">Generatore archivio - Il parametro Dossier Outlook (MapiFolder) {0} non è un dossier radice</data>
+     <data id="cStore_eError_OlStoreNotFound" AdxLine="332">Generatore archivio - Impossibile di ritrovare il Dossier Outlook (MapiFolder) a partire</data>
+     <data id="cStore_eError_OlStoreNotFound_1" AdxLine="333">dalle informazioni dischi {0} - FolderId {1} - StoreId {1}</data>
+     <data id="cStoreParameters_eInfo_NewStore" AdxLine="340">Generatore parametri archivio - Creazione di nuovi parametri per {0} nello spazio {1}</data>
+     <data id="cStoreParameters_eInfo_AdxServer" AdxLine="341">Parametri server di elaborazione - Nome: {0}  Porta: {1}  User: {2}  Password criptata: {3}</data>
+     <data id="cStoreParameters_eInfo_AdxFolder" AdxLine="342">Parametri dossier dell'applicazioe - Nome: {0}  Porta: {1}  Dossier: {2}  User: {3}  Password criptata: {4}</data>
+     <data id="cStoreParameters_eInfo_GetDialogContext" AdxLine="343">Configurazione Contesto (cDlgContext) - Utente e lingua X3</data>
+     <data id="cStoreParameters_eInfo_GetPccConnexion" AdxLine="344">Configurazione della comunicazione (CAdonixContext)</data>
+     <data id="cStoreParameters_eInfo_Save" AdxLine="345">Salvataggio della parametrizzazione dell'archivio {0} - {1}</data>
+     <data id="cStoreParameters_eError_ParametersAlreadyExits" AdxLine="346">Parametri già esistenti nello spazio {0}</data>
+     <data id="cStoreParameters_eError_InvalidAdxSrvTrtPar" AdxLine="347">Parametri server di elaborazione non validi - Nome: {0}  Porta: {1}  User: {2}</data>
+     <data id="cStoreParameters_eError_InvalidAdxFolderPar" AdxLine="348">Parametri dossier dell'applicazione - Nome: {0}  Porta: {1}  Dossier: {2}  User: {3}  Password criptata: {4}</data>
+     <data id="cStoreParameters_eError_InvalidAdxCnxPar" AdxLine="349">Parametro di connessione Sage Entreprise non accessibile</data>
+     <data id="cStoreParameters_eError_DefaultFolderNotSet" AdxLine="350">Directory di default non definita per gli elementi di tipo: {0}</data>
+     <data id="cStoreSteps_eStep_MainTitle" AdxLine="360">Archivio {0}</data>
+     <data id="cStoreSteps_eStep_ScanOlItems" AdxLine="361">Costituzione della lista degli elementi Outlook</data>
+     <data id="cStoreSteps_eStep_ScanListToUpdateSynchroInfos" AdxLine="362">Aggiornamento delle informazioni di sincronizzazione</data>
+     <data id="cStoreSteps_eStep_OpenAdxCnx" AdxLine="363">Apertura della connessione al server remoto</data>
+     <data id="cStoreSteps_eStep_LastSynchroInfos" AdxLine="364">Accesso alle informazioni dell'ultima sincronizzazione</data>
+     <data id="cStoreSteps_eStep_SynchroTask" AdxLine="365">Richiamo elaborazione delle attività</data>
+     <data id="cStoreSteps_eStep_SynchroContact" AdxLine="366">Richiamo elaborazione dei contatti</data>
+     <data id="cStoreSteps_eStep_EndSynchro" AdxLine="367">Fine sincronizzazione</data>
+     <data id="cStoreSteps_eWarning_LastSynchroNotEnded" AdxLine="368">Ultima sicronizzazione non terminata</data>
+     <data id="cStoreSteps_eWarning_NoSynchroLastFile" AdxLine="369">Nessun file di ultima sincronizzazione</data>
+     <data id="cStoreSteps_eInfo_SynchroTaskModeOff" AdxLine="370">Sincronizzazione delle attività non richiesta</data>
+     <data id="cStoreSteps_eInfo_SynchroContactModeOff" AdxLine="371">Sincronizzazione dei contatti non richiesta</data>
+     <data id="cStoreSteps_eInfo_FisrtSynchro" AdxLine="372">Prima sincronizzazione</data>
+     <data id="cStoreSteps_eInfo_UseSynchroRecoveryPointInfos" AdxLine="373">Utilizzo dei risultati dall'ultimo punto di ripristino</data>
+     <data id="cStoreSteps_eInfo_UseLastSynchroInfos" AdxLine="374">Utilizzo dei risultati dell'ultima sincronizzazione terminata</data>
+     <data id="cStoreSteps_eInfo_SynchroInfos" AdxLine="375">Data di riferimento interna: {0} - Archivio di tipo PST: {1}</data>
+     <data id="cStoreSteps_eStep_SynchroAppointment" AdxLine="376">Richiamo elaborazione degli appuntamenti</data>
+     <data id="cStoreSteps_eInfo_SynchroAppointmentModeOff" AdxLine="377">Sincronizzazione degli appuntamenti non richiesta</data>
+     <data id="cStoreSteps_eInfo_RemoteServerTrace" AdxLine="378">- - - Codice della traccia sul server remoto: {0} - - -</data>
+     <data id="cStoreSteps_eInfo_EndServerSynchro" AdxLine="379">Richiamo fine sincronizzazione sul server</data>
+     <data id="cStoreSteps_eInfo_EndOlSynchro" AdxLine="380">Chiusura della sincronizzazione su Outlook</data>
+     <data id="cSynchroBase_eStep_CreateOrUpdateOnRemoteServer" AdxLine="400">Oulook verso il server remoto - Creazione o modifica</data>
+     <data id="cSynchroBase_eStep_DeleteOnRemoteServer" AdxLine="401">Outlook verso il server remoto - Cancellazione</data>
+     <data id="cSynchroBase_eStep_UpdateOnLocalComputer" AdxLine="402">Server remoto versoOutlook - Creazione, modifica o cancellazione</data>
+     <data id="cSynchroBase_eError_AplToAdxUpdate_CreateOrUpdate" AdxLine="405">Impossibile creare o variare l'elemento - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_AplToAdxUpdate_Delete" AdxLine="406">Impossibile eliminare l'elemento - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_CannotRetrieveDlgDesc" AdxLine="407">Impossibile accedere alla descrizione di {0}</data>
+     <data id="cSynchroBase_eError_CannotSetValid" AdxLine="408">Anomalia durante la validazione di una richiesta di aggiornamento sul server remoto - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_CannotGetValid" AdxLine="409">Anomalia durante la validazione di una richiesta di aggiornamento in Outlook - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_InvalidRemoteUpdFlg" AdxLine="410">Flag di aggiornamento proveniente dal server remoto non valido: {0}</data>
+     <data id="cSynchroBase_eError_CreateAdxIdAlreadyExistInOl" AdxLine="411">Richiesta di creazione su un elemento già esistente (variazione effettuata) - Identificativo Sage Entreprise {0}</data>
+     <data id="cSynchroBase_eError_UpdateAdxIdNotExistInOl" AdxLine="412">Richiesta di modifica su un elemento inesistente (richiesta rifiutata) - Identificativo Sage Entreprise {0}</data>
+     <data id="cSynchroBase_eError_RemoteServerBadAdxId" AdxLine="413">Identificativo ritornato dal server Sage Entreprise invalide: {0}</data>
+     <data id="cSynchroBase_eError_InvalidChangeOfAdxId" AdxLine="414">Modifica dell'identificativo Sage Entreprise vietata: {0}</data>
+     <data id="cSynchroBase_eInfo_SetLocalAdxID" AdxLine="415">Aggiornamento dell'elemento con l'identificativo {0}</data>
+     <data id="cSynchroBase_eError_CannotGetDefaultFolder" AdxLine="416">{0} : Directory di default non definita.</data>
+     <data id="cSynchroBase_eError_CancelLoopOnGetNext" AdxLine="419">Arresto ciclo GetNext poiché il server remoto rinvia sempre lo stesso identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eInfo_DeleteAdxIdAlreadyNotExistInOl" AdxLine="420">Richiesta di eliminazione di un elemento inesistente - Identificativo Sage Entreprise {0}</data>
+     <data id="cSynchroBase_eInfo_AplToAdxUpdate" AdxLine="421">Elaborazione Server remoto verso Outlook</data>
+     <data id="cSynchroBase_eWarning_ItemRestoreNoCreateAllowed" AdxLine="422">Ripristino: elemento rifiutato poiché creazione non autorizzata - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eWarning_ItemRestoreNoUpdateAllowed" AdxLine="423">Ripristino: elemento rifiutato poiché modifica non autorizzata - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_CannotGetNext" AdxLine="424">Impossibile ottenere dal server remoto l'elemento successivo da aggiornare</data>
+     <data id="cSynchroBase_eError_CannotSetOnServerOneItem" AdxLine="425">Impossibile aggiornare l'elemento sul server remoto - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_CannotDeleteOnServerOneItem" AdxLine="426">Impossibile eliminare l'elemento sul server remoto - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_CannotGetItem" AdxLine="427">Impossibile ottenere l'elemento sul server remoto - Identificativo Sage Entreprise: {0}</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgCreAndPermission" AdxLine="428">Creazione richiesta dal server mentre la parametrizzazione utente non l'autorizza.</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgUpdAndPermission" AdxLine="429">Variazione richiesta dal server mentre la parametrizzazione utente non l'autorizza.</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgDelAndPermission" AdxLine="430">Eliminazione richiesta dal server mentre la parametrizzazione utente non l'autorizza.</data>
+     <data id="cSynchroTasks_eStep_MainTitle" AdxLine="440">Elaborazioni delle attività</data>
+     <data id="cSynchroTasks_eInfo_ItemName" AdxLine="441">Attività</data>
+     <data id="cSynchroAppointments_eStep_MainTitle" AdxLine="450">Elaborazione degli appuntamenti</data>
+     <data id="cSynchroAppointments_eInfo_ItemName" AdxLine="451">Appuntamenti</data>
+     <data id="cSynchroContacts_eStep_MainTitle" AdxLine="460">Elaborazione dei contatti</data>
+     <data id="cSynchroContacts_eInfo_ItemName" AdxLine="461">Contatti</data>
+     <data id="cManageThreadSteps_eInfo_End" AdxLine="500">Fine</data>
+     <data id="cManageThreadSteps_eInfo_Beginning" AdxLine="501">Lancio</data>
+     <data id="cManageThreadSteps_eError_AdxConnexion" AdxLine="502">Connessione al server remoto impossibile</data>
+     <data id="cManageThread_eInfo_PCCErrorWhy" AdxLine="520">Errore restituito dallo strumento dialogante con il server: {0} - Codice: {1}</data>
+     <data id="cExternalSupport_eError_InvalidWrpItemType" AdxLine="550">Tipo non gestito: {0}</data>
+     <data id="cDlgBase_eInfo_NoMessageFromRemoteServer" AdxLine="560">Nessun messaggio restituito dal server</data>
+     <data id="cDlgBase_eInfo_RemoteMsgPrefixe" AdxLine="561">Messaggio server remoto:</data>
+     <data id="cDlgBase_eInfo_StatusBeforeRequest" AdxLine="562">Stato prima della richiesta al server: {0}</data>
+     <data id="cDlgBase_eInfo_StatusAfterRequest" AdxLine="563">Stato dopo la richiesta al server: {0}</data>
+     <data id="cDlgDescription_eInfo_Description" AdxLine="605">Descrizione - Programma: {0} - Sotto-programma: {1} - Versione: {2}</data>
+     <data id="cDlgDescription_eInfo_AdxIdLibValue" AdxLine="606">Nome del campo utente che identifica i dati Sage X3: {0}</data>
+     <data id="cDlgDescription_eInfo_AdxIdLibValueNA" AdxLine="607">Nessun nome campo utente identifica i dati Sage X3</data>
+     <data id="cDlgDescriptionField_eError_NullLineNode" AdxLine="608">Nodo nullo non valido</data>
+     <data id="cDlgDescriptionField_eError_NullNode" AdxLine="609">Nodo {0} non trovato in {1}</data>
+     <data id="cDlgBaseDynPar_eError_CannotRetrieveNode" AdxLine="610">Impossibile accedere al nodo di tipo {0}</data>
+     <data id="cDlgBaseDynPar_eError_InvalidDim" AdxLine="612">Dim non valido - Contenuto Xml: {0}</data>
+     <data id="cDlgBaseDynPar_eError_InvalidSize" AdxLine="613">Size non valida - Contenuto Xml: {0}</data>
+     <data id="cDlgBaseDynParSetSync_eInfo_SetToRemoteServer" AdxLine="622">Invio dell'elemento - Identificativo {0} - Tipo aggiornamento {1}</data>
+     <data id="cDlgBaseDynParGetSync_eError_RemoteServerBadAdxId" AdxLine="630">Identificativo ritornato dal server Sage Entreprise non valido: {0}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_GetFromRemoteServer" AdxLine="631">Richiesta elemento successivo</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_GetFromRemoteServerInfos" AdxLine="632">Ricevimento dell'elemento - Identificativo {0} - Stato di aggiornamento {1}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_NoMoreItems" AdxLine="633">Nessun elemento</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_UpdateItem" AdxLine="634">Aggiornamento dell'elemento con l'identificativo {0}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_CreateItem" AdxLine="635">Creazione dell'elemento con l'identificativo {0}</data>
+     <data id="cDlgBaseSetOrGetValid_eInfo_SendValid" AdxLine="640">Conferma aggiornamento - Identificativo {0} - Stato di aggiornamento {1}</data>
+     <data id="cDlgBaseInitSync_eInfo_SynchroInfos" AdxLine="650">Sincronizzazione {0} - Verso server: creazione {1}, modifica {2},cancellazione {3}</data>
+     <data id="cDlgBaseInitSync_eInfo_SynchroInfos_1" AdxLine="651">- Verso Outlook: creazione {4}, modifica {5}, cancellazione {6}</data>
+     <data id="cDlgEmbeddedLinksGet_eError_ContactWithAdxIdNotFound" AdxLine="670">Contatto sincronizzato non trovato: {0} - Identificativo {1}</data>
+     <data id="cDlgEmbeddedLinksGet_eWarning_ContactNotFound" AdxLine="671">Contatto fuori sincronizzazione non ritrovato sull'elemento: {0}</data>
+     <data id="cDlgEmbeddedLinksGet_eInfo_ContactsChange" AdxLine="672">La lista dei contatti è variata.</data>
+     <data id="cDlgEmbeddedLinksGet_eInfo_ContactsNoChange" AdxLine="673">Nessuna variazione sull'elenco dei contatti</data>
+     <data id="cDlgBaseValid_eInfo_SendValid" AdxLine="690">Validazione della richiesta al server - Identificativo {0} - Stato: {1}</data>
+     <data id="cShortItemsList_eInfo_CptInStore" AdxLine="700">Archivio {0} - Risultato della ricerca: {1} attività, {2} contatti, {3} appuntamenti gestiti</data>
+     <data id="cShortItemsList_eInfo_CptInStore_1" AdxLine="701">, {7} appuntamenti non gestiti, {4} non riconosciuti, {6} elementi privati, {5} anteriori a data iniziale</data>
+     <data id="cShortItemsList_eInfo_CptInRootFolder" AdxLine="702">Dossier radice {0} - Risulatato della ricerca: {1} attività, {2} contatti, {3} appuntamenti gestiti</data>
+     <data id="cShortItemsList_eInfo_CptInRootFolder_1" AdxLine="703">, {7} appuntamenti non gestiti, {4} non riconosciuti, {6} elementi privati, {5} anteriori a data iniziale</data>
+     <data id="cShortItemsList_eInfo_StoreSynchroDates" AdxLine="704">Data iniziale di sincronizzazione {0} - Data ultima sincronizzazione {1}</data>
+     <data id="cShortItemsList_eInfo_ScanListToUpdateSynchroInfos" AdxLine="705">Percorsi della lista per determinare gli elementi da aggiornare</data>
+     <data id="cShortItemsList_eInfo_SetListFromOl" AdxLine="706">Costituzione della lista degli elementi</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseAllItems" AdxLine="740">Ricerca degli elementi nel dossier principale: {0}</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseFolders" AdxLine="741">Elaborazione dossier : {0}</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseSubFolder" AdxLine="742">Elaborazione del sotto-dossier {0} di {1}</data>
+     <data id="cFrmParameters_eGui_FrmName" AdxLine="750">Opzioni di sincronizzazione tra Outlook e CRM Sage X3 Entreprise</data>
+     <data id="cFrmParameters_eGui_tabpageStores" AdxLine="751">Archivio</data>
+     <data id="cFrmParameters_eGui_tabpageFolders" AdxLine="752">Generale</data>
+     <data id="cFrmParameters_eGui_chkSynchroActive" AdxLine="753">Sincronizzazione dell'archivio attivata</data>
+     <data id="cFrmParameters_eGui_tabpageDefaultFolders" AdxLine="754">Dossier di default</data>
+     <data id="cFrmParameters_eGui_lblDefaultTask" AdxLine="755">In creazione attività</data>
+     <data id="cFrmParameters_eGui_lblDefaultContact" AdxLine="756">In creazione contatti</data>
+     <data id="cFrmParameters_eGui_lblDefaultAppointment" AdxLine="757">In creazione appuntamenti</data>
+     <data id="cFrmParameters_eGui_tabpageRemoteServer" AdxLine="758">Connessione remota</data>
+     <data id="cFrmParameters_eGui_grpRemoteFolder" AdxLine="759">Accesso al dossier</data>
+     <data id="cFrmParameters_eGui_lblFldName" AdxLine="760">Dossier</data>
+     <data id="cFrmParameters_eGui_lblFldAppliServer" AdxLine="761">Server applicativo</data>
+     <data id="cFrmParameters_eGui_lblFldUser" AdxLine="762">Utente</data>
+     <data id="cFrmParameters_eGui_lblFldPwd" AdxLine="763">Password</data>
+     <data id="cFrmParameters_eGui_grpRemoteServer" AdxLine="764">Accesso al server di elaborazione</data>
+     <data id="cFrmParameters_eGui_lblRmtServer" AdxLine="765">Server di elaborazione</data>
+     <data id="cFrmParameters_eGui_lblRmtPort" AdxLine="766">Porta</data>
+     <data id="cFrmParameters_eGui_lblRmtUser" AdxLine="767">Utente</data>
+     <data id="cFrmParameters_eGui_lblRmtPwd" AdxLine="768">Password</data>
+     <data id="cFrmParameters_eGui_btnCnxTest" AdxLine="769">Test della connessione</data>
+     <data id="cFrmParameters_eGui_tabpageSpecial" AdxLine="770">Diversi</data>
+     <data id="cFrmParameters_eGui_lblInitialSynchroDate" AdxLine="771">Data a partire dalla quale un elemento aderisce alla sincronizzazione</data>
+     <data id="cFrmParameters_eGui_lblLastSuccessSynchroDate" AdxLine="772">Data dell'ultima sincronizzazione riuscita</data>
+     <data id="cFrmParameters_eGui_chkIntermediateDebugFile" AdxLine="773">Scrittura di file intermedi (debug)</data>
+     <data id="cFrmParameters_eGui_btnSaveStore" AdxLine="774">Salvataggio</data>
+     <data id="cFrmParameters_eGui_btnCancelStore" AdxLine="775">Annulla</data>
+     <data id="cFrmParameters_eGui_tabpageAddIn" AdxLine="776">Opzioni generali</data>
+     <data id="cFrmParameters_eGui_lblTimeOut" AdxLine="777">Time out massimo di una richiesta al server (in sec.)</data>
+     <data id="cFrmParameters_eGui_chkDebugGui" AdxLine="778">Traccia interfaccia grafica (file Gui.tra)</data>
+     <data id="cFrmParameters_eGui_chkDebugSynchro" AdxLine="779">Traccia motore di sincronizzazione (file Synchro.tra)</data>
+     <data id="cFrmParameters_eGui_btnSaveAddIn" AdxLine="780">Salvataggio</data>
+     <data id="cFrmParameters_eGui_LstFoldersName" AdxLine="781">Dossier da sincronizzare</data>
+     <data id="cFrmParameters_eGui_LstStoresName" AdxLine="782">Archivio gestito dalla scheda Archivio</data>
+     <data id="cFrmParameters_eGui_grpAddIn" AdxLine="783">Opzioni Addln</data>
+     <data id="cFrmParameters_eGui_lblFldLan" AdxLine="784">Lingua</data>
+     <data id="cFrmParameters_eInfo_LoadGrpStore" AdxLine="800">Caricamento delle informazioni dell'archivio {0}</data>
+     <data id="cFrmParameters_eInfo_NewStore" AdxLine="801">Creazione di un nuovo archivio sincronizzato {0}</data>
+     <data id="cFrmParameters_eInfo_TestConnexion" AdxLine="802">Richiesta di test di connessione</data>
+     <data id="cFrmParameters_eInfo_TestConnexionOk" AdxLine="803">Connessione stabilita.</data>
+     <data id="cFrmParameters_eInfo_TestConnexionKo" AdxLine="804">Fallimento del test !</data>
+     <data id="cFrmParameters_eInfo_SaveStore" AdxLine="805">Salvataggio dell'archivio {0}</data>
+     <data id="cFrmParameters_eWarning_NoStoreToSave" AdxLine="810">Nessun archivio da salvare</data>
+     <data id="cFrmParameters_eGui_btnForceSync" AdxLine="811">Risincronizzazione</data>
+     <data id="cFrmParameters_eInfo_ForceSynchro" AdxLine="812">Durante la prossima sincronizzazione, tutti gli elementi aventi una data di aggiornamento superiore alla data</data>
+     <data id="cFrmParameters_eInfo_ForceSynchro_1" AdxLine="813">di utlima sincronizzazione saranno ritrasmessi al server. Confermi questa scelta?</data>
+     <data id="cFrmParameters_eInfo_ForceSynchroTitle" AdxLine="814">Sincronizzazione forzata verso il server</data>
+     <data id="cFrmParameters_eInfo_SaveOk" AdxLine="815">Salvataggio effettuato</data>
+     <data id="cFrmSynchro_eInfo_StepMsg" AdxLine="900">{0} - {1}  ( Info. fase precedente: {4} durata {2} millisec. - {3} )</data>
+     <data id="cFrmSynchro_eInfo_SynchroError" AdxLine="901">Sincronizzazione terminata con errori</data>
+     <data id="cFrmSynchro_eInfo_SynchroWarning" AdxLine="902">Sincronizzazione terminata con warning</data>
+     <data id="cFrmSynchro_eInfo_BtnClick" AdxLine="903">Click sul bottone {0} - {1}</data>
+     <data id="cFrmSynchro_eInfo_CancelSynchroBefore" AdxLine="904">Arrestare la sincronizzazione prima di chiudere questa finestra</data>
+     <data id="cFrmSynchro_eInfo_SynchroEnded" AdxLine="905">Sincronizzazione terminata</data>
+     <data id="cFrmSynchro_eGui_FrmName" AdxLine="910">Sage X3 Sincronizzazione Outlook</data>
+     <data id="cFrmSynchro_eGui_tabPageMain" AdxLine="911">Archivi</data>
+     <data id="cFrmSynchro_eGui_tabPageLog" AdxLine="912">Log</data>
+     <data id="cFrmSynchro_eGui_btnStart" AdxLine="913">Sincronizzazione</data>
+     <data id="cFrmSynchro_eGui_btnCancel" AdxLine="914">Annulla</data>
+     <data id="cFrmSynchro_eGui_lblProgress" AdxLine="915">Avanzamento</data>
+     <data id="cFrmSynchro_eGui_StoresName" AdxLine="916">Archivi sincronizzati</data>
+     <data id="cFrmSynchro_eGui_LogColStoreId" AdxLine="917">OL Store Id</data>
+     <data id="cFrmSynchro_eGui_LogColOlId" AdxLine="918">OL Entry Id</data>
+     <data id="cFrmSynchro_eGui_LogColMsg" AdxLine="919">Messaggi</data>
+     <data id="cFrmSynchro_eGui_CopyLog" AdxLine="920">Copia il log negli appunti.</data>
+     <data id="cFrmSynchro_eError_ThreadNotResponding" AdxLine="921">Richiesta di arresto non ancora considerata dal processo di sincronizzazione.</data>
+     <data id="cFrmSynchro_eInfo_WaitAgain" AdxLine="922">Attendere nuovamente {0} secondi ?</data>
+     <data id="cFrmSynchro_eInfo_CancelledByUser" AdxLine="923">Sincronizzazione interrotta dall'utente</data>
+     <data id="cFrmSynchro_eWarning_OLItemNotFound" AdxLine="924">La scheda non esiste più</data>
+     <data id="cFrmSynchro_eInfo_SynchroAbort" AdxLine="925">Sincronizzazione annullata</data>
+     <data id="cFrmSynchro_eInfo_Warning" AdxLine="926">Con warning</data>
+     <data id="cFrmSynchro_eInfo_Error" AdxLine="927">Con errori</data>
+     <data id="cFrmSynchro_eInfo_Abort" AdxLine="928">Con errore bloccante</data>
+     <data id="cFrmSynchro_eGui_tabException" AdxLine="929">Eccezione</data>
 </Messages>
