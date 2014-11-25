@@ -1,0 +1,926 @@
+{
+	"fileType": "Policy",
+	"generationStamp": "2014-11-14T14:46:38Z",
+	"partnerId": "",
+	"product": {
+		"code": "3",
+		"title": {
+			"fr-FR": "Sage HR Management",
+			"en-US": "Sage HR Management"
+		},
+		"version": "7"
+	},
+	"policy": {
+		"code": "HRM",
+		"title": {
+			"fr-FR": "HRM V7",
+			"en-US": "HRM V7"
+		},
+		"version": "1.0"
+	},
+	"baseProduct": "",
+	"modules": [
+		{
+			"code": "1",
+			"title": {
+				"fr-FR": "Superviseur",
+				"en-US": "Supervisor"
+			},
+			"keyFunctions": [
+				"APATCH",
+				"APATCHA",
+				"GESACLA",
+				"GESACTX",
+				"GESAFC",
+				"GESAMK",
+				"GESAOB",
+				"GESARP",
+				"GESASU",
+				"GESASW",
+				"GESATB",
+				"GESATY",
+				"GESAWI"
+			],
+			"condition": "always"
+		}, {
+			"code": "2",
+			"title": {
+				"fr-FR": "Paie",
+				"en-US": "Payroll"
+			},
+			"keyFunctions": [
+				"APATCHP",
+				"FRMVAL",
+				"GENPLAN",
+				"GESFRM",
+				"GESVEP",
+				"TRTCAL"
+			],
+			"condition": "license"
+		}, {
+			"code": "3",
+			"title": {
+				"fr-FR": "Interface compta",
+				"en-US": "Account.interface"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "4",
+			"title": {
+				"fr-FR": "Gestion temps",
+				"en-US": "Time management"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "5",
+			"title": {
+				"fr-FR": "Formation",
+				"en-US": "Training"
+			},
+			"keyFunctions": [
+				"CONSSBF",
+				"GESINS",
+				"GESPLF"
+			],
+			"condition": "license"
+		}, {
+			"code": "6",
+			"title": {
+				"fr-FR": "Notes de frais",
+				"en-US": "Expense notes"
+			},
+			"keyFunctions": [
+				"CARRNOF",
+				"EXSPST"
+			],
+			"condition": "license"
+		}, {
+			"code": "7",
+			"title": {
+				"fr-FR": "Masse salariale",
+				"en-US": "Total Payroll"
+			},
+			"keyFunctions": [
+				"CONSMAS",
+				"CONSMES",
+				"GESMCH"
+			],
+			"condition": "license"
+		}, {
+			"code": "8",
+			"title": {
+				"fr-FR": "Competences et carrieres",
+				"en-US": "Skills and careers"
+			},
+			"keyFunctions": [
+				"GESCEV",
+				"GESECP",
+				"GESEVA",
+				"RECCPC",
+				"RECPRF"
+			],
+			"condition": "license"
+		}, {
+			"code": "9",
+			"title": {
+				"fr-FR": "Tronc commun",
+				"en-US": "Common Data"
+			},
+			"keyFunctions": [
+				"GESDPI",
+				"INSTPORTAL",
+				"PRHDCG"
+			],
+			"condition": "always"
+		}, {
+			"code": "10",
+			"title": {
+				"fr-FR": "Developpement",
+				"en-US": "Development"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "11",
+			"title": {
+				"fr-FR": "Interne",
+				"en-US": "Sage X3 Internals"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "12",
+			"title": {
+				"fr-FR": "Inactif",
+				"en-US": "OLD Total Payroll"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "13",
+			"title": {
+				"fr-FR": "Inactif",
+				"en-US": "Inactive"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "14",
+			"title": {
+				"fr-FR": "Inactif",
+				"en-US": "Inactive"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "15",
+			"title": {
+				"fr-FR": "Inactif",
+				"en-US": "Inactive"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "16",
+			"title": {
+				"fr-FR": "Module Spe 1",
+				"en-US": "Module Spe 1"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "17",
+			"title": {
+				"fr-FR": "Module Spe 2",
+				"en-US": "Module Spe 2"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "18",
+			"title": {
+				"fr-FR": "Module Spe 3",
+				"en-US": "Module Spe 3"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "19",
+			"title": {
+				"fr-FR": "Module Spe 4",
+				"en-US": "Module Spe 4"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}
+	],
+	"activityCodes": [
+		{
+			"code": "ABI",
+			"title": {
+				"fr-FR": "Business Intelligence",
+				"en-US": "Business intelligence"
+			},
+			"condition": "always"
+		}, {
+			"code": "APL",
+			"title": {
+				"fr-FR": "Portail utilisateur",
+				"en-US": "User dashboard"
+			},
+			"condition": "always"
+		}, {
+			"code": "ARCH",
+			"title": {
+				"fr-FR": "Archivage",
+				"en-US": "Archiving"
+			},
+			"condition": "always"
+		}, {
+			"code": "ASEAR",
+			"title": {
+				"fr-FR": "Moteur de recherche",
+				"en-US": "Search engine"
+			},
+			"condition": "never"
+		}, {
+			"code": "AUD",
+			"title": {
+				"fr-FR": "Audit standard",
+				"en-US": "Standard audit"
+			},
+			"condition": "always"
+		}, {
+			"code": "AYT",
+			"title": {
+				"fr-FR": "Xtend",
+				"en-US": "Xtend"
+			},
+			"condition": "always"
+		}, {
+			"code": "AZPL",
+			"title": {
+				"fr-FR": "Imprimante ZPL",
+				"en-US": "ZPL printer"
+			},
+			"condition": "always"
+		}, {
+			"code": "BIL",
+			"title": {
+				"fr-FR": "Gestion du bilan social",
+				"en-US": "Annual employment report management"
+			},
+			"condition": "always"
+		}, {
+			"code": "BTP",
+			"title": {
+				"fr-FR": "Gestion BTP",
+				"en-US": "BTP management"
+			},
+			"condition": "always"
+		}, {
+			"code": "CAR",
+			"title": {
+				"fr-FR": "Presence Carriere et emploi",
+				"en-US": "Careers and Jobs menu activated"
+			},
+			"condition": "license"
+		}, {
+			"code": "CNA",
+			"title": {
+				"fr-FR": "Gestion des natures",
+				"en-US": "Analytical accounting"
+			},
+			"condition": "always"
+		}, {
+			"code": "CPT",
+			"title": {
+				"fr-FR": "Interface compta",
+				"en-US": "Acct interface"
+			},
+			"condition": "always"
+		}, {
+			"code": "CQH",
+			"title": {
+				"fr-FR": "Cheques dejeuner",
+				"en-US": "Lunch vouchers"
+			},
+			"condition": "always"
+		}, {
+			"code": "CSL",
+			"title": {
+				"fr-FR": "Consolidation",
+				"en-US": "Consolidation"
+			},
+			"condition": "always"
+		}, {
+			"code": "DAS",
+			"title": {
+				"fr-FR": "Gestion DAS2",
+				"en-US": "DAS2 management"
+			},
+			"condition": "always"
+		}, {
+			"code": "DEMAT",
+			"title": {
+				"fr-FR": "Dematerialisation",
+				"en-US": "Paperless"
+			},
+			"condition": "always"
+		}, {
+			"code": "DIS",
+			"title": {
+				"fr-FR": "Distributeurs",
+				"en-US": "Distributors"
+			},
+			"condition": "always"
+		}, {
+			"code": "EMP",
+			"title": {
+				"fr-FR": "Presence l'onglet specifique",
+				"en-US": "Presence of specific tab"
+			},
+			"condition": "always"
+		}, {
+			"code": "EUR",
+			"title": {
+				"fr-FR": "Zones non souhaitables aux USA",
+				"en-US": "Fields not desirable in the US"
+			},
+			"condition": "always"
+		}, {
+			"code": "EVT",
+			"title": {
+				"fr-FR": "Evenements de l'emploi",
+				"en-US": "Employment Events"
+			},
+			"condition": "always"
+		}, {
+			"code": "FAL",
+			"title": {
+				"fr-FR": "Toujours faux",
+				"en-US": "Always false"
+			},
+			"condition": "always"
+		}, {
+			"code": "FRT",
+			"title": {
+				"fr-FR": "Presence Formation",
+				"en-US": "Training attendance"
+			},
+			"condition": "license"
+		}, {
+			"code": "FRTCA",
+			"title": {
+				"fr-FR": "Presence Formation ou carriere",
+				"en-US": "Training or Careers menu activated"
+			},
+			"condition": "always"
+		}, {
+			"code": "GDD",
+			"title": {
+				"fr-FR": "Budgets operationnels",
+				"en-US": "Operating budgets"
+			},
+			"condition": "always"
+		}, {
+			"code": "HIC",
+			"title": {
+				"fr-FR": "Historisation du contexte",
+				"en-US": "Archive context"
+			},
+			"condition": "always"
+		}, {
+			"code": "IAS",
+			"title": {
+				"fr-FR": "Gestion IAS",
+				"en-US": "IAS management"
+			},
+			"condition": "never"
+		}, {
+			"code": "INTMT",
+			"title": {
+				"fr-FR": "Intermittent",
+				"en-US": "Casual worker"
+			},
+			"condition": "always"
+		}, {
+			"code": "JNT",
+			"title": {
+				"fr-FR": "Plusieurs conjoints",
+				"en-US": "Several spouses"
+			},
+			"condition": "always"
+		}, {
+			"code": "KAO",
+			"title": {
+				"fr-FR": "Localisation Angolaise",
+				"en-US": "Angolan localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KAT",
+			"title": {
+				"fr-FR": "Localisation autrichienne",
+				"en-US": "Austrian localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KAU",
+			"title": {
+				"fr-FR": "Localisation Australienne",
+				"en-US": "Australian localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KCH",
+			"title": {
+				"fr-FR": "Localisation Chinoise",
+				"en-US": "Chinese localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KDEAT",
+			"title": {
+				"fr-FR": "Localisation GER/AUT",
+				"en-US": "GER/AUT localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KFR",
+			"title": {
+				"fr-FR": "Localisation Francaise",
+				"en-US": "French localization"
+			},
+			"condition": "always"
+		}, {
+			"code": "KIF",
+			"title": {
+				"fr-FR": "Compteur pieces pour Bollato",
+				"en-US": "Unit sequence number for Bollato"
+			},
+			"condition": "always"
+		}, {
+			"code": "KIT",
+			"title": {
+				"fr-FR": "Localisation Italienne",
+				"en-US": "Italian localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KPL",
+			"title": {
+				"fr-FR": "Localisation Pologne",
+				"en-US": "Polish localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KPO",
+			"title": {
+				"fr-FR": "Localisation Portugaise",
+				"en-US": "Portuguese Localization"
+			},
+			"condition": "always"
+		}, {
+			"code": "KRU",
+			"title": {
+				"fr-FR": "Localisation Russe",
+				"en-US": "Russian localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KSA",
+			"title": {
+				"fr-FR": "Localisation Afrique du Sud",
+				"en-US": "RSA localization"
+			},
+			"condition": "always"
+		}, {
+			"code": "KSP",
+			"title": {
+				"fr-FR": "Localisation espagnole",
+				"en-US": "Spanish localization"
+			},
+			"condition": "always"
+		}, {
+			"code": "KSW",
+			"title": {
+				"fr-FR": "Localisation Suisse",
+				"en-US": "Swiss localization"
+			},
+			"condition": "never"
+		}, {
+			"code": "KUK",
+			"title": {
+				"fr-FR": "Localisation UK",
+				"en-US": "UK Localisation"
+			},
+			"condition": "never"
+		}, {
+			"code": "KUS",
+			"title": {
+				"fr-FR": "Localisation USA",
+				"en-US": "Localization USA"
+			},
+			"condition": "never"
+		}, {
+			"code": "LEG",
+			"title": {
+				"fr-FR": "Gestion multi-legislation",
+				"en-US": "Multi-legislation management"
+			},
+			"condition": "never"
+		}, {
+			"code": "MAS",
+			"title": {
+				"fr-FR": "Presence Masse Salariale",
+				"en-US": "Total payroll active"
+			},
+			"condition": "license"
+		}, {
+			"code": "MIG",
+			"title": {
+				"fr-FR": "Migrations",
+				"en-US": "Migrations"
+			},
+			"condition": "always"
+		}, {
+			"code": "MTT",
+			"title": {
+				"fr-FR": "Presence de modulation TT",
+				"en-US": "WT smoothing active"
+			},
+			"condition": "always"
+		}, {
+			"code": "MUL",
+			"title": {
+				"fr-FR": "Gestion multi-societe",
+				"en-US": "Multi-company management"
+			},
+			"condition": "always"
+		}, {
+			"code": "NBT",
+			"title": {
+				"fr-FR": "Obsolete",
+				"en-US": "Obsolete"
+			},
+			"condition": "never"
+		}, {
+			"code": "NGT",
+			"title": {
+				"fr-FR": "Gestion jour/nuit",
+				"en-US": "Day/night management"
+			},
+			"condition": "always"
+		}, {
+			"code": "NOF",
+			"title": {
+				"fr-FR": "Notes de frais",
+				"en-US": "Expense notes"
+			},
+			"condition": "always"
+		}, {
+			"code": "PAR",
+			"title": {
+				"fr-FR": "Gestion de la participation",
+				"en-US": "Deferred-b.Profit-Sharing scheme Mgmt"
+			},
+			"condition": "always"
+		}, {
+			"code": "PAY",
+			"title": {
+				"fr-FR": "Presence du module PAIE",
+				"en-US": "Presence of the PAYROLL module"
+			},
+			"condition": "license"
+		}, {
+			"code": "PRH",
+			"title": {
+				"fr-FR": "Portail",
+				"en-US": "Dashboard"
+			},
+			"condition": "license"
+		}, {
+			"code": "SRV",
+			"title": {
+				"fr-FR": "Activite de services",
+				"en-US": "Department activity"
+			},
+			"condition": "always"
+		}, {
+			"code": "TPS",
+			"title": {
+				"fr-FR": "Presence Gestion des temps",
+				"en-US": "Time Mgmt available"
+			},
+			"condition": "always"
+		}, {
+			"code": "TRH",
+			"title": {
+				"fr-FR": "Tickets restaurant",
+				"en-US": "Lunch vouchers"
+			},
+			"condition": "always"
+		}, {
+			"code": "TRU",
+			"title": {
+				"fr-FR": "Toujours vrai",
+				"en-US": "Always true"
+			},
+			"condition": "always"
+		}, {
+			"code": "VAT",
+			"title": {
+				"fr-FR": "Gestion des taxes",
+				"en-US": "Tax management"
+			},
+			"condition": "always"
+		}, {
+			"code": "VEP",
+			"title": {
+				"fr-FR": "Onglet bulletin",
+				"en-US": "Slip tab"
+			},
+			"condition": "always"
+		}, {
+			"code": "VII",
+			"title": {
+				"fr-FR": "Virements internationaux",
+				"en-US": "International transfers"
+			},
+			"condition": "always"
+		}, {
+			"code": "VISAF",
+			"title": {
+				"fr-FR": "Visa notes de frais",
+				"en-US": "Expense notes visa"
+			},
+			"condition": "license"
+		}
+	],
+	"languages": [
+		{
+			"code": "FRA",
+			"title": {
+				"fr-FR": "Francais",
+				"en-US": "French"
+			},
+			"condition": "license"
+		}, {
+			"code": "ENG",
+			"title": {
+				"fr-FR": "Anglais(Etats-Unis)",
+				"en-US": "English-American"
+			},
+			"condition": "license"
+		}, {
+			"code": "POR",
+			"title": {
+				"fr-FR": "Portugais",
+				"en-US": "Portuguese"
+			},
+			"condition": "license"
+		}, {
+			"code": "SPA",
+			"title": {
+				"fr-FR": "Espagnol",
+				"en-US": "Spanish"
+			},
+			"condition": "license"
+		}
+	],
+	"legislations": [
+		{
+			"code": "FRA",
+			"title": {
+				"fr-FR": "Legislation Francaise",
+				"en-US": "French legislation"
+			},
+			"condition": "license"
+		}, {
+			"code": "POR",
+			"title": {
+				"fr-FR": "Legislation Portugaise",
+				"en-US": "Portugese legislation"
+			},
+			"condition": "license"
+		}, {
+			"code": "SPA",
+			"title": {
+				"fr-FR": "Legislation Espagnole",
+				"en-US": "Spanish legislation"
+			},
+			"condition": "license"
+		}, {
+			"code": "ZAF",
+			"title": {
+				"fr-FR": "Legislation Sud Africaine",
+				"en-US": "South Africa legislation"
+			},
+			"condition": "license"
+		}
+	],
+	"parameterKits": [
+		
+	],
+	"sessionTypes": [
+		{
+			"code": "all",
+			"title": {
+				"fr-FR": "All sessions",
+				"en-US": "All sessions"
+			},
+			"devices": [
+				"desktop",
+				"phone",
+				"tablet"
+			]
+		}
+	],
+	"badges": [
+		{
+			"code": "HRMDEV",
+			"title": {
+				"fr-FR": "Developpeur",
+				"en-US": "Developer"
+			},
+			"functions": [
+				"APATCH",
+				"APATCHA",
+				"APATCHP",
+				"CARRNOF",
+				"CONSMAS",
+				"CONSMES",
+				"CONSSBF",
+				"EXSPST",
+				"FRMVAL",
+				"GENPLAN",
+				"GESACLA",
+				"GESACTX",
+				"GESAFC",
+				"GESAMK",
+				"GESAOB",
+				"GESARP",
+				"GESASU",
+				"GESASW",
+				"GESATB",
+				"GESATY",
+				"GESAWI",
+				"GESCEV",
+				"GESDPI",
+				"GESECP",
+				"GESEVA",
+				"GESFRM",
+				"GESINS",
+				"GESMCH",
+				"GESPLF",
+				"GESVEP",
+				"INSTPORTAL",
+				"PRHDCG",
+				"RECCPC",
+				"RECPRF",
+				"TRTCAL"
+			]
+		}, {
+			"code": "HRMFULL",
+			"title": {
+				"fr-FR": "Utilisateur plein",
+				"en-US": "Utilisateur plein"
+			},
+			"functions": [
+				"APATCHP",
+				"CARRNOF",
+				"CONSMAS",
+				"CONSMES",
+				"CONSSBF",
+				"EXSPST",
+				"FRMVAL",
+				"GENPLAN",
+				"GESCEV",
+				"GESDPI",
+				"GESECP",
+				"GESEVA",
+				"GESFRM",
+				"GESINS",
+				"GESMCH",
+				"GESPLF",
+				"GESVEP",
+				"INSTPORTAL",
+				"PRHDCG",
+				"RECCPC",
+				"RECPRF",
+				"TRTCAL"
+			]
+		}, {
+			"code": "HRMHR",
+			"title": {
+				"fr-FR": "Utilisateur RH",
+				"en-US": "Operation User-HR"
+			},
+			"functions": [
+				"CONSSBF",
+				"GESCEV",
+				"GESECP",
+				"GESEVA",
+				"GESINS",
+				"GESPLF",
+				"RECCPC",
+				"RECPRF"
+			]
+		}, {
+			"code": "HRMPAY",
+			"title": {
+				"fr-FR": "Utilisateur Paie",
+				"en-US": "Operation User-Payroll"
+			},
+			"functions": [
+				"APATCHP",
+				"CARRNOF",
+				"CONSMAS",
+				"CONSMES",
+				"EXSPST",
+				"FRMVAL",
+				"GENPLAN",
+				"GESFRM",
+				"GESMCH",
+				"GESVEP",
+				"TRTCAL"
+			]
+		}, {
+			"code": "HRMSS",
+			"title": {
+				"fr-FR": "Utilisateur Self Service",
+				"en-US": "Employee Self Service"
+			},
+			"functions": [
+				"APATCHP",
+				"CARRNOF",
+				"CONSMAS",
+				"CONSMES",
+				"CONSSBF",
+				"EXSPST",
+				"FRMVAL",
+				"GENPLAN",
+				"GESCEV",
+				"GESDPI",
+				"GESECP",
+				"GESEVA",
+				"GESFRM",
+				"GESINS",
+				"GESMCH",
+				"GESPLF",
+				"GESVEP",
+				"INSTPORTAL",
+				"PRHDCG",
+				"RECCPC",
+				"RECPRF",
+				"TRTCAL"
+			]
+		}
+	],
+	"parameters": [
+		{
+			"code": "MAXEMPLOYEES",
+			"title": {
+				"fr-FR": "Nombre d'employes",
+				"en-US": "Nombre d'employes"
+			},
+			"type": "integer"
+		}, {
+			"code": "MAXWEBSERVICES",
+			"title": {
+				"fr-FR": "Nombre de web services",
+				"en-US": "Nombre de web services"
+			},
+			"type": "integer"
+		}
+	],
+	"signature": "Q//4U+nEVcVTs36HRUueLYLrvH0kfQYMCtP5Jf9wRWf3kIoG4YSpf2/P6fmdxPar61304hpbEzW4S7qc898s0VrhZDQUHwuGHA+J1G7WKZ4ADmxaJUC9zoZYuuMDEaFZkjCQ5PIoCLqqGzQQBf3Ukfr1C+VdzqzBTvsW63jSImbHp/ruSQ6rsq4uEquY6BQ3Za+bj8t3tkPyCXJsSh29cBoU+7E1tzP+6RhZrSARbkimgJjfABu9Qw0uZKRkdhp0wwFIVUTn+yY3HJSfPXjrvJ3Xy11U91ZwxIykriBbqzL3srF+6WbcWLN+26nsIAB9RrJfrqN3iXnqdPDPv50zQtANYmWisWFGRrdqxgLy18tCyNa3zfQtCK/WKjGJXkssCKNQISvZfWL8eo/YtTQ+zBp9rAsB59RySmB0BYpYgLXG2nKpxwTI+qdvVzzQ0Hj34PMAn6lgSU192pMgDJVKW6EyDakHWtYrco0Dr08H2x/7y3TzXcyBi2vqhDJUpVxaJ0dsu2zMLmRSo4ef0qP0ws+khRiXfPuiV1g+L9UOh5ALx8+RGraf/ZlPcnFv+DHe9knLYIte290QJFJhlpJ33NNIdGx9HQmcb5Qe9tLyD6kr872FGUGfu+bJCTBHT4jhq8asW5TV46u7Ofs9g52l5SVyrdEPSfXCCUetELXyRj8=",
+	"signatureText": "SAGE SAS"
+}
