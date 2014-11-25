@@ -9,7 +9,7 @@ namespace CommonDataHelper.UtilityHelper
     {
         public static string rawDecode(string input)
         {
-            string output = string.Empty;
+            StringBuilder output = new StringBuilder(); 
 
             int chr1, chr2, chr3;
             int enc1, enc2, enc3, enc4;
@@ -31,18 +31,18 @@ namespace CommonDataHelper.UtilityHelper
                 chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
                 chr3 = ((enc3 & 3) << 6) | enc4;
 
-                output = output + char.ConvertFromUtf32(chr1);
+                output.Append(char.ConvertFromUtf32(chr1));
 
                 if (enc3 != 64)
                 {
-                    output = output + char.ConvertFromUtf32(chr2);
+                    output.Append(char.ConvertFromUtf32(chr2));
                 }
                 if (enc4 != 64)
                 {
-                    output = output + char.ConvertFromUtf32(chr3);
+                    output.Append(char.ConvertFromUtf32(chr3));
                 }
             }
-            return output;
+            return output.ToString();
         }
     }
 }
