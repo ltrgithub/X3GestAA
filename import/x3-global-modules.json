@@ -29,6 +29,36 @@
   "$items": [
     {
       "$type": "menuCategory",
+      "code": "STD_ABSENCE",
+      "description": "description_646d96cd-9c85-485a-9545-72afe86b7a5e"
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_PAYSLIP",
+      "description": "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde"
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_LEAVEST",
+      "description": "description_20722046-8742-4702-b47b-19bb4096350e"
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_HEADCOUNT",
+      "description": "description_48b6926d-9ca5-46a6-a167-983090134851"
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_EMPL",
+      "description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66"
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_INCOME",
+      "description": "description_f1196c6b-1d73-425d-9eee-e0ca710473dc"
+    },
+    {
+      "$type": "menuCategory",
       "code": "STD_COST",
       "description": "description_e6747881-3d04-41e3-a58b-872815fd16f0"
     },
@@ -599,16 +629,6 @@
     },
     {
       "$type": "menuModule",
-      "code": "STD_X3_HRM_PAY",
-      "title": "title_befbdb20-8082-4267-8b8c-44350f2734b1",
-      "isFactory": true,
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      }
-    },
-    {
-      "$type": "menuModule",
       "code": "STD_X3_ERP_VXADC",
       "title": "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a",
       "isFactory": true,
@@ -616,10 +636,26 @@
         "application": "x3",
         "contract": "erp"
       }
+    },
+    {
+      "$type": "menuModule",
+      "code": "STD_X3_HRM_PAY",
+      "title": "title_befbdb20-8082-4267-8b8c-44350f2734b1",
+      "isFactory": true,
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      }
     }
   ],
   "$localization": {
     "ar-lb": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -700,10 +736,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "de-de": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -784,10 +826,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Mobile Datenerfassung"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Mobile Datenerfassung",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "en-gb": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -868,10 +916,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "en-us": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absenteeism",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Payslips",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Leave",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Headcounts",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employee",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Income",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -952,10 +1006,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "es-es": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1036,10 +1096,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminales móviles"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminales móviles",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "fr-fr": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Congés",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employée",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Coûts",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventaires",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1120,10 +1186,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Masse salariale",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Exploitation",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Administration du personnel",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Paie",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminaux portables"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminaux portables",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Paie"
     },
     "it-it": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1204,10 +1276,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminali RF"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminali RF",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "pl-pl": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1288,10 +1366,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADC"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADC",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "pt-pt": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1372,10 +1456,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Massa salarial",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Exploração",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Administração de pessoal",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Salários",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminais portáteis"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminais portáteis",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Salários"
     },
     "ru-ru": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1456,10 +1546,16 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     },
     "zh-cn": {
+      "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
+      "description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+      "description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+      "description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+      "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+      "description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "description_eebad67b-e029-42e8-9a4d-c8a6f6c8e649": "DADS",
@@ -1540,8 +1636,8 @@
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "Personnel administration",
-      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
-      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs"
+      "title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
+      "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll"
     }
   }
 }
