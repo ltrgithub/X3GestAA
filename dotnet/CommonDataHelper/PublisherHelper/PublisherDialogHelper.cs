@@ -50,6 +50,11 @@ namespace CommonDataHelper.PublisherHelper
             catch (WebException webEx)
             {
                 MessageBox.Show(webEx.Message);
+
+                /*
+                 * We've had a WebException, so clear the cookie cache. This will force a logon for subsequent requests
+                 */
+                CookieHelper.CookieContainer = null;
             }
             finally
             {
@@ -90,6 +95,11 @@ namespace CommonDataHelper.PublisherHelper
             catch (WebException webEx)
             {
                 MessageBox.Show(webEx.Message);
+
+                /*
+                 * We've had a WebException, so clear the cookie cache. This will force a logon for subsequent requests
+                 */
+                CookieHelper.CookieContainer = null;
             }
             finally
             {
@@ -108,6 +118,11 @@ namespace CommonDataHelper.PublisherHelper
             catch (WebException webEx)
             {
                 MessageBox.Show(webEx.Message);
+
+                /*
+                 * We've had a WebException, so clear the cookie cache. This will force a logon for subsequent requests
+                 */
+                CookieHelper.CookieContainer = null;
             }
             finally
             {
@@ -126,6 +141,11 @@ namespace CommonDataHelper.PublisherHelper
             catch (WebException webEx)
             {
                 MessageBox.Show(webEx.Message);
+
+                /*
+                 * We've had a WebException, so clear the cookie cache. This will force a logon for subsequent requests
+                 */
+                CookieHelper.CookieContainer = null;
             }
             finally
             {
