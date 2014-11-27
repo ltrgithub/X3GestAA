@@ -17,22 +17,18 @@ namespace CommonDataHelper
     public partial class ConnectionDialog : Form
     {
         private Boolean _loggedIn = false;
+        private Boolean _canceled = false;
 
         public ConnectionDialog()
         {
             InitializeComponent();
         }
-        /*
-        void Hide()
-        {
-            MessageBox.Show("Oje");
-        }
-        */
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
+                _canceled = true;
                 Hide();
             }
             base.OnFormClosing(e);
@@ -109,6 +105,7 @@ namespace CommonDataHelper
                 while (!_loggedIn)
                 {
                     Application.DoEvents();
+                    if (_canceled) return false;
                 }
 
                 CookieHelper.setCookies(new WebHelper().GetUriCookieContainer(url.ToString()).GetCookieHeader(url));
