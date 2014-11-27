@@ -31,5 +31,8 @@ namespace CommonDataHelper.PublisherHelper.Model.Common
 
         [JsonProperty("tags")]
         public List<SyracuseUuidModel> tags;
+    
+        [JsonProperty("isReadOnly")]
+        public Boolean isReadOnly;
     }
 }

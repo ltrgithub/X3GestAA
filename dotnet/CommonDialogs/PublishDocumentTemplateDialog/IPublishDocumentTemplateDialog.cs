@@ -27,6 +27,7 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
 
         void setEndpointDelegate(EndpointDelegate endpointDelegate, string officeApplication, string savePrototypeName);
         void setDialogCheckerDelegate(DialogCheckerDelegate dialogCheckerDelegate);
+        Boolean IsReadOnly { get; set; }
     }
 
     public interface IPublishDocumentTemplateDialog : IPublishDocumentTemplate

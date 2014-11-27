@@ -88,6 +88,12 @@ namespace CommonDialogs.PublishDocumentDialog
             }
         }
 
+        public Boolean IsReadOnly
+        {
+            get { return checkBoxReadOnly.Checked; }
+            set { checkBoxReadOnly.Checked = value; }
+        }
+
         private string _documentType = string.Empty;
         public string DocumentType
         {

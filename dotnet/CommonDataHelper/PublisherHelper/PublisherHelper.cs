@@ -75,6 +75,7 @@ namespace CommonDataHelper.PublisherHelper
                     storageVolume = new SyracuseUuidModel() { uuid = publishDocumentParameters.StorageVolume },
                     teams = publishDocumentParameters.Team.OfType<TeamItem>().Select(s => { return new SyracuseUuidModel() { uuid = JsonConvert.DeserializeObject<TeamModel>(s.TeamJson).uuid }; }).ToList<SyracuseUuidModel>(),
                     tags = publishDocumentParameters.Tag.OfType<TagItem>().Select(s => { return new SyracuseUuidModel() { uuid = JsonConvert.DeserializeObject<TagModel>(s.TagJson).uuid }; }).ToList<SyracuseUuidModel>(),
+                    isReadOnly = publishDocumentParameters.IsReadOnly,
                     owner = new SyracuseUuidModel { uuid = publishDocumentParameters.Owner }
                 };
 
@@ -146,6 +147,7 @@ namespace CommonDataHelper.PublisherHelper
                         teams = publishDocumentParameters.Team.OfType<TeamItem>().Select(s => { return new SyracuseUuidModel() { uuid = JsonConvert.DeserializeObject<TeamModel>(s.TeamJson).uuid }; }).ToList<SyracuseUuidModel>(),
                         tags = publishDocumentParameters.Tag.OfType<TagItem>().Select(s => { return new SyracuseUuidModel() { uuid = JsonConvert.DeserializeObject<TagModel>(s.TagJson).uuid }; }).ToList<SyracuseUuidModel>(),
                         templatePurpose = publishDocumentParameters.Purpose,
+                        isReadOnly = publishDocumentParameters.IsReadOnly,
                         endpoint = new SyracuseUuidModel { uuid = publishDocumentParameters.Endpoint }
                     };
 

@@ -17,6 +17,7 @@ namespace CommonDialogs.PublishDocumentDialog
         CheckedListBox.CheckedItemCollection Team { get; }
 
         string DocumentType { get; set; }
+        Boolean IsReadOnly { get; set; }
     }
 
     public interface IPublishDocumentDialog : IPublishDocument
