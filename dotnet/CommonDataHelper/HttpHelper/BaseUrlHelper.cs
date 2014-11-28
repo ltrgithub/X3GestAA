@@ -46,10 +46,9 @@ namespace CommonDataHelper
         {
             get
             {
-                //_baseUrl = null;
                 if (_baseUrl == null)
                 {
-                    Uri baseUrl = getBaseUrlFromCustomData();
+                    Uri baseUrl = getBaseUrlFromCustomData(); 
 
                     if (baseUrl == null)
                     {
@@ -57,7 +56,7 @@ namespace CommonDataHelper
                     }
                     else
                     {
-                        Uri _dummy = getBaseUrlFromUserPreferenceFile();
+                        loadPreferencesList();
                         if (!_prefUrls.Contains(baseUrl))
                         {
                             _prefUrls.Add(baseUrl);
@@ -72,6 +71,7 @@ namespace CommonDataHelper
             {
                 _baseUrl = value;
                 saveUrlPreference(_baseUrl);
+                loadPreferencesList();
             }
         }
 
@@ -87,8 +87,27 @@ namespace CommonDataHelper
             if (CustomData != null)
             {
                 string serverUrl = CustomData.getServerUrl();
-                if (!string.IsNullOrEmpty(serverUrl))
-                    return new Uri(serverUrl);
+                if (string.IsNullOrEmpty(serverUrl))
+                {
+                    Uri documentUrl = getDocumentUrlFromCustomData();
+                    if (documentUrl != null)
+                    {
+                        return new Uri(documentUrl.GetLeftPart(UriPartial.Authority));
+                    }
+                }
+                return new Uri(serverUrl);
+            }
+
+            return null;
+        }
+
+        private static Uri getDocumentUrlFromCustomData()
+        {
+            if (CustomData != null)
+            {
+                string documentUrl = CustomData.getDocumentUrl();
+                if (!string.IsNullOrEmpty(documentUrl))
+                    return new Uri(documentUrl);
             }
 
             return null;
@@ -97,13 +116,17 @@ namespace CommonDataHelper
 
 #region preferencefile
 
-        private static Uri getBaseUrlFromUserPreferenceFile()
+        private static void loadPreferencesList()
         {
             if (_prefUrls.Count == 0)
             {
                 readUserPreferenceFile();
             }
+        }
 
+        private static Uri getBaseUrlFromUserPreferenceFile()
+        {
+            loadPreferencesList();
             return _prefUrls[0];
         }
 

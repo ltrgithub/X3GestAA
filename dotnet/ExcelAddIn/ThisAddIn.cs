@@ -78,8 +78,6 @@ namespace ExcelAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            //System.Diagnostics.Debugger.Launch();
-
             browserDialog = new BrowserDialog();
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);
@@ -87,12 +85,17 @@ namespace ExcelAddIn
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
             taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
-            this.commons.DisplayServerLocations();
+
             taskPane.Visible = BaseUrlHelper.ShowActionPanel;
             templateActions.DisableTemplateButtons();
 
             if (this.Application.ActiveWorkbook != null)
+            {
+                SetServerLocations(this.Application.ActiveWorkbook);
                 AutoConnect(this.Application.ActiveWorkbook);
+                
+            }
+
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
             this.Application.WorkbookActivate += new Excel.AppEvents_WorkbookActivateEventHandler(Application_WorkbookActivate);
             this.Application.WorkbookBeforeSave += new Excel.AppEvents_WorkbookBeforeSaveEventHandler(Application_WorkbookBeforeSave);
@@ -227,6 +230,8 @@ namespace ExcelAddIn
 
         public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
+            SetServerLocations(Wb);
+
             if (handleWorkbookOpen)
             {
                 /*
@@ -247,9 +252,7 @@ namespace ExcelAddIn
                         AutoConnect(Wb);
                 }
             }
-
             checkButton(Wb);
-
             Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
 
@@ -261,13 +264,14 @@ namespace ExcelAddIn
             {
                 return;
             }
-
+ 
             if (isSyracuseWorkbook(Wb))
                 Ribbon.RibbonUI.ActivateTab("syracuseTab");
 
             SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (cd != null)
             {
+                BaseUrlHelper.CustomData = cd;
                 templateActions.ConfigureTemplateRibbon(workbook, cd.getCreateMode(), "".Equals(cd.getDocumentUrl()) == false);
                 commons.SetSupportedLocales(cd);
                 commons.DisplayDocumentLocale(Wb);
@@ -276,14 +280,12 @@ namespace ExcelAddIn
             {
                 if (templateActions.isExcelTemplateType(Wb) == false)
                 {
+                    BaseUrlHelper.CustomData = Globals.ThisAddIn.commons.getSyracuseCustomData(); 
                     commons.SetSupportedLocales(new SyracuseCustomData(workbook));
                     commons.DisplayDocumentLocale(Wb);
                     templateActions.DisableTemplateButtons();
                 }
             }
-            commons.DisplayServerLocations();
-            //workbook.Worksheets["Sage.X3.ReservedSheet"].Visible = Excel.XlSheetVisibility.xlSheetVisible;
-
         }
 
         void Application_WorkbookBeforeSave(Excel.Workbook wb, bool SaveAsUI, ref bool Cancel)
@@ -638,6 +640,28 @@ namespace ExcelAddIn
         private Boolean isSyracuseWorkbook(Workbook Wb)
         {
             return new SyracuseCustomData(Wb).GetReservedSheet(false) != null;
+        }
+
+        private void SetServerLocations(Workbook Wb)
+        {
+            SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(Wb);
+            if (cd != null && (string.IsNullOrEmpty(cd.getServerUrl()) == false || string.IsNullOrEmpty(cd.getDocumentUrl()) == false))
+            {
+                String url = String.IsNullOrEmpty(cd.getServerUrl()) ? cd.getDocumentUrl() : cd.getServerUrl();
+                String baseUrl = new Uri(url).GetLeftPart(UriPartial.Authority);
+                BaseUrlHelper.BaseUrl = new Uri(baseUrl);
+            }
+            else
+            {
+                SyracuseCustomData cd2 = new SyracuseCustomData(Wb); //.GetCustomDataByName("datasourcesAddress");
+                if (cd2 != null && string.IsNullOrEmpty(cd2.GetCustomDataByName("datasourcesAddress")) == false)
+                {
+                    String url = cd2.GetCustomDataByName("serverUrlAddress");
+                    String baseUrl = new Uri(url).GetLeftPart(UriPartial.Authority);
+                    BaseUrlHelper.BaseUrl = new Uri(baseUrl);
+                }
+            }
+            this.commons.DisplayServerLocations();
         }
     
         void Application_WorkbookBeforeClose(Workbook Wb, ref bool Cancel)

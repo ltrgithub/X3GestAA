@@ -92,6 +92,11 @@ namespace WordAddIn
                         new PublisherDialogHelper().showPublisherTemplateDialog("saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
                         break;
                 }
+
+                if (!string.IsNullOrEmpty(Globals.WordAddIn.commons.getSyracuseCustomData().getDocumentUrl()))
+                {
+                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                }
             }
         }
 

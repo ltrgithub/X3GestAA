@@ -231,7 +231,10 @@ namespace CommonDataHelper.PublisherHelper
             }
             else if (applicationName.StartsWith(@"Sage.Syracuse.ExcelAddIn"))
             {
-                repository = "documents";
+                if (documentType.Equals("saveReportTemplatePrototype"))
+                    repository = "msoExcelTemplateDocuments";
+                else
+                    repository = "documents";
             }
             else if (applicationName.StartsWith(@"Sage.Syracuse.PowerPointAddIn"))
             {

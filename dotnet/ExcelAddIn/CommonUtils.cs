@@ -338,10 +338,10 @@ namespace ExcelAddIn
             browserDialog.Hide();
         }
 
-        public void DisplayServerLocations()
+        public void DisplayServerLocations(string baseUrl = null)
         {
             Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Clear();
-            Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = BaseUrlHelper.BaseUrl.ToString();
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = baseUrl ?? BaseUrlHelper.BaseUrl.ToString();
             List<Uri> _urls = BaseUrlHelper.getBaseUrlsFromUserPreferenceFile;
             foreach (Uri _uri in _urls)
             {

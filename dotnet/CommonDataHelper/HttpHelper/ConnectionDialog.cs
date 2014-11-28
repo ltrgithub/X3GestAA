@@ -44,7 +44,7 @@ namespace CommonDataHelper
             DateTime dummy = DateTime.Now;
             Text = BaseUrlHelper.BaseUrl.ToString();
 
-            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html?dummy=" + dummy.ToString());
+            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html"); //?dummy=" + dummy.ToString());
 
             HttpStatusCode statusCode = HttpStatusCode.Unauthorized;
             HttpWebResponse response = null;
@@ -112,6 +112,10 @@ namespace CommonDataHelper
                 }
 
                 CookieHelper.setCookies(new WebHelper().GetUriCookieContainer(url.ToString()).GetCookieHeader(url));
+            }
+            else if (CookieHelper.CookieContainer == null && webBrowser.Document.Cookie != null)
+            {
+                CookieHelper.setCookies(webBrowser.Document.Cookie);
             }
 
             Hide();
