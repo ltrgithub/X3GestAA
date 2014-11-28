@@ -43,6 +43,20 @@ exports.config = {
 		port: 8125
 	},
 	*/
+    mongodb: {
+        // connect options as expected by MongoClient.connect of nodejs mongodb driver
+        options: {
+            db: {
+                w: 1
+            },
+            server: {
+            },
+            replSet: {
+            },
+            mongos: {
+            }
+        }
+    },
 	session: {
 		timeout: 20, // minutes
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
