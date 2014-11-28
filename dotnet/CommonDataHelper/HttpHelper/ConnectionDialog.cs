@@ -93,6 +93,13 @@ namespace CommonDataHelper
                 Application.DoEvents();
             }
 
+            // New Addins against old login
+            if (!rememberMeLogin && string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && (webBrowser.DocumentTitle.Equals("Syracuse") || webBrowser.DocumentTitle.Equals("Sage ERP X3")))
+            {
+                CookieHelper.setCookies(webBrowser.Document.Cookie);
+                return true;
+            }
+            
             // e.g. if URL is wrong or server not available
             if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && !webBrowser.DocumentTitle.Equals("Syracuse") && !webBrowser.DocumentTitle.Equals("Sage ERP X3"))
             {
