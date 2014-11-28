@@ -211,6 +211,12 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
             }
         }
 
+        public Boolean IsReadOnly
+        {
+            get { return checkBoxReadOnly.Checked; }
+            set { checkBoxReadOnly.Checked = value; }
+        }
+
         private void btnOk_Click(object sender, EventArgs e)
         {
             _publisherDelegate(this, _workingCopyPrototypeModel, _customData);

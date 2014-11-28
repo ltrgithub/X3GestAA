@@ -17,22 +17,18 @@ namespace CommonDataHelper
     public partial class ConnectionDialog : Form
     {
         private Boolean _loggedIn = false;
+        private Boolean _canceled = false;
 
         public ConnectionDialog()
         {
             InitializeComponent();
         }
-        /*
-        void Hide()
-        {
-            MessageBox.Show("Oje");
-        }
-        */
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
+                _canceled = true;
                 Hide();
             }
             base.OnFormClosing(e);
@@ -97,6 +93,13 @@ namespace CommonDataHelper
                 Application.DoEvents();
             }
 
+            // New Addins against old login
+            if (!rememberMeLogin && string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && (webBrowser.DocumentTitle.Equals("Syracuse") || webBrowser.DocumentTitle.Equals("Sage ERP X3")))
+            {
+                CookieHelper.setCookies(webBrowser.Document.Cookie);
+                return true;
+            }
+            
             // e.g. if URL is wrong or server not available
             if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && !webBrowser.DocumentTitle.Equals("Syracuse") && !webBrowser.DocumentTitle.Equals("Sage ERP X3"))
             {
@@ -109,6 +112,7 @@ namespace CommonDataHelper
                 while (!_loggedIn)
                 {
                     Application.DoEvents();
+                    if (_canceled) return false;
                 }
 
                 CookieHelper.setCookies(new WebHelper().GetUriCookieContainer(url.ToString()).GetCookieHeader(url));

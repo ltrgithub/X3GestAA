@@ -46,5 +46,8 @@ namespace CommonDataHelper.PublisherHelper.Model.Common
 
         [JsonProperty("templatePurpose")]
         public string templatePurpose;
+
+        [JsonProperty("isReadOnly")]
+        public Boolean isReadOnly;
     }
 }
