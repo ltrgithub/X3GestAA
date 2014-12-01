@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+    <Messages language="English - British" Menu="9913" Version="V1.0" Extract="20141020">
+     <data id="cManageGui_eError_VersionsNotCompatibleTitle" AdxLine="1">Incompatible versions</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg" AdxLine="2">Version {1} of the Sage X3 component of CRM X3 is not compatible with the Outlook version {0} on this workstation</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg2" AdxLine="3">To avoid getting this message, please uninstall this composant via the 'Add/Remove software' function accessible via </data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg2_1" AdxLine="4">the Windows Configuration Panel</data>
+     <data id="cManageGui_eError_VersionsNotCompatibleMsg1" AdxLine="5">You should purchase and install the appropriate component in order to benefit from the CRM X3 synchronisation</data>
+     <data id="cRessourcesOl_eWarning_StoreNotAccessible" AdxLine="70">Store not accessible: {0} - Outlook message: {1} (HResult: {2})</data>
+     <data id="cXmlManage_eError_XmlFileNotFound" AdxLine="80">File not found - {0}</data>
+     <data id="cXmlManage_eError_XmlInvalid" AdxLine="81">Invalid Xml - {0}</data>
+     <data id="cXmlManage_eError_XmlStringInvalid" AdxLine="82">Error loading the Xml flow - {0}</data>
+     <data id="cXmlManage_eError_DirectoryNotFoundException" AdxLine="83">Directory not found - {0}</data>
+     <data id="cXmlManage_eError_XmlLoad" AdxLine="84">Error loading the Xml - {0}</data>
+     <data id="cRessources_eInfo_Yes" AdxLine="90">Yes</data>
+     <data id="cRessources_eInfo_No" AdxLine="91">No</data>
+     <data id="cRessources_eInfo_CleanTempDirectory" AdxLine="92">Cleaning up temporary file {0}</data>
+     <data id="cRessourcesParameters_eStep_SynchroTraceSet" AdxLine="100">Synchronization trace - {0} to {1}</data>
+     <data id="cRessourcesParameters_eStep_GuiTraceSet" AdxLine="101">Graphical interface trace - {0} to {1}</data>
+     <data id="cRessourcesParameters_eStep_PCCTraceSet" AdxLine="102">Sage Communication Pack trace - {0} to {1}</data>
+     <data id="cRessourcesParameters_eError_BadParameterValue" AdxLine="103">Parameter {0} - Invalid value {1}</data>
+     <data id="cRessourcesParameters_eError_BadDialogPrgrmInfos" AdxLine="104">{0} - Incorrect remote server information - Processing {1} - Sub-program {2}</data>
+     <data id="cRessourcesParameters_eError_DialogPrgmUnKnow" AdxLine="105">Dialogue not managed {0}</data>
+     <data id="cRessourcesParameters_eError_Load" AdxLine="106">Impossible to load the AddIn parameters file</data>
+     <data id="cRessourcesParameters_eWarning_CreateFromScratch" AdxLine="107">Initialising the AddIn parameters file</data>
+     <data id="cRessourcesParameters_eInfo_TraceToFile" AdxLine="108">Trace file: {0}</data>
+     <data id="cRessourcesParameters_eGui_InitParameters" AdxLine="109">CRM X3 synchronisation</data>
+     <data id="cRessourcesParameters_eGui_FirstLaunch" AdxLine="110">First use - Initialising the AddIn parameters file</data>
+     <data id="cParameter_eError_CtorWithNullXmlElement" AdxLine="120">Constructor called with a null Xml element</data>
+     <data id="cPccConnection_eStep_OpenStoreConnexion" AdxLine="130">Opening the store connection to the remote server</data>
+     <data id="cPccConnection_eError_AdonixConnexionParameters" AdxLine="132">Invalid connection parameters</data>
+     <data id="cPccConnection_eError_CannotAccessAdonix" AdxLine="133">Impossible to access the server</data>
+     <data id="cPccConnection_eError_LoadError" AdxLine="134">Error loading the Sage Communication Pack</data>
+     <data id="cPccConnection_eInfo_OpenAdxConnexion" AdxLine="135">Opening the connection</data>
+     <data id="cPccConnection_eInfo_CloseAdxConnexion" AdxLine="136">Closing the connection</data>
+     <data id="cPccConnection_eInfo_TestStoreConnexion" AdxLine="137">Testing the connection</data>
+     <data id="cPccConnection_eInfo_AdxConnexionParameters" AdxLine="138">Folder: {0}, X3 user: {1}, Language: {2}, Application server: {3}, </data>
+     <data id="cPccConnection_eInfo_AdxConnexionParameters_1" AdxLine="139">Process server: {4}, Port: {5], User: {6}; Session type: {7}</data>
+     <data id="cPccSubProgRequest_eError_TooMuchValues" AdxLine="150">Parameter {0} - Too many values {1}</data>
+     <data id="cPccSubProgRequest_eError_NullValue" AdxLine="151">Parameter {0} - Null value (null)!</data>
+     <data id="cPccSubProgRequest_eError_ParNotDefined" AdxLine="152">Undefined parameter {0} </data>
+     <data id="cPccSubProgRequest_eError_BadParKeyDef" AdxLine="153">Key parameter incorrectly defined - Name {0} - Dim {1} - Size {2}</data>
+     <data id="cPccSubProgRequest_eError_BadParCharDef" AdxLine="154">String type parameter incorrectly defined - Name {0} - Dim {1} - Size {2}</data>
+     <data id="cPccSubProgRequest_eError_BadParIntDef" AdxLine="155">Int type parameter incorrectly defined - Name {0} - Dim {1}</data>
+     <data id="cPccSubProgRequest_eError_BadParClobDef" AdxLine="156">Image file type parameter incorrectly defined - Name {0} - Dim {1}- Size {2}</data>
+     <data id="cPccSubProgRequest_eError_BadParDecDef" AdxLine="157">Decimal type parameter incorrectly defined - Name {0} - Dim {1}</data>
+     <data id="cPccSubProgRequest_eError_BadParDateDef" AdxLine="158">DateTime type parameter incorrectly defined - Name {0} - Dim {1}</data>
+     <data id="cPccSubProgRequest_eError_InvalidType" AdxLine="159">Type not managed: {0}</data>
+     <data id="cPccSubProgRequest_eError_ParAlreadyDefined" AdxLine="160">Parameter already defined: {0}</data>
+     <data id="cPccSubProgRequest_eError_AddWrongType" AdxLine="161">The value of parameter {3} of type {2} is wrongly added to the collection of type {0}</data>
+     <data id="cPccSubProgRequest_eError_KeyNotDefinedInKeysList" AdxLine="162">Key {1} not found in list {0}</data>
+     <data id="cPccSubProgRequest_eError_GetValueWithBadType" AdxLine="163">The value of parameter {2} of type {3} cannot be obtained from the collection of type {0}</data>
+     <data id="cPccSubProgRequest_eError_BadStringForDate" AdxLine="167">The string {0} cannot be converted into a date or time (expected format yyyyMMddHHmmss)</data>
+     <data id="cPccSubProgRequest_eError_SendRequestFailed" AdxLine="168">Error when processing the request {0} / {1}</data>
+     <data id="cPccSubProgRequest_eStep_SendRequest" AdxLine="169">Request to the serveur {0} / {1}</data>
+     <data id="cPccSubProgRequest_eError_SendRequestProgramFailed" AdxLine="170">Processing error on the server - Request: {0} / {1} - Anomaly: {2}</data>
+     <data id="cPccSubProgRequest_eError_SendRequestCnxFailed" AdxLine="171">Error when dialoguing with the server - Request: {0} / {1} - Anomaly: {2}</data>
+     <data id="cStrucParameter_eError_GetValueWithBadPos" AdxLine="180">Index incorrect {2} to obtain a value in collection {0} of dimension {1}</data>
+     <data id="cStrucParameter_eError_SetValueWithBadPos" AdxLine="181">Index incorrect {2} to position a value in collection {0} of dimension {1}</data>
+     <data id="cWrpOneExplorer_eGui_BtnSynchro" AdxLine="200">Synchro</data>
+     <data id="cWrpOneExplorer_eGui_BtnOptions" AdxLine="201">Options</data>
+     <data id="cWrpOneExplorer_eGui_MenuName" AdxLine="202">CRM X3 synchronisation</data>
+     <data id="cWrpOneExplorer_eInfo_BtnClick" AdxLine="203">Click on {0} - Explorer {1}</data>
+     <data id="cWrpOneExplorer_eInfo_OlExplorerActivate" AdxLine="204">Activating new explorer - Identifier {0}</data>
+     <data id="cWrpOneExplorer_eInfo_GuiSynchroRelease" AdxLine="205">The synchronisation gave control again to the graphical interface</data>
+     <data id="cWrpItem_eError_GetStrFromProperty" AdxLine="220">Get error standard property of string type - Name: {0} - Class: {1} - {2}</data>
+     <data id="cWrpItem_eError_GetStrFromUserProperty" AdxLine="221">Get error user property of string type - Name: {0}</data>
+     <data id="cWrpItem_eError_GetIntFromProperty" AdxLine="222">Get error standard property of int type - Name: {0} - Class: {1} - {2}</data>
+     <data id="cWrpItem_eError_GetIntFromUserProperty" AdxLine="223">Get error user property of int type - Name: {0}</data>
+     <data id="cWrpItem_eError_GetDecFromProperty" AdxLine="224">Get error standard property of decimal type - Name: {0} - Class: {1} - {2}</data>
+     <data id="cWrpItem_eError_GetDecFromUserProperty" AdxLine="225">Get error user property of decimal type - Name: {0}</data>
+     <data id="cWrpItem_eError_GetDateTimeFromProperty" AdxLine="226">Get error standard property of DateTime type - Name: {0} - Class: {1} - {2}</data>
+     <data id="cWrpItem_eError_GetDateTimeFromUserProperty" AdxLine="227">Get error user property of DateTime type - Name: {0}</data>
+     <data id="cWrpItem_eError_SetStrToUserProperty" AdxLine="228">Set error user property of string type - Name: {0}</data>
+     <data id="cWrpItem_eError_SetIntToUserProperty" AdxLine="229">Set error user property of int type - Name: {0}</data>
+     <data id="cWrpItem_eError_SetDecToUserProperty" AdxLine="230">Set error user property of decimal type - Name: {0}</data>
+     <data id="cWrpItem_eError_SetDateTimeToUserProperty" AdxLine="231">Set error user property of DateTime type - Name: {0}</data>
+     <data id="cWrpItem_eError_InvalidUserPropertyExistInStandard" AdxLine="232">Impossible to define this property as user since it already exists as a standard - {0}</data>
+     <data id="cWrpItem_eError_SecurityGetProperty" AdxLine="233">Access unauthorised on the property {0} of classe {1}</data>
+     <data id="cStores_eError_DirectoryDoesNotExist" AdxLine="280">Directory does not exist: {0}</data>
+     <data id="cStores_eWarning_RetrieveStoreFromDiskInfos" AdxLine="281">Store not processed because it could not be found in Outlook - Disk information: {0}</data>
+     <data id="cStores_eInfo_NumberOfStores" AdxLine="282">Number of stores with synchronisation information (disk): {0}</data>
+     <data id="cStores_eInfo_AddIStoreInStoreShortList" AdxLine="283">Addition to the list of stores of {0} - Active synchronisation: {1} - Open in Outlook session: {2} - PST type: {3}</data>
+     <data id="cStoresJob_eStep_MainTitle" AdxLine="300">Store synchronisation</data>
+     <data id="cStoresJob_eStep_Preparation" AdxLine="301">Preparation</data>
+     <data id="cStoresJob_eStep_ScanStoresToSynchro" AdxLine="302">Processing the stores to be synchronised</data>
+     <data id="cStoresJob_eInfo_TimeStart" AdxLine="303">Date and time of the synchronisation start: {0}</data>
+     <data id="cStoresJob_eInfo_TimeEnd" AdxLine="304">Date and time of the synchronisation end: {0}</data>
+     <data id="cStoresJob_eInfo_LaunchSynchroForStore" AdxLine="305">Starting store synchronisation {0} (Identifier {1})</data>
+     <data id="cStoresJob_eInfo_AddInVersion" AdxLine="306">Addin reference: {0} - Version: {1}</data>
+     <data id="cStoresJob_eInfo_AddInDirectory" AdxLine="307">Installation directory: {0}</data>
+     <data id="cStoresJob_eInfo_DataDirectory" AdxLine="308">Data root directory: {0}</data>
+     <data id="cStore_eError_NullStore" AdxLine="330">Constructor - Outlook folder parameter (MapiFolder) null</data>
+     <data id="cStore_eError_NotOlStore" AdxLine="331">Store constructor - The Outlook folder parameter (MapiFolder) {0} is not a root folder</data>
+     <data id="cStore_eError_OlStoreNotFound" AdxLine="332">Store constructor - Impossible to find the Outlook folder (MapiFolder) from</data>
+     <data id="cStore_eError_OlStoreNotFound_1" AdxLine="333">the disk information {0} - FolderId {1} - StoreId {1}</data>
+     <data id="cStoreParameters_eInfo_NewStore" AdxLine="340">Store parameter constructor - Creation of new parameters for {0} at location {1}</data>
+     <data id="cStoreParameters_eInfo_AdxServer" AdxLine="341">Process server parameters - Name: {0}  Port: {1}  User: {2}  Encrypted password: {3}</data>
+     <data id="cStoreParameters_eInfo_AdxFolder" AdxLine="342">Application file parameters - Name: {0}  Port: {1}  Folder: {2}  User: {3}  Encrypted password: {4}</data>
+     <data id="cStoreParameters_eInfo_GetDialogContext" AdxLine="343">Configuration Context (cDlgContext) - X3 user and language</data>
+     <data id="cStoreParameters_eInfo_GetPccConnexion" AdxLine="344">Communication configuration (CAdonixContext)</data>
+     <data id="cStoreParameters_eInfo_Save" AdxLine="345">Saving the store parameterisation {0} - {1}</data>
+     <data id="cStoreParameters_eError_ParametersAlreadyExits" AdxLine="346">Parameter already exists at location {0}</data>
+     <data id="cStoreParameters_eError_InvalidAdxSrvTrtPar" AdxLine="347">Invalid process server parameters - Name: {0}  Port: {1}  User: {2}  </data>
+     <data id="cStoreParameters_eError_InvalidAdxFolderPar" AdxLine="348">Application file parameters - Name: {0}  Port: {1}  Folder: {2}  User: {3}  Encrypted password: {4}</data>
+     <data id="cStoreParameters_eError_InvalidAdxCnxPar" AdxLine="349">Sage connection parameters not accessible</data>
+     <data id="cStoreParameters_eError_DefaultFolderNotSet" AdxLine="350">Default directory not defined for articles of type: {0} </data>
+     <data id="cStoreSteps_eStep_MainTitle" AdxLine="360">Store {0}</data>
+     <data id="cStoreSteps_eStep_ScanOlItems" AdxLine="361">Drawing up the list of Outlook items</data>
+     <data id="cStoreSteps_eStep_ScanListToUpdateSynchroInfos" AdxLine="362">Updating the synchronisation information</data>
+     <data id="cStoreSteps_eStep_OpenAdxCnx" AdxLine="363">Opening the connection to the remote server</data>
+     <data id="cStoreSteps_eStep_LastSynchroInfos" AdxLine="364">Accessing the last synchronisation information</data>
+     <data id="cStoreSteps_eStep_SynchroTask" AdxLine="365">Task processing call</data>
+     <data id="cStoreSteps_eStep_SynchroContact" AdxLine="366">Contact processing call</data>
+     <data id="cStoreSteps_eStep_EndSynchro" AdxLine="367">Synchronisation end</data>
+     <data id="cStoreSteps_eWarning_LastSynchroNotEnded" AdxLine="368">Last synchronisation not completed</data>
+     <data id="cStoreSteps_eWarning_NoSynchroLastFile" AdxLine="369">No last synchronisation file</data>
+     <data id="cStoreSteps_eInfo_SynchroTaskModeOff" AdxLine="370">Task synchronisation not requested</data>
+     <data id="cStoreSteps_eInfo_SynchroContactModeOff" AdxLine="371">Contact synchronisation not requested</data>
+     <data id="cStoreSteps_eInfo_FisrtSynchro" AdxLine="372">First synchronisation</data>
+     <data id="cStoreSteps_eInfo_UseSynchroRecoveryPointInfos" AdxLine="373">Using the results of the last recovery point</data>
+     <data id="cStoreSteps_eInfo_UseLastSynchroInfos" AdxLine="374">Using the results of the last completed synchronization</data>
+     <data id="cStoreSteps_eInfo_SynchroInfos" AdxLine="375">Internal reference date: {0} - Store of PST type: {1}</data>
+     <data id="cStoreSteps_eStep_SynchroAppointment" AdxLine="376">Appointment process call</data>
+     <data id="cStoreSteps_eInfo_SynchroAppointmentModeOff" AdxLine="377">Synchronising the unrequested appointments</data>
+     <data id="cStoreSteps_eInfo_RemoteServerTrace" AdxLine="378">- - - Remote server trace code: {0} - - -</data>
+     <data id="cStoreSteps_eInfo_EndServerSynchro" AdxLine="379">Calling synchronisation end on the server</data>
+     <data id="cStoreSteps_eInfo_EndOlSynchro" AdxLine="380">Closing the synchronisation on Outlook</data>
+     <data id="cSynchroBase_eStep_CreateOrUpdateOnRemoteServer" AdxLine="400">Outlook to the remote server - Creation or modification</data>
+     <data id="cSynchroBase_eStep_DeleteOnRemoteServer" AdxLine="401">Outlook to the remote server - Deletion</data>
+     <data id="cSynchroBase_eStep_UpdateOnLocalComputer" AdxLine="402">Remote server to Outlook - Creation, modification or deletion</data>
+     <data id="cSynchroBase_eError_AplToAdxUpdate_CreateOrUpdate" AdxLine="405">Impossible to create or modify the item - Sage Identifier: {0}</data>
+     <data id="cSynchroBase_eError_AplToAdxUpdate_Delete" AdxLine="406">Impossible to delete the item -  Sage Identifier: {0}</data>
+     <data id="cSynchroBase_eError_CannotRetrieveDlgDesc" AdxLine="407">Impossible to access the description of {0}</data>
+     <data id="cSynchroBase_eError_CannotSetValid" AdxLine="408">Anomaly when validating an update request to the remote server -Sage Identifier: {0}</data>
+     <data id="cSynchroBase_eError_CannotGetValid" AdxLine="409">Anomaly when validating an update request in Outlook -Sage Identifier: {0}</data>
+     <data id="cSynchroBase_eError_InvalidRemoteUpdFlg" AdxLine="410">Update flag from the remote server invalid: {0}</data>
+     <data id="cSynchroBase_eError_CreateAdxIdAlreadyExistInOl" AdxLine="411">Creation request for an already existing item (modification carried out) - Sage Identifier: {0}</data>
+     <data id="cSynchroBase_eError_UpdateAdxIdNotExistInOl" AdxLine="412">Modification request for an already existing item (modification rejected) - Sage Identifier: {0}</data>
+     <data id="cSynchroBase_eError_RemoteServerBadAdxId" AdxLine="413">Identifier returned by the Sage server not valid: {0}</data>
+     <data id="cSynchroBase_eError_InvalidChangeOfAdxId" AdxLine="414">Modifying the Sage identifier prohibited: {0}</data>
+     <data id="cSynchroBase_eInfo_SetLocalAdxID" AdxLine="415">Upating the item with the identifier {0}</data>
+     <data id="cSynchroBase_eError_CannotGetDefaultFolder" AdxLine="416">{0}: default directory not defined</data>
+     <data id="cSynchroBase_eError_CancelLoopOnGetNext" AdxLine="419">Stopping the GetNext loop because the remote server keeps returning the same Sage identifier: {0}</data>
+     <data id="cSynchroBase_eInfo_DeleteAdxIdAlreadyNotExistInOl" AdxLine="420">Requesting the deletion of an existing item - Sage identifier {0}</data>
+     <data id="cSynchroBase_eInfo_AplToAdxUpdate" AdxLine="421">Remote server to Outlook processing</data>
+     <data id="cSynchroBase_eWarning_ItemRestoreNoCreateAllowed" AdxLine="422">Restoration: item rejected because of unauthorised creation - Sage identifier {0}</data>
+     <data id="cSynchroBase_eWarning_ItemRestoreNoUpdateAllowed" AdxLine="423">Restoration: item rejected because of unauthorised modification - Sage identifier {0}</data>
+     <data id="cSynchroBase_eError_CannotGetNext" AdxLine="424">Impossible to obtain the next item to be updated from the remote server</data>
+     <data id="cSynchroBase_eError_CannotSetOnServerOneItem" AdxLine="425">Impossible to update the item on the remote server - Sage identifier {0}</data>
+     <data id="cSynchroBase_eError_CannotDeleteOnServerOneItem" AdxLine="426">Impossible to delete the item on the remote server - Sage identifier {0}</data>
+     <data id="cSynchroBase_eError_CannotGetItem" AdxLine="427">Impossible to obtain the item on the remote server - Sage identifier {0}</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgCreAndPermission" AdxLine="428">Creation requested by the server although the user parameterisation does not allow it</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgUpdAndPermission" AdxLine="429">Modification requested by the server although the user parameterisation does not allow it</data>
+     <data id="cSynchroBase_eError_InvalidRmtFlgDelAndPermission" AdxLine="430">Deletion requested by the server although the user parameterisation does not allow it</data>
+     <data id="cSynchroTasks_eStep_MainTitle" AdxLine="440">Processing the tasks</data>
+     <data id="cSynchroTasks_eInfo_ItemName" AdxLine="441">Tasks</data>
+     <data id="cSynchroAppointments_eStep_MainTitle" AdxLine="450">Processing the appointments</data>
+     <data id="cSynchroAppointments_eInfo_ItemName" AdxLine="451">Appointments</data>
+     <data id="cSynchroContacts_eStep_MainTitle" AdxLine="460">Processing the contacts</data>
+     <data id="cSynchroContacts_eInfo_ItemName" AdxLine="461">Contacts</data>
+     <data id="cManageThreadSteps_eInfo_End" AdxLine="500">End</data>
+     <data id="cManageThreadSteps_eInfo_Beginning" AdxLine="501">Start</data>
+     <data id="cManageThreadSteps_eError_AdxConnexion" AdxLine="502">Connection to the remote server impossible</data>
+     <data id="cManageThread_eInfo_PCCErrorWhy" AdxLine="520">Error returned by the utility that dialogues with the server: {0} - Code: {1}</data>
+     <data id="cExternalSupport_eError_InvalidWrpItemType" AdxLine="550">Type not managed: {0}</data>
+     <data id="cDlgBase_eInfo_NoMessageFromRemoteServer" AdxLine="560">No message returned by the server</data>
+     <data id="cDlgBase_eInfo_RemoteMsgPrefixe" AdxLine="561">Remote server message:</data>
+     <data id="cDlgBase_eInfo_StatusBeforeRequest" AdxLine="562">Status before server request: {0}</data>
+     <data id="cDlgBase_eInfo_StatusAfterRequest" AdxLine="563">Status after server request: {0}</data>
+     <data id="cDlgDescription_eInfo_Description" AdxLine="605">Description - Process: {0} - Sub-program: {1} - Version: {2}</data>
+     <data id="cDlgDescription_eInfo_AdxIdLibValue" AdxLine="606">Name of the user field identifying the Sage X3 data: {0} </data>
+     <data id="cDlgDescription_eInfo_AdxIdLibValueNA" AdxLine="607">No user field name identifying the Sage X3 data</data>
+     <data id="cDlgDescriptionField_eError_NullLineNode" AdxLine="608">Null node invalid</data>
+     <data id="cDlgDescriptionField_eError_NullNode" AdxLine="609">Node {0} not found in {1}</data>
+     <data id="cDlgBaseDynPar_eError_CannotRetrieveNode" AdxLine="610">Impossible to access the node of type {0}</data>
+     <data id="cDlgBaseDynPar_eError_InvalidDim" AdxLine="612">Invalid dim - Xml content: {0}</data>
+     <data id="cDlgBaseDynPar_eError_InvalidSize" AdxLine="613">Invalid size - Xml content: {0}</data>
+     <data id="cDlgBaseDynParSetSync_eInfo_SetToRemoteServer" AdxLine="622">Sending the item - Identifier {0} - Updating type {1}</data>
+     <data id="cDlgBaseDynParGetSync_eError_RemoteServerBadAdxId" AdxLine="630">Identifier found by the Sage server invalid: {0} </data>
+     <data id="cDlgBaseDynParGetSync_eInfo_GetFromRemoteServer" AdxLine="631">Requesting next item</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_GetFromRemoteServerInfos" AdxLine="632">Receiving the item  - Identifier {0} - Update status {1}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_NoMoreItems" AdxLine="633">No items any longer</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_UpdateItem" AdxLine="634">Updating the item with identifier {0}</data>
+     <data id="cDlgBaseDynParGetSync_eInfo_CreateItem" AdxLine="635">Creating the item with identifier {0}</data>
+     <data id="cDlgBaseSetOrGetValid_eInfo_SendValid" AdxLine="640">Confirm update - Identifier {0} - Update status {1}</data>
+     <data id="cDlgBaseInitSync_eInfo_SynchroInfos" AdxLine="650">Synchronisation: {0} - To server: creation {1}, modification {2}, deletion {3}</data>
+     <data id="cDlgBaseInitSync_eInfo_SynchroInfos_1" AdxLine="651">- To Outlook: creation {4}, modification {5}, deletion {6}</data>
+     <data id="cDlgEmbeddedLinksGet_eError_ContactWithAdxIdNotFound" AdxLine="670">Synchronised contact not found: {0} - Identifier {1}</data>
+     <data id="cDlgEmbeddedLinksGet_eWarning_ContactNotFound" AdxLine="671">Off synchronisation contact not found in the article: {0}</data>
+     <data id="cDlgEmbeddedLinksGet_eInfo_ContactsChange" AdxLine="672">The list of contacts has changed</data>
+     <data id="cDlgEmbeddedLinksGet_eInfo_ContactsNoChange" AdxLine="673">No change in the list of contacts</data>
+     <data id="cDlgBaseValid_eInfo_SendValid" AdxLine="690">Validating the request to the server - Identifier {0} - Status: {1}</data>
+     <data id="cShortItemsList_eInfo_CptInStore" AdxLine="700">Store {0} - Search final assessment: {1} tasks, {2} contacts, {3} managed appointments</data>
+     <data id="cShortItemsList_eInfo_CptInStore_1" AdxLine="701">, {7} appointments not managed, {4} not recognised, {6} private items, {5} earlier than initial date</data>
+     <data id="cShortItemsList_eInfo_CptInRootFolder" AdxLine="702">Root folder {0} - Search final assessment: {1} tasks, {2} contacts, {3} managed appointments</data>
+     <data id="cShortItemsList_eInfo_CptInRootFolder_1" AdxLine="703">, {7} appointments not managed, {4} not recognised, {6} private items, {5} earlier than initial date</data>
+     <data id="cShortItemsList_eInfo_StoreSynchroDates" AdxLine="704">Date of the initial synchronisation {0} - Date of the last synchronisation {1}</data>
+     <data id="cShortItemsList_eInfo_ScanListToUpdateSynchroInfos" AdxLine="705">Parsing of the list to determine the items to be updated</data>
+     <data id="cShortItemsList_eInfo_SetListFromOl" AdxLine="706">Constitution of the list of items</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseAllItems" AdxLine="740">Searching for the articles in the main folder: {0}</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseFolders" AdxLine="741">Processing folder: {0}</data>
+     <data id="cFoldersSimpleAnalyse_eStep_ParseSubFolder" AdxLine="742">Processing sub-folder: {0} from {1}</data>
+     <data id="cFrmParameters_eGui_FrmName" AdxLine="750">Synchronisation options between Outlook and CRM X3</data>
+     <data id="cFrmParameters_eGui_tabpageStores" AdxLine="751">Store</data>
+     <data id="cFrmParameters_eGui_tabpageFolders" AdxLine="752">General</data>
+     <data id="cFrmParameters_eGui_chkSynchroActive" AdxLine="753">Store synchronisation activated</data>
+     <data id="cFrmParameters_eGui_tabpageDefaultFolders" AdxLine="754">Default folders</data>
+     <data id="cFrmParameters_eGui_lblDefaultTask" AdxLine="755">In task creation</data>
+     <data id="cFrmParameters_eGui_lblDefaultContact" AdxLine="756">In contact creation</data>
+     <data id="cFrmParameters_eGui_lblDefaultAppointment" AdxLine="757">In appointment creation</data>
+     <data id="cFrmParameters_eGui_tabpageRemoteServer" AdxLine="758">Remote connection</data>
+     <data id="cFrmParameters_eGui_grpRemoteFolder" AdxLine="759">Access to folder</data>
+     <data id="cFrmParameters_eGui_lblFldName" AdxLine="760">Folder</data>
+     <data id="cFrmParameters_eGui_lblFldAppliServer" AdxLine="761">Application server</data>
+     <data id="cFrmParameters_eGui_lblFldUser" AdxLine="762">User</data>
+     <data id="cFrmParameters_eGui_lblFldPwd" AdxLine="763">Password</data>
+     <data id="cFrmParameters_eGui_grpRemoteServer" AdxLine="764">Access to the process server</data>
+     <data id="cFrmParameters_eGui_lblRmtServer" AdxLine="765">Process server</data>
+     <data id="cFrmParameters_eGui_lblRmtPort" AdxLine="766">Port</data>
+     <data id="cFrmParameters_eGui_lblRmtUser" AdxLine="767">User</data>
+     <data id="cFrmParameters_eGui_lblRmtPwd" AdxLine="768">Password</data>
+     <data id="cFrmParameters_eGui_btnCnxTest" AdxLine="769">Testing the connection</data>
+     <data id="cFrmParameters_eGui_tabpageSpecial" AdxLine="770">Miscellaneous</data>
+     <data id="cFrmParameters_eGui_lblInitialSynchroDate" AdxLine="771">Date from which an item takes part in the synchronisation</data>
+     <data id="cFrmParameters_eGui_lblLastSuccessSynchroDate" AdxLine="772">Date of the last successful synchronisation</data>
+     <data id="cFrmParameters_eGui_chkIntermediateDebugFile" AdxLine="773">Writing the intermediate files (debug)</data>
+     <data id="cFrmParameters_eGui_btnSaveStore" AdxLine="774">Save</data>
+     <data id="cFrmParameters_eGui_btnCancelStore" AdxLine="775">Abort</data>
+     <data id="cFrmParameters_eGui_tabpageAddIn" AdxLine="776">General options</data>
+     <data id="cFrmParameters_eGui_lblTimeOut" AdxLine="777">Maximum waiting time for a request to the server (in sec.)</data>
+     <data id="cFrmParameters_eGui_chkDebugGui" AdxLine="778">Graphical interface trace (Gui.tra file)</data>
+     <data id="cFrmParameters_eGui_chkDebugSynchro" AdxLine="779">Synchronisation engine trace (Synchro.tra file)</data>
+     <data id="cFrmParameters_eGui_btnSaveAddIn" AdxLine="780">Save</data>
+     <data id="cFrmParameters_eGui_LstFoldersName" AdxLine="781">Folders to be synchronised</data>
+     <data id="cFrmParameters_eGui_LstStoresName" AdxLine="782">Store managed by the store tab</data>
+     <data id="cFrmParameters_eGui_grpAddIn" AdxLine="783">Addln options</data>
+     <data id="cFrmParameters_eGui_lblFldLan" AdxLine="784">Language</data>
+     <data id="cFrmParameters_eInfo_LoadGrpStore" AdxLine="800">Loading the store information {0}</data>
+     <data id="cFrmParameters_eInfo_NewStore" AdxLine="801">Creating a new syncrhonised store {0}</data>
+     <data id="cFrmParameters_eInfo_TestConnexion" AdxLine="802">Requesting a connection test</data>
+     <data id="cFrmParameters_eInfo_TestConnexionOk" AdxLine="803">Connection set up</data>
+     <data id="cFrmParameters_eInfo_TestConnexionKo" AdxLine="804">The test has failed!</data>
+     <data id="cFrmParameters_eInfo_SaveStore" AdxLine="805">Saving the store {0}</data>
+     <data id="cFrmParameters_eWarning_NoStoreToSave" AdxLine="810">No store to be saved</data>
+     <data id="cFrmParameters_eGui_btnForceSync" AdxLine="811">Resynchronisation</data>
+     <data id="cFrmParameters_eInfo_ForceSynchro" AdxLine="812">During the next synchronisation, all items with an update date later than the date</data>
+     <data id="cFrmParameters_eInfo_ForceSynchro_1" AdxLine="813">of the last synchronisation will be transmitted to the server. Do you confirm this choice?</data>
+     <data id="cFrmParameters_eInfo_ForceSynchroTitle" AdxLine="814">Forced synchronisation to the server</data>
+     <data id="cFrmParameters_eInfo_SaveOk" AdxLine="815">Save completed</data>
+     <data id="cFrmSynchro_eInfo_StepMsg" AdxLine="900">{0} - {1} [Info. of previous stage: {4} duration {2} millisec. - {3} ]</data>
+     <data id="cFrmSynchro_eInfo_SynchroError" AdxLine="901">Synchronisation completed with errors</data>
+     <data id="cFrmSynchro_eInfo_SynchroWarning" AdxLine="902">Synchronisation completed with warnings</data>
+     <data id="cFrmSynchro_eInfo_BtnClick" AdxLine="903">Click on button {0} - {1}</data>
+     <data id="cFrmSynchro_eInfo_CancelSynchroBefore" AdxLine="904">Please stop synchronisation before closing this window</data>
+     <data id="cFrmSynchro_eInfo_SynchroEnded" AdxLine="905">Synchronisation completed</data>
+     <data id="cFrmSynchro_eGui_FrmName" AdxLine="910">CRM X3 synchronisation</data>
+     <data id="cFrmSynchro_eGui_tabPageMain" AdxLine="911">Stores</data>
+     <data id="cFrmSynchro_eGui_tabPageLog" AdxLine="912">Log</data>
+     <data id="cFrmSynchro_eGui_btnStart" AdxLine="913">Synchronisation</data>
+     <data id="cFrmSynchro_eGui_btnCancel" AdxLine="914">Abort</data>
+     <data id="cFrmSynchro_eGui_lblProgress" AdxLine="915">Progress</data>
+     <data id="cFrmSynchro_eGui_StoresName" AdxLine="916">Synchronised stores</data>
+     <data id="cFrmSynchro_eGui_LogColStoreId" AdxLine="917">OL Store Id</data>
+     <data id="cFrmSynchro_eGui_LogColOlId" AdxLine="918">OL Entry Id</data>
+     <data id="cFrmSynchro_eGui_LogColMsg" AdxLine="919">Messages</data>
+     <data id="cFrmSynchro_eGui_CopyLog" AdxLine="920">Copy the log into the clipboard</data>
+     <data id="cFrmSynchro_eError_ThreadNotResponding" AdxLine="921">Your interruption request has not been taken into account yet by the synchronisation process</data>
+     <data id="cFrmSynchro_eInfo_WaitAgain" AdxLine="922">Do you want to wait another {0} seconds?</data>
+     <data id="cFrmSynchro_eInfo_CancelledByUser" AdxLine="923">User stop</data>
+     <data id="cFrmSynchro_eWarning_OLItemNotFound" AdxLine="924">The record no longer exists</data>
+     <data id="cFrmSynchro_eInfo_SynchroAbort" AdxLine="925">Synchronisation aborted</data>
+     <data id="cFrmSynchro_eInfo_Warning" AdxLine="926">With warnings</data>
+     <data id="cFrmSynchro_eInfo_Error" AdxLine="927">With errors</data>
+     <data id="cFrmSynchro_eInfo_Abort" AdxLine="928">With blocking error</data>
+     <data id="cFrmSynchro_eGui_tabException" AdxLine="929">Exception</data>
+</Messages>
