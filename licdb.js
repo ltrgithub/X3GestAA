@@ -41,9 +41,9 @@ if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
 }
 
 var tenantId = process.argv[3]; // optional tenantId
-var db = new mongodb.Db(config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
+/*var db = new mongodb.Db(config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
 	w: "majority"
-});
+});*/
 
 
 function finish(err) {
@@ -54,8 +54,14 @@ function finish(err) {
 	}
 }
 
-
-db.open(function(err, db) {
+var mongoOpt = (config.mongodb || {}).options;
+var dbUrl = "mongodb://" + (config.collaboration.hostname || "localhost") + ":" + (config.collaboration.port || 27017) + "/" + (config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse");
+//db.open(function(err, db) {
+db.connect(dbUrl, mongoOpt || {
+    db: {
+        w: 1
+    }
+}, function(err, db) {
 	if (err) return finish(err);
 	db.createCollection("license", function(err, collection) {
 		if (err) return finish(err);
@@ -94,3 +100,4 @@ db.open(function(err, db) {
 		});
 	});
 });
+ 
