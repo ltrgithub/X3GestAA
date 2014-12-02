@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 namespace ExcelAddIn
 {
@@ -9,9 +10,18 @@ namespace ExcelAddIn
         {
             InitializeComponent();
         }
-        //
+
         public void Connect(String serverUrl)
         {
+            if (!new ConnectionDialog().connectToServer())
+            {
+                CookieHelper.CookieContainer = null;
+                Close();
+                return;
+            }
+
+            webBrowser.Document.Cookie = CookieHelper.CookieContainer.GetCookieHeader(BaseUrlHelper.BaseUrl);
+
             webBrowser.ObjectForScripting = new External();
             ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
             {

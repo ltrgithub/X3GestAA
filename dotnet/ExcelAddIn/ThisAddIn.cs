@@ -163,13 +163,13 @@ namespace ExcelAddIn
         {
             var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
-            if (settingsForm == null)
+            if (settingsForm == null || settingsForm.IsDisposed)
             {
                 settingsForm = new DatasourceMngtForm();
                 settingsForm.Connect(connectUrl);
             }
             mainHandle = NativeWindow.FromHandle(ActionPanel.Handle);
-            if(!settingsForm.Visible)
+            if (!settingsForm.Visible)
                 settingsForm.Show(mainHandle);
         }
 

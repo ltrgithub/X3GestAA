@@ -223,6 +223,19 @@ namespace UnitTests
                 throw new NotImplementedException();
             }
         }
+
+
+        public bool IsReadOnly
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 #endregion
 }

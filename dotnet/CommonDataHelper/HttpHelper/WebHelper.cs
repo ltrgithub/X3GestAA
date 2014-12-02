@@ -15,9 +15,6 @@ namespace CommonDataHelper
 {
     public class WebHelper
     {
-        [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern bool InternetSetCookie(string lpszUrlName, string lbszCookieName, string lpszCookieData);
-
         public string getServerJson(string uri, out HttpStatusCode statusCode)
         {
             string responseJson = null;
@@ -128,7 +125,7 @@ namespace CommonDataHelper
             request.UserAgent = @"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
             request.KeepAlive = true;
 
-            request.CookieContainer = GetUriCookieContainer(uri);
+            request.CookieContainer = GetUriCookieContainer();
 
             request.Timeout = 20000;
 
@@ -237,33 +234,60 @@ namespace CommonDataHelper
             Int32 dwFlags,
             IntPtr lpReserved);
 
+        [DllImport("wininet.dll", SetLastError = true)]
+        public static extern bool InternetGetCookie(
+            string url,
+            string cookieName,
+            StringBuilder cookieData,
+            ref int size);
+
         private const Int32 InternetCookieHttponly = 0x2000;
 
-        public CookieContainer GetUriCookieContainer(String url)
+        public CookieContainer GetUriCookieContainer()
         {
             CookieContainer cookies = null;
-  
+
             int datasize = 8192 * 16;
             StringBuilder cookieData = new StringBuilder(datasize);
 
-            if (!InternetGetCookieEx(url, null, cookieData, ref datasize, InternetCookieHttponly, IntPtr.Zero))
+            if (!InternetGetCookie(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize))
             {
                 if (datasize < 0)
                     return null;
-  
+
                 cookieData = new StringBuilder(datasize);
-                if (!InternetGetCookieEx(
-                        url,
-                        null, cookieData,
-                        ref datasize,
-                        InternetCookieHttponly,
-                        IntPtr.Zero))
+
+                InternetGetCookie(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize);
+            }
+
+            if (cookieData.Length > 0)
+            {
+                cookies = new CookieContainer();
+                cookies.SetCookies(BaseUrlHelper.BaseUrl, cookieData.ToString());
+            }
+            
+            datasize = 8192 * 16;
+            cookieData.EnsureCapacity(datasize);
+
+            if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttponly, IntPtr.Zero))
+            {
+                if (datasize < 0)
+                    return null;
+
+                if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttponly, IntPtr.Zero))
                     return null;
             }
             if (cookieData.Length > 0)
             {
-                cookies = new CookieContainer();
-                cookies.SetCookies(new Uri(url), cookieData.ToString()); 
+                if (cookies == null)
+                    cookies = new CookieContainer();
+
+                String[] cookiesArray = cookieData.ToString().Split(';');
+                foreach (String cookie in cookiesArray)
+                {
+                    cookies.SetCookies(BaseUrlHelper.BaseUrl, cookie);
+                }
+
                 return cookies;
             }
             return null;

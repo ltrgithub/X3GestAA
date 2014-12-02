@@ -10,19 +10,153 @@ using CommonDialogs;
 using CommonDataHelper;
 using System.Runtime.InteropServices;
 using System.Net;
+using System.Threading;
 
 namespace CommonDataHelper
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class ConnectionDialog : Form
     {
-        private Boolean _loggedIn = false;
+        private String _loginPart = @"/auth/login/page";
+        private String _mainPart = @"/syracuse-main/html/main.html";
+        private bool? _connected = null;
         private Boolean _canceled = false;
 
         public ConnectionDialog()
         {
             InitializeComponent();
         }
+        
+        private void documentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (!e.Url.Equals(webBrowser.Url))
+                return;
+
+            if (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+                return;
+
+            if (e.Url.LocalPath.Equals(_loginPart))
+            {
+                /*
+                 * We've arrived at the new login page, so don't do anything.
+                 */
+                return;
+            }
+
+            if (e.Url.LocalPath.Equals(_mainPart))
+            {
+                HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
+                try
+                {   
+                    WebHelper webHelper = new WebHelper();
+                    webHelper.getInitialConnectionJson(new Uri(BaseUrlHelper.BaseUrl, _mainPart).ToString(), out statusCode);
+                    if (statusCode == HttpStatusCode.OK)
+                    {
+                        CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
+                        _connected = true;
+                        return;
+                    }
+                }
+                catch (WebException ex)
+                {
+                    if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        _connected = false;
+                        return;
+                    }
+                }
+
+                return;
+            }
+        }
+
+        public bool connectToServer()
+        {
+            WebHelper webHelper = new WebHelper();
+            CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
+
+            HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
+            HttpWebResponse response = null;
+
+            Uri mainUrl = new Uri(BaseUrlHelper.BaseUrl, _mainPart);
+
+            try
+            {
+                response = webHelper.getInitialConnectionJson(mainUrl.ToString(), out statusCode);
+                if (statusCode == HttpStatusCode.TemporaryRedirect)
+                {
+                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].Equals(_loginPart))
+                    {
+                        /*
+                         * We've been redirected to the new-style login page, so we have to display the page in the browser.
+                         */
+                        Show();
+
+                        webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(documentCompleted);
+
+                        Uri loginUri = new Uri(BaseUrlHelper.BaseUrl, _loginPart);
+                        webBrowser.Navigate(loginUri, "", null, @"If-None-Match: 0"); 
+
+                        /*
+                         * We need this to be synchronous...
+                         */
+                        while (_connected == null)
+                        {
+                            Application.DoEvents();
+                            if (webBrowser.ReadyState == WebBrowserReadyState.Complete)
+                            {
+                                if (_canceled)
+                                {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    /*
+                     * We will get here when accessing an old-style Syracuse server.
+                     * As Syraucse.Sid is a session cookie, it's not in the normal cookie cache, 
+                     * so we can't obtain it with InternetGetCookie or InternetGetCookieEx.
+                     * We therefore have little choice but to force a login...
+                     */
+                    webBrowser.Navigate(mainUrl, "", null, @"If-None-Match: 0");
+
+                    /*
+                     * We need this to be synchronous...
+                     */
+                    while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+                    {
+                        Application.DoEvents();
+                        if (_canceled)
+                        {
+                            Close();
+                            return false;
+                        }
+                    }
+
+                    statusCode = HttpStatusCode.OK;
+                    CookieHelper.setCookies(webBrowser.Document.Cookie);
+                }
+                else
+                {
+                    throw (ex);
+                }
+            }
+
+            if (statusCode == HttpStatusCode.OK)
+            {
+                _connected = true;
+            }
+            
+            Close();
+            return (bool)_connected;
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -32,104 +166,6 @@ namespace CommonDataHelper
                 Hide();
             }
             base.OnFormClosing(e);
-        }
-
-        public bool connectToServer()
-        {
-            _loggedIn = false;
-            DateTime dummy = DateTime.Now;
-            Text = BaseUrlHelper.BaseUrl.ToString();
-
-            Uri url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main.html"); //?dummy=" + dummy.ToString());
-
-            HttpStatusCode statusCode = HttpStatusCode.Unauthorized;
-            HttpWebResponse response = null;
-            Boolean rememberMeLogin = true;
-            try
-            {
-                response = new WebHelper().getInitialConnectionJson(url.ToString(), out statusCode);
-
-            }
-            catch (WebException)
-            {
-                CookieHelper.CookieContainer = null;
-                rememberMeLogin = false;
-            }
-
-            if (rememberMeLogin)
-            {
-                if (statusCode == HttpStatusCode.TemporaryRedirect)
-                {
-                    url = new Uri(BaseUrlHelper.BaseUrl, @"syracuse-main/html/main_notify.html?dummy=" + dummy.ToString());
-                }
-                else if (statusCode == HttpStatusCode.OK)
-                {
-                    CookieHelper.CookieContainer = new CookieContainer();
-
-                    foreach (Cookie c in response.Cookies)
-                    {
-                        CookieHelper.CookieContainer.Add(c);
-                    }
-                    return true;
-                }
-
-                Show();
-            }
-
-            webBrowser.ObjectForScripting = this;
-
-            webBrowser.Navigate(url, "", null, "If-None-Match: 0");
-            if (webBrowser.Document != null)
-            {
-                webBrowser.Document.Cookie = CookieHelper.CookieContainer.GetCookieHeader(BaseUrlHelper.BaseUrl);
-            }
-
-            /*
-             * We need this to be synchronous...
-             */
-
-            while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
-            {
-                Application.DoEvents();
-            }
-
-            // New Addins against old login
-            if (!rememberMeLogin && string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && (webBrowser.DocumentTitle.Equals("Syracuse") || webBrowser.DocumentTitle.Equals("Sage ERP X3")))
-            {
-                CookieHelper.setCookies(webBrowser.Document.Cookie);
-                return true;
-            }
-            
-            // e.g. if URL is wrong or server not available
-            if (string.IsNullOrEmpty(webBrowser.DocumentTitle) == false && !webBrowser.DocumentTitle.Equals("Syracuse") && !webBrowser.DocumentTitle.Equals("Sage ERP X3"))
-            {
-                Hide();
-                return false;
-            }
-
-            if (rememberMeLogin)
-            {
-                while (!_loggedIn)
-                {
-                    Application.DoEvents();
-                    if (_canceled) return false;
-                }
-
-                CookieHelper.setCookies(new WebHelper().GetUriCookieContainer(url.ToString()).GetCookieHeader(url));
-            }
-            else if (CookieHelper.CookieContainer == null && webBrowser.Document.Cookie != null)
-            {
-                CookieHelper.setCookies(webBrowser.Document.Cookie);
-            }
-
-            Hide();
-            return true;
-        }
-
-        public void onLoginOk()
-        {
-            _loggedIn = true;
-            Hide();
         }
     }
 }
