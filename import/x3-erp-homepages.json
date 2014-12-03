@@ -2480,247 +2480,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_REQ_EMBAUCHE",
-      "title": "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71",
-      "description": "description_a59e2e5f-af31-4a28-96bf-d8a6b5654a71",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "isFactory": true,
-      "requestName": "EMBAUCHE",
-      "requestLevel": "99",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_PERSO"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_REQ_FINESS",
-      "title": "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba",
-      "description": "description_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "isFactory": true,
-      "requestName": "FINESS",
-      "requestLevel": "99",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_PERSO"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "PORTVIEW",
-          "title": "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae",
-          "prompt": true,
-          "value": "FINESS"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_STA_ABS12",
-      "title": "title_5fed760f-3051-417e-a920-26d6a6721746",
-      "description": "description_5fed760f-3051-417e-a920-26d6a6721746",
-      "linkType": "$stats",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "isFactory": false,
-      "statName": "ABS",
-      "requestLevel": "99",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": {
-        "dataset": "TESTHRMV7"
-      },
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_GTA"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "PORTVIEW",
-          "title": "title_ddf69074-25d7-4ec5-8bb4-ad8408918909",
-          "prompt": false,
-          "value": "ABS_12"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_STA_ABS01",
-      "title": "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142",
-      "description": "description_e6c0580d-a58f-4ca1-b7e4-72a2c1435142",
-      "linkType": "$stats",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "isFactory": true,
-      "statName": "ABS",
-      "requestLevel": "99",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_GTA"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "PORTVIEW",
-          "title": "title_754e5703-edd8-4a68-abe2-a6f7dfd6c25f",
-          "prompt": false,
-          "value": "ABS_01"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_STA_ABS12",
-      "title": "title_5fed760f-3051-417e-a920-26d6a6721746",
-      "description": "description_5fed760f-3051-417e-a920-26d6a6721746",
-      "linkType": "$stats",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "isFactory": false,
-      "statName": "ABS",
-      "requestLevel": "99",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": {
-        "dataset": "TESTHRMV7"
-      },
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_GTA"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "PORTVIEW",
-          "title": "title_ddf69074-25d7-4ec5-8bb4-ad8408918909",
-          "prompt": false,
-          "value": "ABS_12"
-        }
-      ]
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_94285920-35f6-4ab1-b963-b7f71d79dea9",
-      "useCurrentEndpoint": true,
-      "isFactory": true,
-      "pageName": "Home",
-      "roles": [],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "c07d5009-3094-4720-b375-2c74975445e2",
-          "vignette": {
-            "code": "STD_X3_HRM_PROC_COVERAGE"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "5d2cbc8d-2f1c-4a01-af0c-a34957e87575",
-          "vignette": {
-            "code": "STD_X3_HRM_REQ_EMBAUCHE"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "64bab68c-3cd0-4b79-9c08-0b139edc4e48",
-          "vignette": {
-            "code": "STD_X3_HRM_REQ_FINESS"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "4d4a5f3d-9fc5-4788-aef0-da1457011403",
-          "vignette": {
-            "code": "STD_X3_HRM_STA_ABS12"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "d5a7bd4e-b3df-4ef3-a1f6-a7ca30ab0518",
-          "vignette": {
-            "code": "STD_X3_HRM_STA_ABS01"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "97257482-2144-4071-ae6f-51c226b9c405",
-          "vignette": {
-            "code": "STD_X3_HRM_STA_ABS12"
-          }
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "cca32000-c348-420c-a934-ba3ea0d01428",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@99032f93-8398-4ce5-89a6-85bddee4b698}\",\"$layout\":{\"$items\":[{\"$bind\":\"c07d5009-3094-4720-b375-2c74975445e2\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@6f2ad2f7-ec9d-4752-9eb4-214765412a19}\",\"$layout\":{\"$layoutType\":\"stack\",\"$items\":[{\"$layoutType\":\"row\",\"$widths\":\"50,50\",\"$items\":[{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"5d2cbc8d-2f1c-4a01-af0c-a34957e87575\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"CTRDAT\"},{\"$bind\":\"CDDGRD\"},{\"$bind\":\"CTRGRD\"},{\"$bind\":\"JOB\"},{\"$bind\":\"ETRTIM\"},{\"$bind\":\"FORMULA_2\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"64bab68c-3cd0-4b79-9c08-0b139edc4e48\",\"$title\":\"-\"},{\"$bind\":\"4d4a5f3d-9fc5-4788-aef0-da1457011403\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"datstart1\",\"$isAdvanced\":true},{\"$bind\":\"datend1\",\"$isAdvanced\":true}],\"$widths\":\"50,50\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"TIM\"},{\"$bind\":\"FCY\"},{\"$bind\":\"SRV\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"}]},\"$graphPosition\":\"top\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"amount1\":{\"$style\":\"pie\"},\"amount2\":{\"$style\":\"pie\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"100\"},{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"b4a55a6f-c724-4bd2-9950-b1d2e384876e\",\"$title\":\"-\"},{\"$bind\":\"d5a7bd4e-b3df-4ef3-a1f6-a7ca30ab0518\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"datstart1\",\"$isAdvanced\":true},{\"$bind\":\"datend1\",\"$isAdvanced\":true}],\"$widths\":\"50,50\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"TIM\"},{\"$bind\":\"FCY\"},{\"$bind\":\"SRV\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"}]},\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10,\"$cardItem\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"TIM\"},{\"$bind\":\"FCY\"},{\"$bind\":\"SRV\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"}]}}]},\"$position\":\"bottom\"},\"$selectMode\":\"row\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\"}},{\"$bind\":\"97257482-2144-4071-ae6f-51c226b9c405\",\"$title\":\"-\"}],\"$widths\":\"100\"}]}],\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "Home",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_PROC_COVERAGE",
-      "title": "title_cd4f2627-c4ec-478f-9167-e220aaee7c3c",
-      "description": "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "isFactory": true,
-      "processName": "COVERAGE",
-      "processMenu": "",
-      "processLeg": "",
-      "requestLevel": "99",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": null,
-      "parameters": []
-    },
-    {
       "$type": "landingPage",
       "title": "title_2f4cb715-27ba-43d0-818f-3c6eaca6a3b0",
       "useCurrentEndpoint": true,
@@ -3466,6 +3225,338 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_COVERAGE",
+      "title": "title_cd4f2627-c4ec-478f-9167-e220aaee7c3c",
+      "description": "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": true,
+      "processName": "COVERAGE",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_REQ_EMBAUCHE",
+      "title": "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71",
+      "description": "description_a59e2e5f-af31-4a28-96bf-d8a6b5654a71",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": true,
+      "requestName": "EMBAUCHE",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_REQ_FINESS",
+      "title": "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba",
+      "description": "description_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": true,
+      "requestName": "FINESS",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "PORTVIEW",
+          "title": "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae",
+          "prompt": true,
+          "value": "FINESS"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_STA_ABS01",
+      "title": "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142",
+      "description": "description_e6c0580d-a58f-4ca1-b7e4-72a2c1435142",
+      "linkType": "$stats",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": true,
+      "statName": "ABS",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GTA"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "PORTVIEW",
+          "title": "title_754e5703-edd8-4a68-abe2-a6f7dfd6c25f",
+          "prompt": false,
+          "value": "ABS_01"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_STA_ABS12",
+      "title": "title_5fed760f-3051-417e-a920-26d6a6721746",
+      "description": "description_5fed760f-3051-417e-a920-26d6a6721746",
+      "linkType": "$stats",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": false,
+      "statName": "ABS",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GTA"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "PORTVIEW",
+          "title": "title_ddf69074-25d7-4ec5-8bb4-ad8408918909",
+          "prompt": false,
+          "value": "ABS_12"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_CAL_EMBAUCHE",
+      "title": "title_ddc4dfa7-c635-4e22-8b37-77cd40f10a55",
+      "description": "description_ddc4dfa7-c635-4e22-8b37-77cd40f10a55",
+      "linkType": "$calendar",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": true,
+      "requestName": "EMBAUCHE",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "representation": "EMBAUCHE"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_499a9eca-450f-45db-9660-8803c18268ae",
+          "prompt": false,
+          "value": "EMBAUCHE"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_225a47cc-c8e5-49be-ac34-4f5b1b8ac123",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_CAL_FINESS",
+      "title": "title_b36381a2-a141-4e79-9616-9ab7c29e3039",
+      "description": "description_b36381a2-a141-4e79-9616-9ab7c29e3039",
+      "linkType": "$calendar",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": true,
+      "requestName": "FINESS",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_355e4bea-b88b-45d9-a92b-db5c31be10fc",
+          "prompt": false,
+          "value": "FINESS2"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_a26a19e0-1b29-405c-920d-4e5acab80957",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_STA_ABS03",
+      "title": "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e",
+      "description": "description_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e",
+      "linkType": "$stats",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "isFactory": false,
+      "statName": "ABS",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GTA"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "PORTVIEW",
+          "title": "title_8c2aee17-becb-4d5e-9f83-a0dd1752a308",
+          "prompt": false,
+          "value": "ABS_03"
+        }
+      ]
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_94285920-35f6-4ab1-b963-b7f71d79dea9",
+      "useCurrentEndpoint": true,
+      "isFactory": true,
+      "pageName": "Home",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "c07d5009-3094-4720-b375-2c74975445e2",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_COVERAGE"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "5d2cbc8d-2f1c-4a01-af0c-a34957e87575",
+          "vignette": {
+            "code": "STD_X3_HRM_REQ_EMBAUCHE"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "64bab68c-3cd0-4b79-9c08-0b139edc4e48",
+          "vignette": {
+            "code": "STD_X3_HRM_REQ_FINESS"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "d5a7bd4e-b3df-4ef3-a1f6-a7ca30ab0518",
+          "vignette": {
+            "code": "STD_X3_HRM_STA_ABS01"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "97257482-2144-4071-ae6f-51c226b9c405",
+          "vignette": {
+            "code": "STD_X3_HRM_STA_ABS12"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "ed028ecf-c784-45c8-960a-2b785de1be1d",
+          "vignette": {
+            "code": "STD_X3_HRM_CAL_EMBAUCHE"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "c2a3ef20-fdf7-41b9-b0bf-7567f42de9e8",
+          "vignette": {
+            "code": "STD_X3_HRM_CAL_FINESS"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "2e342a20-e302-4007-8bcb-b1d526930ae8",
+          "vignette": {
+            "code": "STD_X3_HRM_STA_ABS03"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "cca32000-c348-420c-a934-ba3ea0d01428",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@99032f93-8398-4ce5-89a6-85bddee4b698}\",\"$layout\":{\"$items\":[{\"$bind\":\"c07d5009-3094-4720-b375-2c74975445e2\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@6f2ad2f7-ec9d-4752-9eb4-214765412a19}\",\"$layout\":{\"$layoutType\":\"stack\",\"$items\":[{\"$layoutType\":\"row\",\"$widths\":\"50,50\",\"$items\":[{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"5d2cbc8d-2f1c-4a01-af0c-a34957e87575\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"CTRDAT\"},{\"$bind\":\"CTRGRD\"},{\"$bind\":\"JOB\"},{\"$bind\":\"ETRTIM\"},{\"$bind\":\"FORMULA_2\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"ed028ecf-c784-45c8-960a-2b785de1be1d\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$graphPosition\":\"front\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"CTRDAT\"},{\"$bind\":\"CTRGRD\"},{\"$bind\":\"JOB\"},{\"$bind\":\"ETRTIM\"},{\"$bind\":\"FORMULA_2\"}]},\"$calendarView\":\"month\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"64bab68c-3cd0-4b79-9c08-0b139edc4e48\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ENDTRY\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\"}},{\"$bind\":\"c2a3ef20-fdf7-41b9-b0bf-7567f42de9e8\",\"$title\":\"-\"}],\"$widths\":\"100\"},{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"d5a7bd4e-b3df-4ef3-a1f6-a7ca30ab0518\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"datstart1\",\"$isAdvanced\":true},{\"$bind\":\"datend1\",\"$isAdvanced\":true}],\"$widths\":\"50,50\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"TIM\"},{\"$bind\":\"FCY\"},{\"$bind\":\"SRV\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"}]},\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10,\"$cardItem\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"TIM\"},{\"$bind\":\"FCY\"},{\"$bind\":\"SRV\"},{\"$bind\":\"REFNUM\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"}]}}]},\"$position\":\"bottom\"},\"$selectMode\":\"row\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"2e342a20-e302-4007-8bcb-b1d526930ae8\",\"$title\":\"-\"},{\"$bind\":\"97257482-2144-4071-ae6f-51c226b9c405\",\"$title\":\"-\"}],\"$widths\":\"100\"}]}],\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "Home",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_RCPT003",
       "title": "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f",
       "description": "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f",
@@ -4088,7 +4179,7 @@
     {
       "$type": "pageLayout",
       "code": "17c59885-2c1a-4184-a15b-2a2b55925b30",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@6c81f19b-c34d-4167-b355-4feaa27be744}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"8784fae9-8d61-4137-8fd3-40c53971ab94\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BUY\"},{\"$bind\":\"POHFCY\"},{\"$bind\":\"ORDDAT\"},{\"$bind\":\"POHNUM\"},{\"$bind\":\"BPSNUM\"},{\"$bind\":\"BPSNAM\"},{\"$bind\":\"POHTYP\"},{\"$bind\":\"TOTORD\"},{\"$bind\":\"CUR\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"346d9b6b-a431-47b3-9e08-2e70b5173a57\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"PSHFCY\"},{\"$bind\":\"BPSNUM\"},{\"$bind\":\"BPSNAM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$style\":\"column\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"e6fc7565-af10-4bed-b282-4d2da1f50703\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$title\":\"{@c77edce5-a1ba-4e5c-8e9b-a3f4ae329660}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"ed0f87af-4f78-4613-a0a9-941984701aab\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@6c81f19b-c34d-4167-b355-4feaa27be744}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"8784fae9-8d61-4137-8fd3-40c53971ab94\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BUY\"},{\"$bind\":\"POHFCY\"},{\"$bind\":\"ORDDAT\"},{\"$bind\":\"POHNUM\"},{\"$bind\":\"BPSNUM\"},{\"$bind\":\"BPSNAM\"},{\"$bind\":\"POHTYP\"},{\"$bind\":\"TOTORD\"},{\"$bind\":\"CUR\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"346d9b6b-a431-47b3-9e08-2e70b5173a57\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"PSHFCY\"},{\"$bind\":\"BPSNUM\"},{\"$bind\":\"BPSNAM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$style\":\"column\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"e6fc7565-af10-4bed-b282-4d2da1f50703\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$title\":\"{@c77edce5-a1ba-4e5c-8e9b-a3f4ae329660}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"ed0f87af-4f78-4613-a0a9-941984701aab\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
       "page": {
         "pageName": "Buyer",
         "$variantType": "landingPage"
@@ -5693,7 +5784,7 @@
     {
       "$type": "pageLayout",
       "code": "a1a251b4-684f-48bb-a0ff-5817d84baa72",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@656afa2f-1f3c-4fb0-9c41-324817cd6869}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"7487e574-67ff-4c60-8006-30f4418c959c\",\"$title\":\"-\"},{\"$bind\":\"b73cd4dc-7575-45e2-9603-08c4c9532f2f\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"f3da9697-7410-4f42-9569-67a502789d34\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$title\":\"{@7685b672-b965-4ddb-961f-78a745757d9c}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"71835259-1fee-483b-a231-8172f41f57f2\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@656afa2f-1f3c-4fb0-9c41-324817cd6869}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"7487e574-67ff-4c60-8006-30f4418c959c\",\"$title\":\"-\"},{\"$bind\":\"b73cd4dc-7575-45e2-9603-08c4c9532f2f\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"f3da9697-7410-4f42-9569-67a502789d34\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$title\":\"{@7685b672-b965-4ddb-961f-78a745757d9c}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"71835259-1fee-483b-a231-8172f41f57f2\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
       "page": {
         "pageName": "APAccountingManager",
         "$variantType": "landingPage"
@@ -7426,7 +7517,7 @@
     {
       "$type": "pageLayout",
       "code": "ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@5818ee7b-6719-4092-912d-46c88a1f7d42}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"e7f7d103-d55e-4e13-bc71-f1b817144958\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"CPY\"},{\"$bind\":\"BPCNUM\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"OSTAUZ\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"DLVOSTL\"},{\"$bind\":\"NIVDLVL\"},{\"$bind\":\"NPTINVL\"},{\"$bind\":\"ORDBPIATIL\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"line_no\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"eaae1a5d-b073-4e3a-8175-ff9ae15ec8b4\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPRPAY\"},{\"$bind\":\"BPRNAM\"},{\"$bind\":\"DUDDAT\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ACCCUR\"},{\"$bind\":\"FCY\"},{\"$bind\":\"NUM\"},{\"$bind\":\"SAC\"},{\"$bind\":\"DPTCOD\"},{\"$bind\":\"LEVFUP\"},{\"$bind\":\"DATFUP\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"a4c38e8e-de38-4e28-aa15-a55a49309891\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"8a2b7b9e-7d8e-4dde-ae1f-fd5e8e7a0ed1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@b45b2101-b67c-446b-9360-c95f0868a881}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@5818ee7b-6719-4092-912d-46c88a1f7d42}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"e7f7d103-d55e-4e13-bc71-f1b817144958\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"CPY\"},{\"$bind\":\"BPCNUM\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"OSTAUZ\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"DLVOSTL\"},{\"$bind\":\"NIVDLVL\"},{\"$bind\":\"NPTINVL\"},{\"$bind\":\"ORDBPIATIL\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"line_no\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"eaae1a5d-b073-4e3a-8175-ff9ae15ec8b4\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPRPAY\"},{\"$bind\":\"BPRNAM\"},{\"$bind\":\"DUDDAT\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ACCCUR\"},{\"$bind\":\"FCY\"},{\"$bind\":\"NUM\"},{\"$bind\":\"SAC\"},{\"$bind\":\"DPTCOD\"},{\"$bind\":\"LEVFUP\"},{\"$bind\":\"DATFUP\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"a4c38e8e-de38-4e28-aa15-a55a49309891\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"8a2b7b9e-7d8e-4dde-ae1f-fd5e8e7a0ed1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@b45b2101-b67c-446b-9360-c95f0868a881}\",\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
       "page": {
         "pageName": "ARaccountingmanager",
         "$variantType": "landingPage"
@@ -8621,9 +8712,7 @@
         "application": "x3",
         "contract": "hrm"
       },
-      "endpoint": {
-        "dataset": "TESTHRMV7"
-      },
+      "endpoint": null,
       "representationRef": null,
       "module": {
         "code": "STD_X3_HRM_GTA"
@@ -9209,12 +9298,21 @@
       "description_19329531-5b3c-410d-9558-4547e28b70d7": "ADMINDON",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Orders to Sign",
       "description_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Commandes à signer",
+      "pageLayout.17c59885-2c1a-4184-a15b-2a2b55925b30.@6c81f19b-c34d-4167-b355-4feaa27be744": "Key information",
+      "pageLayout.17c59885-2c1a-4184-a15b-2a2b55925b30.@c77edce5-a1ba-4e5c-8e9b-a3f4ae329660": "Business process",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "Sales Administrator",
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Blocked Orders / Customers",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Late Orders / Customers",
       "title_a3fa6259-6f26-4381-bc37-dff76faacf54": "Sales administror Indicators",
       "description_a3fa6259-6f26-4381-bc37-dff76faacf54": "INDIC_ADVT",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@593c47fe-64f2-4c8f-a4a5-54fd342fe4c9": "Order",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@2348c43c-a7f9-4751-bb9e-a94c77c86f0e": "Quote",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@cd61b9fc-25ed-4165-b2c1-163c616d0d6f": "Open order",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@669b21d8-8747-48c9-8915-616512190c58": "Historical",
+      "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@55e942fe-cfe5-495c-8e39-1b1f60de6056": "Purchase request",
+      "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@87faa6f5-b357-4dea-a4dd-e3931c2109ac": "Order",
+      "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@8285bf6a-520a-4add-ae5a-daa0a83eb8a3": "Open order",
       "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Supplier Performance",
       "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
       "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Late Suppl O. Item w/o PA",
@@ -9226,12 +9324,18 @@
       "title_bce86765-6b0a-4264-8033-730c8308a64f": "Customer support",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "A/P accounting manager",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Late Suppl O. Item w/ PA",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business process",
       "title_bea84bfe-dd90-402e-8c30-56f5d6b8c1e2": "Warehouse manager",
       "title_7963c2d5-d781-48da-8763-cca1309d8e12": "Ord. Lines to Deliver",
+      "pageLayout.300bc661-38ec-48d7-824c-bcca7dc35fe0.@af8d6dc7-96ab-43de-bff5-7b8c23678359": "Key Information",
+      "pageLayout.300bc661-38ec-48d7-824c-bcca7dc35fe0.@2cd495f8-163b-4001-aec0-4e9a9382aba3": "Business Process",
       "title_ccac36d1-1ada-4274-a16c-0ed333b44d5c": "Director",
+      "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Key Information",
       "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "A/R accounting manager",
       "title_d6885a38-3c97-4699-b4d4-f031410e690d": "A/R Accounting Manager Indic",
       "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Key Information",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Business Process",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Material buyer",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Late Purchase Requests",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "Material buyer Indicators",
@@ -9378,14 +9482,9 @@
       "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Key Information",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Business Process",
+      "title_2f4cb715-27ba-43d0-818f-3c6eaca6a3b0": "Functional coverage",
       "title_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Functional coverage",
       "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Functional coverage",
-      "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71": "Pending recruitments",
-      "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Probation period expiry",
-      "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae": "Vue du portail",
-      "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteeism in the last 12 months",
-      "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
-      "title_2f4cb715-27ba-43d0-818f-3c6eaca6a3b0": "Functional coverage",
       "pageLayout.5ce1f9b9-8e44-4bb9-9b56-814136ef666f.@19a58546-f0ac-440e-af7d-1e708eba281b": "Functional coverage",
       "title_4d273d81-4c7f-475d-b5c5-4ed81972c88d": "Functional coverage",
       "pageLayout.f8a7a6d6-4cea-4959-b477-3f332e1b4463.@bb36477d-e64a-4807-bd6a-0e7ca503b20a": "Functional coverage",
@@ -9425,6 +9524,12 @@
       "pageLayout.6f4fd6ad-16fb-4a36-b5c5-ce3d131c5dab.@472ad403-3dfa-4771-bf43-73f3867c27cd": "New Employee Process",
       "pageLayout.6f4fd6ad-16fb-4a36-b5c5-ce3d131c5dab.@e0608a58-d396-487d-a6d5-9890ececf5c1": "Terminate Employee",
       "pageLayout.6f4fd6ad-16fb-4a36-b5c5-ce3d131c5dab.@778d9af3-3c68-4c0c-b365-965fea85ba4d": "New Tab 1",
+      "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71": "Pending recruitments",
+      "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Probation period expiry",
+      "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae": "Vue du portail",
+      "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
+      "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteeism in the last 12 months",
+      "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absenteeism in the last 3 months",
       "title_3ddea2fc-ff3a-4d78-9c21-48ba6abb7afa": "Chief accountant",
       "description_3ddea2fc-ff3a-4d78-9c21-48ba6abb7afa": "Chief Accountant",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@929fbe48-7282-4222-b14a-fa4817de5833": "Business Process",
@@ -9524,11 +9629,11 @@
       "title_bce86765-6b0a-4264-8033-730c8308a64f": "Customer support",
       "pageLayout.6f5924c3-4ef3-41aa-ad4a-f6dfbc5c961e.@670737d1-c5c3-4ad9-a7b5-ad806eccbe0e": "Key Information",
       "pageLayout.6f5924c3-4ef3-41aa-ad4a-f6dfbc5c961e.@7131ffa5-b8b4-4565-b30f-9f3c14f06695": "Business processes",
-      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "AP accounting manager",
+      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "A/P accounting manager",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Past Due Invoices w/ Approval",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Key Information",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Business Process",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business processes",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business process",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Sales administrator",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Key Information",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Business Process",
@@ -9608,7 +9713,6 @@
       "title_be484c27-fbde-4a04-94d8-11912da4bc4a": "Time and activity management",
       "description_be484c27-fbde-4a04-94d8-11912da4bc4a": "Time and activity management",
       "title_2fef8417-cdad-4f58-98d8-c3ffe14d7b2c": "Sick leave",
-      "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absenteeism in the last 3 months",
       "title_e08dbb1e-51de-4f9a-9dc8-2fbcdb5847eb": "Leave",
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@c43ec551-7168-4c19-8b89-c6bc59b0ad1d": "Processes",
       "title_555de284-e53d-4589-976d-3dfd57b1cb5c": "Payroll manager",
@@ -9932,17 +10036,7 @@
       "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Indicateurs",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Processus",
-      "title_94285920-35f6-4ab1-b963-b7f71d79dea9": "Home",
       "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Mire d'accueil Sage HR Management",
-      "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71": "Salariés en attente d'embauche",
-      "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Fin de période d'essai",
-      "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae": "Vue du portail",
-      "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteisme sur les 12 derniers mois",
-      "title_ddf69074-25d7-4ec5-8bb4-ad8408918909": "Vue du portail",
-      "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Absentéisme mois en cours",
-      "title_754e5703-edd8-4a68-abe2-a6f7dfd6c25f": "Vue du portail",
-      "pageLayout.cca32000-c348-420c-a934-ba3ea0d01428.@99032f93-8398-4ce5-89a6-85bddee4b698": "Accueil Sage HR Management",
-      "pageLayout.cca32000-c348-420c-a934-ba3ea0d01428.@6f2ad2f7-ec9d-4752-9eb4-214765412a19": "Alertes",
       "title_248ff95c-b1cd-46bc-a50e-bff05b4315a5": "Congés (M-1)",
       "title_7c37d481-1cc7-40a7-af69-eea2de14788e": "Congés (N-1)",
       "title_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317": "Nbre de nouveaux employés (Année)",
@@ -9956,6 +10050,18 @@
       "title_dc81c52d-4dae-4afc-aafb-5e9e29b8f317": "Fin de contrat",
       "title_ddc4dfa7-c635-4e22-8b37-77cd40f10a55": "Salariés en attente d'embauche",
       "title_33b81c32-d8da-4570-b462-fe9c4ebec503": "Visite médicale",
+      "title_94285920-35f6-4ab1-b963-b7f71d79dea9": "Home",
+      "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71": "Salariés en attente d'embauche",
+      "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Fin de période d'essai",
+      "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae": "Vue du portail",
+      "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Absentéisme mois en cours",
+      "title_754e5703-edd8-4a68-abe2-a6f7dfd6c25f": "Vue du portail",
+      "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteisme sur les 12 derniers mois",
+      "title_ddf69074-25d7-4ec5-8bb4-ad8408918909": "Vue du portail",
+      "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absentéisme 03 mois glissants",
+      "title_8c2aee17-becb-4d5e-9f83-a0dd1752a308": "Vue du portail",
+      "pageLayout.cca32000-c348-420c-a934-ba3ea0d01428.@99032f93-8398-4ce5-89a6-85bddee4b698": "Accueil Sage HR Management",
+      "pageLayout.cca32000-c348-420c-a934-ba3ea0d01428.@6f2ad2f7-ec9d-4752-9eb4-214765412a19": "Alertes",
       "title_3ddea2fc-ff3a-4d78-9c21-48ba6abb7afa": "Chef comptable",
       "description_3ddea2fc-ff3a-4d78-9c21-48ba6abb7afa": "Chef comptable",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@929fbe48-7282-4222-b14a-fa4817de5833": "Processus",
@@ -10149,8 +10255,6 @@
       "description_be484c27-fbde-4a04-94d8-11912da4bc4a": "Processus de gestion des temps et activité",
       "title_2fef8417-cdad-4f58-98d8-c3ffe14d7b2c": "Salariés en arrêts maladie",
       "title_5e528296-2f22-4bce-8fe8-21ef615271e3": "Vue du portail",
-      "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absentéisme 03 mois glissants",
-      "title_8c2aee17-becb-4d5e-9f83-a0dd1752a308": "Vue du portail",
       "title_e08dbb1e-51de-4f9a-9dc8-2fbcdb5847eb": "Congés",
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@c43ec551-7168-4c19-8b89-c6bc59b0ad1d": "Processus",
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@cc8c9929-a091-45dc-8a91-57d5db773a0a": "KPI"
@@ -10619,7 +10723,7 @@
       "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@2348c43c-a7f9-4751-bb9e-a94c77c86f0e": "Orçamento",
       "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@593c47fe-64f2-4c8f-a4a5-54fd342fe4c9": "Funçãoes",
       "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@cd61b9fc-25ed-4165-b2c1-163c616d0d6f": "Encomendas abertas",
-      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@669b21d8-8747-48c9-8915-616512190c58": "histórico",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@669b21d8-8747-48c9-8915-616512190c58": "Histórico",
       "title_8d6e311a-79f1-4426-a824-a2825165e164": "Workflow compras",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@55e942fe-cfe5-495c-8e39-1b1f60de6056": "Pedidos compra",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@87faa6f5-b357-4dea-a4dd-e3931c2109ac": "Encomendas",
@@ -10900,6 +11004,8 @@
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "采购员",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "应签字审批的订单",
       "description_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Commandes à signer",
+      "pageLayout.17c59885-2c1a-4184-a15b-2a2b55925b30.@6c81f19b-c34d-4167-b355-4feaa27be744": "关键指数",
+      "pageLayout.17c59885-2c1a-4184-a15b-2a2b55925b30.@c77edce5-a1ba-4e5c-8e9b-a3f4ae329660": "业务流程",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "销售管理员",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "销售管理员",
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
@@ -10907,6 +11013,15 @@
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "逾期订单 / 客户",
       "title_a3fa6259-6f26-4381-bc37-dff76faacf54": "销售管理员指标",
       "description_a3fa6259-6f26-4381-bc37-dff76faacf54": "INDIC_ADVT",
+      "title_7db3a49c-f273-461d-8c18-8c0555347583": "销售工作流",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@2348c43c-a7f9-4751-bb9e-a94c77c86f0e": "报价",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@593c47fe-64f2-4c8f-a4a5-54fd342fe4c9": "订单",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@cd61b9fc-25ed-4165-b2c1-163c616d0d6f": "合同",
+      "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@669b21d8-8747-48c9-8915-616512190c58": "历史记录",
+      "title_8d6e311a-79f1-4426-a824-a2825165e164": "采购工作流",
+      "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@55e942fe-cfe5-495c-8e39-1b1f60de6056": "采购请求",
+      "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@87faa6f5-b357-4dea-a4dd-e3931c2109ac": "订单",
+      "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@8285bf6a-520a-4add-ae5a-daa0a83eb8a3": "合同",
       "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "供应商绩效",
       "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
       "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "逾期但无付款审批单的供应商未结账项",
@@ -10918,12 +11033,18 @@
       "title_bce86765-6b0a-4264-8033-730c8308a64f": "客户支持经理",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "供应商应付账款会计主管",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "逾期但有付款审批单的供应商未结账项",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "业务流程",
       "title_bea84bfe-dd90-402e-8c30-56f5d6b8c1e2": "仓库管理员",
       "title_7963c2d5-d781-48da-8763-cca1309d8e12": "待发货订单行时间表",
+      "pageLayout.300bc661-38ec-48d7-824c-bcca7dc35fe0.@af8d6dc7-96ab-43de-bff5-7b8c23678359": "关键指数",
+      "pageLayout.300bc661-38ec-48d7-824c-bcca7dc35fe0.@2cd495f8-163b-4001-aec0-4e9a9382aba3": "业务流程",
       "title_ccac36d1-1ada-4274-a16c-0ed333b44d5c": "经理",
+      "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "关键指数",
       "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "客户应收账款会计主管",
       "title_d6885a38-3c97-4699-b4d4-f031410e690d": "客户应收账款会计主管指标",
       "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "关键指数",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "业务流程",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "供货员",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "逾期的采购请求",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "供货员指标",
@@ -10943,6 +11064,7 @@
       "description_9e0ec861-f874-4fe1-9f5d-eeec27e8725f": "PRF à calculer",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "计划经理",
       "title_8954227e-bd12-4d47-8304-c3188349793b": "管理总监",
+      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "系统管理员",
       "title_ad0a342b-a67f-4114-99ae-1b82f5f1a515": "参数设置向导",
       "description_ad0a342b-a67f-4114-99ae-1b82f5f1a515": "ASP00"
     }
