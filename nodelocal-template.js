@@ -43,6 +43,9 @@ exports.config = {
 		port: 8125
 	},
 	*/
+    collaboration: {
+        certdir: "certificates"  // path to certificates folder
+    },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
