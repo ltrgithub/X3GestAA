@@ -166,5 +166,10 @@ exports.config = {
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 	},
+    unit_test: {
+        // unit tests related options
+        x3endpoint: {},
+        elasticsearch: {}
+    }
 };
 
