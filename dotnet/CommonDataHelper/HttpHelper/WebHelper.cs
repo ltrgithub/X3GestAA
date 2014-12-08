@@ -197,6 +197,7 @@ namespace CommonDataHelper
                     throw (new WebException(global::CommonDataHelper.Properties.Resources.MSG_CANNOT_CONNECT_TO_SERVER));
                 }
             }
+            CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
         }
         
         public void logout()

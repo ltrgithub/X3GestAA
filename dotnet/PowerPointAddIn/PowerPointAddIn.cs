@@ -8,6 +8,7 @@ using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Core;
 using Microsoft.Win32;
 using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
 
 namespace PowerPointAddIn
 {
@@ -32,6 +33,7 @@ namespace PowerPointAddIn
             Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(on_PresentationBeforeSave);
 
             common.DisplayServerLocations();
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
         }
 
         public void on_PresentationBeforeSave(Presentation Pres, ref bool Cancel)

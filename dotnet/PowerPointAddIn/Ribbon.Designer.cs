@@ -95,6 +95,7 @@ namespace PowerPointAddIn
             this.buttonRefreshAll = this.Factory.CreateRibbonButton();
             this.groupSettings = this.Factory.CreateRibbonGroup();
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
+            this.buttonDisconnect = this.Factory.CreateRibbonButton();
             this.groupVersion = this.Factory.CreateRibbonGroup();
             this.installedVersion = this.Factory.CreateRibbonLabel();
             this.buttonUpdate = this.Factory.CreateRibbonButton();
@@ -174,6 +175,7 @@ namespace PowerPointAddIn
             // groupSettings
             // 
             this.groupSettings.Items.Add(this.comboBoxServerLocation);
+            this.groupSettings.Items.Add(this.buttonDisconnect);
             resources.ApplyResources(this.groupSettings, "groupSettings");
             this.groupSettings.Name = "groupSettings";
             // 
@@ -182,6 +184,15 @@ namespace PowerPointAddIn
             resources.ApplyResources(this.comboBoxServerLocation, "comboBoxServerLocation");
             this.comboBoxServerLocation.Name = "comboBoxServerLocation";
             this.comboBoxServerLocation.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.comboBoxServerLocation_TextChanged);
+            // 
+            // buttonDisconnect
+            // 
+            this.buttonDisconnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonDisconnect.Image = global::PowerPointAddIn.Properties.Resources.logout;
+            resources.ApplyResources(this.buttonDisconnect, "buttonDisconnect");
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.ShowImage = true;
+            this.buttonDisconnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonDisconnect_Click);
             // 
             // groupVersion
             // 
@@ -206,18 +217,22 @@ namespace PowerPointAddIn
             // 
             // version
             // 
+            resources.ApplyResources(this.version, "version");
             this.version.Name = "version";
             // 
             // checkBoxShowTemplatePane
             // 
+            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
             this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
             // 
             // buttonRefreshReport
             // 
+            resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
             this.buttonRefreshReport.Name = "buttonRefreshReport";
             // 
             // buttonPreview
             // 
+            resources.ApplyResources(this.buttonPreview, "buttonPreview");
             this.buttonPreview.Name = "buttonPreview";
             // 
             // Ribbon
@@ -257,6 +272,7 @@ namespace PowerPointAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonGallery galleryPublishAs;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonDisconnect;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

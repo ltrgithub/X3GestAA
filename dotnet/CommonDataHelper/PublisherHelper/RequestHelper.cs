@@ -121,5 +121,29 @@ namespace CommonDataHelper.PublisherHelper
 
             return new Uri(baseUrl, queryParameters.ToString());
         }
+    
+        public Boolean getDocumentIsReadOnly(string documentUrl)
+        {
+            if (documentUrl == String.Empty)
+            {
+                return false;
+            }
+
+            documentUrl = documentUrl.Replace("/content" , String.Empty);
+
+            WebHelper webHelper = new WebHelper();
+            HttpStatusCode httpStatusCode;
+
+            string prototypeJson = webHelper.getServerJson(documentUrl, out httpStatusCode);
+
+            if (httpStatusCode == HttpStatusCode.OK)
+            {
+                var document = Newtonsoft.Json.JsonConvert.DeserializeObject<PublishDocumentModel>(prototypeJson);
+                return document.isReadOnly;
+            }
+
+            return false;
+        }
+
     }
 }

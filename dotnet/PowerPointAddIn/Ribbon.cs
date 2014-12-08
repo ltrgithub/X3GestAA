@@ -72,5 +72,10 @@ namespace PowerPointAddIn
             CookieHelper.CookieContainer = null;
             buttonPublish.Enabled = false;
         }
+
+        private void buttonDisconnect_Click(object sender, RibbonControlEventArgs e)
+        {
+            new ConnectionDialog().disconnectFromServer();
+        }
     }
 }

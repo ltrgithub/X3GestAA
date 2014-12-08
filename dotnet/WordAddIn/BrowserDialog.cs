@@ -10,6 +10,7 @@ using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Word;
 using CommonDialogs;
 using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
 
 namespace WordAddIn
 {
@@ -42,13 +43,27 @@ namespace WordAddIn
 //                this.Hide();
             }
             hideOnCompletion = false;
+
+            RibbonHelper.toggleButtonDisconnect();
         }
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
-            string baseUrl = BaseUrlHelper.BaseUrl.ToString();
-            customData.setServerUrl(baseUrl);
-            return connectToServer(baseUrl);
+            new ConnectionDialog().connectToServer();
+
+            string serverUrl = customData.getServerUrl();
+            if (serverUrl != null)
+            {
+                BaseUrlHelper.BaseUrl = new Uri(serverUrl);
+            }
+            else
+            {
+                serverUrl = BaseUrlHelper.BaseUrl.ToString();
+            }
+            if (serverUrl == null || "".Equals(serverUrl))
+                return false;
+            customData.setServerUrl(serverUrl);
+            return connectToServer(serverUrl);
         }
         
         private bool connectToServer(String serverUrl)
@@ -58,7 +73,7 @@ namespace WordAddIn
             {
                 // Workaround for require.js bound problem
                 DateTime dummy = DateTime.Now;
-                this.webBrowser.Url = new Uri(serverUrl + "msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
+                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
                 this.serverUrl = serverUrl;
             }
             return true;

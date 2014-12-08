@@ -87,7 +87,8 @@ namespace WordAddIn
             customData.setForceRefresh(false);
             customData.setDocumentUrl("");
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", external);
+            DateTime dummy = DateTime.Now;
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), external);
         }
     }
 }

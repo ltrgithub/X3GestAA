@@ -8,6 +8,8 @@ using Office = Microsoft.Office.Core;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using CommonDataHelper;
+using CommonDataHelper.PublisherHelper;
+using CommonDataHelper.HttpHelper;
 
 namespace WordAddIn
 {
@@ -27,6 +29,8 @@ namespace WordAddIn
             reporting = new ReportingActions(browserDialog);
             mailmerge = new MailMergeActions(browserDialog);
             commons = new CommonUtils(browserDialog);
+            
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
 
             this.Application.DocumentChange += new ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
             this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
@@ -125,11 +129,14 @@ namespace WordAddIn
                     commons.ExtractV6Document(doc, customData);
                 }
 
+                //Boolean bol = new RequestHelper().getDocumentIsReadOnly(customData.getDocumentUrl());
+
                 if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
                 {
                     Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
                 }
             }
+           
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
             commons.DisplayServerLocations();

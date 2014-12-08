@@ -71,6 +71,16 @@ namespace PowerPointAddIn.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The document has not been published yet, it will be published as new document. ähnelt.
         /// </summary>
         internal static string MSG_DOC_NOT_PUBLISHED {

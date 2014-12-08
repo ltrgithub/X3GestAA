@@ -106,6 +106,7 @@ namespace ExcelAddIn
             this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.groupSettings = this.Factory.CreateRibbonGroup();
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
+            this.buttonDisconnect = this.Factory.CreateRibbonButton();
             this.dataSourcesGroup = this.Factory.CreateRibbonGroup();
             this.buttonSettings = this.Factory.CreateRibbonButton();
             this.groupSageX3 = this.Factory.CreateRibbonGroup();
@@ -224,6 +225,7 @@ namespace ExcelAddIn
             // groupSettings
             // 
             this.groupSettings.Items.Add(this.comboBoxServerLocation);
+            this.groupSettings.Items.Add(this.buttonDisconnect);
             resources.ApplyResources(this.groupSettings, "groupSettings");
             this.groupSettings.Name = "groupSettings";
             // 
@@ -232,6 +234,15 @@ namespace ExcelAddIn
             resources.ApplyResources(this.comboBoxServerLocation, "comboBoxServerLocation");
             this.comboBoxServerLocation.Name = "comboBoxServerLocation";
             this.comboBoxServerLocation.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.comboBoxServerLocation_TextChanged);
+            // 
+            // buttonDisconnect
+            // 
+            this.buttonDisconnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonDisconnect.Image = global::ExcelAddIn.Properties.Resources.logout;
+            resources.ApplyResources(this.buttonDisconnect, "buttonDisconnect");
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.ShowImage = true;
+            this.buttonDisconnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonDisconnect_Click);
             // 
             // dataSourcesGroup
             // 
@@ -376,6 +387,7 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonGallery galleryPublishAs;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSettings;
         internal Microsoft.Office.Tools.Ribbon.RibbonComboBox comboBoxServerLocation;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonDisconnect;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

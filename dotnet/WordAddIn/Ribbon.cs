@@ -112,5 +112,10 @@ namespace WordAddIn
         {
             new PublisherHelper().publishDocument(Globals.WordAddIn.commons.getSyracuseCustomData());
         }
+
+        private void buttonDisconnect_Click(object sender, RibbonControlEventArgs e)
+        {
+            new ConnectionDialog().disconnectFromServer();
+        }
     }
 }

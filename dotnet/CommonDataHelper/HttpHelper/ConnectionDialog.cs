@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CommonDialogs;
 using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
 using System.Runtime.InteropServices;
 using System.Net;
 using System.Threading;
@@ -151,9 +152,11 @@ namespace CommonDataHelper
             if (statusCode == HttpStatusCode.OK)
             {
                 _connected = true;
+                CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
             }
             
             Close();
+
             return (bool)_connected;
         }
 
@@ -166,6 +169,13 @@ namespace CommonDataHelper
                 Hide();
             }
             base.OnFormClosing(e);
+        }
+
+        public void disconnectFromServer()
+        {
+            WebHelper webHelper = new WebHelper();
+            webHelper.logout();
+            RibbonHelper.toggleButtonDisconnect();            
         }
     }
 }

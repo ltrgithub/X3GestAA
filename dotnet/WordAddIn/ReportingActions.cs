@@ -108,14 +108,15 @@ namespace WordAddIn
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
             DateTime dummy = DateTime.Now;
-            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
         }
 
         public void RefreshWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            DateTime dummy = DateTime.Now;
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
         }
 
         public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData, Boolean delUrl)
@@ -130,7 +131,8 @@ namespace WordAddIn
             customData.setDocumentTitle("");
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard", customData);
+            DateTime dummy = DateTime.Now;
+            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
         }
 
         public void RefreshReport()

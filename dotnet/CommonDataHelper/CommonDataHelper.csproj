@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -68,6 +71,7 @@
     <Compile Include="HttpHelper\ConnectionDialog.Designer.cs">
       <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpHelper\RibbonHelper.cs" />
     <Compile Include="HttpHelper\VersionHelper.cs" />
     <Compile Include="LegislationHelper\LegislationItem.cs" />
     <Compile Include="LegislationHelper\LegislationList.cs" />

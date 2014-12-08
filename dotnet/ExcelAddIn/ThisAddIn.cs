@@ -10,6 +10,7 @@ using System.IO;
 using Microsoft.Win32;
 using Microsoft.Office.Interop.Excel;
 using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
 
 namespace ExcelAddIn
 {
@@ -89,6 +90,8 @@ namespace ExcelAddIn
             taskPane.Visible = BaseUrlHelper.ShowActionPanel;
             templateActions.DisableTemplateButtons();
 
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect; 
+            
             if (this.Application.ActiveWorkbook != null)
             {
                 SetServerLocations(this.Application.ActiveWorkbook);
