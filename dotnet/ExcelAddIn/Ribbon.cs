@@ -92,7 +92,6 @@ namespace ExcelAddIn
                     Globals.ThisAddIn.SaveDocumentToSyracuse();
                  */
                 new PublisherHelper().publishDocument(Globals.ThisAddIn.commons.getSyracuseCustomData());
-
             }
         }
 
@@ -111,8 +110,21 @@ namespace ExcelAddIn
                         new PublisherDialogHelper().showPublisherTemplateDialog("saveReportTemplatePrototype", Globals.ThisAddIn.commons.getSyracuseCustomData());
                         break;
                 }
-            }
 
+                string documentUrl = Globals.ThisAddIn.commons.getSyracuseCustomData().getDocumentUrl();
+                if (!string.IsNullOrEmpty(documentUrl))
+                {
+                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
+                    {
+                        //Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                        // Enable only after change of worksheet
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                    }
+                }            
+            }
         }
 
         private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)

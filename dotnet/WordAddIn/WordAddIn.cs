@@ -25,7 +25,6 @@ namespace WordAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             browserDialog = new BrowserDialog();
-
             reporting = new ReportingActions(browserDialog);
             mailmerge = new MailMergeActions(browserDialog);
             commons = new CommonUtils(browserDialog);
@@ -129,11 +128,12 @@ namespace WordAddIn
                     commons.ExtractV6Document(doc, customData);
                 }
 
-                //Boolean bol = new RequestHelper().getDocumentIsReadOnly(customData.getDocumentUrl());
-
                 if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
                 {
-                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    if (!(new RequestHelper().getDocumentIsReadOnly(customData.getDocumentUrl())))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
                 }
             }
            

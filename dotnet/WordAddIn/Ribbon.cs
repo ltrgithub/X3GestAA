@@ -93,9 +93,17 @@ namespace WordAddIn
                         break;
                 }
 
-                if (!string.IsNullOrEmpty(Globals.WordAddIn.commons.getSyracuseCustomData().getDocumentUrl()))
+                string documentUrl = Globals.WordAddIn.commons.getSyracuseCustomData().getDocumentUrl();
+                if (!string.IsNullOrEmpty(documentUrl))
                 {
-                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                    }
                 }
             }
         }

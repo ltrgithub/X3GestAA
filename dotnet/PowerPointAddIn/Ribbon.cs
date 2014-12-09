@@ -57,9 +57,17 @@ namespace PowerPointAddIn
                 customData.writeDictionaryToDocument();
                 new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", customData);
                 customData = SyracuseOfficeCustomData.getFromDocument(pres);
-                if (customData.getDocumentUrl() != null && !customData.getDocumentUrl().Equals(String.Empty))
+                string documentUrl = customData.getDocumentUrl();
+                if (!string.IsNullOrEmpty(documentUrl))
                 {
-                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                    }
                 }
             }
             Globals.PowerPointAddIn.Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(Globals.PowerPointAddIn.on_PresentationBeforeSave);

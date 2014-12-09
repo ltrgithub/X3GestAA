@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using Microsoft.Office.Interop.Excel;
 using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace ExcelAddIn
 {
@@ -324,9 +325,17 @@ namespace ExcelAddIn
                 {
                     CheckForPlaceholderDeletion(workbook);
 
-                    if ("".Equals(customData.getDocumentUrl()) == false)
+                    string documentUrl = customData.getDocumentUrl();
+                    if (!string.IsNullOrEmpty(documentUrl))
                     {
-                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                        if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
+                        {
+                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                        }
+                        else
+                        {
+                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                        }
                     }
                 }
             }
@@ -338,8 +347,21 @@ namespace ExcelAddIn
                     commons.ExtractV6Document(workbook, customData);
                 }
             }
-            else if ((new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress") != "")
-                Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+            else
+            {
+                string documentUrlAdress = (new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress");
+                if (!string.IsNullOrEmpty(documentUrlAdress))
+                {
+                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrlAdress)))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                    }
+                }
+            }
         }
 
         void Application_SheetSelectionChange(object sh, Excel.Range target)

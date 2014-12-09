@@ -9,6 +9,7 @@ using Microsoft.Office.Core;
 using Microsoft.Win32;
 using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace PowerPointAddIn
 {
@@ -64,6 +65,7 @@ namespace PowerPointAddIn
             {
                 try
                 {
+                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                     Presentation pres = w.Presentation;
                     SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(pres);
                     if ((cd != null) && (!cd.getServerUrl().Equals(String.Empty)))
@@ -82,12 +84,12 @@ namespace PowerPointAddIn
                         string docUrl = cd.getDocumentUrl();
                         if (docUrl != null && !"".Equals(docUrl))
                         {
-                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                            if (!(new RequestHelper().getDocumentIsReadOnly(docUrl)))
+                            {
+                                Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                            }
                         }
-                        else
-                        {
-                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
-                        }
+
                         if (pptx_action_new_chart_slide.Equals(cd.getActionType()))
                         {
                             if (cd.isForceRefresh())
@@ -98,10 +100,6 @@ namespace PowerPointAddIn
                                 PowerPointAddIn_newSlide(pres, cd, Wn);
                             }
                         }
-                    }
-                    else
-                    {
-                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                     }
                 }
                 catch (Exception e)
