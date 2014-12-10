@@ -43,6 +43,9 @@ exports.config = {
 		port: 8125
 	},
 	*/
+    collaboration: {
+        certdir: "certificates"  // path to certificates folder
+    },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
@@ -166,5 +169,10 @@ exports.config = {
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 	},
+    unit_test: {
+        // unit tests related options
+        x3endpoint: {},
+        elasticsearch: {}
+    }
 };
 
