@@ -268,7 +268,7 @@ namespace CommonDataHelper
             StringBuilder cookieData,
             ref int size);
 
-        private const Int32 InternetCookieHttponly = 0x2000;
+        private const Int32 InternetCookieHttpOnly = 0x2000;
 
         public CookieContainer GetUriCookieContainer()
         {
@@ -289,19 +289,19 @@ namespace CommonDataHelper
 
             if (cookieData.Length > 0)
             {
-                cookies = new CookieContainer();
+                cookies = new CookieContainer();                
                 cookies.SetCookies(BaseUrlHelper.BaseUrl, cookieData.ToString());
             }
             
             datasize = 8192 * 16;
             cookieData.EnsureCapacity(datasize);
 
-            if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttponly, IntPtr.Zero))
+            if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttpOnly, IntPtr.Zero))
             {
                 if (datasize < 0)
                     return null;
 
-                if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttponly, IntPtr.Zero))
+                if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttpOnly, IntPtr.Zero))
                     return null;
             }
             if (cookieData.Length > 0)

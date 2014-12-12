@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices;
 
 
 namespace CommonDataHelper
@@ -194,6 +195,15 @@ namespace CommonDataHelper
                     CookieContainer.Add(cookie);
                 }
             }
+        }
+
+        [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        static extern bool  InternetSetCookieEx(string lpszUrlName, string lpszCookieName, string lpszCookieData, Int32 dwFlags, IntPtr lpReserved);
+
+        public static void cacheCookie(string url, string cookieData)
+        {
+            Int32 InternetCookieHttpOnly = 0x2000;
+            InternetSetCookieEx(url, null, cookieData, InternetCookieHttpOnly, IntPtr.Zero);
         }
     }
 }

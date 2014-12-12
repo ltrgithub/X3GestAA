@@ -86,7 +86,15 @@ namespace CommonDataHelper
             try
             {
                 response = webHelper.getInitialConnectionJson(mainUrl.ToString(), out statusCode);
-                if (statusCode == HttpStatusCode.TemporaryRedirect)
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    CookieCollection cc = response.Cookies;
+                    foreach (Cookie c in cc)
+                    {
+                        CookieHelper.cacheCookie(BaseUrlHelper.BaseUrl.ToString(), c.ToString());
+                    }
+                }
+                else if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
                     if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].Equals(_loginPart))
                     {
