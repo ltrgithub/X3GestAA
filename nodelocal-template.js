@@ -43,6 +43,9 @@ exports.config = {
 		port: 8125
 	},
 	*/
+    collaboration: {
+        certdir: "certificates"  // path to certificates folder
+    },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
@@ -102,7 +105,8 @@ exports.config = {
 		// cache tracing
 		cache: {
 			// trace: console.log,
-		}
+		},
+        reuseTimeout: 120000 // in ms
 	},
 
 	help: {
@@ -168,8 +172,6 @@ exports.config = {
 	},
 	traces: {
 		console: false, // For developers
-		maxSize: "100m",
-		maxFiles: 3,
 		// Levels specified here will be used for default traces settings
 		// Valid levels are : 'info', 'debug', 'warn', and 'error'
 		// Levels not specified will be initialized with 'error' level
@@ -187,7 +189,7 @@ exports.config = {
 				jsRunner: "error", // Syracuse calls from 4GL processes
 				pool: "error", // X3 clients pools
 				print: "error", // Print server comunication layer
-				adxwhat: "debug"
+				adxwhat: "error"
 			},
 			// Classic server
 			classic: {
@@ -204,12 +206,13 @@ exports.config = {
 				proxy: "error", // Proxy calls
 			},
 			// Online help integation
-			help: "error",
-			test: {
-				1: "debug",
-				2: "debug"
-			}
+			help: "error"
 		}
     },	
+    unit_test: {
+        // unit tests related options
+        x3endpoint: {},
+        elasticsearch: {}
+    }
 };
 
