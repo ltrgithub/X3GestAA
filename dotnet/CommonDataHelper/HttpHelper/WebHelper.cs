@@ -139,6 +139,32 @@ namespace CommonDataHelper
             return response;
         }
 
+        public HttpWebResponse getInitialPostConnectionJson(string uri, out HttpStatusCode statusCode)
+        {
+            string responseJson = null;
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+
+            request.AllowAutoRedirect = false;
+            request.Accept = @"text/html, application/xhtml+xml, */*";
+            request.Referer = uri.ToString();
+            request.UserAgent = @"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
+            request.KeepAlive = true;
+            request.Method = "POST";
+
+            request.CookieContainer = GetUriCookieContainer();
+
+            request.Timeout = 20000;
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+            {
+                responseJson = sr.ReadToEnd();
+            }
+            statusCode = response.StatusCode;
+
+            return response;
+        }
+        
         private string getContentType()
         {
             string applicationName = System.AppDomain.CurrentDomain.FriendlyName;
@@ -286,6 +312,7 @@ namespace CommonDataHelper
                 String[] cookiesArray = cookieData.ToString().Split(';');
                 foreach (String cookie in cookiesArray)
                 {
+                    if (cookie.Contains("syracuse.sid.login")) System.Diagnostics.Trace.WriteLine("cookie " + cookie);
                     cookies.SetCookies(BaseUrlHelper.BaseUrl, cookie);
                 }
 

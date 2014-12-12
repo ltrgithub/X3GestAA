@@ -20,6 +20,7 @@ namespace CommonDataHelper
     {
         private String _loginPart = @"/auth/login/page";
         private String _mainPart = @"/syracuse-main/html/main.html";
+        private String _logoutPart = @"/auth/forgetMe/page";
         private bool? _connected = null;
         private Boolean _canceled = false;
 
@@ -36,7 +37,7 @@ namespace CommonDataHelper
             if (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 return;
 
-            if (e.Url.LocalPath.Equals(_loginPart))
+            if (e.Url.LocalPath.Equals(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
             {
                 /*
                  * We've arrived at the new login page, so don't do anything.
@@ -55,7 +56,6 @@ namespace CommonDataHelper
                     {
                         CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
                         _connected = true;
-                        return;
                     }
                 }
                 catch (WebException ex)
@@ -63,11 +63,13 @@ namespace CommonDataHelper
                     if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
                     {
                         _connected = false;
-                        return;
                     }
                 }
 
+                CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
+                Hide();
                 return;
+
             }
         }
 
@@ -171,11 +173,93 @@ namespace CommonDataHelper
             base.OnFormClosing(e);
         }
 
-        public void disconnectFromServer()
+        public bool disconnectFromServer()
         {
+            //System.Diagnostics.Debugger.Launch();
+            //Show();
+            /*
             WebHelper webHelper = new WebHelper();
+            webHelper.
             webHelper.logout();
-            RibbonHelper.toggleButtonDisconnect();            
+            //RibbonHelper.toggleButtonDisconnect();            
+             */
+
+
+            WebHelper webHelper = new WebHelper();
+            CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
+
+            HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
+            HttpWebResponse response = null;
+
+            Uri mainUrl = new Uri(BaseUrlHelper.BaseUrl, "/logout");
+
+            try
+            {
+                response = webHelper.getInitialPostConnectionJson(mainUrl.ToString(), out statusCode);
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    Show();
+
+                    webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(documentCompleted);
+
+                    Uri logoutUri = new Uri(BaseUrlHelper.BaseUrl, _loginPart);
+                    webBrowser.Navigate(logoutUri, "", null, @"If-None-Match: 0");
+                }
+            }
+            catch (WebException ex)
+            {
+                if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    /*
+                     * We will get here when accessing an old-style Syracuse server.
+                     * As Syraucse.Sid is a session cookie, it's not in the normal cookie cache, 
+                     * so we can't obtain it with InternetGetCookie or InternetGetCookieEx.
+                     * We therefore have little choice but to force a login...
+                     */
+                    webBrowser.Navigate(mainUrl, "", null, @"If-None-Match: 0");
+
+                    /*
+                     * We need this to be synchronous...
+                     */
+                    while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+                    {
+                        Application.DoEvents();
+                        if (_canceled)
+                        {
+                            Close();
+                            return false;
+                        }
+                    }
+
+                    statusCode = HttpStatusCode.OK;
+                }
+                else
+                {
+                    throw (ex);
+                }
+            }
+
+
+            if (statusCode == HttpStatusCode.OK)
+            {
+                while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+                {
+                    Application.DoEvents();
+                    if (_canceled)
+                    {
+                        break;
+                    }
+                }
+                _connected = false;
+                CookieHelper.CookieContainer = null;
+                CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
+            }
+
+            //Close();
+
+            return (bool)_connected;
+        
+        
         }
     }
 }
