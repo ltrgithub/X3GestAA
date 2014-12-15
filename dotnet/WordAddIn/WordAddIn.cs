@@ -30,6 +30,7 @@ namespace WordAddIn
             commons = new CommonUtils(browserDialog);
             
             RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
 
             this.Application.DocumentChange += new ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
             this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
@@ -121,6 +122,7 @@ namespace WordAddIn
             if (customData != null)
             {
                 BaseUrlHelper.CustomData = customData;
+                BaseUrlHelper.BaseUrl = new Uri(customData.getServerUrl());
 
                 String mode = customData.getCreateMode();
                 if ("v6_doc_embedded".Equals(mode))

@@ -92,24 +92,27 @@ namespace ExcelAddIn
             new CommonDataHelper.ConnectionDialog().connectToServer();
 
             //
-            try
+            if (webBrowser.ObjectForScripting == null)
             {
-                webBrowser.ObjectForScripting = new External();
-                webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
-                ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
-                    {
-                        connected = true;
-                        // actions after logon
-                        // has datasources ?
-                        Excel.Workbook thisWb = Wb != null ? Wb : Globals.ThisAddIn.Application.ActiveWorkbook;
-                        if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
-                            Globals.ThisAddIn.ShowSettingsForm();
-                    };
-                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                try
+                {
+                    webBrowser.ObjectForScripting = new External();
+                    webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
+                    ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
+                        {
+                        	connected = true;
+                            // actions after logon
+                            // has datasources ?
+                            Excel.Workbook thisWb = Wb != null ? Wb : Globals.ThisAddIn.Application.ActiveWorkbook;
+                            if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
+                                Globals.ThisAddIn.ShowSettingsForm();
+                        };
+                    webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                }
             }
         }
 
@@ -141,20 +144,22 @@ namespace ExcelAddIn
         public void RefreshAll()
         {
             if (!connected)
-                _connect("");
+            	_connect("");
 
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             Globals.ThisAddIn.ShowSettingsForm();
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
         }
 
         internal void SaveDocument()
         {
             if (!connected)
-                _connect("");
+            	_connect("");
             if (webBrowser.Document != null)
                 webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "saveDocument" });
         }
@@ -188,8 +193,8 @@ namespace ExcelAddIn
             } 
             else 
             {
-                // TODO: make sure it's connected to the same server !!!
-                internalLoadTables(parameters, onTablesLoaded);
+            	// TODO: make sure it's connected to the same server !!!
+            	internalLoadTables(parameters, onTablesLoaded);
             }
         }
 

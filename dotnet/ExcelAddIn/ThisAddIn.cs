@@ -91,13 +91,13 @@ namespace ExcelAddIn
             taskPane.Visible = BaseUrlHelper.ShowActionPanel;
             templateActions.DisableTemplateButtons();
 
-            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect; 
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
             
             if (this.Application.ActiveWorkbook != null)
             {
                 SetServerLocations(this.Application.ActiveWorkbook);
                 AutoConnect(this.Application.ActiveWorkbook);
-                
             }
 
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
+using CommonDataHelper;
 
 
 namespace CommonDataHelper.HttpHelper
@@ -27,7 +29,12 @@ namespace CommonDataHelper.HttpHelper
             }
             else
             {
-                _button.Enabled = true;
+                _button.Enabled = false;
+                foreach (Cookie cookie in CookieHelper.CookieContainer.GetCookies(BaseUrlHelper.BaseUrl))
+                {
+                    _button.Enabled = true;
+                    break;
+                }
             }
         }
     }
