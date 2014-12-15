@@ -80,6 +80,7 @@ namespace PowerPointAddIn
               
                 this.TopLevel = true;
                 this.webBrowser.Url = uri;
+                Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
             }
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace); }
         }
@@ -101,27 +102,7 @@ namespace PowerPointAddIn
             }
             catch (Exception) { };
             return null;
-        }
-    
-        public void postPage(String urlPart, String serverUrl)
-        {
-            if (!serverUrl.Equals(String.Empty))
-            {
-                PowerPointDownloadData data = new PowerPointDownloadData();
-                try
-                {
-                    String uri = serverUrl + urlPart;
-                    object ret = this.webBrowser.Document.InvokeScript("postUrl", new object[] { uri, data });
-                    byte[] bytes = (byte[])data.data;
-
-                    if (bytes != null)
-                    {
-                        return;
-                    }
-                }
-                catch (Exception) { };
-            }
-        }
+        }    
     }
 
     // The only one class/object to be referenced from javascript 'external'
