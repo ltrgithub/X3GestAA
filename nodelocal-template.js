@@ -105,7 +105,8 @@ exports.config = {
 		// cache tracing
 		cache: {
 			// trace: console.log,
-		}
+		},
+        reuseTimeout: 120000 // in ms
 	},
 
 	help: {
