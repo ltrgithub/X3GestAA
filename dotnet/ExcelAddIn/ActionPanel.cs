@@ -242,26 +242,5 @@ namespace ExcelAddIn
             catch (Exception e) { MessageBox.Show(e.Message); }
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
         }
-
-        public void postPage(String urlPart, String serverUrl)
-        {
-            ExcelDownloadData data = new ExcelDownloadData();
-            if ((data != null) && (!serverUrl.Equals(String.Empty)))
-            {
-                try
-                {
-                    String uri = serverUrl + urlPart;
-
-                    object ret = webBrowser.Document.InvokeScript("postUrl", new object[] { uri, data });
-                    byte[] bytes = data.data;
-
-                    if (bytes != null)
-                    {
-                        return;
-                    }
-                }
-                catch (Exception) { };
-            }
-        }
     }
 }

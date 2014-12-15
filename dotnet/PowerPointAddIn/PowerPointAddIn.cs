@@ -30,7 +30,6 @@ namespace PowerPointAddIn
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
-            //Application.PresentationBeforeClose += new EApplication_PresentationBeforeCloseEventHandler(on_PresentationBeforeClose);
             Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(on_PresentationBeforeSave);
 
             common.DisplayServerLocations();
@@ -194,11 +193,6 @@ namespace PowerPointAddIn
         void Application_SlideSelectionChanged(SlideRange SldRange)
         {
             pptActions.checkRefreshButtons();
-        }
-
-        public void on_PresentationBeforeClose(Presentation pres, ref bool Cancel)
-        {
-            pptActions.closeConnectionsAllSlides();
         }
 
         #region Von VSTO generierter Code

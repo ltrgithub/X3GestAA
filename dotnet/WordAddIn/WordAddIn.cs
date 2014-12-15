@@ -36,7 +36,6 @@ namespace WordAddIn
             this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(on_window_deactivate);
             this.Application.WindowSelectionChange += new ApplicationEvents4_WindowSelectionChangeEventHandler(on_window_selection_changed);
-            //this.Application.DocumentBeforeClose += new ApplicationEvents4_DocumentBeforeCloseEventHandler(on_DocumentBeforeClose);
             this.Application.DocumentBeforeSave += new ApplicationEvents4_DocumentBeforeSaveEventHandler(Application_DocumentBeforeSave);
         }
 
@@ -75,18 +74,6 @@ namespace WordAddIn
 
         public void on_window_deactivate(Document doc, Window win)
         {
-        }
-
-        public void on_DocumentBeforeClose(Document doc, ref bool Cancel)
-        {
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            if (customData != null)
-            {
-                browserDialog.postPage("logout", customData);
-            }
-            
-            WebHelper webHelper = new WebHelper();
-            webHelper.logout();
         }
 
         // Called when ever a document is opend by word or one is activated
