@@ -35,6 +35,7 @@ namespace ExcelAddIn
         private const String originalFileNameProperty       = "originalFileName";
         private const String supportedLocalesProperty = "supportedLocales";
         private const String syracuseRoleProperty = "syracuseRole";
+        private const String syracuseLocaleProperty = "syracuseLocale";
         private const string docContentProperty = "docContent";
         private const string publishedDocumentJsonProperty = "publishedDocumentJson";
         private const String documentUrlAddressProperty = "documentUrlAddress";
@@ -79,9 +80,21 @@ namespace ExcelAddIn
         {
             return getStringProperty(resourceUrlProperty, false);
         }
+        public void setSyracuseRole(String value)
+        {
+            setStringProperty(syracuseRoleProperty, value);
+        }
         public string getSyracuseRole()
         {
             return getStringProperty(syracuseRoleProperty, false);
+        }
+        public void setSyracuseLocale(String value)
+        {
+            setStringProperty(syracuseLocaleProperty, value);
+        }
+        public string getSyracuseLocale()
+        {
+            return getStringProperty(syracuseLocaleProperty, false);
         }
         public void setForceRefresh(Boolean status)
         {

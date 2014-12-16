@@ -74,6 +74,11 @@ namespace ExcelAddIn
             return customData.getSyracuseRole();
         }
 
+        public String getSyracuseLocale()
+        {
+            return customData.getSyracuseLocale();
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)

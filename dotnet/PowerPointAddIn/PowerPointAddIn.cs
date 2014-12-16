@@ -34,6 +34,7 @@ namespace PowerPointAddIn
 
             common.DisplayServerLocations();
             RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
         }
 
         public void on_PresentationBeforeSave(Presentation Pres, ref bool Cancel)
