@@ -33,6 +33,7 @@ namespace WordAddIn
         private const String originalFileNameProperty       = "originalFileName";
         private const String supportedLocalesProperty = "supportedLocales";
         private const String syracuseRoleProperty = "syracuseRole";
+        private const String syracuseLocaleProperty = "syracuseLocale";
         private const string docContentProperty = "docContent";
 
         private Dictionary<String, object> dictionary;
@@ -76,6 +77,10 @@ namespace WordAddIn
         public string getSyracuseRole()
         {
             return getStringProperty(syracuseRoleProperty, false);
+        }
+        public string getSyracuseLocale()
+        {
+            return getStringProperty(syracuseLocaleProperty, false);
         }
         public void setForceRefresh(Boolean status)
         {
