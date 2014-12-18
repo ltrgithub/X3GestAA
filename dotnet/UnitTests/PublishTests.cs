@@ -20,11 +20,19 @@ namespace UnitTests
         public void publishWordDocument()
         {
             PublisherDialogHelper publisherDialogHelper = new PublisherDialogHelper();
-            WorkingCopyPrototypeModel workingCopyPrototypeModel = publisherDialogHelper.initialiseWorkingCopy("msoWordDocument", "saveNewDocumentPrototype", new DummyWordCustomData());
+            DummyWordCustomData dummyWordCustomData = new DummyWordCustomData();
+            WorkingCopyPrototypeModel workingCopyPrototypeModel = publisherDialogHelper.initialiseWorkingCopy("msoWordDocument", "saveNewDocumentPrototype", dummyWordCustomData);
 
             IPublishDocument publishDocumentParameters = new DummyPublishDocument("WordUnitTestDocument");
             PublisherHelper publisherHelper = new PublisherHelper();
-            bool success = publisherHelper.publishDocumentAs(workingCopyPrototypeModel, new DummyWordCustomData(), publishDocumentParameters);
+            dummyWordCustomData.setDocumentUrl(publisherHelper.getDocumentUrl(new Uri(@"http://localhost:8124/"), workingCopyPrototypeModel.uuid, String.Empty));
+            bool success = publisherHelper.publishDocumentAs(workingCopyPrototypeModel, dummyWordCustomData, publishDocumentParameters);
+            Assert.IsTrue(success);
+
+            /*
+             * Now try and save the same document 
+             */
+            success = publisherHelper.doPublishDocument(dummyWordCustomData);
             Assert.IsTrue(success);
         }
 
@@ -32,25 +40,35 @@ namespace UnitTests
         public void publishExcelDocument()
         {
             PublisherDialogHelper publisherDialogHelper = new PublisherDialogHelper();
-            WorkingCopyPrototypeModel workingCopyPrototypeModel = publisherDialogHelper.initialiseWorkingCopy("msoExcelDocument", "saveNewDocumentPrototype", new DummyExcelCustomData());
+            DummyExcelCustomData dummyExcelCustomData = new DummyExcelCustomData();
+            WorkingCopyPrototypeModel workingCopyPrototypeModel = publisherDialogHelper.initialiseWorkingCopy("msoExcelDocument", "saveNewDocumentPrototype", dummyExcelCustomData);
 
             IPublishDocument publishDocumentParameters = new DummyPublishDocument("ExcelUnitTestDocument");
             PublisherHelper publisherHelper = new PublisherHelper();
-            bool success = publisherHelper.publishDocumentAs(workingCopyPrototypeModel, new DummyExcelCustomData(), publishDocumentParameters);
+            dummyExcelCustomData.setDocumentUrl(publisherHelper.getDocumentUrl(new Uri(@"http://localhost:8124/"), workingCopyPrototypeModel.uuid, String.Empty));
+            bool success = publisherHelper.publishDocumentAs(workingCopyPrototypeModel, dummyExcelCustomData, publishDocumentParameters);
+            Assert.IsTrue(success);
+
+            /*
+             * Now try and save the same document 
+             */
+            success = publisherHelper.doPublishDocument(dummyExcelCustomData);
             Assert.IsTrue(success);
         }
     }
 
 #region dummydata
-    class DummyWordCustomData : ISyracuseOfficeCustomData
+    public class DummyWordCustomData : ISyracuseOfficeCustomData
     {
+        string _documentUrl = null; //@"http://localhost:8124/sdata/syracuse/collaboration/syracuse/documents('3332f1be-9cf7-4d8d-b6a9-fb97568c3bb7')/content";
         public void setDocumentUrl(string url)
         {
+            _documentUrl = url;
         }
 
         public string getDocumentUrl()
         {
-            return @"http://localhost:8124/sdata/syracuse/collaboration/syracuse/documents('3332f1be-9cf7-4d8d-b6a9-fb97568c3bb7')/content";
+            return _documentUrl;
         }
 
         public string getServerUrl()
@@ -97,13 +115,15 @@ namespace UnitTests
 
     class DummyExcelCustomData : ISyracuseOfficeCustomData
     {
+        string _documentUrl = null; //@"http://localhost:8124/sdata/syracuse/collaboration/syracuse/documents('3332f1be-9cf7-4d8d-b6a9-fb97568c3bb7')/content";
         public void setDocumentUrl(string url)
         {
+            _documentUrl = url;
         }
 
         public string getDocumentUrl()
         {
-            return @"http://localhost:8124/sdata/syracuse/collaboration/syracuse/documents('3332f1be-9cf7-4d8d-b6a9-fb97568c3bb7')/content";
+            return _documentUrl;
         }
 
         public string getServerUrl()
@@ -223,17 +243,18 @@ namespace UnitTests
                 throw new NotImplementedException();
             }
         }
-
-
+        
+        bool _isReadOnly = false;
         public bool IsReadOnly
         {
             get
             {
-                throw new NotImplementedException();
+                return _isReadOnly; 
+
             }
             set
             {
-                throw new NotImplementedException();
+                _isReadOnly = value;
             }
         }
     }

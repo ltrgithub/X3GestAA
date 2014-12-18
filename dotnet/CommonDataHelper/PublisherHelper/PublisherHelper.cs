@@ -22,14 +22,17 @@ namespace CommonDataHelper.PublisherHelper
 {
     public class PublisherHelper : IDocumentPublisher, IDocumentTemplatePublisher
     {
-        public void publishDocument(ISyracuseOfficeCustomData syracuseCustomData)
+        public bool publishDocument(ISyracuseOfficeCustomData syracuseCustomData)
         {
+            bool success = false;
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                bool success = doPublishDocument(syracuseCustomData);
+                success = doPublishDocument(syracuseCustomData);
                 if (success)
+                {
                     InfoMessageBox.ShowInfoMessage(global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE, global::CommonDataHelper.Properties.Resources.MSG_PUBLISH_DOC_DONE_TITLE);
+                }
             }
             catch (WebException webEx)
             {
@@ -39,6 +42,7 @@ namespace CommonDataHelper.PublisherHelper
             {
                 Cursor.Current = Cursors.Default;
             }
+            return success;
         }
 
         public bool doPublishDocument(ISyracuseOfficeCustomData syracuseCustomData)
@@ -194,7 +198,7 @@ namespace CommonDataHelper.PublisherHelper
             return success;
         }
 
-        private string getDocumentUrl(Uri uri, string uuid, string documentType)
+        public string getDocumentUrl(Uri uri, string uuid, string documentType)
         {
             StringBuilder url = new StringBuilder(uri.GetLeftPart(UriPartial.Authority));
             url.Append(@"/sdata/syracuse/collaboration/syracuse/");
@@ -222,7 +226,7 @@ namespace CommonDataHelper.PublisherHelper
         private string getRepository(string documentType)
         {
             string applicationName = System.AppDomain.CurrentDomain.FriendlyName;
-            string repository = string.Empty;
+            string repository = "documents"; 
 
             if (applicationName.StartsWith(@"Sage.Syracuse.WordAddIn"))
             {
@@ -242,6 +246,7 @@ namespace CommonDataHelper.PublisherHelper
             {
                 repository = "documents";
             }
+
             return repository;
         }
     }
