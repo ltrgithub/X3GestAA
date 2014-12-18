@@ -54,7 +54,7 @@ namespace CommonDataHelper
                     webHelper.getInitialConnectionJson(new Uri(BaseUrlHelper.BaseUrl, _mainPart).ToString(), out statusCode);
                     if (statusCode == HttpStatusCode.OK)
                     {
-                        CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
+                        CookieHelper.CookieContainer = CookieHelper.GetUriCookieContainer();
                         _connected = true;
                     }
                 }
@@ -76,7 +76,7 @@ namespace CommonDataHelper
         public bool connectToServer()
         {
             WebHelper webHelper = new WebHelper();
-            CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
+            CookieHelper.CookieContainer = CookieHelper.GetUriCookieContainer();
 
             HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
             HttpWebResponse response = null;
@@ -88,10 +88,14 @@ namespace CommonDataHelper
                 response = webHelper.getInitialConnectionJson(mainUrl.ToString(), out statusCode);
                 if (statusCode == HttpStatusCode.OK)
                 {
-                    CookieCollection cc = response.Cookies;
-                    foreach (Cookie c in cc)
+                    CookieCollection cachedCookieCollection = CookieHelper.GetUriCookieContainer().GetCookies(BaseUrlHelper.BaseUrl);
+                    CookieCollection responseCookieCollection = response.Cookies;
+                    foreach (Cookie responseCookie in responseCookieCollection)
                     {
-                        CookieHelper.cacheCookie(BaseUrlHelper.BaseUrl.ToString(), c.ToString());
+                        if (cachedCookieCollection[responseCookie.Name] == null || cachedCookieCollection[responseCookie.Name].Value != responseCookie.Value)
+                        {
+                            CookieHelper.cacheCookie(BaseUrlHelper.BaseUrl.ToString(), responseCookie.ToString());
+                        }
                     }
                 }
                 else if (statusCode == HttpStatusCode.TemporaryRedirect)
@@ -194,7 +198,7 @@ namespace CommonDataHelper
 
 
             WebHelper webHelper = new WebHelper();
-            CookieHelper.CookieContainer = webHelper.GetUriCookieContainer();
+            CookieHelper.CookieContainer = CookieHelper.GetUriCookieContainer();
 
             HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
             HttpWebResponse response = null;

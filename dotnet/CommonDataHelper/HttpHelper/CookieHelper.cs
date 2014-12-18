@@ -200,10 +200,84 @@ namespace CommonDataHelper
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
         static extern bool  InternetSetCookieEx(string lpszUrlName, string lpszCookieName, string lpszCookieData, Int32 dwFlags, IntPtr lpReserved);
 
+        [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        static extern bool InternetSetCookie(string lpszUrlName, string lpszCookieName, string lpszCookieData);
+
+        private const Int32 InternetCookieHttpOnly = 0x2000;
+
         public static void cacheCookie(string url, string cookieData)
         {
-            Int32 InternetCookieHttpOnly = 0x2000;
-            InternetSetCookieEx(url, null, cookieData, InternetCookieHttpOnly, IntPtr.Zero);
+            if (!InternetSetCookie(url, null, cookieData))
+            {
+                InternetSetCookieEx(url, null, cookieData, InternetCookieHttpOnly, IntPtr.Zero);
+            }
         }
-    }
+
+        [DllImport("wininet.dll", SetLastError = true)]
+        public static extern bool InternetGetCookieEx(
+            string url,
+            string cookieName,
+            StringBuilder cookieData,
+            ref int size,
+            Int32 dwFlags,
+            IntPtr lpReserved);
+
+        [DllImport("wininet.dll", SetLastError = true)]
+        public static extern bool InternetGetCookie(
+            string url,
+            string cookieName,
+            StringBuilder cookieData,
+            ref int size);
+
+        public static CookieContainer GetUriCookieContainer()
+        {
+            CookieContainer cookies = null;
+
+            int datasize = 8192 * 16;
+            StringBuilder cookieData = new StringBuilder(datasize);
+
+            if (!InternetGetCookie(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize))
+            {
+                if (datasize < 0)
+                    return null;
+
+                cookieData = new StringBuilder(datasize);
+
+                InternetGetCookie(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize);
+            }
+
+            if (cookieData.Length > 0)
+            {
+                cookies = new CookieContainer();                
+                cookies.SetCookies(BaseUrlHelper.BaseUrl, cookieData.ToString());
+            }
+            
+            datasize = 8192 * 16;
+            cookieData.EnsureCapacity(datasize);
+
+            if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttpOnly, IntPtr.Zero))
+            {
+                if (datasize < 0)
+                    return null;
+
+                if (!InternetGetCookieEx(BaseUrlHelper.BaseUrl.ToString(), null, cookieData, ref datasize, InternetCookieHttpOnly, IntPtr.Zero))
+                    return null;
+            }
+            if (cookieData.Length > 0)
+            {
+                if (cookies == null)
+                    cookies = new CookieContainer();
+
+                String[] cookiesArray = cookieData.ToString().Split(';');
+                foreach (String cookie in cookiesArray)
+                {
+                    if (cookie.Contains("syracuse.sid.login")) System.Diagnostics.Trace.WriteLine("cookie " + cookie);
+                    cookies.SetCookies(BaseUrlHelper.BaseUrl, cookie);
+                }
+
+                return cookies;
+            }
+            return null;
+        }
+    }    
 }
