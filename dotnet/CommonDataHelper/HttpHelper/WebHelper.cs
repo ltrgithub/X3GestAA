@@ -312,7 +312,6 @@ namespace CommonDataHelper
                 String[] cookiesArray = cookieData.ToString().Split(';');
                 foreach (String cookie in cookiesArray)
                 {
-                    if (cookie.Contains("syracuse.sid.login")) System.Diagnostics.Trace.WriteLine("cookie " + cookie);
                     cookies.SetCookies(BaseUrlHelper.BaseUrl, cookie);
                 }
 

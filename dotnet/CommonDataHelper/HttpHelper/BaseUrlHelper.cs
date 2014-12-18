@@ -179,6 +179,10 @@ namespace CommonDataHelper
 
         private static void saveUrlPreference(Uri url)
         {
+            if (!url.ToString().EndsWith("/"))
+            {
+                url = new Uri(url + "/");
+            }
             if (url.Equals(@"http://localhost:8124"))
             {
                 return;
@@ -201,10 +205,6 @@ namespace CommonDataHelper
                             urlExists = true;
                             break;
                         }
-                    }
-                    else
-                    {
-                        // Don't add. As we're likely to be storing more user preferences in future, we'll need to look at this again...
                     }
                 }
             }
