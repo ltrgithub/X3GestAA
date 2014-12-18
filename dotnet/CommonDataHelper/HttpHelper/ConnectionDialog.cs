@@ -95,6 +95,7 @@ namespace CommonDataHelper
                         if (cachedCookieCollection[responseCookie.Name] == null || cachedCookieCollection[responseCookie.Name].Value != responseCookie.Value)
                         {
                             CookieHelper.cacheCookie(BaseUrlHelper.BaseUrl.ToString(), responseCookie.ToString());
+                            CookieHelper.CookieContainer.Add(responseCookie);
                         }
                     }
                 }
