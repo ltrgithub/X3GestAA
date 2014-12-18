@@ -88,6 +88,9 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
+        plugin : {
+            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
+        },
 		protocol: {
 			// trace: console.log,
 			LBFChunkSize: 64 // in Kb
