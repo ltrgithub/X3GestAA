@@ -86,6 +86,7 @@ namespace CommonDataHelper
             try
             {
                 response = webHelper.getInitialConnectionJson(mainUrl.ToString(), out statusCode);
+
                 if (statusCode == HttpStatusCode.OK)
                 {
                     CookieCollection cachedCookieCollection = CookieHelper.GetUriCookieContainer().GetCookies(BaseUrlHelper.BaseUrl);
@@ -94,7 +95,7 @@ namespace CommonDataHelper
                     {
                         if (cachedCookieCollection[responseCookie.Name] == null || cachedCookieCollection[responseCookie.Name].Value != responseCookie.Value)
                         {
-                            CookieHelper.cacheCookie(BaseUrlHelper.BaseUrl.ToString(), responseCookie.ToString());
+                            CookieHelper.cacheCookie(BaseUrlHelper.BaseUrl.ToString(), responseCookie.Name, responseCookie.Value);
                             CookieHelper.CookieContainer.Add(responseCookie);
                         }
                     }
@@ -188,16 +189,6 @@ namespace CommonDataHelper
 
         public bool disconnectFromServer()
         {
-            //System.Diagnostics.Debugger.Launch();
-            //Show();
-            /*
-            WebHelper webHelper = new WebHelper();
-            webHelper.
-            webHelper.logout();
-            //RibbonHelper.toggleButtonDisconnect();            
-             */
-
-
             WebHelper webHelper = new WebHelper();
             CookieHelper.CookieContainer = CookieHelper.GetUriCookieContainer();
 
@@ -265,14 +256,10 @@ namespace CommonDataHelper
                 }
                 _connected = false;
                 CookieHelper.CookieContainer = null;
-                CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
+                CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisable();
             }
 
-            //Close();
-
             return (bool)_connected;
-        
-        
         }
     }
 }

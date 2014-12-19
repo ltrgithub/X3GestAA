@@ -37,5 +37,11 @@ namespace CommonDataHelper.HttpHelper
                 }
             }
         }
+
+        public static void toggleButtonDisable()
+        {
+            if (_button != null)
+                _button.Enabled = false;
+        }
     }
 }

@@ -205,11 +205,11 @@ namespace CommonDataHelper
 
         private const Int32 InternetCookieHttpOnly = 0x2000;
 
-        public static void cacheCookie(string url, string cookieData)
+        public static void cacheCookie(string url, string name, string cookieData)
         {
-            if (!InternetSetCookie(url, null, cookieData))
+            if (!InternetSetCookie(url, name, cookieData))
             {
-                InternetSetCookieEx(url, null, cookieData, InternetCookieHttpOnly, IntPtr.Zero);
+                InternetSetCookieEx(url, name, cookieData, InternetCookieHttpOnly, IntPtr.Zero);
             }
         }
 
@@ -248,7 +248,7 @@ namespace CommonDataHelper
 
             if (cookieData.Length > 0)
             {
-                cookies = new CookieContainer();                
+                cookies = new CookieContainer();
                 cookies.SetCookies(BaseUrlHelper.BaseUrl, cookieData.ToString());
             }
             
@@ -271,7 +271,6 @@ namespace CommonDataHelper
                 String[] cookiesArray = cookieData.ToString().Split(';');
                 foreach (String cookie in cookiesArray)
                 {
-                    if (cookie.Contains("syracuse.sid.login")) System.Diagnostics.Trace.WriteLine("cookie " + cookie);
                     cookies.SetCookies(BaseUrlHelper.BaseUrl, cookie);
                 }
 
