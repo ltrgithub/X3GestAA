@@ -17,21 +17,14 @@
 	</ItemGroup>
 	<ItemGroup>
 		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
-	</ItemGroup>
-	<ItemGroup>
-		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
-		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
-			<Name>My Test Project</Name>
-			<OutputGroup>Primary output</OutputGroup>
-			<TargetPath>My Test Exe.exe</TargetPath>
-		</TaggedOutputs> -->
-	</ItemGroup>
-	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2012SpringLimited\InstallShield.targets"/>
-	<ItemGroup>
-	</ItemGroup>
-	<ItemGroup>
-	</ItemGroup>
-	<ItemGroup>
+		<ProjectReference Include="..\CommonDataHelper\CommonDataHelper.csproj">
+			<Name>CommonDataHelper</Name>
+			<Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\CommonDialogs\CommonDialogs.csproj">
+			<Name>CommonDialogs</Name>
+			<Project>{341E57EE-7F9A-4408-A29F-D4A4340039EE}</Project>
+		</ProjectReference>
 		<ProjectReference Include="..\ExcelAddIn\ExcelAddIn.csproj">
 			<Name>ExcelAddIn</Name>
 			<Project>{7CAED4A8-523E-47DA-B5A9-E8FFF57AF193}</Project>
@@ -45,4 +38,13 @@
 			<Project>{6E8D58CA-0CAC-4C2A-BC0E-AB6E1071685D}</Project>
 		</ProjectReference>
 	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2012SpringLimited\InstallShield.targets"/>
 </Project>

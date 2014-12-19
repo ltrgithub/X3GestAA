@@ -49,6 +49,11 @@ namespace ExcelAddIn
                 cd.StoreCustomDataAtAddress("A5", customData.getDictionary()["datasourcesAddress"].ToString());
                 cd.StoreCustomDataAtAddress("A2", customData.getServerUrl());
                 customData.writeDictionaryToDocument();
+
+                if (customData.getCreateMode().Equals(TemplateActions.rpt_build_tpl))
+                {
+                    Globals.ThisAddIn.showReportingFieldsTaskPane(true);
+                }
             }
 
             Globals.ThisAddIn.Application.ScreenUpdating = true;
