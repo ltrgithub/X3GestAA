@@ -70,7 +70,7 @@ namespace CommonDataHelper.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die There exists already a document with that name. If you continue, you will have more than one document with the same name. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die There exists already a document with that name. If you continue, you will have more than one document with the same name.\nIf this document is already published and you want to overwrite it, you can canel this operation and click on &quot;Publish&quot;. ähnelt.
         /// </summary>
         internal static string MSG_DOCUMENT_ALREADY_EXISTS {
             get {
