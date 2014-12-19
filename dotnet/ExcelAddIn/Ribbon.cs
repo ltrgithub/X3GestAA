@@ -114,12 +114,7 @@ namespace ExcelAddIn
                 string documentUrl = Globals.ThisAddIn.commons.getSyracuseCustomData().getDocumentUrl();
                 if (!string.IsNullOrEmpty(documentUrl))
                 {
-                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
-                    {
-                        //Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
-                        // Enable only after change of worksheet
-                    }
-                    else
+                    if (new RequestHelper().getDocumentIsReadOnly(documentUrl))
                     {
                         Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                     }
