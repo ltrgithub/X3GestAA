@@ -7,6 +7,7 @@ using System.Windows.Forms;
 namespace CommonDialogs.PublishDocumentDialog
 {
     public delegate void PublisherDocumentDelegate(IPublishDocument publishDocumentParameters, object workingCopyPrototypeModel, object customData);
+    public delegate bool DocumentCheckerDelegate(string field, object workingCopyResponseModel, object publishDocumentParameters, out string errorMessage);
 
     public interface IPublishDocument
     {
@@ -18,6 +19,7 @@ namespace CommonDialogs.PublishDocumentDialog
 
         string DocumentType { get; set; }
         Boolean IsReadOnly { get; set; }
+        void setDocumentCheckerDelegate(DocumentCheckerDelegate documentCheckerDelegate);
     }
 
     public interface IPublishDocumentDialog : IPublishDocument
