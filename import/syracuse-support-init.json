@@ -1,0 +1,48 @@
+{
+	"$prototypes": {
+		"application": {
+			"$key": ["application", "contract"],
+			"$localized": ["description"]
+		},
+		"endPoint": {
+			"$key": "dataset",
+			"$localized": ["description"],
+			"applicationRef": {
+				"$key": ["application", "contract"]
+			},
+			"groups": {
+				"$key": "description.en-us",
+				"$localized": ["description"]
+			}
+		}
+	},
+	"$items": [{
+		"$type": "application",
+		"description": "description_APP_SUPPORT",
+		"protocol": "syracuse",
+		"application": "syracuse",
+		"contract": "support"
+	}, {
+		"$type": "endPoint",
+		"description": "description_EP_SYRACUSE",
+		"dataset": "support",
+		"localDatabase": true,
+		"applicationRef": {
+			"application": "syracuse",
+			"contract": "support"
+		},
+		"groups": ["description_GP_ADMIN"]
+	}],
+	"$localization": {
+		"en-us": {
+			"description_APP_SUPPORT": "Syracuse Support",
+			"description_EP_SYRACUSE": "Syracuse support tools",
+			"description_GP_ADMIN": "Super administrators"
+		},
+		"fr-fr": {
+			"description_APP_SUPPORT": "Syracuse Support",
+			"description_EP_SUPPORT": "Syracuse outils de support",
+			"description_GP_ADMIN": "Super administrators"
+		}
+	}
+}
