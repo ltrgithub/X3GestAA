@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.ExcelAddInJSExternal
 namespace ExcelAddIn
@@ -73,6 +74,11 @@ namespace ExcelAddIn
             return customData.getSyracuseRole();
         }
 
+        public String getSyracuseLocale()
+        {
+            return customData.getSyracuseLocale();
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)
@@ -89,28 +95,11 @@ namespace ExcelAddIn
             return text;
         }
 
-        public string GetDocumentContent()
-        {
-            Workbook workbook = (customData != null) ? customData.getExcelWorkbook() : null; // this.doc;
-            if (workbook == null)
-            {
-                CommonUtils.ShowErrorMessage(global::ExcelAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
-                return "";
-            }
-
-            String tempFileName = Path.GetTempFileName();
-            workbook.SaveCopyAs(tempFileName);
-            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
-            String base64string = Convert.ToBase64String(content);
-            workbook.Save();
-            return base64string;
-        }
-
         public void NotifySaveDocumentDone()
         {
             browserDialog.Hide();
             CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::ExcelAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
         }
 
         public String getSyracuseDocumentType()
@@ -181,7 +170,7 @@ namespace ExcelAddIn
 
         public String GetAddinVersion()
         {
-            return Globals.ThisAddIn.getInstalledAddinVersion();
+            return VersionHelper.getInstalledAddinVersion();
         }
 
         public void expectedVersion(String neededVersion)
@@ -204,7 +193,7 @@ namespace ExcelAddIn
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
 
-            if (neddedBinary > Globals.ThisAddIn.versionNumberBinary)
+            if (neddedBinary > VersionHelper.versionNumberBinary)
             {
                 if (Globals.ThisAddIn.newVersionMessage == false)
                 {

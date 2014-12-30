@@ -41,34 +41,40 @@ if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
 }
 
 var tenantId = process.argv[3]; // optional tenantId
-var db = new mongodb.Db(config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
+/*var db = new mongodb.Db(config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
 	w: "majority"
-});
+});*/
 
 
-function finish(err) {
-	db.close();
+function finish(db, err) {
+	db && db.close();
 	if (err) {
 		console.error("" + err);
 		process.exit(1);
 	}
 }
 
-
-db.open(function(err, db) {
-	if (err) return finish(err);
+var mongoOpt = (config.mongodb || {}).options;
+var dbUrl = "mongodb://" + (config.collaboration.hostname || "localhost") + ":" + (config.collaboration.port || 27017) + "/" + (config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse");
+//db.open(function(err, db) {
+mongodb.MongoClient.connect(dbUrl, mongoOpt || {
+    db: {
+        w: 1
+    }
+}, function(err, db) {
+	if (err) return finish(db, err);
 	db.createCollection("license", function(err, collection) {
-		if (err) return finish(err);
+		if (err) return finish(db, err);
 		// read or drop collection
 		if (process.argv[2] === 'drop') {
 			return collection.remove({}, function(err, count) {
-				if (err) return finish(err);
+				if (err) return finish(db, err);
 				console.log("Removed " + count + " row(s). Please copy a valid license file to " + path.join(__dirname, "temp/license.json") + " before restarting Syracuse.");
-				return finish();
+				return finish(db);
 			});
 		}
 		return collection.find().toArray(function(err, docs) {
-			if (err) return finish(err);
+			if (err) return finish(db, err);
 			if (docs.length === 0) console.log("No information available");
 			var full = (process.argv[2] === 'full');
 			docs.forEach(function(doc) {
@@ -90,7 +96,8 @@ db.open(function(err, db) {
 					console.error("Wrong content " + util.format(doc));
 				}
 			});
-			return finish();
+			return finish(db);
 		});
 	});
 });
+ 
