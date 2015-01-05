@@ -109,7 +109,7 @@ exports.config = {
 		cache: {
 			// trace: console.log,
 		},
-        reuseTimeout: 120000 // in ms
+        reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
 	},
 
 	help: {
