@@ -125,6 +125,7 @@
 		"description": "description_902f36d7-96d7-4211-8e49-9f2f7aa1cb29",
 		"authoringLevel": "admin",
         "securityLevel": 0,
+        "$factory": true,"$factoryOwner": "SAGE",
 		"profileItems": [{
 			"code": "myProfile",
 			"description": "description_29cc9d96-4cbb-4baa-a126-30a890d7aac6",
@@ -194,56 +195,66 @@
 		"$type": "storageVolume",
 		"code": "SI_REPORTS",
 		"description": "description_80f24f88-88f3-485f-b65c-4f0ba4c34cfd",
-		"storageType": "db_file"
+		"storageType": "db_file",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "storageVolume",
 		"code": "SI_TEMPLATES",
 		"description": "description_22788243-a3df-4e87-8d6d-2c2fd3963ea4",
-		"storageType": "db_file"
+		"storageType": "db_file",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "storageVolume",
 		"code": "STD",
 		"description": "description_cd87a599-ed76-47f0-b1df-98b66cf2bb84",
-		"storageType": "db_file"
+		"storageType": "db_file",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "storageVolume",
 		"code": "WORD_TEMPLATE_MAILMERGE",
 		"description": "description_e7389c3d-c112-49f6-b5e0-909612726384",
-		"storageType": "db_file"
+		"storageType": "db_file",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "storageVolume",
 		"code": "WORD_TEMPLATE_REPORT",
 		"description": "description_7f4c8f18-f4d4-413d-9ec1-40d70ae8c947",
-		"storageType": "db_file"
+		"storageType": "db_file",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "application",
 		"description": "description_2ee88384-161f-4f87-b26b-0dff916d799e",
 		"protocol": "syracuse",
 		"application": "syracuse",
-		"contract": "collaboration"
+		"contract": "collaboration",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "application",
 		"description": "description_549147a8-7f4f-45da-9378-e963712b6c71",
 		"protocol": "syracuse",
 		"application": "syracuse",
-		"contract": "support"
+		"contract": "support",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "application",
 		"description": "description_e5c7b7f4-200b-441b-ba8d-5e1cbb927d49",
 		"protocol": "x3",
 		"application": "x3",
-		"contract": "erp"
+		"contract": "erp",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "application",
 		"description": "description_33079bc3-ee35-4d20-9b98-f3c418b1725b",
 		"protocol": "x3",
 		"application": "x3",
-		"contract": "hrm"
+		"contract": "hrm",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "role",
 		"code": "ADMIN",
 		"description": "description_26024776-bbff-4be9-9069-d464a68e0659",
-		"securityProfile": "ADMIN"
+		"securityProfile": "ADMIN",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "setting",
 		"twoDigitYearMax": 2029,
@@ -251,20 +262,23 @@
 	}, {
 		"$type": "group",
 		"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
-		"role": "ADMIN"
+		"role": "ADMIN",
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "user",
 		"login": "admin",
 		"lastName": "Super administrator",
 		"password": "f5066151ecf0c2511ea0f73306e27a4f",
-		"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"]
+		"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"],
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "user",
 		"login": "import",
 		"firstName": "Import",
 		"lastName": "Special user",
 		"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
-		"groups": ["description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e"]
+		"groups": ["description_f5f01eb8-851e-4113-91f0-d7fc2e2fcd0e"],
+		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "notificationEvent",
 		"code": "license",
