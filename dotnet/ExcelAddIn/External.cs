@@ -243,6 +243,22 @@ namespace ExcelAddIn
             return syracuseLocale;
         }
 
+        public String getSyracuseEndpoint()
+        {
+            String syracuseEndpoint = (new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook)).GetCustomDataByName("syracuseEndpoint");
+            if (syracuseEndpoint.Equals(String.Empty))
+            {
+                Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+                if (wb != null)
+                {
+                    SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(wb);
+                    if (customData != null)
+                        syracuseEndpoint = customData.getSyracuseEndpoint();
+                }
+            }
+            return syracuseEndpoint;
+        }
+
         // needed version (from JS)
         public void expectedVersion(String neededVersion)
         {
