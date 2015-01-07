@@ -9,6 +9,18 @@ using System.IO;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Core;
 using System.Globalization;
+using CommonDialogs.PublishDocumentDialog;
+using CommonDataHelper;
+using CommonDataHelper.TagHelper;
+using CommonDataHelper.PublisherHelper;
+using CommonDataHelper.StorageVolumeHelper;
+using System.ComponentModel;
+using CommonDataHelper.OwnerHelper;
+using CommonDialogs.PublishDocumentTemplateDialog;
+using CommonDataHelper.EndpointHelper;
+using CommonDataHelper.PublisherHelper.Model.Common;
+using System.Net;
+using System.Reflection;
 
 namespace WordAddIn
 {
@@ -296,8 +308,8 @@ namespace WordAddIn
                 doc = Globals.WordAddIn.Application.Documents.Open(newDocumentFile);
             }
 
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+            Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
         }
 
         private void TryDeleteFile(string file)
@@ -320,6 +332,7 @@ namespace WordAddIn
         public void check4updateAddin()
         {
         }
+
         public void updateAddin()
         {
             MessageBox.Show(global::WordAddIn.Properties.Resources.MSG_RESTART, global::WordAddIn.Properties.Resources.MSG_RESTART_TITLE);
@@ -333,5 +346,28 @@ namespace WordAddIn
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
             browserDialog.Hide();
         }
+
+        public SyracuseOfficeCustomData getSyracuseCustomData()
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Globals.WordAddIn.getActiveDocument());
+            if (customData == null)
+                customData = PrepareToSaveNewDoc(Globals.WordAddIn.getActiveDocument());
+
+            return customData;
+        }
+
+        public void DisplayServerLocations()
+        {
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Clear();
+            Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = BaseUrlHelper.BaseUrl.ToString();
+            List<Uri> _urls = BaseUrlHelper.getBaseUrlsFromUserPreferenceFile;
+            foreach (Uri _uri in _urls)
+            {
+                Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
+                item.Label = _uri.ToString();
+                Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Add(item);
+            }
+        }
     }
 }
+

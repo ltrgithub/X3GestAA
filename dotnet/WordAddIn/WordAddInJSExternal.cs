@@ -6,6 +6,7 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
 using System.Security.AccessControl;
+using CommonDataHelper;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
@@ -16,7 +17,6 @@ namespace WordAddIn
     {
         private SyracuseOfficeCustomData customData;
         private BrowserDialog browserDialog;
-//        private Document doc;
 
         public WordAddInJSExternal(SyracuseOfficeCustomData customData, BrowserDialog browserDialog)
         {
@@ -170,6 +170,7 @@ namespace WordAddIn
                 wrdSelection.TypeParagraph();
             }
         }
+
         public void createDatasource(String mailMergeDataJSon)
         {
             if (checkReadOnly())
@@ -280,6 +281,11 @@ namespace WordAddIn
             return customData.getSyracuseRole(); 
         }
 
+        public String getSyracuseLocale()
+        {
+            return customData.getSyracuseLocale();
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)
@@ -294,56 +300,6 @@ namespace WordAddIn
 
             String text = value.ToString();
             return text;
-        }
-
-        public string GetDocumentContent()
-        {
-            // TODO: Original file will be closed, this is wrong
-            // find a way to save a copy of the current doc. w/o
-            // closing and reopening.
-            // Word can't read an open file (locked)!
-            Document doc = (customData != null) ? customData.getWordDoc() : null; // this.doc;
-            if (doc == null)
-            {
-                CommonUtils.ShowErrorMessage(global::WordAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
-                return "";
-            }
-
-            /*
-             * Force the focus to the current document to ensure that the current document is indeed the active document.
-             */
-            doc.ActiveWindow.SetFocus();
-
-            // MailMerge-Query entfernen
-            doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdNotAMergeDocument;
-            // Datei schließen, codiert einlesen und wieder öffnen
-            String tempFileName;
-            if (doc.Path != "")
-            {
-                tempFileName = doc.FullName;
-            }
-            else
-            {
-                tempFileName = Path.GetTempFileName();
-            }
-            doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
-
-            Boolean formsDesign = doc.FormsDesign;  
-           
-            Globals.WordAddIn.Application.ActiveWindow.Close();
-
-            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
-
-            String base64string = Convert.ToBase64String(content);
-
-            Globals.WordAddIn.Application.Documents.Open(tempFileName);
-            if (formsDesign)
-            {
-                doc = Globals.WordAddIn.getActiveDocument();
-                doc.ToggleFormsDesign();
-            }
-            Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
-            return base64string;
         }
 
         public void NotifySaveDocumentDone()
@@ -421,8 +377,7 @@ namespace WordAddIn
         // check version
         public String GetAddinVersion()
         {
-            //return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            return Globals.WordAddIn.getInstalledAddinVersion();
+            return VersionHelper.getInstalledAddinVersion();
         }
         public void expectedVersion(String neededVersion)
         {
@@ -431,7 +386,7 @@ namespace WordAddIn
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
             neddedBinary += Convert.ToInt32(needed[2]);
 
-            if (neddedBinary > Globals.WordAddIn.versionNumberBinary)
+            if (neddedBinary > VersionHelper.versionNumberBinary)
             {
                 if (Globals.WordAddIn.newVersionMessage == false)
                 {
@@ -479,6 +434,5 @@ namespace WordAddIn
         {
             return attributes & ~attributesToRemove;
         }
-
     }
 }

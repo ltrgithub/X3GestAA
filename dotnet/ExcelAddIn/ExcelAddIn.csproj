@@ -217,12 +217,6 @@
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtils.cs" />
-    <Compile Include="ConnectionDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConnectionDialog.designer.cs">
-      <DependentUpon>ConnectionDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExcelTemplatePane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -319,9 +313,6 @@
     <EmbeddedResource Include="BrowserDialog.resx">
       <DependentUpon>BrowserDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionDialog.resx">
-      <DependentUpon>ConnectionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelTemplatePane.resx">
       <DependentUpon>ExcelTemplatePane.cs</DependentUpon>
@@ -541,6 +532,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonDataHelper\CommonDataHelper.csproj">
+      <Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
+      <Name>CommonDataHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
