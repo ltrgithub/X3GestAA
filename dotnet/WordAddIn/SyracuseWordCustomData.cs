@@ -5,6 +5,10 @@ using System.Text;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using CommonDataHelper;
+using Microsoft.Office.Interop.Word;
+using System.IO;
+using CommonDataHelper.UtilityHelper;
 
 namespace WordAddIn
 {
@@ -16,7 +20,7 @@ namespace WordAddIn
     }
 
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class SyracuseOfficeCustomData
+    public class SyracuseOfficeCustomData : ISyracuseOfficeCustomData
     {
         private const String sageERPX3JsonTagName   = "SyracuseOfficeCustomData";
         private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;
@@ -35,6 +39,7 @@ namespace WordAddIn
         private const String syracuseRoleProperty = "syracuseRole";
         private const String syracuseLocaleProperty = "syracuseLocale";
         private const string docContentProperty = "docContent";
+        private const string cookieProperty = "cookie";
 
         private Dictionary<String, object> dictionary;
 
@@ -138,6 +143,11 @@ namespace WordAddIn
         {
             return getStringProperty(originalFileNameProperty, false);
         }
+        public string getCookie()
+        {
+            return getStringProperty(cookieProperty, false);
+        }
+ 
         public void setBooleanValue(String name, Boolean status)
         {
             dictionary[forceRefreshProperty] = (status ? "1" : "0");
@@ -187,6 +197,38 @@ namespace WordAddIn
                 return "";
             }
         }
+
+        public byte[] GetDocumentContent()
+        {
+            Document doc = getWordDoc();
+            if (doc == null)
+            {
+                CommonUtils.ShowErrorMessage(global::WordAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
+                return null;
+            }
+
+            String originalDocumentName = doc.FullName;
+            String tempFileName = Path.GetTempFileName();
+            string tempFileName2 = Path.GetTempPath() + Guid.NewGuid();
+
+            doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
+
+            File.Copy(tempFileName, tempFileName2);
+
+            byte[] content = System.IO.File.ReadAllBytes(tempFileName2);
+            String base64string = Convert.ToBase64String(content);
+
+            doc.SaveAs2(originalDocumentName, WdSaveFormat.wdFormatDocumentDefault);
+
+            Globals.Ribbons.Ribbon.RibbonUI.ActivateTabMso("TabAddIns");
+
+            File.Delete(tempFileName);
+            File.Delete(tempFileName2);
+
+            return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
+        }
+
+
 
         public void debug() 
         {
@@ -295,5 +337,13 @@ namespace WordAddIn
             locales = ret;
             return ret;
         }
+
+        public void setDocumentUrlAddress(String url)
+        {
+        }
+        public void setDocumentTitleAddress(String title)
+        {
+        }
+
     }
 }
