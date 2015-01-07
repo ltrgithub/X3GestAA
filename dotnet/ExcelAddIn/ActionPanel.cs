@@ -74,6 +74,7 @@ namespace ExcelAddIn
             var connectUrl = serverUrl;
             if (connectUrl == "") connectUrl = Globals.ThisAddIn.GetServerUrl(Wb);
             if (connectUrl == "") return;
+            if (connectUrl.EndsWith("/")) connectUrl = connectUrl.Substring(0 , connectUrl.Length - 1);
 
             /*
              * Force a login using a forms-based webBrowser. 
@@ -82,28 +83,36 @@ namespace ExcelAddIn
              * NOTE: The ConnectionDialog class used here should be changed to use the ConnectionDialog class
              * that will (likely) be introduced as part of the .net Save dialog project (SAM95698).
              */
-            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main.html")))
+            
+            /*
+            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main_notify.html")))
                 return;
+            */
+
+            new CommonDataHelper.ConnectionDialog().connectToServer();
 
             //
-            try
+            if (webBrowser.ObjectForScripting == null)
             {
-                webBrowser.ObjectForScripting = new External();
-                webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
-                ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
-                    {
-                        connected = true;
-                        // actions after logon
-                        // has datasources ?
-                        Excel.Workbook thisWb = Wb != null ? Wb : Globals.ThisAddIn.Application.ActiveWorkbook;
-                        if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
-                            Globals.ThisAddIn.ShowSettingsForm();
-                    };
-                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                try
+                {
+                    webBrowser.ObjectForScripting = new External();
+                    webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
+                    ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
+                        {
+                        	connected = true;
+                            // actions after logon
+                            // has datasources ?
+                            Excel.Workbook thisWb = Wb != null ? Wb : Globals.ThisAddIn.Application.ActiveWorkbook;
+                            if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
+                                Globals.ThisAddIn.ShowSettingsForm();
+                        };
+                    webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                }
             }
         }
 
@@ -116,7 +125,7 @@ namespace ExcelAddIn
              * Under certain circumstances, the document title is different from that contained in the document text.
              * We therefore need to test for both if the title is not equal to Syracuse.
              */
-            if (!(title != null && (title.Equals("Syracuse") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
+            if (!(title != null && (title.Equals("Syracuse") ||  title.Equals("Sage ERP X3") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
             {
                 CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
             }
@@ -127,11 +136,6 @@ namespace ExcelAddIn
             webBrowser.DocumentCompleted -= new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
-        private void buttonConnect_Click(object sender, EventArgs e)
-        {
-            _connect("");
-        }
-
         public void Connect(string connectUrl, bool withSettings = true, Excel.Workbook Wb = null)
         {
             _connect(connectUrl, withSettings, Wb);
@@ -140,20 +144,22 @@ namespace ExcelAddIn
         public void RefreshAll()
         {
             if (!connected)
-                _connect("");
+            	_connect("");
 
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             Globals.ThisAddIn.ShowSettingsForm();
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
         }
 
         internal void SaveDocument()
         {
             if (!connected)
-                _connect("");
+            	_connect("");
             if (webBrowser.Document != null)
                 webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "saveDocument" });
         }
@@ -187,8 +193,8 @@ namespace ExcelAddIn
             } 
             else 
             {
-                // TODO: make sure it's connected to the same server !!!
-                internalLoadTables(parameters, onTablesLoaded);
+            	// TODO: make sure it's connected to the same server !!!
+            	internalLoadTables(parameters, onTablesLoaded);
             }
         }
 
@@ -234,7 +240,6 @@ namespace ExcelAddIn
                 webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/general/addIn/SyracuseOfficeAddinsSetup.EXE");
             }
             catch (Exception e) { MessageBox.Show(e.Message); }
-            Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
             Globals.Ribbons.Ribbon.buttonUpdate.Enabled = false;
         }
     }

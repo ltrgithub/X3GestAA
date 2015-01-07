@@ -43,6 +43,23 @@ exports.config = {
 		port: 8125
 	},
 	*/
+    collaboration: {
+        certdir: "certificates"  // path to certificates folder
+    },
+    mongodb: {
+        // connect options as expected by MongoClient.connect of nodejs mongodb driver
+        options: {
+            db: {
+                w: 1
+            },
+            server: {
+            },
+            replSet: {
+            },
+            mongos: {
+            }
+        }
+    },
 	session: {
 		timeout: 20, // minutes
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
@@ -71,6 +88,9 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
+        plugin : {
+            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
+        },
 		protocol: {
 			// trace: console.log,
 			LBFChunkSize: 64 // in Kb
@@ -88,7 +108,8 @@ exports.config = {
 		// cache tracing
 		cache: {
 			// trace: console.log,
-		}
+		},
+        reuseTimeout: 120000 // in ms
 	},
 
 	help: {
@@ -152,5 +173,49 @@ exports.config = {
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 	},
+	traces: {
+		console: false, // For developers
+		// Levels specified here will be used for default traces settings
+		// Valid levels are : 'info', 'debug', 'warn', and 'error'
+		// Levels not specified will be initialized with 'error' level
+		levels: {
+			// Object-relational mapping
+			orm: {
+				factory: "error", // Syracuse entities management
+				x3: "error", // X3 ERP entities management
+				mongodb: "error", // MongoDB interactions
+			},
+			// Elastic search communication
+			search: "error",
+			// X3 ERP communication layer
+			x3Comm: {
+				jsRunner: "error", // Syracuse calls from 4GL processes
+				pool: "error", // X3 clients pools
+				print: "error", // Print server comunication layer
+				adxwhat: "error"
+			},
+			// Classic server
+			classic: {
+				srvCache: "error", // Cache management with Web application server
+				protocol: "error", // Protocol communication layer
+				std: "error", // Basic traces
+				action: "error", // Sent actions
+				session: "error", // Sessions management
+			},
+			businessObjects: "error", // Business Objects integration
+			// X3 HRM portal integration 
+			hrm: {
+				loadBalancer: "error", // Load balancer
+				proxy: "error", // Proxy calls
+			},
+			// Online help integation
+			help: "error"
+		}
+    },	
+    unit_test: {
+        // unit tests related options
+        x3endpoint: {},
+        elasticsearch: {}
+    }
 };
 

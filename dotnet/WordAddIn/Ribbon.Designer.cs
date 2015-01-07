@@ -84,58 +84,77 @@ namespace WordAddIn
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl2 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl3 = this.Factory.CreateRibbonDropDownItem();
             this.tabSageERPX3 = this.Factory.CreateRibbonTab();
-            this.groupSave = this.Factory.CreateRibbonGroup();
+            this.groupPublish = this.Factory.CreateRibbonGroup();
             this.groupReporting = this.Factory.CreateRibbonGroup();
-            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
-            this.groupLocale = this.Factory.CreateRibbonGroup();
+            this.groupTemplate = this.Factory.CreateRibbonGroup();
             this.dropDownLocale = this.Factory.CreateRibbonDropDown();
+            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
+            this.groupSettings = this.Factory.CreateRibbonGroup();
+            this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
             this.groupVersion = this.Factory.CreateRibbonGroup();
             this.installedVersion = this.Factory.CreateRibbonLabel();
             this.version = this.Factory.CreateRibbonLabel();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.buttonSave = this.Factory.CreateRibbonButton();
-            this.buttonSaveAs = this.Factory.CreateRibbonButton();
+            this.buttonPublish = this.Factory.CreateRibbonButton();
+            this.galleryPublishAs = this.Factory.CreateRibbonGallery();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.toggleMakeSum = this.Factory.CreateRibbonToggleButton();
+            this.buttonDisconnect = this.Factory.CreateRibbonButton();
             this.buttonUpdate = this.Factory.CreateRibbonButton();
             this.buttonCleanup = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
-            this.groupSave.SuspendLayout();
+            this.groupPublish.SuspendLayout();
             this.groupReporting.SuspendLayout();
-            this.groupLocale.SuspendLayout();
+            this.groupTemplate.SuspendLayout();
+            this.groupSettings.SuspendLayout();
             this.groupVersion.SuspendLayout();
             this.group1.SuspendLayout();
             // 
             // tabSageERPX3
             // 
             this.tabSageERPX3.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tabSageERPX3.Groups.Add(this.groupSave);
+            this.tabSageERPX3.Groups.Add(this.groupPublish);
             this.tabSageERPX3.Groups.Add(this.groupReporting);
-            this.tabSageERPX3.Groups.Add(this.groupLocale);
+            this.tabSageERPX3.Groups.Add(this.groupTemplate);
+            this.tabSageERPX3.Groups.Add(this.groupSettings);
             this.tabSageERPX3.Groups.Add(this.groupVersion);
             this.tabSageERPX3.Groups.Add(this.group1);
             resources.ApplyResources(this.tabSageERPX3, "tabSageERPX3");
             this.tabSageERPX3.Name = "tabSageERPX3";
             // 
-            // groupSave
+            // groupPublish
             // 
-            this.groupSave.Items.Add(this.buttonSave);
-            this.groupSave.Items.Add(this.buttonSaveAs);
-            resources.ApplyResources(this.groupSave, "groupSave");
-            this.groupSave.Name = "groupSave";
+            this.groupPublish.Items.Add(this.buttonPublish);
+            this.groupPublish.Items.Add(this.galleryPublishAs);
+            resources.ApplyResources(this.groupPublish, "groupPublish");
+            this.groupPublish.Name = "groupPublish";
             // 
             // groupReporting
             // 
             this.groupReporting.Items.Add(this.buttonRefreshReport);
             this.groupReporting.Items.Add(this.buttonPreview);
-            this.groupReporting.Items.Add(this.checkBoxShowTemplatePane);
             this.groupReporting.Items.Add(this.toggleMakeSum);
             resources.ApplyResources(this.groupReporting, "groupReporting");
             this.groupReporting.Name = "groupReporting";
+            // 
+            // groupTemplate
+            // 
+            this.groupTemplate.Items.Add(this.dropDownLocale);
+            this.groupTemplate.Items.Add(this.checkBoxShowTemplatePane);
+            resources.ApplyResources(this.groupTemplate, "groupTemplate");
+            this.groupTemplate.Name = "groupTemplate";
+            // 
+            // dropDownLocale
+            // 
+            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
+            this.dropDownLocale.Name = "dropDownLocale";
+            this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
             // 
             // checkBoxShowTemplatePane
             // 
@@ -143,18 +162,18 @@ namespace WordAddIn
             this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
             this.checkBoxShowTemplatePane.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBoxShowTemplatePane_Click);
             // 
-            // groupLocale
+            // groupSettings
             // 
-            this.groupLocale.Items.Add(this.dropDownLocale);
-            resources.ApplyResources(this.groupLocale, "groupLocale");
-            this.groupLocale.Name = "groupLocale";
+            this.groupSettings.Items.Add(this.comboBoxServerLocation);
+            this.groupSettings.Items.Add(this.buttonDisconnect);
+            resources.ApplyResources(this.groupSettings, "groupSettings");
+            this.groupSettings.Name = "groupSettings";
             // 
-            // dropDownLocale
+            // comboBoxServerLocation
             // 
-            this.dropDownLocale.Items.Add(ribbonDropDownItemImpl1);
-            resources.ApplyResources(this.dropDownLocale, "dropDownLocale");
-            this.dropDownLocale.Name = "dropDownLocale";
-            this.dropDownLocale.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.dropDownLocale_SelectionChanged);
+            resources.ApplyResources(this.comboBoxServerLocation, "comboBoxServerLocation");
+            this.comboBoxServerLocation.Name = "comboBoxServerLocation";
+            this.comboBoxServerLocation.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.comboBoxServerLocation_TextChanged);
             // 
             // groupVersion
             // 
@@ -180,23 +199,30 @@ namespace WordAddIn
             resources.ApplyResources(this.group1, "group1");
             this.group1.Name = "group1";
             // 
-            // buttonSave
+            // buttonPublish
             // 
-            this.buttonSave.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSave.Image = global::WordAddIn.Properties.Resources.sauvegarder;
-            resources.ApplyResources(this.buttonSave, "buttonSave");
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.ShowImage = true;
-            this.buttonSave.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSave_Click);
+            this.buttonPublish.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonPublish.Image = global::WordAddIn.Properties.Resources.save;
+            resources.ApplyResources(this.buttonPublish, "buttonPublish");
+            this.buttonPublish.Name = "buttonPublish";
+            this.buttonPublish.ShowImage = true;
+            this.buttonPublish.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonPublish_Click);
             // 
-            // buttonSaveAs
+            // galleryPublishAs
             // 
-            this.buttonSaveAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSaveAs.Image = global::WordAddIn.Properties.Resources.sauvegarder2;
-            resources.ApplyResources(this.buttonSaveAs, "buttonSaveAs");
-            this.buttonSaveAs.Name = "buttonSaveAs";
-            this.buttonSaveAs.ShowImage = true;
-            this.buttonSaveAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSaveAs_Click);
+            this.galleryPublishAs.ColumnCount = 1;
+            this.galleryPublishAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.galleryPublishAs.Image = global::WordAddIn.Properties.Resources.sauvegarder1;
+            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
+            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
+            resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl1);
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl2);
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl3);
+            resources.ApplyResources(this.galleryPublishAs, "galleryPublishAs");
+            this.galleryPublishAs.Name = "galleryPublishAs";
+            this.galleryPublishAs.ShowImage = true;
+            this.galleryPublishAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gallery1_Click);
             // 
             // buttonRefreshReport
             // 
@@ -222,6 +248,15 @@ namespace WordAddIn
             this.toggleMakeSum.Name = "toggleMakeSum";
             this.toggleMakeSum.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.toggleMakeSum_Click);
             // 
+            // buttonDisconnect
+            // 
+            this.buttonDisconnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonDisconnect.Image = global::WordAddIn.Properties.Resources.logout;
+            resources.ApplyResources(this.buttonDisconnect, "buttonDisconnect");
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.ShowImage = true;
+            this.buttonDisconnect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonDisconnect_Click);
+            // 
             // buttonUpdate
             // 
             resources.ApplyResources(this.buttonUpdate, "buttonUpdate");
@@ -244,12 +279,14 @@ namespace WordAddIn
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
             this.tabSageERPX3.ResumeLayout(false);
             this.tabSageERPX3.PerformLayout();
-            this.groupSave.ResumeLayout(false);
-            this.groupSave.PerformLayout();
+            this.groupPublish.ResumeLayout(false);
+            this.groupPublish.PerformLayout();
             this.groupReporting.ResumeLayout(false);
             this.groupReporting.PerformLayout();
-            this.groupLocale.ResumeLayout(false);
-            this.groupLocale.PerformLayout();
+            this.groupTemplate.ResumeLayout(false);
+            this.groupTemplate.PerformLayout();
+            this.groupSettings.ResumeLayout(false);
+            this.groupSettings.PerformLayout();
             this.groupVersion.ResumeLayout(false);
             this.groupVersion.PerformLayout();
             this.group1.ResumeLayout(false);
@@ -260,14 +297,13 @@ namespace WordAddIn
         #endregion
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tabSageERPX3;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSave;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSave;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupPublish;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupReporting;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBoxShowTemplatePane;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSaveAs;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupLocale;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupTemplate;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownLocale;
         internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton toggleMakeSum;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupVersion;
@@ -276,6 +312,10 @@ namespace WordAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCleanup;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGallery galleryPublishAs;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSettings;
+        internal Microsoft.Office.Tools.Ribbon.RibbonComboBox comboBoxServerLocation;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonDisconnect;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

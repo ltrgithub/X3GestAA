@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using CommonDataHelper;
+using Microsoft.Office.Interop.Excel;
+using System.IO;
+using CommonDataHelper.UtilityHelper;
 
 namespace ExcelAddIn
 {
@@ -14,7 +18,7 @@ namespace ExcelAddIn
     }
 
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
-    public class SyracuseOfficeCustomData
+    public class SyracuseOfficeCustomData : ISyracuseOfficeCustomData
     {
         private const String sageERPX3JsonTagName   = "SyracuseOfficeCustomData";
         private const String sageERPX3JsonTagXPath  = "//" + sageERPX3JsonTagName;
@@ -31,7 +35,11 @@ namespace ExcelAddIn
         private const String originalFileNameProperty       = "originalFileName";
         private const String supportedLocalesProperty = "supportedLocales";
         private const String syracuseRoleProperty = "syracuseRole";
+        private const String syracuseLocaleProperty = "syracuseLocale";
         private const string docContentProperty = "docContent";
+        private const string publishedDocumentJsonProperty = "publishedDocumentJson";
+        private const String documentUrlAddressProperty = "documentUrlAddress";
+        private const String documentTitleAddressProperty = "documentTitleAddress";
 
         private Dictionary<String, object> dictionary;
 
@@ -72,9 +80,21 @@ namespace ExcelAddIn
         {
             return getStringProperty(resourceUrlProperty, false);
         }
+        public void setSyracuseRole(String value)
+        {
+            setStringProperty(syracuseRoleProperty, value);
+        }
         public string getSyracuseRole()
         {
             return getStringProperty(syracuseRoleProperty, false);
+        }
+        public void setSyracuseLocale(String value)
+        {
+            setStringProperty(syracuseLocaleProperty, value);
+        }
+        public string getSyracuseLocale()
+        {
+            return getStringProperty(syracuseLocaleProperty, false);
         }
         public void setForceRefresh(Boolean status)
         {
@@ -95,6 +115,8 @@ namespace ExcelAddIn
         public void setDocumentUrl(String url)
         {
             setStringProperty(documentUrlProperty, url);
+            SyracuseCustomData scd = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            scd.StoreCustomDataByName("documentUrlAddress", url);
         }
         public String getDocumentUrl()
         {
@@ -132,6 +154,16 @@ namespace ExcelAddIn
         {
             return getStringProperty(originalFileNameProperty, false);
         }
+
+        public string getPublishedDocumentJson()
+        {
+            return getStringProperty(publishedDocumentJsonProperty, false);
+        }
+        public void setPublishedDocumentJson(string publishedDocumentJson)
+        {
+            setStringProperty(publishedDocumentJsonProperty, publishedDocumentJson);
+        }
+
         public void setBooleanValue(String name, Boolean status)
         {
             dictionary[forceRefreshProperty] = (status ? "1" : "0");
@@ -208,7 +240,7 @@ namespace ExcelAddIn
             this.dictionary = dictionary;
             this.workbook = workbook;
         }
-
+        
         public void writeDictionaryToDocument()
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -279,5 +311,47 @@ namespace ExcelAddIn
             locales = ret;
             return ret;
         }
+
+        public byte[] GetDocumentContent()
+        {
+            Workbook workbook = getExcelWorkbook(); 
+            if (workbook == null)
+            {
+                CommonUtils.ShowErrorMessage(global::ExcelAddIn.Properties.Resources.MSG_ERROR_NO_DOC);
+                return null;
+            }
+
+            String tempFileName = Path.GetTempFileName();
+            try
+            {
+                workbook.SaveCopyAs(tempFileName);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            byte[] content = System.IO.File.ReadAllBytes(tempFileName);
+            String base64string = Convert.ToBase64String(content);
+            //workbook.Save();
+            return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
+        }
+
+        public void setDocumentUrlAddress(String url)
+        {
+            SyracuseCustomData customData = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            if (customData != null)
+            {
+                customData.StoreCustomDataByName(documentUrlAddressProperty, url);
+            }
+        }
+        public void setDocumentTitleAddress(String title)
+        {
+            SyracuseCustomData customData = new SyracuseCustomData(Globals.ThisAddIn.getActiveWorkbook());
+            if (customData != null)
+            {
+                customData.StoreCustomDataByName(documentTitleAddressProperty, title);
+            }
+        }
+
     }
 }

@@ -7,6 +7,9 @@ using System.Xml.Linq;
 using Microsoft.Office.Interop.PowerPoint;
 using Microsoft.Office.Core;
 using Microsoft.Win32;
+using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace PowerPointAddIn
 {
@@ -18,7 +21,6 @@ namespace PowerPointAddIn
         public BrowserDialog browserDialog;
         public CommonUtils common;
         public Boolean newVersionMessage = false;
-        public int versionNumberBinary = 0;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -28,6 +30,25 @@ namespace PowerPointAddIn
 
             Application.WindowActivate += new EApplication_WindowActivateEventHandler(Application_WindowActivate);
             Application.SlideSelectionChanged += new EApplication_SlideSelectionChangedEventHandler(Application_SlideSelectionChanged);
+            Application.PresentationBeforeSave += new EApplication_PresentationBeforeSaveEventHandler(on_PresentationBeforeSave);
+
+            common.DisplayServerLocations();
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
+        }
+
+        public void on_PresentationBeforeSave(Presentation Pres, ref bool Cancel)
+        {
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Pres);
+            if (customData != null)
+            {
+                if ((!string.IsNullOrEmpty(customData.getDocumentUrl())) &&
+                    (MessageBox.Show(String.Format(global::PowerPointAddIn.Properties.Resources.MSG_SAVE_AS),
+                    global::PowerPointAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.No))
+                {
+                    Cancel = true;
+                }
+            }
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -44,19 +65,31 @@ namespace PowerPointAddIn
             {
                 try
                 {
+                    Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
                     Presentation pres = w.Presentation;
-                    PptCustomData cd = PptCustomData.getFromDocument(pres);
-                    if (cd != null)
+                    SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(pres);
+                    if ((cd != null) && (!cd.getServerUrl().Equals(String.Empty)))
                     {
+                        BaseUrlHelper.CustomData = cd;
+                        if (string.IsNullOrEmpty(cd.getCookie()) == false)
+                        {
+                            CookieHelper.setCookies(cd.getCookie());
+                            if (CookieHelper.CookieContainer.Count != 0)
+                            {
+                                new ConnectionDialog().connectToServer();
+                            }
+                        }
+
+                        BaseUrlHelper.BaseUrl = new Uri(cd.getServerUrl());
                         string docUrl = cd.getDocumentUrl();
                         if (docUrl != null && !"".Equals(docUrl))
                         {
-                            Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                            if (!(new RequestHelper().getDocumentIsReadOnly(docUrl)))
+                            {
+                                Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                            }
                         }
-                        else
-                        {
-                            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
-                        }
+
                         if (pptx_action_new_chart_slide.Equals(cd.getActionType()))
                         {
                             if (cd.isForceRefresh())
@@ -68,10 +101,6 @@ namespace PowerPointAddIn
                             }
                         }
                     }
-                    else
-                    {
-                        Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
-                    }
                 }
                 catch (Exception e)
                 {
@@ -79,9 +108,10 @@ namespace PowerPointAddIn
                 }
             }
             pptActions.checkRefreshButtons();
+            common.DisplayServerLocations();
         }
 
-        private void PowerPointAddIn_newSlide(Presentation pres, PptCustomData customData, DocumentWindow win)
+        private void PowerPointAddIn_newSlide(Presentation pres, SyracuseOfficeCustomData customData, DocumentWindow win)
         {
             try
             {
@@ -101,10 +131,14 @@ namespace PowerPointAddIn
         private void PowerPointAddIn_closePresentation(Presentation pres)
         {
             // Close command presentation
-            pres.Close();
+            try
+            {
+                pres.Close();
+            }
+            catch (Exception) { }
         }
 
-        private void PowerPointAddIn_addNewSlide(Presentation pres, PptCustomData customData, DocumentWindow win)
+        private void PowerPointAddIn_addNewSlide(Presentation pres, SyracuseOfficeCustomData customData, DocumentWindow win)
         {
             DocumentWindow selectedWindow = null;
             Presentation selectedPresentation = null;
@@ -160,39 +194,6 @@ namespace PowerPointAddIn
         void Application_SlideSelectionChanged(SlideRange SldRange)
         {
             pptActions.checkRefreshButtons();
-        }
-
-        public string getInstalledAddinVersion()
-        {
-            String addinVersion = "0.0.0";
-            RegistryKey regLM = Registry.LocalMachine;
-            RegistryKey installerProductKey = regLM.OpenSubKey("SOFTWARE\\Classes\\Installer\\Products");
-            foreach (string subKeyName in installerProductKey.GetSubKeyNames())
-            {
-                using (RegistryKey sk = installerProductKey.OpenSubKey(subKeyName))
-                {
-                    foreach (string valueName in sk.GetValueNames())
-                    {
-                        if (valueName == "ProductName")
-                        {
-                            if (sk.GetValue(valueName).ToString() == "Sage ERP X3 Office Addins")
-                            {
-                                Object decVersion = sk.GetValue("Version");
-                                int v = Convert.ToInt32(decVersion.ToString());
-                                versionNumberBinary = v;
-                                String vr = ((v & 0xFF000000) >> 24) + "." + ((v & 0x00FF0000) >> 16) + "." + (v & 0x0000FFFF);
-                                addinVersion = vr;
-                                break;
-                            }
-                        }
-                    }
-                    sk.Close();
-                }
-            }
-
-            installerProductKey.Close();
-            regLM.Close();
-            return addinVersion;
         }
 
         #region Von VSTO generierter Code
