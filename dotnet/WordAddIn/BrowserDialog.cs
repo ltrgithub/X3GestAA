@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Word;
+using CommonDialogs;
+using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
 
 namespace WordAddIn
 {
@@ -40,18 +43,22 @@ namespace WordAddIn
 //                this.Hide();
             }
             hideOnCompletion = false;
+
+            RibbonHelper.toggleButtonDisconnect();
         }
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
+            new ConnectionDialog().connectToServer();
+
             string serverUrl = customData.getServerUrl();
-            if (serverUrl == null || "".Equals(serverUrl))
+            if (serverUrl != null)
             {
-                ServerSettings settings = new ServerSettings(serverUrl);
-                if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    serverUrl = settings.getServerUrl();
-                }
+                BaseUrlHelper.BaseUrl = new Uri(serverUrl);
+            }
+            else
+            {
+                serverUrl = BaseUrlHelper.BaseUrl.ToString();
             }
             if (serverUrl == null || "".Equals(serverUrl))
                 return false;
@@ -62,9 +69,11 @@ namespace WordAddIn
         private bool connectToServer(String serverUrl)
         {
             this.Text = serverUrl;
-            if (!this.serverUrl.Equals(serverUrl)) 
+            if (!this.serverUrl.Equals(serverUrl))
             {
-                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard");
+                // Workaround for require.js bound problem
+                DateTime dummy = DateTime.Now;
+                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
                 this.serverUrl = serverUrl;
             }
             return true;
@@ -90,6 +99,7 @@ namespace WordAddIn
             }
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);          }
         }
+
         public string getServerUrl()
         {
             return serverUrl;
