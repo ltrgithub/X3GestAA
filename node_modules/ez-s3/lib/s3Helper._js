@@ -1,3 +1,5 @@
+"use strict";
+
 var AWS = require('aws-sdk');
 var tunnel = require('tunnel');
 
@@ -85,7 +87,7 @@ module.exports = {
 		checkMandatoryProperties(params, ['bucket']);
 		var cfg = {
 			CreateBucketConfiguration: {
-				LocationConstraint: config.region
+				LocationConstraint: params.region || "eu-central-1",
 			}
 		}
 

@@ -6,6 +6,34 @@ var helper = require('./s3Helper');
 /// !doc
 /// # ez-s3
 /// Ez-streams for Amazon S3 services.
+/// ---
+/// Both the reader and the writer must be provided by an already configured S3 connector.  
+/// To enable such a connector, you have to use the 'aws-sdk' module (https://www.npmjs.com/package/aws-sdk):
+/// ``` javascript
+/// var AWS = require('aws-sdk');
+/// AWS.config.update({
+/// 	region: 'xxxx',  // 'eu-central-1' for instance
+/// 	accessKeyId: 'xxxxxxxxxxxxxx',
+/// 	secretAccessKey: 'xxxxxxxxxxxxxxx',
+/// });
+/// var s3 = new AWS.S3();
+/// ```
+/// When needed, a proxy can be set, using, for instance, the 'tunnel' module (https://www.npmjs.com/package/tunnel):
+/// ``` javascript
+/// var tunnelingAgent = require('tunnel').httpsOverHttp({
+/// 	proxy: {
+/// 		host: 'x.x.x.x',
+/// 		port: xxxx,
+/// 		}
+/// });
+/// 
+/// AWS.config.update({
+/// 	httpOptions: {
+/// 		agent: tunnelingAgent
+/// 	}
+/// });
+/// ```
+
 module.exports = {
 	/// ### reader(_, s3, params)
 	/// Creates a reader that can be used to read the content of an object stored in a S3 bucket
@@ -21,6 +49,7 @@ module.exports = {
 	/// reader = ezS3.reader(_, s3, {bucket:'xxx', key:'yyy'})
 	/// line = reader.read(_);
 	/// ```
+
 	reader: function(_, s3, params) {
 		var request = helper.getObject(s3, params);
 		var stream = request.createReadStream();
