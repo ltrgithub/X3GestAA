@@ -7,6 +7,9 @@ using Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using CommonDataHelper;
+using CommonDataHelper.PublisherHelper;
+using CommonDataHelper.HttpHelper;
 
 namespace WordAddIn
 {
@@ -18,20 +21,44 @@ namespace WordAddIn
         public MailMergeActions mailmerge = null;
         public CommonUtils commons = null;
         public Boolean newVersionMessage = false;
-        public int versionNumberBinary = 0;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             browserDialog = new BrowserDialog();
-
             reporting = new ReportingActions(browserDialog);
             mailmerge = new MailMergeActions(browserDialog);
             commons = new CommonUtils(browserDialog);
+            
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
 
             this.Application.DocumentChange += new ApplicationEvents4_DocumentChangeEventHandler(on_document_changed);
             this.Application.WindowActivate += new ApplicationEvents4_WindowActivateEventHandler(on_window_activate);
             this.Application.WindowDeactivate += new ApplicationEvents4_WindowDeactivateEventHandler(on_window_deactivate);
             this.Application.WindowSelectionChange += new ApplicationEvents4_WindowSelectionChangeEventHandler(on_window_selection_changed);
+            this.Application.DocumentBeforeSave += new ApplicationEvents4_DocumentBeforeSaveEventHandler(Application_DocumentBeforeSave);
+        }
+
+        void Application_DocumentBeforeSave(Document Doc, ref bool SaveAsUI, ref bool Cancel)
+        {
+            if (!SaveAsUI)
+            {
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(Doc);
+                if (customData != null)
+                {
+                    if ((!string.IsNullOrEmpty(customData.getDocumentUrl())) &&
+                        (MessageBox.Show(String.Format(global::WordAddIn.Properties.Resources.MSG_SAVE_AS),
+                        global::WordAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.No))
+                    {
+                        Cancel = true;
+                    }
+
+                    if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                }
+            }
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -53,7 +80,7 @@ namespace WordAddIn
         public void on_document_changed()
         {
             Globals.Ribbons.Ribbon.buttonPreview.Enabled = false;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
             Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
             Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = false;
             Globals.Ribbons.Ribbon.buttonCleanup.Enabled = false;
@@ -61,14 +88,14 @@ namespace WordAddIn
             Document doc = getActiveDocument();
             if (doc == null)
             {
-                Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = false;
+                Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = false;
                 return;
             }
 
             // Enable save buttons as soon as there is a document
             // It is ok to save ANY kind of document also as template, because
             // the template can be modified later
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
+            Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             if (MailMergeActions.isMailMergeDocument(doc))
             {
                 mailmerge.ActiveDocumentChanged(doc);
@@ -81,18 +108,27 @@ namespace WordAddIn
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData != null)
             {
+                BaseUrlHelper.CustomData = customData;
+                BaseUrlHelper.BaseUrl = new Uri(customData.getServerUrl());
+
                 String mode = customData.getCreateMode();
                 if ("v6_doc_embedded".Equals(mode))
                 {
                     commons.ExtractV6Document(doc, customData);
                 }
-                if (!"".Equals(customData.getDocumentUrl()))
+
+                if (!string.IsNullOrEmpty(customData.getDocumentUrl()))
                 {
-                    Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                    if (!(new RequestHelper().getDocumentIsReadOnly(customData.getDocumentUrl())))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
                 }
             }
+           
             commons.SetSupportedLocales(customData);
             commons.DisplayDocumentLocale(doc);
+            commons.DisplayServerLocations();
         }
 
         void on_window_selection_changed(Selection Sel)
@@ -168,38 +204,6 @@ namespace WordAddIn
             return Application.ActiveDocument;
         }
 
-        public string getInstalledAddinVersion()
-        {
-            String addinVersion = "0.0.0";
-            RegistryKey regLM = Registry.LocalMachine;
-            RegistryKey installerProductKey = regLM.OpenSubKey("SOFTWARE\\Classes\\Installer\\Products");
-            foreach (string subKeyName in installerProductKey.GetSubKeyNames())
-            {
-                using (RegistryKey sk = installerProductKey.OpenSubKey(subKeyName))
-                {
-                    foreach (string valueName in sk.GetValueNames())
-                    {
-                        if (valueName == "ProductName")
-                        {
-                            if (sk.GetValue(valueName).ToString() == "Sage ERP X3 Office Addins")
-                            {
-                                Object decVersion = sk.GetValue("Version");
-                                int v = Convert.ToInt32(decVersion.ToString());
-                                versionNumberBinary = v;
-                                String vr = ((v & 0xFF000000) >> 24) + "." + ((v & 0x00FF0000) >> 16) + "." + (v & 0x0000FFFF);
-                                addinVersion = vr;
-                                break;
-                            }
-                        }
-                    }
-                    sk.Close();
-                }
-            }
-
-            installerProductKey.Close();
-            regLM.Close();
-            return addinVersion;
-        }
         #region Von VSTO generierter Code
 
         /// <summary>

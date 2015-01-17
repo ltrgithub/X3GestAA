@@ -10,6 +10,8 @@ using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using CommonDataHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace WordAddIn
 {
@@ -17,17 +19,9 @@ namespace WordAddIn
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-            installedVersion.Label = Globals.WordAddIn.getInstalledAddinVersion();
+            installedVersion.Label = VersionHelper.getInstalledAddinVersion();
         }
 
-        private void buttonSave_Click(object sender, RibbonControlEventArgs e)
-        {
-            Word.Document doc = Globals.WordAddIn.getActiveDocument();
-            if (doc != null)
-            {
-                Globals.WordAddIn.commons.Save(doc);
-            }
-        }
         private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
         {
             Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
@@ -78,6 +72,58 @@ namespace WordAddIn
         private void buttonCleanup_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.WordAddIn.reporting.CleanupReportTemplateData();
+        }
+
+        private void gallery1_Click(object sender, RibbonControlEventArgs e)
+        {
+            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
+            if (doc != null)
+            {
+                int index = ((RibbonGallery)sender).SelectedItemIndex;
+                switch (index)
+                {
+                    case 0:
+                        new PublisherDialogHelper().showPublisherDocumentDialog("saveNewDocumentPrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+                        break;
+                    case 1:
+                        new PublisherDialogHelper().showPublisherTemplateDialog("saveMailMergeTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+                        break;
+                    case 2:
+                        new PublisherDialogHelper().showPublisherTemplateDialog("saveReportTemplatePrototype", Globals.WordAddIn.commons.getSyracuseCustomData());
+                        break;
+                }
+
+                string documentUrl = Globals.WordAddIn.commons.getSyracuseCustomData().getDocumentUrl();
+                if (!string.IsNullOrEmpty(documentUrl))
+                {
+                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                    }
+                }
+            }
+        }
+
+        private void comboBoxServerLocation_TextChanged(object sender, RibbonControlEventArgs e)
+        {
+            Uri url = new Uri(((RibbonComboBox)sender).Text);
+            BaseUrlHelper.BaseUrl = url;
+            CookieHelper.CookieContainer = null;
+            buttonPublish.Enabled = false;
+        }
+
+        private void buttonPublish_Click(object sender, RibbonControlEventArgs e)
+        {
+            new PublisherHelper().publishDocument(Globals.WordAddIn.commons.getSyracuseCustomData());
+        }
+
+        private void buttonDisconnect_Click(object sender, RibbonControlEventArgs e)
+        {
+            new ConnectionDialog().disconnectFromServer();
         }
     }
 }
