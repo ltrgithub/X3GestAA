@@ -9,7 +9,9 @@ using Microsoft.Office.Core;
 using System.IO;
 using Microsoft.Win32;
 using Microsoft.Office.Interop.Excel;
-
+using CommonDataHelper;
+using CommonDataHelper.HttpHelper;
+using CommonDataHelper.PublisherHelper;
 
 namespace ExcelAddIn
 {
@@ -67,7 +69,6 @@ namespace ExcelAddIn
         public bool prefShowPanel = false;
         public String prefUrl = null;
         public Boolean newVersionMessage = false;
-        public int versionNumberBinary = 0;
 
         public CommonUtils commons = null;
         private BrowserDialog browserDialog = null;
@@ -84,15 +85,21 @@ namespace ExcelAddIn
             commons = new CommonUtils(browserDialog);
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-
             taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
-            this.ReadPreferences();
-            taskPane.Visible = this.GetPrefShowPanel();
+
+            taskPane.Visible = BaseUrlHelper.ShowActionPanel;
             templateActions.DisableTemplateButtons();
 
+            RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
+            Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
+            
             if (this.Application.ActiveWorkbook != null)
+            {
+                SetServerLocations(this.Application.ActiveWorkbook);
                 AutoConnect(this.Application.ActiveWorkbook);
+            }
+
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
             this.Application.WorkbookActivate += new Excel.AppEvents_WorkbookActivateEventHandler(Application_WorkbookActivate);
             this.Application.WorkbookBeforeSave += new Excel.AppEvents_WorkbookBeforeSaveEventHandler(Application_WorkbookBeforeSave);
@@ -108,22 +115,23 @@ namespace ExcelAddIn
                 oldWb = this.Application.ActiveWorkbook;
                 ((Microsoft.Office.Interop.Excel._Workbook)Wb).Activate(); 
             }
-            ServerSettings settings = new ServerSettings();
-            if (settings.ShowDialog() == DialogResult.OK)
+
+            String connectUrl = BaseUrlHelper.BaseUrl.ToString();
+            if (connectUrl != "")
             {
-                String connectUrl = settings.GetConnectUrl();
                 (new SyracuseCustomData(this.Application.ActiveWorkbook)).StoreCustomDataByName("serverUrlAddress", connectUrl);
-                return connectUrl;
             }
-            if (oldWb != null) ((Microsoft.Office.Interop.Excel._Workbook)oldWb).Activate(); 
-            return "";
+            return connectUrl;
         }
         
         public void AutoConnect(Excel.Workbook Wb = null)
         {
             var connectUrl = (new SyracuseCustomData(Wb)).GetCustomDataByName("serverUrlAddress");
             if (connectUrl != "")
+            {
+                BaseUrlHelper.BaseUrl = new Uri(connectUrl);
                 Connect(Wb, connectUrl);
+            }
         }
 
         public void Connect(Excel.Workbook Wb = null, string connectUrl = "")
@@ -158,13 +166,13 @@ namespace ExcelAddIn
         {
             var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
-            if (settingsForm == null)
+            if (settingsForm == null || settingsForm.IsDisposed)
             {
                 settingsForm = new DatasourceMngtForm();
                 settingsForm.Connect(connectUrl);
             }
             mainHandle = NativeWindow.FromHandle(ActionPanel.Handle);
-            if(!settingsForm.Visible)
+            if (!settingsForm.Visible)
                 settingsForm.Show(mainHandle);
         }
 
@@ -225,6 +233,8 @@ namespace ExcelAddIn
 
         public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
+            SetServerLocations(Wb);
+
             if (handleWorkbookOpen)
             {
                 /*
@@ -245,11 +255,9 @@ namespace ExcelAddIn
                         AutoConnect(Wb);
                 }
             }
-
             checkButton(Wb);
-
-            Globals.Ribbons.Ribbon.buttonSaveAs.Enabled = true;
-            Globals.Ribbons.Ribbon.buttonSave.Enabled = false;
+            Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
+            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
 
             if ((settingsForm != null) && settingsForm.Visible)
                 settingsForm.RefreshBrowser();
@@ -259,13 +267,14 @@ namespace ExcelAddIn
             {
                 return;
             }
-
+ 
             if (isSyracuseWorkbook(Wb))
                 Ribbon.RibbonUI.ActivateTab("syracuseTab");
 
             SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(workbook);
             if (cd != null)
             {
+                BaseUrlHelper.CustomData = cd;
                 templateActions.ConfigureTemplateRibbon(workbook, cd.getCreateMode(), "".Equals(cd.getDocumentUrl()) == false);
                 commons.SetSupportedLocales(cd);
                 commons.DisplayDocumentLocale(Wb);
@@ -274,6 +283,7 @@ namespace ExcelAddIn
             {
                 if (templateActions.isExcelTemplateType(Wb) == false)
                 {
+                    BaseUrlHelper.CustomData = Globals.ThisAddIn.commons.getSyracuseCustomData(); 
                     commons.SetSupportedLocales(new SyracuseCustomData(workbook));
                     commons.DisplayDocumentLocale(Wb);
                     templateActions.DisableTemplateButtons();
@@ -287,9 +297,8 @@ namespace ExcelAddIn
             {
                 if (((new SyracuseCustomData(wb)).GetCustomDataByName("documentUrlAddress") != "") &&
                     (MessageBox.Show(String.Format(global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS),
-                    global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.Yes))
+                    global::ExcelAddIn.Properties.Resources.MSG_SAVE_AS_TITLE, MessageBoxButtons.YesNo) == DialogResult.No))
                 {
-                    SaveDocumentToSyracuse();
                     Cancel = true;
                 }
             }
@@ -315,9 +324,17 @@ namespace ExcelAddIn
                 {
                     CheckForPlaceholderDeletion(workbook);
 
-                    if ("".Equals(customData.getDocumentUrl()) == false)
+                    string documentUrl = customData.getDocumentUrl();
+                    if (!string.IsNullOrEmpty(documentUrl))
                     {
-                        Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+                        if (!(new RequestHelper().getDocumentIsReadOnly(documentUrl)))
+                        {
+                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                        }
+                        else
+                        {
+                            Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                        }
                     }
                 }
             }
@@ -329,8 +346,21 @@ namespace ExcelAddIn
                     commons.ExtractV6Document(workbook, customData);
                 }
             }
-            else if ((new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress") != "")
-                Globals.Ribbons.Ribbon.buttonSave.Enabled = true;
+            else
+            {
+                string documentUrlAdress = (new SyracuseCustomData(workbook)).GetCustomDataByName("documentUrlAddress");
+                if (!string.IsNullOrEmpty(documentUrlAdress))
+                {
+                    if (!(new RequestHelper().getDocumentIsReadOnly(documentUrlAdress)))
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
+                    }
+                    else
+                    {
+                        Globals.Ribbons.Ribbon.buttonPublish.Enabled = false;
+                    }
+                }
+            }
         }
 
         void Application_SheetSelectionChange(object sh, Excel.Range target)
@@ -410,53 +440,6 @@ namespace ExcelAddIn
             return utilities;
         }
 
-        internal void SavePreferences()
-        {
-            String path = GetPreferenceFilePath();
-            String[] props = new String[2];
-            props[0] = "Show=" + prefShowPanel;
-            props[1] = "Url=" + prefUrl;  
-            System.IO.StreamWriter file = new System.IO.StreamWriter(path);
-            try
-            {
-                foreach (String s in props)
-                {
-                    file.WriteLine(s);
-                }
-            }
-            catch (Exception e) { MessageBox.Show(e.Message); }
-            file.Close();
-        }
-
-        public void ReadPreferences()
-        {
-            String path = GetPreferenceFilePath();
-            string sContent = "";
-
-            if (File.Exists(path))
-            {
-                StreamReader myFile = new StreamReader(path, System.Text.Encoding.Default);
-                while (!myFile.EndOfStream)
-                {
-                    sContent = myFile.ReadLine();
-                    if (sContent.Equals("Show=True"))
-                    {
-                        prefShowPanel = true;
-                    }
-                    else if (sContent.Substring(0, 4).Equals("Url="))
-                    {
-                        prefUrl = sContent.Substring(4, sContent.Length - 4);
-                    }
-                }
-                myFile.Close();
-            }
-            return;
-        }
-
-        internal string GetPreferenceFilePath()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\Excel.X3.settings";
-        }
         public bool GetPrefShowPanel()
         {
             return prefShowPanel;
@@ -464,24 +447,8 @@ namespace ExcelAddIn
         public void SetPrefShowPanel(Boolean show)
         {
             prefShowPanel = show;
-            SavePreferences();
+            BaseUrlHelper.ShowActionPanel = show;
         }
-        public void SetPrefUrl(String url)
-        {
-            prefUrl = url;
-            SavePreferences();
-        }
-        public String GetPrefUrl()
-        {
-            return prefUrl;
-        }
-
-        public void removeFiles()
-        {
-            String file = GetPreferenceFilePath();
-            File.Delete(file);
-        }
-
         private void ReportingFieldsPane_VisibleChanged(object sender, EventArgs e)
         {
             if (Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled == false)
@@ -643,39 +610,6 @@ namespace ExcelAddIn
             return false;
         }
 
-        public string getInstalledAddinVersion()
-        {
-            String addinVersion = "0.0.0";
-            RegistryKey regLM = Registry.LocalMachine;
-            RegistryKey installerProductKey = regLM.OpenSubKey("SOFTWARE\\Classes\\Installer\\Products");
-            foreach (string subKeyName in installerProductKey.GetSubKeyNames())
-            {
-                using (RegistryKey sk = installerProductKey.OpenSubKey(subKeyName))
-                {
-                    foreach (string valueName in sk.GetValueNames())
-                    {
-                        if (valueName == "ProductName")
-                        {
-                            if (sk.GetValue(valueName).ToString() == "Sage ERP X3 Office Addins")
-                            {
-                                Object decVersion = sk.GetValue("Version");
-                                int v = Convert.ToInt32(decVersion.ToString());
-                                versionNumberBinary = v;
-                                String vr = ((v & 0xFF000000) >> 24) + "." + ((v & 0x00FF0000) >> 16) + "." + (v & 0x0000FFFF);
-                                addinVersion = vr;
-                                break;
-                            }
-                        }
-                    }
-                    sk.Close();
-                }
-            }
-
-            installerProductKey.Close();
-            regLM.Close();
-            return addinVersion;
-        }
-
         internal void ShowActionPanel(bool state)
         {
             if (taskPane.Control.IsDisposed && taskPane.Control is ActionPanel)
@@ -730,6 +664,28 @@ namespace ExcelAddIn
         private Boolean isSyracuseWorkbook(Workbook Wb)
         {
             return new SyracuseCustomData(Wb).GetReservedSheet(false) != null;
+        }
+
+        private void SetServerLocations(Workbook Wb)
+        {
+            SyracuseOfficeCustomData cd = SyracuseOfficeCustomData.getFromDocument(Wb);
+            if (cd != null && (string.IsNullOrEmpty(cd.getServerUrl()) == false || string.IsNullOrEmpty(cd.getDocumentUrl()) == false))
+            {
+                String url = String.IsNullOrEmpty(cd.getServerUrl()) ? cd.getDocumentUrl() : cd.getServerUrl();
+                String baseUrl = new Uri(url).GetLeftPart(UriPartial.Authority);
+                BaseUrlHelper.BaseUrl = new Uri(baseUrl);
+            }
+            else
+            {
+                SyracuseCustomData cd2 = new SyracuseCustomData(Wb); //.GetCustomDataByName("datasourcesAddress");
+                if (cd2 != null && string.IsNullOrEmpty(cd2.GetCustomDataByName("datasourcesAddress")) == false)
+                {
+                    String url = cd2.GetCustomDataByName("serverUrlAddress");
+                    String baseUrl = new Uri(url).GetLeftPart(UriPartial.Authority);
+                    BaseUrlHelper.BaseUrl = new Uri(baseUrl);
+                }
+            }
+            this.commons.DisplayServerLocations();
         }
     }
 }

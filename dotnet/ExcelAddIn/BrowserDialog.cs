@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CommonDataHelper;
 
 namespace ExcelAddIn
 {
@@ -24,14 +25,16 @@ namespace ExcelAddIn
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
+            new ConnectionDialog().connectToServer();
+
             string serverUrl = customData.getServerUrl();
-            if (serverUrl == null || "".Equals(serverUrl))
+            if (serverUrl != null)
             {
-                ServerSettings settings = new ServerSettings(serverUrl);
-                if (settings.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    serverUrl = settings.getServerUrl();
-                }
+                BaseUrlHelper.BaseUrl = new Uri(serverUrl);
+            }
+            else
+            {
+                serverUrl = BaseUrlHelper.BaseUrl.ToString();
             }
             if (serverUrl == null || "".Equals(serverUrl))
                 return false;
@@ -70,6 +73,7 @@ namespace ExcelAddIn
             }
             catch (Exception e) { MessageBox.Show(e.Message + "\n" + e.StackTrace);          }
         }
+
         public string getServerUrl()
         {
             return serverUrl;
