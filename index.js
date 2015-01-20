@@ -111,6 +111,8 @@ if (config.streamline.flamegraph && config.streamline.fast) {
 	console.log("Warning: streamline's fast mode is incompatible with flamegraph option - turning fast mode off");
 	config.streamline.fast = false;
 }
+// automatically enable 'aggressive' optimisation in fibers fast mode
+if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
 require('coffee-script/lib/coffee-script/extensions');
 
