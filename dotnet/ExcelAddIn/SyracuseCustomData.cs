@@ -39,6 +39,7 @@ namespace ExcelAddIn
                         dic["supportedLocales"] = "A7";
                         dic["syracuseRole"] = "A8";
                         dic["syracuseLocale"] = "A9";
+                        dic["syracuseEndpoint"] = "A10";
                         // store it
                         JavaScriptSerializer ser = new JavaScriptSerializer();
                         StoreCustomDataAtAddress("A1", ser.Serialize(dic));

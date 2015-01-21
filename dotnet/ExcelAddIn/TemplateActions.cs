@@ -318,6 +318,7 @@ namespace ExcelAddIn
                     customDataPreview.setServerUrl(customData.getServerUrl());
                     customDataPreview.setSyracuseRole(customData.getSyracuseRole());
                     customDataPreview.setSyracuseLocale(customData.getSyracuseLocale());
+                    customDataPreview.setSyracuseEndpoint(customData.getSyracuseEndpoint());
                     customDataPreview.writeDictionaryToDocument();
                     customDataPreview.setCreateMode(rpt_fill_tpl);
 
