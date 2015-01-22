@@ -90,7 +90,7 @@ namespace PowerPointAddIn
             this.groupPublish = this.Factory.CreateRibbonGroup();
             this.buttonPublish = this.Factory.CreateRibbonButton();
             this.galleryPublishAs = this.Factory.CreateRibbonGallery();
-            this.groupRefresh = this.Factory.CreateRibbonGroup();
+            this.groupReporting = this.Factory.CreateRibbonGroup();
             this.buttonRefresh = this.Factory.CreateRibbonButton();
             this.buttonRefreshAll = this.Factory.CreateRibbonButton();
             this.groupSettings = this.Factory.CreateRibbonGroup();
@@ -105,7 +105,7 @@ namespace PowerPointAddIn
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupPublish.SuspendLayout();
-            this.groupRefresh.SuspendLayout();
+            this.groupReporting.SuspendLayout();
             this.groupSettings.SuspendLayout();
             this.groupVersion.SuspendLayout();
             // 
@@ -113,7 +113,7 @@ namespace PowerPointAddIn
             // 
             this.tabSageERPX3.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tabSageERPX3.Groups.Add(this.groupPublish);
-            this.tabSageERPX3.Groups.Add(this.groupRefresh);
+            this.tabSageERPX3.Groups.Add(this.groupReporting);
             this.tabSageERPX3.Groups.Add(this.groupSettings);
             this.tabSageERPX3.Groups.Add(this.groupVersion);
             resources.ApplyResources(this.tabSageERPX3, "tabSageERPX3");
@@ -147,12 +147,12 @@ namespace PowerPointAddIn
             this.galleryPublishAs.ShowImage = true;
             this.galleryPublishAs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.galleryPublishAs_Click);
             // 
-            // groupRefresh
+            // groupReporting
             // 
-            this.groupRefresh.Items.Add(this.buttonRefresh);
-            this.groupRefresh.Items.Add(this.buttonRefreshAll);
-            resources.ApplyResources(this.groupRefresh, "groupRefresh");
-            this.groupRefresh.Name = "groupRefresh";
+            this.groupReporting.Items.Add(this.buttonRefresh);
+            this.groupReporting.Items.Add(this.buttonRefreshAll);
+            resources.ApplyResources(this.groupReporting, "groupReporting");
+            this.groupReporting.Name = "groupReporting";
             // 
             // buttonRefresh
             // 
@@ -245,8 +245,8 @@ namespace PowerPointAddIn
             this.tabSageERPX3.PerformLayout();
             this.groupPublish.ResumeLayout(false);
             this.groupPublish.PerformLayout();
-            this.groupRefresh.ResumeLayout(false);
-            this.groupRefresh.PerformLayout();
+            this.groupReporting.ResumeLayout(false);
+            this.groupReporting.PerformLayout();
             this.groupSettings.ResumeLayout(false);
             this.groupSettings.PerformLayout();
             this.groupVersion.ResumeLayout(false);
@@ -260,7 +260,7 @@ namespace PowerPointAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPreview;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBoxShowTemplatePane;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshReport;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupRefresh;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupReporting;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefresh;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonRefreshAll;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupVersion;

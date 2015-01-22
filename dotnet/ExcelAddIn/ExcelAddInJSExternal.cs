@@ -79,6 +79,11 @@ namespace ExcelAddIn
             return customData.getSyracuseLocale();
         }
 
+        public String getSyracuseEndpoint()
+        {
+            return customData.getSyracuseEndpoint();
+        }
+
         private string getStringValue(object cellData)
         {
             if (cellData == null)

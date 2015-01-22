@@ -43,6 +43,8 @@ namespace CommonDataHelper.PublisherHelper
                 publishDocumentDialog.TagList = new TagList().createTagList();
                 publishDocumentDialog.TeamList = new TeamList().createTeamList();
 
+                publishDocumentDialog.setDocumentCheckerDelegate(new DocumentCheckerDelegate(DocumentCheckerCallback.checkPublishDocumentDialog));
+                
                 publishDocumentDialog.Publisher(new PublisherDocumentDelegate(publisher), workingCopyPrototypeModel, customData);
 
                 publishDocumentDialog.ShowDialog();
