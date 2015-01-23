@@ -67,7 +67,6 @@ namespace ExcelAddIn
                     return;
 
                 Uri uri = new Uri(serverUrl + urlPart);
-                this.Show();
                 this.webBrowser.ObjectForScripting = scriptingObj;
                 this.webBrowser.Url = uri;
             }
