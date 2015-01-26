@@ -1836,9 +1836,7 @@
       "$factoryOwner": "SAGE",
       "application": null,
       "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
+      "representationRef": null,
       "module": null,
       "categories": [],
       "parameters": []
@@ -1854,6 +1852,29 @@
       "applicationMenu": false,
       "facet": "$query",
       "externalUrl": "/msoffice/lib/general/addin/SyracuseOutlookAddinSetup.EXE",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": null,
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_PLUGIN_ILOG",
+      "title": "title_967385fc-f979-4e89-836c-2410760246e5",
+      "description": "description_967385fc-f979-4e89-836c-2410760246e5",
+      "linkType": "$external",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "externalUrl": "/plugin/download/safex3-ilogconnector-installer-x86_64.exe",
       "target": "self",
       "requestLevel": "99",
       "$factory": true,
@@ -1932,6 +1953,10 @@
             },
             {
               "code": "S_OUTLOOK_ADDIN",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_PLUGIN_ILOG",
               "$variantType": "menuItem"
             }
           ]
@@ -2192,7 +2217,7 @@
     {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
-      "code": "S-USAGE",
+      "code": "S_USAGE",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -2286,7 +2311,7 @@
           "code": "S_TOOLS"
         },
         {
-          "code": "S-USAGE"
+          "code": "S_USAGE"
         }
       ]
     },
@@ -2498,6 +2523,7 @@
       "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Patch integration",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Install addins for Office",
       "title_5ee934c2-c6d2-4280-b7a5-eb2ff16e42d5": "Install addin for Outlook",
+      "title_967385fc-f979-4e89-836c-2410760246e5": "Ilog Connector",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Usage",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
@@ -2698,6 +2724,7 @@
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Groupes de ressources",
       "title_dcc6a91f-eb4d-4403-af82-e3c8a9cf8b1d": "Installation",
       "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Intégration Patch",
+      "title_967385fc-f979-4e89-836c-2410760246e5": "Connecteur Ilog",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploitation",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
