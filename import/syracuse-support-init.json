@@ -1,0 +1,140 @@
+{
+  "$prototypes": {
+    "application": {
+      "$key": [
+        "application",
+        "contract"
+      ]
+    },
+    "menuModule": {
+      "$key": "code",
+      "$localized": [
+        "description",
+        "title"
+      ],
+      "application": {
+        "$key": [
+          "application",
+          "contract"
+        ]
+      }
+    },
+	"endPoint": {
+		"$key": "dataset",
+		"$localized": ["description"],
+		"applicationRef": {
+			"$key": ["application", "contract"]
+		},
+		"groups": {
+			"$key": "description.en-us",
+			"$localized": ["description"]
+		}
+	}
+  },
+  "$items": [
+    {
+      "$type": "application",
+      "application": "syracuse",
+      "description": "description_2ff88384-161f-4f87-b26b-0dff916d799e",
+      "contract": "support",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuModule",
+      "code": "S_MOD_SUPPORT",
+      "title": "title_e3a56261-e26f-4bd0-b381-17cd58ce897c",
+      "application": {
+        "application": "syracuse",
+        "contract": "support"
+      },
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    }, {
+		"$type": "endPoint",
+		"description": "description_EP_SYRACUSE",
+		"dataset": "support",
+		"localDatabase": true,
+		"applicationRef": {
+			"application": "syracuse",
+			"contract": "support"
+		},
+		"groups": ["description_GP_ADMIN"],
+	    "databaseName" : "support"
+	}
+  ],
+  "$localization": {
+    "ar-ae": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "ar-lb": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "de-de": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "en-gb": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "en-us": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "es-es": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "fr-fr": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "it-it": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "pl-pl": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "pt-pt": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "ru-ru": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    },
+    "zh-cn": {
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "description_EP_SYRACUSE": "Syracuse support tools",
+      "description_GP_ADMIN": "Super administrators",
+      "description_2ff88384-161f-4f87-b26b-0dff916d799e": "Syracuse Support"
+    }
+  }
+}
