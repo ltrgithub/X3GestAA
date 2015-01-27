@@ -124,26 +124,29 @@ namespace CommonDataHelper.PublisherHelper
     
         public Boolean getDocumentIsReadOnly(string documentUrl)
         {
-            //if (documentUrl == String.Empty)
-            //{
-            //    return false;
-            //}
+            if (documentUrl == String.Empty)
+            {
+                return false;
+            }
 
-            //documentUrl = documentUrl.Replace("/content" , String.Empty);
+            documentUrl = documentUrl.Replace("/content", String.Empty);
 
-            //WebHelper webHelper = new WebHelper();
-            //HttpStatusCode httpStatusCode;
-
-            //string prototypeJson = webHelper.getServerJson(documentUrl, out httpStatusCode);
-
-            //if (httpStatusCode == HttpStatusCode.OK)
-            //{
-            //    var document = Newtonsoft.Json.JsonConvert.DeserializeObject<PublishDocumentModel>(prototypeJson);
-            //    return document.isReadOnly;
-            //}
+            WebHelper webHelper = new WebHelper();
+            HttpStatusCode httpStatusCode;
+            try
+            {
+                if (documentUrl.StartsWith("http") == false)
+                    documentUrl = new Uri(BaseUrlHelper.BaseUrl, documentUrl).ToString();
+                string prototypeJson = webHelper.getServerJson(documentUrl, out httpStatusCode);
+                if (httpStatusCode == HttpStatusCode.OK)
+                {
+                    var document = Newtonsoft.Json.JsonConvert.DeserializeObject<PublishDocumentModel>(prototypeJson);
+                    return document.isReadOnly;
+                }
+            }
+            catch (WebException){}
 
             return false;
         }
-
     }
 }
