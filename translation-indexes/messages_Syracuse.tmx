@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <tmx version="1.4">
-	<header creationtool="SyracuseTranslationTool" creationtoolversion="1.00" datatype="PlainText" segtype="sentence" adminlang="en-us" srclang="en" o-tmf="ABCTransMem" creationdate="20140226T084141Z" changedate="20150126T130900Z" changeid="erbou">
+	<header creationtool="SyracuseTranslationTool" creationtoolversion="1.00" datatype="PlainText" segtype="sentence" adminlang="en-us" srclang="en" o-tmf="ABCTransMem" creationdate="20140226T084141Z" changedate="20150127T134712Z" changeid="erbou">
 		<note>Syracuse resources</note>
 	</header>
 	<body>
@@ -3235,7 +3235,7 @@
 		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/menuCreated" datatype="Text">
 			<prop type="x-id">10031:122</prop>
 			<tuv xml:lang="en-us">
-				<seg>Menu entry {0} has been created</seg>
+				<seg>Menu item {0} ({1}) has been created</seg>
 			</tuv>
 			<tuv xml:lang="fr-fr">
 				<seg>L&apos;entrée de menu {0} a été créée</seg>
@@ -3259,7 +3259,7 @@
 		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/menuModified" datatype="Text">
 			<prop type="x-id">10031:123</prop>
 			<tuv xml:lang="en-us">
-				<seg>Menu entry {0} has been modified</seg>
+				<seg>Menu item {0} has been modified (old:{1}, new:{2})</seg>
 			</tuv>
 			<tuv xml:lang="fr-fr">
 				<seg>L&apos;entrée de menu {0} a été modifiée</seg>
@@ -3326,6 +3326,51 @@
 			</tuv>
 			<tuv xml:lang="pt-pt">
 				<seg>No código do menu {0}</seg>
+			</tuv>
+		</tu>
+		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/menuImportFailure" datatype="Text">
+			<prop type="x-id">10033:705</prop>
+			<tuv xml:lang="en-us">
+				<seg>Menu import on item {0} ({1}) failed</seg>
+			</tuv>
+			<tuv xml:lang="fr-fr">
+				<seg>Menu import on item {0} ({1}) failed</seg>
+			</tuv>
+		</tu>
+		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/menuModuleModified" datatype="Text">
+			<prop type="x-id">10033:706</prop>
+			<tuv xml:lang="en-us">
+				<seg>Menu item {0} has been modified, module updated</seg>
+			</tuv>
+			<tuv xml:lang="fr-fr">
+				<seg>Menu item {0} has been modified, module updated</seg>
+			</tuv>
+		</tu>
+		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/menuProfileImportLabel" datatype="Text">
+			<prop type="x-id">10033:707</prop>
+			<tuv xml:lang="en-us">
+				<seg>Menu profile import</seg>
+			</tuv>
+			<tuv xml:lang="fr-fr">
+				<seg>Menu profile import</seg>
+			</tuv>
+		</tu>
+		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/taskCreated" datatype="Text">
+			<prop type="x-id">10033:708</prop>
+			<tuv xml:lang="en-us">
+				<seg>Task created on scheduler &quot;{0}&quot;</seg>
+			</tuv>
+			<tuv xml:lang="fr-fr">
+				<seg>Task created on scheduler &quot;{0}&quot;</seg>
+			</tuv>
+		</tu>
+		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/resources/profileMenuImport/codeInsteadTitle" datatype="Text">
+			<prop type="x-id">10033:709</prop>
+			<tuv xml:lang="en-us">
+				<seg>&apos;LIBMENU&apos; not set on X3 function &apos;{0}&apos;.&#0a;&apos;FONCTION&apos; code has been used for menuItem&apos;s title</seg>
+			</tuv>
+			<tuv xml:lang="fr-fr">
+				<seg>&apos;LIBMENU&apos; non valorisé sur la fonction X3 &apos;{0}&apos;.&#0a;Le code &apos;FONCTION&apos; a été utilisé pour le titre de l&apos;entrée de menu</seg>
 			</tuv>
 		</tu>
 		<tu tuid="node_modules/syracuse-collaboration/lib/entities/page/v6Dashboard/resources/v6DashboardImport/user" datatype="Text">

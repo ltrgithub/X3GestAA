@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T08:41:41.000Z",
-		"$lastModified": "2015-01-26T13:09:00.000Z",
+		"$lastModified": "2015-01-27T13:47:12.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -11,7 +11,7 @@
 				"node_modules/syracuse-core/lib/types/resources/date",
 				"node_modules/syracuse-core/lib/types/resources/decimal"
 			],
-			"$count": 4702,
+			"$count": 4707,
 			"$lastModified": "",
 			"$current": 10033,
 			"$": {
@@ -22,7 +22,7 @@
 					"$nextId": 2000
 				},
 				"10033": {
-					"$nextId": 705
+					"$nextId": 710
 				}
 			}
 		},
@@ -2034,7 +2034,7 @@
 			"chp": 10031,
 			"id": 122,
 			"text": {
-				"en-us": "Menu entry {0} has been created",
+				"en-us": "Menu item {0} ({1}) has been created",
 				"fr-fr": "L'entrée de menu {0} a été créée",
 				"en-gb": "===",
 				"zh-cn": "已创建菜单项{0}",
@@ -2048,7 +2048,7 @@
 			"chp": 10031,
 			"id": 123,
 			"text": {
-				"en-us": "Menu entry {0} has been modified",
+				"en-us": "Menu item {0} has been modified (old:{1}, new:{2})",
 				"fr-fr": "L'entrée de menu {0} a été modifiée",
 				"en-gb": "===",
 				"zh-cn": "已修改菜单项{0}",
@@ -2085,6 +2085,51 @@
 				"pt-pt": "No código do menu {0}"
 			},
 			"$key": "554E0F10A9BDDAD631C758F48A8D1FB5CD921A27"
+		},
+		"menuImportFailure": {
+			"chp": 10033,
+			"id": 705,
+			"text": {
+				"en-us": "Menu import on item {0} ({1}) failed",
+				"fr-fr": "Menu import on item {0} ({1}) failed"
+			},
+			"$key": "2E99A59D4C83342B21E19DE5A72FECB881650C73"
+		},
+		"menuModuleModified": {
+			"chp": 10033,
+			"id": 706,
+			"text": {
+				"en-us": "Menu item {0} has been modified, module updated",
+				"fr-fr": "Menu item {0} has been modified, module updated"
+			},
+			"$key": "29451FF10FC94F72880B5CC037D32A23687F3E34"
+		},
+		"menuProfileImportLabel": {
+			"chp": 10033,
+			"id": 707,
+			"text": {
+				"en-us": "Menu profile import",
+				"fr-fr": "Menu profile import"
+			},
+			"$key": "3CE2A741FA8D54DA8C8B1242B204967A489184FF"
+		},
+		"taskCreated": {
+			"chp": 10033,
+			"id": 708,
+			"text": {
+				"en-us": "Task created on scheduler \"{0}\"",
+				"fr-fr": "Task created on scheduler \"{0}\""
+			},
+			"$key": "EC061311F930EA742DCFE63FDE48BB54BBB496E2"
+		},
+		"codeInsteadTitle": {
+			"chp": 10033,
+			"id": 709,
+			"text": {
+				"en-us": "'LIBMENU' not set on X3 function '{0}'.\n'FONCTION' code has been used for menuItem's title",
+				"fr-fr": "'LIBMENU' non valorisé sur la fonction X3 '{0}'.\nLe code 'FONCTION' a été utilisé pour le titre de l'entrée de menu"
+			},
+			"$key": "780FBF70AA8AC77B77605F840EC7A87922476C05"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/page/v6Dashboard/resources/v6DashboardImport": {
