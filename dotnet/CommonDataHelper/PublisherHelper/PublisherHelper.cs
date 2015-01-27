@@ -94,6 +94,7 @@ namespace CommonDataHelper.PublisherHelper
                 string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                 if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                 {
+                    syracuseCustomData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
                     syracuseCustomData.setDocumentUrl(getDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
                     syracuseCustomData.setDocumentUrlAddress(getDocumentUrlAddress(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
                     syracuseCustomData.setDocumentTitleAddress(publishDocumentParameters.Description);
