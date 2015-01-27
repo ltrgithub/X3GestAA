@@ -107,7 +107,7 @@ namespace ExcelAddIn
                             if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
                                 Globals.ThisAddIn.ShowSettingsForm();
                         };
-                    webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                    webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
                 }
                 catch (Exception ex)
                 {
