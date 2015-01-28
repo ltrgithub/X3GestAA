@@ -4665,19 +4665,19 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S0">Value</col>
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Registry1</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry19</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Description</td><td>Sage.Syracuse.PowerPointAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry2</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Description</td><td>Sage.Syracuse.WordAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry20</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>FriendlyName</td><td>PowerPoint AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry21</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry22</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.PowerPointAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry24</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Description</td><td>Sage.Syracuse.ExcelAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry25</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>FriendlyName</td><td>Excel AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry26</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry27</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.ExcelAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry3</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>FriendlyName</td><td>Word AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry4</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry5</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.WordAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry1</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry19</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Description</td><td>Sage.Syracuse.PowerPointAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry2</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Description</td><td>Sage.Syracuse.WordAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry20</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>FriendlyName</td><td>PowerPoint AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry21</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry22</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.PowerPointAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry24</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Description</td><td>Sage.Syracuse.ExcelAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry25</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>FriendlyName</td><td>Excel AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry26</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry27</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.ExcelAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry3</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>FriendlyName</td><td>Word AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry4</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry5</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.WordAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
