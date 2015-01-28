@@ -312,6 +312,8 @@ namespace ExcelAddIn
                         workbook.Names.Add(name.Name, name.RefersTo);
                     }
 
+                    (new SyracuseCustomData(workbook)).StoreCustomDataByName("documentUrlAddress", String.Empty);
+
                     SyracuseOfficeCustomData customDataPreview = SyracuseOfficeCustomData.getFromDocument(workbook, true);
                     customDataPreview.setForceRefresh(false);
                     customDataPreview.setResourceUrl(customData.getResourceUrl());
