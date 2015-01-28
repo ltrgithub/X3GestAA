@@ -79,19 +79,9 @@ namespace ExcelAddIn
             /*
              * Force a login using a forms-based webBrowser. 
              * This prevent focus going to an existing open Excel document in Excel 2013.
-             * 
-             * NOTE: The ConnectionDialog class used here should be changed to use the ConnectionDialog class
-             * that will (likely) be introduced as part of the .net Save dialog project (SAM95698).
              */
-            
-            /*
-            if (!new ConnectionDialog().connectToServer(new Uri(connectUrl + @"/syracuse-main/html/main_notify.html")))
-                return;
-            */
-
             new CommonDataHelper.ConnectionDialog().connectToServer();
 
-            //
             if (webBrowser.ObjectForScripting == null)
             {
                 try
@@ -106,8 +96,14 @@ namespace ExcelAddIn
                             Excel.Workbook thisWb = Wb != null ? Wb : Globals.ThisAddIn.Application.ActiveWorkbook;
                             if (withSettings && ((new SyracuseCustomData(Wb)).GetCustomDataByName("datasourcesAddress") == ""))
                                 Globals.ThisAddIn.ShowSettingsForm();
+
+                            if (_doRefreshAll)
+                            {
+                                webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
+                                _doRefreshAll = false;  
+                            }
                         };
-                    webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                    webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
                 }
                 catch (Exception ex)
                 {
@@ -141,11 +137,13 @@ namespace ExcelAddIn
             _connect(connectUrl, withSettings, Wb);
         }
 
+        Boolean _doRefreshAll = false;
         public void RefreshAll()
         {
             if (!connected)
-            	_connect("");
+                _connect("", true, Globals.ThisAddIn.Application.ActiveWorkbook);
 
+            _doRefreshAll = true;
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
         }

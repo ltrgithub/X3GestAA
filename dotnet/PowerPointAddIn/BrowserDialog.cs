@@ -74,7 +74,7 @@ namespace PowerPointAddIn
                 if (!connectToServer(scriptingObj.getPptCustomData(), extraServerUrl))
                     return;
 
-                Uri uri = new Uri(serverUrl + urlPart);
+                Uri uri = new Uri(new Uri(serverUrl), urlPart);
                 this.Show();
                 this.webBrowser.ObjectForScripting = scriptingObj;
               
