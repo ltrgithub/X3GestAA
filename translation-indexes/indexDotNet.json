@@ -1,18 +1,18 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T09:02:31.000Z",
-		"$lastModified": "2015-01-28T13:15:55.000Z",
+		"$lastModified": "2015-01-28T13:26:32.000Z",
 		"$chapter": {
 			"$name": "DotNet",
 			"$description": "Syracuse dotNet",
 			"$min": 10044,
 			"$max": 10045,
-			"$count": 106,
+			"$count": 175,
 			"$lastModified": "",
 			"$current": 10044,
 			"$": {
 				"10044": {
-					"$nextId": 107
+					"$nextId": 176
 				}
 			}
 		},
@@ -123,7 +123,7 @@
 			"chp": 10044,
 			"id": 7,
 			"text": {
-				"en-us": "Delete cells",
+				"en-us": "Insert rows",
 				"de-de": "Zellen löschen",
 				"fr-fr": "Supprimer les cellules",
 				"en-gb": "===",
@@ -201,7 +201,7 @@
 			"chp": 10044,
 			"id": 13,
 			"text": {
-				"en-us": "Delete rows",
+				"en-us": "Do nothing",
 				"de-de": "Zeilen löschen",
 				"fr-fr": "Supprimer les lignes",
 				"en-gb": "===",
@@ -227,7 +227,7 @@
 			"chp": 10044,
 			"id": 15,
 			"text": {
-				"en-us": "Do nothing",
+				"en-us": "Delete cells",
 				"de-de": "Nichts",
 				"fr-fr": "Ne rien faire",
 				"en-gb": "===",
@@ -292,7 +292,7 @@
 			"chp": 10044,
 			"id": 20,
 			"text": {
-				"en-us": "Data Sources",
+				"en-us": "Data sources",
 				"de-de": "Datenquellen",
 				"fr-fr": "Réglages",
 				"en-gb": "Settings",
@@ -331,7 +331,7 @@
 			"chp": 10044,
 			"id": 23,
 			"text": {
-				"en-us": "Do nothing",
+				"en-us": "Shift cells down",
 				"de-de": "Nichts",
 				"fr-fr": "Ne rien faire",
 				"en-gb": "===",
@@ -422,7 +422,7 @@
 			"chp": 10044,
 			"id": 30,
 			"text": {
-				"en-us": "Cleanup Template Metadata",
+				"en-us": "Cleanup template metadata",
 				"de-de": "Bereinige Vorlagen-Metadaten",
 				"fr-fr": "Nettoyer les méta-données du modèle",
 				"en-gb": "===",
@@ -625,6 +625,156 @@
 				"es-es": "No hacer nada"
 			},
 			"$key": "FE552B40FA951176B0CBDE5A1049674E8A081D0E"
+		},
+		"comboBoxServerLocation.Label": {
+			"chp": 10044,
+			"id": 137,
+			"text": {
+				"en-us": "Server location",
+				"de-de": "Server-URL",
+				"es-es": "Ubicación servidor",
+				"fr-fr": "Emplacement serveur",
+				"pt-pt": "Localização servidor"
+			},
+			"$key": "BE01CC40CEBF48906A877A91873C2317ED5E4696"
+		},
+		"comboBoxServerLocation.ScreenTip": {
+			"chp": 10044,
+			"id": 138,
+			"text": {
+				"en-us": "Enter the server URL as http(s)://servername:port.",
+				"de-de": "Bitte geben Sie die Server-URL in der Form http(s)://servername:port ein.",
+				"es-es": "Introduzca la URL del servidor con el formato http(s)://nombreserver:port.",
+				"fr-fr": "Veuillez saisir l'URL du serveur sous la forme http(s)://nomserveur:port.",
+				"pt-pt": "Deve registar o URL sob a forma http(s)://servername:port."
+			},
+			"$key": "B542855E6AC4C10D0A446B73C36C59D0C6C09D48"
+		},
+		"comboBoxServerLocation.SuperTip": {
+			"chp": 10044,
+			"id": 139,
+			"text": {
+				"en-us": "If you do not know this information, contact your system administrator.",
+				"de-de": "Falls Ihnen diese Informationen nicht bekannt sind fragen Sie bitte Ihren Systemadministrator.",
+				"es-es": "Si no conoce esta información, contacte con su administrador de sistema.",
+				"fr-fr": "Si vous ne connaissez pas ces informations, veuillez contacter votre administrateur système.",
+				"pt-pt": "Se não conhecer esta informação, deve contactar o administrador de sistemas."
+			},
+			"$key": "1295D3EEC3064A2A4D2F1BB0CAA210F2D44EA148"
+		},
+		"groupSettings.Label": {
+			"chp": 10044,
+			"id": 140,
+			"text": {
+				"en-us": "Server settings",
+				"de-de": "Server Einstellungen",
+				"fr-fr": "Server settings"
+			},
+			"$key": "B7DE659A801033CBA13E68D96D817FA1657F7FC5"
+		},
+		"galleryPublishAs.Label": {
+			"chp": 10044,
+			"id": 141,
+			"text": {
+				"en-us": "Publish as...",
+				"de-de": "Veröffentlichen als...",
+				"fr-fr": "Publish as..."
+			},
+			"$key": "A690326E1C966A1E0D99BF48815B1BE554266D47"
+		},
+		"publishDocumentGroup.Label": {
+			"chp": 10044,
+			"id": 142,
+			"text": {
+				"en-us": "Publish document",
+				"de-de": "Dokument veröffentlichen",
+				"fr-fr": "Publish document"
+			},
+			"$key": "A59F9770CBC441C30EC1265A655FEDCC2F5484F4"
+		},
+		"templateGroup.Label": {
+			"chp": 10044,
+			"id": 143,
+			"text": {
+				"en-us": "Template details",
+				"de-de": "Vorlagen-Details",
+				"fr-fr": "Template details"
+			},
+			"$key": "A0E61AF7C6AC137265FDF1D15323B9AA7A063A1E"
+		},
+		"groupReporting.Label": {
+			"chp": 10044,
+			"id": 144,
+			"text": {
+				"en-us": "Reporting",
+				"fr-fr": "Reporting"
+			},
+			"$key": "9CDEDDB1A69B97F126F1E37D524851A290275F95"
+		},
+		"dataSourcesGroup.Label": {
+			"chp": 10044,
+			"id": 145,
+			"text": {
+				"en-us": "Data Sources",
+				"de-de": "Datenquellen",
+				"fr-fr": "Data Sources"
+			},
+			"$key": "B06EFB09ED44420B7C1344C37FFD23F54CE75A3A"
+		},
+		"buttonDisconnect.Label": {
+			"chp": 10044,
+			"id": 146,
+			"text": {
+				"en-us": "Log out",
+				"de-de": "Abmelden",
+				"fr-fr": "Log out"
+			},
+			"$key": "C7245C0DD15A017206A621CE2D12AA5CE0DFC98F"
+		},
+		"groupPublishDocument.Label": {
+			"chp": 10044,
+			"id": 147,
+			"text": {
+				"en-us": "Publish document",
+				"fr-fr": "Publish document"
+			},
+			"$key": "A4106261B5E77166BC2367C16CCFB4BB3D7D0E54"
+		},
+		"groupTemplate.Label": {
+			"chp": 10044,
+			"id": 148,
+			"text": {
+				"en-us": "Template details",
+				"fr-fr": "Template details"
+			},
+			"$key": "5F2738258397073374F92DE5F630BDC50808D609"
+		},
+		"comboBoxServerLocation.SizeString": {
+			"chp": 10044,
+			"id": 149,
+			"text": {
+				"en-us": "http://sosyrgx3app.sagefr.adinternal.com:8124",
+				"fr-fr": "http://sosyrgx3app.sagefr.adinternal.com:8124"
+			},
+			"$key": "C89DB7CC07C28837974E8B4C6687D8A5662EF19C"
+		},
+		"ribbonDropDownItemImpl7.Label": {
+			"chp": 10044,
+			"id": 150,
+			"text": {
+				"en-us": "Delete rows",
+				"fr-fr": "Delete rows"
+			},
+			"$key": "1805954E71F4840C725137CF04236FF7D2A246A7"
+		},
+		"ribbonDropDownItemImpl8.Label": {
+			"chp": 10044,
+			"id": 151,
+			"text": {
+				"en-us": "Do nothing",
+				"fr-fr": "Do nothing"
+			},
+			"$key": "A769A85255B99FCC082A8B68282B40A3ED23333E"
 		}
 	},
 	"dotnet/ExcelAddIn/ServerSettings": {
@@ -659,12 +809,12 @@
 			"chp": 10044,
 			"id": 48,
 			"text": {
-				"en-us": "Ok",
-				"de-de": "===",
+				"en-us": "OK",
+				"de-de": "Ok",
 				"fr-fr": "OK",
 				"en-gb": "===",
-				"pt-pt": "OK",
-				"es-es": "OK"
+				"pt-pt": "===",
+				"es-es": "==="
 			},
 			"$key": "FC399FB145CDC961F09713241D5220F71E513246"
 		},
@@ -685,7 +835,7 @@
 			"chp": 10044,
 			"id": 50,
 			"text": {
-				"en-us": "If you do not know this information, please contact your system administrator.",
+				"en-us": "If you do not know this information, contact your system administrator.",
 				"de-de": "Falls Ihnen diese Informationen nicht bekannt sind fragen Sie bitte Ihren Systemadministrator.",
 				"fr-fr": "Si vous ne connaissez pas ces informations, veuillez contacter votre administrateur système.",
 				"en-gb": "===",
@@ -698,7 +848,7 @@
 			"chp": 10044,
 			"id": 51,
 			"text": {
-				"en-us": "Please enter the server URL in the form http(s)://servername:port.",
+				"en-us": "Enter the server URL as http(s)://servername:port.",
 				"de-de": "Bitte geben Sie die Server-URL in der Form http(s)://servername:port ein.",
 				"fr-fr": "Veuillez saisir l'URL du serveur sous la forme http(s)://nomserveur:port.",
 				"en-gb": "===",
@@ -769,12 +919,12 @@
 			"chp": 10044,
 			"id": 56,
 			"text": {
-				"en-us": "Ok",
-				"de-de": "===",
+				"en-us": "OK",
+				"de-de": "Ok",
 				"fr-fr": "OK",
 				"en-gb": "===",
-				"pt-pt": "OK",
-				"es-es": "OK"
+				"pt-pt": "===",
+				"es-es": "==="
 			},
 			"$key": "6E3BB99AEB59A8E77A1A47E2C130E67178EE6FF3"
 		},
@@ -834,7 +984,7 @@
 			"chp": 10044,
 			"id": 61,
 			"text": {
-				"en-us": "Please select presentation to add the new slide:",
+				"en-us": "Select presentation to add the new slide:",
 				"de-de": "Bitte wählen Sie eine Präsentation, um die neue Folie einzufügen:",
 				"fr-fr": "Veuillez sélectionner une présentation afin d'ajouter la nouvelle diapositive",
 				"en-gb": "===",
@@ -1027,6 +1177,120 @@
 				"es-es": "Actuallizar los gráficos asociados a SAGE ERP X3 en la diapositiva actual"
 			},
 			"$key": "D7E159A482943DBDFEC63B4535D6E8FEDF5F8D08"
+		},
+		"buttonPublish.Label": {
+			"chp": 10044,
+			"id": 152,
+			"text": {
+				"en-us": "Publish",
+				"de-de": "Veröffentlichen",
+				"fr-fr": "Publish"
+			},
+			"$key": "4D08898F38BF915605D4AAEFB34AF776FF03EB40"
+		},
+		"ribbonDropDownItemImpl1.Label": {
+			"chp": 10044,
+			"id": 153,
+			"text": {
+				"en-us": "Document",
+				"de-de": "Dokument",
+				"fr-fr": "Document"
+			},
+			"$key": "96376518268997610CA8E80C22DFDEC7A1EFD827"
+		},
+		"galleryPublishAs.Label": {
+			"chp": 10044,
+			"id": 154,
+			"text": {
+				"en-us": "Publish as...",
+				"de-de": "Veröffentlichen als...",
+				"fr-fr": "Publish as..."
+			},
+			"$key": "EEA12DAAA228936A9477EDE1AAE6F21A72CEA348"
+		},
+		"groupPublish.Label": {
+			"chp": 10044,
+			"id": 155,
+			"text": {
+				"en-us": "Publish document",
+				"de-de": "Dokument veröffentlichen",
+				"fr-fr": "Publish document"
+			},
+			"$key": "0B3EAEFD9164FF93E5697BDA0B94464D77048EE5"
+		},
+		"comboBoxServerLocation.Label": {
+			"chp": 10044,
+			"id": 156,
+			"text": {
+				"en-us": "Server location",
+				"de-de": "Server-URL",
+				"es-es": "Ubicación servidor",
+				"fr-fr": "Emplacement serveur",
+				"pt-pt": "Localização servidor"
+			},
+			"$key": "BDF295448A3688D71CF8A9C0F17286F73FB8E2DC"
+		},
+		"comboBoxServerLocation.ScreenTip": {
+			"chp": 10044,
+			"id": 157,
+			"text": {
+				"en-us": "Enter the server URL as http(s)://servername:port.",
+				"de-de": "Bitte geben Sie die Server-URL in der Form http(s)://servername:port ein.",
+				"es-es": "Introduzca la URL del servidor con el formato http(s)://nombreserver:port.",
+				"fr-fr": "Veuillez saisir l'URL du serveur sous la forme http(s)://nomserveur:port.",
+				"pt-pt": "Deve registar o URL sob a forma http(s)://servername:port."
+			},
+			"$key": "4A17C44E09D19C1E4036008CD339819AA0E4855D"
+		},
+		"comboBoxServerLocation.SuperTip": {
+			"chp": 10044,
+			"id": 158,
+			"text": {
+				"en-us": "If you do not know this information, contact your system administrator.",
+				"de-de": "Falls Ihnen diese Informationen nicht bekannt sind fragen Sie bitte Ihren Systemadministrator.",
+				"es-es": "Si no conoce esta información, contacte con su administrador de sistema.",
+				"fr-fr": "Si vous ne connaissez pas ces informations, veuillez contacter votre administrateur système.",
+				"pt-pt": "Se não conhecer esta informação, deve contactar o administrador de sistemas."
+			},
+			"$key": "76A17E22E9B11497684D827C6C44E1E503BFE336"
+		},
+		"groupSettings.Label": {
+			"chp": 10044,
+			"id": 159,
+			"text": {
+				"en-us": "Server settings",
+				"de-de": "Server Einstellungen",
+				"fr-fr": "Server settings"
+			},
+			"$key": "8077007A7DA13D41C50715A404A47523726CF185"
+		},
+		"buttonDisconnect.Label": {
+			"chp": 10044,
+			"id": 160,
+			"text": {
+				"en-us": "Log out",
+				"de-de": "Abmelden",
+				"fr-fr": "Log out"
+			},
+			"$key": "B7F731F365BCE1AA8312380226E654BF61F90100"
+		},
+		"groupReporting.Label": {
+			"chp": 10044,
+			"id": 161,
+			"text": {
+				"en-us": "Reporting",
+				"fr-fr": "Reporting"
+			},
+			"$key": "520BD4B8813E5585ACBCA5010C2460A782CF70BE"
+		},
+		"comboBoxServerLocation.SizeString": {
+			"chp": 10044,
+			"id": 162,
+			"text": {
+				"en-us": "http://sosyrgx3app.sagefr.adinternal.com:8124",
+				"fr-fr": "http://sosyrgx3app.sagefr.adinternal.com:8124"
+			},
+			"$key": "EABE4C473AD0DF4648EF64A15DE6C5E4C39B0609"
 		}
 	},
 	"dotnet/PowerPointAddIn/ServerSettings": {
@@ -1061,12 +1325,12 @@
 			"chp": 10044,
 			"id": 78,
 			"text": {
-				"en-us": "Ok",
-				"de-de": "===",
+				"en-us": "OK",
+				"de-de": "Ok",
 				"fr-fr": "OK",
 				"en-gb": "===",
-				"pt-pt": "OK",
-				"es-es": "OK"
+				"pt-pt": "===",
+				"es-es": "==="
 			},
 			"$key": "2CAA7E098E7B0302B67124A43EE7EEFEB6DF12B5"
 		},
@@ -1087,7 +1351,7 @@
 			"chp": 10044,
 			"id": 80,
 			"text": {
-				"en-us": "If you do not know this information, please contact your system administrator.",
+				"en-us": "If you do not know this information, contact your system administrator.",
 				"de-de": "Falls Ihnen diese Informationen nicht bekannt sind fragen Sie bitte Ihren Systemadministrator.",
 				"fr-fr": "Si vous ne connaissez pas ces informations, veuillez contacter votre administrateur système.",
 				"en-gb": "===",
@@ -1100,7 +1364,7 @@
 			"chp": 10044,
 			"id": 81,
 			"text": {
-				"en-us": "Please enter the server URL in the form http(s)://servername:port.",
+				"en-us": "Enter the server URL as http(s)://servername:port.",
 				"de-de": "Bitte geben Sie die Server-URL in der Form http(s)://servername:port ein.",
 				"fr-fr": "Veuillez saisir l'URL du serveur sous la forme http(s)://nomserveur:port.",
 				"en-gb": "===",
@@ -1311,7 +1575,7 @@
 			"chp": 10044,
 			"id": 97,
 			"text": {
-				"en-us": "Cleanup Template Metadata",
+				"en-us": "Cleanup template metadata",
 				"de-de": "Bereinige Vorlagen-Metadaten",
 				"fr-fr": "Nettoyer les méta-données du modèle",
 				"en-gb": "===",
@@ -1345,6 +1609,141 @@
 				"es-es": "==="
 			},
 			"$key": "AB8B50318D252D98814438F37DFFC11067A148DF"
+		},
+		"comboBoxServerLocation.Label": {
+			"chp": 10044,
+			"id": 163,
+			"text": {
+				"en-us": "Server location",
+				"de-de": "Server-URL",
+				"es-es": "Ubicación servidor",
+				"fr-fr": "Emplacement serveur",
+				"pt-pt": "Localização servidor"
+			},
+			"$key": "8D832CDE889B1074AAED9A9413A5A57373AF57B0"
+		},
+		"comboBoxServerLocation.ScreenTip": {
+			"chp": 10044,
+			"id": 164,
+			"text": {
+				"en-us": "Enter the server URL as http(s)://servername:port.",
+				"de-de": "Bitte geben Sie die Server-URL in der Form http(s)://servername:port ein.",
+				"es-es": "Introduzca la URL del servidor con el formato http(s)://nombreserver:port.",
+				"fr-fr": "Veuillez saisir l'URL du serveur sous la forme http(s)://nomserveur:port.",
+				"pt-pt": "Deve registar o URL sob a forma http(s)://servername:port."
+			},
+			"$key": "F72EF640646ADE89C0590A2ED20F6E4C07E54778"
+		},
+		"comboBoxServerLocation.SuperTip": {
+			"chp": 10044,
+			"id": 165,
+			"text": {
+				"en-us": "If you do not know this information, contact your system administrator.",
+				"de-de": "Falls Ihnen diese Informationen nicht bekannt sind fragen Sie bitte Ihren Systemadministrator.",
+				"es-es": "Si no conoce esta información, contacte con su administrador de sistema.",
+				"fr-fr": "Si vous ne connaissez pas ces informations, veuillez contacter votre administrateur système.",
+				"pt-pt": "Se não conhecer esta informação, deve contactar o administrador de sistemas."
+			},
+			"$key": "C44383B3F82FFED19E11285B014B7A49EBFA00E9"
+		},
+		"groupSettings.Label": {
+			"chp": 10044,
+			"id": 166,
+			"text": {
+				"en-us": "Server settings",
+				"de-de": "Server Einstellungen",
+				"fr-fr": "Server settings"
+			},
+			"$key": "20665A2F0A4190375E499D1439C48C5114A4D72E"
+		},
+		"ribbonDropDownItemImpl1.Label": {
+			"chp": 10044,
+			"id": 167,
+			"text": {
+				"en-us": "Document",
+				"de-de": "Dokument",
+				"fr-fr": "Document"
+			},
+			"$key": "515153B80E5AF46B9B60C00C7B2D0DB894C68E6A"
+		},
+		"ribbonDropDownItemImpl2.Label": {
+			"chp": 10044,
+			"id": 168,
+			"text": {
+				"en-us": "Mail merge template",
+				"de-de": "Serienbriefvorlage",
+				"fr-fr": "Mail merge template"
+			},
+			"$key": "B673BEF14A73A0F08682DA0B7DEF8113255DEB33"
+		},
+		"ribbonDropDownItemImpl3.Label": {
+			"chp": 10044,
+			"id": 169,
+			"text": {
+				"en-us": "Word report template",
+				"de-de": "Berichtsvorlage",
+				"fr-fr": "Word report template"
+			},
+			"$key": "43F11248025E6D285F8536A7A218275E65B2F45E"
+		},
+		"galleryPublishAs.Label": {
+			"chp": 10044,
+			"id": 170,
+			"text": {
+				"en-us": "Publish as...",
+				"de-de": "Veröffentlichen als...",
+				"fr-fr": "Publish as..."
+			},
+			"$key": "6371EF3245B952D5DF7EF99C0C75321467184325"
+		},
+		"buttonPublish.Label": {
+			"chp": 10044,
+			"id": 171,
+			"text": {
+				"en-us": "Publish",
+				"de-de": "Veröffentlichen",
+				"fr-fr": "Publish"
+			},
+			"$key": "BE568DB7E58BEA24EAD5E6B6F180F8E99E483EE3"
+		},
+		"groupPublish.Label": {
+			"chp": 10044,
+			"id": 172,
+			"text": {
+				"en-us": "Publish document",
+				"de-de": "Dokument veröffentlichen",
+				"fr-fr": "Publish document"
+			},
+			"$key": "827E742419470DE70723317317C3F5D454BA3F18"
+		},
+		"groupTemplate.Label": {
+			"chp": 10044,
+			"id": 173,
+			"text": {
+				"en-us": "Template details",
+				"de-de": "Vorlagen-Details",
+				"fr-fr": "Template details"
+			},
+			"$key": "5F4D487CE07A687C5E0C835C5A3D237B712FB16D"
+		},
+		"buttonDisconnect.Label": {
+			"chp": 10044,
+			"id": 174,
+			"text": {
+				"en-us": "Log out",
+				"de-de": "Abmelden",
+				"fr-fr": "Log out"
+			},
+			"$key": "E5EFF0BE1CE9B8047E4E30EDCB5C1BAD22DBF54A"
+		},
+		"comboBoxServerLocation.SizeString": {
+			"chp": 10044,
+			"id": 175,
+			"text": {
+				"en-us": "http://sosyrgx3app.sagefr.adinternal.com:8124",
+				"fr-fr": "http://sosyrgx3app.sagefr.adinternal.com:8124"
+			},
+			"$key": "15AB0775B482132EF5EF14A21473079D673CFB35"
 		}
 	},
 	"dotnet/WordAddIn/ServerSettings": {
@@ -1435,6 +1834,310 @@
 				"es-es": "Si no conoce esta información, contacte con su administrador de sistema."
 			},
 			"$key": "5E251674A93DE99B9A7A592596264B9459C00825"
+		}
+	},
+	"dotnet/CommonDialogs/PublishDocumentDialog/PublishDocumentDialog": {
+		"$key": "8E18C800624629215DA07950A02E9FA645F16C10",
+		"groupBoxDescription.Text": {
+			"chp": 10044,
+			"id": 107,
+			"text": {
+				"en-us": "DESCRIPTION",
+				"de-de": "BESCHREIBUNG",
+				"fr-fr": "DESCRIPTION"
+			},
+			"$key": "BB08AA4F03748F1C342C5B2299A24CC801553934"
+		},
+		"checkBoxReadOnly.Text": {
+			"chp": 10044,
+			"id": 108,
+			"text": {
+				"en-us": "Read-only",
+				"de-de": "Schreibgeschützt",
+				"fr-fr": "Read-only"
+			},
+			"$key": "70A1C62EE5ACD6D4CD9C2E1BD4398908156A82FA"
+		},
+		"labelOwner.Text": {
+			"chp": 10044,
+			"id": 109,
+			"text": {
+				"en-us": "Owner",
+				"de-de": "Besitzer",
+				"fr-fr": "Owner"
+			},
+			"$key": "5419846BE292B1782C92DC4EBF333D1F21F801DC"
+		},
+		"labelStorageVolume.Text": {
+			"chp": 10044,
+			"id": 110,
+			"text": {
+				"en-us": "Storage volume",
+				"de-de": "Speicherbereich",
+				"fr-fr": "Storage volume"
+			},
+			"$key": "C14EF6214DA819B95317AB6D17DA3D5259075E56"
+		},
+		"labelDescription.Text": {
+			"chp": 10044,
+			"id": 111,
+			"text": {
+				"en-us": "Description *",
+				"de-de": "Beschreibung *",
+				"fr-fr": "Description *"
+			},
+			"$key": "848E5DB086708CFC9EF1B2E3931C6C8CA7E47127"
+		},
+		"btnCancel.Text": {
+			"chp": 10044,
+			"id": 112,
+			"text": {
+				"en-us": "Cancel",
+				"de-de": "Abbrechen",
+				"fr-fr": "Cancel"
+			},
+			"$key": "A24DBC9587E8CCA16A68A1DC6905D8B184E0B5A2"
+		},
+		"btnOk.Text": {
+			"chp": 10044,
+			"id": 113,
+			"text": {
+				"en-us": "OK",
+				"de-de": "===",
+				"fr-fr": "OK"
+			},
+			"$key": "A05471135341E1E870AC44B887201BA26172A02B"
+		},
+		"labelTeams.Text": {
+			"chp": 10044,
+			"id": 114,
+			"text": {
+				"en-us": "Teams",
+				"de-de": "===",
+				"fr-fr": "Teams"
+			},
+			"$key": "C72967322510FD55089E9D5DA51DCF403FBAAA2C"
+		},
+		"labelTags.Text": {
+			"chp": 10044,
+			"id": 115,
+			"text": {
+				"en-us": "Tags",
+				"de-de": "===",
+				"fr-fr": "Tags"
+			},
+			"$key": "65EBE960BC0115F056BC2D42240535D630E3068D"
+		},
+		"groupBoxTagsAndTeams.Text": {
+			"chp": 10044,
+			"id": 116,
+			"text": {
+				"en-us": "TAGS AND TEAMS",
+				"de-de": "TAGS UND TEAMS",
+				"fr-fr": "TAGS AND TEAMS"
+			},
+			"$key": "624EF03D51CE6BCFB9A8C40255E06E3E407D079D"
+		},
+		"@this.Text": {
+			"chp": 10044,
+			"id": 117,
+			"text": {
+				"en-us": "Publish Document",
+				"de-de": "Dokument veröffentlichen",
+				"fr-fr": "Publish Document"
+			},
+			"$key": "663AEE5052414FD269440E89CEF75F3BBE6C1A29"
+		}
+	},
+	"dotnet/CommonDialogs/PublishDocumentTemplateDialog/PublishDocumentTemplateDialog": {
+		"$key": "7076E70E422E80EAB796F0032F32C204C79354EE",
+		"labelDescriptionErrorText.Text": {
+			"chp": 10044,
+			"id": 118,
+			"text": {
+				"en-us": "         ",
+				"fr-fr": "         "
+			},
+			"$key": "56CD949793E5A014F529FF352A0C2E75CE0E61A9"
+		},
+		"labelCodeErrorText.Text": {
+			"chp": 10044,
+			"id": 119,
+			"text": {
+				"en-us": "         ",
+				"fr-fr": "         "
+			},
+			"$key": "1B804CACDF2430B50A03E318A730CFEF028A45CB"
+		},
+		"labelCode.Text": {
+			"chp": 10044,
+			"id": 120,
+			"text": {
+				"en-us": "Code *",
+				"de-de": "===",
+				"fr-fr": "Code *"
+			},
+			"$key": "BE3C1B73F016C779B50BB01C56027E839157D77F"
+		},
+		"checkBoxReadOnly.Text": {
+			"chp": 10044,
+			"id": 121,
+			"text": {
+				"en-us": "Read-only",
+				"de-de": "Schreibgeschützt",
+				"fr-fr": "Read-only"
+			},
+			"$key": "B6F68EAA26F6D9143281C361CDF8125389D160C1"
+		},
+		"labelOwner.Text": {
+			"chp": 10044,
+			"id": 122,
+			"text": {
+				"en-us": "Owner",
+				"de-de": "Besitzer",
+				"fr-fr": "Owner"
+			},
+			"$key": "310315E62B25715C098533E2BACF121114882126"
+		},
+		"labelDescription.Text": {
+			"chp": 10044,
+			"id": 123,
+			"text": {
+				"en-us": "Description *",
+				"de-de": "Beschreibung *",
+				"fr-fr": "Description *"
+			},
+			"$key": "62100213819A3FC71B9DCBE3DAAC2787A32E1E1A"
+		},
+		"groupBoxDescription.Text": {
+			"chp": 10044,
+			"id": 124,
+			"text": {
+				"en-us": "DESCRIPTION",
+				"de-de": "BESCHREIBUNG",
+				"fr-fr": "DESCRIPTION"
+			},
+			"$key": "CE650BFD98324AB41E2F9948E926EA0E1C601D2E"
+		},
+		"btnCancel.Text": {
+			"chp": 10044,
+			"id": 125,
+			"text": {
+				"en-us": "Cancel",
+				"de-de": "Abbrechen",
+				"fr-fr": "Cancel"
+			},
+			"$key": "89CF1908CD4B9C33F2DFC6B7C55CD01D8F477311"
+		},
+		"btnOk.Text": {
+			"chp": 10044,
+			"id": 126,
+			"text": {
+				"en-us": "OK",
+				"de-de": "===",
+				"fr-fr": "OK"
+			},
+			"$key": "56BADB39D61D48839DEC245AFE4B7590DD6FEBFE"
+		},
+		"labelTeams.Text": {
+			"chp": 10044,
+			"id": 127,
+			"text": {
+				"en-us": "Teams",
+				"de-de": "===",
+				"fr-fr": "Teams"
+			},
+			"$key": "EDBBDD3AEF41427782933D746608B80B40446C69"
+		},
+		"labelTags.Text": {
+			"chp": 10044,
+			"id": 128,
+			"text": {
+				"en-us": "Tags",
+				"de-de": "===",
+				"fr-fr": "Tags"
+			},
+			"$key": "79F6879585127E7E11EB390D3679DE6EEC93B61C"
+		},
+		"groupBoxTagsAndTeams.Text": {
+			"chp": 10044,
+			"id": 129,
+			"text": {
+				"en-us": "TAGS AND TEAMS",
+				"de-de": "TAGS UND TEAMS",
+				"fr-fr": "TAGS AND TEAMS"
+			},
+			"$key": "F5DA6C724B446899647D5DB563AFA0D0161F5A90"
+		},
+		"labelActivityCode.Text": {
+			"chp": 10044,
+			"id": 130,
+			"text": {
+				"en-us": "Activity code",
+				"de-de": "Aktivitätscode",
+				"fr-fr": "Activity code"
+			},
+			"$key": "793B42594ED7ACE0DDB99533D369B62C41FEB276"
+		},
+		"labelLegislation.Text": {
+			"chp": 10044,
+			"id": 131,
+			"text": {
+				"en-us": "Legislation",
+				"de-de": "Rechtsordung",
+				"fr-fr": "Legislation"
+			},
+			"$key": "E1A8625AB886EFE51B80D62575FDB386C7E0FA2E"
+		},
+		"labelCompany.Text": {
+			"chp": 10044,
+			"id": 132,
+			"text": {
+				"en-us": "Company",
+				"de-de": "Unternehmen",
+				"fr-fr": "Company"
+			},
+			"$key": "ABCA62C27C0E98D5676F579B5AAD1D5533B27352"
+		},
+		"label1.Text": {
+			"chp": 10044,
+			"id": 133,
+			"text": {
+				"en-us": "Endpoint",
+				"de-de": "===",
+				"fr-fr": "Endpoint"
+			},
+			"$key": "04DF687F4BA4EFC75CBBB5CEE581A1ACFA4376AA"
+		},
+		"labelPurpose.Text": {
+			"chp": 10044,
+			"id": 134,
+			"text": {
+				"en-us": "Purpose",
+				"de-de": "Aufgabe",
+				"fr-fr": "Purpose"
+			},
+			"$key": "14DF60D743BE10686A52FCEBCD6D15832B3952A3"
+		},
+		"groupBoxRelatedTo.Text": {
+			"chp": 10044,
+			"id": 135,
+			"text": {
+				"en-us": "RELATED TO",
+				"de-de": "ABHÄNGIG VON",
+				"fr-fr": "RELATED TO"
+			},
+			"$key": "EDEEBBACFB17EAC72716784F3AC66904B0E08AA1"
+		},
+		"@this.Text": {
+			"chp": 10044,
+			"id": 136,
+			"text": {
+				"en-us": "Publish Document Template",
+				"de-de": "Berichtsvorlage veröffentlichen",
+				"fr-fr": "Publish Document Template"
+			},
+			"$key": "16684B44358ADE67D4E2CC2DE9E69021F52974C6"
 		}
 	}
 }
