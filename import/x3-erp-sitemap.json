@@ -4959,6 +4959,37 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "STD_AMIGPORT",
+			"title": "title_43791f87-96d4-4fe4-b434-e506dc4d7a05",
+			"description": "description_43791f87-96d4-4fe4-b434-e506dc4d7a05",
+			"linkType": "$representation",
+			"icon": "",
+			"applicationMenu": false,
+			"facet": "$query",
+			"keyIsWhere": false,
+			"target": "self",
+			"requestLevel": "99",
+			"$factory": true,
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AMIGPORT",
+				"representation": "AMIGPORT"
+			},
+			"module": {
+				"code": "STD_X3_ERP_GDEV"
+			},
+			"categories": [],
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_777b95f9-f1e8-4710-9d49-761d73d9d00a",
 			"code": "X3_ERP_GUTIL",
@@ -5500,6 +5531,10 @@
 						},
 						{
 							"code": "STD_CNVUTF8",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "STD_AMIGPORT",
 							"$variantType": "menuItem"
 						}
 					]
@@ -57787,6 +57822,8 @@
 			"description_ce64fb3c-8afd-4a5c-b454-b694cc5d5cde": "SYNCHTXT",
 			"title_245253bc-9cb1-40aa-a182-bcb000cb50fa": "UTFB conversion",
 			"description_245253bc-9cb1-40aa-a182-bcb000cb50fa": "CNVUTF8",
+			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6 Portal migration",
+			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6 Portal migration",
 			"title_3c7d79f6-87d5-4bf2-9c6f-519980654663": "Interactive dashboard",
 			"title_823958cd-5326-4e38-9e02-8e29ffff1bb2": "Gadget groups",
 			"description_823958cd-5326-4e38-9e02-8e29ffff1bb2": "GESATP",
@@ -64443,6 +64480,8 @@
 			"description_ce64fb3c-8afd-4a5c-b454-b694cc5d5cde": "SYNCHTXT",
 			"title_245253bc-9cb1-40aa-a182-bcb000cb50fa": "Conversion UTF8",
 			"description_245253bc-9cb1-40aa-a182-bcb000cb50fa": "CNVUTF8",
+			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Migration portails V6",
+			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Migration portails V6",
 			"title_3c7d79f6-87d5-4bf2-9c6f-519980654663": "Portail interactif",
 			"title_823958cd-5326-4e38-9e02-8e29ffff1bb2": "Familles vignettes",
 			"description_823958cd-5326-4e38-9e02-8e29ffff1bb2": "GESATP",
