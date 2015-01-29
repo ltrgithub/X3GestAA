@@ -1,18 +1,18 @@
 {
 	"$config": {
 		"$createDate": "2014-02-26T09:02:31.000Z",
-		"$lastModified": "2015-01-28T13:26:32.000Z",
+		"$lastModified": "2015-01-29T16:12:21.000Z",
 		"$chapter": {
 			"$name": "DotNet",
 			"$description": "Syracuse dotNet",
 			"$min": 10044,
 			"$max": 10045,
-			"$count": 175,
+			"$count": 177,
 			"$lastModified": "",
 			"$current": 10044,
 			"$": {
 				"10044": {
-					"$nextId": 176
+					"$nextId": 178
 				}
 			}
 		},
@@ -123,7 +123,7 @@
 			"chp": 10044,
 			"id": 7,
 			"text": {
-				"en-us": "Insert rows",
+				"en-us": "Delete cells",
 				"de-de": "Zellen löschen",
 				"fr-fr": "Supprimer les cellules",
 				"en-gb": "===",
@@ -201,7 +201,7 @@
 			"chp": 10044,
 			"id": 13,
 			"text": {
-				"en-us": "Do nothing",
+				"en-us": "Delete rows",
 				"de-de": "Zeilen löschen",
 				"fr-fr": "Supprimer les lignes",
 				"en-gb": "===",
@@ -227,7 +227,7 @@
 			"chp": 10044,
 			"id": 15,
 			"text": {
-				"en-us": "Delete cells",
+				"en-us": "Do nothing",
 				"de-de": "Nichts",
 				"fr-fr": "Ne rien faire",
 				"en-gb": "===",
@@ -240,10 +240,10 @@
 			"chp": 10044,
 			"id": 16,
 			"text": {
-				"en-us": "Document",
-				"de-de": "Dokument",
+				"en-us": "Shift cells down",
+				"de-de": "Zellen nach unten verschieben",
 				"fr-fr": "Décaler les cellules vers le bas",
-				"en-gb": "Shift cells down",
+				"en-gb": "===",
 				"pt-pt": "Deslocar as células para baixo",
 				"es-es": "Desplazar las celdas hacia abajo"
 			},
@@ -305,10 +305,10 @@
 			"chp": 10044,
 			"id": 21,
 			"text": {
-				"en-us": "Excel report template",
+				"en-us": "Insert rows",
 				"de-de": "Zeilen einfügen",
 				"fr-fr": "Insérer des lignes",
-				"en-gb": "Insert rows",
+				"en-gb": "===",
 				"pt-pt": "Inserção de linhas",
 				"es-es": "Insertar líneas"
 			},
@@ -331,7 +331,7 @@
 			"chp": 10044,
 			"id": 23,
 			"text": {
-				"en-us": "Shift cells down",
+				"en-us": "Do nothing",
 				"de-de": "Nichts",
 				"fr-fr": "Ne rien faire",
 				"en-gb": "===",
@@ -736,7 +736,8 @@
 			"id": 147,
 			"text": {
 				"en-us": "Publish document",
-				"fr-fr": "Publish document"
+				"fr-fr": "Publish document",
+				"de-de": "Dokument veröffentlichen"
 			},
 			"$key": "A4106261B5E77166BC2367C16CCFB4BB3D7D0E54"
 		},
@@ -745,7 +746,8 @@
 			"id": 148,
 			"text": {
 				"en-us": "Template details",
-				"fr-fr": "Template details"
+				"fr-fr": "Template details",
+				"de-de": "Vorlagen-Details"
 			},
 			"$key": "5F2738258397073374F92DE5F630BDC50808D609"
 		},
@@ -762,8 +764,9 @@
 			"chp": 10044,
 			"id": 150,
 			"text": {
-				"en-us": "Delete rows",
-				"fr-fr": "Delete rows"
+				"en-us": "Document",
+				"fr-fr": "Document",
+				"de-de": "Dokument"
 			},
 			"$key": "1805954E71F4840C725137CF04236FF7D2A246A7"
 		},
@@ -771,10 +774,21 @@
 			"chp": 10044,
 			"id": 151,
 			"text": {
-				"en-us": "Do nothing",
-				"fr-fr": "Do nothing"
+				"en-us": "Excel report template",
+				"fr-fr": "Excel report template",
+				"de-de": "Excel Berichts-Vorlage"
 			},
 			"$key": "A769A85255B99FCC082A8B68282B40A3ED23333E"
+		},
+		"buttonDataSources.Label": {
+			"chp": 10044,
+			"id": 177,
+			"text": {
+				"en-us": "Data Sources",
+				"de-de": "Datenquellen",
+				"fr-fr": "Data Sources"
+			},
+			"$key": "2BF20327E6434D8F386755E424B1C5CE074BDA8A"
 		}
 	},
 	"dotnet/ExcelAddIn/ServerSettings": {
@@ -1156,12 +1170,12 @@
 			"chp": 10044,
 			"id": 74,
 			"text": {
-				"en-us": "Refresh all charts linked to Sage ERP X3",
-				"de-de": "Allen Folien mit Sage ERP X3 aktualisieren",
-				"fr-fr": "Actualiser tous les graphiques associés à Sage ERP X3",
+				"en-us": "Refresh all charts linked to Sage",
+				"de-de": "Allen Folien mit Sage  aktualisieren",
+				"fr-fr": "Actualiser tous les graphiques associés à Sage",
 				"en-gb": "===",
-				"pt-pt": "Atualizar todos os gráficos associados ao Sage ERP X3",
-				"es-es": "Actualizar todos los gráficos asociados a Sage ERP X3"
+				"pt-pt": "Atualizar todos os gráficos associados ao",
+				"es-es": "Actualizar todos los gráficos asociados a Sage"
 			},
 			"$key": "E227009F6B5BD48ACC334CCC6D23FD97F8054C02"
 		},
@@ -1169,12 +1183,12 @@
 			"chp": 10044,
 			"id": 75,
 			"text": {
-				"en-us": "Refresh charts linked to Sage ERP X3 on active slide",
-				"de-de": "Grafiken der aktuellen Folie mit Sage ERP X3 aktualsieren",
-				"fr-fr": "Actualiser les graphiques associés à l'ERP X3 sur la diapositive courante",
+				"en-us": "Refresh charts linked to Sage on active slide",
+				"de-de": "Grafiken der aktuellen Folie mit Sage  aktualsieren",
+				"fr-fr": "Actualiser les graphiques associés à Sage sur la diapositive courante",
 				"en-gb": "===",
-				"pt-pt": "Atualizar os gráficos associados ao ERP X3 no diapositivo corrente",
-				"es-es": "Actuallizar los gráficos asociados a SAGE ERP X3 en la diapositiva actual"
+				"pt-pt": "Atualizar os gráficos associados ao Sage no diapositivo corrente",
+				"es-es": "Actuallizar los gráficos asociados a Sage en la diapositiva actual"
 			},
 			"$key": "D7E159A482943DBDFEC63B4535D6E8FEDF5F8D08"
 		},
@@ -1947,6 +1961,15 @@
 				"fr-fr": "Publish Document"
 			},
 			"$key": "663AEE5052414FD269440E89CEF75F3BBE6C1A29"
+		},
+		"labelDescriptionErrorText.Text": {
+			"chp": 10044,
+			"id": 176,
+			"text": {
+				"en-us": "         ",
+				"fr-fr": "         "
+			},
+			"$key": "B54B545D880010CE7506110822F357C838C2BEDA"
 		}
 	},
 	"dotnet/CommonDialogs/PublishDocumentTemplateDialog/PublishDocumentTemplateDialog": {
