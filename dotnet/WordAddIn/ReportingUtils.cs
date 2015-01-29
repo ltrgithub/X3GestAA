@@ -274,7 +274,6 @@ namespace WordAddIn
                 {
                     oldSelection.Select();
                 }
-                Clipboard.Clear();
                 //long ticks2 = DateTime.Now.Ticks;
                 //long sec = (ticks2-ticks)/10000000;
                 //MessageBox.Show("Table fill time: " + sec + " secs.");
