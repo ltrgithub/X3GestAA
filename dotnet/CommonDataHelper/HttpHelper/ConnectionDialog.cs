@@ -20,7 +20,8 @@ namespace CommonDataHelper
     {
         private String _loginPart = @"/auth/login/page";
         private String _mainPartOld = @"/syracuse-main/html/main.html";
-        private String _mainPart = @"/syracuse-main/html/main-office.html";
+        private String _mainPart = @"/syracuse-main/html/main.html";
+        //private String _mainPart = @"/syracuse-main/html/main-office.html";
         private String _logoutPart = @"/auth/forgetMe/page";
         private bool? _connected = null;
         private Boolean _canceled = false;
@@ -165,8 +166,11 @@ namespace CommonDataHelper
                 }
                 else if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
                 {
-                    _retry = true;
-                    connectToServer();
+                    /*
+                     * Commenting out for the moment, after last-minute issue found accessing non akira-p0 server with IE cookie cache cleared.
+                     */
+                    //_retry = true;
+                    //connectToServer();
                 }
                 else
                 {
