@@ -44891,6 +44891,87 @@
 			"parameters": []
 		},
 		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "CONSTDC",
+			"title": "title_2989344d-92ed-453f-b094-686c93765630",
+			"description": "description_2989344d-92ed-453f-b094-686c93765630",
+			"linkType": "$function",
+			"icon": "",
+			"applicationMenu": true,
+			"facet": "$query",
+			"fusionFunction": "CONSTDC",
+			"fusionKey": "",
+			"keyIsWhere": false,
+			"target": "self",
+			"requestLevel": "99",
+			"$factory": true,
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "FUNTRNDOC",
+			"title": "title_abe8c71b-1c36-46ce-9b7b-8253f25fb147",
+			"description": "description_abe8c71b-1c36-46ce-9b7b-8253f25fb147",
+			"linkType": "$function",
+			"icon": "",
+			"applicationMenu": true,
+			"facet": "$query",
+			"fusionFunction": "FUNTRNDOC",
+			"fusionKey": "",
+			"keyIsWhere": false,
+			"target": "self",
+			"requestLevel": "99",
+			"$factory": true,
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
+			"$variantType": "menuItem",
+			"code": "FUNIMPCDTSA",
+			"title": "title_d5aba41e-2af4-4287-95c7-e224fa19802c",
+			"description": "description_d5aba41e-2af4-4287-95c7-e224fa19802c",
+			"linkType": "$function",
+			"icon": "",
+			"applicationMenu": true,
+			"facet": "$query",
+			"fusionFunction": "FUNIMPCDTSA",
+			"fusionKey": "",
+			"keyIsWhere": false,
+			"target": "self",
+			"requestLevel": "99",
+			"$factory": true,
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
 			"$type": "menuBlock",
 			"title": "title_e35baead-bdd0-4daa-9214-9622f015f9d1",
 			"code": "X3_ERP_MAUD",
@@ -44916,6 +44997,26 @@
 				{
 					"code": "STD_CONSESR",
 					"$variantType": "menuItem"
+				},
+				{
+					"$type": "menuSubblock",
+					"$variantType": "menuBlock",
+					"code": "50578b68-6cca-4666-82d1-b17a4ed35094",
+					"title": "title_50578b68-6cca-4666-82d1-b17a4ed35094",
+					"items": [
+						{
+							"code": "CONSTDC",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "FUNTRNDOC",
+							"$variantType": "menuItem"
+						},
+						{
+							"code": "FUNIMPCDTSA",
+							"$variantType": "menuItem"
+						}
+					]
 				}
 			]
 		},
@@ -60487,6 +60588,13 @@
 			"description_ba22be24-afe0-4abd-aa5a-70f8f20d5221": "CONSAUD",
 			"title_1961378e-e07e-4b86-93bc-5f197169a148": "E-signature history",
 			"description_1961378e-e07e-4b86-93bc-5f197169a148": "CONSESR",
+			"title_50578b68-6cca-4666-82d1-b17a4ed35094": "AT Communication",
+			"title_2989344d-92ed-453f-b094-686c93765630": "AT communication",
+			"description_2989344d-92ed-453f-b094-686c93765630": "AT communication",
+			"title_abe8c71b-1c36-46ce-9b7b-8253f25fb147": "Transp.  web services communication",
+			"description_abe8c71b-1c36-46ce-9b7b-8253f25fb147": "Transp. web services communication",
+			"title_d5aba41e-2af4-4287-95c7-e224fa19802c": "Import transp.communication",
+			"description_d5aba41e-2af4-4287-95c7-e224fa19802c": "Import transp. communication",
 			"title_818fd086-66ba-4b5c-8acb-27a33ef61da8": "Search engine",
 			"title_75af27a2-4ee8-44f8-93c4-f13fc543fbc3": "Indexing synchronization",
 			"description_75af27a2-4ee8-44f8-93c4-f13fc543fbc3": "ASRMAJBAS",
@@ -76969,6 +77077,10 @@
 			"description_ba22be24-afe0-4abd-aa5a-70f8f20d5221": "CONSAUD",
 			"title_1961378e-e07e-4b86-93bc-5f197169a148": "Historial das A. Digitais",
 			"description_1961378e-e07e-4b86-93bc-5f197169a148": "CONSESR",
+			"title_2989344d-92ed-453f-b094-686c93765630": "Comunicação AT",
+			"description_2989344d-92ed-453f-b094-686c93765630": "Comunicação AT",
+			"title_d5aba41e-2af4-4287-95c7-e224fa19802c": "Importação comunicações transportes",
+			"description_d5aba41e-2af4-4287-95c7-e224fa19802c": "Importação comunicações transportes",
 			"title_818fd086-66ba-4b5c-8acb-27a33ef61da8": "Motor de pesquisa",
 			"title_75af27a2-4ee8-44f8-93c4-f13fc543fbc3": "Sincronização indexação",
 			"description_75af27a2-4ee8-44f8-93c4-f13fc543fbc3": "ASRMAJBAS",
