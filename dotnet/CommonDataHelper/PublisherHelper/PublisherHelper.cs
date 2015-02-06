@@ -52,9 +52,13 @@ namespace CommonDataHelper.PublisherHelper
             bool success = false;
             
             String docUrl = syracuseCustomData.getDocumentUrl();
-            if (docUrl.StartsWith("http")) 
-                docUrl = new Uri(docUrl).PathAndQuery;
-
+            if (docUrl.StartsWith("http"))
+            {
+                docUrl = new Uri(docUrl).AbsolutePath;
+                if (!docUrl.EndsWith("/content"))
+                    docUrl += "/content";
+            }
+    
             syracuseCustomData.setDocumentUrl(docUrl);
             syracuseCustomData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
             syracuseCustomData.writeDictionaryToDocument();
