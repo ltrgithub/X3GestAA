@@ -58,6 +58,26 @@ namespace CommonDataHelper
             }
         }
 
+        private static string _locale = null;
+        public static string Locale
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_locale))
+                {
+                    foreach (Cookie cookie in CookieContainer.GetCookies(BaseUrlHelper.BaseUrl))
+                    {
+                        if (cookie.Name.StartsWith("user.profile"))
+                        {
+                            _locale = extractLocale(cookie.Value);
+                            break;
+                        }
+                    }
+                }
+                return _locale;
+            }
+        }
+
         private static string extractUserUuid(string cookieValue)
         {
             /*
@@ -104,6 +124,30 @@ namespace CommonDataHelper
                 role = userProfileDictionary["role"];
             }
             return role;
+        }
+
+        private static string extractLocale(string cookieValue)
+        {
+            /*
+            * Ideally we should have a .net implementation of JSURL.
+            */
+            string locale = string.Empty;
+
+            if (cookieValue.StartsWith("~"))
+            {
+                cookieValue = cookieValue.Remove(0, 1);
+
+                /*
+                 * Remove the start and end curly braces
+                 */
+                cookieValue = cookieValue.Remove(cookieValue.IndexOf('('), 1);
+                cookieValue = cookieValue.Remove(cookieValue.Length - 1);
+
+                Dictionary<string, string> userProfileDictionary = new Dictionary<string, string>();
+                buildUserProfileDictionary(cookieValue, userProfileDictionary);
+                locale = userProfileDictionary["loc"];
+            }
+            return locale; ;
         }
 
 

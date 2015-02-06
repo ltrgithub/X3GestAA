@@ -47,7 +47,7 @@ namespace ExcelAddIn
             this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
-                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard");
+                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard");
                 this.serverUrl = serverUrl;
             }
             return true;
@@ -66,8 +66,7 @@ namespace ExcelAddIn
                 if (!connectToServer(scriptingObj.getSyracuseOfficeCustomData()))
                     return;
 
-                Uri uri = new Uri(serverUrl + urlPart);
-                this.Show();
+                Uri uri = new Uri(new Uri(serverUrl), urlPart);
                 this.webBrowser.ObjectForScripting = scriptingObj;
                 this.webBrowser.Url = uri;
             }

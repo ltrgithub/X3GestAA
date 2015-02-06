@@ -108,7 +108,7 @@ namespace ExcelAddIn
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
             this.buttonDisconnect = this.Factory.CreateRibbonButton();
             this.dataSourcesGroup = this.Factory.CreateRibbonGroup();
-            this.buttonSettings = this.Factory.CreateRibbonButton();
+            this.buttonDataSources = this.Factory.CreateRibbonButton();
             this.groupSageX3 = this.Factory.CreateRibbonGroup();
             this.actionPanelCheckBox = this.Factory.CreateRibbonCheckBox();
             this.dropDownInsert = this.Factory.CreateRibbonDropDown();
@@ -163,10 +163,10 @@ namespace ExcelAddIn
             this.galleryPublishAs.ColumnCount = 1;
             this.galleryPublishAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.galleryPublishAs.Image = global::ExcelAddIn.Properties.Resources.sauvegarder;
-            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
-            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
-            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl1);
-            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl2);
+            resources.ApplyResources(ribbonDropDownItemImpl7, "ribbonDropDownItemImpl7");
+            resources.ApplyResources(ribbonDropDownItemImpl8, "ribbonDropDownItemImpl8");
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl7);
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl8);
             resources.ApplyResources(this.galleryPublishAs, "galleryPublishAs");
             this.galleryPublishAs.Name = "galleryPublishAs";
             this.galleryPublishAs.ShowImage = true;
@@ -246,18 +246,18 @@ namespace ExcelAddIn
             // 
             // dataSourcesGroup
             // 
-            this.dataSourcesGroup.Items.Add(this.buttonSettings);
+            this.dataSourcesGroup.Items.Add(this.buttonDataSources);
             resources.ApplyResources(this.dataSourcesGroup, "dataSourcesGroup");
             this.dataSourcesGroup.Name = "dataSourcesGroup";
             // 
-            // buttonSettings
+            // buttonDataSources
             // 
-            this.buttonSettings.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.buttonSettings.Image = global::ExcelAddIn.Properties.Resources.settings;
-            resources.ApplyResources(this.buttonSettings, "buttonSettings");
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.ShowImage = true;
-            this.buttonSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSettings_Click);
+            this.buttonDataSources.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonDataSources.Image = global::ExcelAddIn.Properties.Resources.settings;
+            resources.ApplyResources(this.buttonDataSources, "buttonDataSources");
+            this.buttonDataSources.Name = "buttonDataSources";
+            this.buttonDataSources.ShowImage = true;
+            this.buttonDataSources.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSettings_Click);
             // 
             // groupSageX3
             // 
@@ -275,23 +275,23 @@ namespace ExcelAddIn
             // 
             // dropDownInsert
             // 
+            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
+            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
             resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
-            resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
-            resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl1);
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl2);
             this.dropDownInsert.Items.Add(ribbonDropDownItemImpl3);
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl4);
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl5);
             resources.ApplyResources(this.dropDownInsert, "dropDownInsert");
             this.dropDownInsert.Name = "dropDownInsert";
             // 
             // dropDownDelete
             // 
+            resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
+            resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
             resources.ApplyResources(ribbonDropDownItemImpl6, "ribbonDropDownItemImpl6");
-            resources.ApplyResources(ribbonDropDownItemImpl7, "ribbonDropDownItemImpl7");
-            resources.ApplyResources(ribbonDropDownItemImpl8, "ribbonDropDownItemImpl8");
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl4);
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl5);
             this.dropDownDelete.Items.Add(ribbonDropDownItemImpl6);
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl7);
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl8);
             resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
             this.dropDownDelete.Name = "dropDownDelete";
             // 
@@ -364,7 +364,7 @@ namespace ExcelAddIn
 
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSageX3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup dataSourcesGroup;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSettings;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonDataSources;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownDelete;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox actionPanelCheckBox;
         public Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownInsert;

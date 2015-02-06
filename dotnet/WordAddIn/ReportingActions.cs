@@ -70,7 +70,9 @@ namespace WordAddIn
                     }
                     Globals.Ribbons.Ribbon.buttonPreview.Enabled = true;
                     Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
-                    new CommonUtils(browserDialog).SetDocumentLanguageID(doc);
+                    CommonUtils commons = new CommonUtils(browserDialog);
+                    commons.SetSupportedLocales(customData);
+                    commons.SetDocumentLanguageID(doc);
                 }
                 else if (rpt_fill_tpl.Equals(mode))
                 {
