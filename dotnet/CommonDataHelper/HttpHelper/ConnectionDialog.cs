@@ -164,14 +164,14 @@ namespace CommonDataHelper
                     statusCode = HttpStatusCode.OK;
                     CookieHelper.setCookies(webBrowser.Document.Cookie);
                 }
-                else if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
-                {
+                //else if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
+                //{
                     /*
                      * Commenting out for the moment, after last-minute issue found accessing non akira-p0 server with IE cookie cache cleared.
                      */
                     //_retry = true;
                     //connectToServer();
-                }
+                //}
                 else
                 {
                     throw (ex);
