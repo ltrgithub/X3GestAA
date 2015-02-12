@@ -9,6 +9,7 @@ using System.Web;
 using System.Collections.Specialized;
 using System.Text;
 using System.Runtime.InteropServices;
+using CommonDataHelper.HttpHelper;
 
 
 namespace CommonDataHelper
@@ -52,6 +53,8 @@ namespace CommonDataHelper
             request.ContentLength = data.Length;
             request.ContentType = "application/json";
             request.UserAgent = @"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
+
+            request.Headers[HttpRequestHeader.AcceptLanguage] = CookieHelper.Locale;
 
             request.CookieContainer = CookieHelper.CookieContainer;
 

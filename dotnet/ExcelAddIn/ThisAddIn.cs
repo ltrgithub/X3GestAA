@@ -677,7 +677,7 @@ namespace ExcelAddIn
             }
             else
             {
-                SyracuseCustomData cd2 = new SyracuseCustomData(Wb); //.GetCustomDataByName("datasourcesAddress");
+                SyracuseCustomData cd2 = new SyracuseCustomData(Wb); 
                 if (cd2 != null && string.IsNullOrEmpty(cd2.GetCustomDataByName("datasourcesAddress")) == false)
                 {
                     String url = cd2.GetCustomDataByName("serverUrlAddress");

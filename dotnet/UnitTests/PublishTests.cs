@@ -111,6 +111,12 @@ namespace UnitTests
         {
             //throw new NotImplementedException();
         }
+
+
+        public void setServerUrl(string url)
+        {
+            //throw new NotImplementedException();
+        }
     }
 
     class DummyExcelCustomData : ISyracuseOfficeCustomData
@@ -163,6 +169,12 @@ namespace UnitTests
         }
 
         public void setDocumentTitleAddress(string title)
+        {
+            //throw new NotImplementedException();
+        }
+
+
+        public void setServerUrl(string url)
         {
             //throw new NotImplementedException();
         }
@@ -219,7 +231,7 @@ namespace UnitTests
             get 
             {
                 System.Windows.Forms.CheckedListBox tagCheckedListBox = new System.Windows.Forms.CheckedListBox();
-                return tagCheckedListBox.CheckedItems;
+                return tagCheckedListBox.CheckedItems;  
             }
         }
 
@@ -256,6 +268,12 @@ namespace UnitTests
             {
                 _isReadOnly = value;
             }
+        }
+
+
+        public void setDocumentCheckerDelegate(DocumentCheckerDelegate documentCheckerDelegate)
+        {
+            throw new NotImplementedException();
         }
     }
 #endregion

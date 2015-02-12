@@ -73,7 +73,7 @@ namespace WordAddIn
             {
                 // Workaround for require.js bound problem
                 DateTime dummy = DateTime.Now;
-                this.webBrowser.Url = new Uri(serverUrl + "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
+                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
                 this.serverUrl = serverUrl;
             }
             return true;
@@ -92,8 +92,7 @@ namespace WordAddIn
                 if (!connectToServer(scriptingObj.getSyracuseOfficeCustomData()))
                     return;
 
-                Uri uri = new Uri(serverUrl + urlPart);
-                this.Show();
+                Uri uri = new Uri(new Uri(serverUrl), urlPart);
                 this.webBrowser.ObjectForScripting = scriptingObj;
                 this.webBrowser.Url = uri;
             }

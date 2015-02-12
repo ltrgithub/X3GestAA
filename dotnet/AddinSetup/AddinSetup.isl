@@ -4596,9 +4596,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{23F41955-501B-436B-81A5-6E909D7E6AFD}</td><td/></row>
+		<row><td>ProductCode</td><td>{A32C7DB8-4794-4AE5-94F1-200466F2807E}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Office Addins</td><td/></row>
-		<row><td>ProductVersion</td><td>1.01.0001</td><td/></row>
+		<row><td>ProductVersion</td><td>1.08.0001</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4610,7 +4610,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE9FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE9FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28;ISACTIONPROP29;ISACTIONPROP30;ISACTIONPROP31</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4665,19 +4665,19 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S0">Value</col>
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Registry1</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry19</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Description</td><td>Sage.Syracuse.PowerPointAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry2</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Description</td><td>Sage.Syracuse.WordAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry20</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>FriendlyName</td><td>PowerPoint AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry21</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry22</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.PowerPointAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry24</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Description</td><td>Sage.Syracuse.ExcelAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry25</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>FriendlyName</td><td>Excel AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry26</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry27</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.ExcelAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry3</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>FriendlyName</td><td>Word AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry4</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry5</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.WordAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry1</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry19</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Description</td><td>Sage.Syracuse.PowerPointAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry2</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Description</td><td>Sage.Syracuse.WordAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry20</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>FriendlyName</td><td>PowerPoint AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry21</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry22</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.PowerPointAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry24</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Description</td><td>Sage.Syracuse.ExcelAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry25</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>FriendlyName</td><td>Excel AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry26</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry27</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.ExcelAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry3</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>FriendlyName</td><td>Word AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry4</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry5</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.WordAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4894,6 +4894,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td></td><td>1.01.0001</td><td></td><td>768</td><td/><td>ISACTIONPROP29</td><td>NewUpgradeEntry1</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0024</td><td>1.00.0024</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP1</td><td>1.00.0024</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0025</td><td>1.00.0025</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP2</td><td>1.00.0025</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0026</td><td>1.00.0026</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>1.00.0026</td></row>
@@ -4921,7 +4922,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0050</td><td>1.00.0050</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP25</td><td>1.00.0050</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0051</td><td>1.00.0052</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP26</td><td>1.00.51</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0052</td><td>1.00.0052</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP27</td><td>1.00.0052</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0053</td><td>1.00.0053</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP30</td><td>1.00.0053</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.01.0000</td><td>1.01.0000</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP28</td><td>1.1.0000</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.01.0001</td><td>1.01.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP31</td><td>1.01.0001</td></row>
 	</table>
 
 	<table name="Verb">
