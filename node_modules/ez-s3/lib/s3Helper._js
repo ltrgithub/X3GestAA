@@ -1,7 +1,6 @@
 "use strict";
 
 var AWS = require('aws-sdk');
-var tunnel = require('tunnel');
 
 // Copies a source object into a target. Each property will be renamed according a mapping table.
 // If no target is provided an empty object will be created.
