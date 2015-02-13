@@ -68,7 +68,13 @@ namespace ExcelAddIn
         public void setServerUrl(string url)
         {
             setStringProperty(serverUrlProperty, url);
+
+            /*
+             * If we're setting the server Url in the customData, set it in the hidden sheet too!
+             */
+            (new SyracuseCustomData(workbook)).StoreCustomDataByName("serverUrlAddress", url);
         }
+
         public string getServerUrl() 
         {
             return getStringProperty(serverUrlProperty, false);

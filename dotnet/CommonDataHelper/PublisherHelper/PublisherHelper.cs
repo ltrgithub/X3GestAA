@@ -50,12 +50,18 @@ namespace CommonDataHelper.PublisherHelper
             WebHelper webHelper = new WebHelper();
             HttpStatusCode httpStatusCode;
             bool success = false;
+            
+            String docUrl = syracuseCustomData.getDocumentUrl();
+            if (docUrl.StartsWith("http")) 
+                docUrl = new Uri(docUrl).PathAndQuery;
 
-            string contentUrl = syracuseCustomData.getDocumentUrl(); 
-
+            syracuseCustomData.setDocumentUrl(docUrl);
+            syracuseCustomData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
+            syracuseCustomData.writeDictionaryToDocument();
+            
             byte[] documentContent = syracuseCustomData.GetDocumentContent();
 
-            string contentResponseJson = webHelper.uploadFile(new Uri(contentUrl), "PUT", documentContent, out httpStatusCode, syracuseCustomData.getDocumentTitle());
+            string contentResponseJson = webHelper.uploadFile(new Uri(BaseUrlHelper.BaseUrl, docUrl), "PUT", documentContent, out httpStatusCode, syracuseCustomData.getDocumentTitle());
 
             success = httpStatusCode == HttpStatusCode.OK;
 
@@ -88,6 +94,7 @@ namespace CommonDataHelper.PublisherHelper
                 string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                 if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                 {
+                    syracuseCustomData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
                     syracuseCustomData.setDocumentUrl(getDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
                     syracuseCustomData.setDocumentUrlAddress(getDocumentUrlAddress(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
                     syracuseCustomData.setDocumentTitleAddress(publishDocumentParameters.Description);
@@ -160,7 +167,9 @@ namespace CommonDataHelper.PublisherHelper
                     string workingCopyUpdateResponseJson = webHelper.setServerJson(new Uri(workingCopyResponseModel.url), "PUT", workingCopyUpdateRequestJson, out httpStatusCode);
                     if (httpStatusCode == HttpStatusCode.OK && string.IsNullOrEmpty(workingCopyUpdateResponseJson) == false)
                     {
-                        syracuseCustomData.setDocumentUrl(getDocumentUrl(new Uri(workingCopyResponseModel.url), workingCopyResponseModel.uuid, publishDocumentParameters.DocumentType));
+                        string filter = @"code eq '" + publishTemplate.code + @"'";
+                        syracuseCustomData.setDocumentUrl(getDocumentUrlFromFilter(new Uri(workingCopyResponseModel.url), filter, publishDocumentParameters.DocumentType));
+                        syracuseCustomData.setServerUrl(BaseUrlHelper.BaseUrl.ToString());
                         syracuseCustomData.writeDictionaryToDocument();
 
                         string contentUrl = new Uri(workingCopyResponseModel.url).GetLeftPart(UriPartial.Path) + "/content";
@@ -198,10 +207,20 @@ namespace CommonDataHelper.PublisherHelper
             return success;
         }
 
+        public string getDocumentUrlFromFilter(Uri uri, string filter, string documentType)
+        {
+            StringBuilder url = new StringBuilder(@"/sdata/syracuse/collaboration/syracuse/");
+            url.Append(getRepository(documentType));
+            url.Append("(");
+            url.Append(filter);
+            url.Append(@")/content");
+
+            return url.ToString();
+        }
+
         public string getDocumentUrl(Uri uri, string uuid, string documentType)
         {
-            StringBuilder url = new StringBuilder(uri.GetLeftPart(UriPartial.Authority));
-            url.Append(@"/sdata/syracuse/collaboration/syracuse/");
+            StringBuilder url = new StringBuilder(@"/sdata/syracuse/collaboration/syracuse/");
             url.Append(getRepository(documentType));
             url.Append("('");
             url.Append(uuid);
