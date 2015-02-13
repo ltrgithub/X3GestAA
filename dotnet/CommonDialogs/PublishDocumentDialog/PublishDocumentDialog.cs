@@ -109,25 +109,25 @@ namespace CommonDialogs.PublishDocumentDialog
         private string _errorDescriptionText = string.Empty;
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
-            
             string errorMessage = string.Empty;
             if (textBoxDescription.Text.Length > 0 && (textBoxDescription.Text.Equals(_errorDescriptionText) == true || !_documentCheckerDelegate("description", _workingCopyPrototypeModel, this, out errorMessage)))
             {
-                //textBoxDescription.ShowError = true;
+                textBoxDescription.ShowError = true;
                 _errorDescriptionText = textBoxDescription.Text;
             }
             else
             {
-                //textBoxDescription.ShowError = false;
+                textBoxDescription.ShowError = false;
                 _errorDescriptionText = string.Empty;
             }
-            
-            //labelDescriptionErrorText.Text = errorMessage;
-            btnOk.Enabled = !string.IsNullOrEmpty(textBoxDescription.Text);
+            labelDescriptionErrorText.Text = errorMessage;
+
+            btnOk_enable();
         }
 
-        private void labelTeams_Click(object sender, EventArgs e)
+        private void btnOk_enable()
         {
+            btnOk.Enabled = (!string.IsNullOrEmpty(textBoxDescription.Text) && _errorDescriptionText.Length == 0);
         }
 
         private PublisherDocumentDelegate _publisherDelegate = null;

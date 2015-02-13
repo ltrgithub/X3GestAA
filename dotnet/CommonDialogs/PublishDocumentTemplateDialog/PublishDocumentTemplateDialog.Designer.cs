@@ -64,7 +64,6 @@
             // 
             // groupBoxDescription
             // 
-            resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Controls.Add(this.textBoxDescription);
             this.groupBoxDescription.Controls.Add(this.labelDescriptionErrorText);
             this.groupBoxDescription.Controls.Add(this.labelCodeErrorText);
@@ -74,6 +73,7 @@
             this.groupBoxDescription.Controls.Add(this.checkBoxReadOnly);
             this.groupBoxDescription.Controls.Add(this.labelOwner);
             this.groupBoxDescription.Controls.Add(this.labelDescription);
+            resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
             // 
@@ -112,9 +112,9 @@
             // 
             // comboBoxOwner
             // 
-            resources.ApplyResources(this.comboBoxOwner, "comboBoxOwner");
             this.comboBoxOwner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOwner.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxOwner, "comboBoxOwner");
             this.comboBoxOwner.Name = "comboBoxOwner";
             // 
             // checkBoxReadOnly
@@ -135,39 +135,39 @@
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOk
             // 
-            resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.Name = "btnOk";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // groupBoxTagsAndTeams
             // 
-            resources.ApplyResources(this.groupBoxTagsAndTeams, "groupBoxTagsAndTeams");
             this.groupBoxTagsAndTeams.Controls.Add(this.checkedListBoxTeams);
             this.groupBoxTagsAndTeams.Controls.Add(this.checkedListBoxTags);
             this.groupBoxTagsAndTeams.Controls.Add(this.labelTeams);
             this.groupBoxTagsAndTeams.Controls.Add(this.labelTags);
+            resources.ApplyResources(this.groupBoxTagsAndTeams, "groupBoxTagsAndTeams");
             this.groupBoxTagsAndTeams.Name = "groupBoxTagsAndTeams";
             this.groupBoxTagsAndTeams.TabStop = false;
             // 
             // checkedListBoxTeams
             // 
-            resources.ApplyResources(this.checkedListBoxTeams, "checkedListBoxTeams");
             this.checkedListBoxTeams.FormattingEnabled = true;
+            resources.ApplyResources(this.checkedListBoxTeams, "checkedListBoxTeams");
             this.checkedListBoxTeams.Name = "checkedListBoxTeams";
             // 
             // checkedListBoxTags
             // 
-            resources.ApplyResources(this.checkedListBoxTags, "checkedListBoxTags");
             this.checkedListBoxTags.FormattingEnabled = true;
+            resources.ApplyResources(this.checkedListBoxTags, "checkedListBoxTags");
             this.checkedListBoxTags.Name = "checkedListBoxTags";
             // 
             // labelTeams
@@ -182,7 +182,6 @@
             // 
             // groupBoxRelatedTo
             // 
-            resources.ApplyResources(this.groupBoxRelatedTo, "groupBoxRelatedTo");
             this.groupBoxRelatedTo.Controls.Add(this.labelActivityCode);
             this.groupBoxRelatedTo.Controls.Add(this.labelLegislation);
             this.groupBoxRelatedTo.Controls.Add(this.labelCompany);
@@ -193,6 +192,7 @@
             this.groupBoxRelatedTo.Controls.Add(this.comboBoxEndpoint);
             this.groupBoxRelatedTo.Controls.Add(this.labelPurpose);
             this.groupBoxRelatedTo.Controls.Add(this.comboBoxPurpose);
+            resources.ApplyResources(this.groupBoxRelatedTo, "groupBoxRelatedTo");
             this.groupBoxRelatedTo.Name = "groupBoxRelatedTo";
             this.groupBoxRelatedTo.TabStop = false;
             this.groupBoxRelatedTo.Enter += new System.EventHandler(this.groupBoxRelatedTo_Enter);
@@ -214,22 +214,22 @@
             // 
             // comboBoxActivityCode
             // 
-            resources.ApplyResources(this.comboBoxActivityCode, "comboBoxActivityCode");
             this.comboBoxActivityCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboBoxActivityCode, "comboBoxActivityCode");
             this.comboBoxActivityCode.FormattingEnabled = true;
             this.comboBoxActivityCode.Name = "comboBoxActivityCode";
             // 
             // comboBoxLegislation
             // 
-            resources.ApplyResources(this.comboBoxLegislation, "comboBoxLegislation");
             this.comboBoxLegislation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboBoxLegislation, "comboBoxLegislation");
             this.comboBoxLegislation.FormattingEnabled = true;
             this.comboBoxLegislation.Name = "comboBoxLegislation";
             // 
             // comboBoxCompany
             // 
-            resources.ApplyResources(this.comboBoxCompany, "comboBoxCompany");
             this.comboBoxCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.comboBoxCompany, "comboBoxCompany");
             this.comboBoxCompany.FormattingEnabled = true;
             this.comboBoxCompany.Name = "comboBoxCompany";
             // 
@@ -240,9 +240,9 @@
             // 
             // comboBoxEndpoint
             // 
-            resources.ApplyResources(this.comboBoxEndpoint, "comboBoxEndpoint");
             this.comboBoxEndpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndpoint.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxEndpoint, "comboBoxEndpoint");
             this.comboBoxEndpoint.Name = "comboBoxEndpoint";
             this.comboBoxEndpoint.SelectedIndexChanged += new System.EventHandler(this.comboBoxEndpoint_SelectedIndexChanged);
             // 
@@ -253,8 +253,8 @@
             // 
             // comboBoxPurpose
             // 
-            resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
             this.comboBoxPurpose.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxPurpose, "comboBoxPurpose");
             this.comboBoxPurpose.Name = "comboBoxPurpose";
             // 
             // PublishDocumentTemplateDialog
