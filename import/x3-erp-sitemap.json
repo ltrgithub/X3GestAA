@@ -352,12 +352,6 @@
 				"title",
 				"description"
 			]
-		},
-		"menuCategory": {
-			"$key": "code",
-			"$localized": [
-				"description"
-			]
 		}
 	},
 	"$items": [
@@ -40029,31 +40023,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "RFI68",
-			"title": "title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "RFI68",
-			"target": "self",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "STD_X3_ERP_FISDE"
-			},
-			"categories": [],
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "RFI64",
 			"title": "title_e2cb172d-fdd4-479a-bfbe-ab655812c5df",
 			"linkType": "$function",
@@ -40175,10 +40144,6 @@
 					"code": "X3_ERP_RFI5M",
 					"title": "title_2ef155e8-47e3-4918-8964-47a6f3ec07b8",
 					"items": [
-						{
-							"code": "RFI68",
-							"$variantType": "menuItem"
-						},
 						{
 							"code": "RFI64",
 							"$variantType": "menuItem"
@@ -45413,100 +45378,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "RPT61",
-			"title": "title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "RPT61",
-			"target": "self",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "STD_X3_ERP_MIMP"
-			},
-			"categories": [],
-			"parameters": []
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_INVOICES",
-			"description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_X3_ERP_SVEN09",
-			"title": "title_bc74a1be-e100-4ac7-a189-c1b834195bc0",
-			"linkType": "$stats",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"statName": "VEN09",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_INVOICES"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_055dc32e-74ad-4934-8da1-30bdafde6533",
-					"prompt": false,
-					"value": "SVEN09"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "RFI68",
-			"title": "title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "RFI68",
-			"target": "self",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "STD_X3_ERP_FISDE"
-			},
-			"categories": [],
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "STD_AMIGNAMFIC",
 			"title": "title_95baa82f-1d02-4a61-bb1c-b3cc2968ed1e",
 			"description": "description_95baa82f-1d02-4a61-bb1c-b3cc2968ed1e",
@@ -45554,18 +45425,6 @@
 				},
 				{
 					"code": "V210",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "RPT61",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "STD_X3_ERP_SVEN09",
-					"$variantType": "menuItem"
-				},
-				{
-					"code": "RFI68",
 					"$variantType": "menuItem"
 				},
 				{
@@ -47905,31 +47764,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "RPT61",
-			"title": "title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f",
-			"linkType": "$function",
-			"applicationMenu": false,
-			"facet": "$query",
-			"fusionFunction": "RPT61",
-			"target": "self",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "STD_X3_ERP_MIMP"
-			},
-			"categories": [],
-			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "RPT62",
 			"title": "title_9111a211-9898-4a51-a16e-ea96ce805ab8",
 			"linkType": "$function",
@@ -48711,10 +48545,6 @@
 								},
 								{
 									"code": "RPT67",
-									"$variantType": "menuItem"
-								},
-								{
-									"code": "RPT61",
 									"$variantType": "menuItem"
 								},
 								{
@@ -53433,7 +53263,6 @@
 			"title_afd65da1-e1df-4292-9922-f74ddcc4c619": "بورتغال",
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "بلجيكا",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "تقرير الأجور",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "آخر",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "فرنسا",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "بلجيكا",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "الولايات المتحدة",
@@ -53602,7 +53431,6 @@
 			"title_e230e674-951b-4d5b-a1d6-d39f9090809c": "ترحيلات",
 			"title_43dc201c-ddd7-4438-94e1-2f6fd65909ab": "إجراءات الترحيل",
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "مراقبة السلسلة",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "ألمانيا",
 			"title_e35baead-bdd0-4daa-9214-9622f015f9d1": "التدقيق",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "إتصال",
 			"title_1211a85c-e5be-469d-9d16-ceee25b09117": "جداول",
@@ -56384,7 +56212,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgien",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Quellensteuermeldung",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Sonstige",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "Frankreich",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Belgien",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "Vereinigte Staaten",
@@ -56697,10 +56524,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Überw. Migrationsreihenfolge",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Deutschland",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "Fakturierter Umsatz Konzern ",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Rechnung",
-			"title_055dc32e-74ad-4934-8da1-30bdafde6533": "portview",
 			"title_e35baead-bdd0-4daa-9214-9622f015f9d1": "Audit",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Verbindungen",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
@@ -59701,7 +59524,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Fees declaration",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Others",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "France",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Belgium",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "United States",
@@ -60012,9 +59834,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Sequencing monitor",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Germany",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "Group Invoiced Turnover",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Invoices",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Connections",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
 			"title_1211a85c-e5be-469d-9d16-ceee25b09117": "Tables",
@@ -63020,7 +62839,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Fees declaration",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Others",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "France",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Belgium",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "United States",
@@ -63337,9 +63155,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Sequencing monitor",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "Overview 2",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Germany",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "Invoiced Sales by Group",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Invoices",
 			"title_95baa82f-1d02-4a61-bb1c-b3cc2968ed1e": "Attachment migration",
 			"description_95baa82f-1d02-4a61-bb1c-b3cc2968ed1e": "Attachment migration",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Connections",
@@ -66365,7 +66180,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Bélgica",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Declaración honorarios",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Otros",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "Francia",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Bélgica",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "Estados Unidos",
@@ -66676,9 +66490,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Monitor de enlace",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Alemania",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "CV Fact Grupo",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Facturas",
 			"title_e35baead-bdd0-4daa-9214-9622f015f9d1": "Auditar",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Conexiones",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
@@ -69725,7 +69536,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgique",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgique",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Déclaration honoraires",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Autres",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "France",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Belgique",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "Etats Unis",
@@ -70044,9 +69854,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Moniteur d'enchainement",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Allemagne",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "CA facturé groupe",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Factures",
 			"title_95baa82f-1d02-4a61-bb1c-b3cc2968ed1e": "Migration des pièces jointes",
 			"description_95baa82f-1d02-4a61-bb1c-b3cc2968ed1e": "Migration des pièces jointes",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Connexions",
@@ -73074,7 +72881,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgio",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Dichiarazione compensi",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Altro",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "Francia",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Belgio",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "Stati Uniti",
@@ -73385,8 +73191,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Monitor concatenamento",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Germania",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "STD_X3_ERP_SVEN09",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Connessioni",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
 			"title_1211a85c-e5be-469d-9d16-ceee25b09117": "Tabelle",
@@ -76414,7 +76218,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgia",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Deklaracja wynagrodzenia",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Inne",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "Francja",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "Belgia",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "Stany Zjednoczone",
@@ -76725,8 +76528,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Monitor kolejności",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Niemcy",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "STD_X3_ERP_SVEN09",
 			"title_e35baead-bdd0-4daa-9214-9622f015f9d1": "Audyt",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Logowania",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
@@ -79728,7 +79529,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "belgica",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "Declaração honorários",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Outros",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "França",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "belgica",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "Estados Unidos",
@@ -80041,9 +79841,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "Monitor de encadeamento",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "Alemanha",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "Valores facturados grupo",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Facturas",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Conexões",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
 			"title_1211a85c-e5be-469d-9d16-ceee25b09117": "Tabelas",
@@ -83051,7 +82848,6 @@
 			"title_afd65da1-e1df-4292-9922-f74ddcc4c619": "RFI63",
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "RFI69",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "Прочее",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "RFI64",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "RFI65",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "RFI66",
@@ -83360,8 +83156,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "RPT61",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "STD_X3_ERP_SVEN09",
 			"title_e35baead-bdd0-4daa-9214-9622f015f9d1": "Аудит",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "Подключения",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
@@ -86369,7 +86163,6 @@
 			"title_11eb6880-b462-498a-8d12-cb11ac8a5aac": "比利时",
 			"description_11eb6880-b462-498a-8d12-cb11ac8a5aac": "Belgium",
 			"title_2ef155e8-47e3-4918-8964-47a6f3ec07b8": "费用申报",
-			"title_4cf716ec-33ea-49dd-aea6-6e0149bccdc8": "其他",
 			"title_e2cb172d-fdd4-479a-bfbe-ab655812c5df": "法国",
 			"title_ca2d3e16-d81f-4850-b3c1-276cad59412f": "比利时",
 			"title_11965e9e-cfe7-4ed4-9060-83e73c041cb3": "美国",
@@ -86680,9 +86473,6 @@
 			"title_e4f312d8-1c53-43d7-994a-98cc09e135ad": "链接监督程序",
 			"description_e4f312d8-1c53-43d7-994a-98cc09e135ad": "AMOULIN",
 			"title_e908b2ed-9f1b-4978-bafe-e499d34508d9": "V210",
-			"title_f8fa5f4a-6585-41fd-92ca-6a53b4781d3f": "德国",
-			"title_bc74a1be-e100-4ac7-a189-c1b834195bc0": "组已开票的营业额",
-			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "采购发票",
 			"title_e35baead-bdd0-4daa-9214-9622f015f9d1": "审计 ",
 			"title_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "连接",
 			"description_7a0aac49-af91-42ef-8c2c-a4b0f719608c": "CONSALO",
