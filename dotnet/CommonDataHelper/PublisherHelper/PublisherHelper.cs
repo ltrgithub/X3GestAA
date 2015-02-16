@@ -55,8 +55,12 @@ namespace CommonDataHelper.PublisherHelper
             if (docUrl.StartsWith("http"))
             {
                 docUrl = new Uri(docUrl).AbsolutePath;
-                if (!docUrl.EndsWith("/content"))
-                    docUrl += "/content";
+            }
+
+            // fix old document url to new value
+            if (!docUrl.EndsWith("/content"))
+            {
+                docUrl += "/content";
             }
     
             syracuseCustomData.setDocumentUrl(docUrl);
