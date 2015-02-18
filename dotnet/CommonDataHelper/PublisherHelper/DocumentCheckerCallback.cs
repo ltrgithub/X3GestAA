@@ -55,7 +55,6 @@ namespace CommonDataHelper.PublisherHelper
                     if (result.totalResults > 0)
                     {
                         errorMessage = global::CommonDataHelper.Properties.Resources.MSG_DOCUMENT_ALREADY_EXISTS;
-                        InfoMessageBox.ShowInfoMessage(global::CommonDataHelper.Properties.Resources.MSG_DOCUMENT_ALREADY_EXISTS, global::CommonDataHelper.Properties.Resources.MSG_DOCUMENT_ALREADY_EXISTS_TITLE);
                         isUnique = false;
                     }
                 }

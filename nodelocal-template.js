@@ -29,6 +29,9 @@ exports.config = {
 		// it shouldn't be enabled in client configurations as modifications made can be lost
 		// on patch application, etc.
 		enableDevelopmentFeatures: false,
+		// next option disables caching of UI resources (JS scripts, CSS files, images)
+		// it should only be turned on by platform UI developers.
+		noUiCache: false,
 		// enables some specific client framework attributes for use with the test robot
 		enableTestRobot: false,
 		// optional: path to some stubs to use in development and tests, relative to index.js

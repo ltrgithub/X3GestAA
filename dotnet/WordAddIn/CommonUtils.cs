@@ -128,11 +128,15 @@ namespace WordAddIn
                 }
             }
             catch (Exception) { }
+
             return null;
         }
 
         public void SetSupportedLocales(SyracuseOfficeCustomData customData)
         {
+            if (Globals.Ribbons.Ribbon.dropDownLocale.Items.Count > 0)
+                return; 
+
             Globals.Ribbons.Ribbon.dropDownLocale.Items.Clear();
             Globals.Ribbons.Ribbon.dropDownLocale.Items.Add(Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem());
             Globals.Ribbons.Ribbon.dropDownLocale.Items[0].Label = "";

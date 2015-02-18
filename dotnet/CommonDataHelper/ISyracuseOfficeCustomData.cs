@@ -10,6 +10,7 @@ namespace CommonDataHelper
         void setDocumentUrl(String url);
         void setDocumentUrlAddress(String url);
         void setDocumentTitleAddress(String title);
+        void setServerUrl(String url);
         String getDocumentUrl();
         string getServerUrl();
         string getDocumentRepresentation();
