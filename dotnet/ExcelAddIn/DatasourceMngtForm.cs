@@ -36,6 +36,20 @@ namespace ExcelAddIn
         private void DatasourceMngtForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Globals.ThisAddIn.SettingsFormDestroyed();
+
+            Microsoft.Office.Interop.Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (wb != null)
+            {
+                string datasourceString = (new SyracuseCustomData(wb)).GetCustomDataByName("datasourcesAddress");
+                if (datasourceString.Equals("{}"))
+                {
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
+                }
+                else
+                {
+                    Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = String.IsNullOrEmpty(datasourceString) == false;
+                }
+            }
         }
 
         internal void RefreshBrowser()
