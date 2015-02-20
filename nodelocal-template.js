@@ -172,6 +172,7 @@ exports.config = {
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		devOpsEmail: 'SageERPX3DevOps@sage.com',
 	},
 	traces: {
 		console: false, // For developers
