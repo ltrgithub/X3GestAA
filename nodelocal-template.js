@@ -222,3 +222,23 @@ exports.config = {
     }
 };
 
+// for git enabled configurations one can override the standard config
+exports.branch_configs = [{
+    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V7",
+            localInitScript: [] // some local data to import on database creation : standard import json file
+        }
+    }
+}, {
+    branch: "akira.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V8",
+            localInitScript: [] // some local data to import on database creation
+        }
+    }
+}];
+
+
