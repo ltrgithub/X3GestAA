@@ -27,6 +27,7 @@ namespace ExcelAddIn
                     if (value.Equals("0000-00-00") || value.Equals("")) // convergence client may send dates like this
                         return "";
                     return DateTime.Parse((String)value);
+                case "application/x-quantity":
                 case "application/x-decimal":
                     if (value.Equals("")) 
                         return "";
@@ -625,6 +626,7 @@ namespace ExcelAddIn
                 case "application/x-time":
                     colRange.NumberFormat = "m/d/yyyy";
                     break;
+                case "application/x-quantity":
                 case "application/x-decimal":
                     string nf = "0.00";
                     try
