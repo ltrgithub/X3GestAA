@@ -438,7 +438,15 @@
 				"code": "STD_X3_HRM_PERSO"
 			},
 			"categories": [],
-			"parameters": []
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_2a849192-846e-4069-8fda-9ca98b940b0e",
+					"prompt": false,
+					"value": "AGE"
+				}
+			]
 		},
 		{
 			"$type": "menuCategory",
@@ -976,10 +984,7 @@
 				"contract": "hrm"
 			},
 			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"representation": "EMBAUCHE"
-			},
+			"representationRef": null,
 			"module": {
 				"code": "STD_X3_HRM_PERSO"
 			},
@@ -1762,6 +1767,7 @@
 			"title_39d679f3-7c3e-41da-be0d-85498131deea": "Salariés sortis (Mois)",
 			"title_49c241cb-265e-455b-a701-bdd39c5b1e60": "Nombre de bulletin (Mois en cours)",
 			"title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Ages des salariés",
+			"title_2a849192-846e-4069-8fda-9ca98b940b0e": "portview",
 			"title_cf3a93f0-7af4-442c-843d-9ab24b833be6": "Gestion des effectifs",
 			"description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventaires",
 			"title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Fin de période d'essai",

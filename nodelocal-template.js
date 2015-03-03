@@ -31,7 +31,9 @@ exports.config = {
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
 		// limit memory usage
-		memoryLimit: 500 // strategy to limit memory usage: limit is an indication; 0 means no limit
+		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
+        // bindIP if IP_ANY is not the good binding (IPV6)
+        bindIP: "0000:00:00:00:00:00000"
 	},
 	/*	integrationServer: {
 		port: 8125
