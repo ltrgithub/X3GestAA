@@ -32,8 +32,8 @@ namespace WordAddIn
         public static ReportingFieldTypes getType(String mimetype) {
             if ("application/x-string".Equals(mimetype))
                 return ReportingFieldTypes.TEXT;
-            if ("application/x-decimal".Equals(mimetype))
-                return ReportingFieldTypes.DECIMAL;
+            if ("application/x-decimal".Equals(mimetype) || "application/x-quantity".Equals(mimetype))
+                return ReportingFieldTypes. DECIMAL;
             if ("application/x-integer".Equals(mimetype))
                 return ReportingFieldTypes.INTEGER;
             if ("application/x-boolean".Equals(mimetype))
@@ -146,7 +146,7 @@ namespace WordAddIn
                         {
                             if (scale > 15)
                                 scale = 15;
-                            fmt = "0." + "###############".Substring(0, scale);
+                            fmt = "0." + "000000000000000".Substring(0, scale);
                         }
                         value = d.ToString(fmt, culture);
                         break;
