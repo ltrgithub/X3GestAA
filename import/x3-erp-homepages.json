@@ -8170,30 +8170,6 @@
 			"parameters": []
 		},
 		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_TRS05_005",
-			"title": "title_8ac5d7c0-a8ba-498c-9ea2-1e29cee13feb",
-			"linkType": "$process",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"processName": "TRS05_005",
-			"processMenu": "",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": null,
-			"module": {
-				"code": "STD_X3_ERP_MFASM"
-			},
-			"parameters": []
-		},
-		{
 			"$type": "landingPage",
 			"title": "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9",
 			"description": "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9",
@@ -8255,20 +8231,13 @@
 					"vignette": {
 						"code": "STD_X3_ERP_TRS05_003"
 					}
-				},
-				{
-					"$type": "landingPageVignette",
-					"bind": "dda21aea-7511-4f1a-a969-f9e38a118014",
-					"vignette": {
-						"code": "STD_X3_ERP_TRS05_005"
-					}
 				}
 			]
 		},
 		{
 			"$type": "pageLayout",
 			"code": "31ec86ac-a227-43b8-b563-f1314a335394",
-			"content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@3203387f-a193-4e25-b2e2-4b11192c6a63}\",\"$layout\":{\"$items\":[{\"$bind\":\"191f558e-5ed4-4b3c-9173-36af51ba7e18\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@8d23fbae-d1d1-4fd5-b800-b8687cc1983a}\",\"$layout\":{\"$items\":[{\"$bind\":\"7e466b28-11a7-4720-8322-840c16d38c3c\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@2bb8a3d2-bf20-4294-8bff-9178dd04f485}\",\"$layout\":{\"$items\":[{\"$bind\":\"67036d99-a0f7-4f8a-95a8-3d5a76a69bfb\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@3bf6e260-f781-435e-b29d-7422da263c54}\",\"$layout\":{\"$items\":[{\"$bind\":\"dda21aea-7511-4f1a-a969-f9e38a118014\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
+			"content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@3203387f-a193-4e25-b2e2-4b11192c6a63}\",\"$layout\":{\"$items\":[{\"$bind\":\"191f558e-5ed4-4b3c-9173-36af51ba7e18\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@8d23fbae-d1d1-4fd5-b800-b8687cc1983a}\",\"$layout\":{\"$items\":[{\"$bind\":\"7e466b28-11a7-4720-8322-840c16d38c3c\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@2bb8a3d2-bf20-4294-8bff-9178dd04f485}\",\"$layout\":{\"$items\":[{\"$bind\":\"67036d99-a0f7-4f8a-95a8-3d5a76a69bfb\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
 			"page": {
 				"pageName": "FA",
 				"$variantType": "landingPage"
@@ -9165,7 +9134,8 @@
 			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@aa8d6171-dd25-4360-a56f-a894eb234426": "New Tab 2",
 			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@8d23fbae-d1d1-4fd5-b800-b8687cc1983a": "Period cut-offs",
 			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@2bb8a3d2-bf20-4294-8bff-9178dd04f485": "FY cut-offs",
-			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3bf6e260-f781-435e-b29d-7422da263c54": "New Tab 1"
+			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3bf6e260-f781-435e-b29d-7422da263c54": "New Tab 1",
+			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@871022bd-269a-4150-805e-51643621bdfd": "New Tab 1"
 		},
 		"es-es": {
 			"title_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fac.compra no contabilizadas",
@@ -9716,7 +9686,11 @@
 			"title_cfed8c0f-58b6-4215-ac84-974e68247975": "Réaliser les arrêtés exercice",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Gérer vos équipements phys.",
 			"title_8ac5d7c0-a8ba-498c-9ea2-1e29cee13feb": "Gérer vos opérations d'invent.",
-			"title_a462660f-3e21-400d-8624-376abf91d345": "Gérer les dépenses et biens"
+			"title_a462660f-3e21-400d-8624-376abf91d345": "Gérer les dépenses et biens",
+			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3bf6e260-f781-435e-b29d-7422da263c54": "Inventaire",
+			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3203387f-a193-4e25-b2e2-4b11192c6a63": "Gérer les dépenses et les biens",
+			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@8d23fbae-d1d1-4fd5-b800-b8687cc1983a": "Réaliser les arrêtés périodiques",
+			"pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@2bb8a3d2-bf20-4294-8bff-9178dd04f485": "Réaliser les arrêtés exercice"
 		},
 		"it-it": {
 			"title_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "STD_X3_ERP_RCPT002",
