@@ -106,13 +106,28 @@ namespace CommonDialogs.PublishDocumentDialog
             _publisherDelegate(this, _workingCopyPrototypeModel, _customData);
         }
 
+        private string _errorDescriptionText = string.Empty;
         private void textBoxDescription_TextChanged(object sender, EventArgs e)
         {
-            btnOk.Enabled = !string.IsNullOrEmpty(textBoxDescription.Text);
+            string errorMessage = string.Empty;
+            if (textBoxDescription.Text.Length > 0 && (textBoxDescription.Text.Equals(_errorDescriptionText) == true || !_documentCheckerDelegate("description", _workingCopyPrototypeModel, this, out errorMessage)))
+            {
+                textBoxDescription.ShowError = true;
+                _errorDescriptionText = textBoxDescription.Text;
+            }
+            else
+            {
+                textBoxDescription.ShowError = false;
+                _errorDescriptionText = string.Empty;
+            }
+            labelDescriptionErrorText.Text = errorMessage;
+
+            btnOk_enable();
         }
 
-        private void labelTeams_Click(object sender, EventArgs e)
+        private void btnOk_enable()
         {
+            btnOk.Enabled = (!string.IsNullOrEmpty(textBoxDescription.Text) && _errorDescriptionText.Length == 0);
         }
 
         private PublisherDocumentDelegate _publisherDelegate = null;
@@ -124,5 +139,12 @@ namespace CommonDialogs.PublishDocumentDialog
             _workingCopyPrototypeModel = workingCopyPrototypeModel;
             _customData = customData;
         }
+    
+        private DocumentCheckerDelegate _documentCheckerDelegate = null;
+        public void setDocumentCheckerDelegate(DocumentCheckerDelegate documentCheckerDelegate)
+        {
+            _documentCheckerDelegate = documentCheckerDelegate;
+        }
+
     }
 }

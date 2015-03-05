@@ -274,7 +274,6 @@ namespace WordAddIn
                 {
                     oldSelection.Select();
                 }
-                Clipboard.Clear();
                 //long ticks2 = DateTime.Now.Ticks;
                 //long sec = (ticks2-ticks)/10000000;
                 //MessageBox.Show("Table fill time: " + sec + " secs.");
@@ -350,7 +349,7 @@ namespace WordAddIn
             if (type != null)
             {
 
-                if (type.Equals("application/x-decimal") && o.GetType() == typeof(String))
+                if ((type.Equals("application/x-decimal") || type.Equals("application/x-quantity")) && o.GetType() == typeof(String))
                 {
                     return Decimal.Parse(o.ToString(), decimalFormat).ToString();
                 }

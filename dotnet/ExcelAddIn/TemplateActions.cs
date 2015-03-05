@@ -312,12 +312,15 @@ namespace ExcelAddIn
                         workbook.Names.Add(name.Name, name.RefersTo);
                     }
 
+                    (new SyracuseCustomData(workbook)).StoreCustomDataByName("documentUrlAddress", String.Empty);
+
                     SyracuseOfficeCustomData customDataPreview = SyracuseOfficeCustomData.getFromDocument(workbook, true);
                     customDataPreview.setForceRefresh(false);
                     customDataPreview.setResourceUrl(customData.getResourceUrl());
                     customDataPreview.setServerUrl(customData.getServerUrl());
                     customDataPreview.setSyracuseRole(customData.getSyracuseRole());
                     customDataPreview.setSyracuseLocale(customData.getSyracuseLocale());
+                    customDataPreview.setSyracuseEndpoint(customData.getSyracuseEndpoint());
                     customDataPreview.writeDictionaryToDocument();
                     customDataPreview.setCreateMode(rpt_fill_tpl);
 

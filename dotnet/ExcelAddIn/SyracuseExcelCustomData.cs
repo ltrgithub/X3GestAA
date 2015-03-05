@@ -36,6 +36,7 @@ namespace ExcelAddIn
         private const String supportedLocalesProperty = "supportedLocales";
         private const String syracuseRoleProperty = "syracuseRole";
         private const String syracuseLocaleProperty = "syracuseLocale";
+        private const String syracuseEndpointProperty = "syracuseEndpoint";
         private const string docContentProperty = "docContent";
         private const string publishedDocumentJsonProperty = "publishedDocumentJson";
         private const String documentUrlAddressProperty = "documentUrlAddress";
@@ -67,7 +68,13 @@ namespace ExcelAddIn
         public void setServerUrl(string url)
         {
             setStringProperty(serverUrlProperty, url);
+
+            /*
+             * If we're setting the server Url in the customData, set it in the hidden sheet too!
+             */
+            (new SyracuseCustomData(workbook)).StoreCustomDataByName("serverUrlAddress", url);
         }
+
         public string getServerUrl() 
         {
             return getStringProperty(serverUrlProperty, false);
@@ -95,6 +102,14 @@ namespace ExcelAddIn
         public string getSyracuseLocale()
         {
             return getStringProperty(syracuseLocaleProperty, false);
+        }
+        public void setSyracuseEndpoint(String value)
+        {
+            setStringProperty(syracuseEndpointProperty, value);
+        }
+        public string getSyracuseEndpoint()
+        {
+            return getStringProperty(syracuseEndpointProperty, false);
         }
         public void setForceRefresh(Boolean status)
         {

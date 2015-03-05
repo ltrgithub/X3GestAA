@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
+            this.labelDescriptionErrorText = new System.Windows.Forms.Label();
+            this.textBoxDescription = new CustomComponents.RichTextBox();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
             this.comboBoxStorageVolume = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
             this.labelOwner = new System.Windows.Forms.Label();
             this.labelStorageVolume = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -50,16 +51,31 @@
             // 
             // groupBoxDescription
             // 
+            this.groupBoxDescription.Controls.Add(this.labelDescriptionErrorText);
+            this.groupBoxDescription.Controls.Add(this.textBoxDescription);
             this.groupBoxDescription.Controls.Add(this.comboBoxOwner);
             this.groupBoxDescription.Controls.Add(this.comboBoxStorageVolume);
             this.groupBoxDescription.Controls.Add(this.checkBoxReadOnly);
             this.groupBoxDescription.Controls.Add(this.labelOwner);
             this.groupBoxDescription.Controls.Add(this.labelStorageVolume);
-            this.groupBoxDescription.Controls.Add(this.textBoxDescription);
             this.groupBoxDescription.Controls.Add(this.labelDescription);
             resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
+            // 
+            // labelDescriptionErrorText
+            // 
+            resources.ApplyResources(this.labelDescriptionErrorText, "labelDescriptionErrorText");
+            this.labelDescriptionErrorText.ForeColor = System.Drawing.Color.Red;
+            this.labelDescriptionErrorText.Name = "labelDescriptionErrorText";
+            this.labelDescriptionErrorText.Tag = "";
+            // 
+            // textBoxDescription
+            // 
+            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ShowError = false;
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // comboBoxOwner
             // 
@@ -90,12 +106,6 @@
             // 
             resources.ApplyResources(this.labelStorageVolume, "labelStorageVolume");
             this.labelStorageVolume.Name = "labelStorageVolume";
-            // 
-            // textBoxDescription
-            // 
-            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // labelDescription
             // 
@@ -143,7 +153,6 @@
             // 
             resources.ApplyResources(this.labelTeams, "labelTeams");
             this.labelTeams.Name = "labelTeams";
-            this.labelTeams.Click += new System.EventHandler(this.labelTeams_Click);
             // 
             // labelTags
             // 
@@ -179,7 +188,6 @@
         private System.Windows.Forms.CheckBox checkBoxReadOnly;
         private System.Windows.Forms.Label labelOwner;
         private System.Windows.Forms.Label labelStorageVolume;
-        private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
@@ -188,5 +196,7 @@
         private System.Windows.Forms.Label labelTeams;
         private System.Windows.Forms.CheckedListBox checkedListBoxTeams;
         private System.Windows.Forms.CheckedListBox checkedListBoxTags;
+        private CustomComponents.RichTextBox textBoxDescription;
+        private System.Windows.Forms.Label labelDescriptionErrorText;
     }
 }
