@@ -28,7 +28,7 @@ namespace ExcelAddIn
         public static ReportingFieldTypes getType(String mimetype) {
             if ("application/x-string".Equals(mimetype))
                 return ReportingFieldTypes.TEXT;
-            if ("application/x-decimal".Equals(mimetype))
+            if ("application/x-decimal".Equals(mimetype) || "application/x-quantity".Equals(mimetype))
                 return ReportingFieldTypes.DECIMAL;
             if ("application/x-integer".Equals(mimetype))
                 return ReportingFieldTypes.INTEGER;

@@ -350,7 +350,7 @@ namespace WordAddIn
             if (type != null)
             {
 
-                if (type.Equals("application/x-decimal") && o.GetType() == typeof(String))
+                if ((type.Equals("application/x-decimal") || type.Equals("application/x-quantity")) && o.GetType() == typeof(String))
                 {
                     return Decimal.Parse(o.ToString(), decimalFormat).ToString();
                 }
