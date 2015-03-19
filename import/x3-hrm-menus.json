@@ -1675,6 +1675,48 @@
 			"module": null,
 			"categories": [],
 			"parameters": []
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_EMPL",
+			"description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_HRM_CAL_ZFIN",
+			"title": "title_db37c5ec-9ab5-42be-876d-d534dbe399c6",
+			"description": "description_db37c5ec-9ab5-42be-876d-d534dbe399c6",
+			"linkType": "$calendar",
+			"icon": "",
+			"applicationMenu": true,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestName": "ZFIN",
+			"requestLevel": "99",
+			"application": {
+				"application": "x3",
+				"contract": "hrm"
+			},
+			"endpoint": null,
+			"representationRef": null,
+			"module": {
+				"code": "STD_X3_HRM_PAY"
+			},
+			"categories": [
+				{
+					"code": "STD_EMPL"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_6a33b74f-7b29-4c17-8a43-d96bafd32069",
+					"prompt": false,
+					"value": "ZFIN"
+				}
+			]
 		}
 	],
 	"$localization": {
@@ -1826,7 +1868,10 @@
 			"description_71fddcb3-18df-4572-9ba8-f15f4bd9c32a": "Processus gestion des frais de déplacement",
 			"title_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie",
 			"description_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie",
-			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espace de stockage X3"
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espace de stockage X3",
+			"title_db37c5ec-9ab5-42be-876d-d534dbe399c6": "ZFIN",
+			"description_db37c5ec-9ab5-42be-876d-d534dbe399c6": "ZFIN",
+			"title_6a33b74f-7b29-4c17-8a43-d96bafd32069": "portview"
 		},
 		"it-it": {},
 		"pl-pl": {},
