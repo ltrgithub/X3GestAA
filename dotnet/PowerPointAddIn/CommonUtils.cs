@@ -24,37 +24,6 @@ namespace PowerPointAddIn
             this.browserDialog = browserDialog;
         }
 
-        // Save a document that has already been published
-        public void Save(Presentation pres)
-        {
-            // A document that has not been published yet cannot be saved using the save button, the user must use Save as...
-            // The button should not be active in this case, this is just for safety reasons
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(pres);
-
-            if (customData == null)
-            {
-                ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED, global::PowerPointAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED_TITLE);
-                SaveAs(pres);
-                return;
-            }
-            if ("".Equals(customData.getDocumentUrl()))
-            {
-                ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED, global::PowerPointAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED_TITLE);
-                SaveAs(pres);
-                return;
-            }
-            // ---
-
-            browserDialog.loadPage("/msoffice/lib/ppt/ui/save.html?url=%3Frepresentation%3Dpptsave.%24dashboard", customData);
-        }
-
-        // Save a document as new document (e.g. create a copy of a already published document or save a not yet published doc.)
-        public void SaveAs(Presentation pres)
-        {
-            SyracuseOfficeCustomData customData = PrepareToSaveNewDoc(pres);
-            browserDialog.loadPage("/msoffice/lib/ppt/ui/save.html?url=%3Frepresentation%3Dpptsave.%24dashboard", customData);
-        }
-
         private static SyracuseOfficeCustomData PrepareToSaveNewDoc(Presentation pres)
         {
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(pres);
