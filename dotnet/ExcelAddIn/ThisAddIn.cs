@@ -250,6 +250,7 @@ namespace ExcelAddIn
                 }
                 else
                 {
+                    System.Diagnostics.Debugger.Launch();
                     // Is the document an excel document with embedded data?
                     if (handleCvgDocument(Wb) == false)
                         AutoConnect(Wb);

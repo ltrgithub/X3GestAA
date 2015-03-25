@@ -31,7 +31,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\bruno\dev\syracuse\node_modules\msoffice\lib\excel\addIn\</PublishUrl>
+    <PublishUrl>C:\syracuse\patch8\Syracuse\dotnet\ExcelAddin\bin\Debug\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
@@ -49,7 +49,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 und x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -131,8 +131,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>cp C:/syracuse/integration/Syracuse/dotnet/ExcelAddIn/bin/Debug/Sage.Syracuse.ExcelAddIn.dll C:/"Program Files (x86)"/Sage/"Sage ERP X3 Office Addins"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
