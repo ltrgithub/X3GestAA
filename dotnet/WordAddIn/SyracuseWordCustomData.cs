@@ -216,6 +216,9 @@ namespace WordAddIn
             String tempFileName = Path.GetTempFileName();
             string tempFileName2 = Path.GetTempPath() + Guid.NewGuid();
 
+            // remove MailMerge-Query 
+            doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdNotAMergeDocument;
+
             doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
 
             File.Copy(tempFileName, tempFileName2);
