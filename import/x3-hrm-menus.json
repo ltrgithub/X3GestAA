@@ -114,6 +114,33 @@
 			]
 		},
 		{
+			"$type": "menuItem",
+			"code": "STD_X3_HRM_AVOLUME",
+			"title": "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
+			"description": "description_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
+			"linkType": "$representation",
+			"icon": "",
+			"applicationMenu": true,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestLevel": "99",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "hrm"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AVOLUME",
+				"representation": "AVOLUME"
+			},
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
 			"$type": "menuCategory",
 			"code": "STD_HEADCOUNT",
 			"description": "description_48b6926d-9ca5-46a6-a167-983090134851",
@@ -1754,49 +1781,44 @@
 				}
 			],
 			"parameters": []
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_HRM_AVOLUME",
-			"title": "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
-			"description": "description_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
-			"linkType": "$representation",
-			"icon": "",
-			"applicationMenu": true,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestLevel": "99",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "hrm"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVOLUME",
-				"representation": "AVOLUME"
-			},
-			"module": null,
-			"categories": [],
-			"parameters": []
 		}
 	],
 	"$localization": {
-		"ar-ae": {},
-		"ar-lb": {},
+		"ar-sa": {
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences"
+		},
 		"de-de": {
+			"description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indikatoren",
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effektive",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Urlaub",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Angestellte",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Lohnabrechnung",
+			"description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventar",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Einkommen",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Abwesenheiten",
+			"description_1494f1c0-f977-46e6-8a7d-31b6bfb49528": "Parametrisierung",
+			"description_fc5261ea-cca2-4dba-9a0d-29fffd3e9ad4": "Kostenbelege",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Zahlungsverfolgung"
 		},
 		"en-gb": {
-			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking"
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences"
 		},
 		"en-us": {
 			"title_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Skills and carreers",
 			"description_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Skills and carreers",
 			"title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
 			"description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicators",
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3 Storage aera",
 			"title_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317": "This year's new employees",
 			"description_48b6926d-9ca5-46a6-a167-983090134851": "Headcounts",
 			"title_7c37d481-1cc7-40a7-af69-eea2de14788e": "Last year's leave",
@@ -1847,10 +1869,20 @@
 			"description_be484c27-fbde-4a04-94d8-11912da4bc4a": "Time and activity management",
 			"title_cd13f1b0-c0a3-4d22-a9db-42594e29e9f5": "Payroll Management",
 			"title_26e0c424-c740-4b83-adcb-c10d3f890214": "Training management process",
-			"description_26e0c424-c740-4b83-adcb-c10d3f890214": "Training management process",
-			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3 Storage aera"
+			"description_26e0c424-c740-4b83-adcb-c10d3f890214": "Training management process"
 		},
 		"es-es": {
+			"description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicadores",
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espacio de almacenamiento X3",
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectivos",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Vacaciones",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Empleado",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Documento de nómina",
+			"description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventarios",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Renta",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Ausencias",
+			"description_1494f1c0-f977-46e6-8a7d-31b6bfb49528": "Parametrización",
+			"description_fc5261ea-cca2-4dba-9a0d-29fffd3e9ad4": "Notas de gastos",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguimiento de pagos"
 		},
 		"fr-fr": {
@@ -1859,6 +1891,7 @@
 			"title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Absentéisme mois en cours",
 			"description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicateurs",
 			"title_754e5703-edd8-4a68-abe2-a6f7dfd6c25f": "Vue du portail",
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espace de stockage X3",
 			"title_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317": "Nbre de nouveaux employés (Année)",
 			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
 			"title_7c37d481-1cc7-40a7-af69-eea2de14788e": "Congés (N-1)",
@@ -1930,17 +1963,59 @@
 			"title_71fddcb3-18df-4572-9ba8-f15f4bd9c32a": "Processus gestion des frais de déplacement",
 			"description_71fddcb3-18df-4572-9ba8-f15f4bd9c32a": "Processus gestion des frais de déplacement",
 			"title_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie",
-			"description_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie",
-			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espace de stockage X3"
+			"description_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie"
 		},
-		"it-it": {},
-		"pl-pl": {},
+		"it-it": {
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences"
+		},
+		"pl-pl": {
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences"
+		},
 		"pt-pt": {
+			"description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicadores",
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3 Storage area",
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Efetivos",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Férias",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Funcionário",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Recibo de salários",
+			"description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventários",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Ganhos",
 			"title_2456d7a3-c209-4965-82db-b5166efde4d6": "Próximas sessões de formação",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Faltas",
+			"description_1494f1c0-f977-46e6-8a7d-31b6bfb49528": "Parametrização",
+			"description_fc5261ea-cca2-4dba-9a0d-29fffd3e9ad4": "Notas de despesa",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguim. Pagamentos"
 		},
-		"ru-ru": {},
+		"ru-ru": {
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "Effectifs",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "Départ",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "Employ",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "Bulletin de paie",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "Revenus",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences"
+		},
 		"zh-cn": {
+			"description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "指标",
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3存储空间",
+			"description_48b6926d-9ca5-46a6-a167-983090134851": "职工人数",
+			"description_20722046-8742-4702-b47b-19bb4096350e": "离开",
+			"description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66": "雇佣",
+			"description_eb0b3ef6-2f03-4755-8cb5-4cbee94f1dde": "工资单",
+			"description_472d1508-dc1e-4bb9-92f0-483ffed92644": "盘点",
+			"description_f1196c6b-1d73-425d-9eee-e0ca710473dc": "收入",
+			"description_646d96cd-9c85-485a-9545-72afe86b7a5e": "缺勤",
+			"description_1494f1c0-f977-46e6-8a7d-31b6bfb49528": "参数设置",
+			"description_fc5261ea-cca2-4dba-9a0d-29fffd3e9ad4": "费用清单",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "收付款追踪"
 		}
 	}
