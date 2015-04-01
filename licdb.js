@@ -55,7 +55,7 @@ function finish(db, err) {
 }
 
 var mongoOpt = (config.mongodb || {}).options;
-var dbUrl = "mongodb://" + (config.collaboration.hostname || "localhost") + ":" + (config.collaboration.port || 27017) + "/" + (config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse");
+var dbUrl = "mongodb://" + (config.collaboration.connectionString || (config.collaboration.hostname || "localhost") + ":" + (config.collaboration.port || 27017)) + "/" + (config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse");
 //db.open(function(err, db) {
 mongodb.MongoClient.connect(dbUrl, mongoOpt || {
     db: {
