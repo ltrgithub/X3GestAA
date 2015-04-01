@@ -274,12 +274,6 @@
       <DependentUpon>DatasourceMngtForm.cs</DependentUpon>
     </Compile>
     <Compile Include="External.cs" />
-    <Compile Include="ServerSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ServerSettings.Designer.cs">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="SyracuseCustomData.cs" />
     <Compile Include="SyracuseExcelTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -299,6 +293,14 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ActionPanel.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionPanel.zh-cn.resx">
+      <DependentUpon>ActionPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionPanel.pl.resx">
       <DependentUpon>ActionPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -334,6 +336,14 @@
       <DependentUpon>Ribbon.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.zh-cn.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon.pl.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ribbon.es.resx">
       <DependentUpon>Ribbon.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -355,6 +365,22 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DocumentBrowser.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.zh-cn.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.pl.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.es.resx">
+      <DependentUpon>DocumentBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentBrowser.pt.resx">
       <DependentUpon>DocumentBrowser.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -386,26 +412,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ServerSettings.de.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.en.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.fr.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.es.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerSettings.pt.resx">
-      <DependentUpon>ServerSettings.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="SISettings.resx">
       <DependentUpon>SISettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +420,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TableUpdateProgress.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableUpdateProgress.zh-cn.resx">
+      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableUpdateProgress.pl.resx">
+      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableUpdateProgress.de.resx">
+      <DependentUpon>TableUpdateProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TableUpdateProgress.es.resx">
       <DependentUpon>TableUpdateProgress.cs</DependentUpon>

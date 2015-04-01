@@ -19,10 +19,13 @@ namespace CommonDataHelper
     public partial class ConnectionDialog : Form
     {
         private String _loginPart = @"/auth/login/page";
+        private String _mainPartOld = @"/syracuse-main/html/main.html";
         private String _mainPart = @"/syracuse-main/html/main.html";
+        //private String _mainPart = @"/syracuse-main/html/main-office.html";
         private String _logoutPart = @"/auth/forgetMe/page";
         private bool? _connected = null;
         private Boolean _canceled = false;
+        private Boolean _retry = false;
 
         public ConnectionDialog()
         {
@@ -37,7 +40,7 @@ namespace CommonDataHelper
             if (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 return;
 
-            if (e.Url.LocalPath.Equals(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
+            if (e.Url.LocalPath.StartsWith(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
             {
                 /*
                  * We've arrived at the new login page, so don't do anything.
@@ -45,13 +48,13 @@ namespace CommonDataHelper
                 return;
             }
 
-            if (e.Url.LocalPath.Equals(_mainPart))
+            if (e.Url.LocalPath.Equals(_mainPartOld) || e.Url.LocalPath.Equals(_mainPart))
             {
                 HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
                 try
                 {   
                     WebHelper webHelper = new WebHelper();
-                    webHelper.getInitialConnectionJson(new Uri(BaseUrlHelper.BaseUrl, _mainPart).ToString(), out statusCode);
+                    webHelper.getInitialConnectionJson(new Uri(BaseUrlHelper.BaseUrl, _retry ? _mainPartOld : _mainPart).ToString(), out statusCode);
                     if (statusCode == HttpStatusCode.OK)
                     {
                         CookieHelper.CookieContainer = CookieHelper.GetUriCookieContainer();
@@ -81,11 +84,13 @@ namespace CommonDataHelper
             HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
             HttpWebResponse response = null;
 
-            Uri mainUrl = new Uri(BaseUrlHelper.BaseUrl, _mainPart);
+            Uri mainUrl = new Uri(BaseUrlHelper.BaseUrl, _retry ? _mainPartOld : _mainPart);
 
             try
             {
                 response = webHelper.getInitialConnectionJson(mainUrl.ToString(), out statusCode);
+
+                _retry = false;
 
                 if (statusCode == HttpStatusCode.OK)
                 {
@@ -102,7 +107,7 @@ namespace CommonDataHelper
                 }
                 else if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
-                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].Equals(_loginPart))
+                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].StartsWith(_loginPart))
                     {
                         /*
                          * We've been redirected to the new-style login page, so we have to display the page in the browser.
@@ -159,6 +164,14 @@ namespace CommonDataHelper
                     statusCode = HttpStatusCode.OK;
                     CookieHelper.setCookies(webBrowser.Document.Cookie);
                 }
+                //else if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
+                //{
+                    /*
+                     * Commenting out for the moment, after last-minute issue found accessing non akira-p0 server with IE cookie cache cleared.
+                     */
+                    //_retry = true;
+                    //connectToServer();
+                //}
                 else
                 {
                     throw (ex);

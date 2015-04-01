@@ -225,6 +225,10 @@
 	<table name="AppSearch">
 		<col key="yes" def="s72">Property</col>
 		<col key="yes" def="s72">Signature_</col>
+		<row><td>IE10FOUND</td><td>sigMsHtml100</td></row>
+		<row><td>IE11FOUND</td><td>sigMsHtml110</td></row>
+		<row><td>IE12FOUND</td><td>sigMsHtml120</td></row>
+		<row><td>IE8FOUND</td><td>sigMsHtml80</td></row>
 		<row><td>IE9FOUND</td><td>sigMsHtml90</td></row>
 	</table>
 
@@ -1201,6 +1205,10 @@
 		<col key="yes" def="S72">Parent</col>
 		<col key="yes" def="S255">Path</col>
 		<col def="I2">Depth</col>
+		<row><td>sigMsHtml100</td><td></td><td>[SystemFolder]</td><td>0</td></row>
+		<row><td>sigMsHtml110</td><td></td><td>[SystemFolder]</td><td>0</td></row>
+		<row><td>sigMsHtml120</td><td></td><td>[SystemFolder]</td><td>0</td></row>
+		<row><td>sigMsHtml80</td><td></td><td>[SystemFolder]</td><td>0</td></row>
 		<row><td>sigMsHtml90</td><td></td><td>[SystemFolder]</td><td>0</td></row>
 	</table>
 
@@ -2874,10 +2882,14 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>-1239229265</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>421765904</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
-		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE9FOUND</td><td>1033</td><td>Internet Explorer 9 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-475893974</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE10FOUND</td><td>1033</td><td>Internet Explorer 10 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-475893974</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE11FOUND</td><td>1033</td><td>Internet Explorer 11 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>555944457</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE12FOUND</td><td>1033</td><td>Internet Explorer 12 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>555999721</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE8FOUND</td><td>1033</td><td>Internet Explorer 8 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>421750891</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE9FOUND</td><td>1033</td><td>Internet Explorer 9 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>555973193</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
@@ -3975,9 +3987,9 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>463582953</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>-1239229265</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>421765904</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Install Office Add-ins for Sage ERP X3</td><td>0</td><td/><td>505527822</td></row>
-		<row><td>ID_STRING4</td><td>1033</td><td>Sage</td><td>0</td><td/><td>-1239229265</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>Sage</td><td>0</td><td/><td>421765904</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>463580905</td></row>
 	</table>
 
@@ -4281,6 +4293,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 	<table name="LaunchCondition">
 		<col key="yes" def="s255">Condition</col>
 		<col def="l255">Description</col>
+		<row><td>IE10FOUND</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_IE10FOUND##</td></row>
+		<row><td>IE8FOUND</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_IE8FOUND##</td></row>
 		<row><td>IE9FOUND</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_IE9FOUND##</td></row>
 	</table>
 
@@ -4596,9 +4610,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{23F41955-501B-436B-81A5-6E909D7E6AFD}</td><td/></row>
+		<row><td>ProductCode</td><td>{712DD58D-62FC-4C55-B8BF-C7A1D06634AF}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Office Addins</td><td/></row>
-		<row><td>ProductVersion</td><td>1.01.0001</td><td/></row>
+		<row><td>ProductVersion</td><td>1.08.0003</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4610,7 +4624,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE9FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE12FOUND;IE10FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28;ISACTIONPROP29;ISACTIONPROP30;ISACTIONPROP31;IE8FOUND;IE9FOUND;ISACTIONPROP32;ISACTIONPROP33</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4665,19 +4679,19 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S0">Value</col>
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Registry1</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry19</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Description</td><td>Sage.Syracuse.PowerPointAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry2</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Description</td><td>Sage.Syracuse.WordAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry20</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>FriendlyName</td><td>PowerPoint AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry21</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry22</td><td>1</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.PowerPointAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry24</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Description</td><td>Sage.Syracuse.ExcelAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry25</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>FriendlyName</td><td>Excel AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry26</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry27</td><td>1</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.ExcelAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry3</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>FriendlyName</td><td>Word AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry4</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry5</td><td>1</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.WordAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry1</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry19</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Description</td><td>Sage.Syracuse.PowerPointAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry2</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Description</td><td>Sage.Syracuse.WordAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry20</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>FriendlyName</td><td>PowerPoint AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry21</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry22</td><td>2</td><td>Software\Microsoft\Office\PowerPoint\Addins\Sage.Syracuse.PowerPointAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.PowerPointAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry24</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Description</td><td>Sage.Syracuse.ExcelAddIn</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry25</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>FriendlyName</td><td>Excel AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry26</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry27</td><td>2</td><td>Software\Microsoft\Office\Excel\Addins\Sage.Syracuse.ExcelAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.ExcelAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry3</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>FriendlyName</td><td>Word AddIn for Sage ERP X3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry4</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
+		<row><td>Registry5</td><td>2</td><td>Software\Microsoft\Office\Word\Addins\Sage.Syracuse.WordAddIn</td><td>Manifest</td><td>file:///[INSTALLDIR]Sage.Syracuse.WordAddIn.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4783,6 +4797,10 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="I4">MinDate</col>
 		<col def="I4">MaxDate</col>
 		<col def="S255">Languages</col>
+		<row><td>sigMsHtml100</td><td>mshtml.dll</td><td>10.0.0</td><td/><td/><td/><td/><td/><td/></row>
+		<row><td>sigMsHtml110</td><td>mshtml.dll</td><td>11.0.0</td><td/><td/><td/><td/><td/><td/></row>
+		<row><td>sigMsHtml120</td><td>mshtml.dll</td><td>12.0.0</td><td/><td/><td/><td/><td/><td/></row>
+		<row><td>sigMsHtml80</td><td>mshtml.dll</td><td>8.0.0</td><td/><td/><td/><td/><td/><td/></row>
 		<row><td>sigMsHtml90</td><td>mshtml.dll</td><td>9.0.0</td><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
@@ -4894,6 +4912,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td></td><td>1.01.0001</td><td></td><td>768</td><td/><td>ISACTIONPROP29</td><td>NewUpgradeEntry1</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0024</td><td>1.00.0024</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP1</td><td>1.00.0024</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0025</td><td>1.00.0025</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP2</td><td>1.00.0025</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0026</td><td>1.00.0026</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>1.00.0026</td></row>
@@ -4921,7 +4940,11 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0050</td><td>1.00.0050</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP25</td><td>1.00.0050</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0051</td><td>1.00.0052</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP26</td><td>1.00.51</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0052</td><td>1.00.0052</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP27</td><td>1.00.0052</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.00.0053</td><td>1.00.0053</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP30</td><td>1.00.0053</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.01.0000</td><td>1.01.0000</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP28</td><td>1.1.0000</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.01.0001</td><td>1.01.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP31</td><td>1.01.0001</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.08.0001</td><td>1.08.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP32</td><td>1.08.0001</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.08.0002</td><td>1.08.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP33</td><td>1.08.0002</td></row>
 	</table>
 
 	<table name="Verb">

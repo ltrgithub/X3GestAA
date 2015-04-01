@@ -29,15 +29,20 @@ exports.config = {
 		// it shouldn't be enabled in client configurations as modifications made can be lost
 		// on patch application, etc.
 		enableDevelopmentFeatures: false,
+		// next option disables caching of UI resources (JS scripts, CSS files, images)
+		// it should only be turned on by platform UI developers.
+		noUiCache: false,
 		// enables some specific client framework attributes for use with the test robot
 		enableTestRobot: false,
 		// optional: path to some stubs to use in development and tests, relative to index.js
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
-        // limit memory usage
-        memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit
+		// limit memory usage
+		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
         // flag to expose stack traces to the UI (off by default for security)
-        exposeStacktrace: false,
+        exposeStacktrace: false
+        // bindIP if IP_ANY is not the good binding (IPV6)
+        bindIP: "0000:00:00:00:00:00000"
 	},
 	/*	integrationServer: {
 		port: 8125
@@ -219,4 +224,24 @@ exports.config = {
         elasticsearch: {}
     }
 };
+
+// for git enabled configurations one can override the standard config
+exports.branch_configs = [{
+    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V7",
+            localInitScript: [] // some local data to import on database creation : standard import json file
+        }
+    }
+}, {
+    branch: "akira.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V8",
+            localInitScript: [] // some local data to import on database creation
+        }
+    }
+}];
+
 
