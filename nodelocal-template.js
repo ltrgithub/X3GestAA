@@ -22,7 +22,6 @@ exports.config = {
 		// https on its behalf.
 		https: false,
 		sitecheck: {
-			enabled: false,
 			localTest: "true",
 			host: "localhost",
 			port: 8124,
