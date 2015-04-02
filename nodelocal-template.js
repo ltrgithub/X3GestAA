@@ -12,6 +12,12 @@ exports.config = {
 	// This option allow to partners to set a factory ID on security 
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
+	/*
+	 * With this flag set to true, even Syracuse administrators will not be able to associate 
+	 * Syracuse users to X3 users on specific endpoints if the login match to Sage factory syracuse user's login.
+	 * For instance, it will be impossible to map a Syracuse user with ADMIN X3 user.
+	 */
+	adminUserRestrict: false,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
