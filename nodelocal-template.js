@@ -40,7 +40,7 @@ exports.config = {
 		// limit memory usage
 		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
         // flag to expose stack traces to the UI (off by default for security)
-        exposeStacktrace: false
+        exposeStacktrace: false,
         // bindIP if IP_ANY is not the good binding (IPV6)
         bindIP: "0000:00:00:00:00:00000"
 	},
