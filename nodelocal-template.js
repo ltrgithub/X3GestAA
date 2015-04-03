@@ -71,11 +71,18 @@ exports.config = {
         }
     },
 	session: {
+		// interactive session timeout (minutes).
 		timeout: 20, // minutes
-		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
-		checkInterval: 60, // secondes
-		//		ignoreStoreSession: true,
-		"auth": "basic"
+		// session extra timeout (minutes) if async tracker is running.
+		asyncTimeout: 20,
+		// session timeout (minutes - decimals allowed) for stateless (web service) requests.
+		statelessTimeout: 1,
+		// interval (in seconds) between scans to release sessions.
+		checkInterval: 60,
+		// ?
+		// ignoreStoreSession: true,
+		// authentication modes
+		"auth": "basic",
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
