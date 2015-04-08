@@ -21,6 +21,13 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
+		sitecheck: {
+			localTest: "true",
+			host: "localhost",
+			port: 8124,
+			dataset: "production",
+			landingPage: "http://localhost:8080/"
+		},
 	},
 	system: {
 		// enables memwatch module
@@ -40,7 +47,7 @@ exports.config = {
 		// limit memory usage
 		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
         // flag to expose stack traces to the UI (off by default for security)
-        exposeStacktrace: false
+        exposeStacktrace: false,
         // bindIP if IP_ANY is not the good binding (IPV6)
         bindIP: "0000:00:00:00:00:00000"
 	},
@@ -221,7 +228,7 @@ exports.config = {
         // unit tests related options
         x3endpoint: {},
         elasticsearch: {}
-    }
+    },
 };
 
 // for git enabled configurations one can override the standard config
