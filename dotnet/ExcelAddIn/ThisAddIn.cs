@@ -12,6 +12,7 @@ using Microsoft.Office.Interop.Excel;
 using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
 using CommonDataHelper.PublisherHelper;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -547,7 +548,7 @@ namespace ExcelAddIn
                 }
                 if (foundNode != null)
                 {
-                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    SageJsonSerializer ser = new SageJsonSerializer();
                     Dictionary<String, object> dict = (Dictionary<String, object>)ser.DeserializeObject(foundNode.Text);
 
                     string proto = null;
