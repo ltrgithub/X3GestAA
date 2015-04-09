@@ -44704,7 +44704,7 @@
 			},
 			"$key": "A10EA97DDB5DC2350C0F236FB0A92DB89D4444DB"
 		},
-		"jobs_job_title": {
+		"jobs_title": {
 			"text": {
 				"en-us": "Job title",
 				"fr-fr": "Intitulé de poste",
@@ -44716,7 +44716,7 @@
 			},
 			"$key": "EC00D70AD912015009E7E0FA2FA34D66491373E5"
 		},
-		"jobs_job_phase": {
+		"jobs_phase": {
 			"text": {
 				"en-us": "Phase",
 				"fr-fr": "Phase",
@@ -44728,7 +44728,7 @@
 			},
 			"$key": "CC8757289041B81754A511FF0EF10E04156503C0"
 		},
-		"jobs_job_phase_detail": {
+		"jobs_phaseDetail": {
 			"text": {
 				"en-us": "Phase detail",
 				"fr-fr": "Détail de phase",
@@ -44740,7 +44740,7 @@
 			},
 			"$key": "BCCAB3C16BC4A6EFA075A853E2513E8DA222280A"
 		},
-		"jobs_job_startdate": {
+		"jobs_startDate": {
 			"text": {
 				"en-us": "Start date",
 				"fr-fr": "Date de début",
@@ -44752,7 +44752,7 @@
 			},
 			"$key": "91C9A77EF888511478430D6078A88F7FAD81ED48"
 		},
-		"jobs_job_starttime": {
+		"jobs_startTime": {
 			"text": {
 				"en-us": "Start time",
 				"fr-fr": "Heure de début",
@@ -44787,7 +44787,7 @@
 			},
 			"$key": "EE440257088CD9CEE02857B7741958D893BB4129"
 		},
-		"jobs_elapsed_seconds": {
+		"jobs_elapsedSeconds": {
 			"text": {
 				"en-us": "Elapsed seconds",
 				"fr-fr": "Secondes écoulées",
@@ -44799,7 +44799,7 @@
 			},
 			"$key": "3C15D935C4DF0BDC6FE16DDF130B3F4A78AB9044"
 		},
-		"jobs_remaining_seconds": {
+		"jobs_remainingSeconds": {
 			"text": {
 				"en-us": "Remaining seconds",
 				"fr-fr": "Secondes restantes",
@@ -45003,31 +45003,7 @@
 			},
 			"$key": "00DFE5286D46562ECADAE936DC467A3F5EB1BA80"
 		},
-		"jv_clear": {
-			"text": {
-				"en-us": "Clear All",
-				"fr-fr": "Tout vider",
-				"en-gb": "===",
-				"zh-cn": "清除所有",
-				"de-de": "Alles leeren",
-				"es-es": "Limpiar todo",
-				"pt-pt": "Limpar"
-			},
-			"$key": "1CFF734CF3C6746C926D3CDD05B2689B9EE26C64"
-		},
-		"jv_type_label": {
-			"text": {
-				"en-us": "Showing : ",
-				"fr-fr": "Montrer :",
-				"en-gb": "===",
-				"zh-cn": "显示：",
-				"de-de": "Anzeigen:",
-				"es-es": "Mostrando : ",
-				"pt-pt": "mostrar"
-			},
-			"$key": "8BB776D0C3E8882A159F4A94543D43CE86EA880D"
-		},
-		"jv_type_default": {
+		"job_kind_default": {
 			"text": {
 				"en-us": "All jobs",
 				"fr-fr": "Toutes les tâches",
@@ -45065,13 +45041,13 @@
 		},
 		"job_clearJob_msg": {
 			"text": {
-				"en-us": "{jobKind} job '{jobTitle}'' still in progress. If you confirm, you will not be able to track its progress. Do you confirm?",
-				"fr-fr": "Tâche {jobKind} '{jobTitle}'en cours. Si vous confirmez, vous ne serez pas en mesure de suivre leur progression. Confirmer?",
+				"en-us": "{jobKind} job '{title}'' still in progress. If you confirm, you will not be able to track its progress. Do you confirm?",
+				"fr-fr": "Tâche {jobKind} '{title}'en cours. Si vous confirmez, vous ne serez pas en mesure de suivre leur progression. Confirmer?",
 				"en-gb": "===",
-				"zh-cn": "正在处理{jobKind}任务'{jobTitle}'。如果您确认，那么您将不能追踪其进度。确认吗？",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Bestätigen Sie, können Sie den Fortschritt nicht verfolgen. Bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'en curso.  Si confirma, no podrá seguir la progresión. ¿Desea confirmar?",
-				"pt-pt": "Tarefa {jobKind} {} 'jobTitle em curso. Se confirmado, você não será capaz de seguir seu progresso. Confirmar"
+				"zh-cn": "正在处理{jobKind}任务'{title}'。如果您确认，那么您将不能追踪其进度。确认吗？",
+				"de-de": "Aufgabe {jobKind} '{title}' noch nicht beendet. Bestätigen Sie, können Sie den Fortschritt nicht verfolgen. Bestätigen?",
+				"es-es": "Tarea {jobKind} '{title}'en curso.  Si confirma, no podrá seguir la progresión. ¿Desea confirmar?",
+				"pt-pt": "Tarefa {jobKind} {} 'title em curso. Se confirmado, você não será capaz de seguir seu progresso. Confirmar"
 			},
 			"$key": "60E8FAD6921E1677F6C8960162A4574DC4D40108"
 		},
@@ -45089,13 +45065,13 @@
 		},
 		"job_cancel_msg": {
 			"text": {
-				"en-us": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm cancel?",
-				"fr-fr": "Tâche {jobKind} '{jobTitle}'' toujours en cours. Confirmer l'annulation?",
+				"en-us": "{jobKind} job '{title}'' still in progress. Do you confirm cancel?",
+				"fr-fr": "Tâche {jobKind} '{title}'' toujours en cours. Confirmer l'annulation?",
 				"en-gb": "===",
-				"zh-cn": "始终在进行{jobKind}任务'{jobTitle}''。确认要取消吗？",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Abbrechen bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la cancelación?",
-				"pt-pt": "Tarefa {jobKind} {} 'jobTitle em curso. Confirme o cancelamento?"
+				"zh-cn": "始终在进行{jobKind}任务'{title}''。确认要取消吗？",
+				"de-de": "Aufgabe {jobKind} '{title}' noch nicht beendet. Abbrechen bestätigen?",
+				"es-es": "Tarea {jobKind} '{title}'' todavía en curso. ¿Desea confirmar la cancelación?",
+				"pt-pt": "Tarefa {jobKind} {} 'title em curso. Confirme o cancelamento?"
 			},
 			"$key": "7FC0413DFF693AF15FA8021928DFECF1B66C0C66"
 		},
@@ -45113,13 +45089,13 @@
 		},
 		"job_abort_msg": {
 			"text": {
-				"en-us": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort?",
-				"fr-fr": "Tâche {jobKind} '{jobTitle}'' toujours en cours. Confirmer l'abandon ?",
-				"en-gb": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort ?",
-				"zh-cn": "{jobKind}任务'{jobTitle}''仍在处理中。您确认要放弃吗？",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Abbrechen bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la cancelación?",
-				"pt-pt": "Tarefa {jobKind} {} 'jobTitle em curso. Confirme o abandono?"
+				"en-us": "{jobKind} job '{title}'' still in progress. Do you confirm abort?",
+				"fr-fr": "Tâche {jobKind} '{title}'' toujours en cours. Confirmer l'abandon ?",
+				"en-gb": "{jobKind} job '{title}'' still in progress. Do you confirm abort ?",
+				"zh-cn": "{jobKind}任务'{title}''仍在处理中。您确认要放弃吗？",
+				"de-de": "Aufgabe {jobKind} '{title}' noch nicht beendet. Abbrechen bestätigen?",
+				"es-es": "Tarea {jobKind} '{title}'' todavía en curso. ¿Desea confirmar la cancelación?",
+				"pt-pt": "Tarefa {jobKind} {} 'title em curso. Confirme o abandono?"
 			},
 			"$key": "72062DBCE9A69F7AB5940058D9F61110D635307E"
 		},
@@ -45137,13 +45113,13 @@
 		},
 		"job_suspend_msg": {
 			"text": {
-				"en-us": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm suspend?",
-				"fr-fr": "Tâche {jobKind} '{jobTitle}'' toujours en cours. Confirmer l'interruption ?",
+				"en-us": "{jobKind} job '{title}'' still in progress. Do you confirm suspend?",
+				"fr-fr": "Tâche {jobKind} '{title}'' toujours en cours. Confirmer l'interruption ?",
 				"en-gb": "===",
-				"zh-cn": "{jobKind}任务'{jobTitle}''仍在处理中。您确认要中断吗？",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Unterbrechen bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la suspensión?",
-				"pt-pt": "Tarefa {jobKind} {} 'jobTitle em curso. Confirme End?"
+				"zh-cn": "{jobKind}任务'{title}''仍在处理中。您确认要中断吗？",
+				"de-de": "Aufgabe {jobKind} '{title}' noch nicht beendet. Unterbrechen bestätigen?",
+				"es-es": "Tarea {jobKind} '{title}'' todavía en curso. ¿Desea confirmar la suspensión?",
+				"pt-pt": "Tarefa {jobKind} {} 'title em curso. Confirme End?"
 			},
 			"$key": "5A402F072AFFFFB11CDEB2E18773E0D55BB685CE"
 		},
@@ -45161,13 +45137,13 @@
 		},
 		"job_resume_msg": {
 			"text": {
-				"en-us": "{jobKind} job '{jobTitle}'' have been paused. Do you confirm resume?",
-				"fr-fr": "La tâche {jobKind} '{jobTitle}'' a été interrompue. Confirmer la reprise ?",
+				"en-us": "{jobKind} job '{title}'' have been paused. Do you confirm resume?",
+				"fr-fr": "La tâche {jobKind} '{title}'' a été interrompue. Confirmer la reprise ?",
 				"en-gb": "===",
-				"zh-cn": "{jobKind}任务'{jobTitle}''已中断。确认要恢复吗？",
-				"de-de": "Die Aufgabe {jobKind} '{jobTitle}'' wurde unterbrochen. Fortsetzen bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' se ha interrumpido. ¿Desea confirmar la recuperación?",
-				"pt-pt": "Tarefa {} {} jobKind jobTitle 'foi interrompido. Confirme a recuperação?"
+				"zh-cn": "{jobKind}任务'{title}''已中断。确认要恢复吗？",
+				"de-de": "Die Aufgabe {jobKind} '{title}'' wurde unterbrochen. Fortsetzen bestätigen?",
+				"es-es": "Tarea {jobKind} '{title}'' se ha interrumpido. ¿Desea confirmar la recuperación?",
+				"pt-pt": "Tarefa {} {} jobKind title 'foi interrompido. Confirme a recuperação?"
 			},
 			"$key": "D13AD16934125B1E0005558C5FDC689D093DA49B"
 		},
