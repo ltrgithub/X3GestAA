@@ -9,6 +9,7 @@ using Microsoft.Office.Core;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using CommonDataHelper.GlobalHelper;
 
 namespace WordAddIn
 {
@@ -26,7 +27,7 @@ namespace WordAddIn
 
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutAndData);
             SyracuseOfficeCustomData customData;
             
@@ -238,7 +239,7 @@ namespace WordAddIn
                 Selection oldSelection = Globals.WordAddIn.Application.Selection;
                 Globals.WordAddIn.Application.ScreenUpdating = false;
 
-                JavaScriptSerializer ser = new JavaScriptSerializer();
+                SageJsonSerializer ser = new SageJsonSerializer();
                 ser.MaxJsonLength = Int32.MaxValue;
                 Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
 
