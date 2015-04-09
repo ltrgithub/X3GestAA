@@ -9,6 +9,7 @@ using CommonDataHelper;
 using Microsoft.Office.Interop.Word;
 using System.IO;
 using CommonDataHelper.UtilityHelper;
+using CommonDataHelper.GlobalHelper;
 
 namespace WordAddIn
 {
@@ -235,14 +236,12 @@ namespace WordAddIn
 
             return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
         }
-
-
-
+        
         public void debug() 
         {
             string jsonData;
 
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             jsonData = ser.Serialize(dictionary);
 
             MessageBox.Show(jsonData);
@@ -271,7 +270,7 @@ namespace WordAddIn
 
         public void writeDictionaryToDocument()
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             String json = ser.Serialize(dictionary);
 
             foreach (CustomXMLPart part in doc.CustomXMLParts)
@@ -307,7 +306,7 @@ namespace WordAddIn
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
-                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    SageJsonSerializer ser = new SageJsonSerializer();
                     return (Dictionary<String, object>) ser.DeserializeObject(node.Text);
                 }
             }
