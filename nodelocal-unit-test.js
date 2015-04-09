@@ -49,7 +49,8 @@ exports.config = {
         exposeStacktrace: false
     },
     collaboration: {
-        certdir: "certificates"  // path to certificates folder
+        certdir: "certificates",  // path to certificates folder
+        port: 27019
     },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
