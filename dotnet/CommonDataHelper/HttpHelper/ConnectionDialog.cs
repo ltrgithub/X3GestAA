@@ -40,7 +40,7 @@ namespace CommonDataHelper
             if (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 return;
 
-            if (e.Url.LocalPath.Equals(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
+            if (e.Url.LocalPath.StartsWith(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
             {
                 /*
                  * We've arrived at the new login page, so don't do anything.
@@ -107,7 +107,7 @@ namespace CommonDataHelper
                 }
                 else if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
-                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].Equals(_loginPart))
+                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].StartsWith(_loginPart))
                     {
                         /*
                          * We've been redirected to the new-style login page, so we have to display the page in the browser.
