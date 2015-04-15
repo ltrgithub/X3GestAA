@@ -4611,7 +4611,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{712DD58D-62FC-4C55-B8BF-C7A1D06634AF}</td><td/></row>
-		<row><td>ProductName</td><td>Sage ERP X3 Office Addins</td><td/></row>
+		<row><td>ProductName</td><td>Sage Office Addins</td><td/></row>
 		<row><td>ProductVersion</td><td>1.08.0003</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
