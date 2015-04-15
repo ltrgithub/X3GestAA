@@ -598,12 +598,16 @@ namespace ExcelAddIn
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
+
+                    // Now remove the hidden sheet.
                     SyracuseCustomData cd = new SyracuseCustomData(wb);
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
-                        ws.Rows.Clear();
+                        ws.Application.DisplayAlerts = false;
+                        ws.Delete();
                     }
+
                     return true;
                 }
             }
