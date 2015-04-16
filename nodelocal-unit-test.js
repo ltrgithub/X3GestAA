@@ -49,7 +49,7 @@ exports.config = {
         exposeStacktrace: false
     },
     collaboration: {
-        certdir: "certificates",  // path to certificates folder
+        certdir: "certificatetest",  // path to certificates folder
         port: 27019
     },
     mongodb: {
