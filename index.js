@@ -34,7 +34,7 @@ function _ext(number) {
 	return number;
 }
 //redirect standard output to file in cluster
-if (/^N\d+$/.test(process.argv[2])) {
+if (/^[NW]\d+$/.test(process.argv[2])) {
 	var os = require('os');
 	var fs = require('fs');
 	var util = require('util');
