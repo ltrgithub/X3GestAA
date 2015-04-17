@@ -8,6 +8,7 @@ using VB = Microsoft.Vbe.Interop;
 using System.Windows.Forms;
 using System.Linq;
 using CommonDataHelper;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -37,7 +38,7 @@ namespace ExcelAddIn
     {
         JsConsole _console = new JsConsole();
         Dictionary<String, SyracuseExcelTable> tableHelpers = new Dictionary<String, SyracuseExcelTable>();
-        JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
+        SageJsonSerializer jsSerializer = new SageJsonSerializer();
 
         public External() { }
         public Microsoft.Office.Interop.Excel.Application Application { get { return Globals.ThisAddIn.Application; } }
@@ -136,7 +137,7 @@ namespace ExcelAddIn
         }
         public void RegisterMacroOptions(String udfName, String udfDescription, String udfCategory, String argOptions)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             String[] argHelp = ser.Deserialize<String[]>(argOptions);
             // Macro options
             Globals.ThisAddIn.Application.MacroOptions2(udfName, udfDescription, Type.Missing, Type.Missing, false, Type.Missing,
@@ -151,7 +152,7 @@ namespace ExcelAddIn
             {
                 result[prop.Name] = (string)prop.Value;
             }
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             return ser.Serialize(result);
         }
         public void StoreCustomData(String address, String data)
