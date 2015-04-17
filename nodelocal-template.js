@@ -21,6 +21,13 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
+		sitecheck: {
+			localTest: "true",
+			host: "localhost",
+			port: 8124,
+			dataset: "production",
+			landingPage: "http://localhost:8080/"
+		},
 	},
 	system: {
 		// enables memwatch module
@@ -39,10 +46,10 @@ exports.config = {
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
 		// limit memory usage
 		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
-		// bindIP if IP_ANY is not the good binding (IPV6)
-		bindIP: "0000:00:00:00:00:00000",
-		// flag to expose stack traces to the UI (off by default for security)
-		exposeStacktrace: false
+        // flag to expose stack traces to the UI (off by default for security)
+        exposeStacktrace: false,
+        // bindIP if IP_ANY is not the good binding (IPV6)
+        bindIP: "0000:00:00:00:00:00000",
 	},
 	/*	integrationServer: {
 		port: 8125
@@ -223,7 +230,7 @@ exports.config = {
 		// etl related options
 
 		// metaFolder: The folder in which the etl will store the json metadata files when exporting
-	}
+	},
 };
 
 // for git enabled configurations one can override the standard config

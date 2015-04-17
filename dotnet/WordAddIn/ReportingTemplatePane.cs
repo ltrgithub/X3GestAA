@@ -11,6 +11,7 @@ using System.Web.Script.Serialization;
 
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Core;
+using CommonDataHelper.GlobalHelper;
 
 namespace WordAddIn
 {
@@ -109,7 +110,7 @@ namespace WordAddIn
             if (layoutData == "")
                 return;
 
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
 
             Object[] boxes = (Object[])layout["layout"];
