@@ -42,6 +42,32 @@
 	"$items": [
 		{
 			"$type": "menuItem",
+			"code": "STD_X3_HRM_AVOLUME",
+			"title": "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
+			"description": "description_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
+			"linkType": "$representation",
+			"icon": "",
+			"applicationMenu": true,
+			"facet": "$query",
+			"target": "self",
+			"isFactory": true,
+			"requestLevel": "99",
+			"application": {
+				"application": "x3",
+				"contract": "hrm"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AVOLUME",
+				"representation": "AVOLUME"
+			},
+			"module": null,
+			"categories": [],
+			"parameters": []
+		},
+		{
+			"$type": "menuItem",
 			"code": "STD_X3_HRM_PROC_FONCCAR0",
 			"title": "title_6b17898b-ab5a-4499-a71b-e5ef5711a08c",
 			"description": "description_6b17898b-ab5a-4499-a71b-e5ef5711a08c",
@@ -1651,32 +1677,6 @@
 			"parameters": []
 		},
 		{
-			"$type": "menuItem",
-			"code": "STD_X3_HRM_AVOLUME",
-			"title": "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
-			"description": "description_3455410c-3e30-4d4c-a0e3-16a3b75f7efa",
-			"linkType": "$representation",
-			"icon": "",
-			"applicationMenu": true,
-			"facet": "$query",
-			"target": "self",
-			"isFactory": true,
-			"requestLevel": "99",
-			"application": {
-				"application": "x3",
-				"contract": "hrm"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVOLUME",
-				"representation": "AVOLUME"
-			},
-			"module": null,
-			"categories": [],
-			"parameters": []
-		},
-		{
 			"$type": "menuCategory",
 			"code": "STD_EMPL",
 			"description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66"
@@ -1729,6 +1729,7 @@
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking"
 		},
 		"en-us": {
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3 Storage aera",
 			"title_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Skills and carreers",
 			"description_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Skills and carreers",
 			"title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
@@ -1783,13 +1784,13 @@
 			"description_be484c27-fbde-4a04-94d8-11912da4bc4a": "Time and activity management",
 			"title_cd13f1b0-c0a3-4d22-a9db-42594e29e9f5": "Payroll Management",
 			"title_26e0c424-c740-4b83-adcb-c10d3f890214": "Training management process",
-			"description_26e0c424-c740-4b83-adcb-c10d3f890214": "Training management process",
-			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3 Storage aera"
+			"description_26e0c424-c740-4b83-adcb-c10d3f890214": "Training management process"
 		},
 		"es-es": {
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguimiento de pagos"
 		},
 		"fr-fr": {
+			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espace de stockage X3",
 			"title_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Gestion des talents carrières et compétences",
 			"description_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Gestion des talents carrières et compétences",
 			"title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Absentéisme mois en cours",
@@ -1868,7 +1869,6 @@
 			"description_71fddcb3-18df-4572-9ba8-f15f4bd9c32a": "Processus gestion des frais de déplacement",
 			"title_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie",
 			"description_8b0d9f9c-506b-401d-9b0d-34196b20f65b": "Processus paramétrage plan de paie",
-			"title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Espace de stockage X3",
 			"title_db37c5ec-9ab5-42be-876d-d534dbe399c6": "ZFIN",
 			"description_db37c5ec-9ab5-42be-876d-d534dbe399c6": "ZFIN",
 			"title_6a33b74f-7b29-4c17-8a43-d96bafd32069": "portview"
