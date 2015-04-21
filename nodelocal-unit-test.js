@@ -222,8 +222,11 @@ exports.config = {
 	},
     unit_test: {
         // unit tests related options
-        x3endpoint: {},
-        elasticsearch: {}
+        // x3endpoint: {},
+        elasticsearch: {},
+        suppress: {
+            officeX3Lookup: true
+        }
     }
 };
 
