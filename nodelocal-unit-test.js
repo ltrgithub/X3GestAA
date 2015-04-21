@@ -225,7 +225,8 @@ exports.config = {
         // x3endpoint: {},
         elasticsearch: {},
         suppress: {
-            officeX3Lookup: true
+            officeX3Lookup: true,
+            x3print: true
         }
     }
 };
