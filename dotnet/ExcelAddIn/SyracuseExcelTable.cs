@@ -133,7 +133,9 @@ namespace ExcelAddIn
 
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
-            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
+            TemplateActions templateActions = new TemplateActions(null);
+            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (templateActions.isExcelTemplateDatasource(wb, _name))
                 return true;
 
             if (rowCount > 0)
@@ -314,8 +316,12 @@ namespace ExcelAddIn
         
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
-            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
+            TemplateActions templateActions = new TemplateActions(null);
+            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (templateActions.isExcelTemplateDatasource(wb, _name))
+            {
                 return _createTemplateListObject(activeCell, headers, actualColumnRanges, rowCount);
+            }
 
             ListObject resultListObject = null;
             Worksheet targetWorksheet = activeCell.Worksheet;
