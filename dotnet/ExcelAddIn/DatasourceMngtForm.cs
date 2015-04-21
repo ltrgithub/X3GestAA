@@ -9,6 +9,7 @@ namespace ExcelAddIn
         public DatasourceMngtForm()
         {
             InitializeComponent();
+            Globals.ThisAddIn.UpdateDataSourceList(Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet);
         }
 
         public void Connect(String serverUrl)
