@@ -41,7 +41,7 @@ if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
 }
 
 var tenantId = process.argv[3]; // optional tenantId
-if (tenantId.substr(0, 9) === "tenantId=") tenantId = tenantId.substr(9);
+if (tenantId && tenantId.substr(0, 9) === "tenantId=") tenantId = tenantId.substr(9);
 
 function finish(db, err) {
 	db && db.close();
