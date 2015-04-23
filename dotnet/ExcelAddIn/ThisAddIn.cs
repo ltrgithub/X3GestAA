@@ -143,7 +143,7 @@ namespace ExcelAddIn
 
         public void RefreshAll()
         {
-            UpdateDataSourceList(this.Application.ActiveWorkbook.ActiveSheet);
+            UpdateListObjects(this.Application.ActiveWorkbook.ActiveSheet);
             ActionPanel.RefreshAll();
         }
 
@@ -380,7 +380,7 @@ namespace ExcelAddIn
         /*
          * When a table is deleted on a worksheet, we must delete any associated ranges, as well as the associated datasource.
          */
-        public void UpdateDataSourceList(Worksheet ws)
+        public void UpdateListObjects(Worksheet ws)
         {
             Workbook workbook = getActiveWorkbook();
             string datasourceString = (new SyracuseCustomData(workbook)).GetCustomDataByName("datasourcesAddress");
@@ -388,34 +388,20 @@ namespace ExcelAddIn
             Dictionary<String, object> datasourceDict = (Dictionary<String, object>)ser.DeserializeObject(datasourceString);
             if (datasourceDict != null)
             {
-                List<Datasource> datasourceDeletionList = new List<Datasource>();
                 var datasources = datasourceDict.Select(root => root.Value).Cast<Dictionary<String, object>>().Where(element => element.ContainsKey("dsName"));
                 foreach (var row in datasources)
                 {
                     if (ws.ListObjects.Cast<ListObject>().Where(listObject => listObject.Name == (string)row["dsName"]).Count() == 0 &&
                         templateActions.isExcelTemplateDatasource(workbook, (string)row["dsName"]) == false)
                     {
-                        Datasource ds;
-                        ds.dsName = (string)row["dsName"];
-                        ds.uuid = (string)row["$uuid"];
-                        datasourceDeletionList.Add(ds);
-                    }
-                }
-
-                if (datasourceDeletionList.Count > 0)
-                {
-                    foreach (Datasource datasource in datasourceDeletionList)
-                    {
                         foreach (Name namedRange in ws.Names)
                         {
-                            String prefix = ws.Name + "!" + datasource.dsName + ".";
+                            String prefix = ws.Name + "!" + (string)row["dsName"] + ".";
                             if ((namedRange.Name != prefix) && (namedRange.Name.IndexOf(prefix) == 0))
                             {
                                 namedRange.Delete();
                             }
                         }
-                        datasourceDict.Remove(datasource.uuid);
-                        new External().StoreCustomData("A5", ser.Serialize(datasourceDict));
                     }
                 }
             }
