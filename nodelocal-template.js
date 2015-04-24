@@ -218,7 +218,13 @@ exports.config = {
 				proxy: "error", // Proxy calls
 			},
 			// Online help integation
-			help: "error"
+			help: "error",
+			studio: {
+				proxy: "error",
+				helper: "error",
+				session: "error",
+				dispatch: "error"
+			}
 		}
     },	
     unit_test: {
