@@ -13,6 +13,7 @@ using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
 using CommonDataHelper.PublisherHelper;
 using CommonDataHelper.GlobalHelper;
+using System.Linq;
 
 namespace ExcelAddIn
 {
@@ -142,6 +143,7 @@ namespace ExcelAddIn
 
         public void RefreshAll()
         {
+            UpdateListObjects(this.Application.ActiveWorkbook.ActiveSheet);
             ActionPanel.RefreshAll();
         }
 
@@ -367,6 +369,43 @@ namespace ExcelAddIn
         void Application_SheetSelectionChange(object sh, Excel.Range target)
         {
             ActionPanel.onSelectionChange();
+        }
+
+        struct Datasource
+        {
+            public string uuid;
+            public string dsName;
+        }
+
+        /*
+         * When a table is deleted on a worksheet, we must delete any associated ranges, as well as the associated datasource.
+         */
+        public void UpdateListObjects(Worksheet ws)
+        {
+            Workbook workbook = getActiveWorkbook();
+            string datasourceString = (new SyracuseCustomData(workbook)).GetCustomDataByName("datasourcesAddress");
+            SageJsonSerializer ser = new SageJsonSerializer();
+            Dictionary<String, object> datasourceDict = (Dictionary<String, object>)ser.DeserializeObject(datasourceString);
+            if (datasourceDict != null)
+            {
+                var datasources = datasourceDict.Select(root => root.Value).Cast<Dictionary<String, object>>().Where(element => element.ContainsKey("dsName"));
+                foreach (var row in datasources)
+                {
+                    if (ws.ListObjects.Cast<ListObject>().Where(listObject => listObject.Name == (string)row["dsName"]).Count() == 0 &&
+                        templateActions.isExcelTemplateDatasource(workbook, (string)row["dsName"]) == false)
+                    {
+                        foreach (Name namedRange in ws.Names)
+                        {
+                            String prefix = ws.Name + "!" + (string)row["dsName"] + ".";
+                            if ((namedRange.Name != prefix) && (namedRange.Name.IndexOf(prefix) == 0))
+                            {
+                                namedRange.Delete();
+                            }
+                        }
+                    }
+                }
+            }
+            return;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
