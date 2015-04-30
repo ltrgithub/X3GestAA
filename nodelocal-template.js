@@ -21,13 +21,14 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
-		sitecheck: {
+		// Enable only if you would like to check status of site
+		/*sitecheck: {
 			localTest: "true",
 			host: "localhost",
 			port: 8124,
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
-		},
+		},*/
 	},
 	system: {
 		// enables memwatch module
