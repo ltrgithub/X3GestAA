@@ -77,7 +77,7 @@ namespace RegistryHelper
         public static void copyFile()
         {
             string _programFiles = System.Environment.GetEnvironmentVariable("ProgramFiles(x86)");
-            string _sourceDir = _programFiles + @"\Sage\Sage ERP X3 Office Addins";
+            string _sourceDir = _programFiles + @"\Sage\Sage Office Addins";
             string _targetDir = _sourceDir + @"\..\InstallHelper";
             string _file = @"\CustomInstaller.exe";
             if (!Directory.Exists(_targetDir))
