@@ -30,7 +30,7 @@ namespace ExcelAddIn
             };
 
             if (!serverUrl.EndsWith("/")) serverUrl += "/";
-            webBrowser.Url = new Uri(serverUrl + "msoffice/lib/excel/html/config.html?url=%3Frepresentation%3Dexcelconfig.%24dashboard");
+            webBrowser.Url = new Uri(serverUrl + "msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24query%26format%3Dapplication/syracuse-excel-worksheet");
         }
 
         private void DatasourceMngtForm_FormClosing(object sender, FormClosingEventArgs e)

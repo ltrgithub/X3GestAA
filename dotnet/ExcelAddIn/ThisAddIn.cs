@@ -83,6 +83,7 @@ namespace ExcelAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             browserDialog = new BrowserDialog();
+            
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);
 
