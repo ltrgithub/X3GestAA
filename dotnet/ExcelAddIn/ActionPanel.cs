@@ -104,7 +104,7 @@ namespace ExcelAddIn
                                 _doRefreshAll = false;  
                             }
                         };
-                    webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                    webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24details&format=application/syracuse-excel-worksheet");
                 }
                 catch (Exception ex)
                 {
@@ -180,7 +180,7 @@ namespace ExcelAddIn
                 // get server url
                 var connectUrl = Globals.ThisAddIn.GetServerUrl(Globals.ThisAddIn.Application.ActiveWorkbook);
                 //
-                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24details&format=application/syracuse-excel-worksheet");
                 webBrowser.ObjectForScripting = new External();
                 ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
                 {
