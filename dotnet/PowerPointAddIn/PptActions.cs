@@ -205,6 +205,7 @@ namespace PowerPointAddIn
                     xcd.setForceRefresh(false);
                     xcd.writeDictionaryToDocument();
                     xcd.setChart(c);
+                    //"/msoffice/lib/ppt/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24details&format=application/syracuse-excel-worksheet"
                     browserDialog.loadPage("/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard", cd, xcd, xcd.getServerUrl());
                 }
                 catch (Exception) { }
