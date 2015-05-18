@@ -11,23 +11,23 @@ namespace RegistryHelper
     {       
         static void Main(string[] args)
         {
-            if (RegistryHelper.Office2013RegistryHelper.isOffice2013Installed())
+            if (RegistryHelper.OfficeRegistryHelper.isOffice2010Installed() || RegistryHelper.OfficeRegistryHelper.isOffice2013Installed())
             {
                 if (args.Length > 0)
                     _log("Action: " + args[0]);
                 if (args.Length > 0 && args[0] == "Install")
                 {
-                    Office2013RegistryHelper.copyAddinsRegistry();
-                    Office2013RegistryHelper.copyFile();
+                    OfficeRegistryHelper.copyAddinsRegistry();
+                    OfficeRegistryHelper.copyFile();
                 }
                 else if (args.Length > 0 && args[0] == "Remove")
                 {
-                    Office2013RegistryHelper.removeAddinRegistry();
+                    OfficeRegistryHelper.removeAddinRegistry();
                 }
             }
             else
             {
-                _log("Office 2013 64bit not found");
+                _log("Office 2010/2013 64bit not found");
             }
         }
 
