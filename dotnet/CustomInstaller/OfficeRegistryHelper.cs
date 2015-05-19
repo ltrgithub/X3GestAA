@@ -8,9 +8,23 @@ using System.IO;
 
 namespace RegistryHelper
 {
-    public class Office2013RegistryHelper
+    public class OfficeRegistryHelper
     {
         private const string _localMachineRoot = "HKEY_LOCAL_MACHINE";
+
+        public static Boolean isOffice2010Installed()
+        {
+            StringBuilder keyName = new StringBuilder(_localMachineRoot);
+            keyName.Append(@"\");
+            keyName.Append(@"Software\Microsoft\Office\14.0\Common\ProductVersion");
+
+            String valueName = "LastProduct";
+            String val = (String)Registry.GetValue(keyName.ToString(), valueName, String.Empty);
+
+            RegistryHelper.Program._log("LastProduct " + val);
+
+            return !String.IsNullOrEmpty(val);
+        }
 
         public static Boolean isOffice2013Installed()
         {
