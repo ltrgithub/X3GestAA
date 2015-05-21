@@ -250,14 +250,14 @@ namespace ExcelAddIn
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+            browserDialog.loadPage("/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query", customData);
         }
 
         public void RefreshExcelTemplate(SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+            browserDialog.loadPage("/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query", customData);
         }
 
         public void RefreshExcelReport()
@@ -389,7 +389,7 @@ namespace ExcelAddIn
             customData.setDocumentTitle("");
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+            browserDialog.loadPage("/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query", customData);
         }
 
         public void CleanupReportTemplateData()
