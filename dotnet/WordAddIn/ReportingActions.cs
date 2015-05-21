@@ -111,7 +111,7 @@ namespace WordAddIn
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
             DateTime dummy = DateTime.Now;
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
+            browserDialog.loadPage("/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dword.%24query%26dummy=" + dummy.ToString(), customData);
         }
 
         public void RefreshWordReportTemplate(Document doc, SyracuseOfficeCustomData customData)
@@ -119,7 +119,7 @@ namespace WordAddIn
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
             DateTime dummy = DateTime.Now;
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
+            browserDialog.loadPage("/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dword.%24query%26dummy=" + dummy.ToString(), customData);
         }
 
         public void PopulateWordReportTemplate(Document doc, SyracuseOfficeCustomData customData, Boolean delUrl)
@@ -135,7 +135,7 @@ namespace WordAddIn
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
             DateTime dummy = DateTime.Now;
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), customData);
+            browserDialog.loadPage("/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dword.%24query%26dummy=" + dummy.ToString(), customData);
         }
 
         public void RefreshReport()

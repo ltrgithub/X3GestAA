@@ -73,7 +73,7 @@ namespace WordAddIn
             {
                 // Workaround for require.js bound problem
                 DateTime dummy = DateTime.Now;
-                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
+                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dword.%24query&dummy=" + dummy.ToString());
                 this.serverUrl = serverUrl;
             }
             return true;
