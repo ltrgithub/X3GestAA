@@ -3,9 +3,9 @@
 		"role": {
 			"$key": "code",
 			"$localized": ["description"],
-      "badges": {
-	"$key": "code"
-      },
+			"badges": {
+				"$key": "code"
+			},
 			"securityProfile": {
 				"$key": "code"
 			}
@@ -41,11 +41,12 @@
 	"$includeAfter": [],
 	"$items": [{
 		"$type": "securityProfile",
-		"code": "CADMIN",
+		"code": "ADMCA",
 		"description": "description_814daedc-1f04-4e20-97ad-ceb67c43ecd8",
 		"authoringLevel": "admin",
 		"securityLevel": 1,
-		"$factory": true,"$factoryOwner": "SAGE",
+		"$factory": true,
+		"$factoryOwner": "SAGE",
 		"profileItems": [{
 			"code": "myProfile",
 			"description": "description_29cc9d96-4cbb-4baa-a126-30a890d7aac6",
@@ -70,9 +71,25 @@
 			"canWrite": false,
 			"canDelete": false,
 			"canExecute": false
-		}, {
+		},{
+			"code": "preferences",
+			"description": "description_cf85634C-5104-4b8b-bf42-0e1ca26d2b69",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true 
+		},{
 			"code": "authoring",
 			"description": "description_5bc9b226-9224-434c-a241-80b70d8988bf",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+		},{
+			"code": "pages",
+			"description": "description_abc9b226-9224-434c-a241-80b70d8988bf",
 			"canCreate": true,
 			"canRead": true,
 			"canWrite": true,
@@ -89,11 +106,11 @@
 		}, {
 			"code": "maintenanceAndStatus",
 			"description": "description_91993d8a-1a61-4245-8b44-4e7c9612e224",
-			"canCreate": true,
-			"canRead": true,
-			"canWrite": true,
-			"canDelete": true,
-			"canExecute": true
+			"canCreate": false,
+			"canRead": false,
+			"canWrite": false,
+			"canDelete": false,
+			"canExecute": false
 		}, {
 			"code": "importData",
 			"description": "description_5cc4833f-9731-4aef-9c61-4d752bcfad09",
@@ -113,25 +130,28 @@
 		}]
 	}, {
 		"$type": "role",
-		"code": "CADMIN",
+		"code": "ADMCA",
 		"description": "description_4a921978-2f34-454f-a781-aae1667ba16a",
 		"badges": [
 			"ERPDEV"
 		],
-		"securityProfile": "CADMIN",
-		"$factory": true,"$factoryOwner": "SAGE"
+		"securityProfile": "ADMCA",
+		"$factory": true,
+		"$factoryOwner": "SAGE"
 	}, {
 		"$type": "group",
 		"description": "description_59cfa737-d988-4a70-9615-27e60fd94335",
-		"role": "CADMIN",
-		"$factory": true,"$factoryOwner": "SAGE"
+		"role": "ADMCA",
+		"$factory": true,
+		"$factoryOwner": "SAGE"
 	}, {
 		"$type": "user",
-		"login": "cadmin",
+		"login": "admca",
 		"lastName": "Customer administrator",
-		"password": "c4135b1a3a1a63b1ad780c2419568775",
+		"password": "059174f3815009ac754c27d21fa8246a",
 		"groups": ["description_59cfa737-d988-4a70-9615-27e60fd94335"],
-		"$factory": true,"$factoryOwner": "SAGE"
+		"$factory": true,
+		"$factoryOwner": "SAGE"
 	}],
 	"$localization": {
 		"en-us": {
@@ -145,7 +165,9 @@
 			"description_42e3da25-7961-452d-9195-ec4c39b0a130": "Teams, documents and storage, Office integration",
 			"description_91993d8a-1a61-4245-8b44-4e7c9612e224": "System status and logs, maintainance actions",
 			"description_5cc4833f-9731-4aef-9c61-4d752bcfad09": "Import data",
-			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data"
+			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data",
+			"description_cf85634C-5104-4b8b-bf42-0e1ca26d2b69": "Preferences",
+			"description_abc9b226-9224-434c-a241-80b70d8988bf": "Navigation : dashboards, vignettes, menus, pages"
 		},
 		"fr-fr": {
 			"description_4a921978-2f34-454f-a781-aae1667ba16a": "Customer administrator",
@@ -158,7 +180,9 @@
 			"description_42e3da25-7961-452d-9195-ec4c39b0a130": "Teams, documents and storage, Office integration",
 			"description_91993d8a-1a61-4245-8b44-4e7c9612e224": "System status and logs, maintainance actions",
 			"description_5cc4833f-9731-4aef-9c61-4d752bcfad09": "Import data",
-			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data"
+			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data",
+			"description_cf85634C-5104-4b8b-bf42-0e1ca26d2b69": "Preferences",
+			"description_abc9b226-9224-434c-a241-80b70d8988bf": "Navigation : dashboards, vignettes, menus, pages"
 		}
 	}
 }
