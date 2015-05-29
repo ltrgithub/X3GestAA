@@ -238,7 +238,13 @@ exports.config = {
 				helper: "error",
 				session: "error",
 				dispatch: "error"
-			}
+			},
+			"soap-generic": {
+				pool: "error",
+				stub: "error",
+				request: "error",
+				ackcall: "error"
+			},
 		}
     },	
     unit_test: {
