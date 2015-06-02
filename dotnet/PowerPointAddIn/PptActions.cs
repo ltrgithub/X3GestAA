@@ -205,8 +205,9 @@ namespace PowerPointAddIn
                     xcd.setForceRefresh(false);
                     xcd.writeDictionaryToDocument();
                     xcd.setChart(c);
-                    //"/msoffice/lib/ppt/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24details&format=application/syracuse-excel-worksheet"
-                    browserDialog.loadPage("/msoffice/lib/ppt/html/main.html?url=%3Frepresentation%3Dppt.%24query", cd, xcd, xcd.getServerUrl());
+                    browserDialog.loadPage(@"/msoffice/lib/ppt/html/main.html?url=%3Frepresentation%3Dppt.%24query", 
+                                            @"/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard",
+                                            cd, xcd, xcd.getServerUrl());
                 }
                 catch (Exception) { }
             }
@@ -250,7 +251,10 @@ namespace PowerPointAddIn
                 PptAddInJSExternal external = new PptAddInJSExternal(cd, xcd, browserDialog);
                 // Workaround for require.js bound problem
                 DateTime dummy = DateTime.Now;
-                browserDialog.loadPage("/msoffice/lib/ppt/html/main.html?url=%3Frepresentation%3Dppt.%24query%26dummy=" + dummy.ToString(), external, xcd.getServerUrl());
+
+                browserDialog.loadPage(@"/msoffice/lib/ppt/html/main.html?url=%3Frepresentation%3Dppt.%24query%26dummy=" + dummy.ToString(), 
+                                        @"/msoffice/lib/ppt/ui/main.html?url=%3Frepresentation%3Dppthome.%24dashboard%26dummy=" + dummy.ToString(),
+                                        external, xcd.getServerUrl());
             }
         }
 
