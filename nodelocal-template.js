@@ -12,6 +12,12 @@ exports.config = {
 	// This option allow to partners to set a factory ID on security 
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
+	/*
+	 * With this flag set to true, even Syracuse administrators will not be able to associate 
+	 * Syracuse users to X3 users on specific endpoints if the login match to Sage factory syracuse user's login.
+	 * For instance, it will be impossible to map a Syracuse user with ADMIN X3 user.
+	 */
+	adminUserRestrict: false,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
@@ -74,11 +80,18 @@ exports.config = {
         }
     },
 	session: {
+		// interactive session timeout (minutes).
 		timeout: 20, // minutes
-		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
-		checkInterval: 60, // secondes
+		// session extra timeout (minutes) if async tracker is running.
+		asyncTimeout: 20,
+		// session timeout (minutes - decimals allowed) for stateless (web service) requests.
+		statelessTimeout: 1,
+		// interval (in seconds) between scans to release sessions.
+		checkInterval: 60,
+		// ?
 		//		ignoreStoreSession: true,
-		"auth": "basic"
+		// authentication modes
+		"auth": "basic",
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
@@ -228,7 +241,13 @@ exports.config = {
 				helper: "error",
 				session: "error",
 				dispatch: "error"
-			}
+			},
+			"soap-generic": {
+				pool: "error",
+				stub: "error",
+				request: "error",
+				ackcall: "error"
+			},
 		}
     },	
     unit_test: {
