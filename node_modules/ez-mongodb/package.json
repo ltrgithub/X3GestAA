@@ -6,6 +6,12 @@
     "type": "git",
     "url": "git://github.com/Sage/ez-mongodb.git"
   },
+  "ez": {
+    "factories": [{
+        "protocol": "mongodb",
+        "module": "ez-mongodb/lib/factory"
+    }]          
+  },
   "engines": {
     "node": ">=0.10.8"
   },

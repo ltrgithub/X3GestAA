@@ -21,6 +21,14 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
+		// Enable only if you would like to check status of site
+		/*sitecheck: {
+			localTest: "true",
+			host: "localhost",
+			port: 8124,
+			dataset: "production",
+			landingPage: "http://localhost:8080/"
+		},*/
 	},
 	system: {
 		// enables memwatch module
@@ -37,10 +45,12 @@ exports.config = {
 		// optional: path to some stubs to use in development and tests, relative to index.js
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
-        // limit memory usage
-        memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit
+		// limit memory usage
+		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
         // flag to expose stack traces to the UI (off by default for security)
         exposeStacktrace: false,
+        // bindIP if IP_ANY is not the good binding (IPV6)
+        bindIP: "0000:00:00:00:00:00000"
 	},
 	/*	integrationServer: {
 		port: 8125
@@ -212,13 +222,39 @@ exports.config = {
 				proxy: "error", // Proxy calls
 			},
 			// Online help integation
-			help: "error"
+			help: "error",
+			studio: {
+				proxy: "error",
+				helper: "error",
+				session: "error",
+				dispatch: "error"
+			}
 		}
     },	
     unit_test: {
         // unit tests related options
         x3endpoint: {},
         elasticsearch: {}
-    }
+    },
 };
+
+// for git enabled configurations one can override the standard config
+exports.branch_configs = [{
+    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V7",
+            localInitScript: [] // some local data to import on database creation : standard import json file
+        }
+    }
+}, {
+    branch: "akira.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V8",
+            localInitScript: [] // some local data to import on database creation
+        }
+    }
+}];
+
 
