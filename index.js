@@ -112,7 +112,7 @@ if (config.streamline.flamegraph && config.streamline.fast) {
 	config.streamline.fast = false;
 }
 // automatically enable 'aggressive' optimisation in fibers fast mode
-if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
+//if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
 require('coffee-script/lib/coffee-script/extensions');
 
