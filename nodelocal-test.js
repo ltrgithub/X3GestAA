@@ -50,15 +50,24 @@ exports.config = {
 		siteuriSuffix: "/auth/login/page",
 		cloudwatch: true,
 		cloudwatch: true,
-		healthId: "c2E6U2FnZUVSUFgzIUNsb3VkU29sdXRpb24=",
-		instance: "X3CLOUD",
-		catalog: "sageerpx3",
-		timeout: 10000,
 		esHostName: "http://internal-Elasticsearch-272472412.us-east-1.elb.amazonaws.com",
 		esPort: 9200,
 		mongoHostName: "10.198.2.4:27017,10.198.2.68,10.198.2.132",
-		mongoPort: 27017
+		mongoPort: 27017,
+		ds:	{
+			healthId: "c2E6U2FnZUVSUFgzIVRYbA0K",
+			instance: "X3CLOUD",
+			catalog: "sageerpx3",
+			timeout: 10000,
+		},
 	},
+	alerts:{
+        consecutivePeriods: 1,
+        period: 300,
+		threshold: 60000,
+		actionsEnabled: true,
+		actions: "arn:aws:sns:us-east-1:653201425183:TestEmail"
+       },
 	streamline: {
 		// "homedrive": "c:", // running node as service
 		// "homepath": "/syracuse", // running node as service
