@@ -34,7 +34,7 @@ function _ext(number) {
 	return number;
 }
 //redirect standard output to file in cluster
-if (/^N\d+$/.test(process.argv[2])) {
+if (/^[NW]\d+$/.test(process.argv[2])) {
 	var os = require('os');
 	var fs = require('fs');
 	var util = require('util');
@@ -112,7 +112,7 @@ if (config.streamline.flamegraph && config.streamline.fast) {
 	config.streamline.fast = false;
 }
 // automatically enable 'aggressive' optimisation in fibers fast mode
-if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
+//if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
 require('coffee-script/lib/coffee-script/extensions');
 
