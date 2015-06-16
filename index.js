@@ -131,11 +131,11 @@ require('syracuse-license').register(function(err, data) {
 		var patchtools = require('syracuse-patch/lib/patchtools');
 		patchtools.waitfunctionCb(function(err) {
 			if (err) {
-				console.log("Error " + err.stack);
+				console.log("Error " + err +" "+err.stack);
 			} else {
 				var syracuse = require('syracuse-main/lib/syracuse');
 				syracuse.runPatchCb(function(err) {
-					console.log("Error " + err.stack);
+					console.log("Error during patching " + err +" "+err.stack);
 				});
 			}
 		});
@@ -152,7 +152,7 @@ require('syracuse-license').register(function(err, data) {
 				console.error("Need a license to start. " + e);
 				process.exit(5);
 			} else {
-				console.log(e.stack);
+				console.log("Startup error "+e+" "+e.stack);
 			}
 		}
 	}
