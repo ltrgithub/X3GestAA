@@ -10,7 +10,6 @@ using CommonDataHelper;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
 using CommonDataHelper.UtilityHelper;
-using CommonDataHelper.GlobalHelper;
 
 
 namespace PowerPointAddIn
@@ -189,7 +188,7 @@ namespace PowerPointAddIn
 
         public void writeDictionaryToDocument()
         {
-            SageJsonSerializer ser = new SageJsonSerializer();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             String json = ser.Serialize(dictionary);
 
             foreach (CustomXMLPart part in pres.CustomXMLParts)
@@ -219,7 +218,7 @@ namespace PowerPointAddIn
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
-                    SageJsonSerializer ser = new SageJsonSerializer();
+                    JavaScriptSerializer ser = new JavaScriptSerializer();
                     return (Dictionary<String, object>) ser.DeserializeObject(node.Text);
                 }
             }

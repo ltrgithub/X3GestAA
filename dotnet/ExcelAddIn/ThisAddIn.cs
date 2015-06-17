@@ -12,8 +12,6 @@ using Microsoft.Office.Interop.Excel;
 using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
 using CommonDataHelper.PublisherHelper;
-using CommonDataHelper.GlobalHelper;
-using System.Linq;
 
 namespace ExcelAddIn
 {
@@ -143,7 +141,6 @@ namespace ExcelAddIn
 
         public void RefreshAll()
         {
-            UpdateListObjects(this.Application.ActiveWorkbook.ActiveSheet);
             ActionPanel.RefreshAll();
         }
 
@@ -371,43 +368,6 @@ namespace ExcelAddIn
             ActionPanel.onSelectionChange();
         }
 
-        struct Datasource
-        {
-            public string uuid;
-            public string dsName;
-        }
-
-        /*
-         * When a table is deleted on a worksheet, we must delete any associated ranges, as well as the associated datasource.
-         */
-        public void UpdateListObjects(Worksheet ws)
-        {
-            Workbook workbook = getActiveWorkbook();
-            string datasourceString = (new SyracuseCustomData(workbook)).GetCustomDataByName("datasourcesAddress");
-            SageJsonSerializer ser = new SageJsonSerializer();
-            Dictionary<String, object> datasourceDict = (Dictionary<String, object>)ser.DeserializeObject(datasourceString);
-            if (datasourceDict != null)
-            {
-                var datasources = datasourceDict.Select(root => root.Value).Cast<Dictionary<String, object>>().Where(element => element.ContainsKey("dsName"));
-                foreach (var row in datasources)
-                {
-                    if (ws.ListObjects.Cast<ListObject>().Where(listObject => listObject.Name == (string)row["dsName"]).Count() == 0 &&
-                        templateActions.isExcelTemplateDatasource(workbook, (string)row["dsName"]) == false)
-                    {
-                        foreach (Name namedRange in ws.Names)
-                        {
-                            String prefix = ws.Name + "!" + (string)row["dsName"] + ".";
-                            if ((namedRange.Name != prefix) && (namedRange.Name.IndexOf(prefix) == 0))
-                            {
-                                namedRange.Delete();
-                            }
-                        }
-                    }
-                }
-            }
-            return;
-        }
-
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
             if (mainHandle != null)
@@ -606,7 +566,7 @@ namespace ExcelAddIn
                 }
                 if (foundNode != null)
                 {
-                    SageJsonSerializer ser = new SageJsonSerializer();
+                    JavaScriptSerializer ser = new JavaScriptSerializer();
                     Dictionary<String, object> dict = (Dictionary<String, object>)ser.DeserializeObject(foundNode.Text);
 
                     string proto = null;
@@ -637,16 +597,12 @@ namespace ExcelAddIn
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
-
-                    // Now remove the hidden sheet.
                     SyracuseCustomData cd = new SyracuseCustomData(wb);
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
-                        ws.Application.DisplayAlerts = false;
-                        ws.Delete();
+                        ws.Rows.Clear();
                     }
-
                     return true;
                 }
             }

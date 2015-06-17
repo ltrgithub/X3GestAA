@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using Microsoft.Office.Core;
 using System.Security.AccessControl;
 using CommonDataHelper;
-using CommonDataHelper.GlobalHelper;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
@@ -183,7 +182,7 @@ namespace WordAddIn
 
             try
             {
-                SageJsonSerializer ser = new SageJsonSerializer();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
                 Dictionary<String, object> mailMergeData = (Dictionary<String, object>)ser.DeserializeObject(mailMergeDataJSon);
 
                 createMailMergeDataFile(mailMergeData);

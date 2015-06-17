@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Interop.Excel;
 using System.Text;
-using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -82,8 +81,7 @@ namespace ExcelAddIn
             if (layoutData.Equals(String.Empty))
                 return;
 
-            SageJsonSerializer ser = new SageJsonSerializer();
-
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutData);
 
             String title = String.Empty;

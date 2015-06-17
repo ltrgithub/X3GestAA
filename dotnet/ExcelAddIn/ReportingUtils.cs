@@ -4,7 +4,6 @@ using System.Linq;
 using Microsoft.Office.Interop.Excel;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -20,7 +19,7 @@ namespace ExcelAddIn
     {
         public static void createExcelTemplate(Workbook workbook, String layoutAndData)
         {
-            SageJsonSerializer ser = new SageJsonSerializer();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutAndData);
             SyracuseOfficeCustomData customData;
 
@@ -110,7 +109,7 @@ namespace ExcelAddIn
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = false;
 
-                SageJsonSerializer ser = new SageJsonSerializer();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
                 Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(data);
 
                 Dictionary<String, object> entityData = (Dictionary<String, object>)layout["data"];

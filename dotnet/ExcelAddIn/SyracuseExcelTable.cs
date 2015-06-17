@@ -133,9 +133,7 @@ namespace ExcelAddIn
 
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
-            TemplateActions templateActions = new TemplateActions(null);
-            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
-            if (templateActions.isExcelTemplateDatasource(wb, _name))
+            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
                 return true;
 
             if (rowCount > 0)
@@ -316,12 +314,8 @@ namespace ExcelAddIn
         
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
-            TemplateActions templateActions = new TemplateActions(null);
-            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
-            if (templateActions.isExcelTemplateDatasource(wb, _name))
-            {
+            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
                 return _createTemplateListObject(activeCell, headers, actualColumnRanges, rowCount);
-            }
 
             ListObject resultListObject = null;
             Worksheet targetWorksheet = activeCell.Worksheet;
@@ -528,13 +522,15 @@ namespace ExcelAddIn
             if (_listObject == null) return false;
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
-            
-            Range activeCell = _listObject.Range[1, 1];
-            Worksheet activeWorksheet = activeCell.Worksheet;
             try
             {
+                //Range activeCell = cell;
+                Range activeCell = _listObject.Range[1, 1];
+                Worksheet activeWorksheet = activeCell.Worksheet;
+                //
                 object[] resources = data;
-                if (ResizeTable(startLine + resources.Length) == false)
+                //
+                if(ResizeTable(startLine + resources.Length) == false)
                     return false;
                 //
                 Dictionary<string, object[,]> _data = new Dictionary<string, object[,]>();
@@ -564,7 +560,7 @@ namespace ExcelAddIn
                     for (int col = 0; col < _fields.Length; col++)
                     {
                         String fieldName = _fields[col]._name;
-                        if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, fieldName) == false)
+                        if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, fieldName) == false) 
                             continue;
 
                         if ((_columnRanges.ContainsKey(fieldName)) && (res[col] != null))
@@ -590,7 +586,7 @@ namespace ExcelAddIn
                 }
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
-                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false)
+                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false) 
                         continue;
 
                     int startRow = namedRange.Value.Row + startLine;
@@ -607,15 +603,10 @@ namespace ExcelAddIn
                         }
                     }
 
-                    activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
+                    activeWorksheet.Range[  activeWorksheet.Cells[startRow, namedRange.Value.Column],
                                             activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Value = _data[namedRange.Key];
                 }
                 return true;
-            }
-            catch (Exception)
-            {
-                Globals.ThisAddIn.UpdateListObjects(activeWorksheet);
-                return UpdateTable(data, startLine, placeholderTable);
             }
             finally
             {

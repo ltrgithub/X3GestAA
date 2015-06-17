@@ -8,7 +8,6 @@ using VB = Microsoft.Vbe.Interop;
 using System.Windows.Forms;
 using System.Linq;
 using CommonDataHelper;
-using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -38,7 +37,7 @@ namespace ExcelAddIn
     {
         JsConsole _console = new JsConsole();
         Dictionary<String, SyracuseExcelTable> tableHelpers = new Dictionary<String, SyracuseExcelTable>();
-        SageJsonSerializer jsSerializer = new SageJsonSerializer();
+        JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
 
         public External() { }
         public Microsoft.Office.Interop.Excel.Application Application { get { return Globals.ThisAddIn.Application; } }
@@ -54,35 +53,24 @@ namespace ExcelAddIn
         public bool Aborted { get { return Globals.ThisAddIn.Aborted; } set { Globals.ThisAddIn.Aborted = value; }}
         public void StartUpdateTable()
         {
-            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
-                return;
-
             Aborted = false;
             Globals.ThisAddIn.ShowProgressForm(true);
             Globals.ThisAddIn.Application.ScreenUpdating = false;
         }
         public void EndUpdateTable()
         {
-            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
-                return;
-
             Globals.ThisAddIn.Application.ScreenUpdating = true;
             Globals.ThisAddIn.ShowProgressForm(false);
         }
         public bool UpdateTable(String name, String simplePrototype, String data, int startLine)
         {
-            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
-                return false;
-
             if (tableHelpers == null || tableHelpers.ContainsKey(name) == false)
                 return false;
 
             var dataArray = (object[])jsSerializer.DeserializeObject(data);
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
 
-            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
-            TemplateActions templateActions = new TemplateActions(null);
-            if (templateActions.isExcelTemplateDatasource(wb, name))
+            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
             {
                 /*
                  * If we have placeholders, we may have multiple tables and therefore multiple list objects.
@@ -102,11 +90,6 @@ namespace ExcelAddIn
         }
         public bool ResizeTable(String name, String simplePrototype, int linesCount, string cellAddress = "")
         {
-            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
-            TemplateActions templateActions = new TemplateActions(null);
-            if (templateActions.isExcelTemplate(wb))
-                return false;
-
             // resolve cell address
             Range target = null;
             if (cellAddress != "")
@@ -118,17 +101,14 @@ namespace ExcelAddIn
                 tableHelpers.Add(name, table);
             table = tableHelpers[name];
 
-            if (templateActions.isExcelTemplateDatasource(wb, name))
+            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+            if (orderedPlaceholderTableList.Count > 0)
             {
-                var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
-                if (orderedPlaceholderTableList.Count > 0)
+                foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
                 {
-                    foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
-                    {
-                        table.ResizeTable(linesCount, placeholderTable.First().placeholder.name);
-                    }
-                    return true;
+                    table.ResizeTable(linesCount, placeholderTable.First().placeholder.name);
                 }
+                return true;
             }
   
             return table.ResizeTable(linesCount);
@@ -156,7 +136,7 @@ namespace ExcelAddIn
         }
         public void RegisterMacroOptions(String udfName, String udfDescription, String udfCategory, String argOptions)
         {
-            SageJsonSerializer ser = new SageJsonSerializer();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             String[] argHelp = ser.Deserialize<String[]>(argOptions);
             // Macro options
             Globals.ThisAddIn.Application.MacroOptions2(udfName, udfDescription, Type.Missing, Type.Missing, false, Type.Missing,
@@ -171,7 +151,7 @@ namespace ExcelAddIn
             {
                 result[prop.Name] = (string)prop.Value;
             }
-            SageJsonSerializer ser = new SageJsonSerializer();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             return ser.Serialize(result);
         }
         public void StoreCustomData(String address, String data)

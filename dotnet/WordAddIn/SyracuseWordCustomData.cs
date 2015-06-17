@@ -9,7 +9,6 @@ using CommonDataHelper;
 using Microsoft.Office.Interop.Word;
 using System.IO;
 using CommonDataHelper.UtilityHelper;
-using CommonDataHelper.GlobalHelper;
 
 namespace WordAddIn
 {
@@ -217,9 +216,6 @@ namespace WordAddIn
             String tempFileName = Path.GetTempFileName();
             string tempFileName2 = Path.GetTempPath() + Guid.NewGuid();
 
-            // remove MailMerge-Query 
-            doc.MailMerge.MainDocumentType = WdMailMergeMainDocType.wdNotAMergeDocument;
-
             doc.SaveAs2(tempFileName, WdSaveFormat.wdFormatDocumentDefault);
 
             File.Copy(tempFileName, tempFileName2);
@@ -236,12 +232,14 @@ namespace WordAddIn
 
             return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
         }
-        
+
+
+
         public void debug() 
         {
             string jsonData;
 
-            SageJsonSerializer ser = new SageJsonSerializer();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             jsonData = ser.Serialize(dictionary);
 
             MessageBox.Show(jsonData);
@@ -270,7 +268,7 @@ namespace WordAddIn
 
         public void writeDictionaryToDocument()
         {
-            SageJsonSerializer ser = new SageJsonSerializer();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             String json = ser.Serialize(dictionary);
 
             foreach (CustomXMLPart part in doc.CustomXMLParts)
@@ -306,7 +304,7 @@ namespace WordAddIn
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
-                    SageJsonSerializer ser = new SageJsonSerializer();
+                    JavaScriptSerializer ser = new JavaScriptSerializer();
                     return (Dictionary<String, object>) ser.DeserializeObject(node.Text);
                 }
             }
