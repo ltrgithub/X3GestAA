@@ -41,10 +41,7 @@ if (config.collaboration.driver && config.collaboration.driver !== "mongodb") {
 }
 
 var tenantId = process.argv[3]; // optional tenantId
-/*var db = new mongodb.Db(config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse", new mongodb.Server(config.collaboration.hostname || "localhost", config.collaboration.port || 27017, {}), {
-	w: "majority"
-});*/
-
+if (tenantId && tenantId.substr(0, 9) === "tenantId=") tenantId = tenantId.substr(9);
 
 function finish(db, err) {
 	db && db.close();
@@ -55,7 +52,7 @@ function finish(db, err) {
 }
 
 var mongoOpt = (config.mongodb || {}).options;
-var dbUrl = "mongodb://" + (config.collaboration.hostname || "localhost") + ":" + (config.collaboration.port || 27017) + "/" + (config.collaboration.dataset || (tenantId ? tenantId+"-" : "")+"syracuse");
+var dbUrl = "mongodb://" + (config.collaboration.connectionString || (config.collaboration.hostname || "localhost") + ":" + (config.collaboration.port || 27017)) + "/" + (tenantId ? tenantId+"-" : "")+ (config.collaboration.dataset || "syracuse");
 //db.open(function(err, db) {
 mongodb.MongoClient.connect(dbUrl, mongoOpt || {
     db: {

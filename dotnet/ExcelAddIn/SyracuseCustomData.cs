@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Interop.Excel;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -23,7 +24,7 @@ namespace ExcelAddIn
                 Range dicCell = (Range)reservedSheet.Range["A1"];
                 if (dicCell.Value2 != null)
                 {
-                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    SageJsonSerializer ser = new SageJsonSerializer();
                     return (Dictionary<String, object>)ser.DeserializeObject((String)dicCell.Value2);
                 }
                 else
@@ -41,7 +42,7 @@ namespace ExcelAddIn
                         dic["syracuseLocale"] = "A9";
                         dic["syracuseEndpoint"] = "A10";
                         // store it
-                        JavaScriptSerializer ser = new JavaScriptSerializer();
+                        SageJsonSerializer ser = new SageJsonSerializer();
                         StoreCustomDataAtAddress("A1", ser.Serialize(dic));
                         //
                         return dic;
@@ -115,7 +116,7 @@ namespace ExcelAddIn
 
             try
             {
-                JavaScriptSerializer ser = new JavaScriptSerializer();
+                SageJsonSerializer ser = new SageJsonSerializer();
                 Object[] localesArray = (Object[])ser.DeserializeObject(GetCustomDataByName("supportedLocales"));
 
                 foreach (Object l in localesArray)

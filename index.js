@@ -34,7 +34,7 @@ function _ext(number) {
 	return number;
 }
 //redirect standard output to file in cluster
-if (/^N\d+$/.test(process.argv[2])) {
+if (/^[NW]\d+$/.test(process.argv[2])) {
 	var os = require('os');
 	var fs = require('fs');
 	var util = require('util');
@@ -112,7 +112,7 @@ if (config.streamline.flamegraph && config.streamline.fast) {
 	config.streamline.fast = false;
 }
 // automatically enable 'aggressive' optimisation in fibers fast mode
-if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
+//if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
 require('coffee-script/lib/coffee-script/extensions');
 
@@ -131,11 +131,11 @@ require('syracuse-license').register(function(err, data) {
 		var patchtools = require('syracuse-patch/lib/patchtools');
 		patchtools.waitfunctionCb(function(err) {
 			if (err) {
-				console.log("Error " + err.stack);
+				console.log("Error " + err +" "+err.stack);
 			} else {
 				var syracuse = require('syracuse-main/lib/syracuse');
 				syracuse.runPatchCb(function(err) {
-					console.log("Error " + err.stack);
+					console.log("Error during patching " + err +" "+err.stack);
 				});
 			}
 		});
@@ -152,7 +152,7 @@ require('syracuse-license').register(function(err, data) {
 				console.error("Need a license to start. " + e);
 				process.exit(5);
 			} else {
-				console.log(e.stack);
+				console.log("Startup error "+e+" "+e.stack);
 			}
 		}
 	}
