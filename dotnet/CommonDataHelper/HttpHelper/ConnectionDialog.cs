@@ -107,7 +107,7 @@ namespace CommonDataHelper
                 }
                 else if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
-                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].Equals(_loginPart))
+                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].StartsWith(_loginPart))
                     {
                         /*
                          * We've been redirected to the new-style login page, so we have to display the page in the browser.
