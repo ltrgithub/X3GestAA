@@ -40,7 +40,7 @@ namespace CommonDataHelper
             if (webBrowser.ReadyState != WebBrowserReadyState.Complete)
                 return;
 
-            if (e.Url.LocalPath.Equals(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
+            if (e.Url.LocalPath.StartsWith(_loginPart) || e.Url.LocalPath.Equals(_logoutPart))
             {
                 /*
                  * We've arrived at the new login page, so don't do anything.
