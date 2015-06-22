@@ -12,61 +12,57 @@ exports.config = {
 	// This option allow to partners to set a factory ID on security
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
-	/*
-	 * With this flag set to true, even Syracuse administrators will not be able to associate
-	 * Syracuse users to X3 users on specific endpoints if the login match to Sage factory syracuse user's login.
-	 * For instance, it will be impossible to map a Syracuse user with ADMIN X3 user.
-	 */
-	adminUserRestrict: false,
+	adminUserRestrict: true,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
 		// the mongodb database names and the elastic search index names.
-		multiTenant: false,
+		multiTenant: true,
 		// https indicates if the public URLs must all be https URLs.
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
-		https: false,
-		// Enable only if you would like to check status of site
-		/*sitecheck: {
-			localTest: "true",
-			host: "localhost",
-			port: 8124,
-			dataset: "production",
-			landingPage: "http://localhost:8080/"
-		},*/
+		https: true,
+
 	},
+	//nanny :{
+
+		//tracer: console.log
+
+	//},
 	system: {
-		// enables memwatch module
-		memwatch: false,
-		// this options enables developpement features like extended authoring rights.
-		// it shouldn't be enabled in client configurations as modifications made can be lost
-		// on patch application, etc.
-		enableDevelopmentFeatures: false,
-		// enables some specific client framework attributes for use with the test robot
-		enableTestRobot: false,
-		// optional: path to some stubs to use in development and tests, relative to index.js
-		// stubsPath = "stubs"
-		protectSettings: false, // internal: true for some production servers to avoid import of initial data
-		// limit memory usage
-		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
-        // flag to expose stack traces to the UI (off by default for security)
-        exposeStacktrace: false
-        // bindIP if IP_ANY is not the good binding (IPV6)
-        bindIP: "0000:00:00:00:00:00000"
+	// 	// enables memwatch module
+	// 	memwatch: false,
+	// 	// this options enables developpement features like extended authoring rights.
+	// 	// it shouldn't be enabled in client configurations as modifications made can be lost
+	// 	// on patch application, etc.
+	// 	enableDevelopmentFeatures: true,
+	// 	// enables some specific client framework attributes for use with the test robot
+	// 	enableTestRobot: false,
+	// 	// optional: path to some stubs to use in development and tests, relative to index.js
+	// 	// stubsPath = "stubs"
+	// 	protectSettings: false, // internal: true for some production servers to avoid import of initial data
+ //        // limit memory usage
+        memoryLimit: 0, // strategy to limit memory usage: limit is an indication; 0 means no limit
+ //        // flag to expose stack traces to the UI (off by default for security)
+ //        exposeStacktrace: false,
 	},
-	/*	integrationServer: {
-		port: 8125
+	port: 8124,
+
+	collaboration: {
+		driver: "mongodb",
+		dataset: "syracuse",
+		hostname: "10.198.2.4:27017,10.198.2.68",
+		port: 27017,
+		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
+		//certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
+        	cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
 	},
-	*/
-    collaboration: {
-        certdir: "certificates"  // path to certificates folder
-    },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
             db: {
-                w: 1
+                w: 1,
+                //readPreference:"nearest"
             },
             server: {
             },
@@ -77,18 +73,11 @@ exports.config = {
         }
     },
 	session: {
-		// interactive session timeout (minutes).
 		timeout: 20, // minutes
-		// session extra timeout (minutes) if async tracker is running.
-		asyncTimeout: 20,
-		// session timeout (minutes - decimals allowed) for stateless (web service) requests.
-		statelessTimeout: 1,
-		// interval (in seconds) between scans to release sessions.
-		checkInterval: 60,
-		// ?
-		// ignoreStoreSession: true,
-		// authentication modes
-		"auth": "basic",
+		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
+		checkInterval: 60, // secondes
+		//		ignoreStoreSession: true,
+		"auth": ["sage-id"]
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
@@ -111,9 +100,6 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
-        plugin : {
-            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
-        },
 		protocol: {
 			// trace: console.log,
 			LBFChunkSize: 64 // in Kb
@@ -131,8 +117,7 @@ exports.config = {
 		// cache tracing
 		cache: {
 			// trace: console.log,
-		},
-        reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+		}
 	},
 
 	help: {
@@ -148,6 +133,8 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
+		hostname: "elastic_search_master",
+        port: 9200,
 		//tracer: console.log,
 
 		// Using a minimal stemmer should only group plurals rather than a
@@ -196,61 +183,25 @@ exports.config = {
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 	},
-	traces: {
-		console: false, // For developers
-		// Levels specified here will be used for default traces settings
-		// Valid levels are : 'info', 'debug', 'warn', and 'error'
-		// Levels not specified will be initialized with 'error' level
-		levels: {
-			// Object-relational mapping
-			orm: {
-				factory: "error", // Syracuse entities management
-				x3: "error", // X3 ERP entities management
-				mongodb: "error", // MongoDB interactions
-			},
-			// Elastic search communication
-			search: "error",
-			// X3 ERP communication layer
-			x3Comm: {
-				jsRunner: "error", // Syracuse calls from 4GL processes
-				pool: "error", // X3 clients pools
-				print: "error", // Print server comunication layer
-				adxwhat: "error"
-			},
-			// Classic server
-			classic: {
-				srvCache: "error", // Cache management with Web application server
-				protocol: "error", // Protocol communication layer
-				std: "error", // Basic traces
-				action: "error", // Sent actions
-				session: "error", // Sessions management
-			},
-			businessObjects: "error", // Business Objects integration
-			// X3 HRM portal integration
-			hrm: {
-				loadBalancer: "error", // Load balancer
-				proxy: "error", // Proxy calls
-			},
-			// Online help integation
-			help: "error",
-			studio: {
-				proxy: "error",
-				helper: "error",
-				session: "error",
-				dispatch: "error"
-			},
-			"soap-generic": {
-				pool: "error",
-				stub: "error",
-				request: "error",
-				ackcall: "error"
-			},
-		}
-    },
-    unit_test: {
-        // unit tests related options
-        x3endpoint: {},
-        elasticsearch: {}
-    },
-};
+	mongoNotify: {
+		host: '10.198.254.30',
+		port: '27017',
+		database: 'syracuse',
+	},
+	aws: {
+	 	"region": "us-west-2",
 
+	},
+    	unit_test: {
+        	// unit tests related options
+        	x3endpoint: {},
+        	elasticsearch: {}
+    },
+	health:{
+		parallel: 4,
+		delay: 300,
+		logUrl: "https://devapi.dev-sageerpx3online.com/healthLogs/production",
+		cloudwatch: true,
+    },
+
+};
