@@ -7,6 +7,7 @@ using CommonDataHelper;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
 using CommonDataHelper.UtilityHelper;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -27,6 +28,7 @@ namespace ExcelAddIn
         private const String resourceUrlProperty    = "resourceUrl";
         private const String forceRefreshProperty   = "forceRefresh";
         private const String dataSourceUuidProperty = "dataSourceUuid";
+        private const String datasourcesAddress = "datasourcesAddress";
         private const String createModeProperty     = "createMode";
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
@@ -126,6 +128,14 @@ namespace ExcelAddIn
         public String getCreateMode()
         {
             return getStringProperty(createModeProperty, false);
+        }
+        public void setDatasources(String datasources)
+        {
+            setStringProperty(datasourcesAddress, datasources);
+        }
+        public String getDatasources()
+        {
+            return getStringProperty(datasourcesAddress, false);
         }
         public void setDocumentUrl(String url)
         {
@@ -229,7 +239,7 @@ namespace ExcelAddIn
         {
             string jsonData;
 
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             jsonData = ser.Serialize(dictionary);
 
             MessageBox.Show(jsonData);
@@ -258,7 +268,7 @@ namespace ExcelAddIn
         
         public void writeDictionaryToDocument()
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             String json = ser.Serialize(dictionary);
 
             foreach (CustomXMLPart part in workbook.CustomXMLParts)
@@ -288,7 +298,7 @@ namespace ExcelAddIn
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
-                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    SageJsonSerializer ser = new SageJsonSerializer();
                     return (Dictionary<String, object>) ser.DeserializeObject(node.Text);
                 }
             }
