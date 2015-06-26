@@ -142,7 +142,8 @@ exports.config = {
         	mongo:{
             		server:"10.198.2.4,10.198.2.68",
             		port:27017,
-        	}
+        	},
+        	vpcId: "vpc-d3c1f1b6",
     	},
 	aws: {
         "region": "us-east-1",
