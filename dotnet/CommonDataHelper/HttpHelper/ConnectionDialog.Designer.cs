@@ -37,24 +37,22 @@
             this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser.IsWebBrowserContextMenuEnabled = false;
             this.webBrowser.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(27, 25);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(912, 710);
+            this.webBrowser.Size = new System.Drawing.Size(684, 577);
             this.webBrowser.TabIndex = 0;
             // 
             // ConnectionDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(912, 710);
+            this.ClientSize = new System.Drawing.Size(684, 577);
             this.Controls.Add(this.webBrowser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConnectionDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Sage ERP X3";
+            this.Text = "Sage";
             this.ResumeLayout(false);
 
         }
