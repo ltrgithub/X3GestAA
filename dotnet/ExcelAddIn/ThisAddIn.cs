@@ -87,7 +87,7 @@ namespace ExcelAddIn
             commons = new CommonUtils(browserDialog);
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
+            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
 
             taskPane.Visible = BaseUrlHelper.ShowActionPanel;
@@ -663,7 +663,7 @@ namespace ExcelAddIn
                  * To prevent exceptions being thrown, we'll create a new ActionPanel and add it to the CustomTaskPanes.
                  */
                 CustomTaskPanes.Remove(taskPane);
-                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage ERP X3");
+                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage");
                 taskPane.VisibleChanged += ActionPanel_VisibleChanged;
             }
             taskPane.Visible = state;
