@@ -38,6 +38,7 @@ namespace WordAddIn
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            this.Text = ((WebBrowser)sender).DocumentTitle;
             if (hideOnCompletion == true)
             {
 //                this.Hide();
