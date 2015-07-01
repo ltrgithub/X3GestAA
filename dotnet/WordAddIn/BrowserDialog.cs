@@ -38,6 +38,7 @@ namespace WordAddIn
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            this.Text = ((WebBrowser)sender).DocumentTitle;    
             if (_useOldPathAndQuery == null && ((WebBrowser)sender).DocumentTitle.Equals("Sage Office") == false && string.IsNullOrEmpty(_oldUrlPart) == false)
             {
                 _useOldPathAndQuery = true;
