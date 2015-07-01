@@ -63,7 +63,7 @@ exports.config = {
             },
             replSet: {
                 readPreference: "primaryPreferred",
-                rs_name: "mongodevRepl"
+                rs_name: "mongoStagvRepl"
             },
             mongos: {
             }
