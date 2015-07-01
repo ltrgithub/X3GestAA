@@ -130,11 +130,11 @@ namespace ExcelAddIn
              * Under certain circumstances, the document title is different from that contained in the document text.
              * We therefore need to test for both if the title is not equal to Syracuse.
              */
-            if (!(title != null && (title.Equals("Syracuse") || title.Equals("Syracuse Office") || title.StartsWith("Sage") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
+            if (!(title != null && (title.Equals("Syracuse") || title.Equals("Sage Office") || title.StartsWith("Sage") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
             {
                 CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
             }
-            else if (_useOldPathAndQuery == null && title.Equals("Syracuse Office") == false)
+            else if (_useOldPathAndQuery == null && title.Equals("Sage Office") == false)
             {
                 _useOldPathAndQuery = true;
                 webBrowser.Url = new Uri(BaseUrlHelper.BaseUrl, "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");

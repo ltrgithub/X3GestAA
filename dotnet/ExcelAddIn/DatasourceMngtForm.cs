@@ -19,7 +19,7 @@ namespace ExcelAddIn
 
         private void documentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            if (_useOldPathAndQuery == null && string.IsNullOrEmpty(((WebBrowser)sender).DocumentTitle) == false && ((WebBrowser)sender).DocumentTitle.Equals("Syracuse Office") == false)
+            if (_useOldPathAndQuery == null && string.IsNullOrEmpty(((WebBrowser)sender).DocumentTitle) == false && ((WebBrowser)sender).DocumentTitle.Equals("Sage Office") == false)
             {
                 /*
                  * We connecting to an old-style server, so use the old path and query

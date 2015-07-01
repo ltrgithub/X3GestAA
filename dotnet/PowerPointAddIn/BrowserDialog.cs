@@ -35,7 +35,7 @@ namespace PowerPointAddIn
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            if (_useOldPathAndQuery == null && ((WebBrowser)sender).DocumentTitle.Equals("Syracuse Office") == false && string.IsNullOrEmpty(_oldUrlPart) == false)
+            if (_useOldPathAndQuery == null && ((WebBrowser)sender).DocumentTitle.Equals("Sage Office") == false && string.IsNullOrEmpty(_oldUrlPart) == false)
             {
                 _useOldPathAndQuery = true;
                 webBrowser.Url = new Uri(BaseUrlHelper.BaseUrl, _oldUrlPart);
