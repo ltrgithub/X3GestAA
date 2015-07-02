@@ -9,6 +9,7 @@ using System.Threading;
 using System.Globalization;
 using Microsoft.Win32;
 using CommonDataHelper;
+using CommonDataHelper.GlobalHelper;
 
 
 namespace ExcelAddIn
@@ -121,7 +122,7 @@ namespace ExcelAddIn
              * Under certain circumstances, the document title is different from that contained in the document text.
              * We therefore need to test for both if the title is not equal to Syracuse.
              */
-            if (!(title != null && (title.Equals("Syracuse") ||  title.Equals("Sage ERP X3") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
+            if (!(title != null && (title.Equals("Syracuse") ||  title.StartsWith("Sage") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
             {
                 CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
             }
@@ -219,7 +220,8 @@ namespace ExcelAddIn
 //            par[1]["parameters"] = "";
             par[1]["limit"] = -1;
             //
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
+
             loadTables(ser.Serialize(par), delegate(string errorMessage) {
                 if (errorMessage == "")
                     MessageBox.Show("Loaded");
