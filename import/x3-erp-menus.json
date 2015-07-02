@@ -94,6 +94,58 @@
     },
     {
       "$type": "menuCategory",
+      "code": "STD_VAT",
+      "description": "description_15f67b94-e99b-4988-a519-a2fde35391f6",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RGBVAT04",
+      "title": "title_1030bd54-6756-42a2-bea0-960ae603ccbe",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "requestName": "GBVAT04",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_CPTA"
+      },
+      "categories": [
+        {
+          "code": "STD_VAT"
+        }
+      ],
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_2b71cae0-4398-4b42-bd7a-f9b8897c12f2",
+          "prompt": false,
+          "value": "RGBVAT04"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_361690c8-bba0-40f4-8513-34d73f8d3e94",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuCategory",
       "code": "STD_RETURNS",
       "description": "description_d50670da-8a82-4f82-b54a-6091996bc268",
       "$factory": true,
@@ -406,58 +458,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "$type": "menuCategory",
-      "code": "STD_VAT",
-      "description": "description_15f67b94-e99b-4988-a519-a2fde35391f6",
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RGBVAT04",
-      "title": "title_1030bd54-6756-42a2-bea0-960ae603ccbe",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "requestName": "GBVAT04",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_CPTA"
-      },
-      "categories": [
-        {
-          "code": "STD_VAT"
-        }
-      ],
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_2b71cae0-4398-4b42-bd7a-f9b8897c12f2",
-          "prompt": false,
-          "value": "RGBVAT04"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_361690c8-bba0-40f4-8513-34d73f8d3e94",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
     },
     {
       "$type": "menuCategory",
@@ -5053,6 +5053,40 @@
           "value": "SACH01"
         }
       ]
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_WEB",
+      "description": "description_40f0bd63-2063-4a72-97ef-d9d9282f789c",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_SAGE",
+      "title": "title_5f308928-c802-483a-bb12-b00ad0714b45",
+      "linkType": "$external",
+      "applicationMenu": false,
+      "facet": "$query",
+      "externalUrl": "http://www.sage.fr",
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": null,
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MENV"
+      },
+      "categories": [
+        {
+          "code": "STD_WEB"
+        }
+      ],
+      "parameters": []
     },
     {
       "$type": "menuCategory",
@@ -9811,6 +9845,40 @@
         "code": "STD_X3_ERP_MIMP"
       },
       "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuCategory",
+      "code": "STD_WEB",
+      "description": "description_40f0bd63-2063-4a72-97ef-d9d9282f789c",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_BAIDU",
+      "title": "title_9f244524-a375-4483-98fb-712c32ac3768",
+      "linkType": "$external",
+      "applicationMenu": false,
+      "facet": "$query",
+      "externalUrl": "http://www.baidu.com",
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": null,
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MENV"
+      },
+      "categories": [
+        {
+          "code": "STD_WEB"
+        }
+      ],
       "parameters": []
     },
     {
@@ -18045,74 +18113,6 @@
     },
     {
       "$type": "menuCategory",
-      "code": "STD_WEB",
-      "description": "description_40f0bd63-2063-4a72-97ef-d9d9282f789c",
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_SAGE",
-      "title": "title_5f308928-c802-483a-bb12-b00ad0714b45",
-      "linkType": "$external",
-      "applicationMenu": false,
-      "facet": "$query",
-      "externalUrl": "http://www.sage.fr",
-      "target": "self",
-      "$factory": true,
-      "requestLevel": "99",
-      "$factoryOwner": "SAGE",
-      "application": null,
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MENV"
-      },
-      "categories": [
-        {
-          "code": "STD_WEB"
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "$type": "menuCategory",
-      "code": "STD_WEB",
-      "description": "description_40f0bd63-2063-4a72-97ef-d9d9282f789c",
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_BAIDU",
-      "title": "title_9f244524-a375-4483-98fb-712c32ac3768",
-      "linkType": "$external",
-      "applicationMenu": false,
-      "facet": "$query",
-      "externalUrl": "http://www.baidu.com",
-      "target": "self",
-      "$factory": true,
-      "requestLevel": "99",
-      "$factoryOwner": "SAGE",
-      "application": null,
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MENV"
-      },
-      "categories": [
-        {
-          "code": "STD_WEB"
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "$type": "menuCategory",
       "code": "STD_MVTS",
       "description": "description_3c8d2b00-8e51-4d61-b3ea-65d99869c35f",
       "$factory": true,
@@ -21744,6 +21744,7 @@
   "$localization": {
     "ar-sa": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "STD_X3_ERP_RACH023",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "STD_X3_ERP_RACH042",
       "title_139b36b0-a58b-4838-804d-944862689ea0": "STD_X3_ERP_VEN02_005",
@@ -21751,7 +21752,6 @@
       "title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
       "title_142b7ff6-81ad-4dfc-b51b-802f11ab1b84": "STD_X3_ERP_VEN02_004",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "STD_X3_ERP_RCPT009",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "STD_X3_ERP_SVEN01",
       "title_185aae2d-4cef-4a79-bb16-90812f0f1668": "STD_X3_ERP_RCPT008",
@@ -21851,6 +21851,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "STD_X3_ERP_RVEN023",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "STD_X3_ERP_CPT02_001",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "STD_X3_ERP_SAGE",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "STD_X3_ERP_RVEN042",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "STD_X3_ERP_SSAV01",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "STD_X3_ERP_RTRS001",
@@ -21955,6 +21956,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "STD_X3_ERP_RGPA017",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "بلجيكا",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "STD_X3_ERP_SGPA06",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
@@ -22129,8 +22131,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "STD_X3_ERP_RCRM006",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "STD_X3_ERP_RVEN048",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "STD_X3_ERP_RGPA018",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "STD_X3_ERP_SAGE",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
       "title_33c44aaf-c76f-43ba-95b4-92ec2e5a2aa6": "STD_X3_ERP_ACH04_001",
@@ -22182,6 +22182,10 @@
       "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Rechnung",
       "title_5fdaedfa-10fc-4fe5-b541-60ed83a7617c": "portview",
       "title_5c761d41-e655-47ca-8130-e20c01490813": "cube",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "Einstellung VAT Lieferant",
+      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "Mehrwertsteuer",
+      "title_2b71cae0-4398-4b42-bd7a-f9b8897c12f2": "portview",
+      "title_361690c8-bba0-40f4-8513-34d73f8d3e94": "cube",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Analyse der Retourengründe",
       "description_d50670da-8a82-4f82-b54a-6091996bc268": "Retouren",
       "title_445e4247-4142-4ebf-af1b-795a227fa9a5": "portview",
@@ -22202,10 +22206,6 @@
       "description_8c2835f5-714f-4429-a941-f9ef03d14601": "Stammdaten",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "Eingehende Schecks",
       "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Zahlungsverfolgung",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "Einstellung VAT Lieferant",
-      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "Mehrwertsteuer",
-      "title_2b71cae0-4398-4b42-bd7a-f9b8897c12f2": "portview",
-      "title_361690c8-bba0-40f4-8513-34d73f8d3e94": "cube",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "Lieferungen bisher ni. abges.",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Rückst. / Abgrenz. ausstehend",
       "title_2426a452-f849-43aa-873c-9a65ad30e3f3": "portview",
@@ -22436,6 +22436,7 @@
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "Verwaltung Mehrwertsteuer",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Aufw. bestellte Artikeln/Lief.",
       "title_48e1b0fe-5aa6-4cbd-8cfc-1c9cda757b7e": "portview",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "Liste der Gegenrechn./Kunde",
       "title_6a063c4b-68ee-4167-95ec-83cf69f45f37": "portview",
       "title_a3463223-b80e-42e5-85f2-8595ef85d56d": "cube",
@@ -22664,6 +22665,7 @@
       "title_59cd7d03-71d4-4b32-aa04-dbf86ff0b88d": "portview",
       "title_b6f5c3bf-3155-49e6-a6fc-f6b3c04c86d8": "cube",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgien",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "Maschinenzahlen",
       "title_93791e85-300f-420f-a9a4-a5277434eec2": "portview",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Inaktive Stücklisten",
@@ -23065,8 +23067,6 @@
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "Fremdb. Auftrag zu erteilen",
       "title_d110e310-4e63-4c30-9854-42b4a6286a91": "portview",
       "title_9d6851b7-151a-449b-bad9-74bfd846bb00": "cube",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Überfällige Aufträge",
       "title_617d1de8-d32d-4c53-ab20-7b47a8294091": "portview",
       "title_47a28b46-2f44-4501-ac8f-59becaae4eca": "cube",
@@ -23259,6 +23259,7 @@
     },
     "en-gb": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "Unpaid prepayments",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "Supplier VAT set up",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Return Reasons Analysis",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "SC prod requirements to cover ",
       "title_139b36b0-a58b-4838-804d-944862689ea0": "Prospecting Proposal",
@@ -23266,7 +23267,6 @@
       "title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/Main Sales Rep",
       "title_142b7ff6-81ad-4dfc-b51b-802f11ab1b84": "Prospecting Tracking",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "Cust Payments: Received Checks",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "Supplier VAT set up",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "Unclo. Deliveries on curr. day",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisions Pending",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "Quote Analysis / Sales Exe",
@@ -23370,6 +23370,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "Projects / Sales Reps",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "Manage VAT",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Ordered Expenses Prdt/Suppl",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "Branch Invoices / Customer",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "Invoiced contract",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "Invoiced Turnover/Geo. Zones",
@@ -23476,6 +23477,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "CRM Activities- Appointment",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "WO of current day in shortage",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgium",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "Machine Amounts",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Inactive Sales BOMs",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Obtained Discount Rate",
@@ -23653,8 +23655,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "France Leads/Activity sector",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "Financial Credit Memos / Cust",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "Subcontract Orders to Place",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Late WOs",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "Invoiced Expenses of curr. day",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "Orders Lines to Receipt",
@@ -23806,6 +23806,8 @@
     "en-us": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "Open Prepayment Requests",
       "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Invoices",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "Supplier VAT set up",
+      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "VAT",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Returns by Reason",
       "description_d50670da-8a82-4f82-b54a-6091996bc268": "Returns",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "Subcontracting Prod Requiremnt",
@@ -23819,8 +23821,6 @@
       "description_8c2835f5-714f-4429-a941-f9ef03d14601": "Common Data",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "Process Cash Receipts",
       "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "Supplier VAT set up",
-      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "VAT",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "Shipments not Invoiced",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Transactions to Process",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "Quotes by Sales Rep ",
@@ -23934,6 +23934,8 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "Projects by Sales Rep",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "Manage VAT",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Orders by Product Family",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
+      "description_40f0bd63-2063-4a72-97ef-d9d9282f789c": "WEB",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "Counter Sales Invoice",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "Invoiced Contracts",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "Invoiced Turnover/Geo. Zones",
@@ -24013,7 +24015,6 @@
       "title_82e6161d-52a8-4998-9a41-8282e867f60e": "Manage Stock Data",
       "title_85baec1b-87e0-424d-8a06-7eaf69524907": "Invoic. Turnover/Cust category",
       "title_86015a69-2cf8-4b3a-b136-267548fd276f": "Sage Switzerland",
-      "description_40f0bd63-2063-4a72-97ef-d9d9282f789c": "WEB",
       "title_87e6aa75-7a8f-4a0e-9028-f8ed77a9af48": "Invoice Service Contracts",
       "title_87ff348d-7007-4226-b137-0f654a871fe6": "Manage Costs",
       "description_e6747881-3d04-41e3-a58b-872815fd16f0": "Costs",
@@ -24051,6 +24052,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "CRM Appointments",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "WO's with Short Stock",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgium",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "Machine Cost ",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Inactive Sales BOMs",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Purchase Inv with Discount",
@@ -24237,8 +24239,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "Leads by Business Sector",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "Financial Credit Memos ",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "Subcontract Orders to Process",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Late WOs",
       "description_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Late WOs",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "Purchase Inv by Supplier",
@@ -24406,6 +24406,8 @@
     "es-es": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "Anticipos no cobrados",
       "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Facturas",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "IVA Proveedores",
+      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "IVA",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Análisis motivo devoluciones",
       "description_d50670da-8a82-4f82-b54a-6091996bc268": "Devoluciones",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "Necesidades a cubrir (Subc)",
@@ -24419,8 +24421,6 @@
       "description_8c2835f5-714f-4429-a941-f9ef03d14601": "Datos base",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "Cobro cliente: Cheque recibido",
       "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguimiento de pagos",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "IVA Proveedores",
-      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "IVA",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "Entr.no saldadas al día de hoy",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisiones en espera",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "Análisis ofertas /comercial",
@@ -24533,6 +24533,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "Proyectos /Representante",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "Gestionar el IVA",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Gastos pedidos art./prov.",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "Facturas mostrador /cliente",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "Contrato facturado",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "CV Fac/Zona geog,",
@@ -24649,6 +24650,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "Acción comercial Visita",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "OF del día en ruptura",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Bélgica",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "Importes máquina",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Estructuras com. inactivas",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Índice de descuento obtenido",
@@ -24830,8 +24832,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "Leads Francia/Sector actividad",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "Abonos/clientes",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "Pedidos Subc a preparar",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "OF en retraso",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "Gastos facturados del día",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "Lín.ped. a recepc.",
@@ -24985,6 +24985,8 @@
     "fr-fr": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "Acomptes non réglés",
       "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Factures",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "TVA fournisseur",
+      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "TVA",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Analyse motifs de retour",
       "description_d50670da-8a82-4f82-b54a-6091996bc268": "Retours",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "Besoins à couvrir art.ss-trait",
@@ -24998,8 +25000,6 @@
       "description_8c2835f5-714f-4429-a941-f9ef03d14601": "Données de base",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "Règlt clients : Chèques reçus",
       "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Suivi règlements",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "TVA fournisseur",
-      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "TVA",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "Livr. non soldées aujourd'hui",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisions en attente",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "Analyse devis / commercial",
@@ -25112,6 +25112,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "Affaires / représentant",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "Gérer la TVA",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Dépenses commandées art./four",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "Factures comptoir / client",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "Contrat facturé",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "CA facturé / zones géo.",
@@ -25228,6 +25229,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "Action commerciale rendez-vous",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "OF du jour en rupture",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgique",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "Montants machine",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Nomenclatures com. inactives",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Taux de remise obtenu",
@@ -25409,8 +25411,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "Leads France/Secteur activité",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "Avoirs financiers / client",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "Commandes SsTraitance à passer",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "OF en retard",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "Dépenses facturées du jour",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "Lignes comm. à récept",
@@ -25571,6 +25571,7 @@
     },
     "it-it": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "STD_X3_ERP_RACH023",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "STD_X3_ERP_RACH042",
       "title_139b36b0-a58b-4838-804d-944862689ea0": "STD_X3_ERP_VEN02_005",
@@ -25578,7 +25579,6 @@
       "title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
       "title_142b7ff6-81ad-4dfc-b51b-802f11ab1b84": "STD_X3_ERP_VEN02_004",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "STD_X3_ERP_RCPT009",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "STD_X3_ERP_SVEN01",
       "title_185aae2d-4cef-4a79-bb16-90812f0f1668": "STD_X3_ERP_RCPT008",
@@ -25679,6 +25679,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "STD_X3_ERP_RVEN023",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "STD_X3_ERP_CPT02_001",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "STD_X3_ERP_RVEN042",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "STD_X3_ERP_SSAV01",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "X3_ERP_WCAZONGEO",
@@ -25784,6 +25785,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "STD_X3_ERP_RGPA017",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgio",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "STD_X3_ERP_SGPA06",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
@@ -25960,8 +25962,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "STD_X3_ERP_RCRM006",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "STD_X3_ERP_RVEN048",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "STD_X3_ERP_RGPA018",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "X3_ERP_RSTO0061_1",
@@ -26111,6 +26111,7 @@
     },
     "pl-pl": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "STD_X3_ERP_RACH023",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "STD_X3_ERP_RACH042",
       "title_139b36b0-a58b-4838-804d-944862689ea0": "STD_X3_ERP_VEN02_005",
@@ -26118,7 +26119,6 @@
       "title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
       "title_142b7ff6-81ad-4dfc-b51b-802f11ab1b84": "STD_X3_ERP_VEN02_004",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "STD_X3_ERP_RCPT009",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "STD_X3_ERP_SVEN01",
       "title_185aae2d-4cef-4a79-bb16-90812f0f1668": "STD_X3_ERP_RCPT008",
@@ -26218,6 +26218,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "STD_X3_ERP_RVEN023",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "STD_X3_ERP_CPT02_001",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "STD_X3_ERP_RVEN042",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "STD_X3_ERP_SSAV01",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "X3_ERP_WCAZONGEO",
@@ -26323,6 +26324,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "STD_X3_ERP_RGPA017",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgia",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "STD_X3_ERP_SGPA06",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
@@ -26499,8 +26501,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "STD_X3_ERP_RCRM006",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "STD_X3_ERP_RVEN048",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "STD_X3_ERP_RGPA018",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "X3_ERP_RSTO0061_1",
@@ -26651,6 +26651,8 @@
     "pt-pt": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "Ped.Pagamento não pagos",
       "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Facturas",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
+      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "IVA",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Análise motivos devolução",
       "description_d50670da-8a82-4f82-b54a-6091996bc268": "Devoluções",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "Necess.Cobrir art. Subcont.",
@@ -26664,8 +26666,6 @@
       "description_8c2835f5-714f-4429-a941-f9ef03d14601": "Dados de base",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "Pagam. Clientes : Cheq. Receb.",
       "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguim. Pagamentos",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
-      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "IVA",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "Exped. n/ saldad. à data hoje",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisões em espera",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "Análise orçamentos / represent",
@@ -26778,6 +26778,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "Projecto / Representantes",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "Gestão IVA",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Desp. Encom. Art./Forn.",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "Venda a dinheiro",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "Contratos facturados",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "CA facturado / zonas geo.",
@@ -26894,6 +26895,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "Acção comercial compromisso",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "OF's do dia em ruptura",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "belgica",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "Montante maquina",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Nomenclat. Comerc. Inactivas",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "taxa desconto obtida",
@@ -27075,8 +27077,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "Leads Franc./sector activ.",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "Credito Financ. / Cliente",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "Encom. Subcontratação a passar",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "OF's em atraso",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "Despesas facturadas dia hoje",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "Linhas enc. a recepc",
@@ -27229,6 +27229,7 @@
     },
     "ru-ru": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "STD_X3_ERP_RACH023",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "STD_X3_ERP_RACH042",
       "title_139b36b0-a58b-4838-804d-944862689ea0": "STD_X3_ERP_VEN02_005",
@@ -27236,7 +27237,6 @@
       "title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
       "title_142b7ff6-81ad-4dfc-b51b-802f11ab1b84": "STD_X3_ERP_VEN02_004",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "STD_X3_ERP_RGBVAT04",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "STD_X3_ERP_RCPT009",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "STD_X3_ERP_SVEN01",
       "title_185aae2d-4cef-4a79-bb16-90812f0f1668": "STD_X3_ERP_RCPT008",
@@ -27336,6 +27336,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "STD_X3_ERP_RVEN023",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "STD_X3_ERP_CPT02_001",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "STD_X3_ERP_RVEN042",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "STD_X3_ERP_SSAV01",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "X3_ERP_WCAZONGEO",
@@ -27441,6 +27442,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "STD_X3_ERP_RGPA017",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Бельгия",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "STD_X3_ERP_SGPA06",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
@@ -27617,8 +27619,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "STD_X3_ERP_RCRM006",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "STD_X3_ERP_RVEN048",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "STD_X3_ERP_RGPA018",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "X3_ERP_RSTO0061_1",
@@ -27769,6 +27769,8 @@
     "zh-cn": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "未支付的预付款",
       "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "采购发票",
+      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "增值税供应商",
+      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "增值税",
       "title_123d8728-2c41-4c41-8bbf-27db00046ba8": "退货原因分析",
       "description_d50670da-8a82-4f82-b54a-6091996bc268": "退货",
       "title_12dee8b0-2666-40ec-85a8-67713ff28133": "外协产品待覆盖的需求",
@@ -27782,8 +27784,6 @@
       "description_8c2835f5-714f-4429-a941-f9ef03d14601": "基础数据",
       "title_15956150-7126-4e8f-bf6e-5591fa446263": "客户付款：已收到的支票",
       "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "收付款追踪",
-      "title_1030bd54-6756-42a2-bea0-960ae603ccbe": "增值税供应商",
-      "description_15f67b94-e99b-4988-a519-a2fde35391f6": "增值税",
       "title_16566eaa-7366-47b3-bab4-e798eba02333": "至今未关账的发货项",
       "description_b449d294-dbfe-479e-9693-f7b4438caf1d": "待处理准备金",
       "title_168d345d-a669-42d8-98c5-f04e1729c582": "报价分析  / 销售人员",
@@ -27896,6 +27896,7 @@
       "title_5d3f2ab1-5793-4df9-a370-74b7a1189aaf": "项目 / 销售代表",
       "title_5de2b152-e429-4697-9e1d-dd495ce444b0": "管理增值税",
       "title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "产品已订货费用 / 供应商",
+      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
       "title_5f71cf7f-b3ae-4f1c-b849-ad5d71c0b957": "分部发票 / 客户",
       "title_608d97eb-4495-4f42-88ed-4374f273c4e5": "已开票的合同",
       "title_610694d8-21f4-4fa3-87f1-b75df3f2d9c9": "已开票营业额 / 地理区域",
@@ -28012,6 +28013,7 @@
       "title_9d60d37e-e5fc-4731-891b-2cd16768b238": "约会商业活动",
       "title_9ddfc9ec-8c3a-44cf-9bf6-6f632f230256": "当日缺货的工单",
       "title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "比利时",
+      "title_9f244524-a375-4483-98fb-712c32ac3768": "百度",
       "title_9f36ef19-405c-4d31-a0a5-1218c33aa762": "机器金额",
       "title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "未激活的销售BOM",
       "title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "获得的折扣比例",
@@ -28194,8 +28196,6 @@
       "title_fe2a8a4e-14c1-49ff-b2df-cd45a1acbf65": "法国销售线索 / 业务领域",
       "title_fe4de9d8-496b-4492-ad3b-44251ac145de": "财务贷记凭证 / 客户",
       "title_feab92c3-7173-4fc6-b75b-155aeb6cb641": "待批准的外协订单",
-      "title_5f308928-c802-483a-bb12-b00ad0714b45": "Sage",
-      "title_9f244524-a375-4483-98fb-712c32ac3768": "百度",
       "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "延误的工单",
       "title_ae7de0d0-6be5-40cb-9878-334009398948": "当日已开票费用",
       "title_12ffa115-a728-4695-99ff-6af7a6f80904": "待收货的订单行时间表",
