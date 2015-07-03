@@ -13,7 +13,13 @@
 			}
 		},
 		"x3solution": {
-			"$key": "code"
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			}
 		},
 		"endPoint": {
 			"$key": "description",
@@ -192,7 +198,10 @@
 			"solutionName": "SUPDVLP",
 			"serverHost": "aws-x3-devsup",
 			"serverPort": 17000,
-			"serverTimeout": 60000
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			}
 		},
 		{
 			"$type": "endPoint",
