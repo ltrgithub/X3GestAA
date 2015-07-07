@@ -14,11 +14,13 @@ namespace PowerPointAddIn
     public partial class BrowserDialog : Form
     {
         public string serverUrl = "";
-        private Boolean hideOnCompletion = false;
+        bool? _useOldPathAndQuery;
 
         public BrowserDialog()
         {
             InitializeComponent();
+
+            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -29,6 +31,15 @@ namespace PowerPointAddIn
                 Hide();
             }
             base.OnFormClosing(e);
+        }
+
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (_useOldPathAndQuery == null && ((WebBrowser)sender).DocumentTitle.Equals("Sage Office") == false && string.IsNullOrEmpty(_oldUrlPart) == false)
+            {
+                _useOldPathAndQuery = true;
+                webBrowser.Url = new Uri(BaseUrlHelper.BaseUrl, _oldUrlPart);
+            }
         }
 
         public bool connectToServer(SyracuseOfficeCustomData customData, string extraServerUrl = null)
@@ -65,6 +76,34 @@ namespace PowerPointAddIn
         {
             PptAddInJSExternal external = new PptAddInJSExternal(customData, customXlsData, this);
             loadPage(urlPart, external, serverUrl);
+        }
+
+        String _oldUrlPart;
+        public void loadPage(String urlPart, String oldUrlPart, SyracuseOfficeCustomData customData, PptCustomXlsData customXlsData = null, string serverUrl = null)
+        {
+            _oldUrlPart = oldUrlPart;
+            PptAddInJSExternal external = new PptAddInJSExternal(customData, customXlsData, this);
+            if (_useOldPathAndQuery == true)
+            {
+                loadPage(_oldUrlPart, external);
+            }
+            else
+            {
+                loadPage(urlPart, external);
+            }
+        }
+
+        public void loadPage(String urlPart, String oldUrlPart, PptAddInJSExternal scriptingObj, string extraServerUrl = null)
+        {
+            _oldUrlPart = oldUrlPart;
+            if (_useOldPathAndQuery == true)
+            {
+                loadPage(_oldUrlPart, scriptingObj);
+            }
+            else
+            {
+                loadPage(urlPart, scriptingObj);
+            }
         }
 
         public void loadPage(String urlPart, PptAddInJSExternal scriptingObj, string extraServerUrl = null)
