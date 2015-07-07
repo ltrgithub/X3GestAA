@@ -99,7 +99,9 @@ namespace WordAddIn
             customData.setDocumentUrl("");
             customData.writeDictionaryToDocument();
             DateTime dummy = DateTime.Now;
-            browserDialog.loadPage("/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(), external);
+            browserDialog.loadPage(@"/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dword.%24query%26dummy=" + dummy.ToString(), 
+                                    @"/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard%26dummy=" + dummy.ToString(),
+                                    external);
         }
     }
 }

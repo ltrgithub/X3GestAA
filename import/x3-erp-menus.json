@@ -19794,6 +19794,34 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_GESLTP",
+      "title": "title_a7f15896-ff5f-4853-bb15-a820176c2363",
+      "description": "description_a7f15896-ff5f-4853-bb15-a820176c2363",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESLTP",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuCategory",
       "code": "STD_INDIC",
       "description": "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b",
@@ -21455,6 +21483,62 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_STO086",
+      "title": "title_649e77e4-14fc-4ae7-ae1a-22d89e53fa04",
+      "description": "description_649e77e4-14fc-4ae7-ae1a-22d89e53fa04",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": false,
+      "requestName": "STO086",
+      "requestLevel": "99",
+      "$factoryOwner": null,
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_5da9af7d-681b-4d00-be7e-c99bd6396ea2",
+          "prompt": false,
+          "value": "true"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "frequency",
+          "title": "title_39356759-549b-4377-bb9d-97a881c48315",
+          "prompt": false,
+          "value": "1"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "level",
+          "title": "title_3163fa85-5f94-419e-aafb-37d23a5e1669",
+          "prompt": false,
+          "value": "1"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "displayLineNum",
+          "title": "title_140f4ff5-8c61-4b17-a196-d41ddcf6bc72",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
       "$type": "menuCategory",
       "code": "STD_INVOICES",
       "description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
@@ -21499,6 +21583,61 @@
           "title": "title_7ba02eff-953e-4a9f-a260-676af1559915",
           "prompt": false,
           "value": "WCAZONGEO"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_STO085",
+      "title": "title_75def1d7-cbcf-4c65-be83-92cd7116dd9d",
+      "description": "description_75def1d7-cbcf-4c65-be83-92cd7116dd9d",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": null,
+      "requestName": "STO085",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_57e1ebf9-a5d2-4ecd-89c4-1a867f848f37",
+          "prompt": false,
+          "value": "true"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "frequency",
+          "title": "title_f7633202-9302-4b28-968c-bffbb7cd1c85",
+          "prompt": false,
+          "value": "1"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "level",
+          "title": "title_a2511918-c05a-4e2f-8ceb-11d23dc201a7",
+          "prompt": false,
+          "value": "1"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "displayLineNum",
+          "title": "title_4deddba6-683e-4b6a-b799-1c24e0a684d7",
+          "prompt": false,
+          "value": "false"
         }
       ]
     },
@@ -22127,6 +22266,7 @@
       "title_895b8c8b-e536-46ce-9bed-aac42466e781": "STD_X3_ERP_CPT07_001",
       "title_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "STD_X3_ERP_RCPT002",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "STD_X3_ERP_RCPT003",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Sage sales tax إتصال إلى",
       "title_8c50c2a8-4719-41f0-b703-320699c0076a": "STD_X3_ERP_INDIC_ADDO",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "STD_X3_ERP_INDIC_APPR",
       "title_bd8dbc75-a118-462b-becf-a649c559c417": "STD_X3_ERP_INDIC_COST",
@@ -23128,6 +23268,8 @@
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
       "title_7834e1e2-21ab-4d25-a9f4-af1e3d733267": "portview",
       "title_258f4c5f-4815-4565-80f3-7abfbf6d903b": "cube",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Schnittstelle Sage Sales Tax",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Einkaufsindikatoren",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indikatoren",
@@ -23681,6 +23823,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Unposted Sales Invoices",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Sage sales tax connection",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Buyer Indicators",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "title_8c50c2a8-4719-41f0-b703-320699c0076a": "Data administrator Indicators",
@@ -24266,6 +24410,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Unposted Sales/BP Invoices",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Sage Sales Tax connection",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Buyer Indicators",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicators",
@@ -24349,8 +24495,11 @@
       "title_fd68ce5e-9db2-43a9-8fcd-911536ee428c": "Sales by Customer ",
       "description_fd68ce5e-9db2-43a9-8fcd-911536ee428c": "SVEN07",
       "title_81126ee4-70eb-4a65-bc44-40503421780c": "Portal code",
+      "description_649e77e4-14fc-4ae7-ae1a-22d89e53fa04": "End-of-Life Products",
       "title_48d9a6c8-cf6f-4c30-aaa0-0ce1233fa8b3": "Invoiced Turnover/Geo. Zones",
       "description_48d9a6c8-cf6f-4c30-aaa0-0ce1233fa8b3": "Sales by Region",
+      "title_75def1d7-cbcf-4c65-be83-92cd7116dd9d": "Soon expired products",
+      "description_75def1d7-cbcf-4c65-be83-92cd7116dd9d": "Soon expired products",
       "title_e7e1b8b9-9bd3-48c7-8d77-2d205e36aa5d": "Quick processing search",
       "description_e7e1b8b9-9bd3-48c7-8d77-2d205e36aa5d": "ARECSRC",
       "title_c3c2f913-9229-4266-bd7b-fa9c68c932ff": "Stable data retrieval",
@@ -24856,6 +25005,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fac.venta no contabilizadas",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Conexión a Sage sales tax",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Indicadores comprador",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicadores",
@@ -25437,6 +25588,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comptabilisées",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Connexion à Sage sales tax",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Indicateurs acheteur",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicateurs",
@@ -25520,7 +25673,19 @@
       "title_fd68ce5e-9db2-43a9-8fcd-911536ee428c": "CA facturé du jour",
       "description_fd68ce5e-9db2-43a9-8fcd-911536ee428c": "SVEN07",
       "title_81126ee4-70eb-4a65-bc44-40503421780c": "Portal code",
+      "title_649e77e4-14fc-4ae7-ae1a-22d89e53fa04": "Produits en fin de vie",
+      "description_649e77e4-14fc-4ae7-ae1a-22d89e53fa04": "Produits en fin de vie",
+      "title_5da9af7d-681b-4d00-be7e-c99bd6396ea2": "forcedExecution",
+      "title_39356759-549b-4377-bb9d-97a881c48315": "frequency",
+      "title_3163fa85-5f94-419e-aafb-37d23a5e1669": "level",
+      "title_140f4ff5-8c61-4b17-a196-d41ddcf6bc72": "displayLineNum",
       "title_48d9a6c8-cf6f-4c30-aaa0-0ce1233fa8b3": "CA facturé / zones géo.",
+      "title_75def1d7-cbcf-4c65-be83-92cd7116dd9d": "Produits à péremption proche",
+      "description_75def1d7-cbcf-4c65-be83-92cd7116dd9d": "Produits à péremption proche",
+      "title_57e1ebf9-a5d2-4ecd-89c4-1a867f848f37": "forcedExecution",
+      "title_f7633202-9302-4b28-968c-bffbb7cd1c85": "frequency",
+      "title_a2511918-c05a-4e2f-8ceb-11d23dc201a7": "level",
+      "title_4deddba6-683e-4b6a-b799-1c24e0a684d7": "displayLineNum",
       "title_e7e1b8b9-9bd3-48c7-8d77-2d205e36aa5d": "Recherche rapide traitements",
       "title_c3c2f913-9229-4266-bd7b-fa9c68c932ff": "Récupération données stables",
       "title_d85b1a26-8b9b-4dd7-8328-aaee3eea5b11": "Sauvegarde données stables",
@@ -25980,6 +26145,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "STD_X3_ERP_RCPT003",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Connessione a Sage Sales Tax",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "X3_ERP_INDIC_ACHE",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "title_8c50c2a8-4719-41f0-b703-320699c0076a": "STD_X3_ERP_INDIC_ADDO",
@@ -26517,6 +26684,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "STD_X3_ERP_RCPT003",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Sage sales tax connection",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "X3_ERP_INDIC_ACHE",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "title_8c50c2a8-4719-41f0-b703-320699c0076a": "STD_X3_ERP_INDIC_ADDO",
@@ -27093,6 +27262,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Facturas venda não contab.",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Conexão à Sage taca vendas",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Indicadores comprador",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicadores",
@@ -27631,6 +27802,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "STD_X3_ERP_RCPT003",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Налог продаж Sage соед",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "X3_ERP_INDIC_ACHE",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "title_8c50c2a8-4719-41f0-b703-320699c0076a": "STD_X3_ERP_INDIC_ADDO",
@@ -28208,6 +28381,8 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "未入账的销售发票",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "连接至Sage sales tax",
+      "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "采购员指标",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "指标",
