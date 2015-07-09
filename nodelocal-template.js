@@ -204,7 +204,8 @@ exports.config = {
 			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
 			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
 			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
-			iv: '6KYYzs9BZFxeR6i0exR/Tg=='
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
 		}
 	},
 	traces: {
