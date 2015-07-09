@@ -83,6 +83,7 @@ namespace ExcelAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             browserDialog = new BrowserDialog();
+            
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);
 
@@ -570,25 +571,6 @@ namespace ExcelAddIn
         }
         
         #endregion
-
-
-        internal void BrowseDocuments(string volumeCode)
-        {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
-            if (connectUrl == "") return;
-            DocumentBrowser b = new DocumentBrowser();
-            b.SelectDocument(connectUrl, volumeCode);
-            b.ShowDialog();
-        }
-
-        internal void SISettings()
-        {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
-            if (connectUrl == "") return;
-            SISettings s = new SISettings();
-            s.Connect(connectUrl);
-            s.ShowDialog();
-        }
 
         bool handleCvgDocument(Excel.Workbook wb)
         {
