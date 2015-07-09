@@ -12,8 +12,14 @@
 				"$key": "code"
 			}
 		},
-		"x3server": {
-			"$key": "description"
+		"x3solution": {
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			}
 		},
 		"endPoint": {
 			"$key": "description",
@@ -23,8 +29,8 @@
 					"contract"
 				]
 			},
-			"x3servers": {
-				"$key": "description"
+			"x3solution": {
+				"$key": "code"
 			}
 		},
 		"group": {
@@ -186,11 +192,16 @@
 			"securityProfile": "ADMIN"
 		},
 		{
-			"$type": "x3server",
-			"description": "X3 Developpement Server",
-			"serverHost": "172.28.16.106",
+			"$type": "x3solution",
+			"code": "SUPDVLP",
+			"description": "SUPDVLP",
+			"solutionName": "SUPDVLP",
+			"serverHost": "aws-x3-devsup",
 			"serverPort": 17000,
-			"serverTimeout": 60000
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			}
 		},
 		{
 			"$type": "endPoint",
@@ -267,8 +278,7 @@
 			},
 			"dataset": "SUPERV",
 			"enableSearch": false,
-			"x3server": "X3 Developpement Server",
-			"x3SolutionName":"SOLSUPV6",
+			"x3solution": "SUPDVLP",
 			"x3ServerFolder": "SUPERV"
 		},
 		{
@@ -370,7 +380,7 @@
 		{
 			"$type": "user",
 			"login": "admin",
-			"password": "admin",
+			"password": "f5066151ecf0c2511ea0f73306e27a4f",
 			"title": "mr",
 			"lastName": "Super administrator",
 			"groups": [
