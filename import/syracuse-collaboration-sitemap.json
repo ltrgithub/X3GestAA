@@ -973,14 +973,16 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_X3_SERVERS",
-      "title": "title_f679e07c-571e-4183-a415-27e7ac8717c6",
-      "description": "description_f679e07c-571e-4183-a415-27e7ac8717c6",
+      "code": "S_X3_SOLUTIONS",
+      "title": "title_5e2156f9-1ef6-403e-81ce-bbdb1ffc2b2f",
+      "description": "description_5e2156f9-1ef6-403e-81ce-bbdb1ffc2b2f",
       "linkType": "$representation",
       "icon": "",
       "applicationMenu": false,
       "facet": "$query",
+      "keyIsWhere": false,
       "target": "self",
+      "requestLevel": "99",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -990,12 +992,10 @@
       "endpoint": null,
       "representationRef": {
         "$type": "representationProxy",
-        "entity": "x3servers",
-        "representation": "x3server"
+        "entity": "x3solutions",
+        "representation": "x3solution"
       },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
+      "module": null,
       "categories": [],
       "parameters": []
     },
@@ -1336,7 +1336,7 @@
               "$variantType": "menuItem"
             },
             {
-              "code": "S_X3_SERVERS",
+              "code": "S_X3_SOLUTIONS",
               "$variantType": "menuItem"
             },
             {
@@ -3346,14 +3346,16 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_X3_SERVERS",
-      "title": "title_f679e07c-571e-4183-a415-27e7ac8717c6",
-      "description": "description_f679e07c-571e-4183-a415-27e7ac8717c6",
+      "code": "S_X3_SOLUTIONS",
+      "title": "title_5e2156f9-1ef6-403e-81ce-bbdb1ffc2b2f",
+      "description": "description_5e2156f9-1ef6-403e-81ce-bbdb1ffc2b2f",
       "linkType": "$representation",
       "icon": "",
       "applicationMenu": false,
       "facet": "$query",
+      "keyIsWhere": false,
       "target": "self",
+      "requestLevel": "99",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -3363,12 +3365,10 @@
       "endpoint": null,
       "representationRef": {
         "$type": "representationProxy",
-        "entity": "x3servers",
-        "representation": "x3server"
+        "entity": "x3solutions",
+        "representation": "x3solution"
       },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
+      "module": null,
       "categories": [],
       "parameters": []
     },
@@ -3709,7 +3709,7 @@
               "$variantType": "menuItem"
             },
             {
-              "code": "S_X3_SERVERS",
+              "code": "S_X3_SOLUTIONS",
               "$variantType": "menuItem"
             },
             {
@@ -5093,8 +5093,8 @@
       "$type": "navigationPage",
       "title": "title_f9daedd5-fd98-4461-b309-2b9bf796360a",
       "pageName": "home",
-      "$factory": false,
-      "$factoryOwner": null,
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "modules": [
         {
           "code": "S_MOD_ADMIN"
@@ -5145,8 +5145,6 @@
       "title_d7903964-50fb-4238-984e-cee77570de7d": "Server",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Syracuse-Server",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Syracuse-Server",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "X3-Server",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Verwaltung X3-Server",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "BO-Server",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM-Server",
       "description_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM-Server",
@@ -5260,8 +5258,7 @@
       "title_d7903964-50fb-4238-984e-cee77570de7d": "Servers",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Hosts",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Hosts",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Application servers",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "X3 Servers management interface",
+      "title_5e2156f9-1ef6-403e-81ce-bbdb1ffc2b2f": "X3 solutions",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "BO Servers",
       "title_f6e5578a-4cf2-4f51-a7eb-9e27f10c2073": "HRM Portal",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM Servers",
@@ -5388,8 +5385,6 @@
       "title_d7903964-50fb-4238-984e-cee77570de7d": "Servidores",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Servidores",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Servidores Syracusa",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Servidores X3",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Gesstión servidores X3",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "Servidores BO",
       "title_f6e5578a-4cf2-4f51-a7eb-9e27f10c2073": "Portal HRM",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "Servidores HRM",
@@ -5494,8 +5489,6 @@
       "title_d7903964-50fb-4238-984e-cee77570de7d": "Serveurs",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Serveur web",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Serveurs Syracuse",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Serveurs d'application",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Gestion des serveurs X3",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "Serveurs BI",
       "title_f6e5578a-4cf2-4f51-a7eb-9e27f10c2073": "Portail HRM",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "Serveurs HRM",
@@ -5593,8 +5586,6 @@
       "description_85661061-b30b-4eb6-ba94-19a6f0cca938": "Certificati delle autorità di certificazioni",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Server Syracuse",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Server Syracuse",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Server X3",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Gestione server X3",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "Server BO",
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Collaborazione",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Collaboratori",
@@ -5683,8 +5674,6 @@
       "description_85661061-b30b-4eb6-ba94-19a6f0cca938": "Certyfikaty urzędów certyfikacji",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Hosty",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Hosty",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Serwery X3",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Zarządzanie serwerami X3",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "Serwery BO",
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Współpraca",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Zespoły",
@@ -5774,8 +5763,6 @@
       "title_85661061-b30b-4eb6-ba94-19a6f0cca938": "Certificados da Autoridade Certificadoras",
       "description_85661061-b30b-4eb6-ba94-19a6f0cca938": "Certificados da Autoridade Certificadoras",
       "title_d7903964-50fb-4238-984e-cee77570de7d": "Servidores",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Servidores X3",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Gestão interface servidores X3",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "Servidores BO",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "Servidores HRM",
       "description_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "Servidores HRM",
@@ -5879,8 +5866,6 @@
       "description_85661061-b30b-4eb6-ba94-19a6f0cca938": "Сертификаты LDAP",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "Хосты",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Хосты",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "Серверы X3",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "Интерфейс управления серверами X3",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "Серверы BO",
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Совместная работа",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Команды",
@@ -5977,8 +5962,6 @@
       "title_d7903964-50fb-4238-984e-cee77570de7d": "服务器",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "web服务器",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Syracuse服务器",
-      "title_f679e07c-571e-4183-a415-27e7ac8717c6": "应用程序服务器",
-      "description_f679e07c-571e-4183-a415-27e7ac8717c6": "X3服务器管理接口",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "BI服务器",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM服务器",
       "description_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM服务器",
