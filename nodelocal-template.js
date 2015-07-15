@@ -169,6 +169,14 @@ exports.config = {
 		// ignoreFrequency: true,
 		// offStemmer : true // desactivation of the stemmer for the search indexation
 	},
+	notificatonServer: {
+		//"log Level" : 3,
+		//'connect timeout': 1000,
+		//'reconnect': true,
+		//'reconnection delay': 300,
+		//'max reconnection attempts': 10000,
+		//'force new connection':true
+	},
 	translation: {
 		// trace: console.log,
 		// redirect diagnosis in the trace
@@ -213,6 +221,7 @@ exports.config = {
 			},
 			// Elastic search communication
 			search: "error",
+			notifications:"error",
 			// X3 ERP communication layer
 			x3Comm: {
 				jsRunner: "error", // Syracuse calls from 4GL processes
