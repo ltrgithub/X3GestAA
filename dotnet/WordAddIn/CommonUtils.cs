@@ -34,37 +34,7 @@ namespace WordAddIn
         {
             this.browserDialog = browserDialog;
         }
-
-        // Save a document that has already been published
-        public void Save(Document doc)
-        {
-            // A document that has not been published yet cannot be saved using the save button, the user must use Save as...
-            // The button should not be active in this case, this is just for safety reasons
-            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
-            if (customData == null)
-            {
-                ShowInfoMessage(global::WordAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED, global::WordAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED_TITLE);
-                SaveAs(doc);
-                return;
-            }
-            if ("".Equals(customData.getDocumentUrl()))
-            {
-                ShowInfoMessage(global::WordAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED, global::WordAddIn.Properties.Resources.MSG_DOC_NOT_PUBLISHED_TITLE);
-                SaveAs(doc);
-                return;
-            }
-            // ---
-
-            browserDialog.loadPage("/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard", customData);
-        }
-
-        // Save a document as new document (e.g. create a copy of a already published document or save a not yet published doc.)
-        public void SaveAs(Document doc)
-        {
-            SyracuseOfficeCustomData customData = PrepareToSaveNewDoc(doc);
-            browserDialog.loadPage("/msoffice/lib/word/ui/save.html?url=%3Frepresentation%3Dwordsave.%24dashboard", customData);
-        }
-
+    
         private static SyracuseOfficeCustomData PrepareToSaveNewDoc(Document doc)
         {
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
