@@ -158,4 +158,16 @@ exports.config = {
 		hostname: "10.198.254.52:27017,10.198.254.53:27017,10.198.254.135:27017,10.198.254.136",
 		port: 27017
 	},
+	opa: {
+		emailSettings: {
+			host: '10.198.254.25',
+			port: 25,
+			text: {
+				from: 'provisioningmaster@sage.com',
+				to: 'SageERPX3DevOps@sage.com',
+				subject: 'Provisiong complete for ',
+				html: 'Hello, <br><br> The following site has finished provisioning, <b>+//+replacesite+//+</b>. <br><br> Please navigate to the following URL and apply the necessary manual steps: <br> <b>+//+replaceurl+//+</b> <br><br> Thank you'
+			},
+		},
+	},
 };
