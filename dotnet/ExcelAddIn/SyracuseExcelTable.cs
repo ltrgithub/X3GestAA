@@ -339,8 +339,7 @@ namespace ExcelAddIn
                 // reselect initial range (wo header line)
                 Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, initialCol + i],
                     targetWorksheet.Cells[initialRow + rowCount, initialCol + i]];
-                //actualColumnRanges.Add(headers[i]._name, cells);
-                //actualColumnRanges.Add(_encodedNameRanges[_name + "." + headers[i]._name], cells);
+
                 actualColumnRanges.Add(ReportingUtils.getEncodedRangeName(headers[i]._name, _encodedNameRanges), cells);
             }
             // the table must be created after cells shift
@@ -573,14 +572,7 @@ namespace ExcelAddIn
                     for (int col = 0; col < _fields.Length; col++)
                     {
                         String fieldName = ReportingUtils.getEncodedRangeName(_fields[col]._name, _encodedNameRanges);
-                        //if (_encodedNameRanges != null && _encodedNameRanges.ContainsKey(_name + "." + _fields[col]._name))
-                        //{
-                        //    fieldName = _encodedNameRanges[c];
-                        //}
-                        //else
-                        //{
-                        //    fieldName = _fields[col]._name;
-                        //}
+
                         if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, fieldName) == false)
                             continue;
 
