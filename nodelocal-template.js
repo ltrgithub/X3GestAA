@@ -206,6 +206,18 @@ exports.config = {
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		devOpsEmail: 'SageERPX3DevOps@sage.com',
+		oauth: {
+			client_id: 'pl4JKQLpgNdEFTgM2Oe1juQQ0dHiv3VD',
+			scope: 'vstf4mpl();',
+			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
+			baseUrl: 'https://signon.sso.staging.services.sage.com/SSO',
+			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+		}
 	},
 	traces: {
 		console: false, // For developers
