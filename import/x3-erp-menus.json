@@ -22043,6 +22043,36 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_ERP_TABPLACE",
+      "title": "title_e85daea9-a1da-4c90-bc45-e70fe4811500",
+      "description": "description_e85daea9-a1da-4c90-bc45-e70fe4811500",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": true,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TABPLACE",
+        "representation": "TABPLACE"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MDBA"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_RPT61",
       "title": "title_c748cea5-7561-438e-a625-1eb0b237def9",
       "description": "description_c748cea5-7561-438e-a625-1eb0b237def9",
@@ -22089,6 +22119,66 @@
       "representationRef": null,
       "module": {
         "code": "STD_X3_ERP_GTRS"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_TABCONTAINER",
+      "title": "title_6a64a934-9648-487f-a305-0762022be318",
+      "description": "description_6a64a934-9648-487f-a305-0762022be318",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": true,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TABCONTAINER",
+        "representation": "TABCONTAINER"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MDBA"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_TABPLACETIME",
+      "title": "title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b",
+      "description": "description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": true,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "TABPLACETIME",
+        "representation": "TABPLACETIME"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MDBA"
       },
       "categories": [],
       "parameters": []
@@ -24793,10 +24883,16 @@
       "description_c8548fe4-f35b-460b-ad1a-8c20268a7fb4": "GESSWIBVR",
       "title_cb68a012-591a-4f17-9632-6cec65bb18ff": "Transport",
       "description_cb68a012-591a-4f17-9632-6cec65bb18ff": "GESTRNP",
+      "title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
+      "description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
       "title_c748cea5-7561-438e-a625-1eb0b237def9": "Germany",
       "description_c748cea5-7561-438e-a625-1eb0b237def9": "RPT61",
       "title_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "Import Swiss ISR file",
-      "description_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "SWIIMPBVR"
+      "description_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "SWIIMPBVR",
+      "title_6a64a934-9648-487f-a305-0762022be318": "Shipping container",
+      "description_6a64a934-9648-487f-a305-0762022be318": "Shipping container",
+      "title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
+      "description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time"
     },
     "es-es": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "Anticipos no cobrados",
@@ -25987,8 +26083,14 @@
       "title_fd804fdc-9047-4e09-ba34-a0fdb60599ae": "Expéditions",
       "title_c8548fe4-f35b-460b-ad1a-8c20268a7fb4": "Import BVR suisse actuel",
       "title_cb68a012-591a-4f17-9632-6cec65bb18ff": "Transport",
+      "title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lieu",
+      "description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lieu",
       "title_c748cea5-7561-438e-a625-1eb0b237def9": "Allemagne",
-      "title_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "Import fichier BVR suisse"
+      "title_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "Import fichier BVR suisse",
+      "title_6a64a934-9648-487f-a305-0762022be318": "Conteneur frêt",
+      "description_6a64a934-9648-487f-a305-0762022be318": "Conteneur frêt",
+      "title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Délai transport",
+      "description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Délai transport"
     },
     "it-it": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "STD_X3_ERP_RACH023",
