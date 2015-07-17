@@ -2166,13 +2166,14 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_PATCH_INTEG",
-      "title": "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873",
-      "description": "description_8bbf195a-5e25-47b5-9c16-10f2a03b6873",
+      "code": "S_UPDATES",
+      "title": "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
+      "description": "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
       "linkType": "$representation",
       "icon": "",
       "applicationMenu": false,
-      "facet": "$create",
+      "facet": "$query",
+      "keyIsWhere": false,
       "target": "self",
       "requestLevel": "99",
       "$factory": true,
@@ -2181,15 +2182,15 @@
         "application": "syracuse",
         "contract": "collaboration"
       },
-      "endpoint": null,
+      "endpoint": {
+        "dataset": "syracuse"
+      },
       "representationRef": {
         "$type": "representationProxy",
-        "entity": "patches",
-        "representation": "patch"
+        "entity": "updates",
+        "representation": "update"
       },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
+      "module": null,
       "categories": [],
       "parameters": []
     },
@@ -2324,7 +2325,7 @@
           "title": "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab",
           "items": [
             {
-              "code": "S_PATCH_INTEG",
+              "code": "S_UPDATES",
               "$variantType": "menuItem"
             },
             {
@@ -4539,13 +4540,14 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_PATCH_INTEG",
-      "title": "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873",
-      "description": "description_8bbf195a-5e25-47b5-9c16-10f2a03b6873",
+      "code": "S_UPDATES",
+      "title": "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
+      "description": "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
       "linkType": "$representation",
       "icon": "",
       "applicationMenu": false,
-      "facet": "$create",
+      "facet": "$query",
+      "keyIsWhere": false,
       "target": "self",
       "requestLevel": "99",
       "$factory": true,
@@ -4554,15 +4556,15 @@
         "application": "syracuse",
         "contract": "collaboration"
       },
-      "endpoint": null,
+      "endpoint": {
+        "dataset": "syracuse"
+      },
       "representationRef": {
         "$type": "representationProxy",
-        "entity": "patches",
-        "representation": "patch"
+        "entity": "updates",
+        "representation": "update"
       },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
+      "module": null,
       "categories": [],
       "parameters": []
     },
@@ -4697,7 +4699,7 @@
           "title": "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab",
           "items": [
             {
-              "code": "S_PATCH_INTEG",
+              "code": "S_UPDATES",
               "$variantType": "menuItem"
             },
             {
@@ -5186,7 +5188,6 @@
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Verwaltung Exportprofile",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalisierung",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ressourcen-Gruppen",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Patch-Integration",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installation Office-Add-Ins",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Verwendung",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
@@ -5318,7 +5319,8 @@
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalizations management",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Resources packs",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Installation",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Patch integration",
+      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Updates",
+      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"One-click\" updates",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Install addins for Office",
       "title_5ee934c2-c6d2-4280-b7a5-eb2ff16e42d5": "Install addin for Outlook",
       "title_967385fc-f979-4e89-836c-2410760246e5": "Ilog Connector",
@@ -5427,7 +5429,6 @@
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestión de personalizaciones",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Paquete de recursos",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Instalación",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Integración de parches",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalar addins para Office",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Explotación",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Utilidades de búsqueda",
@@ -5521,16 +5522,20 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages personnalisées",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestion des pages",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utilitaires",
+      "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Imports",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import de données",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Outil d'import",
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import des utilisateurs X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import des utilisateurs X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import menu profil",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profils d'export",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profiles d'export",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Export des personnalisations",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Groupes de ressources",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Intégration Patch",
+      "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Installation",
+      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour",
+      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour \"en un clic\"",
       "title_967385fc-f979-4e89-836c-2410760246e5": "Connecteur Ilog",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploitation",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
@@ -5621,7 +5626,6 @@
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestione personalizzazioni",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Gruppo risorse",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Integrazione patch",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installazione addins Office",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
@@ -5710,7 +5714,6 @@
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Zarządzanie ustawieniami spersonalizowanymi",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Pakiety zasobów",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Integracja poprawek",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalacja dodatków Office",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
@@ -5805,7 +5808,6 @@
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestão das personalizações",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Packs de recursos",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Instalação",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Integração patch",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalação addins Office",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploração",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
@@ -5902,7 +5904,6 @@
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Управление персонализацией",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ресурсы",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "Интеграция патчей",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Установка расширений для MS Office",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
@@ -6006,7 +6007,6 @@
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "自定义项管理",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "资源组",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "安装",
-      "title_8bbf195a-5e25-47b5-9c16-10f2a03b6873": "补丁集成",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "安装Office加载项",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "开发",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
