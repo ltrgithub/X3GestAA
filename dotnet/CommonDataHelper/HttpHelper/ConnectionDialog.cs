@@ -34,6 +34,7 @@ namespace CommonDataHelper
         
         private void documentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            this.Text = ((WebBrowser)sender).DocumentTitle;
             if (!e.Url.Equals(webBrowser.Url))
                 return;
 

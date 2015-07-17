@@ -41,7 +41,7 @@
 	"$includeAfter": [],
 	"$items": [{
 		"$type": "securityProfile",
-		"code": "CADMIN",
+		"code": "ADMCA",
 		"description": "description_814daedc-1f04-4e20-97ad-ceb67c43ecd8",
 		"authoringLevel": "admin",
 		"securityLevel": 1,
@@ -79,6 +79,22 @@
 			"canDelete": true,
 			"canExecute": true
 		}, {
+			"code": "preferences",
+			"description": "description_ce4d7efe-1a92-455e-9d09-493cd2816d2d",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+		    "canExecute": true
+        }, {
+			"code": "pages",
+			"description": "description_3f1e1689-c8d1-4631-9c66-9fc3a2f770e7",
+			"canCreate": true,
+			"canRead": true,
+			"canWrite": true,
+			"canDelete": true,
+			"canExecute": true
+        }, {
 			"code": "collaborationArea",
 			"description": "description_42e3da25-7961-452d-9195-ec4c39b0a130",
 			"canCreate": true,
@@ -110,26 +126,34 @@
 			"canWrite": false,
 			"canDelete": false,
 			"canExecute": false
+		}, {
+			"code": "development",
+			"description": "description_e52759f3-def5-499d-9ff1-0e36059d4d3c",
+			"canCreate": false,
+			"canRead": false,
+			"canWrite": false,
+			"canDelete": false,
+			"canExecute": false
 		}]
 	}, {
 		"$type": "role",
-		"code": "CADMIN",
+		"code": "ADMCA",
 		"description": "description_4a921978-2f34-454f-a781-aae1667ba16a",
 		"badges": [
 			"ERPDEV"
 		],
-		"securityProfile": "CADMIN",
+		"securityProfile": "ADMCA",
 		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "group",
 		"description": "description_59cfa737-d988-4a70-9615-27e60fd94335",
-		"role": "CADMIN",
+		"role": "ADMCA",
 		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
 		"$type": "user",
-		"login": "cadmin",
+		"login": "ADMCA",
 		"lastName": "Customer administrator",
-		"password": "c4135b1a3a1a63b1ad780c2419568775",
+		"password": "059174f3815009ac754c27d21fa8246a",
 		"groups": ["description_59cfa737-d988-4a70-9615-27e60fd94335"],
 		"$factory": true,"$factoryOwner": "SAGE"
 	}],
@@ -145,7 +169,10 @@
 			"description_42e3da25-7961-452d-9195-ec4c39b0a130": "Teams, documents and storage, Office integration",
 			"description_91993d8a-1a61-4245-8b44-4e7c9612e224": "System status and logs, maintainance actions",
 			"description_5cc4833f-9731-4aef-9c61-4d752bcfad09": "Import data",
-			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data"
+			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data",
+			"description_e52759f3-def5-499d-9ff1-0e36059d4d3c": "Development tools",
+			"description_ce4d7efe-1a92-455e-9d09-493cd2816d2d": "Preferences",
+			"description_3f1e1689-c8d1-4631-9c66-9fc3a2f770e7": "Navigation : dashboards, vignettes, menus, pages"	
 		},
 		"fr-fr": {
 			"description_4a921978-2f34-454f-a781-aae1667ba16a": "Customer administrator",
@@ -158,7 +185,10 @@
 			"description_42e3da25-7961-452d-9195-ec4c39b0a130": "Teams, documents and storage, Office integration",
 			"description_91993d8a-1a61-4245-8b44-4e7c9612e224": "System status and logs, maintainance actions",
 			"description_5cc4833f-9731-4aef-9c61-4d752bcfad09": "Import data",
-			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data"
+			"description_3cda9ad1-fba3-42c9-b431-70c9d7d94a17": "Export data", 
+			"description_e52759f3-def5-499d-9ff1-0e36059d4d3c": "Outils de développement",
+			"description_ce4d7efe-1a92-455e-9d09-493cd2816d2d": "Preferences",
+			"description_3f1e1689-c8d1-4631-9c66-9fc3a2f770e7": "Navigation : dashboards, vignettes, menus, pages"	
 		}
 	}
 }
