@@ -150,7 +150,7 @@ exports.config = {
         "region": "us-east-1",
 	},
 	siteCountries: {
-		list: ["United States", "Canada", "United Kingdom"],
+		list: ["USA", "Canada", "UK", "France"],
 	},
 	collaboration: {
 		driver: "mongodb",
