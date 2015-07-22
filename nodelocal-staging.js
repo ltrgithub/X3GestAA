@@ -49,7 +49,7 @@ exports.config = {
                 delay: 300,
                 siteuriSuffix: "/auth/login/page",
                 cloudwatch: true,
-                esHostName: "10.198.2.5",
+                esHostName: "http://internal-ElasticSearch-652126279.us-east-1.elb.amazonaws.com",
                 esPort: 9200,
                 mongoHostName: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
                 mongoPort: 27017,
