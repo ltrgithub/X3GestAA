@@ -55,9 +55,9 @@ exports.config = {
 		mongoHostName: "10.198.2.4:27017,10.198.2.68,10.198.2.132",
 		mongoPort: 27017,
 		ds:	{
-			healthId: "c2E6U2FnZUVSUFgzIVRYbA0K",
+			healthId: "c2E6U0BnZVgzQ0xPVUQjMSFUWGw=",
 			instance: "X3CLOUD",
-			catalog: "sageerpx3",
+			catalog: "sagex3",
 			timeout: 10000,
 		},
 	},
