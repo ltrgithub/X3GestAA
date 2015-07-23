@@ -61,7 +61,7 @@ exports.config = {
             },
             replSet: {
                 readPreference: "primaryPreferred",
-                rs_name: "mongodevRepl"
+                rs_name: "X3PROD"
             },
             mongos: {
             }
