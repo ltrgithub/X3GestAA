@@ -1,21 +1,21 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2015-06-19T06:07:45Z",
+	"generationStamp": "2015-07-23T09:46:13Z",
 	"partnerId": "",
 	"product": {
 		"code": "1",
 		"title": {
-			"fr-FR": "Sage ERP X3",
-			"en-US": "Sage ERP X3",
-			"it-IT": "Sage ERP X3",
-			"pt-PT": "Sage ERP X3",
-			"es-ES": "Sage ERP X3",
-			"en-GB": "Sage ERP X3",
-			"de-DE": "Sage ERP X3",
-			"pl-PL": "Sage ERP X3",
-			"ZH-CN": "Sage ERP X3",
-			"ru-RU": "Sage ERP X3",
-			"AR-SA": "Sage ERP X3"
+			"fr-FR": "Sage X3",
+			"en-US": "Sage X3",
+			"it-IT": "Sage X3",
+			"pt-PT": "Sage X3",
+			"es-ES": "Sage X3",
+			"en-GB": "Sage X3",
+			"de-DE": "Sage X3",
+			"pl-PL": "Sage X3",
+			"ZH-CN": "Sage X3",
+			"ru-RU": "Sage X3",
+			"AR-SA": "Sage X3"
 		},
 		"version": "9"
 	},
@@ -24,14 +24,14 @@
 		"title": {
 			"fr-FR": "Sage X3",
 			"en-US": "Sage X3",
-			"it-IT": "Sage ERP X3",
-			"pt-PT": "Sage ERP X3",
-			"es-ES": "Sage ERP X3",
-			"en-GB": "Sage ERP X3",
-			"de-DE": "Sage ERP X3",
-			"pl-PL": "Sage ERP X3",
+			"it-IT": "Sage X3",
+			"pt-PT": "Sage X3",
+			"es-ES": "Sage X3",
+			"en-GB": "Sage X3",
+			"de-DE": "Sage X3",
+			"pl-PL": "Sage X3",
 			"ZH-CN": "Sage X3",
-			"ru-RU": "Sage ERP X3",
+			"ru-RU": "Sage X3",
 			"AR-SA": "Sage X3"
 		},
 		"version": "1.0"
@@ -830,7 +830,7 @@
 				"en-GB": "Change control management",
 				"de-DE": "Verwaltung Indizes",
 				"pl-PL": "Change control management",
-				"ZH-CN": "Change control management",
+				"ZH-CN": "指标管理",
 				"ru-RU": "Сменаконтрольнойперемены",
 				"AR-SA": "Change control management"
 			},
@@ -1102,7 +1102,7 @@
 				"en-GB": "Product version management",
 				"de-DE": "Verwaltung Artikelversionen",
 				"pl-PL": "Product version management",
-				"ZH-CN": "Product version management",
+				"ZH-CN": "产品版本管理",
 				"ru-RU": "Управлениеверсиейпродукта",
 				"AR-SA": "Product version management"
 			},
@@ -1118,11 +1118,11 @@
 				"en-GB": "Dematerialization",
 				"de-DE": "Papierloser Dokumentenaust.",
 				"pl-PL": "Paperless document exchange",
-				"ZH-CN": "Paperless document exchange",
+				"ZH-CN": "非物质化",
 				"ru-RU": "Безбумажныйобмендокументами",
 				"AR-SA": "Paperless document exchange"
 			},
-			"condition": "never"
+			"condition": "always"
 		}, {
 			"code": "EMP",
 			"title": {
@@ -1310,7 +1310,7 @@
 				"en-GB": "Food allergens",
 				"de-DE": "Lebensmittelallergene",
 				"pl-PL": "Food allergens",
-				"ZH-CN": "Food allergens",
+				"ZH-CN": "食物过敏原",
 				"ru-RU": "Пищевыеаллергены",
 				"AR-SA": "حساسياتالتغذية"
 			},
@@ -1460,6 +1460,22 @@
 			},
 			"condition": "always"
 		}, {
+			"code": "INVCA",
+			"title": {
+				"fr-FR": "Facture d'annulation",
+				"en-US": "Cancellation invoice",
+				"it-IT": "Cancellation invoice",
+				"pt-PT": "Fatura anulação",
+				"es-ES": "Cancellation invoice",
+				"en-GB": "Cancellation invoice",
+				"de-DE": "Storno Rechnung",
+				"pl-PL": "Cancellation invoice",
+				"ZH-CN": "Cancellation invoice",
+				"ru-RU": "Cancellation invoice",
+				"AR-SA": "Cancellation invoice"
+			},
+			"condition": "always"
+		}, {
 			"code": "ITP",
 			"title": {
 				"fr-FR": "Article-Fournisseur",
@@ -1502,7 +1518,7 @@
 				"en-GB": "Angola localization",
 				"de-DE": "Lokalisierung Angola",
 				"pl-PL": "Angola localization",
-				"ZH-CN": "Angola localization",
+				"ZH-CN": "安哥拉本地化",
 				"ru-RU": "ЛокализацияАнголы",
 				"AR-SA": "Angola localization"
 			},
@@ -1667,6 +1683,22 @@
 				"AR-SA": "Russian localization"
 			},
 			"condition": "license"
+		}, {
+			"code": "KSA",
+			"title": {
+				"fr-FR": "Localisation Afrique du Sud",
+				"en-US": "South African localization",
+				"it-IT": "South African localization",
+				"pt-PT": "Localização Africa do Sul",
+				"es-ES": "Localización sudáfrica",
+				"en-GB": "South African localization",
+				"de-DE": "Lokalisierung Südafrika",
+				"pl-PL": "South African localization",
+				"ZH-CN": "South African localization",
+				"ru-RU": "South African localization",
+				"AR-SA": "South African localization"
+			},
+			"condition": "always"
 		}, {
 			"code": "KSP",
 			"title": {
@@ -2052,6 +2084,22 @@
 			},
 			"condition": "always"
 		}, {
+			"code": "PBDCL",
+			"title": {
+				"fr-FR": "Déclaration balance paiements",
+				"en-US": "Payment balance declaration",
+				"it-IT": "Payment balance declaration",
+				"pt-PT": "Com.Operações Bancár.-COPE",
+				"es-ES": "Payment balance declaration",
+				"en-GB": "Payment balance declaration",
+				"de-DE": "Zahlungsbilanzmeldung",
+				"pl-PL": "Payment balance declaration",
+				"ZH-CN": "付款余额申报",
+				"ru-RU": "Декларированиебалансаплатежа",
+				"AR-SA": "Payment balance declaration"
+			},
+			"condition": "always"
+		}, {
 			"code": "PHY",
 			"title": {
 				"fr-FR": "Eléments physiques",
@@ -2353,6 +2401,22 @@
 				"ZH-CN": "序列数管理",
 				"ru-RU": "Управлениесерийныминомерами",
 				"AR-SA": "Serial number management"
+			},
+			"condition": "always"
+		}, {
+			"code": "SFD",
+			"title": {
+				"fr-FR": "Zones utilisateurs stocks",
+				"en-US": "User areas stock",
+				"it-IT": "User areas stock",
+				"pt-PT": "Zonas utilizadores stock",
+				"es-ES": "User areas stock",
+				"en-GB": "User areas stock",
+				"de-DE": "Benutzerbereich Lager",
+				"pl-PL": "User areas stock",
+				"ZH-CN": "存货用户字段",
+				"ru-RU": "Зоныскладапольз",
+				"AR-SA": "User areas stock"
 			},
 			"condition": "always"
 		}, {
@@ -3575,6 +3639,6 @@
 			"type": "integer"
 		}
 	],
-	"signature": "wsYZWg6P/R3J2MdJSkts1jsBpgK6gLlYsVnG313LS3BR9IRmT/wmJLX4+bs7kOSFbG5/KF+NNYmh5zdm41FtVc5tylpf5lVGOs2DB8ULc2BcJCiG3jbDUwZWU+JsJ8dsBSaUn59m6L6t5ZStZikB6q5pweDr3AUhPWvB0SD/97Un3EiIb6A+MPHztKBaaUanW1rWg+U3CVtuprvDFfNHWCZR2PeyWBka1jK3baMSG0PkUXpyT++ncSvDTfqkt371HWR83NyX8NdbvKzfYtz4dRZbR+8keWcvSsTmJ94KeddaH2c8XFqoBjfTcHhSNwj3M8jnKO/JmPk3qTZ1okUP3whNrrb4Ia/jr0Q8B3Nk/WbaDx86ai11/VOhewTm6Q9+xOMde5ZsWU4w6T6o7Shsv48U7EfBHGQRrZ7V1XLv54XlYiTvZxw1TdzMcOq2P0eQT72ksLPVKtnFwhGLrPVnc1sxCNzdYzPgrvnpgDLGdnySljzPlXwwz3X1/5mw3Bpf6i3l6lSzerVRvaBy6JaNp0t03VnOrSSXPNtGlssArRtSC96GQwWXWrLoH4wHhSoG9cKlJyg0/cTobO7tPkDgwsD5kFAQ3i80qvGpcVh/sZk7SGlSmdFF529Q7HbYYKh0+MXi7athqX/EmRaRWZHYBe0XE1/0W+SP1+sUUC+gCoI=",
+	"signature": "BhXaiRp/sN89gjs2ati1z3RkoZtxKuta9j0dFxKn1jrwMiEClLmmgTrNeHKdOn4Gfj3c4x4jevA2gfUELkerYqUgt6D5F7tk2wqoi5fDToxjNa9ccY4hQxxQpCE8lckbbacz1vjKplua2h1BxWzLZLPbWJEiXQ4rA7Zvyf91pxAUzev0veq5gFS+Ccwoxjn9CpwO4dCr7CxntouPz2DzUbuHYj9U6ERXJv/jxgH23BhcJHSb9e1ORQVnUiCYqvdgvnWyhz0eNXyju30VvOuatI4oLByQWgzZk27MYiBTm8qDx1Tt/hB6tJEGhinv28kf6T5L0e/uw5B2wOWtBW7wdBr6c4KLvLmEleZr9gE4DjlWhLl9nOfXkJSqk9VoQEfc5lUbilo2+H83TroDasAGIRmkYx+jsXFqah9Igxzs39Hfdg7CRHmUhSAf+YimMGQZyOf+cko2bvx5KMEXDzAO4EOOwPYJBEsZqPy1sAHzU5KDvlDJayWDETJkeOlbz7mj5ODSuydihNIZUUYQqwYfUQITXTDNKU+6H6Xq1k8EWSBliKFLM8wWCmC9Wr1bstPFYueSDLHDZw4B8yH//nZ0E40d0KIDdZqRXZNRTSkhFMFr9Re72nRnrzH4wtuvcO6duv7XbRMR5+Z37ghn04f1ui1xeRzivH+QoT60NPnpI4A=",
 	"signatureText": "SAGE SAS"
 }
