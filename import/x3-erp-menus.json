@@ -21721,6 +21721,36 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_ERP_CCMACTION",
+      "title": "title_c1b68e3b-189f-422b-ae10-7503e54dccdf",
+      "description": "description_c1b68e3b-189f-422b-ae10-7503e54dccdf",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "CCMACTION",
+        "representation": "CCMACTION"
+      },
+      "module": {
+        "code": "STD_X3_ERP_CCM"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_CONSBPSI",
       "title": "title_c3b95938-5d1a-4eba-a028-ec658658d7c0",
       "description": "description_c3b95938-5d1a-4eba-a028-ec658658d7c0",
@@ -21795,6 +21825,36 @@
       "representationRef": null,
       "module": {
         "code": "STD_X3_ERP_MPUR"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_CCMCHGREQ",
+      "title": "title_e5f18957-db90-4b29-9690-6b42e11e88cb",
+      "description": "description_e5f18957-db90-4b29-9690-6b42e11e88cb",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "CCMCHGREQ",
+        "representation": "CCMCHGREQ"
+      },
+      "module": {
+        "code": "STD_X3_ERP_CCM"
       },
       "categories": [],
       "parameters": []
@@ -22095,6 +22155,36 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_ERP_CCMCHGREQIA",
+      "title": "title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7",
+      "description": "description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "CCMCHGREQ",
+        "representation": "CCMCHGREQIA"
+      },
+      "module": {
+        "code": "STD_X3_ERP_CCM"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_PBDECODITM",
       "title": "title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd",
       "description": "description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd",
@@ -22238,6 +22328,36 @@
       },
       "module": {
         "code": "STD_X3_ERP_MDBA"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_CCMPLANH",
+      "title": "title_50952f0a-2d2f-4926-9b57-59d1945aa0b6",
+      "description": "description_50952f0a-2d2f-4926-9b57-59d1945aa0b6",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "CCMPLANH",
+        "representation": "CCMPLANH"
+      },
+      "module": {
+        "code": "STD_X3_ERP_CCM"
       },
       "categories": [],
       "parameters": []
@@ -25046,12 +25166,16 @@
       "description_c3c2f913-9229-4266-bd7b-fa9c68c932ff": "ATSTREC",
       "title_d85b1a26-8b9b-4dd7-8328-aaee3eea5b11": "Stable data backup",
       "description_d85b1a26-8b9b-4dd7-8328-aaee3eea5b11": "ATSTSAV",
+      "title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Actions",
+      "description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Actions",
       "title_c3b95938-5d1a-4eba-a028-ec658658d7c0": "Products by supplier",
       "description_c3b95938-5d1a-4eba-a028-ec658658d7c0": "CONSBPSI",
       "title_977812db-43e4-4392-8189-f82c4c632f1f": "Shipment lines",
       "description_977812db-43e4-4392-8189-f82c4c632f1f": "CONSSHIPD",
       "title_f5995b1f-9893-4a5b-9c41-6c2d0b945307": "Transport inquiry",
       "description_f5995b1f-9893-4a5b-9c41-6c2d0b945307": "CONSTRN",
+      "title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Change request",
+      "description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Change request",
       "title_620919fe-fc2e-443d-82ef-ced1928adf0a": "VAT declaration",
       "description_620919fe-fc2e-443d-82ef-ced1928adf0a": "DCLVATOTH",
       "title_5375d07a-8c11-415f-ad69-b9342aabac68": "Economic reason codes",
@@ -25074,6 +25198,8 @@
       "description_c8548fe4-f35b-460b-ad1a-8c20268a7fb4": "GESSWIBVR",
       "title_cb68a012-591a-4f17-9632-6cec65bb18ff": "Transport",
       "description_cb68a012-591a-4f17-9632-6cec65bb18ff": "GESTRNP",
+      "title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Impact analysis",
+      "description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Impact analysis",
       "title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Payment balance declaration product/reason code",
       "description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Payment balance ERC product",
       "title_413c646b-7895-4953-b935-2e30b530498b": "Payment balance declaration field settings",
@@ -25084,6 +25210,8 @@
       "description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Payment balance declaration generation",
       "title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
       "description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
+      "title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Plan",
+      "description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Plan",
       "title_c748cea5-7561-438e-a625-1eb0b237def9": "Germany",
       "description_c748cea5-7561-438e-a625-1eb0b237def9": "RPT61",
       "title_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "Import Swiss ISR file",
@@ -27889,7 +28017,7 @@
       "description_5cbc7fa7-41c4-4feb-94e6-098fb63ac280": "Fact. achat non comp",
       "title_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Facturas venda não contab.",
       "description_48d860fb-fae2-4e24-b7a0-d31440d0af0f": "Fact. vente non comp",
-      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Conexão à Sage taca vendas",
+      "title_a7f15896-ff5f-4853-bb15-a820176c2363": "Conexão ao Sage Tax Sales",
       "description_a7f15896-ff5f-4853-bb15-a820176c2363": "GESLTP",
       "title_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "Indicadores comprador",
       "description_cc796dfa-6c9a-4d8d-b4a9-acc5e8c674cb": "INDIC_ACHE",
@@ -27994,8 +28122,14 @@
       "description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "COPE - Configuração",
       "title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Geração dados COPE",
       "description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Geração dados COPE",
+      "title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Locais",
+      "description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Locais",
       "title_c748cea5-7561-438e-a625-1eb0b237def9": "Alemanha",
-      "title_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "Importação ficheiro BVR Suiço"
+      "title_6f02c8f3-5754-4a49-8abf-4cb36963fa22": "Importação ficheiro BVR Suiço",
+      "title_6a64a934-9648-487f-a305-0762022be318": "Contentores",
+      "description_6a64a934-9648-487f-a305-0762022be318": "Contentores",
+      "title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Tempos de transporte",
+      "description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Tempos de transporte"
     },
     "ru-ru": {
       "title_0b9db8ca-4044-4899-8051-ae65f8579171": "STD_X3_ERP_RACH023",
