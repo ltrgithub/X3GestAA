@@ -709,6 +709,64 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_NOTIF_THEME",
+      "title": "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "description": "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationThemes",
+        "representation": "notificationTheme"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_NOTIF_TEMPLATE",
+      "title": "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "description": "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mailTemplates",
+        "representation": "mailTemplate"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_APPLICATIONS",
       "title": "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
       "description": "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
@@ -1261,6 +1319,14 @@
                 },
                 {
                   "code": "S_NOTIF_EVENT",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "S_NOTIF_THEME",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "S_NOTIF_TEMPLATE",
                   "$variantType": "menuItem"
                 }
               ]
@@ -1843,151 +1909,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_MOBILE_APPS",
-      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileApplications",
-        "representation": "mobileApplication"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_DASHBOARD",
-      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
-      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileDashboards",
-        "representation": "mobileDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_GADGET",
-      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileGadgets",
-        "representation": "mobileGadget"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_MIGRATE_DASHBOARD",
-      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$create",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileMigrateDashboards",
-        "representation": "mobileMigrateDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_f4a0ed58-1182-4fe1-90af-244521b1760a",
-      "code": "S_MOBILITY",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "items": [
-        {
-          "code": "S_MOBILE_APPS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_DASHBOARD",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_GADGET",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_MIGRATE_DASHBOARD",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_IMPORT_TOOL",
       "title": "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
       "description": "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
@@ -2266,6 +2187,29 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_PLUGIN_CR",
+      "title": "title_51626e59-ffe1-4755-8673-630aea54cc25",
+      "description": "description_51626e59-ffe1-4755-8673-630aea54cc25",
+      "linkType": "$external",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "externalUrl": "/plugin/download/safex3-crconnector-installer-x86_64.exe",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": null,
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874",
       "code": "S_TOOLS",
@@ -2337,8 +2281,157 @@
             {
               "code": "S_PLUGIN_ILOG",
               "$variantType": "menuItem"
+            },
+            {
+              "code": "S_PLUGIN_CR",
+              "$variantType": "menuItem"
             }
           ]
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_APPS",
+      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileApplications",
+        "representation": "mobileApplication"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_DASHBOARD",
+      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
+      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileDashboards",
+        "representation": "mobileDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_GADGET",
+      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileGadgets",
+        "representation": "mobileGadget"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_MIGRATE_DASHBOARD",
+      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileMigrateDashboards",
+        "representation": "mobileMigrateDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_f4a0ed58-1182-4fe1-90af-244521b1760a",
+      "code": "S_MOBILITY",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "items": [
+        {
+          "code": "S_MOBILE_APPS",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "S_MOBILE_DASHBOARD",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "S_MOBILE_GADGET",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "S_MOBILE_MIGRATE_DASHBOARD",
+          "$variantType": "menuItem"
         }
       ]
     },
@@ -2610,6 +2703,36 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_LICENSEVIEW",
+      "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "all",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "licenseViews",
+        "representation": "licenseView"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -2677,6 +2800,10 @@
             {
               "code": "S_CVG_REUSE",
               "$variantType": "menuItem"
+            },
+            {
+              "code": "S_LICENSEVIEW",
+              "$variantType": "menuItem"
             }
           ]
         }
@@ -2703,10 +2830,10 @@
           "code": "S_PERS"
         },
         {
-          "code": "S_MOBILITY"
+          "code": "S_TOOLS"
         },
         {
-          "code": "S_TOOLS"
+          "code": "S_MOBILITY"
         },
         {
           "code": "S_USAGE"
@@ -3079,6 +3206,64 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_NOTIF_THEME",
+      "title": "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "description": "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationThemes",
+        "representation": "notificationTheme"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_NOTIF_TEMPLATE",
+      "title": "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "description": "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mailTemplates",
+        "representation": "mailTemplate"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_APPLICATIONS",
       "title": "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
       "description": "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
@@ -3631,6 +3816,14 @@
                 },
                 {
                   "code": "S_NOTIF_EVENT",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "S_NOTIF_THEME",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "S_NOTIF_TEMPLATE",
                   "$variantType": "menuItem"
                 }
               ]
@@ -4213,151 +4406,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_MOBILE_APPS",
-      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileApplications",
-        "representation": "mobileApplication"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_DASHBOARD",
-      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
-      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileDashboards",
-        "representation": "mobileDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_GADGET",
-      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileGadgets",
-        "representation": "mobileGadget"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_MIGRATE_DASHBOARD",
-      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$create",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileMigrateDashboards",
-        "representation": "mobileMigrateDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_f4a0ed58-1182-4fe1-90af-244521b1760a",
-      "code": "S_MOBILITY",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "items": [
-        {
-          "code": "S_MOBILE_APPS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_DASHBOARD",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_GADGET",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_MIGRATE_DASHBOARD",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_IMPORT_TOOL",
       "title": "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
       "description": "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
@@ -4636,6 +4684,29 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_PLUGIN_CR",
+      "title": "title_51626e59-ffe1-4755-8673-630aea54cc25",
+      "description": "description_51626e59-ffe1-4755-8673-630aea54cc25",
+      "linkType": "$external",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "externalUrl": "/plugin/download/safex3-crconnector-installer-x86_64.exe",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": null,
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874",
       "code": "S_TOOLS",
@@ -4707,8 +4778,157 @@
             {
               "code": "S_PLUGIN_ILOG",
               "$variantType": "menuItem"
+            },
+            {
+              "code": "S_PLUGIN_CR",
+              "$variantType": "menuItem"
             }
           ]
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_APPS",
+      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileApplications",
+        "representation": "mobileApplication"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_DASHBOARD",
+      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
+      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileDashboards",
+        "representation": "mobileDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_GADGET",
+      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileGadgets",
+        "representation": "mobileGadget"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_MIGRATE_DASHBOARD",
+      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileMigrateDashboards",
+        "representation": "mobileMigrateDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_f4a0ed58-1182-4fe1-90af-244521b1760a",
+      "code": "S_MOBILITY",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "items": [
+        {
+          "code": "S_MOBILE_APPS",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "S_MOBILE_DASHBOARD",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "S_MOBILE_GADGET",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "S_MOBILE_MIGRATE_DASHBOARD",
+          "$variantType": "menuItem"
         }
       ]
     },
@@ -4980,6 +5200,36 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_LICENSEVIEW",
+      "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "all",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "licenseViews",
+        "representation": "licenseView"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -5047,6 +5297,10 @@
             {
               "code": "S_CVG_REUSE",
               "$variantType": "menuItem"
+            },
+            {
+              "code": "S_LICENSEVIEW",
+              "$variantType": "menuItem"
             }
           ]
         }
@@ -5073,10 +5327,10 @@
           "code": "S_PERS"
         },
         {
-          "code": "S_MOBILITY"
+          "code": "S_TOOLS"
         },
         {
-          "code": "S_TOOLS"
+          "code": "S_MOBILITY"
         },
         {
           "code": "S_USAGE"
@@ -5345,6 +5599,10 @@
       "description_292addf8-1101-41a2-803f-24c3a3615da3": "Notification servers",
       "title_7fc976c6-b66d-4257-a314-f337746232a5": "Notification events",
       "description_7fc976c6-b66d-4257-a314-f337746232a5": "Notification events",
+      "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "Notification themes",
+      "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "Notification themes",
+      "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "Notification templates",
+      "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "Notification templates",
       "title_e5d028e2-2a7d-4475-ae98-6b925b48f125": "Endpoints",
       "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
       "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications management interface",
@@ -5404,15 +5662,6 @@
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Menu categories management interface",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Customized pages",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages management interface",
-      "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "Mobile applications",
-      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
-      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
-      "title_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
-      "description_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
-      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
-      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
-      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
-      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utilities",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Imports",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import Tool",
@@ -5431,6 +5680,18 @@
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Install addins for Office",
       "title_5ee934c2-c6d2-4280-b7a5-eb2ff16e42d5": "Install addin for Outlook",
       "title_967385fc-f979-4e89-836c-2410760246e5": "Ilog Connector",
+      "description_967385fc-f979-4e89-836c-2410760246e5": "Connector for Scales and Gantt ILOG modules",
+      "title_51626e59-ffe1-4755-8673-630aea54cc25": "Crystal Report Connector",
+      "description_51626e59-ffe1-4755-8673-630aea54cc25": "Connector for Crystal Report developer mode",
+      "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "Mobile applications",
+      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
+      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
+      "title_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
+      "description_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
+      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
+      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
+      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
+      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Usage",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
@@ -5450,6 +5711,7 @@
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions Management",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
+      "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "License follow up",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard"
     },
     "es-es": {
@@ -6050,6 +6312,15 @@
       "description_d6affc29-40d1-41bd-b209-f4f2160401ae": "LDAP服务器管理接口",
       "title_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2服务器",
       "description_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2服务器管理接口",
+      "title_627a9da2-ed4b-42c0-bf72-2b6947174061": "通知",
+      "title_292addf8-1101-41a2-803f-24c3a3615da3": "通知服务器",
+      "description_292addf8-1101-41a2-803f-24c3a3615da3": "通知服务器",
+      "title_7fc976c6-b66d-4257-a314-f337746232a5": "通知事件",
+      "description_7fc976c6-b66d-4257-a314-f337746232a5": "通知事件",
+      "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "通知主题",
+      "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "通知主题",
+      "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "通知模板",
+      "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "通知模板",
       "title_e5d028e2-2a7d-4475-ae98-6b925b48f125": "端点",
       "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "应用程序",
       "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "应用程序管理接口",
@@ -6071,11 +6342,19 @@
       "title_d7903964-50fb-4238-984e-cee77570de7d": "服务器",
       "title_8158e8c6-226b-49d4-b064-089b6d680e6c": "web服务器",
       "description_8158e8c6-226b-49d4-b064-089b6d680e6c": "Syracuse服务器",
+      "title_8f15f01f-c81a-4679-a24f-9d12f4f25d69": "X3解决方案",
+      "description_8f15f01f-c81a-4679-a24f-9d12f4f25d69": "X3解决方案",
       "title_7366d800-1b3c-4d21-b22c-d74d00906965": "BI服务器",
+      "title_f6e5578a-4cf2-4f51-a7eb-9e27f10c2073": "HRM门户",
       "title_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM服务器",
       "description_f0cd2a5c-3c57-4695-830f-1434970e3e4c": "HRM服务器",
       "title_72454731-49a9-4d6b-ab74-bd189b0bde20": "HRM地点",
       "description_72454731-49a9-4d6b-ab74-bd189b0bde20": "HRM地点",
+      "title_76316827-8b46-4b7d-ab5f-c247d424847f": "Web服务",
+      "title_132d6f72-622d-435b-8e11-eb06a415b213": "经典版SOAP Web服务",
+      "description_132d6f72-622d-435b-8e11-eb06a415b213": "经典版SOAP Web服务",
+      "title_861bb1df-25cd-41b9-be7a-20d23a5f34b5": "经典版SOAP池配置",
+      "description_861bb1df-25cd-41b9-be7a-20d23a5f34b5": "经典版SOAP池配置",
       "title_8135f76e-2cbd-428d-b48e-c1335b486544": "REST Web服务",
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "协作空间",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "团队",
@@ -6114,7 +6393,23 @@
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "自定义项管理",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "资源组",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "安装",
+      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "更新",
+      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "“一键”更新",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "安装Office加载项",
+      "title_5ee934c2-c6d2-4280-b7a5-eb2ff16e42d5": "安装Outlook加载项",
+      "title_967385fc-f979-4e89-836c-2410760246e5": "Ilog连接器",
+      "description_967385fc-f979-4e89-836c-2410760246e5": "磅秤连接器和甘特Ilog模块",
+      "title_51626e59-ffe1-4755-8673-630aea54cc25": "水晶报表连接器",
+      "description_51626e59-ffe1-4755-8673-630aea54cc25": "水晶报表连接器开发员模式",
+      "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "移动应用",
+      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
+      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
+      "title_f6c887ee-88cc-4992-be28-e92d97457732": "移动仪表板",
+      "description_f6c887ee-88cc-4992-be28-e92d97457732": "移动仪表板",
+      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "移动小部件",
+      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "移动小部件",
+      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "迁移移动仪表板",
+      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "迁移移动仪表板",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "开发",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
@@ -6134,6 +6429,7 @@
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "会话管理",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "经典版客户端会话",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "可重复使用的经典版会话",
+      "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "许可证跟踪",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
     }
   }
