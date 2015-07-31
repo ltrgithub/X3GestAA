@@ -175,7 +175,7 @@ exports.config = {
 									health:{
 					parallel: 4,
 					delay: 300,
-					logUrl: "https://api.sageerpx3online.com/healthLogs/production",
+					logUrl: "https://api.sagex3.com/healthLogs/production",
 					cloudwatch: true,
 	},
 
