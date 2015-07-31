@@ -136,6 +136,7 @@ exports.config = {
 			// trace: console.log,
 		},
         reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+        // webProxyWhitelist: "^(.*)/(GEN|RES)/.*\.(js|json|gif|png|jpeg|jpg|ico|bmp)$", // whitelist for PUB web folder, there is a builtin whitelist. Regexp or array of regexp.
 	},
 
 	help: {
