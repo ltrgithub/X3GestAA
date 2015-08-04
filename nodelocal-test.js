@@ -66,7 +66,8 @@ exports.config = {
         period: 300,
 		threshold: 60000,
 		actionsEnabled: true,
-		actions: "arn:aws:sns:us-east-1:653201425183:TestEmail"
+		actions: "arn:aws:sns:us-east-1:653201425183:TestEmail",
+		env: "Test"
        },
 	streamline: {
 		// "homedrive": "c:", // running node as service
