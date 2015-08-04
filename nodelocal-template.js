@@ -148,10 +148,11 @@ exports.config = {
             info : true
         }*/
 		//deactivateRight: true,
-		// default configuration options for fuzzy search
+        // default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
-		// offStemmer : true // desactivation of the stemmer for the search indexation
+		// offStemmer : true, // desactivation of the stemmer for the search indexation
+        // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
 	},
 	translation: {
 		// trace: console.log,
