@@ -65,7 +65,8 @@ exports.config = {
                 period: 300,
                 threshold: 60000,
                 actionsEnabled: true,
-                actions: "arn:aws:sns:us-east-1:697686824409:X3Staging_Server_Alerts"   //SNS Topic ARN for cloudwatch alarm notification
+                actions: "arn:aws:sns:us-east-1:697686824409:X3Staging_Server_Alerts",   //SNS Topic ARN for cloudwatch alarm notification
+                env: "Staging"
         },
         streamline: {
                 // "homedrive": "c:", // running node as service
