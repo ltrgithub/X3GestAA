@@ -65,7 +65,8 @@ exports.config = {
                 period: 300,
                 threshold: 60000,
                 actionsEnabled: true,
-                actions: ""   //SNS Topic ARN for cloudwatch alarm notification
+                actions: "",   //SNS Topic ARN for cloudwatch alarm notification
+                env: "Production"
         },
         streamline: {
                 // "homedrive": "c:", // running node as service
