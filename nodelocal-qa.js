@@ -65,7 +65,8 @@ exports.config = {
         period: 300,
 		threshold: 60000,
 		actionsEnabled: true,
-		actions: "arn:aws:sns:us-west-1:653201425183:AlarmEmail"
+		actions: "arn:aws:sns:us-west-1:653201425183:AlarmEmail",
+		env: "QA"
        },
 	streamline: {
 		// "homedrive": "c:", // running node as service
