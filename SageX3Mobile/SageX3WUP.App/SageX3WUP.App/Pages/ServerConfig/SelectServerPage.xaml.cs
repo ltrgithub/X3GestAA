@@ -25,6 +25,12 @@ namespace SageX3WUP.App.Pages
         public SelectServerPage()
         {
             this.InitializeComponent();
+            this.Loaded += SelectServerPage_Loaded;
+        }
+
+        private void SelectServerPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.gridView.ItemsSource = SageX3WUP.App.Model.Servers.GetKnownServers().List;
         }
     }
 }

@@ -5,19 +5,53 @@
     xmlns:local="using:SageX3WUP.App"
     RequestedTheme="Light">
     <Application.Resources>
-        
-    <DataTemplate x:Key="ServerConfigReadOnly">
-            <StackPanel Orientation="Vertical" Width="400" Background="#4d4f53" Padding="10,10,10,10">
-            <TextBlock Text="{Binding Name}" Foreground="White" FontSize="36" Margin="10,0,0,0" TextTrimming="WordEllipsis" TextWrapping="Wrap" HorizontalAlignment="Left"/>
-            <TextBlock Text="{Binding Description}"  Foreground="White" FontSize="18" Margin="10,0,0,0" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button>Make default</Button>
-                <Button>Edit</Button>
-                <Button>Remove</Button>
-            </StackPanel>
-        </StackPanel>
-    </DataTemplate>
 
+
+        <!-- colors -->
+        <SolidColorBrush x:Key="SageBrandColorFg">#007F64</SolidColorBrush>
+        <SolidColorBrush x:Key="SageProductColorFg">#41a949</SolidColorBrush>
+        <SolidColorBrush x:Key="SageHeaderColorBg">#FFFFFF</SolidColorBrush>
+        <SolidColorBrush x:Key="SageHeaderColorTitleFg">#4d4f53</SolidColorBrush>
+        <SolidColorBrush x:Key="SageFooterColorBg">#202224</SolidColorBrush>
+        
+        <SolidColorBrush x:Key="SagTileGreyColorBg">#333333</SolidColorBrush>
+        <SolidColorBrush x:Key="SagTileGreyColorFg">#FFFFFF</SolidColorBrush>
+        
+        <FontFamily x:Key="SageFoco">/Resources/Fonts/foco-webfont.ttf#Foco</FontFamily>
+        <FontFamily x:Key="SageFA">/Resources/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
+
+        <DataTemplate x:Key="ServerConfigReadOnly">
+            <Grid Background="{ThemeResource SagTileGreyColorBg}" Width="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Name}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="36" Margin="10,0,10,0" TextTrimming="WordEllipsis" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Description}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="15" Margin="10,0,10,0" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="15" Margin="10,0,10,0" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right">
+                    <Button Margin="0,0,10,0">Make default</Button>
+                    <Button Margin="0,0,10,0">Select</Button>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ServerConfig">
+            <StackPanel Orientation="Vertical" Width="400" Background="White" Padding="10,10,10,10">
+                <TextBlock Text="{Binding Name}" Foreground="White" FontSize="36" Margin="10,0,10,0" TextTrimming="WordEllipsis" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding Description}"  Foreground="White" FontSize="18" Margin="10,10,0,0" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button>Edit</Button>
+                    <Button>Remove</Button>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
     </Application.Resources>
 
 </Application>
