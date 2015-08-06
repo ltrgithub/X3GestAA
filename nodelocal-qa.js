@@ -48,6 +48,7 @@ exports.config = {
 		enabled: true,
 		delay: 300,
 		siteuriSuffix: "/auth/login/page",
+		timeout: 30,
 		cloudwatch: true,
 		esHostName: "http://internal-ElasticSearch-1335197430.us-west-1.elb.amazonaws.com",
 		esPort: 9200,
