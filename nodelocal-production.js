@@ -48,6 +48,7 @@ exports.config = {
                 enabled: true,
                 delay: 300,
                 siteuriSuffix: "/auth/login/page",
+                timeout: 30,
                 cloudwatch: true,
                 esHostName: "http://elastic_search_master",
                 esPort: 9200,
