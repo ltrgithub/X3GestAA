@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page x:Name="SelectServerPage1"
     x:Class="SageX3WUP.App.Pages.SelectServerPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,13 +6,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="ServerConfigReadOnly">
+            <Grid Background="{ThemeResource SagTileGreyColorBg}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Name}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="{StaticResource SagTileGreyColorFg}"  FontFamily="{StaticResource SageFoco}" FontSize="36" Margin="10,0,10,0" TextTrimming="WordEllipsis" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+
+                <TextBlock Text="&#xf05a;" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFA}" TextTrimming="WordEllipsis" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFoco}" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
+                <TextBlock Text="&#xf0c1;" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFA}" TextTrimming="WordEllipsis" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding Url}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFoco}" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
+<!--
+                <StackPanel Orientation="Horizontal"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right">
+                    <Button Margin="0,0,10,0">Make default</Button>
+                    <Button Margin="0,0,10,0">Select</Button>
+                </StackPanel>
+-->                
+            </Grid>
+        </DataTemplate>
+
+    </Page.Resources>
 
     <Grid Background="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="45" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -29,14 +62,41 @@
         </StackPanel>
 
         <Image x:Name="image" Source="ms-appx:///Resources/Images/background_servers.jpg" Stretch="UniformToFill" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
-        <Rectangle Grid.ColumnSpan="2" Fill="#FFF4F4F5" Stroke="Black" Grid.Row="2" Grid.Column="1" Opacity="0.2"/>
-        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+        <Rectangle Grid.ColumnSpan="4" Fill="#FFF4F4F5" Stroke="Black" Opacity="0.2" Margin="0" Grid.Row="2"/>
+        <StackPanel x:Name="stackPanelHeader" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Row="1" Margin="50,0,0,0">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Select a server" Foreground="{StaticResource SagPageHeaderColorFg}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.ColumnSpan="4" Margin="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
 
-            <GridView x:Name="gridView" Padding="20" ItemTemplate="{StaticResource ServerConfigReadOnly}" Margin="0"/>
+            <GridView x:Name="gridViewServers" 
+                      Padding="20" 
+                      ItemTemplate="{StaticResource ServerConfigReadOnly}" 
+                      Margin="0" 
+                      SizeChanged="gridViewServers_SizeChanged" 
+                      ItemClick="gridViewServers_ItemClick" 
+                      IsItemClickEnabled="True">
+                <!--
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid ItemWidth="{Binding GridViewItemWidth, ElementName=gridViewServers}"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid ItemWidth="{Binding GridViewItemWidth, ElementName=gridViewServers}" Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+-->
+                <GridView.ItemContainerStyle>
+                    <Style TargetType="GridViewItem">
+                        <Setter Property="Margin" Value="0,0,15,15" />
+                    </Style>
+                </GridView.ItemContainerStyle>
+            </GridView>
         </Grid>
         <StackPanel x:Name="stackFooter" Grid.ColumnSpan="4" BorderBrush="{StaticResource SageFooterColorBg}" Grid.Row="4" Background="{StaticResource SageFooterColorBg}">
             <Button x:Name="buttonNewServer" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalContentAlignment="Right" Foreground="White" FontSize="24" Width="176" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
