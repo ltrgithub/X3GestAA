@@ -102,8 +102,8 @@
     <Compile Include="Pages\WebView\WebViewPage.xaml.cs">
       <DependentUpon>WebViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ServerConfig\ConfigNewServerPage.xaml.cs">
-      <DependentUpon>ConfigNewServerPage.xaml</DependentUpon>
+    <Compile Include="Pages\ServerConfig\ConfigServerPage.xaml.cs">
+      <DependentUpon>ConfigServerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,11 +111,20 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Resources\Images\background_servers.jpg" />
+    <Content Include="Resources\Images\background_login.jpg" />
     <None Include="ApplicationInsights.config" />
+    <Content Include="Resources\Fonts\foco-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="SageX3WUP.App_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Thirdparty\Server-Room.jpg" />
     <Content Include="Pages\ServerConfig\background.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
@@ -137,7 +146,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ServerConfig\ConfigNewServerPage.xaml">
+    <Page Include="Pages\ServerConfig\ConfigServerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

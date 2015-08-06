@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="SageX3WUP.App.Pages.ConfigNewServerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SageX3WUP.App.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="textBlockName" TextWrapping="Wrap" Text="Server name" Margin="0" Grid.Row="1" FontSize="32" Padding="20,0,6,0" Foreground="White"/>
+
+            <TextBox x:Name="textBoxName" TextWrapping="Wrap" Text="" Margin="20,20,20,0" Grid.Row="2" FontSize="32"/>
+            <TextBlock x:Name="textBlockDescription" TextWrapping="Wrap" Text="Description" Margin="0" Grid.Row="4" FontSize="32" Padding="20,0,6,0" Foreground="White"/>
+            <TextBox x:Name="textBoxDescription" TextWrapping="Wrap" Text="" Margin="20,20,20,0" Grid.Row="5" FontSize="32"/>
+            <TextBlock x:Name="textBlockUrl" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Server url" VerticalAlignment="Top" Grid.Row="7" FontSize="32" Padding="20,0,6,0" Foreground="White"/>
+            <TextBox x:Name="textBoxUrl" TextWrapping="Wrap" Text="" Margin="20,20,20,0" Grid.Row="8" FontSize="32"/>
+        </Grid>
+        <Image x:Name="image" Grid.RowSpan="2" Source="ms-appx:///Assets/Thirdparty/Server-Room.jpg" Stretch="UniformToFill"/>
+        <TextBlock x:Name="textBlock" Margin="0,0,0,-3" TextWrapping="Wrap" Text="Configure server" FontSize="64" TextAlignment="Center" Padding="0,0,20,0" Foreground="White" Grid.ColumnSpan="2"/>
+
+    </Grid>
+
+
+</Page>

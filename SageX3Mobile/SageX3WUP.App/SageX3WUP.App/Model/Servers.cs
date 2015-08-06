@@ -31,8 +31,11 @@ namespace SageX3WUP.App.Model
         private Servers()
         {
             this.List = new List<Server>();
-            this.List.Add(new Server("1", "Debug Host", "Debug client on Host Notebook", "http://vil-004626-nb:8124/syracuse-tablet/html/index_debug.html"));
-            this.List.Add(new Server("2", "Minified Host", "Minified client on Host Notebook", "http://vil-004626-nb:8124/syracuse-tablet/dist/index.html"));
+            for (int i = 0; i < 20; i++)
+            {
+                this.List.Add(new Server("" + (i*2), "Debug Host", "Debug client on Host Notebook - " +i , "http://vil-004626-nb:8124/syracuse-tablet/html/index_debug.html"));
+                this.List.Add(new Server("" + (i*2+1), "Minified Host", "Minified client on Host Notebook - " + i, "http://vil-004626-nb:8124/syracuse-tablet/dist/index.html"));
+            }
         }
 
         public static Servers GetKnownServers()

@@ -7,7 +7,47 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="stackHeader" Grid.ColumnSpan="4" Background="{StaticResource SageHeaderColorBg}">
+            <StackPanel x:Name="stackBrand" HorizontalAlignment="Left" Margin="15,7,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBlock x:Name="textBrand" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="Sage" VerticalAlignment="Top" Foreground="{StaticResource ResourceKey=SageBrandColorFg}" FontFamily="{StaticResource SageFoco}" FontSize="35" FontWeight="Bold"/>
+                <TextBlock x:Name="textProduct" HorizontalAlignment="Left" Margin="5,0,0,0" TextWrapping="Wrap" Text="X3" VerticalAlignment="Top" Foreground="{StaticResource SageProductColorFg}" FontFamily="{StaticResource SageFoco}" FontSize="35"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Image x:Name="image" Source="ms-appx:///Resources/Images/background_servers.jpg" Stretch="UniformToFill" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+        <Rectangle Grid.ColumnSpan="2" Fill="#FFF4F4F5" Stroke="Black" Grid.Row="2" Grid.Column="1" Opacity="0.2"/>
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <GridView x:Name="gridView" Padding="20" ItemTemplate="{StaticResource ServerConfigReadOnly}" Margin="0"/>
+        </Grid>
+        <StackPanel x:Name="stackFooter" Grid.ColumnSpan="4" BorderBrush="{StaticResource SageFooterColorBg}" Grid.Row="4" Background="{StaticResource SageFooterColorBg}">
+            <Button x:Name="buttonNewServer" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalContentAlignment="Right" Foreground="White" FontSize="24" Width="176" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
+                <StackPanel Margin="0" Height="50">
+                    <TextBlock x:Name="textBlockIconCreate" TextWrapping="Wrap" Text="&#xF0FE;" FontFamily="{StaticResource SageFA}" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="21"/>
+                    <TextBlock x:Name="textBlockCreate" TextWrapping="Wrap" Text="Create new server" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Margin="0,0,0,0"/>
+
+                </StackPanel>
+
+            </Button>
+        </StackPanel>
 
     </Grid>
 </Page>

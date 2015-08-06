@@ -26,5 +26,6 @@ namespace SageX3WUP.App.Pages
         {
             this.InitializeComponent();
         }
+        
     }
 }

@@ -52,7 +52,7 @@ namespace SageX3WUP.App
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                //this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
 
@@ -81,8 +81,8 @@ namespace SageX3WUP.App
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                //rootFrame.Navigate(typeof(MainPage), e.Arguments);
-                rootFrame.Navigate(typeof(SageX3WUP.App.Pages.WebViewPage), "1");
+                rootFrame.Navigate(typeof(SageX3WUP.App.Pages.SelectServerPage), e.Arguments);
+                //rootFrame.Navigate(typeof(SageX3WUP.App.Pages.WebViewPage), "1");
             }
             // Ensure the current window is active
             Window.Current.Activate();
