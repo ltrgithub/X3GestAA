@@ -8,10 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="#FF006C30">
-        <WebView x:Name="webView"/>
-        <StackPanel x:Name="panelLoading" Height="150" Margin="0,197,0,293" VerticalAlignment="Center" Background="White">
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Loading" Height="72" FontSize="48" TextAlignment="Center"/>
-            <ProgressBar Height="50" VerticalAlignment="Stretch" IsIndeterminate="True" Margin="100,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <WebView x:Name="webView" Grid.RowSpan="3"/>
+        <StackPanel x:Name="panelLoading" Margin="0" VerticalAlignment="Center" Background="White" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Loading" Height="72" FontSize="48" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlockName" TextWrapping="Wrap" Text="config" FontSize="48" Margin="20,0,0,0"/>
+            </StackPanel>
+            <ProgressBar Height="50" VerticalAlignment="Stretch" IsIndeterminate="True" Margin="0"/>
         </StackPanel>
     </Grid>
 </Page>

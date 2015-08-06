@@ -78,11 +78,7 @@ namespace SageX3WUP.App
 
             if (rootFrame.Content == null)
             {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                rootFrame.Navigate(typeof(SageX3WUP.App.Pages.SelectServerPage), e.Arguments);
-                //rootFrame.Navigate(typeof(SageX3WUP.App.Pages.WebViewPage), "1");
+                CleanStartupOpenPage(e);
             }
             // Ensure the current window is active
             Window.Current.Activate();
@@ -110,6 +106,27 @@ namespace SageX3WUP.App
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        /// <summary>
+        /// Opens default page on clean startup with no arguments
+        /// </summary>
+        /// <param name="e"></param>
+        private void CleanStartupOpenPage(LaunchActivatedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            // When the navigation stack isn't restored navigate to the first page,
+            // configuring the new page by passing required information as a navigation
+            // parameter
+            Model.Server server = Model.Servers.GetKnownServers().GetDefaultServer();
+            if (server != null)
+            {
+                rootFrame.Navigate(typeof(SageX3WUP.App.Pages.WebViewPage), server.Id);
+            }
+            else
+            {
+                rootFrame.Navigate(typeof(SageX3WUP.App.Pages.SelectServerPage));
+            }
         }
     }
 }

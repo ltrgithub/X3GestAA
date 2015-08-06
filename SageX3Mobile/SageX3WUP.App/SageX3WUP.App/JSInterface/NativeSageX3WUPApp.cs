@@ -32,11 +32,11 @@ namespace SageX3WUP.App.Pages
         /// </summary>
         public void NotifLoaded()
         {
-            this.page.hideLoadingMessage();
+            this.page.NotifLoaded();
         }
         public void NotifStartFail(string msg)
         {
-            this.page.hideLoadingMessage();
+            this.page.NotifStartFail(msg);
         }
     }
 }
