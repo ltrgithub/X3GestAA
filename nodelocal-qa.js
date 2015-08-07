@@ -53,19 +53,21 @@ exports.config = {
 		dataset: "syracuse",
 		hostname: "10.198.2.4:27017,10.198.2.68",
 		port: 27017,
-		logpath: "E:\\Sage\\Syracuse\\syracuse\\logs",
-		certdir: "E:\\Sage\\Syracuse\\syracuse\\certs",
-        	cacheDir: "E:\\Sage\\Syracuse\\syracuse\\cache"
+		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
+		certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
+        cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
 	},
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
             db: {
                 w: 1,
+
             },
             server: {
             },
             replSet: {
+  
                 rs_name: "mongodevRepl"
             },
 
@@ -134,7 +136,7 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
-		hostname: "elastic_search_master",
+		hostname: "10.198.2.5",
         port: 9200,
 		//tracer: console.log,
 
@@ -190,7 +192,7 @@ exports.config = {
 		database: 'syracuse',
 	},
 	aws: {
-	 	"region": "us-west-2",
+	 	"region": "us-east-1",
 
 	},
     	unit_test: {
@@ -201,8 +203,8 @@ exports.config = {
 	health:{
 		parallel: 4,
 		delay: 300,
-		logUrl: "https://devapi.dev-sageerpx3online.com/healthLogs/production",
-		siteUrl: "https://devapi.dev-sageerpx3online.com/sdata/sky/automation/production",
+		logUrl: "https://qanewapi.dev-sageerpx3online.com/healthLogs/production",
+		siteUrl: "https://qanewapi.dev-sageerpx3online.com/sdata/sky/automation/production",
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
     },
