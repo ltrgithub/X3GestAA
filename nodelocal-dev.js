@@ -198,11 +198,13 @@ exports.config = {
         	x3endpoint: {},
         	elasticsearch: {}
     },
-	// health:{
-	// 	parallel: 4,
-	// 	delay: 300,
-	// 	logUrl: "https://devapi.dev-sageerpx3online.com/healthLogs/production",
-	// 	cloudwatch: true,
- //    },
+	health:{
+		parallel: 4,
+		delay: 300,
+		logUrl: "https://devapi.dev-sageerpx3online.com/healthLogs/production",
+		siteUrl: "https://devapi.dev-sageerpx3online.com/sdata/sky/automation/production",
+		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
+		cloudwatch: true,
+    },
 
 };
