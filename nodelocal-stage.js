@@ -189,6 +189,8 @@ exports.config = {
 							parallel: 4,
 							delay: 300,
 							logUrl: "https://staging-api.sagex3.com/healthLogs/production",
+                            siteUrl: "https://staging-api.sagex3.com/sdata/sky/automation/production",
+                            site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 						cloudwatch: true,
 	},
 					aws: {
