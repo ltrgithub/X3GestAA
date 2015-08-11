@@ -12,6 +12,8 @@ try {
 	console.error(ex);
 }
 
+config.streamline.babel = {};
+
 (function() {
 	if (config.concurix) {
 		var cx = require('concurix-monitor')({
