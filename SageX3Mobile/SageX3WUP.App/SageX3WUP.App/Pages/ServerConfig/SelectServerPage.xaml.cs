@@ -56,11 +56,11 @@ namespace SageX3WUP.App.Pages
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void gridViewServers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            this.gridViewServers.ItemsSource = null;
+            this.gridViewServers.ItemsSource = SageX3WUP.App.Model.Servers.GetKnownServers().List;
         }
 
         /// <summary>
@@ -77,16 +77,6 @@ namespace SageX3WUP.App.Pages
             colWidth -= 15;
             colWidth = Math.Max(1, colWidth);
             this.gridViewServers.SetValue(GridViewItemWidthProperty, colWidth);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void gridViewServers_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
 
         /// <summary>

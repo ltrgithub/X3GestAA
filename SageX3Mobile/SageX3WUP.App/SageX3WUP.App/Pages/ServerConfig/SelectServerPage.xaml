@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
     <Page.Resources>
         <DataTemplate x:Key="ServerConfigReadOnly">
             <Grid Background="{ThemeResource SagTileGreyColorBg}" d:DesignWidth="1095.333" d:DesignHeight="619.333">
@@ -18,11 +19,14 @@
                     <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="10" />
                     <ColumnDefinition Width="50" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="10" />
                 </Grid.ColumnDefinitions>
+                <!--
+                <TextBlock Text="&#xF006;" Foreground="White" FontSize="36" FontFamily="{StaticResource SageFA}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+                -->
                 <TextBlock Text="{Binding Name}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="{StaticResource SagTileGreyColorFg}"  FontFamily="{StaticResource SageFoco}" FontSize="36" Margin="10,0,10,0" TextTrimming="WordEllipsis" TextWrapping="Wrap" HorizontalAlignment="Left"/>
 
                 <TextBlock Text="&#xf05a;" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFA}" TextTrimming="WordEllipsis" HorizontalAlignment="Right"/>
@@ -30,9 +34,21 @@
                 <TextBlock Text="&#xf0c1;" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFA}" TextTrimming="WordEllipsis" HorizontalAlignment="Right"/>
                 <TextBlock Text="{Binding Url}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFoco}" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
                 <StackPanel Grid.Column="2" Margin="0" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Right">
-                    <Button x:Name="buttonEditServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" Content="Edit" FontSize="16" Height="50" Click="buttonEditServer_Click" Margin="0,-3,0,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}"/>
-                    <Button x:Name="buttonDeleteServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" Content="Delete" FontSize="16" Height="50" Click="buttonDeleteServer_Click" Margin="0,-3,0,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}"/>
-                    <Button x:Name="buttonOpenServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" Content="Open" FontSize="16" Height="50" Click="buttonOpenServer_Click" Margin="0,-3,0,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}"/>
+                    <Button x:Name="buttonEditServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" FontSize="16" Height="50" Click="buttonEditServer_Click" Margin="0,0,10,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}">
+                        <StackPanel Orientation="Horizontal" Background="{StaticResource SageButton1ColorBg}">
+                            <TextBlock Text="&#xF040;" Foreground="{StaticResource SageButton1ColorFg}" FontSize="26.667" FontFamily="{StaticResource SageFA}" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="buttonDeleteServer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="16" Height="50" Click="buttonDeleteServer_Click" Margin="0,0,10,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}">
+                        <StackPanel Orientation="Horizontal" Background="{StaticResource SageButton1ColorBg}">
+                            <TextBlock Text="&#xF00D;" Foreground="{StaticResource SageButton1ColorFg}" FontSize="26.667" FontFamily="{StaticResource SageFA}" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="buttonOpenServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" FontSize="16" Height="50" Click="buttonOpenServer_Click" Margin="0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}">
+                        <StackPanel Orientation="Horizontal" Background="{StaticResource SageButton1ColorBg}">
+                            <TextBlock Text="&#xF152;" Foreground="{StaticResource SageButton1ColorFg}" FontSize="26.667" FontFamily="{StaticResource SageFA}" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Grid>
         </DataTemplate>

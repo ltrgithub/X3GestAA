@@ -173,6 +173,16 @@ namespace SageX3WUP.App.Model
                 srvInList.Name = srv.Name;
                 srvInList.Description = srv.Description;
                 srvInList.Url = srv.Url;
+                srvInList.IsDefault = srv.IsDefault;
+            }
+
+            // Set new default server
+            foreach (Server s in this.List)
+            {
+                if (srvInList.IsDefault && s != srvInList)
+                {
+                    s.IsDefault = false;
+                }
             }
             this.persistServers();
         }

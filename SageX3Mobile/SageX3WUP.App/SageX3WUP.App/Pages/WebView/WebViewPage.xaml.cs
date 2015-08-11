@@ -49,7 +49,6 @@ namespace SageX3WUP.App.Pages
             this.webView.NavigationFailed += WebView_NavigationFailed;
 
             this.addNativeLibraries();
-            this.Loaded += WebViewPage_Loaded;
         }
 
         /// <summary>
@@ -125,18 +124,20 @@ namespace SageX3WUP.App.Pages
             if (this.loadingState != WebviewLoadingState.ACKNOWLEDGED)
             {
                 this.loadingState = WebviewLoadingState.FAILED;
-                this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.showLoadingError("There was an error loading the application: The application did not respond in time." + "\nPlease select another server configuration")).AsTask();
+                this.showLoadingError("There was an error loading the application: The application did not respond in time." + "\nPlease select another server configuration");
             }
         }
 
-        private void showLoadingError(string msg)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="msg"></param>
+        private async void showLoadingError(string msg)
         {
-            MessageDialog messageDialog = new MessageDialog(msg, "Error loading application");
-            messageDialog.Commands.Add(new UICommand("Ok", new UICommandInvokedHandler(this.CommandInvokedHandler), "LOAD_ERROR_OK"));
-            messageDialog.DefaultCommandIndex = 0;
-            messageDialog.CancelCommandIndex = 0;
-
-            messageDialog.ShowAsync().AsTask().ContinueWith(i => this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, this.hideLoadingMessage));
+            await UIHelpers.ShowModal(msg, "Error loading application");
+            this.hideLoadingMessage();
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(SageX3WUP.App.Pages.SelectServerPage));
         }
 
 
@@ -151,15 +152,6 @@ namespace SageX3WUP.App.Pages
             {
                 rootFrame.Navigate(typeof(SageX3WUP.App.Pages.SelectServerPage));
             }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void WebViewPage_Loaded(object sender, RoutedEventArgs e)
-        {
         }
 
         /// <summary>
