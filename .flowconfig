@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/[a-r].*
+.*/node_modules/[t-z].*
+
+[include]
+node_modules/streamline/*
+node_modules/syracuse-core/*
+node_modules/syracuse-sdata/*
+
+[libs]
+
+[options]
+suppress_comment= *\\$FlowIssue
+unsafe.enable_getters_and_setters=true
