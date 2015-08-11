@@ -94,6 +94,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Cortana.cs" />
     <Compile Include="Model\Servers.cs" />
     <Compile Include="Pages\ServerConfig\SelectServerPage.xaml.cs">
       <DependentUpon>SelectServerPage.xaml</DependentUpon>
@@ -106,6 +107,7 @@
       <DependentUpon>ConfigServerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -113,6 +115,7 @@
     </AppxManifest>
     <Content Include="Resources\Images\background_servers.jpg" />
     <Content Include="Resources\Images\background_login.jpg" />
+    <Content Include="Resources\VoiceCommands.xml" />
     <None Include="ApplicationInsights.config" />
     <Content Include="Resources\Fonts\foco-webfont.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -124,7 +127,6 @@
     <None Include="SageX3WUP.App_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Thirdparty\Server-Room.jpg" />
     <Content Include="Pages\ServerConfig\background.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />

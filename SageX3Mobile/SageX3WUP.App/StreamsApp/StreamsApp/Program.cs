@@ -7,148 +7,65 @@ using System.IO;
 
 namespace StreamsApp
 {
-    class TestStream: Stream
+    public class Program
     {
-        private Stream wrappedStream;
-
-        public TestStream(Stream s)
-        {
-            wrappedStream = s;
-        }
-
-        public override bool CanRead
-        {
-            get
-            {
-                return wrappedStream.CanRead;
-            }
-        }
-
-        public override bool CanSeek
-        {
-            get
-            {
-                return wrappedStream.CanSeek;
-            }
-        }
-
-        public override bool CanWrite
-        {
-            get
-            {
-                return wrappedStream.CanWrite;
-            }
-        }
-
-        public override long Length
-        {
-            get
-            {
-                return wrappedStream.Length;
-            }
-        }
-
-        public override long Position
-        {
-            get
-            {
-                return wrappedStream.Position;
-            }
-
-            set
-            {
-                wrappedStream.Position = value;
-            }
-        }
-
-        public override void Flush()
-        {
-            wrappedStream.Flush();
-        }
-
-        public override int Read(byte[] buffer, int offset, int count)
-        {
-            return wrappedStream.Read(buffer, offset, count);
-        }
-
-        public override long Seek(long offset, SeekOrigin origin)
-        {
-            return wrappedStream.Seek(offset, origin);
-        }
-
-        public override void SetLength(long value)
-        {
-            wrappedStream.SetLength(value);
-        }
-
-        public override void Write(byte[] buffer, int offset, int count)
-        {
-            wrappedStream.Write(buffer, offset, count);
-        }
-
-        public async Task<byte[]> ReadPaketAsync()
-        {
-            byte[] buffer = new byte[32];
-            byte[] buffer2 = new byte[256];
-
-            int pos = 0;
-            while (true)
-            {
-                int num = await this.ReadAsync(buffer, 0, buffer.Length);
-                Console.WriteLine(num);
-                if (num <= 0)
-                {
-                    break;
-                }
-                Array.Copy(buffer, 0, buffer2, pos, num);
-                pos += num;
-                if (pos > 128)
-                {
-                    break;
-                }
-            }
-
-            byte[] r = new byte[pos];
-            Array.Copy(buffer2, r, pos);
-            return r;
-        }
-    }
-
-    class Program
-    {
-
         static void Main(string[] args)
         {
-
-            new Program().Go();
+            Go();
+        }
+        public static void Go()
+        {
+            GoAsync();
             Console.ReadLine();
         }
-
-        byte[] buffer = new byte[128];
-
-        public async void Go()
+        public static async void GoAsync()
         {
-            MemoryStream ms = new MemoryStream();
-            TestStream wt = new TestStream(ms);
-            Stream fs = new StreamReader(@"C:\temp\test.txt").BaseStream;
-            TestStream rd = new TestStream(fs);
 
-            int num = 1;
-            while (num > 0)
+            Console.WriteLine("Starting");
+
+
+            int i = 10;
+            Task task1 = null;
+            Task task2 = null;
+                try {
+            while (i-->0)
             {
-                //num = await rd.ReadAsync(buffer, 0, buffer.Length);
-                //await wt.WriteAsync(buffer, 0, num);
-
-                byte[] c = await rd.ReadPaketAsync();
-                num = c.Length;
-                await wt.WriteAsync(c, 0, c.Length);
-
-                //Console.Write(Encoding.UTF8.GetString(buffer, 0, buffer.Length));
+                    if (task1 == null || task1.IsCompleted)
+                    {
+                        if (task1 != null && task1.Exception != null)
+                        {
+                            throw task1.Exception;
+                        }
+                        task1 = Sleep(1000, i).ContinueWith(ix=>Sleep(1500, 0));
+                    }
+                    if (task2 == null || task2.IsCompleted)
+                    {
+                        if (task2 != null && task2.Exception != null)
+                        {
+                            throw task2.Exception;
+                        }
+                        task2 = Sleep(2000, i);
+                    }
+                    Task<int>.WaitAny(task1, task2);
             }
+                } catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
 
-            byte[] res = ms.GetBuffer();
-            Console.WriteLine(Encoding.UTF8.GetString(res, 0, (int) ms.Length));
-            Console.WriteLine("Size: " + ms.Length);
+        }
+
+        private async static Task<int> Sleep(int ms, int i)
+        {
+            Console.WriteLine("Sleeping for {0} at {1}", ms, Environment.TickCount);
+            await Task.Delay(ms);
+            if (i == 2)
+            {
+                Console.WriteLine("Throw");
+                throw new Exception("Killed");
+            }
+            Console.WriteLine("Sleeping for {0} finished at {1}", ms, Environment.TickCount);
+            return ms;
         }
     }
 }

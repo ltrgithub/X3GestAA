@@ -49,6 +49,8 @@ namespace SageX3WUP.App
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
+            Cortana.RegisterCommands();
+
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -84,12 +86,22 @@ namespace SageX3WUP.App
             Window.Current.Activate();
         }
 
+        protected override void OnActivated(IActivatedEventArgs e)
+        {
+            // Was the app activated by a voice command?
+            if (e.Kind == Windows.ApplicationModel.Activation.ActivationKind.VoiceCommand)
+            {
+                VoiceCommandActivatedEventArgs commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
+                Cortana.HandleCommand(commandArgs);
+            }
+        }                
+
         /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>
         /// <param name="sender">The Frame which failed navigation</param>
         /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+            void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
@@ -115,11 +127,8 @@ namespace SageX3WUP.App
         private void CleanStartupOpenPage(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            // When the navigation stack isn't restored navigate to the first page,
-            // configuring the new page by passing required information as a navigation
-            // parameter
             Model.Server server = Model.Servers.GetKnownServers().GetDefaultServer();
-            if (server != null)
+            if (server != null) // We got a default server, connect immediately
             {
                 rootFrame.Navigate(typeof(SageX3WUP.App.Pages.WebViewPage), server.Id);
             }

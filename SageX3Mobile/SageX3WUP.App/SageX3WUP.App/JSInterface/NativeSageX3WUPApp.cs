@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Data.Xml.Dom;
 using Windows.Foundation.Metadata;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -34,9 +36,23 @@ namespace SageX3WUP.App.Pages
         {
             this.page.NotifLoaded();
         }
+
+        /// <summary>
+        /// Called when webapp encounters problems starting up
+        /// </summary>
+        /// <param name="msg"></param>
         public void NotifStartFail(string msg)
         {
             this.page.NotifStartFail(msg);
+        }
+
+        public void UpdateTile()
+        {
+            XmlDocument tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare310x310ImageAndText01);
+            XmlNodeList tileTextAttributes = tileXml.GetElementsByTagName("text");
+            tileTextAttributes[0].AppendChild(tileXml.CreateTextNode("Hello World! My very own tile notification"));
+            TileNotification tileNotification = new TileNotification(tileXml);
+            TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
         }
     }
 }

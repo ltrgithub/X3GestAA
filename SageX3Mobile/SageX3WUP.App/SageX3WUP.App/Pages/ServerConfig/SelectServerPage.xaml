@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="ServerConfigReadOnly">
-            <Grid Background="{ThemeResource SagTileGreyColorBg}">
+            <Grid Background="{ThemeResource SagTileGreyColorBg}" d:DesignWidth="1095.333" d:DesignHeight="619.333">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10" />
                     <RowDefinition Height="60" />
@@ -29,12 +29,11 @@
                 <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFoco}" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
                 <TextBlock Text="&#xf0c1;" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFA}" TextTrimming="WordEllipsis" HorizontalAlignment="Right"/>
                 <TextBlock Text="{Binding Url}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" Foreground="{StaticResource SagTileGreyColorFg}" FontSize="18" Margin="10,0,10,0"  FontFamily="{StaticResource SageFoco}" TextTrimming="WordEllipsis" HorizontalAlignment="Left"/>
-<!--
-                <StackPanel Orientation="Horizontal"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right">
-                    <Button Margin="0,0,10,0">Make default</Button>
-                    <Button Margin="0,0,10,0">Select</Button>
+                <StackPanel Grid.Column="2" Margin="0" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Right">
+                    <Button x:Name="buttonEditServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" Content="Edit" FontSize="16" Height="50" Click="buttonEditServer_Click" Margin="0,-3,0,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}"/>
+                    <Button x:Name="buttonDeleteServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" Content="Delete" FontSize="16" Height="50" Click="buttonDeleteServer_Click" Margin="0,-3,0,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}"/>
+                    <Button x:Name="buttonOpenServer" VerticalAlignment="Stretch" HorizontalAlignment="Right" Content="Open" FontSize="16" Height="50" Click="buttonOpenServer_Click" Margin="0,-3,0,0" Foreground="{StaticResource SageButton1ColorFg}" Background="{StaticResource SageButton1ColorBg}"/>
                 </StackPanel>
--->                
             </Grid>
         </DataTemplate>
 
@@ -76,7 +75,6 @@
                       ItemTemplate="{StaticResource ServerConfigReadOnly}" 
                       Margin="0" 
                       SizeChanged="gridViewServers_SizeChanged" 
-                      ItemClick="gridViewServers_ItemClick" 
                       IsItemClickEnabled="True">
                 <!--
                 <GridView.ItemsPanel>
@@ -98,15 +96,15 @@
                 </GridView.ItemContainerStyle>
             </GridView>
         </Grid>
-        <StackPanel x:Name="stackFooter" Grid.ColumnSpan="4" BorderBrush="{StaticResource SageFooterColorBg}" Grid.Row="4" Background="{StaticResource SageFooterColorBg}">
-            <Button x:Name="buttonNewServer" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalContentAlignment="Right" Foreground="White" FontSize="24" Width="176" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
-                <StackPanel Margin="0" Height="50">
-                    <TextBlock x:Name="textBlockIconCreate" TextWrapping="Wrap" Text="&#xF0FE;" FontFamily="{StaticResource SageFA}" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="21"/>
-                    <TextBlock x:Name="textBlockCreate" TextWrapping="Wrap" Text="Create new server" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Margin="0,0,0,0"/>
-
-                </StackPanel>
-
-            </Button>
+        <StackPanel x:Name="stackFooter" Grid.ColumnSpan="4" BorderBrush="{StaticResource SageFooterColorBg}" Grid.Row="4" Background="{StaticResource SageFooterColorBg}" Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Margin="0,0,20,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="buttonNewServer" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Right" Foreground="White" FontSize="24" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Click="buttonNewServer_Click">
+                    <StackPanel Margin="0" Height="50" HorizontalAlignment="Center">
+                        <TextBlock x:Name="textBlockIconCreate" TextWrapping="Wrap" Text="&#xF0FE;" FontFamily="{StaticResource SageFA}" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="21"/>
+                        <TextBlock x:Name="textBlockCreate" TextWrapping="Wrap" Text="Create new server" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

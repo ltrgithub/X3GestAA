@@ -49,7 +49,7 @@ namespace SageX3WUP.App.Pages
             this.webView.NavigationFailed += WebView_NavigationFailed;
 
             this.addNativeLibraries();
-            this.Loaded += MainPage_Loaded;
+            this.Loaded += WebViewPage_Loaded;
         }
 
         /// <summary>
@@ -62,6 +62,8 @@ namespace SageX3WUP.App.Pages
 
             // redirect debug output
             this.webView.AddWebAllowedObject("smNativeLogger", new SageX3WUP.NativeAddons.NativeLogger());
+
+            new SageX3WUPAppJSInterface(this).UpdateTile();
         }
 
         /// <summary>
@@ -84,6 +86,12 @@ namespace SageX3WUP.App.Pages
         /// <param name="args"></param>
         private void WebView_NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
         {
+            if (!args.IsSuccess)
+            {
+                // Catched by NavigationFailed
+                return;
+            }
+
             if (loadingState == WebviewLoadingState.STARTED)
             {
                 this.loadingState = WebviewLoadingState.COMPLETED;
@@ -150,7 +158,7 @@ namespace SageX3WUP.App.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private void WebViewPage_Loaded(object sender, RoutedEventArgs e)
         {
         }
 
@@ -168,15 +176,16 @@ namespace SageX3WUP.App.Pages
                     this.server = srv;
                     this.loadingState = WebviewLoadingState.TRIGGERED;
                     this.showLoadingMessage();
-                    this.webView.Navigate(new Uri(srv.Url) );
+                    this.webView.Navigate(srv.GetStartUrl());
                 }
                 else
                 {
                     throw new Exception("Unable to find matching server configuration");
                 }
-            } catch (Exception)
+            } catch (Exception ex)
             {
-                // TODO:
+                this.hideLoadingMessage();
+                this.showLoadingError(ex.Message);
             }
         }
 

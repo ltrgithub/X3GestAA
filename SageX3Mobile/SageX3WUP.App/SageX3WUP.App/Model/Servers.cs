@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 
 namespace SageX3WUP.App.Model
 {
@@ -18,6 +19,14 @@ namespace SageX3WUP.App.Model
 
         public bool IsDefault { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="url"></param>
+        /// <param name="isDefault"></param>
         public Server(string id, string name, string description, string url, bool isDefault)
         {
             this.Id = id;
@@ -25,6 +34,62 @@ namespace SageX3WUP.App.Model
             this.Description = description;
             this.Url = url;
             this.IsDefault = isDefault;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Uri GetStartUrl()
+        {
+            // Valid resulting urls
+            // http://vil-004626-nb:8124/syracuse-tablet/dist/index.html
+            // http://vil-004626-nb:8124/syracuse-tablet/html/index_debug.html
+
+            string url;
+            string[] segments = this.Url.Split('/');
+            if (segments.Length == 3) // Host only
+            {
+                url = this.Url + "/syracuse-tablet/dist/index.html"; 
+            }
+            else
+            {
+                url = this.Url;
+            }
+
+            return new Uri(url);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static bool IsValidUrl(string url)
+        {
+            try
+            {
+                Uri uri = new Uri(url);
+                if (uri.Scheme != "http" && uri.Scheme != "https")
+                {
+                    return false;
+                }
+
+                string[] segments = url.Split('/');
+                if (segments.Length != 3 &&
+                    !url.EndsWith("syracuse-tablet/dist/index.html") &&
+                    !url.EndsWith("syracuse-tablet/html/index_debug.html"))
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 
@@ -43,11 +108,7 @@ namespace SageX3WUP.App.Model
         private Servers()
         {
             this.List = new List<Server>();
-            for (int i = 0; i < 20; i++)
-            {
-                this.List.Add(new Server("" + (i*2), "Debug Host", "Debug client on Host Notebook - " +i , "http://vil-004626-nb:8124/syracuse-tablet/html/index_debug.html", true));
-                this.List.Add(new Server("" + (i*2+1), "Minified Host", "Minified client on Host Notebook - " + i, "http://vil-004626-nb:8124/syracuse-tablet/dist/index.html", false));
-            }
+            this.readServers();
         }
 
         /// <summary>
@@ -83,6 +144,89 @@ namespace SageX3WUP.App.Model
         {
             Server srv = this.List.FirstOrDefault(server => server.Id == id);
             return srv;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serverId"></param>
+        public void DeleteServer(string serverId)
+        {
+            this.List.RemoveAll(server => { return server.Id.Equals(serverId);  } );
+            this.persistServers();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="srv"></param>
+        public void SaveServer(Server srv)
+        {
+            Server srvInList = this.List.FirstOrDefault(server => server.Id == srv.Id);
+            if (srvInList == null) // define new server?
+            {
+                this.List.Add(srv);
+                srvInList = srv;
+            }
+            else
+            {
+                srvInList.Name = srv.Name;
+                srvInList.Description = srv.Description;
+                srvInList.Url = srv.Url;
+            }
+            this.persistServers();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void persistServers()
+        {
+            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            string serverList = "";
+            foreach (Server srv in this.List)
+            {
+                serverList += "(" + srv.Id + ")\n";
+                serverList += "(" + srv.Name + ")\n";
+                serverList += "(" + srv.Description + ")\n";
+                serverList += "(" + srv.Url + ")\n";
+                serverList += "(" + (srv.IsDefault ? "TRUE" : "FALSE") + ")";
+                serverList += "\n\n";
+            }
+            localSettings.Values["servers"] = serverList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void readServers()
+        {
+            this.List.Clear();
+
+            ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            string serverList = (string)localSettings.Values["servers"];
+            if (serverList == null)
+            {
+                return;
+            }
+
+            string[] serverDefs = serverList.Split(new string[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string serverDef in serverDefs)
+            {
+                string[] lines = serverDef.Split('\n');
+                if (lines.Length != 5)
+                {
+                    continue;
+                }
+                string id = lines[0].Substring(1, lines[0].Length - 2);
+                string name = lines[1].Substring(1, lines[1].Length - 2);
+                string description = lines[2].Substring(1, lines[2].Length - 2);
+                string url = lines[3].Substring(1, lines[3].Length - 2);
+                bool isDefault = lines[4].Substring(1, lines[4].Length - 2).Equals("TRUE");
+
+                Server srv = new Server(id, name, description, url, isDefault);
+                this.List.Add(srv);
+            }
         }
     }
 }
