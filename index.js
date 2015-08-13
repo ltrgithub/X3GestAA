@@ -7,7 +7,6 @@
 	}
 })();
 
-require('babel/register');
 (function() {
 	var matches = process.version.match(/^v(\d+)\.(\d+).*$/);
 	if (!(matches && (matches[1] > 0 || matches[2] >= 10))) throw new Error("unsupported node version: " + process.version + " - please upgrade to 0.10.x or more recent");
@@ -125,7 +124,7 @@ if (config.streamline.flamegraph && config.streamline.fast) {
 // automatically enable 'aggressive' optimisation in fibers fast mode
 //if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
-require('coffee-script/lib/coffee-script/extensions');
+//require('coffee-script/lib/coffee-script/extensions');
 
 require('syracuse-license').register(function(err, data) {
 	if (err) console.log("" + err);
