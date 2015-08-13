@@ -8,6 +8,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -47,7 +48,6 @@ namespace SageX3WUP.App.Pages
             this.webView.NavigationStarting += WebView_NavigationStarting;
             this.webView.NavigationCompleted += WebView_NavigationCompleted;
             this.webView.NavigationFailed += WebView_NavigationFailed;
-
             this.addNativeLibraries();
         }
 
@@ -62,7 +62,9 @@ namespace SageX3WUP.App.Pages
             // redirect debug output
             this.webView.AddWebAllowedObject("smNativeLogger", new SageX3WUP.NativeAddons.NativeLogger());
 
-            new SageX3WUPAppJSInterface(this).UpdateTile();
+            // redirect debug output
+            this.webView.AddWebAllowedObject("smNativeMsg", new SageX3WUP.NativeAddons.NativeMessages());
+
         }
 
         /// <summary>
@@ -98,7 +100,7 @@ namespace SageX3WUP.App.Pages
                 // If the content of the webview is loaded, JS should call this.NotifLoaded to signal all is fine
                 // if this call is not done withing a periode of time, we assume there is s.th. wrong.
                 // This can be a scripterror 
-                Task.Delay(5000).ContinueWith(i => this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, this.checkLoadedNotification));
+                Task.Delay(30000).ContinueWith(i => this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, this.checkLoadedNotification));
 
                 // Debugging show after 5 seconds
                 //Task.Delay(5000).ContinueWith(i => this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, this.hideLoadingMessage));
@@ -217,6 +219,18 @@ namespace SageX3WUP.App.Pages
         {
             loadingState = WebviewLoadingState.FAILED;
             this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.showLoadingError(msg)).AsTask();
+        }
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+             ApplicationViewOrientation o = ApplicationView.GetForCurrentView().Orientation;
+            if (o == ApplicationViewOrientation.Landscape)
+            {
+                VisualStateManager.GoToState(this, "Landscape", true);
+            } else
+            {
+                VisualStateManager.GoToState(this, "Portrait", true);
+            }
         }
     }
 }

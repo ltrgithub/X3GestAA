@@ -179,7 +179,7 @@ namespace SageX3WUP.App.Model
             // Set new default server
             foreach (Server s in this.List)
             {
-                if (srvInList.IsDefault && s != srvInList)
+                if (srvInList.IsDefault && !s.Id.Equals(srvInList.Id))
                 {
                     s.IsDefault = false;
                 }

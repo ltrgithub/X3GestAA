@@ -45,14 +45,5 @@ namespace SageX3WUP.App.Pages
         {
             this.page.NotifStartFail(msg);
         }
-
-        public void UpdateTile()
-        {
-            XmlDocument tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare310x310ImageAndText01);
-            XmlNodeList tileTextAttributes = tileXml.GetElementsByTagName("text");
-            tileTextAttributes[0].AppendChild(tileXml.CreateTextNode("Hello World! My very own tile notification"));
-            TileNotification tileNotification = new TileNotification(tileXml);
-            TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
-        }
     }
 }

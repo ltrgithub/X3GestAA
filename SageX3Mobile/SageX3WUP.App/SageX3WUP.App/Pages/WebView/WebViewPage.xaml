@@ -5,7 +5,7 @@
     xmlns:local="using:SageX3WUP.App.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" SizeChanged="Page_SizeChanged">
 
     <Grid Background="#FF006C30">
         <Grid.RowDefinitions>
@@ -13,8 +13,15 @@
             <RowDefinition Height="150" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-
-        <WebView x:Name="webView" Grid.RowSpan="3"/>
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="Landscape"/>
+                <VisualState x:Name="Portrait"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <WebView x:Name="webView" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5"/>
         <StackPanel x:Name="panelLoading" Margin="0" VerticalAlignment="Center" Background="White" Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Loading" Height="72" FontSize="48" TextAlignment="Center"/>
