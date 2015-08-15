@@ -20,7 +20,10 @@ try {
 	console.error(ex);
 }
 
-config.streamline.babel = {};
+config.streamline.babel = {
+	extensions: [".js", "._js"],
+	plugins: ['babel-plugin-flow-comments', 'streamline-plugin'],
+};
 
 (function() {
 	if (config.concurix) {
