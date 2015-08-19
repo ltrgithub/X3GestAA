@@ -20,7 +20,6 @@ try {
 	console.error(ex);
 }
 
-require("babel");
 require("streamline-plugin");
 require("babel-plugin-flow-comments");
 require("babel/register")({
