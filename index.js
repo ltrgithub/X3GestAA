@@ -20,10 +20,20 @@ try {
 	console.error(ex);
 }
 
-config.streamline.babel = {
+require("babel");
+require("streamline-plugin");
+require("babel-plugin-flow-comments");
+require("babel/register")({
+	plugins: ['flow-comments', 'streamline-plugin'],	
 	extensions: [".js", "._js"],
-	plugins: ['babel-plugin-flow-comments', 'streamline-plugin'],
-};
+	extra: {
+		streamline: {
+			cache: config.streamline.cache,
+			verbose: config.streamline.verbose,
+			runtime: config.streamline.runtime || "fibers",
+		}
+	}
+});
 
 (function() {
 	if (config.concurix) {
@@ -133,7 +143,8 @@ require('syracuse-license').register(function(err, data) {
 	if (err) console.log("" + err);
 	else if (!data) console.log("No license");
 
-	require("streamline").register(config.streamline);
+	// streamline is now registered with babel, at the very beginning
+	//require("streamline").register(config.streamline);
 	if (config.streamline.flamegraph) require("streamline/lib/globals").emitter = new (require('events').EventEmitter)();
 
 	require("syracuse-core/lib/localeWrapper");
