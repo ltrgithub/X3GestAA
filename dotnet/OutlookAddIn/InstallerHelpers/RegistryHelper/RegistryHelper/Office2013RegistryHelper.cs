@@ -1,10 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Security.Permissions;
+using System.Security.Principal;
 using System.Text;
 
 namespace RegistryHelper
@@ -40,15 +40,10 @@ namespace RegistryHelper
         public static void registerAddIn(String installDirectory)
         {
             enableContactsField();
-            Boolean success = registerAssembly(installDirectory);
-            if (success)
-            {
-                removeUnusedAssembly(installDirectory);
-            }
+            registerAssembly(installDirectory);
         }
         
-        [SecurityPermission(SecurityAction.Demand)]
-        private static Boolean registerAssembly(string installDirectory)
+        private static void registerAssembly(string installDirectory)
         {
             /*
              * We need to determine the correct regasm to use here.
@@ -77,8 +72,6 @@ namespace RegistryHelper
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
             p.WaitForExit();
-
-            return true;
         }
 
         private static void enableContactsField ()
@@ -94,11 +87,6 @@ namespace RegistryHelper
             {
                 Registry.SetValue(keyName.ToString(), valueName, 1, RegistryValueKind.DWord);
             }
-        }
-
-        private static void removeUnusedAssembly(String installDirectory)
-        {
-            System.IO.File.Delete(installDirectory + @"\AdxOLNetv2s0-2010.dll");
         }
     }
 }
