@@ -35,8 +35,8 @@ exports.config = {
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
 		},*/
-		// allow to pass some node parameter like --prof to generate some log or other
-		nodeOptions : ""
+		// allow to pass some node parameter like --prof
+		nodeOptions:""
 	},
 	system: {
 		// enables memwatch module
