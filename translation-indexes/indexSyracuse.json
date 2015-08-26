@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2015-06-09T16:17:59.000Z",
-		"$lastModified": "2015-08-25T15:14:59.000Z",
+		"$lastModified": "2015-08-26T15:40:56.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -3533,6 +3533,27 @@
 				"ru-ru": "Процесс закончен. {0} представление (ы), используемый этим мобильных приложений и были добавленыпредставления."
 			},
 			"$key": "A4F8F0654183E4234D601039E9FC1B57B0CC102C"
+		},
+		"errorInvalidApp": {
+			"text": {
+				"en-us": "Invalid mobile application",
+				"fr-fr": "Invalid mobile application"
+			},
+			"$key": "3E802752377D2483D7C5E8F4F5C18FFA567A8F08"
+		},
+		"errorInvalidPages": {
+			"text": {
+				"en-us": "The current representations are not available on the currently selected endpoint: {0}",
+				"fr-fr": "The current representations are not available on the currently selected endpoint: {0}"
+			},
+			"$key": "8C8AD93BDCE4F66640E0E9EC00D36AAA6C02FB1E"
+		},
+		"versionNumber": {
+			"text": {
+				"en-us": "Version number(s) have been increased.",
+				"fr-fr": "Version number(s) have been increased."
+			},
+			"$key": "8009B9E67D33E96B75AF945EC1ECC63E1EB30320"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/mobile/resources/mobileMigrateDashboard": {
@@ -5609,6 +5630,20 @@
 				"ru-ru": "Имя фолдера '{0}' не появляется в FOLDERS.json"
 			},
 			"$key": "92851BE123BD6D9EDB0C2E4B69BA21601621A488"
+		},
+		"cantAccessFoldersJson": {
+			"text": {
+				"en-us": "Can not access to FOLDERS.json file through this url:\n{0}\nMaybe Http proxy settings are necessary on X3 solution instance.",
+				"fr-fr": "Can not access to FOLDERS.json file through this url:\n{0}\nMaybe Http proxy settings are necessary on X3 solution instance."
+			},
+			"$key": "97DC7C45FD7BB9FF79459530263DAFE8FD5981D6"
+		},
+		"cantAccessSolutionJson": {
+			"text": {
+				"en-us": "Can not access to solution.json file through this url:\n{0}\nMaybe Http proxy settings are necessary.",
+				"fr-fr": "Can not access to solution.json file through this url:\n{0}\nMaybe Http proxy settings are necessary."
+			},
+			"$key": "B26C56FC1AB0A43206E7E16A54E6ED280D1110A7"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/resources/entity": {
@@ -5926,6 +5961,13 @@
 				"ru-ru": "Folders.json не найден для url \"{0}\". Пожалуйста проверьте настройки сервера и имя решения"
 			},
 			"$key": "BC3EE35F00AF430C152EC3FB91F2901EE9A69568"
+		},
+		"solutionMustBeSaved": {
+			"text": {
+				"en-us": "X3 solution must be saved before accessing folders",
+				"fr-fr": "X3 solution must be saved before accessing folders"
+			},
+			"$key": "DAFF8212A4DEBBD5248ED95F9BFA83C344ACC59F"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/resources/notificationEvent": {
@@ -7706,6 +7748,13 @@
 				"ru-ru": "Неверный атрибут {0} будет проигнорирован"
 			},
 			"$key": "90A26C317B8E263D7DF8DA93FA0514AA1CCD4B36"
+		},
+		"unbindError": {
+			"text": {
+				"en-us": "Unbind error {0}",
+				"fr-fr": "Unbind error {0}"
+			},
+			"$key": "EC4D3C0F8B004D2CECC01817937770C79A7973B8"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/user/resources/ldapAttributeName": {
@@ -7987,6 +8036,20 @@
 				"ru-ru": "Пожалуйста введите правильный старый пароль"
 			},
 			"$key": "4C4F3E7E370324C6084BE3629FC5F4DEC3F55D6B"
+		},
+		"deleteCurrent": {
+			"text": {
+				"en-us": "Cannot delete the current user",
+				"fr-fr": "Cannot delete the current user"
+			},
+			"$key": "06C61FF88C13A1CE219AB7B6F9498710B57B10C7"
+		},
+		"removeCurrentAdmin": {
+			"text": {
+				"en-us": "Current user cannot remove himself/herself from administrators",
+				"fr-fr": "Current user cannot remove himself/herself from administrators"
+			},
+			"$key": "A81F28FADBEC9DD20576528810B3B3778DF6DD64"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/user/resources/userBookmarkProxy": {
@@ -35023,6 +35086,923 @@
 				"de-de": "Dieser Vorgang initialisiert die Parameter mit den Ursprungswerten neu"
 			},
 			"$key": "F29326CD997B6B3B19ABE23A2B6C8F5A44DF42BF"
+		},
+		"endPoint.x3solution.$title": {
+			"text": {
+				"en-us": "X3 solution",
+				"fr-fr": "X3 solution"
+			},
+			"$key": "B4281A6CC04916133665D049839E5018A91526B7"
+		},
+		"mobileApplication.$descriptionTemplate": {
+			"text": {
+				"en-us": "Mobile application definition",
+				"fr-fr": "Mobile application definition"
+			},
+			"$key": "5DD0FEED5A2E668FA4BD1B43E6B8DEA0FB86755B"
+		},
+		"mobileApplication.$services.applicationMetaData.$title": {
+			"text": {
+				"en-us": "Get application meta data",
+				"fr-fr": "Get application meta data"
+			},
+			"$key": "DAB8A4D6BDA624F9054135C13AA3892B064234C6"
+		},
+		"mobileApplication.$services.applicationRepresentations.$title": {
+			"text": {
+				"en-us": "Find used representations",
+				"fr-fr": "Find used representations"
+			},
+			"$key": "83B72C37E5CB3BF6330235B51D6554EFB4863AC1"
+		},
+		"mobileApplication.$services.availableApplications.$title": {
+			"text": {
+				"en-us": "Get available applications",
+				"fr-fr": "Get available applications"
+			},
+			"$key": "981ABD0473D93113863D6303C3F5291689E7D0B8"
+		},
+		"mobileApplication.$services.updateVersion.$title": {
+			"text": {
+				"en-us": "Update version",
+				"fr-fr": "Update version"
+			},
+			"$key": "6B8B6C7D9E12F8CD9ECBD5D2EA828D75876D9CF5"
+		},
+		"mobileApplication.$services.updateVersions.$title": {
+			"text": {
+				"en-us": "Update versions",
+				"fr-fr": "Update versions"
+			},
+			"$key": "C5E43B33B590FB4E33B19D7759F8A7A5D750B8F5"
+		},
+		"mobileApplication.$titleTemplate": {
+			"text": {
+				"en-us": "Mobile application",
+				"fr-fr": "Mobile application"
+			},
+			"$key": "EDFB949FCB351C004FF6698DD05A18BEBCFC94F5"
+		},
+		"mobileApplication.applicationName.$title": {
+			"text": {
+				"en-us": "Mobile application name",
+				"fr-fr": "Mobile application name"
+			},
+			"$key": "CED953C7510E686C951974BA7148FFECF4FE66E1"
+		},
+		"mobileApplication.description.$title": {
+			"text": {
+				"en-us": "Description",
+				"fr-fr": "Description"
+			},
+			"$key": "FFB2443D3BBA1FAD27D3484EADABCE3A0053A0D7"
+		},
+		"mobileApplication.endPoints.$title": {
+			"text": {
+				"en-us": "Endpoints",
+				"fr-fr": "Endpoints"
+			},
+			"$key": "948F14973EA5D8E9D4AD12AFD93BCBF1DEBC9873"
+		},
+		"mobileApplication.homeDashboard.$title": {
+			"text": {
+				"en-us": "Home dashboard",
+				"fr-fr": "Home dashboard"
+			},
+			"$key": "E4E6590F5D2A91DA8EDC1BF5B52BB427863255E0"
+		},
+		"mobileApplication.iconName.$title": {
+			"text": {
+				"en-us": "Icon",
+				"fr-fr": "Icon"
+			},
+			"$key": "E4B2D29A10CA602E751B98747BA3C30F2C0259BC"
+		},
+		"mobileApplication.representations.$title": {
+			"text": {
+				"en-us": "Representations",
+				"fr-fr": "Representations"
+			},
+			"$key": "77936F8E810F3F2CDFE7FFB5D5D9AE5FDF5ABAE3"
+		},
+		"mobileApplication.roles.$title": {
+			"text": {
+				"en-us": "Roles",
+				"fr-fr": "Roles"
+			},
+			"$key": "C04A1BAF9CCC85629B03BB5E2A9468153B489DA0"
+		},
+		"mobileApplication.title.$title": {
+			"text": {
+				"en-us": "Title",
+				"fr-fr": "Title"
+			},
+			"$key": "75755E0A7AB4B1FF54820FA2243B6B4DAC954E6D"
+		},
+		"mobileApplication.versionNumber.$title": {
+			"text": {
+				"en-us": "Version",
+				"fr-fr": "Version"
+			},
+			"$key": "EF1511CF86D72C2D0586823F2B9486C6FDD16A57"
+		},
+		"mobileDashboard.$descriptionTemplate": {
+			"text": {
+				"en-us": "Mobile dashboard definition",
+				"fr-fr": "Mobile dashboard definition"
+			},
+			"$key": "6E682716265E52D8499F66B9403BD63F784992F9"
+		},
+		"mobileDashboard.$titleTemplate": {
+			"text": {
+				"en-us": "Mobile dashboard",
+				"fr-fr": "Mobile dashboard"
+			},
+			"$key": "28681D89FA4D2ABF21438A885DD046FC20C7A591"
+		},
+		"mobileDashboard.dashboardName.$title": {
+			"text": {
+				"en-us": "Dashboard name",
+				"fr-fr": "Dashboard name"
+			},
+			"$key": "68CD6F1FF026629B344527F687EF6BDB1F3C1C0D"
+		},
+		"mobileDashboard.description.$title": {
+			"text": {
+				"en-us": "Description",
+				"fr-fr": "Description"
+			},
+			"$key": "DCAA6D9FEBAC86AC980DD1D14B61CE27CA72E095"
+		},
+		"mobileDashboard.title.$title": {
+			"text": {
+				"en-us": "Title",
+				"fr-fr": "Title"
+			},
+			"$key": "62915291B75443298F54AF6349D11900CC1CC4AF"
+		},
+		"mobileDashboard.vignettes.$title": {
+			"text": {
+				"en-us": "Gadgets",
+				"fr-fr": "Gadgets"
+			},
+			"$key": "7DC9A2A30563CB5B628C31EFB62D638DF040ADF6"
+		},
+		"mobileDashboardVignette.$descriptionTemplate": {
+			"text": {
+				"en-us": "Mobile dashboard vignette",
+				"fr-fr": "Mobile dashboard vignette"
+			},
+			"$key": "5770C90CBEC4D2E8C726928E64D8180FB9AEF2DD"
+		},
+		"mobileDashboardVignette.$titleTemplate": {
+			"text": {
+				"en-us": "Mobile dashboard vignette",
+				"fr-fr": "Mobile dashboard vignette"
+			},
+			"$key": "45A0490C324D547292E2C6D8084F7FF39F877F1C"
+		},
+		"mobileDashboardVignette.displayStyle.$full": {
+			"text": {
+				"en-us": "Always display as vignette",
+				"fr-fr": "Always display as vignette"
+			},
+			"$key": "F39252B6763D78332F0861355A780281E89CF893"
+		},
+		"mobileDashboardVignette.displayStyle.$fullOnBigDeviceOnly": {
+			"text": {
+				"en-us": "Display as link on small devices",
+				"fr-fr": "Display as link on small devices"
+			},
+			"$key": "C70FF50B4D067245008351157760E2ABE2B3293B"
+		},
+		"mobileDashboardVignette.displayStyle.$link": {
+			"text": {
+				"en-us": "Always display as link",
+				"fr-fr": "Always display as link"
+			},
+			"$key": "53D2B6A1D127FE40A98C9F55F8E78C1BBC7130DE"
+		},
+		"mobileDashboardVignette.displayStyle.$title": {
+			"text": {
+				"en-us": "Display style",
+				"fr-fr": "Display style"
+			},
+			"$key": "C3F3400A1019264CE5C0293774DCBFBB40332E51"
+		},
+		"mobileDashboardVignette.gadget.$title": {
+			"text": {
+				"en-us": "Gadget",
+				"fr-fr": "Gadget"
+			},
+			"$key": "968F12E6FCB3E91DBA61FB30477CC7E4513B2C1C"
+		},
+		"mobileGadget.$descriptionTemplate": {
+			"text": {
+				"en-us": "Mobile gadget definition",
+				"fr-fr": "Mobile gadget definition"
+			},
+			"$key": "137D09BEFA8DA1A3F2E674966E1460AB670678CD"
+		},
+		"mobileGadget.$titleTemplate": {
+			"text": {
+				"en-us": "Mobile gadget",
+				"fr-fr": "Mobile gadget"
+			},
+			"$key": "5CA87FCDB9EC129FF05C9C9CA42C169ADF969631"
+		},
+		"mobileGadget.action.$create": {
+			"text": {
+				"en-us": "Create",
+				"fr-fr": "Create"
+			},
+			"$key": "BEC98767D126A4E0B707E86684933D2B68ED5DC6"
+		},
+		"mobileGadget.action.$details": {
+			"text": {
+				"en-us": "Details",
+				"fr-fr": "Details"
+			},
+			"$key": "CF27169300D52EACB74DFB502070C6F8A1E0447F"
+		},
+		"mobileGadget.action.$edit": {
+			"text": {
+				"en-us": "Edit",
+				"fr-fr": "Edit"
+			},
+			"$key": "1C51D7514AB8323E04554F77F16D73DCB4BFB54F"
+		},
+		"mobileGadget.action.$query": {
+			"text": {
+				"en-us": "Query",
+				"fr-fr": "Query"
+			},
+			"$key": "29FD96D2BF122A304F6C232434DAA0FF1377E63E"
+		},
+		"mobileGadget.action.$summary": {
+			"text": {
+				"en-us": "Summary",
+				"fr-fr": "Summary"
+			},
+			"$key": "8C34B1C2B6978E4BA48C0759899139E05408AED6"
+		},
+		"mobileGadget.action.$title": {
+			"text": {
+				"en-us": "Action",
+				"fr-fr": "Action"
+			},
+			"$key": "BE7DFE3E8D0813A3C024E7275A87A40E8D251AE7"
+		},
+		"mobileGadget.application.$title": {
+			"text": {
+				"en-us": "Application",
+				"fr-fr": "Application"
+			},
+			"$key": "5534898BED9097B02E92D91F2B3C1C05FCBF6401"
+		},
+		"mobileGadget.code.$title": {
+			"text": {
+				"en-us": "Code",
+				"fr-fr": "Code"
+			},
+			"$key": "31458AAB95427F0BF6E6A2CFDD7EC9EB12968240"
+		},
+		"mobileGadget.description.$title": {
+			"text": {
+				"en-us": "Description",
+				"fr-fr": "Description"
+			},
+			"$key": "9AA3322EF68F223DE01A327BF930F364634F85DC"
+		},
+		"mobileGadget.endpoint.$description": {
+			"text": {
+				"en-us": "Choose an endpoint for an endpoint specific function or representation",
+				"fr-fr": "Choose an endpoint for an endpoint specific function or representation"
+			},
+			"$key": "4E3F5A3BFFB169519EF8A32B2A2CFE41E2617B68"
+		},
+		"mobileGadget.endpoint.$title": {
+			"text": {
+				"en-us": "Endpoint",
+				"fr-fr": "Endpoint"
+			},
+			"$key": "42DA3004A4146E7BDB3096B05379E608098AD9D6"
+		},
+		"mobileGadget.entity.$title": {
+			"text": {
+				"en-us": "Entity",
+				"fr-fr": "Entity"
+			},
+			"$key": "7543C56DB06CAD102341E32A1A0626DC72FE6B7C"
+		},
+		"mobileGadget.externalUrl.$title": {
+			"text": {
+				"en-us": "Url",
+				"fr-fr": "Url"
+			},
+			"$key": "9FA689A136B3ED9F67ABC042371CC9E1FBFFF561"
+		},
+		"mobileGadget.gadgetType.$dashboard": {
+			"text": {
+				"en-us": "Dashboard page",
+				"fr-fr": "Dashboard page"
+			},
+			"$key": "DC05D275EB6D194CB638AA820C0BCC4D04315024"
+		},
+		"mobileGadget.gadgetType.$external": {
+			"text": {
+				"en-us": "External link",
+				"fr-fr": "External link"
+			},
+			"$key": "B4B12D19044DD36897322893E08D5BC44A9D7944"
+		},
+		"mobileGadget.gadgetType.$representation": {
+			"text": {
+				"en-us": "Representation",
+				"fr-fr": "Representation"
+			},
+			"$key": "636E1868CC637F19022D684C732DC9653E3E6579"
+		},
+		"mobileGadget.gadgetType.$request": {
+			"text": {
+				"en-us": "Query",
+				"fr-fr": "Query"
+			},
+			"$key": "DE5F66171DE4229E5D732F14A50B194F0F73C0B2"
+		},
+		"mobileGadget.gadgetType.$stats": {
+			"text": {
+				"en-us": "Statistics",
+				"fr-fr": "Statistics"
+			},
+			"$key": "488256050D559113E3EA97408D17C35564C9057C"
+		},
+		"mobileGadget.gadgetType.$title": {
+			"text": {
+				"en-us": "Gadget type",
+				"fr-fr": "Gadget type"
+			},
+			"$key": "6400DC8592D9FA725F8F0947410BA6D8780B1F86"
+		},
+		"mobileGadget.icon.$title": {
+			"text": {
+				"en-us": "Icon",
+				"fr-fr": "Icon"
+			},
+			"$key": "4D5531DA46EB3DD1C20E34C6104463FCF04776A7"
+		},
+		"mobileGadget.keyParameter.$title": {
+			"text": {
+				"en-us": "Key",
+				"fr-fr": "Key"
+			},
+			"$key": "79488B919B02769BD73F3484BAA49D69E468511F"
+		},
+		"mobileGadget.mobileDashboard.$title": {
+			"text": {
+				"en-us": "Mobile Dashboard",
+				"fr-fr": "Mobile Dashboard"
+			},
+			"$key": "51DE069162FEC4D10E01FABE2F77024B9061618A"
+		},
+		"mobileGadget.parameters.$title": {
+			"text": {
+				"en-us": "Parameters",
+				"fr-fr": "Parameters"
+			},
+			"$key": "4023A939036452FA3E63D3DD6A2A647472603C66"
+		},
+		"mobileGadget.processLeg.$title": {
+			"text": {
+				"en-us": "Process legislation",
+				"fr-fr": "Process legislation"
+			},
+			"$key": "0653D4D55D2B1C3AB694AB0DC20DAD8863C22D46"
+		},
+		"mobileGadget.processMenu.$title": {
+			"text": {
+				"en-us": "Process menu",
+				"fr-fr": "Process menu"
+			},
+			"$key": "500FED3512C83EA31F2EA9CEDA3329BF3EFBF0AA"
+		},
+		"mobileGadget.processName.$title": {
+			"text": {
+				"en-us": "Process name",
+				"fr-fr": "Process name"
+			},
+			"$key": "02700437898BAB68FBB7BCBF156D752776F8630C"
+		},
+		"mobileGadget.referenceDataset.$title": {
+			"text": {
+				"en-us": "Reference dataset",
+				"fr-fr": "Reference dataset"
+			},
+			"$key": "5A569E9D66B97ECE71170C612FCD0D726CDB9F10"
+		},
+		"mobileGadget.representation.$title": {
+			"text": {
+				"en-us": "Representation",
+				"fr-fr": "Representation"
+			},
+			"$key": "77AFFB8252D57AF5C19017542BC9F38ABCDB79A4"
+		},
+		"mobileGadget.representationRef.$title": {
+			"text": {
+				"en-us": "Representation",
+				"fr-fr": "Representation"
+			},
+			"$key": "835156EBAEF59CB065F9C33D2EEA67B56E4AE527"
+		},
+		"mobileGadget.requestLevel.$title": {
+			"text": {
+				"en-us": "Request level",
+				"fr-fr": "Request level"
+			},
+			"$key": "6DCE9881CE32A948BC2E4701B0098C204E97416F"
+		},
+		"mobileGadget.requestName.$title": {
+			"text": {
+				"en-us": "Request name",
+				"fr-fr": "Request name"
+			},
+			"$key": "E7FD63EC063054A08E079AB2674007765A303381"
+		},
+		"mobileGadget.statName.$title": {
+			"text": {
+				"en-us": "Stat name",
+				"fr-fr": "Stat name"
+			},
+			"$key": "F8DDE991EA502F82E15FEF937E81B2B8FE6ABBAD"
+		},
+		"mobileGadget.title.$title": {
+			"text": {
+				"en-us": "Title",
+				"fr-fr": "Title"
+			},
+			"$key": "21C3DECA9584DFB66E3977D7374DE80AF8B5580C"
+		},
+		"mobileGadgetParam.name.$title": {
+			"text": {
+				"en-us": "Name",
+				"fr-fr": "Name"
+			},
+			"$key": "494A5C47D93F4BB733619366580217B4B4C06436"
+		},
+		"mobileGadgetParam.title.$title": {
+			"text": {
+				"en-us": "Title",
+				"fr-fr": "Title"
+			},
+			"$key": "30926D75F264E22F0ED29C4F2D0769151DDE053A"
+		},
+		"mobileGadgetParam.value.$title": {
+			"text": {
+				"en-us": "Value",
+				"fr-fr": "Value"
+			},
+			"$key": "E6DCE32192721F376D5C5BDBB7E7B088D493F163"
+		},
+		"mobileMigrateDashboard.$descriptionTemplate": {
+			"text": {
+				"en-us": "Migrate Mobile Dashboard",
+				"fr-fr": "Migrate Mobile Dashboard"
+			},
+			"$key": "C0370438B4C58AEC07F1E0AE40FF312F2CF4D2AE"
+		},
+		"mobileMigrateDashboard.$services.migrateApplication.$title": {
+			"text": {
+				"en-us": "Migrate dashboard",
+				"fr-fr": "Migrate dashboard"
+			},
+			"$key": "655E94DBEB5A75F5ED8AC01AF8EA9EA9DEFF8AF7"
+		},
+		"mobileMigrateDashboard.$titleTemplate": {
+			"text": {
+				"en-us": "Migrate Mobile Dashboard",
+				"fr-fr": "Migrate Mobile Dashboard"
+			},
+			"$key": "B0705274B19068AE0FA1AEEE7FD865CE0A568A83"
+		},
+		"mobileMigrateDashboard.applicationName.$title": {
+			"text": {
+				"en-us": "Mobile application name",
+				"fr-fr": "Mobile application name"
+			},
+			"$key": "DF7C07E6E457F21CCE35B0EE5DE1A2AD7FA35F83"
+		},
+		"mobileMigrateDashboard.createFactoryVariant.$title": {
+			"text": {
+				"en-us": "Create factory variant",
+				"fr-fr": "Create factory variant"
+			},
+			"$key": "E40DB682DE6D5436B44A61B36EC94549879F79F7"
+		},
+		"mobileMigrateDashboard.dashboard.$title": {
+			"text": {
+				"en-us": "Dashboard",
+				"fr-fr": "Dashboard"
+			},
+			"$key": "9F3DDFE68D7E3969F8277F57406F74A37C23DECC"
+		},
+		"mobileMigrateDashboard.endPoints.$title": {
+			"text": {
+				"en-us": "Endpoints",
+				"fr-fr": "Endpoints"
+			},
+			"$key": "06F8970602B7EC529F77B062338E5DFDF8D61981"
+		},
+		"mobileRepresentation.$descriptionTemplate": {
+			"text": {
+				"en-us": "Mobile dashboard definition",
+				"fr-fr": "Mobile dashboard definition"
+			},
+			"$key": "E39312082CB0C54E611240E1DEDACAA1CD355D92"
+		},
+		"mobileRepresentation.$titleTemplate": {
+			"text": {
+				"en-us": "Mobile dashboard",
+				"fr-fr": "Mobile dashboard"
+			},
+			"$key": "F5526DD5B11C0333B7D26ED1F5372C04E79E14DE"
+		},
+		"mobileRepresentation.cacheType.$all": {
+			"text": {
+				"en-us": "All",
+				"fr-fr": "All"
+			},
+			"$key": "EC390D559A663262757D31B4B0CE27F121659F46"
+		},
+		"mobileRepresentation.cacheType.$auto": {
+			"text": {
+				"en-us": "Automatic",
+				"fr-fr": "Automatic"
+			},
+			"$key": "134137631B5AE1452935AEEE126CE5518126EA52"
+		},
+		"mobileRepresentation.cacheType.$filtered": {
+			"text": {
+				"en-us": "Filter expression",
+				"fr-fr": "Filter expression"
+			},
+			"$key": "0CDCD658D05634A468F3354C036A3401C325855E"
+		},
+		"mobileRepresentation.cacheType.$nocache": {
+			"text": {
+				"en-us": "No caching",
+				"fr-fr": "No caching"
+			},
+			"$key": "30A7AC1D3E63CA9D834F5A1AB8BE6DE7D774D1A2"
+		},
+		"mobileRepresentation.cacheType.$title": {
+			"text": {
+				"en-us": "Cache type",
+				"fr-fr": "Cache type"
+			},
+			"$key": "6D7DA070DE5B7643F0E5EE8894066490B5D32696"
+		},
+		"mobileRepresentation.facet.$title": {
+			"text": {
+				"en-us": "Facet",
+				"fr-fr": "Facet"
+			},
+			"$key": "3B5EB3F94546BD6057D557436C8C1ABEBE5DC42F"
+		},
+		"mobileRepresentation.filter.$title": {
+			"text": {
+				"en-us": "Filter",
+				"fr-fr": "Filter"
+			},
+			"$key": "A676CB3CA6BADD8E5DC95602AEF1EF1B23A35A19"
+		},
+		"mobileRepresentation.name.$title": {
+			"text": {
+				"en-us": "Name",
+				"fr-fr": "Name"
+			},
+			"$key": "F8B136A07F54D6E13FC6949DB9C36B0D693F2301"
+		},
+		"pageDef.facet.$create": {
+			"text": {
+				"en-us": "Create",
+				"fr-fr": "Create"
+			},
+			"$key": "1D780636CE1B6AFE525090F1C57F1AD8BBAF8A45"
+		},
+		"pageDef.facet.$mobileDashboard": {
+			"text": {
+				"en-us": "Mobile dashboard",
+				"fr-fr": "Mobile dashboard"
+			},
+			"$key": "5B097B0688BCED6C02FEB556AD0BFC143B55EAD6"
+		},
+		"x3server.serverPort.$description": {
+			"text": {
+				"en-us": "X3 server runtime port",
+				"fr-fr": "X3 server runtime port"
+			},
+			"$key": "F44E5648569C1811FD5FBC493414F94E49C822C5"
+		},
+		"x3server.tag.$title": {
+			"text": {
+				"en-us": "X3 server tags",
+				"fr-fr": "X3 server tags"
+			},
+			"$key": "442BF7446CACBF906A70445E06528C9DD197BCBE"
+		},
+		"x3server.tag.$description": {
+			"text": {
+				"en-us": "Allow to set affinity with user's groups or web services pools",
+				"fr-fr": "Allow to set affinity with user's groups or web services pools"
+			},
+			"$key": "BFA723CB48AAAFED112D13CE8F9B26E366AA3F74"
+		},
+		"x3server.exclusive.$title": {
+			"text": {
+				"en-us": "Tag exclusive",
+				"fr-fr": "Tag exclusive"
+			},
+			"$key": "889DD57D0EC7D456346227450BDB7E4ED43ACE9A"
+		},
+		"x3server.exclusive.$description": {
+			"text": {
+				"en-us": "The tag is exclusive to use this process server",
+				"fr-fr": "The tag is exclusive to use this process server"
+			},
+			"$key": "4AC9CA790410B68082AE328764D948417114B8EF"
+		},
+		"x3server.banTimeout.$title": {
+			"text": {
+				"en-us": "Ban timeout",
+				"fr-fr": "Ban timeout"
+			},
+			"$key": "8CDD442F5928D143FB09A7F997C41A5F27D8810E"
+		},
+		"x3server.banTimeout.$description": {
+			"text": {
+				"en-us": "The time to ban X3 server runtime when some user fails to connect (minutes)",
+				"fr-fr": "The time to ban X3 server runtime when some user fails to connect (minutes)"
+			},
+			"$key": "79CB7B587C0574016388FD657E5441678BAF8039"
+		},
+		"x3server.banned.$title": {
+			"text": {
+				"en-us": "Black listed",
+				"fr-fr": "Black listed"
+			},
+			"$key": "3364FE6B43C6BE2DE5D702BB1E5798ECDAB164DA"
+		},
+		"x3server.banned.$description": {
+			"text": {
+				"en-us": "Black listed because some connections failed (60 minutes by default)",
+				"fr-fr": "Black listed because some connections failed (60 minutes by default)"
+			},
+			"$key": "EE6EFEF7A22EB599AA37682559D4A1D8EAFECE20"
+		},
+		"x3server.autoConfig.$title": {
+			"text": {
+				"en-us": "Auto config",
+				"fr-fr": "Auto config"
+			},
+			"$key": "8A44B30118B51DA81523D7DE848A34FA5B891974"
+		},
+		"x3server.autoConfig.$description": {
+			"text": {
+				"en-us": "Has been configured by synchronisation with solution.json",
+				"fr-fr": "Has been configured by synchronisation with solution.json"
+			},
+			"$key": "D4DD035673C61C2FFC2ECD3F9467AB99FCE0274D"
+		},
+		"x3server.disabled.$title": {
+			"text": {
+				"en-us": "Disabled",
+				"fr-fr": "Disabled"
+			},
+			"$key": "9B4BA87A0921E294C1596B5616FF86D0200E21A3"
+		},
+		"x3server.disabled.$description": {
+			"text": {
+				"en-us": "A disabled server is not used by any connection",
+				"fr-fr": "A disabled server is not used by any connection"
+			},
+			"$key": "16EEB0813F608EF994F17614C17021825760DE63"
+		},
+		"x3solution.$createActionTitle": {
+			"text": {
+				"en-us": "New X3 solution",
+				"fr-fr": "New X3 solution"
+			},
+			"$key": "BAB354567B90A686C04ACBF58510282B7510ABDB"
+		},
+		"x3solution.$descriptionTemplate": {
+			"text": {
+				"en-us": "X3 solution settings",
+				"fr-fr": "X3 solution settings"
+			},
+			"$key": "92F325AE71E13071E9C630173A308CBC7B47F9B9"
+		},
+		"x3solution.$listTitle": {
+			"text": {
+				"en-us": "List of X3 solutions",
+				"fr-fr": "List of X3 solutions"
+			},
+			"$key": "F76BE7E5BB52EA25681C270AD808BC4755C2F39F"
+		},
+		"x3solution.$services.checkMainServer.$description": {
+			"text": {
+				"en-us": "Attempts to connect to the main server",
+				"fr-fr": "Attempts to connect to the main server"
+			},
+			"$key": "861AF340D5BD13316CCF415D82D5027A6545298C"
+		},
+		"x3solution.$services.checkMainServer.$parameters.folderName.$description": {
+			"text": {
+				"en-us": "Indicate a X3 folder that can be used to test the connection",
+				"fr-fr": "Indicate a X3 folder that can be used to test the connection"
+			},
+			"$key": "44D33991BB1C35667E4FCECF4B8B2515194796C2"
+		},
+		"x3solution.$services.checkMainServer.$parameters.folderName.$title": {
+			"text": {
+				"en-us": "Folder to test",
+				"fr-fr": "Folder to test"
+			},
+			"$key": "C9FFA224132C3234A2E5C535D7E1A754CF30CF71"
+		},
+		"x3solution.$services.checkMainServer.$title": {
+			"text": {
+				"en-us": "Check main runtime settings",
+				"fr-fr": "Check main runtime settings"
+			},
+			"$key": "8223FF1B509E8931A366E86D2C3A8FC2A18604E6"
+		},
+		"x3solution.$services.checkAllServer.$description": {
+			"text": {
+				"en-us": "Attempts to connect to all servers",
+				"fr-fr": "Attempts to connect to all servers"
+			},
+			"$key": "38BA6252FE8919A6B51A36969140FC3682F5CA0F"
+		},
+		"x3solution.$services.checkAllServer.$parameters.folderName.$description": {
+			"text": {
+				"en-us": "Indicate a X3 folder that can be used to test the connection",
+				"fr-fr": "Indicate a X3 folder that can be used to test the connection"
+			},
+			"$key": "D3EEFFBE90878E338DF02124D7B3D2BFE1F88CF1"
+		},
+		"x3solution.$services.checkAllServer.$parameters.folderName.$title": {
+			"text": {
+				"en-us": "Folder to test",
+				"fr-fr": "Folder to test"
+			},
+			"$key": "B674C3115F6BE80FDB9A8C4C607C929364B079FC"
+		},
+		"x3solution.$services.checkAllServer.$title": {
+			"text": {
+				"en-us": "Check all servers settings",
+				"fr-fr": "Check all servers settings"
+			},
+			"$key": "FC15EB3C902495C41994817392FA03B0862533AA"
+		},
+		"x3solution.$titleTemplate": {
+			"text": {
+				"en-us": "X3 solution {solutionName}",
+				"fr-fr": "X3 solution {solutionName}"
+			},
+			"$key": "F8292D1ACFAA5624DDC6314B00D9217D31275F6F"
+		},
+		"x3solution.boServer.$description": {
+			"text": {
+				"en-us": "This is the Business Objects Server associated to X3 solution",
+				"fr-fr": "This is the Business Objects Server associated to X3 solution"
+			},
+			"$key": "25FCFF30FC7C2E61A74AFE3E5AD5D58F381A8414"
+		},
+		"x3solution.boServer.$title": {
+			"text": {
+				"en-us": "BO Server",
+				"fr-fr": "BO Server"
+			},
+			"$key": "064DE4DB044ADBB47A6A3C9E0E5A34708F39EE58"
+		},
+		"x3solution.certificate.$description": {
+			"text": {
+				"en-us": "Certificate used for authentication on these servers",
+				"fr-fr": "Certificate used for authentication on these servers"
+			},
+			"$key": "6C926F489538BBA3F7CA151DE0D15B9E1AD32C1C"
+		},
+		"x3solution.certificate.$title": {
+			"text": {
+				"en-us": "Certificate",
+				"fr-fr": "Certificate"
+			},
+			"$key": "116FA8875DB819657AE992F4AF64B1FF238ED1DE"
+		},
+		"x3solution.description.$description": {
+			"text": {
+				"en-us": "Friendly name",
+				"fr-fr": "Friendly name"
+			},
+			"$key": "240F15C231607C9D97CA46A86FF4B4C915AE4D13"
+		},
+		"x3solution.description.$title": {
+			"text": {
+				"en-us": "Description",
+				"fr-fr": "Description"
+			},
+			"$key": "77A711F31151096B58CB4F762C553BBB63836106"
+		},
+		"x3solution.endpoints.$description": {
+			"text": {
+				"en-us": "Associated endpoints",
+				"fr-fr": "Associated endpoints"
+			},
+			"$key": "C504EB2A11009E89E1698BBB3118B617B2FD3036"
+		},
+		"x3solution.endpoints.$title": {
+			"text": {
+				"en-us": "Endpoints",
+				"fr-fr": "Endpoints"
+			},
+			"$key": "EF37807AAA84B41B9A3F0722B29CBC8DF799E699"
+		},
+		"x3solution.serverHost.$description": {
+			"text": {
+				"en-us": "Physical server name or IP address for main application server",
+				"fr-fr": "Physical server name or IP address for main application server"
+			},
+			"$key": "81FB3757CCB25AC664AB11C8E8B1CBE3E1A16DA3"
+		},
+		"x3solution.serverHost.$title": {
+			"text": {
+				"en-us": "Main server host",
+				"fr-fr": "Main server host"
+			},
+			"$key": "CE3AA585BBD8F69F9E56313B2F746E71805BC21F"
+		},
+		"x3solution.serverName.$description": {
+			"text": {
+				"en-us": "If different from \"Main server host\"",
+				"fr-fr": "If different from \"Main server host\""
+			},
+			"$key": "96240F744745A986FBB35CC56FF289890AEB66F9"
+		},
+		"x3solution.solutionName.$title": {
+			"text": {
+				"en-us": "Solution name",
+				"fr-fr": "Solution name"
+			},
+			"$key": "38350D2D793ABD0229DB684B0DF68AFB55EB6693"
+		},
+		"x3solution.solutionName.$description": {
+			"text": {
+				"en-us": "The X3 solution name",
+				"fr-fr": "The X3 solution name"
+			},
+			"$key": "4B1AAEE421403E2189E0450B16F8F6437B7BF705"
+		},
+		"x3solution.serverPort.$title": {
+			"text": {
+				"en-us": "Main server port",
+				"fr-fr": "Main server port"
+			},
+			"$key": "C68BF9D3B9DDC47657707ADF2E52C2A501116AA9"
+		},
+		"x3solution.serverPort.$description": {
+			"text": {
+				"en-us": "The main application server port",
+				"fr-fr": "The main application server port"
+			},
+			"$key": "B35A27B93DEB09C4F9C4742D29B696EFA7616CB8"
+		},
+		"x3solution.serverTimeout.$title": {
+			"text": {
+				"en-us": "Server timeout (ms)",
+				"fr-fr": "Server timeout (ms)"
+			},
+			"$key": "9E0F696F5B94DA6ACCC0977AC15DC1A578C139B5"
+		},
+		"x3solution.webServer.$description": {
+			"text": {
+				"en-us": "If different from \"Main server host\"",
+				"fr-fr": "If different from \"Main server host\""
+			},
+			"$key": "D75008711ACE24E7BB6318D2F0289A64ECCC4A07"
+		},
+		"x3solution.webServer.$title": {
+			"text": {
+				"en-us": "Web server host",
+				"fr-fr": "Web server host"
+			},
+			"$key": "B72F05ACA67BC6F27ED5C161ABD0B0DCC39A0AF5"
+		},
+		"x3solution.webServerPort.$title": {
+			"text": {
+				"en-us": "Web server port",
+				"fr-fr": "Web server port"
+			},
+			"$key": "72153C6D87B8A783163098C34FF814A296A41C4F"
 		}
 	},
 	"node_modules/syracuse-core/lib/types/resources/bigint": {
@@ -37371,6 +38351,13 @@
 				"ru-ru": "Невозможно считать файл импорта: \"{0}\""
 			},
 			"$key": "747B28407861CD7EF1CF9E7C2343BE113CAA0A2E"
+		},
+		"diagPrefix_success": {
+			"text": {
+				"en-us": "Succes importing \"{0}\" ({1}): {2}",
+				"fr-fr": "Succes importing \"{0}\" ({1}): {2}"
+			},
+			"$key": "8899A138D125097A273F76B4487C8C6EA26A7B8C"
 		}
 	},
 	"node_modules/syracuse-license/lib/resources/check": {
@@ -42665,7 +43652,8 @@
 				"fr-fr": "Impossible de crypter un contenu de longueur {0}",
 				"pt-pt": "Não é possível encriptar o conteúdo de comprimento {0}",
 				"en-gb": "===",
-				"ru-ru": "Не может шифровать содержимое длиной {0}"
+				"ru-ru": "Не может шифровать содержимое длиной {0}",
+				"zh-cn": "无法长度{0}的内容进行加密"
 			},
 			"$key": "528718ED2D93FE6377E345D202C7E15FD54E7FD7"
 		},
@@ -43103,7 +44091,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "===",
-				"ru-ru": "ОК"
+				"ru-ru": "ОК",
+				"zh-cn": "确定"
 			},
 			"$key": "AC0E4E8644A171509CF51094F1BBC99F4884496E"
 		},
@@ -43511,7 +44500,8 @@
 				"fr-fr": "Vous n'êtes pas autorisé à lire cette instance de l'entité {0}.",
 				"pt-pt": "Você não tem a autorização para ler esta instância da entidade {0}",
 				"en-gb": "===",
-				"ru-ru": "У вас нет прав на чтение этого экземпляр орг единице {0}"
+				"ru-ru": "У вас нет прав на чтение этого экземпляр орг единице {0}",
+				"zh-cn": "您无权读取实体{0}的这个实例。"
 			},
 			"$key": "6C62560EAED0A4D002DA8B77172B541CC8B7E023"
 		},
@@ -43664,7 +44654,8 @@
 				"fr-fr": "Interdit: vous n'êtes pas autorisé à modifier \"{0}\" créé par \"{1}\".",
 				"pt-pt": "Proibido: Você não tem autorização para modificar \"{0}\" criado por \"{1}\"",
 				"en-gb": "===",
-				"ru-ru": "Запрещено: У вас нет прав на изменение '{0}' создан '{1}'"
+				"ru-ru": "Запрещено: У вас нет прав на изменение '{0}' создан '{1}'",
+				"zh-cn": "禁止：您无权修改由\"{1}\"创建的\"{0}\"。"
 			},
 			"$key": "69326C68AAA338DD476E2FA5383B9B1D2DE20B34"
 		},
@@ -43677,7 +44668,8 @@
 				"fr-fr": "Interdit: vous n'êtes pas autorisé à modifier \"{0}\". En effet, \"{1}\" a été créé par \"{2}\".",
 				"pt-pt": "Proibido: Você não tem autorização para modificar \"{0}\", porque esta \"{1}\" foi criado por \"{2}\"",
 				"en-gb": "===",
-				"ru-ru": "Запрещено: У вас нет прав на изменение '{0}', потому что это '{1}' был создан '{2}"
+				"ru-ru": "Запрещено: У вас нет прав на изменение '{0}', потому что это '{1}' был создан '{2}",
+				"zh-cn": "禁止：您无权修改\"{0}\"。实际上，\"{1}\"是由\"{2}\"创建的。"
 			},
 			"$key": "F16DBCAA4B95FAFC4A9419E62BCF8ED2415ED352"
 		},
@@ -43690,7 +44682,8 @@
 				"fr-fr": "Interdit: vous n'êtes pas autorisé à supprimer \"{0}\" créé par \"{1}\".",
 				"pt-pt": "Proibido: Você não tem autorização para apagar \"{0}\" criado por \"{1}\"",
 				"en-gb": "===",
-				"ru-ru": "Запрещено: У вас нет прав на удаление '{0}' создан '{1}'"
+				"ru-ru": "Запрещено: У вас нет прав на удаление '{0}' создан '{1}'",
+				"zh-cn": "禁止：您无权删除由\"{1}\"创建的\"{0}\"。"
 			},
 			"$key": "3030442522DEEB1E50B1411F9AD74DAC85545C6B"
 		},
@@ -43703,7 +44696,8 @@
 				"fr-fr": "Interdit: vous n'êtes pas autorisé à créer des instances \"livrées\".",
 				"pt-pt": "Proibido: Você não tem autorização para criar instâncias de \"fábrica\"",
 				"en-gb": "===",
-				"ru-ru": "Запрещено: У вас нет прав на создание «Фабрика» экземпляры"
+				"ru-ru": "Запрещено: У вас нет прав на создание «Фабрика» экземпляры",
+				"zh-cn": "禁止：您无权创建\"出厂交付\"的实例。"
 			},
 			"$key": "BA6650D7249A3D903707AFAF2088ACBF4FC48242"
 		},
@@ -43716,7 +44710,8 @@
 				"fr-fr": "Interdit: vous n'êtes pas autorisé à modifier l'élément \"livré\" car \"{0}\" a été créé par \"{1}\".",
 				"pt-pt": "Proibido: Você não tem autorização para modificar o \"Factory\", porque esta \"{0}\" foi criado por \"{1}\"",
 				"en-gb": "===",
-				"ru-ru": "Запрещено: У вас нет прав на изменение 'Фабрика', потому что это '{0}' был создан"
+				"ru-ru": "Запрещено: У вас нет прав на изменение 'Фабрика', потому что это '{0}' был создан",
+				"zh-cn": "禁止：您无权修改该\"出厂交付\"元素，因为\"{0}\"是由\"{1}\"创建的。"
 			},
 			"$key": "429843B10B3B4B0BF263D86D393C14CDA2E4B506"
 		},
@@ -43931,7 +44926,8 @@
 				"fr-fr": "Aucun patch Syracuse",
 				"pt-pt": "Nenhuma patch de Syracuse",
 				"en-gb": "===",
-				"ru-ru": "Нет Syracuse патча"
+				"ru-ru": "Нет Syracuse патча",
+				"zh-cn": "没有任何Syracuse补丁"
 			},
 			"$key": "E36F07D33661E607957212AD9662CD7A5C2352FD"
 		},
@@ -44544,7 +45540,8 @@
 				"pt-pt": "Detalhes",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Подробности"
+				"ru-ru": "Подробности",
+				"zh-cn": "详情"
 			},
 			"$key": "21DC74BCE6259A91B9D4199B94F19096A691E73B"
 		}
@@ -44782,7 +45779,8 @@
 				"fr-fr": "La ressource est désormais introuvable.",
 				"pt-pt": "Recursos não pode mais ser encontrado",
 				"en-gb": "===",
-				"ru-ru": "Ресурс не может быть найден больше"
+				"ru-ru": "Ресурс не может быть найден больше",
+				"zh-cn": "再也无法找到该资源了。"
 			},
 			"$key": "1E56274C7DFA1B94DA940880227F7A38C2149074"
 		},
@@ -44794,7 +45792,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "===",
-				"ru-ru": "ОК"
+				"ru-ru": "ОК",
+				"zh-cn": "确定"
 			},
 			"$key": "88B9389A8FE58B26879D5FE1842B64805B3FDE28"
 		},
@@ -45289,7 +46288,8 @@
 				"fr-fr": "{0} mapping supprimé(s)",
 				"en-gb": "===",
 				"pt-pt": "{0} mapeamentos eliminados",
-				"ru-ru": "{0} отображение удалено"
+				"ru-ru": "{0} отображение удалено",
+				"zh-cn": "{0}映射已删除"
 			},
 			"$key": "939A850E6FBC52A771B8EA42D229123A8968F643"
 		},
@@ -45302,7 +46302,8 @@
 				"fr-fr": "{0} données supprimées",
 				"pt-pt": "{0} dados apagados",
 				"en-gb": "===",
-				"ru-ru": "{0} данные удаляются"
+				"ru-ru": "{0} данные удаляются",
+				"zh-cn": "{0}数据已删除"
 			},
 			"$key": "A2EF0C4641585B5CFCE73EEA4E5EFD41D9AD9DE8"
 		}
@@ -45375,7 +46376,8 @@
 				"fr-fr": "La configuration actuelle ne permet pas les caractères jokers en première position dans la chaîne de recherche (Contacter votre administrateur système): {0}",
 				"pt-pt": "A configuração atual não permite caracteres especiais na seqüência de pesquisa (Contacte o seu sistema administrador): {0}seu administrador de sistema): {0}",
 				"en-gb": "===",
-				"ru-ru": "Текущая конфигурация не позволяет ведущим символов подстановки в строке поиска (Обратитесь SYSадминистратор): {0}"
+				"ru-ru": "Текущая конфигурация не позволяет ведущим символов подстановки в строке поиска (Обратитесь SYSадминистратор): {0}",
+				"zh-cn": "当前配置不允许在搜索字符串中的第一个位置使用通配符（请联系您的系统管理员）：{0}"
 			},
 			"$key": "C70D7994340644A5A836DA907C27BAE06B450DC5"
 		},
@@ -45615,7 +46617,8 @@
 				"fr-fr": "Limite mémoire atteinte : {0} (definie {1})",
 				"pt-pt": "Limite de memória alcançado: {0} (definido {1})",
 				"en-gb": "===",
-				"ru-ru": "Ограничение по памяти : {0} (определяется {1})"
+				"ru-ru": "Ограничение по памяти : {0} (определяется {1})",
+				"zh-cn": "达到内存限制：{0}（定义为{1}）"
 			},
 			"$key": "E4E8B5E930219E63B17E7E9F44200FB37BCA3FD6"
 		},
@@ -45628,7 +46631,8 @@
 				"fr-fr": "{0} - Le serveur va maintenant s'arrêter ;  origine {1}",
 				"pt-pt": "{0} - O servidor irá sair agora; origem {1}",
 				"en-gb": "===",
-				"ru-ru": "{0} - сервер будет выйти в настоящее время; Происхождение {1}"
+				"ru-ru": "{0} - сервер будет выйти в настоящее время; Происхождение {1}",
+				"zh-cn": "{0} –这个服务器现在将停止；来源{1}"
 			},
 			"$key": "E7D2713B67E60F8FA4DAADEC8A2492FF2727AF0E"
 		},
@@ -45641,7 +46645,8 @@
 				"fr-fr": "{0} - Serveur en mode limité ; session quittée {1}",
 				"pt-pt": "{0} - O servidor está em modo restrito; sair sessão: {1}",
 				"en-gb": "===",
-				"ru-ru": "{0} - Сервер находится в режиме ограниченного; сессия слева: {1}"
+				"ru-ru": "{0} - Сервер находится в режиме ограниченного; сессия слева: {1}",
+				"zh-cn": "{0} –服务器处于限制模式；遗留会话{1}"
 			},
 			"$key": "3A450B8B3E30D048D8F36ECC3A1B21A98EB86C8B"
 		},
@@ -45654,7 +46659,8 @@
 				"fr-fr": "{0} - Mode limité demandé ; origine {1}",
 				"pt-pt": "{0} - modo restrito solicitado; origem {1}",
 				"en-gb": "===",
-				"ru-ru": "{0} - режим ограниченного запроса; Происхождение {1}"
+				"ru-ru": "{0} - режим ограниченного запроса; Происхождение {1}",
+				"zh-cn": "{0} –已请求限制模式；来源{1}"
 			},
 			"$key": "A56AF51E4BB80D87DB6D28F657D3B474B47EB526"
 		},
@@ -45667,7 +46673,8 @@
 				"fr-fr": "Votre session a été supprimée en raison d'une erreur. Veuillez vous reconnecter.",
 				"pt-pt": "Sua sessão foi encerrada por causa de um erro no servidor. Por favor, faça o login novamente",
 				"en-gb": "===",
-				"ru-ru": "Ваш сеанс был прекращен из-за ошибки сервера. Пожалуйста, войдите снова"
+				"ru-ru": "Ваш сеанс был прекращен из-за ошибки сервера. Пожалуйста, войдите снова",
+				"zh-cn": "因为一个错误，您的会话已被删除。请您重新连接。"
 			},
 			"$key": "4A8159531E4760BC0A5113DB69CE5EF8D51428C5"
 		},
@@ -45680,7 +46687,8 @@
 				"fr-fr": "Vous ne pouvez pas vous déconnecter de cette session car vous avez encore des sessions client classique en cours",
 				"pt-pt": "Não é possível sair desta sessão, pois há ainda sessões clássicas cliente abertas",
 				"en-gb": "===",
-				"ru-ru": "Не можете выйти на этой сессии, как там по-прежнему классические клиентские сеансы открытые"
+				"ru-ru": "Не можете выйти на этой сессии, как там по-прежнему классические клиентские сеансы открытые",
+				"zh-cn": "您无法从这个会话中断开连接，因为您还有打开中的经典客户端会话。"
 			},
 			"$key": "316A78CF7E34F80AA45DC10B81E2E24B1CDA9533"
 		}
@@ -45825,7 +46833,8 @@
 				"fr-fr": "Noeud racine 'definitions' non trouvé.",
 				"pt-pt": "Nó raiz 'definições' não foi encontrado.",
 				"en-gb": "===",
-				"ru-ru": "Корневой узел 'Определения' не найдено."
+				"ru-ru": "Корневой узел 'Определения' не найдено.",
+				"zh-cn": "未找到 '定义'类型的根节点。"
 			},
 			"$key": "B102BD1AA980A9224F146D8D382D194EDE0BE3E9"
 		},
@@ -45838,7 +46847,8 @@
 				"fr-fr": "Aucun noeud 'types' trouvé.",
 				"pt-pt": "Não encontrou noeud 'tipos'.",
 				"en-gb": "===",
-				"ru-ru": "Узел Нет 'типов' найден."
+				"ru-ru": "Узел Нет 'типов' найден.",
+				"zh-cn": "未找到任何'types'节点。"
 			},
 			"$key": "451EBDA5F96C9191691E06826D6F0E7F8610D8D5"
 		},
@@ -45851,7 +46861,8 @@
 				"fr-fr": "Aucun noeud 'message' trouvé.",
 				"pt-pt": "No noeud 'mensagem' encontrado.",
 				"en-gb": "===",
-				"ru-ru": "Нет 'сообщение' узел не найден."
+				"ru-ru": "Нет 'сообщение' узел не найден.",
+				"zh-cn": "未找到任何'message'节点。"
 			},
 			"$key": "A1AAA760FDE81AB75A60F5D8CAB71BC11E7CDD9B"
 		},
@@ -45864,7 +46875,8 @@
 				"fr-fr": "Aucun noeud 'portType' trouvé.",
 				"pt-pt": "No noeud 'portType' encontrado.",
 				"en-gb": "===",
-				"ru-ru": "Узел 'PortType' не найден."
+				"ru-ru": "Узел 'PortType' не найден.",
+				"zh-cn": "未找到任何'portType'节点。"
 			},
 			"$key": "DDBFF39CE50A999775980E6B47CA654DCFB3ACED"
 		},
@@ -45877,7 +46889,8 @@
 				"fr-fr": "Aucun noeud 'binding' trouvé.",
 				"pt-pt": "No noeud 'ligação' encontrado.",
 				"en-gb": "===",
-				"ru-ru": "узел 'связывания'  не найден."
+				"ru-ru": "узел 'связывания'  не найден.",
+				"zh-cn": "未找到任何'binding'节点。"
 			},
 			"$key": "37EDE8E169CB76CEBAFB7E0366C07C48E4CA31BC"
 		},
@@ -45890,7 +46903,8 @@
 				"fr-fr": "Aucun noeud 'service' trouvé.",
 				"pt-pt": "No noeud serviço encontrado.",
 				"en-gb": "===",
-				"ru-ru": "узел 'обслуживание'  не найден."
+				"ru-ru": "узел 'обслуживание'  не найден.",
+				"zh-cn": "未找到任何'service'节点。"
 			},
 			"$key": "A4A6B04DAC273C9B20BDF79D5FE326782566372A"
 		},
@@ -46289,7 +47303,8 @@
 				"fr-fr": "Une erreur s'est produite lors de la transmission de la requête :\n {0}",
 				"pt-pt": "Ocorreu um erro durante a apresentação do pedido: \n {0}",
 				"en-gb": "An error has occurred while sending request:",
-				"ru-ru": "Произошла ошибка при отправке запроса:  п {0}"
+				"ru-ru": "Произошла ошибка при отправке запроса:  п {0}",
+				"zh-cn": "在传输请求时产生了一个错误：\n {0}"
 			},
 			"$key": "FF9183825BD3FD73C9C4C1AA325A9C7B9FD95C4E"
 		},
@@ -46538,6 +47553,13 @@
 				"ru-ru": "множеств был остановлен. Все клиенты Классический веб-службы будут отключены"
 			},
 			"$key": "EC795BD704EBDEF5B64FF369D66328B5ACE6472C"
+		},
+		"repAdossierMissing": {
+			"text": {
+				"en-us": "Impossible to get available languages on X3 folder '{0}': {1}",
+				"fr-fr": "Impossible to get available languages on X3 folder '{0}': {1}"
+			},
+			"$key": "FA2C4D6D930261508784991C399A5CD4B3247787"
 		}
 	},
 	"node_modules/syracuse-soap/lib/generic/entities/resources/soapGeneric": {
@@ -54359,6 +55381,1126 @@
 				"fr-fr": "Not empty"
 			},
 			"$key": "C62D9129972B2914F526AF627CBC97B90BEB1F30"
+		},
+		"nofilter": {
+			"text": {
+				"en-us": "No filter",
+				"fr-fr": "No filter"
+			},
+			"$key": "25E5D0B9AAC881F5C56A22F7086A3EB25431197A"
+		},
+		"page": {
+			"text": {
+				"en-us": "Page",
+				"fr-fr": "Page"
+			},
+			"$key": "575537C2D86FC3A29345C58A7339E8716EE3BA09"
+		},
+		"colorsPalette.primecolor": {
+			"text": {
+				"en-us": "Primary colors",
+				"fr-fr": "Primary colors"
+			},
+			"$key": "AFBB15272FC8690946FE1C5DB64F89AEFB9E5761"
+		},
+		"colorsPalette.secondcolor": {
+			"text": {
+				"en-us": "Secondary colors",
+				"fr-fr": "Secondary colors"
+			},
+			"$key": "9B35407C5C16256A7563C08A9BE885188A3071D8"
+		},
+		"colorsPalette.notifcolors": {
+			"text": {
+				"en-us": "Notification colors",
+				"fr-fr": "Notification colors"
+			},
+			"$key": "CB2ECD8AE17FB7C2667AAD364258131881CD9810"
+		},
+		"colorsPalette.colors.medium-purple": {
+			"text": {
+				"en-us": "Medium Purple",
+				"fr-fr": "Medium Purple"
+			},
+			"$key": "15C6E8696A0C3F42CDB007865BEF0580C282BD8A"
+		},
+		"colorsPalette.colors.darkgrey": {
+			"text": {
+				"en-us": "Dark Gray",
+				"fr-fr": "Dark Gray"
+			},
+			"$key": "CE60DC4A304EAD5A3494DC8943AA4C91161AC6C9"
+		},
+		"colorsPalette.colors.purple": {
+			"text": {
+				"en-us": "Purple",
+				"fr-fr": "Purple"
+			},
+			"$key": "2FD0CE56D0F93819F97FD9471D2515130305AF99"
+		},
+		"colorsPalette.colors.sagegreen": {
+			"text": {
+				"en-us": "Sage Green",
+				"fr-fr": "Sage Green"
+			},
+			"$key": "243A0F466CBE002720D4F5AA742F2BE8D1A74C83"
+		},
+		"colorsPalette.colors.blue": {
+			"text": {
+				"en-us": "Blue",
+				"fr-fr": "Blue"
+			},
+			"$key": "62749BEF45845026B019F2DAC269E8AD7D23A55F"
+		},
+		"colorsPalette.colors.orange": {
+			"text": {
+				"en-us": "Orange",
+				"fr-fr": "Orange"
+			},
+			"$key": "CA76F9442A870C51985E201919D097D3B4292CEB"
+		},
+		"colorsPalette.colors.lightorange": {
+			"text": {
+				"en-us": "Light Orange",
+				"fr-fr": "Light Orange"
+			},
+			"$key": "3E522F7367BB8FE47CFD697EE970774CEADCE511"
+		},
+		"colorsPalette.colors.skyblue": {
+			"text": {
+				"en-us": "Sky Blue",
+				"fr-fr": "Sky Blue"
+			},
+			"$key": "588FC9FC484D317200BD49A3D12D792E45104DDC"
+		},
+		"colorsPalette.colors.lightgreen": {
+			"text": {
+				"en-us": "Light Green",
+				"fr-fr": "Light Green"
+			},
+			"$key": "E76337F875804A8A318A4D5A600DE8DCD7CF5C3F"
+		},
+		"colorsPalette.colors.medium-grey": {
+			"text": {
+				"en-us": "Medium Gray",
+				"fr-fr": "Medium Gray"
+			},
+			"$key": "F433CA736C9F554F23D26F48D1D6498546DA9FB6"
+		},
+		"colorsPalette.colors.green": {
+			"text": {
+				"en-us": "Green",
+				"fr-fr": "Green"
+			},
+			"$key": "5AC9AE99A8EBBA83F76B6B6752D6E0048A32EAAC"
+		},
+		"colorsPalette.colors.white": {
+			"text": {
+				"en-us": "White",
+				"fr-fr": "White"
+			},
+			"$key": "371A865F93D865E4CE457D1C85A019FC049806E1"
+		},
+		"colorsPalette.colors.black": {
+			"text": {
+				"en-us": "Black",
+				"fr-fr": "Black"
+			},
+			"$key": "2AE827F830CC9A1DA26BA4795405EB6B7F5EB434"
+		},
+		"colorsPalette.colors.grey": {
+			"text": {
+				"en-us": "Grey",
+				"fr-fr": "Grey"
+			},
+			"$key": "141C2EAC5988BE448FE2F075B5F07F57A94AAF30"
+		},
+		"colorsPalette.colors.lightgray": {
+			"text": {
+				"en-us": "Light Gray",
+				"fr-fr": "Light Gray"
+			},
+			"$key": "BC7A8954F6C0C2A441BCD34E1A4F4F857DD43292"
+		},
+		"colorsPalette.colors.error": {
+			"text": {
+				"en-us": "Error",
+				"fr-fr": "Error"
+			},
+			"$key": "CE6E43F32E904E73A8092CDE95BED45E138B4BA9"
+		},
+		"colorsPalette.colors.lighterror": {
+			"text": {
+				"en-us": "Light Error",
+				"fr-fr": "Light Error"
+			},
+			"$key": "D51294D3FB92DE3CFE72811122356B10BB7C989E"
+		},
+		"colorsPalette.colors.alert": {
+			"text": {
+				"en-us": "Alert",
+				"fr-fr": "Alert"
+			},
+			"$key": "65333760F039D610AF322F4B0F48C1B3497B4FEA"
+		},
+		"colorsPalette.colors.lightalert": {
+			"text": {
+				"en-us": "Light Alert",
+				"fr-fr": "Light Alert"
+			},
+			"$key": "F6A4543CA632DB627C7C527F0E7237FFFCA26D9D"
+		},
+		"colorsPalette.colors.warning": {
+			"text": {
+				"en-us": "Warning",
+				"fr-fr": "Warning"
+			},
+			"$key": "3297F350B355F09E0165CC43971DC9C00FF38B32"
+		},
+		"colorsPalette.colors.info": {
+			"text": {
+				"en-us": "Info",
+				"fr-fr": "Info"
+			},
+			"$key": "BBC602743C588DD3ED687B91A5FED427684222FC"
+		},
+		"modal.action.success": {
+			"text": {
+				"en-us": "Action succeeded",
+				"fr-fr": "Action succeeded"
+			},
+			"$key": "87371B192D0B6BF9A65D2EF52A7A9A79BFF09944"
+		},
+		"modal.action.fail": {
+			"text": {
+				"en-us": "Action failed",
+				"fr-fr": "Action failed"
+			},
+			"$key": "6C852DE6EEAF15DEF897E57E7E8AD4F99DA9A251"
+		},
+		"auth.panel.label_design": {
+			"text": {
+				"en-us": "Design",
+				"fr-fr": "Design"
+			},
+			"$key": "A7187FDEC039403BFDB6C2800E2EC27BD2B31DFC"
+		},
+		"auth.panel.label_comment": {
+			"text": {
+				"en-us": "Comment",
+				"fr-fr": "Comment"
+			},
+			"$key": "57D6D0C6C4EB74D3C7939176F4D29993BE40BED6"
+		},
+		"auth.checkBoxDisplayAs": {
+			"text": {
+				"en-us": "Display as",
+				"fr-fr": "Display as"
+			},
+			"$key": "4B255DEDAFB022113BD6DDA12F0C62640C26358C"
+		},
+		"auth.checkBoxDisplayAs.icon": {
+			"text": {
+				"en-us": "icon",
+				"fr-fr": "icon"
+			},
+			"$key": "5DB39800DB6E89F11E19B4D7E023FF00002BD94A"
+		},
+		"auth.checkBoxDisplayAs.text": {
+			"text": {
+				"en-us": "text",
+				"fr-fr": "text"
+			},
+			"$key": "BB3D850C835C0EBAC8D98E44F1B9889BA8E3610D"
+		},
+		"auth.theme.none": {
+			"text": {
+				"en-us": "None",
+				"fr-fr": "None"
+			},
+			"$key": "1A0371CD3E5DE2C85C9E033428084C980D198FD3"
+		},
+		"auth.theme.largetitle": {
+			"text": {
+				"en-us": "Large title",
+				"fr-fr": "Large title"
+			},
+			"$key": "29D2A6D82FAB42CF2B32795D04056E0AE771CF5F"
+		},
+		"auth.emptyImageIcon": {
+			"text": {
+				"en-us": "Empty image icon",
+				"fr-fr": "Empty image icon"
+			},
+			"$key": "2CA86073124EEDC6207B562133B89FB5BB62E469"
+		},
+		"auth.emptyIconSize": {
+			"text": {
+				"en-us": "Empty icon size",
+				"fr-fr": "Empty icon size"
+			},
+			"$key": "12887F62D08DD32DEC2901688E7C4D1BC4062DC0"
+		},
+		"auth.emptyIconSize.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "8A9B8EAEEA305E1748D355D68CB44CA9958E4358"
+		},
+		"auth.emptyIconSize.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "E18AF03FC4085946DC1937B6E79BE911F1A0ED35"
+		},
+		"auth.emptyIconSize.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "5C59CBDD23A3F59DE1DA24E12095D5D22A3D8304"
+		},
+		"auth.emptyIconSize.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "E5039D0D5943E0349D039384DAF60E6335804985"
+		},
+		"auth.urlIcon": {
+			"text": {
+				"en-us": "External link icon",
+				"fr-fr": "External link icon"
+			},
+			"$key": "0F543DA6E6C673CCDA7DA0839D81D034EDA7B2FD"
+		},
+		"auth.urlIconSize": {
+			"text": {
+				"en-us": "External link icon size",
+				"fr-fr": "External link icon size"
+			},
+			"$key": "DDBFA025014E9F8986B2166B14436DEBB16B3534"
+		},
+		"auth.urlIconSize.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "CEC001CB9418E623E3AF8C611EA4F4485F60D5EF"
+		},
+		"auth.urlIconSize.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "76CFADED847BC4F1C0E3D8518951C0707377C336"
+		},
+		"auth.urlIconSize.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "F28E507AEB7D841BA08EFC6BDDA1E5F14BBC1F6C"
+		},
+		"auth.urlIconSize.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "14AA2211A1172B29A0415E1D35B4193D2337CF3A"
+		},
+		"auth.switcher.onText": {
+			"text": {
+				"en-us": "Yes",
+				"fr-fr": "Yes"
+			},
+			"$key": "4511F9813713469EDDE19433F3E049704E0BC078"
+		},
+		"auth.switcher.offText": {
+			"text": {
+				"en-us": "No",
+				"fr-fr": "No"
+			},
+			"$key": "7BAECED1D327AC3CE11843D2143B63A197E7086F"
+		},
+		"auth.imgcol.displayIcon": {
+			"text": {
+				"en-us": "Display as an icon",
+				"fr-fr": "Display as an icon"
+			},
+			"$key": "F956FC3C88E0E697F80B91388CECDA22522FFD97"
+		},
+		"auth.imgcol.iconPicker": {
+			"text": {
+				"en-us": "Select an icon",
+				"fr-fr": "Select an icon"
+			},
+			"$key": "C837FF82FA3676A791ACAB8D38D04816EF89C510"
+		},
+		"auth.imgHeight": {
+			"text": {
+				"en-us": "Image height",
+				"fr-fr": "Image height"
+			},
+			"$key": "7D6BFAECF2ABFE063A0B30532CC19200335D6979"
+		},
+		"auth.imgHeight.xsmall": {
+			"text": {
+				"en-us": "Extra Small",
+				"fr-fr": "Extra Small"
+			},
+			"$key": "621C05A312AE40894C3E3630B808BE097BD1F7C2"
+		},
+		"auth.imgHeight.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "1D25AA53D45BC6148B8AEFFEF61C967922A921BC"
+		},
+		"auth.imgHeight.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "561ED08A41E96AC5A755C2E71FE0AB33241FFF49"
+		},
+		"auth.imgHeight.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "BD37DD9029A4A4BF236FD4586C0AF206E526CA1A"
+		},
+		"auth.imgHeight.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "9BE6272C048D4645ABA502A4BA0E8F4ECB35A73B"
+		},
+		"auth.bgColor": {
+			"text": {
+				"en-us": "Color",
+				"fr-fr": "Color"
+			},
+			"$key": "467D33D2BBD885A7F36E6A172B38F8CB05DD6705"
+		},
+		"auth.arrayDisplay.chart": {
+			"text": {
+				"en-us": "Chart",
+				"fr-fr": "Chart"
+			},
+			"$key": "979AD5F11A09A44DD875351F36614C1A422EE7CA"
+		},
+		"auth.arrayDisplay.separator": {
+			"text": {
+				"en-us": "Separator",
+				"fr-fr": "Separator"
+			},
+			"$key": "B1B7D1BFABC1225AE7494CC9BB0CF271349BD3C6"
+		},
+		"auth.arraySeparator": {
+			"text": {
+				"en-us": "Separator",
+				"fr-fr": "Separator"
+			},
+			"$key": "777868C9D2F4ACD091DEBC5E914F379D02DC42FE"
+		},
+		"auth.arraySeparator.blank": {
+			"text": {
+				"en-us": "blank",
+				"fr-fr": "blank"
+			},
+			"$key": "178942BFACEFA61E11CFF85B47F36560C8D36884"
+		},
+		"auth.arraySeparator.dash": {
+			"text": {
+				"en-us": "dash",
+				"fr-fr": "dash"
+			},
+			"$key": "3777CC33378D2D45436CA59EB6FBC7CD9CC1FC5E"
+		},
+		"auth.arraySeparator.semicolon": {
+			"text": {
+				"en-us": "semicolon",
+				"fr-fr": "semicolon"
+			},
+			"$key": "A781D9E467614B6312F04F3777A97E0E81F9AA90"
+		},
+		"auth.arraySeparator.colon": {
+			"text": {
+				"en-us": "colon",
+				"fr-fr": "colon"
+			},
+			"$key": "C9E28D35777291D7F5ABB7FF450C578B37CAB269"
+		},
+		"auth.arrayBgColor": {
+			"text": {
+				"en-us": "Array background color",
+				"fr-fr": "Array background color"
+			},
+			"$key": "94DE3EFB6F8D4F94D6C5F916E0BBBEF5622B7889"
+		},
+		"auth.arrayStatusEnabled.none": {
+			"text": {
+				"en-us": "No status",
+				"fr-fr": "No status"
+			},
+			"$key": "E1A38A40445DBFB005AFD127638C7ADF5298B19D"
+		},
+		"auth.arrayStatusEnabled.mono": {
+			"text": {
+				"en-us": "Single status",
+				"fr-fr": "Single status"
+			},
+			"$key": "4ECE847597072B1539EE942F366FE7ED2DD7EE2B"
+		},
+		"auth.arrayStatusEnabled.multi": {
+			"text": {
+				"en-us": "Multiple status",
+				"fr-fr": "Multiple status"
+			},
+			"$key": "3E856977D11A127F40944272D4D9D7C8AE1BC92A"
+		},
+		"auth.actionSettings": {
+			"text": {
+				"en-us": "Actions",
+				"fr-fr": "Actions"
+			},
+			"$key": "0F174954AFA5CC569E9DF74ECDD94D83BBCDCFA7"
+		},
+		"auth.actionSettings.allowDownload": {
+			"text": {
+				"en-us": "Allow download",
+				"fr-fr": "Allow download"
+			},
+			"$key": "E1CFEB9C6E64DA14DD4785523F350825750D6749"
+		},
+		"auth.actionSettings.novalue": {
+			"text": {
+				"en-us": "Select an action",
+				"fr-fr": "Select an action"
+			},
+			"$key": "D55E066A038BAEEA49AD5A46ADA515127FF26FBD"
+		},
+		"auth.actionSettings.append": {
+			"text": {
+				"en-us": "Add an action",
+				"fr-fr": "Add an action"
+			},
+			"$key": "6E39282346ADA068C9D742426833CD7254911B95"
+		},
+		"auth.actionSettings.actionlist": {
+			"text": {
+				"en-us": "Actions list",
+				"fr-fr": "Actions list"
+			},
+			"$key": "B178669279561C56300FD625BF42F6C6CFD9C07B"
+		},
+		"auth.actionSettings.options": {
+			"text": {
+				"en-us": "Select options",
+				"fr-fr": "Select options"
+			},
+			"$key": "B70658B9B39D3E3A6F60C5B1069D17C42BE7B657"
+		},
+		"auth.actionSettings.action": {
+			"text": {
+				"en-us": "Select an action",
+				"fr-fr": "Select an action"
+			},
+			"$key": "A25BAEC7878388B8716728E7E5E273DBE1CBE7C4"
+		},
+		"auth.actionSettings.icon": {
+			"text": {
+				"en-us": "Select an icon",
+				"fr-fr": "Select an icon"
+			},
+			"$key": "497CB353F123374F1E7D3127DF857D74661F6530"
+		},
+		"auth.actionSettings.editaction": {
+			"text": {
+				"en-us": "Edit action",
+				"fr-fr": "Edit action"
+			},
+			"$key": "2916DC70E552086F2EF117108033C4A9D679DE65"
+		},
+		"auth.actionSettings.invalid": {
+			"text": {
+				"en-us": "Mandatory fields(*) are missing",
+				"fr-fr": "Mandatory fields(*) are missing"
+			},
+			"$key": "3D4BE8C95C097C16EB869838EDF42C0F24815602"
+		},
+		"auth.actionSettings.invalid.action": {
+			"text": {
+				"en-us": "Action not found {0}",
+				"fr-fr": "Action not found {0}"
+			},
+			"$key": "DF8C14A13CDCF33D1D814E47FFE2058C13959A83"
+		},
+		"auth.actionSettings.invalid.empty": {
+			"text": {
+				"en-us": "A property should be set",
+				"fr-fr": "A property should be set"
+			},
+			"$key": "F7ED9B4946F0D4F9645270D2DA33F686123D91FE"
+		},
+		"auth.actionSettings.invalid.icon": {
+			"text": {
+				"en-us": "Icon is mandatory for footer/header",
+				"fr-fr": "Icon is mandatory for footer/header"
+			},
+			"$key": "32F16D6038D6CB6A38D209A46A3610D4195AD035"
+		},
+		"auth.actionSettings.footerHeader": {
+			"text": {
+				"en-us": "Add to footer/header",
+				"fr-fr": "Add to footer/header"
+			},
+			"$key": "DE2414D6E7E7DD51A8CDBA6D191F9B220649FCB9"
+		},
+		"auth.actionSettings.refreshPage": {
+			"text": {
+				"en-us": "Refresh page",
+				"fr-fr": "Refresh page"
+			},
+			"$key": "90B147C1549F3D89C8BD1F3A600D359E141C00AB"
+		},
+		"auth.actionSettings.multiselection": {
+			"text": {
+				"en-us": "Multi-selection",
+				"fr-fr": "Multi-selection"
+			},
+			"$key": "FF63F362B5F07A2092CDF1AEE7CC57C8E59D1928"
+		},
+		"auth.arrayOptions": {
+			"text": {
+				"en-us": "Array control",
+				"fr-fr": "Array control"
+			},
+			"$key": "F951C8391C61970F133C6CB81D78E55619780067"
+		},
+		"auth.arrayOptions.showPagination": {
+			"text": {
+				"en-us": "Pagination",
+				"fr-fr": "Pagination"
+			},
+			"$key": "9521539455E67F8B7BB2C4E9989A09667ABC1FC3"
+		},
+		"auth.arrayOptions.showSortFilter": {
+			"text": {
+				"en-us": "Sort and Filter",
+				"fr-fr": "Sort and Filter"
+			},
+			"$key": "D8F71441357BB59A8934389E243BBE8B942D1F22"
+		},
+		"auth.arrayOptions.showSearch": {
+			"text": {
+				"en-us": "Search",
+				"fr-fr": "Search"
+			},
+			"$key": "A1F6B7F98C72E024DF75C46D0BDA9A5FDF1F9732"
+		},
+		"auth.arrayOptions.rowIndex": {
+			"text": {
+				"en-us": "Row index",
+				"fr-fr": "Row index"
+			},
+			"$key": "167E10A9822B4ACBE0D42A511911867C525C0660"
+		},
+		"auth.arrayOptions.showRowDetailLink": {
+			"text": {
+				"en-us": "Show row's detail link",
+				"fr-fr": "Show row's detail link"
+			},
+			"$key": "128C9D701498244FD3740BE2D1A61EA6C319A0CC"
+		},
+		"auth.arrayOptions.hideEmptyRows": {
+			"text": {
+				"en-us": "Hide empty rows",
+				"fr-fr": "Hide empty rows"
+			},
+			"$key": "328071C60B0A0ADC958CA711F048BBEF1EFF090E"
+		},
+		"auth.chartDetail.saveDesign": {
+			"text": {
+				"en-us": "Save detail design",
+				"fr-fr": "Save detail design"
+			},
+			"$key": "00EFE1BBC49DB876771A67EE0A14A714C0E210C7"
+		},
+		"auth.chartDetail.openDesign": {
+			"text": {
+				"en-us": "Open detail design",
+				"fr-fr": "Open detail design"
+			},
+			"$key": "44FE7B08ADB3579077817CE00D82B8709668815C"
+		},
+		"auth.layoutTheme": {
+			"text": {
+				"en-us": "Theme",
+				"fr-fr": "Theme"
+			},
+			"$key": "EA04432972A98FBA553545519A4984251CC33FF0"
+		},
+		"auth.layoutTheme.a": {
+			"text": {
+				"en-us": "Level 1",
+				"fr-fr": "Level 1"
+			},
+			"$key": "28316AAB33E3C82EBB407FCC4FFBAF6A4EC31213"
+		},
+		"auth.layoutTheme.b": {
+			"text": {
+				"en-us": "Level 2",
+				"fr-fr": "Level 2"
+			},
+			"$key": "BA494AAA480AE36BB17356018994CFAEE2E6E18B"
+		},
+		"auth.layoutTheme.c": {
+			"text": {
+				"en-us": "Level 3",
+				"fr-fr": "Level 3"
+			},
+			"$key": "CBB8C43D71D0DF33D8EBE4AD3D7E81CD37CEA81B"
+		},
+		"auth.layoutTheme.advanced": {
+			"text": {
+				"en-us": "Advanced",
+				"fr-fr": "Advanced"
+			},
+			"$key": "311619276E8562524354CE907250127FEB39DE2C"
+		},
+		"auth.chartDetailDisplay": {
+			"text": {
+				"en-us": "Page display",
+				"fr-fr": "Page display"
+			},
+			"$key": "8CDBD077664E385553935DFFDCA85ADD42B407BA"
+		},
+		"auth.chartDetailDisplay.chartOnly": {
+			"text": {
+				"en-us": "Chart only",
+				"fr-fr": "Chart only"
+			},
+			"$key": "514357EA0536718A0A2292F815872BD8F033CC13"
+		},
+		"auth.chartDetailDisplay.arrayOnly": {
+			"text": {
+				"en-us": "Array only",
+				"fr-fr": "Array only"
+			},
+			"$key": "38320AE3B38886A38AA2469B3544B10CC0C3212F"
+		},
+		"auth.chartDetailDisplay.bothSideToSide": {
+			"text": {
+				"en-us": "Both Side to side",
+				"fr-fr": "Both Side to side"
+			},
+			"$key": "8D67E86113343A2ABB7F2F23A54A109FA12CA5EB"
+		},
+		"auth.chartHeight": {
+			"text": {
+				"en-us": "Height",
+				"fr-fr": "Height"
+			},
+			"$key": "D7D07EEB668856563DA218BBB771E84B437B898A"
+		},
+		"auth.chartHeight.xsmall": {
+			"text": {
+				"en-us": "Extra Small",
+				"fr-fr": "Extra Small"
+			},
+			"$key": "70ED1FD7BE8EFBF1D10F0916D86B7DC4E3E7B7B4"
+		},
+		"auth.chartHeight.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "C50E601587EC83C7290DCAC282CA4BF096BCC973"
+		},
+		"auth.chartHeight.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "9E8EB3279D0C56F25FF2660D8406A42A54E9677C"
+		},
+		"auth.chartHeight.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "E1782BE434C3979B31768B8349DDECBE18698924"
+		},
+		"auth.chartHeight.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "49062E289172AA5FE2FEEC30E5EB35FC17188B97"
+		},
+		"auth.chartDisplay": {
+			"text": {
+				"en-us": "Display",
+				"fr-fr": "Display"
+			},
+			"$key": "5CB1CAB3A6B2293768F3A923C792C39687AA3B87"
+		},
+		"auth.chartDisplay.table": {
+			"text": {
+				"en-us": "Table",
+				"fr-fr": "Table"
+			},
+			"$key": "87EEE60FF8F3E11F4C253B7F14043C3F58F5AA42"
+		},
+		"auth.chartDisplay.card": {
+			"text": {
+				"en-us": "Cards",
+				"fr-fr": "Cards"
+			},
+			"$key": "2FB1B64EF028AE88EF976342EDCEA4A356A37ADD"
+		},
+		"auth.chartDisplay.chart": {
+			"text": {
+				"en-us": "Chart",
+				"fr-fr": "Chart"
+			},
+			"$key": "0DCE2454023EEED81E51A0C207C1D98DB9792C0C"
+		},
+		"auth.chartOpenDetail": {
+			"text": {
+				"en-us": "Touch opens detail",
+				"fr-fr": "Touch opens detail"
+			},
+			"$key": "DCF8C8DC5B4F763FB6B8FE5532530494F98EFE80"
+		},
+		"auth.chartOpenDetail.true": {
+			"text": {
+				"en-us": "Yes",
+				"fr-fr": "Yes"
+			},
+			"$key": "C4F9D28F8B29A3723C14B110D86E2000D3550946"
+		},
+		"auth.chartOpenDetail.false": {
+			"text": {
+				"en-us": "No",
+				"fr-fr": "No"
+			},
+			"$key": "84CAEDB0160565F104E171EE45E5953554DE438A"
+		},
+		"auth.chartStyle": {
+			"text": {
+				"en-us": "Chart style",
+				"fr-fr": "Chart style"
+			},
+			"$key": "70DC96348E13DD37B8EE21DB13E2CD928C5DD6BD"
+		},
+		"auth.chartStyle.pie": {
+			"text": {
+				"en-us": "Pie",
+				"fr-fr": "Pie"
+			},
+			"$key": "323AEB71B0D18C1208F73431508D1215477756FD"
+		},
+		"auth.chartStyle.bar": {
+			"text": {
+				"en-us": "Bar",
+				"fr-fr": "Bar"
+			},
+			"$key": "53BAB94B5E9E9228802AAA9B387388AFA9DF9A4D"
+		},
+		"auth.chartStyle.column": {
+			"text": {
+				"en-us": "Column",
+				"fr-fr": "Column"
+			},
+			"$key": "31B1E7778D5D336A65E0FBA613628A0C52768F42"
+		},
+		"auth.chartStyle.line": {
+			"text": {
+				"en-us": "Line",
+				"fr-fr": "Line"
+			},
+			"$key": "D4E37140689B29A2A6BC67269083C62FA3387494"
+		},
+		"auth.chartOptions": {
+			"text": {
+				"en-us": "Chart display options",
+				"fr-fr": "Chart display options"
+			},
+			"$key": "D8F1D23BA7FA317FD8B21B1AA85928E6586A3AFF"
+		},
+		"auth.chartOptions.isTitleHidden": {
+			"text": {
+				"en-us": "Hide title",
+				"fr-fr": "Hide title"
+			},
+			"$key": "F2C875D19EED47FE7973EB52689E7F8CA23FA663"
+		},
+		"auth.chartOptions.isXLabelsHidden": {
+			"text": {
+				"en-us": "Hide horizontal labels",
+				"fr-fr": "Hide horizontal labels"
+			},
+			"$key": "A5166ECA81BC8B595CC169BA8CD2DE89EC8CB1D7"
+		},
+		"auth.chartOptions.isXLabelHidden": {
+			"text": {
+				"en-us": "Hide horizontal title",
+				"fr-fr": "Hide horizontal title"
+			},
+			"$key": "45ECCCBC5942DB549C43C83A04FC1CD69611811F"
+		},
+		"auth.chartOptions.isYLabelsHidden": {
+			"text": {
+				"en-us": "Hide vertical labels",
+				"fr-fr": "Hide vertical labels"
+			},
+			"$key": "36B06FE255116A07ED7FF3B866558D5775B6B5AF"
+		},
+		"auth.chartOptions.isYLabelHidden": {
+			"text": {
+				"en-us": "Hide vertical title",
+				"fr-fr": "Hide vertical title"
+			},
+			"$key": "89A0270EA85C8A8AA68B27536784032033CFD1F2"
+		},
+		"auth.chartOptions.isLegendHidden": {
+			"text": {
+				"en-us": "Hide legend",
+				"fr-fr": "Hide legend"
+			},
+			"$key": "7A4351B6A810BFBC2EFD195621453D8F68383D45"
+		},
+		"auth.chartOptions.isGridLineHidden": {
+			"text": {
+				"en-us": "Hide grid lines",
+				"fr-fr": "Hide grid lines"
+			},
+			"$key": "A04D2F9D0805C9F85B4E423C34FC086A9AB69A31"
+		},
+		"auth.chartOptions.isLabelsHidden": {
+			"text": {
+				"en-us": "Hide labels",
+				"fr-fr": "Hide labels"
+			},
+			"$key": "7008FD39B331915CC6F7889D71F64E2E6CD5436A"
+		},
+		"auth.seriesOptions": {
+			"text": {
+				"en-us": "Chart series options",
+				"fr-fr": "Chart series options"
+			},
+			"$key": "AE3F01E1B1383BE14B4B6CA9F27A69BF83667933"
+		},
+		"auth.seriesOptions.color": {
+			"text": {
+				"en-us": "Select a color",
+				"fr-fr": "Select a color"
+			},
+			"$key": "24BFE87A1E48A4E56757C08EBD37D4CE8A0D25FD"
+		},
+		"auth.seriesOptions.isHidden": {
+			"text": {
+				"en-us": "Visible",
+				"fr-fr": "Visible"
+			},
+			"$key": "F464DE301004F3219E04CBE62E6D2264B7F99E02"
+		},
+		"action.unpin": {
+			"text": {
+				"en-us": "Remove from dashboard",
+				"fr-fr": "Remove from dashboard"
+			},
+			"$key": "667B7F6BAC7B08A5101AAF184F21C11F5F2BD3F2"
+		},
+		"chartdetail.page.name": {
+			"text": {
+				"en-us": "Chart detail",
+				"fr-fr": "Chart detail"
+			},
+			"$key": "6F5CF6A6A27928907D7DE8EF1011FF1F22AD2F68"
+		},
+		"modal.sync.nodata": {
+			"text": {
+				"en-us": "No data to synchronize",
+				"fr-fr": "No data to synchronize"
+			},
+			"$key": "D6A2870BFFE50782E57A3AF3F71070B269B7CBD4"
+		},
+		"modal.sync.errors": {
+			"text": {
+				"en-us": "Sorry, there were some errors",
+				"fr-fr": "Sorry, there were some errors"
+			},
+			"$key": "3C89D0520AADB3649CA4FE3DA845DDFDA10E41D2"
+		},
+		"settings.cache.week1": {
+			"text": {
+				"en-us": "7 days",
+				"fr-fr": "7 days"
+			},
+			"$key": "FD6AE12292B705D94E8CA236184064438AA7AD55"
+		},
+		"settings.cache.week2": {
+			"text": {
+				"en-us": "14 days",
+				"fr-fr": "14 days"
+			},
+			"$key": "4B079F5DE96330E34D8561C6932A21EFF40BBCCB"
+		},
+		"settings.cache.month": {
+			"text": {
+				"en-us": "30 days",
+				"fr-fr": "30 days"
+			},
+			"$key": "313C7C5AC658ED815C1FFBCEA883490245F0AC41"
+		},
+		"settings.cache.all": {
+			"text": {
+				"en-us": "All",
+				"fr-fr": "All"
+			},
+			"$key": "26D0AA52658BA91440C371CC46C6CAE3DB510E76"
+		},
+		"settings.apps.label": {
+			"text": {
+				"en-us": "Apps management",
+				"fr-fr": "Apps management"
+			},
+			"$key": "AF18E56600EEF54264BAED56468C5A89AE6F9C6B"
+		},
+		"settings.apps.update": {
+			"text": {
+				"en-us": "Update applications",
+				"fr-fr": "Update applications"
+			},
+			"$key": "03F1D0AFD4C167B00F64E151211E5D31796FCA50"
+		},
+		"settings.apps.confirm": {
+			"text": {
+				"en-us": "Click again to update apps",
+				"fr-fr": "Click again to update apps"
+			},
+			"$key": "ECDC740BFF6FABFF61238D931ACEA0C9475FCE01"
+		},
+		"settings.apps.wait": {
+			"text": {
+				"en-us": "Please wait...",
+				"fr-fr": "Please wait..."
+			},
+			"$key": "09968899E5AE1F6BC37845206D29D7A43D8C2F03"
+		},
+		"settings.apps.ok": {
+			"text": {
+				"en-us": "Success, reopen applications to see changes",
+				"fr-fr": "Success, reopen applications to see changes"
+			},
+			"$key": "5661446091D4CD6AC9A67C57D7A572EC57FEF2FE"
+		},
+		"settings.cancel": {
+			"text": {
+				"en-us": "Cancel",
+				"fr-fr": "Cancel"
+			},
+			"$key": "62EBFB417DB381277B7BDC566DC22A1D9FB70A2B"
+		},
+		"array.links.save": {
+			"text": {
+				"en-us": "Save",
+				"fr-fr": "Save"
+			},
+			"$key": "718E55C4AE1CB6F9FCA70404EF2625496228868E"
+		},
+		"array.links.delete": {
+			"text": {
+				"en-us": "Delete",
+				"fr-fr": "Delete"
+			},
+			"$key": "E8B62CC73A4EE23E940182BB9E2E88A7CF8D8E70"
+		},
+		"global.label.brand": {
+			"text": {
+				"en-us": "Sage",
+				"fr-fr": "Sage"
+			},
+			"$key": "264AB4741359AB98D77915D38836129DE6D6DE03"
+		},
+		"global.label.product": {
+			"text": {
+				"en-us": "X3",
+				"fr-fr": "X3"
+			},
+			"$key": "408902E941B81486F5A2D9D5B8C624427E1B8411"
+		},
+		"global.units.bytes": {
+			"text": {
+				"en-us": "bytes",
+				"fr-fr": "bytes"
+			},
+			"$key": "A7F19ABA2DFFF50345050D9D14FF869C5D6410F1"
+		},
+		"global.units.kilobytes": {
+			"text": {
+				"en-us": "KB",
+				"fr-fr": "KB"
+			},
+			"$key": "EBED4EF7AE2FF8372ECC05C5D21844D8ECA1F37A"
+		},
+		"global.units.megabytes": {
+			"text": {
+				"en-us": "MB",
+				"fr-fr": "MB"
+			},
+			"$key": "A6CAA8A943C0AEAB6F84572A30B9795A18B0A1BA"
+		},
+		"global.units.files": {
+			"text": {
+				"en-us": "files",
+				"fr-fr": "files"
+			},
+			"$key": "C9DAEE7904C9AD101BD336D9B21DE52018C928F3"
+		},
+		"modal.confirm.update": {
+			"text": {
+				"en-us": "An update of this application is available, do you want to update?",
+				"fr-fr": "An update of this application is available, do you want to update?"
+			},
+			"$key": "62B1AFFFD0142EC20EF302689B597620518849BA"
+		},
+		"grid.addrow.label": {
+			"text": {
+				"en-us": "Add row",
+				"fr-fr": "Add row"
+			},
+			"$key": "D897986B7B2781849AC6EE85B2D8015D709B818D"
+		},
+		"login.roleendpoint.error": {
+			"text": {
+				"en-us": "User does not have a role or endpoint assigned, please contact your administrator",
+				"fr-fr": "User does not have a role or endpoint assigned, please contact your administrator"
+			},
+			"$key": "E41A45FFBAC03442C3F5CB4F6DF0E8FF20CCB01D"
+		},
+		"login.context.error": {
+			"text": {
+				"en-us": "There was an error setting up your session",
+				"fr-fr": "There was an error setting up your session"
+			},
+			"$key": "7233E239CE030A6D7E8A88451F9BD8A614967AB4"
+		},
+		"label.chart.nodata": {
+			"text": {
+				"en-us": "No data",
+				"fr-fr": "No data"
+			},
+			"$key": "9565C93356B076839DCF0D23FBCD2A5C0F147EBD"
 		}
 	},
 	"node_modules/syracuse-tablet/html/js/resources/strings": {
@@ -60377,6 +62519,1126 @@
 				"ru-ru": "Ваш сеанс истек, вам нужно снова войти!"
 			},
 			"$key": "B94B7492EF8A0CA7C90AB6212AD8CBA575C261F9"
+		},
+		"nofilter": {
+			"text": {
+				"en-us": "No filter",
+				"fr-fr": "No filter"
+			},
+			"$key": "58195BCD8712335D069FEDEA33A2DD92A6C12986"
+		},
+		"page": {
+			"text": {
+				"en-us": "Page",
+				"fr-fr": "Page"
+			},
+			"$key": "99FAC7C3F62122BA93BD53B80DF49DFE9767495D"
+		},
+		"colorsPalette.primecolor": {
+			"text": {
+				"en-us": "Primary colors",
+				"fr-fr": "Primary colors"
+			},
+			"$key": "97FAE6494FE92E316CB305835E1A86F8E5EDB344"
+		},
+		"colorsPalette.secondcolor": {
+			"text": {
+				"en-us": "Secondary colors",
+				"fr-fr": "Secondary colors"
+			},
+			"$key": "BDC9C4811435AFA84B839B6BA9F06ADFFFB84959"
+		},
+		"colorsPalette.notifcolors": {
+			"text": {
+				"en-us": "Notification colors",
+				"fr-fr": "Notification colors"
+			},
+			"$key": "EC6CD155FCEAEEE280A3CE96A37F4D0AC9AE3816"
+		},
+		"colorsPalette.colors.medium-purple": {
+			"text": {
+				"en-us": "Medium Purple",
+				"fr-fr": "Medium Purple"
+			},
+			"$key": "69F4702A40666F533D8346B38220454A3E1E0002"
+		},
+		"colorsPalette.colors.darkgrey": {
+			"text": {
+				"en-us": "Dark Gray",
+				"fr-fr": "Dark Gray"
+			},
+			"$key": "73D15DE8994A0D6A17CD7D8C7C93774594531ABF"
+		},
+		"colorsPalette.colors.purple": {
+			"text": {
+				"en-us": "Purple",
+				"fr-fr": "Purple"
+			},
+			"$key": "99D5742840B5A6A0C6CCC45AB5F594362BB5F35E"
+		},
+		"colorsPalette.colors.sagegreen": {
+			"text": {
+				"en-us": "Sage Green",
+				"fr-fr": "Sage Green"
+			},
+			"$key": "838465DA44A2E33B1130738498D9323A806AFF13"
+		},
+		"colorsPalette.colors.blue": {
+			"text": {
+				"en-us": "Blue",
+				"fr-fr": "Blue"
+			},
+			"$key": "DC2073EF97F3C51DC2A178C365A6FC328BD26B4F"
+		},
+		"colorsPalette.colors.orange": {
+			"text": {
+				"en-us": "Orange",
+				"fr-fr": "Orange"
+			},
+			"$key": "8EAC8BF5BC7AB310AE0497169DAF1AA469CB6982"
+		},
+		"colorsPalette.colors.lightorange": {
+			"text": {
+				"en-us": "Light Orange",
+				"fr-fr": "Light Orange"
+			},
+			"$key": "4CC697AFFEBD8EEB765E83691109B6BD826A924E"
+		},
+		"colorsPalette.colors.skyblue": {
+			"text": {
+				"en-us": "Sky Blue",
+				"fr-fr": "Sky Blue"
+			},
+			"$key": "04A2C862386317EFC40CB0A1D5DA1587E8371F65"
+		},
+		"colorsPalette.colors.lightgreen": {
+			"text": {
+				"en-us": "Light Green",
+				"fr-fr": "Light Green"
+			},
+			"$key": "B5A79776B7425F067DA0E2D8424145200ACAC13F"
+		},
+		"colorsPalette.colors.medium-grey": {
+			"text": {
+				"en-us": "Medium Gray",
+				"fr-fr": "Medium Gray"
+			},
+			"$key": "9B4E15AB756749CDD61C49EDD51E289A60E201B7"
+		},
+		"colorsPalette.colors.green": {
+			"text": {
+				"en-us": "Green",
+				"fr-fr": "Green"
+			},
+			"$key": "6FC8E3E668C5D7F945388A6253032F74DFE3F646"
+		},
+		"colorsPalette.colors.white": {
+			"text": {
+				"en-us": "White",
+				"fr-fr": "White"
+			},
+			"$key": "A729C89E77F85C3223029703F9858F0443635D71"
+		},
+		"colorsPalette.colors.black": {
+			"text": {
+				"en-us": "Black",
+				"fr-fr": "Black"
+			},
+			"$key": "053015EC592294EAD42AD7C7B456637B4B0741C6"
+		},
+		"colorsPalette.colors.grey": {
+			"text": {
+				"en-us": "Grey",
+				"fr-fr": "Grey"
+			},
+			"$key": "E7B375923B81A4380863614124D041DD391AC7A9"
+		},
+		"colorsPalette.colors.lightgray": {
+			"text": {
+				"en-us": "Light Gray",
+				"fr-fr": "Light Gray"
+			},
+			"$key": "7B4B5252BBE278F9339C3024B57F265A52A42A80"
+		},
+		"colorsPalette.colors.error": {
+			"text": {
+				"en-us": "Error",
+				"fr-fr": "Error"
+			},
+			"$key": "76C18F004240B4BF028A3E774B15E40B12852151"
+		},
+		"colorsPalette.colors.lighterror": {
+			"text": {
+				"en-us": "Light Error",
+				"fr-fr": "Light Error"
+			},
+			"$key": "BB80108F7C21FE4CDF23727F454DF0422F50386C"
+		},
+		"colorsPalette.colors.alert": {
+			"text": {
+				"en-us": "Alert",
+				"fr-fr": "Alert"
+			},
+			"$key": "FA2F76C6070DE121825A0E82BDFBD1C5D27E14F7"
+		},
+		"colorsPalette.colors.lightalert": {
+			"text": {
+				"en-us": "Light Alert",
+				"fr-fr": "Light Alert"
+			},
+			"$key": "E60B2A74DC5E18EF49001FF12C308608C67ED2A1"
+		},
+		"colorsPalette.colors.warning": {
+			"text": {
+				"en-us": "Warning",
+				"fr-fr": "Warning"
+			},
+			"$key": "57C415A513C11D04BAE5740E4F13E45379A6833F"
+		},
+		"colorsPalette.colors.info": {
+			"text": {
+				"en-us": "Info",
+				"fr-fr": "Info"
+			},
+			"$key": "D6CDEC5EC6C2DAF251839E840E82E9246025984A"
+		},
+		"modal.action.success": {
+			"text": {
+				"en-us": "Action succeeded",
+				"fr-fr": "Action succeeded"
+			},
+			"$key": "0A3D6F0456D38E53B2972039A4F22224070DE51E"
+		},
+		"modal.action.fail": {
+			"text": {
+				"en-us": "Action failed",
+				"fr-fr": "Action failed"
+			},
+			"$key": "5E027AD4D4E4F5BE5E478790724B671D57E6A877"
+		},
+		"auth.panel.label_design": {
+			"text": {
+				"en-us": "Design",
+				"fr-fr": "Design"
+			},
+			"$key": "189C23AB85440BC93C43FE071FE9DDF5D897DE4E"
+		},
+		"auth.panel.label_comment": {
+			"text": {
+				"en-us": "Comment",
+				"fr-fr": "Comment"
+			},
+			"$key": "D9E244585E9EAB5BD988111EE3C9F99CF46A9399"
+		},
+		"auth.checkBoxDisplayAs": {
+			"text": {
+				"en-us": "Display as",
+				"fr-fr": "Display as"
+			},
+			"$key": "6CF9F3BF4BD2915CFAD45949B4C0A83E23E4B39E"
+		},
+		"auth.checkBoxDisplayAs.icon": {
+			"text": {
+				"en-us": "icon",
+				"fr-fr": "icon"
+			},
+			"$key": "F044C0D2BE37121C2A4E103628E34AED65C394C2"
+		},
+		"auth.checkBoxDisplayAs.text": {
+			"text": {
+				"en-us": "text",
+				"fr-fr": "text"
+			},
+			"$key": "C77B2EC254798184380B26D14EEF10A2F03101F8"
+		},
+		"auth.theme.none": {
+			"text": {
+				"en-us": "None",
+				"fr-fr": "None"
+			},
+			"$key": "16798657BCEC57E5B20DBF6F0754ECDB502B3769"
+		},
+		"auth.theme.largetitle": {
+			"text": {
+				"en-us": "Large title",
+				"fr-fr": "Large title"
+			},
+			"$key": "7623CDC2FB1108B672EAEF0FAC7EEFC883406730"
+		},
+		"auth.emptyImageIcon": {
+			"text": {
+				"en-us": "Empty image icon",
+				"fr-fr": "Empty image icon"
+			},
+			"$key": "731A77856186713FB23477F9E1455DD699CC2755"
+		},
+		"auth.emptyIconSize": {
+			"text": {
+				"en-us": "Empty icon size",
+				"fr-fr": "Empty icon size"
+			},
+			"$key": "920D687BBC6009DC039C877254B5AF9D0933DBAE"
+		},
+		"auth.emptyIconSize.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "C143BBBA4C3B92BF9AB8FEEDC70CBF18EE092654"
+		},
+		"auth.emptyIconSize.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "D6FEEF13156B05A5AAD100B688A667D6A6C6D37F"
+		},
+		"auth.emptyIconSize.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "3A914866167EACFC286027C44636E580711E8274"
+		},
+		"auth.emptyIconSize.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "02A30FEBA840146EAC7A9314D8F57A19294D24E8"
+		},
+		"auth.urlIcon": {
+			"text": {
+				"en-us": "External link icon",
+				"fr-fr": "External link icon"
+			},
+			"$key": "20893A7F3BAB1DA3463CC957D2CE0D878BF804F4"
+		},
+		"auth.urlIconSize": {
+			"text": {
+				"en-us": "External link icon size",
+				"fr-fr": "External link icon size"
+			},
+			"$key": "7AAC409D17A3F36EB86AA9D1037C29DD641B2D84"
+		},
+		"auth.urlIconSize.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "B5DD3371F2E70E865AF8B5D5CF6E0439FB6C5155"
+		},
+		"auth.urlIconSize.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "55685ED8468018346F06BF9D46DDEE21B64D83FC"
+		},
+		"auth.urlIconSize.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "A4CEE32187D454693D1CAAAF0293CA60FCAFCFD0"
+		},
+		"auth.urlIconSize.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "7315EB99BC355DE6148266115CD02F22BE4500DC"
+		},
+		"auth.switcher.onText": {
+			"text": {
+				"en-us": "Yes",
+				"fr-fr": "Yes"
+			},
+			"$key": "24D83A54E2B82BB2D06D7C77DED402FE84D1B896"
+		},
+		"auth.switcher.offText": {
+			"text": {
+				"en-us": "No",
+				"fr-fr": "No"
+			},
+			"$key": "D2FDE04177855026D4F7BEEFC8F00D65A72C5312"
+		},
+		"auth.imgcol.displayIcon": {
+			"text": {
+				"en-us": "Display as an icon",
+				"fr-fr": "Display as an icon"
+			},
+			"$key": "CD04C0626D3BBE8BD22D272CAEECCCB38EBEB46C"
+		},
+		"auth.imgcol.iconPicker": {
+			"text": {
+				"en-us": "Select an icon",
+				"fr-fr": "Select an icon"
+			},
+			"$key": "64F724002E8315681F99856870F1B4A1C87FF3F6"
+		},
+		"auth.imgHeight": {
+			"text": {
+				"en-us": "Image height",
+				"fr-fr": "Image height"
+			},
+			"$key": "67E79432768C5877E0E1F433F17A3AE300EB6DDE"
+		},
+		"auth.imgHeight.xsmall": {
+			"text": {
+				"en-us": "Extra Small",
+				"fr-fr": "Extra Small"
+			},
+			"$key": "F8451BF08955B4F37BC935A70090E4F1081F9E43"
+		},
+		"auth.imgHeight.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "ACC7164FCB879DEB964193FD57AE5CFB7473D988"
+		},
+		"auth.imgHeight.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "6AC86F25BFAFD1CA6C1FC0AD42B6AA11859C833C"
+		},
+		"auth.imgHeight.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "A8D7B56AE4F4E221BC2E4594EC78300DEDF47BBF"
+		},
+		"auth.imgHeight.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "2261AE8AF72000459DE2F541557655976BA069AA"
+		},
+		"auth.bgColor": {
+			"text": {
+				"en-us": "Color",
+				"fr-fr": "Color"
+			},
+			"$key": "6E82D712E99DD5490EE741D45AE3A0DAD1911DA8"
+		},
+		"auth.arrayDisplay.chart": {
+			"text": {
+				"en-us": "Chart",
+				"fr-fr": "Chart"
+			},
+			"$key": "3D1976D5FE9C6198169C77D13EF04920788C8114"
+		},
+		"auth.arrayDisplay.separator": {
+			"text": {
+				"en-us": "Separator",
+				"fr-fr": "Separator"
+			},
+			"$key": "4C4F9212CBA7738E3316E69D4FCB8A04B2C2AD34"
+		},
+		"auth.arraySeparator": {
+			"text": {
+				"en-us": "Separator",
+				"fr-fr": "Separator"
+			},
+			"$key": "0BED11FF21359E4DC197AA09074525A1969F3C7C"
+		},
+		"auth.arraySeparator.blank": {
+			"text": {
+				"en-us": "blank",
+				"fr-fr": "blank"
+			},
+			"$key": "96533B8A114BCBF0525EC015152BF5C518062E6C"
+		},
+		"auth.arraySeparator.dash": {
+			"text": {
+				"en-us": "dash",
+				"fr-fr": "dash"
+			},
+			"$key": "ED6DE613AA5763833847770A4A1511166B87F62A"
+		},
+		"auth.arraySeparator.semicolon": {
+			"text": {
+				"en-us": "semicolon",
+				"fr-fr": "semicolon"
+			},
+			"$key": "3A861C2BA05DA5C3116957F580BDEBFB5536AE8B"
+		},
+		"auth.arraySeparator.colon": {
+			"text": {
+				"en-us": "colon",
+				"fr-fr": "colon"
+			},
+			"$key": "7F94413605845A42176F885BF0A97B24D1E8147A"
+		},
+		"auth.arrayBgColor": {
+			"text": {
+				"en-us": "Array background color",
+				"fr-fr": "Array background color"
+			},
+			"$key": "A3EAEC4487D359B74E521BEA398BEAD22210918F"
+		},
+		"auth.arrayStatusEnabled.none": {
+			"text": {
+				"en-us": "No status",
+				"fr-fr": "No status"
+			},
+			"$key": "34E13C1D0CA454A756807E3334A1312FB2C4377F"
+		},
+		"auth.arrayStatusEnabled.mono": {
+			"text": {
+				"en-us": "Single status",
+				"fr-fr": "Single status"
+			},
+			"$key": "FA8F50B94B9949BD119EEC23A56E174243DE9735"
+		},
+		"auth.arrayStatusEnabled.multi": {
+			"text": {
+				"en-us": "Multiple status",
+				"fr-fr": "Multiple status"
+			},
+			"$key": "B0B71E301EC7E97AC8487381544853984403F6C2"
+		},
+		"auth.actionSettings": {
+			"text": {
+				"en-us": "Actions",
+				"fr-fr": "Actions"
+			},
+			"$key": "5BDAB12FE44A35BA41313A3E2FB9395216E5ECF6"
+		},
+		"auth.actionSettings.allowDownload": {
+			"text": {
+				"en-us": "Allow download",
+				"fr-fr": "Allow download"
+			},
+			"$key": "2231B8741F6A2DC8949A789D946915502AB533C7"
+		},
+		"auth.actionSettings.novalue": {
+			"text": {
+				"en-us": "Select an action",
+				"fr-fr": "Select an action"
+			},
+			"$key": "C2FF4FD0D7E51FA0D8D98A04623D790D57861CBE"
+		},
+		"auth.actionSettings.append": {
+			"text": {
+				"en-us": "Add an action",
+				"fr-fr": "Add an action"
+			},
+			"$key": "73AA9B7429C70CA0FB67B45E94F7C34FCB03960D"
+		},
+		"auth.actionSettings.actionlist": {
+			"text": {
+				"en-us": "Actions list",
+				"fr-fr": "Actions list"
+			},
+			"$key": "78C92DA0634DBC427178385F9656C8A5EC9B9A8C"
+		},
+		"auth.actionSettings.options": {
+			"text": {
+				"en-us": "Select options",
+				"fr-fr": "Select options"
+			},
+			"$key": "FC41E12E51A55230146F3DFA54BD9155AF0B6656"
+		},
+		"auth.actionSettings.action": {
+			"text": {
+				"en-us": "Select an action",
+				"fr-fr": "Select an action"
+			},
+			"$key": "D36292083DDC07D348D883654C43E17CDC394380"
+		},
+		"auth.actionSettings.icon": {
+			"text": {
+				"en-us": "Select an icon",
+				"fr-fr": "Select an icon"
+			},
+			"$key": "EC80BC1CC55A0C1EF63B719183CA9B9BD66027CD"
+		},
+		"auth.actionSettings.editaction": {
+			"text": {
+				"en-us": "Edit action",
+				"fr-fr": "Edit action"
+			},
+			"$key": "49DD85CDE3C5A22391F9500FB986C2267B789782"
+		},
+		"auth.actionSettings.invalid": {
+			"text": {
+				"en-us": "Mandatory fields(*) are missing",
+				"fr-fr": "Mandatory fields(*) are missing"
+			},
+			"$key": "D21EF654ED749847D057C2E37AF5569F9782E673"
+		},
+		"auth.actionSettings.invalid.action": {
+			"text": {
+				"en-us": "Action not found {0}",
+				"fr-fr": "Action not found {0}"
+			},
+			"$key": "F4F291262178A3255074C314D266E8F940CC46C7"
+		},
+		"auth.actionSettings.invalid.empty": {
+			"text": {
+				"en-us": "A property should be set",
+				"fr-fr": "A property should be set"
+			},
+			"$key": "2A88B9CD7DCF84B49A6D775DDE0B200B9030A529"
+		},
+		"auth.actionSettings.invalid.icon": {
+			"text": {
+				"en-us": "Icon is mandatory for footer/header",
+				"fr-fr": "Icon is mandatory for footer/header"
+			},
+			"$key": "5574F49E565850974BB93FD5869D535A8174CDA7"
+		},
+		"auth.actionSettings.footerHeader": {
+			"text": {
+				"en-us": "Add to footer/header",
+				"fr-fr": "Add to footer/header"
+			},
+			"$key": "6EA7626BFE9B5A3893341549DCD363FC79387B77"
+		},
+		"auth.actionSettings.refreshPage": {
+			"text": {
+				"en-us": "Refresh page",
+				"fr-fr": "Refresh page"
+			},
+			"$key": "373D1CB1C7467024730EAF0AAA1A07C922E94181"
+		},
+		"auth.actionSettings.multiselection": {
+			"text": {
+				"en-us": "Multi-selection",
+				"fr-fr": "Multi-selection"
+			},
+			"$key": "9D3E56E6499572970210241BD8FB1CE69FFB9061"
+		},
+		"auth.arrayOptions": {
+			"text": {
+				"en-us": "Array control",
+				"fr-fr": "Array control"
+			},
+			"$key": "C1A500800567A35FBA3767FF8F7D088622BE7629"
+		},
+		"auth.arrayOptions.showPagination": {
+			"text": {
+				"en-us": "Pagination",
+				"fr-fr": "Pagination"
+			},
+			"$key": "2ED9C5119592D4AE6CDEE7A3EA97A9FE39FEC273"
+		},
+		"auth.arrayOptions.showSortFilter": {
+			"text": {
+				"en-us": "Sort and Filter",
+				"fr-fr": "Sort and Filter"
+			},
+			"$key": "50B058A47CAB97FBA76BB4EE570C41D51EA91B37"
+		},
+		"auth.arrayOptions.showSearch": {
+			"text": {
+				"en-us": "Search",
+				"fr-fr": "Search"
+			},
+			"$key": "C0A53AC9AD73AEC9C91D1E73F0F053D2E7B32CA7"
+		},
+		"auth.arrayOptions.rowIndex": {
+			"text": {
+				"en-us": "Row index",
+				"fr-fr": "Row index"
+			},
+			"$key": "00C19314DDC33E37AC20D5B75237B3BC9C9678AC"
+		},
+		"auth.arrayOptions.showRowDetailLink": {
+			"text": {
+				"en-us": "Show row's detail link",
+				"fr-fr": "Show row's detail link"
+			},
+			"$key": "5E475DA4DDFCBAFE360B2F68C312BA3F696701EA"
+		},
+		"auth.arrayOptions.hideEmptyRows": {
+			"text": {
+				"en-us": "Hide empty rows",
+				"fr-fr": "Hide empty rows"
+			},
+			"$key": "9FC6A56F0C1770E791A6063024905F3D81E94AD6"
+		},
+		"auth.chartDetail.saveDesign": {
+			"text": {
+				"en-us": "Save detail design",
+				"fr-fr": "Save detail design"
+			},
+			"$key": "6A9B4854E4FC8D8D6246FF7A5D6A2878B1B270F9"
+		},
+		"auth.chartDetail.openDesign": {
+			"text": {
+				"en-us": "Open detail design",
+				"fr-fr": "Open detail design"
+			},
+			"$key": "561DA47BC16583222FD246F4A5234AF0F5ACCF16"
+		},
+		"auth.layoutTheme": {
+			"text": {
+				"en-us": "Theme",
+				"fr-fr": "Theme"
+			},
+			"$key": "6E179EE4E265510DFDE7F7ED1613AD5DA7A3A95E"
+		},
+		"auth.layoutTheme.a": {
+			"text": {
+				"en-us": "Level 1",
+				"fr-fr": "Level 1"
+			},
+			"$key": "8E6088B9263B45ECEC3A8AC1EB7143F8B3A1D417"
+		},
+		"auth.layoutTheme.b": {
+			"text": {
+				"en-us": "Level 2",
+				"fr-fr": "Level 2"
+			},
+			"$key": "BE9089FF1C7ADD8AC5B41204242EDD5DD1BA9787"
+		},
+		"auth.layoutTheme.c": {
+			"text": {
+				"en-us": "Level 3",
+				"fr-fr": "Level 3"
+			},
+			"$key": "4AE095B227E4639D20116CDEEF407E27F1D01E51"
+		},
+		"auth.layoutTheme.advanced": {
+			"text": {
+				"en-us": "Advanced",
+				"fr-fr": "Advanced"
+			},
+			"$key": "20D8009AB4993D73C5C443459D437FEDFF3EE07B"
+		},
+		"auth.chartDetailDisplay": {
+			"text": {
+				"en-us": "Page display",
+				"fr-fr": "Page display"
+			},
+			"$key": "45333FE275AF0BE4C90322F4B2CD66B2D84F4283"
+		},
+		"auth.chartDetailDisplay.chartOnly": {
+			"text": {
+				"en-us": "Chart only",
+				"fr-fr": "Chart only"
+			},
+			"$key": "2CA9F01F819562677EA331A32AA96044262366ED"
+		},
+		"auth.chartDetailDisplay.arrayOnly": {
+			"text": {
+				"en-us": "Array only",
+				"fr-fr": "Array only"
+			},
+			"$key": "3FD281F06A199B6BB9F73340C321A35D624E23EB"
+		},
+		"auth.chartDetailDisplay.bothSideToSide": {
+			"text": {
+				"en-us": "Both Side to side",
+				"fr-fr": "Both Side to side"
+			},
+			"$key": "1EF13DCA212CFC83A3828CD57F6A6289A67E439B"
+		},
+		"auth.chartHeight": {
+			"text": {
+				"en-us": "Height",
+				"fr-fr": "Height"
+			},
+			"$key": "2BD3F7450CD6BDEDC88358EF30C421A8C9B5CCF9"
+		},
+		"auth.chartHeight.xsmall": {
+			"text": {
+				"en-us": "Extra Small",
+				"fr-fr": "Extra Small"
+			},
+			"$key": "4E0DFFD95489536D773199B93A608B94D9E129FB"
+		},
+		"auth.chartHeight.small": {
+			"text": {
+				"en-us": "Small",
+				"fr-fr": "Small"
+			},
+			"$key": "3719129ED96CD04CD5DF981DE9087C511ED25DAF"
+		},
+		"auth.chartHeight.medium": {
+			"text": {
+				"en-us": "Medium",
+				"fr-fr": "Medium"
+			},
+			"$key": "1E86E6223B068FB16A71372FDC29077313DE767D"
+		},
+		"auth.chartHeight.large": {
+			"text": {
+				"en-us": "Large",
+				"fr-fr": "Large"
+			},
+			"$key": "6551A7B442CC5E2F9F278B33B4F09A582E4F0E4C"
+		},
+		"auth.chartHeight.xlarge": {
+			"text": {
+				"en-us": "Extra Large",
+				"fr-fr": "Extra Large"
+			},
+			"$key": "B2679511B0EADA2E2A08224C191EAB5C403AAD25"
+		},
+		"auth.chartDisplay": {
+			"text": {
+				"en-us": "Display",
+				"fr-fr": "Display"
+			},
+			"$key": "9363FF612F05EB304FA79AE63DA06A13EB683258"
+		},
+		"auth.chartDisplay.table": {
+			"text": {
+				"en-us": "Table",
+				"fr-fr": "Table"
+			},
+			"$key": "92282501F3DBAFC85E608FDD4692F952D8C79262"
+		},
+		"auth.chartDisplay.card": {
+			"text": {
+				"en-us": "Cards",
+				"fr-fr": "Cards"
+			},
+			"$key": "3658FC7AE5C8AE0E5B4BD8E27F3CAC79A4AD8913"
+		},
+		"auth.chartDisplay.chart": {
+			"text": {
+				"en-us": "Chart",
+				"fr-fr": "Chart"
+			},
+			"$key": "9CA769CA0E85CCB1D62E62B7CEF04DA6E16AC5BB"
+		},
+		"auth.chartOpenDetail": {
+			"text": {
+				"en-us": "Touch opens detail",
+				"fr-fr": "Touch opens detail"
+			},
+			"$key": "D3EB5A29A9DE226848A43AA77AE069CD86E74DB4"
+		},
+		"auth.chartOpenDetail.true": {
+			"text": {
+				"en-us": "Yes",
+				"fr-fr": "Yes"
+			},
+			"$key": "9948A009BB435C8CB69ABC2B1FB0D9633CC3FEFD"
+		},
+		"auth.chartOpenDetail.false": {
+			"text": {
+				"en-us": "No",
+				"fr-fr": "No"
+			},
+			"$key": "52E8D0637D2352B25B4C7128C9998BB9C5A76EED"
+		},
+		"auth.chartStyle": {
+			"text": {
+				"en-us": "Chart style",
+				"fr-fr": "Chart style"
+			},
+			"$key": "0DF3EBE4EF9929CCD6D9C1E07E3C0D174A90CF81"
+		},
+		"auth.chartStyle.pie": {
+			"text": {
+				"en-us": "Pie",
+				"fr-fr": "Pie"
+			},
+			"$key": "041D976F90BBFA72BB854035FE4B793204386E0E"
+		},
+		"auth.chartStyle.bar": {
+			"text": {
+				"en-us": "Bar",
+				"fr-fr": "Bar"
+			},
+			"$key": "64A8675A189D50E7DC7F6788B7790D80A5DE884F"
+		},
+		"auth.chartStyle.column": {
+			"text": {
+				"en-us": "Column",
+				"fr-fr": "Column"
+			},
+			"$key": "89D493F9D9BAA8AF7FB7AF8F1A25517F8AD2F8F9"
+		},
+		"auth.chartStyle.line": {
+			"text": {
+				"en-us": "Line",
+				"fr-fr": "Line"
+			},
+			"$key": "AE84AB11B527902AC021805D3EF519224C69169E"
+		},
+		"auth.chartOptions": {
+			"text": {
+				"en-us": "Chart display options",
+				"fr-fr": "Chart display options"
+			},
+			"$key": "70B47A83F46EB3E1C0ECC94CDCEA7AECB49D2018"
+		},
+		"auth.chartOptions.isTitleHidden": {
+			"text": {
+				"en-us": "Hide title",
+				"fr-fr": "Hide title"
+			},
+			"$key": "3E8F794D5D2BBB3834303779A6C5B3E9102E46E7"
+		},
+		"auth.chartOptions.isXLabelsHidden": {
+			"text": {
+				"en-us": "Hide horizontal labels",
+				"fr-fr": "Hide horizontal labels"
+			},
+			"$key": "19B1890C79061AF27EFE3046668E4401238BB045"
+		},
+		"auth.chartOptions.isXLabelHidden": {
+			"text": {
+				"en-us": "Hide horizontal title",
+				"fr-fr": "Hide horizontal title"
+			},
+			"$key": "7DDB29425E63496107615CFA3EFD8EC928AFB134"
+		},
+		"auth.chartOptions.isYLabelsHidden": {
+			"text": {
+				"en-us": "Hide vertical labels",
+				"fr-fr": "Hide vertical labels"
+			},
+			"$key": "1A4D394BCA4D62CD43018D9C7CFF8F0D7441F9EB"
+		},
+		"auth.chartOptions.isYLabelHidden": {
+			"text": {
+				"en-us": "Hide vertical title",
+				"fr-fr": "Hide vertical title"
+			},
+			"$key": "A40ADD82FD6040543F00F8DEA53B02D4A6E84748"
+		},
+		"auth.chartOptions.isLegendHidden": {
+			"text": {
+				"en-us": "Hide legend",
+				"fr-fr": "Hide legend"
+			},
+			"$key": "BB6DCB32081230B83E752C9CBC30AE429C8B98D2"
+		},
+		"auth.chartOptions.isGridLineHidden": {
+			"text": {
+				"en-us": "Hide grid lines",
+				"fr-fr": "Hide grid lines"
+			},
+			"$key": "C753E89BE05BEAD7408B4AFBFDBD5D3CDC5F7BD3"
+		},
+		"auth.chartOptions.isLabelsHidden": {
+			"text": {
+				"en-us": "Hide labels",
+				"fr-fr": "Hide labels"
+			},
+			"$key": "8BED97E6B3CC17182AC5BB7B74561883AD3A6B2D"
+		},
+		"auth.seriesOptions": {
+			"text": {
+				"en-us": "Chart series options",
+				"fr-fr": "Chart series options"
+			},
+			"$key": "B97C5926FC87775B51871E4CC5EE915B68A7796D"
+		},
+		"auth.seriesOptions.color": {
+			"text": {
+				"en-us": "Select a color",
+				"fr-fr": "Select a color"
+			},
+			"$key": "3EA9B67C7EEF422DCB7A5123139FF3D5EF8A56C4"
+		},
+		"auth.seriesOptions.isHidden": {
+			"text": {
+				"en-us": "Visible",
+				"fr-fr": "Visible"
+			},
+			"$key": "68BEC832C1195E0990E980819D83E42C610F7E7C"
+		},
+		"action.unpin": {
+			"text": {
+				"en-us": "Remove from dashboard",
+				"fr-fr": "Remove from dashboard"
+			},
+			"$key": "93DE8A562B41EE52CE0C432130CE78663F835CB8"
+		},
+		"chartdetail.page.name": {
+			"text": {
+				"en-us": "Chart detail",
+				"fr-fr": "Chart detail"
+			},
+			"$key": "BD8EC75C2B573449C573EE1E5E888B0359A398ED"
+		},
+		"modal.sync.nodata": {
+			"text": {
+				"en-us": "No data to synchronize",
+				"fr-fr": "No data to synchronize"
+			},
+			"$key": "18540E7A7812743FDE1F68B87B6E36E1CF3B279B"
+		},
+		"modal.sync.errors": {
+			"text": {
+				"en-us": "Sorry, there were some errors",
+				"fr-fr": "Sorry, there were some errors"
+			},
+			"$key": "EF6A74A2207E0BA8796E93F3C6EF0EE4237EFF9D"
+		},
+		"settings.cache.week1": {
+			"text": {
+				"en-us": "7 days",
+				"fr-fr": "7 days"
+			},
+			"$key": "344E4E4B152A6EA6BB997889B331B6C128A11DF2"
+		},
+		"settings.cache.week2": {
+			"text": {
+				"en-us": "14 days",
+				"fr-fr": "14 days"
+			},
+			"$key": "78D5B73F45C8CB10F33DC5B587801925E472CF42"
+		},
+		"settings.cache.month": {
+			"text": {
+				"en-us": "30 days",
+				"fr-fr": "30 days"
+			},
+			"$key": "90948189DAF5B1137002422381020DD703755474"
+		},
+		"settings.cache.all": {
+			"text": {
+				"en-us": "All",
+				"fr-fr": "All"
+			},
+			"$key": "68DB383D43924A8FAC1AC5C7477B7987C17D584C"
+		},
+		"settings.apps.label": {
+			"text": {
+				"en-us": "Apps management",
+				"fr-fr": "Apps management"
+			},
+			"$key": "62E0395619C7DC3E600B987C5FFC7516A074345B"
+		},
+		"settings.apps.update": {
+			"text": {
+				"en-us": "Update applications",
+				"fr-fr": "Update applications"
+			},
+			"$key": "052A8BCE9CF49394C8001FE51113FA1F79C2874E"
+		},
+		"settings.apps.confirm": {
+			"text": {
+				"en-us": "Click again to update apps",
+				"fr-fr": "Click again to update apps"
+			},
+			"$key": "9E29251F19B42FAC90791177EF5625D1317B8BDC"
+		},
+		"settings.apps.wait": {
+			"text": {
+				"en-us": "Please wait...",
+				"fr-fr": "Please wait..."
+			},
+			"$key": "01F0FB1A88C2E771D88ED79DF417C0F38CF995F2"
+		},
+		"settings.apps.ok": {
+			"text": {
+				"en-us": "Success, reopen applications to see changes",
+				"fr-fr": "Success, reopen applications to see changes"
+			},
+			"$key": "E85987CBCAACDEC137152696E9B92F3FD24DE7FD"
+		},
+		"settings.cancel": {
+			"text": {
+				"en-us": "Cancel",
+				"fr-fr": "Cancel"
+			},
+			"$key": "268F4AF1AE8AB274746BF847D04EBCF59E833A87"
+		},
+		"array.links.save": {
+			"text": {
+				"en-us": "Save",
+				"fr-fr": "Save"
+			},
+			"$key": "F9BE1978E43404B96A5A933186E0E48076A7AF34"
+		},
+		"array.links.delete": {
+			"text": {
+				"en-us": "Delete",
+				"fr-fr": "Delete"
+			},
+			"$key": "50BDD9BF092C8226974C9FEE2E39DEB06B4B66D7"
+		},
+		"global.label.brand": {
+			"text": {
+				"en-us": "Sage",
+				"fr-fr": "Sage"
+			},
+			"$key": "66403DF39BA6C51831D293B54050FE86157EEDB6"
+		},
+		"global.label.product": {
+			"text": {
+				"en-us": "X3",
+				"fr-fr": "X3"
+			},
+			"$key": "6E89B7A4BCA8DA50EA7B6FE176DFE935497CBA85"
+		},
+		"global.units.bytes": {
+			"text": {
+				"en-us": "bytes",
+				"fr-fr": "bytes"
+			},
+			"$key": "7C1CC4AEDDDE41112D80CEEF2D28912D8DDC7256"
+		},
+		"global.units.kilobytes": {
+			"text": {
+				"en-us": "KB",
+				"fr-fr": "KB"
+			},
+			"$key": "56ADC2EB9229F7D460444AFA3FA18AB25254E5EA"
+		},
+		"global.units.megabytes": {
+			"text": {
+				"en-us": "MB",
+				"fr-fr": "MB"
+			},
+			"$key": "CF10B557BEDD28C89C58635CD3882F4F2BB7C170"
+		},
+		"global.units.files": {
+			"text": {
+				"en-us": "files",
+				"fr-fr": "files"
+			},
+			"$key": "75200877B046ED902B2E734973C5374B2292F27E"
+		},
+		"modal.confirm.update": {
+			"text": {
+				"en-us": "An update of this application is available, do you want to update?",
+				"fr-fr": "An update of this application is available, do you want to update?"
+			},
+			"$key": "D3BF8A79CEFE809D07530C3211A5B399B1594BE6"
+		},
+		"grid.addrow.label": {
+			"text": {
+				"en-us": "Add row",
+				"fr-fr": "Add row"
+			},
+			"$key": "59D208955A87DE9ED43570976DF2986CDC314AE9"
+		},
+		"login.roleendpoint.error": {
+			"text": {
+				"en-us": "User does not have a role or endpoint assigned, please contact your administrator",
+				"fr-fr": "User does not have a role or endpoint assigned, please contact your administrator"
+			},
+			"$key": "0951E2C511E10EFB14B83C2A4D892D82719608C4"
+		},
+		"login.context.error": {
+			"text": {
+				"en-us": "There was an error setting up your session",
+				"fr-fr": "There was an error setting up your session"
+			},
+			"$key": "36ED8A3D1F58611D040ECE00040CB82D944EFE0E"
+		},
+		"label.chart.nodata": {
+			"text": {
+				"en-us": "No data",
+				"fr-fr": "No data"
+			},
+			"$key": "1FE25360E2F5A6A4F32996107D1BFAB112936834"
 		}
 	},
 	"node_modules/syracuse-tablet/native/win8/Surface/syracuse-tablet/dist/js/resources/strings": {
@@ -65184,6 +68446,41 @@
 				"ru-ru": "Классический SOAP веб-службы множествы"
 			},
 			"$key": "2334DBD5AB9689E8403935C6252E0BF0F6052AF5"
+		},
+		"x3Comm.loadBalancer": {
+			"text": {
+				"en-us": "X3 server selection algorithm",
+				"fr-fr": "X3 server selection algorithm"
+			},
+			"$key": "21CFE70D2C39FB95583A59B3321B0F22D38AB861"
+		},
+		"fileService": {
+			"text": {
+				"en-us": "upload file service",
+				"fr-fr": "upload file service"
+			},
+			"$key": "1B2825E4A6358CEE8543592E9E09D21187BC17C8"
+		},
+		"notifications": {
+			"text": {
+				"en-us": "Service de notification",
+				"fr-fr": "Service de notification"
+			},
+			"$key": "944C9982417630CEFA8321FD377E67390694969A"
+		},
+		"sagePay": {
+			"text": {
+				"en-us": "Sage Pay bundle",
+				"fr-fr": "Sage Pay bundle"
+			},
+			"$key": "A1EA4E35EFE0C0FBBEFBA308A861FA4DD7B5714B"
+		},
+		"email": {
+			"text": {
+				"en-us": "Email notification server",
+				"fr-fr": "Email notification server"
+			},
+			"$key": "B7BDC542FE377F7A25848A08EFA787808013175C"
 		}
 	},
 	"node_modules/syracuse-trace/lib/resources/strings": {
@@ -78305,6 +81602,281 @@
 				"fr-fr": "Code http {status}. Pas de diagnostic au plus haut niveau"
 			},
 			"$key": "54FAFFA25FC023FA2DA6E8930F596603A9550435"
+		},
+		"site_history_prev_link": {
+			"text": {
+				"en-us": "Back",
+				"fr-fr": "Back"
+			},
+			"$key": "AF59E93A76B65AB4730D807C4771CE02D5EED325"
+		},
+		"site_history_next_link": {
+			"text": {
+				"en-us": "Forward",
+				"fr-fr": "Forward"
+			},
+			"$key": "4201B2B8C32FF671F78CB1BB6EC10A6498E94BFB"
+		},
+		"ldpBrowseCategoryNoEndpoint": {
+			"text": {
+				"en-us": "Browse category",
+				"fr-fr": "Browse category"
+			},
+			"$key": "A42D635168AEB04414A3DE32906DCAEF3C2F1ECB"
+		},
+		"field_warn_limit_input": {
+			"text": {
+				"en-us": "The limit number of characters is reached",
+				"fr-fr": "The limit number of characters is reached"
+			},
+			"$key": "28D5E7C64CAE57EC7A40235CBDAD9BA6704B0DC6"
+		},
+		"fieldDefaultTitle": {
+			"text": {
+				"en-us": "Field",
+				"fr-fr": "Field"
+			},
+			"$key": "DBCDDC5A2B8A1E0EE6861EFE7569631AD514F0A2"
+		},
+		"flFetchDataFailed": {
+			"text": {
+				"en-us": "Loading failed. Empty data",
+				"fr-fr": "Loading failed. Empty data"
+			},
+			"$key": "A5F57C40655729AF1F91655EC7810D672CB61057"
+		},
+		"flfilter_clear": {
+			"text": {
+				"en-us": "Clear filter",
+				"fr-fr": "Clear filter"
+			},
+			"$key": "4F604FF6BAE0755E0A1B714F6AEEF2930CB33B93"
+		},
+		"flSearch": {
+			"text": {
+				"en-us": "Search",
+				"fr-fr": "Search"
+			},
+			"$key": "2BC08559467BBA6BC9C8F3987A312B561AEEB564"
+		},
+		"flSearch_next": {
+			"text": {
+				"en-us": "Next",
+				"fr-fr": "Next"
+			},
+			"$key": "A58C2BA57BFA186B721371449D351D725A87B5D1"
+		},
+		"flSearch_prev": {
+			"text": {
+				"en-us": "Previous",
+				"fr-fr": "Previous"
+			},
+			"$key": "F3E26FC8A3C1AAB514E23F98310054038127980F"
+		},
+		"trackers_opener": {
+			"text": {
+				"en-us": "Started from",
+				"fr-fr": "Started from"
+			},
+			"$key": "79AB4FD95E415A156FF927091DB1BD27220FD883"
+		},
+		"lw_card_position_no": {
+			"text": {
+				"en-us": "No",
+				"de-de": "Nein",
+				"pt-pt": "no",
+				"zh-cn": "编号",
+				"fr-fr": "No"
+			},
+			"$key": "F0987337A646E07791AE164964E613915A7D6E69"
+		},
+		"lw_card_position_row": {
+			"text": {
+				"en-us": "Row",
+				"de-de": "Zeile",
+				"es-es": "Línea",
+				"fr-fr": "Row",
+				"pt-pt": "Linha",
+				"zh-cn": "行"
+			},
+			"$key": "3A4DB577523579BB4DCBF9ACC8CB08C261B35FAB"
+		},
+		"lw_card_position_top": {
+			"text": {
+				"en-us": "Top",
+				"de-de": "Oben",
+				"es-es": "Alto",
+				"fr-fr": "Top",
+				"pt-pt": "Alto",
+				"zh-cn": "上"
+			},
+			"$key": "8303A560C79160EBFF1C0A7A1C80C0A94FE505B9"
+		},
+		"lw_card_position_left": {
+			"text": {
+				"en-us": "Left",
+				"de-de": "Links",
+				"es-es": "Izquierda",
+				"fr-fr": "Left",
+				"pt-pt": "Esquerda",
+				"zh-cn": "左"
+			},
+			"$key": "90C8837BAC3E10D945D0BBEAA5B13529932983CA"
+		},
+		"lw_card_position_right": {
+			"text": {
+				"en-us": "Right",
+				"de-de": "Rechts",
+				"es-es": "Derecha",
+				"fr-fr": "Right",
+				"pt-pt": "Direita",
+				"zh-cn": "右"
+			},
+			"$key": "2694FA74233A936A0C1E8ECEB2643D533D50D204"
+		},
+		"lw_card_position_bottom": {
+			"text": {
+				"en-us": "Bottom",
+				"de-de": "Unten",
+				"es-es": "Bajo",
+				"fr-fr": "Bottom",
+				"pt-pt": "Baixo",
+				"zh-cn": "下"
+			},
+			"$key": "A7AE9168C72D5609F9CCBC75BCEA38455132A9DE"
+		},
+		"lw_graph_position": {
+			"text": {
+				"en-us": "Chart position",
+				"de-de": "Position Diagramm",
+				"es-es": "Posición del gráfico",
+				"fr-fr": "Chart position",
+				"pt-pt": "Posição Chart",
+				"zh-cn": "图形位置"
+			},
+			"$key": "5056395DB3C6F188DFD3BADEF32637C783ADFC12"
+		},
+		"lw_graph_position_top": {
+			"text": {
+				"en-us": "Top",
+				"de-de": "Oben",
+				"es-es": "Alto",
+				"fr-fr": "Top",
+				"pt-pt": "Alto",
+				"zh-cn": "上"
+			},
+			"$key": "1F79A7F0F396E34896819E1CA9E4A40833B1178F"
+		},
+		"lw_graph_position_left": {
+			"text": {
+				"en-us": "Left",
+				"de-de": "Links",
+				"es-es": "Izquierda",
+				"fr-fr": "Left",
+				"pt-pt": "Esquerda",
+				"zh-cn": "左"
+			},
+			"$key": "AD387D6D709E367CBB9CC849CFEF428B8C02C30C"
+		},
+		"lw_graph_position_right": {
+			"text": {
+				"en-us": "Right",
+				"de-de": "Rechts",
+				"es-es": "Derecha",
+				"fr-fr": "Right",
+				"pt-pt": "Direita",
+				"zh-cn": "右"
+			},
+			"$key": "D9F41DE1A5A2399B4DD23F8E9047444DEF4FAF80"
+		},
+		"lw_graph_position_bottom": {
+			"text": {
+				"en-us": "Bottom",
+				"de-de": "Unten",
+				"es-es": "Bajo",
+				"fr-fr": "Bottom",
+				"pt-pt": "Baixo",
+				"zh-cn": "下"
+			},
+			"$key": "B215FBBBF56E4FEA08939E5E6CE6CB748587C735"
+		},
+		"lw_graph_position_front": {
+			"text": {
+				"en-us": "Front",
+				"de-de": "Vorne",
+				"es-es": "Delante",
+				"fr-fr": "Front",
+				"pt-pt": "Frente",
+				"zh-cn": "前面"
+			},
+			"$key": "DB96305BA684D04335651C344E4A03518A5F17E3"
+		},
+		"lw_graph_position_behind": {
+			"text": {
+				"en-us": "Behind",
+				"de-de": "Hinten",
+				"es-es": "Detras",
+				"fr-fr": "Behind",
+				"pt-pt": "Costas",
+				"zh-cn": "后面"
+			},
+			"$key": "3B864F9274BCEC65660F75E50A2B6FDD83F5FB86"
+		},
+		"site_link_home_fusion": {
+			"text": {
+				"en-us": "Open Home in new tab",
+				"fr-fr": "Open Home in new tab"
+			},
+			"$key": "ED22E05ECFB709DD574CC97AF10157745951A79F"
+		},
+		"site_link_navigation_fusion": {
+			"text": {
+				"en-us": "Open Navigation in new tab",
+				"fr-fr": "Open Navigation in new tab"
+			},
+			"$key": "F43A2A1394C6069E7DFC46CA90D82B5CCAF44565"
+		},
+		"siteNavigation_mobileHome_v7": {
+			"text": {
+				"en-us": "Mobile home page V7",
+				"fr-fr": "Mobile home page V7"
+			},
+			"$key": "E4AA634CB2899C333E6F6CE824BDC8524926702E"
+		},
+		"siteNavigation_tablethome_v7": {
+			"text": {
+				"en-us": "Tablet home page V7",
+				"fr-fr": "Tablet home page V7"
+			},
+			"$key": "D3B83848E589D385A1E1B7E512FFF022FBB28B08"
+		},
+		"wc_warn_unload_title": {
+			"text": {
+				"en-us": "Warning",
+				"fr-fr": "Warning"
+			},
+			"$key": "CDA3FAE379E64B65E95A52EFEE3B8B9334CE2065"
+		},
+		"wc_warn_unload_message": {
+			"text": {
+				"en-us": "You have unsaved changes",
+				"fr-fr": "You have unsaved changes"
+			},
+			"$key": "904C063FF5D5177C280499FD479FA76D63FA292A"
+		},
+		"wc_warn_unload_no_button": {
+			"text": {
+				"en-us": "Stay on current page",
+				"fr-fr": "Stay on current page"
+			},
+			"$key": "C13EBD8ED652023D5649C6DEDFBC3411F554C9CD"
+		},
+		"wc_warn_unload_yes_button": {
+			"text": {
+				"en-us": "Continue",
+				"fr-fr": "Continue"
+			},
+			"$key": "86B9DF04F4F10B96B2E099958CAD6091811F5757"
 		}
 	},
 	"node_modules/syracuse-x3/lib/clients/common/cvg/resources/CvgClientAbs": {
@@ -81636,6 +85208,13 @@
 				"ru-ru": "Подключение к базе данных не более доступны (закрыт)"
 			},
 			"$key": "B404F1E5D9B3794BC15F7BBC6275FDAF36836FCD"
+		},
+		"langReturnedNotMatch": {
+			"text": {
+				"en-us": "Language returned by supervisor is not {0}. Selected language for channels is {1}",
+				"fr-fr": "Language returned by supervisor is not {0}. Selected language for channels is {1}"
+			},
+			"$key": "98435EB6E8B87B0A012028181272B98AB303E0CC"
 		}
 	},
 	"node_modules/syracuse-x3/lib/convergence/client/resources/CvgClient": {
@@ -81689,7 +85268,9 @@
 				"de-de": "Ist die Variable [{0}] numerisch, ist das erhaltene 'Ergebnis' nicht [{1}]. Das dieser numerischen Variable zugwiesene Format ist [{2}].",
 				"fr-fr": "Alors que la variable [{0}] est numérique, le 'résu' reçu ne l'est pas [{1}]. Le format associé à cette variable numérique est [{2}].",
 				"en-gb": "===",
-				"ru-ru": "Хотя переменная [{0}] числовой, полученные \"RESU\" не [{1}]. Формат, связанный с этим п[{2}]."
+				"ru-ru": "Хотя переменная [{0}] числовой, полученные \"RESU\" не [{1}]. Формат, связанный с этим п[{2}].",
+				"pt-pt": "Enquanto a variável [{0}] é digital, o 'resu' recebido não é [{1}]. O formato associado com a variável numérico és [{2}].",
+				"zh-cn": "尽管变量[{0}]是数字的，但收到的'résu'不是[{1}]。与这个数字变量 相关联的格式为[{2}]。"
 			},
 			"$key": "9BB2B0E89F57E0D1919B519C829DE55EE81F8942"
 		},
@@ -81784,7 +85365,9 @@
 				"fr-fr": "Il est impossible de traiter une requête 'RQ' dont l'action 'A' ne contient pas de noeud 'istdatas'. le paramètre fourni est une instance de [{0}].",
 				"de-de": "Eine 'RQ'-Abfrage kann nicht mit einer Aktion 'A' verarbeitet werden, die keinen 'istdatas'-Node enthält. Der angegebene Parameter ist eine Instanz von [{0}].",
 				"en-gb": "===",
-				"ru-ru": "Невозможно обработать  'RQ' запрос с действием 'A', который не содержит каких-либо кивок 'istdatas'Параметр является экземпляром [{0}]."
+				"ru-ru": "Невозможно обработать  'RQ' запрос с действием 'A', который не содержит каких-либо кивок 'istdatas'Параметр является экземпляром [{0}].",
+				"pt-pt": "É impossivel tratar um pedido 'RQ' cuja acção 'A' não contem um nó 'istdatas'. O parametro fornecido é uma instância de [{0}].",
+				"zh-cn": "无法处理一个操作'A'中不包含节点'istdatas'的'RQ'请求。所提供的参数 是[{0}]的一个实例。"
 			},
 			"$key": "F61B4D37F1D611ABA41A5971F044306C3CF4F31B"
 		},
@@ -82060,7 +85643,8 @@
 				"fr-fr": "Impossible de mettre en place un contenu d'une longueur de [{0}] octets dans le blob [{1}] d'une taille maximum de [{2}] octets (size {3}).",
 				"de-de": "Unmöglich, Inhalt einzufügen, der größer als [{0}] Bytes im Blob [{1}] ist, mit einer Max.größe v. [{2}] Bytes (Größe {3}).",
 				"en-gb": "===",
-				"ru-ru": "Невозможно реализовать содержание больше, чем [{0}] байт в каплю [{1}] с максимальным размером [{2}"
+				"ru-ru": "Невозможно реализовать содержание больше, чем [{0}] байт в каплю [{1}] с максимальным размером [{2}",
+				"zh-cn": "在一个最大尺寸为[{2}]字节（尺寸{3}）的blob [{1}]中，无法处理长度为[{0}] 字节的内容。"
 			},
 			"$key": "C7C817F04419BA5769B273096EC019265728C3AD"
 		},
@@ -83558,6 +87142,13 @@
 				"ru-ru": "Нет профиль найти"
 			},
 			"$key": "E44C84C82FAD12942566446D992BE5734E2E098B"
+		},
+		"noX3Solution": {
+			"text": {
+				"en-us": "Unable to find X3 solution for endpoint {0}",
+				"fr-fr": "Unable to find X3 solution for endpoint {0}"
+			},
+			"$key": "4600610DEBBC256AE42535356C6704164A705758"
 		}
 	},
 	"node_modules/syracuse-x3/lib/resources/x3Dispatch": {
@@ -83646,6 +87237,1030 @@
 				"ru-ru": "==="
 			},
 			"$key": "CF02A9B187A97F8D98CDF0A43AE736DBC29C7081"
+		}
+	},
+	"node_modules/msoffice/lib/excel/html/resources/main": {
+		"$key": "97DD7953977A9981011318235255FB62372DD7B7",
+		"connecting": {
+			"text": {
+				"en-us": "Please wait while connecting",
+				"fr-fr": "Please wait while connecting"
+			},
+			"$key": "8214118A4FB46358C9E8242D6FA9F171DBDFD814"
+		},
+		"document_representation": {
+			"text": {
+				"en-us": "\"{0}\" is a representation \"{1}\" of \"{2}\" on \"{3}\"",
+				"ar-sa": "هو عرض\"{1} \" من \"{2}\" على \"{0}\"{3}",
+				"de-de": "{0}\" ist eine Repräsentation \"{1}\" von \"{2}\" in \"{3}\"",
+				"es-es": "\"{0}\" es una representación \"{1}\" de \"{2}\" sobre \"{3}\"",
+				"fr-fr": "\"{0}\" is a representation \"{1}\" of \"{2}\" on \"{3}\"",
+				"pt-pt": "\"{0}\" é uma representação \"{1}\" de \"{2}\" em \"{3}\"",
+				"zh-cn": "\"{0}\"是\"{3}\"上\"{2}\"的一个表示法\"{1}\""
+			},
+			"$key": "6CC96C715BD15E9A83B3CD4DC5CDC876B5F73E26"
+		},
+		"datasource_modificationsApplied": {
+			"text": {
+				"en-us": "Modifications have been applied",
+				"ar-sa": "التعديلات تمّ تطبيقها",
+				"de-de": "Änderungen wurden vorgenommen",
+				"es-es": "Las modificaciones se han aplicado",
+				"fr-fr": "Modifications have been applied",
+				"pt-pt": "As alterações foram aplicadas",
+				"zh-cn": "已应用这些修改项"
+			},
+			"$key": "D9EA4D186E135DD6451109CC7F52CB0F036E0DA4"
+		},
+		"datasource_description": {
+			"text": {
+				"en-us": "Description",
+				"fr-fr": "Description"
+			},
+			"$key": "E24355A22A8EA29D7E5CBD2DC613484308839489"
+		},
+		"datasource_name": {
+			"text": {
+				"en-us": "Name",
+				"fr-fr": "Name"
+			},
+			"$key": "C3A5B20AA4CB71D1D840AC9BC15350A5F8606E1C"
+		},
+		"datasource_title": {
+			"text": {
+				"en-us": "Title",
+				"fr-fr": "Title"
+			},
+			"$key": "43D54DAF24FB7AC1EA76993DF153AE6105502847"
+		},
+		"datasource_endpoint": {
+			"text": {
+				"en-us": "Endpoint",
+				"fr-fr": "Endpoint"
+			},
+			"$key": "4CC6B554F005428ACFC81A4C537CC8611D4023D4"
+		},
+		"datasource_menuItem": {
+			"text": {
+				"en-us": "Data Source",
+				"fr-fr": "Data Source"
+			},
+			"$key": "BA06FDD4812CD9DAE88B0837306F904BCD36B377"
+		},
+		"datasource_orderBys": {
+			"text": {
+				"en-us": "Order bys",
+				"fr-fr": "Order bys"
+			},
+			"$key": "1D182F6D6F6112869503B4C74484F97CBD19D247"
+		},
+		"datasource_add": {
+			"text": {
+				"en-us": "Add",
+				"fr-fr": "Add"
+			},
+			"$key": "6372F3128A3912E2AF09004280B269A68A8F2BD2"
+		},
+		"datasource_entity": {
+			"text": {
+				"en-us": "Entity",
+				"fr-fr": "Entity"
+			},
+			"$key": "147027DB9C1D0999C374FE00436547AFE6A79415"
+		},
+		"datasource_representation": {
+			"text": {
+				"en-us": "Representation",
+				"fr-fr": "Representation"
+			},
+			"$key": "4BE0C250F95B60C5B1AE53351493B418C51F244D"
+		},
+		"datasource_fetchAll": {
+			"text": {
+				"en-us": "Fetch all",
+				"fr-fr": "Fetch all"
+			},
+			"$key": "686D84047AED40BCB32ECE8BDCA1B5B3DADE0B8D"
+		},
+		"datasource_fetchLimit": {
+			"text": {
+				"en-us": "Fetch limit",
+				"fr-fr": "Fetch limit"
+			},
+			"$key": "98A77F6AAE891F727106A2279C7AFD0D9A0ACAA7"
+		},
+		"datasource_filter": {
+			"text": {
+				"en-us": "Filter",
+				"fr-fr": "Filter"
+			},
+			"$key": "0B515A60B600E1549C5A28C2811FB24C16AA585A"
+		},
+		"datasource_predefined": {
+			"text": {
+				"en-us": "Predefined datasources",
+				"fr-fr": "Predefined datasources"
+			},
+			"$key": "22E40FE58D04A205524C604CA5001B8E2B3A73F2"
+		},
+		"datasource_browse": {
+			"text": {
+				"en-us": "Data model browse",
+				"fr-fr": "Data model browse"
+			},
+			"$key": "9A063667E0F6F63E42511BC99487766EFA8D1924"
+		},
+		"datasource_apply": {
+			"text": {
+				"en-us": "Apply",
+				"fr-fr": "Apply"
+			},
+			"$key": "8E329084A0F7E287209F030A2DFF18EB24CF42D7"
+		},
+		"datasource_cancel": {
+			"text": {
+				"en-us": "Cancel",
+				"fr-fr": "Cancel"
+			},
+			"$key": "2164B613EFD3E492C14593743236B77677FBE90D"
+		},
+		"datasource_refresh_all": {
+			"text": {
+				"en-us": "Refresh all",
+				"fr-fr": "Refresh all"
+			},
+			"$key": "E5308F655B51FB82B3EB224E22671F864A15AE1F"
+		},
+		"datasource_workbook": {
+			"text": {
+				"en-us": "Workbook settings - Data Sources",
+				"fr-fr": "Workbook settings - Data Sources"
+			},
+			"$key": "884B8CCF11F023D02403C1A4F3C426FFA98D9A08"
+		},
+		"office_document_saved": {
+			"text": {
+				"en-us": "The document has been saved",
+				"fr-fr": "The document has been saved"
+			},
+			"$key": "49631E176DA003F3373B4EE660B44B88C9049677"
+		},
+		"new_addin": {
+			"text": {
+				"en-us": "A newer version of the addin is available. Click here to download it",
+				"fr-fr": "A newer version of the addin is available. Click here to download it"
+			},
+			"$key": "9900DB3ACB44BD825E7BD74BCF47A2638E6DB424"
+		}
+	},
+	"node_modules/syracuse-collaboration/lib/entities/resources/licenseView": {
+		"$key": "9257DA4A58192B7A0190F015E31C3956DD4A660E",
+		"day": {
+			"text": {
+				"en-us": "{0}% for today: {1} of {2} MB",
+				"fr-fr": "{0}% for today: {1} of {2} MB"
+			},
+			"$key": "F2B42B60787B7BB0A158CFD1ABE22E19A8DB8293"
+		},
+		"month": {
+			"text": {
+				"en-us": "{0}% for current month: {1} of {2} MB",
+				"fr-fr": "{0}% for current month: {1} of {2} MB"
+			},
+			"$key": "471E3629B31F97F872CC2855268D10B89FB5F092"
+		},
+		"much": {
+			"text": {
+				"en-us": "You will be blocked at {0} MB",
+				"fr-fr": "You will be blocked at {0} MB"
+			},
+			"$key": "32AAA7992BD88EA9338D0FD28C635C9C52E72B1B"
+		},
+		"year": {
+			"text": {
+				"en-us": "{0}% for current year: {1} of {2} MB",
+				"fr-fr": "{0}% for current year: {1} of {2} MB"
+			},
+			"$key": "8A8F94C0819D20DD83CCF52BFE250FAC6951C079"
+		}
+	},
+	"node_modules/syracuse-collaboration/lib/entities/resources/x3solution": {
+		"$key": "F0084BB2687FBE0FF3E38412F8A74265AA160512",
+		"cantAccessSolutionJson": {
+			"text": {
+				"en-us": "Can not access to solution.json file through this url:\n{0}\nMaybe Http proxy settings are necessary.",
+				"fr-fr": "Can not access to solution.json file through this url:\n{0}\nMaybe Http proxy settings are necessary."
+			},
+			"$key": "8D9229297CFFF5FE60C9E1BA599DE382ED9D79BE"
+		},
+		"cantParseSolutionJson": {
+			"text": {
+				"en-us": "A problem occured during parsing solution.json ({0}).\nPlease check JSON file is valid.\nurl: {1}",
+				"fr-fr": "A problem occured during parsing solution.json ({0}).\nPlease check JSON file is valid.\nurl: {1}"
+			},
+			"$key": "A9E1BCFA4E66D951358401BB4C2512FF472C1FB9"
+		},
+		"clientNotServer": {
+			"text": {
+				"en-us": "Client certificate must not be dedicated to one Syracuse server",
+				"ar-sa": "شهادة الزبون لا يمكن تكريسها لخادم واحد سيراكوز",
+				"de-de": "Client-Zertifikat darf nicht einem Syracuse-Server zugeordnet werden",
+				"es-es": "El certificado del cliente no debe estar dedicado a un solo servidor Syracuse",
+				"fr-fr": "Client certificate must not be dedicated to one Syracuse server",
+				"pt-pt": "O certificado do cliente não deve ser dedicado a um único servidor de Syracuse",
+				"zh-cn": "该客户端证书不应只专用于一个Syracuse服务器"
+			},
+			"$key": "5A253A4E44F1E7EA9FC466E83AB3F9CF52A48415"
+		},
+		"epAlreadySet": {
+			"text": {
+				"en-us": "An enpoint is already defined for X3 folder {0}",
+				"fr-fr": "An enpoint is already defined for X3 folder {0}"
+			},
+			"$key": "45BD4A5A37BF8415AD8F2AADF313AF59E1E7A399"
+		},
+		"epCreationErr": {
+			"text": {
+				"en-us": "Endpoint [{0}] creation error: {1}",
+				"fr-fr": "Endpoint [{0}] creation error: {1}"
+			},
+			"$key": "34BC6AD4589B343E12FF94470A3D628105EE3B54"
+		},
+		"epCreationSuccess": {
+			"text": {
+				"en-us": "Endpoint [{0}] has been created successfully and associated to this solution. Please Save the solution.",
+				"fr-fr": "Endpoint [{0}] has been created successfully and associated to this solution. Please Save the solution."
+			},
+			"$key": "9D342AA8C8C9904B4E7C1E7CA58DCFE3FF973A1F"
+		},
+		"noInternal": {
+			"text": {
+				"en-us": "Cannot use internal server certificate as client certificate",
+				"ar-sa": "مستحيل إستخدام شهادة الخادم الداخلي كما شهادة الزبون",
+				"de-de": "Internes Server-Zertifikat kann nicht als Client-Zertifikat verwendet werden",
+				"es-es": "Imposible utilizar el certificado del servidor interno como certificado del cliente",
+				"fr-fr": "Cannot use internal server certificate as client certificate",
+				"pt-pt": "Não é possível usar o certificado do servidor interno como um certificado de cliente",
+				"zh-cn": "无法将该服务器证书作为客户端证书使用"
+			},
+			"$key": "D3C79681FA6D9C5862DB5433FD0C96E1DD1F75BA"
+		},
+		"noMainRuntimeMatch": {
+			"text": {
+				"en-us": "No runtime configuration match with {0}:{1} for the solution {2}",
+				"fr-fr": "No runtime configuration match with {0}:{1} for the solution {2}"
+			},
+			"$key": "1EE0DE8AC146CEF90C21C67938A18835D35A70A5"
+		},
+		"noOrderedServerOnSolution": {
+			"text": {
+				"en-us": "No X3 server on X3 solution '{0}' can be used for load balancing",
+				"fr-fr": "No X3 server on X3 solution '{0}' can be used for load balancing"
+			},
+			"$key": "ADE99A4A368F2C067FEAE906A3A6D6078C778357"
+		},
+		"noRuntimes": {
+			"text": {
+				"en-us": "No runtimes configured on solution {0}",
+				"fr-fr": "No runtimes configured on solution {0}"
+			},
+			"$key": "C45084F799D9CD26E566B3112AEF9AC4037C366F"
+		},
+		"noServerAvailable": {
+			"text": {
+				"en-us": "No X3 Server available",
+				"fr-fr": "No X3 Server available"
+			},
+			"$key": "3C2CB6A965279A754A4163BF236946F75EB8D143"
+		},
+		"noServerMatchInConf": {
+			"text": {
+				"en-us": "No server corresponding to '{0}' was found in HRM Site configuration",
+				"fr-fr": "No server corresponding to '{0}' was found in HRM Site configuration"
+			},
+			"$key": "6EBB69EE5D78DBA07C898FFB562F1DA3DAAE7C63"
+		},
+		"noServerMatchInLB": {
+			"text": {
+				"en-us": "No server corresponding to '{0}' was found in load balancer list",
+				"fr-fr": "No server corresponding to '{0}' was found in load balancer list"
+			},
+			"$key": "46222F5B77C56ACC83932FEF41DE2BB18E461A54"
+		},
+		"noSolution": {
+			"text": {
+				"en-us": "No solution set on endPoint {0}",
+				"fr-fr": "No solution set on endPoint {0}"
+			},
+			"$key": "97803803DEE760B91E5DC55CB899C55E929D6C3D"
+		},
+		"noTaggedServerOnSolution": {
+			"text": {
+				"en-us": "No X3 server on X3 solution '{0}' has matching tag",
+				"fr-fr": "No X3 server on X3 solution '{0}' has matching tag"
+			},
+			"$key": "2978BDC98B9ABE3AF705E6BBB3747ECE2D791A2E"
+		},
+		"noUsableServerOnSolution": {
+			"text": {
+				"en-us": "All X3 servers on X3 solution '{0}' are banned or disabled",
+				"fr-fr": "All X3 servers on X3 solution '{0}' are banned or disabled"
+			},
+			"$key": "DA428CCBC64FFFFD69B25C60C8C69460B165804F"
+		},
+		"noX3ServerOnX3Solution": {
+			"text": {
+				"en-us": "No X3 server defined on X3 Solution '{0}'",
+				"fr-fr": "No X3 server defined on X3 Solution '{0}'"
+			},
+			"$key": "B9AA4AF4F173964B6D5CEC6CCDC2D7A6E52D09CD"
+		},
+		"relatedFieldErr": {
+			"text": {
+				"en-us": "Error related to field",
+				"fr-fr": "Error related to field"
+			},
+			"$key": "86F561C770E9830DF070CE974A21B86EFBCD818B"
+		},
+		"serverAvailable": {
+			"text": {
+				"en-us": "HRM Web Server '{0}:{1}' is available",
+				"fr-fr": "HRM Web Server '{0}:{1}' is available"
+			},
+			"$key": "A38657D898AC9DF993446AEA4233BD330900EB27"
+		},
+		"serverBanned": {
+			"text": {
+				"en-us": "The server '{0}' is banned",
+				"fr-fr": "The server '{0}' is banned"
+			},
+			"$key": "1902F69BA811B3B3E61E3A1A0D930254A7F85E0F"
+		},
+		"serverNotAvailable": {
+			"text": {
+				"en-us": "HRM Web Server '{0}:{1}' is not available and has been banned",
+				"fr-fr": "HRM Web Server '{0}:{1}' is not available and has been banned"
+			},
+			"$key": "61728EE286C5E107DD191EF8AC2CCD3DE930DAF6"
+		},
+		"syncDone": {
+			"text": {
+				"en-us": "Synchronization with solution.json done",
+				"fr-fr": "Synchronization with solution.json done"
+			},
+			"$key": "163B44923C2AF4846252CE0B0E7C868FFB825C45"
+		}
+	},
+	"node_modules/syracuse-collaboration/lib/entities/user/resources/oauth2": {
+		"$key": "57117F50A5EAF7D637A7AFABF7DC7FDCCFCAE788",
+		"uniqueBatchAuthentication": {
+			"text": {
+				"en-us": "At most one OAuth2 server may have the batch authentication property set",
+				"fr-fr": "At most one OAuth2 server may have the batch authentication property set"
+			},
+			"$key": "EC6C0B94162F408EAC17B24CEC7BD1E52CB11B72"
+		}
+	},
+	"node_modules/syracuse-email/lib/entities/resources/notificationEvent": {
+		"$key": "A6A32165E3FC6F320935C56501F3A13265FDA2E8",
+		"noLocale": {
+			"text": {
+				"en-us": "Locale not found: {0}",
+				"ar-sa": "معلمات إقليمية ليس موجودة :{0}",
+				"de-de": "Lokale Parameter nicht gefunden: {0}",
+				"es-es": "Parametrización regional no encontrada : {0}",
+				"fr-fr": "Locale not found: {0}",
+				"pt-pt": "Parametros regionais não encontrados {0}",
+				"zh-cn": "未找到本地化设置：{0}"
+			},
+			"$key": "8B9A4582A356D06D2A4AF39D3475FE87FC47D248"
+		},
+		"testMailSubtitle": {
+			"text": {
+				"en-us": "Syracuse event",
+				"fr-fr": "Syracuse event"
+			},
+			"$key": "F26D00DFCB3CCF4E455021DD8821992BAFA4B171"
+		},
+		"mailLinkLabel": {
+			"text": {
+				"en-us": "Click here to go on the event...",
+				"fr-fr": "Click here to go on the event..."
+			},
+			"$key": "0D79627D6D92CDC2E6047FA6A4EC37F2E4613800"
+		},
+		"dateLabel": {
+			"text": {
+				"en-us": "Date",
+				"fr-fr": "Date"
+			},
+			"$key": "66293119C67303A74DE7FE1A33E2DBF2D4ABD26E"
+		},
+		"timeLabel": {
+			"text": {
+				"en-us": "Time",
+				"fr-fr": "Time"
+			},
+			"$key": "457F69FC35F70B265CB888004E58D0379F40DDAF"
+		}
+	},
+	"node_modules/syracuse-email/lib/entities/resources/notificationServer": {
+		"$key": "262A8DAAC2E11919664D614E9920CB38D2A049FF",
+		"noRecipient": {
+			"text": {
+				"en-us": "No email recipient given",
+				"ar-sa": "لا أي مستلم البريد مقدّم",
+				"de-de": "Kein E-Mail-Empfänger angegeben",
+				"es-es": "Ningún destinatorio e-mail indicado",
+				"fr-fr": "No email recipient given",
+				"pt-pt": "Nenhum destinatários de e-mail fornecido",
+				"zh-cn": "没有提供任何e-mail收件人"
+			},
+			"$key": "610F41BAC4A8683B0622DFD76AA10DD1466666AA"
+		},
+		"testMailTitle": {
+			"text": {
+				"en-us": "Notification server {0}",
+				"fr-fr": "Notification server {0}"
+			},
+			"$key": "D1964455DB66245AC935AF1244E675D73ECD6FF3"
+		},
+		"testMailSubtitle": {
+			"text": {
+				"en-us": "Configuration test",
+				"fr-fr": "Configuration test"
+			},
+			"$key": "9AC6DE7FE9757FC5D16AA6AD24B672D0EBFF9F41"
+		},
+		"testMailContent": {
+			"text": {
+				"en-us": "The notification server configuration named '{1}' is working.<br><br>Summary:<br>Host: {1}<br>Port: {2}<br>Secure: {3}<br>User: {4}",
+				"fr-fr": "The notification server configuration named '{1}' is working.<br><br>Summary:<br>Host: {1}<br>Port: {2}<br>Secure: {3}<br>User: {4}"
+			},
+			"$key": "2A2FBB840AF8F2878E2F225E9A12355567C833F0"
+		},
+		"testMailSig": {
+			"text": {
+				"en-us": "Notification server tester",
+				"fr-fr": "Notification server tester"
+			},
+			"$key": "409F85FBB92D89057628CE4271EDC5203548DC68"
+		},
+		"mailLinkLabel": {
+			"text": {
+				"en-us": "Click here to go on the configuration...",
+				"fr-fr": "Click here to go on the configuration..."
+			},
+			"$key": "EBC8D4091F470CA0FDE1359513802E2B844402B4"
+		},
+		"dateLabel": {
+			"text": {
+				"en-us": "Date",
+				"fr-fr": "Date"
+			},
+			"$key": "B99ACE0A086F72EF5E2820552BFAE8DB2D71F29A"
+		},
+		"timeLabel": {
+			"text": {
+				"en-us": "Time",
+				"fr-fr": "Time"
+			},
+			"$key": "BDDFD5A4835224E1082BEF696312D1CBDB034FD7"
+		}
+	},
+	"node_modules/syracuse-email/lib/resources/strings": {
+		"$key": "8F4B499ACA48F9DBD673248C90A30C43FA43B655",
+		"notificationEvent.$titleTemplate": {
+			"text": {
+				"en-us": "Notification event",
+				"ar-sa": "حدث الإشعار",
+				"de-de": "Benachrichtigungsereignis",
+				"es-es": "Evento notificación",
+				"fr-fr": "Notification event",
+				"pt-pt": "Evento notificação",
+				"zh-cn": "通知事件"
+			},
+			"$key": "DB1556A5511E6A7DB385F6E99B3812735BF7CD9E"
+		},
+		"notificationEvent.code.$title": {
+			"text": {
+				"en-us": "Code",
+				"ar-sa": "رمز",
+				"es-es": "Código",
+				"pt-pt": "Código",
+				"zh-cn": "代码",
+				"fr-fr": "Code"
+			},
+			"$key": "66FF279F0DBA9A9C1BBA245A6F55195A6495EF39"
+		},
+		"notificationEvent.description.$title": {
+			"text": {
+				"en-us": "Description",
+				"ar-sa": "وصف",
+				"de-de": "Beschreibung",
+				"es-es": "Descripción",
+				"pt-pt": "Descrição",
+				"zh-cn": "描述",
+				"fr-fr": "Description"
+			},
+			"$key": "7E293254FCE76765F5D4060D5C9DCC4F032AE3A5"
+		},
+		"notificationEvent.notificationServers.$title": {
+			"text": {
+				"en-us": "Notification servers",
+				"ar-sa": "خوادم الإشعار",
+				"de-de": "Benachrichtigungsserver",
+				"es-es": "Servidores de notificación",
+				"fr-fr": "Notification servers",
+				"pt-pt": "Servidores de notificação",
+				"zh-cn": "通知服务器"
+			},
+			"$key": "D6CE9505F27E1F400C8C1ADBFB9D72C9CBFBA444"
+		},
+		"notificationEvent.recipients.$title": {
+			"text": {
+				"en-us": "Recipients",
+				"ar-sa": "المستلمين",
+				"de-de": "Empfänger",
+				"es-es": "Recipientes",
+				"fr-fr": "Recipients",
+				"pt-pt": "Recipientes",
+				"zh-cn": "收件人"
+			},
+			"$key": "DEC39A738D74368C8316798F8493D680975DAAF7"
+		},
+		"notificationEvent.textTemplate.$title": {
+			"text": {
+				"en-us": "Text template",
+				"ar-sa": "وحدة النص",
+				"de-de": "Textvorlage",
+				"es-es": "Modelo texto",
+				"fr-fr": "Text template",
+				"pt-pt": "Modelo de texto",
+				"zh-cn": "文本模板"
+			},
+			"$key": "07CA115BD4E3F22383D1D168280D62AF3F49F302"
+		},
+		"notificationEvent.titleTemplate.$title": {
+			"text": {
+				"en-us": "Title template",
+				"ar-sa": "نموذج العنوان",
+				"de-de": "Titelvorlage",
+				"es-es": "Modelo título",
+				"fr-fr": "Title template",
+				"pt-pt": "Modelo de título",
+				"zh-cn": "标题模板"
+			},
+			"$key": "6DCF2001854D33D845BECC620D155E12C15A662D"
+		},
+		"notificationServer.$titleTemplate": {
+			"text": {
+				"en-us": "Notification server",
+				"ar-sa": "خادم الإشعار",
+				"de-de": "Benachrichtigungsserver",
+				"es-es": "Servidor notificación",
+				"fr-fr": "Notification server",
+				"pt-pt": "Servidor notificação",
+				"zh-cn": "通知服务器"
+			},
+			"$key": "8ADE0EF2F210AE0C44E4F80FEAF706BBD20A698F"
+		},
+		"notificationServer.authentication.$title": {
+			"text": {
+				"en-us": "Authentication",
+				"ar-sa": "مصادقة",
+				"de-de": "Authentifizierung",
+				"es-es": "Autentificación",
+				"fr-fr": "Authentication",
+				"pt-pt": "Autênticação",
+				"zh-cn": "验证"
+			},
+			"$key": "4DA356C6295B11C8921CCA3C83C330DB02CB6709"
+		},
+		"notificationServer.authentication.none": {
+			"text": {
+				"en-us": "No authentication",
+				"ar-sa": "لا أي مصادقة",
+				"de-de": "Keine Authentifizierung",
+				"es-es": "Sin autentificación",
+				"fr-fr": "No authentication",
+				"pt-pt": "Sem autênticação",
+				"zh-cn": "无任何验证"
+			},
+			"$key": "66AC91D5911081AA987824E369D04A1CF87CDE7A"
+		},
+		"notificationServer.authentication.password": {
+			"text": {
+				"en-us": "Authentication with user and password",
+				"ar-sa": "مصادقة مع مستخدم و كلمة المرور",
+				"de-de": "Authentifizierung mit Benutzer und Passwort",
+				"es-es": "Autentificación con usuairo y contraseña",
+				"fr-fr": "Authentication with user and password",
+				"pt-pt": "Autênticação com utilizador e palavra-chave",
+				"zh-cn": "通过用户名和密码验证"
+			},
+			"$key": "F169EA10D52CD01278A7CA047E01E393E1609F43"
+		},
+		"notificationServer.clientHost.$title": {
+			"text": {
+				"en-us": "Client server name",
+				"ar-sa": "إسم خادم الزبون",
+				"de-de": "Client-Servername",
+				"es-es": "Nomre cliente servidor",
+				"fr-fr": "Client server name",
+				"pt-pt": "Nome do servidor cliente",
+				"zh-cn": "客户端服务器名称"
+			},
+			"$key": "B2AC3BBAEEAEFCEDA43D62942F7B09B653A7C279"
+		},
+		"notificationServer.code.$title": {
+			"text": {
+				"en-us": "Name",
+				"ar-sa": "إسم",
+				"es-es": "Nombre",
+				"fr-fr": "Name",
+				"pt-pt": "Nome",
+				"zh-cn": "名称"
+			},
+			"$key": "FA5D8D92A73E1D93C9031EEFAA423436CB81ECDF"
+		},
+		"notificationServer.description.$title": {
+			"text": {
+				"en-us": "Description",
+				"ar-sa": "وصف",
+				"de-de": "Beschreibung",
+				"es-es": "Descripción",
+				"pt-pt": "Descrição",
+				"zh-cn": "描述",
+				"fr-fr": "Description"
+			},
+			"$key": "230DEA0852B558604F8F713CDFBD6C2A12FA1AF6"
+		},
+		"notificationServer.host.$title": {
+			"text": {
+				"en-us": "Mail server",
+				"ar-sa": "خادم البريد",
+				"de-de": "Mail-Server",
+				"es-es": "Servidor mail",
+				"fr-fr": "Mail server",
+				"pt-pt": "Servidor de e-mail",
+				"zh-cn": "邮件服务器"
+			},
+			"$key": "B46517F51C56FD846AC884F7A48388D0A7189C2F"
+		},
+		"notificationServer.idleTime.$title": {
+			"text": {
+				"en-us": "Idle time",
+				"ar-sa": "فترة التعطيل",
+				"de-de": "Wartezeit",
+				"es-es": "Tiempo inactividad",
+				"fr-fr": "Idle time",
+				"pt-pt": "Tempo inativo",
+				"zh-cn": "空闲时段"
+			},
+			"$key": "C559F7432E4D732A774A643A4FCD7D9C8950BADD"
+		},
+		"notificationServer.password.$title": {
+			"text": {
+				"en-us": "Password",
+				"ar-sa": "كلمة المرور",
+				"de-de": "Passwort",
+				"es-es": "Contraseña",
+				"fr-fr": "Password",
+				"pt-pt": "Palavra-chave",
+				"zh-cn": "密码"
+			},
+			"$key": "C8023DE4426FFA0330D836B8D5F0353574DB5DB8"
+		},
+		"notificationServer.port.$title": {
+			"text": {
+				"en-us": "Port",
+				"ar-sa": "باب",
+				"es-es": "Puerto",
+				"zh-cn": "端口",
+				"fr-fr": "Port"
+			},
+			"$key": "2D4C12EEADC93A4FF09A4383A40063EA6AD1749F"
+		},
+		"notificationServer.secureConnection.$title": {
+			"text": {
+				"en-us": "Secure connection",
+				"ar-sa": "إتصال آمن",
+				"de-de": "Sichere Verbindung",
+				"es-es": "Conexión segura",
+				"fr-fr": "Secure connection",
+				"pt-pt": "Conexão segura",
+				"zh-cn": "安全连接"
+			},
+			"$key": "E9B546A0E11705E94F3C682F7E46878E5CEE8E6F"
+		},
+		"notificationServer.sender.$title": {
+			"text": {
+				"en-us": "Sender email",
+				"ar-sa": "بريد المرسل",
+				"de-de": "E-Mail-Absender",
+				"es-es": "mail remitente",
+				"fr-fr": "Sender email",
+				"pt-pt": "Email remetente",
+				"zh-cn": "邮件发件人"
+			},
+			"$key": "25857C6D0B0C34D15F5AB7C0C76AD608C7B14631"
+		},
+		"notificationServer.service.$title": {
+			"text": {
+				"en-us": "Service",
+				"ar-sa": "خدمة",
+				"zh-cn": "服务",
+				"fr-fr": "Service"
+			},
+			"$key": "183A50B842A2336577929A8847425F996D639A65"
+		},
+		"notificationServer.type.$title": {
+			"text": {
+				"en-us": "Type",
+				"ar-sa": "نوع",
+				"de-de": "Typ",
+				"es-es": "Tipo",
+				"pt-pt": "Tipo",
+				"zh-cn": "类型",
+				"fr-fr": "Type"
+			},
+			"$key": "675A1F2235D7796F1A0D23F6B860250E948358F7"
+		},
+		"notificationServer.type.SMTP": {
+			"text": {
+				"en-us": "SMTP",
+				"fr-fr": "SMTP"
+			},
+			"$key": "D2A22923F165D9358B93188C9BCF5DD13B379CAF"
+		},
+		"notificationServer.user.$title": {
+			"text": {
+				"en-us": "User",
+				"ar-sa": "مستخدم",
+				"de-de": "Benutzer",
+				"es-es": "Usuario",
+				"fr-fr": "User",
+				"pt-pt": "Utilizador",
+				"zh-cn": "用户"
+			},
+			"$key": "979A5D2A95217E5F97B6CD3E6D754370C7855931"
+		}
+	},
+	"node_modules/syracuse-hrm/lib/entities/resources/hrmServer": {
+		"$key": "55936FA8443B464A364DDAE522EC12193F2D6149",
+		"pingOk": {
+			"text": {
+				"en-us": "Site access is working throught web server ({0})",
+				"ar-sa": "الوصول إلى الموقع وظيفية عن طريق خادم الويب ({0})",
+				"de-de": "Der Zugriff auf die Seite erfolgt über den Webserver ({0})",
+				"es-es": "El acceso al portal es funcional mediante el servidor web ({0})",
+				"fr-fr": "Site access is working throught web server ({0})",
+				"pt-pt": "O acesso ao site funciona através do servidor web ({0})",
+				"zh-cn": "该网站的访问是通过Web服务器({0})运行的"
+			},
+			"$key": "2D4DA37470AA2DD3B793785848574DB6A2BEBCA8"
+		},
+		"pingFailed": {
+			"text": {
+				"en-us": "Site access is not working throught web server ({0})",
+				"ar-sa": "الوصول إلى موقع غير فعال عن طريق خادم الويب ({0})",
+				"de-de": "Der Zugriff auf die Seite erfolgt nicht über den Webserver ({0})",
+				"es-es": "El acceso al portal no es funcional mediante el servidor web ({0})",
+				"fr-fr": "Site access is not working throught web server ({0})",
+				"pt-pt": "O acesso ao site não funciona através do servidor web ({0})",
+				"zh-cn": "该网站的访问不是通过Web服务器({0})运行的"
+			},
+			"$key": "B6804BF87050C2A1F6E5AF6B158C0B5536EFB495"
+		},
+		"serverBanned": {
+			"text": {
+				"en-us": "Server ({0}) is banned.",
+				"ar-sa": "K",
+				"de-de": "Der Server ({0}) ist gesperrt.",
+				"es-es": "El servidor ({0}) está prohibido",
+				"fr-fr": "Server ({0}) is banned.",
+				"pt-pt": "O servidor ({0}) é banido.",
+				"zh-cn": "服务器{0}被禁止。"
+			},
+			"$key": "B13592F45DA48B130169DD631E268CBE4F1EB161"
+		}
+	},
+	"node_modules/syracuse-hrm/lib/entities/resources/hrmSite": {
+		"$key": "B30371296E4BC3C971D50868F236D6A9B168CD67",
+		"homePageMissing": {
+			"text": {
+				"en-us": "The navigation page 'home' doesn't exist. So no modules was set",
+				"ar-sa": "لا يمكن إضافة أي وحدةhomeعدم وجود صفحة الإستكشاف",
+				"de-de": "Die Navigatiosnseite 'Home' ist nicht vorhanden. Kein Modul konnte hinzugefügt werden",
+				"es-es": "La página de navegación 'home' no existe. No se ha podido añadir ningún módulo",
+				"fr-fr": "The navigation page 'home' doesn't exist. So no modules was set",
+				"pt-pt": "A página inicial de navegação  não existe. Nenhum módulo pode ser adicionado",
+				"zh-cn": "'home'导航页面不存在。无法添加任何模块"
+			},
+			"$key": "D34764E4BEB5824B2C0ECA34A36C98FE8AF7EF16"
+		},
+		"menuItemsAdded": {
+			"text": {
+				"en-us": "{0} menu item(s) was(were) added ({1}) and linked to this HRM Site",
+				"ar-sa": "HRMتم إضافة{0} عناصر القائمة و({1}9 ربطها بالموقع",
+				"de-de": "{0} Menüeinträge wurden hinzugefügt ({1}) und mit diesem HRM-Standort verknüpft",
+				"es-es": "{0} entrada(s) de menú se ha(n) añadido ({1}) y vinculado a este portal HRM",
+				"fr-fr": "{0} menu item(s) was(were) added ({1}) and linked to this HRM Site",
+				"pt-pt": "Menu {0} entrada (s)  foi adicionado (s) ({1}) e (s) ligado ao site HRM",
+				"zh-cn": "已向该HRM地点添加和关联了{0}个菜单项"
+			},
+			"$key": "47241F51EC126686F09EB9D00FB06E50ADF270D0"
+		},
+		"menuBlockAdded": {
+			"text": {
+				"en-us": "A menu block was added ({0}) and linked to menu items",
+				"ar-sa": "تمت إضافة كتلة القائمة ({0}) وربطها عناصر القائمة",
+				"de-de": "Ein Menüblock wurde hinzugefügt ({0}) und mit den Menüeinträgen verknüpft",
+				"es-es": "Un bloque de menu se ha añadido ({0}) y vinculado a las entradas de menú",
+				"fr-fr": "A menu block was added ({0}) and linked to menu items",
+				"pt-pt": "Um bloco de menu foi adicionado ({0}) e ligado aos itens de menu",
+				"zh-cn": "已向菜单项添加和关联了1个菜单版块({0})"
+			},
+			"$key": "7A53C389DFDC23BD20586FC943CF269FEC6573E0"
+		},
+		"menuModuleAdded": {
+			"text": {
+				"en-us": "A menu module was added ({0}) to the menu bloc and also to the 'home' navigation page",
+				"ar-sa": "'home'تم إضافة وحدة القائمة({0}) و ربطها بكتلة القائمة كما صفحة الإستكشاف",
+				"de-de": "Ein Menümodul wurde hinzugefügt ({0}) und mit dem Menüblock sowie mit der Navigationsseite 'Home' verknüpft",
+				"es-es": "Un módulo se menu se ha añadido ({0}) y vinculado al bloque de menú así como a la página de navegación 'home'",
+				"fr-fr": "A menu module was added ({0}) to the menu bloc and also to the 'home' navigation page",
+				"pt-pt": "Um módulo de menu foi adicionado ({0}) e ligado ao bloco de menu e da página inicial de navegação.",
+				"zh-cn": "已向菜单版块以及'home'导航页面添加和关联了1个菜单模块({0})"
+			},
+			"$key": "76057DB2E91AFB514238660F49B210CD4E8AE3F3"
+		},
+		"installOk": {
+			"text": {
+				"en-us": "The HRM Portal link is available in the home navigation page",
+				"ar-sa": "'home'متوفر على صفحة الإستكشافHRM رابط الباب",
+				"de-de": "Die HRM-Portal-Verkknüpfung ist auf der Navigationsseite 'Home' verfügbar",
+				"es-es": "El link del portal HRM está disponible en la página de navegación 'home'",
+				"fr-fr": "The HRM Portal link is available in the home navigation page",
+				"pt-pt": "O link do portal HRM está disponível na página de navegação inicial",
+				"zh-cn": "'home'导航页面上与HRM门户之间的链接可用"
+			},
+			"$key": "CD199D221344E1FC551642A5A033DA67450A5161"
+		},
+		"miParamHost": {
+			"text": {
+				"en-us": "XTend web server hostname",
+				"ar-sa": "Web XTendإسم مضيف الخادم",
+				"de-de": "Hostname des XTend-Webservers",
+				"es-es": "Nombre de host del servidor web Xtend",
+				"fr-fr": "XTend web server hostname",
+				"pt-pt": "Nome do host do servidor Web XTend",
+				"zh-cn": "Web XTend服务器的主机名"
+			},
+			"$key": "861F963E66F022D9733D152F79682EC8A821E023"
+		},
+		"miParamPort": {
+			"text": {
+				"en-us": "XTend web server port",
+				"ar-sa": "Web XTendباب الخادم",
+				"de-de": "Port des XTend-Webservers",
+				"es-es": "Puerto del servidor Web Xtend",
+				"fr-fr": "XTend web server port",
+				"pt-pt": "Porta do servidor Web XTend",
+				"zh-cn": "Web XTend服务器的端口"
+			},
+			"$key": "D890B7BFAEBB474304A8CEDDBCAB79892295D17C"
+		},
+		"menuItemsRemoved": {
+			"text": {
+				"en-us": "{0} menu items was/were removed ({1})",
+				"ar-sa": "{0} تم حذف عناصر القائمة",
+				"de-de": "{0} Menüeinträge wurden gelöscht ({1})",
+				"es-es": "{0} entrada(s) de menú se ha(n) borrado ({1})",
+				"fr-fr": "{0} menu items was/were removed ({1})",
+				"pt-pt": "{0} itens de menu foi/foram removidos ({1})",
+				"zh-cn": "{0}个菜单项已被删除({1})"
+			},
+			"$key": "F06BC5C83175861A9A35A424A47757344E18EAA7"
+		},
+		"epRemovedFromBlock": {
+			"text": {
+				"en-us": "The endpoint {0} was removed from menu block ({1})",
+				"ar-sa": "({1})تم حذف نقطة الوصول{0} من كتلة القائمة",
+				"de-de": "Der Zugriffspunkt {0} wurde aus dem Menüblock ({1}) gelöscht",
+				"es-es": "El punto de acceso {0} se ha borrado del bloque de menu ({1})",
+				"fr-fr": "The endpoint {0} was removed from menu block ({1})",
+				"pt-pt": "O ponto de acesso {0} foi suprimido do bloco de menu ({1})",
+				"zh-cn": "菜单版块({1})的端点{0}已被删除"
+			},
+			"$key": "9D1C17008BFABF8BFFD7C5E5AADD32BDC5EB9D5E"
+		},
+		"epRemovedFromModule": {
+			"text": {
+				"en-us": "The endpoint {0} was removed from menu module ({1})",
+				"ar-sa": "({1})تم حذف نقطة الوصول{0} من وحدة القائمة",
+				"de-de": "Der Zugriffspunkt {0} wurde aus dem Menümodul ({1}) gelöscht",
+				"es-es": "El punto de acceso {0} se ha borrado del módulo de menú ({1})",
+				"fr-fr": "The endpoint {0} was removed from menu module ({1})",
+				"pt-pt": "O ponto de acesso {0} foi suprimido do módulo de menu ({1})",
+				"zh-cn": "菜单模块({1})的端点{0}已被删除"
+			},
+			"$key": "6ABD9FF74B8EF9390361B4DC9780A1C1EF25ABB9"
+		},
+		"alreadyClean": {
+			"text": {
+				"en-us": "Nothing to do ! All is already clean...",
+				"ar-sa": "لا علاقة! كل شيء الخاصة بالفعل ...",
+				"de-de": "Nichts zu tun! Alles ist bereits bereinigt...",
+				"es-es": "No hacer nada, todo está ya limpio",
+				"fr-fr": "Nothing to do ! All is already clean...",
+				"pt-pt": "Nada a fazer! Já está tudo conforme...",
+				"zh-cn": "什么都没做！一切都是本来就有的..."
+			},
+			"$key": "F8CC84705D152C1ADED51F7CB22298752DF4D326"
+		},
+		"notPublished": {
+			"text": {
+				"en-us": "Site must be published before access to portal(s)",
+				"ar-sa": "يجب نشر الموقع قبل أي وصول إلى بوابة",
+				"de-de": "Der Standort muss vor dem Portalzugriff veröffentlicht werden",
+				"es-es": "El sitio debe ser publicado antes de acceder al portal",
+				"fr-fr": "Site must be published before access to portal(s)",
+				"pt-pt": "O local deve ser publicado antes de qualquer acesso a (x) portal (s)",
+				"zh-cn": "应当在访问任何门户前发布该网站"
+			},
+			"$key": "F7D836C82E721D1188F82D32D5FBD396E9C63D99"
+		},
+		"noServers": {
+			"text": {
+				"en-us": "Aucun serveur web n'est associé au site HRM",
+				"ar-sa": "HRMلا خادم ويب مرتبط بموقع",
+				"de-de": "Dem HRM-Standort  zugewiesener Webserver",
+				"es-es": "Ningun servidor web asociado al portal HRM",
+				"fr-fr": "Aucun serveur web n'est associé au site HRM",
+				"pt-pt": "Nenhum web server associado ao site HRM",
+				"zh-cn": "没有与HRM网站相关联的web服务器"
+			},
+			"$key": "BCD6C23DB50A4C443DCD86E4DC7DD7ADBEF8DB06"
+		}
+	},
+	"node_modules/syracuse-hrm/lib/resources/userCreation": {
+		"$key": "CB99B44C454219A0BEED742C03B29FA757441C10",
+		"noEndpoint": {
+			"text": {
+				"en-us": "No endpoint selected",
+				"fr-fr": "No endpoint selected"
+			},
+			"$key": "800864DB254BF3FDF8CC06AD517B3B132CEFAE82"
+		},
+		"noRefUser": {
+			"text": {
+				"en-us": "Reference user does not exist",
+				"fr-fr": "Reference user does not exist"
+			},
+			"$key": "896F04B10E82DE115491D7F6BD0384812299F09D"
+		},
+		"noX3Ref": {
+			"text": {
+				"en-us": "Reference user {0} for endpoint {1} not found",
+				"fr-fr": "Reference user {0} for endpoint {1} not found"
+			},
+			"$key": "75092A6948815B4511D1C0A405E17F37F38C731E"
+		}
+	},
+	"node_modules/syracuse-soap/lib/generic/resources/nannyHelper": {
+		"$key": "7D15DE067323763FEA5F659F05A0DFD3867FD2FF",
+		"noWsProcesses": {
+			"text": {
+				"en-us": "No web services processes declared in Syracuse Hosts",
+				"fr-fr": "No web services processes declared in Syracuse Hosts"
+			},
+			"$key": "97436FAC9B8AA6FAA5CD334E4A7FE55F21D22868"
+		}
+	},
+	"node_modules/syracuse-ui/lib/field/helpers/resources/format": {
+		"$key": "5F2365C9519A2D763A6E47F8C81C293533BD7EFC",
+		"badFormat": {
+			"text": {
+				"en-us": "value doesn't match field format or type",
+				"fr-fr": "value doesn't match field format or type"
+			},
+			"$key": "55BB1C50079BD708EB64AE8C344B00D96D193285"
+		},
+		"valueTooLong": {
+			"text": {
+				"en-us": "value is too long regarding field format",
+				"fr-fr": "value is too long regarding field format"
+			},
+			"$key": "0F92778318D8A1FD044807B3657D0AC449CBFE27"
+		},
+		"loopSuperFormat": {
+			"text": {
+				"en-us": "system detected a loop in extend format definition (super format)",
+				"fr-fr": "system detected a loop in extend format definition (super format)"
+			},
+			"$key": "F6216D1EE28010B9209CA178CB5E88C12E0FEE2D"
 		}
 	}
 }
