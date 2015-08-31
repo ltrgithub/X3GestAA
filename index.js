@@ -20,6 +20,7 @@ try {
 	console.error(ex);
 }
 
+if (config.streamline.runtime === 'await') require('es6-promise');
 require("streamline-plugin");
 require("babel-plugin-flow-comments");
 require("babel/register")({
