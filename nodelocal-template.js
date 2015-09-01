@@ -35,6 +35,8 @@ exports.config = {
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
 		},*/
+		// allow to pass some node parameter like --prof
+		nodeOptions:""
 	},
 	system: {
 		// enables memwatch module
@@ -132,7 +134,8 @@ exports.config = {
 		cache: {
 			// trace: console.log,
 		},
-		reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+        reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+        // webProxyWhitelist: "^(.*)/(GEN|RES)/.*\.(js|json|gif|png|jpeg|jpg|ico|bmp)$", // whitelist for PUB web folder, there is a builtin whitelist. Regexp or array of regexp.
 	},
 
 	help: {
@@ -164,7 +167,8 @@ exports.config = {
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
-		// offStemmer : true // desactivation of the stemmer for the search indexation
+		// offStemmer : true, // desactivation of the stemmer for the search indexation
+        // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
 	},
 	notificatonServer: {
 		//"log Level" : 3,
@@ -203,6 +207,18 @@ exports.config = {
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		devOpsEmail: 'SageERPX3DevOps@sage.com',
+		oauth: {
+			client_id: 'pl4JKQLpgNdEFTgM2Oe1juQQ0dHiv3VD',
+			scope: 'vstf4mpl();',
+			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
+			baseUrl: 'https://signon.sso.staging.services.sage.com/SSO',
+			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+		}
 	},
 	traces: {
 		console: false, // For developers

@@ -12,7 +12,6 @@ exports.config = {
 	// This option allow to partners to set a factory ID on security
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
-	adminUserRestrict: true,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
@@ -22,6 +21,7 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: true,
+		dbUnlock: true
 
 	},
 	//nanny :{
@@ -53,21 +53,22 @@ exports.config = {
 		dataset: "syracuse",
 		hostname: "10.198.2.4:27017,10.198.2.68",
 		port: 27017,
-		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
-		//certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
-        	cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
+		logpath: "E:\\Sage\\Syracuse\\syracuse\\logs",
+		certdir: "E:\\Sage\\Syracuse\\syracuse\\certs",
+        	cacheDir: "E:\\Sage\\Syracuse\\syracuse\\cache"
 	},
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
             db: {
                 w: 1,
-                //readPreference:"nearest"
             },
             server: {
             },
             replSet: {
+                rs_name: "mongodevRepl"
             },
+
             mongos: {
             }
         }
@@ -201,6 +202,8 @@ exports.config = {
 		parallel: 4,
 		delay: 300,
 		logUrl: "https://devapi.dev-sageerpx3online.com/healthLogs/production",
+		siteUrl: "https://devapi.dev-sageerpx3online.com/sdata/sky/automation/production",
+		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
     },
 
