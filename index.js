@@ -19,6 +19,7 @@ try {
 } catch (ex) {
 	console.error(ex);
 }
+require('npm-shadow')();
 
 if (config.streamline.runtime === 'await') require('es6-promise');
 require("streamline-plugin");
@@ -26,6 +27,11 @@ require("babel-plugin-flow-comments");
 require("babel/register")({
 	plugins: ['flow-comments', 'streamline-plugin'],	
 	extensions: [".js", "._js"],
+	// ignore dependencies but not cached-modules 
+	ignore: function(path) {
+		var segs = path.split('/node_modules/');
+		return segs.length > 3 || (segs.length == 3 && segs[1] !== 'cached-modules');
+	},
 	extra: {
 		streamline: {
 			cache: config.streamline.cache,
