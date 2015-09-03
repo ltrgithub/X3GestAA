@@ -10,10 +10,3 @@ for dir in commander ez-mongodb ez-streams galaxy jsurl streamline streamline-do
 		cd $DIR/node_modules/$dir
 		git checkout .
 done;
-cd $DIR/node_modules
-npm install babel-core babel-plugin-flow-comments
-for dir in commander source-map babel-plugin-streamline; do
-		echo "npm install in " $dir
-		cd $DIR/node_modules/$dir
-		npm install
-done;

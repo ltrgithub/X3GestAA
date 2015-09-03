@@ -1,8 +1,10 @@
 #!/bin/sh
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-for dir in colors commander ez-mongodb ez-streams galaxy jsurl regenerator source-map \
+for dir in babel-plugin-flow-comments colors commander ez-mongodb ez-streams fibers \
+	galaxy handlebars jsurl look memwatch mongodb npm-shadow regenerator socket.io source-map \
 	streamline streamline-doctool streamline-flamegraph streamline-fs \
-	streamline-pdfkit babel-plugin-streamline streamline-require streamline-runtime; do
+	streamline-pdfkit babel-plugin-streamline streamline-require streamline-runtime \
+	v8-profiler; do
 		echo "clearing " $dir
 		rm -rf $DIR/node_modules/$dir/* $DIR/node_modules/$dir/.[a-z]*
 done;
