@@ -262,7 +262,7 @@
 		<row><td>NewBinary16</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallFirstUse.ico</td></row>
 		<row><td>NewBinary17</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallPartial.ico</td></row>
 		<row><td>NewBinary18</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallStateMenu.ico</td></row>
-		<row><td>NewBinary19</td><td/><td>C:\Syracuse\F_SAM93100\Syracuse\dotnet\OutlookAddIn\InstallerHelpers\RegistryHelper\bin\Release\RegistryHelper.exe</td></row>
+		<row><td>NewBinary19</td><td/><td>C:\syracuse\akira\Syracuse\dotnet\OutlookAddIn\InstallerHelpers\RegistryHelper\bin\Release\RegistryHelper.exe</td></row>
 		<row><td>NewBinary2</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\New.ibd</td></row>
 		<row><td>NewBinary3</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\Up.ibd</td></row>
 		<row><td>NewBinary4</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\WarningIcon.ibd</td></row>
@@ -4436,7 +4436,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{7690CF17-3E18-403E-98E4-AB8B780ABCCE}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Outlook AddIn</td><td/></row>
-		<row><td>ProductVersion</td><td>1.08.0001</td><td/></row>
+		<row><td>ProductVersion</td><td>1.08.0002</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4448,10 +4448,10 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
-		<row><td>UpgradeCode</td><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td/></row>
+		<row><td>UpgradeCode</td><td>{61287F0B-6122-4ECD-BBBF-7476BBCB04B4}</td><td/></row>
 		<row><td>_IsMaintenance</td><td>Change</td><td/></row>
 		<row><td>_IsSetupTypeMin</td><td>Typical</td><td/></row>
 	</table>
@@ -4722,6 +4722,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.00.0000</td><td>1.00.0000</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP1</td><td>1.00.0000</td></row>
+		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0001</td><td>1.08.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP2</td><td>1.08.0001</td></row>
 	</table>
 
 	<table name="Verb">
