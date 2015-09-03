@@ -22,10 +22,10 @@ try {
 require('npm-shadow')();
 
 if (config.streamline.runtime === 'await') require('es6-promise');
-require("streamline-plugin");
+require("babel-plugin-streamline");
 require("babel-plugin-flow-comments");
 require("babel/register")({
-	plugins: ['flow-comments', 'streamline-plugin'],	
+	plugins: ['flow-comments', 'streamline'],	
 	extensions: [".js", "._js"],
 	// ignore dependencies but not shadow-modules 
 	ignore: function(path) {

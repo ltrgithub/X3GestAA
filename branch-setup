@@ -5,14 +5,14 @@ git submodule init
 git submodule update
 cd $DIR/node_modules
 for dir in commander ez-mongodb ez-streams galaxy jsurl streamline streamline-doctool streamline-flamegraph streamline-fs \
-	streamline-pdfkit streamline-plugin streamline-require streamline-runtime; do
+	streamline-pdfkit babel-plugin-streamline streamline-require streamline-runtime; do
 		echo "git checkout in " $dir
 		cd $DIR/node_modules/$dir
 		git checkout .
 done;
 cd $DIR/node_modules
 npm install babel-core babel-plugin-flow-comments
-for dir in commander source-map streamline-plugin; do
+for dir in commander source-map babel-plugin-streamline; do
 		echo "npm install in " $dir
 		cd $DIR/node_modules/$dir
 		npm install
