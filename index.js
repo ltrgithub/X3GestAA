@@ -30,6 +30,7 @@ require("babel/register")({
 	// ignore dependencies but not shadow-modules 
 	ignore: function(path) {
 		var segs = path.split('/node_modules/');
+		if (/^fibers\//.test(segs[1])) return true;
 		return segs.length > 3 || (segs.length == 3 && segs[1] !== 'shadow-modules');
 	},
 	extra: {
