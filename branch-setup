@@ -3,10 +3,3 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd $DIR; 
 git submodule init
 git submodule update
-cd $DIR/node_modules
-for dir in commander ez-mongodb ez-streams galaxy jsurl streamline streamline-doctool streamline-flamegraph streamline-fs \
-	streamline-pdfkit babel-plugin-streamline streamline-require streamline-runtime; do
-		echo "git checkout in " $dir
-		cd $DIR/node_modules/$dir
-		git checkout .
-done;
