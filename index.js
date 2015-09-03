@@ -27,10 +27,10 @@ require("babel-plugin-flow-comments");
 require("babel/register")({
 	plugins: ['flow-comments', 'streamline-plugin'],	
 	extensions: [".js", "._js"],
-	// ignore dependencies but not cached-modules 
+	// ignore dependencies but not shadow-modules 
 	ignore: function(path) {
 		var segs = path.split('/node_modules/');
-		return segs.length > 3 || (segs.length == 3 && segs[1] !== 'cached-modules');
+		return segs.length > 3 || (segs.length == 3 && segs[1] !== 'shadow-modules');
 	},
 	extra: {
 		streamline: {
