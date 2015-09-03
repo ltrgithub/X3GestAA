@@ -1,0 +1,7 @@
+#!/bin/sh
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd $DIR; 
+npm install
+cd $DIR/node_modules/ez-mailer; npm install
+cd $DIR/node_modules/streamline-upload; npm install
+cd $DIR/node_modules/syracuse-phantomjs; npm install

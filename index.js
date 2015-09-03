@@ -20,27 +20,7 @@ try {
 	console.error(ex);
 }
 require('npm-shadow')();
-
-if (config.streamline.runtime === 'await') require('es6-promise');
-require("babel-plugin-streamline");
-require("babel-plugin-flow-comments");
-require("babel/register")({
-	plugins: ['flow-comments', 'streamline'],	
-	extensions: [".js", "._js"],
-	// ignore dependencies but not shadow-modules 
-	ignore: function(path) {
-		if (/\/node_modules\/fibers\//.test(path)) return true;
-		var segs = path.split('/node_modules/');
-		return segs.length > 3 || (segs.length == 3 && segs[1] !== 'shadow-modules');
-	},
-	extra: {
-		streamline: {
-			cache: config.streamline.cache,
-			verbose: config.streamline.verbose,
-			runtime: config.streamline.runtime || "fibers",
-		}
-	}
-});
+require('syracuse-core/lib/streamline-loader')(config.streamline);
 
 (function() {
 	if (config.concurix) {
