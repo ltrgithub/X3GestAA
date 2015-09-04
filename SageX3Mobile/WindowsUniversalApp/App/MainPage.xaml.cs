@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // Die Vorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 dokumentiert.
 
-namespace App
+namespace Sage.X3.Mobile.App.Pages
 {
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet werden kann oder auf die innerhalb eines Rahmens navigiert werden kann.
