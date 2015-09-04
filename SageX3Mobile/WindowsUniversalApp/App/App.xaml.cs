@@ -1,4 +1,6 @@
-﻿using Sage.X3.Mobile.App.Model;
+﻿using Sage.X3.Mobile.App;
+using Sage.X3.Mobile.App.Common;
+using Sage.X3.Mobile.App.Model;
 using Sage.X3.Mobile.App.Pages;
 using Sage.X3.Mobile.App.Pages.ServerConfig;
 using System;
@@ -93,8 +95,8 @@ namespace SageX3WUP.App
             // Was the app activated by a voice command?
             if (e.Kind == Windows.ApplicationModel.Activation.ActivationKind.VoiceCommand)
             {
-                VoiceCommandActivatedEventArgs commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
-                Cortana.HandleCommand(commandArgs);
+                //VoiceCommandActivatedEventArgs commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
+                //Cortana.HandleCommand(commandArgs);
             }
         }                
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 
-namespace SageX3WUP.App
+namespace Sage.X3.Mobile.App.Common
 {
     public class Cortana
     {
