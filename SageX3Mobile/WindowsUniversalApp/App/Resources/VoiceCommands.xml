@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+  <CommandSet xml:lang="en-us" Name="SageX3Mobile_en-us">
+    <CommandPrefix>X3 </CommandPrefix>
+    <Example>X3 open</Example>
+
+    <!--
+    <Command Name="showTripToDestination">
+      <Example>Show customer Loreal</Example>
+      <ListenFor>show customer {customer} </ListenFor>
+      <Feedback>Showing customer {customer} </Feedback>
+      <Navigate/>
+    </Command>
+    -->
+    
+    <Command Name="openX3">
+      <Example>open</Example>
+      <ListenFor>open</ListenFor>
+      <Feedback>Opening X3</Feedback>
+      <Navigate/>
+    </Command>
+    <!--
+    <PhraseList Label="destination">
+      <Item> London </Item>
+      <Item> Dallas </Item>
+      <Item> New York </Item>
+    </PhraseList>
+
+    <PhraseTopic Label="newDestination" Scenario="Search">
+      <Subject>City/State</Subject>
+    </PhraseTopic>
+-->
+  </CommandSet>
+    
+  <!-- Other CommandSets for other languages -->
+</VoiceCommands>
