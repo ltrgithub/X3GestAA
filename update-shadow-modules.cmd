@@ -1,6 +1,6 @@
 @echo off
 set /p ok="You will lose all changes that have not been pushed to GitHub. Are you sure? " -n 1 -r
-if /I "%ok%" NEQ "Y" GOTO END
+if /I "%ok%" NEQ "Y" GOTO :eof
 set DIR=%~dp0
 echo STEP 1: resetting node_modules
 cd %DIR% & rmdir /s/q node_modules
@@ -30,4 +30,3 @@ echo
 echo STEP 7: checking out submodules (again)
 git submodule init
 git submodule update
-:END
