@@ -40,8 +40,9 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 }
 config.streamline.lines = config.streamline.lines || "preserve";
 
-require("streamline").register(config.streamline);
-
+// require("streamline").register(config.streamline);
+require('npm-shadow')();
+require('syracuse-core/lib/streamline-loader')(config.streamline);
 var arg = process.argv[2];
 require('syracuse-patch/lib/patchcreate').cmdLinePatchCb(config, function(err, result) {
 	if (err) {
