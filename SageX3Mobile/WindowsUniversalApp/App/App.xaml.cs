@@ -3,6 +3,7 @@ using Sage.X3.Mobile.App.Common;
 using Sage.X3.Mobile.App.Model;
 using Sage.X3.Mobile.App.Pages;
 using Sage.X3.Mobile.App.Pages.ServerConfig;
+using Sage.X3.Mobile.NativeComponents.Basics;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -53,7 +54,7 @@ namespace SageX3WUP.App
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Cortana.RegisterCommands();
+            NativeVoiceCommands.RegisterVoiceCommands(new Uri("ms-appx:///Resources/VoiceCommands.xml"));
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -95,8 +96,8 @@ namespace SageX3WUP.App
             // Was the app activated by a voice command?
             if (e.Kind == Windows.ApplicationModel.Activation.ActivationKind.VoiceCommand)
             {
-                //VoiceCommandActivatedEventArgs commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
-                //Cortana.HandleCommand(commandArgs);
+                VoiceCommandActivatedEventArgs commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
+                NativeVoiceCommands.OnActivatedByVoiceCommand(commandArgs);
             }
         }                
 

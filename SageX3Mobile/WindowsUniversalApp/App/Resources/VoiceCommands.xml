@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
   <CommandSet xml:lang="de-de" Name="SageX3Mobile_de-de">
-    <CommandPrefix>X 3</CommandPrefix>
+    <CommandPrefix>X 3,</CommandPrefix>
     <Example>X3 öffnen</Example>
 
     <Command Name="openX3">
@@ -10,20 +10,21 @@
       <Feedback>Öffne Sage X3 Mobile</Feedback>
       <Navigate/>
     </Command>
+
+    <Command Name="show">
+      <Example>zeige</Example>
+      <ListenFor>zeige {bookmark}</ListenFor>
+      <Feedback>zeige meine kunden</Feedback>
+      <Navigate/>
+    </Command>
+
+    <PhraseList Label="bookmark">
+    </PhraseList>
   </CommandSet>
   
   <CommandSet xml:lang="en-us" Name="SageX3Mobile_en-us">
-    <CommandPrefix>X3</CommandPrefix>
+    <CommandPrefix>X 3,</CommandPrefix>
     <Example>X3 open</Example>
-
-    <!--
-    <Command Name="showTripToDestination">
-      <Example>Show customer Loreal</Example>
-      <ListenFor>show customer {customer} </ListenFor>
-      <Feedback>Showing customer {customer} </Feedback>
-      <Navigate/>
-    </Command>
-    -->
 
     <Command Name="openX3">
       <Example>open</Example>
@@ -31,17 +32,16 @@
       <Feedback>Opening X3</Feedback>
       <Navigate/>
     </Command>
-    <!--
-    <PhraseList Label="destination">
-      <Item> London </Item>
-      <Item> Dallas </Item>
-      <Item> New York </Item>
-    </PhraseList>
 
-    <PhraseTopic Label="newDestination" Scenario="Search">
-      <Subject>City/State</Subject>
-    </PhraseTopic>
--->
+    <Command Name="show">
+      <Example>show</Example>
+      <ListenFor>show {bookmark}</ListenFor>
+      <Feedback>show my customers</Feedback>
+      <Navigate/>
+    </Command>
+
+    <PhraseList Label="bookmark">
+    </PhraseList>
   </CommandSet>
     
   <!-- Other CommandSets for other languages -->
