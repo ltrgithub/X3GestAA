@@ -64,10 +64,10 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="20" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="stackHeader" Grid.ColumnSpan="4" Background="{StaticResource SageHeaderColorBg}">
             <StackPanel x:Name="stackBrand" HorizontalAlignment="Left" Margin="15,7,0,0" VerticalAlignment="Top" Orientation="Horizontal">
@@ -78,8 +78,8 @@
 
         <Image x:Name="image" Source="ms-appx:///Resources/Images/background_servers.jpg" Stretch="UniformToFill" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
         <Rectangle Grid.ColumnSpan="4" Fill="#FFF4F4F5" Stroke="Black" Opacity="0.2" Margin="0" Grid.Row="2"/>
-        <StackPanel x:Name="stackPanelHeader" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Row="1" Margin="50,0,0,0">
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Select a server" Foreground="{StaticResource SagPageHeaderColorFg}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
+        <StackPanel x:Name="stackPanelHeader" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Row="1" Margin="0">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Select a server" Foreground="{StaticResource SagPageHeaderColorFg}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Margin="20,0,0,0"/>
         </StackPanel>
         <Grid Grid.Row="2" Grid.ColumnSpan="4" Margin="0">
             <Grid.RowDefinitions>

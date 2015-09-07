@@ -40,6 +40,19 @@
 
     </Page.Resources>
     <Grid Background="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="Tablet">
+                <VisualState x:Name="VisualState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="grid.(Grid.Column)" Value="2"/>
+                        <Setter Target="grid.(Grid.ColumnSpan)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="45" />
@@ -64,9 +77,9 @@
         <Rectangle Grid.ColumnSpan="4" Fill="#FFF4F4F5" Stroke="Black" Margin="0" Grid.Row="2" Visibility="Collapsed"/>
         <StackPanel x:Name="stackPanelHeader" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Row="1" Margin="50,0,0,0">
         </StackPanel>
-        <Grid Grid.Column="2" Grid.Row="1" Background="{StaticResource SageFooterColorBg}" Grid.RowSpan="3" Grid.ColumnSpan="2">
+        <Grid x:Name="grid" Grid.Row="1" Background="{StaticResource SageFooterColorBg}" Grid.RowSpan="3" Grid.ColumnSpan="4">
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="15" />
@@ -81,11 +94,11 @@
 
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Edit server configuration" Foreground="{StaticResource SagPageHeaderColorFg}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Margin="20,15,0,0"/>
             <TextBlock x:Name="textBlockName" TextWrapping="Wrap" Text="Server name" Margin="0" Grid.Row="1" FontSize="20" Padding="20,0,6,0" Foreground="White"/>
-            <TextBox x:Name="textBoxName" TextWrapping="Wrap" Text="" Margin="20,20,20,0" Grid.Row="2" FontSize="20"/>
+            <TextBox x:Name="textBoxName" Text="" Margin="20,20,20,0" Grid.Row="2" FontSize="20"/>
             <TextBlock x:Name="textBlockDescription" TextWrapping="Wrap" Text="Description" Margin="0" Grid.Row="4" FontSize="20" Padding="20,0,6,0" Foreground="White"/>
-            <TextBox x:Name="textBoxDescription" TextWrapping="Wrap" Text="" Margin="20,20,20,0" Grid.Row="5" FontSize="20"/>
+            <TextBox x:Name="textBoxDescription" Text="" Margin="20,20,20,0" Grid.Row="5" FontSize="20"/>
             <TextBlock x:Name="textBlockUrl" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Server url" VerticalAlignment="Top" Grid.Row="7" FontSize="20" Padding="20,0,6,0" Foreground="White"/>
-            <TextBox x:Name="textBoxUrl" TextWrapping="Wrap" Text="" Margin="20,20,20,0" Grid.Row="8" FontSize="20"/>
+            <TextBox x:Name="textBoxUrl" Text="" Margin="20,20,20,0" Grid.Row="8" FontSize="20"/>
             <CheckBox x:Name="checkBoxMakeDefault" Content="Make default server" HorizontalAlignment="Left" Margin="20,20,0,0" Grid.Row="10" VerticalAlignment="Top" FontSize="20" Foreground="White" RequestedTheme="Dark"/>
         </Grid>
 
