@@ -52,7 +52,7 @@ exports.config = {
 		cloudwatch: true,
 		esHostName: "http://internal-Elasticsearch-272472412.us-east-1.elb.amazonaws.com",
 		esPort: 9200,
-		mongoHostName: "10.198.2.4:27017,10.198.2.68,10.198.2.132",
+		mongoHostName: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
 		mongoPort: 27017,
 		ds:	{
 			healthId: "c2E6U0BnZVgzQ0xPVUQjMSFUWGw=",
