@@ -190,6 +190,17 @@ exports.config = {
                                 pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3.pfx",
                                 // passphrase for the certificate file. This one works with the staging test certificate
                                 passphrase: "5xrG9S9yHNVsh6B",
+                                oauth: {
+                                    client_id: '',
+                                    scope: '',
+                                    secret_key: '',
+                                    baseUrl: 'https://na-signon.sso.services.sage.com/SSO',
+                                    redirectUrl: 'https://notifications.sagex3.com/auth/oauth2/sageid/sageIdRedirect',
+                                    redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+                                    key: '',
+                                    iv: '',
+                                    retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+                                }
                 },
                 mongoNotify: {
                                 host: '10.198.254.30',
