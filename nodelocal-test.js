@@ -22,6 +22,8 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: true,
+		dbUnlock: true,
+		localBalancer: true
 
 	},
 	//nanny :{
