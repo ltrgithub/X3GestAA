@@ -134,8 +134,6 @@ require('syracuse-license').register(function(err, data) {
 	//require("streamline").register(config.streamline);
 	if (config.streamline.flamegraph) require("streamline/lib/globals").emitter = new (require('events').EventEmitter)();
 
-	require("syracuse-core/lib/localeWrapper");
-
 	var waitData;
 	if (process.argv[2] === "PATCH") {
 		// patchtools are independent of Syracuse modules!
