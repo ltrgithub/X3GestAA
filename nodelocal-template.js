@@ -35,6 +35,8 @@ exports.config = {
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
 		},*/
+		// allow to pass some node parameter like --prof
+		nodeOptions:""
 	},
 	system: {
 		// enables memwatch module
@@ -56,26 +58,29 @@ exports.config = {
         // flag to expose stack traces to the UI (off by default for security)
         exposeStacktrace: false,
         // bindIP if IP_ANY is not the good binding (IPV6)
-        bindIP: "0000:00:00:00:00:00000",
+        bindIP: "0000:00:00:00:00:00000"
 	},
 	/*	integrationServer: {
 		port: 8125
 	},
 	*/
-	collaboration: {
-		certdir: "certificates" // path to certificates folder
-	},
-	mongodb: {
-		// connect options as expected by MongoClient.connect of nodejs mongodb driver
-		options: {
-			db: {
-				w: 1
-			},
-			server: {},
-			replSet: {},
-			mongos: {}
-		}
-	},
+    collaboration: {
+        certdir: "certificates"  // path to certificates folder
+    },
+    mongodb: {
+        // connect options as expected by MongoClient.connect of nodejs mongodb driver
+        options: {
+            db: {
+                w: 1
+            },
+            server: {
+            },
+            replSet: {
+            },
+            mongos: {
+            }
+        }
+    },
 	session: {
 		// interactive session timeout (minutes).
 		timeout: 20, // minutes
@@ -97,8 +102,8 @@ exports.config = {
 		"cache": true,
 		"verbose": true,
 		"fast": true,
-		// comment out the flamegraph block to activate flame graphs
-		// options are documented on https://github.com/Sage/streamline-flamegraph#configuration
+        // comment out the flamegraph block to activate flame graphs
+        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
 		// flamegraph: { rate: 1, },	
 	},
 	docTool: {
@@ -111,9 +116,9 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
-		plugin: {
-			killTimeoutOnCreate: 120000 // timeout switch orchestration mode
-		},
+        plugin : {
+            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
+        },
 		protocol: {
 			// trace: console.log,
 			LBFChunkSize: 64 // in Kb
@@ -132,7 +137,8 @@ exports.config = {
 		cache: {
 			// trace: console.log,
 		},
-		reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+        reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+        // webProxyWhitelist: "^(.*)/(GEN|RES)/.*\.(js|json|gif|png|jpeg|jpg|ico|bmp)$", // whitelist for PUB web folder, there is a builtin whitelist. Regexp or array of regexp.
 	},
 
 	help: {
@@ -164,7 +170,8 @@ exports.config = {
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
-		// offStemmer : true // desactivation of the stemmer for the search indexation
+		// offStemmer : true, // desactivation of the stemmer for the search indexation
+        // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
 	},
 	notificatonServer: {
 		//"log Level" : 3,
@@ -194,7 +201,7 @@ exports.config = {
 		// White list of media types that we allow in upload operations
 		// This entry is mandatory when hosting.multiTenant is true.
 		// The white list may be specified as a single regular expression or an array or regular expressions.
-		allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+	    allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
 	},
 	sage_id: {
 		// base URL of sage ID service - this one is staging, not prod
@@ -203,6 +210,18 @@ exports.config = {
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		devOpsEmail: 'SageERPX3DevOps@sage.com',
+		oauth: {
+			client_id: 'pl4JKQLpgNdEFTgM2Oe1juQQ0dHiv3VD',
+			scope: 'vstf4mpl();',
+			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
+			baseUrl: 'https://signon.sso.staging.services.sage.com/SSO',
+			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+		}
 	},
 	traces: {
 		console: false, // For developers
@@ -255,34 +274,31 @@ exports.config = {
 				ackcall: "error"
 			},
 		}
-	},
-	unit_test: {
-		// unit tests related options
-		x3endpoint: {},
-		elasticsearch: {}
-	},
-	etl: {
-		// etl related options
-
-		// metaFolder: The folder in which the etl will store the json metadata files when exporting
-	},
+    },	
+    unit_test: {
+        // unit tests related options
+        x3endpoint: {},
+        elasticsearch: {}
+    },
 };
 
 // for git enabled configurations one can override the standard config
 exports.branch_configs = [{
-	branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
-	config: {
-		collaboration: {
-			databaseName: "Syracuse_V7",
-			localInitScript: [] // some local data to import on database creation : standard import json file
-		}
-	}
+    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V7",
+            localInitScript: [] // some local data to import on database creation : standard import json file
+        }
+    }
 }, {
-	branch: "akira.*", // branch name should match this regular expression
-	config: {
-		collaboration: {
-			databaseName: "Syracuse_V8",
-			localInitScript: [] // some local data to import on database creation
-		}
-	}
+    branch: "akira.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V8",
+            localInitScript: [] // some local data to import on database creation
+        }
+    }
 }];
+
+

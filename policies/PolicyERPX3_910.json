@@ -1,21 +1,21 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2015-06-19T06:07:45Z",
+	"generationStamp": "2015-09-07T13:08:38Z",
 	"partnerId": "",
 	"product": {
 		"code": "1",
 		"title": {
-			"fr-FR": "Sage ERP X3",
-			"en-US": "Sage ERP X3",
-			"it-IT": "Sage ERP X3",
-			"pt-PT": "Sage ERP X3",
-			"es-ES": "Sage ERP X3",
-			"en-GB": "Sage ERP X3",
-			"de-DE": "Sage ERP X3",
-			"pl-PL": "Sage ERP X3",
-			"ZH-CN": "Sage ERP X3",
-			"ru-RU": "Sage ERP X3",
-			"AR-SA": "Sage ERP X3"
+			"fr-FR": "Sage X3",
+			"en-US": "Sage X3",
+			"it-IT": "Sage X3",
+			"pt-PT": "Sage X3",
+			"es-ES": "Sage X3",
+			"en-GB": "Sage X3",
+			"de-DE": "Sage X3",
+			"pl-PL": "Sage X3",
+			"ZH-CN": "Sage X3",
+			"ru-RU": "Sage X3",
+			"AR-SA": "Sage X3"
 		},
 		"version": "9"
 	},
@@ -24,14 +24,14 @@
 		"title": {
 			"fr-FR": "Sage X3",
 			"en-US": "Sage X3",
-			"it-IT": "Sage ERP X3",
-			"pt-PT": "Sage ERP X3",
-			"es-ES": "Sage ERP X3",
-			"en-GB": "Sage ERP X3",
-			"de-DE": "Sage ERP X3",
-			"pl-PL": "Sage ERP X3",
+			"it-IT": "Sage X3",
+			"pt-PT": "Sage X3",
+			"es-ES": "Sage X3",
+			"en-GB": "Sage X3",
+			"de-DE": "Sage X3",
+			"pl-PL": "Sage X3",
 			"ZH-CN": "Sage X3",
-			"ru-RU": "Sage ERP X3",
+			"ru-RU": "Sage X3",
 			"AR-SA": "Sage X3"
 		},
 		"version": "1.0"
@@ -816,7 +816,7 @@
 				"pl-PL": "Ograniczone zdolnośćprod.",
 				"ZH-CN": "有限容量",
 				"ru-RU": "Ограниченнаямощность",
-				"AR-SA": "Finite capacity"
+				"AR-SA": "قدرةمنتهية"
 			},
 			"condition": "always"
 		}, {
@@ -826,11 +826,11 @@
 				"en-US": "Change control management",
 				"it-IT": "Change control management",
 				"pt-PT": "Gestão dos indices",
-				"es-ES": "Change control management",
+				"es-ES": "Gestión control del cambio",
 				"en-GB": "Change control management",
 				"de-DE": "Verwaltung Indizes",
 				"pl-PL": "Change control management",
-				"ZH-CN": "Change control management",
+				"ZH-CN": "指标管理",
 				"ru-RU": "Сменаконтрольнойперемены",
 				"AR-SA": "Change control management"
 			},
@@ -960,7 +960,7 @@
 				"pl-PL": "Folder księgowań",
 				"ZH-CN": "会计目录",
 				"ru-RU": "Разделучета",
-				"AR-SA": "Accounting folder"
+				"AR-SA": "ملفمعالمحاسبة"
 			},
 			"condition": "always"
 		}, {
@@ -1038,7 +1038,7 @@
 				"en-GB": "VAT decl.other legislations",
 				"de-DE": "USt.-Erkl.sonstige Rechtsordnungen",
 				"pl-PL": "VAT decl.other legislations",
-				"ZH-CN": "VAT decl.other legislations",
+				"ZH-CN": "其他准则的增值税申报",
 				"ru-RU": "НДСдеклдругиезаконодательства",
 				"AR-SA": "VAT decl.other legislations"
 			},
@@ -1072,7 +1072,7 @@
 				"pl-PL": "Dystrybutorzy",
 				"ZH-CN": "发行人",
 				"ru-RU": "Дистрибьюторы",
-				"AR-SA": "Distributors"
+				"AR-SA": "موزذعين"
 			},
 			"condition": "always"
 		}, {
@@ -1098,11 +1098,11 @@
 				"en-US": "Product version management",
 				"it-IT": "Product version management",
 				"pt-PT": "Gestão das versões de artigos",
-				"es-ES": "Product version management",
+				"es-ES": "Gestión versión producto",
 				"en-GB": "Product version management",
 				"de-DE": "Verwaltung Artikelversionen",
 				"pl-PL": "Product version management",
-				"ZH-CN": "Product version management",
+				"ZH-CN": "产品版本管理",
 				"ru-RU": "Управлениеверсиейпродукта",
 				"AR-SA": "Product version management"
 			},
@@ -1118,11 +1118,11 @@
 				"en-GB": "Dematerialization",
 				"de-DE": "Papierloser Dokumentenaust.",
 				"pl-PL": "Paperless document exchange",
-				"ZH-CN": "Paperless document exchange",
+				"ZH-CN": "非物质化",
 				"ru-RU": "Безбумажныйобмендокументами",
 				"AR-SA": "Paperless document exchange"
 			},
-			"condition": "never"
+			"condition": "license"
 		}, {
 			"code": "EMP",
 			"title": {
@@ -1136,7 +1136,7 @@
 				"pl-PL": "Zarządzanie miejscami składowania",
 				"ZH-CN": "地址管理",
 				"ru-RU": "Управлениеместамихранения",
-				"AR-SA": "Location management"
+				"AR-SA": "إدارةالمواقع"
 			},
 			"condition": "always"
 		}, {
@@ -1232,7 +1232,7 @@
 				"pl-PL": "Zarządzanie datąważności",
 				"ZH-CN": "到期管理",
 				"ru-RU": "Управлениесрокамидействия",
-				"AR-SA": "Expiration management"
+				"AR-SA": "إدارةالإنزلاق"
 			},
 			"condition": "always"
 		}, {
@@ -1296,7 +1296,7 @@
 				"pl-PL": "Zarządzanie faktoringiem",
 				"ZH-CN": "因素管理",
 				"ru-RU": "Управлениефакторингом",
-				"AR-SA": "Factoring management"
+				"AR-SA": "إدارةالفوترة"
 			},
 			"condition": "always"
 		}, {
@@ -1310,7 +1310,7 @@
 				"en-GB": "Food allergens",
 				"de-DE": "Lebensmittelallergene",
 				"pl-PL": "Food allergens",
-				"ZH-CN": "Food allergens",
+				"ZH-CN": "食物过敏原",
 				"ru-RU": "Пищевыеаллергены",
 				"AR-SA": "حساسياتالتغذية"
 			},
@@ -1344,7 +1344,7 @@
 				"pl-PL": "Zarządzanie monitami i zaległymi płatnościami",
 				"ZH-CN": "提醒和迟付管理",
 				"ru-RU": "Управлениенапоминаниемипросроченнымиплатежами",
-				"AR-SA": "Reminder and late payment mana"
+				"AR-SA": "إدارةالتذكيروغيرمدفوع"
 			},
 			"condition": "always"
 		}, {
@@ -1460,6 +1460,22 @@
 			},
 			"condition": "always"
 		}, {
+			"code": "INVCA",
+			"title": {
+				"fr-FR": "Facture d'annulation",
+				"en-US": "Cancellation invoice",
+				"it-IT": "Cancellation invoice",
+				"pt-PT": "Fatura anulação",
+				"es-ES": "Factura de anulación",
+				"en-GB": "Cancellation invoice",
+				"de-DE": "Storno Rechnung",
+				"pl-PL": "Cancellation invoice",
+				"ZH-CN": "撤销的发票",
+				"ru-RU": "Cancellation invoice",
+				"AR-SA": "Cancellation invoice"
+			},
+			"condition": "always"
+		}, {
 			"code": "ITP",
 			"title": {
 				"fr-FR": "Article-Fournisseur",
@@ -1497,12 +1513,12 @@
 				"fr-FR": "Localisation Angola",
 				"en-US": "Angola localization",
 				"it-IT": "Angola localization",
-				"pt-PT": "Localizaçao Angola",
+				"pt-PT": "Localização Angola",
 				"es-ES": "Localización Angola",
 				"en-GB": "Angola localization",
 				"de-DE": "Lokalisierung Angola",
 				"pl-PL": "Angola localization",
-				"ZH-CN": "Angola localization",
+				"ZH-CN": "安哥拉本地化",
 				"ru-RU": "ЛокализацияАнголы",
 				"AR-SA": "Angola localization"
 			},
@@ -1668,6 +1684,22 @@
 			},
 			"condition": "license"
 		}, {
+			"code": "KSA",
+			"title": {
+				"fr-FR": "Localisation globale Sage ZA",
+				"en-US": "Global Sage ZA localization",
+				"it-IT": "Global Sage ZA localization",
+				"pt-PT": "Localização Sage ZA global",
+				"es-ES": "Global Sage ZA localization",
+				"en-GB": "Global Sage ZA localisation",
+				"de-DE": "Globale Lokalisierung Südafrika",
+				"pl-PL": "Global Sage ZA localization",
+				"ZH-CN": "全局Sage南非本地化",
+				"ru-RU": "Global Sage ZA localization",
+				"AR-SA": "Global Sage ZA localization"
+			},
+			"condition": "never"
+		}, {
 			"code": "KSP",
 			"title": {
 				"fr-FR": "Localisation espagnole",
@@ -1732,6 +1764,22 @@
 			},
 			"condition": "license"
 		}, {
+			"code": "KZA",
+			"title": {
+				"fr-FR": "Localisation Sud-Africaine",
+				"en-US": "South-African localization",
+				"it-IT": "South-African localization",
+				"pt-PT": "Localização Sul-Africana",
+				"es-ES": "Localización Sudafricana",
+				"en-GB": "South-African localization",
+				"de-DE": "Lokalisierung Südafrika",
+				"pl-PL": "South-African localization",
+				"ZH-CN": "南非本地化",
+				"ru-RU": "Южноафриканскаялокализация",
+				"AR-SA": "South-African localization"
+			},
+			"condition": "never"
+		}, {
 			"code": "LEA",
 			"title": {
 				"fr-FR": "Contrat location financement",
@@ -1776,7 +1824,7 @@
 				"pl-PL": "Raport",
 				"ZH-CN": "报表",
 				"ru-RU": "Отчет",
-				"AR-SA": "Report"
+				"AR-SA": "إسم"
 			},
 			"condition": "always"
 		}, {
@@ -1792,7 +1840,7 @@
 				"pl-PL": "Zarz mag.u klienta",
 				"ZH-CN": "贷款管理",
 				"ru-RU": "Управлениекредитами",
-				"AR-SA": "Loan management"
+				"AR-SA": "إدارةالقروض"
 			},
 			"condition": "always"
 		}, {
@@ -1824,7 +1872,7 @@
 				"pl-PL": "Zarządzanie partiami",
 				"ZH-CN": "批次管理",
 				"ru-RU": "Управлениепартией",
-				"AR-SA": "Lot management"
+				"AR-SA": "إدارةبالحصص"
 			},
 			"condition": "always"
 		}, {
@@ -1968,7 +2016,7 @@
 				"pl-PL": "Zarządzanie kontrahentami wielofirmowymi",
 				"ZH-CN": "跨公司商务伙伴管理",
 				"ru-RU": "Управлениебизнес-партнерамимультикомпании",
-				"AR-SA": "Multi-company business partner management"
+				"AR-SA": "إدارةالشريكلعدةشركة"
 			},
 			"condition": "always"
 		}, {
@@ -2048,7 +2096,23 @@
 				"pl-PL": "Paletyzacja",
 				"ZH-CN": "货盘化",
 				"ru-RU": "Загрузка",
-				"AR-SA": "Stock identifiers"
+				"AR-SA": "محددينالمخزون"
+			},
+			"condition": "always"
+		}, {
+			"code": "PBDCL",
+			"title": {
+				"fr-FR": "Déclaration balance paiements",
+				"en-US": "Payment balance declaration",
+				"it-IT": "Payment balance declaration",
+				"pt-PT": "Com.Operações Bancár.-COPE",
+				"es-ES": "Payment balance declaration",
+				"en-GB": "Payment balance declaration",
+				"de-DE": "Zahlungsbilanzmeldung",
+				"pl-PL": "Payment balance declaration",
+				"ZH-CN": "付款余额申报",
+				"ru-RU": "Декларированиебалансаплатежа",
+				"AR-SA": "Payment balance declaration"
 			},
 			"condition": "always"
 		}, {
@@ -2066,7 +2130,7 @@
 				"ru-RU": "Физическиеэлементы",
 				"AR-SA": "عناصربدنية"
 			},
-			"condition": "always"
+			"condition": "license"
 		}, {
 			"code": "PIT",
 			"title": {
@@ -2112,7 +2176,7 @@
 				"pl-PL": "Zarządzanie potencjalnymi klientami",
 				"ZH-CN": "潜在客户管理",
 				"ru-RU": "Управлениепотенциальнымиклиентами",
-				"AR-SA": "Prospect management"
+				"AR-SA": "إدارةالمحتمل"
 			},
 			"condition": "always"
 		}, {
@@ -2128,7 +2192,7 @@
 				"pl-PL": "Zarządzanie produkcją",
 				"ZH-CN": "生产管理",
 				"ru-RU": "Управлениепродукцией",
-				"AR-SA": "Production management"
+				"AR-SA": "إدارةالإنتاج"
 			},
 			"condition": "always"
 		}, {
@@ -2279,7 +2343,7 @@
 			"code": "SCMD",
 			"title": {
 				"fr-FR": "Interface n.SKEP-X3",
-				"en-US": "N.skep-X3 interface",
+				"en-US": "n.SKEP-X3 interface",
 				"it-IT": "Interfaccia n.SKEP-X3",
 				"pt-PT": "Interface n.SKEP-X3",
 				"es-ES": "Interface n.SKEP-X3",
@@ -2288,7 +2352,7 @@
 				"pl-PL": "Interfejs n.SKEP-X3",
 				"ZH-CN": "n.SKEP-X3接口",
 				"ru-RU": "N.skep-X3интерфейс",
-				"AR-SA": "N.skep-X3 interface"
+				"AR-SA": "n.SKEP-X3 interface"
 			},
 			"condition": "always"
 		}, {
@@ -2326,17 +2390,17 @@
 		}, {
 			"code": "SEPP",
 			"title": {
-				"fr-FR": "Sage Exchange",
-				"en-US": "Sage Exchange",
-				"it-IT": "Sage Exchange",
-				"pt-PT": "Sage Exchange",
-				"es-ES": "Sage Exchange",
-				"en-GB": "Sage exchange",
-				"de-DE": "Sage Exchange",
-				"pl-PL": "Sage Exchange",
-				"ZH-CN": "Sage Exchange",
-				"ru-RU": "Sage Exchange",
-				"AR-SA": "Sage Exchange"
+				"fr-FR": "Intégration carte de crédit",
+				"en-US": "Credit card integration",
+				"it-IT": "Credit card integration",
+				"pt-PT": "Integração carta de crédito",
+				"es-ES": "Credit card integration",
+				"en-GB": "Credit card integration",
+				"de-DE": "Kreditkartenintegration",
+				"pl-PL": "Credit card integration",
+				"ZH-CN": "Credit card integration",
+				"ru-RU": "Credit card integration",
+				"AR-SA": "Credit card integration"
 			},
 			"condition": "always"
 		}, {
@@ -2352,7 +2416,23 @@
 				"pl-PL": "Zarządzanie numerami seryjnymi",
 				"ZH-CN": "序列数管理",
 				"ru-RU": "Управлениесерийныминомерами",
-				"AR-SA": "Serial number management"
+				"AR-SA": "إدارةأرقامالسلسلة"
+			},
+			"condition": "always"
+		}, {
+			"code": "SFD",
+			"title": {
+				"fr-FR": "Zones utilisateurs stocks",
+				"en-US": "User areas stock",
+				"it-IT": "User areas stock",
+				"pt-PT": "Zonas utilizadores stock",
+				"es-ES": "Zonas usuarios stocks",
+				"en-GB": "User areas stock",
+				"de-DE": "Benutzerbereich Lager",
+				"pl-PL": "User areas stock",
+				"ZH-CN": "存货用户字段",
+				"ru-RU": "Зоныскладапольз",
+				"AR-SA": "User areas stock"
 			},
 			"condition": "always"
 		}, {
@@ -2512,7 +2592,7 @@
 				"pl-PL": "Zarządzanie stężeniem",
 				"ZH-CN": "浓度管理",
 				"ru-RU": "Управлениепотенциальнымиклиентами",
-				"AR-SA": "Potency management"
+				"AR-SA": "(إدارةالعناوين(مادة"
 			},
 			"condition": "always"
 		}, {
@@ -2560,7 +2640,7 @@
 				"pl-PL": "Zarządzanieśledzeniem zapasów",
 				"ZH-CN": "存货追踪管理",
 				"ru-RU": "Управлениеотслеживаниемзапасов",
-				"AR-SA": "Stock traceability management"
+				"AR-SA": "إدارةتتبّعالمخزون"
 			},
 			"condition": "always"
 		}, {
@@ -2574,7 +2654,7 @@
 				"en-GB": "Transportation note activation",
 				"de-DE": "Aktivierung Transportschein",
 				"pl-PL": "Transportation note activation",
-				"ZH-CN": "Transportation note activation",
+				"ZH-CN": "运输提单激活",
 				"ru-RU": "Активациясправкиотранспорте",
 				"AR-SA": "Transportation note activation"
 			},
@@ -2898,7 +2978,7 @@
 				"pt-PT": "Legislação Alemã",
 				"es-ES": "Legislación Alemana",
 				"en-GB": "German legislation",
-				"de-DE": "Landesrecht Deutschland",
+				"de-DE": "Deutschland",
 				"pl-PL": "Legislacja niemiecka",
 				"ZH-CN": "德国准则",
 				"ru-RU": "ЗаконодательствоГермании",
@@ -3087,7 +3167,7 @@
 				"fr-FR": "Législation Autrichienne",
 				"en-US": "Austria",
 				"it-IT": "Legislazione Austria",
-				"pt-PT": "Legislação Austriaco",
+				"pt-PT": "Legislação Austriaca",
 				"es-ES": "Legislación Austriaca",
 				"en-GB": "Austrian legislation",
 				"de-DE": "LandesrechtÖsterreich",
@@ -3138,7 +3218,7 @@
 				"fr-FR": "Kit Package North America",
 				"en-US": "Kit Package North America",
 				"it-IT": "Kit Package North America",
-				"pt-PT": "Kit Package North America",
+				"pt-PT": "kit pack America Norte",
 				"es-ES": "Kit Package Norte América",
 				"en-GB": "Kit Package North America",
 				"de-DE": "Kit-Package Nordamerika",
@@ -3518,7 +3598,7 @@
 				"pt-PT": "",
 				"es-ES": "",
 				"en-GB": "",
-				"de-DE": "",
+				"de-DE": "Vor Anh Webservices",
 				"pl-PL": "",
 				"ZH-CN": "",
 				"ru-RU": "",
@@ -3534,7 +3614,7 @@
 				"pt-PT": "",
 				"es-ES": "",
 				"en-GB": "",
-				"de-DE": "",
+				"de-DE": "Faktor Verl WS",
 				"pl-PL": "",
 				"ZH-CN": "",
 				"ru-RU": "",
@@ -3550,7 +3630,7 @@
 				"pt-PT": "",
 				"es-ES": "",
 				"en-GB": "",
-				"de-DE": "",
+				"de-DE": "Periodizität Prüf WS",
 				"pl-PL": "",
 				"ZH-CN": "",
 				"ru-RU": "",
@@ -3566,7 +3646,7 @@
 				"pt-PT": "",
 				"es-ES": "",
 				"en-GB": "",
-				"de-DE": "",
+				"de-DE": "Volumen Webservices",
 				"pl-PL": "",
 				"ZH-CN": "",
 				"ru-RU": "",
@@ -3575,6 +3655,6 @@
 			"type": "integer"
 		}
 	],
-	"signature": "wsYZWg6P/R3J2MdJSkts1jsBpgK6gLlYsVnG313LS3BR9IRmT/wmJLX4+bs7kOSFbG5/KF+NNYmh5zdm41FtVc5tylpf5lVGOs2DB8ULc2BcJCiG3jbDUwZWU+JsJ8dsBSaUn59m6L6t5ZStZikB6q5pweDr3AUhPWvB0SD/97Un3EiIb6A+MPHztKBaaUanW1rWg+U3CVtuprvDFfNHWCZR2PeyWBka1jK3baMSG0PkUXpyT++ncSvDTfqkt371HWR83NyX8NdbvKzfYtz4dRZbR+8keWcvSsTmJ94KeddaH2c8XFqoBjfTcHhSNwj3M8jnKO/JmPk3qTZ1okUP3whNrrb4Ia/jr0Q8B3Nk/WbaDx86ai11/VOhewTm6Q9+xOMde5ZsWU4w6T6o7Shsv48U7EfBHGQRrZ7V1XLv54XlYiTvZxw1TdzMcOq2P0eQT72ksLPVKtnFwhGLrPVnc1sxCNzdYzPgrvnpgDLGdnySljzPlXwwz3X1/5mw3Bpf6i3l6lSzerVRvaBy6JaNp0t03VnOrSSXPNtGlssArRtSC96GQwWXWrLoH4wHhSoG9cKlJyg0/cTobO7tPkDgwsD5kFAQ3i80qvGpcVh/sZk7SGlSmdFF529Q7HbYYKh0+MXi7athqX/EmRaRWZHYBe0XE1/0W+SP1+sUUC+gCoI=",
+	"signature": "PzV2BQmL9GSOgqrRzukR+aGgUzcPFjyfCH4Tbqn6Df/I2cbm6ucRaV06E/if7F4tS3X6DT7htLCIeWm90OoRef86oeh7WewHnsL6VYqXiVz3BeQGgm17YR47gOcvqUHOAtv+803XH+PslmTxHun9hXTtSSHXQ3PShmljTxBcW2weRVQRJjzA5tp7wfX2skzpHGV7C33w9wTFFFtu2FyDdkM+jowrsahxiLWJOsuI6TOJjJWqZ79BCz+Hhp5PMI1+8Da3kxb4vne3SS3X/mStReG22kRn8Psgt2u89VibMWn9FeJhqDuIneDfnLlnbVURt3vZaINO0gAvdB0Vwg67H3VEe0NXib+v6TYLLTvApZ3eE5tyH9tZ4v2JhOKmGmNH0uwQ5wyrndDZsUUxrwYJ4On5S+LpUqRq1MnnsWWzI95LIua2+ULg/XJs0ipmfPONfSU0vMe4HJ7MchNgWPS67DQDIdKlIKMjtO//B6d8EwtHjmFwimWjq3gIKuIdI4fJsbLFd0S7Axruj4ffU7g9dQheb+nim1b96RqJjq+KqO5NK7Ti2DOJZLm1mNBp2BZP7821B/FG3BDXdnFZsXxRr34v5uZFOW0FwIwCLERobyoG2Vkh/3RokQN/1IcbT5BBpaavCcuPQT4uPfjZjyD5dPKIiMnriPWwJ/83Ywz8nu0=",
 	"signatureText": "SAGE SAS"
 }
