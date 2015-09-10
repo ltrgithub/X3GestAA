@@ -178,7 +178,7 @@ exports.config = {
                                 // absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
                                 pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
                                 // passphrase for the certificate file. This one works with the staging test certificate
-                                passphrase: "as985k3bZ8p2",
+                                passphrase: "$Sage_ERP_X3_Development",
                 },
                 mongoNotify: {
                                 host: 'sage_id_notifications',
@@ -190,7 +190,7 @@ exports.config = {
 							delay: 300,
 							logUrl: "https://staging-api.sagex3.com/healthLogs/production",
                             siteUrl: "https://staging-api.sagex3.com/sdata/sky/automation/production",
-                            site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
+                            site: "$skyadm64",
 						cloudwatch: true,
 	},
 					aws: {
