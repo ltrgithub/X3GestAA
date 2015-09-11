@@ -54,9 +54,9 @@ exports.config = {
 		dataset: "syracuse",
 		hostname: "10.198.2.4:27017,10.198.2.68",
 		port: 27017,
-		logpath: "E:\\Sage\\Syracuse\\syracuse\\logs",
-		certdir: "E:\\Sage\\Syracuse\\syracuse\\certs",
-        	cacheDir: "E:\\Sage\\Syracuse\\syracuse\\cache"
+		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
+		certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
+        	cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
 	},
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
