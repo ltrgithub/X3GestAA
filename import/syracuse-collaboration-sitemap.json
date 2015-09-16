@@ -1961,6 +1961,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_IMPORT_SESSIONS",
+      "title": "title_82036412-8c87-4714-8ada-73210716e986",
+      "description": "description_82036412-8c87-4714-8ada-73210716e986",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "importSessions",
+        "representation": "importSession"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_EXPORT_PROFILES",
       "title": "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
       "description": "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
@@ -2143,6 +2172,69 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_ABOUT",
+      "title": "title_8543b70c-2dff-4e77-99e2-d4df1f214f09",
+      "description": "description_8543b70c-2dff-4e77-99e2-d4df1f214f09",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "ALL",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "abouts",
+        "representation": "about"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_UPDATES",
+      "title": "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
+      "description": "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": {
+        "dataset": "syracuse"
+      },
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "updates",
+        "representation": "update"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874",
       "code": "S_TOOLS",
@@ -2169,6 +2261,10 @@
             },
             {
               "code": "S_MENU_PROFILE_IMPORT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_IMPORT_SESSIONS",
               "$variantType": "menuItem"
             }
           ]
@@ -2213,6 +2309,22 @@
             },
             {
               "code": "S_PLUGIN_CR",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "23bf396a-7d70-4b1f-92af-27b5e46bc4d3",
+          "title": "title_23bf396a-7d70-4b1f-92af-27b5e46bc4d3",
+          "items": [
+            {
+              "code": "S_ABOUT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_UPDATES",
               "$variantType": "menuItem"
             }
           ]
@@ -2516,35 +2628,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_IMPORT_SESSIONS",
-      "title": "title_82036412-8c87-4714-8ada-73210716e986",
-      "description": "description_82036412-8c87-4714-8ada-73210716e986",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "importSessions",
-        "representation": "importSession"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_LICENSEVIEW",
       "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
       "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
@@ -2662,69 +2745,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_ABOUT",
-      "title": "title_8543b70c-2dff-4e77-99e2-d4df1f214f09",
-      "description": "description_8543b70c-2dff-4e77-99e2-d4df1f214f09",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "ALL",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "abouts",
-        "representation": "about"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_UPDATES",
-      "title": "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
-      "description": "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": {
-        "dataset": "syracuse"
-      },
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "updates",
-        "representation": "update"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -2768,10 +2788,6 @@
             {
               "code": "S_SERVERLOGS",
               "$variantType": "menuItem"
-            },
-            {
-              "code": "S_IMPORT_SESSIONS",
-              "$variantType": "menuItem"
             }
           ]
         },
@@ -2795,22 +2811,6 @@
             },
             {
               "code": "S_CVG_REUSE",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "7bb7d051-a9dc-439f-8cf5-eade69e9ddf5",
-          "title": "title_7bb7d051-a9dc-439f-8cf5-eade69e9ddf5",
-          "items": [
-            {
-              "code": "S_ABOUT",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_UPDATES",
               "$variantType": "menuItem"
             }
           ]
@@ -4466,6 +4466,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_IMPORT_SESSIONS",
+      "title": "title_82036412-8c87-4714-8ada-73210716e986",
+      "description": "description_82036412-8c87-4714-8ada-73210716e986",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "importSessions",
+        "representation": "importSession"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_EXPORT_PROFILES",
       "title": "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
       "description": "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
@@ -4648,6 +4677,69 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_ABOUT",
+      "title": "title_8543b70c-2dff-4e77-99e2-d4df1f214f09",
+      "description": "description_8543b70c-2dff-4e77-99e2-d4df1f214f09",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "ALL",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "abouts",
+        "representation": "about"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_UPDATES",
+      "title": "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
+      "description": "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": {
+        "dataset": "syracuse"
+      },
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "updates",
+        "representation": "update"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874",
       "code": "S_TOOLS",
@@ -4674,6 +4766,10 @@
             },
             {
               "code": "S_MENU_PROFILE_IMPORT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_IMPORT_SESSIONS",
               "$variantType": "menuItem"
             }
           ]
@@ -4718,6 +4814,22 @@
             },
             {
               "code": "S_PLUGIN_CR",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "23bf396a-7d70-4b1f-92af-27b5e46bc4d3",
+          "title": "title_23bf396a-7d70-4b1f-92af-27b5e46bc4d3",
+          "items": [
+            {
+              "code": "S_ABOUT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_UPDATES",
               "$variantType": "menuItem"
             }
           ]
@@ -5021,35 +5133,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_IMPORT_SESSIONS",
-      "title": "title_82036412-8c87-4714-8ada-73210716e986",
-      "description": "description_82036412-8c87-4714-8ada-73210716e986",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "importSessions",
-        "representation": "importSession"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_LICENSEVIEW",
       "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
       "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
@@ -5167,69 +5250,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_ABOUT",
-      "title": "title_8543b70c-2dff-4e77-99e2-d4df1f214f09",
-      "description": "description_8543b70c-2dff-4e77-99e2-d4df1f214f09",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "ALL",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "abouts",
-        "representation": "about"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_UPDATES",
-      "title": "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
-      "description": "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": {
-        "dataset": "syracuse"
-      },
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "updates",
-        "representation": "update"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -5273,10 +5293,6 @@
             {
               "code": "S_SERVERLOGS",
               "$variantType": "menuItem"
-            },
-            {
-              "code": "S_IMPORT_SESSIONS",
-              "$variantType": "menuItem"
             }
           ]
         },
@@ -5300,22 +5316,6 @@
             },
             {
               "code": "S_CVG_REUSE",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "7bb7d051-a9dc-439f-8cf5-eade69e9ddf5",
-          "title": "title_7bb7d051-a9dc-439f-8cf5-eade69e9ddf5",
-          "items": [
-            {
-              "code": "S_ABOUT",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_UPDATES",
               "$variantType": "menuItem"
             }
           ]
@@ -5450,12 +5450,15 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3 للمستخدمين استيراد",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3 للمستخدمين استيراد",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "استيراد القائمة الملف الشخصي",
+      "title_82036412-8c87-4714-8ada-73210716e986": "دورات الاستيراد",
+      "description_82036412-8c87-4714-8ada-73210716e986": "دورات الاستيراد",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "الصادرات",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "الملامح التصدير",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "الملامح التصدير",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "التخصيصات التصدير",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "مجموعات الموارد",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "تثبيت",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "حول",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "إستثمار",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "إدارة محرك البحث",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "إدارة محرك البحث",
@@ -5468,14 +5471,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "آلية",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "سجل الأعمال",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم",
-      "title_82036412-8c87-4714-8ada-73210716e986": "دورات الاستيراد",
-      "description_82036412-8c87-4714-8ada-73210716e986": "دورات الاستيراد",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "إدارة الأقسام",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "دورات زبون الويب",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "إدارة الدورات",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "دورات الصفحة الكلاسبكية",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "جلسات الكلاسيكية التي يمكن إعادة استخدامها",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "حول"
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "جلسات الكلاسيكية التي يمكن إعادة استخدامها"
     },
     "de-de": {
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Verwaltung",
@@ -5557,12 +5557,15 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3-Benutzerimport",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3-Benutzerimport",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import Menüprofile",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Importsitzungen",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Importsitzungen",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exporte",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Exportprofile",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Verwaltung Exportprofile",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalisierung",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ressourcen-Gruppen",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installation Office-Add-Ins",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Über",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Verwendung",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
@@ -5575,14 +5578,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automaten",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Aufgabenjournal",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverlog",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Importsitzungen",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Importsitzungen",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Verwaltung Sessions",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic Client-Sitzung",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Wiederverwendbare Classic-Sitzungen",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Über",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
     },
     "en-gb": {
@@ -5688,6 +5688,8 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3 Users import",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3 Users import",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Menu profile import",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
@@ -5700,6 +5702,10 @@
       "description_967385fc-f979-4e89-836c-2410760246e5": "Connector for Scales and Gantt ILOG modules",
       "title_51626e59-ffe1-4755-8673-630aea54cc25": "Crystal Report Connector",
       "description_51626e59-ffe1-4755-8673-630aea54cc25": "Connector for Crystal Report developer mode",
+      "title_23bf396a-7d70-4b1f-92af-27b5e46bc4d3": "Update",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "About",
+      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Updates",
+      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"One-click\" updates",
       "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "Mobile applications",
       "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
       "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
@@ -5721,18 +5727,12 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Sessions management",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "License follow up",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web client sessions",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions Management",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
-      "title_7bb7d051-a9dc-439f-8cf5-eade69e9ddf5": "Updates",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "About",
-      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Updates",
-      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"One-click\" updates",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard"
     },
     "es-es": {
@@ -5813,12 +5813,15 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Importación de usuarios X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Importación de usuarios X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Importación menú perfiles",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Sesiones de importación",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Sesiones de importación",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfiles de exportación",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfiles de exportación",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestión de personalizaciones",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Paquete de recursos",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Instalación",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalar addins para Office",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Acerca de",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Explotación",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Utilidades de búsqueda",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestión de utilidades de búsqueda",
@@ -5831,14 +5834,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Diario de tareas",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "trazas servidor",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Sesiones de importación",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Sesiones de importación",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestión de sesiones",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sesiones clientes Web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestión de sesiones",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Páginas sesión clásica",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Sesión clasica reutilizable",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Acerca de",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración"
     },
     "fr-fr": {
@@ -5914,16 +5914,25 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages personnalisées",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestion des pages",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utilitaires",
+      "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Imports",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import de données",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Outil d'import",
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import des utilisateurs X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import des utilisateurs X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import menu profil",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Sessions d'import",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Sessions d'import",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profils d'export",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profiles d'export",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Export des personnalisations",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Groupes de ressources",
+      "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Installation",
       "title_967385fc-f979-4e89-836c-2410760246e5": "Connecteur Ilog",
+      "title_23bf396a-7d70-4b1f-92af-27b5e46bc4d3": "Update",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "À propos",
+      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour",
+      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour \"en un clic\"",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploitation",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
@@ -5936,16 +5945,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Journal des tâches",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Traces serveur",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Sessions d'import",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Sessions d'import",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestion des sessions",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions client web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessions classic page",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Sessions classic réutilisable",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "À propos",
-      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour",
-      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour \"en un clic\"",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration"
     },
     "it-it": {
@@ -6012,23 +6016,23 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import utenti X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import utenti X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Menù profilo import",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestione personalizzazioni",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Gruppo risorse",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installazione addins Office",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Versioni informazioni",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "x3 sessione configurazione",
       "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestione sessioni client web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestione sessioni",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessione client",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Lista client riutilizzati",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Versioni informazioni",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator"
     },
     "pl-pl": {
@@ -6100,23 +6104,23 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import użytkowników X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import użytkowników X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import profili menu",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
       "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Zarządzanie ustawieniami spersonalizowanymi",
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Pakiety zasobów",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalacja dodatków Office",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Informacja o wersji",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Konfiguracja sesji X3",
       "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Zarządzanie sesjami Web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Zarządzanie sesjami",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sesje w trybie zgodności",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Pula połączeń oczekujących",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Informacja o wersji",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna"
     },
     "pt-pt": {
@@ -6198,6 +6202,8 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Importação utilizadores X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Importação utilizadores X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Perfil do menu importação",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Sessões de importação",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Sessões de importação",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exportações",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfis de exportação",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfis de exportação",
@@ -6205,6 +6211,7 @@
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Packs de recursos",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Instalação",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalação addins Office",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Sobre...",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploração",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
@@ -6217,14 +6224,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Sessões de importação",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Sessões de importação",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestão de sessões",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessões cliente clássico",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Lista clientes reutilizados",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Sobre...",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração"
     },
     "ru-ru": {
@@ -6310,6 +6314,8 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Импорт данных пользователей X3",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Импорт данных пользователей X3",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Импорт профиля меню",
+      "title_82036412-8c87-4714-8ada-73210716e986": "Сессии импорта",
+      "description_82036412-8c87-4714-8ada-73210716e986": "Сессии импорта",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Экспорт",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
@@ -6317,6 +6323,7 @@
       "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ресурсы",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Установка",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Установка расширений для MS Office",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Информация о версии",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Использование",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
@@ -6329,14 +6336,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
-      "title_82036412-8c87-4714-8ada-73210716e986": "Сессии импорта",
-      "description_82036412-8c87-4714-8ada-73210716e986": "Сессии импорта",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Управление сессиями",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Сессии Web клиента",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Управление сессиями Web клиента",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Сессии для стандартного клиента",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Вторичные сессии клиента",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Информация о версии",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора"
     },
     "zh-cn": {
@@ -6437,6 +6441,8 @@
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3用户导入",
       "description_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "X3用户导入",
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "菜单配置导入",
+      "title_82036412-8c87-4714-8ada-73210716e986": "导入会话",
+      "description_82036412-8c87-4714-8ada-73210716e986": "导入会话",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "导出",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
       "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
@@ -6449,6 +6455,9 @@
       "description_967385fc-f979-4e89-836c-2410760246e5": "磅秤连接器和甘特Ilog模块",
       "title_51626e59-ffe1-4755-8673-630aea54cc25": "水晶报表连接器",
       "description_51626e59-ffe1-4755-8673-630aea54cc25": "水晶报表连接器开发员模式",
+      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "关于",
+      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "更新",
+      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "“一键”更新",
       "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "移动应用",
       "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
       "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
@@ -6470,17 +6479,12 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "工作日志",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "服务器追踪日志",
-      "title_82036412-8c87-4714-8ada-73210716e986": "导入会话",
-      "description_82036412-8c87-4714-8ada-73210716e986": "导入会话",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "会话管理",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "许可证跟踪",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web客户端会话管理",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "会话管理",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "经典版客户端会话",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "可重复使用的经典版会话",
-      "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "关于",
-      "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "更新",
-      "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "“一键”更新",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
     }
   }
