@@ -534,6 +534,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_NOTIF_SERVER",
+      "title": "title_292addf8-1101-41a2-803f-24c3a3615da3",
+      "description": "description_292addf8-1101-41a2-803f-24c3a3615da3",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationServers",
+        "representation": "notificationServer"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_PROXY",
       "title": "title_43b0a458-36bd-4395-b375-c483de7b4689",
       "description": "description_43b0a458-36bd-4395-b375-c483de7b4689",
@@ -615,122 +644,6 @@
       "module": {
         "code": "S_MOD_ADMIN"
       },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_SERVER",
-      "title": "title_292addf8-1101-41a2-803f-24c3a3615da3",
-      "description": "description_292addf8-1101-41a2-803f-24c3a3615da3",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "notificationServers",
-        "representation": "notificationServer"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_EVENT",
-      "title": "title_7fc976c6-b66d-4257-a314-f337746232a5",
-      "description": "description_7fc976c6-b66d-4257-a314-f337746232a5",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "notificationEvents",
-        "representation": "notificationEvent"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_THEME",
-      "title": "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
-      "description": "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "notificationThemes",
-        "representation": "notificationTheme"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_TEMPLATE",
-      "title": "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
-      "description": "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mailTemplates",
-        "representation": "mailTemplate"
-      },
-      "module": null,
       "categories": [],
       "parameters": []
     },
@@ -1252,6 +1165,10 @@
               "$variantType": "menuItem"
             },
             {
+              "code": "S_NOTIF_SERVER",
+              "$variantType": "menuItem"
+            },
+            {
               "code": "S_PROXY",
               "$variantType": "menuItem"
             },
@@ -1267,30 +1184,6 @@
                 },
                 {
                   "code": "S_OAUTH2_SERVERS",
-                  "$variantType": "menuItem"
-                }
-              ]
-            },
-            {
-              "$type": "menuSubblock",
-              "$variantType": "menuBlock",
-              "code": "627a9da2-ed4b-42c0-bf72-2b6947174061",
-              "title": "title_627a9da2-ed4b-42c0-bf72-2b6947174061",
-              "items": [
-                {
-                  "code": "S_NOTIF_SERVER",
-                  "$variantType": "menuItem"
-                },
-                {
-                  "code": "S_NOTIF_EVENT",
-                  "$variantType": "menuItem"
-                },
-                {
-                  "code": "S_NOTIF_THEME",
-                  "$variantType": "menuItem"
-                },
-                {
-                  "code": "S_NOTIF_TEMPLATE",
                   "$variantType": "menuItem"
                 }
               ]
@@ -1443,35 +1336,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_VOLUMES",
-      "title": "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
-      "description": "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "storageVolumes",
-        "representation": "storageVolume"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_DOCUMENTS",
       "title": "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272",
       "description": "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272",
@@ -1491,6 +1355,35 @@
         "$type": "representationProxy",
         "entity": "documents",
         "representation": "document"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_WORD_TEMPLATES",
+      "title": "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
+      "description": "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "msoWordTemplateDocuments",
+        "representation": "msoWordTemplateDocument"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -1559,9 +1452,96 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_WORD_TEMPLATES",
-      "title": "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
-      "description": "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
+      "code": "S_NOTIF_EVENT",
+      "title": "title_7fc976c6-b66d-4257-a314-f337746232a5",
+      "description": "description_7fc976c6-b66d-4257-a314-f337746232a5",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationEvents",
+        "representation": "notificationEvent"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_NOTIF_TEMPLATE",
+      "title": "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "description": "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mailTemplates",
+        "representation": "mailTemplate"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_NOTIF_THEME",
+      "title": "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "description": "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationThemes",
+        "representation": "notificationTheme"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_VOLUMES",
+      "title": "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
+      "description": "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
       "linkType": "$representation",
       "icon": "",
       "applicationMenu": false,
@@ -1576,8 +1556,8 @@
       "endpoint": null,
       "representationRef": {
         "$type": "representationProxy",
-        "entity": "msoWordTemplateDocuments",
-        "representation": "msoWordTemplateDocument"
+        "entity": "storageVolumes",
+        "representation": "storageVolume"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -1601,23 +1581,51 @@
           "$variantType": "menuItem"
         },
         {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "430a7eb8-5223-4ceb-b020-2ed8d0b0d088",
+          "title": "title_430a7eb8-5223-4ceb-b020-2ed8d0b0d088",
+          "items": [
+            {
+              "code": "S_DOCUMENTS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_WORD_TEMPLATES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_DOCUMENT_TAGS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_TAG_CATEGORIES",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "3a2251d7-3b95-483f-ae10-44d50c2e2ce1",
+          "title": "title_3a2251d7-3b95-483f-ae10-44d50c2e2ce1",
+          "items": [
+            {
+              "code": "S_NOTIF_EVENT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_NOTIF_TEMPLATE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_NOTIF_THEME",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
           "code": "S_VOLUMES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_DOCUMENTS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_DOCUMENT_TAGS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_TAG_CATEGORIES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_WORD_TEMPLATES",
           "$variantType": "menuItem"
         }
       ]
@@ -1873,6 +1881,94 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_EXPORT_PROFILES",
+      "title": "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
+      "description": "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "exportProfiles",
+        "representation": "exportProfile"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_PERS_MNGT",
+      "title": "title_4315b554-2ed2-432a-870b-fa490f94eab7",
+      "description": "description_4315b554-2ed2-432a-870b-fa490f94eab7",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "personalizationManagements",
+        "representation": "personalizationManagement"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_RESPACK",
+      "title": "title_78e8bba0-36c3-4499-a758-a2a051207de6",
+      "description": "description_78e8bba0-36c3-4499-a758-a2a051207de6",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "resourcePacks",
+        "representation": "resourcePack"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_IMPORT_TOOL",
       "title": "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
       "description": "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
@@ -1980,94 +2076,6 @@
         "$type": "representationProxy",
         "entity": "importSessions",
         "representation": "importSession"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_EXPORT_PROFILES",
-      "title": "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
-      "description": "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "exportProfiles",
-        "representation": "exportProfile"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_PERS_MNGT",
-      "title": "title_4315b554-2ed2-432a-870b-fa490f94eab7",
-      "description": "description_4315b554-2ed2-432a-870b-fa490f94eab7",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "personalizationManagements",
-        "representation": "personalizationManagement"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_RESPACK",
-      "title": "title_78e8bba0-36c3-4499-a758-a2a051207de6",
-      "description": "description_78e8bba0-36c3-4499-a758-a2a051207de6",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "resourcePacks",
-        "representation": "resourcePack"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -2248,6 +2256,26 @@
         {
           "$type": "menuSubblock",
           "$variantType": "menuBlock",
+          "code": "85f360ee-e187-4df3-af24-2d9b677d502c",
+          "title": "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5",
+          "items": [
+            {
+              "code": "S_EXPORT_PROFILES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_PERS_MNGT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_RESPACK",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
           "code": "793a2509-a936-492f-97a6-2662d4ed5eef",
           "title": "title_4e5dcab4-8cb3-4126-9939-02c7fff69614",
           "items": [
@@ -2265,26 +2293,6 @@
             },
             {
               "code": "S_IMPORT_SESSIONS",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "85f360ee-e187-4df3-af24-2d9b677d502c",
-          "title": "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5",
-          "items": [
-            {
-              "code": "S_EXPORT_PROFILES",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_PERS_MNGT",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_RESPACK",
               "$variantType": "menuItem"
             }
           ]
@@ -2508,6 +2516,125 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_LICENSEVIEW",
+      "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "all",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "licenseViews",
+        "representation": "licenseView"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_SESSIONS",
+      "title": "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
+      "description": "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "sessionInfos",
+        "representation": "sessionInfo"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_CVG_SESSION",
+      "title": "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
+      "description": "description_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "cvgSessions",
+        "representation": "cvgSession"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_CVG_REUSE",
+      "title": "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
+      "description": "description_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "cvgReuseClients",
+        "representation": "cvgReuseClient"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_TRACE_RECORD",
       "title": "title_5251fcbb-7be2-420c-8026-191536612e20",
       "description": "description_5251fcbb-7be2-420c-8026-191536612e20",
@@ -2626,125 +2753,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_LICENSEVIEW",
-      "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
-      "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "all",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "licenseViews",
-        "representation": "licenseView"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_SESSIONS",
-      "title": "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
-      "description": "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "sessionInfos",
-        "representation": "sessionInfo"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_CVG_SESSION",
-      "title": "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
-      "description": "description_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "cvgSessions",
-        "representation": "cvgSession"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_CVG_REUSE",
-      "title": "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
-      "description": "description_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "cvgReuseClients",
-        "representation": "cvgReuseClient"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -2758,6 +2766,30 @@
         {
           "code": "S_SEARCH_ADMIN",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "d748b755-463b-494a-ae5d-b41497ea45e8",
+          "title": "title_43d874f4-65e3-46d8-af22-61491a4a99f0",
+          "items": [
+            {
+              "code": "S_LICENSEVIEW",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_SESSIONS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_CVG_SESSION",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_CVG_REUSE",
+              "$variantType": "menuItem"
+            }
+          ]
         },
         {
           "$type": "menuSubblock",
@@ -2787,30 +2819,6 @@
             },
             {
               "code": "S_SERVERLOGS",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "d748b755-463b-494a-ae5d-b41497ea45e8",
-          "title": "title_43d874f4-65e3-46d8-af22-61491a4a99f0",
-          "items": [
-            {
-              "code": "S_LICENSEVIEW",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_SESSIONS",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_CVG_SESSION",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_CVG_REUSE",
               "$variantType": "menuItem"
             }
           ]
@@ -3039,6 +3047,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_NOTIF_SERVER",
+      "title": "title_292addf8-1101-41a2-803f-24c3a3615da3",
+      "description": "description_292addf8-1101-41a2-803f-24c3a3615da3",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationServers",
+        "representation": "notificationServer"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_PROXY",
       "title": "title_43b0a458-36bd-4395-b375-c483de7b4689",
       "description": "description_43b0a458-36bd-4395-b375-c483de7b4689",
@@ -3120,122 +3157,6 @@
       "module": {
         "code": "S_MOD_ADMIN"
       },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_SERVER",
-      "title": "title_292addf8-1101-41a2-803f-24c3a3615da3",
-      "description": "description_292addf8-1101-41a2-803f-24c3a3615da3",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "notificationServers",
-        "representation": "notificationServer"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_EVENT",
-      "title": "title_7fc976c6-b66d-4257-a314-f337746232a5",
-      "description": "description_7fc976c6-b66d-4257-a314-f337746232a5",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "notificationEvents",
-        "representation": "notificationEvent"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_THEME",
-      "title": "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
-      "description": "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "notificationThemes",
-        "representation": "notificationTheme"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_NOTIF_TEMPLATE",
-      "title": "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
-      "description": "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mailTemplates",
-        "representation": "mailTemplate"
-      },
-      "module": null,
       "categories": [],
       "parameters": []
     },
@@ -3757,6 +3678,10 @@
               "$variantType": "menuItem"
             },
             {
+              "code": "S_NOTIF_SERVER",
+              "$variantType": "menuItem"
+            },
+            {
               "code": "S_PROXY",
               "$variantType": "menuItem"
             },
@@ -3772,30 +3697,6 @@
                 },
                 {
                   "code": "S_OAUTH2_SERVERS",
-                  "$variantType": "menuItem"
-                }
-              ]
-            },
-            {
-              "$type": "menuSubblock",
-              "$variantType": "menuBlock",
-              "code": "627a9da2-ed4b-42c0-bf72-2b6947174061",
-              "title": "title_627a9da2-ed4b-42c0-bf72-2b6947174061",
-              "items": [
-                {
-                  "code": "S_NOTIF_SERVER",
-                  "$variantType": "menuItem"
-                },
-                {
-                  "code": "S_NOTIF_EVENT",
-                  "$variantType": "menuItem"
-                },
-                {
-                  "code": "S_NOTIF_THEME",
-                  "$variantType": "menuItem"
-                },
-                {
-                  "code": "S_NOTIF_TEMPLATE",
                   "$variantType": "menuItem"
                 }
               ]
@@ -3948,35 +3849,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_VOLUMES",
-      "title": "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
-      "description": "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "storageVolumes",
-        "representation": "storageVolume"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_DOCUMENTS",
       "title": "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272",
       "description": "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272",
@@ -3996,6 +3868,35 @@
         "$type": "representationProxy",
         "entity": "documents",
         "representation": "document"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_WORD_TEMPLATES",
+      "title": "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
+      "description": "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "msoWordTemplateDocuments",
+        "representation": "msoWordTemplateDocument"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -4064,9 +3965,96 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_WORD_TEMPLATES",
-      "title": "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
-      "description": "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3",
+      "code": "S_NOTIF_EVENT",
+      "title": "title_7fc976c6-b66d-4257-a314-f337746232a5",
+      "description": "description_7fc976c6-b66d-4257-a314-f337746232a5",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationEvents",
+        "representation": "notificationEvent"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_NOTIF_TEMPLATE",
+      "title": "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "description": "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mailTemplates",
+        "representation": "mailTemplate"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_NOTIF_THEME",
+      "title": "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "description": "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "notificationThemes",
+        "representation": "notificationTheme"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_VOLUMES",
+      "title": "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
+      "description": "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6",
       "linkType": "$representation",
       "icon": "",
       "applicationMenu": false,
@@ -4081,8 +4069,8 @@
       "endpoint": null,
       "representationRef": {
         "$type": "representationProxy",
-        "entity": "msoWordTemplateDocuments",
-        "representation": "msoWordTemplateDocument"
+        "entity": "storageVolumes",
+        "representation": "storageVolume"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -4106,23 +4094,51 @@
           "$variantType": "menuItem"
         },
         {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "430a7eb8-5223-4ceb-b020-2ed8d0b0d088",
+          "title": "title_430a7eb8-5223-4ceb-b020-2ed8d0b0d088",
+          "items": [
+            {
+              "code": "S_DOCUMENTS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_WORD_TEMPLATES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_DOCUMENT_TAGS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_TAG_CATEGORIES",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "3a2251d7-3b95-483f-ae10-44d50c2e2ce1",
+          "title": "title_3a2251d7-3b95-483f-ae10-44d50c2e2ce1",
+          "items": [
+            {
+              "code": "S_NOTIF_EVENT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_NOTIF_TEMPLATE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_NOTIF_THEME",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
           "code": "S_VOLUMES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_DOCUMENTS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_DOCUMENT_TAGS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_TAG_CATEGORIES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_WORD_TEMPLATES",
           "$variantType": "menuItem"
         }
       ]
@@ -4378,6 +4394,94 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_EXPORT_PROFILES",
+      "title": "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
+      "description": "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "exportProfiles",
+        "representation": "exportProfile"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_PERS_MNGT",
+      "title": "title_4315b554-2ed2-432a-870b-fa490f94eab7",
+      "description": "description_4315b554-2ed2-432a-870b-fa490f94eab7",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "personalizationManagements",
+        "representation": "personalizationManagement"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_RESPACK",
+      "title": "title_78e8bba0-36c3-4499-a758-a2a051207de6",
+      "description": "description_78e8bba0-36c3-4499-a758-a2a051207de6",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "resourcePacks",
+        "representation": "resourcePack"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_IMPORT_TOOL",
       "title": "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
       "description": "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4",
@@ -4485,94 +4589,6 @@
         "$type": "representationProxy",
         "entity": "importSessions",
         "representation": "importSession"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_EXPORT_PROFILES",
-      "title": "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
-      "description": "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "exportProfiles",
-        "representation": "exportProfile"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_PERS_MNGT",
-      "title": "title_4315b554-2ed2-432a-870b-fa490f94eab7",
-      "description": "description_4315b554-2ed2-432a-870b-fa490f94eab7",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "personalizationManagements",
-        "representation": "personalizationManagement"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_RESPACK",
-      "title": "title_78e8bba0-36c3-4499-a758-a2a051207de6",
-      "description": "description_78e8bba0-36c3-4499-a758-a2a051207de6",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "resourcePacks",
-        "representation": "resourcePack"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -4753,6 +4769,26 @@
         {
           "$type": "menuSubblock",
           "$variantType": "menuBlock",
+          "code": "85f360ee-e187-4df3-af24-2d9b677d502c",
+          "title": "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5",
+          "items": [
+            {
+              "code": "S_EXPORT_PROFILES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_PERS_MNGT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_RESPACK",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
           "code": "793a2509-a936-492f-97a6-2662d4ed5eef",
           "title": "title_4e5dcab4-8cb3-4126-9939-02c7fff69614",
           "items": [
@@ -4770,26 +4806,6 @@
             },
             {
               "code": "S_IMPORT_SESSIONS",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "85f360ee-e187-4df3-af24-2d9b677d502c",
-          "title": "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5",
-          "items": [
-            {
-              "code": "S_EXPORT_PROFILES",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_PERS_MNGT",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_RESPACK",
               "$variantType": "menuItem"
             }
           ]
@@ -5013,6 +5029,125 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_LICENSEVIEW",
+      "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "all",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "licenseViews",
+        "representation": "licenseView"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_SESSIONS",
+      "title": "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
+      "description": "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "sessionInfos",
+        "representation": "sessionInfo"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_CVG_SESSION",
+      "title": "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
+      "description": "description_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "cvgSessions",
+        "representation": "cvgSession"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_CVG_REUSE",
+      "title": "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
+      "description": "description_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "cvgReuseClients",
+        "representation": "cvgReuseClient"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_TRACE_RECORD",
       "title": "title_5251fcbb-7be2-420c-8026-191536612e20",
       "description": "description_5251fcbb-7be2-420c-8026-191536612e20",
@@ -5131,125 +5266,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_LICENSEVIEW",
-      "title": "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
-      "description": "description_1f9fed02-3f9e-4be9-944e-0c66c5b985fa",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "all",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "licenseViews",
-        "representation": "licenseView"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_SESSIONS",
-      "title": "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
-      "description": "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "sessionInfos",
-        "representation": "sessionInfo"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_CVG_SESSION",
-      "title": "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
-      "description": "description_b4f0ba74-1006-4f98-9c05-a25bfad25acc",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "cvgSessions",
-        "representation": "cvgSession"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_CVG_REUSE",
-      "title": "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
-      "description": "description_389eb4c7-35b0-403a-8303-f8bd0588c8a1",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "cvgReuseClients",
-        "representation": "cvgReuseClient"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -5263,6 +5279,30 @@
         {
           "code": "S_SEARCH_ADMIN",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "d748b755-463b-494a-ae5d-b41497ea45e8",
+          "title": "title_43d874f4-65e3-46d8-af22-61491a4a99f0",
+          "items": [
+            {
+              "code": "S_LICENSEVIEW",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_SESSIONS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_CVG_SESSION",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_CVG_REUSE",
+              "$variantType": "menuItem"
+            }
+          ]
         },
         {
           "$type": "menuSubblock",
@@ -5292,30 +5332,6 @@
             },
             {
               "code": "S_SERVERLOGS",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "d748b755-463b-494a-ae5d-b41497ea45e8",
-          "title": "title_43d874f4-65e3-46d8-af22-61491a4a99f0",
-          "items": [
-            {
-              "code": "S_LICENSEVIEW",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_SESSIONS",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_CVG_SESSION",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_CVG_REUSE",
               "$variantType": "menuItem"
             }
           ]
@@ -5422,16 +5438,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "مساحة التعاون",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "فرق",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "إدارة الموظفين",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "أحجام المخزون",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "أحجام المخزون",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "وثائق",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "إدارة الوثائق",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word نماذج الوثيقة",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word نماذج الوثيقة",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "تسميات الوثيقة",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "إدارة التسميات",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "فئات تسميات الوثيقة",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "فئات تسميات الوثيقة",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word نماذج الوثيقة",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word نماذج الوثيقة",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "أحجام المخزون",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "أحجام المخزون",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "تشخيص",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "الصفحات الإستكشاف",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "نماذج القائمة",
@@ -5444,6 +5460,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "الصفحات المخصصة",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "إدارة الصفحات",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "خدمات",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "الصادرات",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "الملامح التصدير",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "الملامح التصدير",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "التخصيصات التصدير",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "مجموعات الموارد",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "الواردات",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "استيراد البيانات",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "أداة استيراد",
@@ -5452,16 +5473,16 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "استيراد القائمة الملف الشخصي",
       "title_82036412-8c87-4714-8ada-73210716e986": "دورات الاستيراد",
       "description_82036412-8c87-4714-8ada-73210716e986": "دورات الاستيراد",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "الصادرات",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "الملامح التصدير",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "الملامح التصدير",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "التخصيصات التصدير",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "مجموعات الموارد",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "تثبيت",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "حول",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "إستثمار",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "إدارة محرك البحث",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "إدارة محرك البحث",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "إدارة الأقسام",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "دورات زبون الويب",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "إدارة الدورات",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "دورات الصفحة الكلاسبكية",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "جلسات الكلاسيكية التي يمكن إعادة استخدامها",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "مسارات",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "مسارات خادم الويب",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "مسارات خادم سيراكوز",
@@ -5470,12 +5491,7 @@
       "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "مرتّب",
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "آلية",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "سجل الأعمال",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "إدارة الأقسام",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "دورات زبون الويب",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "إدارة الدورات",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "دورات الصفحة الكلاسبكية",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "جلسات الكلاسيكية التي يمكن إعادة استخدامها"
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم"
     },
     "de-de": {
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Verwaltung",
@@ -5529,16 +5545,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Kollaboration",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Gruppen",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Verwaltung Teams",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumen",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Speichervolumen",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Dokumente",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Verwaltung Dokumente",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word-Vorlagen",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word-Vorlagen",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Dokumenten-Tags",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Verwaltung Dokumenten-Tags",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Tag-Kategorien",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Verwaltung von Tag-Kategorien",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word-Vorlagen",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word-Vorlagen",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumen",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Speichervolumen",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personalisierung",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigationsseiten",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menümodule",
@@ -5551,6 +5567,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Seiten",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Verwaltung Seiten",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Werkzeuge",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exporte",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Exportprofile",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Verwaltung Exportprofile",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalisierung",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ressourcen-Gruppen",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Importe",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import-Werkzeug",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import-Werkzeug",
@@ -5559,16 +5580,16 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import Menüprofile",
       "title_82036412-8c87-4714-8ada-73210716e986": "Importsitzungen",
       "description_82036412-8c87-4714-8ada-73210716e986": "Importsitzungen",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exporte",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Exportprofile",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Verwaltung Exportprofile",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalisierung",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ressourcen-Gruppen",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installation Office-Add-Ins",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Über",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Verwendung",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Verwaltung Sessions",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic Client-Sitzung",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Wiederverwendbare Classic-Sitzungen",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "Logdateien",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Webserver-Logs",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse-Serverlogs",
@@ -5578,11 +5599,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automaten",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Aufgabenjournal",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverlog",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Verwaltung Sessions",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic Client-Sitzung",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Wiederverwendbare Classic-Sitzungen",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
     },
     "en-gb": {
@@ -5606,6 +5622,8 @@
       "description_27ef47f6-ee4b-418d-8a2f-b32597585e04": "Global settings management interface",
       "title_13d182ef-dc57-4737-b563-4142632925ca": "Locales",
       "description_13d182ef-dc57-4737-b563-4142632925ca": "Locales management interface",
+      "title_292addf8-1101-41a2-803f-24c3a3615da3": "Notification servers",
+      "description_292addf8-1101-41a2-803f-24c3a3615da3": "Notification servers",
       "title_43b0a458-36bd-4395-b375-c483de7b4689": "Proxies configuration",
       "description_43b0a458-36bd-4395-b375-c483de7b4689": "Proxies configuration interface",
       "title_e532e714-443e-4530-9f20-b75e483143de": "Authentication",
@@ -5613,15 +5631,6 @@
       "description_d6affc29-40d1-41bd-b209-f4f2160401ae": "LDAP Servers management interface",
       "title_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2 Servers",
       "description_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2 Servers management interface",
-      "title_627a9da2-ed4b-42c0-bf72-2b6947174061": "Notifications",
-      "title_292addf8-1101-41a2-803f-24c3a3615da3": "Notification servers",
-      "description_292addf8-1101-41a2-803f-24c3a3615da3": "Notification servers",
-      "title_7fc976c6-b66d-4257-a314-f337746232a5": "Notification events",
-      "description_7fc976c6-b66d-4257-a314-f337746232a5": "Notification events",
-      "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "Notification themes",
-      "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "Notification themes",
-      "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "Notification templates",
-      "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "Notification templates",
       "title_e5d028e2-2a7d-4475-ae98-6b925b48f125": "Endpoints",
       "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
       "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications management interface",
@@ -5660,16 +5669,24 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Collaboration",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Teams",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Teams management",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Storage volumes",
+      "title_430a7eb8-5223-4ceb-b020-2ed8d0b0d088": "Documents",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Documents",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Document management",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word templates",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word templates",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Document tags",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Document tags",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Tags categories",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Tags categories",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word templates",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word templates",
+      "title_3a2251d7-3b95-483f-ae10-44d50c2e2ce1": "Notification",
+      "title_7fc976c6-b66d-4257-a314-f337746232a5": "Notification events",
+      "description_7fc976c6-b66d-4257-a314-f337746232a5": "Notification events",
+      "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "Notification templates",
+      "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "Notification templates",
+      "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "Notification themes",
+      "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "Notification themes",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Storage volumes",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Authoring",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigation pages",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menu Modules",
@@ -5682,6 +5699,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Customized pages",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages management interface",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utilities",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalizations management",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Resources packs",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Imports",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import Tool",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import tool",
@@ -5690,11 +5712,6 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Menu profile import",
       "title_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
       "description_82036412-8c87-4714-8ada-73210716e986": "Import sessions",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Personalizations management",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Resources packs",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Installation",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Install addins for Office",
       "title_5ee934c2-c6d2-4280-b7a5-eb2ff16e42d5": "Install addin for Outlook",
@@ -5718,6 +5735,12 @@
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Usage",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Sessions management",
+      "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "License follow up",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web client sessions",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions Management",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "Logs",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Host traces",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse server traces",
@@ -5727,12 +5750,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Sessions management",
-      "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "License follow up",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web client sessions",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions Management",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic client sessions",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Clients reused list",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard"
     },
     "es-es": {
@@ -5786,16 +5803,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Espacio Colaboración",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Equipos",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Gestión de equipos",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volúmenes",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volúmenes de almacenamiento",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Documentos",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Gestión de documentos",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modelos de documentos Word",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Gestión de modelos de Word",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Etiquetas",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Gestión de etiquetas",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Categoría de etiquetas",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Gestión de categoría de documentos",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modelos de documentos Word",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Gestión de modelos de Word",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volúmenes",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volúmenes de almacenamiento",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personalización",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Páginas de navegación",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Módulos de menús",
@@ -5808,6 +5825,10 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Páginas personalizadas",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestión de páginas",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Herramientas",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfiles de exportación",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfiles de exportación",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestión de personalizaciones",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Paquete de recursos",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Importación de datos",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Herramientas de importación",
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Importación de usuarios X3",
@@ -5815,16 +5836,17 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Importación menú perfiles",
       "title_82036412-8c87-4714-8ada-73210716e986": "Sesiones de importación",
       "description_82036412-8c87-4714-8ada-73210716e986": "Sesiones de importación",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfiles de exportación",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfiles de exportación",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestión de personalizaciones",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Paquete de recursos",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Instalación",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalar addins para Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Acerca de",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Explotación",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Utilidades de búsqueda",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestión de utilidades de búsqueda",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestión de sesiones",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sesiones clientes Web",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestión de sesiones",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Páginas sesión clásica",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Sesión clasica reutilizable",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "Trazas",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Trazas servidor Web",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Trazas servidor Syracuse",
@@ -5834,11 +5856,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Diario de tareas",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "trazas servidor",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestión de sesiones",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sesiones clientes Web",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestión de sesiones",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Páginas sesión clásica",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Sesión clasica reutilizable",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración"
     },
     "fr-fr": {
@@ -5863,7 +5880,6 @@
       "description_d6affc29-40d1-41bd-b209-f4f2160401ae": "Gestion des serveurs LDAP",
       "title_4d9e892a-82cf-4759-961c-4ae6da834577": "Serveurs OAuth2",
       "description_4d9e892a-82cf-4759-961c-4ae6da834577": "Gestion des serveurs OAuth2",
-      "title_627a9da2-ed4b-42c0-bf72-2b6947174061": "Notifications",
       "title_e5d028e2-2a7d-4475-ae98-6b925b48f125": "Sources de données",
       "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Gestion des applications",
       "title_8a761057-1f59-4f43-9434-1af6dd6d79ae": "Points d'accès",
@@ -5893,15 +5909,15 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Espace collaboratif",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Equipes",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Gestion de collaborateurs",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de stockage",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de stockage",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Gestion de documents",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modèles de document Word",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modèles de document Word",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Etiquettes de document",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Gestion des etiquettes",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Catégories d'étiquettes de document",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Categories d'étiquettes de document",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modèles de document Word",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modèles de document Word",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de stockage",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de stockage",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personnalisation",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Pages de navigation",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Modules de menu",
@@ -5914,6 +5930,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages personnalisées",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestion des pages",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utilitaires",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profils d'export",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profiles d'export",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Export des personnalisations",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Groupes de ressources",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Imports",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import de données",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Outil d'import",
@@ -5922,11 +5943,6 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import menu profil",
       "title_82036412-8c87-4714-8ada-73210716e986": "Sessions d'import",
       "description_82036412-8c87-4714-8ada-73210716e986": "Sessions d'import",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profils d'export",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profiles d'export",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Export des personnalisations",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Groupes de ressources",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Installation",
       "title_967385fc-f979-4e89-836c-2410760246e5": "Connecteur Ilog",
       "title_23bf396a-7d70-4b1f-92af-27b5e46bc4d3": "Update",
@@ -5936,6 +5952,11 @@
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploitation",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestion des sessions",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions client web",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessions classic page",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Sessions classic réutilisable",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "Traces",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Traces serveur Web",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Traces serveur Syracuse",
@@ -5945,11 +5966,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Journal des tâches",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Traces serveur",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestion des sessions",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions client web",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestion de sessions",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessions classic page",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Sessions classic réutilisable",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration"
     },
     "it-it": {
@@ -5990,16 +6006,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Collaborazione",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Collaboratori",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Gestione dei collaboratori",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumi",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Storage volumi",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Documenti",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Gestione dei documenti",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modello doc word",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modello doc word",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Etichette",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Gestione delle etichette",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Categorie etichette documenti",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Categorie etichette documenti",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modello doc word",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Modello doc word",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumi",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Storage volumi",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Perzonalizzazione",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigazione pagine",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menù Modulo",
@@ -6011,6 +6027,10 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pagine",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestione delle pagine",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utility",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestione personalizzazioni",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Gruppo risorse",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Utility import",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Utility import",
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import utenti X3",
@@ -6018,21 +6038,17 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Menù profilo import",
       "title_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
       "description_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profilo export",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestione personalizzazioni",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Gruppo risorse",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installazione addins Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Versioni informazioni",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
-      "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "x3 sessione configurazione",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestione sessioni client web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestione sessioni",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessione client",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Lista client riutilizzati",
+      "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "x3 sessione configurazione",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator"
     },
     "pl-pl": {
@@ -6077,16 +6093,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Współpraca",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Zespoły",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Zarządzanie zespołami",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Woluminy",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Woluminy danych",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Dokumenty",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Zarządzanie dokumentami",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Szablony Word",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Szablony Word",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Etykiety dokumentów",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Etykiety dokumentów",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Kategorie etykiet",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Kategorie etykiet",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Szablony Word",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Szablony Word",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Woluminy",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Woluminy danych",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Tworzenie",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Strony nawigacji",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Moduły menu",
@@ -6099,6 +6115,10 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Strony",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Intefejs zarządzania stronami",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Narzędzia",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Zarządzanie ustawieniami spersonalizowanymi",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Pakiety zasobów",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Narzędzie importu",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Narzędzie importu",
       "title_a5e221df-a3fc-4af1-b276-81bd6a9f5a05": "Import użytkowników X3",
@@ -6106,21 +6126,17 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Import profili menu",
       "title_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
       "description_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Profile eksportu",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Zarządzanie ustawieniami spersonalizowanymi",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Pakiety zasobów",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalacja dodatków Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Informacja o wersji",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
-      "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Konfiguracja sesji X3",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Zarządzanie sesjami Web",
       "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Zarządzanie sesjami",
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sesje w trybie zgodności",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Pula połączeń oczekujących",
+      "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Konfiguracja sesji X3",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna"
     },
     "pt-pt": {
@@ -6174,16 +6190,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Colaboração",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Equipas",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Gestão de equipas",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de armazenamento",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Armazenamento volumes",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Documentos",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Gestão de documentos",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Templates do word",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Templates do word",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Tags do documento",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Tags do documento",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Categoria de tags",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Categoria de tags",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Templates do word",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Templates do word",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de armazenamento",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Armazenamento volumes",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personalização",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Páginas de navegação",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menu Modulos",
@@ -6196,6 +6212,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Páginas",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Gestão do interface de páginas",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Ferramentas",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exportações",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfis de exportação",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfis de exportação",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestão das personalizações",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Packs de recursos",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Importações",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Ferramentas de importação",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Ferramentas de importação",
@@ -6204,17 +6225,17 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Perfil do menu importação",
       "title_82036412-8c87-4714-8ada-73210716e986": "Sessões de importação",
       "description_82036412-8c87-4714-8ada-73210716e986": "Sessões de importação",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exportações",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfis de exportação",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Perfis de exportação",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Gestão das personalizações",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Packs de recursos",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Instalação",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalação addins Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Sobre...",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploração",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestão de sessões",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessões cliente clássico",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Lista clientes reutilizados",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "Traces",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Traces do host",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Traces servidor Syracuse",
@@ -6224,11 +6245,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestão de sessões",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessões cliente clássico",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Lista clientes reutilizados",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração"
     },
     "ru-ru": {
@@ -6286,16 +6302,16 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "Совместная работа",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Команды",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "Управление командами",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Хранилища",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Хранилища",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Документы",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "Управление документами",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Шаблоны Word",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Шаблоны Word",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Ключевые слова",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "Ключевые слова",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Категории ключевых слов",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "Категории ключевых слов",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Шаблоны Word",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Шаблоны Word",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Хранилища",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Хранилища",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Персонализация",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Страницы навигации",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Модули меню",
@@ -6308,6 +6324,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Страницы",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Интерфейс управления страницами",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Инструменты",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Экспорт",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Управление персонализацией",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ресурсы",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "Импорт",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Инструменты импорта",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Инструменты импорта",
@@ -6316,17 +6337,17 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "Импорт профиля меню",
       "title_82036412-8c87-4714-8ada-73210716e986": "Сессии импорта",
       "description_82036412-8c87-4714-8ada-73210716e986": "Сессии импорта",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Экспорт",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Профили экспорта",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "Управление персонализацией",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "Ресурсы",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "Установка",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Установка расширений для MS Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Информация о версии",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Использование",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Управление сессиями",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Сессии Web клиента",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Управление сессиями Web клиента",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Сессии для стандартного клиента",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Вторичные сессии клиента",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "Логи",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Трассировка хоста",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Трассировка сервера Syracuse",
@@ -6336,11 +6357,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Управление сессиями",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Сессии Web клиента",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Управление сессиями Web клиента",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Сессии для стандартного клиента",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Вторичные сессии клиента",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора"
     },
     "zh-cn": {
@@ -6360,6 +6376,8 @@
       "description_27ef47f6-ee4b-418d-8a2f-b32597585e04": "全局设置管理接口",
       "title_13d182ef-dc57-4737-b563-4142632925ca": "区域设置",
       "description_13d182ef-dc57-4737-b563-4142632925ca": "区域设置管理接口",
+      "title_292addf8-1101-41a2-803f-24c3a3615da3": "通知服务器",
+      "description_292addf8-1101-41a2-803f-24c3a3615da3": "通知服务器",
       "title_43b0a458-36bd-4395-b375-c483de7b4689": "代理配置",
       "description_43b0a458-36bd-4395-b375-c483de7b4689": "代理配置接口",
       "title_e532e714-443e-4530-9f20-b75e483143de": "认证",
@@ -6367,15 +6385,6 @@
       "description_d6affc29-40d1-41bd-b209-f4f2160401ae": "LDAP服务器管理接口",
       "title_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2服务器",
       "description_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2服务器管理接口",
-      "title_627a9da2-ed4b-42c0-bf72-2b6947174061": "通知",
-      "title_292addf8-1101-41a2-803f-24c3a3615da3": "通知服务器",
-      "description_292addf8-1101-41a2-803f-24c3a3615da3": "通知服务器",
-      "title_7fc976c6-b66d-4257-a314-f337746232a5": "通知事件",
-      "description_7fc976c6-b66d-4257-a314-f337746232a5": "通知事件",
-      "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "通知主题",
-      "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "通知主题",
-      "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "通知模板",
-      "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "通知模板",
       "title_e5d028e2-2a7d-4475-ae98-6b925b48f125": "端点",
       "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "应用程序",
       "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "应用程序管理接口",
@@ -6413,16 +6422,22 @@
       "title_cd32aa93-2610-4307-8af4-dcfa823a27d7": "协作空间",
       "title_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "团队",
       "description_b3ca3f47-63c4-4c75-8ad7-a50627b907d4": "员工管理",
-      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "存储卷",
-      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "存储卷",
       "title_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "文档",
       "description_b9771625-b70d-4a7b-825c-cbbfb9a3b272": "文档管理",
+      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word文档模板",
+      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word文档模板",
       "title_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "文档标签",
       "description_7f40d8c6-1749-4a2c-be7a-b458e1de0d28": "文档标签管理",
       "title_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "文档标签类别",
       "description_c97e4a5c-1a4b-4de8-a062-04d8bbe48a0e": "文档标签类别",
-      "title_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word文档模板",
-      "description_ab9b311f-c501-4acb-ab2d-a97d7edf9aa3": "Word文档模板",
+      "title_7fc976c6-b66d-4257-a314-f337746232a5": "通知事件",
+      "description_7fc976c6-b66d-4257-a314-f337746232a5": "通知事件",
+      "title_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "通知模板",
+      "description_3ab4d4e9-3526-4ce4-9c46-5662bb20e35c": "通知模板",
+      "title_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "通知主题",
+      "description_3a3558ed-1d97-4dce-abc1-7cfe33e72e16": "通知主题",
+      "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "存储卷",
+      "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "存储卷",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "自定义设置",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "导航页面",
       "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "模块菜单",
@@ -6435,6 +6450,11 @@
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "自定义设置页面",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "页面管理接口",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "工具",
+      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "导出",
+      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
+      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
+      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "自定义项管理",
+      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "资源组",
       "title_4e5dcab4-8cb3-4126-9939-02c7fff69614": "导入",
       "title_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "导入工具",
       "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "导入工具",
@@ -6443,11 +6463,6 @@
       "title_7d78e9fb-65a6-4e4e-9139-01fddffff479": "菜单配置导入",
       "title_82036412-8c87-4714-8ada-73210716e986": "导入会话",
       "description_82036412-8c87-4714-8ada-73210716e986": "导入会话",
-      "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "导出",
-      "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
-      "description_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
-      "title_4315b554-2ed2-432a-870b-fa490f94eab7": "自定义项管理",
-      "title_78e8bba0-36c3-4499-a758-a2a051207de6": "资源组",
       "title_b0e9f8b1-7609-4602-afad-b699d0d2a3ab": "安装",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "安装Office加载项",
       "title_5ee934c2-c6d2-4280-b7a5-eb2ff16e42d5": "安装Outlook加载项",
@@ -6470,6 +6485,12 @@
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "开发",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
+      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "会话管理",
+      "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "许可证跟踪",
+      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web客户端会话管理",
+      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "会话管理",
+      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "经典版客户端会话",
+      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "可重复使用的经典版会话",
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "日志",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Web服务器追踪日志",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse服务器追踪日志",
@@ -6479,12 +6500,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "工作日志",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "服务器追踪日志",
-      "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "会话管理",
-      "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "许可证跟踪",
-      "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web客户端会话管理",
-      "description_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "会话管理",
-      "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "经典版客户端会话",
-      "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "可重复使用的经典版会话",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
     }
   }
