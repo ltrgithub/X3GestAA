@@ -21,7 +21,8 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: true,
-		dbUnlock: true
+		dbUnlock: true,
+		localBalancer: true
 
 	},
 	//nanny :{
@@ -51,7 +52,7 @@ exports.config = {
 	collaboration: {
 		driver: "mongodb",
 		dataset: "syracuse",
-		hostname: "10.198.2.4:27017,10.198.2.68",
+		hostname: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
 		port: 27017,
 		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
 		certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
