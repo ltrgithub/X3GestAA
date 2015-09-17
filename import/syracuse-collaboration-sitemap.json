@@ -1663,66 +1663,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_MENU_MODULES",
-      "title": "title_1846c78b-a466-4296-b471-cf0eb78b4f4e",
-      "description": "description_1846c78b-a466-4296-b471-cf0eb78b4f4e",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "menuModules",
-        "representation": "menuModule"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MENU_SUBMODULES",
-      "title": "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
-      "description": "description_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "menuBlocks",
-        "representation": "menuBlock"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_HOMEPAGE",
       "title": "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66",
       "description": "description_fa0cd13e-6fba-42e2-bab2-48fc63a19f66",
@@ -1772,6 +1712,66 @@
         "$type": "representationProxy",
         "entity": "menuItems",
         "representation": "menuItem"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MENU_SUBMODULES",
+      "title": "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
+      "description": "description_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "menuBlocks",
+        "representation": "menuBlock"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MENU_MODULES",
+      "title": "title_1846c78b-a466-4296-b471-cf0eb78b4f4e",
+      "description": "description_1846c78b-a466-4296-b471-cf0eb78b4f4e",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "menuModules",
+        "representation": "menuModule"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -1838,6 +1838,122 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_APPS",
+      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileApplications",
+        "representation": "mobileApplication"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_DASHBOARD",
+      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
+      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileDashboards",
+        "representation": "mobileDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_GADGET",
+      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileGadgets",
+        "representation": "mobileGadget"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_MIGRATE_DASHBOARD",
+      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileMigrateDashboards",
+        "representation": "mobileMigrateDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b1c8314f-dcb2-497b-85a4-12b59015b15c",
       "code": "S_PERS",
@@ -1849,32 +1965,64 @@
       },
       "items": [
         {
-          "code": "S_NAVPAGE",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_MODULES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_SUBMODULES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_HOMEPAGE",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_ITEMS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_CATEGORIES",
-          "$variantType": "menuItem"
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "715a9676-c927-409a-beae-f659c4122111",
+          "title": "title_715a9676-c927-409a-beae-f659c4122111",
+          "items": [
+            {
+              "code": "S_NAVPAGE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_HOMEPAGE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_ITEMS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_SUBMODULES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_MODULES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_CATEGORIES",
+              "$variantType": "menuItem"
+            }
+          ]
         },
         {
           "code": "S_PAGES",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "46e97ba8-b993-4b4d-9e20-cf66b7353571",
+          "title": "title_46e97ba8-b993-4b4d-9e20-cf66b7353571",
+          "items": [
+            {
+              "code": "S_MOBILE_APPS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MOBILE_DASHBOARD",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MOBILE_GADGET",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MOBILE_MIGRATE_DASHBOARD",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -2342,151 +2490,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_MOBILE_APPS",
-      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileApplications",
-        "representation": "mobileApplication"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_DASHBOARD",
-      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
-      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileDashboards",
-        "representation": "mobileDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_GADGET",
-      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileGadgets",
-        "representation": "mobileGadget"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_MIGRATE_DASHBOARD",
-      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$create",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileMigrateDashboards",
-        "representation": "mobileMigrateDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_f4a0ed58-1182-4fe1-90af-244521b1760a",
-      "code": "S_MOBILITY",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "items": [
-        {
-          "code": "S_MOBILE_APPS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_DASHBOARD",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_GADGET",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_MIGRATE_DASHBOARD",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_SEARCH_ADMIN",
       "title": "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
       "description": "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
@@ -2847,9 +2850,6 @@
         },
         {
           "code": "S_TOOLS"
-        },
-        {
-          "code": "S_MOBILITY"
         },
         {
           "code": "S_USAGE"
@@ -4176,66 +4176,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_MENU_MODULES",
-      "title": "title_1846c78b-a466-4296-b471-cf0eb78b4f4e",
-      "description": "description_1846c78b-a466-4296-b471-cf0eb78b4f4e",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "menuModules",
-        "representation": "menuModule"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MENU_SUBMODULES",
-      "title": "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
-      "description": "description_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "menuBlocks",
-        "representation": "menuBlock"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_HOMEPAGE",
       "title": "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66",
       "description": "description_fa0cd13e-6fba-42e2-bab2-48fc63a19f66",
@@ -4285,6 +4225,66 @@
         "$type": "representationProxy",
         "entity": "menuItems",
         "representation": "menuItem"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MENU_SUBMODULES",
+      "title": "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
+      "description": "description_159d141c-9aa6-4ee1-b458-3d2d3ba6d379",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "menuBlocks",
+        "representation": "menuBlock"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MENU_MODULES",
+      "title": "title_1846c78b-a466-4296-b471-cf0eb78b4f4e",
+      "description": "description_1846c78b-a466-4296-b471-cf0eb78b4f4e",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "menuModules",
+        "representation": "menuModule"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -4351,6 +4351,122 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_APPS",
+      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileApplications",
+        "representation": "mobileApplication"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_DASHBOARD",
+      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
+      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileDashboards",
+        "representation": "mobileDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_GADGET",
+      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileGadgets",
+        "representation": "mobileGadget"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_MOBILE_MIGRATE_DASHBOARD",
+      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "mobileMigrateDashboards",
+        "representation": "mobileMigrateDashboard"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b1c8314f-dcb2-497b-85a4-12b59015b15c",
       "code": "S_PERS",
@@ -4362,32 +4478,64 @@
       },
       "items": [
         {
-          "code": "S_NAVPAGE",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_MODULES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_SUBMODULES",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_HOMEPAGE",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_ITEMS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MENU_CATEGORIES",
-          "$variantType": "menuItem"
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "715a9676-c927-409a-beae-f659c4122111",
+          "title": "title_715a9676-c927-409a-beae-f659c4122111",
+          "items": [
+            {
+              "code": "S_NAVPAGE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_HOMEPAGE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_ITEMS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_SUBMODULES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_MODULES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MENU_CATEGORIES",
+              "$variantType": "menuItem"
+            }
+          ]
         },
         {
           "code": "S_PAGES",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "46e97ba8-b993-4b4d-9e20-cf66b7353571",
+          "title": "title_46e97ba8-b993-4b4d-9e20-cf66b7353571",
+          "items": [
+            {
+              "code": "S_MOBILE_APPS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MOBILE_DASHBOARD",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MOBILE_GADGET",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_MOBILE_MIGRATE_DASHBOARD",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -4855,151 +5003,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "S_MOBILE_APPS",
-      "title": "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "description": "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileApplications",
-        "representation": "mobileApplication"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_DASHBOARD",
-      "title": "title_f6c887ee-88cc-4992-be28-e92d97457732",
-      "description": "description_f6c887ee-88cc-4992-be28-e92d97457732",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileDashboards",
-        "representation": "mobileDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_GADGET",
-      "title": "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "description": "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileGadgets",
-        "representation": "mobileGadget"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_MOBILE_MIGRATE_DASHBOARD",
-      "title": "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "description": "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$create",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "mobileMigrateDashboards",
-        "representation": "mobileMigrateDashboard"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_f4a0ed58-1182-4fe1-90af-244521b1760a",
-      "code": "S_MOBILITY",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "items": [
-        {
-          "code": "S_MOBILE_APPS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_DASHBOARD",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_GADGET",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "S_MOBILE_MIGRATE_DASHBOARD",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "S_SEARCH_ADMIN",
       "title": "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
       "description": "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
@@ -5362,9 +5365,6 @@
           "code": "S_TOOLS"
         },
         {
-          "code": "S_MOBILITY"
-        },
-        {
           "code": "S_USAGE"
         }
       ]
@@ -5450,11 +5450,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "أحجام المخزون",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "تشخيص",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "الصفحات الإستكشاف",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "نماذج القائمة",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "وحدات فرعية القائمة",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "صفحات الأمامية",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "عناصر القائمة",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "إدارة عناصر القائمة",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "وحدات فرعية القائمة",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "نماذج القائمة",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "فئات القائمة",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "إدارة فئات القائمة",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "الصفحات المخصصة",
@@ -5557,11 +5557,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Speichervolumen",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personalisierung",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigationsseiten",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menümodule",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menüuntermodule",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Homepages",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menüpunkte",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Verwaltung Menüpunkte",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menüuntermodule",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menümodule",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Menükategorien",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Verwaltung der Menükategorien",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Seiten",
@@ -5688,16 +5688,26 @@
       "title_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes",
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Storage volumes",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Authoring",
+      "title_715a9676-c927-409a-beae-f659c4122111": "Pages",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigation pages",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menu Modules",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menu Submodules",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Home pages",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menu Items",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menu items management interface",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menu Submodules",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menu Modules",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Menu Categories",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Menu categories management interface",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Customized pages",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages management interface",
+      "title_46e97ba8-b993-4b4d-9e20-cf66b7353571": "Mobile",
+      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
+      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
+      "title_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
+      "description_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
+      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
+      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
+      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
+      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "Utilities",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "Exports",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "Export profiles",
@@ -5723,15 +5733,6 @@
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "About",
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Updates",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"One-click\" updates",
-      "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "Mobile applications",
-      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
-      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "Mobile applications",
-      "title_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
-      "description_f6c887ee-88cc-4992-be28-e92d97457732": "Mobile dashboards",
-      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
-      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "Mobile gadgets",
-      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
-      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "Migrate mobile dashboard",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Usage",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
@@ -5815,11 +5816,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volúmenes de almacenamiento",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personalización",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Páginas de navegación",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Módulos de menús",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Submódulos de menús",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Páginas de inicio",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Entradas de menú",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Gestión de entradas de menú",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Submódulos de menús",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Módulos de menús",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "categorías de menú",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Gestión de categorías de menú",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Páginas personalizadas",
@@ -5920,11 +5921,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Volumes de stockage",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personnalisation",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Pages de navigation",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Modules de menu",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Sous-modules de menu",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Pages d'accueil",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Entrées de menu",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Gestion des entrées de menu",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Sous-modules de menu",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Modules de menu",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Catégories de menu",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Gestion des catégories de menu",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pages personnalisées",
@@ -6018,10 +6019,10 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Storage volumi",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Perzonalizzazione",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Navigazione pagine",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menù Modulo",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menù sotto-modulo",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menù",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Gestione dei menù",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menù sotto-modulo",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menù Modulo",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Categorie dei menù",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Categorie dei menù",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Pagine",
@@ -6105,11 +6106,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Woluminy danych",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Tworzenie",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Strony nawigacji",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Moduły menu",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Podmoduły menu",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Strony domowe",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Elementy menu",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Interfejs zarządzania elementami menu",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Podmoduły menu",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Moduły menu",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Kategorie menu",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Interfejs zarządzania kategoriami menu",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Strony",
@@ -6202,11 +6203,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Armazenamento volumes",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Personalização",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Páginas de navegação",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menu Modulos",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menu Submodulos",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Home Pages",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Menu items",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Gestão do interface menu items",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Menu Submodulos",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Menu Modulos",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Categorias de menu",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Gestão do interface das categorias de menus",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Páginas",
@@ -6314,11 +6315,11 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "Хранилища",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "Персонализация",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "Страницы навигации",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Модули меню",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Подмодули меню",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "Домашние страницы",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Элементы меню",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "Интерфейс управления элементами меню",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "Подмодули меню",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "Модули меню",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "Категории меню",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "Интерфейс управления элементами меню",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "Страницы",
@@ -6440,15 +6441,23 @@
       "description_5d345818-1ecc-4c47-8a09-3b0e36d7f1e6": "存储卷",
       "title_b1c8314f-dcb2-497b-85a4-12b59015b15c": "自定义设置",
       "title_3d5c2dd0-a358-4e26-8d07-1aa19f1a2a71": "导航页面",
-      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "模块菜单",
-      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "子模块菜单",
       "title_fa0cd13e-6fba-42e2-bab2-48fc63a19f66": "主页",
       "title_ebde23b7-7942-4b84-8a23-594b5c010f2d": "菜单项",
       "description_ebde23b7-7942-4b84-8a23-594b5c010f2d": "菜单项管理接口",
+      "title_159d141c-9aa6-4ee1-b458-3d2d3ba6d379": "子模块菜单",
+      "title_1846c78b-a466-4296-b471-cf0eb78b4f4e": "模块菜单",
       "title_ca835319-466c-4f49-a0f1-00092983d7e9": "菜单类别",
       "description_ca835319-466c-4f49-a0f1-00092983d7e9": "菜单类别管理接口",
       "title_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "自定义设置页面",
       "description_87b4d20c-afcb-4278-b2f8-8ed975de2c1c": "页面管理接口",
+      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
+      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
+      "title_f6c887ee-88cc-4992-be28-e92d97457732": "移动仪表板",
+      "description_f6c887ee-88cc-4992-be28-e92d97457732": "移动仪表板",
+      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "移动小部件",
+      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "移动小部件",
+      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "迁移移动仪表板",
+      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "迁移移动仪表板",
       "title_b1e2e8ac-19c6-41e8-86b4-8785ec01c874": "工具",
       "title_b11ed1ef-9bd6-497f-bec9-efe5d1e425f5": "导出",
       "title_3f8220f5-cd75-4359-b86b-ae92ceb5549b": "导出配置文件",
@@ -6473,15 +6482,6 @@
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "关于",
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "更新",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "“一键”更新",
-      "title_f4a0ed58-1182-4fe1-90af-244521b1760a": "移动应用",
-      "title_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
-      "description_e0353fe2-95de-4e76-84e3-9e04ca5b8c7a": "移动应用",
-      "title_f6c887ee-88cc-4992-be28-e92d97457732": "移动仪表板",
-      "description_f6c887ee-88cc-4992-be28-e92d97457732": "移动仪表板",
-      "title_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "移动小部件",
-      "description_68e8cad0-813e-4e1a-85f9-dcf34a7e5b6a": "移动小部件",
-      "title_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "迁移移动仪表板",
-      "description_8531ee1b-4cf5-4a28-80ba-1aae9a547daf": "迁移移动仪表板",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "开发",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
