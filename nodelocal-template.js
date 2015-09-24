@@ -35,6 +35,12 @@ exports.config = {
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
 		},*/
+		// Enable the following setting when the load balancer should only distribute 
+		// requests to its own child processes:
+		/* localBalancer: true, */
+		// Enable the following setting only when the load balancer should start its
+		// child processes using the --dbUnlock flag
+		/* dbUnlock: true, */
 		// allow to pass some node parameter like --prof
 		nodeOptions:""
 	},
