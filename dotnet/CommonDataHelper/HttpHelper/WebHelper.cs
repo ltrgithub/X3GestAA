@@ -20,7 +20,13 @@ namespace CommonDataHelper
         {
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-
+            if (HttpWebRequest.DefaultWebProxy != null)
+            {
+                request.Proxy = HttpWebRequest.DefaultWebProxy;
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            }
+            
+            
             checkCookie();
 
             request.ContentType = @"application/json";
@@ -46,6 +52,11 @@ namespace CommonDataHelper
         {
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+            if (HttpWebRequest.DefaultWebProxy != null)
+            {
+                request.Proxy = HttpWebRequest.DefaultWebProxy;
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            }            
 
             checkCookie();
             
@@ -79,6 +90,11 @@ namespace CommonDataHelper
 
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+            if (HttpWebRequest.DefaultWebProxy != null)
+            {
+                request.Proxy = HttpWebRequest.DefaultWebProxy;
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            }          
 
             checkCookie();
             
@@ -121,7 +137,12 @@ namespace CommonDataHelper
         {
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-
+            if (HttpWebRequest.DefaultWebProxy != null)
+            {
+                request.Proxy = HttpWebRequest.DefaultWebProxy;
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            }
+                        
             request.AllowAutoRedirect = false;
             request.Accept = @"text/html, application/xhtml+xml, */*";
             request.Referer = uri.ToString();
@@ -146,7 +167,12 @@ namespace CommonDataHelper
         {
             string responseJson = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-
+            if (HttpWebRequest.DefaultWebProxy != null)
+            {
+                request.Proxy = HttpWebRequest.DefaultWebProxy;
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+            }
+                        
             request.AllowAutoRedirect = false;
             request.Accept = @"text/html, application/xhtml+xml, */*";
             request.Referer = uri.ToString();
