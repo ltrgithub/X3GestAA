@@ -8,6 +8,7 @@ changelog/changelogSettings.json
 /.settings
 /.externalToolBuilders
 /.idea
+/logs
 /dotnet/ExcelAddIn/bin
 /dotnet/ExcelAddIn/obj
 /dotnet/ExcelAddIn/ExcelAddIn.csproj.user
@@ -33,7 +34,7 @@ junk/
 /node_modules/istanbul
 coverage
 JSLintNet.json
-*.sln
+./*.sln
 *.njsproj
 *.suo
 version.json
@@ -45,3 +46,6 @@ version.json
 /cert_gen/private
 /certificates
 /translation-indexes/output/
+# streamline 1.0 branch switch script does not remove babel.core because we don t want to refetch it every time
+/node_modules/babel?core/
+/logs

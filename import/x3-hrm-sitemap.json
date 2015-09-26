@@ -1301,6 +1301,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESDSN",
+      "title": "title_b6f83495-1d43-4a21-abd4-16a90959f756",
+      "description": "description_b6f83495-1d43-4a21-abd4-16a90959f756",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESDSN",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_82cdb4ce-df1e-47f6-9365-2ea063b18c9e",
       "code": "STD_X3_HRM_GDON",
@@ -1485,6 +1512,10 @@
         },
         {
           "code": "STD_X3_HRM_GESDDA",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESDSN",
           "$variantType": "menuItem"
         }
       ]
@@ -4465,6 +4496,33 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_ARECSRC",
+      "title": "title_a98ee413-6f97-4e02-aec6-4b5bbcd3f120",
+      "description": "description_a98ee413-6f97-4e02-aec6-4b5bbcd3f120",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ARECSRC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_DOSEXTRA",
       "title": "title_ff1da390-899c-4d8e-aafe-6a4725743759",
       "description": "description_ff1da390-899c-4d8e-aafe-6a4725743759",
@@ -5686,6 +5744,10 @@
             {
               "code": "STD_X3_HRM_ARECHMEN",
               "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_ARECSRC",
+              "$variantType": "menuItem"
             }
           ]
         },
@@ -6852,6 +6914,81 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_ATSTSAV",
+      "title": "title_dea8900a-7186-4b41-a4e2-542f1a017357",
+      "description": "description_dea8900a-7186-4b41-a4e2-542f1a017357",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ATSTSAV",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_ATSTREC",
+      "title": "title_9237ce8d-d68d-4233-b796-5e9a0ca086a8",
+      "description": "description_9237ce8d-d68d-4233-b796-5e9a0ca086a8",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ATSTREC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_cfd834f4-3c93-43ff-9ebf-3c22fdd3e6d0",
+      "code": "STD_X3_HRM_GUNIT",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "code": "STD_X3_HRM_ATSTSAV",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_ATSTREC",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_4492769b-c64c-4c93-b481-952138788b42",
       "code": "STD_X3_HRM_GDEV",
@@ -6879,6 +7016,9 @@
         },
         {
           "code": "STD_X3_HRM_AYT"
+        },
+        {
+          "code": "STD_X3_HRM_GUNIT"
         }
       ]
     },
@@ -8366,15 +8506,16 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESAON",
-      "title": "title_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9",
-      "description": "description_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9",
+      "code": "STD_X3_HRM_GESTFOLEG",
+      "title": "title_c3315e6b-383c-4ea4-a491-77c78baf4bff",
+      "description": "description_c3315e6b-383c-4ea4-a491-77c78baf4bff",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESAON",
-      "fusionKey": "",
+      "fusionFunction": "GESTFOLEG",
+      "keyIsWhere": false,
       "target": "self",
+      "requestLevel": "1",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -8382,9 +8523,7 @@
         "contract": "hrm"
       },
       "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
+      "representationRef": null,
       "module": {
         "code": "STD_X3_HRM_MENV"
       },
@@ -8523,7 +8662,7 @@
           "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_HRM_GESAON",
+          "code": "STD_X3_HRM_GESTFOLEG",
           "$variantType": "menuItem"
         }
       ]
@@ -12355,6 +12494,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESTVT",
+      "title": "title_1c737f78-de12-48a8-beef-0cf8634710ca",
+      "description": "description_1c737f78-de12-48a8-beef-0cf8634710ca",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESTVT",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MDBA"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_c4ad3dae-62cd-48e8-b039-a8496f07c5f1",
       "code": "STD_X3_HRM_MDRCO",
@@ -12407,6 +12573,10 @@
         },
         {
           "code": "STD_X3_HRM_GESCAEC",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESTVT",
           "$variantType": "menuItem"
         }
       ]
@@ -13391,7 +13561,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_PERSO"
       },
       "categories": [],
       "parameters": []
@@ -13786,6 +13956,13 @@
         {
           "code": "STD_X3_HRM_LISTELEC",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PDUE",
+          "title": "title_824f7b5f-9466-4394-b295-acc5c1f89581",
+          "items": []
         }
       ]
     },
@@ -15890,6 +16067,13 @@
             {
               "code": "STD_X3_HRM_TRTPREPAY",
               "$variantType": "menuItem"
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PPPH",
+              "title": "title_f4f24837-fc37-4e01-aa61-bceda8d0ea67",
+              "items": []
             }
           ]
         },
@@ -17402,6 +17586,762 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDFS",
+      "title": "title_cd80e5c6-4288-4120-8b01-3ad50accba09",
+      "description": "description_cd80e5c6-4288-4120-8b01-3ad50accba09",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDFS",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDSH",
+      "title": "title_71eeb33d-eaca-4457-bda4-bef18cb69593",
+      "description": "description_71eeb33d-eaca-4457-bda4-bef18cb69593",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDSH",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDSR",
+      "title": "title_c2d6adfa-89e5-4b3e-8b0b-b4bb4f084a82",
+      "description": "description_c2d6adfa-89e5-4b3e-8b0b-b4bb4f084a82",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDSR",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDSE",
+      "title": "title_b4071829-2050-46bd-a815-0f7fd6e5d946",
+      "description": "description_b4071829-2050-46bd-a815-0f7fd6e5d946",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDSE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDSC",
+      "title": "title_52b78598-2ede-47bb-8bb5-b23191a730ea",
+      "description": "description_52b78598-2ede-47bb-8bb5-b23191a730ea",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDSC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDCP",
+      "title": "title_e0745ef9-6d1a-4b86-8c64-946f953ff0f4",
+      "description": "description_e0745ef9-6d1a-4b86-8c64-946f953ff0f4",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDCP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDFY",
+      "title": "title_f1b78308-d52e-427e-a127-a601af08b8b3",
+      "description": "description_f1b78308-d52e-427e-a127-a601af08b8b3",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDFY",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_EXTRDSNM",
+      "title": "title_ffc08cc8-9356-4808-be0b-8cbae0d7f517",
+      "description": "description_ffc08cc8-9356-4808-be0b-8cbae0d7f517",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXTRDSNM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDMM",
+      "title": "title_1e35f5ac-5db9-413c-acdd-2a864a08582c",
+      "description": "description_1e35f5ac-5db9-413c-acdd-2a864a08582c",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDMM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDMC",
+      "title": "title_4166e044-bbe1-4827-b2bf-3e826eb9bbda",
+      "description": "description_4166e044-bbe1-4827-b2bf-3e826eb9bbda",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDMC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDMV",
+      "title": "title_b73a2f2b-18da-4e48-be2f-596abe3c1667",
+      "description": "description_b73a2f2b-18da-4e48-be2f-596abe3c1667",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDMV",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDMT",
+      "title": "title_2380312c-20ce-4f4c-bc07-78c6307ebbda",
+      "description": "description_2380312c-20ce-4f4c-bc07-78c6307ebbda",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDMT",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRCFY",
+      "title": "title_30304648-4249-4ce4-a933-4f0d84174c05",
+      "description": "description_30304648-4249-4ce4-a933-4f0d84174c05",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRCFY",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRCFH",
+      "title": "title_65f5617d-5f8f-4e6a-a922-8697e3038872",
+      "description": "description_65f5617d-5f8f-4e6a-a922-8697e3038872",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRCFH",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENDSNM",
+      "title": "title_9b661143-89ff-42a9-83a4-96664eb05b05",
+      "description": "description_9b661143-89ff-42a9-83a4-96664eb05b05",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENDSNM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRMDM",
+      "title": "title_8390f635-9b55-4eb1-b282-e82f4713b055",
+      "description": "description_8390f635-9b55-4eb1-b282-e82f4713b055",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRMDM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_EXTRDSNA",
+      "title": "title_d9a6e8d5-6679-4db7-98b2-949f269e794a",
+      "description": "description_d9a6e8d5-6679-4db7-98b2-949f269e794a",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXTRDSNA",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDWS",
+      "title": "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f",
+      "description": "description_fb1342ce-a8d8-4018-ad1d-3f888ccad69f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDWS",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENDSNA",
+      "title": "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff",
+      "description": "description_8826eb7d-c9ca-447e-95c2-aa2b968719ff",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENDSNA",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDWM",
+      "title": "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec",
+      "description": "description_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDWM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_EXTRDSNC",
+      "title": "title_e4b6ee3a-948a-44f4-b063-de2541d0f715",
+      "description": "description_e4b6ee3a-948a-44f4-b063-de2541d0f715",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXTRDSNC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDCC",
+      "title": "title_437d4377-19b1-4194-ab5d-9bf92d7f963f",
+      "description": "description_437d4377-19b1-4194-ab5d-9bf92d7f963f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDCC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRDCV",
+      "title": "title_f59eb449-aa6e-460f-9040-c6d8b24221af",
+      "description": "description_f59eb449-aa6e-460f-9040-c6d8b24221af",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRDCV",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENDSNC",
+      "title": "title_9529ba29-f075-4325-901c-22e4e5e5375f",
+      "description": "description_9529ba29-f075-4325-901c-22e4e5e5375f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENDSNC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRCDM",
+      "title": "title_8a37bb76-1db0-4fdd-8484-b10d8179c4f8",
+      "description": "description_8a37bb76-1db0-4fdd-8484-b10d8179c4f8",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRCDM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_TRTDSNSUP",
+      "title": "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d",
+      "description": "description_6a7b78d2-8129-4648-ba71-da0da0b4ba3d",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "TRTDSNSUP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_TRTDSNCLO",
+      "title": "title_5081f007-b673-49c1-95b9-27f7d5fc22fe",
+      "description": "description_5081f007-b673-49c1-95b9-27f7d5fc22fe",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "TRTDSNCLO",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_INCDCL",
+      "title": "title_83d57e13-e939-4f77-b27c-71e94f0d7ed8",
+      "description": "description_83d57e13-e939-4f77-b27c-71e94f0d7ed8",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "INCDCL",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_c73b1160-b6d7-4ab8-a0ed-6fab884c2bf3",
       "code": "STD_X3_HRM_PDEC",
@@ -17643,6 +18583,246 @@
               "$variantType": "menuItem"
             }
           ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PDSN",
+          "title": "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066",
+          "items": [
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PPDSN",
+              "title": "title_ef3e85e8-987c-443e-a356-f68616da24fb",
+              "items": [
+                {
+                  "code": "STD_X3_HRM_GESHRDFS",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDSH",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDSR",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDSE",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDSC",
+                  "$variantType": "menuItem"
+                }
+              ]
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PDSNG",
+              "title": "title_fc1b9b81-cd9c-4175-855f-7022867825d5",
+              "items": [
+                {
+                  "code": "STD_X3_HRM_GESHRDCP",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDFY",
+                  "$variantType": "menuItem"
+                }
+              ]
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PDSNM",
+              "title": "title_760e7d54-4a1a-458d-8c91-75bbe4f0b6d0",
+              "items": [
+                {
+                  "code": "STD_X3_HRM_EXTRDSNM",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDMM",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDMC",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDMV",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDMT",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRCFY",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRCFH",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GENDSNM",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRMDM",
+                  "$variantType": "menuItem"
+                }
+              ]
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PDSNA",
+              "title": "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5",
+              "items": [
+                {
+                  "code": "STD_X3_HRM_EXTRDSNA",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDWS",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GENDSNA",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDWM",
+                  "$variantType": "menuItem"
+                }
+              ]
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PDSNC",
+              "title": "title_8ce01e33-9999-4781-8c4e-d99917e1e53d",
+              "items": [
+                {
+                  "code": "STD_X3_HRM_EXTRDSNC",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDCC",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRDCV",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GENDSNC",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_GESHRCDM",
+                  "$variantType": "menuItem"
+                }
+              ]
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PDSNO",
+              "title": "title_a37929b9-6e19-447c-b5b4-d985d516513b",
+              "items": [
+                {
+                  "code": "STD_X3_HRM_TRTDSNSUP",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_HRM_TRTDSNCLO",
+                  "$variantType": "menuItem"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PDUCS",
+          "title": "title_751fdd4f-e990-40b2-84c4-359e643b50fe",
+          "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PN4DS",
+          "title": "title_8e1ac967-14c4-49d9-8267-1b647d68ab55",
+          "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PDNA",
+          "title": "title_dc28a256-8589-422a-b7ec-19ff08500622",
+          "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PDDS",
+          "title": "title_affd6666-1dcf-475c-a3d4-da4eb838943a",
+          "items": [
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PPREV",
+              "title": "title_e79118b3-1e16-4886-aa05-e9850eb79da7",
+              "items": []
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PMUT",
+              "title": "title_98504909-dc79-4c31-a0c4-8b6152aedf80",
+              "items": []
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PHONO",
+              "title": "title_80c4df0e-feec-486f-b303-738dff52e803",
+              "items": []
+            },
+            {
+              "$type": "menuSubblock",
+              "$variantType": "menuBlock",
+              "code": "STD_X3_HRM_PIDA",
+              "title": "title_b0614372-ccba-42c0-bf3c-531ab475764a",
+              "items": [
+                {
+                  "$type": "menuSubblock",
+                  "$variantType": "menuBlock",
+                  "code": "STD_X3_HRM_PIPRV",
+                  "title": "title_a5ebe45d-c06d-4750-b060-d3a060b1ce6e",
+                  "items": []
+                },
+                {
+                  "$type": "menuSubblock",
+                  "$variantType": "menuBlock",
+                  "code": "STD_X3_HRM_PIMUT",
+                  "title": "title_c968b546-d512-49d5-b558-5b29efb6654a",
+                  "items": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "STD_X3_HRM_INCDCL",
+          "$variantType": "menuItem"
         }
       ]
     },
@@ -18083,6 +19263,20 @@
               "$variantType": "menuItem"
             }
           ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PTRH",
+          "title": "title_2af14fb4-5fd0-4966-9fed-5d5ff509e38a",
+          "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_PCQH",
+          "title": "title_88e8bd05-3613-4af4-a4d9-1317b386186f",
+          "items": []
         }
       ]
     },
@@ -18134,6 +19328,18 @@
       ]
     },
     {
+      "$type": "menuBlock",
+      "title": "title_b6e6a487-ebd7-4334-8bbe-523d1449e9a8",
+      "code": "STD_X3_HRM_PAEM",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": []
+    },
+    {
       "$type": "menuModule",
       "title": "title_befbdb20-8082-4267-8b8c-44350f2734b1",
       "code": "STD_X3_HRM_PAY",
@@ -18170,6 +19376,9 @@
         },
         {
           "code": "STD_X3_HRM_PSTA"
+        },
+        {
+          "code": "STD_X3_HRM_PAEM"
         }
       ]
     },
@@ -21833,7 +23042,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_ERP_GDEV"
+        "code": "STD_X3_HRM_MTDI"
       },
       "categories": [],
       "parameters": []
@@ -23642,7 +24851,9 @@
     }
   ],
   "$localization": {
-    "ar-sa": {},
+    "ar-sa": {
+      "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3 مساحة المخزون"
+    },
     "de-de": {
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard",
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
@@ -23652,6 +24863,7 @@
       "title_204a81cf-562c-418b-8391-8e91be536e02": "Skills and careers",
       "title_5588dc2d-cf10-45c6-a6a3-1d03389789e3": "Training",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage",
+      "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "X3-Lagerplätze",
       "title_1546f900-9f51-4a0e-9bc7-7faa9d9a1ce4": "Reports",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "Translations"
     },
@@ -23695,11 +24907,11 @@
       "description_68333866-b21a-470f-afa7-14796e5f66af": "GESACST",
       "title_b448fbcc-d099-411c-96d8-506e8c289914": "Context",
       "description_b448fbcc-d099-411c-96d8-506e8c289914": "GESACTX",
-      "title_690c6940-6849-48cf-8e8e-82c554bb5e39": "Global variables",
+      "title_690c6940-6849-48cf-8e8e-82c554bb5e39": "Global variables  ",
       "description_690c6940-6849-48cf-8e8e-82c554bb5e39": "GESAGB",
       "title_a32223da-d256-4de9-bc5c-ab03f463f9c7": "Counter type variables",
       "description_a32223da-d256-4de9-bc5c-ab03f463f9c7": "GESACM",
-      "title_3db64885-e017-4c3c-9d1a-87ab9d11c12d": "Content type",
+      "title_3db64885-e017-4c3c-9d1a-87ab9d11c12d": "Content type ",
       "title_b0812845-4428-481c-b629-58f319d80f4e": "Formula wizard setup",
       "description_b0812845-4428-481c-b629-58f319d80f4e": "GESAVR",
       "title_a96322ba-c7f5-4d3f-8bd9-41778695ecf0": "History/purge",
@@ -23734,6 +24946,8 @@
       "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "DADS-U field dictionary",
       "description_721711b2-bed4-4ea0-bb86-af572aefa40d": "GESDDA",
+      "title_b6f83495-1d43-4a21-abd4-16a90959f756": "DSN field dictionary",
+      "description_b6f83495-1d43-4a21-abd4-16a90959f756": "GESDSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "Script dictionary",
       "title_d55c6412-a18c-4813-97a6-85d009a26c3a": "Screens",
       "title_658dba65-81f9-44d6-98b8-20d312c0317b": "Screens",
@@ -23949,6 +25163,8 @@
       "description_655c610d-7670-4661-880e-0dc8dd39d208": "RECHADC",
       "title_67168adb-3606-43c6-8878-4a439d953f10": "Menu",
       "description_67168adb-3606-43c6-8878-4a439d953f10": "ARECHMEN",
+      "title_a98ee413-6f97-4e02-aec6-4b5bbcd3f120": "Quick processing search",
+      "description_a98ee413-6f97-4e02-aec6-4b5bbcd3f120": "ARECSRC",
       "title_cacb277d-655d-4d03-915d-fe0f298e6279": "Extraction/integration",
       "title_ff1da390-899c-4d8e-aafe-6a4725743759": "Data extract",
       "description_ff1da390-899c-4d8e-aafe-6a4725743759": "DOSEXTRA",
@@ -24022,12 +25238,12 @@
       "title_83dc781b-4626-4231-94e6-09e900e622da": "Create flash archive",
       "description_83dc781b-4626-4231-94e6-09e900e622da": "ARCHFLASH",
       "title_707e14e4-d593-4fdd-bd82-748ffa155550": "Safe X3 WAS",
-      "title_136e42f6-6aba-4b00-acb1-2d9855bd799e": "Websites",
+      "title_136e42f6-6aba-4b00-acb1-2d9855bd799e": "Web sites",
       "title_3d349836-cd1d-4b97-9375-fa047935a9df": "Select current site",
       "description_3d349836-cd1d-4b97-9375-fa047935a9df": "AYTCHGFCYW",
-      "title_a5028509-a3ad-4fc3-8847-661809774d36": "Websites",
+      "title_a5028509-a3ad-4fc3-8847-661809774d36": "Web sites",
       "description_a5028509-a3ad-4fc3-8847-661809774d36": "GESAYS",
-      "title_6042866e-d9e3-4e64-919c-9134c34f79cb": "Website profiles",
+      "title_6042866e-d9e3-4e64-919c-9134c34f79cb": "Web site profiles",
       "description_6042866e-d9e3-4e64-919c-9134c34f79cb": "GESAYD",
       "title_e9945295-b22b-4edf-aab0-86f3f1366f36": "Tokens",
       "title_892677b9-bc71-4259-9a8d-0928cb934b2b": "Web pages",
@@ -24060,14 +25276,14 @@
       "title_bbafaf5c-ac2d-486b-8c7a-e80bd79f1051": "Utilities",
       "title_9d4c6a9b-c486-47ba-8315-6f4745eee63b": "Where-used",
       "description_9d4c6a9b-c486-47ba-8315-6f4745eee63b": "CONSAYU",
-      "title_18c4cb44-d0ba-4168-a9ff-b70ec21a4965": "Validate website",
+      "title_18c4cb44-d0ba-4168-a9ff-b70ec21a4965": "Validate web site",
       "description_18c4cb44-d0ba-4168-a9ff-b70ec21a4965": "AYTFCYGEN",
       "title_c94a6ef7-6718-4c7d-a869-10b7347d8010": "Copy web site",
       "description_c94a6ef7-6718-4c7d-a869-10b7347d8010": "AYTFCYCOP",
       "title_daea3e48-a544-4d78-8adc-d13664e5dbf8": "Copy web service",
       "description_daea3e48-a544-4d78-8adc-d13664e5dbf8": "AYTWSRGES",
-      "title_b026c4dd-e1c8-472f-8876-98d478d5369b": "Portal link publishing",
-      "title_d3508f2e-6c69-43a8-9311-aa391fae6b96": "Delete website",
+      "title_b026c4dd-e1c8-472f-8876-98d478d5369b": "Portal link publication",
+      "title_d3508f2e-6c69-43a8-9311-aa391fae6b96": "Delete web site",
       "description_d3508f2e-6c69-43a8-9311-aa391fae6b96": "AYTFCYDEL",
       "title_43c9ac17-1423-4983-906a-8a9807b6203b": "Design/archive management",
       "description_43c9ac17-1423-4983-906a-8a9807b6203b": "AYTFCYTAR",
@@ -24078,8 +25294,13 @@
       "title_c181596c-34ad-40e1-afbb-8038dbd86cfd": "View web site",
       "description_c181596c-34ad-40e1-afbb-8038dbd86cfd": "VISUAYS",
       "title_62489f45-d13e-4252-929c-9980be845698": "Tests",
-      "title_957eee8d-98c1-45b0-922f-9130de699b5b": "Test website",
+      "title_957eee8d-98c1-45b0-922f-9130de699b5b": "Test web site",
       "description_957eee8d-98c1-45b0-922f-9130de699b5b": "GESAYT",
+      "title_cfd834f4-3c93-43ff-9ebf-3c22fdd3e6d0": "Unit tests",
+      "title_dea8900a-7186-4b41-a4e2-542f1a017357": "ATSTSAV",
+      "description_dea8900a-7186-4b41-a4e2-542f1a017357": "ATSTSAV",
+      "title_9237ce8d-d68d-4233-b796-5e9a0ca086a8": "ATSTREC",
+      "description_9237ce8d-d68d-4233-b796-5e9a0ca086a8": "ATSTREC",
       "title_ccfa405e-c4a8-4f9d-bd40-bca59b462f7f": "Setup",
       "title_3425842b-e03d-4635-b06e-ed49d8cfa15a": "Users",
       "title_c695e1ef-c31a-4226-a292-513b160f305f": "Users",
@@ -24112,7 +25333,7 @@
       "description_c34193ec-ba0e-4ad4-9da5-094524c613e3": "GESARC",
       "title_bfe7429e-5c6f-4455-ae86-10349e630daa": "Archiving parameters",
       "description_bfe7429e-5c6f-4455-ae86-10349e630daa": "GESARE",
-      "title_c694bc7e-2ce5-435f-b2e4-7a2f3817f67a": "Prints codes",
+      "title_c694bc7e-2ce5-435f-b2e4-7a2f3817f67a": "Print code",
       "description_c694bc7e-2ce5-435f-b2e4-7a2f3817f67a": "GESARX",
       "title_dda4fff5-5137-492a-8800-ccafef47d871": "Default values",
       "description_dda4fff5-5137-492a-8800-ccafef47d871": "GESARV",
@@ -24179,8 +25400,8 @@
       "description_290cdeb8-f957-49e1-9fd3-83039c0f502d": "GESSVR",
       "title_d421997c-ae9a-4ad2-ac9e-7230d728c024": "Inquiry screens",
       "description_d421997c-ae9a-4ad2-ac9e-7230d728c024": "GESGTC",
-      "title_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9": "Default documents",
-      "description_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9": "GESAON",
+      "title_c3315e6b-383c-4ea4-a491-77c78baf4bff": "GESTFOLEG",
+      "description_c3315e6b-383c-4ea4-a491-77c78baf4bff": "GESTFOLEG",
       "title_bdfc1155-9164-4428-bb6a-67190a74bf6b": "Usage ",
       "title_926a5876-1940-4737-aefc-30ea5475b0a1": "Statistics",
       "title_a796495d-3364-44e2-9992-2bf15951d57c": "Statistical triggers",
@@ -24212,12 +25433,12 @@
       "title_9eb631e8-e324-4389-b1d8-9151889e66fd": "Data",
       "title_39edd644-9405-4d0f-8640-89f0a376599f": "Purge parameters",
       "description_39edd644-9405-4d0f-8640-89f0a376599f": "APARHIS",
-      "title_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "Database optimisation",
+      "title_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "Database optimization",
       "description_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "GESANX",
       "title_ecb0ace6-c2c1-4cdf-adbc-2a3a75cb6103": "Organizational structure",
       "title_1ac2d7c1-eb6f-42d6-920d-d8781991ec24": "Folders",
       "description_1ac2d7c1-eb6f-42d6-920d-d8781991ec24": "GESADS",
-      "title_e49635b2-3c53-4b2b-9e5b-25013456b37d": "Site/company grouping",
+      "title_e49635b2-3c53-4b2b-9e5b-25013456b37d": "Site/company groupings",
       "description_e49635b2-3c53-4b2b-9e5b-25013456b37d": "GESAGF",
       "title_84f6c46c-8090-4ccc-96dc-a01ca07e6d30": "Companies",
       "description_84f6c46c-8090-4ccc-96dc-a01ca07e6d30": "GESCPY",
@@ -24258,6 +25479,7 @@
       "description_51da353d-b781-4359-b66a-4429f94ef9ac": "GESPVE",
       "title_2ff4c26d-7b9c-4f14-9038-1a0d04b15d0b": "Fixed investment/profit sharing",
       "description_2ff4c26d-7b9c-4f14-9038-1a0d04b15d0b": "GESPVI",
+      "title_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "Casual worker statement",
       "description_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "GESPVA",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Payroll plan",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Headings",
@@ -24266,7 +25488,7 @@
       "description_ab801a1b-21a1-4852-918a-fd2d4e88e850": "GESVRA",
       "title_a99f2722-9661-4e84-8a55-19edcc9f8344": "Totals",
       "description_a99f2722-9661-4e84-8a55-19edcc9f8344": "GESCUM",
-      "title_db6916be-68fb-4e53-b2d5-1417f55b7c53": "Accounts on headings",
+      "title_db6916be-68fb-4e53-b2d5-1417f55b7c53": "Accounts by heading",
       "title_5c01ed76-6bfd-4416-8706-ec4aad677099": "Heading update",
       "title_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "Totals",
       "description_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "CUMRUB",
@@ -24359,7 +25581,7 @@
       "title_2454fbbb-4566-486f-9137-24a7c78d631b": "Interactive dashboard",
       "title_894e5f37-6716-4607-807d-1acfdf81e97a": "Interactive components",
       "description_894e5f37-6716-4607-807d-1acfdf81e97a": "GESAIT",
-      "title_ae16a528-376d-4fd2-a371-4ef62383b1ce": "Gadgets",
+      "title_ae16a528-376d-4fd2-a371-4ef62383b1ce": "GESAVP",
       "description_ae16a528-376d-4fd2-a371-4ef62383b1ce": "GESAVP",
       "title_2042d784-b832-42ee-973b-30b047304330": "Dashboard views",
       "description_2042d784-b832-42ee-973b-30b047304330": "GESAPV",
@@ -24372,7 +25594,7 @@
       "title_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "Dashboard pages",
       "description_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "GESAPS",
       "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Deliverable management",
-      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Delievrables",
+      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Deliverables",
       "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
       "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Setup kits",
       "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
@@ -24414,8 +25636,10 @@
       "description_fb893b7d-906b-4079-ab1e-54d8a4846e5c": "GESTUN",
       "title_c72893c9-e6fc-4167-8267-1fb4607c58b2": "Uom conversion",
       "title_90945080-5b76-49b8-a67e-2a4c2814d9c2": "Contacts (relationship)",
-      "title_435a5f75-b3f1-4707-8f07-bca60f69caf8": "CAE",
+      "title_435a5f75-b3f1-4707-8f07-bca60f69caf8": "CAE code",
       "description_435a5f75-b3f1-4707-8f07-bca60f69caf8": "Portuguese Classification of Economic Activities",
+      "title_1c737f78-de12-48a8-beef-0cf8634710ca": "Taxes",
+      "description_1c737f78-de12-48a8-beef-0cf8634710ca": "GESTVT",
       "title_ed0fc459-3817-4f3d-b902-b317e0a9d5cb": "G/L accounting tables",
       "title_b9918fdd-1355-402e-8f21-964a93cab3e3": "Natures",
       "description_b9918fdd-1355-402e-8f21-964a93cab3e3": "GESCNA",
@@ -24484,7 +25708,7 @@
       "description_8f625f23-3e1a-4068-8515-2e2325c93f1c": "EXTRDUE",
       "title_8cc78b74-ad16-46c8-a679-026b4b869f28": "DUE file",
       "description_8cc78b74-ad16-46c8-a679-026b4b869f28": "GESDUE",
-      "title_81c5a7db-aaca-449e-ba5e-2abdbd301562": "Generation",
+      "title_81c5a7db-aaca-449e-ba5e-2abdbd301562": "File generation",
       "description_81c5a7db-aaca-449e-ba5e-2abdbd301562": "TRTDUE",
       "title_fc327d8f-bc64-4088-aae2-a3557fe62e9c": "Receipt",
       "description_fc327d8f-bc64-4088-aae2-a3557fe62e9c": "RECEPDUE",
@@ -24496,16 +25720,17 @@
       "description_7ad2134c-ee12-4e61-aaf4-9675d2317501": "GESDLA",
       "title_e774d073-85f1-42c8-a0f4-13981f11ef1d": "Workplace injury / Work-related sickness",
       "description_e774d073-85f1-42c8-a0f4-13981f11ef1d": "GESTAT",
-      "title_f9c7336a-700d-45c5-9df5-7238f5178e3d": "Transfer into payroll",
+      "title_f9c7336a-700d-45c5-9df5-7238f5178e3d": "Transfer to payroll",
       "description_f9c7336a-700d-45c5-9df5-7238f5178e3d": "TRTIJSS",
       "title_332b13a8-b280-45fd-b413-0af2b847ed3d": "Single staff register",
-      "title_125a1660-4fa8-4dbb-9c3b-bf0d19d4698c": "Ledger numbering",
+      "title_125a1660-4fa8-4dbb-9c3b-bf0d19d4698c": "Register numbering",
       "description_125a1660-4fa8-4dbb-9c3b-bf0d19d4698c": "TRTREG",
       "title_af62857b-ca01-4bed-b1de-dc0b35edb0ab": "Single staff register",
       "description_af62857b-ca01-4bed-b1de-dc0b35edb0ab": "REGUNPERS",
       "title_1d1789a7-6ede-4a71-8055-41f7776d11f0": "Electoral lists",
       "description_1d1789a7-6ede-4a71-8055-41f7776d11f0": "LISTELEC",
-      "title_b6e7ce26-6e8f-4517-88ab-d5fbd3ac0af1": "Annual employee report",
+      "title_824f7b5f-9466-4394-b295-acc5c1f89581": "DUE",
+      "title_b6e7ce26-6e8f-4517-88ab-d5fbd3ac0af1": "Annual employee report ",
       "title_b77dcfab-266a-4944-b385-c77e944226af": "Indicators",
       "description_b77dcfab-266a-4944-b385-c77e944226af": "GESBIN",
       "title_a14a33aa-1095-4fe8-9e4a-df2cedbd8eff": "Extraction",
@@ -24558,7 +25783,7 @@
       "description_e81fbd40-b753-4ff1-a296-b6c08ba0fb8c": "PLNEMP",
       "title_6206f0e1-360d-4fdf-aca1-1cdf17ff8d65": "Time entry",
       "description_6206f0e1-360d-4fdf-aca1-1cdf17ff8d65": "TPSSTD",
-      "title_f27f7357-b7b8-4b8e-8e69-49da6328f837": "Time sheet",
+      "title_f27f7357-b7b8-4b8e-8e69-49da6328f837": "Time sheets",
       "description_f27f7357-b7b8-4b8e-8e69-49da6328f837": "TPSJOU",
       "title_f013f29c-2d41-4ad0-ae61-182777dbb248": "Adjustments",
       "description_f013f29c-2d41-4ad0-ae61-182777dbb248": "TPSSTDR",
@@ -24608,6 +25833,7 @@
       "description_a039a67b-f313-4176-a4d5-e7a2117be3ac": "TRTPPHACC",
       "title_4495a9bb-1d15-47e4-a77b-cda7df7b257a": "Pay order",
       "description_4495a9bb-1d15-47e4-a77b-cda7df7b257a": "TRTPREPAY",
+      "title_f4f24837-fc37-4e01-aa61-bceda8d0ea67": "Pay preparation slips",
       "title_8126c3f0-9f56-402c-a8ed-d3853471cda8": "Entry of variables",
       "title_938eb5f3-e811-4e42-9fa5-ded4ee0f57dc": "Direct entry",
       "description_938eb5f3-e811-4e42-9fa5-ded4ee0f57dc": "DIRECT",
@@ -24628,7 +25854,7 @@
       "description_673a3fab-7975-4fd4-8d88-762ea7fd6966": "TRTCAL",
       "title_ae8f2af2-2e44-444b-b473-acfb6b25ca45": "Printing of slips",
       "description_ae8f2af2-2e44-444b-b473-acfb6b25ca45": "PRNBUL",
-      "title_a520e6fc-919a-4828-b8ca-842f7e0961e8": "PFD archiving of payslips",
+      "title_a520e6fc-919a-4828-b8ca-842f7e0961e8": "PDF archiving of payslips",
       "description_a520e6fc-919a-4828-b8ca-842f7e0961e8": "VEPFIL",
       "title_38bfeb7b-b2a4-4774-95c0-186f4f0cc1a3": "Controls",
       "title_f170cbf7-6b5b-4a7d-9198-276d71961b5b": "Employee totals",
@@ -24659,7 +25885,7 @@
       "description_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "FICMAG",
       "title_23babcea-bfaf-4575-b83d-6a83d3c52b16": "Bank accounts",
       "description_23babcea-bfaf-4575-b83d-6a83d3c52b16": "GESBAN",
-      "title_62ccd1c4-638e-4654-96fa-a550afdda650": "Cash",
+      "title_62ccd1c4-638e-4654-96fa-a550afdda650": "Funds",
       "description_62ccd1c4-638e-4654-96fa-a550afdda650": "GESCAI",
       "title_87dcaa9e-450a-4636-9c51-0f1cc9ddc7e3": "Payment balances",
       "description_87dcaa9e-450a-4636-9c51-0f1cc9ddc7e3": "GESSLD",
@@ -24680,16 +25906,16 @@
       "description_1624c79a-8337-46b5-8c1a-df9f12a570d8": "GESDUC",
       "title_27c7cdb4-55c2-4817-98ff-3a106fd60ff4": "Payroll extraction",
       "description_27c7cdb4-55c2-4817-98ff-3a106fd60ff4": "EXTRDUCS",
-      "title_2b5e9fbd-7825-4495-9e99-69214520e4fb": "DUCS data",
+      "title_2b5e9fbd-7825-4495-9e99-69214520e4fb": "Data",
       "description_2b5e9fbd-7825-4495-9e99-69214520e4fb": "GESDCS",
-      "title_a7854962-7b7f-4e87-ad70-dd89b091a653": "DUCS file generation",
+      "title_a7854962-7b7f-4e87-ad70-dd89b091a653": "File generation",
       "description_a7854962-7b7f-4e87-ad70-dd89b091a653": "GENDCS",
       "title_7d117b37-661f-4a5f-8183-5134cbfd0c09": "N4DS setup",
-      "title_c739bab0-2a54-4016-ab3e-90ac51b2995d": "DADS-U/DNA file structure",
+      "title_c739bab0-2a54-4016-ab3e-90ac51b2995d": "File structure",
       "description_c739bab0-2a54-4016-ab3e-90ac51b2995d": "GESFTD",
-      "title_f1322e14-afbf-4c82-901a-a329f0b3fb74": "N4DS messages",
+      "title_f1322e14-afbf-4c82-901a-a329f0b3fb74": "Messages",
       "description_f1322e14-afbf-4c82-901a-a329f0b3fb74": "GESFTM",
-      "title_a6c1b869-dad7-4383-8d46-21f0a70a9bc8": "N4DS code correspondences",
+      "title_a6c1b869-dad7-4383-8d46-21f0a70a9bc8": "Code correspondences",
       "description_a6c1b869-dad7-4383-8d46-21f0a70a9bc8": "GESN4H",
       "title_d780a6df-a41c-4865-b0e6-338e2de45754": "AED",
       "title_5cf4c99d-46c6-4399-b8ce-e93e9a7ac350": "Extraction parameterization",
@@ -24700,7 +25926,7 @@
       "description_55c79f5f-deb3-4dcd-8775-ce40cd096e50": "GESDFA",
       "title_47ddf2e2-3dbf-4615-ac2b-7769ed427752": "Employee data",
       "description_47ddf2e2-3dbf-4615-ac2b-7769ed427752": "GESDNE",
-      "title_e87cd714-965e-4454-bbf1-69ca8e548d45": "AED file generation",
+      "title_e87cd714-965e-4454-bbf1-69ca8e548d45": "File generation",
       "description_e87cd714-965e-4454-bbf1-69ca8e548d45": "GENDNA",
       "title_38b331d9-7c3a-47e8-aab4-e03c448ef2cf": "DADS-U",
       "title_f68eba3a-a13a-4093-80ca-ea8e8fcbf27d": "Extraction parameterization",
@@ -24728,9 +25954,9 @@
       "description_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8": "GESPRV",
       "title_251137fe-7317-4b65-b38c-cd518c65fcc0": "Fees entry",
       "description_251137fe-7317-4b65-b38c-cd518c65fcc0": "GESHLN",
-      "title_c2889d5d-35e4-47eb-85c8-96a7e1c7eedc": "DADS-U file generation",
+      "title_c2889d5d-35e4-47eb-85c8-96a7e1c7eedc": "File generation",
       "description_c2889d5d-35e4-47eb-85c8-96a7e1c7eedc": "GENTDS",
-      "title_94309f0e-6c37-4223-91ef-592caec81efd": "DADS-U file control",
+      "title_94309f0e-6c37-4223-91ef-592caec81efd": "File check",
       "description_94309f0e-6c37-4223-91ef-592caec81efd": "CTRTDS",
       "title_331d8b9f-7ff9-4440-842b-bb91eb285660": "Import",
       "title_7933a6bb-287f-42d9-bf27-7ad62ff9b8f8": "Employee data",
@@ -24747,40 +25973,116 @@
       "title_5f39dd4f-5446-4299-8455-31a30d7dee5a": "Beneficiaries",
       "description_5f39dd4f-5446-4299-8455-31a30d7dee5a": "GESIDQ",
       "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Legal obligations setup",
-      "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "Social Security/Insurance",
-      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Monthly Tax declaration",
+      "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "Social security/Insurance",
+      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Monthly tax declaration",
       "title_249c4f61-87ff-43aa-af20-bbd878eb1cb2": "Model 10",
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "Model 30",
+      "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066": "DSN",
+      "title_ef3e85e8-987c-443e-a356-f68616da24fb": "Setup",
+      "title_cd80e5c6-4288-4120-8b01-3ad50accba09": "File structure",
+      "description_cd80e5c6-4288-4120-8b01-3ad50accba09": "GESHRDFS",
+      "title_71eeb33d-eaca-4457-bda4-bef18cb69593": "Code correspondences",
+      "description_71eeb33d-eaca-4457-bda4-bef18cb69593": "GESHRDSH",
+      "title_c2d6adfa-89e5-4b3e-8b0b-b4bb4f084a82": "Declaration setup",
+      "description_c2d6adfa-89e5-4b3e-8b0b-b4bb4f084a82": "GESHRDSR",
+      "title_b4071829-2050-46bd-a815-0f7fd6e5d946": "Extraction parameterization",
+      "description_b4071829-2050-46bd-a815-0f7fd6e5d946": "GESHRDSE",
+      "title_52b78598-2ede-47bb-8bb5-b23191a730ea": "Charge declarations",
+      "description_52b78598-2ede-47bb-8bb5-b23191a730ea": "GESHRDSC",
+      "title_fc1b9b81-cd9c-4175-855f-7022867825d5": "Organizational structure",
+      "title_e0745ef9-6d1a-4b86-8c64-946f953ff0f4": "Company data",
+      "description_e0745ef9-6d1a-4b86-8c64-946f953ff0f4": "GESHRDCP",
+      "title_f1b78308-d52e-427e-a127-a601af08b8b3": "Site data",
+      "description_f1b78308-d52e-427e-a127-a601af08b8b3": "GESHRDFY",
+      "title_760e7d54-4a1a-458d-8c91-75bbe4f0b6d0": "Monthly declaration",
+      "title_ffc08cc8-9356-4808-be0b-8cbae0d7f517": "Extraction",
+      "description_ffc08cc8-9356-4808-be0b-8cbae0d7f517": "EXTRDSNM",
+      "title_1e35f5ac-5db9-413c-acdd-2a864a08582c": "Employee data",
+      "description_1e35f5ac-5db9-413c-acdd-2a864a08582c": "GESHRDMM",
+      "title_4166e044-bbe1-4827-b2bf-3e826eb9bbda": "Contract data",
+      "description_4166e044-bbe1-4827-b2bf-3e826eb9bbda": "GESHRDMC",
+      "title_b73a2f2b-18da-4e48-be2f-596abe3c1667": "Payment data",
+      "description_b73a2f2b-18da-4e48-be2f-596abe3c1667": "GESHRDMV",
+      "title_2380312c-20ce-4f4c-bc07-78c6307ebbda": "Individual contributions",
+      "description_2380312c-20ce-4f4c-bc07-78c6307ebbda": "GESHRDMT",
+      "title_30304648-4249-4ce4-a933-4f0d84174c05": "Site declaration data",
+      "description_30304648-4249-4ce4-a933-4f0d84174c05": "GESHRCFY",
+      "title_65f5617d-5f8f-4e6a-a922-8697e3038872": "Contribution slips",
+      "description_65f5617d-5f8f-4e6a-a922-8697e3038872": "GESHRCFH",
+      "title_9b661143-89ff-42a9-83a4-96664eb05b05": "Generation",
+      "description_9b661143-89ff-42a9-83a4-96664eb05b05": "GENDSNM",
+      "title_8390f635-9b55-4eb1-b282-e82f4713b055": "Data management",
+      "description_8390f635-9b55-4eb1-b282-e82f4713b055": "GESHRMDM",
+      "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5": "Leave/return declaration",
+      "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "Extraction",
+      "description_d9a6e8d5-6679-4db7-98b2-949f269e794a": "EXTRDSNA",
+      "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Employee data",
+      "description_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "GESHRDWS",
+      "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "Generation",
+      "description_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "GENDSNA",
+      "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "Data management",
+      "description_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "GESHRDWM",
+      "title_8ce01e33-9999-4781-8c4e-d99917e1e53d": "Contract end declaration",
+      "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "Extraction",
+      "description_e4b6ee3a-948a-44f4-b063-de2541d0f715": "EXTRDSNC",
+      "title_437d4377-19b1-4194-ab5d-9bf92d7f963f": "Contract data",
+      "description_437d4377-19b1-4194-ab5d-9bf92d7f963f": "GESHRDCC",
+      "title_f59eb449-aa6e-460f-9040-c6d8b24221af": "Payment data",
+      "description_f59eb449-aa6e-460f-9040-c6d8b24221af": "GESHRDCV",
+      "title_9529ba29-f075-4325-901c-22e4e5e5375f": "Generation",
+      "description_9529ba29-f075-4325-901c-22e4e5e5375f": "GENDSNC",
+      "title_8a37bb76-1db0-4fdd-8484-b10d8179c4f8": "Data management",
+      "description_8a37bb76-1db0-4fdd-8484-b10d8179c4f8": "GESHRCDM",
+      "title_a37929b9-6e19-447c-b5b4-d985d516513b": "Tools",
+      "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "Declaration deletion",
+      "description_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "TRTDSNSUP",
+      "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "Declaration closing",
+      "description_5081f007-b673-49c1-95b9-27f7d5fc22fe": "TRTDSNCLO",
+      "title_751fdd4f-e990-40b2-84c4-359e643b50fe": "DUCS",
+      "title_8e1ac967-14c4-49d9-8267-1b647d68ab55": "N4DS setup",
+      "title_dc28a256-8589-422a-b7ec-19ff08500622": "AED",
+      "title_affd6666-1dcf-475c-a3d4-da4eb838943a": "DADS-U",
+      "title_e79118b3-1e16-4886-aa05-e9850eb79da7": "Welfare",
+      "title_98504909-dc79-4c31-a0c4-8b6152aedf80": "Compl. health insurance",
+      "title_80c4df0e-feec-486f-b303-738dff52e803": "Fees",
+      "title_b0614372-ccba-42c0-bf3c-531ab475764a": "Import",
+      "title_a5ebe45d-c06d-4750-b060-d3a060b1ce6e": "Welfare",
+      "title_c968b546-d512-49d5-b558-5b29efb6654a": "Compl. health insurance",
+      "title_83d57e13-e939-4f77-b27c-71e94f0d7ed8": "Income declaration",
+      "description_83d57e13-e939-4f77-b27c-71e94f0d7ed8": "INCDCL",
       "title_19691840-6ec5-4d60-b972-620ff5245413": "MEC",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
-      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "MEC file",
+      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Data",
       "description_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "GESMEA",
-      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "Generation",
+      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "File generation",
       "description_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "TRTAEM",
       "title_6195399b-f0cb-4037-b88b-6e70ac55111b": "Entertainment fund",
       "title_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "Extraction",
       "description_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "EXTRCCS",
-      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Entertainment fund file",
+      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Data",
       "description_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "GESCCS",
-      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "Generation",
+      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "File generation",
       "description_db3ec906-1851-45e8-b996-fb67061f09b7": "TRTCCS",
       "title_1f694c47-fe20-412e-a816-02fc6ade491b": "Luncheon vouchers",
       "title_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "Extraction",
       "description_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "EXTRTRL",
-      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Lunch vouchers",
+      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Data",
       "description_afd6f5a6-8233-4290-b24b-214b4a451ad3": "GESTRL",
-      "title_799b3774-e083-4433-81c4-9a364bb236db": "Generation",
+      "title_799b3774-e083-4433-81c4-9a364bb236db": "File generation",
       "description_799b3774-e083-4433-81c4-9a364bb236db": "TRTTRL",
       "title_e212b8cf-94f0-4966-92c3-31e1286249f5": "Extraction",
       "description_e212b8cf-94f0-4966-92c3-31e1286249f5": "EXTRCQL",
-      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Lunch vouchers",
+      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Data",
       "description_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "GESCQL",
-      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "Generation",
+      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "File generation",
       "description_1e1717e1-a81e-49ec-9192-a20ea5578326": "TRTCQL",
+      "title_2af14fb4-5fd0-4966-9fed-5d5ff509e38a": "Lunch vouchers",
+      "title_88e8bd05-3613-4af4-a4d9-1317b386186f": "Lunch vouchers",
       "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Statutory exports",
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "UIF export",
-      "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes",
+      "title_b6e6a487-ebd7-4334-8bbe-523d1449e9a8": "MEC",
+      "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes  ",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Expense notes  ",
       "title_b11e842b-a583-414f-8f10-0994334c5307": "Expense codes",
       "description_b11e842b-a583-414f-8f10-0994334c5307": "GESTES",
@@ -24939,7 +26241,7 @@
       "description_684a8b21-787a-4a5c-9c9b-7d454cd4c556": "GESINS",
       "title_bac5ffa4-b5b3-4964-9392-9c95eef13067": "2483 declaration",
       "description_bac5ffa4-b5b3-4964-9392-9c95eef13067": "GESDEC",
-      "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage",
+      "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage ",
       "title_667a6727-92bf-4bda-8176-5c570d238415": "Batch server",
       "title_e5d9241e-ceb0-43fd-a343-6b19d246f4a6": "Server activation",
       "description_e5d9241e-ceb0-43fd-a343-6b19d246f4a6": "BATCHRUN",
@@ -25138,6 +26440,7 @@
       "title_4492769b-c64c-4c93-b481-952138788b42": "Développement",
       "title_82cdb4ce-df1e-47f6-9365-2ea063b18c9e": "Dictionnaire données",
       "title_8fb53983-5c2f-429a-b741-62dc9f85eafc": "Tables",
+      "title_5969d371-b55f-4ef0-95a4-0a0df7327a78": "Tables",
       "title_67dd3972-d7ca-4a8d-aaf8-ecabe2964d9f": "Types de données",
       "description_67dd3972-d7ca-4a8d-aaf8-ecabe2964d9f": "GESATY",
       "title_2bd74ec0-225d-4976-8c79-8dce14a17491": "Menus locaux - Messages",
@@ -25162,7 +26465,7 @@
       "description_690c6940-6849-48cf-8e8e-82c554bb5e39": "GESAGB",
       "title_a32223da-d256-4de9-bc5c-ab03f463f9c7": "Variables de type compteur",
       "description_a32223da-d256-4de9-bc5c-ab03f463f9c7": "GESACM",
-      "title_3db64885-e017-4c3c-9d1a-87ab9d11c12d": "Type de contenu",
+      "title_3db64885-e017-4c3c-9d1a-87ab9d11c12d": "Content type",
       "title_b0812845-4428-481c-b629-58f319d80f4e": "Contexte assistant de formules",
       "description_b0812845-4428-481c-b629-58f319d80f4e": "GESAVR",
       "title_a96322ba-c7f5-4d3f-8bd9-41778695ecf0": "Historisation / Epuration",
@@ -25170,6 +26473,7 @@
       "title_25284415-3e90-44a3-ae7e-ba1b3a7a9b85": "Modèles de données",
       "description_25284415-3e90-44a3-ae7e-ba1b3a7a9b85": "GESAWM",
       "title_d5ab73ac-a751-4850-9133-a45d24aa60f0": "Classes",
+      "title_dbe897d7-75e7-4e8d-a071-27b08f350861": "Classes",
       "title_f7a2f3e3-b981-480e-b72d-1c8003667afd": "Représentations",
       "title_237baf6d-6cce-4ada-87ac-31f456adc01b": "Migration objet",
       "description_237baf6d-6cce-4ada-87ac-31f456adc01b": "AMIGSYR",
@@ -25185,6 +26489,7 @@
       "title_29c76050-1c7d-441e-8794-48e0da8e9439": "Mémos",
       "description_29c76050-1c7d-441e-8794-48e0da8e9439": "GESAMM",
       "title_cc8a45fb-6bc2-4ea6-bb05-462d596e0b51": "Documentation",
+      "title_e6635079-4710-4e28-8ac9-e598541e3fe5": "Documentation",
       "title_6057bf50-ffe8-42fb-8acb-ee0ebbd2eb49": "Liens de documentation",
       "description_6057bf50-ffe8-42fb-8acb-ee0ebbd2eb49": "GESADF",
       "title_44fa870a-d92b-4657-aa66-53e202676b2e": "Documentation sur champs",
@@ -25195,6 +26500,7 @@
       "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "Dictionnaire champs DADS-U",
       "description_721711b2-bed4-4ea0-bb86-af572aefa40d": "GESDDA",
+      "title_b6f83495-1d43-4a21-abd4-16a90959f756": "Dictionnaire champs DSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "Dictionnaire scripts",
       "title_d55c6412-a18c-4813-97a6-85d009a26c3a": "Ecrans",
       "title_658dba65-81f9-44d6-98b8-20d312c0317b": "Ecrans",
@@ -25208,11 +26514,13 @@
       "title_f40716e4-7685-4b38-959b-be8396555c4c": "Objets",
       "title_b93cfd75-98a7-4362-a3e1-9524e40c6c60": "Consultations",
       "description_b93cfd75-98a7-4362-a3e1-9524e40c6c60": "GESACN",
+      "title_9d685ada-4c66-4b0a-bfb0-6aac6e6b593e": "Actions",
       "title_d8ad3194-85ac-4bb7-987a-fe14ab18579f": "Actions",
       "description_d8ad3194-85ac-4bb7-987a-fe14ab18579f": "GESACT",
       "title_253e733f-3c0e-4941-bb6b-56ecb57a586f": "Paramètres actions",
       "description_253e733f-3c0e-4941-bb6b-56ecb57a586f": "GESAAR",
       "title_a9a5775b-3ca3-47d4-a4b0-d4eec477952f": "Fonctions",
+      "title_a791e058-a98a-4243-b17f-f2dd678529f9": "Scripts",
       "title_36faf186-d198-4709-b0ed-0170ae80b560": "Editeur scripts",
       "description_36faf186-d198-4709-b0ed-0170ae80b560": "ADOTRT",
       "title_c71c933b-b4ef-4ed9-a799-0c84fc538121": "Editeur Eclipse",
@@ -25408,6 +26716,7 @@
       "description_655c610d-7670-4661-880e-0dc8dd39d208": "RECHADC",
       "title_67168adb-3606-43c6-8878-4a439d953f10": "Menu",
       "description_67168adb-3606-43c6-8878-4a439d953f10": "ARECHMEN",
+      "title_a98ee413-6f97-4e02-aec6-4b5bbcd3f120": "Recherche rapide traitements",
       "title_cacb277d-655d-4d03-915d-fe0f298e6279": "Extraction/Intégration",
       "title_ff1da390-899c-4d8e-aafe-6a4725743759": "Extraction données",
       "description_ff1da390-899c-4d8e-aafe-6a4725743759": "DOSEXTRA",
@@ -25480,6 +26789,7 @@
       "description_fe6c9349-76e3-4526-b49f-1d8942d0973e": "GESAPP",
       "title_83dc781b-4626-4231-94e6-09e900e622da": "Création archive flash",
       "description_83dc781b-4626-4231-94e6-09e900e622da": "ARCHFLASH",
+      "title_707e14e4-d593-4fdd-bd82-748ffa155550": "Safe X3 WAS",
       "title_136e42f6-6aba-4b00-acb1-2d9855bd799e": "Sites Web",
       "title_3d349836-cd1d-4b97-9375-fa047935a9df": "Sélection site courant",
       "description_3d349836-cd1d-4b97-9375-fa047935a9df": "AYTCHGFCYW",
@@ -25538,6 +26848,9 @@
       "title_62489f45-d13e-4252-929c-9980be845698": "Tests",
       "title_957eee8d-98c1-45b0-922f-9130de699b5b": "Test site Web",
       "description_957eee8d-98c1-45b0-922f-9130de699b5b": "GESAYT",
+      "title_cfd834f4-3c93-43ff-9ebf-3c22fdd3e6d0": "Tests unitaires",
+      "title_dea8900a-7186-4b41-a4e2-542f1a017357": "Sauvegarde données stables",
+      "title_9237ce8d-d68d-4233-b796-5e9a0ca086a8": "Récupération données stables",
       "title_ccfa405e-c4a8-4f9d-bd40-bca59b462f7f": "Paramétrage",
       "title_3425842b-e03d-4635-b06e-ed49d8cfa15a": "Utilisateurs",
       "title_c695e1ef-c31a-4226-a292-513b160f305f": "Utilisateurs",
@@ -25562,6 +26875,7 @@
       "description_97987fd6-802c-4576-a989-3d652ba18d3e": "GESANU",
       "title_198762c9-bb8b-48b4-8667-10eecee27a9b": "Création utilisateurs",
       "description_198762c9-bb8b-48b4-8667-10eecee27a9b": "CREUSR",
+      "title_44bbcbec-76c9-42d2-a8ec-85b1e02dd255": "Destinations",
       "title_455af27a-3f0f-4602-99af-cfc812203112": "Destinations",
       "description_455af27a-3f0f-4602-99af-cfc812203112": "GESAIM",
       "title_b20aa430-409b-4e06-bdfc-1bb79e587e17": "Destinations par utilisateur",
@@ -25569,10 +26883,11 @@
       "description_c34193ec-ba0e-4ad4-9da5-094524c613e3": "GESARC",
       "title_bfe7429e-5c6f-4455-ae86-10349e630daa": "Paramètres d'archivage",
       "description_bfe7429e-5c6f-4455-ae86-10349e630daa": "GESARE",
-      "title_c694bc7e-2ce5-435f-b2e4-7a2f3817f67a": "Codes impressions",
+      "title_c694bc7e-2ce5-435f-b2e4-7a2f3817f67a": "Code impression",
       "description_c694bc7e-2ce5-435f-b2e4-7a2f3817f67a": "GESARX",
       "title_dda4fff5-5137-492a-8800-ccafef47d871": "Valeurs par défaut",
       "description_dda4fff5-5137-492a-8800-ccafef47d871": "GESARV",
+      "title_17c6a5ae-bdbc-4349-8143-a055df89cc80": "Workflow",
       "title_70a31a06-c3ce-496f-9fcd-63231924e170": "Circuit de signature",
       "description_70a31a06-c3ce-496f-9fcd-63231924e170": "GESCEW",
       "title_da29aabb-a02c-4250-8d0e-66dbf66085e8": "Règles d'affectation utilisateur",
@@ -25635,8 +26950,7 @@
       "description_290cdeb8-f957-49e1-9fd3-83039c0f502d": "GESSVR",
       "title_d421997c-ae9a-4ad2-ac9e-7230d728c024": "Ecrans de consultation",
       "description_d421997c-ae9a-4ad2-ac9e-7230d728c024": "GESGTC",
-      "title_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9": "Documents par défaut",
-      "description_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9": "GESAON",
+      "title_c3315e6b-383c-4ea4-a491-77c78baf4bff": "Formules par législation",
       "title_bdfc1155-9164-4428-bb6a-67190a74bf6b": "Exploitation",
       "title_926a5876-1940-4737-aefc-30ea5475b0a1": "Statistiques",
       "title_a796495d-3364-44e2-9992-2bf15951d57c": "Déclencheurs statistiques",
@@ -25723,7 +27037,7 @@
       "description_ab801a1b-21a1-4852-918a-fd2d4e88e850": "GESVRA",
       "title_a99f2722-9661-4e84-8a55-19edcc9f8344": "Cumuls",
       "description_a99f2722-9661-4e84-8a55-19edcc9f8344": "GESCUM",
-      "title_db6916be-68fb-4e53-b2d5-1417f55b7c53": "Comptes sur rubriques",
+      "title_db6916be-68fb-4e53-b2d5-1417f55b7c53": "Comptes par rubrique",
       "title_5c01ed76-6bfd-4416-8706-ec4aad677099": "Maj rubriques",
       "title_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "Cumuls",
       "description_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "CUMRUB",
@@ -25816,7 +27130,7 @@
       "title_2454fbbb-4566-486f-9137-24a7c78d631b": "Portail interactif",
       "title_894e5f37-6716-4607-807d-1acfdf81e97a": "Composants interactifs",
       "description_894e5f37-6716-4607-807d-1acfdf81e97a": "GESAIT",
-      "title_ae16a528-376d-4fd2-a371-4ef62383b1ce": "Vignettes",
+      "title_ae16a528-376d-4fd2-a371-4ef62383b1ce": "GESAVP",
       "description_ae16a528-376d-4fd2-a371-4ef62383b1ce": "GESAVP",
       "title_2042d784-b832-42ee-973b-30b047304330": "Vues du portail",
       "description_2042d784-b832-42ee-973b-30b047304330": "GESAPV",
@@ -25871,6 +27185,8 @@
       "description_fb893b7d-906b-4079-ab1e-54d8a4846e5c": "GESTUN",
       "title_c72893c9-e6fc-4167-8267-1fb4607c58b2": "Conversions d'unités",
       "title_90945080-5b76-49b8-a67e-2a4c2814d9c2": "Interlocuteurs",
+      "title_435a5f75-b3f1-4707-8f07-bca60f69caf8": "Code CAE",
+      "title_1c737f78-de12-48a8-beef-0cf8634710ca": "Taxes",
       "title_ed0fc459-3817-4f3d-b902-b317e0a9d5cb": "Tables comptables",
       "title_b9918fdd-1355-402e-8f21-964a93cab3e3": "Natures",
       "description_b9918fdd-1355-402e-8f21-964a93cab3e3": "GESCNA",
@@ -25904,6 +27220,7 @@
       "description_d110cef8-c891-4ff4-8755-7b486e17d58b": "GESJOT",
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "Postes",
       "description_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "GESPOT",
+      "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Missions",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Profils",
       "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "GESPRF",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classements conventionnels",
@@ -25938,7 +27255,7 @@
       "description_8f625f23-3e1a-4068-8515-2e2325c93f1c": "EXTRDUE",
       "title_8cc78b74-ad16-46c8-a679-026b4b869f28": "Fichier DUE",
       "description_8cc78b74-ad16-46c8-a679-026b4b869f28": "GESDUE",
-      "title_81c5a7db-aaca-449e-ba5e-2abdbd301562": "Génération",
+      "title_81c5a7db-aaca-449e-ba5e-2abdbd301562": "Génération du fichier",
       "description_81c5a7db-aaca-449e-ba5e-2abdbd301562": "TRTDUE",
       "title_fc327d8f-bc64-4088-aae2-a3557fe62e9c": "Réception",
       "description_fc327d8f-bc64-4088-aae2-a3557fe62e9c": "RECEPDUE",
@@ -25959,6 +27276,7 @@
       "description_af62857b-ca01-4bed-b1de-dc0b35edb0ab": "REGUNPERS",
       "title_1d1789a7-6ede-4a71-8055-41f7776d11f0": "Listes électorales",
       "description_1d1789a7-6ede-4a71-8055-41f7776d11f0": "LISTELEC",
+      "title_824f7b5f-9466-4394-b295-acc5c1f89581": "DUE",
       "title_b6e7ce26-6e8f-4517-88ab-d5fbd3ac0af1": "Bilan social",
       "title_b77dcfab-266a-4944-b385-c77e944226af": "Indicateurs",
       "description_b77dcfab-266a-4944-b385-c77e944226af": "GESBIN",
@@ -25994,6 +27312,7 @@
       "description_59beeeee-a186-4475-acf6-653f8329fece": "GESCNE",
       "title_12379986-e2ed-4bdf-ad08-6b3af49ad34f": "Initialisation des congés",
       "description_12379986-e2ed-4bdf-ad08-6b3af49ad34f": "INITCP",
+      "title_3004b10d-356b-4f92-8c9e-79ad4a921f1e": "Absences",
       "title_8b929b56-efc8-4f05-9be8-4f3d5ff7f902": "Saisie des absences",
       "description_8b929b56-efc8-4f05-9be8-4f3d5ff7f902": "GESDCG",
       "title_f027d185-b9ee-49e8-9d87-36dcce1da273": "Création globale",
@@ -26061,6 +27380,7 @@
       "description_a039a67b-f313-4176-a4d5-e7a2117be3ac": "TRTPPHACC",
       "title_4495a9bb-1d15-47e4-a77b-cda7df7b257a": "Arrêté de paie",
       "description_4495a9bb-1d15-47e4-a77b-cda7df7b257a": "TRTPREPAY",
+      "title_f4f24837-fc37-4e01-aa61-bceda8d0ea67": "Bordereaux préparation de paie",
       "title_8126c3f0-9f56-402c-a8ed-d3853471cda8": "Saisie de variables",
       "title_938eb5f3-e811-4e42-9fa5-ded4ee0f57dc": "Saisie directe",
       "description_938eb5f3-e811-4e42-9fa5-ded4ee0f57dc": "DIRECT",
@@ -26133,16 +27453,16 @@
       "description_1624c79a-8337-46b5-8c1a-df9f12a570d8": "GESDUC",
       "title_27c7cdb4-55c2-4817-98ff-3a106fd60ff4": "Extraction de paie",
       "description_27c7cdb4-55c2-4817-98ff-3a106fd60ff4": "EXTRDUCS",
-      "title_2b5e9fbd-7825-4495-9e99-69214520e4fb": "Données DUCS",
+      "title_2b5e9fbd-7825-4495-9e99-69214520e4fb": "Données",
       "description_2b5e9fbd-7825-4495-9e99-69214520e4fb": "GESDCS",
-      "title_a7854962-7b7f-4e87-ad70-dd89b091a653": "Génération fichier DUCS",
+      "title_a7854962-7b7f-4e87-ad70-dd89b091a653": "Génération du fichier",
       "description_a7854962-7b7f-4e87-ad70-dd89b091a653": "GENDCS",
       "title_7d117b37-661f-4a5f-8183-5134cbfd0c09": "Paramétrage N4DS",
-      "title_c739bab0-2a54-4016-ab3e-90ac51b2995d": "Structure fichier N4DS",
+      "title_c739bab0-2a54-4016-ab3e-90ac51b2995d": "Structure fichier",
       "description_c739bab0-2a54-4016-ab3e-90ac51b2995d": "GESFTD",
-      "title_f1322e14-afbf-4c82-901a-a329f0b3fb74": "Messages N4DS",
+      "title_f1322e14-afbf-4c82-901a-a329f0b3fb74": "Messages",
       "description_f1322e14-afbf-4c82-901a-a329f0b3fb74": "GESFTM",
-      "title_a6c1b869-dad7-4383-8d46-21f0a70a9bc8": "Correspondances code N4DS",
+      "title_a6c1b869-dad7-4383-8d46-21f0a70a9bc8": "Correspondances codes",
       "description_a6c1b869-dad7-4383-8d46-21f0a70a9bc8": "GESN4H",
       "title_d780a6df-a41c-4865-b0e6-338e2de45754": "AED",
       "title_5cf4c99d-46c6-4399-b8ce-e93e9a7ac350": "Paramétrage extraction",
@@ -26153,7 +27473,7 @@
       "description_55c79f5f-deb3-4dcd-8775-ce40cd096e50": "GESDFA",
       "title_47ddf2e2-3dbf-4615-ac2b-7769ed427752": "Données salariés",
       "description_47ddf2e2-3dbf-4615-ac2b-7769ed427752": "GESDNE",
-      "title_e87cd714-965e-4454-bbf1-69ca8e548d45": "Génération fichier AED",
+      "title_e87cd714-965e-4454-bbf1-69ca8e548d45": "Génération du fichier",
       "description_e87cd714-965e-4454-bbf1-69ca8e548d45": "GENDNA",
       "title_38b331d9-7c3a-47e8-aab4-e03c448ef2cf": "DADS-U",
       "title_f68eba3a-a13a-4093-80ca-ea8e8fcbf27d": "Paramétrage extraction",
@@ -26181,9 +27501,9 @@
       "description_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8": "GESPRV",
       "title_251137fe-7317-4b65-b38c-cd518c65fcc0": "Saisie des honoraires",
       "description_251137fe-7317-4b65-b38c-cd518c65fcc0": "GESHLN",
-      "title_c2889d5d-35e4-47eb-85c8-96a7e1c7eedc": "Génération fichier DADS-U",
+      "title_c2889d5d-35e4-47eb-85c8-96a7e1c7eedc": "Génération du fichier",
       "description_c2889d5d-35e4-47eb-85c8-96a7e1c7eedc": "GENTDS",
-      "title_94309f0e-6c37-4223-91ef-592caec81efd": "Contrôle fichier DADS-U",
+      "title_94309f0e-6c37-4223-91ef-592caec81efd": "Contrôle du fichier",
       "description_94309f0e-6c37-4223-91ef-592caec81efd": "CTRTDS",
       "title_331d8b9f-7ff9-4440-842b-bb91eb285660": "Import",
       "title_7933a6bb-287f-42d9-bf27-7ad62ff9b8f8": "Données salariés",
@@ -26199,36 +27519,90 @@
       "title_38367120-6361-4532-854c-ac51a1c112f6": "Rémunérations",
       "title_5f39dd4f-5446-4299-8455-31a30d7dee5a": "Ayants droit",
       "description_5f39dd4f-5446-4299-8455-31a30d7dee5a": "GESIDQ",
-      "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Fichier Sécurité sociale",
+      "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Param obligations légales",
+      "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "Sécurité sociale/Assurance",
+      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Déclaration fiscale mensuelle",
+      "title_249c4f61-87ff-43aa-af20-bbd878eb1cb2": "Modèle 10",
+      "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "Modèle 30",
+      "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066": "DSN",
+      "title_ef3e85e8-987c-443e-a356-f68616da24fb": "Paramétrage",
+      "title_cd80e5c6-4288-4120-8b01-3ad50accba09": "Structure fichier",
+      "title_71eeb33d-eaca-4457-bda4-bef18cb69593": "Correspondances codes",
+      "title_c2d6adfa-89e5-4b3e-8b0b-b4bb4f084a82": "Paramétrage des déclarations",
+      "title_b4071829-2050-46bd-a815-0f7fd6e5d946": "Paramétrage extraction",
+      "title_52b78598-2ede-47bb-8bb5-b23191a730ea": "Déclarations de charges",
+      "title_fc1b9b81-cd9c-4175-855f-7022867825d5": "Structure générale",
+      "title_e0745ef9-6d1a-4b86-8c64-946f953ff0f4": "Données sociétés",
+      "title_f1b78308-d52e-427e-a127-a601af08b8b3": "Données sites",
+      "title_760e7d54-4a1a-458d-8c91-75bbe4f0b6d0": "Déclaration mensuelle",
+      "title_ffc08cc8-9356-4808-be0b-8cbae0d7f517": "Extraction",
+      "title_1e35f5ac-5db9-413c-acdd-2a864a08582c": "Données salariés",
+      "title_4166e044-bbe1-4827-b2bf-3e826eb9bbda": "Données contrats",
+      "title_b73a2f2b-18da-4e48-be2f-596abe3c1667": "Données versements",
+      "title_2380312c-20ce-4f4c-bc07-78c6307ebbda": "Cotisations individuelles",
+      "title_30304648-4249-4ce4-a933-4f0d84174c05": "Données déclaratives site",
+      "title_65f5617d-5f8f-4e6a-a922-8697e3038872": "Bordereaux de cotisations",
+      "title_9b661143-89ff-42a9-83a4-96664eb05b05": "Génération",
+      "title_8390f635-9b55-4eb1-b282-e82f4713b055": "Gestion des données",
+      "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5": "Déclaration arrêt/reprise",
+      "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "Extraction",
+      "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Données salariés",
+      "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "Génération",
+      "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "Gestion des données",
+      "title_8ce01e33-9999-4781-8c4e-d99917e1e53d": "Déclaration fin de contrat",
+      "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "Extraction",
+      "title_437d4377-19b1-4194-ab5d-9bf92d7f963f": "Données contrats",
+      "title_f59eb449-aa6e-460f-9040-c6d8b24221af": "Données versements",
+      "title_9529ba29-f075-4325-901c-22e4e5e5375f": "Génération",
+      "title_8a37bb76-1db0-4fdd-8484-b10d8179c4f8": "Gestion des données",
+      "title_a37929b9-6e19-447c-b5b4-d985d516513b": "Outils",
+      "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "Suppression des déclarations",
+      "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "Fermeture des déclarations",
+      "title_751fdd4f-e990-40b2-84c4-359e643b50fe": "DUCS",
+      "title_8e1ac967-14c4-49d9-8267-1b647d68ab55": "Paramétrage N4DS",
+      "title_dc28a256-8589-422a-b7ec-19ff08500622": "AED",
+      "title_affd6666-1dcf-475c-a3d4-da4eb838943a": "DADS-U",
+      "title_e79118b3-1e16-4886-aa05-e9850eb79da7": "Prévoyance",
+      "title_98504909-dc79-4c31-a0c4-8b6152aedf80": "Mutuelle",
+      "title_80c4df0e-feec-486f-b303-738dff52e803": "Honoraires",
+      "title_b0614372-ccba-42c0-bf3c-531ab475764a": "Import",
+      "title_a5ebe45d-c06d-4750-b060-d3a060b1ce6e": "Prévoyance",
+      "title_c968b546-d512-49d5-b558-5b29efb6654a": "Mutuelle",
+      "title_83d57e13-e939-4f77-b27c-71e94f0d7ed8": "Déclaration revenu",
       "title_19691840-6ec5-4d60-b972-620ff5245413": "AEM",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
-      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Fichier AEM",
+      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Données",
       "description_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "GESMEA",
-      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "Génération",
+      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "Génération du fichier",
       "description_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "TRTAEM",
       "title_6195399b-f0cb-4037-b88b-6e70ac55111b": "Congés spectacles",
       "title_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "Extraction",
       "description_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "EXTRCCS",
-      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Fichier congés spectacles",
+      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Données",
       "description_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "GESCCS",
-      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "Génération",
+      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "Génération du fichier",
       "description_db3ec906-1851-45e8-b996-fb67061f09b7": "TRTCCS",
       "title_1f694c47-fe20-412e-a816-02fc6ade491b": "Titres restaurant",
       "title_97247120-6e7b-4a39-8cf3-01f3b8c6a65e": "Tickets restaurant",
       "title_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "Extraction",
       "description_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "EXTRTRL",
-      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Tickets restaurant",
+      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Données",
       "description_afd6f5a6-8233-4290-b24b-214b4a451ad3": "GESTRL",
-      "title_799b3774-e083-4433-81c4-9a364bb236db": "Génération",
+      "title_799b3774-e083-4433-81c4-9a364bb236db": "Génération du fichier",
       "description_799b3774-e083-4433-81c4-9a364bb236db": "TRTTRL",
       "title_44b77cda-c224-4a61-bc79-3245ade30349": "Chèques déjeuner",
       "title_e212b8cf-94f0-4966-92c3-31e1286249f5": "Extraction",
       "description_e212b8cf-94f0-4966-92c3-31e1286249f5": "EXTRCQL",
-      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Chèques déjeuner",
+      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Données",
       "description_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "GESCQL",
-      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "Génération",
+      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "Génération du fichier",
       "description_1e1717e1-a81e-49ec-9192-a20ea5578326": "TRTCQL",
+      "title_2af14fb4-5fd0-4966-9fed-5d5ff509e38a": "Tickets restaurant",
+      "title_88e8bd05-3613-4af4-a4d9-1317b386186f": "Chèques déjeuner",
+      "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Exports statutaires",
+      "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Export UIF",
+      "title_b6e6a487-ebd7-4334-8bbe-523d1449e9a8": "AEM",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notes de frais",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Notes de frais",
       "title_b11e842b-a583-414f-8f10-0994334c5307": "Codes frais",
@@ -26353,6 +27727,7 @@
       "description_453190de-655d-49da-b5e3-b14a635f7873": "GESTCS",
       "title_176ae4c0-e507-4b76-bb55-860c7568df9b": "Parcours individualisés",
       "description_176ae4c0-e507-4b76-bb55-860c7568df9b": "GESCSI",
+      "title_70d5b59a-5f82-4ab8-971e-e35313304f8a": "Budgets",
       "title_aff84768-57e1-4052-a1f6-42e0fe55f6ed": "Budgets de référence",
       "description_aff84768-57e1-4052-a1f6-42e0fe55f6ed": "GESBUR",
       "title_782a7a59-c1b6-4d81-aa20-0ffa1338b3d6": "Plans prévisionnels",
@@ -26455,12 +27830,14 @@
       "description_f352dde7-e7ad-40a7-aa38-0c2e98fd6db2": "CHGDAT",
       "title_fb07d720-b26e-4f39-8107-3d95e8e3eb56": "Changement utilisateur",
       "description_fb07d720-b26e-4f39-8107-3d95e8e3eb56": "CHGUSR",
+      "title_72cf1545-8ebf-4921-b17c-7fa6598a82e9": "Migrations",
       "title_655b2654-bc97-426d-9407-014f8abf908e": "Procédures de migration",
       "description_655b2654-bc97-426d-9407-014f8abf908e": "GESAM3",
       "title_3704e24d-4ad8-4a36-ad1a-492eab3fd3ba": "Moniteur d'enchainement",
       "description_3704e24d-4ad8-4a36-ad1a-492eab3fd3ba": "AMOULIN",
       "title_a0d9f4b0-27c2-4e35-a437-f28ef155b306": "Migration des pièces jointes",
       "description_a0d9f4b0-27c2-4e35-a437-f28ef155b306": "Migration des pièces jointes",
+      "title_b3a71d84-705d-413d-abaa-b6814131531a": "Audit",
       "title_ba07d8a2-5f82-45c4-9039-fa0304d4cabe": "Connexions",
       "description_ba07d8a2-5f82-45c4-9039-fa0304d4cabe": "CONSALO",
       "title_a5a62ec2-6b7c-437d-87ee-918caacedcfd": "Tables",
@@ -26558,6 +27935,7 @@
       "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "Génération des libellés",
       "description_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "ALANG",
+      "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "Documentation",
       "title_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "Plan de travail documentation",
       "description_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "ADOCTRA",
       "title_135378ee-3ced-4fac-9bc7-0c6a2534494e": "Extraction documentation",
@@ -27093,8 +28471,6 @@
       "description_290cdeb8-f957-49e1-9fd3-83039c0f502d": "GESSVR",
       "title_d421997c-ae9a-4ad2-ac9e-7230d728c024": "Ecrãs de consulta",
       "description_d421997c-ae9a-4ad2-ac9e-7230d728c024": "GESGTC",
-      "title_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9": "Documentos p/defeito",
-      "description_f1aaef88-4707-46a7-bbe8-8c84f6fb4df9": "GESAON",
       "title_bdfc1155-9164-4428-bb6a-67190a74bf6b": "Exploração",
       "title_926a5876-1940-4737-aefc-30ea5475b0a1": "Estatísticas",
       "title_a796495d-3364-44e2-9992-2bf15951d57c": "Arranques estatísticos",
@@ -28014,6 +29390,7 @@
       "title_204a81cf-562c-418b-8391-8e91be536e02": "Skills and careers",
       "title_5588dc2d-cf10-45c6-a6a3-1d03389789e3": "Training",
       "title_a90c47d7-771d-447b-8bfe-50acbe224a3c": "Usage",
+      "title_3455410c-3e30-4d4c-a0e3-16a3b75f7efa": "Хранилище X3",
       "title_1546f900-9f51-4a0e-9bc7-7faa9d9a1ce4": "Reports",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "Translations",
       "description_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "ADOCTRA"
