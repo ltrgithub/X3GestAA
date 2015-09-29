@@ -854,11 +854,6 @@
 			}
 		},
 		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
 			"code": "SYBPCCATEG",
@@ -875,11 +870,6 @@
 				"entity": "BPCCATEG",
 				"representation": "BPCCATEG"
 			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
 		},
 		{
 			"$type": "menuItem",
@@ -1026,11 +1016,6 @@
 			}
 		},
 		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
 			"code": "STD_X3_ERP_BPSCATEG",
@@ -1049,11 +1034,6 @@
 			}
 		},
 		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
 			"code": "STD_X3_ERP_BPSUPPLIER",
@@ -1069,43 +1049,6 @@
 				"$type": "representationProxy",
 				"entity": "BPSUPPLIER",
 				"representation": "BPSUPPLIER"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SUP_APSADX",
-			"title": "title_760c2401-5feb-4d81-ae65-cc6dc051010a",
-			"description": "description_760c2401-5feb-4d81-ae65-cc6dc051010a",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "APSADX",
-				"representation": "APSADX"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "AVISULIC",
-			"title": "title_c76b5d2a-fe99-482d-8933-574e9e3869cc",
-			"description": "description_c76b5d2a-fe99-482d-8933-574e9e3869cc",
-			"linkType": "$representation",
-			"facet": "$details",
-			"keyParameter": "\" \"",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVISULIC",
-				"representation": "AVISULIC"
 			}
 		},
 		{
@@ -1201,42 +1144,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "STD_X3_ERP_PHYBUI",
-			"title": "title_c86ad417-975a-498a-bf2a-155382ef9b15",
-			"description": "description_c86ad417-975a-498a-bf2a-155382ef9b15",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYBUI",
-				"representation": "PHYBUI"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_X3_ERP_PHYLCT",
-			"title": "title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c",
-			"description": "description_d8fb34d3-11c5-4496-a1e1-7adeadcd810c",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYLCT",
-				"representation": "PHYLCT"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "STD_X3_ERP_CCMCHGREQ",
 			"title": "title_e5f18957-db90-4b29-9690-6b42e11e88cb",
 			"description": "description_e5f18957-db90-4b29-9690-6b42e11e88cb",
@@ -1304,6 +1211,15 @@
 				"$type": "representationProxy",
 				"entity": "CCMACTION",
 				"representation": "CCMACTION"
+			}
+		},
+		{
+			"$type": "menuModule",
+			"title": "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d",
+			"code": "STD_X3_ERP_CCM",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
 			}
 		},
 		{
@@ -1404,276 +1320,6 @@
 		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
-			"code": "STD_X3_ERP_PHYELT",
-			"title": "title_719f15e2-6625-4392-9046-0ea5758466c3",
-			"description": "description_719f15e2-6625-4392-9046-0ea5758466c3",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYELT",
-				"representation": "PHYELT"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SUP_AVOLUME",
-			"title": "title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d",
-			"description": "description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVOLUME",
-				"representation": "AVOLUME"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYCACCE",
-			"title": "title_4ee95f41-7c51-40b5-97e1-694518dd4c6b",
-			"description": "description_4ee95f41-7c51-40b5-97e1-694518dd4c6b",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "CACCE",
-				"representation": "CACCE"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGACCOUNT",
-			"title": "title_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3",
-			"description": "description_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GACCOUNT",
-				"representation": "GACCOUNT"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGACM",
-			"title": "title_8b4dd026-d14c-4dc3-a9dd-5923f7af339f",
-			"description": "description_8b4dd026-d14c-4dc3-a9dd-5923f7af339f",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GACM",
-				"representation": "GACM"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGJOURNAL",
-			"title": "title_5cc65117-e2fc-430e-8540-f9b81838d548",
-			"description": "description_5cc65117-e2fc-430e-8540-f9b81838d548",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GJOURNAL",
-				"representation": "GJOURNAL"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBUDPAR",
-			"title": "title_177430d4-a5e6-4f5c-b190-f677c4088fef",
-			"description": "description_177430d4-a5e6-4f5c-b190-f677c4088fef",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BUDPAR",
-				"representation": "BUDPAR"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBUDTYP",
-			"title": "title_273d61c8-7305-4fe2-8483-15739b1e6c0e",
-			"description": "description_273d61c8-7305-4fe2-8483-15739b1e6c0e",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BUDTYP",
-				"representation": "BUDTYP"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYCADISTMP",
-			"title": "title_1975fa53-48e7-41dd-b4eb-794b615aa61c",
-			"description": "description_1975fa53-48e7-41dd-b4eb-794b615aa61c",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "CADISTMP",
-				"representation": "CADISTMP"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYENTITE",
-			"title": "title_7de9f82e-630f-4dfb-95c4-0d6327f24b35",
-			"description": "description_7de9f82e-630f-4dfb-95c4-0d6327f24b35",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ENTITE",
-				"representation": "ENTITE"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGDIE",
-			"title": "title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9",
-			"description": "description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GDIE",
-				"representation": "GDIE"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBUDAPP",
-			"title": "title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9",
-			"description": "description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BUDAPP",
-				"representation": "BUDAPP"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBUDVER",
-			"title": "title_f8939df3-83ab-484a-bdcd-4d31f7c286fb",
-			"description": "description_f8939df3-83ab-484a-bdcd-4d31f7c286fb",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BUDVER",
-				"representation": "BUDVER"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYENVELOPPE",
-			"title": "title_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b",
-			"description": "description_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ENVELOPPE",
-				"representation": "ENVELOPPE"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGLED",
-			"title": "title_48d675c6-4b28-4a83-af91-87280d71da4d",
-			"description": "description_48d675c6-4b28-4a83-af91-87280d71da4d",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GLED",
-				"representation": "GLED"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
 			"code": "SYGACCDENCOD",
 			"title": "title_a561b68e-28f6-4c3e-99e3-c824147dc8a7",
 			"description": "description_a561b68e-28f6-4c3e-99e3-c824147dc8a7",
@@ -1759,373 +1405,6 @@
 				"$type": "representationProxy",
 				"entity": "CAI",
 				"representation": "CAI"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYCONTEXT",
-			"title": "title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62",
-			"description": "description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "CONTEXT",
-				"representation": "CONTEXT"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYLAYOUTFAS",
-			"title": "title_543dd069-1092-4069-8896-da0ad9d544d2",
-			"description": "description_543dd069-1092-4069-8896-da0ad9d544d2",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "LAYOUTFAS",
-				"representation": "LAYOUTFAS"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYFXDASSETS",
-			"title": "title_92b63465-2a01-4a93-b5ee-f4d0b04f052d",
-			"description": "description_92b63465-2a01-4a93-b5ee-f4d0b04f052d",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "FXDASSETS",
-				"representation": "FXDASSETS"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYLEASE",
-			"title": "title_b552cc53-9804-471e-9ecd-38bdeba19359",
-			"description": "description_b552cc53-9804-471e-9ecd-38bdeba19359",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "LEASE",
-				"representation": "LEASE"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYGRANTS",
-			"title": "title_8d8c9b8b-3179-4631-af56-c70743d52e6d",
-			"description": "description_8d8c9b8b-3179-4631-af56-c70743d52e6d",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "GRANTS",
-				"representation": "GRANTS"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYCONCESSION",
-			"title": "title_8ce76b66-9546-4f8d-ae93-dd63b574ce79",
-			"description": "description_8ce76b66-9546-4f8d-ae93-dd63b574ce79",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "CONCESSION",
-				"representation": "CONCESSION"
-			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBPARTNER",
-			"title": "title_13502b3e-5477-4a4f-adc1-9b2e209224b3",
-			"description": "description_13502b3e-5477-4a4f-adc1-9b2e209224b3",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPARTNER",
-				"representation": "BPARTNER"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYPROSPECT",
-			"title": "title_82237bfc-8f0b-4a2c-a6bd-baa14d86161f",
-			"description": "description_82237bfc-8f0b-4a2c-a6bd-baa14d86161f",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPCUSTOMER",
-				"representation": "BPCUSTOMER4"
-			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBPCCATEG",
-			"title": "title_cc70dbfe-fb24-403a-b5ac-182aa537f65d",
-			"description": "description_cc70dbfe-fb24-403a-b5ac-182aa537f65d",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPCCATEG",
-				"representation": "BPCCATEG"
-			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYBPCUSTOMER",
-			"title": "title_29871b1d-bc2c-4f22-a6e4-9495ceba5603",
-			"description": "description_29871b1d-bc2c-4f22-a6e4-9495ceba5603",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPCUSTOMER",
-				"representation": "BPCUSTOMER"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYITMCATEG",
-			"title": "title_b39966b3-14b1-4a82-90dd-4f892e0bda19",
-			"description": "description_b39966b3-14b1-4a82-90dd-4f892e0bda19",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ITMCATEG",
-				"representation": "ITMCATEG"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYITMFACILIT",
-			"title": "title_8bd2b86c-1aab-4529-8fc7-84a2fad71316",
-			"description": "description_8bd2b86c-1aab-4529-8fc7-84a2fad71316",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ITMFACILIT",
-				"representation": "ITMFACILIT"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYITMMASTER",
-			"title": "title_8cab2d5c-e792-4fb3-9c21-0c00884cf212",
-			"description": "description_8cab2d5c-e792-4fb3-9c21-0c00884cf212",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ITMMASTER",
-				"representation": "ITMMASTER"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYITMWRH",
-			"title": "title_4b474024-2da3-4864-9b21-270f606663a3",
-			"description": "description_4b474024-2da3-4864-9b21-270f606663a3",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "ITMWRH",
-				"representation": "ITMWRH"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYTABSTASTO",
-			"title": "title_510a4465-7713-4ae4-84d5-8f789d90e64d",
-			"description": "description_510a4465-7713-4ae4-84d5-8f789d90e64d",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "TABSTASTO",
-				"representation": "TABSTASTO"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYSALESREP",
-			"title": "title_c2de7eae-1a9f-47e6-981b-5754a8b98323",
-			"description": "description_c2de7eae-1a9f-47e6-981b-5754a8b98323",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "SALESREP",
-				"representation": "SALESREP"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "SYINCOTERM",
-			"title": "title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7",
-			"description": "description_278b764c-c45e-4cc1-a545-23ea4dcbe5d7",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "INCOTERMH",
-				"representation": "INCOTERM"
-			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_X3_ERP_BPSCATEG",
-			"title": "title_301cd727-8380-48ea-bd8d-b22bc4c1778c",
-			"description": "description_301cd727-8380-48ea-bd8d-b22bc4c1778c",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPSCATEG",
-				"representation": "BPSCATEG"
-			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601"
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "STD_X3_ERP_BPSUPPLIER",
-			"title": "title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6",
-			"description": "description_f3a87eb7-5792-48d9-a5ac-760007f2a7b6",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "BPSUPPLIER",
-				"representation": "BPSUPPLIER"
 			}
 		},
 		{
@@ -2351,11 +1630,6 @@
 			}
 		},
 		{
-			"$type": "menuCategory",
-			"code": "STD_ORDERS",
-			"description": "description_2836fd8d-47f8-4391-9641-073335050651"
-		},
-		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
 			"code": "SYSOPENORDERC",
@@ -2420,11 +1694,6 @@
 			}
 		},
 		{
-			"$type": "menuCategory",
-			"code": "STD_RETURNS",
-			"description": "description_d50670da-8a82-4f82-b54a-6091996bc268"
-		},
-		{
 			"$type": "menuItem",
 			"$variantType": "menuItem",
 			"code": "SYSRETURNL",
@@ -2441,11 +1710,6 @@
 				"entity": "SRETURN",
 				"representation": "SRETURNL"
 			}
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_RETURNS",
-			"description": "description_d50670da-8a82-4f82-b54a-6091996bc268"
 		},
 		{
 			"$type": "menuItem",
@@ -3172,23 +2436,6 @@
 			]
 		},
 		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "2214db2b-a40c-430d-b9da-c603dae6e752",
-			"items": [
-				{
-					"$type": "menuSubblock",
-					"$variantType": "menuBlock",
-					"code": "68494199-589a-4a0a-a600-64254c0d6390"
-				}
-			]
-		},
-		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "68494199-589a-4a0a-a600-64254c0d6390"
-		},
-		{
 			"$type": "menuBlock",
 			"title": "title_cec1e507-6704-4590-aa93-903ec762f999",
 			"code": "APARaccounting",
@@ -3275,16 +2522,6 @@
 			]
 		},
 		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "c9b8a222-1520-4547-990e-a3788a3a72bc"
-		},
-		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "b689308c-6bf1-4a2d-b276-4a010970cdab"
-		},
-		{
 			"$type": "menuBlock",
 			"title": "title_a3f2d84d-13a5-4e1d-b2b4-4ec5faabe222",
 			"code": "STD_X3_ERP_SETUP_EDI",
@@ -3312,21 +2549,6 @@
 					"title": "title_9b738305-6a8d-4100-861b-9ba0082b9a4b"
 				}
 			]
-		},
-		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "58b5fbee-8fe9-4730-873b-a2293303eaeb"
-		},
-		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "8ee18b58-5c2e-48f1-bb3f-39da03744765"
-		},
-		{
-			"$type": "menuSubblock",
-			"$variantType": "menuBlock",
-			"code": "d0082b73-9594-41c7-85e7-ec206a79a858"
 		}
 	],
 	"$localization": {
@@ -3334,8 +2556,12 @@
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "رصد المستخدمين",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "رصد المستخدمين",
 			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "رؤية الرخصة",
+			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "مباني",
+			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "مواقع",
+			"title_719f15e2-6625-4392-9046-0ea5758466c3": "عناصر مادية",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 مساحات التخزين",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 مساحات التخزون",
+			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "محاسبة",
 			"title_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "أقسام تحليلية",
 			"title_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3": "حسابات",
 			"title_8b4dd026-d14c-4dc3-a9dd-5923f7af339f": "نماذج الحسابية",
@@ -3370,63 +2596,8 @@
 			"title_510a4465-7713-4ae4-84d5-8f789d90e64d": "أوضاع المخزون",
 			"title_c2de7eae-1a9f-47e6-981b-5754a8b98323": "مندوبين",
 			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "incoterm",
-			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "TVA",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "صفحات للقراءة فقط",
-			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "واجهات حسابية",
-			"title_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "معاملة دخول التسويات",
-			"title_c743a4db-9a07-4b25-8128-883e5c2a9eda": "مجموعة تذكير",
-			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "عوامل",
-			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "صناديق",
-			"title_3cc1a1a2-5465-4330-a3af-871eb7732b77": "إدارة العائدات",
-			"title_9f608f27-1a43-4f2f-beea-e508d4e2b950": "ترتيبات التعاقد",
-			"title_4342f84e-cd3a-4f0f-8e7a-e4e1be3b4cf8": "طلبيات الشراء",
-			"title_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "إيصالات الشراء",
-			"title_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "طلبات الشراء",
-			"title_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "مراقبة الفواتير",
-			"title_ea43738e-3487-4124-8fc8-eab9564643ce": "دخول التعريفات",
-			"title_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "أعمال",
-			"title_2a4b8297-3545-431c-a9df-67176c7e4ed2": "إقتباس",
-			"title_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "طلبيات المبيع",
-			"title_cc907141-7636-4126-b2a5-eea0528398fd": "طلبيات مفتوحة",
-			"description_2836fd8d-47f8-4391-9641-073335050651": "طلبيات",
-			"title_984fe8ba-7722-4757-9764-6b0b0b4c5722": "طلبيات التسليم",
-			"title_480651d4-5ade-4ba0-942a-22e5d54cc294": "تسليمات",
-			"description_58eacb99-85a9-4bb1-b3cb-50e32280cd9a": "تسليم",
-			"title_8916a16a-3c31-4e51-8983-75671b9de141": "عائدات الزبون",
-			"description_d50670da-8a82-4f82-b54a-6091996bc268": "عائدات",
-			"title_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "عائدات القرض",
-			"title_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "عائدات مواد التعاقد",
-			"title_155b3776-e7e7-4ced-8224-ce194eab6043": "فواتير المبيعات",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "فواتير البيع",
-			"description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead": "تعريفات",
-			"title_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "تسميات الإنتاج",
-			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "التسميات البديلة",
-			"title_6be03087-9ab1-4e70-a4f1-a26bdac11a94": "مجموعات",
-			"title_148f8c62-8b51-4869-b8e6-3699b7eee198": "مجموة البدائل",
-			"title_7361fccd-a60d-4139-9dab-b326c4b0e659": "تشاور سعر العائد التصنيع",
-			"title_88abbc78-f8e0-4e38-9543-d47a2d7e758d": "التكاليف القياسية محاكاة",
-			"title_39ac2aae-f6f7-429b-b7f6-e9a3e9470bed": "مراكز التحميل",
-			"title_2d84e7b7-1c15-41de-88d7-8b89266b8511": "محطات التحميل",
-			"title_920d28ae-9b68-4244-a786-82697a4a6bb8": "مواقع",
-			"title_eb8ebce7-65d2-4ec6-abb5-b0709f18fef0": "أنواع المواقع",
-			"title_47472066-b6ad-4b23-b9b1-70cc14874419": "أسئلة",
-			"title_92a8da7f-e0f7-4b42-86e4-ffd6f2af1513": "مراقبة الجودة",
-			"title_2bfd794e-a640-44e9-b038-cc07b720c2ea": "قسائم تقنية",
-			"title_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "أجوبة",
-			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "غلاف",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "فئات الموردين",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "الموردين",
-			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "TVA إعفاء الأنماط",
-			"title_909262ac-87e4-4521-bde2-340857a842ff": "بحث سعر الشراء",
-			"description_909262ac-87e4-4521-bde2-340857a842ff": "بحث سعر الشراء",
-			"title_35cc5310-2228-455c-95eb-e16390eba78b": "تشاور تعريفات البيع",
-			"description_35cc5310-2228-455c-95eb-e16390eba78b": "تشاور تعريفا ت البيع",
-			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDIتابع الملفات",
-			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI مطلب الإعداد",
-			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "مباني",
-			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "مواقع",
-			"title_719f15e2-6625-4392-9046-0ea5758466c3": "عناصر مادية",
-			"description_719f15e2-6625-4392-9046-0ea5758466c3": "PHYLET",
 			"title_6a64a934-9648-487f-a305-0762022be318": "حاوية الشحن",
 			"description_6a64a934-9648-487f-a305-0762022be318": "حاوية الشحن",
 			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "مكان",
@@ -3453,6 +2624,55 @@
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "ميزان المدفوعات- تكوين",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "خلق",
 			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "ميزان المدفوعات- خلق",
+			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "TVA إعفاء الأنماط",
+			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "TVA",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "صفحات للقراءة فقط",
+			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "واجهات حسابية",
+			"title_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "معاملة دخول التسويات",
+			"title_c743a4db-9a07-4b25-8128-883e5c2a9eda": "مجموعة تذكير",
+			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "عوامل",
+			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "صناديق",
+			"title_3cc1a1a2-5465-4330-a3af-871eb7732b77": "إدارة العائدات",
+			"title_9f608f27-1a43-4f2f-beea-e508d4e2b950": "ترتيبات التعاقد",
+			"title_4342f84e-cd3a-4f0f-8e7a-e4e1be3b4cf8": "طلبيات الشراء",
+			"title_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "إيصالات الشراء",
+			"title_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "طلبات الشراء",
+			"title_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "مراقبة الفواتير",
+			"title_909262ac-87e4-4521-bde2-340857a842ff": "بحث سعر الشراء",
+			"description_909262ac-87e4-4521-bde2-340857a842ff": "بحث سعر الشراء",
+			"title_ea43738e-3487-4124-8fc8-eab9564643ce": "دخول التعريفات",
+			"title_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "أعمال",
+			"title_2a4b8297-3545-431c-a9df-67176c7e4ed2": "إقتباس",
+			"title_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "طلبيات المبيع",
+			"title_cc907141-7636-4126-b2a5-eea0528398fd": "طلبيات مفتوحة",
+			"description_2836fd8d-47f8-4391-9641-073335050651": "طلبيات",
+			"title_984fe8ba-7722-4757-9764-6b0b0b4c5722": "طلبيات التسليم",
+			"title_480651d4-5ade-4ba0-942a-22e5d54cc294": "تسليمات",
+			"description_58eacb99-85a9-4bb1-b3cb-50e32280cd9a": "تسليم",
+			"title_8916a16a-3c31-4e51-8983-75671b9de141": "عائدات الزبون",
+			"description_d50670da-8a82-4f82-b54a-6091996bc268": "عائدات",
+			"title_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "عائدات القرض",
+			"title_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "عائدات مواد التعاقد",
+			"title_155b3776-e7e7-4ced-8224-ce194eab6043": "فواتير المبيعات",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "فواتير البيع",
+			"title_35cc5310-2228-455c-95eb-e16390eba78b": "تشاور تعريفات البيع",
+			"description_35cc5310-2228-455c-95eb-e16390eba78b": "تشاور تعريفا ت البيع",
+			"description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead": "تعريفات",
+			"title_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "تسميات الإنتاج",
+			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "التسميات البديلة",
+			"title_6be03087-9ab1-4e70-a4f1-a26bdac11a94": "مجموعات",
+			"title_148f8c62-8b51-4869-b8e6-3699b7eee198": "مجموة البدائل",
+			"title_7361fccd-a60d-4139-9dab-b326c4b0e659": "تشاور سعر العائد التصنيع",
+			"title_88abbc78-f8e0-4e38-9543-d47a2d7e758d": "التكاليف القياسية محاكاة",
+			"title_39ac2aae-f6f7-429b-b7f6-e9a3e9470bed": "مراكز التحميل",
+			"title_2d84e7b7-1c15-41de-88d7-8b89266b8511": "محطات التحميل",
+			"title_920d28ae-9b68-4244-a786-82697a4a6bb8": "مواقع",
+			"title_eb8ebce7-65d2-4ec6-abb5-b0709f18fef0": "أنواع المواقع",
+			"title_47472066-b6ad-4b23-b9b1-70cc14874419": "أسئلة",
+			"title_92a8da7f-e0f7-4b42-86e4-ffd6f2af1513": "مراقبة الجودة",
+			"title_2bfd794e-a640-44e9-b038-cc07b720c2ea": "قسائم تقنية",
+			"title_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "أجوبة",
+			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "غلاف",
 			"title_9efd455e-fce6-446c-ab02-a61b2add56a1": "EDI خلق الإرسال",
 			"description_9efd455e-fce6-446c-ab02-a61b2add56a1": "EDI خلق الإرسال",
 			"title_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "EDI خلق الإيصالات",
@@ -3460,7 +2680,9 @@
 			"title_a6daf6ab-763e-46f7-8371-090bad9d5229": "Sas EDI",
 			"description_a6daf6ab-763e-46f7-8371-090bad9d5229": "Sas EDI",
 			"title_76bf9455-c4a0-4628-9f44-642352149457": "EDIتابع الملفات",
+			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDIتابع الملفات",
 			"title_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI مطلب الإعداد",
+			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI مطلب الإعداد",
 			"title_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI شركاء",
 			"description_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI شركاء",
 			"title_60803382-5d94-4e06-a1b7-2d2e9134b914": "EDI فئات",
@@ -3481,7 +2703,6 @@
 			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "عبر الشريكEDI شركاء",
 			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "عبر شريك الشركةEDI تدفق",
 			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "عبر شريك الشركةEDI تدفق",
-			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "محاسبة",
 			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "ممتلكات",
 			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "بيانات القاعدة",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "محاسبة الشريك",
@@ -3501,6 +2722,9 @@
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
 			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Lizenz ansehen",
+			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Gebäude",
+			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Orte",
+			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Inventargüter",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Speicherbereiche zur Dateiablage",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Buchhaltung",
@@ -3543,10 +2767,22 @@
 			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Versandbedingungen",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Lieferantenkategorie",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Lieferanten",
+			"title_6a64a934-9648-487f-a305-0762022be318": "Versandbehälter",
+			"description_6a64a934-9648-487f-a305-0762022be318": "Versandbehälter",
+			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Platz",
+			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Platz",
+			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transportlieferzeit",
+			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transportlieferzeit",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Leistungskennziffern",
 			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Leistungskennziffern",
 			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Leistungskennziffern/BP Gruppen",
 			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Leistungskennziffern/BP Gruppen",
+			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Änderungsanfrage",
+			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Änderungsanfrage",
+			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Einflussanalyse",
+			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Einflussanalyse",
+			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Aktionen",
+			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Aktionen",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Produkt/Leistungskennziffern",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Zahlungsbilanz - Produkt/Leistungskennziffern",
 			"title_413c646b-7895-4953-b935-2e30b530498b": "Feldeinstellungen",
@@ -3571,6 +2807,8 @@
 			"title_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "Wareneingang",
 			"title_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "Materialanforderung",
 			"title_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "Einkaufsrechnungen",
+			"title_909262ac-87e4-4521-bde2-340857a842ff": "Einkaufspreissuche",
+			"description_909262ac-87e4-4521-bde2-340857a842ff": "Verkaufspreissuche",
 			"title_8348d183-39fe-456f-a92e-8a44c4e3b1fa": "Verkauf",
 			"title_ea43738e-3487-4124-8fc8-eab9564643ce": "Preiserfassung",
 			"title_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "Projekt",
@@ -3607,23 +2845,6 @@
 			"title_2bfd794e-a640-44e9-b038-cc07b720c2ea": "QS-Datenblatt",
 			"title_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "Antworten",
 			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Verpackungen",
-			"title_909262ac-87e4-4521-bde2-340857a842ff": "Einkaufspreissuche",
-			"description_909262ac-87e4-4521-bde2-340857a842ff": "Verkaufspreissuche",
-			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Gebäude",
-			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Orte",
-			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Inventargüter",
-			"title_6a64a934-9648-487f-a305-0762022be318": "Versandbehälter",
-			"description_6a64a934-9648-487f-a305-0762022be318": "Versandbehälter",
-			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Platz",
-			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Platz",
-			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transportlieferzeit",
-			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transportlieferzeit",
-			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Änderungsanfrage",
-			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Änderungsanfrage",
-			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Einflussanalyse",
-			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Einflussanalyse",
-			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Aktionen",
-			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Aktionen",
 			"title_9efd455e-fce6-446c-ab02-a61b2add56a1": "Start EDI-Ausgaben",
 			"description_9efd455e-fce6-446c-ab02-a61b2add56a1": "Start EDI-Ausgaben",
 			"title_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "Start Wareneingänge EDI",
@@ -3653,20 +2874,31 @@
 			"title_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI-Partner / Personenkonto",
 			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI-Partner / Personenkonto",
 			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI-Flüsse nach Personenkonto/Unternehmen",
-			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI-Flüsse nach Personenkonto/Unternehmen"
+			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI-Flüsse nach Personenkonto/Unternehmen",
+			"title_69a5e658-63a8-4af7-ba28-39e1303fc5a7": "Verwendung EDI",
+			"title_df32247f-f02a-487b-8323-d9498807e615": "Verarbeitungen EDI",
+			"title_ccdead4a-edcb-4d29-bcd7-d1cf1a3063dc": "Prüfungen EDI",
+			"title_a3f2d84d-13a5-4e1d-b2b4-4ec5faabe222": "Einstellungen EDI",
+			"title_77b15ca2-5e25-4451-ac63-6f4fc488dba3": "Einstellungen EDI",
+			"title_a768e3d6-7ae4-42ef-871b-d7d6b0dfecf7": "Flussdefinition",
+			"title_9b738305-6a8d-4100-861b-9ba0082b9a4b": "Zuweisungen"
 		},
 		"en-gb": {
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User monitoring",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "User monitoring",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage areas",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage areas",
-			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Financials",
-			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Fixed Assets",
-			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "Common data",
+			"title_6a64a934-9648-487f-a305-0762022be318": "Shipping container",
+			"description_6a64a934-9648-487f-a305-0762022be318": "Shipping container",
+			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
+			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
+			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
+			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Economic reason codes",
 			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Economic reason codes",
 			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Economic reason/BP groups",
 			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Economic reason/BP groups",
+			"title_71d39a8e-57e6-4712-b652-38870f121054": "Change Control",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Change request",
 			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Impact analysis",
 			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Impact analysis",
@@ -3680,12 +2912,9 @@
 			"description_413c646b-7895-4953-b935-2e30b530498b": "Payment balance UI configuration",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generation",
 			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Payment balance declaration - Generation",
-			"title_cec1e507-6704-4590-aa93-903ec762f999": "A/P-A/R accounting",
-			"title_f1c0e99c-b8ec-4bac-b881-d5f20a65fddc": "Purchasing",
-			"title_8348d183-39fe-456f-a92e-8a44c4e3b1fa": "Sales",
+			"description_909262ac-87e4-4521-bde2-340857a842ff": "Purchase price search",
 			"description_58eacb99-85a9-4bb1-b3cb-50e32280cd9a": "Deliveries",
 			"description_35cc5310-2228-455c-95eb-e16390eba78b": "SPRICESEARCH",
-			"title_a6806110-6a39-475e-abe2-fc8e7c240a44": "Manufacturing",
 			"description_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "Production BOMs",
 			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "BOM Codes",
 			"description_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "BOM Codes",
@@ -3704,6 +2933,8 @@
 			"title_3fac53ae-6893-4483-9a48-def8a9fb4731": "Standard Operations",
 			"description_3fac53ae-6893-4483-9a48-def8a9fb4731": "Standard Operations",
 			"title_7e66706c-e8b2-418c-9cc4-1ca7b71c1301": "Inventory",
+			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDI tracking documents",
+			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI setup query",
 			"title_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI Partner",
 			"description_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI Partner",
 			"title_60803382-5d94-4e06-a1b7-2d2e9134b914": "EDI Category",
@@ -3724,97 +2955,55 @@
 			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI partners / BP",
 			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI flows by BP / company",
 			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI flows by BP/company",
-			"description_909262ac-87e4-4521-bde2-340857a842ff": "Purchase price search",
-			"title_6a64a934-9648-487f-a305-0762022be318": "Shipping container",
-			"description_6a64a934-9648-487f-a305-0762022be318": "Shipping container",
-			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
-			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
-			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
-			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
-			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDI tracking documents",
-			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI setup query"
+			"title_ccdead4a-edcb-4d29-bcd7-d1cf1a3063dc": "EDI Controls",
+			"title_77b15ca2-5e25-4451-ac63-6f4fc488dba3": "EDI Setup"
 		},
 		"en-us": {
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
 			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "View license",
 			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Buildings",
-			"description_c86ad417-975a-498a-bf2a-155382ef9b15": "PHYBUI",
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Locations",
-			"description_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "PHYLCT",
 			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Physical elements",
-			"description_719f15e2-6625-4392-9046-0ea5758466c3": "PHYELT",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3 Storage Areas",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Financials",
 			"title_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "Analytical dimensions",
-			"description_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "CACCE",
 			"title_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3": "Accounts",
-			"description_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3": "GACCOUNT",
 			"title_8b4dd026-d14c-4dc3-a9dd-5923f7af339f": "Account core models",
-			"description_8b4dd026-d14c-4dc3-a9dd-5923f7af339f": "GACM",
 			"title_5cc65117-e2fc-430e-8540-f9b81838d548": "Journal codes",
-			"description_5cc65117-e2fc-430e-8540-f9b81838d548": "GJOURNAL",
 			"title_177430d4-a5e6-4f5c-b190-f677c4088fef": "Budgets",
-			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
 			"title_273d61c8-7305-4fe2-8483-15739b1e6c0e": "Budget type",
-			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
 			"title_1975fa53-48e7-41dd-b4eb-794b615aa61c": "Budget weighting codes",
-			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
 			"title_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "Entities",
 			"description_7de9f82e-630f-4dfb-95c4-0d6327f24b35": "ENTITE",
 			"title_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "Dimension type",
-			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
 			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approval list",
-			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
 			"title_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "Budget versions",
-			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
 			"title_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b": "Budget Envelopes",
 			"description_3d1f59b8-b1f4-4cd8-a0c0-07dc8b9d9d6b": "Budget Envelopes",
 			"title_48d675c6-4b28-4a83-af91-87280d71da4d": "Ledgers",
-			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
-			"title_51f52afe-f2b2-4ed5-ab62-70a2bae1b391": "My menu",
-			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Fixed Assets",
 			"title_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "Contexts",
 			"description_b3ddeea8-8ee1-4373-8c22-5b0758d31d62": "CONTEXT",
 			"title_543dd069-1092-4069-8896-da0ad9d544d2": "Expenses",
-			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
 			"title_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "Fixed assets",
-			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
 			"title_b552cc53-9804-471e-9ecd-38bdeba19359": "Leases",
-			"description_b552cc53-9804-471e-9ecd-38bdeba19359": "LEASE",
 			"title_8d8c9b8b-3179-4631-af56-c70743d52e6d": "Subsidies",
-			"description_8d8c9b8b-3179-4631-af56-c70743d52e6d": "GRANTS",
 			"title_8ce76b66-9546-4f8d-ae93-dd63b574ce79": "Concessions",
-			"description_8ce76b66-9546-4f8d-ae93-dd63b574ce79": "CONCESSION",
-			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "Common data",
 			"title_13502b3e-5477-4a4f-adc1-9b2e209224b3": "BPs",
-			"description_13502b3e-5477-4a4f-adc1-9b2e209224b3": "BPARTNER",
 			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Common Data",
 			"title_82237bfc-8f0b-4a2c-a6bd-baa14d86161f": "Prospects",
-			"description_82237bfc-8f0b-4a2c-a6bd-baa14d86161f": "BPCUSTOMER4",
 			"title_cc70dbfe-fb24-403a-b5ac-182aa537f65d": "Customer categories",
-			"description_cc70dbfe-fb24-403a-b5ac-182aa537f65d": "BPCCATEG",
 			"title_29871b1d-bc2c-4f22-a6e4-9495ceba5603": "Customers",
-			"description_29871b1d-bc2c-4f22-a6e4-9495ceba5603": "BPCUSTOMER",
 			"title_b39966b3-14b1-4a82-90dd-4f892e0bda19": "Product categories",
-			"description_b39966b3-14b1-4a82-90dd-4f892e0bda19": "ITMCATEG",
 			"title_8bd2b86c-1aab-4529-8fc7-84a2fad71316": "Products sites",
-			"description_8bd2b86c-1aab-4529-8fc7-84a2fad71316": "ITMFACILIT",
 			"title_8cab2d5c-e792-4fb3-9c21-0c00884cf212": "Products",
-			"description_8cab2d5c-e792-4fb3-9c21-0c00884cf212": "ITMMASTER",
 			"title_4b474024-2da3-4864-9b21-270f606663a3": "Products warehouses",
-			"description_4b474024-2da3-4864-9b21-270f606663a3": "ITMWRH",
 			"title_510a4465-7713-4ae4-84d5-8f789d90e64d": "Stock statuses",
-			"description_510a4465-7713-4ae4-84d5-8f789d90e64d": "TABSTASTO",
 			"title_c2de7eae-1a9f-47e6-981b-5754a8b98323": "Sales reps",
-			"description_c2de7eae-1a9f-47e6-981b-5754a8b98323": "SALESREP",
 			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Incoterms",
-			"description_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "INCOTERM",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Supplier categories",
-			"description_301cd727-8380-48ea-bd8d-b22bc4c1778c": "BPSCATEG",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Suppliers",
-			"description_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "BPSUPPLIER",
 			"title_6a64a934-9648-487f-a305-0762022be318": "Shipping containers",
 			"description_6a64a934-9648-487f-a305-0762022be318": "Shipping containers",
 			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Places",
@@ -3842,43 +3031,25 @@
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generation",
 			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Payment balance declaration generation",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "VAT exemption reasons",
-			"description_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "VATEXEREA",
 			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "VAT",
 			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
-			"title_cec1e507-6704-4590-aa93-903ec762f999": "A/P-A/R accounting",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Payment attributes",
-			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
 			"title_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "Payment entry types",
-			"description_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "TABPAYTYP",
 			"title_c743a4db-9a07-4b25-8128-883e5c2a9eda": "Reminder groups",
-			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
 			"title_f1ac4474-6800-46f4-9a10-a2fe059982bc": "Factors",
-			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
 			"title_1038a023-aa7c-442b-9d5b-3198a63fe74c": "Cash",
-			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
-			"title_f1c0e99c-b8ec-4bac-b881-d5f20a65fddc": "Purchasing",
 			"title_3cc1a1a2-5465-4330-a3af-871eb7732b77": "Return management",
-			"description_3cc1a1a2-5465-4330-a3af-871eb7732b77": "PRETURN",
 			"title_9f608f27-1a43-4f2f-beea-e508d4e2b950": "Sub-contract orders",
-			"description_9f608f27-1a43-4f2f-beea-e508d4e2b950": "SCOHEAD",
 			"title_4342f84e-cd3a-4f0f-8e7a-e4e1be3b4cf8": "Purchase orders",
-			"description_4342f84e-cd3a-4f0f-8e7a-e4e1be3b4cf8": "PORDER",
 			"title_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "Purchase Receipts",
 			"title_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "Purchase request",
-			"description_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "PREQUIS",
 			"title_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "Invoice control",
-			"description_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "PINVOICE",
 			"title_909262ac-87e4-4521-bde2-340857a842ff": "Purchase price search",
 			"description_909262ac-87e4-4521-bde2-340857a842ff": "Purchase Price search",
-			"title_8348d183-39fe-456f-a92e-8a44c4e3b1fa": "Sales",
 			"title_ea43738e-3487-4124-8fc8-eab9564643ce": "Price lists",
-			"description_ea43738e-3487-4124-8fc8-eab9564643ce": "SPRICFICH",
 			"title_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "Projects",
-			"description_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "OPPOR",
 			"title_2a4b8297-3545-431c-a9df-67176c7e4ed2": "Quotes",
-			"description_2a4b8297-3545-431c-a9df-67176c7e4ed2": "SQUOTE",
 			"title_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "Sales orders",
-			"description_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "SORDER",
 			"title_cc907141-7636-4126-b2a5-eea0528398fd": "Open orders",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "Orders",
 			"title_984fe8ba-7722-4757-9764-6b0b0b4c5722": "Delivery requests",
@@ -3893,69 +3064,43 @@
 			"title_35cc5310-2228-455c-95eb-e16390eba78b": "Sales price inquiry",
 			"description_35cc5310-2228-455c-95eb-e16390eba78b": "Sales price inquiry",
 			"description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead": "Prices",
-			"title_a6806110-6a39-475e-abe2-fc8e7c240a44": "Manufacturing",
 			"title_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "Production BOMs",
-			"description_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "BODP",
 			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "BOM Code",
-			"description_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "TABBOMALT",
 			"title_6be03087-9ab1-4e70-a4f1-a26bdac11a94": "Routings",
-			"description_6be03087-9ab1-4e70-a4f1-a26bdac11a94": "ROUTING",
 			"title_148f8c62-8b51-4869-b8e6-3699b7eee198": "Routing Codes",
-			"description_148f8c62-8b51-4869-b8e6-3699b7eee198": "TABROUALT",
 			"title_7361fccd-a60d-4139-9dab-b326c4b0e659": "Production cost inquiry",
-			"description_7361fccd-a60d-4139-9dab-b326c4b0e659": "MFGCOST",
-			"description_354be49c-9e29-4f6c-b5e8-e5ace069248d": "ITMCOSTD",
-			"description_e0d39f9c-26f9-4149-a171-c4369ce9572e": "ITMCOSTA",
-			"description_16881cf0-c146-48d8-8365-38d48c67845f": "ITMCOSTB",
 			"title_88abbc78-f8e0-4e38-9543-d47a2d7e758d": "Simulated standard cost",
-			"description_88abbc78-f8e0-4e38-9543-d47a2d7e758d": "ITMCOSTS",
 			"title_39ac2aae-f6f7-429b-b7f6-e9a3e9470bed": "Work Centre Groups",
-			"description_39ac2aae-f6f7-429b-b7f6-e9a3e9470bed": "TABWRKCTR",
 			"title_2d84e7b7-1c15-41de-88d7-8b89266b8511": "Work Centres",
-			"description_2d84e7b7-1c15-41de-88d7-8b89266b8511": "WORKSTATIO",
-			"description_3fac53ae-6893-4483-9a48-def8a9fb4731": "ROUOPESTD",
-			"title_7e66706c-e8b2-418c-9cc4-1ca7b71c1301": "Stock",
 			"title_920d28ae-9b68-4244-a786-82697a4a6bb8": "Locations",
-			"description_920d28ae-9b68-4244-a786-82697a4a6bb8": "STOLOC",
 			"title_eb8ebce7-65d2-4ec6-abb5-b0709f18fef0": "Location type table",
-			"description_eb8ebce7-65d2-4ec6-abb5-b0709f18fef0": "TABLOCTYP",
 			"title_47472066-b6ad-4b23-b9b1-70cc14874419": "Quality records - questions",
-			"description_47472066-b6ad-4b23-b9b1-70cc14874419": "QLYCRDQST",
 			"title_92a8da7f-e0f7-4b42-86e4-ffd6f2af1513": "Quality control",
-			"description_92a8da7f-e0f7-4b42-86e4-ffd6f2af1513": "STOQLY",
 			"title_2bfd794e-a640-44e9-b038-cc07b720c2ea": "Technical sheet",
-			"description_2bfd794e-a640-44e9-b038-cc07b720c2ea": "QLYCRD",
 			"title_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "Responses",
 			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Packages",
-			"title_69a5e658-63a8-4af7-ba28-39e1303fc5a7": "EDI Usage",
-			"title_df32247f-f02a-487b-8323-d9498807e615": "EDI Processes",
 			"title_9efd455e-fce6-446c-ab02-a61b2add56a1": "EDI issues generation",
 			"description_9efd455e-fce6-446c-ab02-a61b2add56a1": "EDI issues generation",
 			"title_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "EDI receipts generation",
 			"description_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "EDI receipts generation",
-			"title_ccdead4a-edcb-4d29-bcd7-d1cf1a3063dc": "EDI controls",
 			"title_a6daf6ab-763e-46f7-8371-090bad9d5229": "EDI temporary storage",
 			"description_a6daf6ab-763e-46f7-8371-090bad9d5229": "EDI temporary storage",
 			"title_76bf9455-c4a0-4628-9f44-642352149457": "EDI tracking documents",
 			"description_76bf9455-c4a0-4628-9f44-642352149457": "Suivi des documents EDI",
 			"title_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI setup query",
 			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "Requête paramétrage EDI",
-			"title_a3f2d84d-13a5-4e1d-b2b4-4ec5faabe222": "EDI Setup",
-			"title_77b15ca2-5e25-4451-ac63-6f4fc488dba3": "EDI setup",
 			"title_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI Partners",
 			"description_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI Partner",
 			"title_60803382-5d94-4e06-a1b7-2d2e9134b914": "EDI Categories",
 			"description_60803382-5d94-4e06-a1b7-2d2e9134b914": "EDI Category",
 			"title_c096399b-a513-4bee-b896-3a9e81140ab6": "EDI Protocols",
 			"description_c096399b-a513-4bee-b896-3a9e81140ab6": "EDI Protocols",
-			"title_a768e3d6-7ae4-42ef-871b-d7d6b0dfecf7": "Flow definition",
 			"title_e3f4491e-f491-4f4f-9c7b-63ff13b82f47": "EDI Message Mapping",
 			"description_e3f4491e-f491-4f4f-9c7b-63ff13b82f47": "EDI Message mapping",
 			"title_def3d33e-bf5b-483d-a36d-e3ad683a32c3": "EDI Sequential file",
 			"description_def3d33e-bf5b-483d-a36d-e3ad683a32c3": "EDI Sequential file",
 			"title_563af6c6-f6c1-4026-b8ac-3cc2ef77bcaa": "EDI Flow",
 			"description_563af6c6-f6c1-4026-b8ac-3cc2ef77bcaa": "EDI Flow",
-			"title_9b738305-6a8d-4100-861b-9ba0082b9a4b": "Associations",
 			"title_6540e4ec-eb3b-4f0f-bda8-666290cec811": "EDI partners / company",
 			"description_6540e4ec-eb3b-4f0f-bda8-666290cec811": "EDI partners / company",
 			"title_fb3cf637-f488-4e1b-b6cc-f6131da62d86": "EDI partners / site",
@@ -3963,11 +3108,111 @@
 			"title_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI partners / BP",
 			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI partners / BP",
 			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI flows by BP/company",
-			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI flows by BP/company"
+			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI flows by BP/company",
+			"title_51f52afe-f2b2-4ed5-ab62-70a2bae1b391": "My menu",
+			"title_957f4aec-3e3c-41c0-b930-7f9b76d825de": "Fixed Assets",
+			"description_8ce76b66-9546-4f8d-ae93-dd63b574ce79": "CONCESSION",
+			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "Common data",
+			"description_82237bfc-8f0b-4a2c-a6bd-baa14d86161f": "BPCUSTOMER4",
+			"title_cec1e507-6704-4590-aa93-903ec762f999": "A/P-A/R accounting",
+			"title_f1c0e99c-b8ec-4bac-b881-d5f20a65fddc": "Purchasing",
+			"title_8348d183-39fe-456f-a92e-8a44c4e3b1fa": "Sales",
+			"title_a6806110-6a39-475e-abe2-fc8e7c240a44": "Manufacturing",
+			"title_7e66706c-e8b2-418c-9cc4-1ca7b71c1301": "Stock",
+			"title_71d39a8e-57e6-4712-b652-38870f121054": "Change Control",
+			"description_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "BODP",
+			"description_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "TABBOMALT",
+			"description_6be03087-9ab1-4e70-a4f1-a26bdac11a94": "ROUTING",
+			"description_148f8c62-8b51-4869-b8e6-3699b7eee198": "TABROUALT",
+			"description_7361fccd-a60d-4139-9dab-b326c4b0e659": "MFGCOST",
+			"title_354be49c-9e29-4f6c-b5e8-e5ace069248d": "Standard Cost",
+			"description_354be49c-9e29-4f6c-b5e8-e5ace069248d": "ITMCOSTD",
+			"title_e0d39f9c-26f9-4149-a171-c4369ce9572e": "Revised Standard Cost",
+			"description_e0d39f9c-26f9-4149-a171-c4369ce9572e": "ITMCOSTA",
+			"title_16881cf0-c146-48d8-8365-38d48c67845f": "Budget Standard Cost",
+			"description_16881cf0-c146-48d8-8365-38d48c67845f": "ITMCOSTB",
+			"description_39ac2aae-f6f7-429b-b7f6-e9a3e9470bed": "TABWRKCTR",
+			"description_2d84e7b7-1c15-41de-88d7-8b89266b8511": "WORKSTATIO",
+			"title_3fac53ae-6893-4483-9a48-def8a9fb4731": "Standard Operations",
+			"description_3fac53ae-6893-4483-9a48-def8a9fb4731": "ROUOPESTD",
+			"description_c76b5d2a-fe99-482d-8933-574e9e3869cc": "AVISULIC",
+			"description_c86ad417-975a-498a-bf2a-155382ef9b15": "PHYBUI",
+			"description_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "PHYLCT",
+			"description_719f15e2-6625-4392-9046-0ea5758466c3": "PHYELT",
+			"description_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "CACCE",
+			"description_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3": "GACCOUNT",
+			"description_8b4dd026-d14c-4dc3-a9dd-5923f7af339f": "GACM",
+			"description_5cc65117-e2fc-430e-8540-f9b81838d548": "GJOURNAL",
+			"description_177430d4-a5e6-4f5c-b190-f677c4088fef": "BUDPAR",
+			"description_273d61c8-7305-4fe2-8483-15739b1e6c0e": "BUDTYP",
+			"description_1975fa53-48e7-41dd-b4eb-794b615aa61c": "CADISTMP",
+			"description_257c5b6e-b998-4f7c-96fa-1e45a35d8fb9": "GDIE",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
+			"description_f8939df3-83ab-484a-bdcd-4d31f7c286fb": "BUDVER",
+			"description_48d675c6-4b28-4a83-af91-87280d71da4d": "GLED",
+			"description_543dd069-1092-4069-8896-da0ad9d544d2": "LAYOUTFAS",
+			"description_92b63465-2a01-4a93-b5ee-f4d0b04f052d": "FXDASSETS",
+			"description_b552cc53-9804-471e-9ecd-38bdeba19359": "LEASE",
+			"description_8d8c9b8b-3179-4631-af56-c70743d52e6d": "GRANTS",
+			"description_13502b3e-5477-4a4f-adc1-9b2e209224b3": "BPARTNER",
+			"description_cc70dbfe-fb24-403a-b5ac-182aa537f65d": "BPCCATEG",
+			"description_29871b1d-bc2c-4f22-a6e4-9495ceba5603": "BPCUSTOMER",
+			"description_b39966b3-14b1-4a82-90dd-4f892e0bda19": "ITMCATEG",
+			"description_8bd2b86c-1aab-4529-8fc7-84a2fad71316": "ITMFACILIT",
+			"description_8cab2d5c-e792-4fb3-9c21-0c00884cf212": "ITMMASTER",
+			"description_4b474024-2da3-4864-9b21-270f606663a3": "ITMWRH",
+			"description_510a4465-7713-4ae4-84d5-8f789d90e64d": "TABSTASTO",
+			"description_c2de7eae-1a9f-47e6-981b-5754a8b98323": "SALESREP",
+			"description_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "INCOTERM",
+			"description_301cd727-8380-48ea-bd8d-b22bc4c1778c": "BPSCATEG",
+			"description_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "BPSUPPLIER",
+			"title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
+			"description_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "VATEXEREA",
+			"description_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "GACCDENCOD",
+			"description_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "TABPAYTYP",
+			"description_c743a4db-9a07-4b25-8128-883e5c2a9eda": "FUPGRP",
+			"description_f1ac4474-6800-46f4-9a10-a2fe059982bc": "FACTOR",
+			"description_1038a023-aa7c-442b-9d5b-3198a63fe74c": "CAI",
+			"description_3cc1a1a2-5465-4330-a3af-871eb7732b77": "PRETURN",
+			"description_9f608f27-1a43-4f2f-beea-e508d4e2b950": "SCOHEAD",
+			"description_4342f84e-cd3a-4f0f-8e7a-e4e1be3b4cf8": "PORDER",
+			"description_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "PRECEIPT",
+			"description_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "PREQUIS",
+			"description_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "PINVOICE",
+			"description_ea43738e-3487-4124-8fc8-eab9564643ce": "SPRICFICH",
+			"description_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "OPPOR",
+			"description_2a4b8297-3545-431c-a9df-67176c7e4ed2": "SQUOTE",
+			"description_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "SORDER",
+			"description_cc907141-7636-4126-b2a5-eea0528398fd": "SOPENORDER",
+			"description_984fe8ba-7722-4757-9764-6b0b0b4c5722": "SOPENORDERC",
+			"description_480651d4-5ade-4ba0-942a-22e5d54cc294": "SDELIVERY",
+			"description_8916a16a-3c31-4e51-8983-75671b9de141": "SRETURN",
+			"description_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "SRETURNL",
+			"description_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "SRETURNS",
+			"description_155b3776-e7e7-4ced-8224-ce194eab6043": "SINVOICEV",
+			"description_88abbc78-f8e0-4e38-9543-d47a2d7e758d": "ITMCOSTS",
+			"description_920d28ae-9b68-4244-a786-82697a4a6bb8": "STOLOC",
+			"description_eb8ebce7-65d2-4ec6-abb5-b0709f18fef0": "TABLOCTYP",
+			"description_47472066-b6ad-4b23-b9b1-70cc14874419": "QLYCRDQST",
+			"description_92a8da7f-e0f7-4b42-86e4-ffd6f2af1513": "STOQLY",
+			"description_2bfd794e-a640-44e9-b038-cc07b720c2ea": "QLYCRD",
+			"description_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "Réponses",
+			"description_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Emballages",
+			"title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
+			"title_69a5e658-63a8-4af7-ba28-39e1303fc5a7": "EDI Usage",
+			"title_df32247f-f02a-487b-8323-d9498807e615": "EDI Processes",
+			"title_ccdead4a-edcb-4d29-bcd7-d1cf1a3063dc": "EDI controls",
+			"title_a3f2d84d-13a5-4e1d-b2b4-4ec5faabe222": "EDI Setup",
+			"title_77b15ca2-5e25-4451-ac63-6f4fc488dba3": "EDI setup",
+			"title_a768e3d6-7ae4-42ef-871b-d7d6b0dfecf7": "Flow definition",
+			"title_9b738305-6a8d-4100-861b-9ba0082b9a4b": "Associations"
 		},
 		"es-es": {
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Vigilancia usuarios",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Vigilancia usuarios",
+			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Edificios",
+			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Ubicaciones",
+			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Elementos físicos",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espacios de almacenamiento X3",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espacios de almacenamiento X3",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Contabilidad",
@@ -4007,6 +3252,30 @@
 			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Incoterm",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Categoría proveedor",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Proveedores",
+			"title_6a64a934-9648-487f-a305-0762022be318": "Contenedor flete",
+			"description_6a64a934-9648-487f-a305-0762022be318": "Contenedor flete",
+			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lugar",
+			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lugar",
+			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Plazo de transporte",
+			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Plazo de transporte",
+			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
+			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
+			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/Grupo de terceros",
+			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/Grupo de terceros",
+			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Solicitud de cambio",
+			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Solicitud de cambio",
+			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análisis de impacto",
+			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análisis de impacto",
+			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Acciones",
+			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Acciones",
+			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Artículos/Motivos económicos",
+			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Balance de pagos/ artículos",
+			"title_413c646b-7895-4953-b935-2e30b530498b": "Interface usuario",
+			"description_413c646b-7895-4953-b935-2e30b530498b": "Balance de pagos - interface usuario",
+			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Configuración",
+			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Blance de pagos - Configuración",
+			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generación",
+			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Balance de pagos - Generación",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Motivos exento IVA",
 			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "IVA",
 			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Páginas en solo lectura",
@@ -4075,33 +3344,6 @@
 			"description_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "TABCTL",
 			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Embalajes",
 			"description_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "TABPACKAGE",
-			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Edificios",
-			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Ubicaciones",
-			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Elementos físicos",
-			"title_6a64a934-9648-487f-a305-0762022be318": "Contenedor flete",
-			"description_6a64a934-9648-487f-a305-0762022be318": "Contenedor flete",
-			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lugar",
-			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lugar",
-			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Plazo de transporte",
-			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Plazo de transporte",
-			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
-			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
-			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/Grupo de terceros",
-			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/Grupo de terceros",
-			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Solicitud de cambio",
-			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Solicitud de cambio",
-			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análisis de impacto",
-			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análisis de impacto",
-			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Acciones",
-			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Acciones",
-			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Artículos/Motivos económicos",
-			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Balance de pagos/ artículos",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Interface usuario",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Balance de pagos - interface usuario",
-			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Configuración",
-			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Blance de pagos - Configuración",
-			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generación",
-			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Balance de pagos - Generación",
 			"title_9efd455e-fce6-446c-ab02-a61b2add56a1": "Generación envios EDI",
 			"description_9efd455e-fce6-446c-ab02-a61b2add56a1": "Generación envios EDI",
 			"title_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "Generación recepciones EDI",
@@ -4194,12 +3436,17 @@
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motifs économiques",
 			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Motifs économiques",
 			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Motifs économiques/Groupe de tiers",
+			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Motifs économiques/Groupe de tiers",
+			"title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Gestion des changements",
+			"title_71d39a8e-57e6-4712-b652-38870f121054": "Gestion des changements",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Demande de changement",
+			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Demande de changement",
 			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Analyse des impacts",
 			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Analyse des impacts",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planifier",
 			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planifier",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Articles/Motifs économiques",
+			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Balance paiements produit ERC",
 			"title_413c646b-7895-4953-b935-2e30b530498b": "Paramètres champ",
 			"description_413c646b-7895-4953-b935-2e30b530498b": "Balance des paiements - Interface utilisateur",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Balance des paiements - Configuration",
@@ -4304,10 +3551,7 @@
 			"title_afdd4e9e-8514-4582-8bd3-ba47872302b9": "Partenaires EDI par tiers",
 			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "Partenaires EDI par tiers",
 			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "Flux EDI par tiers société",
-			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "Flux EDI par tiers société",
-			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Motifs économiques/Groupe de tiers",
-			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Demande de changement",
-			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Balance paiements produit ERC"
+			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "Flux EDI par tiers société"
 		},
 		"it-it": {
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Contabilità",
@@ -4332,6 +3576,7 @@
 			"title_8ce76b66-9546-4f8d-ae93-dd63b574ce79": "Concessioni",
 			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "Dati di base",
 			"title_13502b3e-5477-4a4f-adc1-9b2e209224b3": "Terzi",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Common Data",
 			"title_82237bfc-8f0b-4a2c-a6bd-baa14d86161f": "Prospect",
 			"title_cc70dbfe-fb24-403a-b5ac-182aa537f65d": "Categoria cliente",
 			"title_29871b1d-bc2c-4f22-a6e4-9495ceba5603": "Clienti",
@@ -4343,6 +3588,7 @@
 			"title_c2de7eae-1a9f-47e6-981b-5754a8b98323": "Agenti",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Categoria Fornitore",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Fornitori",
+			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "VAT",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Contabilità terzi",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Destinazione contabile",
 			"title_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "Transazioni pagamenti/incassi",
@@ -4364,20 +3610,25 @@
 			"title_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "Ordini",
 			"title_cc907141-7636-4126-b2a5-eea0528398fd": "Ordini aperti",
 			"description_cc907141-7636-4126-b2a5-eea0528398fd": "SOPENORDER",
+			"description_2836fd8d-47f8-4391-9641-073335050651": "Orders",
 			"title_984fe8ba-7722-4757-9764-6b0b0b4c5722": "Richieste di consegna",
 			"description_984fe8ba-7722-4757-9764-6b0b0b4c5722": "SOPENORDERC",
 			"title_480651d4-5ade-4ba0-942a-22e5d54cc294": "Consegne",
 			"description_480651d4-5ade-4ba0-942a-22e5d54cc294": "SDELIVERY",
+			"description_58eacb99-85a9-4bb1-b3cb-50e32280cd9a": "Shipments",
 			"title_8916a16a-3c31-4e51-8983-75671b9de141": "Reso cliente",
 			"description_8916a16a-3c31-4e51-8983-75671b9de141": "SRETURN",
+			"description_d50670da-8a82-4f82-b54a-6091996bc268": "Returns",
 			"title_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "Reso prestito",
 			"description_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "SRETURNL",
 			"title_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "Reso materiale c/lavoro",
 			"description_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "SRETURNS",
 			"title_155b3776-e7e7-4ced-8224-ce194eab6043": "Fattura vend.",
 			"description_155b3776-e7e7-4ced-8224-ce194eab6043": "SINVOICEV",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Sales Invoices",
 			"title_35cc5310-2228-455c-95eb-e16390eba78b": "Consultazione listini",
 			"description_35cc5310-2228-455c-95eb-e16390eba78b": "SPRICESEARCH",
+			"description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead": "Prices",
 			"title_a6806110-6a39-475e-abe2-fc8e7c240a44": "Produzione",
 			"title_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "Distinte basi produzione",
 			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "Distinta base alternativa",
@@ -4426,6 +3677,7 @@
 			"title_8ce76b66-9546-4f8d-ae93-dd63b574ce79": "Koncesje",
 			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "Dane podstawowe",
 			"title_13502b3e-5477-4a4f-adc1-9b2e209224b3": "Kontrahenci",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Common Data",
 			"title_82237bfc-8f0b-4a2c-a6bd-baa14d86161f": "Prospekci",
 			"title_cc70dbfe-fb24-403a-b5ac-182aa537f65d": "Kategorie klienta",
 			"title_29871b1d-bc2c-4f22-a6e4-9495ceba5603": "Klienci",
@@ -4437,6 +3689,7 @@
 			"title_c2de7eae-1a9f-47e6-981b-5754a8b98323": "Przedstawiciele handlowi",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Kategorie dostawców",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Dostawcy",
+			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "VAT",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Rozrachunki",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Atrybuty płatności",
 			"title_d6a3f3cb-3310-4a9d-a44c-273327a3c9bd": "Okna rejestracji wpłat",
@@ -4456,14 +3709,19 @@
 			"title_2a4b8297-3545-431c-a9df-67176c7e4ed2": "Oferty",
 			"title_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "Zamówienia klienta",
 			"title_cc907141-7636-4126-b2a5-eea0528398fd": "Kontrakty sprzdażowe",
+			"description_2836fd8d-47f8-4391-9641-073335050651": "Orders",
 			"title_984fe8ba-7722-4757-9764-6b0b0b4c5722": "Polecenie dostaw",
 			"title_480651d4-5ade-4ba0-942a-22e5d54cc294": "Dostawy",
+			"description_58eacb99-85a9-4bb1-b3cb-50e32280cd9a": "Shipments",
 			"title_8916a16a-3c31-4e51-8983-75671b9de141": "Zwroty od klientów",
+			"description_d50670da-8a82-4f82-b54a-6091996bc268": "Returns",
 			"title_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "Zwroty z mag. Klienta",
 			"title_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "Zwrot materiałów kooperacji",
 			"title_155b3776-e7e7-4ced-8224-ce194eab6043": "Faktury",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Sales Invoices",
 			"title_35cc5310-2228-455c-95eb-e16390eba78b": "Zapytanie o cenę",
 			"description_35cc5310-2228-455c-95eb-e16390eba78b": "SPRICESEARCH",
+			"description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead": "Prices",
 			"title_a6806110-6a39-475e-abe2-fc8e7c240a44": "Produkcja",
 			"title_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "BOMy produkcyjne",
 			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "Kody BOM",
@@ -4494,6 +3752,11 @@
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitorização Utilizadores",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitorização Utilizadores",
 			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Visualização de licença",
+			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Edificios",
+			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Localizações",
+			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Elementos físicos",
+			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaços de armazenamento X3",
+			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaços de armazenamento X3",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Contabilidade",
 			"title_4ee95f41-7c51-40b5-97e1-694518dd4c6b": "Secções analíticas",
 			"title_b29b2d13-3a98-44be-95fc-ce8f8fecbfa3": "Contas",
@@ -4528,6 +3791,7 @@
 			"title_4b474024-2da3-4864-9b21-270f606663a3": "Artigos - Depósitos",
 			"title_510a4465-7713-4ae4-84d5-8f789d90e64d": "Tabela de Status de stock",
 			"title_c2de7eae-1a9f-47e6-981b-5754a8b98323": "Representantes",
+			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Incoterm",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Categoria fornecedor",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Fornecedores",
 			"title_6a64a934-9648-487f-a305-0762022be318": "Contentores frete",
@@ -4536,6 +3800,19 @@
 			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Locais",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Tempos de transporte",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Tempos de transporte",
+			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
+			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
+			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/grupo terceiros",
+			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/grupos 3º",
+			"title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Gestão de versões",
+			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Pedido de modificação",
+			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Pedido de modificação",
+			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análise de impacto",
+			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análise de impacto",
+			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Plano",
+			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Plano",
+			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Ações",
+			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Ações",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "COPE - Produto/motivos economicos",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "COPE - Produto/motivos economicos",
 			"title_413c646b-7895-4953-b935-2e30b530498b": "Interface utilizador",
@@ -4612,24 +3889,6 @@
 			"description_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "TABCTL",
 			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Embalagens",
 			"description_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "TABPACKAGE",
-			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaços de armazenamento X3",
-			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Espaços de armazenamento X3",
-			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Incoterm",
-			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Edificios",
-			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Localizações",
-			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Elementos físicos",
-			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
-			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
-			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/grupo terceiros",
-			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "Motivos economicos/grupos 3º",
-			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Pedido de modificação",
-			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Pedido de modificação",
-			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análise de impacto",
-			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Análise de impacto",
-			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Plano",
-			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Plano",
-			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Ações",
-			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Ações",
 			"title_9efd455e-fce6-446c-ab02-a61b2add56a1": "Geração envios EDI",
 			"description_9efd455e-fce6-446c-ab02-a61b2add56a1": "Geração envios EDI",
 			"title_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "Geração receções EDI",
@@ -4665,6 +3924,8 @@
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Мониторинг Пользователя",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Мониторинг Пользователя",
 			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "Посмотреть лицензию",
+			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Места хранения",
+			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Физические элементы",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Хранилища X3",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "Хранилища X3",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "Финансы",
@@ -4691,6 +3952,7 @@
 			"title_8ce76b66-9546-4f8d-ae93-dd63b574ce79": "Концессии",
 			"title_c9f35cbe-e1ca-4ec1-87f4-cf9e98272ae4": "Основные данные",
 			"title_13502b3e-5477-4a4f-adc1-9b2e209224b3": "Бизнес-партнеры",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Общие данные",
 			"title_82237bfc-8f0b-4a2c-a6bd-baa14d86161f": "Потенциальные клиенты",
 			"title_cc70dbfe-fb24-403a-b5ac-182aa537f65d": "Категории клиентов",
 			"title_29871b1d-bc2c-4f22-a6e4-9495ceba5603": "Клиенты",
@@ -4703,6 +3965,22 @@
 			"title_278b764c-c45e-4cc1-a545-23ea4dcbe5d7": "Инкотермс",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Категории поставщиков",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Поставщики",
+			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Анализ влияния",
+			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "Анализ влияния",
+			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "План",
+			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "План",
+			"title_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Действия",
+			"description_c1b68e3b-189f-422b-ae10-7503e54dccdf": "Действия",
+			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Код продукта / причины",
+			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Баланс платежа ERC продукта",
+			"title_413c646b-7895-4953-b935-2e30b530498b": "Настройки поля",
+			"description_413c646b-7895-4953-b935-2e30b530498b": "Настройка интерфейса баланса платежа",
+			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Настройка",
+			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Настройка декларации баланса платежа",
+			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Создание",
+			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Создание декларации баланса платежа",
+			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Причины освобождения от уплаты НДС",
+			"description_15f67b94-e99b-4988-a519-a2fde35391f6": "НДС",
 			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Страницы только для чтения",
 			"title_cec1e507-6704-4590-aa93-903ec762f999": "Учет по дебиторам и кредиторам",
 			"title_a561b68e-28f6-4c3e-99e3-c824147dc8a7": "Атрибуты платежей",
@@ -4717,20 +3995,27 @@
 			"title_1315c69d-9ac4-464d-83f8-ccc5ae701af2": "Поступления",
 			"title_ec4898dd-9c01-4f26-9575-37ca1fd8e420": "Заявки на закупку",
 			"title_374edfae-6cc5-4ad2-a34c-17a8ee5b0fa4": "Контроль счетов-фактур",
+			"title_909262ac-87e4-4521-bde2-340857a842ff": "Поиск цены покупки",
+			"description_909262ac-87e4-4521-bde2-340857a842ff": "Поиск цены покупки",
 			"title_8348d183-39fe-456f-a92e-8a44c4e3b1fa": "Продажи",
 			"title_ea43738e-3487-4124-8fc8-eab9564643ce": "Прайс-листы",
 			"title_1f0c5781-e947-4c5e-a5de-6ef2f4e45929": "Проекты",
 			"title_2a4b8297-3545-431c-a9df-67176c7e4ed2": "Коммерческие предложения",
 			"title_d73f613b-ffbc-402e-934f-f89aeb8e1f7e": "Заказы на продажу",
 			"title_cc907141-7636-4126-b2a5-eea0528398fd": "Открытые заказы",
+			"description_2836fd8d-47f8-4391-9641-073335050651": "Заказы",
 			"title_984fe8ba-7722-4757-9764-6b0b0b4c5722": "Заявки на отгрузку",
 			"title_480651d4-5ade-4ba0-942a-22e5d54cc294": "Отгрузки",
+			"description_58eacb99-85a9-4bb1-b3cb-50e32280cd9a": "Отгрузки",
 			"title_8916a16a-3c31-4e51-8983-75671b9de141": "Клиентские возвраты",
+			"description_d50670da-8a82-4f82-b54a-6091996bc268": "Возвраты",
 			"title_d26a8f35-a6ec-4059-baee-5a9e496cf52c": "Возвраты кредита",
 			"title_88ff36f6-5a4b-49b3-a3f4-a7a6a16d2921": "Возвраты материалов по суб-контракту",
 			"title_155b3776-e7e7-4ced-8224-ce194eab6043": "Счета-фактуры",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Счет-фактура на продажу",
 			"title_35cc5310-2228-455c-95eb-e16390eba78b": "Запрос цены",
 			"description_35cc5310-2228-455c-95eb-e16390eba78b": "SPRICESEARCH",
+			"description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead": "Цены",
 			"title_a6806110-6a39-475e-abe2-fc8e7c240a44": "Производство",
 			"title_d8aef2e3-25ba-489c-9241-b94b0cca33ca": "Производственные спецификации",
 			"title_807b9f02-8d26-4bb7-a35c-cb7290d81a4e": "Код спецификации",
@@ -4754,16 +4039,51 @@
 			"description_8ba0e96b-c474-4dee-b153-af7bfd3ed697": "TABCTL",
 			"title_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "Упаковка",
 			"description_c3ef85f1-c5f8-4dbc-bce0-c8838d4dc1d6": "TABPACKAGE",
-			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Причины освобождения от уплаты НДС",
-			"title_909262ac-87e4-4521-bde2-340857a842ff": "Поиск цены покупки",
-			"description_909262ac-87e4-4521-bde2-340857a842ff": "Поиск цены покупки",
-			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDI tracking documents",
-			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI setup query"
+			"title_9efd455e-fce6-446c-ab02-a61b2add56a1": "Создание сообщений EDI",
+			"description_9efd455e-fce6-446c-ab02-a61b2add56a1": "Создание сообщений EDI",
+			"title_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "Создание подтверждений EDI",
+			"description_418b47fb-5dbd-4ae6-b0ed-a6de9872fc37": "Создание подтверждений EDI",
+			"title_a6daf6ab-763e-46f7-8371-090bad9d5229": "Временное хранилище EDI",
+			"description_a6daf6ab-763e-46f7-8371-090bad9d5229": "Временное хранилище EDI",
+			"title_76bf9455-c4a0-4628-9f44-642352149457": "Документы отслеживания EDI",
+			"description_76bf9455-c4a0-4628-9f44-642352149457": "Документы отслеживания EDI",
+			"title_f8f32079-f613-4cb7-a706-40e4582bf3ec": "Запрос на подключение EDI",
+			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "Запрос на подключение EDI",
+			"title_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI Партнер",
+			"description_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI Партнер",
+			"title_60803382-5d94-4e06-a1b7-2d2e9134b914": "Категория EDI",
+			"description_60803382-5d94-4e06-a1b7-2d2e9134b914": "Категория EDI",
+			"title_c096399b-a513-4bee-b896-3a9e81140ab6": "Протоколы EDI",
+			"description_c096399b-a513-4bee-b896-3a9e81140ab6": "Протоколы EDI",
+			"title_e3f4491e-f491-4f4f-9c7b-63ff13b82f47": "Связать EDI сообщения",
+			"description_e3f4491e-f491-4f4f-9c7b-63ff13b82f47": "Связать EDI сообщения",
+			"title_def3d33e-bf5b-483d-a36d-e3ad683a32c3": "Последовательный файл EDI",
+			"description_def3d33e-bf5b-483d-a36d-e3ad683a32c3": "Последовательный файл EDI",
+			"title_563af6c6-f6c1-4026-b8ac-3cc2ef77bcaa": "Транзакции EDI",
+			"description_563af6c6-f6c1-4026-b8ac-3cc2ef77bcaa": "Транзакции EDI",
+			"title_6540e4ec-eb3b-4f0f-bda8-666290cec811": "EDI партнер / компания",
+			"description_6540e4ec-eb3b-4f0f-bda8-666290cec811": "EDI партнер / компания",
+			"title_fb3cf637-f488-4e1b-b6cc-f6131da62d86": "EDI партнер / участок",
+			"description_fb3cf637-f488-4e1b-b6cc-f6131da62d86": "EDI партнер / участок",
+			"title_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI партнеры / Бизнес партнеры",
+			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "EDI партнеры / Бизнес партнеры",
+			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI обмен Бизнес партнера / компании",
+			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "EDI обмен Бизнес партнера / компании",
+			"title_69a5e658-63a8-4af7-ba28-39e1303fc5a7": "Статистика использования EDI",
+			"title_df32247f-f02a-487b-8323-d9498807e615": "Процессы EDI",
+			"title_ccdead4a-edcb-4d29-bcd7-d1cf1a3063dc": "Настройки EDI",
+			"title_a3f2d84d-13a5-4e1d-b2b4-4ec5faabe222": "Установка EDI",
+			"title_77b15ca2-5e25-4451-ac63-6f4fc488dba3": "Установка  EDI",
+			"title_a768e3d6-7ae4-42ef-871b-d7d6b0dfecf7": "Описание потока данных",
+			"title_9b738305-6a8d-4100-861b-9ba0082b9a4b": "Связи"
 		},
 		"zh-cn": {
 			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "用户监控",
 			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "用户监控",
 			"title_c76b5d2a-fe99-482d-8933-574e9e3869cc": "查看许可证",
+			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "楼房",
+			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "位置",
+			"title_719f15e2-6625-4392-9046-0ea5758466c3": "实物元素",
 			"title_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3存储空间",
 			"description_3103fe3e-759c-4fe4-96c2-febfa8ceb45d": "X3存储空间",
 			"title_3660e972-eaba-4baa-9bed-cfdb133b5a03": "财务",
@@ -4813,7 +4133,10 @@
 			"description_5375d07a-8c11-415f-ad69-b9342aabac68": "经济原因代码",
 			"title_63c94553-d0a3-42a4-961c-8e61c1077085": "经济原因/BP组",
 			"description_63c94553-d0a3-42a4-961c-8e61c1077085": "经济原因/BP组",
+			"title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "变更管理",
+			"title_71d39a8e-57e6-4712-b652-38870f121054": "变更管理",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "变更请求",
+			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "变更请求",
 			"title_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "影响分析",
 			"description_1fa0877e-b5fc-4981-80ad-6bc5e699e1f7": "影响分析",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "计划",
@@ -4898,9 +4221,9 @@
 			"title_a6daf6ab-763e-46f7-8371-090bad9d5229": "EDI临时存储",
 			"description_a6daf6ab-763e-46f7-8371-090bad9d5229": "EDI临时存储",
 			"title_76bf9455-c4a0-4628-9f44-642352149457": "EDI文档追踪",
-			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDI文档追踪",
+			"description_76bf9455-c4a0-4628-9f44-642352149457": "EDI tracking documents",
 			"title_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI参数设置查询",
-			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI参数设置查询",
+			"description_f8f32079-f613-4cb7-a706-40e4582bf3ec": "EDI setup query",
 			"title_a3f2d84d-13a5-4e1d-b2b4-4ec5faabe222": "EDI参数设置",
 			"title_77b15ca2-5e25-4451-ac63-6f4fc488dba3": "EDI参数设置",
 			"title_8a3c2216-e9dc-4c83-ba22-450de243b929": "EDI合作伙伴",
@@ -4924,11 +4247,7 @@
 			"title_afdd4e9e-8514-4582-8bd3-ba47872302b9": "按BP分的EDI合作伙伴",
 			"description_afdd4e9e-8514-4582-8bd3-ba47872302b9": "按BP分的EDI合作伙伴",
 			"title_7b05f982-3447-4023-a5c7-b41f89723cf8": "按BP/公司分的EDI流",
-			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "按BP/公司分的EDI流",
-			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "楼房",
-			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "位置",
-			"title_719f15e2-6625-4392-9046-0ea5758466c3": "实物元素",
-			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "变更请求"
+			"description_7b05f982-3447-4023-a5c7-b41f89723cf8": "按BP/公司分的EDI流"
 		}
 	}
 }
