@@ -83,11 +83,12 @@ namespace ExcelAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             browserDialog = new BrowserDialog();
+            
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
+            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
 
             taskPane.Visible = BaseUrlHelper.ShowActionPanel;
@@ -571,25 +572,6 @@ namespace ExcelAddIn
         
         #endregion
 
-
-        internal void BrowseDocuments(string volumeCode)
-        {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
-            if (connectUrl == "") return;
-            DocumentBrowser b = new DocumentBrowser();
-            b.SelectDocument(connectUrl, volumeCode);
-            b.ShowDialog();
-        }
-
-        internal void SISettings()
-        {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
-            if (connectUrl == "") return;
-            SISettings s = new SISettings();
-            s.Connect(connectUrl);
-            s.ShowDialog();
-        }
-
         bool handleCvgDocument(Excel.Workbook wb)
         {
             CustomXMLNode foundNode = null;
@@ -663,7 +645,7 @@ namespace ExcelAddIn
                  * To prevent exceptions being thrown, we'll create a new ActionPanel and add it to the CustomTaskPanes.
                  */
                 CustomTaskPanes.Remove(taskPane);
-                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage ERP X3");
+                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage");
                 taskPane.VisibleChanged += ActionPanel_VisibleChanged;
             }
             taskPane.Visible = state;

@@ -50,7 +50,6 @@
             this.Controls.Add(this.webBrowser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BrowserDialog";
-            this.Text = "Sage ERP X3";
             this.ResumeLayout(false);
 
         }

@@ -1,479 +1,485 @@
 {
-	"$prototypes": {
-		"navigationPage": {
-			"$key": "pageName",
-			"modules": {
-				"$key": "code",
-				"application": {
-					"$key": [
-						"application",
-						"contract"
-					]
-				},
-				"submodules": {
-					"$key": "code",
-					"application": {
-						"$key": [
-							"application",
-							"contract"
-						]
-					},
-					"items": {
-						"$variants": {
-							"menuBlock": {
-								"$key": "code",
-								"$id": "menuBlock",
-								"items": {
-									"$variants": {
-										"menuBlock": {
-											"$id": "menuBlock",
-											"$type": "pointer"
-										},
-										"menuItem": {
-											"$key": "code",
-											"application": {
-												"$key": [
-													"application",
-													"contract"
-												]
-											},
-											"endpoint": {
-												"$key": "dataset"
-											},
-											"representationRef": {},
-											"module": {
-												"$key": "code"
-											},
-											"categories": {
-												"$key": "code",
-												"$localized": [
-													"description"
-												]
-											},
-											"parameters": {
-												"$key": "name",
-												"$localized": [
-													"title"
-												]
-											},
-											"$localized": [
-												"title",
-												"description"
-											]
-										}
-									}
-								},
-								"$localized": [
-									"title"
-								]
-							},
-							"menuItem": {
-								"$key": "code",
-								"application": {
-									"$key": [
-										"application",
-										"contract"
-									]
-								},
-								"endpoint": {
-									"$key": "dataset"
-								},
-								"representationRef": {},
-								"module": {
-									"$key": "code"
-								},
-								"categories": {
-									"$key": "code",
-									"$localized": [
-										"description"
-									]
-								},
-								"parameters": {
-									"$key": "name",
-									"$localized": [
-										"title"
-									]
-								},
-								"$localized": [
-									"title",
-									"description"
-								]
-							}
-						}
-					},
-					"$localized": [
-						"title",
-						"description"
-					]
-				},
-				"$localized": [
-					"title",
-					"description"
-				]
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		},
-		"menuModule": {
-			"$key": "code",
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"submodules": {
-				"$key": "code",
-				"application": {
-					"$key": [
-						"application",
-						"contract"
-					]
-				},
-				"items": {
-					"$variants": {
-						"menuBlock": {
-							"$key": "code",
-							"$id": "menuBlock",
-							"items": {
-								"$variants": {
-									"menuBlock": {
-										"$id": "menuBlock",
-										"$type": "pointer"
-									},
-									"menuItem": {
-										"$key": "code",
-										"application": {
-											"$key": [
-												"application",
-												"contract"
-											]
-										},
-										"endpoint": {
-											"$key": "dataset"
-										},
-										"representationRef": {},
-										"module": {
-											"$key": "code"
-										},
-										"categories": {
-											"$key": "code",
-											"$localized": [
-												"description"
-											]
-										},
-										"parameters": {
-											"$key": "name",
-											"$localized": [
-												"title"
-											]
-										},
-										"$localized": [
-											"title",
-											"description"
-										]
-									}
-								}
-							},
-							"$localized": [
-								"title"
-							]
-						},
-						"menuItem": {
-							"$key": "code",
-							"application": {
-								"$key": [
-									"application",
-									"contract"
-								]
-							},
-							"endpoint": {
-								"$key": "dataset"
-							},
-							"representationRef": {},
-							"module": {
-								"$key": "code"
-							},
-							"categories": {
-								"$key": "code",
-								"$localized": [
-									"description"
-								]
-							},
-							"parameters": {
-								"$key": "name",
-								"$localized": [
-									"title"
-								]
-							},
-							"$localized": [
-								"title",
-								"description"
-							]
-						}
-					}
-				},
-				"$localized": [
-					"title",
-					"description"
-				]
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		},
-		"menuBlock": {
-			"$key": "code",
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"items": {
-				"$variants": {
-					"menuBlock": {
-						"$key": "code",
-						"$id": "menuBlock",
-						"items": {
-							"$variants": {
-								"menuBlock": {
-									"$id": "menuBlock",
-									"$type": "pointer"
-								},
-								"menuItem": {
-									"$key": "code",
-									"application": {
-										"$key": [
-											"application",
-											"contract"
-										]
-									},
-									"endpoint": {
-										"$key": "dataset"
-									},
-									"representationRef": {},
-									"module": {
-										"$key": "code"
-									},
-									"categories": {
-										"$key": "code",
-										"$localized": [
-											"description"
-										]
-									},
-									"parameters": {
-										"$key": "name",
-										"$localized": [
-											"title"
-										]
-									},
-									"$localized": [
-										"title",
-										"description"
-									]
-								}
-							}
-						},
-						"$localized": [
-							"title"
-						]
-					},
-					"menuItem": {
-						"$key": "code",
-						"application": {
-							"$key": [
-								"application",
-								"contract"
-							]
-						},
-						"endpoint": {
-							"$key": "dataset"
-						},
-						"representationRef": {},
-						"module": {
-							"$key": "code"
-						},
-						"categories": {
-							"$key": "code",
-							"$localized": [
-								"description"
-							]
-						},
-						"parameters": {
-							"$key": "name",
-							"$localized": [
-								"title"
-							]
-						},
-						"$localized": [
-							"title",
-							"description"
-						]
-					}
-				}
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		},
-		"menuItem": {
-			"$key": "code",
-			"application": {
-				"$key": [
-					"application",
-					"contract"
-				]
-			},
-			"endpoint": {
-				"$key": "dataset"
-			},
-			"representationRef": {},
-			"module": {
-				"$key": "code"
-			},
-			"categories": {
-				"$key": "code",
-				"$localized": [
-					"description"
-				]
-			},
-			"parameters": {
-				"$key": "name",
-				"$localized": [
-					"title"
-				]
-			},
-			"$localized": [
-				"title",
-				"description"
-			]
-		}
-	},
-	"$items": [
-		{
-			"$type": "navigationPage",
-			"title": "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340",
-			"pageName": "homefa",
-			"$factory": false,
-			"$factoryOwner": null,
-			"modules": []
-		},
-		{
-			"$type": "menuItem",
-			"$variantType": "menuItem",
-			"code": "S_SUPPORT_TRACES",
-			"title": "title_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089",
-			"description": "description_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089",
-			"linkType": "$representation",
-			"icon": "",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"requestLevel": "99",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "syracuse",
-				"contract": "support"
-			},
-			"endpoint": {
-				"dataset": "support"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "traceImports",
-				"representation": "traceImport"
-			},
-			"module": null,
-			"categories": [],
-			"parameters": []
-		},
-		{
-			"$type": "menuBlock",
-			"title": "title_274beb48-10bd-4939-ba08-bafc1a5b8c60",
-			"code": "S_SUPPORT_TOOLS",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "syracuse",
-				"contract": "support"
-			},
-			"items": [
-				{
-					"code": "S_SUPPORT_TRACES",
-					"$variantType": "menuItem"
-				}
-			]
-		},
-		{
-			"$type": "menuModule",
-			"title": "title_e3a56261-e26f-4bd0-b381-17cd58ce897c",
-			"code": "S_MOD_SUPPORT",
-			"$factory": true,
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "syracuse",
-				"contract": "support"
-			},
-			"submodules": [
-				{
-					"code": "S_SUPPORT_TOOLS"
-				}
-			]
-		},
-		{
-			"$type": "navigationPage",
-			"title": "title_f9daedd5-fd98-4461-b309-2b9bf796360a",
-			"pageName": "home",
-			"$factory": false,
-			"$factoryOwner": null,
-			"modules": [
-				{
-					"code": "S_MOD_SUPPORT"
-				}
-			]
-		}
-	],
-	"$localization": {
-		"ar-sa": {},
-		"de-de": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
-		},
-		"en-gb": {},
-		"en-us": {
-			"title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard",
-			"title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
-			"title_274beb48-10bd-4939-ba08-bafc1a5b8c60": "Tools",
-			"title_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "Traces",
-			"description_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "Traces import tool"
-		},
-		"es-es": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración"
-		},
-		"fr-fr": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration",
-			"title_274beb48-10bd-4939-ba08-bafc1a5b8c60": "Outils"
-		},
-		"it-it": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator"
-		},
-		"pl-pl": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna"
-		},
-		"pt-pt": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração"
-		},
-		"ru-ru": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора"
-		},
-		"zh-cn": {
-			"title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
-		}
-	}
+  "$prototypes": {
+    "navigationPage": {
+      "$key": "pageName",
+      "modules": {
+        "$key": "code",
+        "application": {
+          "$key": [
+            "application",
+            "contract"
+          ]
+        },
+        "submodules": {
+          "$key": "code",
+          "application": {
+            "$key": [
+              "application",
+              "contract"
+            ]
+          },
+          "items": {
+            "$variants": {
+              "menuBlock": {
+                "$key": "code",
+                "$id": "menuBlock",
+                "items": {
+                  "$variants": {
+                    "menuBlock": {
+                      "$id": "menuBlock",
+                      "$type": "pointer"
+                    },
+                    "menuItem": {
+                      "$key": "code",
+                      "application": {
+                        "$key": [
+                          "application",
+                          "contract"
+                        ]
+                      },
+                      "endpoint": {
+                        "$key": "dataset"
+                      },
+                      "representationRef": {},
+                      "module": {
+                        "$key": "code"
+                      },
+                      "categories": {
+                        "$key": "code",
+                        "$localized": [
+                          "description"
+                        ]
+                      },
+                      "parameters": {
+                        "$key": "name",
+                        "$localized": [
+                          "title"
+                        ]
+                      },
+                      "$localized": [
+                        "title",
+                        "description"
+                      ]
+                    }
+                  }
+                },
+                "$localized": [
+                  "title"
+                ]
+              },
+              "menuItem": {
+                "$key": "code",
+                "application": {
+                  "$key": [
+                    "application",
+                    "contract"
+                  ]
+                },
+                "endpoint": {
+                  "$key": "dataset"
+                },
+                "representationRef": {},
+                "module": {
+                  "$key": "code"
+                },
+                "categories": {
+                  "$key": "code",
+                  "$localized": [
+                    "description"
+                  ]
+                },
+                "parameters": {
+                  "$key": "name",
+                  "$localized": [
+                    "title"
+                  ]
+                },
+                "$localized": [
+                  "title",
+                  "description"
+                ]
+              }
+            }
+          },
+          "$localized": [
+            "title",
+            "description"
+          ]
+        },
+        "$localized": [
+          "title",
+          "description"
+        ]
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    },
+    "menuModule": {
+      "$key": "code",
+      "application": {
+        "$key": [
+          "application",
+          "contract"
+        ]
+      },
+      "submodules": {
+        "$key": "code",
+        "application": {
+          "$key": [
+            "application",
+            "contract"
+          ]
+        },
+        "items": {
+          "$variants": {
+            "menuBlock": {
+              "$key": "code",
+              "$id": "menuBlock",
+              "items": {
+                "$variants": {
+                  "menuBlock": {
+                    "$id": "menuBlock",
+                    "$type": "pointer"
+                  },
+                  "menuItem": {
+                    "$key": "code",
+                    "application": {
+                      "$key": [
+                        "application",
+                        "contract"
+                      ]
+                    },
+                    "endpoint": {
+                      "$key": "dataset"
+                    },
+                    "representationRef": {},
+                    "module": {
+                      "$key": "code"
+                    },
+                    "categories": {
+                      "$key": "code",
+                      "$localized": [
+                        "description"
+                      ]
+                    },
+                    "parameters": {
+                      "$key": "name",
+                      "$localized": [
+                        "title"
+                      ]
+                    },
+                    "$localized": [
+                      "title",
+                      "description"
+                    ]
+                  }
+                }
+              },
+              "$localized": [
+                "title"
+              ]
+            },
+            "menuItem": {
+              "$key": "code",
+              "application": {
+                "$key": [
+                  "application",
+                  "contract"
+                ]
+              },
+              "endpoint": {
+                "$key": "dataset"
+              },
+              "representationRef": {},
+              "module": {
+                "$key": "code"
+              },
+              "categories": {
+                "$key": "code",
+                "$localized": [
+                  "description"
+                ]
+              },
+              "parameters": {
+                "$key": "name",
+                "$localized": [
+                  "title"
+                ]
+              },
+              "$localized": [
+                "title",
+                "description"
+              ]
+            }
+          }
+        },
+        "$localized": [
+          "title",
+          "description"
+        ]
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    },
+    "menuBlock": {
+      "$key": "code",
+      "application": {
+        "$key": [
+          "application",
+          "contract"
+        ]
+      },
+      "items": {
+        "$variants": {
+          "menuBlock": {
+            "$key": "code",
+            "$id": "menuBlock",
+            "items": {
+              "$variants": {
+                "menuBlock": {
+                  "$id": "menuBlock",
+                  "$type": "pointer"
+                },
+                "menuItem": {
+                  "$key": "code",
+                  "application": {
+                    "$key": [
+                      "application",
+                      "contract"
+                    ]
+                  },
+                  "endpoint": {
+                    "$key": "dataset"
+                  },
+                  "representationRef": {},
+                  "module": {
+                    "$key": "code"
+                  },
+                  "categories": {
+                    "$key": "code",
+                    "$localized": [
+                      "description"
+                    ]
+                  },
+                  "parameters": {
+                    "$key": "name",
+                    "$localized": [
+                      "title"
+                    ]
+                  },
+                  "$localized": [
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "$localized": [
+              "title"
+            ]
+          },
+          "menuItem": {
+            "$key": "code",
+            "application": {
+              "$key": [
+                "application",
+                "contract"
+              ]
+            },
+            "endpoint": {
+              "$key": "dataset"
+            },
+            "representationRef": {},
+            "module": {
+              "$key": "code"
+            },
+            "categories": {
+              "$key": "code",
+              "$localized": [
+                "description"
+              ]
+            },
+            "parameters": {
+              "$key": "name",
+              "$localized": [
+                "title"
+              ]
+            },
+            "$localized": [
+              "title",
+              "description"
+            ]
+          }
+        }
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    },
+    "menuItem": {
+      "$key": "code",
+      "application": {
+        "$key": [
+          "application",
+          "contract"
+        ]
+      },
+      "endpoint": {
+        "$key": "dataset"
+      },
+      "representationRef": {},
+      "module": {
+        "$key": "code"
+      },
+      "categories": {
+        "$key": "code",
+        "$localized": [
+          "description"
+        ]
+      },
+      "parameters": {
+        "$key": "name",
+        "$localized": [
+          "title"
+        ]
+      },
+      "$localized": [
+        "title",
+        "description"
+      ]
+    }
+  },
+  "$items": [
+    {
+      "$type": "navigationPage",
+      "title": "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340",
+      "pageName": "homefa",
+      "$factory": false,
+      "$factoryOwner": null,
+      "modules": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_SUPPORT_TRACES",
+      "title": "title_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089",
+      "description": "description_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "support"
+      },
+      "endpoint": {
+        "dataset": "support"
+      },
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "traceImports",
+        "representation": "traceImport"
+      },
+      "module": {
+        "code": "S_MOD_SUPPORT"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_274beb48-10bd-4939-ba08-bafc1a5b8c60",
+      "code": "S_SUPPORT_TOOLS",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "support"
+      },
+      "items": [
+        {
+          "code": "S_SUPPORT_TRACES",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
+      "$type": "menuModule",
+      "title": "title_e3a56261-e26f-4bd0-b381-17cd58ce897c",
+      "code": "S_MOD_SUPPORT",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "support"
+      },
+      "submodules": [
+        {
+          "code": "S_SUPPORT_TOOLS"
+        }
+      ]
+    },
+    {
+      "$type": "navigationPage",
+      "title": "title_f9daedd5-fd98-4461-b309-2b9bf796360a",
+      "pageName": "home",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "modules": [
+        {
+          "code": "S_MOD_SUPPORT"
+        }
+      ]
+    }
+  ],
+  "$localization": {
+    "ar-sa": {},
+    "de-de": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
+    },
+    "en-gb": {},
+    "en-us": {
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard",
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "Support",
+      "title_274beb48-10bd-4939-ba08-bafc1a5b8c60": "Tools",
+      "title_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "Traces",
+      "description_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "Traces import tool"
+    },
+    "es-es": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración"
+    },
+    "fr-fr": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration",
+      "title_274beb48-10bd-4939-ba08-bafc1a5b8c60": "Outils"
+    },
+    "it-it": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator"
+    },
+    "pl-pl": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna"
+    },
+    "pt-pt": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração"
+    },
+    "ru-ru": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора"
+    },
+    "zh-cn": {
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板",
+      "title_e3a56261-e26f-4bd0-b381-17cd58ce897c": "支持",
+      "title_274beb48-10bd-4939-ba08-bafc1a5b8c60": "工具",
+      "title_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "追踪日志",
+      "description_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "追踪日志导入工具"
+    }
+  }
 }

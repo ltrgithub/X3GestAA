@@ -1,0 +1,72 @@
+{
+	"$prototypes": {
+		"notificationThemeImage": {
+			"$key": "name"
+		},
+		"notificationTheme": {
+			"$key": "name",
+			"images": {
+				"$key": "name"
+			}
+		}
+	},
+	"$items": [
+   		{
+			"$type": "notificationTheme",
+			"name": "sage-sample",
+			"html": "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">\n<title>{{title}}</title>\n\n<table id=\"_top\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"531\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<td><img src=\"cid:green_bar.jpg@img\" height=\"18\" width=\"531\">\n\t\t\t\t<table border=\"0\" cellpadding=\"10\" cellspacing=\"0\" width=\"100%\">\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td width=\"66%\">\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<font face=\"Times New Roman, Times, serif\"> <font color=\"#00785C\" face=\"Arial, Helvetica, sans-serif\" size=\"5\">{{title}}</font> <font face=\"Arial, Helvetica, sans-serif\" size=\"5\"></font>\n\t\t\t\t\t\t\t\t\t{{#subtitle}}<br>  <font color=\"#01C01A\">{{subtitle}}</font>{{/subtitle}}\n\t\t\t\t\t\t\t\t\t</font>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td width=\"34%\">\n\t\t\t\t\t\t\t\t<div align=\"right\">\n\t\t\t\t\t\t\t\t\t<img src=\"cid:logo_sage.jpg@img\" height=\"35\" width=\"84\"><br> &nbsp;\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t\t\n\t\t\t\t\t\t\t{{#infos}}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t{{/infos}}\n\t\t\t\t\t\t<table style=\"border-top: 1px solid #000000;\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" width=\"100%\">\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td style=\"font-size: 10pt;\" width=\"66%\">\n\t\t\t\t\t\t\t\t{{#content}}\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<font color=\"#4d4f53\" face=\"Arial, Helvetica, sans-serif\">{{{content}}}</font>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t{{/content}}\n\t\t\t\t\t\t\t\t<br><br><br>\n\t\t\t\t\t\t\t\t{{#signature}}\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<br> <font color=\"#4d4f53\" face=\"Arial, Helvetica, sans-serif\"><strong>{{signature}}</strong></font>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t{{/signature}}\n\t\t\t\t\t\t\t\t{{#link}}\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<font color=\"#4d4f53\" face=\"Arial, Helvetica, sans-serif\"><a href=\"{{link.href}}\" style=\"color: #007f64;\">&gt; {{link.label}}</a></font>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t{{/link}}\n\t\t\t\t\t\t\t</td><td style=\"font-size: 8pt;\" valign=\"top\" width=\"34%\"><p>\n\t\t\t\t\t\t\t\t\t<font face=\"Arial, Helvetica, sans-serif\"><strong><font color=\"#00785C\" size=\"2\">{{info.date.label}}</font></strong><font color=\"#00785C\" size=\"2\"><br> {{info.date.value}}</font></font>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<font color=\"#00785C\" face=\"Arial, Helvetica, sans-serif\" size=\"2\"><strong>{{info.time.label}}</strong><br> {{info.time.value}}</font>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td></tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t\t<table style=\"border-top: 1px solid #000000;\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" width=\"100%\">\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td style=\"font-size: 10pt;\" width=\"66%\">\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\t<u><a href=\"#_top\" style=\"color: #007f64;\"><font size=\"1\">^ Back to top</font></a></u>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td style=\"font-size: 8pt;\" valign=\"top\" width=\"34%\">\n\t\t\t\t\t\t\t\t<p align=\"right\">\n\t\t\t\t\t\t\t\t\t<img src=\"cid:logo_sage_small.jpg@img\" height=\"24\" width=\"57\">\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table></td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n",
+			"images": [
+				{
+					"name": "green_bar.jpg",
+					"size": 952,
+					"file": {
+						"length": 952,
+						"contentType": "image/jpeg",
+						"fileName": "green_bar.jpg",
+						"uploadDate": "2015-07-21T14:50:47.746Z",
+						"chunkSize": 261120,
+						"$content": "/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJSMgIyIoLTkwKCo2KyIjMkQyNjs9QEBAJjBGS0U+Sjk/QD3/2wBDAQsLCw8NDx0QEB09KSMpPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT3/wAARCAASAhMDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDmaKKWtD5UKKKKQgpaKKQC0tJS0gCiiikIKWkpaQhaKKKQBS0lLSELRRRSEFFFLUsApaSlpCClpKWkAUUUUmIUUopKWpAKKKKQgpaSlpCFpaSikwFoooqRBSikpaQhRRSUtJgFLSUtSxBS0lLSAKWkpaQgoopaQAKWkpakQUUUUhC0UUVIBS96SlpMQUUUUmAUtFFSwAUtJS1IgpaSlpMAoooqRBRRRSAw6KKK+qPSFooopAFFFFIQtLRRSAKKKKQhaKKKkBaKKKQhaKKKQhaKKKQBS0UUhC0UUVIBRRRQIWloopMQUtFFSAUUUUhC0UUUgFpaKKQgpaKKkQUUUUgCloopMQtFFFSAtFFFIQtFFFSIKWiikAUooopCClooqQCiiikIWiiikwAdaXvRRUsQUUUUgFoooqWAtFFFQIKWiipEFFFFID//2Q=="
+					}
+				},
+				{
+					"name": "logo_sage.jpg",
+					"size": 3165,
+					"file": {
+						"length": 3165,
+						"contentType": "image/jpeg",
+						"fileName": "logo_sage.jpg",
+						"uploadDate": "2015-07-21T14:50:54.906Z",
+						"chunkSize": 261120,
+						"$content": "/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABGAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxQTk1NTZCQjlEMzcxMUUyQjQ4QkZCRTZCRDQ1MzdGNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxQTk1NTZCQzlEMzcxMUUyQjQ4QkZCRTZCRDQ1MzdGNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFBOTU1NkI5OUQzNzExRTJCNDhCRkJFNkJENDUzN0Y2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFBOTU1NkJBOUQzNzExRTJCNDhCRkJFNkJENDUzN0Y2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQABAMDAwMDBAMDBAYEAwQGBwUEBAUH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"
+					}
+				},
+				{
+					"name": "logo_sage_small.jpg",
+					"size": 2222,
+					"file": {
+						"length": 2222,
+						"contentType": "image/jpeg",
+						"fileName": "logo_sage_small.jpg",
+						"uploadDate": "2015-07-21T14:51:02.277Z",
+						"chunkSize": 261120,
+						"$content": "/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABGAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxNTY2NzQ1NDlEMzcxMUUyODNCNDgwNkE5MEI1NENGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxNTY2NzQ1NTlEMzcxMUUyODNCNDgwNkE5MEI1NENGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE1NjY3NDUyOUQzNzExRTI4M0I0ODA2QTkwQjU0Q0YzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE1NjY3NDUzOUQzNzExRTI4M0I0ODA2QTkwQjU0Q0YzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQABAMDAwMDBAMDBAYEAwQGBwUEBAUHCAYGBwYGCAoICQkJCQgKCgwMDAwMCgwMDQ0MDBERERERFBQUFBQUFBQUFAEEBQUIBwgPCgoPFA4ODhQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAGAA5AwERAAIRAQMRAf/EAI0AAQEBAQAAAAAAAAAAAAAAAAcGBAgBAAIDAQEAAAAAAAAAAAAAAAIFAQMEBgAQAAEDAwMCAwUFCQAAAAAAAAECAwQRBQYAEgchEzFBYVGhIhQIcYEychiR0VKSIyRU1BURAAEEAQIEBQIHAAAAAAAAAAEAAgMEESESMUFRE/BxgQUVYaHB0eHxIjJi/9oADAMBAAIRAxEAPwBPzbNcvzXl24cfpy0YTYIC1stSAsxystJBqVpW2VLXWqarAp77QABlcVatTT2zD3O00eiorPx3ypbbrGXiHLDd4irX/dpluqlltun4g0t14L+zcnUZHRao6Vprx259w551+2qzHirkma89Jyvl5dtupWoCLGkuhCUgnaSkPsAVHXaEdNTuHRB8fYccyWNp+h/UI0n8p8vY7drhxlDyUXaSqY3BiXZJDjx3qCU9p5VSAvcK1JI8josA6pS+/bjcYA/cc4B/IpIm8Xc24Zj07JYXIT9xuEeK69Ntby33Gy2EEuBtx5xY3JFSk7E9fMaHIPJNn0LsEZeJSSBqNfxRhxnkPK3IFxVhcXMpVugq3TJ1ykyFqdbbQEoolxSgs1JFEJWPboiAEnozWrLu0JCBxJJSbkMfkHhKOxltuzdzLrA0823dbVcXS44UOHbVBW44ep6VTQp9RoRgptM2xRAkbL3G51BV3+pTjX/Jd/lH79DsKZ/NV+qhMyy3gHNssuEDOrXNs10gr+XRelNvRlvhvod6WgVChFE9xHh7PDRAOA0SyzZoTylszS0jnqM+PqibkmJxdjztukcQX24Srz3FGSpKnAhtsCqSlzttK3V8gT00YyeKSXW1YiDWcS5UWA479P14xqPcM5ySU3lDm43Bl91bJSvcaBFGlbhSnXcdCSeS1U4aD4w6V5389UXTp2O2HkP/AKWKh2TjVsuLUiB3Se64xHcSqpKgk/Ft6VGj5JQ98cc+6PVjXZHkF1dl31GcazcKuSLTMemXa4Q3ozFtEd1DqXH21I/qKUnYAmvWij6V1UGHK7Sx71WMJ2nLiOGFytxw1g7+Q9rkF6ZDsL6FpRMhGhbeqCCv4HCU0rXamvhq055LjKQgL8TEhvUdUr3Sy/TJEkRIUW83y8OSnEtqEE9wNhRpuVvjpr+VG5XpoP5JzJF7a0gBz3Z6fskf9NXEX8V6/ar/AFtDvKb/AAlT/Xj0THfsMxPKNpyGzRLitNNrkhlK1inhRVN3v0AJCfTVopf7tDvNZrLx5g2OvGTZMfgwpJFO82ynuU9FEEjXslBFSgiOWMA9Fjk8TcaTJS5sjFrcuS4retfYSkFXtKRQe7U7iq3e3VnHJY3PkpHkux2PB7c9lGMcdRsgu0irMsNNAobYKQFFbSQokFIp8COnnTUg55rDeiZA3uRwh7jx8kLu8p4TIt0u1ce8Z/K5pPYch70MpdLBeSULLYQkrJAJp8KdHtPMpAb8JaWww4eRjh4KW+FuHI1mwBdtz21R5c66SDNegSkJe+XTtShCTUGi6CqqHzpoHO10Tz2v20R19szQS45weSRrJxzguNyvnrHj8KFNH4ZDbKS4n8qlVI+7QklNYqUERyxgB8lT6hbF/9k="
+					}
+				}
+			],
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		}
+	],
+	"$localization": {
+		"de-de": {},
+		"en-gb": {},
+		"en-us": {},
+		"es-es": {},
+		"fr-fr": {},
+		"it-it": {},
+		"pl-pl": {},
+		"pt-pt": {},
+		"ru-ru": {},
+		"zh-cn": {}
+	}
+}

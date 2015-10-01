@@ -68,6 +68,7 @@ namespace ExcelAddIn
             }
         }
 
+        bool? _useOldPathAndQuery;
         public HtmlDocument webDocument { get { return webBrowser.Document; } }
         private void _connect(string serverUrl, bool withSettings = true, Excel.Workbook Wb = null)
         {
@@ -104,7 +105,14 @@ namespace ExcelAddIn
                                 _doRefreshAll = false;  
                             }
                         };
-                    webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                    if (_useOldPathAndQuery == true)
+                    {
+                        webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                    }
+                    else   
+                    {
+                        webBrowser.Url = new Uri(new Uri(connectUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24details&format=application/syracuse-excel-worksheet");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -122,9 +130,14 @@ namespace ExcelAddIn
              * Under certain circumstances, the document title is different from that contained in the document text.
              * We therefore need to test for both if the title is not equal to Syracuse.
              */
-            if (!(title != null && (title.Equals("Syracuse") ||  title.Equals("Sage ERP X3") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
+            if (!(title != null && (title.Equals("Syracuse") || title.Equals("Sage Office") || title.StartsWith("Sage") || ((WebBrowser)sender).DocumentText.Contains("<title>Syracuse</title>"))))
             {
                 CommonUtils.ShowInfoMessage(global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL, global::ExcelAddIn.Properties.Resources.MSG_INVALID_SERVER_URL_TITLE);
+            }
+            else if (_useOldPathAndQuery == null && title.Equals("Sage Office") == false)
+            {
+                _useOldPathAndQuery = true;
+                webBrowser.Url = new Uri(BaseUrlHelper.BaseUrl, "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
             }
 
             /*
@@ -179,8 +192,16 @@ namespace ExcelAddIn
             if(!connected) {
                 // get server url
                 var connectUrl = Globals.ThisAddIn.GetServerUrl(Globals.ThisAddIn.Application.ActiveWorkbook);
-                //
-                webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+
+                if (_useOldPathAndQuery == true)
+                {
+                    webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelhome.%24dashboard");
+                }
+                else
+                {
+                    webBrowser.Url = new Uri(connectUrl + "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24details&format=application/syracuse-excel-worksheet");
+                }
+
                 webBrowser.ObjectForScripting = new External();
                 ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
                 {

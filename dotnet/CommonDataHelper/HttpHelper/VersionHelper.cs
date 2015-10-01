@@ -29,7 +29,7 @@ namespace CommonDataHelper
                     {
                         if (valueName == "ProductName")
                         {
-                            if (sk.GetValue(valueName).ToString() == "Sage ERP X3 Office Addins")
+                            if (sk.GetValue(valueName).ToString() == "Sage Office Addins")
                             {
                                 Object decVersion = sk.GetValue("Version");
                                 int v = Convert.ToInt32(decVersion.ToString());

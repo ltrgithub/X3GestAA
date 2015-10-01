@@ -126,24 +126,6 @@ namespace PowerPointAddIn.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die The specified server location is invalid  ähnelt.
-        /// </summary>
-        internal static string MSG_INVALID_SERVER_URL {
-            get {
-                return ResourceManager.GetString("MSG_INVALID_SERVER_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Invalid server location  ähnelt.
-        /// </summary>
-        internal static string MSG_INVALID_SERVER_URL_TITLE {
-            get {
-                return ResourceManager.GetString("MSG_INVALID_SERVER_URL_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die New Addin available. Do do want to install it? ähnelt.
         /// </summary>
         internal static string MSG_NEW_VERSION {
@@ -195,24 +177,6 @@ namespace PowerPointAddIn.Properties {
         internal static string MSG_SAVE_AS_TITLE {
             get {
                 return ResourceManager.GetString("MSG_SAVE_AS_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die The document has been saved successfully! ähnelt.
-        /// </summary>
-        internal static string MSG_SAVE_DOC_DONE {
-            get {
-                return ResourceManager.GetString("MSG_SAVE_DOC_DONE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Saved document ähnelt.
-        /// </summary>
-        internal static string MSG_SAVE_DOC_DONE_TITLE {
-            get {
-                return ResourceManager.GetString("MSG_SAVE_DOC_DONE_TITLE", resourceCulture);
             }
         }
         

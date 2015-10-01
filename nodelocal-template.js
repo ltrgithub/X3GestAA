@@ -12,6 +12,12 @@ exports.config = {
 	// This option allow to partners to set a factory ID on security 
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
+	/*
+	 * With this flag set to true, even Syracuse administrators will not be able to associate 
+	 * Syracuse users to X3 users on specific endpoints if the login match to Sage factory syracuse user's login.
+	 * For instance, it will be impossible to map a Syracuse user with ADMIN X3 user.
+	 */
+	adminUserRestrict: false,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
@@ -21,13 +27,16 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: false,
-		sitecheck: {
+		// Enable only if you would like to check status of site
+		/*sitecheck: {
 			localTest: "true",
 			host: "localhost",
 			port: 8124,
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
-		},
+		},*/
+		// allow to pass some node parameter like --prof
+		nodeOptions:""
 	},
 	system: {
 		// enables memwatch module
@@ -73,11 +82,18 @@ exports.config = {
         }
     },
 	session: {
+		// interactive session timeout (minutes).
 		timeout: 20, // minutes
-		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
-		checkInterval: 60, // secondes
+		// session extra timeout (minutes) if async tracker is running.
+		asyncTimeout: 20,
+		// session timeout (minutes - decimals allowed) for stateless (web service) requests.
+		statelessTimeout: 1,
+		// interval (in seconds) between scans to release sessions.
+		checkInterval: 60,
+		// ?
 		//		ignoreStoreSession: true,
-		"auth": "basic"
+		// authentication modes
+		"auth": "basic",
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
@@ -122,6 +138,7 @@ exports.config = {
 			// trace: console.log,
 		},
         reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+        // webProxyWhitelist: "^(.*)/(GEN|RES)/.*\.(js|json|gif|png|jpeg|jpg|ico|bmp)$", // whitelist for PUB web folder, there is a builtin whitelist. Regexp or array of regexp.
 	},
 
 	help: {
@@ -153,7 +170,16 @@ exports.config = {
 		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
-		// offStemmer : true // desactivation of the stemmer for the search indexation
+		// offStemmer : true, // desactivation of the stemmer for the search indexation
+        // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
+	},
+	notificatonServer: {
+		//"log Level" : 3,
+		//'connect timeout': 1000,
+		//'reconnect': true,
+		//'reconnection delay': 300,
+		//'max reconnection attempts': 10000,
+		//'force new connection':true
 	},
 	translation: {
 		// trace: console.log,
@@ -184,6 +210,18 @@ exports.config = {
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		devOpsEmail: 'SageERPX3DevOps@sage.com',
+		oauth: {
+			client_id: 'pl4JKQLpgNdEFTgM2Oe1juQQ0dHiv3VD',
+			scope: 'vstf4mpl();',
+			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
+			baseUrl: 'https://signon.sso.staging.services.sage.com/SSO',
+			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+		}
 	},
 	traces: {
 		console: false, // For developers
@@ -199,6 +237,7 @@ exports.config = {
 			},
 			// Elastic search communication
 			search: "error",
+			notifications:"error",
 			// X3 ERP communication layer
 			x3Comm: {
 				jsRunner: "error", // Syracuse calls from 4GL processes
@@ -227,7 +266,13 @@ exports.config = {
 				helper: "error",
 				session: "error",
 				dispatch: "error"
-			}
+			},
+			"soap-generic": {
+				pool: "error",
+				stub: "error",
+				request: "error",
+				ackcall: "error"
+			},
 		}
     },	
     unit_test: {

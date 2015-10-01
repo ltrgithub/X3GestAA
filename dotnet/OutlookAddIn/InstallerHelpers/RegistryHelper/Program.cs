@@ -8,6 +8,7 @@ namespace RegistryHelper
     {
         static void Main(string[] args)
         {
+            //String installDirectory = @"C:\Program Files (x86)\Sage\Sage ERP X3 Outlook AddIn".Trim(System.IO.Path.GetInvalidPathChars());
             String installDirectory = args[0].Trim(System.IO.Path.GetInvalidPathChars());
 
             if (Office2010RegistryHelper.isOffice2010Installed())
