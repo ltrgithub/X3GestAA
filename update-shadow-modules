@@ -10,7 +10,7 @@ echo "STEP 1: resetting node_modules"
 cd $DIR; rm -rf node_modules; git checkout node_modules
 echo ""
 echo "STEP 2: checking out submodules"
-$DIR; git submodule update --init
+cd $DIR; git submodule update --init
 echo ""
 echo "STEP 3: running npm install (may take a while)"
 # Use --production flag to avoid problems with grunt's very long file paths on windows
