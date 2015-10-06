@@ -1891,6 +1891,28 @@
       "$factoryOwner": "SAGE"
     },
     {
+      "$type": "mobileGadget",
+      "code": "SPE_YORDER",
+      "title": "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7",
+      "description": "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7",
+      "gadgetType": "$representation",
+      "icon": "",
+      "entity": "YORDER",
+      "representation": "YORDER",
+      "action": "$query",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "representationRef": {
+        "representation": "YORDER",
+        "entity": "YORDER"
+      },
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
       "$type": "mobileDashboard",
       "dashboardName": "STD_X3_ERP_CUSTOMER_DETAILS_DASHBOARD",
       "title": "title_576ba35b-b1eb-4151-b658-d235bd0047fc",
@@ -2301,12 +2323,27 @@
       "$factoryOwner": "SAGE"
     },
     {
+      "$type": "mobileDashboard",
+      "dashboardName": "Specific order entry",
+      "title": "title_c4739576-14b7-4315-8616-eda787c30126",
+      "description": "description_c4739576-14b7-4315-8616-eda787c30126",
+      "vignettes": [
+        {
+          "displayStyle": "$fullOnBigDeviceOnly",
+          "persistentId": "dac34338-a874-4c1d-8f2f-4f946f9b73fd",
+          "gadget": "SPE_YORDER"
+        }
+      ],
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
       "$type": "mobileApplication",
       "title": "title_2bfe7319-ec88-4d33-8327-567f3ffd5695",
       "description": "description_2bfe7319-ec88-4d33-8327-567f3ffd5695",
       "applicationName": "STD_X3_ERP_CRM",
       "iconName": "",
-      "versionNumber": "606",
+      "versionNumber": "608",
       "homeDashboard": "STD_X3_ERP_CRM",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2317,7 +2354,7 @@
       "description": "description_4628af72-535a-4511-b3bf-8ce44d2a6da1",
       "applicationName": "STD_X3_ERP_SALES_DOCUMENTS",
       "iconName": "",
-      "versionNumber": "613",
+      "versionNumber": "615",
       "homeDashboard": "STD_X3_ERP_SALES_DOCUMENTS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2328,7 +2365,7 @@
       "description": "description_12528087-a635-49f5-80ba-9672cb8afecf",
       "applicationName": "STD_X3_ERP_MYCUSTOMERS",
       "iconName": "s-m-sales-customers",
-      "versionNumber": "592",
+      "versionNumber": "594",
       "homeDashboard": "STD_X3_ERP_MYCUSTOMERS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2339,7 +2376,7 @@
       "description": "description_24451198-1710-498e-a9ad-502da47ae912",
       "applicationName": "STD_X3_ERP_CUSTOMERS_DASHBOARD",
       "iconName": "",
-      "versionNumber": "622",
+      "versionNumber": "624",
       "homeDashboard": "STD_X3_ERP_CUSTOMERS_DASHBOARD",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2350,7 +2387,7 @@
       "description": "description_14ad258f-bd8a-432c-b921-c23486dc17ce",
       "applicationName": "STD_X3_ERP_EXPENSES",
       "iconName": "s-m-expenses",
-      "versionNumber": "587",
+      "versionNumber": "589",
       "homeDashboard": "STD_X3_ERP_EXPENSES_DASHBOARD",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2361,7 +2398,7 @@
       "description": "description_c8f25ab9-2699-47d7-ba32-62a12903f37e",
       "applicationName": "STD_X3_ERP_INQUIRIES",
       "iconName": "",
-      "versionNumber": "595",
+      "versionNumber": "597",
       "homeDashboard": "STD_X3_ERP_INQUIRIES",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2372,7 +2409,7 @@
       "description": "description_6ffdec47-456c-4ded-a9ba-38b19bfa0dc0",
       "applicationName": "STD_X3_ERP_MY_STAT",
       "iconName": "",
-      "versionNumber": "605",
+      "versionNumber": "607",
       "homeDashboard": "STD_X3_ERP_MY_STAT",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2383,7 +2420,7 @@
       "description": "description_916a5a91-8f37-437a-9425-bd5596d75196",
       "applicationName": "STD_X3_ERP_PRODUCT_TO_PUSH",
       "iconName": "s-m-sales-inquiries",
-      "versionNumber": "586",
+      "versionNumber": "588",
       "homeDashboard": "STD_X3_ERP_PRODUCT_TO_PUSH",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2394,7 +2431,7 @@
       "description": "description_45ebd755-8864-4812-9d58-be5f7f242d6a",
       "applicationName": "STD_X3_ERP_PURCHASE_MYACTIONS",
       "iconName": "s-m-purchase-actions",
-      "versionNumber": "590",
+      "versionNumber": "592",
       "homeDashboard": "STD_X3_ERP_PURCHASE_MYACTIONS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2405,8 +2442,19 @@
       "description": "description_238a47ca-801b-4e83-9135-9340c670ca50",
       "applicationName": "STD_X3_ERP_SALES_MYACTIONS",
       "iconName": "s-m-sales-actions",
-      "versionNumber": "593",
+      "versionNumber": "595",
       "homeDashboard": "STD_X3_ERP_SALES_MYACTIONS",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "mobileApplication",
+      "title": "title_b24c9dad-7976-4c1b-b672-9651618ae322",
+      "description": "description_b24c9dad-7976-4c1b-b672-9651618ae322",
+      "applicationName": "Specifi Orders",
+      "iconName": "",
+      "versionNumber": "4",
+      "homeDashboard": "Specific order entry",
       "$factory": true,
       "$factoryOwner": "SAGE"
     }
@@ -2664,6 +2712,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Customer relation Dashboard",
@@ -2692,6 +2742,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Sales - My actions",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -2711,7 +2763,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "de-de": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -2965,6 +3019,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -2993,6 +3049,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3012,7 +3070,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "en-gb": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -3266,6 +3326,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -3294,6 +3356,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3313,7 +3377,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "en-us": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -3567,6 +3633,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Customer relation Dashboard",
@@ -3595,6 +3663,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Sales - My actions",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expense notes dashboard",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expense notes dashboard",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3614,7 +3684,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "es-es": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -3868,6 +3940,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -3896,6 +3970,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3915,7 +3991,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "fr-fr": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Classement annuel RDV / client",
@@ -4169,6 +4247,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "Consultation des notes de frais",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "Consultation des notes de frais",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Tableau de bord Relation client",
@@ -4197,6 +4277,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Ventes - Mes actions",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "Mon tableau de bord Note de frais",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "Mon tableau de bord Note de frais",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Tableau de bord Relation client",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Tableau de bord Relation client",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "Mes documents Vente",
@@ -4216,7 +4298,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Achats - Mes actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Achats - Mes actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Ventes - Mes actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Ventes - Mes actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Ventes - Mes actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "it-it": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -4470,6 +4554,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -4498,6 +4584,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -4517,7 +4605,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "pl-pl": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -4771,6 +4861,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -4799,6 +4891,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -4818,7 +4912,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "pt-pt": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -5072,6 +5168,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -5100,6 +5198,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -5119,7 +5219,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "ru-ru": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -5373,6 +5475,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -5401,6 +5505,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -5420,7 +5526,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "zh-cn": {
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
@@ -5674,6 +5782,8 @@
       "title_16901328-3165-4b0a-90b7-d19591f85528": "count",
       "title_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
       "description_cddd3460-ef15-48cc-b983-eb6985012116": "View expenses",
+      "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -5702,6 +5812,8 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Actions de signatures ventes en mobilité",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -5721,7 +5833,9 @@
       "title_45ebd755-8864-4812-9d58-be5f7f242d6a": "Achats - Mes actions",
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Mobilité - Actions de signature achats",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Ventes - Mes actions",
-      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Actions de signatures ventes en mobilité"
+      "description_238a47ca-801b-4e83-9135-9340c670ca50": "Actions de signatures ventes en mobilité",
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific Order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     }
   }
 }
