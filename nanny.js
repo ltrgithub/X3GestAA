@@ -37,7 +37,8 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 }
 config.streamline.lines = config.streamline.lines || "preserve";
 
-require("streamline").register(config.streamline);
+require('npm-shadow')();
+require('syracuse-core/lib/streamline-loader')(config.streamline);
 
 require("syracuse-load/lib/balancer").startCb(config, function(err) {
 	if (err) {
