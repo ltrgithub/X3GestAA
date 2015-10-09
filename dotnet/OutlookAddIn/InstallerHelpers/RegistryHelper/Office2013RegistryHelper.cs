@@ -1,11 +1,11 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Security.Principal;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RegistryHelper
 {
@@ -18,29 +18,60 @@ namespace RegistryHelper
         {
             StringBuilder keyName = new StringBuilder(_localMachineRoot);
             keyName.Append(@"\");
-            keyName.Append(@"Software\Microsoft\Office\15.0\Outlook\InstallRoot");
+            keyName.Append(@"Software\Microsoft\Office\15.0\Outlook");
 
-            String valueName = "Path";
+            String valueName = "Bitness";
+            String val = (String)Registry.GetValue(keyName.ToString(), valueName, String.Empty);
+            return !String.IsNullOrEmpty(val);
+        }
+
+        public static Boolean isOffice32Bit()
+        {
+            StringBuilder keyName = new StringBuilder(_localMachineRoot);
+            keyName.Append(@"\");
+            keyName.Append(@"Software\Microsoft\Office\15.0\Outlook");
+
+            String valueName = "Bitness";
             String val = (String)Registry.GetValue(keyName.ToString(), valueName, String.Empty);
 
-            return !String.IsNullOrEmpty(val);
+            return val.Equals("x86");
         }
 
         public static void registerAddIn(String installDirectory)
         {
             enableContactsField();
-            Boolean success = registerAssembly(installDirectory);
-            if (success)
-            {
-                removeUnusedAssembly(installDirectory);
-            }
+            registerAssembly(installDirectory);
         }
-
-        private static Boolean registerAssembly(string installDirectory)
+        
+        private static void registerAssembly(string installDirectory)
         {
-            Assembly asm = Assembly.LoadFile(installDirectory + "AdxOLNetv2s0-2013.dll");
-            RegistrationServices regAsm = new RegistrationServices();
-            return regAsm.RegisterAssembly(asm, AssemblyRegistrationFlags.SetCodeBase);
+            /*
+             * We need to determine the correct regasm to use here.
+             * If the installed version of Outlook is 32-bit, we need to register the add-in using
+             * the framework 32 version of regasm.exe. 
+             * Otherwise, use the framework 64 version of regasm.exe.
+             */
+
+            string frameworkDir;
+            if (isOffice32Bit())
+            {
+                frameworkDir = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.NET\Framework\v2.0.50727";
+            }
+            else
+            {
+                frameworkDir = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.NET\Framework64\v2.0.50727";
+            }
+
+            string regasmPath = frameworkDir + @"\regasm.exe";
+            string componentPath = installDirectory + "AdxOLNetv2s0-2013.dll";
+
+            Process p = new Process();
+            p.StartInfo.FileName = regasmPath;
+            p.StartInfo.Arguments = "\"" + componentPath + "\" /codebase";
+            p.StartInfo.Verb = "runas"; // To run as administrator.
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.Start();
+            p.WaitForExit();
         }
 
         private static void enableContactsField ()
@@ -56,11 +87,6 @@ namespace RegistryHelper
             {
                 Registry.SetValue(keyName.ToString(), valueName, 1, RegistryValueKind.DWord);
             }
-        }
-
-        private static void removeUnusedAssembly(String installDirectory)
-        {
-            System.IO.File.Delete(installDirectory + "AdxOLNetv2s0-2010.dll");
         }
     }
 }
