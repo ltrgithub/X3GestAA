@@ -20,7 +20,7 @@ cd $DIR/node_modules/streamline-upload; npm install
 cd $DIR/node_modules/syracuse-phantomjs; npm install
 echo ""
 echo "STEP 4: running npm dedup (may take a while)"
-cd $DIR; npm dedup
+cd $DIR; npm dedupe
 echo ""
 echo "STEP 5: running npm-shadow"
 cd $DIR/node_modules; node npm-shadow
