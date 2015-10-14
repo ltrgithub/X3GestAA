@@ -74,7 +74,7 @@ exports.config = {
                                 asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
                                 checkInterval: 60, // secondes
                                 //                            ignoreStoreSession: true,
-                                "auth": ["sage-id", "oauth2", "bearer"],
+                                "auth": ["sage-id", "oauth2", "bearer", "certificate"],
 
 
                 },
