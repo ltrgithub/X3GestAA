@@ -171,4 +171,9 @@ exports.config = {
 			},
 		},
 	},
+	xmSymphony: {
+		api: "https://localhost:8124",
+		certPath: __dirname + '/node_modules/sky-automation/lib/ssl/seos.crt',
+		keyPath: __dirname + '/node_modules/sky-automation/lib/ssl/seos.key',
+	},
 };
