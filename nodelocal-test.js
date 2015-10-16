@@ -69,6 +69,7 @@ exports.config = {
             server: {
             },
             replSet: {
+            	rs_name: "mongodevRepl"
             },
             mongos: {
             }
