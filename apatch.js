@@ -26,11 +26,7 @@ if (config.streamline) {
 	if (config.streamline.homepath)
 		process.env.HOMEPATH = config.streamline.homepath;
 } else {
-	config.streamline = {
-		fibers: false,
-		verbose: true,
-		cache: true,
-	};
+	config.streamline = {};
 }
 
 config.patch = config.patch || {};
@@ -38,7 +34,6 @@ config.patch = config.patch || {};
 if (config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/" + (process.env.USER || process.env.USERNAME || "");
 }
-config.streamline.lines = config.streamline.lines || "preserve";
 
 // require("streamline").register(config.streamline);
 require('npm-shadow')();
