@@ -1,3 +1,5 @@
+"use strict";
+require('npm-shadow')();
 var config = {};
 
 try {
@@ -31,7 +33,6 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/" + (process.env.USER || process.env.USERNAME || "");
 }
 
-require('npm-shadow')();
 require('syracuse-core/lib/streamline-loader')(config.streamline);
 
 require("syracuse-load/lib/balancer").startCb(config, function(err) {

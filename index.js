@@ -1,3 +1,5 @@
+"use strict";
+require('npm-shadow')();
 (function() {
 	// streamline and babel only work together if process launched from node_modules or below.
 	var where = require('path').join(__dirname, 'node_modules'); 
@@ -47,7 +49,6 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 // automatically enable 'aggressive' optimisation in fibers fast mode
 //if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
-require('npm-shadow')();
 require('syracuse-core/lib/streamline-loader')(config.streamline);
 
 (function() {

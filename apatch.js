@@ -1,4 +1,6 @@
+"use strict";
 // Special entry file for patch creation
+require('npm-shadow')();
 
 var config = {};
 
@@ -36,7 +38,6 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 }
 
 // require("streamline").register(config.streamline);
-require('npm-shadow')();
 require('syracuse-core/lib/streamline-loader')(config.streamline);
 var arg = process.argv[2];
 require('syracuse-patch/lib/patchcreate').cmdLinePatchCb(config, function(err, result) {
