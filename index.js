@@ -1,13 +1,5 @@
 "use strict";
 require('npm-shadow')();
-(function() {
-	// streamline and babel only work together if process launched from node_modules or below.
-	var where = require('path').join(__dirname, 'node_modules'); 
-	if (process.cwd().indexOf(where) !== 0) {
-		console.error('changing working directory to ' + where);
-		process.chdir(where);
-	}
-})();
 
 (function() {
 	var matches = process.version.match(/^v(\d+)\.(\d+).*$/);
