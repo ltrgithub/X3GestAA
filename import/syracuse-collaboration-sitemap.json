@@ -621,6 +621,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_SAML2_SERVERS",
+      "title": "title_7dd49a09-7be1-4170-9b98-11faf731856e",
+      "description": "description_7dd49a09-7be1-4170-9b98-11faf731856e",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "saml2s",
+        "representation": "saml2"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_APPLICATIONS",
       "title": "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
       "description": "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
@@ -1180,6 +1209,10 @@
                 },
                 {
                   "code": "S_OAUTH2_SERVERS",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "S_SAML2_SERVERS",
                   "$variantType": "menuItem"
                 }
               ]
@@ -3139,6 +3172,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_SAML2_SERVERS",
+      "title": "title_7dd49a09-7be1-4170-9b98-11faf731856e",
+      "description": "description_7dd49a09-7be1-4170-9b98-11faf731856e",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "saml2s",
+        "representation": "saml2"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_APPLICATIONS",
       "title": "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
       "description": "description_d13556f7-5d15-439e-9dbb-93b8ebbb7d39",
@@ -3698,6 +3760,10 @@
                 },
                 {
                   "code": "S_OAUTH2_SERVERS",
+                  "$variantType": "menuItem"
+                },
+                {
+                  "code": "S_SAML2_SERVERS",
                   "$variantType": "menuItem"
                 }
               ]
@@ -5693,6 +5759,8 @@
       "description_d6affc29-40d1-41bd-b209-f4f2160401ae": "LDAP Servers management interface",
       "title_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2 Servers",
       "description_4d9e892a-82cf-4759-961c-4ae6da834577": "OAuth2 Servers management interface",
+      "title_7dd49a09-7be1-4170-9b98-11faf731856e": "SAML2 id provider",
+      "description_7dd49a09-7be1-4170-9b98-11faf731856e": "SAML2 id provider",
       "title_6f903214-e346-480a-985d-11f240f09e89": "Notifications",
       "title_e5d028e2-2a7d-4475-ae98-6b925b48f125": "Endpoints",
       "title_d13556f7-5d15-439e-9dbb-93b8ebbb7d39": "Applications",
