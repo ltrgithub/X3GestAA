@@ -1,4 +1,6 @@
+"use strict";
 // Special entry file for patch creation
+require('npm-shadow')();
 
 var config = {};
 
@@ -26,11 +28,7 @@ if (config.streamline) {
 	if (config.streamline.homepath)
 		process.env.HOMEPATH = config.streamline.homepath;
 } else {
-	config.streamline = {
-		fibers: false,
-		verbose: true,
-		cache: true,
-	};
+	config.streamline = {};
 }
 
 config.patch = config.patch || {};
@@ -38,10 +36,9 @@ config.patch = config.patch || {};
 if (config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/" + (process.env.USER || process.env.USERNAME || "");
 }
-config.streamline.lines = config.streamline.lines || "preserve";
 
-require("streamline").register(config.streamline);
-
+// require("streamline").register(config.streamline);
+require('syracuse-core/lib/streamline-loader')(config.streamline);
 var arg = process.argv[2];
 require('syracuse-patch/lib/patchcreate').cmdLinePatchCb(config, function(err, result) {
 	if (err) {
