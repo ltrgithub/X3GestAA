@@ -1,3 +1,5 @@
+"use strict";
+require('npm-shadow')();
 var config = {};
 
 try {
@@ -12,12 +14,7 @@ if (config.streamline) {
 	if (config.streamline.homepath)
 		process.env.HOMEPATH = config.streamline.homepath;
 } else {
-	config.streamline = {
-		fibers: false,
-		verbose: true,
-		cache: true,
-		trampoline: "nextTick"
-	};
+	config.streamline = {};
 }
 
 if (config.streamlineFromCI) {
@@ -35,9 +32,8 @@ if (config.streamlineFromCI) {
 if (config.collaboration && config.collaboration.cacheDir) { // user dependent cache directory to avoid access conflicts
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/" + (process.env.USER || process.env.USERNAME || "");
 }
-config.streamline.lines = config.streamline.lines || "preserve";
 
-require("streamline").register(config.streamline);
+require('syracuse-core/lib/streamline-loader')(config.streamline);
 
 require("syracuse-load/lib/balancer").startCb(config, function(err) {
 	if (err) {

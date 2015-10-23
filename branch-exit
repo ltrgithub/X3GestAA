@@ -1,0 +1,12 @@
+#!/bin/sh
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+echo "clearing  shadow-modules"
+rm -rf $DIR/shadow-modules/* $DIR/shadow-modules/.[a-z]*
+# remove all the directories that were embedded before and are now handled as submodules
+for dir in ez-mongodb ez-streams galaxy jsurl \
+	streamline streamline-doctool streamline-flamegraph streamline-fs \
+	streamline-pdfkit streamline-require babel-plugin-streamline \
+	npm-shadow streamline-runtime xa1-calculator xa1-color-picker; do
+		echo "clearing " $dir
+		rm -rf $DIR/node_modules/$dir/* $DIR/node_modules/$dir/.[a-z]*
+done;
