@@ -21,7 +21,8 @@ exports.config = {
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
 		https: true,
-		dbUnlock: true
+		dbUnlock: true,
+		localBalancer: true
 
 	},
 	//nanny :{
@@ -51,7 +52,7 @@ exports.config = {
 	collaboration: {
 		driver: "mongodb",
 		dataset: "syracuse",
-		hostname: "10.198.2.4:27017,10.198.2.68",
+		hostname: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
 		port: 27017,
 		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
 		certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
@@ -80,7 +81,7 @@ exports.config = {
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
 		checkInterval: 60, // secondes
 		//		ignoreStoreSession: true,
-		"auth": ["sage-id"]
+		"auth": ["sage-id", "oauth2", "bearer", "certificate"],
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
@@ -180,11 +181,22 @@ exports.config = {
 	},
 	sage_id: {
 		// base URL of sage ID service - this one is staging, not prod
-		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
+		baseUrl: "https://na-services.sso.staging.services.sage.com/SSO",
 		// absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		oauth: {
+			client_id: 'pl4JKQLpgNdEFTgM2Oe1juQQ0dHiv3VD',
+			scope: 'vstf4mpl();',
+			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
+			baseUrl: 'https://na-signon.sso.staging.services.sage.com/SSO',
+			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+		}
 	},
 	mongoNotify: {
 		host: '10.198.254.30',

@@ -8,6 +8,7 @@ changelog/changelogSettings.json
 /.settings
 /.externalToolBuilders
 /.idea
+/logs
 /dotnet/ExcelAddIn/bin
 /dotnet/ExcelAddIn/obj
 /dotnet/ExcelAddIn/ExcelAddIn.csproj.user
@@ -19,6 +20,8 @@ npm-debug.log
 /node_modules/syracuse-main/html/mobile/js/build/errors-init.log
 /node_modules/syracuse-main/html/mobile/js/build/errors-res.log
 /node_modules/syracuse-collaboration/test/server/exportResults/
+/node_modules/babel-core
+/node_modules/certificatetest
 junk/
 .bin
 *-N?.log
@@ -29,9 +32,10 @@ junk/
 /node_modules/grunt*
 /node_modules/jshint-stylish
 /node_modules/istanbul
+/node_modules/tedious/node_modules/babel
 coverage
 JSLintNet.json
-*.sln
+./*.sln
 *.njsproj
 *.suo
 version.json
@@ -43,5 +47,8 @@ version.json
 /cert_gen/private
 /certificates
 /translation-indexes/output/
+<<<<<<< HEAD
 # streamline 1.0 branch switch script does not remove babel.core because we don t want to refetch it every time
 /node_modules/babel?core/
+/logs
+/heapdumps
