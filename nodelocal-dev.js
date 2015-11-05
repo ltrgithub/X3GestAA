@@ -189,7 +189,7 @@ exports.config = {
 			scope: 'vstf4mpl();',
 			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
 			baseUrl: 'https://na-signon.sso.staging.services.sage.com/SSO',
-			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectUrl: 'https://sageidnotifications-420831420.us-west-2.elb.amazonaws.com/auth/oauth2/sageid/sageIdRedirect',
 			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
 			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
 			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
