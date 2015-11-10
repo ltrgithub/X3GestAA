@@ -40,7 +40,7 @@ exec(cmdline, function(error, stdout, stderr) {
 		cache: true,
 	};
 	result.src = res[2];
-	result.comment = res[1]+" "+res[3];
+	result.comment = new Date().toISOString().substr(0, 10)+" "+res[1]+" "+res[3];
 	result.relNumber = new Date().toISOString().substr(0, 10).replace(/\-/g, ".");
 	result.patchNumber = 0;
 	var oldversion = {};
