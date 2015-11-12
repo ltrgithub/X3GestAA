@@ -13847,6 +13847,64 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_EXTPENIND",
+      "title": "title_57937499-b1dd-4dcd-b050-bfce85de812f",
+      "description": "description_57937499-b1dd-4dcd-b050-bfce85de812f",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXTPENIND",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRPIH",
+      "title": "title_b3824cf3-1731-480e-b832-e146bfcc761d",
+      "description": "description_b3824cf3-1731-480e-b832-e146bfcc761d",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRPIH",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_5d97cb44-f178-4520-bfa3-e388b72d1666",
       "code": "STD_X3_HRM_DCADM",
@@ -13963,6 +14021,24 @@
           "code": "STD_X3_HRM_PDUE",
           "title": "title_824f7b5f-9466-4394-b295-acc5c1f89581",
           "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "cfa61ee2-ccde-4e1f-a4bc-1023e566e66b",
+          "title": "title_cfa61ee2-ccde-4e1f-a4bc-1023e566e66b",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "STD_X3_HRM_EXTPENIND",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESHRPIH",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -17188,6 +17264,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESDPN",
+      "title": "title_a87d844e-8c7d-4a09-bc6d-3eda55ea4956",
+      "description": "description_a87d844e-8c7d-4a09-bc6d-3eda55ea4956",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESDPN",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESPRV",
       "title": "title_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8",
       "description": "description_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8",
@@ -17654,7 +17759,7 @@
       "icon": "",
       "applicationMenu": true,
       "facet": "$query",
-      "fusionFunction": "funincdcl",
+      "fusionFunction": "FUNINCDCL",
       "fusionKey": "",
       "keyIsWhere": false,
       "target": "self",
@@ -18568,6 +18673,10 @@
             },
             {
               "code": "STD_X3_HRM_GESDAQ",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESDPN",
               "$variantType": "menuItem"
             },
             {
@@ -27376,6 +27485,11 @@
       "title_1d1789a7-6ede-4a71-8055-41f7776d11f0": "Listes électorales",
       "description_1d1789a7-6ede-4a71-8055-41f7776d11f0": "LISTELEC",
       "title_824f7b5f-9466-4394-b295-acc5c1f89581": "DUE",
+      "title_cfa61ee2-ccde-4e1f-a4bc-1023e566e66b": "Pénibilité",
+      "title_57937499-b1dd-4dcd-b050-bfce85de812f": "Extraction",
+      "description_57937499-b1dd-4dcd-b050-bfce85de812f": "EXTPENIND",
+      "title_b3824cf3-1731-480e-b832-e146bfcc761d": "Fiches d'exposition",
+      "description_b3824cf3-1731-480e-b832-e146bfcc761d": "GESHRPIH",
       "title_b6e7ce26-6e8f-4517-88ab-d5fbd3ac0af1": "Bilan social",
       "title_b77dcfab-266a-4944-b385-c77e944226af": "Indicateurs",
       "description_b77dcfab-266a-4944-b385-c77e944226af": "GESBIN",
@@ -27596,6 +27710,8 @@
       "description_fb8e4605-4281-4e2b-94cc-681979fc081a": "GESDMP",
       "title_97a56de0-400c-440c-98ed-e17aea61fbf0": "Ayants droit",
       "description_97a56de0-400c-440c-98ed-e17aea61fbf0": "GESDAQ",
+      "title_a87d844e-8c7d-4a09-bc6d-3eda55ea4956": "Pénibilité",
+      "description_a87d844e-8c7d-4a09-bc6d-3eda55ea4956": "GESDPN",
       "title_f32b1a48-ed8c-4e86-9af2-ca9e5ca9353b": "Honoraires",
       "title_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8": "Prestataires d'honoraires",
       "description_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8": "GESPRV",
