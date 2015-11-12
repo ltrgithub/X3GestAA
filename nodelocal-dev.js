@@ -181,4 +181,31 @@ exports.config = {
 		keyPath: __dirname + '/node_modules/sky-automation/lib/ssl/admca.key',
 		passphrase: 'admca',
 	},
+	SEI: {
+		s3Region: "us-east-1",
+		s3Bucket: "SEIConfig",
+		key: "Dev"
+	},
+	cloudflare: {
+		options : {
+	        hostname: 'api.cloudflare.com',
+	        port: 443,
+	        headers: {
+	            "X-Auth-Email": "infra.arch@sage.com",
+	            "X-Auth-Key": "2d03c4a22cc1dabc7439f07e95897e2e48c59"
+	        }
+	    },
+	    zoneName: "dev-sageerpx3online.com",
+	    content: "dev.sei.cloud.dev-sageerpx3online.com",
+	    paths: {
+	        getRecord :'/client/v4/zones/:zoneID/dns_records?name=',
+	        deleteRecord: '/client/v4/zones/:zoneID/dns_records/',
+	        addRecord: '/client/v4/zones/:zoneID/dns_records',
+	        updateRecord:  '/client/v4/zones/:zoneID/dns_records/',
+	        listZones: '/client/v4/zones?per_page=999',
+	        getZone: '/client/v4/zones?name=:zoneName',
+	        
+	    }
+	},
+
 };
