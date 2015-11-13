@@ -66,7 +66,7 @@ exports.config = {
         period: 300,
 		threshold: 60000,
 		actionsEnabled: true,
-		actions: "arn:aws:sns:us-west-1:653201425183:AlarmEmail",
+		actions: "arn:aws:sns:us-east-1:653201425183:Ron",
 		env: "QA"
        },
 	streamline: {
