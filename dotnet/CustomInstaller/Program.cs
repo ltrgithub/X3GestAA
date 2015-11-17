@@ -11,7 +11,7 @@ namespace RegistryHelper
     {       
         static void Main(string[] args)
         {
-            if (RegistryHelper.OfficeRegistryHelper.isOffice2010Installed() || RegistryHelper.OfficeRegistryHelper.isOffice2013Installed())
+            if (RegistryHelper.OfficeRegistryHelper.isOffice2010Installed() || RegistryHelper.OfficeRegistryHelper.isOffice2013Installed() || RegistryHelper.OfficeRegistryHelper.isOffice2016Installed())
             {
                 if (args.Length > 0)
                     _log("Action: " + args[0]);
@@ -27,7 +27,7 @@ namespace RegistryHelper
             }
             else
             {
-                _log("Office 2010/2013 64bit not found");
+                _log("Office 2010/2013/2016 64bit not found");
             }
         }
 

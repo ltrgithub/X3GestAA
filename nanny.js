@@ -7,6 +7,7 @@ try {
 } catch (ex) {
 	console.log(ex);
 }
+
 //crnit: allow passing the HOMEPATH variable, important to execute syracuse as windows service, under local system account
 if (config.streamline) {
 	if (config.streamline.homedrive)
@@ -35,8 +36,10 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 
 require('syracuse-core/lib/streamline-loader')(config.streamline);
 
-require("syracuse-load/lib/balancer").startCb(config, function(err) {
+require("syracuse-load/lib/balancer").startCb(config, function(err, result) {
 	if (err) {
 		console.log("Error: " + err.message + " " + err.stack);
+		process.exit(1);
 	}
+	if (result > 0) process.exit(result);
 });
