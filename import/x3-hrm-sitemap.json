@@ -21479,6 +21479,167 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRACSA",
+      "title": "title_48378819-a5f7-4faa-8b07-1cc22deb60b3",
+      "description": "description_48378819-a5f7-4faa-8b07-1cc22deb60b3",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRACSA",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRSOFO",
+      "title": "title_224fbeae-9d6d-469e-95b2-7f65c876798a",
+      "description": "description_224fbeae-9d6d-469e-95b2-7f65c876798a",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRSOFO",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRSCPC",
+      "title": "title_745f7b05-d305-476b-a536-4b67400fa12a",
+      "description": "description_745f7b05-d305-476b-a536-4b67400fa12a",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRSCPC",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESEQGOANUM",
+      "title": "title_d17a8931-34ae-44db-8da2-0d45ae451acb",
+      "description": "description_d17a8931-34ae-44db-8da2-0d45ae451acb",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESEQGOANUM",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_c046fa1c-298c-43da-9f02-857e98f67db1",
+      "code": "CLSMNG",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "96f0bb1a-aab2-45a2-bc3d-a12dc99ece65",
+          "title": "title_96f0bb1a-aab2-45a2-bc3d-a12dc99ece65",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESHRACSA",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "add4b555-5858-43b6-b89a-75624880ac47",
+          "title": "title_add4b555-5858-43b6-b89a-75624880ac47",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESHRSOFO",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESHRSCPC",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "9c937c7e-1d37-42fd-a5c4-4b09e5e52748",
+          "title": "title_9c937c7e-1d37-42fd-a5c4-4b09e5e52748",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESEQGOANUM",
+              "$variantType": "menuItem"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_204a81cf-562c-418b-8391-8e91be536e02",
       "code": "STD_X3_HRM_GRH",
@@ -21494,6 +21655,9 @@
         },
         {
           "code": "STD_X3_HRM_CAR"
+        },
+        {
+          "code": "CLSMNG"
         }
       ]
     },
@@ -26597,6 +26761,18 @@
       "description_68c51846-2e86-4b96-b4cc-998f1baf1d6d": "RECCPC",
       "title_455fa680-7935-419d-a6f0-43a2487512dd": "Search for profiles",
       "description_455fa680-7935-419d-a6f0-43a2487512dd": "RECPRF",
+      "title_c046fa1c-298c-43da-9f02-857e98f67db1": "Classification",
+      "title_96f0bb1a-aab2-45a2-bc3d-a12dc99ece65": "History",
+      "title_48378819-a5f7-4faa-8b07-1cc22deb60b3": "Classification history",
+      "description_48378819-a5f7-4faa-8b07-1cc22deb60b3": "Classification history",
+      "title_add4b555-5858-43b6-b89a-75624880ac47": "Skills development",
+      "title_224fbeae-9d6d-469e-95b2-7f65c876798a": "OFO Codes",
+      "description_224fbeae-9d6d-469e-95b2-7f65c876798a": "OFO Codes",
+      "title_745f7b05-d305-476b-a536-4b67400fa12a": "Strategic skills priority",
+      "description_745f7b05-d305-476b-a536-4b67400fa12a": "Strategic skills priority",
+      "title_9c937c7e-1d37-42fd-a5c4-4b09e5e52748": "Equity",
+      "title_d17a8931-34ae-44db-8da2-0d45ae451acb": "Equity numerical goals",
+      "description_d17a8931-34ae-44db-8da2-0d45ae451acb": "Equity numerical goals",
       "title_5588dc2d-cf10-45c6-a6a3-1d03389789e3": "Training",
       "title_6a85d5c4-c91c-472d-8584-82a97ccede7f": "Training guidelines",
       "title_43e284f3-d04e-470b-bc16-493fd547298b": "Scale levels",
