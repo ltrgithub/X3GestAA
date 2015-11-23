@@ -34,7 +34,7 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 	config.streamline.cacheDir = config.collaboration.cacheDir + "/" + (process.env.USER || process.env.USERNAME || "");
 }
 
-require('syracuse-core/lib/streamline-loader')(config.streamline);
+require('syracuse-core/streamline-loader')(config.streamline);
 
 require("syracuse-load/lib/balancer").startCb(config, function(err, result) {
 	if (err) {
