@@ -677,49 +677,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_HRM_VISITMED",
-      "title": "title_33b81c32-d8da-4570-b462-fe9c4ebec503",
-      "description": "description_33b81c32-d8da-4570-b462-fe9c4ebec503",
-      "linkType": "$calendar",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "requestName": "VISITMED",
-      "requestLevel": "99",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PERSO"
-      },
-      "categories": [],
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_edfc1f0a-890c-438a-892c-af994c151e10",
-          "prompt": false,
-          "value": "VISITMED"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_584b45ed-526b-4aee-84d3-074287543594",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_HRM_CAL_FINESS",
       "title": "title_b36381a2-a141-4e79-9616-9ab7c29e3039",
       "description": "description_b36381a2-a141-4e79-9616-9ab7c29e3039",
@@ -1308,6 +1265,49 @@
           "title": "title_bac34356-60d7-4db1-9de1-5437294532ab",
           "prompt": false,
           "value": "EFFECTIF"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_VISITMED",
+      "title": "title_33b81c32-d8da-4570-b462-fe9c4ebec503",
+      "description": "description_33b81c32-d8da-4570-b462-fe9c4ebec503",
+      "linkType": "$calendar",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "requestName": "VISITMED",
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [],
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_edfc1f0a-890c-438a-892c-af994c151e10",
+          "prompt": false,
+          "value": "VISITMED"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_584b45ed-526b-4aee-84d3-074287543594",
+          "prompt": false,
+          "value": "false"
         }
       ]
     },
@@ -1940,7 +1940,6 @@
       "title_251f6334-5ea3-4393-b899-ed7e32d63c5d": "Residence permit expiry",
       "title_2fef8417-cdad-4f58-98d8-c3ffe14d7b2c": "Sick leave",
       "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absenteeism",
-      "title_33b81c32-d8da-4570-b462-fe9c4ebec503": "Medical examination",
       "title_b36381a2-a141-4e79-9616-9ab7c29e3039": "Probation period expiry",
       "title_ddc4dfa7-c635-4e22-8b37-77cd40f10a55": "Pending recruitments",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicators",
@@ -1957,6 +1956,7 @@
       "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Staff ages",
       "title_cf3a93f0-7af4-442c-843d-9ab24b833be6": "Staff management",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
+      "title_33b81c32-d8da-4570-b462-fe9c4ebec503": "Medical examination",
       "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteeism in the last 12 months",
       "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absenteeism in the last 3 months",
       "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
@@ -2014,7 +2014,6 @@
       "title_2fef8417-cdad-4f58-98d8-c3ffe14d7b2c": "Salariés en arrêts maladie",
       "description_646d96cd-9c85-485a-9545-72afe86b7a5e": "Absences",
       "title_5e528296-2f22-4bce-8fe8-21ef615271e3": "Vue du portail",
-      "title_33b81c32-d8da-4570-b462-fe9c4ebec503": "Visite médicale",
       "title_b36381a2-a141-4e79-9616-9ab7c29e3039": "Fin de période d'essai",
       "title_ddc4dfa7-c635-4e22-8b37-77cd40f10a55": "Salariés en attente d'embauche",
       "description_dfc4ff2d-d2ad-45ef-a7e0-c443fb49d72b": "Indicateurs",
@@ -2034,6 +2033,7 @@
       "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Ages des salariés",
       "title_cf3a93f0-7af4-442c-843d-9ab24b833be6": "Gestion des effectifs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventaires",
+      "title_33b81c32-d8da-4570-b462-fe9c4ebec503": "Visite médicale",
       "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteisme sur les 12 derniers mois",
       "title_ddf69074-25d7-4ec5-8bb4-ad8408918909": "Vue du portail",
       "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absentéisme 03 mois glissants",
@@ -2106,6 +2106,7 @@
       "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Escalões etários",
       "title_cf3a93f0-7af4-442c-843d-9ab24b833be6": "Efectivos",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventários",
+      "title_33b81c32-d8da-4570-b462-fe9c4ebec503": "Exames médicos",
       "title_5fed760f-3051-417e-a920-26d6a6721746": "Absentismo nos últimos 12 meses",
       "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absentismo nos últimos 3 meses",
       "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Absentismo no mês em curso",
