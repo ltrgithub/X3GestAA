@@ -1,6 +1,7 @@
+"use strict";
 // this little tool displays the license content in the database and can drop it
 // It is mainly used for emergency when starting Syracuse is not possible any more
-
+require('npm-shadow')();
 var mongodb = require('mongodb');
 var util = require('util');
 var path = require('path');
