@@ -4,7 +4,7 @@ exports.main = function(){
     var site = new Site();
     site.$isLicenceTool = true;
     site.$userProfileUrl = "/action/user-profile";
-    site.loadBox();
+    site.load();
 };
 
 if (require.main == module) 
