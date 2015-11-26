@@ -120,6 +120,12 @@
 		"numberDecimalSeparator": ".",
 		"numberGroupSeparator": " "
 	}, {
+		"$type": "localePreference",
+		"code": "ar-SA",
+		"enabled": true,
+		"numberDecimalSeparator": ",",
+		"numberGroupSeparator": " "
+	}, {
 		"$type": "securityProfile",
 		"code": "ADMIN",
 		"description": "description_902f36d7-96d7-4211-8e49-9f2f7aa1cb29",
@@ -157,15 +163,7 @@
 			"canWrite": true,
 			"canDelete": true,
 			"canExecute": true
-		}, {
-			"code": "preferences",
-			"description": "description_ce4d7efe-1a92-455e-9d09-493cd2816d2d",
-			"canCreate": true,
-			"canRead": true,
-			"canWrite": true,
-			"canDelete": true,
-		    "canExecute": true
-        }, {
+		},  {
 			"code": "pages",
 			"description": "description_3f1e1689-c8d1-4631-9c66-9fc3a2f770e7",
 			"canCreate": true,
@@ -182,7 +180,7 @@
 			"canDelete": true,
 			"canExecute": true
 		}, {
-			"code": "maintenanceAndStatus",
+			"code": "statusAndUsage",
 			"description": "description_91993d8a-1a61-4245-8b44-4e7c9612e224",
 			"canCreate": true,
 			"canRead": true,
