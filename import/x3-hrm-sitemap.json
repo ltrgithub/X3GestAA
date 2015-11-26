@@ -9182,6 +9182,8 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -16571,6 +16573,35 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRYEP",
+      "title": "title_cacaee33-a890-499b-8031-d5f6b5407272",
+      "description": "description_cacaee33-a890-499b-8031-d5f6b5407272",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRYEP",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_91da1071-a2b8-4d65-95cb-48fc47ca5807",
       "code": "STD_X3_HRM_PFEU",
@@ -16751,6 +16782,10 @@
             },
             {
               "code": "STD_X3_HRM_SIMULPAY",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRYEP",
               "$variantType": "menuItem"
             }
           ]
@@ -20011,6 +20046,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHREXTVAL",
+      "title": "title_4068d8bf-d2ee-4717-a325-8536b3b4e96a",
+      "description": "description_4068d8bf-d2ee-4717-a325-8536b3b4e96a",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHREXTVAL",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GENHREXTITR",
       "title": "title_9d35f547-867a-4c88-a810-3d57d939761a",
       "description": "description_9d35f547-867a-4c88-a810-3d57d939761a",
@@ -20023,6 +20087,8 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -20050,6 +20116,37 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHREXTYER",
+      "title": "title_fb87eb7f-4be3-4503-8462-182d2bc93985",
+      "description": "description_fb87eb7f-4be3-4503-8462-182d2bc93985",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHREXTYER",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -20077,6 +20174,66 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHREXTRES",
+      "title": "title_bf4d6b12-ae63-45b3-a6ed-34fb586bdc73",
+      "description": "description_bf4d6b12-ae63-45b3-a6ed-34fb586bdc73",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHREXTRES",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHREXTRSN",
+      "title": "title_ec7396bc-2896-4d58-b8ba-837a44d26fc4",
+      "description": "description_ec7396bc-2896-4d58-b8ba-837a44d26fc4",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHREXTRSN",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -20104,6 +20261,8 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -20159,6 +20318,10 @@
           "$variantType": "menuItem"
         },
         {
+          "code": "STD_X3_HRM_GENHREXTVAL",
+          "$variantType": "menuItem"
+        },
+        {
           "code": "STD_X3_HRM_GENHREXTITR",
           "$variantType": "menuItem"
         },
@@ -20167,7 +20330,19 @@
           "$variantType": "menuItem"
         },
         {
+          "code": "STD_X3_HRM_GENHREXTYER",
+          "$variantType": "menuItem"
+        },
+        {
           "code": "STD_X3_HRM_GENHREXTTER",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GENHREXTRES",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GENHREXTRSN",
           "$variantType": "menuItem"
         },
         {
@@ -26928,6 +27103,8 @@
       "description_466e8847-7854-49b6-bd6b-0a1b14c2eb15": "TRTRECCUM",
       "title_113642d2-3c3a-4845-9a73-52e900995c7a": "Payroll simulation",
       "description_113642d2-3c3a-4845-9a73-52e900995c7a": "SIMULPAY",
+      "title_cacaee33-a890-499b-8031-d5f6b5407272": "Year end program",
+      "description_cacaee33-a890-499b-8031-d5f6b5407272": "Year end program",
       "title_c9cadd2a-8e4c-40c1-84cf-22cf1da2dbb3": "Payments",
       "title_d465e21d-5bf0-4b49-b1f7-35a60e11d204": "Entry of payments",
       "description_d465e21d-5bf0-4b49-b1f7-35a60e11d204": "GESFRM",
@@ -27134,12 +27311,20 @@
       "title_88e8bd05-3613-4af4-a4d9-1317b386186f": "Lunch vouchers",
       "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Statutory exports",
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "UIF export",
+      "title_4068d8bf-d2ee-4717-a325-8536b3b4e96a": "Tax run validation",
+      "description_4068d8bf-d2ee-4717-a325-8536b3b4e96a": "Tax run validation",
       "title_9d35f547-867a-4c88-a810-3d57d939761a": "ITREG",
       "description_9d35f547-867a-4c88-a810-3d57d939761a": "ITREG",
       "title_de73652f-f377-4de0-a154-74cd47cf83df": "Mid-year tax run",
       "description_de73652f-f377-4de0-a154-74cd47cf83df": "Mid-year tax run",
+      "title_fb87eb7f-4be3-4503-8462-182d2bc93985": "Year end tax run",
+      "description_fb87eb7f-4be3-4503-8462-182d2bc93985": "Year end tax run",
       "title_a882d333-51b9-473e-a640-8f67cf4463b2": "Termination run",
       "description_a882d333-51b9-473e-a640-8f67cf4463b2": "Termination run",
+      "title_bf4d6b12-ae63-45b3-a6ed-34fb586bdc73": "Resubmit",
+      "description_bf4d6b12-ae63-45b3-a6ed-34fb586bdc73": "Resubmit",
+      "title_ec7396bc-2896-4d58-b8ba-837a44d26fc4": "Resubmission with new numbers",
+      "description_ec7396bc-2896-4d58-b8ba-837a44d26fc4": "Resubmission with new numbers",
       "title_e41d5aec-bb5b-4d3b-ab9c-327d45ee8c37": "Execute extract",
       "description_e41d5aec-bb5b-4d3b-ab9c-327d45ee8c37": "Execute extract",
       "title_34a48200-2673-4c74-b1ee-02463404c0fd": "Skills extract",
