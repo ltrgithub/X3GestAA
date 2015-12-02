@@ -117,7 +117,7 @@ exports.config = {
         "disabled": false // do not generate doc at startup. Useful for having cleaner flame graph.
     },
     traces: {
-        console: false, // For developers
+        console: true, // For developers
         // Levels specified here will be used for default traces settings
         // Valid levels are : 'info', 'debug', 'warn', and 'error'
         // Levels not specified will be initialized with 'error' level

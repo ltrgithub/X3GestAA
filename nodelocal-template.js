@@ -64,26 +64,29 @@ exports.config = {
         // flag to expose stack traces to the UI (off by default for security)
         exposeStacktrace: false,
         // bindIP if IP_ANY is not the good binding (IPV6)
-        bindIP: "0000:00:00:00:00:00000",
+        bindIP: "0000:00:00:00:00:00000"
 	},
 	/*	integrationServer: {
 		port: 8125
 	},
 	*/
-	collaboration: {
-		certdir: "certificates" // path to certificates folder
-	},
-	mongodb: {
-		// connect options as expected by MongoClient.connect of nodejs mongodb driver
-		options: {
-			db: {
-				w: 1
-			},
-			server: {},
-			replSet: {},
-			mongos: {}
-		}
-	},
+    collaboration: {
+        certdir: "certificates"  // path to certificates folder
+    },
+    mongodb: {
+        // connect options as expected by MongoClient.connect of nodejs mongodb driver
+        options: {
+            db: {
+                w: 1
+            },
+            server: {
+            },
+            replSet: {
+            },
+            mongos: {
+            }
+        }
+    },
 	session: {
 		// interactive session timeout (minutes).
 		timeout: 20, // minutes
@@ -105,8 +108,8 @@ exports.config = {
 		"cache": true,
 		"verbose": true,
 		"fast": true,
-		// comment out the flamegraph block to activate flame graphs
-		// options are documented on https://github.com/Sage/streamline-flamegraph#configuration
+        // comment out the flamegraph block to activate flame graphs
+        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
 		// flamegraph: { rate: 1, },	
 	},
 	docTool: {
@@ -119,9 +122,9 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
-		plugin: {
-			killTimeoutOnCreate: 120000 // timeout switch orchestration mode
-		},
+        plugin : {
+            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
+        },
 		protocol: {
 			// trace: console.log,
 			LBFChunkSize: 64 // in Kb
@@ -204,7 +207,7 @@ exports.config = {
 		// White list of media types that we allow in upload operations
 		// This entry is mandatory when hosting.multiTenant is true.
 		// The white list may be specified as a single regular expression or an array or regular expressions.
-		allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+	    allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
 	},
 	sage_id: {
 		// base URL of sage ID service - this one is staging, not prod
@@ -277,34 +280,31 @@ exports.config = {
 				ackcall: "error"
 			},
 		}
-	},
-	unit_test: {
-		// unit tests related options
-		x3endpoint: {},
-		elasticsearch: {}
-	},
-	etl: {
-		// etl related options
-
-		// metaFolder: The folder in which the etl will store the json metadata files when exporting
-	},
+    },	
+    unit_test: {
+        // unit tests related options
+        x3endpoint: {},
+        elasticsearch: {}
+    },
 };
 
 // for git enabled configurations one can override the standard config
 exports.branch_configs = [{
-	branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
-	config: {
-		collaboration: {
-			databaseName: "Syracuse_V7",
-			localInitScript: [] // some local data to import on database creation : standard import json file
-		}
-	}
+    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V7",
+            localInitScript: [] // some local data to import on database creation : standard import json file
+        }
+    }
 }, {
-	branch: "akira.*", // branch name should match this regular expression
-	config: {
-		collaboration: {
-			databaseName: "Syracuse_V8",
-			localInitScript: [] // some local data to import on database creation
-		}
-	}
+    branch: "akira.*", // branch name should match this regular expression
+    config : {
+        collaboration: {
+            databaseName: "Syracuse_V8",
+            localInitScript: [] // some local data to import on database creation
+        }
+    }
 }];
+
+
