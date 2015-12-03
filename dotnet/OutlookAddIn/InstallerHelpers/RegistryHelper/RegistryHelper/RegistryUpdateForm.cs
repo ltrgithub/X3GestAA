@@ -23,13 +23,17 @@ namespace RegistryHelper
             if (args.Length > 1 && String.IsNullOrEmpty(args[1]) == false)
             {
                 String installDirectory = args[1].Trim(System.IO.Path.GetInvalidPathChars());
-                if (Office2010RegistryHelper.isOffice2010Installed())
+                if (Office2016RegistryHelper.isOffice2016Installed())
                 {
-                    Office2010RegistryHelper.registerAddIn(installDirectory);
+                    Office2016RegistryHelper.registerAddIn(installDirectory);
                 }
                 else if (Office2013RegistryHelper.isOffice2013Installed())
                 {
                     Office2013RegistryHelper.registerAddIn(installDirectory);
+                }
+                else if (Office2010RegistryHelper.isOffice2010Installed())
+                {
+                    Office2010RegistryHelper.registerAddIn(installDirectory);
                 }
             }
             waitTimer.Start();
