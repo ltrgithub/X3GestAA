@@ -38,6 +38,12 @@ exports.config = {
 		// allow to pass some node parameter like --prof
 		nodeOptions:""
 	},
+    security: {
+        http: {
+        	// set 'x-frame-options' to enable embedding into another site via iframe
+            // 'x-frame-options': 'allow-from http://other-site',
+        },
+    },
 	system: {
 		// enables memwatch module
 		memwatch: false,
