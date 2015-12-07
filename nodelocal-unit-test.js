@@ -7,11 +7,6 @@
 // The nodelocal.js file is marked as "ignored" for subversion. 
 // So subversion will not try to add it when you run the subversion Add command. 
 
-var helpers = require('syracuse-core/lib/helpers');
-
-helpers.stubsPath = "stubs";
-helpers.enableDevelopmentFeatures = true;
-
 exports.config = {
     // Partner feature correspond actually to factory creation capability.
     // This option allow to partners to set a factory ID on security 
