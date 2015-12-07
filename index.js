@@ -41,7 +41,7 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 // automatically enable 'aggressive' optimisation in fibers fast mode
 //if (config.streamline.fast && config.streamline.fibers) config.streamline.aggressive = true;
 
-require('syracuse-core/lib/streamline-loader')(config.streamline);
+require('syracuse-core/streamline-loader')(config.streamline);
 
 (function() {
 	if (config.concurix) {
