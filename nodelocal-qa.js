@@ -50,7 +50,7 @@ exports.config = {
 		siteuriSuffix: "/auth/login/page",
 		timeout: 30,
 		cloudwatch: true,
-		esHostName: "http://internal-ElasticSearch-1335197430.us-west-1.elb.amazonaws.com",
+		esHostName: "http://10.198.2.5",
 		esPort: 9200,
 		mongoHostName: "10.198.2.4:27017,10.198.2.68",
 		mongoPort: 27017,
@@ -142,7 +142,7 @@ exports.config = {
 	},
 	skyAutomation: {
         	mongo:{
-            		server:"10.198.2.4,10.198.2.68",
+            		server:"10.198.2.4,10.198.2.68,10.198.2.132",
             		port:27017,
         	},
         	vpcId: "vpc-d3c1f1b6",
