@@ -50,7 +50,7 @@ exports.config = {
 		siteuriSuffix: "/auth/login/page",
 		timeout: 30,
 		cloudwatch: true,
-		esHostName: "http://10.198.2.5",
+		esHostName: "http://internal-ElasticSearchQA-803649399.us-east-1.elb.amazonaws.com",
 		esPort: 9200,
 		mongoHostName: "10.198.2.4:27017,10.198.2.68",
 		mongoPort: 27017,
