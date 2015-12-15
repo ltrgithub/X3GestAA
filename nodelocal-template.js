@@ -38,6 +38,18 @@ exports.config = {
 		// allow to pass some node parameter like --prof
 		nodeOptions:""
 	},
+    security: {
+        http: {
+        	// set 'allow' to define what OPTIONS request can be executed
+        	"allow": "POST, GET"
+		},
+		cors: {
+			// set 'all access-control' headers wanted for cross-origin calls
+			// "access-control-allow-origin": "*",
+			// "access-control-allow-headers": "authorization, content-type, soapaction, x-requested-with",
+		}
+        
+    },
 	system: {
 		// enables memwatch module
 		memwatch: false,
