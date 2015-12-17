@@ -21,7 +21,6 @@ namespace CommonDataHelper
         private String _loginPart = @"/auth/login/page";
         private String _mainPartOld = @"/syracuse-main/html/main.html";
         private String _mainPart = @"/syracuse-main/html/main.html";
-        //private String _mainPart = @"/syracuse-main/html/main-office.html";
         private String _logoutPart = @"/auth/forgetMe/page";
         private bool? _connected = null;
         private Boolean _canceled = false;
@@ -31,7 +30,7 @@ namespace CommonDataHelper
         {
             InitializeComponent();
         }
-        
+
         private void documentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             this.Text = ((WebBrowser)sender).DocumentTitle;
@@ -53,7 +52,7 @@ namespace CommonDataHelper
             {
                 HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
                 try
-                {   
+                {
                     WebHelper webHelper = new WebHelper();
                     webHelper.getInitialConnectionJson(new Uri(BaseUrlHelper.BaseUrl, _retry ? _mainPartOld : _mainPart).ToString(), out statusCode);
                     if (statusCode == HttpStatusCode.OK)
@@ -77,6 +76,7 @@ namespace CommonDataHelper
             }
         }
 
+        private bool _externalRedirect = false;
         public bool connectToServer()
         {
             WebHelper webHelper = new WebHelper();
@@ -108,30 +108,70 @@ namespace CommonDataHelper
                 }
                 else if (statusCode == HttpStatusCode.TemporaryRedirect)
                 {
-                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false && response.Headers["Location"].StartsWith(_loginPart))
+                    if (String.IsNullOrEmpty(response.Headers["Location"]) == false)
                     {
-                        /*
-                         * We've been redirected to the new-style login page, so we have to display the page in the browser.
-                         */
-                        Show();
-
+                        String location = response.Headers["Location"];
+                        
                         webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(documentCompleted);
 
-                        Uri loginUri = new Uri(BaseUrlHelper.BaseUrl, _loginPart);
-                        webBrowser.Navigate(loginUri, "", null, @"If-None-Match: 0"); 
-
-                        /*
-                         * We need this to be synchronous...
-                         */
-                        while (_connected == null)
+                        if (_externalRedirect || location.StartsWith(_loginPart))
                         {
-                            Application.DoEvents();
-                            if (webBrowser.ReadyState == WebBrowserReadyState.Complete)
+                            /*
+                             * We've been redirected to the new-style login page, so we have to display the page in the browser.
+                             */
+                            Show();
+
+                            Uri loginUri = new Uri(BaseUrlHelper.BaseUrl, _loginPart);
+                            webBrowser.Navigate(loginUri, "", null, @"If-None-Match: 0");
+
+                            /*
+                             * We need this to be synchronous...
+                             */
+                            while (_connected == null)
                             {
+                                Application.DoEvents();
+                                if (webBrowser.ReadyState == WebBrowserReadyState.Complete)
+                                {
+                                    if (_canceled)
+                                    {
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            /*
+                             * We've got a temporary redirection that is not to the login screen.
+                             * 
+                             * One potential cause of this is the presence of an external Web Proxy.
+                             * This causes issues with HttpWebRequest when AllowAutoRedirect is enabled. 
+                             * In this scenario, the web proxy is unable retrieve the client's NTLM credentials.
+                             * Consequently, the web proxy does not provide the required redirection to allow the setting of
+                             * the authentication cookie to allow passage through the web proxy.
+                             * 
+                             * We'll therefore use the webBrowser component to handle the redirection and NTLM authentication.
+                             */
+
+                            webBrowser.Navigate(mainUrl, "", null, @"If-None-Match: 0");
+
+                            /*
+                             * Keep this synchronous...
+                             */
+                            while (webBrowser.ReadyState != WebBrowserReadyState.Complete)
+                            {
+                                Application.DoEvents();
                                 if (_canceled)
                                 {
+                                    Close();
                                     return false;
                                 }
+                            }
+
+                            if (!_externalRedirect)
+                            {
+                                _externalRedirect = true;
+                                return connectToServer();
                             }
                         }
                     }
@@ -161,18 +201,9 @@ namespace CommonDataHelper
                             return false;
                         }
                     }
-
                     statusCode = HttpStatusCode.OK;
                     CookieHelper.setCookies(webBrowser.Document.Cookie);
                 }
-                //else if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
-                //{
-                    /*
-                     * Commenting out for the moment, after last-minute issue found accessing non akira-p0 server with IE cookie cache cleared.
-                     */
-                    //_retry = true;
-                    //connectToServer();
-                //}
                 else
                 {
                     throw (ex);
@@ -184,8 +215,12 @@ namespace CommonDataHelper
                 _connected = true;
                 CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
             }
-            
-            Close();
+
+            if (!_externalRedirect)
+            {
+                Close();
+            }
+            _externalRedirect = false;
 
             return (bool)_connected;
         }
