@@ -79,12 +79,16 @@ exports.config = {
         // bindIP if IP_ANY is not the good binding (IPV6)
         bindIP: "0000:00:00:00:00:00000"
 	},
-	/*	integrationServer: {
-		port: 8125
-	},
-	*/
     collaboration: {
         certdir: "certificates"  // path to certificates folder
+    },
+    extensions: {
+        "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
+        "modules": [{
+            "path": "syracuse-si",  // absolute path or relative to root
+            "active": true,         // convenient flag to activate / deactivate; defaults to true
+            "forceUpdate": false    // force update of the package regardless of already present version
+        }]
     },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
