@@ -1,6 +1,6 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2015-11-30T12:57:24Z",
+	"generationStamp": "2015-12-22T16:49:11Z",
 	"partnerId": "",
 	"product": {
 		"code": "3",
@@ -14,9 +14,9 @@
 	"policy": {
 		"code": "HRM",
 		"title": {
-			"pt-PT": "HRM V9",
-			"fr-FR": "HRM V9",
-			"en-US": "HRM V9"
+			"pt-PT": "Sage X3 People",
+			"fr-FR": "Sage X3 People",
+			"en-US": "Sage X3 People"
 		},
 		"version": "1.0"
 	},
@@ -967,7 +967,7 @@
 		}, {
 			"code": "ZAF",
 			"title": {
-				"pt-PT": "Législation Afrique du Sud",
+				"pt-PT": "LegislaçãoÁfrica do Sul",
 				"fr-FR": "Législation Afrique du Sud",
 				"en-US": "Législation Afrique du Sud"
 			},
@@ -991,63 +991,63 @@
 		}, {
 			"code": "ANG",
 			"title": {
-				"pt-PT": "Angola",
-				"fr-FR": "Angola",
-				"en-US": "Angola"
+				"pt-PT": "Legislação Angolana",
+				"fr-FR": "Législation Angolaise",
+				"en-US": "Angolan legislation"
 			},
 			"condition": "license"
 		}, {
 			"code": "ARE",
 			"title": {
-				"pt-PT": "United Arab Emirates",
-				"fr-FR": "United Arab Emirates",
+				"pt-PT": "Legislação Em.Árabes Unidos",
+				"fr-FR": "",
 				"en-US": "United Arab Emirates"
 			},
 			"condition": "license"
 		}, {
 			"code": "KEN",
 			"title": {
-				"pt-PT": "Kenya",
-				"fr-FR": "Kenya",
+				"pt-PT": "Legislação Quênia",
+				"fr-FR": "",
 				"en-US": "Kenya"
 			},
 			"condition": "license"
 		}, {
 			"code": "MAR",
 			"title": {
-				"pt-PT": "Morocco",
-				"fr-FR": "Morocco",
+				"pt-PT": "Legislação Marrocos",
+				"fr-FR": "",
 				"en-US": "Morocco"
 			},
 			"condition": "license"
 		}, {
 			"code": "NAM",
 			"title": {
-				"pt-PT": "Namibia",
-				"fr-FR": "Namibia",
+				"pt-PT": "Legislação Namíbia",
+				"fr-FR": "",
 				"en-US": "Namibia"
 			},
 			"condition": "license"
 		}, {
 			"code": "NGA",
 			"title": {
-				"pt-PT": "Nigeria",
-				"fr-FR": "Nigeria",
+				"pt-PT": "Legislação Nigéria",
+				"fr-FR": "",
 				"en-US": "Nigeria"
 			},
 			"condition": "license"
 		}, {
 			"code": "BWA",
 			"title": {
-				"pt-PT": "Botswana",
-				"fr-FR": "Botswana",
+				"pt-PT": "Legislação Botswana",
+				"fr-FR": "",
 				"en-US": "Botswana"
 			},
 			"condition": "license"
 		}, {
 			"code": "ZMB",
 			"title": {
-				"pt-PT": "Zambia",
+				"pt-PT": "Legislação Zâmbia",
 				"fr-FR": "Zambia",
 				"en-US": "Zambia"
 			},
@@ -1061,7 +1061,7 @@
 		{
 			"code": "all",
 			"title": {
-				"pt-PT": "All sessions",
+				"pt-PT": "Todas as sessões",
 				"fr-FR": "All sessions",
 				"en-US": "All sessions"
 			},
@@ -1228,15 +1228,39 @@
 			},
 			"type": "integer"
 		}, {
-			"code": "MAXWEBSERVICES",
+			"code": "WSGRACELIMIT",
 			"title": {
-				"pt-PT": "Número de web services",
-				"fr-FR": "Nombre de web services",
-				"en-US": "Nombre de web services"
+				"pt-PT": "Web service grace period",
+				"fr-FR": "Grâce avant arrêt web services",
+				"en-US": "Web service grace period"
+			},
+			"type": "integer"
+		}, {
+			"code": "WSGRACESLOWDOWN",
+			"title": {
+				"pt-PT": "Web service slowing down",
+				"fr-FR": "Facteur ralentissement WS",
+				"en-US": "Web service slowing down"
+			},
+			"type": "integer"
+		}, {
+			"code": "WSPERIOD",
+			"title": {
+				"pt-PT": "Web service consumption period",
+				"fr-FR": "Périodicitédu contrôle WS",
+				"en-US": "Web service consumption period"
+			},
+			"type": "string"
+		}, {
+			"code": "WSSIZELIMIT",
+			"title": {
+				"pt-PT": "Web service consumption volume",
+				"fr-FR": "Volume web services",
+				"en-US": "Web service consumption volume"
 			},
 			"type": "integer"
 		}
 	],
-	"signature": "y1g3oCmxjp6QU0PDD8TBFrdyQiW3JgxH34NoID5zBEOFZJHN7+kQdBVOBcMLBA27R7TST65ub7BVML9vjNGoTNFa31uI6pTTyNZyRK0jgcWnRIN/ppvXvIGWA25+ig2i42t6iXzEnBC4TjvdmqaqkGljs1YPhbijhpVpzFQJ5+CP6DmDPOYpDIz8h42Gzw0bhzoYSdtOC8BjMZ3hbPXtZZdUeXiQWZNO+Kw1gFW2BNpQtXonDlQhIHf6xaNBnhLo+Ne5GGZlE0fPVTUnNaruLbLYOgCIaje2gFb7tj76OwtlAq6nZNNUBlpn0jmHHHgp83gbyWGIt5EAV8QcfTax+P7zrVnd/8yCizGhSLtrUlY22aQfEfPMkKxK3nssqPsgQLia1Qy8e4dvhU3uufGISJMf9dR13WRSC8mumK54gQXhRa07vWtvLlOKlXOgKZEmzaYNkvesujve0RIfotGXgbxr6QNVheirQPutYkys69RgcHK8yGX+iHC90qlB4hcCZ+xAcZMJiPhJy7GoOz9gHje6VHC19oht9G5YezCS7JRLCLjydsuUcwAe8bzTtotGHPjKW51VVqRJxwftR37LEGLXfkIkhEamqyAMUvNT8QOkln3op9OZY46po/4SUQKwDC/ucqFDLePMPzARviCxzBbSbAsF+QiqyONJ0xeVCoY=",
+	"signature": "CqM125gVjTQWl+RyvCo8mbqT3vUq71RTKidSCHdllEcvFni3TZwP2AkOeQo4mXWOlZPYtRDqlRpbywwucDGK2pz/RwRLCFaLZFNmqtrLuJG9CbHe71unRwgHqjgDpFyXRW3/43C3/46MGNaGBlA6mgsx0lY0T3WF+xPkWDAQuF2zOAatMjUkTMDjl3+M2uVUdwS5XgQzrxAHdWg1NhaRYF3djUhICkJUYwh50RGRzhGtUbIYqHy0iGtHi2OkvCni1St7aOTfBLY3nRqYK7EGfyRZGYgf+hrRICUfHCAenuqk5WMJ+qzmHSgY11h3G6nNtJWx2TlMaVtGneMARGbhXhBO6mhhJrgyXX1hRcFc6ra78Q5ZRM9GOGqBke2WiNEfSx1bjT2omcjL7VfoVKOAzNX4MVAyzmPdmwohcE+BgDXg8Zi/KzSO9C1c9G43vFbOnKhwcaMKcr5eGzAK1seXuqOIWQZoEZWJUq8is/92aNKNzNjE3xAVD0KZB6UiQURTVGioZUL7pQxaTVkY4h5tYznZB22XPwFpCwAoPTB7m8WmKWa9P8WFjkT3dOx2xHUz/W4Qr1Ic95QEzwgVgj5E1HKM5SgsTI+T2dEYk6uDpmNCaj5pOyj/vwq731of7Q7Pfy0rCIjIrDbDuvnzwgtSLD13T2oxytmezt0Ip+MKsmM=",
 	"signatureText": "SAGE SAS"
 }
