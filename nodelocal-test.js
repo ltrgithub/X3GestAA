@@ -69,6 +69,7 @@ exports.config = {
             server: {
             },
             replSet: {
+            	rs_name: "mongodevRepl"
             },
             mongos: {
             }
@@ -217,5 +218,8 @@ exports.config = {
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
     },
-
+    symphony: {
+        webApiUrl: "https://devapi.dev-sageerpx3online.com",
+        webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+    },
 };

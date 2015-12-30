@@ -52,7 +52,7 @@
 	<summary>
 		<codepage>1252</codepage>
 		<title>##ID_STRING3##</title>
-		<subject>Sage ERP X3 Outlook AddIn</subject>
+		<subject>##ID_STRING4##</subject>
 		<author>##ID_STRING2##</author>
 		<keywords>Installer,MSI,Database</keywords>
 		<comments>Contact:  Your local administrator</comments>
@@ -262,7 +262,7 @@
 		<row><td>NewBinary16</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallFirstUse.ico</td></row>
 		<row><td>NewBinary17</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallPartial.ico</td></row>
 		<row><td>NewBinary18</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallStateMenu.ico</td></row>
-		<row><td>NewBinary19</td><td/><td>&lt;ISProjectFolder&gt;\..\InstallerHelpers\RegistryHelper\bin\Release\RegistryHelper.exe</td></row>
+		<row><td>NewBinary19</td><td/><td>&lt;ISProjectFolder&gt;\..\InstallerHelpers\RegistryHelper\RegistryHelper\bin\Release\RegistryHelper.exe</td></row>
 		<row><td>NewBinary2</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\New.ibd</td></row>
 		<row><td>NewBinary3</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\Up.ibd</td></row>
 		<row><td>NewBinary4</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\WarningIcon.ibd</td></row>
@@ -346,6 +346,7 @@
 		<row><td>AdxOLNetv2s0_2010.dll3</td><td>{894C8FCF-1F73-4866-81B0-83AE2F8C585D}</td><td>INSTALLDIR</td><td>2</td><td/><td>adxolnetv2s0_2010.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>AdxOLNetv2s0_2013.dll1</td><td>{197684E6-B0E2-4CAC-987B-699958DCD3E9}</td><td>AppDataFolder</td><td>2</td><td/><td>adxolnetv2s0_2013.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>AdxOLNetv2s0_2013.dll3</td><td>{9EF831FC-66C6-4501-9D60-0598C746209F}</td><td>INSTALLDIR</td><td>2</td><td/><td>adxolnetv2s0_2013.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>AdxOLNetv2s0_2016.dll</td><td>{CB3248CB-9BA9-4EA7-B839-300A0E9A4599}</td><td>INSTALLDIR</td><td>2</td><td/><td>adxolnetv2s0_2016.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IKVM.GNU.Classpath.dll</td><td>{8C79E8C7-166D-45E4-9D24-D5A2A6B78230}</td><td>AppDataFolder</td><td>2</td><td/><td>ikvm.gnu.classpath.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IKVM.GNU.Classpath.dll3</td><td>{F156BEC4-1D87-40B0-A67B-AFFA09F6AA99}</td><td>INSTALLDIR</td><td>2</td><td/><td>ikvm.gnu.classpath.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IKVM.Runtime.dll</td><td>{6521A5FC-BE4E-4F67-A840-5A9650375286}</td><td>AppDataFolder</td><td>2</td><td/><td>ikvm.runtime.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1064,6 +1065,7 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>AdxOLNetv2s0_2016.dll</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 	</table>
 
@@ -1884,6 +1886,7 @@
 		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2010.dll3</td></row>
 		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2013.dll1</td></row>
 		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2013.dll3</td></row>
+		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2016.dll</td></row>
 		<row><td>AlwaysInstall</td><td>IKVM.GNU.Classpath.dll</td></row>
 		<row><td>AlwaysInstall</td><td>IKVM.GNU.Classpath.dll3</td></row>
 		<row><td>AlwaysInstall</td><td>IKVM.Runtime.dll</td></row>
@@ -1921,6 +1924,7 @@
 		<row><td>adxolnetv2s0_2010.dll3</td><td>AdxOLNetv2s0_2010.dll3</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2010.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2010.dll</td><td>1</td><td/></row>
 		<row><td>adxolnetv2s0_2013.dll1</td><td>AdxOLNetv2s0_2013.dll1</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2013.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2013.dll</td><td>1</td><td/></row>
 		<row><td>adxolnetv2s0_2013.dll3</td><td>AdxOLNetv2s0_2013.dll3</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2013.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2013.dll</td><td>1</td><td/></row>
+		<row><td>adxolnetv2s0_2016.dll</td><td>AdxOLNetv2s0_2016.dll</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2016.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2016.dll</td><td>1</td><td/></row>
 		<row><td>ikvm.gnu.classpath.dll</td><td>IKVM.GNU.Classpath.dll</td><td>IKVMGN~1.DLL|IKVM.GNU.Classpath.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\IKVM.GNU.Classpath.dll</td><td>1</td><td/></row>
 		<row><td>ikvm.gnu.classpath.dll3</td><td>IKVM.GNU.Classpath.dll3</td><td>IKVMGN~1.DLL|IKVM.GNU.Classpath.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\IKVM.GNU.Classpath.dll</td><td>1</td><td/></row>
 		<row><td>ikvm.runtime.dll</td><td>IKVM.Runtime.dll</td><td>IKVMRU~1.DLL|IKVM.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\IKVM.Runtime.dll</td><td>1</td><td/></row>
@@ -2089,6 +2093,7 @@
 		<row><td>AdxOLNetv2s0_2010.dll3</td><td/><td/><td>_F7D1F0B1_E3D4_47FE_ACA5_811BC7602C6E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>AdxOLNetv2s0_2013.dll1</td><td/><td/><td>_9314D4FA_F1C4_409E_AF96_8CB4867B6E01_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>AdxOLNetv2s0_2013.dll3</td><td/><td/><td>_551D6272_58AC_4552_A8BA_4974A5245059_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>AdxOLNetv2s0_2016.dll</td><td/><td/><td>_47D65584_D302_4476_9693_1AF62D799A49_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IKVM.GNU.Classpath.dll</td><td/><td/><td>_1E78F386_9F31_42A9_94DA_B435F03269AD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IKVM.GNU.Classpath.dll3</td><td/><td/><td>_CD2754BD_ED84_4C49_BB12_20911E7C7043_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IKVM.Runtime.dll</td><td/><td/><td>_9C3A2905_2E4F_4C44_8F3C_6FECD5129115_FILTER</td><td/><td/><td/><td/></row>
@@ -2410,12 +2415,6 @@
 		<row><td>RegistryHelper</td><td>InstallerHelpers\RegistryHelper\RegistryHelper.vcxproj</td><td/><td>2</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
-	</table>
-
-	<table name="ISPowerShellWrap">
-		<col key="yes" def="s72">Action_</col>
-		<col key="yes" def="s72">Name</col>
-		<col def="S0">Value</col>
 	</table>
 
 	<table name="ISProductConfiguration">
@@ -3820,7 +3819,8 @@
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>1520684202</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1520684202</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>Install Outlook Add-in for Sage ERP X3</td><td>0</td><td/><td>-1918730032</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>Install ERP X3 Outlook Add-in </td><td>0</td><td/><td>1436766891</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>Sage ERP X3 Outlook AddIn</td><td>0</td><td/><td>1436754571</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1918762772</td></row>
 	</table>
 
@@ -3886,6 +3886,12 @@
 		<col key="yes" def="s72">Shortcut_</col>
 		<col key="yes" def="s72">Name</col>
 		<col def="s255">Value</col>
+	</table>
+
+	<table name="ISWSEWrap">
+		<col key="yes" def="s72">Action_</col>
+		<col key="yes" def="s72">Name</col>
+		<col def="S0">Value</col>
 	</table>
 
 	<table name="ISXmlElement">
@@ -4063,7 +4069,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{BDC2B88A-1A39-43EA-BEFC-77DA00DB4AA9}</td></row>
 		<row><td>ISUSSignature</td><td>{271B00A1-217E-4824-84A0-FDCA38A23AC8}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewSetupTypes,viewSetupDesign,viewRealSetupDesign,viewUpdateService,viewUpgradePaths,viewShortcuts,viewRegistry,viewIniFiles,viewTextFiles,viewXMLConfig,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewAppFiles,viewFeatureFiles,viewObjects,viewCustomActions,viewISToday</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewSetupTypes,viewSetupDesign,viewRealSetupDesign,viewUpdateService,viewUpgradePaths,viewShortcuts,viewRegistry,viewIniFiles,viewTextFiles,viewXMLConfig,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewAppFiles,viewFeatureFiles,viewObjects,viewCustomActions,viewISToday,viewUI</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4075,7 +4081,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SaveAsSchema</td><td/></row>
 		<row><td>SccEnabled</td><td>0</td></row>
 		<row><td>SccPath</td><td/></row>
-		<row><td>SchemaVersion</td><td>774</td></row>
+		<row><td>SchemaVersion</td><td>776</td></row>
 		<row><td>SwidtagLocalComponent</td><td/></row>
 		<row><td>SwidtagSystemComponent</td><td/></row>
 		<row><td>Type</td><td>MSIE</td></row>
@@ -4438,9 +4444,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{A90EA953-7E77-47FE-83C8-D6D5765A0CC1}</td><td/></row>
+		<row><td>ProductCode</td><td>{B42B3C8C-BBE5-41DB-9C76-F2E755CBD990}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Outlook AddIn</td><td/></row>
-		<row><td>ProductVersion</td><td>1.09.0001</td><td/></row>
+		<row><td>ProductVersion</td><td>1.09.0003</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4452,10 +4458,10 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP5;ISACTIONPROP4</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
-		<row><td>UpgradeCode</td><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td/></row>
+		<row><td>UpgradeCode</td><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td/></row>
 		<row><td>_IsMaintenance</td><td>Change</td><td/></row>
 		<row><td>_IsSetupTypeMin</td><td>Typical</td><td/></row>
 	</table>
@@ -4732,6 +4738,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.00.0000</td><td>1.00.0000</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP1</td><td>1.00.0000</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0001</td><td>1.08.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP2</td><td>1.08.0001</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0002</td><td>1.08.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>1.08.0002</td></row>
+		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.09.0001</td><td>1.09.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP5</td><td>1.09.001</td></row>
+		<row><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td>1.09.0002</td><td>1.09.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP4</td><td>1.09.0002</td></row>
 	</table>
 
 	<table name="Verb">
@@ -5215,9 +5223,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISPathVariable</td><td>TestValue</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The test value of the path variable.</td></row>
 		<row><td>ISPathVariable</td><td>Type</td><td>N</td><td/><td/><td/><td/><td/><td>1;2;4;8</td><td>The type of the path variable.</td></row>
 		<row><td>ISPathVariable</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The value of the path variable.</td></row>
-		<row><td>ISPowerShellWrap</td><td>Action_</td><td>N</td><td/><td/><td>CustomAction</td><td>1</td><td>Identifier</td><td/><td>Foreign key into CustomAction table</td></row>
-		<row><td>ISPowerShellWrap</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Property associated with this Action</td></row>
-		<row><td>ISPowerShellWrap</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value associated with this Property</td></row>
 		<row><td>ISProductConfiguration</td><td>GeneratePackageCode</td><td>Y</td><td/><td/><td/><td/><td>Number</td><td>0;1</td><td>Indicates whether or not to generate a package code.</td></row>
 		<row><td>ISProductConfiguration</td><td>ISProductConfiguration</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>The name of the product configuration.</td></row>
 		<row><td>ISProductConfiguration</td><td>ProductConfigurationFlags</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Product configuration (release) flags.</td></row>
@@ -5455,6 +5460,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISVirtualShortcut</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Property name</td></row>
 		<row><td>ISVirtualShortcut</td><td>Shortcut_</td><td>N</td><td/><td/><td>Shortcut</td><td>1</td><td>Identifier</td><td/><td>Foreign key into Shortcut table.</td></row>
 		<row><td>ISVirtualShortcut</td><td>Value</td><td>N</td><td/><td/><td/><td/><td/><td/><td>Property value</td></row>
+		<row><td>ISWSEWrap</td><td>Action_</td><td>N</td><td/><td/><td>CustomAction</td><td>1</td><td>Identifier</td><td/><td>Foreign key into CustomAction table</td></row>
+		<row><td>ISWSEWrap</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Property associated with this Action</td></row>
+		<row><td>ISWSEWrap</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value associated with this Property</td></row>
 		<row><td>ISXmlElement</td><td>Content</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Element contents</td></row>
 		<row><td>ISXmlElement</td><td>ISAttributes</td><td>Y</td><td/><td/><td/><td/><td>Number</td><td/><td>Internal XML element attributes</td></row>
 		<row><td>ISXmlElement</td><td>ISXmlElement</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key, non-localized, internal token for Xml element</td></row>
