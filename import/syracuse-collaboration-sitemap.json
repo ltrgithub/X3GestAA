@@ -2564,6 +2564,36 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_AUTOMATES",
+      "title": "title_692c782c-b203-46fc-bfe4-1069ee8c1c04",
+      "description": "description_692c782c-b203-46fc-bfe4-1069ee8c1c04",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "dashboard": "TESTEL",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "automates",
+        "representation": "automate"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_SEARCH_ADMIN",
       "title": "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
       "description": "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
@@ -2583,6 +2613,65 @@
         "$type": "representationProxy",
         "entity": "searchAdmins",
         "representation": "searchAdmin"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_ACTION",
+      "title": "title_312479da-273c-4845-86c6-235637e0f2b3",
+      "description": "description_312479da-273c-4845-86c6-235637e0f2b3",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "x3Tasks",
+        "representation": "x3Task"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_SERVERLOGS",
+      "title": "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
+      "description": "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "dashboard": "TESTEL",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "serverLogs",
+        "representation": "serverLog"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -2770,66 +2859,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_AUTOMATES",
-      "title": "title_692c782c-b203-46fc-bfe4-1069ee8c1c04",
-      "description": "description_692c782c-b203-46fc-bfe4-1069ee8c1c04",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "dashboard": "TESTEL",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "automates",
-        "representation": "automate"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_SERVERLOGS",
-      "title": "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
-      "description": "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "dashboard": "TESTEL",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "serverLogs",
-        "representation": "serverLog"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -2841,8 +2870,30 @@
       },
       "items": [
         {
-          "code": "S_SEARCH_ADMIN",
-          "$variantType": "menuItem"
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "a14ed599-8af2-40a4-bd06-4f085c561556",
+          "title": "title_36205c09-ea10-4603-8f24-523582f614cb",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "S_AUTOMATES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_SEARCH_ADMIN",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_ACTION",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_SERVERLOGS",
+              "$variantType": "menuItem"
+            }
+          ]
         },
         {
           "$type": "menuSubblock",
@@ -2884,24 +2935,6 @@
             },
             {
               "code": "S_X3_SESSION_CFG",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "a14ed599-8af2-40a4-bd06-4f085c561556",
-          "title": "title_36205c09-ea10-4603-8f24-523582f614cb",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "S_AUTOMATES",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_SERVERLOGS",
               "$variantType": "menuItem"
             }
           ]
@@ -5157,6 +5190,36 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_AUTOMATES",
+      "title": "title_692c782c-b203-46fc-bfe4-1069ee8c1c04",
+      "description": "description_692c782c-b203-46fc-bfe4-1069ee8c1c04",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "dashboard": "TESTEL",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "automates",
+        "representation": "automate"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_SEARCH_ADMIN",
       "title": "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
       "description": "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b",
@@ -5176,6 +5239,65 @@
         "$type": "representationProxy",
         "entity": "searchAdmins",
         "representation": "searchAdmin"
+      },
+      "module": {
+        "code": "S_MOD_ADMIN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_ACTION",
+      "title": "title_312479da-273c-4845-86c6-235637e0f2b3",
+      "description": "description_312479da-273c-4845-86c6-235637e0f2b3",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "x3Tasks",
+        "representation": "x3Task"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "S_SERVERLOGS",
+      "title": "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
+      "description": "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "dashboard": "TESTEL",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "serverLogs",
+        "representation": "serverLog"
       },
       "module": {
         "code": "S_MOD_ADMIN"
@@ -5363,66 +5485,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_AUTOMATES",
-      "title": "title_692c782c-b203-46fc-bfe4-1069ee8c1c04",
-      "description": "description_692c782c-b203-46fc-bfe4-1069ee8c1c04",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "dashboard": "TESTEL",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "automates",
-        "representation": "automate"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_SERVERLOGS",
-      "title": "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
-      "description": "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "dashboard": "TESTEL",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "serverLogs",
-        "representation": "serverLog"
-      },
-      "module": {
-        "code": "S_MOD_ADMIN"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_b78c36de-a1bc-451c-91cf-048f75604bbb",
       "code": "S_USAGE",
@@ -5434,8 +5496,30 @@
       },
       "items": [
         {
-          "code": "S_SEARCH_ADMIN",
-          "$variantType": "menuItem"
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "a14ed599-8af2-40a4-bd06-4f085c561556",
+          "title": "title_36205c09-ea10-4603-8f24-523582f614cb",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "S_AUTOMATES",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_SEARCH_ADMIN",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_ACTION",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "S_SERVERLOGS",
+              "$variantType": "menuItem"
+            }
+          ]
         },
         {
           "$type": "menuSubblock",
@@ -5477,24 +5561,6 @@
             },
             {
               "code": "S_X3_SESSION_CFG",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "a14ed599-8af2-40a4-bd06-4f085c561556",
-          "title": "title_36205c09-ea10-4603-8f24-523582f614cb",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "S_AUTOMATES",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "S_SERVERLOGS",
               "$variantType": "menuItem"
             }
           ]
@@ -5661,8 +5727,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "تحديث",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"تحديث \"إضغط",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "إستثمار",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "إدارة الأعمال",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "مرتّب",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "آلية",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "إدارة محرك البحث",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "إدارة محرك البحث",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "سجل الأعمال",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "إدارة الأقسام",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "تابع الرخصة",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "دورات زبون الويب",
@@ -5672,12 +5743,7 @@
       "title_269c7300-b38d-41f3-a985-92fd4d9d0837": "مسارات",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "مسارات خادم الويب",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "مسارات خادم سيراكوز",
-      "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "مسار المحرك",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "إدارة الأعمال",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "مرتّب",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "آلية",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "سجل الأعمال",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم"
+      "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "مسار المحرك"
     },
     "de-de": {
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
@@ -5795,8 +5861,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Updates",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"One-Klick\"-Updates",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Verwendung",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automatisieren",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Anweisender",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automaten",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Verwaltung Suchindizes",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Aufgabenjournal",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverlog",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Sitzungsverwaltung",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "Lizenznachbereitung",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sitzungsverwaltung",
@@ -5807,11 +5878,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Webserver-Logs",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse-Serverlogs",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Logmaschine",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automatisieren",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Anweisender",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automaten",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Aufgabenjournal",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverlog",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
     },
     "en-gb": {
@@ -5954,8 +6020,15 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Updates",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "\"One-click\" updates",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Usage",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automate",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Search Index Management",
+      "title_312479da-273c-4845-86c6-235637e0f2b3": "Invoke action",
+      "description_312479da-273c-4845-86c6-235637e0f2b3": "Invoke an action on a X3 class",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Sessions management",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "License follow up",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web client sessions",
@@ -5966,11 +6039,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Host traces",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse server traces",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Engine trace",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automate",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard"
     },
     "es-es": {
@@ -6090,8 +6158,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Actualización",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Actualizciones \"en un clic\"",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Explotación",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automatizar",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Utilidades de búsqueda",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestión de utilidades de búsqueda",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Diario de tareas",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "trazas servidor",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestión de sesiones",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "Seguimiento licencia",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sesiones clientes Web",
@@ -6102,11 +6175,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Trazas servidor Web",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Trazas servidor Syracuse",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Traza motor",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automatizar",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Diario de tareas",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "trazas servidor",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración"
     },
     "fr-fr": {
@@ -6228,8 +6296,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Mises à jour \"en un clic\"",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploitation",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automatiser",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Ordonnanceur",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestion du moteur de recherche",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Journal des tâches",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Traces serveur",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestion des sessions",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "Suivi licence",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessions client web",
@@ -6240,11 +6313,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Traces serveur Web",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Traces serveur Syracuse",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Trace moteur",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "Automatiser",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Ordonnanceur",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Journal des tâches",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Traces serveur",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration"
     },
     "it-it": {
@@ -6323,6 +6391,8 @@
       "description_82036412-8c87-4714-8ada-73210716e986": "Sessione d'import",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Installazione addins Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Versioni informazioni",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestione utility ricerca",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Gestione sessioni client web",
@@ -6330,8 +6400,6 @@
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sessione client",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Lista client riutilizzati",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "x3 sessione configurazione",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator"
     },
     "pl-pl": {
@@ -6415,6 +6483,8 @@
       "description_82036412-8c87-4714-8ada-73210716e986": "Sesje importu",
       "title_d90e3b9a-8323-4b95-b086-0175ef798592": "Instalacja dodatków Office",
       "title_8543b70c-2dff-4e77-99e2-d4df1f214f09": "Informacja o wersji",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Zarządzanie indeksem wyszukiwania",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Zarządzanie sesjami Web",
@@ -6422,8 +6492,6 @@
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Sesje w trybie zgodności",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Pula połączeń oczekujących",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Konfiguracja sesji X3",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna"
     },
     "pt-pt": {
@@ -6543,8 +6611,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Atualização",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Atualização \"em um clique\"",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Exploração",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "Gestão de tarefas",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Gestão índice de pesquisa",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Gestão de sessões",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "Acompanhamento da licença",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Sessões cliente web",
@@ -6555,11 +6628,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Traces do host",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Traces servidor Syracuse",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Configurações sessão X3",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "Gestão de tarefas",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração"
     },
     "ru-ru": {
@@ -6681,8 +6749,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Обновления",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "Обновление одной кнопкой",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "Использование",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "Автоматизировать",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "Управление индексированным поиском",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "Управление сессиями",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "Обслуживание лицензии",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Сессии Web клиента",
@@ -6693,11 +6766,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Трассировка хоста",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Трассировка сервера Syracuse",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Трассировка движка",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "Автоматизировать",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора"
     },
     "zh-cn": {
@@ -6830,8 +6898,13 @@
       "title_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "更新",
       "description_704096ee-f0cd-436d-bf48-2ee3a27b10c4": "“一键”更新",
       "title_b78c36de-a1bc-451c-91cf-048f75604bbb": "使用",
+      "title_36205c09-ea10-4603-8f24-523582f614cb": "任务管理",
+      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
+      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
       "title_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
       "description_fc6aaa4d-7934-4c16-85cd-13d754f4318b": "搜索引擎管理",
+      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "工作日志",
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "服务器追踪日志",
       "title_43d874f4-65e3-46d8-af22-61491a4a99f0": "会话管理",
       "title_1f9fed02-3f9e-4be9-944e-0c66c5b985fa": "许可证跟踪",
       "title_f7ff1b2f-c4d3-4fb2-b673-dac9df49707e": "Web客户端会话管理",
@@ -6842,11 +6915,6 @@
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Web服务器追踪日志",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse服务器追踪日志",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "引擎追踪日志",
-      "title_36205c09-ea10-4603-8f24-523582f614cb": "任务管理",
-      "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
-      "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
-      "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "工作日志",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "服务器追踪日志",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
     }
   }
