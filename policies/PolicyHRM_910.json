@@ -1,22 +1,22 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2015-11-30T12:57:24Z",
+	"generationStamp": "2016-01-05T14:41:31Z",
 	"partnerId": "",
 	"product": {
 		"code": "3",
 		"title": {
-			"pt-PT": "Sage HRM X3",
-			"fr-FR": "Sage HR Management",
-			"en-US": "Sage HR Management"
+			"pt-PT": "Sage X3 People",
+			"fr-FR": "Sage X3 People",
+			"en-US": "Sage X3 People"
 		},
 		"version": "9"
 	},
 	"policy": {
 		"code": "HRM",
 		"title": {
-			"pt-PT": "HRM V9",
-			"fr-FR": "HRM V9",
-			"en-US": "HRM V9"
+			"pt-PT": "Sage X3 People",
+			"fr-FR": "Sage X3 People",
+			"en-US": "Sage X3 People"
 		},
 		"version": "1.0"
 	},
@@ -967,7 +967,7 @@
 		}, {
 			"code": "ZAF",
 			"title": {
-				"pt-PT": "Législation Afrique du Sud",
+				"pt-PT": "LegislaçãoÁfrica do Sul",
 				"fr-FR": "Législation Afrique du Sud",
 				"en-US": "Législation Afrique du Sud"
 			},
@@ -991,63 +991,63 @@
 		}, {
 			"code": "ANG",
 			"title": {
-				"pt-PT": "Angola",
-				"fr-FR": "Angola",
-				"en-US": "Angola"
+				"pt-PT": "Legislação Angolana",
+				"fr-FR": "Législation Angolaise",
+				"en-US": "Angolan legislation"
 			},
 			"condition": "license"
 		}, {
 			"code": "ARE",
 			"title": {
-				"pt-PT": "United Arab Emirates",
-				"fr-FR": "United Arab Emirates",
+				"pt-PT": "Legislação Em.Árabes Unidos",
+				"fr-FR": "",
 				"en-US": "United Arab Emirates"
 			},
 			"condition": "license"
 		}, {
 			"code": "KEN",
 			"title": {
-				"pt-PT": "Kenya",
-				"fr-FR": "Kenya",
+				"pt-PT": "Legislação Quênia",
+				"fr-FR": "",
 				"en-US": "Kenya"
 			},
 			"condition": "license"
 		}, {
 			"code": "MAR",
 			"title": {
-				"pt-PT": "Morocco",
-				"fr-FR": "Morocco",
+				"pt-PT": "Legislação Marrocos",
+				"fr-FR": "",
 				"en-US": "Morocco"
 			},
 			"condition": "license"
 		}, {
 			"code": "NAM",
 			"title": {
-				"pt-PT": "Namibia",
-				"fr-FR": "Namibia",
+				"pt-PT": "Legislação Namíbia",
+				"fr-FR": "",
 				"en-US": "Namibia"
 			},
 			"condition": "license"
 		}, {
 			"code": "NGA",
 			"title": {
-				"pt-PT": "Nigeria",
-				"fr-FR": "Nigeria",
+				"pt-PT": "Legislação Nigéria",
+				"fr-FR": "",
 				"en-US": "Nigeria"
 			},
 			"condition": "license"
 		}, {
 			"code": "BWA",
 			"title": {
-				"pt-PT": "Botswana",
-				"fr-FR": "Botswana",
+				"pt-PT": "Legislação Botswana",
+				"fr-FR": "",
 				"en-US": "Botswana"
 			},
 			"condition": "license"
 		}, {
 			"code": "ZMB",
 			"title": {
-				"pt-PT": "Zambia",
+				"pt-PT": "Legislação Zâmbia",
 				"fr-FR": "Zambia",
 				"en-US": "Zambia"
 			},
@@ -1061,7 +1061,7 @@
 		{
 			"code": "all",
 			"title": {
-				"pt-PT": "All sessions",
+				"pt-PT": "Todas as sessões",
 				"fr-FR": "All sessions",
 				"en-US": "All sessions"
 			},
@@ -1228,15 +1228,39 @@
 			},
 			"type": "integer"
 		}, {
-			"code": "MAXWEBSERVICES",
+			"code": "WSGRACELIMIT",
 			"title": {
-				"pt-PT": "Número de web services",
-				"fr-FR": "Nombre de web services",
-				"en-US": "Nombre de web services"
+				"pt-PT": "Web service grace period",
+				"fr-FR": "Grâce avant arrêt web services",
+				"en-US": "Web service grace period"
+			},
+			"type": "integer"
+		}, {
+			"code": "WSGRACESLOWDOWN",
+			"title": {
+				"pt-PT": "Web service slowing down",
+				"fr-FR": "Facteur ralentissement WS",
+				"en-US": "Web service slowing down"
+			},
+			"type": "integer"
+		}, {
+			"code": "WSPERIOD",
+			"title": {
+				"pt-PT": "Web service consumption period",
+				"fr-FR": "Périodicitédu contrôle WS",
+				"en-US": "Web service consumption period"
+			},
+			"type": "string"
+		}, {
+			"code": "WSSIZELIMIT",
+			"title": {
+				"pt-PT": "Web service consumption volume",
+				"fr-FR": "Volume web services",
+				"en-US": "Web service consumption volume"
 			},
 			"type": "integer"
 		}
 	],
-	"signature": "y1g3oCmxjp6QU0PDD8TBFrdyQiW3JgxH34NoID5zBEOFZJHN7+kQdBVOBcMLBA27R7TST65ub7BVML9vjNGoTNFa31uI6pTTyNZyRK0jgcWnRIN/ppvXvIGWA25+ig2i42t6iXzEnBC4TjvdmqaqkGljs1YPhbijhpVpzFQJ5+CP6DmDPOYpDIz8h42Gzw0bhzoYSdtOC8BjMZ3hbPXtZZdUeXiQWZNO+Kw1gFW2BNpQtXonDlQhIHf6xaNBnhLo+Ne5GGZlE0fPVTUnNaruLbLYOgCIaje2gFb7tj76OwtlAq6nZNNUBlpn0jmHHHgp83gbyWGIt5EAV8QcfTax+P7zrVnd/8yCizGhSLtrUlY22aQfEfPMkKxK3nssqPsgQLia1Qy8e4dvhU3uufGISJMf9dR13WRSC8mumK54gQXhRa07vWtvLlOKlXOgKZEmzaYNkvesujve0RIfotGXgbxr6QNVheirQPutYkys69RgcHK8yGX+iHC90qlB4hcCZ+xAcZMJiPhJy7GoOz9gHje6VHC19oht9G5YezCS7JRLCLjydsuUcwAe8bzTtotGHPjKW51VVqRJxwftR37LEGLXfkIkhEamqyAMUvNT8QOkln3op9OZY46po/4SUQKwDC/ucqFDLePMPzARviCxzBbSbAsF+QiqyONJ0xeVCoY=",
+	"signature": "FyW4k4RwQwrRGP9QrTQfofDUj4mYWskHE9YOUTSlpH4HNGCQgL3BrKuWRXdss5SrMcDLnlYHImq65jKyPpIseVHBUk36ApGibX8HH95PH9yaf4YUE5R/h7jvLRaS0iKV88p5jrO0dlmgHC7qrP/ntrKfmuk/hONIELVeuX2NMDJ8ddU6sGUXFUdh8eRSIMdNpjYNdShfvgL/hjfrzaX6YsTD3lQEWFuYlqDcf08je8pGxQP4qa3hWKjqmZe0DFAZiCHUqvCeStm1NIqgPbtk0C+ItcR0TqWzl3kiNzC5LFVIvm47u4VMak4pEOomMm29GcCsV5Hh5yauMo17MUhhKQgJsmOqY80us71YtRkfZi/2QobV/bRiv4Wx8dpXLUaDWLjSZND8eRHrAs22sitlkrjI4i0F49rkmmgumhJW2nRUXEgkOTdTRIqUmL8EWwpZwCPVKjJqOgEd//dC2J9eqtn5bbJmmFUjxbX1J7K9SeLaKPJcE3XYLlLKxX6KPH1mOchIPe/3Cp7RBPXeslPPpUrvjkkIpvbQ61peSgmUQjJeTA5i5WAGzEkhGgIcpbXarOp5EUrmBaaRl4lhn3HzFZL+qI64ISR7iA1d+mZ9sDout112kDiK5VFP44l7Evs1KbdT0ETewsLZtnVxfpNMKyCKI1j0z2KBDgraQoUbKOQ=",
 	"signatureText": "SAGE SAS"
 }
