@@ -218,7 +218,8 @@ exports.config = {
         elasticsearch: {}
     },
     symphony: {
-        webApiUrl: "https://devapi.dev-sageerpx3online.com",
-        webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        webApiUrl: "https://api.sagex3.com",
+        webApiAuth: "",
+        farmElbUrl: "https://symphony.na.cloud.sagex3.com",
     },
 };
