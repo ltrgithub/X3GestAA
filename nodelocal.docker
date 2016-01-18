@@ -1,0 +1,313 @@
+"use strict";
+
+// This file must be copied as nodelocal.js
+// You should edit the copy to adapt it to your local settings.
+//
+// YOUR LOCAL COPY MAY CONTAIN CONFIDENTIAL INFORMATION (passwords for example)
+// SO DO NOT EDIT THE TEMPLATE ITSELF, ONLY EDIT YOUR COPY (nodelocal.js)
+//
+// The nodelocal.js file is marked as "ignored" for subversion.
+// So subversion will not try to add it when you run the subversion Add command.
+exports.config = {
+	scm: {
+		endpointName: "X3",
+		solutionName: "APPSTDEN",
+		folderName: "X3",
+		solutionPath: "C:/Users/stden/docker/test-metadata",
+		//		solutionPath: "C:\\Sage\\test-metadata\\",
+		settingsTable: "_SETTINGS",
+		sql: {
+			driver: "sqlServer",
+			user: "X3",
+			password: "tiger",
+			database: "sagex3",
+			hostname: "localhost",
+			requestTimeout: 0,
+		},
+		sql1: {
+			driver: "sqlServer",
+			user: "X3",
+			password: "tiger",
+			database: "sagex3",
+			hostname: "WIN-VDBG4U8JAB1\\X3"
+		},
+		patch: {
+			langs: ["ENG", "FRA"],
+			version: 1,
+			product: "X3",
+			comment: "test",
+		},
+		metaSubFolder: "meta",
+		patchSubFolder: "patches",
+		trace: console.log,
+		git: {
+			//trace: console.log,
+		},
+		unitTests: {
+			refPatchFolder: "C:\\Users\\stden\\sources\\syracuse\\node_modules\\bundles\\scm-helper\\test\\server\\resources\\refPatchFiles",
+			refJsonFolder: "C:\\Users\\stden\\sources\\syracuse\\node_modules\\bundles\\scm-helper\\test\\server\\resources\\refJsonFiles",
+		}
+	},
+	etl: {
+		metaSubFolder: "test-metadata",
+		metaRootFolder : "C:/Users/stden/docker",
+		git: {
+			trace: console.log,
+		},
+		// solutionPath: "C:\\test\\user1\\test-metadata\\",
+		// dataFolder: "C:/Exports/Data.sql",
+	},
+	s3: {
+		region: "eu-central-1",
+		accessKeyId: 'AKIAIIJQTF546WRH6E6Q',
+		secretAccessKey: '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',
+		proxyHost: '172.31.34.9',
+		proxyPort: 8080,
+	},
+	etna: {
+		endpointName: "etnaDocker",
+		solutionName: "SUPDVLP",
+		folderName: "SUPERV",
+		solutionPath: "C:\\test\\User1\\test-metadata\\",
+		//solutionPath: "C:\\User1\\test-metadata\\",
+		//solutionPath: "C:\\Sage\\test-metadata\\",
+		// solutionPath: "C:\\Sage\\SAGEX3V7\\APPSTDEN3",
+
+		mongo: {
+			host: "127.0.0.1",
+			port: 27017,
+			database: "test"
+		},
+		sql: {
+			driver: "oracle",
+			user: "SUPERV",
+			port: 1521,
+			password: "tiger",
+			database: "SUPDVLP",
+			hostname: "AWS-X3-DEVSUP",
+		},
+		mongo2: {
+			host: "docker",
+			port: 27017,
+			database: "test"
+		},
+		sql3: {
+			driver: "oracle",
+			user: "SUPERV",
+			port: 1521,
+			password: "tiger",
+			database: "XE",
+			hostname: "docker",
+		},
+		mongo1: {
+			host: "localhost",
+			port: 27017,
+			database: "test2"
+		},
+		sql2: {
+			driver: "oracle",
+			user: "GX3APP",
+			port: 1521,
+			password: "tiger",
+			database: "X3DVLP",
+			hostname: "aws-x3-devx3",
+		},
+		sql1: {
+			driver: "oracle",
+			user: "PAIEV6",
+			port: 1521,
+			password: "tiger",
+			database: "HRMDVLP",
+			hostname: "AWS-X3-DEVHRM",
+		},
+		trace: console.log,
+	},
+	hosting: {
+		// multiTenant should be set to true when hosted in Cloud.
+		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
+		// the mongodb database names and the elastic search index names.
+		multiTenant: false,
+		// https indicates if the public URLs must all be https URLs.
+		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
+		// https on its behalf.
+		https: false,
+	},
+	system: {
+		// enables memwatch module
+		memwatch: false,
+		// this options enables developpement features like extended authoring rights.
+		// it shouldn't be enabled in client configurations as modifications made can be lost
+		// on patch application, etc.
+		enableDevelopmentFeatures: true,
+		// enables some specific client framework attributes for use with the test robot
+		enableTestRobot: false,
+		// optional: path to some stubs to use in development and tests, relative to index.js
+		// stubsPath = "stubs"
+		protectSettings: false, // internal: true for some production servers to avoid import of initial data
+		// limit memory usage
+		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit
+		// flag to expose stack traces to the UI (off by default for security)
+		exposeStacktrace: false,
+	},
+	traces: {
+		console: true, // For developers
+		// Levels specified here will be used for default traces settings
+		// Valid levels are : 'info', 'debug', 'warn', and 'error'
+		// Levels not specified will be initialized with 'error' level
+		levels: {
+			// X3 ERP communication layer
+			// x3Comm: {
+			// 	jsRunner: "error", // Syracuse calls from 4GL processes
+			// 	pool: "error", // X3 clients pools
+			// 	rightsTrace: "error",
+			// 	print: "error", // Print server comunication layer
+			// 	adxwhat: "error",
+			// 	sadfsq: "error"
+			// },
+			patch: "debug",
+			// ETNA
+			// search_: "error",
+			// etna: {
+			// 	engine: "error",
+			// 	supervisor: "debug",
+			// 	scripts: "error"
+			// },
+			// orm: {
+			// 	x3: "error",
+			// 	factory: "error"
+			// },
+			// classic_: {
+			// 	std: "error",
+			// 	session: "error"
+			// }
+		}
+	},
+	/*	integrationServer: {
+		port: 8125
+	},
+	*/
+	session: {
+		timeout: 20, // minutes
+		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
+		checkInterval: 60, // secondes
+		//		ignoreStoreSession: true,
+		"auth": "basic"
+	},
+	streamline: {
+		// "homedrive": "c:", // running node as service
+		// "homepath": "/syracuse", // running node as service
+		"fibers": true,
+		"cache": true,
+		"verbose": true,
+//		"fast": false,
+		"lines" : "preserve",
+		// comment out the flamegraph block to activate flame graphs
+		// options are documented on https://github.com/Sage/streamline-flamegraph#configuration
+		// flamegraph: { rate: 1, },	
+	},
+	docTool: {
+		"verbose": true,
+		"disabled": false // do not generate doc at startup. Useful for having cleaner flame graph.
+	},
+	x3fusion: {
+		// 		prototypesLocalServerRoot: "/sdata/x3stb/erp/fusion",
+		//		prototypesFolder: "GEN/SYR/FR-FR/FENJ",
+		//		tracer: console.log,
+		//		profiler: console.log
+		// protocol tracing
+		protocol: {
+			// trace: console.log,
+		},
+		// session tracing
+		sessions: {
+			// trace: console.log,
+		},
+		// enable perfmon logging
+		perfmon: {
+			// activate: true,
+			// more details
+			// detail: true
+		},
+		// cache tracing
+		cache: {
+			// trace: console.log,
+		}
+	},
+
+	help: {
+		// trace: console.log,
+		//
+		// Path to help stored on local file system
+		// rootDir: c:/help-path/online-doc/DOCV7-X3,
+		//
+		// Override help URL with local file system path
+		// local: true,
+		//
+		// Override cloud based help URL
+		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
+	},
+	searchEngine: {
+		//tracer: console.log,
+
+		// Using a minimal stemmer should only group plurals rather than a
+		// deeper root of the word.
+		stemmer: "minimal",
+
+		// Leading wildcards can affect search performance
+		allowLeadingWildcard: false,
+		/*tracer : {
+            trace : console.log,
+            info : true
+        }*/
+		//deactivateRight: true,
+		// default configuration options for fuzzy search
+		// minSimilarity: 0.5,
+		// ignoreFrequency: true,
+		// offStemmer : true // desactivation of the stemmer for the search indexation
+	},
+	translation: {
+		// trace: console.log,
+		// redirect diagnosis in the trace
+		traceDiagnosis: true,
+		// skip extraction and updating of the specified resource type
+		skip: {
+			// syracuse: true,
+			// dotnet: true,
+			// admin: true,
+		}
+	},
+	orm: {
+		x3: {
+			// trace: console.log,
+		}
+	},
+	upload: {
+		// White list of media types that we allow in upload operations
+		// This entry is mandatory when hosting.multiTenant is true.
+		// The white list may be specified as a single regular expression or an array or regular expressions.
+		allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+	},
+	sage_id: {
+		// base URL of sage ID service - this one is staging, not prod
+		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
+		// absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
+		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
+		// passphrase for the certificate file. This one works with the staging test certificate
+		passphrase: "as985k3bZ8p2",
+	},
+	 collaboration: {
+         hostname: "192.168.99.100",
+                 },
+
+/*
+ collaboration: {
+  driver: "mongodb",
+  dataset: "syracuse",
+  hostname: "mongo",
+  port: 27017,
+  logpath: "/logs",
+  certdir: "/certsdir",
+        cacheDir: "/cachedir"
+ }
+*/
+};
