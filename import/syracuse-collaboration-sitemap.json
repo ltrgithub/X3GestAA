@@ -6918,5 +6918,28 @@
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "引擎追踪日志",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
     }
-  }
+  },
+  "$options": {
+    "unmark": "pre_import"
+  },
+  "$scriptsBefore": [
+    {
+      "module": "syracuse-collaboration/lib/advancedScripts/pre-import-sitemap",
+      "options": {
+        "homepagesFilter": "(pageName like 'home%')",
+        "modulesFilter": "(application.description eq 'Syracuse Collaboration') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
+        "factoryOwner": "SAGE"
+      }
+    }
+  ],
+  "$scriptsAfter": [
+    {
+      "module": "syracuse-collaboration/lib/advancedScripts/post-import-sitemap",
+      "options": {
+        "homepagesFilter": "(pageName like 'home%')",
+        "modulesFilter": "(application.description eq 'Syracuse Collaboration') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
+        "factoryOwner": "SAGE"
+      }
+    }
+  ]
 }
