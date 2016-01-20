@@ -60,6 +60,11 @@ exports.config = {
 			catalog: "sagex3",
 			timeout: 10000,
 		},
+		xm: {
+			ips: "10.198.6.62,10.198.6.94,10.198.6.149",
+			port: 80,
+			path: "/ping",
+		},
 	},
 	alerts:{
         consecutivePeriods: 1,
