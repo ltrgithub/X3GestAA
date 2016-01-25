@@ -215,5 +215,10 @@ exports.config = {
         // unit tests related options
         x3endpoint: {},
         elasticsearch: {}
-    }
+    },
+    symphony: {
+        webApiUrl: "https://api.sagex3.com",
+        webApiAuth: "",
+        farmElbUrl: "https://symphony.na.cloud.sagex3.com",
+    },
 };

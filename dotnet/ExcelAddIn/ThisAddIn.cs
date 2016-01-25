@@ -168,7 +168,7 @@ namespace ExcelAddIn
 
         public void ShowSettingsForm()
         {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
+            var connectUrl = BaseUrlHelper.BaseUrl.ToString() ?? GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
             if (settingsForm == null || settingsForm.IsDisposed)
             {
