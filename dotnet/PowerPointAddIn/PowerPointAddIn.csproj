@@ -368,6 +368,12 @@
     <Content Include="Resources\sauvegarder.png" />
     <Content Include="Resources\sauvegarder2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonDataHelper\CommonDataHelper.csproj">
+      <Project>{E7B10E14-921C-4136-90D1-7B64AD5A031E}</Project>
+      <Name>CommonDataHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

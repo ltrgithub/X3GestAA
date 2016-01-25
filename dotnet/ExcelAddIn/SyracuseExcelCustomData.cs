@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Office.Core;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -195,7 +196,7 @@ namespace ExcelAddIn
         {
             string jsonData;
 
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             jsonData = ser.Serialize(dictionary);
 
             MessageBox.Show(jsonData);
@@ -224,7 +225,7 @@ namespace ExcelAddIn
 
         public void writeDictionaryToDocument()
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             String json = ser.Serialize(dictionary);
 
             foreach (CustomXMLPart part in workbook.CustomXMLParts)
@@ -254,7 +255,7 @@ namespace ExcelAddIn
                 CustomXMLNode node = part.SelectSingleNode(sageERPX3JsonTagXPath);
                 if (node != null)
                 {
-                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    SageJsonSerializer ser = new SageJsonSerializer();
                     return (Dictionary<String, object>) ser.DeserializeObject(node.Text);
                 }
             }

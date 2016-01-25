@@ -9,6 +9,7 @@ using System.Threading;
 using System.Globalization;
 using Microsoft.Win32;
 using CommonDataHelper;
+using CommonDataHelper.GlobalHelper;
 
 
 namespace ExcelAddIn
@@ -215,7 +216,7 @@ namespace ExcelAddIn
 //            par[1]["parameters"] = "";
             par[1]["limit"] = -1;
             //
-            JavaScriptSerializer ser = new JavaScriptSerializer();
+            SageJsonSerializer ser = new SageJsonSerializer();
             loadTables(ser.Serialize(par), delegate(string errorMessage) {
                 if (errorMessage == "")
                     MessageBox.Show("Loaded");

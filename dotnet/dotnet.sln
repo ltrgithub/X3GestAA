@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddIn", "ExcelAddIn\ExcelAddIn.csproj", "{7CAED4A8-523E-47DA-B5A9-E8FFF57AF193}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E} = {E7B10E14-921C-4136-90D1-7B64AD5A031E}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6C08697-AA0D-4E0F-B116-48AE8C4A865C}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,6 +37,8 @@ Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "AddinSetup", "AddinSetup\Ad
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomInstaller", "CustomInstaller\CustomInstaller.csproj", "{BD21DD34-A03D-43BA-A5EF-B39A20C03212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDataHelper", "CommonDataHelper\CommonDataHelper.csproj", "{E7B10E14-921C-4136-90D1-7B64AD5A031E}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -252,6 +257,41 @@ Global
 		{BD21DD34-A03D-43BA-A5EF-B39A20C03212}.SingleImage|x64.ActiveCfg = Release|x86
 		{BD21DD34-A03D-43BA-A5EF-B39A20C03212}.SingleImage|x86.ActiveCfg = Release|x86
 		{BD21DD34-A03D-43BA-A5EF-B39A20C03212}.SingleImage|x86.Build.0 = Release|x86
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|Mixed Platforms.Build.0 = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|Win32.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|x64.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|Win32.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|x64.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|Win32.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|Win32.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|x64.ActiveCfg = Release|Any CPU
+		{E7B10E14-921C-4136-90D1-7B64AD5A031E}.SingleImage|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
