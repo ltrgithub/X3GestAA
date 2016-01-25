@@ -178,7 +178,9 @@ namespace CommonDataHelper
             request.Referer = uri.ToString();
             request.UserAgent = @"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
             request.KeepAlive = true;
+            request.ContentLength = 0;
             request.Method = "POST";
+
 
             request.CookieContainer = CookieHelper.GetUriCookieContainer();
 

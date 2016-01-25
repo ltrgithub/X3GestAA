@@ -220,5 +220,9 @@ exports.config = {
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
     },
-
+    symphony: {
+        webApiUrl: "https://qaapi.dev-sageerpx3online.com",
+        webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        farmElbUrl: "https://qa.symphony.na.cloud.dev-sageerpx3online.com",
+    },
 };
