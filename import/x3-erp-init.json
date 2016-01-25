@@ -46,17 +46,6 @@
 		},
 		{
 			"$type": "menuModule",
-			"code": "S_MOD_SUPERVADMIN",
-			"title": "title_c0956863-a637-4699-8c3c-b2785df97832",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuModule",
 			"code": "STD_X3_ERP_MIMP",
 			"title": "title_169a5a92-c055-4737-b795-f1b42df51995",
 			"application": {
@@ -70,6 +59,17 @@
 			"$type": "menuModule",
 			"code": "STD_X3_FAS_MIMP",
 			"title": "title_4ea1db3d-e6d1-4c9f-bc81-983438055426",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuModule",
+			"code": "S_MOD_SUPERVADMIN",
+			"title": "title_c0956863-a637-4699-8c3c-b2785df97832",
 			"application": {
 				"application": "x3",
 				"contract": "erp"
@@ -103,17 +103,6 @@
 			"$type": "menuModule",
 			"code": "STD_X3_ERP_FISDE",
 			"title": "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuModule",
-			"code": "Viewpages",
-			"title": "title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2",
 			"application": {
 				"application": "x3",
 				"contract": "erp"
@@ -296,19 +285,29 @@
 			},
 			"$factory": true,
 			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuModule",
+			"code": "Viewpages",
+			"title": "title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"$factory": true,
+			"$factoryOwner": "SAGE"
 		}
 	],
 	"$localization": {
 		"ar-sa": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
-			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
+			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "إنطباعات",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "إنطباعات",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "تطوير",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "ترجمات",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "تقارير",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "صفحات للقراءة فقط",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "المعطيات",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "اعداد",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "شراء",
@@ -324,18 +323,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "علاقة الزبون",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "المعطيات",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "محطات المتنقلة",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "اعداد"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "اعداد",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "صفحات للقراءة فقط"
 		},
 		"de-de": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
 			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Anzeigeseiten",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 Administration",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Reports",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Reports",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 Administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Entwicklung",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Übersetzungen",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Steuerliche Meldungen",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Anzeigeseiten",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Stammdaten",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Parameter",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Einkauf",
@@ -351,18 +350,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "CRM",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Stammdaten",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Mobile Datenerfassung",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameter"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameter",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Anzeigeseiten"
 		},
 		"en-gb": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
 			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Printouts",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Printouts",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Development",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Translations",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declarations",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Common Data",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Parameters",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Purchasing",
@@ -378,18 +377,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "Customer Relation",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Common Data",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameters"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameters",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages"
 		},
 		"en-us": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
 			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Reports",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Reports",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Development",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Translations",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declarations",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Common data",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Setup",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Purchasing",
@@ -405,18 +404,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "Customer relation",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Common Data",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Setup"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Setup",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages"
 		},
 		"es-es": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
-			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
+			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Informes",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Informes",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Desarrollo",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Traducciones",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declaraciones",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Páginas en solo lectura",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Datos base",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Parametrización",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Compras",
@@ -432,18 +431,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "CRM",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Datos base",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminales móviles",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrización"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrización",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Páginas en solo lectura"
 		},
 		"fr-fr": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
 			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "Administration X3",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Impressions",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Impressions",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "Administration X3",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Développement",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Traductions",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Déclarations",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Pages en lecture seule",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Données de base",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Paramétrage",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Achats",
@@ -459,18 +458,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "Relation client",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Données de base",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminaux portables",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Paramétrage"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Paramétrage",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Pages en lecture seule"
 		},
 		"it-it": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
-			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
+			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Stampe",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Stampe",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Sviluppo",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Traduzioni",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Dichiarazione",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Dati di base",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Parametrizzazione",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Acquisti",
@@ -486,18 +485,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "CRM",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Dati di base",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminali RF",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrizzazione"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrizzazione",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages"
 		},
 		"pl-pl": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
-			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
+			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Raporty",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Raporty",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Projektowanie",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Tłumaczenia",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Deklaracje",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Dane podstawowe",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Parametry",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Zakupy",
@@ -513,18 +512,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "CRM",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Dane podstawowe",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADC",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametry"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametry",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages"
 		},
 		"pt-pt": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
 			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Paginas apenas-leitura",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Impressões",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Impressões",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Desenvolvimento",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Traduções",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declarações",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Paginas apenas-leitura",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Dados de base",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Parametrização",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Compras",
@@ -540,18 +539,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "Relação cliente",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Dados de base",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "Terminais portáteis",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrização"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrização",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Paginas apenas-leitura"
 		},
 		"ru-ru": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
-			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
+			"title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "Отчеты",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "Отчеты",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Разработка",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "Переводы",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Декларирования",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "Основные данные",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "Параметры",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Закупки",
@@ -567,18 +566,18 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "Взаимоотношения с клиентами",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Основные данные",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Параметры"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Параметры",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "Read-only pages"
 		},
 		"zh-cn": {
 			"description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
 			"title_eb838491-7417-4155-95f0-311bb6479d6e": "只读页面",
-			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_169a5a92-c055-4737-b795-f1b42df51995": "报表打印",
 			"title_4ea1db3d-e6d1-4c9f-bc81-983438055426": "报表打印",
+			"title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
 			"title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "开发",
 			"title_4ff7f867-e13f-4055-8636-1db82acf32af": "翻译",
 			"title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "申报",
-			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "只读页面",
 			"title_34fa9fa6-7855-47b2-9b5a-21ddcd00362c": "基础数据",
 			"title_ea248556-ddaf-4db8-b2b5-c4661bf97514": "参数设置",
 			"title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "采购",
@@ -594,7 +593,8 @@
 			"title_dbe976e1-8904-41b0-8903-30c2d0b28d53": "客户关系",
 			"title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "基础数据",
 			"title_c88cb828-f92d-48d7-9c17-3ccc838dc25a": "ADCs",
-			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "参数设置"
+			"title_84402364-323d-47ff-b9b2-4b316a7a60e5": "参数设置",
+			"title_43b77378-3bfd-4c4c-af30-da87c7d5b0f2": "只读页面"
 		}
 	}
 }

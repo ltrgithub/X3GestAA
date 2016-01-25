@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
 using Microsoft.Office.Interop.Excel;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -17,7 +18,7 @@ namespace ExcelAddIn
             ",{_name:\"c\", _title: \"C\", _type: \"application/x-string\"}]";
         //String table2_data = "";
         //
-        JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
+        SageJsonSerializer jsSerializer = new SageJsonSerializer();
         //
         public UnitTest_Tables()
         {
