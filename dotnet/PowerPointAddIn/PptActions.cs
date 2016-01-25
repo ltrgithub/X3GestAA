@@ -9,6 +9,7 @@ using System.Web.Script.Serialization;
 using Microsoft.VisualBasic;
 using System.Diagnostics;
 using CommonDataHelper;
+using CommonDataHelper.GlobalHelper;
 
 namespace PowerPointAddIn
 {
@@ -71,7 +72,7 @@ namespace PowerPointAddIn
     public class PptActions
     {
         public BrowserDialog browserDialog = null;
-        private JavaScriptSerializer ser = new JavaScriptSerializer();
+        private SageJsonSerializer ser = new SageJsonSerializer();
         private const string SYRACUSE_CHART_PREFIX = "__SYRACUSE_CHART__";
         private Microsoft.Office.Interop.Excel.Application _excelApp = null;
 
