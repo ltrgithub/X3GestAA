@@ -7674,6 +7674,64 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_COVERAGE",
+      "title": "title_cd4f2627-c4ec-478f-9167-e220aaee7c3c",
+      "description": "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "processName": "COVERAGE",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_4d273d81-4c7f-475d-b5c5-4ed81972c88d",
+      "description": "description_4d273d81-4c7f-475d-b5c5-4ed81972c88d",
+      "useCurrentEndpoint": true,
+      "pageName": "Coverage",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "a915744f-cbe9-4f7a-89a4-0dd12660dc4e",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_COVERAGE"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "f8a7a6d6-4cea-4959-b477-3f332e1b4463",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@bb36477d-e64a-4807-bd6a-0e7ca503b20a}\",\"$layout\":{\"$items\":[{\"$bind\":\"a915744f-cbe9-4f7a-89a4-0dd12660dc4e\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
+      "page": {
+        "pageName": "Coverage",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_RSTO010",
       "title": "title_dc3b2367-2072-4054-8abe-4314beb81bff",
       "linkType": "$request",
@@ -8584,6 +8642,569 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_FONCPAIE0",
+      "title": "title_cd13f1b0-c0a3-4d22-a9db-42594e29e9f5",
+      "description": "description_cd13f1b0-c0a3-4d22-a9db-42594e29e9f5",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "processName": "FONCPAIE0",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "FONCENT1",
+      "title": "title_7e7bc272-a341-483d-97d7-9e2fc4c6c955",
+      "description": "description_7e7bc272-a341-483d-97d7-9e2fc4c6c955",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "processName": "FONCENT1",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "FONCDEP1",
+      "title": "title_c4e8cf55-714e-4c7e-9fd4-a9fb4300c30d",
+      "description": "description_c4e8cf55-714e-4c7e-9fd4-a9fb4300c30d",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "processName": "FONCDEP1",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_QCOMCOUNT",
+      "title": "title_ee333673-6c00-4d4f-90c4-10808446608a",
+      "description": "description_ee333673-6c00-4d4f-90c4-10808446608a",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "QCOMCNT",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_REQ_EMPNEWM",
+      "title": "title_d4a7fbe5-44ca-4a54-be22-7b558c1098cb",
+      "description": "description_d4a7fbe5-44ca-4a54-be22-7b558c1098cb",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "EMPNEWM",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_REQ_EMPDEPM",
+      "title": "title_39d679f3-7c3e-41da-be0d-85498131deea",
+      "description": "description_39d679f3-7c3e-41da-be0d-85498131deea",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "EMPDEPM",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_REQ_EMPNEWY",
+      "title": "title_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317",
+      "description": "description_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "EMPNEWY",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_REQ_EMPDEPY",
+      "title": "title_8817c4d5-4b33-4f35-a592-9e3de0e958af",
+      "description": "description_8817c4d5-4b33-4f35-a592-9e3de0e958af",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "EMPDEPY",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_f73a391e-9b5b-4ce5-a50f-ea09a2b26ec3",
+      "description": "description_f73a391e-9b5b-4ce5-a50f-ea09a2b26ec3",
+      "useCurrentEndpoint": true,
+      "pageName": "PayrollAdmin",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "f8b1788b-7f02-4e76-8794-f57803823d46",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_FONCPAIE0"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "c62d990a-fa0b-4682-8d89-1238a1a65f0e",
+          "vignette": {
+            "code": "FONCENT1"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "1edba214-fe2e-4e44-bdf6-561205d5946a",
+          "vignette": {
+            "code": "FONCDEP1"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "11e7e149-e692-4e39-8721-c2a6e4cd583b",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_QCOMCOUNT"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "72e93c2c-20b6-4dac-bb9e-70b37e6da969",
+          "vignette": {
+            "code": "STD_X3_HRM_REQ_EMPNEWM"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "d0575269-92e0-4a8c-8d85-7c48103ff3ba",
+          "vignette": {
+            "code": "STD_X3_HRM_REQ_EMPDEPM"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "a73bd0ca-512a-4139-a2c9-12cf429e621a",
+          "vignette": {
+            "code": "STD_X3_HRM_REQ_EMPNEWY"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "86c2eaaf-9ae1-40de-9f48-f9f23ae16f2d",
+          "vignette": {
+            "code": "STD_X3_HRM_REQ_EMPDEPY"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "5c6f63c6-8107-4923-b94a-896c738c119e",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9352941b-c44e-494a-b5ed-df567f957413}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"72e93c2c-20b6-4dac-bb9e-70b37e6da969\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"FCYNAM\"},{\"$bind\":\"FORMULA_1\"}]},\"$graphPosition\":\"top\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}},{\"$bind\":\"d0575269-92e0-4a8c-8d85-7c48103ff3ba\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"FCYNAM\"},{\"$bind\":\"FORMULA_1\"}]},\"$graphPosition\":\"top\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$color\":\"#ff5800\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}},{\"$bind\":\"a73bd0ca-512a-4139-a2c9-12cf429e621a\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"FCYNAM\"},{\"$bind\":\"FORMULA_1\"}]},\"$graphPosition\":\"top\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}},{\"$bind\":\"86c2eaaf-9ae1-40de-9f48-f9f23ae16f2d\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"FCYNAM\"},{\"$bind\":\"FORMULA_1\"}]},\"$graphPosition\":\"top\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$color\":\"#ff5800\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}}],\"$widths\":\"25,25,25,25\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@1d8d5fc1-d75e-4032-9c6c-2f6e68bdfa47}\",\"$layout\":{\"$items\":[{\"$bind\":\"11e7e149-e692-4e39-8721-c2a6e4cd583b\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$graphPosition\":\"top\",\"$itemsPerPage\":10,\"$selectMode\":\"row\",\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$color\":\"#34b233\",\"$style\":\"column\"}}},\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"SRV\"},{\"$bind\":\"FORMULA_1\"}]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$altVignettes\":{\"QUERY~QCOMCNT~2.$query\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"SRV\"},{\"$bind\":\"FORMULA_1\"}]},\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@888e441e-4771-4fe0-9a66-e09fc451c834}\",\"$layout\":{\"$items\":[{\"$bind\":\"f8b1788b-7f02-4e76-8794-f57803823d46\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9ca830ad-983b-4dcc-bf6e-8ed2bf73e5e3}\",\"$layout\":{\"$items\":[{\"$bind\":\"c62d990a-fa0b-4682-8d89-1238a1a65f0e\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@614bf0ad-47ad-487a-a40a-c7c351ee7e8d}\",\"$layout\":{\"$items\":[{\"$bind\":\"1edba214-fe2e-4e44-bdf6-561205d5946a\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "PayrollAdmin",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_DISCIPLIN",
+      "title": "title_8c6f9542-66e3-4d40-88a6-da2f36579411",
+      "description": "description_8c6f9542-66e3-4d40-88a6-da2f36579411",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "DISCIPLIN",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_93bd77ed-9d1f-4c88-8bf3-d7b0772a2bbd",
+      "description": "description_93bd77ed-9d1f-4c88-8bf3-d7b0772a2bbd",
+      "useCurrentEndpoint": true,
+      "pageName": "Disciplinary",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "5198c152-93ae-43e0-8b3e-95c5df485723",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_DISCIPLIN"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "6199dd5e-139c-4724-bb18-b2e7abd4cb22",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@2b49a613-9a12-4c0c-8b6c-a28687bd799c}\",\"$layout\":{\"$items\":[{\"$bind\":\"5198c152-93ae-43e0-8b3e-95c5df485723\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@5b122fc2-aa6a-4fa3-94b9-32f002b39175}\",\"$layout\":{\"$items\":[{\"$category\":\"space\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "Disciplinary",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "EQ",
+      "title": "title_68c7211c-f4ed-4e8c-8450-61fd1041467c",
+      "description": "description_68c7211c-f4ed-4e8c-8450-61fd1041467c",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "EQ",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD X3 HRM LPSEHCGE",
+      "title": "title_9dc3a479-5311-4590-bd6f-50d7dc30336d",
+      "description": "description_9dc3a479-5311-4590-bd6f-50d7dc30336d",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "blank",
+      "requestName": "LPSEHCGE",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GRH"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD X3 HRM LPSEHCOP",
+      "title": "title_27594bb0-1987-4779-b1bd-d2603be3da01",
+      "description": "description_27594bb0-1987-4779-b1bd-d2603be3da01",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "blank",
+      "requestName": "LPSEHCOP",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GRH"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD X3 HRM LPSEHCOO",
+      "title": "title_ee8f3780-47b9-4f5c-9f68-8b2df4bd8a5a",
+      "description": "description_ee8f3780-47b9-4f5c-9f68-8b2df4bd8a5a",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "LPSEHCOO",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GRH"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD X3 HRM LPSEHCRA",
+      "title": "title_2f88595f-3e6e-4ea6-9ff1-3f42dcf18481",
+      "description": "description_2f88595f-3e6e-4ea6-9ff1-3f42dcf18481",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "LPSEHCRA",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GRH"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff",
+      "description": "description_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff",
+      "useCurrentEndpoint": true,
+      "pageName": "Equity",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "7da67a85-25b7-47ac-8261-f7dd16fed922",
+          "vignette": {
+            "code": "EQ"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7f31e52f-b63a-4c41-aadc-9163d6b6bd84",
+          "vignette": {
+            "code": "STD X3 HRM LPSEHCGE"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "e1a8f98a-3360-47cb-a489-62c2e59ddb47",
+          "vignette": {
+            "code": "STD X3 HRM LPSEHCOP"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7edd10c1-1bd5-42ae-8451-c0a9591e0d11",
+          "vignette": {
+            "code": "STD X3 HRM LPSEHCOO"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "13c17658-ef3f-4000-922a-a5a34dc065d4",
+          "vignette": {
+            "code": "STD X3 HRM LPSEHCRA"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "3c76ceaf-2a85-45bd-ac47-8d78b31b90af",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@54cf2d97-f837-4cb3-b1b9-f960af6820f4}\",\"$layout\":{\"$items\":[{\"$bind\":\"7da67a85-25b7-47ac-8261-f7dd16fed922\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@31cc3849-3311-4ab0-98f7-72b2cc37d816}\",\"$layout\":{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"7f31e52f-b63a-4c41-aadc-9163d6b6bd84\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$style\":\"bar\"},\"FORMULA_2\":{\"$style\":\"bar\"}}},\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"OCPLEV\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"FORMULA_2\"}]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\"}},{\"$bind\":\"e1a8f98a-3360-47cb-a489-62c2e59ddb47\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"OCPLEV\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"FORMULA_3\"},{\"$bind\":\"FORMULA_4\"},{\"$bind\":\"FORMULA_5\"},{\"$bind\":\"FORMULA_6\"},{\"$bind\":\"FORMULA_7\"},{\"$bind\":\"FORMULA_8\"},{\"$bind\":\"FORMULA_9\"},{\"$bind\":\"FORMULA_10\"}]},\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$style\":\"bar\"},\"FORMULA_8\":{\"$style\":\"bar\"},\"FORMULA_2\":{\"$style\":\"bar\"},\"FORMULA_9\":{\"$style\":\"bar\"},\"FORMULA_3\":{\"$style\":\"bar\"},\"FORMULA_10\":{\"$style\":\"bar\"},\"FORMULA_4\":{\"$style\":\"bar\"},\"FORMULA_5\":{\"$style\":\"bar\"},\"FORMULA_6\":{\"$style\":\"bar\"},\"FORMULA_7\":{\"$style\":\"bar\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$layoutType\":\"row\",\"$widths\":\"50,50\",\"$items\":[{\"$category\":\"space\"},{\"$category\":\"space\"}]},{\"$bind\":\"13c17658-ef3f-4000-922a-a5a34dc065d4\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"OCPLEV\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"FORMULA_3\"},{\"$bind\":\"FORMULA_4\"}]},\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$style\":\"bar\"},\"FORMULA_2\":{\"$style\":\"bar\"},\"FORMULA_3\":{\"$style\":\"bar\"},\"FORMULA_4\":{\"$style\":\"bar\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"7edd10c1-1bd5-42ae-8451-c0a9591e0d11\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"OCPLEV\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"FORMULA_3\"},{\"$bind\":\"FORMULA_4\"},{\"$bind\":\"FORMULA_5\"},{\"$bind\":\"FORMULA_6\"},{\"$bind\":\"FORMULA_7\"},{\"$bind\":\"FORMULA_8\"},{\"$bind\":\"FORMULA_9\"},{\"$bind\":\"FORMULA_10\"}]},\"$graphPosition\":\"bottom\",\"$itemsPerPage\":10,\"$cube\":{\"$measures\":{\"FORMULA_1\":{\"$style\":\"bar\"},\"FORMULA_8\":{\"$style\":\"bar\"},\"FORMULA_2\":{\"$style\":\"bar\"},\"FORMULA_9\":{\"$style\":\"bar\"},\"FORMULA_3\":{\"$style\":\"bar\"},\"FORMULA_10\":{\"$style\":\"bar\"},\"FORMULA_4\":{\"$style\":\"bar\"},\"FORMULA_5\":{\"$style\":\"bar\"},\"FORMULA_6\":{\"$style\":\"bar\"},\"FORMULA_7\":{\"$style\":\"bar\"}}}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$layoutType\":\"row\",\"$items\":[{\"$category\":\"space\"},{\"$category\":\"space\"},{\"$category\":\"space\"}],\"$widths\":\"33.33,33.33,33.33\"},{\"$layoutType\":\"row\",\"$items\":[{\"$category\":\"space\"},{\"$category\":\"space\"}],\"$widths\":\"50,50\"}],\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "Equity",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_TRS05_002",
       "title": "title_b65cd30a-b590-4882-be98-1e40eb1716a7",
       "linkType": "$process",
@@ -8889,6 +9510,325 @@
       }
     },
     {
+      "$type": "menuItem",
+      "code": "LOANSSETP",
+      "title": "title_acc25fad-f67f-433f-83bd-7f5ba723cc01",
+      "description": "description_acc25fad-f67f-433f-83bd-7f5ba723cc01",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "LOANSSETP",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "LOANSEMP",
+      "title": "title_f3b9c212-aec2-4e42-93db-a0b1cd880f6a",
+      "description": "description_f3b9c212-aec2-4e42-93db-a0b1cd880f6a",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "LOANSEMP",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "LOANPERP",
+      "title": "title_72fefe72-6e29-4620-a575-de2df1d58f22",
+      "description": "description_72fefe72-6e29-4620-a575-de2df1d58f22",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "LOANPERP",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_8cc9f146-d387-48f3-860e-fd4068c787c5",
+      "description": "description_8cc9f146-d387-48f3-860e-fd4068c787c5",
+      "useCurrentEndpoint": true,
+      "pageName": "Loans",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "5a0a8487-f4c7-4778-b96f-cbb4a3e75d8f",
+          "vignette": {
+            "code": "LOANSSETP"
+          },
+          "endpoint": {
+            "dataset": "SEEDPOR"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "c656c7af-ddc2-4bac-bcdd-aa61a3bdab29",
+          "vignette": {
+            "code": "LOANSEMP"
+          },
+          "endpoint": {
+            "dataset": "SEEDPOR"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "26a2d8d3-6b37-4c1a-8720-07a228c82a6c",
+          "vignette": {
+            "code": "LOANPERP"
+          },
+          "endpoint": {
+            "dataset": "SEEDPOR"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "d1b18d5e-2798-4fd3-8168-655e123d918c",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@c24c4e35-4e3a-401a-a575-aa15bd134d78}\",\"$layout\":{\"$items\":[{\"$bind\":\"5a0a8487-f4c7-4778-b96f-cbb4a3e75d8f\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@b1c55c18-5338-46a7-b947-b16e837d7b03}\",\"$layout\":{\"$items\":[{\"$bind\":\"c656c7af-ddc2-4bac-bcdd-aa61a3bdab29\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7d8280b1-d495-4d4f-92f5-6508f8cb5256}\",\"$layout\":{\"$items\":[{\"$bind\":\"26a2d8d3-6b37-4c1a-8720-07a228c82a6c\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "Loans",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_ONBOARD",
+      "title": "title_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a",
+      "description": "description_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "ONBOARD",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_EMPAVGLE",
+      "title": "title_2453fb09-72d3-408d-b967-4d754269cfe2",
+      "description": "description_2453fb09-72d3-408d-b967-4d754269cfe2",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "EMPAVGLE",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_EMPCOMP",
+      "title": "title_a76bf229-581a-44ee-bc9b-c7558752be51",
+      "description": "description_a76bf229-581a-44ee-bc9b-c7558752be51",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "EMPCOMP",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD X3 HRM PROC EMPSTM",
+      "title": "title_f5e28875-77e4-41c9-a58e-8dd3430d3875",
+      "description": "description_f5e28875-77e4-41c9-a58e-8dd3430d3875",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "EMPSTM",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_QCOMCOUNT",
+      "title": "title_ee333673-6c00-4d4f-90c4-10808446608a",
+      "description": "description_ee333673-6c00-4d4f-90c4-10808446608a",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "QCOMCNT",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_c7113733-13ec-422e-b9cf-3db850b3ca96",
+      "description": "description_c7113733-13ec-422e-b9cf-3db850b3ca96",
+      "useCurrentEndpoint": true,
+      "pageName": "Boarding",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "6cbb6573-a14c-464d-b458-7d0e29b69672",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_ONBOARD"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7d5d4db4-bdd5-4677-8d28-3c8f9e3f190c",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_EMPAVGLE"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "6d5154ca-c8df-45b8-a9cd-8c5883631569",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_EMPCOMP"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "a78f23e6-7eed-46de-9f0a-2c33fa2e66f8",
+          "vignette": {
+            "code": "STD X3 HRM PROC EMPSTM"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "5233870a-d8e9-4460-a5f6-209943f2f3b0",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_QCOMCOUNT"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "7e50f7d7-e18c-406b-9320-931047ad7a90",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@6e8fbc06-8cfe-4e7d-aec8-948362a2e3bd}\",\"$layout\":{\"$items\":[{\"$bind\":\"6cbb6573-a14c-464d-b458-7d0e29b69672\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@b24dca49-126b-410e-bf10-1c7a6ad47721}\",\"$layout\":{\"$items\":[{\"$bind\":\"7d5d4db4-bdd5-4677-8d28-3c8f9e3f190c\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"6d5154ca-c8df-45b8-a9cd-8c5883631569\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"a78f23e6-7eed-46de-9f0a-2c33fa2e66f8\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"5233870a-d8e9-4460-a5f6-209943f2f3b0\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "Boarding",
+        "$variantType": "landingPage"
+      }
+    },
+    {
       "$type": "landingPage",
       "title": "title_7716fd9a-b7b2-4639-b69f-21cb87ccdb2c",
       "description": "description_7716fd9a-b7b2-4639-b69f-21cb87ccdb2c",
@@ -8912,6 +9852,63 @@
       "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
       "page": {
         "pageName": "FAsystemadministrator",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_TYE",
+      "title": "title_28947337-f481-4dc5-80f3-4992d311d433",
+      "description": "description_28947337-f481-4dc5-80f3-4992d311d433",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "TYE",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_b78611c3-d0f4-4485-bb29-5823c79bc0fa",
+      "description": "description_b78611c3-d0f4-4485-bb29-5823c79bc0fa",
+      "useCurrentEndpoint": true,
+      "pageName": "TaxYearEndProcess",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "88f5b229-3a4a-4c93-9151-14e602f9f276",
+          "vignette": {
+            "code": "STD_X3_HRM_PROC_TYE"
+          },
+          "endpoint": {
+            "dataset": "SEEDZAF"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "f9bffb7e-e93f-4965-a642-8ccc86cf2a00",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7f539856-1bfb-43c9-bc4a-30fd835caf3a}\",\"$layout\":{\"$items\":[{\"$bind\":\"88f5b229-3a4a-4c93-9151-14e602f9f276\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "TaxYearEndProcess",
         "$variantType": "landingPage"
       }
     },
@@ -10669,6 +11666,10 @@
       "description_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Skills and carreers",
       "pageLayout.b40095b2-63d8-4839-b23f-2e8125e6d38e.@2fd49049-2864-466e-8538-909f6ae08f86": "KPI",
       "pageLayout.b40095b2-63d8-4839-b23f-2e8125e6d38e.@953cb051-11dc-4ad7-b68d-d696c4792965": "KPI",
+      "title_4d273d81-4c7f-475d-b5c5-4ed81972c88d": "Functional coverage",
+      "title_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Functional coverage",
+      "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Functional coverage",
+      "pageLayout.f8a7a6d6-4cea-4959-b477-3f332e1b4463.@bb36477d-e64a-4807-bd6a-0e7ca503b20a": "Functional coverage",
       "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Stock manager",
       "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock in QC Status",
       "title_fab39cc1-1185-43f8-b470-277705864a8c": "Stock manager Indicators",
@@ -10711,6 +11712,49 @@
       "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
       "title_e08dbb1e-51de-4f9a-9dc8-2fbcdb5847eb": "Leave",
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@c43ec551-7168-4c19-8b89-c6bc59b0ad1d": "Processes",
+      "title_f73a391e-9b5b-4ce5-a50f-ea09a2b26ec3": "Payroll and personnel administration",
+      "title_7e7bc272-a341-483d-97d7-9e2fc4c6c955": "Hiring formalities",
+      "description_7e7bc272-a341-483d-97d7-9e2fc4c6c955": "Hiring formalities",
+      "title_c4e8cf55-714e-4c7e-9fd4-a9fb4300c30d": "Termination formalities",
+      "description_c4e8cf55-714e-4c7e-9fd4-a9fb4300c30d": "Termination formalities",
+      "title_ee333673-6c00-4d4f-90c4-10808446608a": "Employee count",
+      "description_ee333673-6c00-4d4f-90c4-10808446608a": "Employees per company",
+      "title_d4a7fbe5-44ca-4a54-be22-7b558c1098cb": "This month's new employees",
+      "title_39d679f3-7c3e-41da-be0d-85498131deea": "This month's leaving employees",
+      "title_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317": "This year's new employees",
+      "title_8817c4d5-4b33-4f35-a592-9e3de0e958af": "This year's leaving employees",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@888e441e-4771-4fe0-9a66-e09fc451c834": "Administration",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@b31b9354-50c4-48c6-9db4-457a4343ad28": "Arrival",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@b2ec524a-e5ed-4e39-99fd-25997cb9b636": "Departure",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@9ca830ad-983b-4dcc-bf6e-8ed2bf73e5e3": "Arrival",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@614bf0ad-47ad-487a-a40a-c7c351ee7e8d": "Departure",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@2768e06f-de0b-4e05-a763-8b2042bc2eb9": "New Tab 1",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@1d8d5fc1-d75e-4032-9c6c-2f6e68bdfa47": "Quick view",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@9352941b-c44e-494a-b5ed-df567f957413": "Statistics",
+      "pageLayout.5c6f63c6-8107-4923-b94a-896c738c119e.@d9019675-dff9-4203-bada-2824933982d3": "New Tab 1",
+      "title_93bd77ed-9d1f-4c88-8bf3-d7b0772a2bbd": "Disciplinary",
+      "description_93bd77ed-9d1f-4c88-8bf3-d7b0772a2bbd": "Disciplinary",
+      "title_8c6f9542-66e3-4d40-88a6-da2f36579411": "Disciplinary",
+      "description_8c6f9542-66e3-4d40-88a6-da2f36579411": "Disciplinary",
+      "pageLayout.6199dd5e-139c-4724-bb18-b2e7abd4cb22.@811973ac-df6c-4adc-a310-86d254754d0d": "New Tab 1",
+      "pageLayout.6199dd5e-139c-4724-bb18-b2e7abd4cb22.@2b49a613-9a12-4c0c-8b6c-a28687bd799c": "Process",
+      "pageLayout.6199dd5e-139c-4724-bb18-b2e7abd4cb22.@5b122fc2-aa6a-4fa3-94b9-32f002b39175": "New Tab 1",
+      "title_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff": "Equity Management",
+      "description_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff": "Equity Management",
+      "title_68c7211c-f4ed-4e8c-8450-61fd1041467c": "Employment Equity",
+      "description_68c7211c-f4ed-4e8c-8450-61fd1041467c": "Employment Equity",
+      "title_9dc3a479-5311-4590-bd6f-50d7dc30336d": "H/Count by level and gender (LP)",
+      "description_9dc3a479-5311-4590-bd6f-50d7dc30336d": "H/Count by level and gender (LP)",
+      "title_27594bb0-1987-4779-b1bd-d2603be3da01": "H/Count by level and race (LP)",
+      "description_27594bb0-1987-4779-b1bd-d2603be3da01": "H/Count by level and race (LP)",
+      "title_ee8f3780-47b9-4f5c-9f68-8b2df4bd8a5a": "H/Count by level and OFO (LP)",
+      "description_ee8f3780-47b9-4f5c-9f68-8b2df4bd8a5a": "H/Count by level and OFO (LP)",
+      "title_2f88595f-3e6e-4ea6-9ff1-3f42dcf18481": "H/Count by occ & race (LP)",
+      "description_2f88595f-3e6e-4ea6-9ff1-3f42dcf18481": "H/Count by occ & race (LP)",
+      "pageLayout.3c76ceaf-2a85-45bd-ac47-8d78b31b90af.@54cf2d97-f837-4cb3-b1b9-f960af6820f4": "Process",
+      "pageLayout.3c76ceaf-2a85-45bd-ac47-8d78b31b90af.@c3efc9b6-a61b-48a1-82f0-e563cad903d1": "KPI",
+      "pageLayout.3c76ceaf-2a85-45bd-ac47-8d78b31b90af.@31cc3849-3311-4ab0-98f7-72b2cc37d816": "KPI",
+      "pageLayout.3c76ceaf-2a85-45bd-ac47-8d78b31b90af.@bd0f5d1f-b155-44cf-8168-ffef516e4611": "New Tab 1",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Fixed assets",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Fixed assets home page",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Perform Period Cut-offs",
@@ -10725,10 +11769,38 @@
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@2bb8a3d2-bf20-4294-8bff-9178dd04f485": "FY cut-offs",
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3bf6e260-f781-435e-b29d-7422da263c54": "New Tab 1",
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@871022bd-269a-4150-805e-51643621bdfd": "New Tab 1",
+      "title_8cc9f146-d387-48f3-860e-fd4068c787c5": "Loans",
+      "description_8cc9f146-d387-48f3-860e-fd4068c787c5": "Loans",
+      "title_acc25fad-f67f-433f-83bd-7f5ba723cc01": "Loans Setup",
+      "description_acc25fad-f67f-433f-83bd-7f5ba723cc01": "Loans Setup",
+      "title_f3b9c212-aec2-4e42-93db-a0b1cd880f6a": "Loans Employee",
+      "description_f3b9c212-aec2-4e42-93db-a0b1cd880f6a": "Loans Employee",
+      "title_72fefe72-6e29-4620-a575-de2df1d58f22": "Loans Per Period",
+      "description_72fefe72-6e29-4620-a575-de2df1d58f22": "Loans Per Period",
+      "pageLayout.d1b18d5e-2798-4fd3-8168-655e123d918c.@c24c4e35-4e3a-401a-a575-aa15bd134d78": "Process Setup",
+      "pageLayout.d1b18d5e-2798-4fd3-8168-655e123d918c.@b1c55c18-5338-46a7-b947-b16e837d7b03": "Process Employee",
+      "pageLayout.d1b18d5e-2798-4fd3-8168-655e123d918c.@7d8280b1-d495-4d4f-92f5-6508f8cb5256": "Statistics",
+      "title_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
+      "description_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
+      "title_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a": "On-Boarding",
+      "description_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a": "On-Boarding",
+      "title_2453fb09-72d3-408d-b967-4d754269cfe2": "Employee Ave Leaving Per Year",
+      "description_2453fb09-72d3-408d-b967-4d754269cfe2": "Employee Ave Leaving Per Year",
+      "title_a76bf229-581a-44ee-bc9b-c7558752be51": "Employee Compare Leaving vs New 2015",
+      "description_a76bf229-581a-44ee-bc9b-c7558752be51": "Employee Compare Leaving vs New 2015",
+      "title_f5e28875-77e4-41c9-a58e-8dd3430d3875": "Employee Monthly Start",
+      "description_f5e28875-77e4-41c9-a58e-8dd3430d3875": "Employee Monthly Start",
+      "pageLayout.7e50f7d7-e18c-406b-9320-931047ad7a90.@6e8fbc06-8cfe-4e7d-aec8-948362a2e3bd": "Process",
+      "pageLayout.7e50f7d7-e18c-406b-9320-931047ad7a90.@b24dca49-126b-410e-bf10-1c7a6ad47721": "Statistics",
       "title_7716fd9a-b7b2-4639-b69f-21cb87ccdb2c": "System administrator Fixed assets",
       "description_7716fd9a-b7b2-4639-b69f-21cb87ccdb2c": "System administrator Fixed assets",
       "pageLayout.56b9ff20-815a-42b9-94ec-74c7b68cf393.@4c85c02d-5544-4e15-9cee-fd65744f1b43": "New Tab 1",
       "pageLayout.56b9ff20-815a-42b9-94ec-74c7b68cf393.@d2f1cc6d-6668-429c-bc11-98e730c0de4c": "New Tab 1",
+      "title_b78611c3-d0f4-4485-bb29-5823c79bc0fa": "Tax year end process",
+      "description_b78611c3-d0f4-4485-bb29-5823c79bc0fa": "Tax year end process",
+      "title_28947337-f481-4dc5-80f3-4992d311d433": "Tax Year End",
+      "description_28947337-f481-4dc5-80f3-4992d311d433": "Tax Year End",
+      "pageLayout.f9bffb7e-e93f-4965-a642-8ccc86cf2a00.@7f539856-1bfb-43c9-bc4a-30fd835caf3a": "Process",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Executive",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "Purchase Inv by Product Family",
       "description_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "SACH04",
@@ -11352,6 +12424,7 @@
       "title_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Gestion des talents carrières et compétences",
       "description_6b17898b-ab5a-4499-a71b-e5ef5711a08c": "Gestion des talents carrières et compétences",
       "pageLayout.b40095b2-63d8-4839-b23f-2e8125e6d38e.@2c7f4d46-ebd6-4380-a1f9-27b850d1d375": "Processes",
+      "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Mire d'accueil Sage HR Management",
       "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsable des stocks",
       "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock en statut Q",
       "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indicateurs responsable stocks",
@@ -11400,6 +12473,10 @@
       "title_e08dbb1e-51de-4f9a-9dc8-2fbcdb5847eb": "Congés",
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@c43ec551-7168-4c19-8b89-c6bc59b0ad1d": "Processus",
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@cc8c9929-a091-45dc-8a91-57d5db773a0a": "KPI",
+      "title_d4a7fbe5-44ca-4a54-be22-7b558c1098cb": "Embauches (Mois en cours)",
+      "title_39d679f3-7c3e-41da-be0d-85498131deea": "Salariés sortis (Mois)",
+      "title_3f30ce80-c7a4-4d29-b1c2-3bce71a7d317": "Nbre de nouveaux employés (Année)",
+      "title_8817c4d5-4b33-4f35-a592-9e3de0e958af": "Salariés sortis (Année)",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Immobilisations",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Page d'accueil Immobilisations",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Réaliser les arrêtés périod.",
