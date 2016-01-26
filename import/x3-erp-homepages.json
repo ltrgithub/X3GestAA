@@ -8537,6 +8537,36 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_NCS_VISPROCESS",
+      "title": "title_39b9d4ae-aa31-48a2-b1b3-49eb9c4bf10a",
+      "description": "description_39b9d4ae-aa31-48a2-b1b3-49eb9c4bf10a",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "NCSCHGREQ",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_NCS"
+      },
+      "parameters": []
+    },
+    {
       "$type": "landingPage",
       "title": "title_3d051ad8-2a5c-472b-afbe-082dc97b6b7d",
       "description": "description_3d051ad8-2a5c-472b-afbe-082dc97b6b7d",
@@ -8613,13 +8643,23 @@
           "endpoint": {
             "dataset": "X3REFAVENG"
           }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "d2495e47-265c-48cf-9deb-6696052b3108",
+          "vignette": {
+            "code": "STD_X3_ERP_NCS_VISPROCESS"
+          },
+          "endpoint": {
+            "dataset": "X3REFAVENG"
+          }
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "554f7ce3-9890-4c02-988b-e054d519301a",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@16285afe-9c77-46b5-9425-cc8b85949d40}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"556923ae-f2f9-4190-b7c0-435f4beacfbe\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"44aada9b-e7c2-4bae-8855-4a0ca11f346d\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"eaf9cb11-7fd4-49aa-8086-f95b41df6d74\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"1b32dd4b-6ae2-4c1c-aaa6-f9d06806d45b\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"a1c63015-e14c-4165-b985-b8fda0fe1e44\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"2b464d77-796a-4acf-a533-c0c108c2fdd7\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"90ff9a80-a22d-436d-9086-e370eba1e58e\",\"$layout\":{\"$items\":[]}},{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"4e5adea4-fb3f-411a-8838-301d30fcde9c\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"d1367c2f-c47a-4840-bd09-9f3c41d65afe\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"399d7880-c680-4ba4-994b-0adde2fc0574\",\"$layout\":{\"$items\":[]}},{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"39ee9d5f-5779-4d1b-9859-4749d3c2ce35\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"29075dfc-94ff-4a7e-b6a4-28ec20e9920e\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7f156557-9e2b-494e-af9d-a62a3bb36119}\",\"$layout\":{\"$items\":[{\"$bind\":\"a09d28e6-7eb6-4b35-a194-57b5f75195cc\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@16285afe-9c77-46b5-9425-cc8b85949d40}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"556923ae-f2f9-4190-b7c0-435f4beacfbe\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"44aada9b-e7c2-4bae-8855-4a0ca11f346d\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"eaf9cb11-7fd4-49aa-8086-f95b41df6d74\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"1b32dd4b-6ae2-4c1c-aaa6-f9d06806d45b\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$layoutType\":\"row\",\"$items\":[{\"$category\":\"space\"},{\"$category\":\"space\"}],\"$widths\":\"50,50\"},{\"$layoutType\":\"row\",\"$items\":[{\"$category\":\"space\"},{\"$category\":\"space\"}],\"$widths\":\"50,50\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@6419f108-dcf9-4da6-a1ee-e1655ea508cc}\",\"$layout\":{\"$items\":[{\"$bind\":\"d2495e47-265c-48cf-9deb-6696052b3108\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "NCS",
         "$variantType": "landingPage"
@@ -9781,12 +9821,15 @@
       "title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Non-conformances to plan",
       "description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Non-conformances to plan",
       "title_b23fc27e-f5df-4cdf-8fad-33ce1e619689": "filter",
+      "title_39b9d4ae-aa31-48a2-b1b3-49eb9c4bf10a": "Non-conformance Visual Process",
+      "description_39b9d4ae-aa31-48a2-b1b3-49eb9c4bf10a": "Non-conformance Visual Process",
       "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@6c216b81-4cae-4ff8-bcc0-b411abdcc10e": "New Tab 1",
       "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@fac542cc-a997-4e81-a25d-a994dedf733b": "New Tab 2",
       "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@240fb263-d7f9-4800-a627-96c55ddbfd98": "Key Information",
       "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@dd68769c-11e1-430a-8dcd-5718a9377cd8": "New Tab 1",
       "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@16285afe-9c77-46b5-9425-cc8b85949d40": "Key Information",
       "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@7f156557-9e2b-494e-af9d-a62a3bb36119": "Business Process",
+      "pageLayout.554f7ce3-9890-4c02-988b-e054d519301a.@6419f108-dcf9-4da6-a1ee-e1655ea508cc": "Business process",
       "title_7716fd9a-b7b2-4639-b69f-21cb87ccdb2c": "System administrator Fixed assets",
       "description_7716fd9a-b7b2-4639-b69f-21cb87ccdb2c": "System administrator Fixed assets",
       "pageLayout.56b9ff20-815a-42b9-94ec-74c7b68cf393.@4c85c02d-5544-4e15-9cee-fd65744f1b43": "New Tab 1",
