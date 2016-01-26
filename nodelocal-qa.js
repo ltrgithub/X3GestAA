@@ -221,7 +221,8 @@ exports.config = {
 		cloudwatch: true,
     },
     symphony: {
-        webApiUrl: "https://devapi.dev-sageerpx3online.com",
+        webApiUrl: "https://qaapi.dev-sageerpx3online.com",
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        farmElbUrl: "https://qa.symphony.na.cloud.dev-sageerpx3online.com",
     },
 };
