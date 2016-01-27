@@ -79,12 +79,16 @@ exports.config = {
         // bindIP if IP_ANY is not the good binding (IPV6)
         bindIP: "0000:00:00:00:00:00000"
 	},
-	/*	integrationServer: {
-		port: 8125
-	},
-	*/
     collaboration: {
         certdir: "certificates"  // path to certificates folder
+    },
+    extensions: {
+        "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
+        "modules": [{
+            "path": "syracuse-si",  // absolute path or relative to root
+            "active": true,         // convenient flag to activate / deactivate; defaults to true
+            "forceUpdate": false    // force update of the package regardless of already present version
+        }]
     },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
@@ -302,7 +306,15 @@ exports.config = {
     symphony: {
         webApiUrl: "https://devapi.dev-sageerpx3online.com",
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
-    },    
+        farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
+    },
+    // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
+    // See section 4.1.2 in Sage ID Reference Documentation for further information
+    /*mongoNotify: {
+		host: 'localhost',
+		port: '27017',
+		database: 'syracuse',
+	},*/    
 };
 
 // for git enabled configurations one can override the standard config
