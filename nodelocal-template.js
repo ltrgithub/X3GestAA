@@ -307,7 +307,14 @@ exports.config = {
         webApiUrl: "https://devapi.dev-sageerpx3online.com",
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
         farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
-    },    
+    },
+    // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
+    // See section 4.1.2 in Sage ID Reference Documentation for further information
+    /*mongoNotify: {
+		host: 'localhost',
+		port: '27017',
+		database: 'syracuse',
+	},*/    
 };
 
 // for git enabled configurations one can override the standard config
