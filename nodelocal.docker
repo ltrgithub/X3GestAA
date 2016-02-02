@@ -9,45 +9,6 @@
 // The nodelocal.js file is marked as "ignored" for subversion.
 // So subversion will not try to add it when you run the subversion Add command.
 exports.config = {
-	scm: {
-		endpointName: "X3",
-		solutionName: "APPSTDEN",
-		folderName: "X3",
-		solutionPath: "C:/Users/stden/docker/test-metadata",
-		//		solutionPath: "C:\\Sage\\test-metadata\\",
-		settingsTable: "_SETTINGS",
-		sql: {
-			driver: "sqlServer",
-			user: "X3",
-			password: "tiger",
-			database: "sagex3",
-			hostname: "localhost",
-			requestTimeout: 0,
-		},
-		sql1: {
-			driver: "sqlServer",
-			user: "X3",
-			password: "tiger",
-			database: "sagex3",
-			hostname: "WIN-VDBG4U8JAB1\\X3"
-		},
-		patch: {
-			langs: ["ENG", "FRA"],
-			version: 1,
-			product: "X3",
-			comment: "test",
-		},
-		metaSubFolder: "meta",
-		patchSubFolder: "patches",
-		trace: console.log,
-		git: {
-			//trace: console.log,
-		},
-		unitTests: {
-			refPatchFolder: "C:\\Users\\stden\\sources\\syracuse\\node_modules\\bundles\\scm-helper\\test\\server\\resources\\refPatchFiles",
-			refJsonFolder: "C:\\Users\\stden\\sources\\syracuse\\node_modules\\bundles\\scm-helper\\test\\server\\resources\\refJsonFiles",
-		}
-	},
 	etl: {
 		metaSubFolder: "test-metadata",
 		metaRootFolder : "C:/Users/stden/docker",
@@ -57,22 +18,11 @@ exports.config = {
 		// solutionPath: "C:\\test\\user1\\test-metadata\\",
 		// dataFolder: "C:/Exports/Data.sql",
 	},
-	s3: {
-		region: "eu-central-1",
-		accessKeyId: 'AKIAIIJQTF546WRH6E6Q',
-		secretAccessKey: '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',
-		proxyHost: '172.31.34.9',
-		proxyPort: 8080,
-	},
 	etna: {
 		endpointName: "etnaDocker",
 		solutionName: "SUPDVLP",
 		folderName: "SUPERV",
 		solutionPath: "C:\\test\\User1\\test-metadata\\",
-		//solutionPath: "C:\\User1\\test-metadata\\",
-		//solutionPath: "C:\\Sage\\test-metadata\\",
-		// solutionPath: "C:\\Sage\\SAGEX3V7\\APPSTDEN3",
-
 		mongo: {
 			host: "127.0.0.1",
 			port: 27017,
