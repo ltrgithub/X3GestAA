@@ -26,8 +26,11 @@ echo ""
 echo "STEP 5: running npm-shadow"
 cd $DIR/node_modules; node npm-shadow
 echo ""
-echo "STEP 6: resetting node_modules (again)"
+echo "STEP 6: rebuilding syracuse-core"
+cd $DIR/shadow-modules/node_modules/syracuse-core; node build
+echo ""
+echo "STEP 7: resetting node_modules (again)"
 cd $DIR; rm -rf node_modules; git checkout node_modules
 echo ""
-echo "STEP 7: checking out submodules (again)"
+echo "STEP 8: checking out submodules (again)"
 cd $DIR; git submodule update --init
