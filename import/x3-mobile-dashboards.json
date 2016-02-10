@@ -219,81 +219,6 @@
 	"$items": [
 		{
 			"$type": "menuItem",
-			"code": "SPRICESEAM",
-			"title": "title_ba2b8e96-323b-460c-b01c-cda50ba13271",
-			"description": "description_ba2b8e96-323b-460c-b01c-cda50ba13271",
-			"linkType": "$representation",
-			"icon": ".custom.sales-prices-search",
-			"applicationMenu": false,
-			"facet": "$create",
-			"target": "self",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "SPRICESEARCH",
-				"representation": "SPRICESEAM"
-			},
-			"module": null
-		},
-		{
-			"$type": "portlet",
-			"code": "sales-prices-search",
-			"title": "title_9d0ed06a-56ff-4091-873c-e526881fc6f8",
-			"description": "description_9d0ed06a-56ff-4091-873c-e526881fc6f8",
-			"type": "$menu",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"items": [
-				{
-					"code": "SPRICESEAM"
-				}
-			],
-			"pageItem": null
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_33da5e15-246a-423c-ad97-ff35124885d3",
-			"description": "description_33da5e15-246a-423c-ad97-ff35124885d3",
-			"dashboardName": "SALES_MYINQUIRIES",
-			"mobile": true,
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "DEFAULT",
-					"title": "title_fb9d1101-1d38-44a7-a982-c99e61444b40",
-					"description": "description_fb9d1101-1d38-44a7-a982-c99e61444b40",
-					"allApplications": false,
-					"isFactory": true,
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"allEndpoints": true,
-							"isTOC": false,
-							"portlet": {
-								"code": "sales-prices-search"
-							},
-							"endpoint": null
-						}
-					],
-					"roles": [],
-					"users": [],
-					"pageData": null
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
 			"code": "EXPENENTSM",
 			"title": "title_49528cbe-5962-40b9-8208-4358f82430e1",
 			"description": "description_49528cbe-5962-40b9-8208-4358f82430e1",
@@ -966,6 +891,81 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "SPRICESEAM",
+			"title": "title_ba2b8e96-323b-460c-b01c-cda50ba13271",
+			"description": "description_ba2b8e96-323b-460c-b01c-cda50ba13271",
+			"linkType": "$representation",
+			"icon": ".custom.sales-prices-search",
+			"applicationMenu": false,
+			"facet": "$create",
+			"target": "self",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "SPRICESEARCH",
+				"representation": "SPRICESEAM"
+			},
+			"module": null
+		},
+		{
+			"$type": "portlet",
+			"code": "sales-prices-search",
+			"title": "title_9d0ed06a-56ff-4091-873c-e526881fc6f8",
+			"description": "description_9d0ed06a-56ff-4091-873c-e526881fc6f8",
+			"type": "$menu",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"items": [
+				{
+					"code": "SPRICESEAM"
+				}
+			],
+			"pageItem": null
+		},
+		{
+			"$type": "dashboardDef",
+			"title": "title_33da5e15-246a-423c-ad97-ff35124885d3",
+			"description": "description_33da5e15-246a-423c-ad97-ff35124885d3",
+			"dashboardName": "SALES_MYINQUIRIES",
+			"mobile": true,
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_fb9d1101-1d38-44a7-a982-c99e61444b40",
+					"description": "description_fb9d1101-1d38-44a7-a982-c99e61444b40",
+					"allApplications": false,
+					"isFactory": true,
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"allEndpoints": true,
+							"isTOC": false,
+							"portlet": {
+								"code": "sales-prices-search"
+							},
+							"endpoint": null
+						}
+					],
+					"roles": [],
+					"users": [],
+					"pageData": null
+				}
+			]
+		},
+		{
+			"$type": "menuItem",
 			"code": "STKCNSSDIM",
 			"title": "title_7e8efef8-7666-461e-98d6-66dd287899af",
 			"description": "description_7e8efef8-7666-461e-98d6-66dd287899af",
@@ -1044,14 +1044,12 @@
 		"ar-ar": {},
 		"ar-lb": {},
 		"de-de": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Anzeige Preise",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
-			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Erfassung Spesen",
-			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Erfassung Spesen",
-			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Spesen, nicht freigegeben",
-			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Spesen, nicht freigegeben",
-			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Meine Spesen anzeigen",
-			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Meine Spesen anzeigen",
+			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Erfassung Ausgaben",
+			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Erfassung Ausgaben",
+			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Ausgaben, nicht freigegeben",
+			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Ausgaben, nicht freigegeben",
+			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Ausgaben anzeigen",
+			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Ausgaben anzeigen",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Preisanzeige",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Einkaufspreisanzeige",
 			"title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Kunden",
@@ -1080,18 +1078,14 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Unterzeichnet",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Meine offenen Aufträge",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Unterzeichnet",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Preisanzeige",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Anzeige Verkaufspreise",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Verfügbarer Bestand",
 			"description_d306d33d-9861-4ad0-bb2e-f0063365354b": "Mobilität - Verfügbarer Bestand",
 			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Verfügbarer Bestand",
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Verfügbarer Bestand"
 		},
 		"en-gb": {
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Sales - My inquiries",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobility - Sales inquiries",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobility - Sales inquiries",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price search",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_938090e7-f520-4630-87a3-cb66479efb23": "Expenses",
 			"description_938090e7-f520-4630-87a3-cb66479efb23": "Mobility - Expense notes",
 			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
@@ -1112,18 +1106,18 @@
 			"description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Mobility - Sales signature actions",
 			"title_72d5f477-16a0-46de-b662-af2c98e11ee5": "Sales - My actions",
 			"description_72d5f477-16a0-46de-b662-af2c98e11ee5": "Mobility - Sales signature actions",
+			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Sales - My inquiries",
+			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobility - Sales inquiries",
+			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries",
+			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobility - Sales inquiries",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price search",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Available stock",
 			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Mobility - Available stock",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Available Stock",
 			"description_d306d33d-9861-4ad0-bb2e-f0063365354b": "Mobility - Available stock"
 		},
 		"en-us": {
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Sales - My inquiries",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobility - Sales inquiries",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobility - Sales inquiries",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Price inquiry",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price inquiry",
 			"title_938090e7-f520-4630-87a3-cb66479efb23": "My Expenses",
 			"description_938090e7-f520-4630-87a3-cb66479efb23": "Mobility - Expense notes",
 			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "My expenses",
@@ -1178,6 +1172,12 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signed",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "My open orders",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signed",
+			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Sales - My inquiries",
+			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobility - Sales inquiries",
+			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Sales - My inquiries",
+			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobility - Sales inquiries",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Price inquiry",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price inquiry",
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Available stock",
 			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Mobility - Available stock",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Available Stock",
@@ -1186,12 +1186,6 @@
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Available Stock"
 		},
 		"es-es": {
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventas - Mis consultas",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultas - Movilidad",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventas - Mis consultas",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Movilidad - Consultas ventas",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas venta",
 			"title_938090e7-f520-4630-87a3-cb66479efb23": "Gastos",
 			"description_938090e7-f520-4630-87a3-cb66479efb23": "Gastos",
 			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "Mis gastos",
@@ -1246,6 +1240,12 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Firmados",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Mis pedidos abiertos",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Firmados",
+			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventas - Mis consultas",
+			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultas - Movilidad",
+			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventas - Mis consultas",
+			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Movilidad - Consultas ventas",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas venta",
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
 			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
@@ -1254,12 +1254,6 @@
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible"
 		},
 		"fr-fr": {
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventes - Mes consultations",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobilité - Consultations Ventes",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventes - Mes consultations",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobilité - Consultations Ventes",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs vente",
 			"title_938090e7-f520-4630-87a3-cb66479efb23": "Frais",
 			"description_938090e7-f520-4630-87a3-cb66479efb23": "Mobilité - Note de frais",
 			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "Mes frais",
@@ -1314,6 +1308,12 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signées",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Mes commandes ouvertes",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signées",
+			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventes - Mes consultations",
+			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Mobilité - Consultations Ventes",
+			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventes - Mes consultations",
+			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobilité - Consultations Ventes",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultation tarifs vente",
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
 			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Mobilité - Stock disponible",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
@@ -1322,12 +1322,6 @@
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible"
 		},
 		"it-it": {
-			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Vendite - Mie consultazioni",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultazioni - Mobilità",
-			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Vendite - Mie consultazioni",
-			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobilità - Consultazioni vendite",
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultazione listini",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_938090e7-f520-4630-87a3-cb66479efb23": "Spese",
 			"description_938090e7-f520-4630-87a3-cb66479efb23": "Spese",
 			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "Mie spese",
@@ -1378,6 +1372,12 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Firmati",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Miei ordini aperti",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Firmati",
+			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Vendite - Mie consultazioni",
+			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultazioni - Mobilità",
+			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Vendite - Mie consultazioni",
+			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Mobilità - Consultazioni vendite",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consultazione listini",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponibile",
 			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponibile",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponibile",
@@ -1386,18 +1386,16 @@
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponibile"
 		},
 		"pl-pl": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Zapytanie o cenę",
 			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Wprowadzenie wydatku",
 			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Wprowadzenie wydatku",
 			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Wydatki niezatwierdzone",
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Wydatki niezatwierdzone",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Zapytanie o cenę",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Zapas dostępny",
 			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Zapas dostępny",
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Zapas dostępny"
 		},
 		"pt-pt": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Registo despesas",
 			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Registo despesas",
 			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Despesas não autor.",
@@ -1432,21 +1430,55 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Assinada",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Minhas encomendas abertas",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Assinada",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponivel",
 			"description_d306d33d-9861-4ad0-bb2e-f0063365354b": "Mobilidade - Stock disponivel",
 			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponível",
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponível"
 		},
 		"ru-ru": {
+			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Расход",
+			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Расход",
+			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Расходы не одобрены",
+			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Расходы не одобрены",
+			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Показать расходы",
+			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Показать расходы",
+			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Запрос цены",
+			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Запрос цены покупки",
+			"title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Покупатели",
+			"description_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Покупатели",
+			"title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Запросы на покупку",
+			"description_76c9652a-d39a-4391-ba28-df4c9abc0714": "К подписанию",
+			"title_84ad4902-8de8-4343-8039-5b7b624a9dbb": "Заказы",
+			"description_84ad4902-8de8-4343-8039-5b7b624a9dbb": "К подписанию",
+			"title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "Открыть заказы",
+			"description_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "К подписанию",
+			"title_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Мои запросы на покупку",
+			"description_2ec1698a-ca19-44d1-9bbb-9b10dcb400f7": "Подписанные",
+			"title_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Мои заказы",
+			"description_395d5092-2e82-4eb3-8b6b-86f91ecc28f0": "Подписанные",
+			"title_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Мои открытые заказы",
+			"description_4b1ec3ff-570c-4431-8cbf-c088b97f6bcd": "Подписанные",
+			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Предложения",
+			"description_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "К подписанию",
+			"title_f2bec910-61a9-45b7-bad5-ff41e97f431e": "Заказы",
+			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "К подписанию",
+			"title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Открытые заказы",
+			"description_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "К подписанию",
+			"title_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Мои предложения",
+			"description_e4d91aa8-97c6-49d9-afbb-c060af6999d3": "Подписанные",
+			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Мои заказы",
+			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Подписанные",
+			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Мои открытые заказы",
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Подписанные",
 			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Запрос цены",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Запрос цены продаж",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Доступно",
-			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Доступно",
-			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Доступно"
+			"title_7e8efef8-7666-461e-98d6-66dd287899af": "В наличие на складе",
+			"description_7e8efef8-7666-461e-98d6-66dd287899af": "В наличие на складе"
 		},
 		"zh-cn": {
-			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "价目表查询",
-			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "销售价目表查询",
 			"title_49528cbe-5962-40b9-8208-4358f82430e1": "费用录入",
 			"description_49528cbe-5962-40b9-8208-4358f82430e1": "费用录入",
 			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "未批准的费用",
@@ -1481,6 +1513,8 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "已签名",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "我的合同",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "已签名",
+			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "价目表查询",
+			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "销售价目表查询",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "可承诺存货数量",
 			"title_7e8efef8-7666-461e-98d6-66dd287899af": "可承诺存货数量",
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "可承诺存货数量"
