@@ -481,5 +481,28 @@
       "title_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "追踪日志",
       "description_81025b5f-d6f7-4ebf-9fb3-aa9fd3979089": "追踪日志导入工具"
     }
-  }
+  },
+  "$options": {
+    "unmark": "pre_import"
+  },
+  "$scriptsBefore": [
+    {
+      "module": "syracuse-collaboration/lib/advancedScripts/pre-import-sitemap",
+      "options": {
+        "homepagesFilter": "(pageName like 'home%')",
+        "modulesFilter": "(application.description eq 'Syracuse support') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
+        "factoryOwner": "SAGE"
+      }
+    }
+  ],
+  "$scriptsAfter": [
+    {
+      "module": "syracuse-collaboration/lib/advancedScripts/post-import-sitemap",
+      "options": {
+        "homepagesFilter": "(pageName like 'home%')",
+        "modulesFilter": "(application.description eq 'Syracuse support') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
+        "factoryOwner": "SAGE"
+      }
+    }
+  ]
 }
