@@ -14289,6 +14289,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PDUE",
           "title": "title_bcab5a2d-d602-4ce4-9de2-309c90bc0197",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         },
         {
@@ -14296,6 +14298,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_MPEN",
           "title": "title_d7fa8c50-daf8-4afa-94d0-c48775ee10a7",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         }
       ]
@@ -14464,7 +14468,9 @@
       },
       "endpoint": null,
       "representationRef": null,
-      "module": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
       "categories": [],
       "parameters": []
     },
@@ -14518,7 +14524,9 @@
       },
       "endpoint": null,
       "representationRef": null,
-      "module": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
       "categories": [],
       "parameters": []
     },
@@ -14545,7 +14553,9 @@
       },
       "endpoint": null,
       "representationRef": null,
-      "module": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
       "categories": [],
       "parameters": []
     },
@@ -14572,7 +14582,9 @@
       },
       "endpoint": null,
       "representationRef": null,
-      "module": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
       "categories": [],
       "parameters": []
     },
@@ -14599,7 +14611,9 @@
       },
       "endpoint": null,
       "representationRef": null,
-      "module": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
       "categories": [],
       "parameters": []
     },
@@ -14671,6 +14685,78 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRLOATYP",
+      "title": "title_8eb37077-eb3f-4595-b163-77e6bb96db4d",
+      "description": "description_8eb37077-eb3f-4595-b163-77e6bb96db4d",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRLOATYP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_94ee2809-6ec0-41bd-acb2-3e557a272769",
+      "code": "STD_X3_HRM_FLOA",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_LSET",
+          "title": "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESHRLOATYP",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_LLOA",
+          "title": "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_LLOAP",
+          "title": "title_7c5cd296-d06d-46e2-b559-3927a12beb36",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": []
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a",
       "code": "STD_X3_HRM_PERSO",
@@ -14695,6 +14781,9 @@
         },
         {
           "code": "STD_X3_HRM_LOA"
+        },
+        {
+          "code": "STD_X3_HRM_FLOA"
         }
       ]
     },
@@ -19548,6 +19637,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PDUCS",
           "title": "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         },
         {
@@ -19555,6 +19646,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PN4DS",
           "title": "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         },
         {
@@ -19562,6 +19655,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PDNA",
           "title": "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         },
         {
@@ -19569,12 +19664,16 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PDDS",
           "title": "title_bbf1672a-5490-4111-89ab-f14663b737af",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": [
             {
               "$type": "menuSubblock",
               "$variantType": "menuBlock",
               "code": "SPE_X3_HRM_PPREV",
               "title": "title_65b643b8-8592-4b93-b3ff-e441120780c4",
+              "$factory": true,
+              "$factoryOwner": "SAGE",
               "items": []
             },
             {
@@ -19582,6 +19681,8 @@
               "$variantType": "menuBlock",
               "code": "SPE_X3_HRM_PMUT",
               "title": "title_e853ec93-b673-4d8c-86ba-6fa1b4935994",
+              "$factory": true,
+              "$factoryOwner": "SAGE",
               "items": []
             },
             {
@@ -19589,6 +19690,8 @@
               "$variantType": "menuBlock",
               "code": "SPE_X3_HRM_PHONO",
               "title": "title_be46336e-d70b-47ac-841a-1db96fe72544",
+              "$factory": true,
+              "$factoryOwner": "SAGE",
               "items": []
             },
             {
@@ -19596,12 +19699,16 @@
               "$variantType": "menuBlock",
               "code": "SPE_X3_HRM_PIDA",
               "title": "title_d5a2901c-b243-490f-9852-33dccf1342a3",
+              "$factory": true,
+              "$factoryOwner": "SAGE",
               "items": [
                 {
                   "$type": "menuSubblock",
                   "$variantType": "menuBlock",
                   "code": "SPE_X3_HRM_PIPRV",
                   "title": "title_170b76c7-d0e9-47e5-ab16-c28ff390a66f",
+                  "$factory": true,
+                  "$factoryOwner": "SAGE",
                   "items": []
                 },
                 {
@@ -19609,6 +19716,8 @@
                   "$variantType": "menuBlock",
                   "code": "SPE_X3_HRM_PIMUT",
                   "title": "title_d3918ee2-7a63-41c7-a20c-cdfdc5111fa0",
+                  "$factory": true,
+                  "$factoryOwner": "SAGE",
                   "items": []
                 }
               ]
@@ -20064,6 +20173,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PTRH",
           "title": "title_f0682f55-d2ca-4c7e-868a-2f0b06c00758",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         },
         {
@@ -20071,6 +20182,8 @@
           "$variantType": "menuBlock",
           "code": "SPE_X3_HRM_PCQH",
           "title": "title_643fbdc0-778a-4219-a3f0-df2284e00631",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
           "items": []
         }
       ]
@@ -30472,8 +30585,19 @@
       "title_85438c3a-cc35-4417-b3da-8a8fb65094bd": "Impression",
       "description_85438c3a-cc35-4417-b3da-8a8fb65094bd": "IMPBIL",
       "title_fba578c6-4e4f-4c48-b34c-2225d10719f1": "Setup",
+      "title_4eb65908-d85a-481d-9847-2a8a64d2530e": "Taux prêts standards",
+      "title_ecf8d2c7-769c-4e18-a11e-f88659392c0f": "Paramétrage prêt",
       "title_c5c8bae6-693d-41d6-a253-b5a9004f1b0e": "Employee loans",
+      "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "Prêts salariés",
+      "title_337063b5-8def-4bc9-a026-a0a640085e11": "Demande prêt",
       "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Loans process",
+      "title_d3b96156-6cda-41cd-8227-500e966127a9": "Générer versement prêt",
+      "title_94ee2809-6ec0-41bd-acb2-3e557a272769": "Gestion des prêts",
+      "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c": "Paramétrage",
+      "title_8eb37077-eb3f-4595-b163-77e6bb96db4d": "Type prêt",
+      "description_8eb37077-eb3f-4595-b163-77e6bb96db4d": "GESHRLOATYP",
+      "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9": "Paramétrage",
+      "title_7c5cd296-d06d-46e2-b559-3927a12beb36": "Processus de prêts",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestion des temps",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Paramètres",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Natures d'événements",
