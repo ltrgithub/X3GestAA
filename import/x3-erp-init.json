@@ -112,17 +112,6 @@
     },
     {
       "$type": "menuModule",
-      "code": "STD_X3_FAS_MENV",
-      "title": "title_84402364-323d-47ff-b9b2-4b316a7a60e5",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuModule",
       "code": "STD_X3_ERP_MIMP",
       "title": "title_169a5a92-c055-4737-b795-f1b42df51995",
       "application": {
@@ -169,28 +158,6 @@
       "$type": "menuModule",
       "code": "STD_X3_ERP_MPUR",
       "title": "title_8a8220ff-b0d2-47b3-8f13-09b75df452df",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuModule",
-      "code": "STD_X3_ERP_MMFG",
-      "title": "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuModule",
-      "code": "STD_X3_ERP_CPTA",
-      "title": "title_998eade3-f4b3-484d-ac19-85e2eacecf8b",
       "application": {
         "application": "x3",
         "contract": "erp"
@@ -329,6 +296,39 @@
       },
       "$factory": true,
       "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuModule",
+      "code": "STD_X3_FAS_MENV",
+      "title": "title_84402364-323d-47ff-b9b2-4b316a7a60e5",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuModule",
+      "code": "STD_X3_ERP_MMFG",
+      "title": "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuModule",
+      "code": "STD_X3_ERP_CPTA",
+      "title": "title_998eade3-f4b3-484d-ac19-85e2eacecf8b",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "$factory": true,
+      "$factoryOwner": "SAGE"
     }
   ],
   "$localization": {
@@ -341,14 +341,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "تطوير",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "تقارير",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "ميزانيات التشغيلية",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "اعداد",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "إنطباعات",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "الرقابة الإدارية",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "مبيعات",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "شراء",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "إنتاج",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "محاسبة",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "إستغلال",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "المعطيات",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -360,7 +357,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "المحاسبة الزبون/المورد",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "اعداد",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "إنتاج",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "محاسبة"
     },
     "de-de": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -371,14 +371,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Entwicklung",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Steuerliche Meldungen",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Betriebliche Budgets",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameter",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Reports",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Kalkulation",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Verkauf",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Einkauf",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Fertigung",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Buchhaltung",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Verwaltung",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Stammdaten",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 Administration",
@@ -390,7 +387,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Änderungskontrolle",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Buchhaltung Personenkonten",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Anzeigeseiten"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Anzeigeseiten",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameter",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Fertigung",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Buchhaltung"
     },
     "en-gb": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -401,14 +401,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Development",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declarations",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Operating Budgets",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameters",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Printouts",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Costing",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Sales",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Purchasing",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Manufacturing",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Financials",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Usage",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Common Data",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -420,7 +417,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "A/P-A/R Accounting",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parameters",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Manufacturing",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Financials"
     },
     "en-us": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -431,14 +431,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Development",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declarations",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Operating budgets",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Setup",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Reports",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Costing",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Sales",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Purchasing",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Manufacturing",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Financials",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Usage ",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Common Data",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -450,7 +447,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "A/P-A/R accounting",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Setup",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Manufacturing",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Financials"
     },
     "es-es": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -461,14 +461,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Desarrollo",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declaraciones",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Presupuestos operativos",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrización",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Informes",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Control de gestión",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Ventas",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Compras",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Producción",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Contabilidad",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Explotación",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Datos base",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -480,7 +477,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Contabilidad tercero",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrización",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Producción",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Contabilidad"
     },
     "fr-fr": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -491,14 +491,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Développement",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Déclarations",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Budgets opérationnels",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Paramétrage",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Impressions",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Contrôle de gestion",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Ventes",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Achats",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Production",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Comptabilité",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Exploitation",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Données de base",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "Administration X3",
@@ -510,7 +507,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Gestion des changements",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Comptabilité tiers",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Pages en lecture seule",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Paramétrage",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Production",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Comptabilité"
     },
     "it-it": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -521,14 +521,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Sviluppo",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Dichiarazione",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Budget operativi",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrizzazione",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Stampe",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Controllo di Gestione",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Vendite",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Acquisti",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Produzione",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Contabilità",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Utilizzo",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Dati di base",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -540,7 +537,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Contabilità terzi",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrizzazione",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Produzione",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Contabilità"
     },
     "pl-pl": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -551,14 +551,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Projektowanie",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Deklaracje",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Budżety operacyjne",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametry",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Raporty",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Kontroling kosztów",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Sprzedaż",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Zakupy",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Produkcja",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Księgowość",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Obsługa",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Dane podstawowe",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -570,7 +567,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Rozrachunki",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametry",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Produkcja",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Księgowość"
     },
     "pt-pt": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -581,14 +581,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Desenvolvimento",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Declarações",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Orçamentos operacionais",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrização",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Impressões",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Controlo de gestão",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Vendas",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Compras",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Produção",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Contabilidade",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Exploração",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Dados de base",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -600,7 +597,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Gestão de versões",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Contabilidade terceiros",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Paginas apenas-leitura"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Paginas apenas-leitura",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Parametrização",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Produção",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Contabilidade"
     },
     "ru-ru": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -611,14 +611,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "Разработка",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "Декларирования",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "Оперативный бюджет",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Параметры",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "Отчеты",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "Учет затрат",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "Продажи",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "Закупки",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Производство",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Финансы",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "Использование",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "Основные данные",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3 administration",
@@ -630,7 +627,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "Change Control",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "Учет по дебиторам и кредиторам",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "Read-only pages",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "Параметры",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "Производство",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "Финансы"
     },
     "zh-cn": {
       "description_9d813447-2ee8-4554-be06-202e926a9b90": "X3 ERP",
@@ -641,14 +641,11 @@
       "title_58ff633c-7fa9-442f-89ed-3ddb253a2678": "开发",
       "title_5e1786d7-b277-46c0-ae79-c80e53f44bd7": "申报",
       "title_6d454167-ddf0-4041-bdda-1aa647b9eddd": "运营预算",
-      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "参数设置",
       "title_169a5a92-c055-4737-b795-f1b42df51995": "报表打印",
       "title_16bb94e4-289b-4a95-8318-4890d83b7e6d": "成本管理控制",
       "title_1d261341-414c-415e-ba21-f1dd15ba940b": "Non-conformance",
       "title_80d64e42-adfa-470d-8247-2a90ae9721cb": "销售",
       "title_8a8220ff-b0d2-47b3-8f13-09b75df452df": "采购",
-      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "生产",
-      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "财务",
       "title_a808b505-e633-4d27-92a0-666dde360f34": "工具",
       "title_bf7a13af-7f36-4880-b8f3-fdd386b26f7c": "基础数据",
       "title_c0956863-a637-4699-8c3c-b2785df97832": "X3管理",
@@ -660,7 +657,10 @@
       "title_ea68719c-11a1-4e28-8681-a7406625ddb4": "EDI",
       "title_f4fc79d6-8ff2-421f-90b9-c077fa9a054d": "变更管理",
       "title_faa632bf-78c1-4b74-995f-c252d899e663": "应收/应付会计",
-      "title_eb838491-7417-4155-95f0-311bb6479d6e": "只读页面"
+      "title_eb838491-7417-4155-95f0-311bb6479d6e": "只读页面",
+      "title_84402364-323d-47ff-b9b2-4b316a7a60e5": "参数设置",
+      "title_8fbd624a-6981-425e-a4b8-b4a719b4e3e6": "生产",
+      "title_998eade3-f4b3-484d-ac19-85e2eacecf8b": "财务"
     }
   }
 }
