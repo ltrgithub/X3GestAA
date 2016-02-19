@@ -29684,5 +29684,28 @@
       "title_fbfcf29f-a3ad-4f07-adc2-c59d84c88d52": "文档导入",
       "description_fbfcf29f-a3ad-4f07-adc2-c59d84c88d52": "ADOCIMP"
     }
-  }
+  },
+  "$options": {
+    "unmark": "pre_import"
+  },
+  "$scriptsBefore": [
+    {
+      "module": "syracuse-collaboration/lib/advancedScripts/pre-import-sitemap",
+      "options": {
+        "homepagesFilter": "(pageName eq 'home')",
+        "modulesFilter": "(application.description eq 'HR Management') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
+        "factoryOwner": "SAGE"
+      }
+    }
+  ],
+  "$scriptsAfter": [
+    {
+      "module": "syracuse-collaboration/lib/advancedScripts/post-import-sitemap",
+      "options": {
+        "homepagesFilter": "(pageName eq 'home')",
+        "modulesFilter": "(application.description eq 'HR Management') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
+        "factoryOwner": "SAGE"
+      }
+    }
+  ]
 }
