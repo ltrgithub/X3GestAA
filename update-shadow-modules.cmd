@@ -17,6 +17,7 @@ cd %DIR%\node_modules\ez-mailer & cmd /C npm install
 cd %DIR%\node_modules\streamline-upload & cmd /C npm install
 cd %DIR%\node_modules\syracuse-phantomjs & cmd /C npm install
 cd %DIR%\node_modules\syracuse-ldap & cmd /C npm install
+cd %DIR%\node_modules\syracuse-core & cmd /C npm install
 echo 
 echo STEP 4: running npm dedup (may take a while)
 cd %DIR% & cmd /C npm dedup
