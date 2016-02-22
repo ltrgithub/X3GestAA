@@ -1,6 +1,6 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2016-02-22T13:02:05Z",
+	"generationStamp": "2016-02-22T13:02:07Z",
 	"partnerId": "",
 	"product": {
 		"code": "1",
@@ -20,19 +20,19 @@
 		"version": "10"
 	},
 	"policy": {
-		"code": "ERPX3",
+		"code": "FRPFAX3",
 		"title": {
-			"fr-FR": "Sage X3",
-			"en-US": "Sage X3",
-			"it-IT": "Sage X3",
-			"pt-PT": "Sage X3",
-			"es-ES": "Sage X3",
-			"en-GB": "Sage X3",
-			"de-DE": "Sage X3",
-			"pl-PL": "Sage X3",
-			"ZH-CN": "Sage X3",
-			"ru-RU": "Sage X3",
-			"AR-SA": "Sage X3"
+			"fr-FR": "Sage FRP Fixed Assets",
+			"en-US": "Sage FRP Fixed Assets",
+			"it-IT": "Sage FRP Fixed Assets",
+			"pt-PT": "Sage FRP Ativos",
+			"es-ES": "Sage FRP Inmovilizado",
+			"en-GB": "Sage FRP Fixed Assets",
+			"de-DE": "Sage FRP Anlagenbuchhaltung",
+			"pl-PL": "Sage FRP Fixed Assets",
+			"ZH-CN": "Sage FRP Fixed Assets",
+			"ru-RU": "Sage FRP Fixed Assets",
+			"AR-SA": "Sage FRP Fixed Assets"
 		},
 		"version": "1.0"
 	},
@@ -85,12 +85,7 @@
 				"AR-SA": "محاسبة"
 			},
 			"keyFunctions": [
-				"BUDAPP",
-				"FIYEND",
-				"GESENV",
-				"GESGAS",
-				"LETTRAGE",
-				"LETTRAUTO"
+				
 			],
 			"condition": "always"
 		}, {
@@ -109,13 +104,7 @@
 				"AR-SA": "شركاء"
 			},
 			"keyFunctions": [
-				"CPTQUIT",
-				"GESBIC",
-				"GESBIS",
-				"GESEXS",
-				"GESPAY",
-				"PAYPROPAL",
-				"RELBANK"
+				
 			],
 			"condition": "always"
 		}, {
@@ -136,7 +125,7 @@
 			"keyFunctions": [
 				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "5",
 			"title": {
@@ -153,28 +142,9 @@
 				"AR-SA": "مبيعات"
 			},
 			"keyFunctions": [
-				"FUNAUTDLV",
-				"FUNAUTINVC",
-				"FUNAUTINVD",
-				"FUNAUTINVO",
-				"FUNAUTINVS",
-				"FUNAUTINVT",
-				"FUNCFMINV",
-				"FUNSNS",
-				"FUNVENSPSI",
-				"GESSDH",
-				"GESSIH",
-				"GESSLA",
-				"GESSOH",
-				"GESSOQ",
-				"GESSOV",
-				"GESSPP",
-				"GESSQH",
-				"GESSRH",
-				"GESSRL",
-				"GESSRS"
+				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "6",
 			"title": {
@@ -191,14 +161,9 @@
 				"AR-SA": "شراء"
 			},
 			"keyFunctions": [
-				"FUNPIH",
-				"GESPIH",
-				"GESPOH",
-				"GESPSH",
-				"GESPTH",
-				"GESSCO"
+				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "7",
 			"title": {
@@ -215,14 +180,9 @@
 				"AR-SA": "مخزون"
 			},
 			"keyFunctions": [
-				"GESPRH",
-				"GESSMO",
-				"GESSMR",
-				"GESSMX",
-				"GESSNL",
-				"GESSTQ"
+				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "8",
 			"title": {
@@ -239,13 +199,9 @@
 				"AR-SA": "GPAO"
 			},
 			"keyFunctions": [
-				"FUNMAUTR",
-				"GESMFG",
-				"GESMTK",
-				"GESROU",
-				"VXAPT"
+				
 			],
-			"condition": "license"
+			"condition": "never"
 		}, {
 			"code": "9",
 			"title": {
@@ -302,7 +258,7 @@
 			"keyFunctions": [
 				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "12",
 			"title": {
@@ -319,11 +275,9 @@
 				"AR-SA": "دعمالزبون"
 			},
 			"keyFunctions": [
-				"GESCON",
-				"GESMAC",
-				"GESSRE"
+				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "13",
 			"title": {
@@ -340,11 +294,9 @@
 				"AR-SA": "نشاطتجاري"
 			},
 			"keyFunctions": [
-				"GESBAP",
-				"GESOPP",
-				"GESTSK"
+				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "14",
 			"title": {
@@ -364,7 +316,7 @@
 				"GESFAS",
 				"GESLOF"
 			],
-			"condition": "always"
+			"condition": "license"
 		}, {
 			"code": "15",
 			"title": {
@@ -383,7 +335,7 @@
 			"keyFunctions": [
 				
 			],
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "16",
 			"title": {
@@ -494,7 +446,7 @@
 				"ru-RU": "ADCs",
 				"AR-SA": "محطاتالمتنقلة"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "APL",
 			"title": {
@@ -558,7 +510,7 @@
 				"ru-RU": "SДанные",
 				"AR-SA": "SData"
 			},
-			"condition": "never"
+			"condition": "always"
 		}, {
 			"code": "AUD",
 			"title": {
@@ -830,7 +782,7 @@
 				"ru-RU": "Ограниченнаямощность",
 				"AR-SA": "قدرةمنتهية"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "CCM",
 			"title": {
@@ -878,7 +830,7 @@
 				"ru-RU": "Конфигуратор",
 				"AR-SA": "مكوِّن"
 			},
-			"condition": "license"
+			"condition": "never"
 		}, {
 			"code": "CFOM",
 			"title": {
@@ -1134,7 +1086,7 @@
 				"ru-RU": "Безбумажныйобмендокументами",
 				"AR-SA": "منغيرورق"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "EMP",
 			"title": {
@@ -1150,7 +1102,7 @@
 				"ru-RU": "Управлениеместамихранения",
 				"AR-SA": "إدارةالمواقع"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "ENERG",
 			"title": {
@@ -1246,7 +1198,7 @@
 				"ru-RU": "Управлениесрокамидействия",
 				"AR-SA": "إدارةالإنزلاق"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "FAL",
 			"title": {
@@ -1326,7 +1278,7 @@
 				"ru-RU": "Пищевыеаллергены",
 				"AR-SA": "حساسياتالتغذية"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "FTC",
 			"title": {
@@ -1374,7 +1326,7 @@
 				"ru-RU": "ГлобалCRM",
 				"AR-SA": "شاملCRM"
 			},
-			"condition": "never"
+			"condition": "always"
 		}, {
 			"code": "GDD",
 			"title": {
@@ -1390,7 +1342,7 @@
 				"ru-RU": "Оперативныйбюджет",
 				"AR-SA": "ميزانياتالتشغيلية"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "GRT",
 			"title": {
@@ -1406,7 +1358,7 @@
 				"ru-RU": "Субсидия",
 				"AR-SA": "منح"
 			},
-			"condition": "always"
+			"condition": "license"
 		}, {
 			"code": "HDK",
 			"title": {
@@ -1422,7 +1374,7 @@
 				"ru-RU": "Модульведенияклиента",
 				"AR-SA": "وحدةدعمالزبون"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "HDU",
 			"title": {
@@ -1470,7 +1422,7 @@
 				"ru-RU": "ГенераторфайловМСФО",
 				"AR-SA": "IESمحرّكالملف"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "INTCO",
 			"title": {
@@ -1550,7 +1502,7 @@
 				"ru-RU": "ЛокализацияАнголы",
 				"AR-SA": "موقعأنغولا"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KAT",
 			"title": {
@@ -1566,7 +1518,7 @@
 				"ru-RU": "Австрийскаялокализация",
 				"AR-SA": "موقعالنمساوي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KAU",
 			"title": {
@@ -1582,7 +1534,7 @@
 				"ru-RU": "Австралийскаялокализация",
 				"AR-SA": "موقعالأسترالي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KBE",
 			"title": {
@@ -1598,7 +1550,7 @@
 				"ru-RU": "Бельгийскаялокализация",
 				"AR-SA": "موقعبلجيكي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KCH",
 			"title": {
@@ -1614,7 +1566,7 @@
 				"ru-RU": "Китайскаялокализация",
 				"AR-SA": "موقعصيني"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KDE",
 			"title": {
@@ -1630,7 +1582,7 @@
 				"ru-RU": "ЛокализацияГермания",
 				"AR-SA": "موقعألماني"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KFR",
 			"title": {
@@ -1646,7 +1598,7 @@
 				"ru-RU": "ЛокализацияФранция",
 				"AR-SA": "موقعفرنسي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KIT",
 			"title": {
@@ -1662,7 +1614,7 @@
 				"ru-RU": "ЛокализацияИталия",
 				"AR-SA": "موقعإيطالي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KPL",
 			"title": {
@@ -1678,7 +1630,7 @@
 				"ru-RU": "Польскаялокализация",
 				"AR-SA": "موقعبولوني"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KPO",
 			"title": {
@@ -1694,7 +1646,7 @@
 				"ru-RU": "Portuguese localization",
 				"AR-SA": "موقعالبرتغالي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KRU",
 			"title": {
@@ -1710,7 +1662,7 @@
 				"ru-RU": "Российскаялокализация",
 				"AR-SA": "موقعروسي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KSA",
 			"title": {
@@ -1742,7 +1694,7 @@
 				"ru-RU": "ЛокализацияИспания",
 				"AR-SA": "موقعالإسبانيولي"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KSW",
 			"title": {
@@ -1758,7 +1710,7 @@
 				"ru-RU": "Швейцарскаялокализация",
 				"AR-SA": "موقعسويسري"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KUK",
 			"title": {
@@ -1774,7 +1726,7 @@
 				"ru-RU": "ЛокализацияВеликобритания",
 				"AR-SA": "توطينالمملكةالمتحدة"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KUS",
 			"title": {
@@ -1790,7 +1742,7 @@
 				"ru-RU": "ЛокализацияСША",
 				"AR-SA": "التوطينإلىاللغةالإنجليزية"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "KZA",
 			"title": {
@@ -1822,7 +1774,7 @@
 				"ru-RU": "Договорлизинга",
 				"AR-SA": "عقدالموقعالمالي"
 			},
-			"condition": "always"
+			"condition": "license"
 		}, {
 			"code": "LEG",
 			"title": {
@@ -1838,7 +1790,7 @@
 				"ru-RU": "Управлениепонесколькимзаконодательствам",
 				"AR-SA": "إدارةالتشريعاتالكختلفة"
 			},
-			"condition": "license"
+			"condition": "always"
 		}, {
 			"code": "LIA",
 			"title": {
@@ -1870,7 +1822,7 @@
 				"ru-RU": "Управлениекредитами",
 				"AR-SA": "إدارةالقروض"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "LNK",
 			"title": {
@@ -1902,7 +1854,7 @@
 				"ru-RU": "Управлениепартией",
 				"AR-SA": "إدارةبالحصص"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "LST",
 			"title": {
@@ -1918,7 +1870,7 @@
 				"ru-RU": "Субподрядныепоставки",
 				"AR-SA": "تسليماتالتعاقد"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "LTA",
 			"title": {
@@ -1934,7 +1886,7 @@
 				"ru-RU": "Местноеналогообложение",
 				"AR-SA": "ضريبةمحلية"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "MAXPD",
 			"title": {
@@ -2014,7 +1966,7 @@
 				"ru-RU": "Потолокпропорциональнойкорректировки(COGS)",
 				"AR-SA": "(السقفتعديلتناسبي(تكلفةالمبيعات"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "MTO",
 			"title": {
@@ -2078,7 +2030,7 @@
 				"ru-RU": "Весовая",
 				"AR-SA": "محطاتالوزن"
 			},
-			"condition": "license"
+			"condition": "never"
 		}, {
 			"code": "NCS",
 			"title": {
@@ -2094,7 +2046,7 @@
 				"ru-RU": "Non-conformance",
 				"AR-SA": "Non-conformance"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "ORO",
 			"title": {
@@ -2110,7 +2062,7 @@
 				"ru-RU": "APS-X3интерфейс",
 				"AR-SA": "APS-X3وجهة"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "ORP",
 			"title": {
@@ -2126,7 +2078,7 @@
 				"ru-RU": "PREACTORинтерфейс-X3",
 				"AR-SA": "PREACTOR-X3واجهة"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "PAL",
 			"title": {
@@ -2142,7 +2094,7 @@
 				"ru-RU": "Загрузка",
 				"AR-SA": "محددينالمخزون"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "PBDCL",
 			"title": {
@@ -2190,7 +2142,7 @@
 				"ru-RU": "Управлениебаллами",
 				"AR-SA": "إدارةالنقاط"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "PLM",
 			"title": {
@@ -2222,7 +2174,7 @@
 				"ru-RU": "Управлениепотенциальнымиклиентами",
 				"AR-SA": "إدارةالمحتمل"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "PRO",
 			"title": {
@@ -2318,7 +2270,7 @@
 				"ru-RU": "Routing version management",
 				"AR-SA": "Routing version management"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "S1099",
 			"title": {
@@ -2398,7 +2350,7 @@
 				"ru-RU": "APSпрогноз-интерфесX3",
 				"AR-SA": "APS-X3وجهةالتوقع"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "SCMD",
 			"title": {
@@ -2414,7 +2366,7 @@
 				"ru-RU": "N.skep-X3интерфейс",
 				"AR-SA": "n.SKEP-Xواجهة"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "SCTE",
 			"title": {
@@ -2478,7 +2430,7 @@
 				"ru-RU": "Управлениесерийныминомерами",
 				"AR-SA": "إدارةأرقامالسلسلة"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "SFD",
 			"title": {
@@ -2494,7 +2446,7 @@
 				"ru-RU": "Зоныскладапольз",
 				"AR-SA": "مواقعمستخدمينالمخزون"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "SFRPT",
 			"title": {
@@ -2542,7 +2494,7 @@
 				"ru-RU": "Управлениепочастямпартий",
 				"AR-SA": "إدارةبالحصةالفرعية"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "SMI",
 			"title": {
@@ -2558,7 +2510,7 @@
 				"ru-RU": "Интегральнаямиграция",
 				"AR-SA": "تكاملالهجرة"
 			},
-			"condition": "never"
+			"condition": "always"
 		}, {
 			"code": "SPD",
 			"title": {
@@ -2574,7 +2526,7 @@
 				"ru-RU": "Разбивкапорасходамзапасов",
 				"AR-SA": "تقسيمكلفةالمخزون"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "SVC",
 			"title": {
@@ -2670,7 +2622,7 @@
 				"ru-RU": "Управлениепотенциальнымиклиентами",
 				"AR-SA": "(إدارةالعناوين(مادة"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "TOK",
 			"title": {
@@ -2686,7 +2638,7 @@
 				"ru-RU": "Управлениемаркерами",
 				"AR-SA": "إدارةالرموز"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "TPT",
 			"title": {
@@ -2718,7 +2670,7 @@
 				"ru-RU": "Управлениеотслеживаниемзапасов",
 				"AR-SA": "إدارةتتبّعالمخزون"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "TRSNA",
 			"title": {
@@ -2766,7 +2718,7 @@
 				"ru-RU": "Единицыизмеренияколичествасвязей",
 				"AR-SA": "وحدةقياسكميةالرابط"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "VAT",
 			"title": {
@@ -2814,7 +2766,7 @@
 				"ru-RU": "Двойнаяоценка",
 				"AR-SA": "تقييممزدوج"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "WRH",
 			"title": {
@@ -2830,59 +2782,11 @@
 				"ru-RU": "Управлениескладами",
 				"AR-SA": "إدارةالمستودعات"
 			},
-			"condition": "always"
+			"condition": "never"
 		}
 	],
 	"languages": [
 		{
-			"code": "BRI",
-			"title": {
-				"fr-FR": "Anglais(Royaume Uni)",
-				"en-US": "English-British",
-				"it-IT": "Inglese(Regno Unito)",
-				"pt-PT": "Inglês",
-				"es-ES": "Inglés(Reino Unido)",
-				"en-GB": "English-British",
-				"de-DE": "Englisch(UK)",
-				"pl-PL": "angielski(Wielka Brytania)",
-				"ZH-CN": "英国英语",
-				"ru-RU": "Британскийанглийский",
-				"AR-SA": "English-British"
-			},
-			"condition": "license"
-		}, {
-			"code": "CHI",
-			"title": {
-				"fr-FR": "Chinois",
-				"en-US": "Chinese",
-				"it-IT": "Cinese",
-				"pt-PT": "Chinês",
-				"es-ES": "Chino",
-				"en-GB": "Chinese",
-				"de-DE": "Chinesisch",
-				"pl-PL": "chiński",
-				"ZH-CN": "中文",
-				"ru-RU": "Китайский",
-				"AR-SA": "Chinese"
-			},
-			"condition": "license"
-		}, {
-			"code": "ENG",
-			"title": {
-				"fr-FR": "Anglais(Etats-Unis)",
-				"en-US": "English-American",
-				"it-IT": "Inglese(Stati Uniti)",
-				"pt-PT": "Inglês(Estados Unidos)",
-				"es-ES": "Inglés(Estados Unidos)",
-				"en-GB": "English-American",
-				"de-DE": "Englisch(US)",
-				"pl-PL": "angielski(Stany Zjednoczone)",
-				"ZH-CN": "美国英语",
-				"ru-RU": "Английский(США)",
-				"AR-SA": "English-American"
-			},
-			"condition": "license"
-		}, {
 			"code": "FRA",
 			"title": {
 				"fr-FR": "Français",
@@ -2896,86 +2800,6 @@
 				"ZH-CN": "法语",
 				"ru-RU": "Французский",
 				"AR-SA": "French"
-			},
-			"condition": "license"
-		}, {
-			"code": "GER",
-			"title": {
-				"fr-FR": "Allemand",
-				"en-US": "German",
-				"it-IT": "Tedesco",
-				"pt-PT": "Alemão",
-				"es-ES": "Alemán",
-				"en-GB": "German",
-				"de-DE": "Deutsch",
-				"pl-PL": "niemiecki",
-				"ZH-CN": "德语",
-				"ru-RU": "Немецкий",
-				"AR-SA": "German"
-			},
-			"condition": "license"
-		}, {
-			"code": "ITA",
-			"title": {
-				"fr-FR": "Italien",
-				"en-US": "Italian",
-				"it-IT": "Italiano",
-				"pt-PT": "Italiano",
-				"es-ES": "Italiano",
-				"en-GB": "Italian",
-				"de-DE": "Italienisch",
-				"pl-PL": "włoski",
-				"ZH-CN": "意大利语",
-				"ru-RU": "Итальянский",
-				"AR-SA": "Italian"
-			},
-			"condition": "license"
-		}, {
-			"code": "POL",
-			"title": {
-				"fr-FR": "Polonais",
-				"en-US": "Polish",
-				"it-IT": "Polacco",
-				"pt-PT": "Polaco",
-				"es-ES": "Polaco",
-				"en-GB": "Polish",
-				"de-DE": "Polnisch",
-				"pl-PL": "polski",
-				"ZH-CN": "波兰语",
-				"ru-RU": "Польский",
-				"AR-SA": "Polish"
-			},
-			"condition": "license"
-		}, {
-			"code": "POR",
-			"title": {
-				"fr-FR": "Portugais",
-				"en-US": "Portuguese",
-				"it-IT": "Portoghese",
-				"pt-PT": "Português",
-				"es-ES": "Portugués",
-				"en-GB": "Portuguese",
-				"de-DE": "Portugiesisch",
-				"pl-PL": "portugalski",
-				"ZH-CN": "葡萄牙语",
-				"ru-RU": "Португальский",
-				"AR-SA": "Portuguese"
-			},
-			"condition": "license"
-		}, {
-			"code": "RUS",
-			"title": {
-				"fr-FR": "Russe",
-				"en-US": "Russian",
-				"it-IT": "Russo",
-				"pt-PT": "Russo",
-				"es-ES": "Ruso",
-				"en-GB": "Russian",
-				"de-DE": "Russisch",
-				"pl-PL": "rosyjski",
-				"ZH-CN": "俄语",
-				"ru-RU": "Русский",
-				"AR-SA": "Russian"
 			},
 			"condition": "license"
 		}, {
@@ -2995,19 +2819,131 @@
 			},
 			"condition": "license"
 		}, {
-			"code": "ARB",
+			"code": "POR",
 			"title": {
-				"fr-FR": "Arabe Standard",
-				"en-US": "Standard Arabic",
-				"it-IT": "Standard Arabic",
-				"pt-PT": "Standard Arabic",
-				"es-ES": "Árabe estándar",
-				"en-GB": "Standard Arabic",
-				"de-DE": "Standard-Arabisch",
-				"pl-PL": "Standard Arabic",
-				"ZH-CN": "标准阿拉伯语",
-				"ru-RU": "Standard Arabic",
-				"AR-SA": "Standard Arabic"
+				"fr-FR": "Portugais",
+				"en-US": "Portuguese",
+				"it-IT": "Portoghese",
+				"pt-PT": "Português",
+				"es-ES": "Portugués",
+				"en-GB": "Portuguese",
+				"de-DE": "Portugiesisch",
+				"pl-PL": "portugalski",
+				"ZH-CN": "葡萄牙语",
+				"ru-RU": "Португальский",
+				"AR-SA": "Portuguese"
+			},
+			"condition": "license"
+		}, {
+			"code": "ITA",
+			"title": {
+				"fr-FR": "Italien",
+				"en-US": "Italian",
+				"it-IT": "Italiano",
+				"pt-PT": "Italiano",
+				"es-ES": "Italiano",
+				"en-GB": "Italian",
+				"de-DE": "Italienisch",
+				"pl-PL": "włoski",
+				"ZH-CN": "意大利语",
+				"ru-RU": "Итальянский",
+				"AR-SA": "Italian"
+			},
+			"condition": "license"
+		}, {
+			"code": "GER",
+			"title": {
+				"fr-FR": "Allemand",
+				"en-US": "German",
+				"it-IT": "Tedesco",
+				"pt-PT": "Alemão",
+				"es-ES": "Alemán",
+				"en-GB": "German",
+				"de-DE": "Deutsch",
+				"pl-PL": "niemiecki",
+				"ZH-CN": "德语",
+				"ru-RU": "Немецкий",
+				"AR-SA": "German"
+			},
+			"condition": "license"
+		}, {
+			"code": "BRI",
+			"title": {
+				"fr-FR": "Anglais(Royaume Uni)",
+				"en-US": "English-British",
+				"it-IT": "Inglese(Regno Unito)",
+				"pt-PT": "Inglês",
+				"es-ES": "Inglés(Reino Unido)",
+				"en-GB": "English-British",
+				"de-DE": "Englisch(UK)",
+				"pl-PL": "angielski(Wielka Brytania)",
+				"ZH-CN": "英国英语",
+				"ru-RU": "Британскийанглийский",
+				"AR-SA": "English-British"
+			},
+			"condition": "license"
+		}, {
+			"code": "ENG",
+			"title": {
+				"fr-FR": "Anglais(Etats-Unis)",
+				"en-US": "English-American",
+				"it-IT": "Inglese(Stati Uniti)",
+				"pt-PT": "Inglês(Estados Unidos)",
+				"es-ES": "Inglés(Estados Unidos)",
+				"en-GB": "English-American",
+				"de-DE": "Englisch(US)",
+				"pl-PL": "angielski(Stany Zjednoczone)",
+				"ZH-CN": "美国英语",
+				"ru-RU": "Английский(США)",
+				"AR-SA": "English-American"
+			},
+			"condition": "license"
+		}, {
+			"code": "CHI",
+			"title": {
+				"fr-FR": "Chinois",
+				"en-US": "Chinese",
+				"it-IT": "Cinese",
+				"pt-PT": "Chinês",
+				"es-ES": "Chino",
+				"en-GB": "Chinese",
+				"de-DE": "Chinesisch",
+				"pl-PL": "chiński",
+				"ZH-CN": "中文",
+				"ru-RU": "Китайский",
+				"AR-SA": "Chinese"
+			},
+			"condition": "license"
+		}, {
+			"code": "RUS",
+			"title": {
+				"fr-FR": "Russe",
+				"en-US": "Russian",
+				"it-IT": "Russo",
+				"pt-PT": "Russo",
+				"es-ES": "Ruso",
+				"en-GB": "Russian",
+				"de-DE": "Russisch",
+				"pl-PL": "rosyjski",
+				"ZH-CN": "俄语",
+				"ru-RU": "Русский",
+				"AR-SA": "Russian"
+			},
+			"condition": "license"
+		}, {
+			"code": "POL",
+			"title": {
+				"fr-FR": "Polonais",
+				"en-US": "Polish",
+				"it-IT": "Polacco",
+				"pt-PT": "Polaco",
+				"es-ES": "Polaco",
+				"en-GB": "Polish",
+				"de-DE": "Polnisch",
+				"pl-PL": "polski",
+				"ZH-CN": "波兰语",
+				"ru-RU": "Польский",
+				"AR-SA": "Polish"
 			},
 			"condition": "license"
 		}
@@ -3046,22 +2982,6 @@
 			},
 			"condition": "license"
 		}, {
-			"code": "GER",
-			"title": {
-				"fr-FR": "Législation Allemande",
-				"en-US": "Germany",
-				"it-IT": "Legislazione Germania",
-				"pt-PT": "Legislação Alemã",
-				"es-ES": "Legislación Alemana",
-				"en-GB": "German legislation",
-				"de-DE": "Deutschland",
-				"pl-PL": "Legislacja niemiecka",
-				"ZH-CN": "德国准则",
-				"ru-RU": "ЗаконодательствоГермании",
-				"AR-SA": "التشريعالألماني"
-			},
-			"condition": "license"
-		}, {
 			"code": "POR",
 			"title": {
 				"fr-FR": "Législation Portugaise",
@@ -3094,6 +3014,22 @@
 			},
 			"condition": "license"
 		}, {
+			"code": "GER",
+			"title": {
+				"fr-FR": "Législation Allemande",
+				"en-US": "Germany",
+				"it-IT": "Legislazione Germania",
+				"pt-PT": "Legislação Alemã",
+				"es-ES": "Legislación Alemana",
+				"en-GB": "German legislation",
+				"de-DE": "Deutschland",
+				"pl-PL": "Legislacja niemiecka",
+				"ZH-CN": "德国准则",
+				"ru-RU": "ЗаконодательствоГермании",
+				"AR-SA": "التشريعالألماني"
+			},
+			"condition": "license"
+		}, {
 			"code": "BRI",
 			"title": {
 				"fr-FR": "Législation Britannique",
@@ -3107,6 +3043,22 @@
 				"ZH-CN": "英国准则",
 				"ru-RU": "ЗаконодательствоАнглии",
 				"AR-SA": "التشريعالبريطاني"
+			},
+			"condition": "license"
+		}, {
+			"code": "ANG",
+			"title": {
+				"fr-FR": "Législation Angolaise",
+				"en-US": "Angolan legislation",
+				"it-IT": "Legislazione Angola",
+				"pt-PT": "Legislação Angolana",
+				"es-ES": "Legislación Angoleña",
+				"en-GB": "Angolan legislation",
+				"de-DE": "Angola",
+				"pl-PL": "Legislacja Angoli",
+				"ZH-CN": "安哥拉准则",
+				"ru-RU": "ЗаконодательствоАнголы",
+				"AR-SA": "التشريعالأنغولا"
 			},
 			"condition": "license"
 		}, {
@@ -3142,38 +3094,6 @@
 			},
 			"condition": "license"
 		}, {
-			"code": "POL",
-			"title": {
-				"fr-FR": "Législation Polonaise",
-				"en-US": "Poland",
-				"it-IT": "Legislazione Polonia",
-				"pt-PT": "Legislação Polaca",
-				"es-ES": "Legislación Polaca",
-				"en-GB": "Polish legislation",
-				"de-DE": "Polen",
-				"pl-PL": "Legislacja polska",
-				"ZH-CN": "波兰准则",
-				"ru-RU": "ЗаконодательствоПольши",
-				"AR-SA": "التشريعالبولندي"
-			},
-			"condition": "license"
-		}, {
-			"code": "SWI",
-			"title": {
-				"fr-FR": "Législation Suisse",
-				"en-US": "Switzerland",
-				"it-IT": "Legislazione Svizzera",
-				"pt-PT": "Legislação Suiça",
-				"es-ES": "Legislación Suiza",
-				"en-GB": "Swiss legislation",
-				"de-DE": "Schweiz",
-				"pl-PL": "Legislacja szwajcarska",
-				"ZH-CN": "瑞士准则",
-				"ru-RU": "ЗаконодательствоШвейцарии",
-				"AR-SA": "التشريعالسويسري"
-			},
-			"condition": "license"
-		}, {
 			"code": "RUS",
 			"title": {
 				"fr-FR": "Législation Russe",
@@ -3190,6 +3110,22 @@
 			},
 			"condition": "license"
 		}, {
+			"code": "POL",
+			"title": {
+				"fr-FR": "Législation Polonaise",
+				"en-US": "Poland",
+				"it-IT": "Legislazione Polonia",
+				"pt-PT": "Legislação Polaca",
+				"es-ES": "Legislación Polaca",
+				"en-GB": "Polish legislation",
+				"de-DE": "Polen",
+				"pl-PL": "Legislacja polska",
+				"ZH-CN": "波兰准则",
+				"ru-RU": "ЗаконодательствоПольши",
+				"AR-SA": "التشريعالبولندي"
+			},
+			"condition": "license"
+		}, {
 			"code": "AUS",
 			"title": {
 				"fr-FR": "Législation Australienne",
@@ -3203,38 +3139,6 @@
 				"ZH-CN": "澳大利亚准则",
 				"ru-RU": "ЗаконодательствоАвстралиец",
 				"AR-SA": "التشريعالأسترالي"
-			},
-			"condition": "license"
-		}, {
-			"code": "ZAF",
-			"title": {
-				"fr-FR": "Législation Sud-Africaine",
-				"en-US": "South African legislation",
-				"it-IT": "Legislazione Sud-Africana",
-				"pt-PT": "Legislação Africana do Sul",
-				"es-ES": "Legislación Sudafricana",
-				"en-GB": "South African legislation",
-				"de-DE": "Südafrika",
-				"pl-PL": "Legislacja południowoafryk.",
-				"ZH-CN": "南非准则",
-				"ru-RU": "ЗаконодательствоЮжнойАфрики",
-				"AR-SA": "التشريعجنوبأفريقيا"
-			},
-			"condition": "license"
-		}, {
-			"code": "ANG",
-			"title": {
-				"fr-FR": "Législation Angolaise",
-				"en-US": "Angolan legislation",
-				"it-IT": "Legislazione Angola",
-				"pt-PT": "Legislação Angolana",
-				"es-ES": "Legislación Angoleña",
-				"en-GB": "Angolan legislation",
-				"de-DE": "Angola",
-				"pl-PL": "Legislacja Angoli",
-				"ZH-CN": "安哥拉准则",
-				"ru-RU": "ЗаконодательствоАнголы",
-				"AR-SA": "التشريعالأنغولا"
 			},
 			"condition": "license"
 		}, {
@@ -3270,41 +3174,41 @@
 			},
 			"condition": "license"
 		}, {
-			"code": "BRA",
+			"code": "SWI",
 			"title": {
-				"fr-FR": "Législation Brésilienne",
-				"en-US": "Brazilian legislation",
-				"it-IT": "Legislazione Brasiliana",
-				"pt-PT": "Legislação Brasileira",
-				"es-ES": "Legislación Brasileña",
-				"en-GB": "Brazilian legislation",
-				"de-DE": "Brasilien",
-				"pl-PL": "Legislacja Brazylia",
-				"ZH-CN": "巴西准则",
-				"ru-RU": "Законодательствобразильский",
-				"AR-SA": "التشريعالبرازيلي"
+				"fr-FR": "Législation Suisse",
+				"en-US": "Switzerland",
+				"it-IT": "Legislazione Svizzera",
+				"pt-PT": "Legislação Suiça",
+				"es-ES": "Legislación Suiza",
+				"en-GB": "Swiss legislation",
+				"de-DE": "Schweiz",
+				"pl-PL": "Legislacja szwajcarska",
+				"ZH-CN": "瑞士准则",
+				"ru-RU": "ЗаконодательствоШвейцарии",
+				"AR-SA": "التشريعالسويسري"
+			},
+			"condition": "license"
+		}, {
+			"code": "ZAF",
+			"title": {
+				"fr-FR": "Législation Sud-Africaine",
+				"en-US": "South African legislation",
+				"it-IT": "Legislazione Sud-Africana",
+				"pt-PT": "Legislação Africana do Sul",
+				"es-ES": "Legislación Sudafricana",
+				"en-GB": "South African legislation",
+				"de-DE": "Südafrika",
+				"pl-PL": "Legislacja południowoafryk.",
+				"ZH-CN": "南非准则",
+				"ru-RU": "ЗаконодательствоЮжнойАфрики",
+				"AR-SA": "التشريعجنوبأفريقيا"
 			},
 			"condition": "license"
 		}
 	],
 	"parameterKits": [
-		{
-			"code": "ERP_NAPACKAGE",
-			"title": {
-				"fr-FR": "Kit Package North America",
-				"en-US": "Kit Package North America",
-				"it-IT": "Kit Package North America",
-				"pt-PT": "kit pack America Norte",
-				"es-ES": "Kit Package Norte América",
-				"en-GB": "Kit Package North America",
-				"de-DE": "Kit-Package Nordamerika",
-				"pl-PL": "Kit Package North America",
-				"ZH-CN": "Kit Package North America",
-				"ru-RU": "Kit Package North America",
-				"AR-SA": "Kit Package North America"
-			},
-			"condition": "always"
-		}
+		
 	],
 	"sessionTypes": [
 		{
@@ -3331,42 +3235,7 @@
 	],
 	"badges": [
 		{
-			"code": "ERPCRM",
-			"title": {
-				"fr-FR": "Utilisateur Op.-CRM",
-				"en-US": "Operation User-CRM",
-				"it-IT": "Utente applicativo CRM",
-				"pt-PT": "Utilizador-CRM",
-				"es-ES": "Usuario Op.-CRM",
-				"en-GB": "Operation User-CRM",
-				"de-DE": "Benutzer CRM",
-				"pl-PL": "Uż.operacyjny-CRM",
-				"ZH-CN": "操作用户-CRM",
-				"ru-RU": "Исполнитель-CRM",
-				"AR-SA": "Operation User-CRM"
-			},
-			"functions": [
-				"FUNAUTDLV",
-				"FUNSNS",
-				"FUNVENSPSI",
-				"GESEXS",
-				"GESPAY",
-				"GESPRH",
-				"GESPSH",
-				"GESSDH",
-				"GESSIH",
-				"GESSLA",
-				"GESSNL",
-				"GESSOQ",
-				"GESSOV",
-				"GESSPP",
-				"GESSQH",
-				"GESSRH",
-				"GESSRL",
-				"GESSRS"
-			]
-		}, {
-			"code": "ERPDEV",
+			"code": "FADEV",
 			"title": {
 				"fr-FR": "Développeur",
 				"en-US": "Developer",
@@ -3377,26 +3246,12 @@
 				"de-DE": "Entwickler",
 				"pl-PL": "Deweloper",
 				"ZH-CN": "开发人员",
-				"ru-RU": "Разработчик",
+				"ru-RU": "Developer",
 				"AR-SA": "Developer"
 			},
 			"functions": [
 				"APATCH",
 				"APATCHA",
-				"BUDAPP",
-				"CPTQUIT",
-				"FIYEND",
-				"FUNAUTDLV",
-				"FUNAUTINVC",
-				"FUNAUTINVD",
-				"FUNAUTINVO",
-				"FUNAUTINVS",
-				"FUNAUTINVT",
-				"FUNCFMINV",
-				"FUNMAUTR",
-				"FUNPIH",
-				"FUNSNS",
-				"FUNVENSPSI",
 				"GESACLA",
 				"GESACTX",
 				"GESAFC",
@@ -3408,144 +3263,11 @@
 				"GESATB",
 				"GESATY",
 				"GESAWI",
-				"GESBAP",
-				"GESBIC",
-				"GESBIS",
-				"GESCON",
-				"GESENV",
-				"GESEXS",
 				"GESFAS",
-				"GESGAS",
-				"GESLOF",
-				"GESMAC",
-				"GESMFG",
-				"GESMTK",
-				"GESOPP",
-				"GESPAY",
-				"GESPIH",
-				"GESPOH",
-				"GESPRH",
-				"GESPSH",
-				"GESPTH",
-				"GESROU",
-				"GESSCO",
-				"GESSDH",
-				"GESSIH",
-				"GESSLA",
-				"GESSMO",
-				"GESSMR",
-				"GESSMX",
-				"GESSNL",
-				"GESSOH",
-				"GESSOQ",
-				"GESSOV",
-				"GESSPP",
-				"GESSQH",
-				"GESSRE",
-				"GESSRH",
-				"GESSRL",
-				"GESSRS",
-				"GESSTQ",
-				"GESTSK",
-				"LETTRAGE",
-				"LETTRAUTO",
-				"PAYPROPAL",
-				"RELBANK",
-				"VXAPT"
+				"GESLOF"
 			]
 		}, {
-			"code": "ERPDIS",
-			"title": {
-				"fr-FR": "Utilisateur Op.-Distribution",
-				"en-US": "Operation User-Distribution",
-				"it-IT": "Utente applicat.Distribution",
-				"pt-PT": "Utilizador-Distribuição",
-				"es-ES": "Usuario Op.-Distribución",
-				"en-GB": "Operation User-Distribution",
-				"de-DE": "Benutzer Distribution",
-				"pl-PL": "Uż.operacyjny-dystrybucja",
-				"ZH-CN": "操作用户-分销模块",
-				"ru-RU": "Исполнитель-дистрибуция",
-				"AR-SA": "Operation User-Distribution"
-			},
-			"functions": [
-				"FUNAUTDLV",
-				"FUNAUTINVC",
-				"FUNAUTINVD",
-				"FUNAUTINVO",
-				"FUNAUTINVS",
-				"FUNAUTINVT",
-				"FUNCFMINV",
-				"FUNPIH",
-				"FUNSNS",
-				"FUNVENSPSI",
-				"GESBAP",
-				"GESCON",
-				"GESEXS",
-				"GESMAC",
-				"GESOPP",
-				"GESPIH",
-				"GESPOH",
-				"GESPRH",
-				"GESPSH",
-				"GESPTH",
-				"GESSCO",
-				"GESSDH",
-				"GESSIH",
-				"GESSLA",
-				"GESSMO",
-				"GESSMR",
-				"GESSMX",
-				"GESSNL",
-				"GESSOH",
-				"GESSOQ",
-				"GESSOV",
-				"GESSPP",
-				"GESSQH",
-				"GESSRE",
-				"GESSRH",
-				"GESSRL",
-				"GESSRS",
-				"GESSTQ",
-				"GESTSK"
-			]
-		}, {
-			"code": "ERPFIN",
-			"title": {
-				"fr-FR": "Utilisateur Op.-Finance",
-				"en-US": "Operation User-Finance",
-				"it-IT": "Utente applicativo Finance",
-				"pt-PT": "Utilizador-Finanças",
-				"es-ES": "Usuario Op.-Finanzas",
-				"en-GB": "Operation User-Finance",
-				"de-DE": "Benutzer Finanzen",
-				"pl-PL": "Uż.operacyjny-finanse",
-				"ZH-CN": "操作用户-财务模块",
-				"ru-RU": "Исполнитель-финансы",
-				"AR-SA": "Operation User-Finance"
-			},
-			"functions": [
-				"BUDAPP",
-				"CPTQUIT",
-				"FIYEND",
-				"FUNPIH",
-				"GESBIC",
-				"GESBIS",
-				"GESENV",
-				"GESEXS",
-				"GESFAS",
-				"GESGAS",
-				"GESLOF",
-				"GESPAY",
-				"GESPIH",
-				"GESPSH",
-				"LETTRAGE",
-				"LETTRAUTO",
-				"PAYPROPAL",
-				"RELBANK"
-			]
-		}, {
-			"code": "ERPFULL",
+			"code": "FAFULL",
 			"title": {
 				"fr-FR": "Utilisateur Complet",
 				"en-US": "Full User",
@@ -3560,137 +3282,13 @@
 				"AR-SA": "Full User"
 			},
 			"functions": [
-				"BUDAPP",
-				"CPTQUIT",
-				"FIYEND",
-				"FUNAUTDLV",
-				"FUNAUTINVC",
-				"FUNAUTINVD",
-				"FUNAUTINVO",
-				"FUNAUTINVS",
-				"FUNAUTINVT",
-				"FUNCFMINV",
-				"FUNMAUTR",
-				"FUNPIH",
-				"FUNSNS",
-				"FUNVENSPSI",
-				"GESBAP",
-				"GESBIC",
-				"GESBIS",
-				"GESCON",
-				"GESENV",
-				"GESEXS",
 				"GESFAS",
-				"GESGAS",
-				"GESLOF",
-				"GESMAC",
-				"GESMFG",
-				"GESMTK",
-				"GESOPP",
-				"GESPAY",
-				"GESPIH",
-				"GESPOH",
-				"GESPRH",
-				"GESPSH",
-				"GESPTH",
-				"GESROU",
-				"GESSCO",
-				"GESSDH",
-				"GESSIH",
-				"GESSLA",
-				"GESSMO",
-				"GESSMR",
-				"GESSMX",
-				"GESSNL",
-				"GESSOH",
-				"GESSOQ",
-				"GESSOV",
-				"GESSPP",
-				"GESSQH",
-				"GESSRE",
-				"GESSRH",
-				"GESSRL",
-				"GESSRS",
-				"GESSTQ",
-				"GESTSK",
-				"LETTRAGE",
-				"LETTRAUTO",
-				"PAYPROPAL",
-				"RELBANK",
-				"VXAPT"
-			]
-		}, {
-			"code": "ERPMAN",
-			"title": {
-				"fr-FR": "Utilisateur Op.-Production",
-				"en-US": "Operation User-Manufacturing",
-				"it-IT": "Utente applicativo Produzione",
-				"pt-PT": "Utilizador-Produção",
-				"es-ES": "Usuario Op.-Producción",
-				"en-GB": "Operation User-Manufacturing",
-				"de-DE": "Benutzer Fertigung",
-				"pl-PL": "Uż.operacyjny-produkcja",
-				"ZH-CN": "操作用户-生产模块",
-				"ru-RU": "Исполнитель-производство",
-				"AR-SA": "Operation User-Manufacturing"
-			},
-			"functions": [
-				"FUNMAUTR",
-				"GESEXS",
-				"GESMFG",
-				"GESMTK",
-				"GESPOH",
-				"GESPRH",
-				"GESPSH",
-				"GESROU",
-				"GESSCO",
-				"GESSMO",
-				"GESSMR",
-				"GESSMX",
-				"GESSNL",
-				"GESSOH",
-				"GESSTQ",
-				"VXAPT"
-			]
-		}, {
-			"code": "ERPTRAN",
-			"title": {
-				"fr-FR": "Utilisateur Transactionnel",
-				"en-US": "Transactional User",
-				"it-IT": "Utente operativo",
-				"pt-PT": "Utilizador transacional",
-				"es-ES": "Usuario Transaccional",
-				"en-GB": "Transactional User",
-				"de-DE": "Benutzer Transaktionen",
-				"pl-PL": "Użytkownik okazjonalny",
-				"ZH-CN": "交易处理用户",
-				"ru-RU": "Управляющийтранзакциями",
-				"AR-SA": "Transactional User"
-			},
-			"functions": [
-				"GESEXS",
-				"GESPSH"
+				"GESLOF"
 			]
 		}
 	],
 	"parameters": [
 		{
-			"code": "ACTGANTT",
-			"title": {
-				"fr-FR": "Gantt",
-				"en-US": "Gantt",
-				"it-IT": "Gantt",
-				"pt-PT": "Gantt",
-				"es-ES": "Gantt",
-				"en-GB": "Gantt",
-				"de-DE": "Gantt",
-				"pl-PL": "Wykres Gantta",
-				"ZH-CN": "甘特图",
-				"ru-RU": "Гант",
-				"AR-SA": "Gantt"
-			},
-			"type": "boolean"
-		}, {
 			"code": "MAXFIXEDASSETS",
 			"title": {
 				"fr-FR": "Nombre d'immobilisations",
@@ -3720,22 +3318,6 @@
 				"ZH-CN": "ADCs数量",
 				"ru-RU": "Номернастольноготерминала",
 				"AR-SA": "Number of ADCs"
-			},
-			"type": "integer"
-		}, {
-			"code": "MAXWEIGHTING",
-			"title": {
-				"fr-FR": "Centrale de pesée",
-				"en-US": "Weighing station",
-				"it-IT": "Pesate",
-				"pt-PT": "Central de pesagem",
-				"es-ES": "Central de pesadas",
-				"en-GB": "Weighing stations",
-				"de-DE": "Verwaltung Waagen",
-				"pl-PL": "Stacje ważenia",
-				"ZH-CN": "称量台",
-				"ru-RU": "Станциявзвешивания",
-				"AR-SA": "Weighing station"
 			},
 			"type": "integer"
 		}, {
@@ -3804,6 +3386,6 @@
 			"type": "integer"
 		}
 	],
-	"signature": "rzpJXmVvGAGvO+F5s0zlamkZC/wjLjtXvH47Vnj/VHJ40s61e5A3cFAiIfywLJd2Lcy9rNyfFKSKPFw7ysRXDqhEogOjsJk8Ub2+gVZU6qo+EDg1/88TzXrHH7CUvtEmtYfuMh6sWAXXhHXxcqAlJef3wpuhYf7klgHeL3I00rHigkE4Hoa8K95bjr98TF3wx+xWbPt9jROXKO+eSb95AtYUTqKU9JZ9fDYgjHD2SSK132gDTqQnDJrsanCF1ULT3pnEM14RpuR/gz6vlwXQ+hX+xRsyYkiBcLkdrWrxtl+0E3YeNVZdpLVEykCALAPAjHvT5me2UCrdiCMFiRalX4M9VKLy6JfWqoDdvn34+kiH3dRqqqCsZFRqQNteaVM77lOHKa3D5H6lZyHfTyHwfhgVdTcLJF7C1hX1lnxP8tkeiYJQoWssg7uBHrukxCQhGbpN46pKTBCMYc+sCPDL8Ocg54hod0ZK5kH58ivvQhOS9wgabG+yvKsUlrI6kq5a6PeHotwHzAdAQhNvQVEerESN8HP9Qu5pFEEeiQCUeGsN5Jp6gqYsCsU2wEQgP9C+ViCkvvlg8iGfcHzF1ESayWj3kCwscR9vc9UtaznXOqlFJGfxVLodnjKTZnQtsQaS3pt+V4x5AcUVo5b2rVs0BQsoC7KnEhsKIseDFnqR4/o=",
+	"signature": "nTtQdqUi7GiHH+F7q1epDVfwztc1mfzqsh+OV9gNrRqRDaXXK3nX6cJjQGIVy3wihzHMJZzZe6gmMzURzm6ldlJjwOOrsozkveCTT2VdscTu6tj4IPJtoq2X4ogvHPam0b2MzpbhAK1CZH5zgWXifDNJMXdwXZB12jXieHTRLLatozlW02P8cba4PMf6k9do6N23hE6oYiVgsas2bWzzPzXunCw3fz/01fkOTYQuDHe/tD8DQPKl2OJONFK29ohGc4fxRxRERcNMGY5Jls+l+3b0yyNVz0H46x0d4mCrlMZiMD7R65Ltk54CVxIjm18jyc2P+ftDqbkqSbGHig6b7u4uN35INk6jUaXfdXOsUyP/F+59UR510NEEcaxB2puVo950oIWPeV0KLV/wKSHaWbltFDjpbb/z7fjj1zvcFN9ZKjpD2GlIzuhjL7tVnzLPhdhEETabrZR41zIMjXha9ZVdNpdL+HwsJA51NVuAD9Byo9l9EP7KSaNLzMA7y+91aL1rw2ySYufU0rV2WGE4ife3Jcjz5zPYxPqu74+LY9a725YRYHNNIrpGmH3C9g4rXDUQSyKfyCwBYBRT15jc4+pzu+c9moj1LbJsbWyY68aF0YqfHPSbOay582s5X23qoVmWCIZky9GuGGIGzbbbuWj5upIBTwZTasrUDIdR/tY=",
 	"signatureText": "SAGE SAS"
 }
