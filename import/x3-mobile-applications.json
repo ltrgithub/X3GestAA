@@ -82,6 +82,28 @@
   "$items": [
     {
       "$type": "mobileGadget",
+      "code": "SPE_YORDER1",
+      "title": "title_4c659906-82f6-4523-b0a8-a265af3609c8",
+      "description": "description_4c659906-82f6-4523-b0a8-a265af3609c8",
+      "gadgetType": "$representation",
+      "icon": "",
+      "entity": "YORDER",
+      "representation": "YORDERM1",
+      "action": "$query",
+      "requestLevel": "99",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "representationRef": {
+        "representation": "YORDERM1",
+        "entity": "YORDER"
+      },
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "mobileGadget",
       "code": "STD_X3_ERP_CRM075",
       "title": "title_f727ff54-2c87-42a8-aa94-c166a200cf44",
       "description": "description_f727ff54-2c87-42a8-aa94-c166a200cf44",
@@ -1919,6 +1941,26 @@
     },
     {
       "$type": "mobileDashboard",
+      "dashboardName": "SPE_YORDER1",
+      "title": "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8",
+      "description": "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8",
+      "vignettes": [
+        {
+          "displayStyle": "$link",
+          "persistentId": "58bd3a75-7028-4a32-bd94-0c638c9c4655",
+          "gadget": "SPE_YORDER1"
+        },
+        {
+          "displayStyle": "$full",
+          "persistentId": "3a6e1c43-5899-48ca-9176-a6ba7332ec20",
+          "gadget": "YSTATYOH"
+        }
+      ],
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "mobileDashboard",
       "dashboardName": "STD_X3_ERP_CUSTOMER_DETAILS_DASHBOARD",
       "title": "title_576ba35b-b1eb-4151-b658-d235bd0047fc",
       "description": "description_576ba35b-b1eb-4151-b658-d235bd0047fc",
@@ -2339,7 +2381,7 @@
       "description": "description_c4739576-14b7-4315-8616-eda787c30126",
       "vignettes": [
         {
-          "displayStyle": "$fullOnBigDeviceOnly",
+          "displayStyle": "$full",
           "persistentId": "dac34338-a874-4c1d-8f2f-4f946f9b73fd",
           "gadget": "SPE_YORDER"
         }
@@ -2349,11 +2391,22 @@
     },
     {
       "$type": "mobileApplication",
+      "title": "title_80ee3f2e-c922-4be3-bb65-26e975e322ff",
+      "description": "description_80ee3f2e-c922-4be3-bb65-26e975e322ff",
+      "applicationName": "SPE_YORDER1",
+      "iconName": "",
+      "versionNumber": "25",
+      "homeDashboard": "SPE_YORDER1",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "mobileApplication",
       "title": "title_2bfe7319-ec88-4d33-8327-567f3ffd5695",
       "description": "description_2bfe7319-ec88-4d33-8327-567f3ffd5695",
       "applicationName": "STD_X3_ERP_CRM",
       "iconName": "s-m-sales-custom-relation",
-      "versionNumber": "621",
+      "versionNumber": "640",
       "homeDashboard": "STD_X3_ERP_CRM",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2364,7 +2417,7 @@
       "description": "description_4628af72-535a-4511-b3bf-8ce44d2a6da1",
       "applicationName": "STD_X3_ERP_SALES_DOCUMENTS",
       "iconName": "s-m-sales-documents",
-      "versionNumber": "616",
+      "versionNumber": "635",
       "homeDashboard": "STD_X3_ERP_SALES_DOCUMENTS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2375,7 +2428,7 @@
       "description": "description_12528087-a635-49f5-80ba-9672cb8afecf",
       "applicationName": "STD_X3_ERP_MYCUSTOMERS",
       "iconName": "s-m-sales-customers",
-      "versionNumber": "621",
+      "versionNumber": "640",
       "homeDashboard": "STD_X3_ERP_MYCUSTOMERS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2386,7 +2439,7 @@
       "description": "description_24451198-1710-498e-a9ad-502da47ae912",
       "applicationName": "STD_X3_ERP_CUSTOMERS_DASHBOARD",
       "iconName": "s-m-sales-custom-dashboard",
-      "versionNumber": "643",
+      "versionNumber": "662",
       "homeDashboard": "STD_X3_ERP_CUSTOMERS_DASHBOARD",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2397,7 +2450,7 @@
       "description": "description_14ad258f-bd8a-432c-b921-c23486dc17ce",
       "applicationName": "STD_X3_ERP_EXPENSES",
       "iconName": "s-m-expenses",
-      "versionNumber": "616",
+      "versionNumber": "635",
       "homeDashboard": "STD_X3_ERP_EXPENSES_DASHBOARD",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2408,7 +2461,7 @@
       "description": "description_c8f25ab9-2699-47d7-ba32-62a12903f37e",
       "applicationName": "STD_X3_ERP_INQUIRIES",
       "iconName": "s-m-inquiries-search",
-      "versionNumber": "625",
+      "versionNumber": "644",
       "homeDashboard": "STD_X3_ERP_INQUIRIES",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2419,7 +2472,7 @@
       "description": "description_6ffdec47-456c-4ded-a9ba-38b19bfa0dc0",
       "applicationName": "STD_X3_ERP_MY_STAT",
       "iconName": "s-m-inquiries-stats",
-      "versionNumber": "632",
+      "versionNumber": "651",
       "homeDashboard": "STD_X3_ERP_MY_STAT",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2430,7 +2483,7 @@
       "description": "description_916a5a91-8f37-437a-9425-bd5596d75196",
       "applicationName": "STD_X3_ERP_PRODUCT_TO_PUSH",
       "iconName": "s-m-sales-inquiries",
-      "versionNumber": "615",
+      "versionNumber": "634",
       "homeDashboard": "STD_X3_ERP_PRODUCT_TO_PUSH",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2441,7 +2494,7 @@
       "description": "description_45ebd755-8864-4812-9d58-be5f7f242d6a",
       "applicationName": "STD_X3_ERP_PURCHASE_MYACTIONS",
       "iconName": "s-m-purchase-actions",
-      "versionNumber": "619",
+      "versionNumber": "638",
       "homeDashboard": "STD_X3_ERP_PURCHASE_MYACTIONS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2452,7 +2505,7 @@
       "description": "description_238a47ca-801b-4e83-9135-9340c670ca50",
       "applicationName": "STD_X3_ERP_SALES_MYACTIONS",
       "iconName": "s-m-sales-actions",
-      "versionNumber": "622",
+      "versionNumber": "641",
       "homeDashboard": "STD_X3_ERP_SALES_MYACTIONS",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2463,7 +2516,7 @@
       "description": "description_b24c9dad-7976-4c1b-b672-9651618ae322",
       "applicationName": "SPE_YORDER",
       "iconName": "",
-      "versionNumber": "116",
+      "versionNumber": "160",
       "homeDashboard": "SPE_YORDER",
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -2471,6 +2524,8 @@
   ],
   "$localization": {
     "ar-sa": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -2725,6 +2780,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Customer relation Dashboard",
@@ -2755,6 +2812,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -2779,6 +2838,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "de-de": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -3033,6 +3094,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -3063,6 +3126,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "Meine Aufträge",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Individuelle Auftragserfassung",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3087,6 +3152,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Auftragserfassung (Beispiel)"
     },
     "en-gb": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -3341,6 +3408,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -3371,6 +3440,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3395,6 +3466,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "en-us": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -3649,6 +3722,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Customer relation Dashboard",
@@ -3677,8 +3752,10 @@
       "description_591d22b1-3ce5-40f2-b546-85ec3717bf07": "Sales - My actions",
       "title_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expense notes dashboard",
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expense notes dashboard",
-      "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
-      "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
+      "title_c4739576-14b7-4315-8616-eda787c30126": "Simple order entry",
+      "description_c4739576-14b7-4315-8616-eda787c30126": "Simple specific order entry",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation Dashboard",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -3699,10 +3776,12 @@
       "description_45ebd755-8864-4812-9d58-be5f7f242d6a": "Purchase - My actions",
       "title_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
       "description_238a47ca-801b-4e83-9135-9340c670ca50": "Sales - My actions",
-      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Order entry sample",
-      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Order entry sample"
+      "title_b24c9dad-7976-4c1b-b672-9651618ae322": "Simple order entry",
+      "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Simple order entry"
     },
     "es-es": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -3957,6 +4036,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -3987,6 +4068,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "Pedidos específicos",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Pedidos específicos",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -4011,6 +4094,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Pedidos específicos"
     },
     "fr-fr": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Classement annuel RDV / client",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Classement annuel RDV / client",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -4265,6 +4350,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Tableau de bord Relation client",
@@ -4295,6 +4382,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "Mon tableau de bord Note de frais",
       "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Tableau de bord Relation client",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Tableau de bord Relation client",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "Mes documents Vente",
@@ -4319,6 +4408,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Saisie commande (exemple)"
     },
     "it-it": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -4573,6 +4664,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -4603,6 +4696,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -4627,6 +4722,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "pl-pl": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -4881,6 +4978,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -4911,6 +5010,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "SPE_YORDER",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Specific order entry",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -4935,6 +5036,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Specific order entry"
     },
     "pt-pt": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -5189,6 +5292,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Gestão especifica despesas",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Gestão especifica despesas",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -5219,6 +5324,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "Encomendas especifico",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Encomendas especifico",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -5243,6 +5350,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Registo especifico encomenda"
     },
     "ru-ru": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -5497,6 +5606,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -5527,6 +5638,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "Новый заказ",
       "description_c4739576-14b7-4315-8616-eda787c30126": "Настройки нового заказа",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
@@ -5551,6 +5664,8 @@
       "description_b24c9dad-7976-4c1b-b672-9651618ae322": "Новый заказ (пример)"
     },
     "zh-cn": {
+      "title_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
+      "description_4c659906-82f6-4523-b0a8-a265af3609c8": "Advanced sales order",
       "title_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "description_f727ff54-2c87-42a8-aa94-c166a200cf44": "Annual ranking of customers appointments",
       "title_bf20ea62-d719-4c4c-857c-4db2bd4995a0": "forcedExecution",
@@ -5805,6 +5920,8 @@
       "title_a065f025-68b7-4752-b6cc-e58b727d249f": "forcedExecution",
       "title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
       "description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": "Specific order management",
+      "title_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
+      "description_2660ffdf-a2b3-455f-a56f-abe8e0f6e0f8": "Advanced order entry",
       "title_576ba35b-b1eb-4151-b658-d235bd0047fc": "S_CUSTOMER_DETAILS_DASHBOARD",
       "description_576ba35b-b1eb-4151-b658-d235bd0047fc": "Customer details",
       "title_eff53e48-482d-4c1a-8df5-8f261d83c978": "Relation client",
@@ -5835,6 +5952,8 @@
       "description_840d3c1c-5552-4eb0-ba9a-f9c7178b24ee": "My expenses",
       "title_c4739576-14b7-4315-8616-eda787c30126": "订单录入",
       "description_c4739576-14b7-4315-8616-eda787c30126": "订单录入",
+      "title_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
+      "description_80ee3f2e-c922-4be3-bb65-26e975e322ff": "Advanced order entry",
       "title_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "description_2bfe7319-ec88-4d33-8327-567f3ffd5695": "Customer relation",
       "title_4628af72-535a-4511-b3bf-8ce44d2a6da1": "My Sales documents",
