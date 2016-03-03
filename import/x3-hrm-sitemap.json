@@ -14687,78 +14687,6 @@
       ]
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESHRLOATYP",
-      "title": "title_8eb37077-eb3f-4595-b163-77e6bb96db4d",
-      "description": "description_8eb37077-eb3f-4595-b163-77e6bb96db4d",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESHRLOATYP",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_PERSO"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_94ee2809-6ec0-41bd-acb2-3e557a272769",
-      "code": "STD_X3_HRM_FLOA",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": [
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_LSET",
-          "title": "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "STD_X3_HRM_GESHRLOATYP",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_LLOA",
-          "title": "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": []
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_LLOAP",
-          "title": "title_7c5cd296-d06d-46e2-b559-3927a12beb36",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": []
-        }
-      ]
-    },
-    {
       "$type": "menuModule",
       "title": "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a",
       "code": "STD_X3_HRM_PERSO",
@@ -14783,9 +14711,6 @@
         },
         {
           "code": "STD_X3_HRM_LOA"
-        },
-        {
-          "code": "STD_X3_HRM_FLOA"
         }
       ]
     },
@@ -26844,8 +26769,6 @@
       "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "GESHRLLA",
       "title_337063b5-8def-4bc9-a026-a0a640085e11": "طلب القرض",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "إنشاء أقساط القرض",
-      "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c": "اعداد",
-      "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9": "اعداد",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "إدارة الوقت",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "تعريف المعاملات",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "طبيعة الفعاليات",
@@ -28135,10 +28058,6 @@
       "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Loans process",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "Generate loan installment",
       "description_d3b96156-6cda-41cd-8227-500e966127a9": "Generate loan installment",
-      "title_94ee2809-6ec0-41bd-acb2-3e557a272769": "Loans management",
-      "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c": "Setup",
-      "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9": "Setup",
-      "title_7c5cd296-d06d-46e2-b559-3927a12beb36": "Loans process",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Time management",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parameter definition",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Nature of events",
@@ -29369,8 +29288,6 @@
       "title_337063b5-8def-4bc9-a026-a0a640085e11": "GESHRLAR",
       "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Gestión prestamos",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "GESHRLGPP",
-      "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c": "Parametrización",
-      "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9": "Parametrización",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestión de tiempos",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parámetros",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Naturalezas de los eventos",
@@ -30624,21 +30541,16 @@
       "description_e316b060-1d0b-48a4-9c11-cb8f5b826974": "SAIBIL",
       "title_85438c3a-cc35-4417-b3da-8a8fb65094bd": "Impression",
       "description_85438c3a-cc35-4417-b3da-8a8fb65094bd": "IMPBIL",
-      "title_fba578c6-4e4f-4c48-b34c-2225d10719f1": "Setup",
+      "title_bf2baa0e-27fe-45f7-9192-ba969e1a6658": "Gestion des prêts",
+      "title_fba578c6-4e4f-4c48-b34c-2225d10719f1": "Paramétrage",
       "title_4eb65908-d85a-481d-9847-2a8a64d2530e": "Taux prêts standards",
       "title_6429119c-e83e-4799-b1fb-6bfefe8b7fda": "Type prêt",
       "title_ecf8d2c7-769c-4e18-a11e-f88659392c0f": "Paramétrage prêt",
-      "title_c5c8bae6-693d-41d6-a253-b5a9004f1b0e": "Employee loans",
+      "title_c5c8bae6-693d-41d6-a253-b5a9004f1b0e": "Prêts salariés",
       "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "Prêts salariés",
       "title_337063b5-8def-4bc9-a026-a0a640085e11": "Demande prêt",
-      "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Loans process",
+      "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Gestion des prêts",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "Générer versement prêt",
-      "title_94ee2809-6ec0-41bd-acb2-3e557a272769": "Gestion des prêts",
-      "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c": "Paramétrage",
-      "title_8eb37077-eb3f-4595-b163-77e6bb96db4d": "Type prêt",
-      "description_8eb37077-eb3f-4595-b163-77e6bb96db4d": "GESHRLOATYP",
-      "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9": "Paramétrage",
-      "title_7c5cd296-d06d-46e2-b559-3927a12beb36": "Processus de prêts",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestion des temps",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Paramètres",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Natures d'événements",
@@ -32214,8 +32126,6 @@
       "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Gestão empréstimo",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "Gerar prestações de empréstimo",
       "description_d3b96156-6cda-41cd-8227-500e966127a9": "Geração empréstimo",
-      "title_b8ddf4f6-7052-4770-a294-ae28abfe7b3c": "Parâmetrização",
-      "title_55d7478d-94ba-4ef4-a21e-1cc84add4eb9": "Parâmetrização",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestão de tempos",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parâmetros",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Natur. de eventos",
