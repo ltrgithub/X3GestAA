@@ -27,6 +27,15 @@
 			"$localized": [
 				"description"
 			]
+		},
+		"cssFile": {
+			"$key": "path"
+		},
+		"theme": {
+			"$key": "code",
+			"cssFiles": {
+				"$key": "path"
+			}
 		}
 	},
 	"$items": [
@@ -126,6 +135,16 @@
 			"description": "description_342af009-3a6e-419f-b609-1f48715f602b",
 			"numberDecimalSeparator": ".",
 			"numberGroupSeparator": " "
+		},
+		{
+			"$type": "theme",
+			"code": "contrast",
+			"description": "contrast",
+			"cssFiles": [
+				{
+					"path": "contrast"
+				}
+			]
 		}
 	],
 	"$localization": {
