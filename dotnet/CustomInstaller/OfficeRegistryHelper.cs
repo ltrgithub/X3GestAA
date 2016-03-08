@@ -40,6 +40,24 @@ namespace RegistryHelper
             return !String.IsNullOrEmpty(val);
         }
 
+        public static Boolean isOffice2016Installed()
+        {
+            StringBuilder keyName = new StringBuilder(_localMachineRoot);
+            keyName.Append(@"\");
+            keyName.Append(@"Software\Microsoft\Office\16.0\Excel\InstallRoot");
+
+            /*
+             * The registry structure is different for Office 2016, so we'll 
+             * just check for the presence of the the Excel Path string.
+             */
+            String valueName = "Path";
+            String val = (String)Registry.GetValue(keyName.ToString(), valueName, String.Empty);
+
+            RegistryHelper.Program._log("LastProduct " + val);
+
+            return !String.IsNullOrEmpty(val);
+        }
+
         public static void copyAddinsRegistry()
         {
             RegistryHelper.Program._log("copyAddinsRegistry");
