@@ -12,7 +12,6 @@ exports.config = {
 	// This option allow to partners to set a factory ID on security
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
-	adminUserRestrict: true,
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
@@ -52,24 +51,26 @@ exports.config = {
 
 	collaboration: {
 		driver: "mongodb",
-		dataset: "syracuse",
 		hostname: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
 		port: 27017,
 		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
 		//certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
-        	cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
+        cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
 	},
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
         options: {
             db: {
                 w: 1,
-                //readPreference:"nearest"
+
             },
             server: {
             },
             replSet: {
+  
+                rs_name: "mongodevRepl"
             },
+
             mongos: {
             }
         }
@@ -189,12 +190,12 @@ exports.config = {
 			scope: 'vstf4mpl();',
 			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
 			baseUrl: 'https://na-signon.sso.staging.services.sage.com/SSO',
-			redirectUrl: 'http://localhost:8124/auth/oauth2/sageid/sageIdRedirect',
+			redirectUrl: 'https://QA-SageIDNotifications-329038975.us-east-1.elb.amazonaws.com/auth/oauth2/sageid/sageIdRedirect',
 			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
 			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
 			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
 			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
-		}
+		}	
 	},
 	mongoNotify: {
 		host: '10.198.254.30',
@@ -203,6 +204,7 @@ exports.config = {
 	},
 	aws: {
 	 	"region": "us-east-1",
+
 	},
     	unit_test: {
         	// unit tests related options
@@ -212,14 +214,14 @@ exports.config = {
 	health:{
 		parallel: 4,
 		delay: 300,
-		logUrl: "https://api.dev-sageerpx3online.com/healthLogs/production",
-		siteUrl: "https://api.dev-sageerpx3online.com/sdata/sky/automation/production",
+		logUrl: "https://TEST-Web-API-2-1116820282.us-east-1.elb.amazonaws.com/healthLogs/production",
+		siteUrl: "https://TEST-Web-API-2-1116820282.us-east-1.elb.amazonaws.com/sdata/sky/automation/production",
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
     },
     symphony: {
-        webApiUrl: "https://api.dev-sageerpx3online.com",
+        webApiUrl: "https://qaapi.dev-sageerpx3online.com",
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
-        farmElbUrl: "https://test.symphony.na.cloud.dev-sageerpx3online.com",
-    },
+        farmElbUrl: "https://qa.symphony.na.cloud.dev-sageerpx3online.com",
+	},
 };
