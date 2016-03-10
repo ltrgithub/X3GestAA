@@ -346,6 +346,7 @@
 		<row><td>AdxOLNetv2s0_2010.dll3</td><td>{894C8FCF-1F73-4866-81B0-83AE2F8C585D}</td><td>INSTALLDIR</td><td>2</td><td/><td>adxolnetv2s0_2010.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>AdxOLNetv2s0_2013.dll1</td><td>{197684E6-B0E2-4CAC-987B-699958DCD3E9}</td><td>AppDataFolder</td><td>2</td><td/><td>adxolnetv2s0_2013.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>AdxOLNetv2s0_2013.dll3</td><td>{9EF831FC-66C6-4501-9D60-0598C746209F}</td><td>INSTALLDIR</td><td>2</td><td/><td>adxolnetv2s0_2013.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>AdxOLNetv2s0_2016.dll</td><td>{E5990870-F744-4AD7-B24C-9EAB576DD4DC}</td><td>INSTALLDIR</td><td>2</td><td/><td>adxolnetv2s0_2016.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IKVM.GNU.Classpath.dll</td><td>{8C79E8C7-166D-45E4-9D24-D5A2A6B78230}</td><td>AppDataFolder</td><td>2</td><td/><td>ikvm.gnu.classpath.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IKVM.GNU.Classpath.dll3</td><td>{F156BEC4-1D87-40B0-A67B-AFFA09F6AA99}</td><td>INSTALLDIR</td><td>2</td><td/><td>ikvm.gnu.classpath.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IKVM.Runtime.dll</td><td>{6521A5FC-BE4E-4F67-A840-5A9650375286}</td><td>AppDataFolder</td><td>2</td><td/><td>ikvm.runtime.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1884,6 +1885,7 @@
 		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2010.dll3</td></row>
 		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2013.dll1</td></row>
 		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2013.dll3</td></row>
+		<row><td>AlwaysInstall</td><td>AdxOLNetv2s0_2016.dll</td></row>
 		<row><td>AlwaysInstall</td><td>IKVM.GNU.Classpath.dll</td></row>
 		<row><td>AlwaysInstall</td><td>IKVM.GNU.Classpath.dll3</td></row>
 		<row><td>AlwaysInstall</td><td>IKVM.Runtime.dll</td></row>
@@ -1921,6 +1923,7 @@
 		<row><td>adxolnetv2s0_2010.dll3</td><td>AdxOLNetv2s0_2010.dll3</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2010.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2010.dll</td><td>1</td><td/></row>
 		<row><td>adxolnetv2s0_2013.dll1</td><td>AdxOLNetv2s0_2013.dll1</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2013.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2013.dll</td><td>1</td><td/></row>
 		<row><td>adxolnetv2s0_2013.dll3</td><td>AdxOLNetv2s0_2013.dll3</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2013.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2013.dll</td><td>1</td><td/></row>
+		<row><td>adxolnetv2s0_2016.dll</td><td>AdxOLNetv2s0_2016.dll</td><td>ADXOLN~1.DLL|AdxOLNetv2s0-2016.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\AdxOLNetv2s0-2016.dll</td><td>1</td><td/></row>
 		<row><td>ikvm.gnu.classpath.dll</td><td>IKVM.GNU.Classpath.dll</td><td>IKVMGN~1.DLL|IKVM.GNU.Classpath.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\IKVM.GNU.Classpath.dll</td><td>1</td><td/></row>
 		<row><td>ikvm.gnu.classpath.dll3</td><td>IKVM.GNU.Classpath.dll3</td><td>IKVMGN~1.DLL|IKVM.GNU.Classpath.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\IKVM.GNU.Classpath.dll</td><td>1</td><td/></row>
 		<row><td>ikvm.runtime.dll</td><td>IKVM.Runtime.dll</td><td>IKVMRU~1.DLL|IKVM.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\external\Release\IKVM.Runtime.dll</td><td>1</td><td/></row>
@@ -2089,6 +2092,7 @@
 		<row><td>AdxOLNetv2s0_2010.dll3</td><td/><td/><td>_F7D1F0B1_E3D4_47FE_ACA5_811BC7602C6E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>AdxOLNetv2s0_2013.dll1</td><td/><td/><td>_9314D4FA_F1C4_409E_AF96_8CB4867B6E01_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>AdxOLNetv2s0_2013.dll3</td><td/><td/><td>_551D6272_58AC_4552_A8BA_4974A5245059_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>AdxOLNetv2s0_2016.dll</td><td/><td/><td>_AB74B08A_98F8_45B9_8A08_1CA668FA45B0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IKVM.GNU.Classpath.dll</td><td/><td/><td>_1E78F386_9F31_42A9_94DA_B435F03269AD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IKVM.GNU.Classpath.dll3</td><td/><td/><td>_CD2754BD_ED84_4C49_BB12_20911E7C7043_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IKVM.Runtime.dll</td><td/><td/><td>_9C3A2905_2E4F_4C44_8F3C_6FECD5129115_FILTER</td><td/><td/><td/><td/></row>
@@ -2718,7 +2722,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1520684202</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1101277037</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
@@ -3818,8 +3822,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>1520684202</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1520684202</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>1101277037</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1101277037</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Install Outlook Add-in for Sage ERP X3</td><td>0</td><td/><td>-1918730032</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1918762772</td></row>
 	</table>
@@ -4063,7 +4067,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{BDC2B88A-1A39-43EA-BEFC-77DA00DB4AA9}</td></row>
 		<row><td>ISUSSignature</td><td>{271B00A1-217E-4824-84A0-FDCA38A23AC8}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewSetupTypes,viewSetupDesign,viewRealSetupDesign,viewUpdateService,viewUpgradePaths,viewShortcuts,viewRegistry,viewIniFiles,viewTextFiles,viewXMLConfig,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewAppFiles,viewFeatureFiles,viewObjects,viewCustomActions,viewISToday</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewSetupTypes,viewSetupDesign,viewRealSetupDesign,viewUpdateService,viewUpgradePaths,viewShortcuts,viewRegistry,viewIniFiles,viewTextFiles,viewXMLConfig,viewFileExtensions,viewEnvironmentVariables,viewVRoots,viewAppFiles,viewFeatureFiles,viewObjects,viewCustomActions,viewISToday,viewAppV</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4412,6 +4416,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>InstallChoice</td><td>AR</td><td/></row>
 		<row><td>LAUNCHPROGRAM</td><td>1</td><td/></row>
 		<row><td>LAUNCHREADME</td><td>1</td><td/></row>
+		<row><td>MSIFASTINSTALL</td><td>1</td><td/></row>
 		<row><td>Manufacturer</td><td>##COMPANY_NAME##</td><td/></row>
 		<row><td>PIDKEY</td><td/><td/></row>
 		<row><td>PIDTemplate</td><td>12345&lt;###-%%%%%%%&gt;@@@@@</td><td/></row>
@@ -4438,9 +4443,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{A90EA953-7E77-47FE-83C8-D6D5765A0CC1}</td><td/></row>
+		<row><td>ProductCode</td><td>{E2CC1484-A879-4690-99B3-76D4CDC322CC}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Outlook AddIn</td><td/></row>
-		<row><td>ProductVersion</td><td>1.09.0001</td><td/></row>
+		<row><td>ProductVersion</td><td>1.09.0002</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4452,7 +4457,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td/></row>
@@ -4732,6 +4737,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.00.0000</td><td>1.00.0000</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP1</td><td>1.00.0000</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0001</td><td>1.08.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP2</td><td>1.08.0001</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0002</td><td>1.08.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>1.08.0002</td></row>
+		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.09.0001</td><td>1.09.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP4</td><td>1.09.0001</td></row>
 	</table>
 
 	<table name="Verb">
