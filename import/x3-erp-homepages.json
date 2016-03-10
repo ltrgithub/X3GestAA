@@ -3559,6 +3559,221 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_ERP_RSTO010",
+      "title": "title_dc3b2367-2072-4054-8abe-4314beb81bff",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "STO010",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MSTO"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_32d5ee60-1057-428b-8f83-5a1d3cf57385",
+          "prompt": false,
+          "value": "RSTO010"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_cf0ddfc2-3e32-463c-a3cd-f4b6d9e3d68b",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_RESS",
+      "title": "title_fab39cc1-1185-43f8-b470-277705864a8c",
+      "description": "description_fab39cc1-1185-43f8-b470-277705864a8c",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RESS",
+      "target": "self",
+      "processName": "INDIC_RESS",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MSTO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPSTOCK",
+      "title": "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6",
+      "description": "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~STO06_001~RESPSTOCKS",
+      "target": "self",
+      "processName": "STO06_001",
+      "processMenu": "RESPSTOCKS",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MSTO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_SSTO01",
+      "title": "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a",
+      "description": "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a",
+      "linkType": "$stats",
+      "applicationMenu": false,
+      "facet": "$cube",
+      "keyParameter": "STO01",
+      "target": "self",
+      "statName": "STO01",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MSTO"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "PORTVIEW",
+          "title": "title_47ef36fa-2290-47c9-b0ff-19f38158ae95",
+          "prompt": false,
+          "value": "SSTO01"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_661d2850-f1cb-43c9-b0e3-39bc15ff4c41",
+          "prompt": false,
+          "value": "SSTO01"
+        }
+      ]
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931",
+      "description": "description_6d71c19a-78b5-4a1c-bc28-a38f2c53d931",
+      "useCurrentEndpoint": true,
+      "pageName": "Stockmanager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "ERP-STOCKMANA"
+        },
+        {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
+          "code": "ADMIN"
+        },
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "SEED contributor"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "9de5b829-aee1-488f-a9bd-2ef1269e2b84",
+          "vignette": {
+            "code": "STD_X3_ERP_RSTO010"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7a3ad52a-bb26-454a-8d39-0e0ddb2a021a",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_RESS"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7102ae8f-efc7-4544-9eb1-ebe86c1785b8",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPSTOCK"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "8da3912b-4971-4e52-9852-74dd6edb87f0",
+          "vignette": {
+            "code": "STD_X3_ERP_SSTO01"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "d0943dfb-f070-4e0a-bac2-8be4968fa285",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@b7418641-8d0d-4529-b160-de97f46d31f3}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"8da3912b-4971-4e52-9852-74dd6edb87f0\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"datstart1\",\"$isAdvanced\":true},{\"$bind\":\"datend1\",\"$isAdvanced\":true}],\"$widths\":\"50,50\"},{\"$bind\":\"def_company\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"ITMREF\"},{\"$bind\":\"C_ITMREF\"},{\"$bind\":\"STOFCY\"},{\"$bind\":\"C_STOFCY\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"},{\"$bind\":\"amount3\"},{\"$bind\":\"amount4\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\"}},{\"$bind\":\"9de5b829-aee1-488f-a9bd-2ef1269e2b84\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$graphPosition\":\"behind\",\"$itemsPerPage\":10,\"$layout\":{\"$items\":[{\"$bind\":\"ITMREF\"},{\"$bind\":\"DES1AXX\"},{\"$bind\":\"STOFCY\"},{\"$bind\":\"STA\"},{\"$bind\":\"LOC\"},{\"$bind\":\"QTYSTU\"},{\"$bind\":\"LOT\"},{\"$bind\":\"SLO\"},{\"$bind\":\"SERNUM\"},{\"$bind\":\"line_no\"}]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"7a3ad52a-bb26-454a-8d39-0e0ddb2a021a\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"7102ae8f-efc7-4544-9eb1-ebe86c1785b8\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@8fba941c-7bc9-4e7e-9203-daeae79ce4d0}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "Stockmanager",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_RGPA015",
       "title": "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a",
       "description": "description_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a",
@@ -7826,221 +8041,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_RSTO010",
-      "title": "title_dc3b2367-2072-4054-8abe-4314beb81bff",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "STO010",
-      "requestLevel": "2",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MSTO"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_32d5ee60-1057-428b-8f83-5a1d3cf57385",
-          "prompt": false,
-          "value": "RSTO010"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_cf0ddfc2-3e32-463c-a3cd-f4b6d9e3d68b",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_INDIC_RESS",
-      "title": "title_fab39cc1-1185-43f8-b470-277705864a8c",
-      "description": "description_fab39cc1-1185-43f8-b470-277705864a8c",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_RESS",
-      "target": "self",
-      "processName": "INDIC_RESS",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MSTO"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RESPSTOCK",
-      "title": "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6",
-      "description": "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~STO06_001~RESPSTOCKS",
-      "target": "self",
-      "processName": "STO06_001",
-      "processMenu": "RESPSTOCKS",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MSTO"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_SSTO01",
-      "title": "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a",
-      "description": "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a",
-      "linkType": "$stats",
-      "applicationMenu": false,
-      "facet": "$cube",
-      "keyParameter": "STO01",
-      "target": "self",
-      "statName": "STO01",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MSTO"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "PORTVIEW",
-          "title": "title_47ef36fa-2290-47c9-b0ff-19f38158ae95",
-          "prompt": false,
-          "value": "SSTO01"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_661d2850-f1cb-43c9-b0e3-39bc15ff4c41",
-          "prompt": false,
-          "value": "SSTO01"
-        }
-      ]
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931",
-      "description": "description_6d71c19a-78b5-4a1c-bc28-a38f2c53d931",
-      "useCurrentEndpoint": true,
-      "pageName": "Stockmanager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "ERP-STOCKMANA"
-        },
-        {
-          "code": "ERP-SYSTADMIN"
-        },
-        {
-          "code": "ADMIN"
-        },
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "GUEST"
-        },
-        {
-          "code": "SEED contributor"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "9de5b829-aee1-488f-a9bd-2ef1269e2b84",
-          "vignette": {
-            "code": "STD_X3_ERP_RSTO010"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "7a3ad52a-bb26-454a-8d39-0e0ddb2a021a",
-          "vignette": {
-            "code": "STD_X3_ERP_INDIC_RESS"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "7102ae8f-efc7-4544-9eb1-ebe86c1785b8",
-          "vignette": {
-            "code": "STD_X3_ERP_RESPSTOCK"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "8da3912b-4971-4e52-9852-74dd6edb87f0",
-          "vignette": {
-            "code": "STD_X3_ERP_SSTO01"
-          },
-          "endpoint": null
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "d0943dfb-f070-4e0a-bac2-8be4968fa285",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@b7418641-8d0d-4529-b160-de97f46d31f3}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"8da3912b-4971-4e52-9852-74dd6edb87f0\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"datstart1\",\"$isAdvanced\":true},{\"$bind\":\"datend1\",\"$isAdvanced\":true}],\"$widths\":\"50,50\"},{\"$bind\":\"def_company\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"ITMREF\"},{\"$bind\":\"C_ITMREF\"},{\"$bind\":\"STOFCY\"},{\"$bind\":\"C_STOFCY\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"},{\"$bind\":\"amount3\"},{\"$bind\":\"amount4\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\"}},{\"$bind\":\"9de5b829-aee1-488f-a9bd-2ef1269e2b84\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$graphPosition\":\"behind\",\"$itemsPerPage\":10,\"$layout\":{\"$items\":[{\"$bind\":\"ITMREF\"},{\"$bind\":\"DES1AXX\"},{\"$bind\":\"STOFCY\"},{\"$bind\":\"STA\"},{\"$bind\":\"LOC\"},{\"$bind\":\"QTYSTU\"},{\"$bind\":\"LOT\"},{\"$bind\":\"SLO\"},{\"$bind\":\"SERNUM\"},{\"$bind\":\"line_no\"}]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"7a3ad52a-bb26-454a-8d39-0e0ddb2a021a\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"7102ae8f-efc7-4544-9eb1-ebe86c1785b8\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@8fba941c-7bc9-4e7e-9203-daeae79ce4d0}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "Stockmanager",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_ERP_TRS05_002",
       "title": "title_b65cd30a-b590-4882-be98-1e40eb1716a7",
       "linkType": "$process",
@@ -8735,6 +8735,10 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "مؤشرات",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "عملية",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "مسؤول التخزين",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "مؤشرات",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "عملية",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "مسؤول التخطيط",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "مؤشرات",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "عملية",
@@ -8845,10 +8849,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "إجراء مهنة",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "معلومات رئيسية",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "إجراء مهنة",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "مسؤول التخزين",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "مؤشرات",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "عملية",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "ممتلكات",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "الصفحة الرئيسية الممتلكات",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "STD_X3_ERP_TRS05_002",
@@ -9055,6 +9055,19 @@
       "title_c11a97be-f251-4297-8c72-e7c71ce923b1": "cube",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Schlüsselinformationen",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Geschäftsprozess",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Bestandsverwalter",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": " Bestand mit Status Q",
+      "title_32d5ee60-1057-428b-8f83-5a1d3cf57385": "portview",
+      "title_cf0ddfc2-3e32-463c-a3cd-f4b6d9e3d68b": "cube",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Lagerbeauftrage Indikatoren",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Bestandsmanagement",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Bewegungsprotokoll",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "title_661d2850-f1cb-43c9-b0e3-39bc15ff4c41": "portview",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Schlüsselinformationen",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Geschäftsprozess",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Produktionsplanung",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Schlüsselinformationen",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Geschäftsprozess",
@@ -9189,13 +9202,6 @@
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Erwartete Tageswarenauslief.",
       "title_4fab2371-78af-4585-a1fb-48bf2df47825": "portview",
       "title_945f71f5-8828-4af1-86dd-0f9357c745c6": "cube",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Lagerbeauftrage Indikatoren",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Bestandsmanagement",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Bewegungsprotokoll",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
-      "title_661d2850-f1cb-43c9-b0e3-39bc15ff4c41": "portview",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Schlüsselinformationen",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Geschäftsprozess",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "Vertrieb",
@@ -9211,12 +9217,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Businessprozess",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Schlüsselinformation",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Businessprozess",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Bestandsverwalter",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": " Bestand mit Status Q",
-      "title_32d5ee60-1057-428b-8f83-5a1d3cf57385": "portview",
-      "title_cf0ddfc2-3e32-463c-a3cd-f4b6d9e3d68b": "cube",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Schlüsselinformationen",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Geschäftsprozess",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Anlagen",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Homepage Anlagen",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Abschreibungen/Periode",
@@ -9330,6 +9330,15 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "BOMs under Development",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Business Process",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Key Information",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock with Status Q",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Stock manager Indicators",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Stock manager",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Movement History",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business Process",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Key Information",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Key Information",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business Process",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Late Purchase Requests",
@@ -9429,18 +9438,9 @@
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "System Administrator",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business Process",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Pending Deliveries of curr day",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Stock manager Indicators",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Stock manager",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Movement History",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "title_ed862534-604d-43dd-94fa-878b3d1fcfc8": "Rep Objectives / Inv Turnover",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Business process",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Business process",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock with Status Q",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business Process",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Key Information",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Perform Period Cut-offs",
       "title_cfed8c0f-58b6-4215-ac84-974e68247975": "Perform Fiscal Year Cut-offs",
       "title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Manage your physical equipment",
@@ -9593,6 +9593,17 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "BOMs In Development",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Key Information",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Business Process",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Stock manager",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock in QC Status",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Stock manager Indicators",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Stock manager",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Product History",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "title_47ef36fa-2290-47c9-b0ff-19f38158ae95": "Portal code",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Key Information",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business Process",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Planning manager",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Key Information",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business Process",
@@ -9717,13 +9728,6 @@
       "pageLayout.65bc85ae-a95a-43ff-8705-e909604030e0.@d3d15e0c-868c-4bc1-8e72-110f96bf1e57": "Key Information",
       "title_7c3acab9-9526-4a17-b568-40a5eae9d0a2": "Warehouse manager",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Late Orders to be Shipped",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Stock manager Indicators",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Stock manager",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Product History",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
-      "title_47ef36fa-2290-47c9-b0ff-19f38158ae95": "Portal code",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Key Information",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Business Process",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "Sales executive",
@@ -9742,10 +9746,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Business Process",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Key Information",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Business Process",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Stock manager",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock in QC Status",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Key Information",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business Process",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Fixed assets",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Fixed assets home page",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Perform Period Cut-offs",
@@ -9926,6 +9926,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "Estructuras en elaboración",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Indicadores",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Procesos",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsable de stocks",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock en estado Q",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indicadores responsable stock",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Responsable del Stock",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Histórico de los movimientos",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Indicadores",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Procesos",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsable planificación",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Indicadores",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Procesos",
@@ -10045,12 +10055,6 @@
       "pageLayout.65bc85ae-a95a-43ff-8705-e909604030e0.@d3d15e0c-868c-4bc1-8e72-110f96bf1e57": "Indicadores",
       "title_7c3acab9-9526-4a17-b568-40a5eae9d0a2": "Responsable stocks NA",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "En espera de entrega por dia",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indicadores responsable stock",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Responsable del Stock",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Histórico de los movimientos",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Indicadores",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Procesos",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "Responsable des ventas NA",
@@ -10066,10 +10070,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Proceso de negocio",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Información clave",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Proceso de negocio",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsable de stocks",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock en estado Q",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Indicadores",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Procesos",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Inmovilizados",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Página inicio Inmovilizados",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Realizar los cierre periodos",
@@ -10226,6 +10226,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "Nomenclatures en élaboration",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Processus",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Indicateurs",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsable des stocks",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock en statut Q",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indicateurs responsable stocks",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Responsable des stocks",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Historique des mouvements",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processus",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Indicateurs",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsable planning",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processus",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Indicateurs",
@@ -10352,12 +10362,6 @@
       "pageLayout.65bc85ae-a95a-43ff-8705-e909604030e0.@d3d15e0c-868c-4bc1-8e72-110f96bf1e57": "Indicateurs",
       "title_7c3acab9-9526-4a17-b568-40a5eae9d0a2": "Responsable stocks NA",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Attentes de livraison du jour",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indicateurs responsable stocks",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Responsable des stocks",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Historique des mouvements",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Indicateurs",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Processus",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "Responsable des ventes NA",
@@ -10373,10 +10377,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Processus",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Indicateurs",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Process métier",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsable des stocks",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock en statut Q",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processus",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Indicateurs",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Immobilisations",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Page d'accueil Immobilisations",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Réaliser les arrêtés périod.",
@@ -10492,6 +10492,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Informazioni chiave",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Business process",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsabile Magazzino",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "X3_ERP_INDIC_RESS",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "X3_ERP_RESPSTOCK",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "X3_ERP_SSTO01",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Informazioni chiave",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business process",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsabile planning",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Informazioni chiave",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business process",
@@ -10594,17 +10604,7 @@
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Portale utente",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business process",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "X3_ERP_INDIC_RESS",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "X3_ERP_RESPSTOCK",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "X3_ERP_SSTO01",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "title_ed862534-604d-43dd-94fa-878b3d1fcfc8": "X3_ERP_SVEN05",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsabile Magazzino",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Informazioni chiave",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business process",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "STD_X3_ERP_TRS05_002",
       "title_cfed8c0f-58b6-4215-ac84-974e68247975": "STD_X3_ERP_TRS05_003",
       "title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
@@ -10712,6 +10712,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Proces biznesowy",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Główne informacje",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Kierownik magazynu",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "X3_ERP_INDIC_RESS",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "X3_ERP_RESPSTOCK",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "X3_ERP_SSTO01",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Główne informacje",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Proces biznesowy",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Planista",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Główne informacje",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Proces biznesowy",
@@ -10821,17 +10831,7 @@
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrator systemu",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Proces biznesowy",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "X3_ERP_INDIC_RESS",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "X3_ERP_RESPSTOCK",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "X3_ERP_SSTO01",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "title_ed862534-604d-43dd-94fa-878b3d1fcfc8": "X3_ERP_SVEN05",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Kierownik magazynu",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Główne informacje",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Proces biznesowy",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "STD_X3_ERP_TRS05_002",
       "title_cfed8c0f-58b6-4215-ac84-974e68247975": "STD_X3_ERP_TRS05_003",
       "title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
@@ -10976,6 +10976,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "BOM's em elaboração",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Informação chave",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Processo de negócio",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsável Stocks",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock em status Q",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indic. Responsavel Stocks",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Responsável stocks",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Historico dos movimentos",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Informação chave",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processo de negócio",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsável planeamento",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Informação chave",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processo de negócio",
@@ -11096,12 +11106,6 @@
       "pageLayout.65bc85ae-a95a-43ff-8705-e909604030e0.@d3d15e0c-868c-4bc1-8e72-110f96bf1e57": "Informação Chave",
       "title_7c3acab9-9526-4a17-b568-40a5eae9d0a2": "Gestor armazém",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Expediç. em espera no dia hoje",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "Indic. Responsavel Stocks",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "Responsável stocks",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "Historico dos movimentos",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Informação Chave",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Processo de negócio",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "Comercial",
@@ -11117,10 +11121,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Processo de negócio",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Informação chave",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Processo de negócio",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Responsável Stocks",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Stock em status Q",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Informação chave",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processo de negócio",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Investimentos",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Pág. receção investimentos",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "trat. Encerram. periodo",
@@ -11276,6 +11276,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "Основная информация",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "Бизнес-процесс",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Менеджер склада",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "X3_ERP_INDIC_RESS",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "X3_ERP_RESPSTOCK",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "X3_ERP_SSTO01",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Основная информация",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Бизнес-процесс",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Менеджер по планированию",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Основная информация",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Бизнес-процесс",
@@ -11396,12 +11406,6 @@
       "pageLayout.65bc85ae-a95a-43ff-8705-e909604030e0.@d3d15e0c-868c-4bc1-8e72-110f96bf1e57": "Основная информация",
       "title_7c3acab9-9526-4a17-b568-40a5eae9d0a2": "Заведующий складом",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "X3_ERP_INDIC_RESS",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "X3_ERP_RESPSTOCK",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "X3_ERP_SSTO01",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "Основная информация",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "Бизнес-процесс",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "Менеджер по продажам",
@@ -11411,10 +11415,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Бизнес-процесс",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Основная информация",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Бизнес-процесс",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "Менеджер склада",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Основная информация",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Бизнес-процесс",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Основные средства",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Основные средства Начальная страница",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "STD_X3_ERP_TRS05_002",
@@ -11573,6 +11573,16 @@
       "title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "制订中的BOM",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@2751d542-2551-4327-8082-c7cb5c917379": "业务流程",
       "pageLayout.46aa8540-f4a0-4b29-bfe8-2254ab6869b3.@708fd66d-38db-4dac-8c5d-5c3144c0cac8": "关键指数",
+      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "库存经理",
+      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Q状态的存货",
+      "title_fab39cc1-1185-43f8-b470-277705864a8c": "库存经理指标",
+      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
+      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "库存经理",
+      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
+      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "变动历史记录",
+      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "业务流程",
+      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "关键指数",
       "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "计划经理",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "关键指数",
       "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "业务流程",
@@ -11693,12 +11703,6 @@
       "pageLayout.65bc85ae-a95a-43ff-8705-e909604030e0.@d3d15e0c-868c-4bc1-8e72-110f96bf1e57": "关键指标",
       "title_7c3acab9-9526-4a17-b568-40a5eae9d0a2": "北美库存经理",
       "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "当日待发货项",
-      "title_fab39cc1-1185-43f8-b470-277705864a8c": "库存经理指标",
-      "description_fab39cc1-1185-43f8-b470-277705864a8c": "INDIC_RESS",
-      "title_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "库存经理",
-      "description_bcc0fec6-67c1-4e0d-84bc-b0d28c0f52d6": "RESPSTOCK",
-      "title_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "变动历史记录",
-      "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@6db4557f-237e-4193-8f39-b3b03ac614f1": "关键指标",
       "pageLayout.856029a5-9b1d-44b6-b78a-9b10eed5a728.@33214254-bbf9-4d34-9de6-f2f584ec6327": "业务流程",
       "title_c9bb94fa-dcad-4f45-a16f-86dc87cbfe1b": "北美销售管理员",
@@ -11714,10 +11718,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "业务流程",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "关键指标",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "业务流程",
-      "title_6d71c19a-78b5-4a1c-bc28-a38f2c53d931": "库存经理",
-      "title_dc3b2367-2072-4054-8abe-4314beb81bff": "Q状态的存货",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "业务流程",
-      "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "关键指数",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "固定资产",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "固定资产主页",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "实现周期性结算",
