@@ -101,6 +101,8 @@ exports.config = {
 		asyncTimeout: 20,
 		// session timeout (minutes - decimals allowed) for stateless (web service) requests.
 		statelessTimeout: 1,
+		// session timeout (minutes - decimals allowed) for api1 requests.
+		api1SessionTimeout: 2,
 		// interval (in seconds) between scans to release sessions.
 		checkInterval: 60,
 		// ?
