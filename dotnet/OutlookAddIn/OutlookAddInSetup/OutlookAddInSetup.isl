@@ -4460,9 +4460,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{B42B3C8C-BBE5-41DB-9C76-F2E755CBD990}</td><td/></row>
+		<row><td>ProductCode</td><td>{FA4B716D-8A55-4BB7-BEC0-5409CE6FE712}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Outlook AddIn</td><td/></row>
-		<row><td>ProductVersion</td><td>1.09.0003</td><td/></row>
+		<row><td>ProductVersion</td><td>1.11.0001</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4474,7 +4474,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP5;ISACTIONPROP4</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP5;ISACTIONPROP4;ISACTIONPROP6</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td/></row>
@@ -4770,6 +4770,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0002</td><td>1.08.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>1.08.0002</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.09.0001</td><td>1.09.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP5</td><td>1.09.001</td></row>
 		<row><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td>1.09.0002</td><td>1.09.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP4</td><td>1.09.0002</td></row>
+		<row><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td>1.09.0003</td><td>1.09.0003</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP6</td><td>1.09.0003</td></row>
 	</table>
 
 	<table name="Verb">
