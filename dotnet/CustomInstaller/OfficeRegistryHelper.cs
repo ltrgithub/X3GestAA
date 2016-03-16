@@ -204,7 +204,7 @@ namespace RegistryHelper
                 string keyName = String.Empty;
                 if (clickToRun)
                 {
-                    keyName = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Office\" +
+                    keyName = @"Software\Microsoft\Office\" +
                             officeVersionNumber +
                             @"\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\" +
                             _app +
