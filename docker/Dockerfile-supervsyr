@@ -1,0 +1,21 @@
+FROM 192.168.99.101:5000/ubuntu
+
+EXPOSE 22
+
+# install needed packages
+RUN apt-get update && apt-get install -y curl unzip openssh-server
+
+# create folders
+RUN mkdir /logs && mkdir /certsdir 
+VOLUME /logs
+VOLUME /certsdir
+
+RUN mkdir -p /syracuse/temp && \
+    curl -SL http://192.168.99.1/syracuse.zip -o /logs/syracuse.zip && \
+    unzip /logs/syracuse.zip -d /syracuse 
+COPY nodelocal.js /syracuse/nodelocal.js
+COPY syracuse-admin-endpoint.json /syracuse/import/syracuse-admin-endpoint.json
+    
+VOLUME /syracuse
+
+CMD /usr/sbin/sshd -D
