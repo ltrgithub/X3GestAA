@@ -32,3 +32,7 @@ echo
 echo STEP 7: checking out submodules (again)
 git submodule init
 git submodule update
+echo
+echo STEP 8: cleanup shadow modules binaries
+cd %DIR%\shadow-modules & git checkout node_modules/fibers/bin
+cd %DIR%\shadow-modules & git checkout git checkout win32-*
