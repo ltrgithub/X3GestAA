@@ -13,10 +13,10 @@ echo
 echo STEP 3: running npm install (may take a while)
 rem Use --production flag to avoid problems with grunt s very long file paths on windows
 cmd /C npm install --production
-cd %DIR%\node_modules\ez-mailer & cmd /C npm install
 cd %DIR%\node_modules\streamline-upload & cmd /C npm install
 cd %DIR%\node_modules\syracuse-phantomjs & cmd /C npm install
 cd %DIR%\node_modules\syracuse-ldap & cmd /C npm install
+cd %DIR%\node_modules\syracuse-core & cmd /C npm install
 echo 
 echo STEP 4: running npm dedup (may take a while)
 cd %DIR% & cmd /C npm dedup
@@ -31,3 +31,7 @@ echo
 echo STEP 7: checking out submodules (again)
 git submodule init
 git submodule update
+echo
+echo STEP 8: cleanup shadow modules binaries
+cd %DIR%\shadow-modules & git checkout node_modules/fibers/bin
+cd %DIR%\shadow-modules & git checkout git checkout win32-*
