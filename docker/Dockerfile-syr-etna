@@ -12,7 +12,9 @@ RUN mkdir -p /syracuse
 RUN mkdir -p /config
 RUN mkdir -p /extensions
 
-COPY syracuse/* /syracuse/
+WORKDIR /syracuse
+
+COPY syracuse .
 
 RUN cp /syracuse/docker/nodelocal-syr-etna.docker /syracuse/nodelocal.js
 
@@ -22,4 +24,4 @@ VOLUME /config
 VOLUME /extensions
 EXPOSE 8124
 
-CMD [node .]
+CMD node .
