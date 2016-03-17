@@ -1,11 +1,14 @@
 FROM node:4.2
 
-mkdir /syracuse
+RUN mkdir -p /syracuse
 
-COPY syracuse/* /syracuse
+COPY syracuse/* /syracuse/
 
 RUN cp /syracuse/nodelocal.docker /syracuse/nodelocal.js
 
 RUN cd /syracuse
+
+VOLUME /syracuse
+EXPOSE 8124
 
 CMD [node .]
