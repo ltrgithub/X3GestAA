@@ -1,0 +1,11 @@
+FROM node:4.2
+
+mkdir /syracuse
+
+COPY syracuse/* /syracuse
+
+RUN cp /syracuse/nodelocal.docker /syracuse/nodelocal.js
+
+RUN cd /syracuse
+
+CMD [node .]
