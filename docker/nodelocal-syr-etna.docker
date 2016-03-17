@@ -9,69 +9,6 @@
 // The nodelocal.js file is marked as "ignored" for subversion.
 // So subversion will not try to add it when you run the subversion Add command.
 exports.config = {
-	etl: {
-		metaSubFolder: "test-metadata",
-		metaRootFolder : "C:/Users/stden/docker",
-		git: {
-			trace: console.log,
-		},
-		// solutionPath: "C:\\test\\user1\\test-metadata\\",
-		// dataFolder: "C:/Exports/Data.sql",
-	},
-	etna: {
-		endpointName: "etnaDocker",
-		solutionName: "SUPDVLP",
-		folderName: "SUPERV",
-		solutionPath: "C:\\test\\User1\\test-metadata\\",
-		mongo: {
-			host: "127.0.0.1",
-			port: 27017,
-			database: "test"
-		},
-		sql: {
-			driver: "oracle",
-			user: "SUPERV",
-			port: 1521,
-			password: "tiger",
-			database: "SUPDVLP",
-			hostname: "AWS-X3-DEVSUP",
-		},
-		mongo2: {
-			host: "docker",
-			port: 27017,
-			database: "test"
-		},
-		sql3: {
-			driver: "oracle",
-			user: "SUPERV",
-			port: 1521,
-			password: "tiger",
-			database: "XE",
-			hostname: "docker",
-		},
-		mongo1: {
-			host: "localhost",
-			port: 27017,
-			database: "test2"
-		},
-		sql2: {
-			driver: "oracle",
-			user: "GX3APP",
-			port: 1521,
-			password: "tiger",
-			database: "X3DVLP",
-			hostname: "aws-x3-devx3",
-		},
-		sql1: {
-			driver: "oracle",
-			user: "PAIEV6",
-			port: 1521,
-			password: "tiger",
-			database: "HRMDVLP",
-			hostname: "AWS-X3-DEVHRM",
-		},
-		trace: console.log,
-	},
 	hosting: {
 		// multiTenant should be set to true when hosted in Cloud.
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
@@ -95,7 +32,7 @@ exports.config = {
 		// stubsPath = "stubs"
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
 		// limit memory usage
-		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit
+		memoryLimit: 0, // strategy to limit memory usage: limit is an indication; 0 means no limit
 		// flag to expose stack traces to the UI (off by default for security)
 		exposeStacktrace: false,
 	},
@@ -245,19 +182,12 @@ exports.config = {
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 	},
-	 collaboration: {
-         hostname: "192.168.99.100",
-                 },
+    collaboration: {
+         hostname: "mongodb",
+    },
+    extensions: {
+        "root": "/extensions",
+        "modules": []
+    },
 
-/*
- collaboration: {
-  driver: "mongodb",
-  dataset: "syracuse",
-  hostname: "mongo",
-  port: 27017,
-  logpath: "/logs",
-  certdir: "/certsdir",
-        cacheDir: "/cachedir"
- }
-*/
 };
