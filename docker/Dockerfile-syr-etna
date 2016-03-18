@@ -27,4 +27,5 @@ VOLUME /config
 VOLUME /extensions
 EXPOSE 8124
 
-CMD node .
+RUN chmod a+x docker/start-syr-etna.sh
+CMD ./docker/start-syr-etna.sh
