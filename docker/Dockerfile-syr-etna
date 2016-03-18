@@ -1,20 +1,23 @@
 FROM node:4.2
 
-# oracle instantclient
-RUN curl -SL http://192.168.99.1/instantclient-basiclite-linux.x64-12.1.0.2.0.tar.xz | tar -xoJC /runtime && \
-    curl -SL http://192.168.99.1/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar.xz | tar -xoJC /runtime && \
-    ln -s /runtime/instantclient_12_1 /runtime/instantclient_12_1/bin && \
-    ln -s /runtime/instantclient_12_1 /runtime/instantclient_12_1/lib && \
-    chown -R nobody:nogroup /runtime/instantclient_12_1 && \
-    chmod -R 775 /runtime/instantclient_12_1 
+# install needed packages
+RUN apt-get update && apt-get install -y curl xz-utils libxml2 libaio1 ksh
 
-RUN mkdir -p /syracuse
-RUN mkdir -p /config
-RUN mkdir -p /extensions
+RUN mkdir -p /tmp /syracuse /config /extensions
+
+COPY instantclient-basiclite-linux.x64-12.1.0.2.0.tar /tmp
+COPY instantclient-sqlplus-linux.x64-12.1.0.2.0.tar /tmp
+RUN mkdir /opt/oracle && cd /opt/oracle && tar -xf /tmp/instantclient-basiclite-linux.x64-12.1.0.2.0.tar && \
+    tar -xf /tmp/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar && \
+    ln -s /opt/oracle/instantclient_12_1/libclntsh.so.12.1 /opt/oracle/instantclient_12_1/libclntsh.so && \
+    ln -s /opt/oracle/instantclient_12_1/libocci.so.12.1 /opt/oracle/instantclient_12_1/libocci.so
+
+ENV LD_LIBRARY_PATH /opt/oracle/instantclient_12_1:$LD_LIBRARY_PATH
+ENV PATH /opt/oracle/instantclient_12_1:$PATH
 
 WORKDIR /syracuse
 
-COPY syracuse .
+COPY . .
 
 RUN cp /syracuse/docker/nodelocal-syr-etna.docker /syracuse/nodelocal.js
 
@@ -24,4 +27,5 @@ VOLUME /config
 VOLUME /extensions
 EXPOSE 8124
 
-CMD node .
+RUN chmod a+x docker/start-syr-etna.sh
+CMD ./docker/start-syr-etna.sh
