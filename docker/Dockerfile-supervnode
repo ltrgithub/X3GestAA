@@ -1,0 +1,20 @@
+FROM 192.168.99.101:5000/node:0.12
+
+EXPOSE 8124
+
+RUN mkdir -p /syracuse
+VOLUME /syracuse
+
+WORKDIR /syracuse
+CMD if [ -d /certsdir/certs ]; then \
+        mkdir -p /certsdir/$HOSTNAME ; \
+        cp -f /certsdir/cert.pem /certsdir/$HOSTNAME.pem ; \
+        cp -f /certsdir/certs/ca.cacrt /certsdir/$HOSTNAME/ca.cacrt ; \
+        cp -f /certsdir/certs/cert.crt /certsdir/$HOSTNAME/$HOSTNAME.crt ; \
+        cp -f /certsdir/certs/cert.key /certsdir/$HOSTNAME/$HOSTNAME.key ; \
+        node nanny install 8124 1 ; \
+        node nanny passphrase 'Sage2016' ; \
+        node nanny; \
+    else \
+        node index; \
+    fi
