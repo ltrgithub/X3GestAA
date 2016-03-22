@@ -71,7 +71,11 @@ exports.config = {
         // flag to expose stack traces to the UI (off by default for security)
         exposeStacktrace: false,
         // bindIP if IP_ANY is not the good binding (IPV6)
-        bindIP: "0000:00:00:00:00:00000"
+        bindIP: "0000:00:00:00:00:00000",
+		requestReport : {
+			//threshold : 1000,
+			autoTraceRecord : false
+		}
 	},
 	/*	integrationServer: {
 		port: 8125
