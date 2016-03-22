@@ -58,7 +58,53 @@ namespace RegistryHelper
             return !String.IsNullOrEmpty(val);
         }
 
-        public static void copyAddinsRegistry()
+        public static Boolean isOffice2013ClickToRunInstalled(out String officeVersionNumber)
+        {
+            StringBuilder keyName = new StringBuilder(_localMachineRoot);
+            keyName.Append(@"\");
+            keyName.Append(@"SOFTWARE\Microsoft\Office\15.0\Common\InstallRoot\Virtual");
+
+            String valueName = "VirtualExcel";
+            String val = (String)Registry.GetValue(keyName.ToString(), valueName, String.Empty);
+
+            RegistryHelper.Program._log("VirtualExcel " + val);
+
+            if (String.IsNullOrEmpty(val))
+            {
+                officeVersionNumber = String.Empty;
+                return false;
+            }
+            else
+            {
+                officeVersionNumber = "15.0";
+                return true;
+            }
+        }
+
+        public static Boolean isOffice2016ClickToRunInstalled(out String officeVersionNumber)
+        {
+            StringBuilder keyName = new StringBuilder(_localMachineRoot);
+            keyName.Append(@"\");
+            keyName.Append(@"Software\Microsoft\Office\16.0\Common\InstallRoot\Virtual");
+
+            String valueName = "VirtualExcel";
+            String val = (String)Registry.GetValue(keyName.ToString(), valueName, String.Empty);
+
+            RegistryHelper.Program._log("VirtualExcel " + val);
+
+            if (String.IsNullOrEmpty(val))
+            {
+                officeVersionNumber = String.Empty;
+                return false;
+            }
+            else
+            {
+                officeVersionNumber = "16.0";
+                return true;
+            }
+        }
+
+        public static void copyAddinsRegistry(bool clickToRun, String officeVersionNumber)
         {
             RegistryHelper.Program._log("copyAddinsRegistry");
             string[] _application = {"Word", "Excel", "PowerPoint"};
@@ -66,7 +112,19 @@ namespace RegistryHelper
             foreach (string _app in _application)
             {
                 string regSrc = @"HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Office\" + _app + @"\Addins\Sage.Syracuse." + _app + "AddIn";
-                string regDest = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Office\" + _app + @"\Addins\Sage.Syracuse." + _app + "AddIn";
+                string regDest = String.Empty;
+                if (clickToRun)
+                {
+                    regDest =   @"HKEY_LOCAL_MACHINE\Software\Microsoft\Office\" + 
+                                officeVersionNumber + 
+                                @"\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\" +
+                                _app +
+                                @"\Addins\Sage.Syracuse." + _app + "AddIn";
+                }
+                else
+                {
+                    regDest = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Office\" + _app + @"\Addins\Sage.Syracuse." + _app + "AddIn";
+                }
 
                 string[] _valueNames = { "Description", "FriendlyName", "Manifest" };
                 string[] _values = { "valDescription", "valFriendlyName", "valManifest" };
@@ -136,14 +194,27 @@ namespace RegistryHelper
             }
         }
 
-        public static void removeAddinRegistry()
+        public static void removeAddinRegistry(bool clickToRun, String officeVersionNumber)
         {
             RegistryHelper.Program._log("removeRegistry");
             string[] _application = { "Word", "Excel", "PowerPoint" };
 
             foreach (string _app in _application)
             {
-                string keyName = @"Software\Microsoft\Office\" + _app + @"\Addins\Sage.Syracuse." + _app + "AddIn";
+                string keyName = String.Empty;
+                if (clickToRun)
+                {
+                    keyName = @"Software\Microsoft\Office\" +
+                            officeVersionNumber +
+                            @"\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\" +
+                            _app +
+                            @"\Addins\Sage.Syracuse." + _app + "AddIn";
+                }
+                else
+                {
+                    keyName = @"Software\Microsoft\Office\" + _app + @"\Addins\Sage.Syracuse." + _app + "AddIn";
+                }
+
                 try
                 {
                     Registry.LocalMachine.CreateSubKey(keyName);

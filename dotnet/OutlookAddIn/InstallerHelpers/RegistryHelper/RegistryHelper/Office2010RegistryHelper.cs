@@ -37,12 +37,12 @@ namespace RegistryHelper
             return val.Equals("x86");
         }
 
-        public static void registerAddIn(String installDirectory)
+        public static void registerAddIn(String installDirectory, Boolean install)
         {
-            registerAssembly(installDirectory);
+            registerAssembly(installDirectory, install);
         }
 
-        private static void registerAssembly(string installDirectory)
+        private static void registerAssembly(string installDirectory, Boolean install)
         {
             /*
              * We need to determine the correct regasm to use here.
@@ -66,7 +66,7 @@ namespace RegistryHelper
 
             Process p = new Process();
             p.StartInfo.FileName = regasmPath;
-            p.StartInfo.Arguments = "\"" + componentPath + "\" /codebase";
+            p.StartInfo.Arguments = "\"" + componentPath + (install ? "\" /codebase" : "\" /unregister");
             p.StartInfo.Verb = "runas"; // To run as administrator.
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
