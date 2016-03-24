@@ -59,7 +59,24 @@ exports.config = {
 		requestReport : {
 			//threshold : 1000,
 			autoTraceRecord : false
-		}
+		},
+		// load balancer will not assign new sessions any more when the heap usage exceeds this value (in MB)
+		memoryThreshold1: 1000,
+		// process will be killed during load balancer ping operation when the heap usage exceeds this value (in MB)
+		memoryThreshold2: 1500,
+		
+	},
+	nanny: {
+		// try to connect child processes every 'childPingStatusPolling' milliseconds. Load balancer will measure the response
+		// time and consider this for load balancing. This is a sliding mean, it is computed as follows: 
+		// the newest value will be considered by (100-'childSlidingMean') percent, the previous computed value 
+		// by 'childSlidingMean' percent. When a child process takes longer than 'childPingStatusTimeout' milliseconds for
+		// the ping response, it will be deleted. 
+		childPingStatusPolling:60000,
+	 	childPingStatusTimeout: 10000,
+	 	childSlidingMean: 20,
+	 	// waiting time (milliseconds) during load balancing to obtain results of other processes
+	 	balancingWaitTime: 600
 	},
 	/*	integrationServer: {
 		port: 8125
