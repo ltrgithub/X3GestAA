@@ -13,7 +13,7 @@ exports.config = {
 	// profiles and then flag some data as factory to protect them.
 	enablePartnerFeatures: false,
 	/*
-	 * With this flag set to true, even Syracuse administrators will not be able to associate 
+	 * With this flag set to true, even Syracuse administrators will not be able to associate
 	 * Syracuse users to X3 users on specific endpoints if the login match to Sage factory syracuse user's login.
 	 * For instance, it will be impossible to map a Syracuse user with ADMIN X3 user.
 	 */
@@ -36,21 +36,58 @@ exports.config = {
 			landingPage: "http://localhost:8080/"
 		},*/
 		// allow to pass some node parameter like --prof
-		nodeOptions:""
+		nodeOptions: ""
 	},
-    security: {
-        http: {
-        	// set 'x-frame-options' to enable embedding into another site via iframe
-            // 'x-frame-options': 'allow-from http://other-site',
-        	// set 'allow' to define what OPTIONS request can be executed
-        	// "allow": "POST, GET"
+	security: {
+		http: {
+			// HTTP headers added
+			headers: {
+				// set 'x-frame-options' to enable embedding into another site via iframe (default is "DENY")
+				// http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx
+				// 'x-frame-options': 'allow-from http://other-site',
+
+				// set 'x-content-type-options' to prevent MIME-sniffing (default is "nosniff")
+				// http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+				// https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+				// "x-content-type-options": "nosniff",
+
+				// enable Cross-site scripting filter (default is "1; mode=block")
+				// https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+				// https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/			
+				// "x-xss-protection": "1; mode=block",
+
+				// set 'content-security-policy' to define the security level on scripts
+				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' https://www.google.com;"
+			},
+			// set 'allow' to define what OPTIONS request can be executed
+			"allow": "POST, GET"
 		},
 		cors: {
 			// set 'all access-control' headers wanted for cross-origin calls
 			// "access-control-allow-origin": "*",
 			// "access-control-allow-headers": "authorization, content-type, soapaction, x-requested-with",
+		},
+		client: {
+			iframe: {
+				sandbox: {
+					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxing iframes
+					// By default, this levels are set to be the more secure for each level.
+					// This section allow you to relax this security but at your own risk
+					// allow-forms			Enables form submission
+					// allow-pointer-lock	Enables pointer APIs (for example pointer position)
+					// allow-popups			Enables popups
+					// allow-same-origin	Allows the iframe content to be treated as being from the same origin
+					// allow-scripts		Enables scripts
+					// allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
+					// low: null,
+					// medium: null,
+					// medium: "",
+					medium: "allow-same-origin allow-forms allow-scripts",
+					// high: ""
+				}
+			}
 		}
-    },
+	},
 	system: {
 		// enables memwatch module
 		memwatch: false,
@@ -68,9 +105,9 @@ exports.config = {
 		protectSettings: false, // internal: true for some production servers to avoid import of initial data
 		// limit memory usage
 		memoryLimit: 500, // strategy to limit memory usage: limit is an indication; 0 means no limit,
-        // flag to expose stack traces to the UI (off by default for security)
-        exposeStacktrace: false,
-        // bindIP if IP_ANY is not the good binding (IPV6)
+		// flag to expose stack traces to the UI (off by default for security)
+		exposeStacktrace: false,
+		// bindIP if IP_ANY is not the good binding (IPV6)
         bindIP: "0000:00:00:00:00:00000",
 		requestReport : {
 			//threshold : 1000,
@@ -81,23 +118,20 @@ exports.config = {
 		port: 8125
 	},
 	*/
-    collaboration: {
-        certdir: "certificates"  // path to certificates folder
-    },
-    mongodb: {
-        // connect options as expected by MongoClient.connect of nodejs mongodb driver
-        options: {
-            db: {
-                w: 1
-            },
-            server: {
-            },
-            replSet: {
-            },
-            mongos: {
-            }
-        }
-    },
+	collaboration: {
+		certdir: "certificates" // path to certificates folder
+	},
+	mongodb: {
+		// connect options as expected by MongoClient.connect of nodejs mongodb driver
+		options: {
+			db: {
+				w: 1
+			},
+			server: {},
+			replSet: {},
+			mongos: {}
+		}
+	},
 	session: {
 		// interactive session timeout (minutes).
 		timeout: 20, // minutes
@@ -121,8 +155,8 @@ exports.config = {
 		"cache": true,
 		"verbose": true,
 		"fast": true,
-        // comment out the flamegraph block to activate flame graphs
-        // options are documented on https://github.com/Sage/streamline-flamegraph#configuration
+		// comment out the flamegraph block to activate flame graphs
+		// options are documented on https://github.com/Sage/streamline-flamegraph#configuration
 		// flamegraph: { rate: 1, },	
 	},
 	docTool: {
@@ -135,9 +169,9 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
-        plugin : {
-            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
-        },
+		plugin: {
+			killTimeoutOnCreate: 120000 // timeout switch orchestration mode
+		},
 		protocol: {
 			// trace: console.log,
 			LBFChunkSize: 64 // in Kb
@@ -156,8 +190,8 @@ exports.config = {
 		cache: {
 			// trace: console.log,
 		},
-        reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
-        // webProxyWhitelist: "^(.*)/(GEN|RES)/.*\.(js|json|gif|png|jpeg|jpg|ico|bmp)$", // whitelist for PUB web folder, there is a builtin whitelist. Regexp or array of regexp.
+		reuseTimeout: 20 // timeout of sessions reuse, in minutes (miliseconds values also tolerated)
+		// webProxyWhitelist: "^(.*)/(GEN|RES)/.*\.(js|json|gif|png|jpeg|jpg|ico|bmp)$", // whitelist for PUB web folder, there is a builtin whitelist. Regexp or array of regexp.
 	},
 
 	help: {
@@ -190,7 +224,7 @@ exports.config = {
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
 		// offStemmer : true, // desactivation of the stemmer for the search indexation
-        // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
+		// useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
 	},
 	notificatonServer: {
 		//"log Level" : 3,
@@ -220,7 +254,7 @@ exports.config = {
 		// White list of media types that we allow in upload operations
 		// This entry is mandatory when hosting.multiTenant is true.
 		// The white list may be specified as a single regular expression or an array or regular expressions.
-	    allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+		allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
 	},
 	sage_id: {
 		// base URL of sage ID service - this one is staging, not prod
@@ -256,7 +290,7 @@ exports.config = {
 			},
 			// Elastic search communication
 			search: "error",
-			notifications:"error",
+			notifications: "error",
 			// X3 ERP communication layer
 			x3Comm: {
 				jsRunner: "error", // Syracuse calls from 4GL processes
@@ -308,21 +342,19 @@ exports.config = {
 
 // for git enabled configurations one can override the standard config
 exports.branch_configs = [{
-    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
-    config : {
-        collaboration: {
-            databaseName: "Syracuse_V7",
-            localInitScript: [] // some local data to import on database creation : standard import json file
-        }
-    }
+	branch: "V7\\.0.*|V7\\.1.*", // branch name should match this regular expression
+	config: {
+		collaboration: {
+			databaseName: "Syracuse_V7",
+			localInitScript: [] // some local data to import on database creation : standard import json file
+		}
+	}
 }, {
-    branch: "akira.*", // branch name should match this regular expression
-    config : {
-        collaboration: {
-            databaseName: "Syracuse_V8",
-            localInitScript: [] // some local data to import on database creation
-        }
-    }
+	branch: "akira.*", // branch name should match this regular expression
+	config: {
+		collaboration: {
+			databaseName: "Syracuse_V8",
+			localInitScript: [] // some local data to import on database creation
+		}
+	}
 }];
-
-
