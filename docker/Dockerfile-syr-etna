@@ -1,6 +1,6 @@
 FROM node:4.2
 
-ENV SYRACUSE_SRC="."
+ARG SYRACUSE_SRC="."
 
 # install needed packages
 RUN apt-get update && apt-get install -y curl xz-utils libxml2 libaio1 ksh
