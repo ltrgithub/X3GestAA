@@ -197,9 +197,10 @@ exports.config = {
 		}
 	},
 	mongoNotify: {
-		host: '10.198.254.30',
+		host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
 		port: '27017',
-		database: 'syracuse',
+		database: 'api',
+		sageIdCollection: 'sageid_notifications'
 	},
 	aws: {
 	 	"region": "us-west-2",
