@@ -193,9 +193,10 @@ exports.config = {
                                 }
                 },
                 mongoNotify: {
-                                host: 'sage_id_notifications',
-                                port: '27017',
-                                database: 'syracuse',
+                    host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
+                    port: '27017',
+                    database: 'api',
+                    sageIdCollection: 'sageid_notifications'
                 },
 								health:{
 							parallel: 4,
