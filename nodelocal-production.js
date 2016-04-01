@@ -180,6 +180,7 @@ exports.config = {
                     siteUrl: "https://api.sagex3.com/sdata/sky/automation/production",
                     site: $WebAPIAuth,
 					cloudwatch: true,
+                    esIndex: 'x3.erp.x3'
 	},
 
                 sage_id: {

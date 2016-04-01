@@ -217,6 +217,7 @@ exports.config = {
 		siteUrl: "https://devapi.dev-sageerpx3online.com/sdata/sky/automation/production",
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
+		esIndex: 'x3.erp.x3'
     },
     symphony: {
 		webApiUrl: "https://devapi.dev-sageerpx3online.com",
