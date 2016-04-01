@@ -62,8 +62,20 @@ exports.config = {
 				// https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/			
 				// "x-xss-protection": "1; mode=block",
 
-				// set 'content-security-policy' to define the security level on scripts
-				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' https://www.google.com;"
+				// set 'content-security-policy' to define the security level on scripts (can be a string or a subobject)
+				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' www.w3schools.com easyid.scansafe.net www.sage.fr;",
+				"content-security-policy": {
+					// "$directiveSeparator": ";",
+					// "$valueSeparator": " ",
+					// "script-src": ["'self'", "'unsafe-eval'", "'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='"],
+					// "script-src": null,
+					// "child-src": ""
+					// "child-src": ["'self'", 
+					// 	// "www.w3schools.com", 
+					// 	// "easyid.scansafe.net"
+					// ]
+				},
+				// "content-security-policy-report-only": "script-src 'self'; report-uri /csp-report/"
 			},
         	// set 'allow' to define what OPTIONS request can be executed
 			"allow": "POST, GET"
@@ -88,7 +100,7 @@ exports.config = {
 					// low: null,
 					// medium: null,
 					// medium: "",
-					medium: "allow-same-origin allow-forms allow-scripts",
+					// medium: "allow-same-origin allow-forms allow-scripts",
 					// high: ""
 				}
 			}
