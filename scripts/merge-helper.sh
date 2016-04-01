@@ -15,10 +15,10 @@ then
 	case $yn in
 		[Yy]* ) 
 			unmerged
-			break;;
+			;;
 		[Nn]* ) 
 			
-			break;;
+			;;
 		* ) echo "!!! PRESS 'y' TO CONTINUE !!!";;
 	esac
 else
@@ -28,9 +28,9 @@ else
 	case $yn in
 		[Yy]* ) 
 			git commit
-			break;;
+			;;
 		[Nn]* ) 
-			break;;
+			;;
 		* ) echo "!!! PRESS 'y' TO CONTINUE !!!";;
 	esac
 fi
