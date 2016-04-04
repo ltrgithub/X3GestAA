@@ -56,8 +56,20 @@ exports.config = {
 				// https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/			
 				// "x-xss-protection": "1; mode=block",
 
-				// set 'content-security-policy' to define the security level on scripts
-				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' https://www.google.com;"
+				// set 'content-security-policy' to define the security level on scripts (can be a string or a subobject)
+				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' www.w3schools.com easyid.scansafe.net www.sage.fr;",
+				"content-security-policy": {
+					// "$directiveSeparator": ";",
+					// "$valueSeparator": " ",
+					// "script-src": ["'self'", "'unsafe-eval'", "'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='"],
+					// "script-src": null,
+					// "child-src": ""
+					// "child-src": ["'self'", 
+					// 	// "www.w3schools.com", 
+					// 	// "easyid.scansafe.net"
+					// ]
+				},
+				// "content-security-policy-report-only": "script-src 'self'; report-uri /csp-report/"
 			},
 			// set 'allow' to define what OPTIONS request can be executed
 			"allow": "POST, GET"
@@ -82,7 +94,7 @@ exports.config = {
 					// low: null,
 					// medium: null,
 					// medium: "",
-					medium: "allow-same-origin allow-forms allow-scripts",
+					// medium: "allow-same-origin allow-forms allow-scripts",
 					// high: ""
 				}
 			}
@@ -112,7 +124,24 @@ exports.config = {
 		requestReport : {
 			//threshold : 1000,
 			autoTraceRecord : false
-		}
+		},
+		// load balancer will not assign new sessions any more when the heap usage exceeds this value (in MB)
+		memoryThreshold1: 1000,
+		// process will be killed during load balancer ping operation when the heap usage exceeds this value (in MB)
+		memoryThreshold2: 1500,
+		
+	},
+	nanny: {
+		// try to connect child processes every 'childPingStatusPolling' milliseconds. Load balancer will measure the response
+		// time and consider this for load balancing. This is a sliding mean, it is computed as follows: 
+		// the newest value will be considered by (100-'childSlidingMean') percent, the previous computed value 
+		// by 'childSlidingMean' percent. When a child process takes longer than 'childPingStatusTimeout' milliseconds for
+		// the ping response, it will be deleted. 
+		childPingStatusPolling:60000,
+	 	childPingStatusTimeout: 10000,
+	 	childSlidingMean: 20,
+	 	// waiting time (milliseconds) during load balancing to obtain results of other processes
+	 	balancingWaitTime: 600
 	},
 	/*	integrationServer: {
 		port: 8125
