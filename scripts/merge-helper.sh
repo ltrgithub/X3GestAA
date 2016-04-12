@@ -15,10 +15,10 @@ then
 	case $yn in
 		[Yy]* ) 
 			unmerged
-			break;;
+			;;
 		[Nn]* ) 
 			
-			break;;
+			;;
 		* ) echo "!!! PRESS 'y' TO CONTINUE !!!";;
 	esac
 else
@@ -28,9 +28,9 @@ else
 	case $yn in
 		[Yy]* ) 
 			git commit
-			break;;
+			;;
 		[Nn]* ) 
-			break;;
+			;;
 		* ) echo "!!! PRESS 'y' TO CONTINUE !!!";;
 	esac
 fi
@@ -38,7 +38,7 @@ fi
 
 if [ "$#" -ne 2 ]; then
 	echo "Two parameters needed" >&2
-	echo "Usage: ./merge-helper branch-origin branch-destination" >&2
+	echo "Usage: ./scripts/merge-helper branch-origin branch-destination" >&2
 	exit 1
 fi
 
@@ -70,7 +70,7 @@ echo ""
 echo ">>> git merge --no-commit -s recursive -Xignore-space-change" $orig
 git merge --no-commit -s recursive -Xignore-space-change $orig
 
-for line in $(cat ../merge-ignore-list.txt)
+for line in $(cat scripts/merge-ignore-list.txt)
 do
 	echo ""
 	echo "Revert and ignore changes on ./${line}"

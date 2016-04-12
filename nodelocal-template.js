@@ -42,19 +42,68 @@ exports.config = {
 		// child processes using the --dbUnlock flag
 		/* dbUnlock: true, */
 		// allow to pass some node parameter like --prof
-		nodeOptions:""
+		nodeOptions: ""
 	},
     security: {
         http: {
-        	// set 'x-frame-options' to enable embedding into another site via iframe
+			// HTTP headers added
+			headers: {
+				// set 'x-frame-options' to enable embedding into another site via iframe (default is "DENY")
+				// http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx
             // 'x-frame-options': 'allow-from http://other-site',
+
+				// set 'x-content-type-options' to prevent MIME-sniffing (default is "nosniff")
+				// http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+				// https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+				// "x-content-type-options": "nosniff",
+
+				// enable Cross-site scripting filter (default is "1; mode=block")
+				// https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+				// https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/			
+				// "x-xss-protection": "1; mode=block",
+
+				// set 'content-security-policy' to define the security level on scripts (can be a string or a subobject)
+				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' www.w3schools.com easyid.scansafe.net www.sage.fr;",
+				"content-security-policy": {
+					// "$directiveSeparator": ";",
+					// "$valueSeparator": " ",
+					// "script-src": ["'self'", "'unsafe-eval'", "'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='"],
+					// "script-src": null,
+					// "child-src": ""
+					// "child-src": ["'self'", 
+					// 	// "www.w3schools.com", 
+					// 	// "easyid.scansafe.net"
+					// ]
+				},
+				// "content-security-policy-report-only": "script-src 'self'; report-uri /csp-report/"
+			},
         	// set 'allow' to define what OPTIONS request can be executed
-        	// "allow": "POST, GET"
+			"allow": "POST, GET"
 		},
 		cors: {
 			// set 'all access-control' headers wanted for cross-origin calls
 			// "access-control-allow-origin": "*",
 			// "access-control-allow-headers": "authorization, content-type, soapaction, x-requested-with",
+		},
+		client: {
+			iframe: {
+				sandbox: {
+					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxing iframes
+					// By default, this levels are set to be the more secure for each level.
+					// This section allow you to relax this security but at your own risk
+					// allow-forms			Enables form submission
+					// allow-pointer-lock	Enables pointer APIs (for example pointer position)
+					// allow-popups			Enables popups
+					// allow-same-origin	Allows the iframe content to be treated as being from the same origin
+					// allow-scripts		Enables scripts
+					// allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
+					// low: null,
+					// medium: null,
+					// medium: "",
+					// medium: "allow-same-origin allow-forms allow-scripts",
+					// high: ""
+				}
+			}
 		}
     },
 	system: {
@@ -77,7 +126,28 @@ exports.config = {
         // flag to expose stack traces to the UI (off by default for security)
         exposeStacktrace: false,
         // bindIP if IP_ANY is not the good binding (IPV6)
-        bindIP: "0000:00:00:00:00:00000"
+        bindIP: "0000:00:00:00:00:00000",
+		requestReport : {
+			//threshold : 1000,
+			autoTraceRecord : false
+		},
+		// load balancer will not assign new sessions any more when the heap usage exceeds this value (in MB)
+		memoryThreshold1: 1000,
+		// process will be killed during load balancer ping operation when the heap usage exceeds this value (in MB)
+		memoryThreshold2: 1500,
+		
+	},
+	nanny: {
+		// try to connect child processes every 'childPingStatusPolling' milliseconds. Load balancer will measure the response
+		// time and consider this for load balancing. This is a sliding mean, it is computed as follows: 
+		// the newest value will be considered by (100-'childSlidingMean') percent, the previous computed value 
+		// by 'childSlidingMean' percent. When a child process takes longer than 'childPingStatusTimeout' milliseconds for
+		// the ping response, it will be deleted. 
+		childPingStatusPolling:60000,
+	 	childPingStatusTimeout: 10000,
+	 	childSlidingMean: 20,
+	 	// waiting time (milliseconds) during load balancing to obtain results of other processes
+	 	balancingWaitTime: 600
 	},
     collaboration: {
         certdir: "certificates"  // path to certificates folder
@@ -87,7 +157,8 @@ exports.config = {
         "modules": [{
             "path": "syracuse-si",  // absolute path or relative to root
             "active": true,         // convenient flag to activate / deactivate; defaults to true
-            "forceUpdate": false    // force update of the package regardless of already present version
+            "forceUpdate": false,    // force update of the package regardless of already present version
+            "forceAgentUpdate": false // force update of the package by the Syracuse agent. This can prevent problems with file access rights.
         }]
     },
     mongodb: {
@@ -96,12 +167,9 @@ exports.config = {
             db: {
                 w: 1
             },
-            server: {
-            },
-            replSet: {
-            },
-            mongos: {
-            }
+			server: {},
+			replSet: {},
+			mongos: {}
         }
     },
 	session: {
@@ -141,8 +209,8 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
-        plugin : {
-            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
+		plugin: {
+			killTimeoutOnCreate: 120000 // timeout switch orchestration mode
         },
 		protocol: {
 			// trace: console.log,
@@ -262,7 +330,7 @@ exports.config = {
 			},
 			// Elastic search communication
 			search: "error",
-			notifications:"error",
+			notifications: "error",
 			// X3 ERP communication layer
 			x3Comm: {
 				jsRunner: "error", // Syracuse calls from 4GL processes
@@ -321,8 +389,8 @@ exports.config = {
 
 // for git enabled configurations one can override the standard config
 exports.branch_configs = [{
-    branch: "V7\.0.*|V7\.1.*", // branch name should match this regular expression
-    config : {
+	branch: "V7\\.0.*|V7\\.1.*", // branch name should match this regular expression
+	config: {
         collaboration: {
             databaseName: "Syracuse_V7",
             localInitScript: [] // some local data to import on database creation : standard import json file
@@ -330,12 +398,10 @@ exports.branch_configs = [{
     }
 }, {
     branch: "akira.*", // branch name should match this regular expression
-    config : {
+	config: {
         collaboration: {
             databaseName: "Syracuse_V8",
             localInitScript: [] // some local data to import on database creation
         }
     }
 }];
-
-

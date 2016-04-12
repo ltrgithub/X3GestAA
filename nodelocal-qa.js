@@ -199,9 +199,10 @@ exports.config = {
 		}	
 	},
 	mongoNotify: {
-		host: '10.198.254.76',
+		host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
 		port: '27017',
-		database: 'syracuse',
+		database: 'api',
+		sageIdCollection: 'sageid_notifications'
 	},
 	aws: {
 	 	"region": "us-east-1",
@@ -219,6 +220,7 @@ exports.config = {
 		siteUrl: "https://QA-Web-API-2-902657689.us-east-1.elb.amazonaws.com/sdata/sky/automation/production",
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
+		esIndex: 'x3.erp.x3'
     },
     symphony: {
         webApiUrl: "https://qaapi.dev-sageerpx3online.com",
