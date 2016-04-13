@@ -2869,50 +2869,6 @@
       ]
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_CI_AUTO",
-      "title": "title_308fa19a-9245-4705-a7ce-19b9ccd97f05",
-      "description": "description_308fa19a-9245-4705-a7ce-19b9ccd97f05",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "ciAutomations",
-        "representation": "ciAutomation"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_ee6955fa-42c1-498c-9c00-bf0ed2c4fd58",
-      "code": "S_CI_TOOLS",
-      "$factory": false,
-      "$factoryOwner": null,
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "items": [
-        {
-          "code": "S_CI_AUTO",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
       "$type": "menuModule",
       "title": "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf",
       "code": "S_MOD_ADMIN",
@@ -2937,9 +2893,6 @@
         },
         {
           "code": "S_USAGE"
-        },
-        {
-          "code": "S_CI_TOOLS"
         }
       ]
     },
@@ -5469,50 +5422,6 @@
       ]
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "S_CI_AUTO",
-      "title": "title_308fa19a-9245-4705-a7ce-19b9ccd97f05",
-      "description": "description_308fa19a-9245-4705-a7ce-19b9ccd97f05",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "ciAutomations",
-        "representation": "ciAutomation"
-      },
-      "module": null,
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_ee6955fa-42c1-498c-9c00-bf0ed2c4fd58",
-      "code": "S_CI_TOOLS",
-      "$factory": false,
-      "$factoryOwner": null,
-      "application": {
-        "application": "syracuse",
-        "contract": "collaboration"
-      },
-      "items": [
-        {
-          "code": "S_CI_AUTO",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
       "$type": "menuModule",
       "title": "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf",
       "code": "S_MOD_ADMIN",
@@ -5537,9 +5446,6 @@
         },
         {
           "code": "S_USAGE"
-        },
-        {
-          "code": "S_CI_TOOLS"
         }
       ]
     },
@@ -5828,7 +5734,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automaten",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Aufgabenjournal",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverlog",
-      "title_ee6955fa-42c1-498c-9c00-bf0ed2c4fd58": "Tools kontinuierliche Integration",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
     },
     "en-gb": {
@@ -5986,9 +5891,6 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
-      "title_ee6955fa-42c1-498c-9c00-bf0ed2c4fd58": "Continuous integration tools",
-      "title_308fa19a-9245-4705-a7ce-19b9ccd97f05": "Continuous integration",
-      "description_308fa19a-9245-4705-a7ce-19b9ccd97f05": "Continuous integration",
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard"
     },
     "es-es": {
@@ -6832,7 +6734,7 @@
       "options": {
         "homepagesFilter": "(pageName like 'home%')",
         "modulesFilter": "(application.description eq 'Syracuse Collaboration') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
-        "submodulesFilter": "",
+        "submodulesFilter": "($factory eq true) and ($factoryOwner eq 'SAGE')",
         "factoryOwner": "SAGE"
       }
     }
@@ -6843,7 +6745,7 @@
       "options": {
         "homepagesFilter": "(pageName like 'home%')",
         "modulesFilter": "(application.description eq 'Syracuse Collaboration') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
-        "submodulesFilter": "",
+        "submodulesFilter": "($factory eq true) and ($factoryOwner eq 'SAGE')",
         "factoryOwner": "SAGE"
       }
     }
