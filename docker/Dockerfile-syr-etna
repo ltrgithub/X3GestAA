@@ -1,23 +1,24 @@
 FROM node:4.2
 
+ARG SYRACUSE_SRC="."
+
 # install needed packages
-RUN apt-get update && apt-get install -y curl xz-utils libxml2 libaio1 ksh
-
-RUN mkdir -p /tmp /syracuse /config /extensions
-
-COPY instantclient-basiclite-linux.x64-12.1.0.2.0.tar /tmp
-COPY instantclient-sqlplus-linux.x64-12.1.0.2.0.tar /tmp
-RUN mkdir /opt/oracle && cd /opt/oracle && tar -xf /tmp/instantclient-basiclite-linux.x64-12.1.0.2.0.tar && \
-    tar -xf /tmp/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar && \
-    ln -s /opt/oracle/instantclient_12_1/libclntsh.so.12.1 /opt/oracle/instantclient_12_1/libclntsh.so && \
-    ln -s /opt/oracle/instantclient_12_1/libocci.so.12.1 /opt/oracle/instantclient_12_1/libocci.so
-
+RUN apt-get update && apt-get install -y curl xz-utils libxml2 libaio1 ksh && \
+  mkdir -p /tmp /syracuse /config /extensions /opt/oracle && cd /tmp && \
+  wget https://s3-eu-west-1.amazonaws.com/sagex3platform/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar && \
+  wget https://s3-eu-west-1.amazonaws.com/sagex3platform/instantclient-basiclite-linux.x64-12.1.0.2.0.tar && \
+  cd /opt/oracle && tar -xf /tmp/instantclient-basiclite-linux.x64-12.1.0.2.0.tar && \
+  tar -xf /tmp/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar && \
+  ln -s /opt/oracle/instantclient_12_1/libclntsh.so.12.1 /opt/oracle/instantclient_12_1/libclntsh.so && \
+  ln -s /opt/oracle/instantclient_12_1/libocci.so.12.1 /opt/oracle/instantclient_12_1/libocci.so && \
+  rm /tmp/*
+    
 ENV LD_LIBRARY_PATH /opt/oracle/instantclient_12_1:$LD_LIBRARY_PATH
 ENV PATH /opt/oracle/instantclient_12_1:$PATH
 
 WORKDIR /syracuse
 
-COPY . .
+COPY $SYRACUSE_SRC .
 
 RUN cp /syracuse/docker/nodelocal-syr-etna.docker /syracuse/nodelocal.js
 
