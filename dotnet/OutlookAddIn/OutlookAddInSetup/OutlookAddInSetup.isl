@@ -264,6 +264,7 @@
 		<row><td>NewBinary18</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallStateMenu.ico</td></row>
 		<row><td>NewBinary19</td><td/><td>&lt;ISProjectFolder&gt;\..\InstallerHelpers\RegistryHelper\RegistryHelper\bin\Release\RegistryHelper.exe</td></row>
 		<row><td>NewBinary2</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\New.ibd</td></row>
+		<row><td>NewBinary20</td><td/><td>&lt;ISProjectFolder&gt;\..\InstallerHelpers\RegistryHelper\RegistryHelper\bin\Release\RegistryHelper.exe</td></row>
 		<row><td>NewBinary3</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\Up.ibd</td></row>
 		<row><td>NewBinary4</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\WarningIcon.ibd</td></row>
 		<row><td>NewBinary5</td><td/><td>&lt;ISProductFolder&gt;\Support\Themes\InstallShield Blue Theme\welcome.jpg</td></row>
@@ -1025,9 +1026,11 @@
 		<row><td>SetupCompleteError</td><td>Finish</td><td>DoAction</td><td>CleanUp</td><td>ISSCRIPTRUNNING="1"</td><td>1</td></row>
 		<row><td>SetupCompleteError</td><td>Finish</td><td>DoAction</td><td>ShowMsiLog</td><td>MsiLogFileLocation And (ISSHOWMSILOG="1")</td><td>3</td></row>
 		<row><td>SetupCompleteError</td><td>Finish</td><td>EndDialog</td><td>Exit</td><td>1</td><td>2</td></row>
-		<row><td>SetupCompleteSuccess</td><td>OK</td><td>DoAction</td><td>CleanUp</td><td>ISSCRIPTRUNNING="1"</td><td>1</td></row>
-		<row><td>SetupCompleteSuccess</td><td>OK</td><td>DoAction</td><td>ShowMsiLog</td><td>MsiLogFileLocation And (ISSHOWMSILOG="1") And NOT ISENABLEDWUSFINISHDIALOG</td><td>6</td></row>
-		<row><td>SetupCompleteSuccess</td><td>OK</td><td>EndDialog</td><td>Exit</td><td>1</td><td>2</td></row>
+		<row><td>SetupCompleteSuccess</td><td>OK</td><td>DoAction</td><td>CleanUp</td><td>ISSCRIPTRUNNING="1"</td><td>3</td></row>
+		<row><td>SetupCompleteSuccess</td><td>OK</td><td>DoAction</td><td>ShowMsiLog</td><td>MsiLogFileLocation And (ISSHOWMSILOG="1") And NOT ISENABLEDWUSFINISHDIALOG</td><td>8</td></row>
+		<row><td>SetupCompleteSuccess</td><td>OK</td><td>DoAction</td><td>UpdateRegistry</td><td>Not Installed</td><td>1</td></row>
+		<row><td>SetupCompleteSuccess</td><td>OK</td><td>EndDialog</td><td>Exit</td><td>1</td><td>4</td></row>
+		<row><td>SetupCompleteSuccess</td><td>OK</td><td>[UpdateRegistry]</td><td>UpdateRegistry</td><td>Not Installed</td><td>2</td></row>
 		<row><td>SetupError</td><td>A</td><td>EndDialog</td><td>ErrorAbort</td><td>1</td><td>0</td></row>
 		<row><td>SetupError</td><td>C</td><td>EndDialog</td><td>ErrorCancel</td><td>1</td><td>0</td></row>
 		<row><td>SetupError</td><td>I</td><td>EndDialog</td><td>ErrorIgnore</td><td>1</td><td>0</td></row>
@@ -1084,10 +1087,11 @@
 		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
+		<row><td>RemoveFromRegistry</td><td>3074</td><td>NewBinary20</td><td>"uninstall" "[INSTALLDIR] </td><td/><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
 		<row><td>ShowMsiLog</td><td>226</td><td>SystemFolder</td><td>[SystemFolder]notepad.exe "[MsiLogFileLocation]"</td><td/><td>Shows Property-driven MSI Log</td></row>
-		<row><td>UpdateRegistry</td><td>1026</td><td>NewBinary19</td><td>"[INSTALLDIR]</td><td/><td/></row>
+		<row><td>UpdateRegistry</td><td>2</td><td>NewBinary19</td><td>"install" "[INSTALLDIR]</td><td/><td/></row>
 		<row><td>setAllUsersProfile2K</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%ALLUSERSPROFILE]</td><td/><td/></row>
 		<row><td>setUserProfileNT</td><td>51</td><td>USERPROFILE</td><td>[%USERPROFILE]</td><td/><td/></row>
 	</table>
@@ -2717,7 +2721,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1520684202</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1915006256</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
@@ -3817,8 +3821,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1918762772</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>1520684202</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1520684202</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>1915006256</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1915006256</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Install ERP X3 Outlook Add-in </td><td>0</td><td/><td>1436766891</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Sage ERP X3 Outlook AddIn</td><td>0</td><td/><td>1436754571</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1918762772</td></row>
@@ -4015,6 +4019,7 @@
 		<row><td>RemoveExistingProducts</td><td/><td>1410</td><td>RemoveExistingProducts</td><td/></row>
 		<row><td>RemoveFiles</td><td/><td>3500</td><td>RemoveFiles</td><td/></row>
 		<row><td>RemoveFolders</td><td/><td>3600</td><td>RemoveFolders</td><td/></row>
+		<row><td>RemoveFromRegistry</td><td>REMOVE="ALL"</td><td>6405</td><td/><td/></row>
 		<row><td>RemoveIniValues</td><td/><td>3100</td><td>RemoveIniValues</td><td/></row>
 		<row><td>RemoveODBC</td><td/><td>2400</td><td>RemoveODBC</td><td/></row>
 		<row><td>RemoveRegistryValues</td><td/><td>2600</td><td>RemoveRegistryValues</td><td/></row>
@@ -4037,7 +4042,6 @@
 		<row><td>UnregisterMIMEInfo</td><td/><td>3000</td><td>UnregisterMIMEInfo</td><td/></row>
 		<row><td>UnregisterProgIdInfo</td><td/><td>2900</td><td>UnregisterProgIdInfo</td><td/></row>
 		<row><td>UnregisterTypeLibraries</td><td/><td>2300</td><td>UnregisterTypeLibraries</td><td/></row>
-		<row><td>UpdateRegistry</td><td>Not Installed</td><td>6405</td><td/><td/></row>
 		<row><td>ValidateProductID</td><td/><td>700</td><td>ValidateProductID</td><td/></row>
 		<row><td>WriteEnvironmentStrings</td><td/><td>5200</td><td>WriteEnvironmentStrings</td><td/></row>
 		<row><td>WriteIniValues</td><td/><td>5100</td><td>WriteIniValues</td><td/></row>
@@ -4444,9 +4448,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{B42B3C8C-BBE5-41DB-9C76-F2E755CBD990}</td><td/></row>
+		<row><td>ProductCode</td><td>{22592624-7EBB-4C6C-B087-B741055E504C}</td><td/></row>
 		<row><td>ProductName</td><td>Sage ERP X3 Outlook AddIn</td><td/></row>
-		<row><td>ProductVersion</td><td>1.09.0003</td><td/></row>
+		<row><td>ProductVersion</td><td>1.09.0004</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4458,7 +4462,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP5;ISACTIONPROP4</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP5;ISACTIONPROP4;ISACTIONPROP7</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td/></row>
@@ -4514,12 +4518,24 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>Registry1</td><td>2</td><td>SOFTWARE</td><td/><td/><td>ISX_DEFAULTCOMPONENT2</td><td>1</td></row>
+		<row><td>Registry3</td><td>2</td><td>SOFTWARE\Microsoft\Office\15.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry4</td><td>2</td><td>SOFTWARE\Microsoft\Office\15.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
+		<row><td>Registry5</td><td>2</td><td>SOFTWARE\Microsoft\Office\15.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry6</td><td>2</td><td>SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry7</td><td>2</td><td>SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
 		<row><td>Registry8</td><td>2</td><td>SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT2</td><td>0</td></row>
-		<row><td>_3B1A02E838F379D6AEDF4D76400B2DAB</td><td>2</td><td>SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
-		<row><td>_B1F8599BBEDDDB29921EFFF2E9353D06</td><td>2</td><td>SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
-		<row><td>_CB1D1767981744EC80F6D9447828DD5E</td><td>2</td><td>SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_35119521615E93D08EF5FB3C4315D390</td><td>2</td><td>SOFTWARE\Microsoft\Office\15.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_3B1A02E838F379D6AEDF4D76400B2DAB</td><td>2</td><td>SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_7B4564DB0766897496FBCDE689CC52C7</td><td>2</td><td>SOFTWARE\Microsoft\Office\16.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT2</td><td/></row>
+		<row><td>_93E43157CF2F3F92A47164812BB1FD42</td><td>2</td><td>SOFTWARE\Microsoft\Office\15.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_A3430C5B40CB84AC8F28B881AF055B37</td><td>2</td><td>SOFTWARE\Microsoft\Office\15.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_A7EEC62A5ADD9B1CEEB43CBBCD8A6A6A</td><td>2</td><td>SOFTWARE\Microsoft\Office\16.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT2</td><td/></row>
+		<row><td>_B1F8599BBEDDDB29921EFFF2E9353D06</td><td>2</td><td>SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_B40AC5E44BC5F966BCE83E3E728C18F2</td><td>2</td><td>SOFTWARE\Microsoft\Office\16.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>FriendlyName</td><td>Sage CRM Add-in</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_BA004E23D5ED7612BDFAF1177E59D416</td><td>2</td><td>SOFTWARE\Microsoft\Office\16.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_CB1D1767981744EC80F6D9447828DD5E</td><td>2</td><td>SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_E8ED56440C4824FB54171E8E76385A98</td><td>2</td><td>SOFTWARE\Microsoft\Office\16.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT4</td><td/></row>
+		<row><td>_F3E4C03FE6BAE613C3100BD9CA84CD45</td><td>2</td><td>SOFTWARE\Microsoft\Office\16.0\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect</td><td>Description</td><td>Link between Sage CRM and OutLook</td><td>ISX_DEFAULTCOMPONENT2</td><td/></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4740,6 +4756,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.08.0002</td><td>1.08.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>1.08.0002</td></row>
 		<row><td>{227ED38D-3827-4780-89F4-A6A8D7636B31}</td><td>1.09.0001</td><td>1.09.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP5</td><td>1.09.001</td></row>
 		<row><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td>1.09.0002</td><td>1.09.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP4</td><td>1.09.0002</td></row>
+		<row><td>{9153DA36-9DE8-4BB1-8C13-CF5BD5894D7E}</td><td>1.09.0003</td><td>1.09.0003</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP7</td><td>1.09.0003</td></row>
 	</table>
 
 	<table name="Verb">
