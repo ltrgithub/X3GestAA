@@ -157,7 +157,8 @@ exports.config = {
         "modules": [{
             "path": "syracuse-si",  // absolute path or relative to root
             "active": true,         // convenient flag to activate / deactivate; defaults to true
-            "forceUpdate": false    // force update of the package regardless of already present version
+            "forceUpdate": false,    // force update of the package regardless of already present version
+            "forceAgentUpdate": false // force update of the package by the Syracuse agent. This can prevent problems with file access rights.
         }]
     },
     mongodb: {
