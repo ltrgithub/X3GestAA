@@ -107,7 +107,7 @@ namespace ExcelAddIn
                         {
                             boxParent = null;
                         }
-                        else if (level == 2)
+                        else if (level >= 2)
                         {
                             if (box.ContainsKey("$bind"))
                                 boxParent = box["$bind"].ToString();
@@ -149,7 +149,7 @@ namespace ExcelAddIn
                             String bind = item["$bind"].ToString();
                             
                             ReportingFieldTypes tft = ReportingFieldUtil.getType(type);
-                            
+                                
                             FieldTreeNode child = new FieldTreeNode(ctitle, item);
                             child.titleParent = boxParent != null ? title : null;
                             child.itemParent = boxParent;

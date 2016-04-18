@@ -432,10 +432,13 @@ namespace WordAddIn
                 if (nonTabularCollection.ContainsKey("$items"))
                 {
                     Object[] itemsArray = (Object[])nonTabularCollection.Where(key => key.Key.Equals("$items")).First().Value;
-                    Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
-                    if (itemsDictionary.ContainsKey(tag.property))
+                    if (itemsArray.Length > 0)
                     {
-                        return (Dictionary<String, object>)itemsDictionary[tag.property];
+                        Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
+                        if (itemsDictionary.ContainsKey(tag.property))
+                        {
+                            return (Dictionary<String, object>)itemsDictionary[tag.property];
+                        }
                     }
                 }
             }

@@ -1,9 +1,10 @@
 "use strict";
-var Site = require('syracuse-ui/lib/site/site').Site;
+var _site = require('syracuse-ui/lib/site/site');
 exports.main = function(){
-    var site = new Site();
+    var site = _site.create();
     site.$isLicenceTool = true;
-    site.$userProfileUrl = "/action/user-profile";
+	delete syra_config.$pageTemplateUrl;
+    syra_config.$userProfileUrl = "/action/user-profile";
     site.load();
 };
 

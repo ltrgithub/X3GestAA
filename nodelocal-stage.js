@@ -193,9 +193,10 @@ exports.config = {
                                 }
                 },
                 mongoNotify: {
-                                host: 'sage_id_notifications',
-                                port: '27017',
-                                database: 'syracuse',
+                    host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
+                    port: '27017',
+                    database: 'api',
+                    sageIdCollection: 'sageid_notifications'
                 },
 								health:{
 							parallel: 4,
@@ -204,6 +205,7 @@ exports.config = {
                             siteUrl: "https://staging-api.sagex3.com/sdata/sky/automation/production",
                             site: $WebAPIAuth,
 						cloudwatch: true,
+                        esIndex: 'x3.erp.x3'
 	},
 					aws: {
 
@@ -215,7 +217,8 @@ exports.config = {
         elasticsearch: {}
     },
     symphony: {
-        webApiUrl: "https://devapi.dev-sageerpx3online.com",
+        webApiUrl: "https://staging-api.sagex3.com",
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        farmElbUrl: "https://staging.symphony.na.cloud.sagex3.com",
     },    
 };
