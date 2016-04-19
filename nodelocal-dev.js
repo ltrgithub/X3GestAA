@@ -52,10 +52,10 @@ exports.config = {
 	collaboration: {
 		driver: "mongodb",
 		dataset: "syracuse",
-		hostname: "10.198.2.4:27017,10.198.2.68",
+		hostname: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
 		port: 27017,
 		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
-		certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
+		//certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
         	cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
 	},
     mongodb: {
@@ -135,7 +135,7 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
-		hostname: "elastic_search_master",
+		hostname: "internal-elastic-s-elastics-1q0e4l3zzl1fa-2111868106.us-west-2.elb.amazonaws.com",
         port: 9200,
 		//tracer: console.log,
 
@@ -197,9 +197,10 @@ exports.config = {
 		}
 	},
 	mongoNotify: {
-		host: '10.198.254.30',
+		host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
 		port: '27017',
-		database: 'syracuse',
+		database: 'api',
+		sageIdCollection: 'sageid_notifications'
 	},
 	aws: {
 	 	"region": "us-west-2",
@@ -213,13 +214,15 @@ exports.config = {
 	health:{
 		parallel: 4,
 		delay: 300,
-		logUrl: "https://devapi.dev-sageerpx3online.com/healthLogs/production",
-		siteUrl: "https://devapi.dev-sageerpx3online.com/sdata/sky/automation/production",
+		logUrl: "https://Web-API-2-371451615.us-west-2.elb.amazonaws.com/healthLogs/production",
+		siteUrl: "https://Web-API-2-371451615.us-west-2.elb.amazonaws.com/sdata/sky/automation/production",
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
+		esIndex: 'x3.erp.x3'
     },
     symphony: {
 		webApiUrl: "https://devapi.dev-sageerpx3online.com",
 		webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+		farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
 	},
 };
