@@ -237,6 +237,13 @@ namespace ExcelAddIn
 
         public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
+            
+            if (EmbeddedHelper.IsEmbedded(Wb))
+            {
+                EmbeddedHelper.setSyracuseTabVisibility(false);
+                return;
+            }
+
             SetServerLocations(Wb);
 
             if (handleWorkbookOpen)
@@ -293,6 +300,8 @@ namespace ExcelAddIn
                     templateActions.DisableTemplateButtons();
                 }
             }
+
+            EmbeddedHelper.setSyracuseTabVisibility(true);
         }
 
         void Application_WorkbookBeforeSave(Excel.Workbook wb, bool SaveAsUI, ref bool Cancel)
