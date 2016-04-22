@@ -8,21 +8,43 @@ using System.Runtime.InteropServices;
 namespace RegistryHelper
 {
     class Program
-    {       
+    {
+        enum OfficeInstallationType
+        {
+            NotInstalled,
+            StandardOfficeInstallation,
+            ClickToRunOfficeInstallation
+        };
+
         static void Main(string[] args)
         {
-            if (RegistryHelper.OfficeRegistryHelper.isOffice2010Installed() || RegistryHelper.OfficeRegistryHelper.isOffice2013Installed() || RegistryHelper.OfficeRegistryHelper.isOffice2016Installed())
+            int officeInstallation = (int)OfficeInstallationType.NotInstalled;
+            String officeVersionNumber = String.Empty;
+
+            if (RegistryHelper.OfficeRegistryHelper.isOffice2010Installed() ||
+                    RegistryHelper.OfficeRegistryHelper.isOffice2013Installed() ||
+                    RegistryHelper.OfficeRegistryHelper.isOffice2016Installed())
+            {
+                officeInstallation = (int)OfficeInstallationType.StandardOfficeInstallation;
+            }
+            else if (RegistryHelper.OfficeRegistryHelper.isOffice2013ClickToRunInstalled(out officeVersionNumber) ||
+                        RegistryHelper.OfficeRegistryHelper.isOffice2016ClickToRunInstalled(out officeVersionNumber))
+            {
+                officeInstallation = (int)OfficeInstallationType.ClickToRunOfficeInstallation;
+            }
+
+            if (officeInstallation != (int)OfficeInstallationType.NotInstalled)
             {
                 if (args.Length > 0)
                     _log("Action: " + args[0]);
                 if (args.Length > 0 && args[0] == "Install")
                 {
-                    OfficeRegistryHelper.copyAddinsRegistry();
+                    OfficeRegistryHelper.copyAddinsRegistry(officeInstallation == (int)OfficeInstallationType.ClickToRunOfficeInstallation, officeVersionNumber);
                     OfficeRegistryHelper.copyFile();
                 }
                 else if (args.Length > 0 && args[0] == "Remove")
                 {
-                    OfficeRegistryHelper.removeAddinRegistry();
+                    OfficeRegistryHelper.removeAddinRegistry(officeInstallation == (int)OfficeInstallationType.ClickToRunOfficeInstallation, officeVersionNumber);
                 }
             }
             else
