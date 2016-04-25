@@ -135,9 +135,14 @@ namespace ExcelAddIn
         }
         public bool DeleteTable(String name)
         {
-            String encodedName = ReportingUtils.encodeRangePrefix(name);
-            SyracuseExcelTable table = new SyracuseExcelTable(encodedName, null);
-            return table.DeleteTable(ReportingUtils.encodeRangePrefix(encodedName));
+            bool success = true;
+            if (!String.IsNullOrEmpty(name))
+            {
+                String encodedName = ReportingUtils.encodeRangePrefix(name);
+                SyracuseExcelTable table = new SyracuseExcelTable(encodedName, null);
+                success = table.DeleteTable(ReportingUtils.encodeRangePrefix(encodedName));
+            }
+            return success;
         }
         //
         public void RegisterVBCallback()
