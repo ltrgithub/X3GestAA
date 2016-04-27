@@ -43,8 +43,12 @@ namespace ExcelAddIn
             webBrowser.ObjectForScripting = new External();
             ((External)webBrowser.ObjectForScripting).onLogonHandler = delegate()
             {
-                if(!Globals.ThisAddIn.ActionPanel.connected)
-                 Globals.ThisAddIn.ActionPanel.Connect("");
+                if (!Globals.ThisAddIn.ActionPanel.connected)
+                {
+                    Microsoft.Office.Interop.Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+                    if ((wb != null && new TemplateActions(null).isExcelTemplateType(wb)) == false)
+                        Globals.ThisAddIn.ActionPanel.Connect("");
+                }
             };
 
             if (!serverUrl.EndsWith("/")) serverUrl += "/";
@@ -55,7 +59,7 @@ namespace ExcelAddIn
             }
             else
             {
-                webBrowser.Url = new Uri(serverUrl + "msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24query%26format%3Dapplication/syracuse-excel-worksheet");
+                webBrowser.Url = new Uri(serverUrl + "msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexcelconfig.%24query%26source=excelDataSource%26format%3Dapplication/syracuse-excel-worksheet");
             }
         }
 
