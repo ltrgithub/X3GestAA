@@ -294,10 +294,10 @@ namespace WordAddIn
         }
 
         //Used by exel (maybe someday)
-        private static Dictionary<String, object> getDictionaryFromCustomXMLPart(Microsoft.Office.Interop.Excel.Workbook doc)
-        {
-            return getDictionaryFromCustomXMLParts(doc.CustomXMLParts);
-        }
+        //private static Dictionary<String, object> getDictionaryFromCustomXMLPart(Microsoft.Office.Interop.Excel.Workbook doc)
+        //{
+        //    return getDictionaryFromCustomXMLParts(doc.CustomXMLParts);
+        //}
 
         private static Dictionary<String, object> getDictionaryFromCustomXMLParts(CustomXMLParts parts)
         {
