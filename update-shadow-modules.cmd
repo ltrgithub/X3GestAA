@@ -18,20 +18,17 @@ cd %DIR%\node_modules\syracuse-phantomjs & cmd /C npm install
 cd %DIR%\node_modules\syracuse-ldap & cmd /C npm install
 cd %DIR%\node_modules\syracuse-core & cmd /C npm install
 echo 
-echo STEP 4: running npm dedup (may take a while)
-cd %DIR% & cmd /C npm dedup
-echo 
-echo STEP 5: running npm-shadow
+echo STEP 4: running npm-shadow
 cd %DIR%\node_modules & node npm-shadow
 echo 
-echo STEP 6: resetting node_modules (again)
+echo STEP 5: resetting node_modules (again)
 cd %DIR% & rmdir /s/q node_modules
 git checkout node_modules
 echo 
-echo STEP 7: checking out submodules (again)
+echo STEP 6: checking out submodules (again)
 git submodule init
 git submodule update
 echo
-echo STEP 8: cleanup shadow modules binaries
+echo STEP 7: cleanup shadow modules binaries
 cd %DIR%\shadow-modules & git checkout node_modules/fibers/bin
 cd %DIR%\shadow-modules & git checkout git checkout win32-*
