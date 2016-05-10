@@ -20432,7 +20432,7 @@
       "endpoint": null,
       "representationRef": null,
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_MIMP"
       },
       "categories": [],
       "parameters": []
@@ -25554,6 +25554,114 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENQRTPAY",
+      "title": "title_785bea63-af89-46ba-a33f-868d7aea20fd",
+      "description": "description_785bea63-af89-46ba-a33f-868d7aea20fd",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENQRTPAY",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENQRTHEA",
+      "title": "title_9573fd12-e9a6-4f2d-9c48-0a2bf7932fae",
+      "description": "description_9573fd12-e9a6-4f2d-9c48-0a2bf7932fae",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENQRTHEA",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENQRT",
+      "title": "title_34a48200-2673-4c74-b1ee-02463404c0fd",
+      "description": "description_34a48200-2673-4c74-b1ee-02463404c0fd",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENQRT",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_60d6143d-62f3-4a9d-ab4f-72590093c1f9",
+      "code": "STD_X3_HRM_RPTQR",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "code": "STD_X3_HRM_GENQRTPAY",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GENQRTHEA",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GENQRT",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_1546f900-9f51-4a0e-9bc7-7faa9d9a1ce4",
       "code": "STD_X3_HRM_MIMP",
@@ -25569,6 +25677,9 @@
         },
         {
           "code": "STD_X3_HRM_MIMP_MISC"
+        },
+        {
+          "code": "STD_X3_HRM_RPTQR"
         }
       ]
     },
@@ -28772,6 +28883,11 @@
       "description_43f9de7f-53d8-4ddd-8de1-b45f546d56aa": "PSIMP",
       "title_74545310-ae50-43cd-9efb-e9b4750da0a7": "Log reading",
       "description_74545310-ae50-43cd-9efb-e9b4750da0a7": "LECTRACE",
+      "title_60d6143d-62f3-4a9d-ab4f-72590093c1f9": "Queries",
+      "title_785bea63-af89-46ba-a33f-868d7aea20fd": "Payroll",
+      "description_785bea63-af89-46ba-a33f-868d7aea20fd": "Payroll",
+      "title_9573fd12-e9a6-4f2d-9c48-0a2bf7932fae": "Headcount",
+      "description_9573fd12-e9a6-4f2d-9c48-0a2bf7932fae": "Headcount",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "Translations",
       "title_2f4c5580-7ecc-44d0-a197-0a727dae6c49": "Software",
       "title_b920c9d0-dce1-492a-a3d9-e316306aba9b": "Functions",
