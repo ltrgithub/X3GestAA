@@ -525,6 +525,20 @@
     "path": "/node_modules/ui-d3-graph/public/deps"
   },
   {
+    "name": "mime-types",
+    "version": "2.0.14",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/accepts/node_modules/mime-types"
+  },
+  {
+    "name": "accepts",
+    "version": "1.1.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/accepts"
+  },
+  {
     "name": "acorn",
     "version": "1.2.2",
     "licenses": "MIT",
@@ -567,13 +581,6 @@
     "path": "/shadow-modules/node_modules/amdefine"
   },
   {
-    "name": "ansi",
-    "version": "0.3.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2012 Nathan Rajlich ",
-    "path": "/shadow-modules/node_modules/ansi"
-  },
-  {
     "name": "ansi-regex",
     "version": "2.0.0",
     "licenses": "MIT",
@@ -582,17 +589,31 @@
   },
   {
     "name": "ansi-styles",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "licenses": "MIT",
     "copyrights": "Copyright (c) Sindre Sorhus ",
     "path": "/shadow-modules/node_modules/ansi-styles"
   },
   {
-    "name": "are-we-there-yet",
-    "version": "1.0.6",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) 2015, Rebecca Turner",
-    "path": "/shadow-modules/node_modules/are-we-there-yet"
+    "name": "argsparser",
+    "version": "0.0.6",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2011 Oleg Slobodskoi",
+    "path": "/shadow-modules/node_modules/argsparser"
+  },
+  {
+    "name": "array-flatten",
+    "version": "1.1.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Blake Embrey ",
+    "path": "/shadow-modules/node_modules/array-flatten"
+  },
+  {
+    "name": "asap",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright 2009–2014 Contributors. All rights reserved.",
+    "path": "/shadow-modules/node_modules/asap"
   },
   {
     "name": "asn1",
@@ -631,7 +652,7 @@
   },
   {
     "name": "async",
-    "version": "0.2.10",
+    "version": "1.5.2",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2010-2016 Caolan McMahon",
     "path": "/shadow-modules/node_modules/async"
@@ -652,136 +673,133 @@
   },
   {
     "name": "babel-code-frame",
-    "version": "6.7.2",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-code-frame"
-  },
-  {
-    "name": "source-map",
-    "version": "0.5.3",
-    "licenses": "BSD-3-Clause",
-    "copyrights": "Copyright (c) 2009-2011, Mozilla Foundation and contributors",
-    "path": "/shadow-modules/node_modules/babel-core/node_modules/source-map"
-  },
-  {
-    "name": "babel-core",
-    "version": "6.5.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-core"
-  },
-  {
-    "name": "is-finite",
-    "version": "1.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-generator/node_modules/is-finite"
-  },
-  {
-    "name": "number-is-nan",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-generator/node_modules/number-is-nan"
-  },
-  {
-    "name": "repeating",
-    "version": "1.1.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-generator/node_modules/repeating"
-  },
-  {
-    "name": "babel-generator",
-    "version": "6.7.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-generator"
-  },
-  {
-    "name": "babel-helper-call-delegate",
-    "version": "6.6.5",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-helper-call-delegate"
   },
   {
     "name": "lodash",
     "version": "3.10.1",
     "licenses": "MIT",
     "copyrights": "Copyright jQuery Foundation and other contributors ",
-    "path": "/shadow-modules/node_modules/babel-helper-define-map/node_modules/lodash"
+    "path": "/shadow-modules/node_modules/babel-core/node_modules/lodash"
+  },
+  {
+    "name": "source-map",
+    "version": "0.5.6",
+    "licenses": "BSD-3-Clause",
+    "copyrights": "Copyright (c) 2009-2011, Mozilla Foundation and contributors",
+    "path": "/shadow-modules/node_modules/babel-core/node_modules/source-map"
+  },
+  {
+    "name": "babel-core",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-core"
+  },
+  {
+    "name": "babel-generator",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-generator"
+  },
+  {
+    "name": "babel-helper-call-delegate",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-helper-call-delegate"
   },
   {
     "name": "babel-helper-define-map",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-define-map"
   },
   {
     "name": "babel-helper-function-name",
-    "version": "6.6.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-function-name"
   },
   {
     "name": "babel-helper-get-function-arity",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-get-function-arity"
   },
   {
     "name": "babel-helper-hoist-variables",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-hoist-variables"
   },
   {
     "name": "babel-helper-optimise-call-expression",
-    "version": "6.6.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-optimise-call-expression"
   },
   {
     "name": "babel-helper-regex",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-regex"
   },
   {
     "name": "babel-helper-replace-supers",
-    "version": "6.7.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helper-replace-supers"
   },
   {
     "name": "babel-helpers",
-    "version": "6.6.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-helpers"
   },
   {
     "name": "babel-messages",
-    "version": "6.7.2",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-messages"
   },
   {
     "name": "babel-plugin-check-es2015-constants",
-    "version": "6.7.2",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-check-es2015-constants"
+  },
+  {
+    "name": "babel-plugin-constant-folding",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-constant-folding"
+  },
+  {
+    "name": "babel-plugin-dead-code-elimination",
+    "version": "1.0.2",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-dead-code-elimination"
+  },
+  {
+    "name": "babel-plugin-eval",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-eval"
   },
   {
     "name": "babel-plugin-flow-comments",
@@ -791,413 +809,279 @@
     "path": "/shadow-modules/node_modules/babel-plugin-flow-comments"
   },
   {
+    "name": "babel-plugin-inline-environment-variables",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-inline-environment-variables"
+  },
+  {
+    "name": "babel-plugin-jscript",
+    "version": "1.0.4",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-jscript"
+  },
+  {
+    "name": "babel-plugin-member-expression-literals",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-member-expression-literals"
+  },
+  {
+    "name": "babel-plugin-property-literals",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-property-literals"
+  },
+  {
+    "name": "babel-plugin-proto-to-assign",
+    "version": "1.0.4",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-proto-to-assign"
+  },
+  {
+    "name": "babel-plugin-react-constant-elements",
+    "version": "1.0.3",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-react-constant-elements"
+  },
+  {
+    "name": "babel-plugin-react-display-name",
+    "version": "1.0.3",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-react-display-name"
+  },
+  {
+    "name": "babel-plugin-remove-console",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-remove-console"
+  },
+  {
+    "name": "babel-plugin-remove-debugger",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-remove-debugger"
+  },
+  {
+    "name": "babel-plugin-runtime",
+    "version": "1.0.7",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-runtime"
+  },
+  {
     "name": "babel-plugin-syntax-async-functions",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-syntax-async-functions"
   },
   {
     "name": "babel-plugin-syntax-flow",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-syntax-flow"
   },
   {
     "name": "babel-plugin-transform-es2015-arrow-functions",
-    "version": "6.5.2",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-arrow-functions"
   },
   {
     "name": "babel-plugin-transform-es2015-block-scoped-functions",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-block-scoped-functions"
   },
   {
     "name": "babel-plugin-transform-es2015-block-scoping",
-    "version": "6.7.1",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-block-scoping"
   },
   {
     "name": "babel-plugin-transform-es2015-classes",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-classes"
   },
   {
     "name": "babel-plugin-transform-es2015-computed-properties",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-computed-properties"
   },
   {
     "name": "babel-plugin-transform-es2015-destructuring",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-destructuring"
   },
   {
+    "name": "babel-plugin-transform-es2015-duplicate-keys",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-duplicate-keys"
+  },
+  {
     "name": "babel-plugin-transform-es2015-for-of",
-    "version": "6.6.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-for-of"
   },
   {
     "name": "babel-plugin-transform-es2015-function-name",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-function-name"
   },
   {
     "name": "babel-plugin-transform-es2015-literals",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-literals"
   },
   {
     "name": "babel-plugin-transform-es2015-modules-commonjs",
-    "version": "6.7.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-modules-commonjs"
   },
   {
     "name": "babel-plugin-transform-es2015-object-super",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-object-super"
   },
   {
     "name": "babel-plugin-transform-es2015-parameters",
-    "version": "6.7.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-parameters"
   },
   {
     "name": "babel-plugin-transform-es2015-shorthand-properties",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-shorthand-properties"
   },
   {
     "name": "babel-plugin-transform-es2015-spread",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-spread"
   },
   {
     "name": "babel-plugin-transform-es2015-sticky-regex",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-sticky-regex"
   },
   {
     "name": "babel-plugin-transform-es2015-template-literals",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-template-literals"
   },
   {
     "name": "babel-plugin-transform-es2015-typeof-symbol",
-    "version": "6.6.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-typeof-symbol"
   },
   {
     "name": "babel-plugin-transform-es2015-unicode-regex",
-    "version": "6.5.0",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-es2015-unicode-regex"
   },
   {
-    "name": "babel-register",
-    "version": "6.7.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/babel-register"
-  },
-  {
-    "name": "babel-template",
-    "version": "6.7.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/babel-template"
-  },
-  {
-    "name": "babylon",
-    "version": "6.7.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/babylon"
-  },
-  {
-    "name": "chalk",
-    "version": "1.1.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/chalk"
-  },
-  {
-    "name": "color-convert",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2011 Heather Arthur ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/color-convert"
-  },
-  {
-    "name": "convert-source-map",
-    "version": "1.2.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright 2013 Thorsten Lorenz. ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/convert-source-map"
-  },
-  {
-    "name": "detect-indent",
-    "version": "3.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/detect-indent"
-  },
-  {
-    "name": "escape-string-regexp",
-    "version": "1.0.5",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/escape-string-regexp"
-  },
-  {
-    "name": "esutils",
-    "version": "2.0.2",
-    "licenses": "BSD",
-    "copyrights": "copyright",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/esutils"
-  },
-  {
-    "name": "get-stdin",
-    "version": "4.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/get-stdin"
-  },
-  {
-    "name": "has-ansi",
-    "version": "2.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/has-ansi"
-  },
-  {
-    "name": "home-or-tmp",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/home-or-tmp"
-  },
-  {
-    "name": "is-integer",
-    "version": "1.0.6",
-    "licenses": "WTFPL",
-    "copyrights": "Copyright (C) 2004 Sam Hocevar ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/is-integer"
-  },
-  {
-    "name": "js-tokens",
-    "version": "1.0.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014, 2015, 2016 Simon Lydell",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/js-tokens"
-  },
-  {
-    "name": "json5",
-    "version": "0.4.0",
-    "licenses": "MIT",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/json5"
-  },
-  {
-    "name": "left-pad",
-    "version": "0.0.3",
-    "licenses": "BSD",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/left-pad"
-  },
-  {
-    "name": "line-numbers",
-    "version": "0.2.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014, 2015 Simon Lydell",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/line-numbers"
-  },
-  {
-    "name": "minimist",
-    "version": "1.2.0",
-    "licenses": "MIT",
-    "copyrights": "copyright notice and this permission notice shall be included in all",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/minimist"
-  },
-  {
-    "name": "mkdirp",
-    "version": "0.5.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright 2010 James Halliday ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/mkdirp"
-  },
-  {
-    "name": "os-tmpdir",
-    "version": "1.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/os-tmpdir"
-  },
-  {
-    "name": "path-exists",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/path-exists"
-  },
-  {
-    "name": "path-is-absolute",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/path-is-absolute"
-  },
-  {
-    "name": "private",
-    "version": "0.1.6",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Ben Newman ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/private"
-  },
-  {
-    "name": "shebang-regex",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/shebang-regex"
-  },
-  {
-    "name": "slash",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/slash"
-  },
-  {
-    "name": "source-map-support",
-    "version": "0.2.10",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Evan Wallace",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/source-map-support"
-  },
-  {
-    "name": "strip-ansi",
-    "version": "3.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/strip-ansi"
-  },
-  {
-    "name": "supports-color",
-    "version": "2.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/supports-color"
-  },
-  {
-    "name": "trim-right",
-    "version": "1.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/trim-right"
-  },
-  {
-    "name": "user-home",
-    "version": "1.1.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator/node_modules/user-home"
-  },
-  {
     "name": "babel-plugin-transform-regenerator",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "BSD",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-regenerator"
   },
   {
     "name": "babel-plugin-transform-strict-mode",
-    "version": "6.6.5",
+    "version": "6.8.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-plugin-transform-strict-mode"
   },
   {
-    "name": "babel-traverse",
-    "version": "6.7.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-preset-es2015/node_modules/babel-template/node_modules/babel-traverse"
-  },
-  {
-    "name": "babel-types",
-    "version": "6.7.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
-    "path": "/shadow-modules/node_modules/babel-preset-es2015/node_modules/babel-template/node_modules/babel-types"
-  },
-  {
-    "name": "globals",
-    "version": "8.18.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/babel-preset-es2015/node_modules/babel-template/node_modules/globals"
-  },
-  {
-    "name": "invariant",
-    "version": "2.2.1",
-    "licenses": "BSD-3-Clause",
-    "path": "/shadow-modules/node_modules/babel-preset-es2015/node_modules/babel-template/node_modules/invariant"
-  },
-  {
-    "name": "loose-envify",
-    "version": "1.1.0",
-    "licenses": "MIT",
-    "path": "/shadow-modules/node_modules/babel-preset-es2015/node_modules/babel-template/node_modules/loose-envify"
-  },
-  {
-    "name": "to-fast-properties",
+    "name": "babel-plugin-undeclared-variables-check",
     "version": "1.0.2",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Petka Antonov",
-    "path": "/shadow-modules/node_modules/babel-preset-es2015/node_modules/babel-template/node_modules/to-fast-properties"
+    "path": "/shadow-modules/node_modules/babel-plugin-undeclared-variables-check"
+  },
+  {
+    "name": "babel-plugin-undefined-to-void",
+    "version": "1.1.6",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/babel-plugin-undefined-to-void"
   },
   {
     "name": "babel-preset-es2015",
-    "version": "6.5.0",
+    "version": "6.6.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
     "path": "/shadow-modules/node_modules/babel-preset-es2015"
+  },
+  {
+    "name": "babel-register",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-register"
+  },
+  {
+    "name": "babel-template",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-template"
+  },
+  {
+    "name": "babel-traverse",
+    "version": "6.8.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-traverse"
+  },
+  {
+    "name": "babel-types",
+    "version": "6.8.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babel-types"
+  },
+  {
+    "name": "babylon",
+    "version": "6.7.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Sebastian McKenzie ",
+    "path": "/shadow-modules/node_modules/babylon"
   },
   {
     "name": "backoff",
@@ -1228,11 +1112,25 @@
     "path": "/shadow-modules/node_modules/bindings"
   },
   {
-    "name": "block-stream",
-    "version": "0.0.8",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter, Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/block-stream"
+    "name": "bluebird",
+    "version": "2.10.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013-2015 Petka Antonov",
+    "path": "/shadow-modules/node_modules/bluebird"
+  },
+  {
+    "name": "qs",
+    "version": "6.1.0",
+    "licenses": "BSD-3-Clause",
+    "copyrights": "Copyright (c) 2014 Nathan LaFreniere and other contributors.",
+    "path": "/shadow-modules/node_modules/body-parser/node_modules/qs"
+  },
+  {
+    "name": "body-parser",
+    "version": "1.15.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/body-parser"
   },
   {
     "name": "boom",
@@ -1254,13 +1152,6 @@
     "path": "/shadow-modules/node_modules/bson/browser_build"
   },
   {
-    "name": "1to2",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2016 NAN contributors",
-    "path": "/shadow-modules/node_modules/bufferutil/node_modules/nan/tools"
-  },
-  {
     "name": "bufferutil",
     "version": "1.2.1",
     "licenses": "MIT",
@@ -1268,10 +1159,24 @@
   },
   {
     "name": "buildmail",
-    "version": "3.5.2",
+    "version": "3.6.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
     "path": "/shadow-modules/node_modules/buildmail"
+  },
+  {
+    "name": "bunyan",
+    "version": "1.5.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2011-2012 Joyent Inc.",
+    "path": "/shadow-modules/node_modules/bunyan"
+  },
+  {
+    "name": "bytes",
+    "version": "2.2.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2014 TJ Holowaychuk ",
+    "path": "/shadow-modules/node_modules/bytes"
   },
   {
     "name": "camelcase",
@@ -1302,6 +1207,13 @@
     "path": "/shadow-modules/node_modules/chai"
   },
   {
+    "name": "chalk",
+    "version": "1.1.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/chalk"
+  },
+  {
     "name": "charenc",
     "version": "0.0.1",
     "licenses": "BSD 2-clause \"Simplified\"",
@@ -1316,11 +1228,11 @@
     "path": "/shadow-modules/node_modules/cli"
   },
   {
-    "name": "wordwrap",
-    "version": "0.0.2",
-    "licenses": "MIT/X11",
-    "copyrights": "copyright notice and this permission notice shall be included in all",
-    "path": "/shadow-modules/node_modules/cliui/node_modules/wordwrap"
+    "name": "cli-table",
+    "version": "0.3.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2010 LearnBoost ",
+    "path": "/shadow-modules/node_modules/cli-table"
   },
   {
     "name": "cliui",
@@ -1328,6 +1240,13 @@
     "licenses": "ISC",
     "copyrights": "Copyright (c) 2015, Contributors",
     "path": "/shadow-modules/node_modules/cliui"
+  },
+  {
+    "name": "co",
+    "version": "3.1.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 TJ Holowaychuk ",
+    "path": "/shadow-modules/node_modules/co"
   },
   {
     "name": "coffee-script",
@@ -1344,25 +1263,18 @@
     "path": "/shadow-modules/node_modules/combined-stream"
   },
   {
-    "name": "graceful-fs",
-    "version": "4.1.3",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter, Ben Noordhuis, and Contributors",
-    "path": "/shadow-modules/node_modules/commoner/node_modules/graceful-fs"
-  },
-  {
-    "name": "graceful-readlink",
-    "version": "1.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015 Zhiye Li",
-    "path": "/shadow-modules/node_modules/commoner/node_modules/graceful-readlink"
-  },
-  {
     "name": "commoner",
     "version": "0.10.4",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2013 Ben Newman ",
     "path": "/shadow-modules/node_modules/commoner"
+  },
+  {
+    "name": "concat-stream",
+    "version": "1.5.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Max Ogden",
+    "path": "/shadow-modules/node_modules/concat-stream"
   },
   {
     "name": "config-chain",
@@ -1377,6 +1289,41 @@
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2012 Raynos.",
     "path": "/shadow-modules/node_modules/console-browserify"
+  },
+  {
+    "name": "content-disposition",
+    "version": "0.5.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/content-disposition"
+  },
+  {
+    "name": "content-type",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/content-type"
+  },
+  {
+    "name": "convert-source-map",
+    "version": "1.2.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright 2013 Thorsten Lorenz. ",
+    "path": "/shadow-modules/node_modules/convert-source-map"
+  },
+  {
+    "name": "cookie",
+    "version": "0.1.5",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2014 Roman Shtylman ",
+    "path": "/shadow-modules/node_modules/cookie"
+  },
+  {
+    "name": "cookie-signature",
+    "version": "1.0.6",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012 LearnBoost ",
+    "path": "/shadow-modules/node_modules/cookie-signature"
   },
   {
     "name": "crypt",
@@ -1428,11 +1375,11 @@
     "path": "/shadow-modules/node_modules/deep-eql"
   },
   {
-    "name": "deep-extend",
-    "version": "0.4.1",
+    "name": "deep-is",
+    "version": "0.1.3",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2013-2015, Viacheslav Lotsmanov",
-    "path": "/shadow-modules/node_modules/deep-extend"
+    "copyrights": "Copyright (c) 2012, 2013 Thorsten Lorenz ",
+    "path": "/shadow-modules/node_modules/deep-is"
   },
   {
     "name": "defined",
@@ -1440,90 +1387,6 @@
     "licenses": "MIT",
     "copyrights": "copyright notice and this permission notice shall be included in all",
     "path": "/shadow-modules/node_modules/defined"
-  },
-  {
-    "name": "invert-kv",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/defs/node_modules/invert-kv"
-  },
-  {
-    "name": "is-buffer",
-    "version": "1.1.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Feross Aboukhadijeh",
-    "path": "/shadow-modules/node_modules/defs/node_modules/is-buffer"
-  },
-  {
-    "name": "kind-of",
-    "version": "3.0.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016, Jon Schlinkert.",
-    "path": "/shadow-modules/node_modules/defs/node_modules/kind-of"
-  },
-  {
-    "name": "lazy-cache",
-    "version": "1.0.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015-2016, Jon Schlinkert.",
-    "path": "/shadow-modules/node_modules/defs/node_modules/lazy-cache"
-  },
-  {
-    "name": "lcid",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/defs/node_modules/lcid"
-  },
-  {
-    "name": "longest",
-    "version": "1.0.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2015, Jon Schlinkert.",
-    "path": "/shadow-modules/node_modules/defs/node_modules/longest"
-  },
-  {
-    "name": "os-locale",
-    "version": "1.4.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/defs/node_modules/os-locale"
-  },
-  {
-    "name": "repeat-string",
-    "version": "1.5.4",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2015, Jon Schlinkert.",
-    "path": "/shadow-modules/node_modules/defs/node_modules/repeat-string"
-  },
-  {
-    "name": "right-align",
-    "version": "0.1.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015, Jon Schlinkert.",
-    "path": "/shadow-modules/node_modules/defs/node_modules/right-align"
-  },
-  {
-    "name": "window-size",
-    "version": "0.1.4",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015, Jon Schlinkert.",
-    "path": "/shadow-modules/node_modules/defs/node_modules/window-size"
-  },
-  {
-    "name": "y18n",
-    "version": "3.2.1",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) 2015, Contributors",
-    "path": "/shadow-modules/node_modules/defs/node_modules/y18n"
-  },
-  {
-    "name": "yargs",
-    "version": "3.27.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright 2010 James Halliday ",
-    "path": "/shadow-modules/node_modules/defs/node_modules/yargs"
   },
   {
     "name": "defs",
@@ -1540,11 +1403,25 @@
     "path": "/shadow-modules/node_modules/delayed-stream"
   },
   {
-    "name": "delegates",
-    "version": "1.0.0",
+    "name": "depd",
+    "version": "1.1.0",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015 TJ Holowaychuk ",
-    "path": "/shadow-modules/node_modules/delegates"
+    "copyrights": "Copyright (c) 2014-2015 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/depd"
+  },
+  {
+    "name": "destroy",
+    "version": "1.0.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
+    "path": "/shadow-modules/node_modules/destroy"
+  },
+  {
+    "name": "detect-indent",
+    "version": "3.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/detect-indent"
   },
   {
     "name": "detective",
@@ -1589,24 +1466,25 @@
     "path": "/shadow-modules/node_modules/dtrace-provider"
   },
   {
+    "name": "ecc-jsbn",
+    "version": "0.1.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jeremie Miller",
+    "path": "/shadow-modules/node_modules/ecc-jsbn"
+  },
+  {
+    "name": "ee-first",
+    "version": "1.1.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
+    "path": "/shadow-modules/node_modules/ee-first"
+  },
+  {
     "name": "engine.io",
     "version": "1.5.4",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014 Guillermo Rauch ",
     "path": "/shadow-modules/node_modules/engine.io"
-  },
-  {
-    "name": "ultron",
-    "version": "1.0.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015 Unshift.io, Arnout Kazemier,  the Contributors.",
-    "path": "/shadow-modules/node_modules/engine.io-client/node_modules/ultron"
-  },
-  {
-    "name": "utf-8-validate",
-    "version": "1.2.1",
-    "licenses": "MIT",
-    "path": "/shadow-modules/node_modules/engine.io-client/node_modules/utf-8-validate"
   },
   {
     "name": "es6-promise",
@@ -1616,11 +1494,101 @@
     "path": "/shadow-modules/node_modules/es6-promise"
   },
   {
+    "name": "escape-html",
+    "version": "1.0.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2013 TJ Holowaychuk",
+    "path": "/shadow-modules/node_modules/escape-html"
+  },
+  {
+    "name": "escape-string-regexp",
+    "version": "1.0.5",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/escape-string-regexp"
+  },
+  {
+    "name": "escodegen",
+    "version": "1.8.0",
+    "licenses": "BSD-2-Clause",
+    "copyrights": "Copyright (c) 2009-2011, Mozilla Foundation and contributors",
+    "path": "/shadow-modules/node_modules/escodegen"
+  },
+  {
     "name": "esprima-fb",
     "version": "15001.1001.0-dev-harmony-fb",
     "licenses": "BSD",
     "copyrights": "copyright",
     "path": "/shadow-modules/node_modules/esprima-fb"
+  },
+  {
+    "name": "estraverse",
+    "version": "1.9.3",
+    "licenses": "BSD",
+    "copyrights": "copyright",
+    "path": "/shadow-modules/node_modules/estraverse"
+  },
+  {
+    "name": "esutils",
+    "version": "2.0.2",
+    "licenses": "BSD",
+    "copyrights": "copyright",
+    "path": "/shadow-modules/node_modules/esutils"
+  },
+  {
+    "name": "etag",
+    "version": "1.7.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2015 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/etag"
+  },
+  {
+    "name": "mime-db",
+    "version": "1.23.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
+    "path": "/shadow-modules/node_modules/express/node_modules/mime-db"
+  },
+  {
+    "name": "negotiator",
+    "version": "0.5.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2014 Federico Romero",
+    "path": "/shadow-modules/node_modules/express/node_modules/negotiator"
+  },
+  {
+    "name": "express",
+    "version": "4.13.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2009-2014 TJ Holowaychuk ",
+    "path": "/shadow-modules/node_modules/express"
+  },
+  {
+    "name": "graceful-fs",
+    "version": "3.0.8",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter, Ben Noordhuis, and Contributors",
+    "path": "/shadow-modules/node_modules/express-handlebars/node_modules/graceful-fs"
+  },
+  {
+    "name": "express-handlebars",
+    "version": "2.0.1",
+    "licenses": "BSD-3-Clause",
+    "copyrights": "Copyright (c) 2014, Yahoo Inc.  All rights reserved.",
+    "path": "/shadow-modules/node_modules/express-handlebars"
+  },
+  {
+    "name": "extend",
+    "version": "3.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Stefan Thomas",
+    "path": "/shadow-modules/node_modules/extend"
+  },
+  {
+    "name": "extract-zip",
+    "version": "1.5.0",
+    "licenses": "BSD-2-Clause",
+    "path": "/shadow-modules/node_modules/extract-zip"
   },
   {
     "name": "extsprintf",
@@ -1634,6 +1602,181 @@
     "version": "3.0.0",
     "licenses": "MIT",
     "path": "/shadow-modules/node_modules/ez-jedi"
+  },
+  {
+    "name": "graceful-readlink",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015 Zhiye Li",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/graceful-readlink"
+  },
+  {
+    "name": "invert-kv",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/invert-kv"
+  },
+  {
+    "name": "ip",
+    "version": "1.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright Fedor Indutny, 2012.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/ip"
+  },
+  {
+    "name": "is-buffer",
+    "version": "1.1.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Feross Aboukhadijeh",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/is-buffer"
+  },
+  {
+    "name": "kind-of",
+    "version": "3.0.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016, Jon Schlinkert.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/kind-of"
+  },
+  {
+    "name": "lazy-cache",
+    "version": "1.0.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015-2016, Jon Schlinkert.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/lazy-cache"
+  },
+  {
+    "name": "lcid",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/lcid"
+  },
+  {
+    "name": "libbase64",
+    "version": "0.1.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/libbase64"
+  },
+  {
+    "name": "libmime",
+    "version": "2.0.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/libmime"
+  },
+  {
+    "name": "libqp",
+    "version": "1.1.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/libqp"
+  },
+  {
+    "name": "longest",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2015, Jon Schlinkert.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/longest"
+  },
+  {
+    "name": "mailcomposer",
+    "version": "3.7.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/mailcomposer"
+  },
+  {
+    "name": "minimist",
+    "version": "0.0.8",
+    "licenses": "MIT",
+    "copyrights": "copyright notice and this permission notice shall be included in all",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/minimist"
+  },
+  {
+    "name": "mkdirp",
+    "version": "0.5.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright 2010 James Halliday ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/mkdirp"
+  },
+  {
+    "name": "mustache",
+    "version": "0.8.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2009 Chris Wanstrath ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/mustache"
+  },
+  {
+    "name": "nodemailer",
+    "version": "2.3.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2011-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer"
+  },
+  {
+    "name": "nodemailer-direct-transport",
+    "version": "3.0.7",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer-direct-transport"
+  },
+  {
+    "name": "nodemailer-fetch",
+    "version": "1.3.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer-fetch"
+  },
+  {
+    "name": "nodemailer-shared",
+    "version": "1.0.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer-shared"
+  },
+  {
+    "name": "nodemailer-smtp-pool",
+    "version": "2.5.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer-smtp-pool"
+  },
+  {
+    "name": "nodemailer-smtp-transport",
+    "version": "2.4.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer-smtp-transport"
+  },
+  {
+    "name": "nodemailer-wellknown",
+    "version": "0.1.8",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/nodemailer-wellknown"
+  },
+  {
+    "name": "os-locale",
+    "version": "1.4.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/os-locale"
+  },
+  {
+    "name": "path-is-absolute",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/path-is-absolute"
+  },
+  {
+    "name": "private",
+    "version": "0.1.6",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Ben Newman ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/private"
   },
   {
     "name": "q",
@@ -1651,10 +1794,31 @@
   },
   {
     "name": "regenerator",
-    "version": "0.8.42",
+    "version": "0.8.45",
     "licenses": "BSD",
     "copyrights": "Copyright (c) 2014, Facebook, Inc.",
     "path": "/shadow-modules/node_modules/ez-mailer/node_modules/regenerator"
+  },
+  {
+    "name": "regenerator-runtime",
+    "version": "0.9.5",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014, Facebook, Inc.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/regenerator/packages/regenerator-runtime"
+  },
+  {
+    "name": "repeat-string",
+    "version": "1.5.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2015, Jon Schlinkert.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/repeat-string"
+  },
+  {
+    "name": "right-align",
+    "version": "0.1.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015, Jon Schlinkert.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/right-align"
   },
   {
     "name": "simple-fmt",
@@ -1669,6 +1833,27 @@
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2013 Olov Lassus ",
     "path": "/shadow-modules/node_modules/ez-mailer/node_modules/simple-is"
+  },
+  {
+    "name": "smart-buffer",
+    "version": "1.0.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Josh Glazebrook",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/smart-buffer"
+  },
+  {
+    "name": "smtp-connection",
+    "version": "2.3.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/smtp-connection"
+  },
+  {
+    "name": "socks",
+    "version": "1.1.9",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Josh Glazebrook",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/socks"
   },
   {
     "name": "stable",
@@ -1705,6 +1890,62 @@
     "path": "/shadow-modules/node_modules/ez-mailer/node_modules/tryor"
   },
   {
+    "name": "window-size",
+    "version": "0.1.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015, Jon Schlinkert.",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/window-size"
+  },
+  {
+    "name": "wordwrap",
+    "version": "0.0.2",
+    "licenses": "MIT/X11",
+    "copyrights": "copyright notice and this permission notice shall be included in all",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/wordwrap"
+  },
+  {
+    "name": "y18n",
+    "version": "3.2.1",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) 2015, Contributors",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/y18n"
+  },
+  {
+    "name": "yargs",
+    "version": "3.27.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright 2010 James Halliday ",
+    "path": "/shadow-modules/node_modules/ez-mailer/node_modules/yargs"
+  },
+  {
+    "name": "fast-levenshtein",
+    "version": "1.1.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 [Ramesh Nair",
+    "path": "/shadow-modules/node_modules/fast-levenshtein"
+  },
+  {
+    "name": "fd-slicer",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Andrew Kelley",
+    "path": "/shadow-modules/node_modules/fd-slicer"
+  },
+  {
+    "name": "fileset",
+    "version": "0.2.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012 Mickael Daniel",
+    "path": "/shadow-modules/node_modules/fileset"
+  },
+  {
+    "name": "finalhandler",
+    "version": "0.4.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2015 Douglas Christopher Wilson ",
+    "path": "/shadow-modules/node_modules/finalhandler"
+  },
+  {
     "name": "forever-agent",
     "version": "0.5.2",
     "licenses": "Apache License 2.0",
@@ -1719,6 +1960,20 @@
     "path": "/shadow-modules/node_modules/form-data"
   },
   {
+    "name": "forwarded",
+    "version": "0.1.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/forwarded"
+  },
+  {
+    "name": "fresh",
+    "version": "0.3.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012 TJ Holowaychuk ",
+    "path": "/shadow-modules/node_modules/fresh"
+  },
+  {
     "name": "fs-extra",
     "version": "0.23.1",
     "licenses": "MIT",
@@ -1726,25 +1981,39 @@
     "path": "/shadow-modules/node_modules/fs-extra"
   },
   {
-    "name": "fstream",
-    "version": "1.0.8",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/fstream"
+    "name": "fs-readdir-recursive",
+    "version": "0.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
+    "path": "/shadow-modules/node_modules/fs-readdir-recursive"
   },
   {
-    "name": "fstream-ignore",
-    "version": "1.0.3",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/fstream-ignore"
+    "name": "generate-function",
+    "version": "2.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Mathias Buus",
+    "path": "/shadow-modules/node_modules/generate-function"
   },
   {
-    "name": "gauge",
-    "version": "1.2.7",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) 2014, Rebecca Turner ",
-    "path": "/shadow-modules/node_modules/gauge"
+    "name": "generate-object-property",
+    "version": "1.2.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Mathias Buus",
+    "path": "/shadow-modules/node_modules/generate-object-property"
+  },
+  {
+    "name": "get-stdin",
+    "version": "4.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/get-stdin"
+  },
+  {
+    "name": "getpass",
+    "version": "0.1.6",
+    "licenses": "MIT",
+    "copyrights": "Copyright Joyent, Inc. All rights reserved.",
+    "path": "/shadow-modules/node_modules/getpass"
   },
   {
     "name": "git-fs-db",
@@ -1782,6 +2051,13 @@
     "path": "/shadow-modules/node_modules/git-pack-codec"
   },
   {
+    "name": "globals",
+    "version": "8.18.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/globals"
+  },
+  {
     "name": "growl",
     "version": "1.8.1",
     "licenses": "MIT",
@@ -1810,6 +2086,13 @@
     "path": "/shadow-modules/node_modules/handlebars"
   },
   {
+    "name": "har-validator",
+    "version": "2.0.6",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) 2015, Ahmad Nassri ",
+    "path": "/shadow-modules/node_modules/har-validator"
+  },
+  {
     "name": "harmony-reflect",
     "version": "1.4.2",
     "licenses": "Apache License 2.0, MPL-1.1",
@@ -1817,11 +2100,25 @@
     "path": "/shadow-modules/node_modules/harmony-reflect"
   },
   {
-    "name": "has-unicode",
+    "name": "has-ansi",
     "version": "2.0.0",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) 2014, Rebecca Turner ",
-    "path": "/shadow-modules/node_modules/has-unicode"
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/has-ansi"
+  },
+  {
+    "name": "has-flag",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/has-flag"
+  },
+  {
+    "name": "hasha",
+    "version": "2.2.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/hasha"
   },
   {
     "name": "hawk",
@@ -1838,11 +2135,25 @@
     "path": "/shadow-modules/node_modules/hoek"
   },
   {
+    "name": "home-or-tmp",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/home-or-tmp"
+  },
+  {
     "name": "htmlparser2",
     "version": "3.3.0",
     "licenses": "MIT",
     "copyrights": "Copyright 2010, 2011, Chris Winberry ",
     "path": "/shadow-modules/node_modules/htmlparser2"
+  },
+  {
+    "name": "http-errors",
+    "version": "1.4.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
+    "path": "/shadow-modules/node_modules/http-errors"
   },
   {
     "name": "http-signature",
@@ -1859,11 +2170,101 @@
     "path": "/shadow-modules/node_modules/ini"
   },
   {
-    "name": "ip",
-    "version": "0.3.3",
+    "name": "invariant",
+    "version": "2.2.1",
+    "licenses": "BSD-3-Clause",
+    "path": "/shadow-modules/node_modules/invariant"
+  },
+  {
+    "name": "ipaddr.js",
+    "version": "1.0.5",
     "licenses": "MIT",
-    "copyrights": "Copyright Fedor Indutny, 2012.",
-    "path": "/shadow-modules/node_modules/ip"
+    "copyrights": "Copyright (C) 2011 Peter Zotov ",
+    "path": "/shadow-modules/node_modules/ipaddr.js"
+  },
+  {
+    "name": "is-absolute",
+    "version": "0.1.7",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2015, Jon Schlinkert.Copyright ",
+    "path": "/shadow-modules/node_modules/is-absolute"
+  },
+  {
+    "name": "is-finite",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/is-finite"
+  },
+  {
+    "name": "is-integer",
+    "version": "1.0.6",
+    "licenses": "WTFPL",
+    "copyrights": "Copyright (C) 2004 Sam Hocevar ",
+    "path": "/shadow-modules/node_modules/is-integer"
+  },
+  {
+    "name": "is-my-json-valid",
+    "version": "2.13.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Mathias Buus",
+    "path": "/shadow-modules/node_modules/is-my-json-valid"
+  },
+  {
+    "name": "is-property",
+    "version": "1.0.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Mikola Lysenko",
+    "path": "/shadow-modules/node_modules/is-property"
+  },
+  {
+    "name": "is-relative",
+    "version": "0.1.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014, 2015 Jon Schlinkert",
+    "path": "/shadow-modules/node_modules/is-relative"
+  },
+  {
+    "name": "is-stream",
+    "version": "1.1.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/is-stream"
+  },
+  {
+    "name": "is-typedarray",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "copyright notice and this permission notice shall be included in all",
+    "path": "/shadow-modules/node_modules/is-typedarray"
+  },
+  {
+    "name": "isexe",
+    "version": "1.1.2",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
+    "path": "/shadow-modules/node_modules/isexe"
+  },
+  {
+    "name": "isstream",
+    "version": "0.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015 Rod Vagg",
+    "path": "/shadow-modules/node_modules/isstream"
+  },
+  {
+    "name": "supports-color",
+    "version": "3.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/istanbul/node_modules/supports-color"
+  },
+  {
+    "name": "istanbul",
+    "version": "0.4.3",
+    "licenses": "BSD-3-Clause",
+    "copyrights": "Copyright 2012 Yahoo",
+    "path": "/shadow-modules/node_modules/istanbul"
   },
   {
     "name": "jade",
@@ -1873,11 +2274,32 @@
     "path": "/shadow-modules/node_modules/jade"
   },
   {
+    "name": "jodid25519",
+    "version": "1.0.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012 Ron Garret",
+    "path": "/shadow-modules/node_modules/jodid25519"
+  },
+  {
     "name": "js-git",
     "version": "0.5.4",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2013-2014 Tim Caswell ",
     "path": "/shadow-modules/node_modules/js-git"
+  },
+  {
+    "name": "js-tokens",
+    "version": "1.0.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014, 2015, 2016 Simon Lydell",
+    "path": "/shadow-modules/node_modules/js-tokens"
+  },
+  {
+    "name": "jsbn",
+    "version": "0.1.0",
+    "licenses": "BSD",
+    "copyrights": "copyright:",
+    "path": "/shadow-modules/node_modules/jsbn"
   },
   {
     "name": "jsesc",
@@ -1887,18 +2309,11 @@
     "path": "/shadow-modules/node_modules/jsesc"
   },
   {
-    "name": "lru-cache",
-    "version": "2.7.3",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/jshint/node_modules/lru-cache"
-  },
-  {
-    "name": "sigmund",
-    "version": "1.0.1",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/jshint/node_modules/sigmund"
+    "name": "underscore",
+    "version": "1.4.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative",
+    "path": "/shadow-modules/node_modules/jshint/node_modules/underscore"
   },
   {
     "name": "jshint",
@@ -1915,6 +2330,12 @@
     "path": "/shadow-modules/node_modules/jsntlm"
   },
   {
+    "name": "json-schema",
+    "version": "0.2.2",
+    "licenses": "AFLv2.1",
+    "path": "/shadow-modules/node_modules/json-schema"
+  },
+  {
     "name": "json-stringify-safe",
     "version": "5.0.1",
     "licenses": "ISC",
@@ -1923,17 +2344,37 @@
   },
   {
     "name": "json3",
-    "version": "3.3.2",
+    "version": "3.2.6",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2012-2015 Kit Cambridge.",
     "path": "/shadow-modules/node_modules/json3"
   },
   {
+    "name": "json5",
+    "version": "0.4.0",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/json5"
+  },
+  {
     "name": "jsonfile",
-    "version": "2.2.3",
+    "version": "2.3.0",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2012-2015, JP Richardson ",
     "path": "/shadow-modules/node_modules/jsonfile"
+  },
+  {
+    "name": "jsonpointer",
+    "version": "2.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2011-2015 Jan Lehnardt ",
+    "path": "/shadow-modules/node_modules/jsonpointer"
+  },
+  {
+    "name": "jsprim",
+    "version": "1.2.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012, Joyent, Inc. All rights reserved.",
+    "path": "/shadow-modules/node_modules/jsprim"
   },
   {
     "name": "jsx509",
@@ -1949,18 +2390,18 @@
     "path": "/shadow-modules/node_modules/kew"
   },
   {
-    "name": "bunyan",
-    "version": "1.5.1",
+    "name": "klaw",
+    "version": "1.2.0",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2011-2012 Joyent Inc.",
-    "path": "/shadow-modules/node_modules/ldapjs/node_modules/bunyan"
+    "copyrights": "Copyright (c) 2015-2016 JP Richardson",
+    "path": "/shadow-modules/node_modules/klaw"
   },
   {
     "name": "ldap-filter",
     "version": "0.2.2",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014 Patrick Mooney. All rights reserved.",
-    "path": "/shadow-modules/node_modules/ldapjs/node_modules/ldap-filter"
+    "path": "/shadow-modules/node_modules/ldap-filter"
   },
   {
     "name": "ldapjs",
@@ -1970,67 +2411,31 @@
     "path": "/shadow-modules/node_modules/ldapjs"
   },
   {
-    "name": "libbase64",
-    "version": "0.1.0",
+    "name": "leven",
+    "version": "1.0.2",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Andris Reinman",
-    "path": "/shadow-modules/node_modules/libbase64"
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/leven"
   },
   {
-    "name": "libmime",
-    "version": "2.0.3",
+    "name": "levn",
+    "version": "0.3.0",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/libmime"
+    "copyrights": "Copyright (c) George Zahariev",
+    "path": "/shadow-modules/node_modules/levn"
   },
   {
-    "name": "libqp",
+    "name": "loose-envify",
     "version": "1.1.0",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Andris Reinman",
-    "path": "/shadow-modules/node_modules/libqp"
+    "path": "/shadow-modules/node_modules/loose-envify"
   },
   {
-    "name": "lodash.pad",
-    "version": "4.1.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright jQuery Foundation and other contributors ",
-    "path": "/shadow-modules/node_modules/lodash.pad"
-  },
-  {
-    "name": "lodash.padend",
-    "version": "4.2.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright jQuery Foundation and other contributors ",
-    "path": "/shadow-modules/node_modules/lodash.padend"
-  },
-  {
-    "name": "lodash.padstart",
-    "version": "4.2.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright jQuery Foundation and other contributors ",
-    "path": "/shadow-modules/node_modules/lodash.padstart"
-  },
-  {
-    "name": "lodash.repeat",
-    "version": "4.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright jQuery Foundation and other contributors ",
-    "path": "/shadow-modules/node_modules/lodash.repeat"
-  },
-  {
-    "name": "lodash.tostring",
-    "version": "4.1.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright jQuery Foundation and other contributors ",
-    "path": "/shadow-modules/node_modules/lodash.tostring"
-  },
-  {
-    "name": "mailcomposer",
-    "version": "3.6.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2012-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/mailcomposer"
+    "name": "lru-cache",
+    "version": "2.7.3",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
+    "path": "/shadow-modules/node_modules/lru-cache"
   },
   {
     "name": "md5",
@@ -2040,18 +2445,32 @@
     "path": "/shadow-modules/node_modules/md5"
   },
   {
+    "name": "media-typer",
+    "version": "0.3.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2015 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/media-typer"
+  },
+  {
+    "name": "merge-descriptors",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/merge-descriptors"
+  },
+  {
+    "name": "methods",
+    "version": "1.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013-2014 TJ Holowaychuk ",
+    "path": "/shadow-modules/node_modules/methods"
+  },
+  {
     "name": "mime",
     "version": "1.2.11",
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2010 Benjamin Thomas, Robert Kieffer",
     "path": "/shadow-modules/node_modules/mime"
-  },
-  {
-    "name": "mime-types",
-    "version": "1.0.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
-    "path": "/shadow-modules/node_modules/mime-types"
   },
   {
     "name": "mmmagic",
@@ -2082,11 +2501,11 @@
     "path": "/shadow-modules/node_modules/mongodb-core"
   },
   {
-    "name": "mustache",
-    "version": "0.8.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2009 Chris Wanstrath ",
-    "path": "/shadow-modules/node_modules/mustache"
+    "name": "rimraf",
+    "version": "2.4.5",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
+    "path": "/shadow-modules/node_modules/mv/node_modules/rimraf"
   },
   {
     "name": "mv",
@@ -2094,6 +2513,13 @@
     "licenses": "MIT",
     "copyrights": "Copyright (c) 2014 Andrew Kelley",
     "path": "/shadow-modules/node_modules/mv"
+  },
+  {
+    "name": "1to2",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2016 NAN contributors",
+    "path": "/shadow-modules/node_modules/nan/tools"
   },
   {
     "name": "ncp",
@@ -2110,73 +2536,11 @@
     "path": "/shadow-modules/node_modules/node-phantom-simple"
   },
   {
-    "name": "nw-pre-gyp-module-test",
-    "version": "0.0.1",
-    "licenses": "BSD",
-    "path": "/shadow-modules/node_modules/node-pre-gyp/lib/util/nw-pre-gyp"
-  },
-  {
-    "name": "node-pre-gyp",
-    "version": "0.6.23",
-    "licenses": "BSD",
-    "copyrights": "Copyright ",
-    "path": "/shadow-modules/node_modules/node-pre-gyp"
-  },
-  {
     "name": "node-uuid",
     "version": "1.4.7",
     "licenses": "MIT",
     "copyrights": "Copyright (c)  2010-2012 Robert Kieffer ",
     "path": "/shadow-modules/node_modules/node-uuid"
-  },
-  {
-    "name": "nodemailer",
-    "version": "2.3.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2011-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer"
-  },
-  {
-    "name": "nodemailer-direct-transport",
-    "version": "3.0.6",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer-direct-transport"
-  },
-  {
-    "name": "nodemailer-fetch",
-    "version": "1.3.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer-fetch"
-  },
-  {
-    "name": "nodemailer-shared",
-    "version": "1.0.4",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer-shared"
-  },
-  {
-    "name": "nodemailer-smtp-pool",
-    "version": "2.5.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer-smtp-pool"
-  },
-  {
-    "name": "nodemailer-smtp-transport",
-    "version": "2.4.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer-smtp-transport"
-  },
-  {
-    "name": "nodemailer-wellknown",
-    "version": "0.1.7",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/nodemailer-wellknown"
   },
   {
     "name": "semver",
@@ -2193,11 +2557,11 @@
     "path": "/shadow-modules/node_modules/npmconf"
   },
   {
-    "name": "npmlog",
-    "version": "2.0.2",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/npmlog"
+    "name": "number-is-nan",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/number-is-nan"
   },
   {
     "name": "oauth-sign",
@@ -2207,8 +2571,36 @@
     "path": "/shadow-modules/node_modules/oauth-sign"
   },
   {
+    "name": "object-keys",
+    "version": "1.0.9",
+    "licenses": "MIT",
+    "copyrights": "Copyright (C) 2013 Jordan Harband",
+    "path": "/shadow-modules/node_modules/object-keys"
+  },
+  {
+    "name": "object.assign",
+    "version": "1.1.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jordan Harband",
+    "path": "/shadow-modules/node_modules/object.assign"
+  },
+  {
+    "name": "on-finished",
+    "version": "2.3.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/on-finished"
+  },
+  {
+    "name": "optionator",
+    "version": "0.8.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) George Zahariev",
+    "path": "/shadow-modules/node_modules/optionator"
+  },
+  {
     "name": "oracledb",
-    "version": "1.6.0",
+    "version": "1.8.0",
     "licenses": "Apache License 2.0",
     "copyrights": "copyright owner or entity authorized by",
     "path": "/shadow-modules/node_modules/oracledb"
@@ -2221,11 +2613,60 @@
     "path": "/shadow-modules/node_modules/os-homedir"
   },
   {
+    "name": "os-tmpdir",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/os-tmpdir"
+  },
+  {
     "name": "osenv",
     "version": "0.1.3",
     "licenses": "ISC",
     "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
     "path": "/shadow-modules/node_modules/osenv"
+  },
+  {
+    "name": "output-file-sync",
+    "version": "1.1.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 - 2015 Shinnosuke Watanabe",
+    "path": "/shadow-modules/node_modules/output-file-sync"
+  },
+  {
+    "name": "parseurl",
+    "version": "1.3.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/parseurl"
+  },
+  {
+    "name": "path-exists",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/path-exists"
+  },
+  {
+    "name": "path-to-regexp",
+    "version": "0.1.7",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Blake Embrey ",
+    "path": "/shadow-modules/node_modules/path-to-regexp"
+  },
+  {
+    "name": "pend",
+    "version": "1.2.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Andrew Kelley",
+    "path": "/shadow-modules/node_modules/pend"
+  },
+  {
+    "name": "which",
+    "version": "1.0.9",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
+    "path": "/shadow-modules/node_modules/phantomjs/node_modules/which"
   },
   {
     "name": "phantomjs",
@@ -2235,11 +2676,32 @@
     "path": "/shadow-modules/node_modules/phantomjs"
   },
   {
+    "name": "pinkie",
+    "version": "2.0.4",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Vsevolod Strukchinsky ",
+    "path": "/shadow-modules/node_modules/pinkie"
+  },
+  {
+    "name": "pinkie-promise",
+    "version": "2.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Vsevolod Strukchinsky ",
+    "path": "/shadow-modules/node_modules/pinkie-promise"
+  },
+  {
     "name": "precond",
     "version": "0.2.3",
     "licenses": "MIT",
     "copyrights": "Copyright (C) 2012 Mathieu Turcotte",
     "path": "/shadow-modules/node_modules/precond"
+  },
+  {
+    "name": "prelude-ls",
+    "version": "1.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) George Zahariev",
+    "path": "/shadow-modules/node_modules/prelude-ls"
   },
   {
     "name": "progress",
@@ -2249,11 +2711,25 @@
     "path": "/shadow-modules/node_modules/progress"
   },
   {
+    "name": "promise",
+    "version": "6.1.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Forbes Lindesay",
+    "path": "/shadow-modules/node_modules/promise"
+  },
+  {
     "name": "proto-list",
     "version": "1.2.4",
     "licenses": "ISC",
     "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
     "path": "/shadow-modules/node_modules/proto-list"
+  },
+  {
+    "name": "proxy-addr",
+    "version": "1.0.10",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014-2016 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/proxy-addr"
   },
   {
     "name": "push-to-pull",
@@ -2262,18 +2738,25 @@
     "path": "/shadow-modules/node_modules/push-to-pull"
   },
   {
-    "name": "qs",
-    "version": "1.2.2",
-    "licenses": "BSD",
-    "copyrights": "Copyright (c) 2014 Nathan LaFreniere and other contributors.",
-    "path": "/shadow-modules/node_modules/qs"
+    "name": "resolve",
+    "version": "0.7.4",
+    "licenses": "MIT",
+    "copyrights": "copyright notice and this permission notice shall be included in all",
+    "path": "/shadow-modules/node_modules/qunit/node_modules/resolve"
   },
   {
-    "name": "rc",
-    "version": "1.1.6",
-    "licenses": "(BSD-2-Clause OR MIT OR Apache License 2.0)",
-    "copyrights": "Copyright (c) 2011 Dominic Tarr, Copyright (c) 2013, Dominic Tarr",
-    "path": "/shadow-modules/node_modules/rc"
+    "name": "range-parser",
+    "version": "1.0.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2014 TJ Holowaychuk ",
+    "path": "/shadow-modules/node_modules/range-parser"
+  },
+  {
+    "name": "raw-body",
+    "version": "2.1.6",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013-2014 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/raw-body"
   },
   {
     "name": "regenerate",
@@ -2281,6 +2764,13 @@
     "licenses": "MIT",
     "copyrights": "Copyright Mathias Bynens ",
     "path": "/shadow-modules/node_modules/regenerate"
+  },
+  {
+    "name": "regexpu",
+    "version": "1.3.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright Mathias Bynens ",
+    "path": "/shadow-modules/node_modules/regexpu"
   },
   {
     "name": "regexpu-core",
@@ -2302,6 +2792,13 @@
     "licenses": "BSD",
     "copyrights": "Copyright (c) Julian Viereck and Contributors, All Rights Reserved.",
     "path": "/shadow-modules/node_modules/regjsparser"
+  },
+  {
+    "name": "repeating",
+    "version": "1.1.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/repeating"
   },
   {
     "name": "request",
@@ -2332,13 +2829,6 @@
     "path": "/shadow-modules/node_modules/resolve-from"
   },
   {
-    "name": "rimraf",
-    "version": "2.5.2",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/rimraf"
-  },
-  {
     "name": "safe-json-stringify",
     "version": "1.0.3",
     "licenses": "MIT",
@@ -2353,6 +2843,27 @@
     "path": "/shadow-modules/node_modules/sax"
   },
   {
+    "name": "send",
+    "version": "0.13.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012 TJ Holowaychuk",
+    "path": "/shadow-modules/node_modules/send"
+  },
+  {
+    "name": "serve-static",
+    "version": "1.10.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2010 Sencha Inc.",
+    "path": "/shadow-modules/node_modules/serve-static"
+  },
+  {
+    "name": "shebang-regex",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/shebang-regex"
+  },
+  {
     "name": "shelljs",
     "version": "0.1.4",
     "licenses": "BSD 3-clause \"New\" or \"Revised\"",
@@ -2360,18 +2871,18 @@
     "path": "/shadow-modules/node_modules/shelljs"
   },
   {
-    "name": "smart-buffer",
-    "version": "1.0.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2013 Josh Glazebrook",
-    "path": "/shadow-modules/node_modules/smart-buffer"
+    "name": "sigmund",
+    "version": "1.0.1",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
+    "path": "/shadow-modules/node_modules/sigmund"
   },
   {
-    "name": "smtp-connection",
-    "version": "2.3.1",
+    "name": "slash",
+    "version": "1.0.0",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2016 Andris Reinman",
-    "path": "/shadow-modules/node_modules/smtp-connection"
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/slash"
   },
   {
     "name": "sntp",
@@ -2379,27 +2890,6 @@
     "licenses": "BSD",
     "copyrights": "Copyright (c) 2012-2015, Eran Hammer and other contributors.",
     "path": "/shadow-modules/node_modules/sntp"
-  },
-  {
-    "name": "accepts",
-    "version": "1.1.4",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
-    "path": "/shadow-modules/node_modules/socket.io/node_modules/accepts"
-  },
-  {
-    "name": "mime-db",
-    "version": "1.12.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
-    "path": "/shadow-modules/node_modules/socket.io/node_modules/mime-db"
-  },
-  {
-    "name": "negotiator",
-    "version": "0.4.9",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2012-2014 Federico Romero",
-    "path": "/shadow-modules/node_modules/socket.io/node_modules/negotiator"
   },
   {
     "name": "socket.io",
@@ -2423,25 +2913,11 @@
     "path": "/shadow-modules/node_modules/socket.io-adapter"
   },
   {
-    "name": "xmlhttprequest-ssl",
-    "version": "1.5.1",
+    "name": "source-map-support",
+    "version": "0.2.10",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2010 passive.ly LLC",
-    "path": "/shadow-modules/node_modules/socket.io-client/node_modules/xmlhttprequest-ssl"
-  },
-  {
-    "name": "yeast",
-    "version": "0.1.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2015 Unshift.io, Arnout Kazemier,  the Contributors.",
-    "path": "/shadow-modules/node_modules/socket.io-client/node_modules/yeast"
-  },
-  {
-    "name": "socks",
-    "version": "1.1.8",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2013 Josh Glazebrook",
-    "path": "/shadow-modules/node_modules/socks"
+    "copyrights": "Copyright (c) 2014 Evan Wallace",
+    "path": "/shadow-modules/node_modules/source-map-support"
   },
   {
     "name": "ssh2",
@@ -2451,150 +2927,18 @@
     "path": "/shadow-modules/node_modules/ssh2"
   },
   {
-    "name": "argsparser",
-    "version": "0.0.6",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2011 Oleg Slobodskoi",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/argsparser"
-  },
-  {
-    "name": "cli-table",
-    "version": "0.3.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2010 LearnBoost ",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/cli-table"
-  },
-  {
-    "name": "co",
-    "version": "3.1.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014 TJ Holowaychuk ",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/co"
-  },
-  {
-    "name": "deep-is",
-    "version": "0.1.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2012, 2013 Thorsten Lorenz ",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/deep-is"
-  },
-  {
-    "name": "escodegen",
-    "version": "1.7.1",
-    "licenses": "BSD-2-Clause",
-    "copyrights": "Copyright (c) 2009-2011, Mozilla Foundation and contributors",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/escodegen"
-  },
-  {
-    "name": "estraverse",
-    "version": "1.9.3",
-    "licenses": "BSD",
-    "copyrights": "copyright",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/estraverse"
-  },
-  {
-    "name": "fast-levenshtein",
-    "version": "1.0.7",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2013 [Ramesh Nair",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/fast-levenshtein"
-  },
-  {
-    "name": "fileset",
-    "version": "0.2.1",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2012 Mickael Daniel",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/fileset"
-  },
-  {
-    "name": "has-flag",
-    "version": "1.0.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/has-flag"
-  },
-  {
-    "name": "is-absolute",
-    "version": "0.1.7",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014-2015, Jon Schlinkert.Copyright ",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/is-absolute"
-  },
-  {
-    "name": "is-relative",
-    "version": "0.1.3",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014, 2015 Jon Schlinkert",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/is-relative"
-  },
-  {
-    "name": "isexe",
-    "version": "1.1.2",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/isexe"
-  },
-  {
-    "name": "istanbul",
-    "version": "0.4.2",
-    "licenses": "BSD-3-Clause",
-    "copyrights": "Copyright 2012 Yahoo",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/istanbul"
-  },
-  {
-    "name": "levn",
-    "version": "0.2.5",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) George Zahariev",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/levn"
-  },
-  {
-    "name": "optionator",
-    "version": "0.5.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) George Zahariev",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/optionator"
-  },
-  {
-    "name": "prelude-ls",
-    "version": "1.1.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) George Zahariev",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/prelude-ls"
-  },
-  {
-    "name": "resolve",
-    "version": "1.1.7",
-    "licenses": "MIT",
-    "copyrights": "copyright notice and this permission notice shall be included in all",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/resolve"
-  },
-  {
-    "name": "tracejs",
-    "version": "0.1.8",
-    "licenses": "BSD",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/tracejs"
-  },
-  {
-    "name": "type-check",
-    "version": "0.3.2",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) George Zahariev",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/type-check"
-  },
-  {
-    "name": "underscore",
+    "name": "sshpk",
     "version": "1.8.3",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/underscore"
+    "copyrights": "Copyright Joyent, Inc. All rights reserved.",
+    "path": "/shadow-modules/node_modules/sshpk"
   },
   {
-    "name": "which",
-    "version": "1.2.4",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/streamline-helpers/node_modules/which"
+    "name": "statuses",
+    "version": "1.2.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong me",
+    "path": "/shadow-modules/node_modules/statuses"
   },
   {
     "name": "streamline-pdfkit",
@@ -2631,52 +2975,105 @@
     "path": "/shadow-modules/node_modules/stringstream"
   },
   {
-    "name": "strip-json-comments",
-    "version": "1.0.4",
+    "name": "strip-ansi",
+    "version": "3.0.1",
     "licenses": "MIT",
     "copyrights": "Copyright (c) Sindre Sorhus ",
-    "path": "/shadow-modules/node_modules/strip-json-comments"
+    "path": "/shadow-modules/node_modules/strip-ansi"
   },
   {
-    "name": "tar",
-    "version": "2.2.1",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter and Contributors",
-    "path": "/shadow-modules/node_modules/tar"
+    "name": "vasync",
+    "version": "1.6.3",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014, Joyent, Inc. All rights reserved.",
+    "path": "/shadow-modules/node_modules/syracuse-ldap/node_modules/vasync"
   },
   {
-    "name": "uid-number",
-    "version": "0.0.6",
-    "licenses": "ISC",
-    "copyrights": "Copyright (c) Isaac Z. Schlueter",
-    "path": "/shadow-modules/node_modules/tar-pack/node_modules/uid-number"
-  },
-  {
-    "name": "tar-pack",
-    "version": "3.1.3",
-    "licenses": "BSD-2-Clause",
-    "copyrights": "Copyright (c) 2014, Forbes Lindesay",
-    "path": "/shadow-modules/node_modules/tar-pack"
+    "name": "verror",
+    "version": "1.6.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012, Joyent, Inc. All rights reserved.",
+    "path": "/shadow-modules/node_modules/syracuse-ldap/node_modules/verror"
   },
   {
     "name": "throttleit",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "licenses": "MIT",
-    "path": "/shadow-modules/node_modules/throttleit"
+    "path": "/shadow-modules/node_modules/syracuse-phantomjs/node_modules/throttleit"
   },
   {
     "name": "tough-cookie",
     "version": "2.2.2",
     "licenses": "BSD-3-Clause",
     "copyrights": "Copyright (c) 2015, Salesforce.com, Inc.",
-    "path": "/shadow-modules/node_modules/tough-cookie"
+    "path": "/shadow-modules/node_modules/syracuse-phantomjs/node_modules/tough-cookie"
   },
   {
     "name": "tunnel-agent",
     "version": "0.4.2",
     "licenses": "Apache License 2.0",
     "copyrights": "copyright owner or entity authorized by the copyright owner that is granting the License.",
-    "path": "/shadow-modules/node_modules/tunnel-agent"
+    "path": "/shadow-modules/node_modules/syracuse-phantomjs/node_modules/tunnel-agent"
+  },
+  {
+    "name": "xtend",
+    "version": "4.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2012-2014 Raynos.",
+    "path": "/shadow-modules/node_modules/syracuse-phantomjs/node_modules/xtend"
+  },
+  {
+    "name": "to-fast-properties",
+    "version": "1.0.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Petka Antonov",
+    "path": "/shadow-modules/node_modules/to-fast-properties"
+  },
+  {
+    "name": "tracejs",
+    "version": "0.1.8",
+    "licenses": "BSD",
+    "path": "/shadow-modules/node_modules/tracejs"
+  },
+  {
+    "name": "trim-right",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/trim-right"
+  },
+  {
+    "name": "try-resolve",
+    "version": "1.0.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/try-resolve"
+  },
+  {
+    "name": "tweetnacl",
+    "version": "0.13.3",
+    "licenses": "Public domain",
+    "path": "/shadow-modules/node_modules/tweetnacl"
+  },
+  {
+    "name": "type-check",
+    "version": "0.3.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) George Zahariev",
+    "path": "/shadow-modules/node_modules/type-check"
+  },
+  {
+    "name": "type-is",
+    "version": "1.6.12",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Jonathan Ong ",
+    "path": "/shadow-modules/node_modules/type-is"
+  },
+  {
+    "name": "typedarray",
+    "version": "0.0.6",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2010, Linden Research, Inc.",
+    "path": "/shadow-modules/node_modules/typedarray"
   },
   {
     "name": "uglify-to-browserify",
@@ -2686,11 +3083,45 @@
     "path": "/shadow-modules/node_modules/uglify-to-browserify"
   },
   {
-    "name": "v8-profiler",
-    "version": "5.6.0",
-    "licenses": "BSD-2-Clause",
-    "copyrights": "Copyright (c) 2011, Danny Coates",
-    "path": "/shadow-modules/node_modules/v8-profiler"
+    "name": "uid-number",
+    "version": "0.0.5",
+    "licenses": "ISC",
+    "copyrights": "Copyright (c) Isaac Z. Schlueter",
+    "path": "/shadow-modules/node_modules/uid-number"
+  },
+  {
+    "name": "ultron",
+    "version": "1.0.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015 Unshift.io, Arnout Kazemier,  the Contributors.",
+    "path": "/shadow-modules/node_modules/ultron"
+  },
+  {
+    "name": "unpipe",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015 Douglas Christopher Wilson ",
+    "path": "/shadow-modules/node_modules/unpipe"
+  },
+  {
+    "name": "user-home",
+    "version": "1.1.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) Sindre Sorhus ",
+    "path": "/shadow-modules/node_modules/user-home"
+  },
+  {
+    "name": "utf-8-validate",
+    "version": "1.2.1",
+    "licenses": "MIT",
+    "path": "/shadow-modules/node_modules/utf-8-validate"
+  },
+  {
+    "name": "utils-merge",
+    "version": "1.0.0",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2013 Jared Hanson",
+    "path": "/shadow-modules/node_modules/utils-merge"
   },
   {
     "name": "varint",
@@ -2699,18 +3130,11 @@
     "path": "/shadow-modules/node_modules/varint"
   },
   {
-    "name": "vasync",
-    "version": "1.6.3",
+    "name": "vary",
+    "version": "1.0.1",
     "licenses": "MIT",
-    "copyrights": "Copyright (c) 2014, Joyent, Inc. All rights reserved.",
-    "path": "/shadow-modules/node_modules/vasync"
-  },
-  {
-    "name": "verror",
-    "version": "1.6.0",
-    "licenses": "MIT",
-    "copyrights": "Copyright (c) 2012, Joyent, Inc. All rights reserved.",
-    "path": "/shadow-modules/node_modules/verror"
+    "copyrights": "Copyright (c) 2014-2015 Douglas Christopher Wilson",
+    "path": "/shadow-modules/node_modules/vary"
   },
   {
     "name": "xml-crypto",
@@ -2741,9 +3165,30 @@
     "path": "/shadow-modules/node_modules/xmldom"
   },
   {
+    "name": "xmlhttprequest-ssl",
+    "version": "1.5.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2010 passive.ly LLC",
+    "path": "/shadow-modules/node_modules/xmlhttprequest-ssl"
+  },
+  {
     "name": "xpath.js",
     "version": "1.0.6",
     "licenses": "MIT",
     "path": "/shadow-modules/node_modules/xpath.js"
+  },
+  {
+    "name": "yauzl",
+    "version": "2.4.1",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2014 Josh Wolfe",
+    "path": "/shadow-modules/node_modules/yauzl"
+  },
+  {
+    "name": "yeast",
+    "version": "0.1.2",
+    "licenses": "MIT",
+    "copyrights": "Copyright (c) 2015 Unshift.io, Arnout Kazemier,  the Contributors.",
+    "path": "/shadow-modules/node_modules/yeast"
   }
 ]
