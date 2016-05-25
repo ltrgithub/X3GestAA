@@ -365,6 +365,7 @@
 		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>{347F67F8-6B95-4525-A933-9834937DF911}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.commo</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>{2F0EEA49-54DF-4327-8453-E4C7A5EAA130}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.excel</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>{69937D42-F563-47EA-B87F-DD7781F8841D}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.word.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.VisualStudio.OLE.Interop.dll</td><td>{70F08041-3AF7-4A02-8588-79C9221E3A8B}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.visualstudio.ole.i</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>{1DA4DB09-250F-4016-8007-B4892BB5B617}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.visualstudio.tools</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Newtonsoft.Json.dll</td><td>{047F22F6-2E3F-49B6-8E57-7C86B00A2180}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PowerPointAddIn.Lokalisierte_Ressourcen</td><td>{5CAC0C72-94EB-4FDD-A340-306ADD2854CF}</td><td>INSTALLDIR</td><td>2</td><td/><td>powerpointaddin.lokalisierte</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1923,6 +1924,7 @@
 		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.VisualStudio.OLE.Interop.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Newtonsoft.Json.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PowerPointAddIn.Lokalisierte_Ressourcen</td></row>
@@ -1962,6 +1964,7 @@
 		<row><td>microsoft.office.tools.commo</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.excel</td><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.word.</td><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\WordAddIn\bin\Release\Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.visualstudio.ole.i</td><td>Microsoft.VisualStudio.OLE.Interop.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.OLE.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\ExcelAddIn\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.visualstudio.tools</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Program Files\Reference Assemblies\Microsoft\VSTO40\v4.0.Framework\Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>1</td><td/></row>
 		<row><td>newtonsoft.json.dll</td><td>Newtonsoft.Json.dll</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\CommonDataHelper\bin\Release\Newtonsoft.Json.dll</td><td>1</td><td/></row>
 		<row><td>powerpointaddin.lokalisierte</td><td>PowerPointAddIn.Lokalisierte_Ressourcen1</td><td>PowerPointAddIn.Lokalisierte Ressourcen</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PowerPointAddIn&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
@@ -2250,6 +2253,7 @@
 		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td/><td/><td>_BA6C2EAA_4101_41C5_9E06_AAE9949B4FB1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Microsoft.Office.Tools.Excel.v4.0.Utilities.dll</td><td/><td/><td>_AADA948A_F8EA_487A_9DDD_8827A5011647_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Microsoft.Office.Tools.Word.v4.0.Utilities.dll</td><td/><td/><td>_D3ACDF17_1848_4FB6_B8D9_C65D79DCF8D6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.VisualStudio.OLE.Interop.dll</td><td/><td/><td>_44253147_8C5B_443B_A3D2_7979BFE28CC9_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td/><td/><td>_788377E2_CDBF_4FDA_BE83_DCD82EDC98A2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_D6719DF7_3571_4393_A1A8_AE297E34C09F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PowerPointAddIn.Lokalisierte_Ressourcen</td><td/><td/><td>_38768A9D_351F_49E0_8CF8_856CC11FDEFE_FILTER</td><td/><td/><td/><td/></row>
@@ -4629,9 +4633,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{4FFB4DA9-3A0D-4A79-AE94-4D02D2FCDB7E}</td><td/></row>
+		<row><td>ProductCode</td><td>{9888AD58-CEC1-4E4C-9C53-EFCDF3CF224C}</td><td/></row>
 		<row><td>ProductName</td><td>Sage Office Addins</td><td/></row>
-		<row><td>ProductVersion</td><td>1.10.0003</td><td/></row>
+		<row><td>ProductVersion</td><td>1.10.0004</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4643,7 +4647,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE12FOUND;IE10FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28;ISACTIONPROP29;ISACTIONPROP30;ISACTIONPROP31;IE8FOUND;IE9FOUND;ISACTIONPROP32;ISACTIONPROP33;ISACTIONPROP34;ISACTIONPROP34;ISACTIONPROP35;ISACTIONPROP36;ISACTIONPROP37</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE12FOUND;IE10FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28;ISACTIONPROP29;ISACTIONPROP30;ISACTIONPROP31;IE8FOUND;IE9FOUND;ISACTIONPROP32;ISACTIONPROP33;ISACTIONPROP34;ISACTIONPROP34;ISACTIONPROP35;ISACTIONPROP36;ISACTIONPROP37;ISACTIONPROP38</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4968,6 +4972,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.09.0001</td><td>1.09.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP35</td><td>1.09.0001</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.10.0001</td><td>1.10.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP36</td><td>1.10.0001</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.10.0002</td><td>1.10.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP37</td><td>1.10.0002</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.10.0003</td><td>1.10.0003</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP38</td><td>1.10.0003</td></row>
 	</table>
 
 	<table name="Verb">
