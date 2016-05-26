@@ -520,6 +520,45 @@
     },
     {
       "$type": "menuCategory",
+      "code": "STD_EMPL",
+      "description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_STA_AGE01",
+      "title": "title_45579484-5c53-4891-bbb4-1ae05a761bc9",
+      "description": "description_45579484-5c53-4891-bbb4-1ae05a761bc9",
+      "linkType": "$stats",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "statName": "AGE",
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [
+        {
+          "code": "STD_EMPL"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "$type": "menuCategory",
       "code": "STD_CNT",
       "description": "description_472d1508-dc1e-4bb9-92f0-483ffed92644",
       "$factory": true,
@@ -1035,6 +1074,47 @@
       ]
     },
     {
+      "$type": "menuCategory",
+      "code": "STD_EMPL",
+      "description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_PROC_FONCDEP1",
+      "title": "title_b13f2dcd-66f4-434d-b6cb-7b657b6867aa",
+      "description": "description_b13f2dcd-66f4-434d-b6cb-7b657b6867aa",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "$factory": true,
+      "processName": "Departure of Employee",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "99",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [
+        {
+          "code": "STD_EMPL"
+        }
+      ],
+      "parameters": []
+    },
+    {
       "$type": "menuItem",
       "code": "STD_X3_HRM_CAL_FINESS",
       "title": "title_b36381a2-a141-4e79-9616-9ab7c29e3039",
@@ -1404,86 +1484,6 @@
           "value": "EXPIHAB"
         }
       ]
-    },
-    {
-      "$type": "menuCategory",
-      "code": "STD_EMPL",
-      "description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66",
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_PROC_FONCDEP1",
-      "title": "title_b13f2dcd-66f4-434d-b6cb-7b657b6867aa",
-      "description": "description_b13f2dcd-66f4-434d-b6cb-7b657b6867aa",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "processName": "Departure of Employee",
-      "processMenu": "",
-      "processLeg": "",
-      "requestLevel": "99",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PERSO"
-      },
-      "categories": [
-        {
-          "code": "STD_EMPL"
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "$type": "menuCategory",
-      "code": "STD_EMPL",
-      "description": "description_3816ba64-9294-4fd9-bdbe-f1ff84d4ce66",
-      "$factory": true,
-      "$factoryOwner": "SAGE"
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_HRM_STA_AGE01",
-      "title": "title_45579484-5c53-4891-bbb4-1ae05a761bc9",
-      "description": "description_45579484-5c53-4891-bbb4-1ae05a761bc9",
-      "linkType": "$stats",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "$factory": true,
-      "statName": "AGE",
-      "requestLevel": "99",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PERSO"
-      },
-      "categories": [
-        {
-          "code": "STD_EMPL"
-        }
-      ],
-      "parameters": []
     },
     {
       "$type": "menuCategory",
@@ -2100,6 +2100,7 @@
       "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Probation period expiry",
       "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae": "Vue du portail",
       "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71": "Pending recruitments",
+      "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Staff ages",
       "title_cf3a93f0-7af4-442c-843d-9ab24b833be6": "Staff management",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Count",
       "title_e4cd66e3-f108-4c94-bb2e-d5892e6086f8": "Contract expiry",
@@ -2116,6 +2117,7 @@
       "title_5fed760f-3051-417e-a920-26d6a6721746": "Absenteeism in the last 12 months",
       "title_63ffc064-5838-4149-989c-a9f31674da25": "Today's brithdays",
       "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absenteeism in the last 3 months",
+      "title_b13f2dcd-66f4-434d-b6cb-7b657b6867aa": "Departure of Employee",
       "title_b36381a2-a141-4e79-9616-9ab7c29e3039": "Probation period expiry",
       "title_dc81c52d-4dae-4afc-aafb-5e9e29b8f317": "Contract expiry",
       "title_ddc4dfa7-c635-4e22-8b37-77cd40f10a55": "Pending recruitments",
@@ -2124,8 +2126,6 @@
       "title_e6c0580d-a58f-4ca1-b7e4-72a2c1435142": "Monthly absenteeism",
       "title_ece9abda-73ac-46ea-bf99-cd18648214e9": "Net Pay",
       "title_f94f7a19-ede3-4c2b-a71f-f6c80d3a893b": "Licence expiry",
-      "title_b13f2dcd-66f4-434d-b6cb-7b657b6867aa": "Departure of Employee",
-      "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Staff ages",
       "title_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Functional coverage",
       "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Functional coverage",
       "title_3584a2c0-45f5-4226-bb44-9cea46b39cb2": "Payroll",
@@ -2174,6 +2174,7 @@
       "title_3bf1bd4b-41b6-4e30-8c7e-67f81ce8f2ba": "Fin de période d'essai",
       "title_5ab47f21-6bcb-4d61-8bfc-d1980faa18ae": "Vue du portail",
       "title_a59e2e5f-af31-4a28-96bf-d8a6b5654a71": "Salariés en attente d'embauche",
+      "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Ages des salariés",
       "title_cf3a93f0-7af4-442c-843d-9ab24b833be6": "Gestion des effectifs",
       "description_472d1508-dc1e-4bb9-92f0-483ffed92644": "Inventaires",
       "title_e4cd66e3-f108-4c94-bb2e-d5892e6086f8": "Fin de contrat",
@@ -2196,6 +2197,7 @@
       "title_466b9ac3-cc85-4b40-b156-c7419e887eb6": "Vue du portail",
       "title_817a9ebf-1ec0-4d88-868a-6ee6f7cf3e0e": "Absentéisme 03 mois glissants",
       "title_8c2aee17-becb-4d5e-9f83-a0dd1752a308": "Vue du portail",
+      "title_b13f2dcd-66f4-434d-b6cb-7b657b6867aa": "Départ d'un salarié",
       "title_b36381a2-a141-4e79-9616-9ab7c29e3039": "Fin de période d'essai",
       "title_dc81c52d-4dae-4afc-aafb-5e9e29b8f317": "Fin de contrat",
       "title_ddc4dfa7-c635-4e22-8b37-77cd40f10a55": "Salariés en attente d'embauche",
@@ -2206,8 +2208,6 @@
       "title_ece9abda-73ac-46ea-bf99-cd18648214e9": "Net à payer",
       "title_f94f7a19-ede3-4c2b-a71f-f6c80d3a893b": "Expiration d'habilitation",
       "title_20366315-66f0-4024-832d-ed80d19c8590": "Vue du portail",
-      "title_b13f2dcd-66f4-434d-b6cb-7b657b6867aa": "Départ d'un salarié",
-      "title_45579484-5c53-4891-bbb4-1ae05a761bc9": "Ages des salariés",
       "description_cd4f2627-c4ec-478f-9167-e220aaee7c3c": "Mire d'accueil Sage HR Management",
       "title_3584a2c0-45f5-4226-bb44-9cea46b39cb2": "Processus masse salariale et budgetisation",
       "description_3584a2c0-45f5-4226-bb44-9cea46b39cb2": "Processus masse salariale et budgetisation",
