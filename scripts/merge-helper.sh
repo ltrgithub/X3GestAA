@@ -70,9 +70,9 @@ echo ""
 echo ">>> git merge --no-commit -s recursive -Xignore-space-change" $orig
 git merge --no-commit -s recursive -Xignore-space-change $orig
 
-for line in $(cat scripts/merge-ignore-list.txt)
+for line in $(cat scripts/merge-ignore-list.txt | sed -e 's|$||')
 do
-	echo ""
+	echo "Begin revert on excludes"
 	echo "Revert and ignore changes on ./${line}"
 	
 	echo ">>> git reset -q -- ./${line}"
