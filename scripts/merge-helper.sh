@@ -87,4 +87,8 @@ do
 	git clean -df ${line}
 done
 
+<<<<<<< HEAD
 unmerged
+=======
+unmerged
+>>>>>>> 78fe635... #814: recreate deleted file
