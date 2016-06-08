@@ -226,4 +226,16 @@ exports.config = {
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
         farmElbUrl: "https://qa.symphony.na.cloud.dev-sageerpx3online.com",
 	},
+	sf: {
+        oauth: {
+            certPath: __dirname + '/node_modules/salesforce-auth/ssl/sf_authentication.key',
+            jwtClaim: {
+                iss: '3MVG98_Psg5cppybv9YS_vxNfNYUtdxGB.Cu..PAmWaR.FhuWm1u6Une8EwCALUncIIL9DVvWNgPquw13L96_',
+                sub: '',
+                aud: 'https://login.salesforce.com',
+            },
+            host: 'https://login.salesforce.com'
+        },
+        restPath: '/services/data/v36.0/'
+    },
 };
