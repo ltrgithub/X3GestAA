@@ -352,6 +352,12 @@
         "title",
         "description"
       ]
+    },
+    "menuCategory": {
+      "$key": "code",
+      "$localized": [
+        "description"
+      ]
     }
   },
   "$items": [
@@ -18937,6 +18943,45 @@
       "parameters": []
     },
     {
+      "$type": "menuCategory",
+      "code": "STD_PAY_TRK",
+      "description": "description_9a00f1d3-1a17-4800-957b-53176f13ac32",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_ERP_TRS08_001",
+      "title": "title_15956150-7126-4e8f-bf6e-5591fa446263",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "processName": "TRS08_001",
+      "processMenu": "",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "categories": [
+        {
+          "code": "STD_PAY_TRK"
+        }
+      ],
+      "parameters": []
+    },
+    {
       "$type": "menuItem",
       "$variantType": "menuItem",
       "code": "STD_X3_HRM_EXTRDSNC",
@@ -19119,6 +19164,181 @@
       "requestLevel": "1",
       "$factory": true,
       "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRSDS",
+      "title": "title_1ed77a2c-c9f3-4d6b-8d98-882180687ef5",
+      "description": "description_1ed77a2c-c9f3-4d6b-8d98-882180687ef5",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRSDS",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSDG",
+      "title": "title_50d19e96-7b32-4699-93e8-d627bbdf652d",
+      "description": "description_50d19e96-7b32-4699-93e8-d627bbdf652d",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSDG",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSDM",
+      "title": "title_caf89420-7030-40c0-8a04-9feedcaf0c78",
+      "description": "description_caf89420-7030-40c0-8a04-9feedcaf0c78",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSDM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSPI",
+      "title": "title_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7",
+      "description": "description_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSPI",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSPE",
+      "title": "title_5435b4d7-7776-4ea0-89e7-338e443b9a0c",
+      "description": "description_5435b4d7-7776-4ea0-89e7-338e443b9a0c",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSPE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSGE",
+      "title": "title_5c0845b8-7e29-44c9-b052-3b0911c79822",
+      "description": "description_5c0845b8-7e29-44c9-b052-3b0911c79822",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSGE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSDM",
+      "title": "title_caf89420-7030-40c0-8a04-9feedcaf0c78",
+      "description": "description_caf89420-7030-40c0-8a04-9feedcaf0c78",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSDM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -19537,6 +19757,10 @@
                 {
                   "code": "STD_X3_HRM_GESHRDWM",
                   "$variantType": "menuItem"
+                },
+                {
+                  "code": "STD_X3_ERP_TRS08_001",
+                  "$variantType": "menuItem"
                 }
               ]
             },
@@ -19679,6 +19903,50 @@
                   "items": []
                 }
               ]
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "a4b8cc54-f1af-4d41-aa19-72f039cee20b",
+          "title": "title_a4b8cc54-f1af-4d41-aa19-72f039cee20b",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESHRSDS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSDG",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSDM",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "f7e88683-3515-42ef-9a06-82af9e26e24a",
+          "title": "title_f7e88683-3515-42ef-9a06-82af9e26e24a",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GENHRSPI",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSPE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSGE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSDM",
+              "$variantType": "menuItem"
             }
           ]
         }
@@ -27063,6 +27331,8 @@
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "GESHRDWS",
       "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "إنشاء",
       "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "GESHRDWM",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "تابع التسويات",
       "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "إستخراج",
       "title_437d4377-19b1-4194-ab5d-9bf92d7f963f": "GESHRDCC",
       "title_f59eb449-aa6e-460f-9040-c6d8b24221af": "GESHRDCV",
@@ -27292,6 +27562,8 @@
     "de-de": {
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard",
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "Eingehende Schecks",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Zahlungsrückmeldung",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
@@ -27305,6 +27577,8 @@
     "en-gb": {
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
       "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Social security file",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "Cust Payments: Received Checks",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
@@ -28491,6 +28765,8 @@
       "description_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "GENDSNA",
       "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "Data management",
       "description_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "GESHRDWM",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "Process Cash Receipts",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking",
       "title_8ce01e33-9999-4781-8c4e-d99917e1e53d": "Contract end declaration",
       "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "Extraction",
       "description_e4b6ee3a-948a-44f4-b063-de2541d0f715": "EXTRDSNC",
@@ -28517,6 +28793,20 @@
       "title_d5a2901c-b243-490f-9852-33dccf1342a3": "Import",
       "title_170b76c7-d0e9-47e5-ab16-c28ff390a66f": "Welfare",
       "title_d3918ee2-7a63-41c7-a20c-cdfdc5111fa0": "Compl. health insurance",
+      "title_a4b8cc54-f1af-4d41-aa19-72f039cee20b": "Tax Declaration",
+      "title_1ed77a2c-c9f3-4d6b-8d98-882180687ef5": "Declaration setup",
+      "description_1ed77a2c-c9f3-4d6b-8d98-882180687ef5": "GESHRSDS",
+      "title_50d19e96-7b32-4699-93e8-d627bbdf652d": "Declaration generation",
+      "description_50d19e96-7b32-4699-93e8-d627bbdf652d": "Declaration generation",
+      "title_caf89420-7030-40c0-8a04-9feedcaf0c78": "Statutory declaration",
+      "description_caf89420-7030-40c0-8a04-9feedcaf0c78": "Statutory declaration",
+      "title_f7e88683-3515-42ef-9a06-82af9e26e24a": "CNSS",
+      "title_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7": "Social security pre-set import",
+      "description_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7": "Social security pre-set import",
+      "title_5435b4d7-7776-4ea0-89e7-338e443b9a0c": "Update",
+      "description_5435b4d7-7776-4ea0-89e7-338e443b9a0c": "Update",
+      "title_5c0845b8-7e29-44c9-b052-3b0911c79822": "Export",
+      "description_5c0845b8-7e29-44c9-b052-3b0911c79822": "Export",
       "title_19691840-6ec5-4d60-b972-620ff5245413": "MEC",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
@@ -29594,6 +29884,8 @@
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Datos empleados",
       "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "Generación",
       "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "Gestión de datos",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "Cobro cliente: Cheque recibido",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguimiento de pagos",
       "title_8ce01e33-9999-4781-8c4e-d99917e1e53d": "Declaración fin de contrato",
       "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "Extracción",
       "title_437d4377-19b1-4194-ab5d-9bf92d7f963f": "Datos contratos",
@@ -30968,6 +31260,8 @@
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Données salariés",
       "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "Génération",
       "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "Gestion des données",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "Règlt clients : Chèques reçus",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Suivi règlements",
       "title_8ce01e33-9999-4781-8c4e-d99917e1e53d": "Déclaration fin de contrat",
       "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "Extraction",
       "title_437d4377-19b1-4194-ab5d-9bf92d7f963f": "Données contrats",
@@ -31379,6 +31673,8 @@
     "it-it": {
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator",
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
@@ -31391,6 +31687,8 @@
     "pl-pl": {
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna",
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
@@ -32546,6 +32844,8 @@
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Dados colab.",
       "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "Geração",
       "title_6111ec07-ca76-4e1c-bc93-c46b4b0dd3ec": "Gestão dados",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "Pagam. Clientes : Cheq. Receb.",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguim. Pagamentos",
       "title_8ce01e33-9999-4781-8c4e-d99917e1e53d": "Declaração fim contrato",
       "title_e4b6ee3a-948a-44f4-b063-de2541d0f715": "Extracção",
       "title_437d4377-19b1-4194-ab5d-9bf92d7f963f": "Data contrato",
@@ -32963,6 +33263,8 @@
     "ru-ru": {
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора",
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "Payroll",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "STD_X3_ERP_TRS08_001",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Отслеживание платежа",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Total payroll",
@@ -33019,6 +33321,8 @@
       "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a": "人事管理",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "时间管理",
       "title_befbdb20-8082-4267-8b8c-44350f2734b1": "薪资",
+      "title_15956150-7126-4e8f-bf6e-5591fa446263": "客户付款：已收到的支票",
+      "description_9a00f1d3-1a17-4800-957b-53176f13ac32": "收付款追踪",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "费用清单",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "利润分配",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "参数定义",
