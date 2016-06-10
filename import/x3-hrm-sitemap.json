@@ -19252,6 +19252,106 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSPI",
+      "title": "title_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7",
+      "description": "description_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSPI",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSPE",
+      "title": "title_5435b4d7-7776-4ea0-89e7-338e443b9a0c",
+      "description": "description_5435b4d7-7776-4ea0-89e7-338e443b9a0c",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSPE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSGE",
+      "title": "title_5c0845b8-7e29-44c9-b052-3b0911c79822",
+      "description": "description_5c0845b8-7e29-44c9-b052-3b0911c79822",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSGE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENHRSDM",
+      "title": "title_caf89420-7030-40c0-8a04-9feedcaf0c78",
+      "description": "description_caf89420-7030-40c0-8a04-9feedcaf0c78",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENHRSDM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_c73b1160-b6d7-4ab8-a0ed-6fab884c2bf3",
       "code": "STD_X3_HRM_PDEC",
@@ -19831,7 +19931,24 @@
           "$variantType": "menuBlock",
           "code": "f7e88683-3515-42ef-9a06-82af9e26e24a",
           "title": "title_f7e88683-3515-42ef-9a06-82af9e26e24a",
-          "items": []
+          "items": [
+            {
+              "code": "STD_X3_HRM_GENHRSPI",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSPE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSGE",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENHRSDM",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -28684,6 +28801,12 @@
       "title_caf89420-7030-40c0-8a04-9feedcaf0c78": "Statutory declaration",
       "description_caf89420-7030-40c0-8a04-9feedcaf0c78": "Statutory declaration",
       "title_f7e88683-3515-42ef-9a06-82af9e26e24a": "CNSS",
+      "title_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7": "Social security pre-set import",
+      "description_bc5993b6-b729-41d8-9f70-ee3a85f3e2c7": "Social security pre-set import",
+      "title_5435b4d7-7776-4ea0-89e7-338e443b9a0c": "Update",
+      "description_5435b4d7-7776-4ea0-89e7-338e443b9a0c": "Update",
+      "title_5c0845b8-7e29-44c9-b052-3b0911c79822": "Export",
+      "description_5c0845b8-7e29-44c9-b052-3b0911c79822": "Export",
       "title_19691840-6ec5-4d60-b972-620ff5245413": "MEC",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
