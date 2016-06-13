@@ -337,8 +337,7 @@ namespace ExcelAddIn
                 // reselect initial range (wo header line)
                 Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, initialCol + i],
                     targetWorksheet.Cells[initialRow + rowCount, initialCol + i]];
-                //actualColumnRanges.Add(headers[i]._name, cells);
-                //actualColumnRanges.Add(_encodedNameRanges[_name + "." + headers[i]._name], cells);
+
                 actualColumnRanges.Add(ReportingUtils.getEncodedRangeName(headers[i]._name, _encodedNameRanges), cells);
             }
             // the table must be created after cells shift
