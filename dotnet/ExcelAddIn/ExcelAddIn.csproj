@@ -131,8 +131,10 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(Configuration)==Debug (copy "$(OutDir)Sage.Syracuse.ExcelAddIn.dll" "$(SageOfficeAddinsDirV8)" /y
+copy "$(OutDir)CommonDataHelper.dll" "$(SageOfficeAddinsDirV8)" /y
+copy "$(OutDir)CommonDialogs.dll" "$(SageOfficeAddinsDirV8)" /y
+copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDirV8)" /y) ELSE (echo "Do nothing!")</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
