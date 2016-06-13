@@ -95,7 +95,7 @@ namespace ExcelAddIn
             Range target = null;
             if (cellAddress != "")
                 target = Globals.ThisAddIn.Application.Range[cellAddress];
-            SyracuseExcelTable table = new SyracuseExcelTable(name, (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype), target);
+            SyracuseExcelTable table = new SyracuseExcelTable(ReportingUtils.encodeRangePrefix(name), (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype), target);
             if (tableHelpers.ContainsKey(name))
                 tableHelpers[name] = table;
             else
@@ -116,8 +116,9 @@ namespace ExcelAddIn
         }
         public bool DeleteTable(String name)
         {
-            SyracuseExcelTable table = new SyracuseExcelTable(name, null);
-            return table.DeleteTable(name);
+            String encodedName = ReportingUtils.encodeRangePrefix(name);
+            SyracuseExcelTable table = new SyracuseExcelTable(encodedName, null);
+            return table.DeleteTable(ReportingUtils.encodeRangePrefix(encodedName));
         }
         //
         public void RegisterVBCallback()
