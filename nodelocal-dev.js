@@ -197,9 +197,11 @@ exports.config = {
 		}
 	},
 	mongoNotify: {
-		host: '10.198.254.30',
+		host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
 		port: '27017',
-		database: 'syracuse',
+		database: 'api',
+		oauthCollection: 'oauth_redirects',
+		apiHost: 'https://devapi.dev-sageerpx3online.com'
 	},
 	aws: {
 	 	"region": "us-west-2",
