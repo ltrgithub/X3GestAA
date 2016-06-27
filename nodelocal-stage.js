@@ -193,9 +193,11 @@ exports.config = {
                                 }
                 },
                 mongoNotify: {
-                                host: 'sage_id_notifications',
-                                port: '27017',
-                                database: 'syracuse',
+                    host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
+                    port: '27017',
+                    database: 'api',
+                    oauthCollection: 'oauth_redirects',
+                    apiHost: 'https://staging-api.sagex3.com'
                 },
 								health:{
 							parallel: 4,
