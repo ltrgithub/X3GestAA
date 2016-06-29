@@ -1,6 +1,6 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2016-01-22T18:00:00Z",
+	"generationStamp": "2016-06-29T18:00:00Z",
 	"partnerId": "",
 	"product": {
 		"code": "3",
@@ -25,9 +25,17 @@
 		{
 			"code": "1",
 			"title": {
-				"pt-PT": "Supervisor",
 				"fr-FR": "Superviseur",
-				"en-US": "Supervisor"
+				"en-US": "Supervisor",
+				"it-IT": "Supervisore",
+				"pt-PT": "Supervisor",
+				"es-ES": "Supervisor",
+				"en-GB": "Supervisor",
+				"de-DE": "Supervisor",
+				"pl-PL": "Administrator",
+				"ZH-CN": "系统管理员",
+				"ru-RU": "Контролер",
+				"AR-SA": "مشرف"
 			},
 			"keyFunctions": [
 				"APATCH",
@@ -48,36 +56,66 @@
 		}, {
 			"code": "2",
 			"title": {
-				"pt-PT": "Salários",
-				"fr-FR": "Paie",
-				"en-US": "Payroll"
+				"fr-FR": "Comptabilité",
+				"en-US": "Financials",
+				"it-IT": "Contabilità",
+				"pt-PT": "Contabilidade",
+				"es-ES": "Contabilidad",
+				"en-GB": "Accounting",
+				"de-DE": "Buchhaltung",
+				"pl-PL": "Księgowość",
+				"ZH-CN": "会计",
+				"ru-RU": "Учет",
+				"AR-SA": "محاسبة"
 			},
 			"keyFunctions": [
-				"APATCHP",
-				"FRMVAL",
-				"GENPLAN",
-				"GESFRM",
-				"GESVEP",
-				"TRTCAL"
+				"BUDAPP",
+				"FIYEND",
+				"GESENV",
+				"GESGAS",
+				"LETTRAGE",
+				"LETTRAUTO"
 			],
 			"condition": "always"
 		}, {
 			"code": "3",
 			"title": {
-				"pt-PT": "Interface contab.",
-				"fr-FR": "Interface compta",
-				"en-US": "Account.interface"
+				"fr-FR": "Tiers",
+				"en-US": "A/P-A/R accounting",
+				"it-IT": "Terzi",
+				"pt-PT": "Terceiros",
+				"es-ES": "Terceros",
+				"en-GB": "S/L and P/L",
+				"de-DE": "TP-Buchhaltung",
+				"pl-PL": "Rozrachunki",
+				"ZH-CN": "应收和应付",
+				"ru-RU": "Дебиторы/Кредиторы",
+				"AR-SA": "شركاء"
 			},
 			"keyFunctions": [
-				
+				"CPTQUIT",
+				"GESBIC",
+				"GESBIS",
+				"GESEXS",
+				"GESPAY",
+				"PAYPROPAL",
+				"RELBANK"
 			],
 			"condition": "always"
 		}, {
 			"code": "4",
 			"title": {
-				"pt-PT": "Gestão tempos",
-				"fr-FR": "Gestion temps",
-				"en-US": "Time management"
+				"fr-FR": "Externe",
+				"en-US": "External",
+				"it-IT": "Esterno",
+				"pt-PT": "Externo",
+				"es-ES": "Externo",
+				"en-GB": "External",
+				"de-DE": "Extern",
+				"pl-PL": "Zewnętrzne",
+				"ZH-CN": "外部",
+				"ru-RU": "Внешний",
+				"AR-SA": "خارجي"
 			},
 			"keyFunctions": [
 				
@@ -86,75 +124,133 @@
 		}, {
 			"code": "5",
 			"title": {
-				"pt-PT": "Formação",
-				"fr-FR": "Formation",
-				"en-US": "Training"
+				"fr-FR": "Ventes",
+				"en-US": "Sales",
+				"it-IT": "Vendite",
+				"pt-PT": "Vendas",
+				"es-ES": "Ventas",
+				"en-GB": "Sales",
+				"de-DE": "Verkauf",
+				"pl-PL": "Sprzedaż",
+				"ZH-CN": "销售",
+				"ru-RU": "Продажи",
+				"AR-SA": "مبيعات"
 			},
 			"keyFunctions": [
-				"CONSSBF",
-				"GESINS",
-				"GESPLF"
+				"FUNAUTINVC",
+				"FUNAUTINVD",
+				"FUNAUTINVO",
+				"FUNAUTINVS",
+				"FUNAUTINVT",
+				"FUNCFMINV",
+				"GESSDH",
+				"GESSIH",
+				"GESSOH",
+				"GESSQH"
 			],
 			"condition": "always"
 		}, {
 			"code": "6",
 			"title": {
-				"pt-PT": "Notas despesa",
-				"fr-FR": "Notes de frais",
-				"en-US": "Expense notes"
+				"fr-FR": "Achats",
+				"en-US": "Purchasing",
+				"it-IT": "Acquisti",
+				"pt-PT": "Compras",
+				"es-ES": "Compras",
+				"en-GB": "Purchasing",
+				"de-DE": "Einkauf",
+				"pl-PL": "Zakupy",
+				"ZH-CN": "采购",
+				"ru-RU": "Закупки",
+				"AR-SA": "شراء"
 			},
 			"keyFunctions": [
-				"CARRNOF",
-				"EXSPST"
+				"FUNPIH",
+				"GESPIH",
+				"GESPOH",
+				"GESPSH",
+				"GESPTH",
+				"GESSCO"
 			],
 			"condition": "always"
 		}, {
 			"code": "7",
 			"title": {
-				"pt-PT": "Massa salarial",
-				"fr-FR": "Masse salariale",
-				"en-US": "Total Payroll"
+				"fr-FR": "Stocks",
+				"en-US": "Stock",
+				"it-IT": "Stock",
+				"pt-PT": "Stocks",
+				"es-ES": "Stocks",
+				"en-GB": "Inventory",
+				"de-DE": "Lager",
+				"pl-PL": "Magazyny",
+				"ZH-CN": "存货",
+				"ru-RU": "Запасы",
+				"AR-SA": "مخزون"
 			},
 			"keyFunctions": [
-				"CONSMAS",
-				"CONSMES",
-				"GESMCH"
+				"GESSMO",
+				"GESSMR",
+				"GESSMX",
+				"GESSTQ"
 			],
 			"condition": "always"
 		}, {
 			"code": "8",
 			"title": {
-				"pt-PT": "Competências e carreiras",
-				"fr-FR": "Compétences et carrières",
-				"en-US": "Skills and careers"
+				"fr-FR": "GPAO",
+				"en-US": "Manufacturing",
+				"it-IT": "Produzione",
+				"pt-PT": "GPAC",
+				"es-ES": "Producción",
+				"en-GB": "Manufacturing",
+				"de-DE": "PPS",
+				"pl-PL": "Produkcja",
+				"ZH-CN": "生产",
+				"ru-RU": "Производство",
+				"AR-SA": "GPAO"
 			},
 			"keyFunctions": [
-				"GESCEV",
-				"GESECP",
-				"GESEVA",
-				"RECCPC",
-				"RECPRF"
+				"FUNMAUTR",
+				"GESMFG",
+				"GESMTK",
+				"GESROU",
+				"VXAPT"
 			],
 			"condition": "always"
 		}, {
 			"code": "9",
 			"title": {
-				"pt-PT": "Tronco comum",
 				"fr-FR": "Tronc commun",
-				"en-US": "Common Data"
+				"en-US": "Common Data",
+				"it-IT": "Modulo base",
+				"pt-PT": "Tronco comum",
+				"es-ES": "Tronco común",
+				"en-GB": "Common",
+				"de-DE": "Gemeinsame",
+				"pl-PL": "Dane podstawowe",
+				"ZH-CN": "基础数据",
+				"ru-RU": "Общиеданные",
+				"AR-SA": "رأسالأساسي"
 			},
 			"keyFunctions": [
-				"GESDPI",
-				"INSTPORTAL",
-				"PRHDCG"
+				
 			],
 			"condition": "always"
 		}, {
 			"code": "10",
 			"title": {
-				"pt-PT": "Desenvolvimento",
 				"fr-FR": "Développement",
-				"en-US": "Development"
+				"en-US": "Development",
+				"it-IT": "Sviluppo",
+				"pt-PT": "Desenvolvimento",
+				"es-ES": "Desarrollo",
+				"en-GB": "Development",
+				"de-DE": "Entwicklung",
+				"pl-PL": "Projektowanie",
+				"ZH-CN": "开发",
+				"ru-RU": "Разработка",
+				"AR-SA": "تطوير"
 			},
 			"keyFunctions": [
 				
@@ -163,9 +259,17 @@
 		}, {
 			"code": "11",
 			"title": {
-				"pt-PT": "Interno Adonix",
-				"fr-FR": "Interne",
-				"en-US": "Sage X3 Internals"
+				"fr-FR": "Interne X3",
+				"en-US": "Sage X3 Internals",
+				"it-IT": "Interno X3",
+				"pt-PT": "Interno X3",
+				"es-ES": "Interno X3",
+				"en-GB": "Adonix X3 Internals",
+				"de-DE": "Interne X3",
+				"pl-PL": "Sage X3 Internals",
+				"ZH-CN": "Sage X3内部",
+				"ru-RU": "ВнутренниеданныеSage X3",
+				"AR-SA": "X3داخلي"
 			},
 			"keyFunctions": [
 				
@@ -174,42 +278,79 @@
 		}, {
 			"code": "12",
 			"title": {
-				"pt-PT": "OLD Massa salarial",
-				"fr-FR": "Inactif",
-				"en-US": "OLD Total Payroll"
+				"fr-FR": "Support client",
+				"en-US": "Help-Desk",
+				"it-IT": "Supporto cliente",
+				"pt-PT": "Suporte cliente",
+				"es-ES": "Soporte cliente",
+				"en-GB": "Help-Desk",
+				"de-DE": "Kundenbetreuung",
+				"pl-PL": "Help-Desk",
+				"ZH-CN": "客户支持",
+				"ru-RU": "Справочнаяслужба",
+				"AR-SA": "دعمالزبون"
 			},
 			"keyFunctions": [
-				
+				"GESCON",
+				"GESMAC",
+				"GESSRE"
 			],
 			"condition": "always"
 		}, {
 			"code": "13",
 			"title": {
-				"pt-PT": "Inactivo",
-				"fr-FR": "Inactif",
-				"en-US": "Inactive"
+				"fr-FR": "Action commerciale",
+				"en-US": "CRM activities",
+				"it-IT": "CRM",
+				"pt-PT": "Acção comercial",
+				"es-ES": "Acción comercial",
+				"en-GB": "Commercial activity",
+				"de-DE": "CRM-Aktivitäten",
+				"pl-PL": "CRM",
+				"ZH-CN": "商业活动",
+				"ru-RU": "ОперацииCRM",
+				"AR-SA": "نشاطتجاري"
 			},
 			"keyFunctions": [
-				
+				"GESBAP",
+				"GESOPP",
+				"GESTSK"
 			],
 			"condition": "always"
 		}, {
 			"code": "14",
 			"title": {
-				"pt-PT": "Inactivo",
-				"fr-FR": "Inactif",
-				"en-US": "Inactive"
+				"fr-FR": "Immobilisations",
+				"en-US": "Fixed Assets",
+				"it-IT": "Cespiti",
+				"pt-PT": "Imobilizado",
+				"es-ES": "Inmovilizados",
+				"en-GB": "Fixed Assets",
+				"de-DE": "Anlagen",
+				"pl-PL": "Środki trwałe",
+				"ZH-CN": "固定资产",
+				"ru-RU": "ВнеоборотныеАктивы",
+				"AR-SA": "ممتلكات"
 			},
 			"keyFunctions": [
-				
+				"GESFAS",
+				"GESLOF"
 			],
 			"condition": "always"
 		}, {
 			"code": "15",
 			"title": {
-				"pt-PT": "Inactivo",
-				"fr-FR": "Inactif",
-				"en-US": "Inactive"
+				"fr-FR": "Administration des RH",
+				"en-US": "Human Resources administration",
+				"it-IT": "Human Resources administration",
+				"pt-PT": "Human Resources administration",
+				"es-ES": "Human Resources administration",
+				"en-GB": "Human Resources administration",
+				"de-DE": "Human Resources administration",
+				"pl-PL": "Human Resources administration",
+				"ZH-CN": "Human Resources administration",
+				"ru-RU": "Human Resources administration",
+				"AR-SA": "Human Resources administration"
 			},
 			"keyFunctions": [
 				
@@ -218,9 +359,17 @@
 		}, {
 			"code": "16",
 			"title": {
-				"pt-PT": "Modulo Esp.1",
 				"fr-FR": "Module Spe 1",
-				"en-US": "Module Spe 1"
+				"en-US": "Module Spe 1",
+				"it-IT": "Modulo Spe 1",
+				"pt-PT": "Modulo Esp.1",
+				"es-ES": "Modulo Spe 1",
+				"en-GB": "Module Spe 1",
+				"de-DE": "Modul Spe 1",
+				"pl-PL": "ModułSpe 1",
+				"ZH-CN": "SPE模块1",
+				"ru-RU": "Хар-кимодуля1",
+				"AR-SA": "Module Spe 1"
 			},
 			"keyFunctions": [
 				
@@ -229,9 +378,17 @@
 		}, {
 			"code": "17",
 			"title": {
-				"pt-PT": "Modulo Esp.2",
 				"fr-FR": "Module Spe 2",
-				"en-US": "Module Spe 2"
+				"en-US": "Module Spe 2",
+				"it-IT": "Modulo Spe 2",
+				"pt-PT": "Modulo Esp.2",
+				"es-ES": "Modulo Spe 2",
+				"en-GB": "Module Spe 2",
+				"de-DE": "Modul Spe 2",
+				"pl-PL": "ModułSpe 2",
+				"ZH-CN": "SPE模块2",
+				"ru-RU": "Хар-кимодуля2",
+				"AR-SA": "Module Spe 2"
 			},
 			"keyFunctions": [
 				
@@ -240,9 +397,17 @@
 		}, {
 			"code": "18",
 			"title": {
-				"pt-PT": "Modulo Esp.3",
 				"fr-FR": "Module Spe 3",
-				"en-US": "Module Spe 3"
+				"en-US": "Module Spe 3",
+				"it-IT": "Modulo Spe 3",
+				"pt-PT": "Modulo Esp.3",
+				"es-ES": "Modulo Spe 3",
+				"en-GB": "Module Spe 3",
+				"de-DE": "Modul Spe 3",
+				"pl-PL": "ModułSpe 3",
+				"ZH-CN": "SPE模块3",
+				"ru-RU": "Хар-кимодуля3",
+				"AR-SA": "Module Spe 3"
 			},
 			"keyFunctions": [
 				
@@ -251,9 +416,36 @@
 		}, {
 			"code": "19",
 			"title": {
-				"pt-PT": "Modulo Esp.4",
 				"fr-FR": "Module Spe 4",
-				"en-US": "Module Spe 4"
+				"en-US": "Module Spe 4",
+				"it-IT": "Modulo Spe 4",
+				"pt-PT": "Modulo Esp.4",
+				"es-ES": "Modulo Spe 4",
+				"en-GB": "Module Spe 4",
+				"de-DE": "Modul Spe 4",
+				"pl-PL": "ModułSpe 4",
+				"ZH-CN": "SPE模块4",
+				"ru-RU": "Хар-кимодуля4",
+				"AR-SA": "Module Spe 4"
+			},
+			"keyFunctions": [
+				
+			],
+			"condition": "always"
+		}, {
+			"code": "20",
+			"title": {
+				"fr-FR": "Gestion des talents",
+				"en-US": "Human Capital management",
+				"it-IT": "Human Capital management",
+				"pt-PT": "Human Capital management",
+				"es-ES": "Human Capital management",
+				"en-GB": "Human Capital management",
+				"de-DE": "Human Capital management",
+				"pl-PL": "Human Capital management",
+				"ZH-CN": "Human Capital management",
+				"ru-RU": "Human Capital management",
+				"AR-SA": "Human Capital management"
 			},
 			"keyFunctions": [
 				
@@ -1261,6 +1453,6 @@
 			"type": "integer"
 		}
 	],
-	"signature": "l3K72o1ITfw3H464McDikZNNJw5UIu9Z4b4MQxZxIu7YdgGungRzyYLYBBQxCPEB+cYjlOaM8fe2gzSpyO/6J89WhspctQopS1CrtRW/mGdGK7j08iSwdRjq425LL0qhWvA+UbnjO7/Bdgxb7nIyMb1j9GBbruv1b7YRowbuovCtpn8hHDf1VVmjdlmGgFy0fMWFuzTFlLlpSubQGTLBg3OiRnHtZTrciHdiM1IRDahv4ngovCoiEKt2nMzjweCfT/sB9DQ7F+azmIUtLzWXfTsPWEQfdDysSsLSIVHmiTsRS89GSjacQUVEXR/gHif+UFJiLZ4gCZd3q973kEqHHOauWrCAq7qbHQqPh1M6E3rsNwqOmXFr6N0a3tyAQA8MqUtcyfB89lMLTGtUegXLZr1TpNcEmjw4M1XIScjanFO2wSGGev28f/yZ6q7gNzMFI7TWWn7DYp+rd/Vb43BFquGjEeW5KQayKMbX8aSNHl238HJ6gbWLmwLsCy+wpcauB+KWzlwrYNcKndE/0yYSKS4h9n6oFzZOn02PA34c/ng0KHjUbGCWnL9daj2A4hT8K/s0QfusLBXFYhJD+KqFl3nUt3j6kBjMye4d6JnQxBbs2CrlQzC2KJ5Td8B6RfTBpPc6ERGSsvkjtEPYndkDdIyjGiV4GIQ0vSMM4ecesbs=",
+	"signature": "h/M1QjZVwtTgEI8VkyQpR8yAVZFdO44G878/wTw6YEuQ/xett/R3U4KW7ii60ed5nbYE6/hbPMRuoMQH7TC6Lxj48Oz53BK+nmO5ijOCuA4qW2RJIBcoTFZnu6TpX+zmg28ed7FYXbQjtkgYkiatgZILbWz2ouv0XqOHJhUjx31nb7akpm0gxZx0bZGQxfgOuBxBIbttSR+ivNfjCAuGLoJvEO0xK4rVJ0Lo0FkeVinWX8sHcwW0ysK2NFuDen+dYI6V5KPaF8xJwdBrcZXjim3EnUIww3QMrxiXxzliWUtfmzPUDnDqgqtuP6An73x9snkURrjTKfSUMFjGL9nV+df7WKyLb4odXWVOf22ZVn9L2iEzzgJ+sEgIDLQJB6efdmpYZJJV+v/c+uJyU1y7rufIrDhx1Fr7Kvp8yNS28v2RkNu12tBLpKO01xlBqdADJl6G9qq7E8aqWC9z4NRr3Bga4ASKB4q3iOu1KX7UCip0ZnHFCvejULmudmn14Mv4Oby6NoO2wCOAKHxQ/32rdnHWUmzbmMBemdOj4HdIMCzDHzCh+KJ9wTGfX/OiQQr8BCntlAMDe+wW9XB/wlZg3vD4x9gUvzY8wNx1mYzlWfSdoDmG5SXsNVTng+BTddc7Ox+qAv/KY2bAmVYsoN6cTtT+L3jwvSZDbA+Qi3eWNHg=",
 	"signatureText": "SAGE SAS"
 }
