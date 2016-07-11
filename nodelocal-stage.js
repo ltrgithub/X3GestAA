@@ -196,14 +196,16 @@ exports.config = {
                     host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
                     port: '27017',
                     database: 'api',
-                    sageIdCollection: 'sageid_notifications'
+                    sageIdCollection: 'sageid_notifications',
+                    oauthCollection: 'oauth_redirects',
+                    apiHost: 'https://staging-api.sagex3.com'
                 },
-								health:{
-							parallel: 4,
-							delay: 300,
-							logUrl: "https://staging-api.sagex3.com/healthLogs/production",
-                            siteUrl: "https://staging-api.sagex3.com/sdata/sky/automation/production",
-                            site: $WebAPIAuth,
+				health:{
+						parallel: 4,
+						delay: 300,
+						logUrl: "https://staging-api.sagex3.com/healthLogs/production",
+                        siteUrl: "https://staging-api.sagex3.com/sdata/sky/automation/production",
+                        site: $WebAPIAuth,
 						cloudwatch: true,
                         esIndex: 'x3.erp.x3'
 	},
