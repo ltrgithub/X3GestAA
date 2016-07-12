@@ -191,5 +191,11 @@ exports.config = {
     },
     textsServer: {
         "url": "http://10.169.142.155:8085"
-    }
+    },
+	batch: {
+		"auto": {
+			"retries": 10,
+			"intervalMs": 30000
+		}
+	}
 };
