@@ -28,6 +28,7 @@ namespace ExcelAddIn
         private const String resourceUrlProperty    = "resourceUrl";
         private const String forceRefreshProperty   = "forceRefresh";
         private const String dataSourceUuidProperty = "dataSourceUuid";
+        private const String datasourcesAddress = "datasourcesAddress";
         private const String createModeProperty     = "createMode";
         private const String documentUrlProperty    = "documentUrl";
         private const String documentTitleProperty  = "documentTitle";
@@ -127,6 +128,14 @@ namespace ExcelAddIn
         public String getCreateMode()
         {
             return getStringProperty(createModeProperty, false);
+        }
+        public void setDatasources(String datasources)
+        {
+            setStringProperty(datasourcesAddress, datasources);
+        }
+        public String getDatasources()
+        {
+            return getStringProperty(datasourcesAddress, false);
         }
         public void setDocumentUrl(String url)
         {

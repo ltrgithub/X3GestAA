@@ -5,6 +5,8 @@ using Microsoft.Office.Interop.Excel;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using CommonDataHelper.GlobalHelper;
+using System.Text.RegularExpressions;
+using System.Text;
 
 namespace ExcelAddIn
 {
@@ -138,7 +140,7 @@ namespace ExcelAddIn
         private static void FillCollectionControls(Workbook workbook, Dictionary<String, object> entityData, Dictionary<String, ExcelReportingField> fieldsInfo, BrowserDialog browserDialog, ProgressDialog pd)
         {
             /*
-             * Iterate through the list of placeholder groups. Populate only non-tabular placeholders within each group.
+             * Iterate through the list of placeholder groups. 
              */
             var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
             foreach (IGrouping<object, PlaceholderTable> orderedPlaceholderTables in orderedPlaceholderTableList)
@@ -149,7 +151,6 @@ namespace ExcelAddIn
 
                 foreach (var placeholderTable in orderedPlaceholderTables)
                 {
-
                     if (GetTabularFieldsList(fieldsInfo).Count(pair => pair.Key.Equals(placeholderTable.placeholder.name)) > 0)
                     {
                         /*
@@ -259,19 +260,26 @@ namespace ExcelAddIn
                                 if (nonTabularCollection.ContainsKey("$items"))
                                 {
                                     Object[] itemsArray = (Object[])nonTabularCollection.Where(key => key.Key.Equals("$items")).First().Value;
-                                    Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
-
-                                    String field = placeholderTable.placeholder.name.Split('.')[1];
-                                    if (field != null && itemsDictionary.ContainsKey(field))
+                                    if (itemsArray.Length > 0)
                                     {
-                                        Dictionary<String, object> item = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
+                                        Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
 
-                                        String link = null;
-                                        if (((Dictionary<String, object>)itemsDictionary[field]).ContainsKey("$link"))
-                                            link = (String)((Dictionary<String, object>)itemsDictionary[field])["$link"];
+                                        String field = placeholderTable.placeholder.name.Split('.')[1];
+                                        if (field != null && itemsDictionary.ContainsKey(field))
+                                        {
+                                            Dictionary<String, object> item = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
 
-                                        String propData = item.First().Value.ToString();
-                                        PopulatePlaceholderCell(placeholderTable.placeholder, propData, link);
+                                            String link = null;
+                                            if (((Dictionary<String, object>)itemsDictionary[field]).ContainsKey("$link"))
+                                                link = (String)((Dictionary<String, object>)itemsDictionary[field])["$link"];
+
+                                            String propData = item.First().Value.ToString();
+                                            PopulatePlaceholderCell(placeholderTable.placeholder, propData, link);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        PopulatePlaceholderCell(placeholderTable.placeholder, String.Empty, String.Empty); // just clear the placeholder 
                                     }
                                 }
                             }
@@ -327,7 +335,7 @@ namespace ExcelAddIn
                     else if (container.ContainsKey("$level"))
                     {
                         int level = Convert.ToInt32(container["$level"].ToString());
-                        if (level == 2 && container.ContainsKey("$bind"))
+                        if (level >= 2 && container.ContainsKey("$bind"))
                         {
                             bind = container["$bind"].ToString() + ".";
                         }
@@ -411,6 +419,8 @@ namespace ExcelAddIn
 
         public static List<PlaceholderTable> buildPlaceholderTableList()
         {
+            PrintPlaceholderData("******************** buildPlaceholderTableList ********************");
+
             List<Placeholder> placeholderList = new List<Placeholder>();
             foreach (Name name in Globals.ThisAddIn.Application.ActiveWorkbook.Names)
             {
@@ -425,16 +435,22 @@ namespace ExcelAddIn
                     if (range.Value2 != null)
                     {
                         String title = range.Value2;
-                        if (title.Contains("."))
+                        if (!string.IsNullOrEmpty(title) && title.StartsWith("<<") && title.EndsWith(">>"))
                         {
-                            title = title.Split('.')[1];
-                            placeholder.title = title.Substring(0, title.Length - 2);
+                            if (title.Contains(".") && !title.EndsWith("."))
+                            {
+                                title = title.Split('.')[1];
+                                placeholder.title = title.Substring(0, title.Length - 2);
+                            }
+                            else
+                            {
+                                placeholder.title = title.Substring(2, title.Length - 4);
+                            }
                         }
-                        else
-                            placeholder.title = title.Substring(2, title.Length - 4); ;
                     }
-
                     placeholderList.Add(placeholder);
+
+                    PrintPlaceholderData(String.Format("Title: {0}, Name: {1}, Row: {2}, Column: {3}", placeholder.title, placeholder.name, placeholder.row, placeholder.column));
                 }
                 catch (Exception)
                 {
@@ -532,6 +548,12 @@ namespace ExcelAddIn
             return placeholderTable.Where(x => x.placeholder.name.Equals(placeholderName)).Count() > 0;
         }
 
+        [System.Diagnostics.Conditional("DEBUG")]
+        public static void PrintPlaceholderData(String text) 
+        {
+            System.Diagnostics.Debug.WriteLine(text);
+        }
+
         //public static void test()
         //{
         //    var orderedPlaceholderTableList = buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
@@ -571,5 +593,152 @@ namespace ExcelAddIn
         //}
         #endregion
 
+        #region rangeValidation
+
+        public static Dictionary<String, String> buildEncodedRangeNames(ExcelTablePrototypeField[] headers)
+        {
+            Dictionary<String, String> encodedRangeNames = new Dictionary<string, string>();
+            if (headers != null)
+            {
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    /*
+                     * The add-in prefixes all range names with full representation path - e.g. Sage.X3.DS.Syracuse_menuModules
+                     * Consequently, we don't need to appply "firstPart" validation to each range name, as this is covered when validating the prefix.
+                     */
+                    if (!isValidLastPart(headers[i]._name))
+                    {
+                        encodedRangeNames.Add(headers[i]._name, encodeRangeName(headers[i]._name));
+                    }
+                }
+            }
+            return encodedRangeNames;
+        }
+
+        public static String getEncodedRangeName(String fullRangeName, Dictionary<String, String> encodedNameRanges)
+        {
+            if (encodedNameRanges != null && encodedNameRanges.ContainsKey(fullRangeName))
+                return encodedNameRanges[fullRangeName];
+
+            return fullRangeName;
+        }
+
+        public static String encodeRangePrefix(String rangeName)
+        {
+            String firstPart;
+            if (!isValidFirstPart(rangeName))
+            {
+                firstPart = encodeFirstPart(rangeName.Substring(0, 1));
+            }
+            else
+            {
+                firstPart = rangeName.Substring(0, 1);
+            }
+
+            String lastPart;
+            if (rangeName.Length > 1 && !isValidLastPart(rangeName))
+            {
+                lastPart = encodeLastPart(rangeName.Substring(1));
+            }
+            else
+            {
+                lastPart = rangeName.Substring(1);
+            }
+            return firstPart + lastPart;
+        }
+
+        private static String encodeRangeName(String rangeName)
+        {
+            String lastPart;
+            if (rangeName.Length > 1 && !isValidLastPart(rangeName))
+            {
+                lastPart = encodeLastPart(rangeName.Substring(1));
+            }
+            else
+            {
+                lastPart = rangeName.Substring(1);
+            }
+            return lastPart;
+        }
+
+        private const string _escapeSequence = "_____";
+        private static string encodeFirstPart(String firstPart)
+        {
+            /*
+             * Get the ascii value of the first character
+             */
+            StringBuilder sb = new StringBuilder(_escapeSequence);
+            sb.Append((int)firstPart[0]);
+            sb.Append(_escapeSequence);
+            return sb.ToString();
+        }
+
+        private static string encodeLastPart(String lastPart)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in lastPart)
+            {
+                var matches = Regex.Matches(c.ToString(), @"[a-zA-Z0-9_.]");
+                if (matches.Count == 0)
+                {
+                    sb.Append(_escapeSequence);
+                    sb.Append((int)c); // invalid character, so get its ascii value then surround it with the escape sequence.
+                    sb.Append(_escapeSequence);
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+
+        private static Boolean isValidFirstPart(String rangeName)
+        {
+            /* 
+             * If the range name is only 1 character long, it cannot be a C, c, R or r.
+             * 
+             * The range name cannot match a cell reference - e.g.  A$35, R2D2 or A5.
+             * 
+             * The first character of a range name must be one of:
+                    letter
+                    underscore (_)  
+                    backslash (\).
+             */
+            var matches = Regex.Matches(rangeName, @"(^[_a-zA-Z])");
+            if (!(matches.Count == 1 && matches[0].Groups.Count == 2 && matches[0].Groups[0].Value.Equals(rangeName.Substring(0, 1))))
+                return false;
+
+            if (rangeName.Length == 1 && "CcRr".Contains(rangeName))
+                return false;
+
+            /*
+             * todo - check for clash with cell names;
+             */
+
+            return true;
+        }
+
+        private static Boolean isValidLastPart(String rangeName)
+        {
+            /* 
+             *                 
+             * Remaining (optional) characters in the name can be
+                    letters
+                    numbers
+                    periods
+                    underscore characters
+                    Spaces are not allowed as part of a name.
+                    Names can contain uppercase and lowercase letters, and Excel does not distinguish between them. For example, North and NORTH are treated as the same name.
+                    Names cannot be the same as a cell reference, such as A$35 or R2D2.
+             */
+            var matches = Regex.Matches(rangeName, @"(.)([a-zA-Z0-9_.]*)");
+            if (!(matches.Count == 1 && matches[0].Groups.Count == 3 && matches[0].Groups[0].ToString().Equals(rangeName)))
+                return false;
+
+            return true;
+        }
+
+        #endregion
     }
 }

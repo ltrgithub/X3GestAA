@@ -3,6 +3,7 @@ using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Collections.Generic;
 using CommonDataHelper;
+using CommonDataHelper.GlobalHelper;
 
 namespace ExcelAddIn
 {
@@ -47,6 +48,46 @@ namespace ExcelAddIn
                 return mode != null && (mode.Equals("rpt_build_tpl") || mode.Equals("rpt_is_tpl"));
             }
             return false;
+        }
+
+        public Boolean isExcelTemplateDatasource(Excel.Workbook workbook, string datasourceName)
+        {
+            if (isExcelTemplateType(workbook) == false)
+                return false;
+
+            /*
+             * Extract the custom data from the workbook...
+             */
+            Boolean isExcelTemplateDatasource = false;
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(workbook);
+            if (customData != null)
+            {
+                string datasourcesString = customData.getDatasources();
+                if (String.IsNullOrEmpty(datasourcesString))
+                {
+                    /*
+                     * If we don't have a datasource specified in the template, then this is a template type.
+                     */
+                    return true;
+                }
+                SageJsonSerializer ser = new SageJsonSerializer();
+                Dictionary<String, object> datasourceDict = (Dictionary<String, object>)ser.DeserializeObject(datasourcesString);
+                if (datasourceDict != null)
+                {
+                    var datasources = datasourceDict.Select(root => root.Value).Cast<Dictionary<String, object>>().Where(element => element.ContainsKey("dsName"));
+
+
+                    foreach (var row in datasources)
+                    {
+                        if (datasourceName == (string)row["dsName"])
+                        {
+                            isExcelTemplateDatasource = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return isExcelTemplateDatasource;
         }
 
         public Boolean isExcelDetailFacetType (Excel.Workbook workbook)
@@ -105,6 +146,7 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonDataSources.Enabled = false;
             }
             else if ("rpt_fill_tpl".Equals(mode))
             {
@@ -119,6 +161,7 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.dropDownDelete.Enabled = isDetailFacetType == false;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = true;
                 Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonDataSources.Enabled = true;
             }
             else if ("rpt_is_tpl".Equals(mode))
             {
@@ -132,6 +175,7 @@ namespace ExcelAddIn
                 Globals.Ribbons.Ribbon.checkBoxShowTemplatePane.Enabled = true;
                 Globals.Ribbons.Ribbon.buttonRefreshReport.Enabled = false;
                 Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
+                Globals.Ribbons.Ribbon.buttonDataSources.Enabled = false;
             }
             else if ("v6_doc".Equals(mode))
             {
@@ -206,14 +250,18 @@ namespace ExcelAddIn
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+            browserDialog.loadPage(@"/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query", 
+                                    @"/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard",
+                                    customData);
         }
 
         public void RefreshExcelTemplate(SyracuseOfficeCustomData customData)
         {
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+            browserDialog.loadPage(@"/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query", 
+                                    @"/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard",
+                                    customData);
         }
 
         public void RefreshExcelReport()
@@ -321,6 +369,7 @@ namespace ExcelAddIn
                     customDataPreview.setSyracuseRole(customData.getSyracuseRole());
                     customDataPreview.setSyracuseLocale(customData.getSyracuseLocale());
                     customDataPreview.setSyracuseEndpoint(customData.getSyracuseEndpoint());
+                    customDataPreview.setDatasources(customData.getDatasources());
                     customDataPreview.writeDictionaryToDocument();
                     customDataPreview.setCreateMode(rpt_fill_tpl);
 
@@ -344,7 +393,9 @@ namespace ExcelAddIn
             customData.setDocumentTitle("");
             customData.setForceRefresh(false);
             customData.writeDictionaryToDocument();
-            browserDialog.loadPage("/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", customData);
+            browserDialog.loadPage(@"/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query", 
+                                    @"/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard", 
+                                    customData);
         }
 
         public void CleanupReportTemplateData()

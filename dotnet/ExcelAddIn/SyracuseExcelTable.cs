@@ -47,12 +47,13 @@ namespace ExcelAddIn
         String _name;
         ListObject _listObject;
         Dictionary<string, Range> _columnRanges;
+        Dictionary<String, String> _encodedNameRanges;
         public SyracuseExcelTable(String name, ExcelTablePrototypeField[] fields, Range cell = null)
         {
             _name = name;
             _fields = fields;
             _columnRanges = new Dictionary<string, Range>();
-            _listObject = FindListObject(name);
+            _listObject = FindListObject(_name);
             if (_listObject == null)
             {
                 // initialize the list object to required cell or the active one
@@ -133,7 +134,9 @@ namespace ExcelAddIn
 
         private Boolean _makePlace(Worksheet targetWorksheet, int initialRow, int initialCol, int colCount, int rowCount)
         {
-            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
+            TemplateActions templateActions = new TemplateActions(null);
+            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            if (templateActions.isExcelTemplateDatasource(wb, _name))
                 return true;
 
             if (rowCount > 0)
@@ -308,14 +311,20 @@ namespace ExcelAddIn
                     }
                 }
             }
-
             return resultListObject;
         }
         
         private ListObject _createListObject(Range activeCell, ExcelTablePrototypeField[] headers, Dictionary<string, Range> actualColumnRanges, int rowCount)
         {
-            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
+            TemplateActions templateActions = new TemplateActions(null);
+            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+
+            _encodedNameRanges = ReportingUtils.buildEncodedRangeNames(headers);
+
+            if (templateActions.isExcelTemplateDatasource(wb, _name))
+            {
                 return _createTemplateListObject(activeCell, headers, actualColumnRanges, rowCount);
+            }
 
             ListObject resultListObject = null;
             Worksheet targetWorksheet = activeCell.Worksheet;
@@ -330,7 +339,8 @@ namespace ExcelAddIn
                 // reselect initial range (wo header line)
                 Range cells = targetWorksheet.Range[targetWorksheet.Cells[initialRow + 1, initialCol + i],
                     targetWorksheet.Cells[initialRow + rowCount, initialCol + i]];
-                actualColumnRanges.Add(headers[i]._name, cells);
+
+                actualColumnRanges.Add(ReportingUtils.getEncodedRangeName(headers[i]._name, _encodedNameRanges), cells);
             }
             // the table must be created after cells shift
             try
@@ -485,6 +495,10 @@ namespace ExcelAddIn
                 //
                 if (!_updateListObject(activeCell, activeWorksheet, _listObject, _columnRanges, linesCount))
                     return false;
+
+                if (_encodedNameRanges == null)
+                    _encodedNameRanges = ReportingUtils.buildEncodedRangeNames(_fields);
+                
                 if (cleanFirstDataRow == true)
                 {
                     try
@@ -501,7 +515,7 @@ namespace ExcelAddIn
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
                     // make named ranges
-                    activeWorksheet.Names.Add(_name + "." + namedRange.Key,
+                    activeWorksheet.Names.Add(_name + "." + ReportingUtils.getEncodedRangeName(namedRange.Key, _encodedNameRanges),
                         namedRange.Value,
                         true, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
                         Type.Missing, Type.Missing, Type.Missing, Type.Missing);
@@ -522,15 +536,13 @@ namespace ExcelAddIn
             if (_listObject == null) return false;
             var saveScreenUpd = Globals.ThisAddIn.Application.ScreenUpdating;
             Globals.ThisAddIn.Application.ScreenUpdating = false;
+            
+            Range activeCell = _listObject.Range[1, 1];
+            Worksheet activeWorksheet = activeCell.Worksheet;
             try
             {
-                //Range activeCell = cell;
-                Range activeCell = _listObject.Range[1, 1];
-                Worksheet activeWorksheet = activeCell.Worksheet;
-                //
                 object[] resources = data;
-                //
-                if(ResizeTable(startLine + resources.Length) == false)
+                if (ResizeTable(startLine + resources.Length) == false)
                     return false;
                 //
                 Dictionary<string, object[,]> _data = new Dictionary<string, object[,]>();
@@ -559,8 +571,9 @@ namespace ExcelAddIn
                     object[] res = (object[])resources[r];
                     for (int col = 0; col < _fields.Length; col++)
                     {
-                        String fieldName = _fields[col]._name;
-                        if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, fieldName) == false) 
+                        String fieldName = ReportingUtils.getEncodedRangeName(_fields[col]._name, _encodedNameRanges);
+
+                        if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, fieldName) == false)
                             continue;
 
                         if ((_columnRanges.ContainsKey(fieldName)) && (res[col] != null))
@@ -586,7 +599,7 @@ namespace ExcelAddIn
                 }
                 foreach (KeyValuePair<string, Range> namedRange in _columnRanges)
                 {
-                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false) 
+                    if (placeholderTable != null && ReportingUtils.isPlaceholderInTable(placeholderTable, namedRange.Key) == false)
                         continue;
 
                     int startRow = namedRange.Value.Row + startLine;
@@ -603,10 +616,15 @@ namespace ExcelAddIn
                         }
                     }
 
-                    activeWorksheet.Range[  activeWorksheet.Cells[startRow, namedRange.Value.Column],
+                    activeWorksheet.Range[activeWorksheet.Cells[startRow, namedRange.Value.Column],
                                             activeWorksheet.Cells[startRow + resources.Length - 1, namedRange.Value.Column]].Value = _data[namedRange.Key];
                 }
                 return true;
+            }
+            catch (Exception)
+            {
+                Globals.ThisAddIn.UpdateListObjects(activeWorksheet);
+                return UpdateTable(data, startLine, placeholderTable);
             }
             finally
             {

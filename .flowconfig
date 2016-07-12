@@ -1,0 +1,15 @@
+[ignore]
+.*/syracuse/node_modules/[^cs].*
+.*phantomjs.*
+
+[include]
+node_modules/config.js
+node_modules/streamline/*
+node_modules/syracuse-core/*
+node_modules/syracuse-sdata/*
+
+[libs]
+
+[options]
+suppress_comment= *\\$FlowIssue
+unsafe.enable_getters_and_setters=true

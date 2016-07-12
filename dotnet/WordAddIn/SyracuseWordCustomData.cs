@@ -236,9 +236,7 @@ namespace WordAddIn
 
             return System.Text.Encoding.UTF8.GetBytes(EncodingHelper.rawDecode(base64string));
         }
-
-
-
+        
         public void debug() 
         {
             string jsonData;

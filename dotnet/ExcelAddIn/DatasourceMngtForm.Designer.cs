@@ -52,7 +52,6 @@
             this.Name = "DatasourceMngtForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sage ERP X3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatasourceMngtForm_FormClosing);
             this.Load += new System.EventHandler(this.DatasourceMngtForm_Load);
             this.ResumeLayout(false);

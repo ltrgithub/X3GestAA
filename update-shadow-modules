@@ -1,0 +1,33 @@
+#!/bin/sh
+read -p "You will lose all changes that have not been pushed to GitHub. Are you sure? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ "$REPLY" != "Y" && "$REPLY" != "y" ]]
+then
+    exit 1
+fi
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+echo "STEP 1: resetting node_modules"
+cd $DIR; rm -rf node_modules; git checkout node_modules
+echo ""
+echo "STEP 2: checking out submodules"
+cd $DIR; git submodule update --init
+echo ""
+echo "STEP 3: running npm install (may take a while)"
+# Use --production flag to avoid problems with grunt's very long file paths on windows
+npm install --production
+cd $DIR/node_modules/ez-mailer; npm install
+cd $DIR/node_modules/streamline-upload; npm install
+cd $DIR/node_modules/syracuse-phantomjs; npm install
+cd $DIR/node_modules/syracuse-ldap; npm install
+echo ""
+echo "STEP 4: running npm dedup (may take a while)"
+cd $DIR; npm dedupe
+echo ""
+echo "STEP 5: running npm-shadow"
+cd $DIR/node_modules; node npm-shadow
+echo ""
+echo "STEP 6: resetting node_modules (again)"
+cd $DIR; rm -rf node_modules; git checkout node_modules
+echo ""
+echo "STEP 7: checking out submodules (again)"
+cd $DIR; git submodule update --init

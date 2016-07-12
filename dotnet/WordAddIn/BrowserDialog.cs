@@ -17,7 +17,7 @@ namespace WordAddIn
     public partial class BrowserDialog : Form
     {
         public string serverUrl = "";
-        private Boolean hideOnCompletion = false;
+        bool? _useOldPathAndQuery;
 
         public BrowserDialog()
         {
@@ -38,11 +38,12 @@ namespace WordAddIn
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            if (hideOnCompletion == true)
+            this.Text = ((WebBrowser)sender).DocumentTitle;    
+            if (_useOldPathAndQuery == null && ((WebBrowser)sender).DocumentTitle.Equals("Sage Office") == false && string.IsNullOrEmpty(_oldUrlPart) == false)
             {
-//                this.Hide();
+                _useOldPathAndQuery = true;
+                webBrowser.Url = new Uri(BaseUrlHelper.BaseUrl, _oldUrlPart);
             }
-            hideOnCompletion = false;
 
             RibbonHelper.toggleButtonDisconnect();
         }
@@ -73,7 +74,7 @@ namespace WordAddIn
             {
                 // Workaround for require.js bound problem
                 DateTime dummy = DateTime.Now;
-                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/word/ui/main.html?url=%3Frepresentation%3Dwordhome.%24dashboard&dummy=" + dummy.ToString());
+                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/word/html/main.html?url=%3Frepresentation%3Dword.%24query&dummy=" + dummy.ToString());
                 this.serverUrl = serverUrl;
             }
             return true;
@@ -83,6 +84,34 @@ namespace WordAddIn
         {
             WordAddInJSExternal external = new WordAddInJSExternal(customData, this);
             loadPage(urlPart, external);
+        }
+
+        String _oldUrlPart;
+        public void loadPage(String urlPart, String oldUrlPart, SyracuseOfficeCustomData customData)
+        {
+            _oldUrlPart = oldUrlPart;
+            WordAddInJSExternal external = new WordAddInJSExternal(customData, this);
+            if (_useOldPathAndQuery == true)
+            {
+                loadPage(_oldUrlPart, external);
+            }
+            else
+            {
+                loadPage(urlPart, external);
+            }
+        }
+
+        public void loadPage(String urlPart, String oldUrlPart, WordAddInJSExternal scriptingObj)
+        {
+            _oldUrlPart = oldUrlPart;
+            if (_useOldPathAndQuery == true)
+            {
+                loadPage(_oldUrlPart, scriptingObj);
+            }
+            else
+            {
+                loadPage(urlPart, scriptingObj);
+            }
         }
 
         public void loadPage(String urlPart, WordAddInJSExternal scriptingObj)

@@ -35,9 +35,77 @@ exports.config = {
 			dataset: "production",
 			landingPage: "http://localhost:8080/"
 		},*/
+		// Enable the following setting when the load balancer should only distribute 
+		// requests to its own child processes:
+		/* localBalancer: true, */
+		// Enable the following setting only when the load balancer should start its
+		// child processes using the --dbUnlock flag
+		/* dbUnlock: true, */
 		// allow to pass some node parameter like --prof
-		nodeOptions:""
+		nodeOptions: ""
 	},
+    security: {
+        http: {
+			// HTTP headers added
+			headers: {
+				// set 'x-frame-options' to enable embedding into another site via iframe (default is "DENY")
+				// http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx
+            // 'x-frame-options': 'allow-from http://other-site',
+
+				// set 'x-content-type-options' to prevent MIME-sniffing (default is "nosniff")
+				// http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+				// https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+				// "x-content-type-options": "nosniff",
+
+				// enable Cross-site scripting filter (default is "1; mode=block")
+				// https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+				// https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/			
+				// "x-xss-protection": "1; mode=block",
+
+				// set 'content-security-policy' to define the security level on scripts (can be a string or a subobject)
+				// "content-security-policy": "script-src 'self' 'unsafe-eval' 'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='; child-src 'self' www.w3schools.com easyid.scansafe.net www.sage.fr;",
+				"content-security-policy": {
+					// "$directiveSeparator": ";",
+					// "$valueSeparator": " ",
+					// "script-src": ["'self'", "'unsafe-eval'", "'sha256-PC/JaatOIxSsFjtJ7S/uH5NZsi4WRfDYbKY9H+b7nIg='"],
+					// "script-src": null,
+					// "child-src": ""
+					// "child-src": ["'self'", 
+					// 	// "www.w3schools.com", 
+					// 	// "easyid.scansafe.net"
+					// ]
+				},
+				// "content-security-policy-report-only": "script-src 'self'; report-uri /csp-report/"
+			},
+        	// set 'allow' to define what OPTIONS request can be executed
+			"allow": "POST, GET"
+		},
+		cors: {
+			// set 'all access-control' headers wanted for cross-origin calls
+			// "access-control-allow-origin": "*",
+			// "access-control-allow-headers": "authorization, content-type, soapaction, x-requested-with",
+		},
+		client: {
+			iframe: {
+				sandbox: {
+					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxing iframes
+					// By default, this levels are set to be the more secure for each level.
+					// This section allow you to relax this security but at your own risk
+					// allow-forms			Enables form submission
+					// allow-pointer-lock	Enables pointer APIs (for example pointer position)
+					// allow-popups			Enables popups
+					// allow-same-origin	Allows the iframe content to be treated as being from the same origin
+					// allow-scripts		Enables scripts
+					// allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
+					// low: null,
+					// medium: null,
+					// medium: "",
+					// medium: "allow-same-origin allow-forms allow-scripts",
+					// high: ""
+				}
+			}
+		}
+    },
 	system: {
 		// enables memwatch module
 		memwatch: false,
@@ -45,6 +113,9 @@ exports.config = {
 		// it shouldn't be enabled in client configurations as modifications made can be lost
 		// on patch application, etc.
 		enableDevelopmentFeatures: false,
+		// next option disables caching of UI resources (JS scripts, CSS files, images)
+		// it should only be turned on by platform UI developers.
+		noUiCache: false,
 		// enables some specific client framework attributes for use with the test robot
 		enableTestRobot: false,
 		// optional: path to some stubs to use in development and tests, relative to index.js
@@ -78,12 +149,17 @@ exports.config = {
 	 	// waiting time (milliseconds) during load balancing to obtain results of other processes
 	 	balancingWaitTime: 600
 	},
-	/*	integrationServer: {
-		port: 8125
-	},
-	*/
     collaboration: {
         certdir: "certificates"  // path to certificates folder
+    },
+    extensions: {
+        "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
+        "modules": [{
+            "path": "syracuse-si",  // absolute path or relative to root
+            "active": true,         // convenient flag to activate / deactivate; defaults to true
+            "forceUpdate": false,    // force update of the package regardless of already present version
+            "forceAgentUpdate": false // force update of the package by the Syracuse agent. This can prevent problems with file access rights.
+        }]
     },
     mongodb: {
         // connect options as expected by MongoClient.connect of nodejs mongodb driver
@@ -91,12 +167,9 @@ exports.config = {
             db: {
                 w: 1
             },
-            server: {
-            },
-            replSet: {
-            },
-            mongos: {
-            }
+			server: {},
+			replSet: {},
+			mongos: {}
         }
     },
 	session: {
@@ -106,10 +179,12 @@ exports.config = {
 		asyncTimeout: 20,
 		// session timeout (minutes - decimals allowed) for stateless (web service) requests.
 		statelessTimeout: 1,
+		// session timeout (minutes - decimals allowed) for api1 requests.
+		api1SessionTimeout: 2,
 		// interval (in seconds) between scans to release sessions.
 		checkInterval: 60,
 		// ?
-		// ignoreStoreSession: true,
+		//		ignoreStoreSession: true,
 		// authentication modes
 		"auth": "basic",
 	},
@@ -134,8 +209,8 @@ exports.config = {
 		//		tracer: console.log,
 		//		profiler: console.log
 		// protocol tracing
-        plugin : {
-            killTimeoutOnCreate : 120000 // timeout switch orchestration mode
+		plugin: {
+			killTimeoutOnCreate: 120000 // timeout switch orchestration mode
         },
 		protocol: {
 			// trace: console.log,
@@ -185,11 +260,19 @@ exports.config = {
             info : true
         }*/
 		//deactivateRight: true,
-        // default configuration options for fuzzy search
+		// default configuration options for fuzzy search
 		// minSimilarity: 0.5,
 		// ignoreFrequency: true,
 		// offStemmer : true, // desactivation of the stemmer for the search indexation
         // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
+	},
+	notificatonServer: {
+		//"log Level" : 3,
+		//'connect timeout': 1000,
+		//'reconnect': true,
+		//'reconnection delay': 300,
+		//'max reconnection attempts': 10000,
+		//'force new connection':true
 	},
 	translation: {
 		// trace: console.log,
@@ -247,6 +330,7 @@ exports.config = {
 			},
 			// Elastic search communication
 			search: "error",
+			notifications: "error",
 			// X3 ERP communication layer
 			x3Comm: {
 				jsRunner: "error", // Syracuse calls from 4GL processes
@@ -289,5 +373,35 @@ exports.config = {
         x3endpoint: {},
         elasticsearch: {}
     },
+    symphony: {
+        webApiUrl: "https://devapi.dev-sageerpx3online.com",
+        webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
+    },
+    // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
+    // See section 4.1.2 in Sage ID Reference Documentation for further information
+    /*mongoNotify: {
+		host: 'localhost',
+		port: '27017',
+		database: 'syracuse',
+	},*/    
 };
 
+// for git enabled configurations one can override the standard config
+exports.branch_configs = [{
+	branch: "V7\\.0.*|V7\\.1.*", // branch name should match this regular expression
+	config: {
+        collaboration: {
+            databaseName: "Syracuse_V7",
+            localInitScript: [] // some local data to import on database creation : standard import json file
+        }
+    }
+}, {
+    branch: "akira.*", // branch name should match this regular expression
+	config: {
+        collaboration: {
+            databaseName: "Syracuse_V8",
+            localInitScript: [] // some local data to import on database creation
+        }
+    }
+}];

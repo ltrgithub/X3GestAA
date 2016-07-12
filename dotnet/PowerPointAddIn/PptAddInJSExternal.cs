@@ -52,12 +52,6 @@ namespace PowerPointAddIn
         {
             Globals.PowerPointAddIn.pptActions.refreshNextChart(getPptCustomData().getPresentation());
         }
-        public void NotifySaveDocumentDone()
-        {
-            browserDialog.Hide();
-            CommonUtils.ShowInfoMessage(global::PowerPointAddIn.Properties.Resources.MSG_SAVE_DOC_DONE, global::PowerPointAddIn.Properties.Resources.MSG_SAVE_DOC_DONE_TITLE);
-        }
-
         public BrowserDialog getBrowserDialog()
         {
             return browserDialog;

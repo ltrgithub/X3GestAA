@@ -166,6 +166,7 @@ namespace CommonDataHelper.PublisherHelper
                         teams = publishDocumentParameters.Team.OfType<TeamItem>().Select(s => { return new SyracuseUuidModel() { uuid = JsonConvert.DeserializeObject<TeamModel>(s.TeamJson).uuid }; }).ToList<SyracuseUuidModel>(),
                         tags = publishDocumentParameters.Tag.OfType<TagItem>().Select(s => { return new SyracuseUuidModel() { uuid = JsonConvert.DeserializeObject<TagModel>(s.TagJson).uuid }; }).ToList<SyracuseUuidModel>(),
                         templatePurpose = publishDocumentParameters.Purpose,
+                        templateClass = syracuseCustomData.getDocumentRepresentation(),
                         isReadOnly = publishDocumentParameters.IsReadOnly,
                         endpoint = new SyracuseUuidModel { uuid = publishDocumentParameters.Endpoint }
                     };

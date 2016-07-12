@@ -51,11 +51,11 @@ exports.config = {
 
 	collaboration: {
 		driver: "mongodb",
-		dataset: "syracuse",
 		hostname: "10.198.2.4:27017,10.198.2.68:27017,10.198.2.132",
+		//hostname: "10.198.2.4",
 		port: 27017,
 		logpath: "D:\\Sage\\Syracuse\\syracuse\\logs",
-		certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
+		//certdir: "D:\\Sage\\Syracuse\\syracuse\\certs",
         cacheDir: "D:\\Sage\\Syracuse\\syracuse\\cache"
 	},
     mongodb: {
@@ -81,7 +81,7 @@ exports.config = {
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
 		checkInterval: 60, // secondes
 		//		ignoreStoreSession: true,
-		"auth": ["sage-id"]
+		"auth": ["sage-id", "oauth2", "bearer", "certificate"],
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
@@ -137,7 +137,7 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
-		hostname: "10.198.2.5",
+		hostname: "internal-elastic-s-elastics-nm1r98iym3kz-2141363800.us-east-1.elb.amazonaws.com",
         port: 9200,
 		//tracer: console.log,
 
@@ -186,11 +186,24 @@ exports.config = {
 		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
+		oauth: {
+			client_id: 'pl4JKQLpgNdEFTgM2Oe1juQQ0dHiv3VD',
+			scope: 'vstf4mpl();',
+			secret_key: 'ZUcNBEOCkvwSahYavgKZXl6RL+S8b5CGxaE7MpOhtqM=',
+			baseUrl: 'https://na-signon.sso.staging.services.sage.com/SSO',
+			redirectUrl: 'https://QA-SageIDNotifications-329038975.us-east-1.elb.amazonaws.com/auth/oauth2/sageid/sageIdRedirect',
+			redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+			key: 'RtsQnOKEIqY3+AX0m169DmvWNqQjkyBqDTWI6CL4ZK4=',
+			iv: '6KYYzs9BZFxeR6i0exR/Tg==',
+			retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+		}	
 	},
 	mongoNotify: {
-		host: '10.198.254.30',
+		host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
 		port: '27017',
-		database: 'syracuse',
+		database: 'api',
+		oauthCollection: 'oauth_redirects',
+		apiHost: '"https://qaapi2.dev-sageerpx3online.com"'
 	},
 	aws: {
 	 	"region": "us-east-1",
@@ -204,10 +217,15 @@ exports.config = {
 	health:{
 		parallel: 4,
 		delay: 300,
-		logUrl: "https://qanewapi.dev-sageerpx3online.com/healthLogs/production",
-		siteUrl: "https://qanewapi.dev-sageerpx3online.com/sdata/sky/automation/production",
+		logUrl: "https://QA-Web-API-2-902657689.us-east-1.elb.amazonaws.com/healthLogs/production",
+		siteUrl: "https://QA-Web-API-2-902657689.us-east-1.elb.amazonaws.com/sdata/sky/automation/production",
 		site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
 		cloudwatch: true,
+		esIndex: 'x3.erp.x3'
     },
-
+    symphony: {
+        webApiUrl: "https://qaapi.dev-sageerpx3online.com",
+        webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        farmElbUrl: "https://qa.symphony.na.cloud.dev-sageerpx3online.com",
+	},
 };

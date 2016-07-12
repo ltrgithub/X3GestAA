@@ -7,10 +7,13 @@ namespace ExcelAddIn
     public partial class BrowserDialog : Form
     {
         public string serverUrl = "";
+        bool? _useOldPathAndQuery;
 
         public BrowserDialog()
         {
             InitializeComponent();
+
+            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(webBrowser_DocumentCompleted);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -21,6 +24,15 @@ namespace ExcelAddIn
                 Hide();
             }
             base.OnFormClosing(e);
+        }
+
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (_useOldPathAndQuery == null && ((WebBrowser)sender).DocumentTitle.Equals("Sage Office") == false && string.IsNullOrEmpty(_oldUrlPart) == false)
+            {
+                _useOldPathAndQuery = true;
+                webBrowser.Url = new Uri(BaseUrlHelper.BaseUrl, _oldUrlPart);
+            }
         }
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
@@ -47,7 +59,7 @@ namespace ExcelAddIn
             this.Text = serverUrl;
             if (!this.serverUrl.Equals(serverUrl)) 
             {
-                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/excel/ui/main.html?url=%3Frepresentation%3Dexceltemplatehome.%24dashboard");
+                this.webBrowser.Url = new Uri(new Uri(serverUrl), "/msoffice/lib/excel/html/main.html?url=%3Frepresentation%3Dexceltemplate.%24query");
                 this.serverUrl = serverUrl;
             }
             return true;
@@ -57,6 +69,34 @@ namespace ExcelAddIn
         {
             ExcelAddInJSExternal external = new ExcelAddInJSExternal(customData, this);
             loadPage(urlPart, external);
+        }
+
+        String _oldUrlPart;
+        public void loadPage(String urlPart, String oldUrlPart, SyracuseOfficeCustomData customData)
+        {
+            _oldUrlPart = oldUrlPart;
+            ExcelAddInJSExternal external = new ExcelAddInJSExternal(customData, this);
+            if (_useOldPathAndQuery == true)
+            {
+                loadPage(_oldUrlPart, external);
+            }
+            else
+            {
+                loadPage(urlPart, external);
+            }
+        }
+
+        public void loadPage(String urlPart, String oldUrlPart, ExcelAddInJSExternal scriptingObj)
+        {
+            _oldUrlPart = oldUrlPart;
+            if (_useOldPathAndQuery == true)
+            {
+                loadPage(_oldUrlPart, scriptingObj);
+            }
+            else
+            {
+                loadPage(urlPart, scriptingObj);
+            }
         }
 
         public void loadPage(String urlPart, ExcelAddInJSExternal scriptingObj)

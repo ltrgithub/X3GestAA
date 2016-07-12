@@ -54,24 +54,35 @@ namespace ExcelAddIn
         public bool Aborted { get { return Globals.ThisAddIn.Aborted; } set { Globals.ThisAddIn.Aborted = value; }}
         public void StartUpdateTable()
         {
+            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+                return;
+
             Aborted = false;
             Globals.ThisAddIn.ShowProgressForm(true);
             Globals.ThisAddIn.Application.ScreenUpdating = false;
         }
         public void EndUpdateTable()
         {
+            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+                return;
+
             Globals.ThisAddIn.Application.ScreenUpdating = true;
             Globals.ThisAddIn.ShowProgressForm(false);
         }
         public bool UpdateTable(String name, String simplePrototype, String data, int startLine)
         {
+            if (new TemplateActions(null).isExcelTemplate(Globals.ThisAddIn.Application.ActiveWorkbook))
+                return false;
+
             if (tableHelpers == null || tableHelpers.ContainsKey(name) == false)
                 return false;
 
             var dataArray = (object[])jsSerializer.DeserializeObject(data);
             Globals.ThisAddIn.UpdateProgress(startLine + dataArray.Length);
 
-            if (new TemplateActions(null).isExcelTemplateType(Globals.ThisAddIn.Application.ActiveWorkbook))
+            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            TemplateActions templateActions = new TemplateActions(null);
+            if (templateActions.isExcelTemplateDatasource(wb, name))
             {
                 /*
                  * If we have placeholders, we may have multiple tables and therefore multiple list objects.
@@ -91,33 +102,47 @@ namespace ExcelAddIn
         }
         public bool ResizeTable(String name, String simplePrototype, int linesCount, string cellAddress = "")
         {
+            Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            TemplateActions templateActions = new TemplateActions(null);
+            if (templateActions.isExcelTemplate(wb))
+                return false;
+
             // resolve cell address
             Range target = null;
             if (cellAddress != "")
                 target = Globals.ThisAddIn.Application.Range[cellAddress];
-            SyracuseExcelTable table = new SyracuseExcelTable(name, (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype), target);
+            SyracuseExcelTable table = new SyracuseExcelTable(ReportingUtils.encodeRangePrefix(name), (ExcelTablePrototypeField[])jsSerializer.Deserialize<ExcelTablePrototypeField[]>(simplePrototype), target);
             if (tableHelpers.ContainsKey(name))
                 tableHelpers[name] = table;
             else
                 tableHelpers.Add(name, table);
             table = tableHelpers[name];
 
-            var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
-            if (orderedPlaceholderTableList.Count > 0)
+            if (templateActions.isExcelTemplateDatasource(wb, name))
             {
-                foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+                var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
+                if (orderedPlaceholderTableList.Count > 0)
                 {
-                    table.ResizeTable(linesCount, placeholderTable.First().placeholder.name);
+                    foreach (IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable in orderedPlaceholderTableList)
+                    {
+                        table.ResizeTable(linesCount, placeholderTable.First().placeholder.name);
+                    }
+                    return true;
                 }
-                return true;
             }
   
             return table.ResizeTable(linesCount);
         }
         public bool DeleteTable(String name)
         {
-            SyracuseExcelTable table = new SyracuseExcelTable(name, null);
-            return table.DeleteTable(name);
+            bool success = true;
+            if (!String.IsNullOrEmpty(name))
+            {
+                String encodedName = ReportingUtils.encodeRangePrefix(name);
+                SyracuseExcelTable table = new SyracuseExcelTable(encodedName, null);
+                success = table.DeleteTable(ReportingUtils.encodeRangePrefix(encodedName));
+            }
+            return success;
         }
         //
         public void RegisterVBCallback()

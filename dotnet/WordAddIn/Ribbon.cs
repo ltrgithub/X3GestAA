@@ -21,15 +21,6 @@ namespace WordAddIn
         {
             installedVersion.Label = VersionHelper.getInstalledAddinVersion();
         }
-
-        private void buttonSaveAs_Click(object sender, RibbonControlEventArgs e)
-        {
-            Word.Document doc = Globals.WordAddIn.Application.ActiveDocument;
-            if (doc != null)
-            {
-                Globals.WordAddIn.commons.SaveAs(doc);
-            }
-        }
         private void checkBoxShowTemplatePane_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.WordAddIn.showReportingFieldsTaskPane(checkBoxShowTemplatePane.Checked);

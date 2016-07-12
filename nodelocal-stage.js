@@ -64,7 +64,6 @@ exports.config = {
             server: {
             },
             replSet: {
-                readPreference: "primaryPreferred",
                 rs_name: "mongoStagvRepl"
             },
             mongos: {
@@ -76,7 +75,7 @@ exports.config = {
                                 asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
                                 checkInterval: 60, // secondes
                                 //                            ignoreStoreSession: true,
-                                "auth": ["sage-id"]
+                                "auth": ["sage-id", "oauth2", "bearer", "certificate"],
                 },
                 streamline: {
                                 // "homedrive": "c:", // running node as service
@@ -181,19 +180,33 @@ exports.config = {
                                 pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
                                 // passphrase for the certificate file. This one works with the staging test certificate
                                 passphrase: "as985k3bZ8p2",
+                                oauth: {
+                                    client_id: '',
+                                    scope: '',
+                                    secret_key: '',
+                                    baseUrl: 'https://na-signon.sso.staging.services.sage.com/SSO',
+                                    redirectUrl: 'https://staging-notifications.sagex3.com/auth/oauth2/sageid/sageIdRedirect',
+                                    redirectPath: '/auth/oauth2/sageid/sageIdCallback',
+                                    key: '',
+                                    iv: '',
+                                    retrieveTokenPath: '/auth/oauth2/sageid/sageIdTokenRetrieval'
+                                }
                 },
                 mongoNotify: {
-                                host: 'sage_id_notifications',
-                                port: '27017',
-                                database: 'syracuse',
+                    host: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
+                    port: '27017',
+                    database: 'api',
+                    oauthCollection: 'oauth_redirects',
+                    apiHost: 'https://staging-api.sagex3.com'
                 },
 								health:{
 							parallel: 4,
 							delay: 300,
 							logUrl: "https://staging-api.sagex3.com/healthLogs/production",
                             siteUrl: "https://staging-api.sagex3.com/sdata/sky/automation/production",
-                            site: "c2t5YWRtOiRreVdlYiR2YyQwMSE=",
+                            site: $WebAPIAuth,
 						cloudwatch: true,
+                        esIndex: 'x3.erp.x3'
 	},
 					aws: {
 
@@ -203,5 +216,10 @@ exports.config = {
         // unit tests related options
         x3endpoint: {},
         elasticsearch: {}
-    }
+    },
+    symphony: {
+        webApiUrl: "https://staging-api.sagex3.com",
+        webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
+        farmElbUrl: "https://staging.symphony.na.cloud.sagex3.com",
+    },    
 };

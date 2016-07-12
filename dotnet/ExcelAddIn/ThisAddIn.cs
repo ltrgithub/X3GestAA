@@ -13,6 +13,7 @@ using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
 using CommonDataHelper.PublisherHelper;
 using CommonDataHelper.GlobalHelper;
+using System.Linq;
 
 namespace ExcelAddIn
 {
@@ -82,11 +83,12 @@ namespace ExcelAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             browserDialog = new BrowserDialog();
+            
             templateActions = new TemplateActions(browserDialog);
             commons = new CommonUtils(browserDialog);
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
-            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage ERP X3");
+            taskPane = this.CustomTaskPanes.Add(actionPanel, "Sage");
             taskPane.VisibleChanged += new EventHandler(ActionPanel_VisibleChanged);
 
             taskPane.Visible = BaseUrlHelper.ShowActionPanel;
@@ -142,6 +144,7 @@ namespace ExcelAddIn
 
         public void RefreshAll()
         {
+            UpdateListObjects(this.Application.ActiveWorkbook.ActiveSheet);
             ActionPanel.RefreshAll();
         }
 
@@ -165,7 +168,7 @@ namespace ExcelAddIn
 
         public void ShowSettingsForm()
         {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
+            var connectUrl = BaseUrlHelper.BaseUrl.ToString() ?? GetServerUrl(this.Application.ActiveWorkbook);
             if (connectUrl == "") return;
             if (settingsForm == null || settingsForm.IsDisposed)
             {
@@ -378,6 +381,43 @@ namespace ExcelAddIn
             ActionPanel.onSelectionChange();
         }
 
+        struct Datasource
+        {
+            public string uuid;
+            public string dsName;
+        }
+
+        /*
+         * When a table is deleted on a worksheet, we must delete any associated ranges, as well as the associated datasource.
+         */
+        public void UpdateListObjects(Worksheet ws)
+        {
+            Workbook workbook = getActiveWorkbook();
+            string datasourceString = (new SyracuseCustomData(workbook)).GetCustomDataByName("datasourcesAddress");
+            SageJsonSerializer ser = new SageJsonSerializer();
+            Dictionary<String, object> datasourceDict = (Dictionary<String, object>)ser.DeserializeObject(datasourceString);
+            if (datasourceDict != null)
+            {
+                var datasources = datasourceDict.Select(root => root.Value).Cast<Dictionary<String, object>>().Where(element => element.ContainsKey("dsName"));
+                foreach (var row in datasources)
+                {
+                    if (ws.ListObjects.Cast<ListObject>().Where(listObject => listObject.Name == (string)row["dsName"]).Count() == 0 &&
+                        templateActions.isExcelTemplateDatasource(workbook, (string)row["dsName"]) == false)
+                    {
+                        foreach (Name namedRange in ws.Names)
+                        {
+                            String prefix = ws.Name + "!" + (string)row["dsName"] + ".";
+                            if ((namedRange.Name != prefix) && (namedRange.Name.IndexOf(prefix) == 0))
+                            {
+                                namedRange.Delete();
+                            }
+                        }
+                    }
+                }
+            }
+            return;
+        }
+
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
             if (mainHandle != null)
@@ -541,25 +581,6 @@ namespace ExcelAddIn
         
         #endregion
 
-
-        internal void BrowseDocuments(string volumeCode)
-        {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
-            if (connectUrl == "") return;
-            DocumentBrowser b = new DocumentBrowser();
-            b.SelectDocument(connectUrl, volumeCode);
-            b.ShowDialog();
-        }
-
-        internal void SISettings()
-        {
-            var connectUrl = GetServerUrl(this.Application.ActiveWorkbook);
-            if (connectUrl == "") return;
-            SISettings s = new SISettings();
-            s.Connect(connectUrl);
-            s.ShowDialog();
-        }
-
         bool handleCvgDocument(Excel.Workbook wb)
         {
             CustomXMLNode foundNode = null;
@@ -607,12 +628,16 @@ namespace ExcelAddIn
 
                     // Remove all custom data since this is a standalone document!
                     foundNode.Text = "";
+
+                    // Now remove the hidden sheet.
                     SyracuseCustomData cd = new SyracuseCustomData(wb);
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
-                        ws.Rows.Clear();
+                        ws.Application.DisplayAlerts = false;
+                        ws.Delete();
                     }
+
                     return true;
                 }
             }
@@ -629,7 +654,7 @@ namespace ExcelAddIn
                  * To prevent exceptions being thrown, we'll create a new ActionPanel and add it to the CustomTaskPanes.
                  */
                 CustomTaskPanes.Remove(taskPane);
-                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage ERP X3");
+                taskPane = this.CustomTaskPanes.Add(ActionPanel, "Sage");
                 taskPane.VisibleChanged += ActionPanel_VisibleChanged;
             }
             taskPane.Visible = state;
