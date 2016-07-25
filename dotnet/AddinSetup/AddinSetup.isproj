@@ -1,4 +1,5 @@
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
 		<!-- Select a Product Configuration -->
 		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
@@ -25,6 +26,10 @@
 			<Name>CommonDialogs</Name>
 			<Project>{341E57EE-7F9A-4408-A29F-D4A4340039EE}</Project>
 		</ProjectReference>
+		<ProjectReference Include="..\CustomInstaller\CustomInstaller.csproj">
+			<Name>CustomInstaller</Name>
+			<Project>{BD21DD34-A03D-43BA-A5EF-B39A20C03212}</Project>
+		</ProjectReference>
 		<ProjectReference Include="..\ExcelAddIn\ExcelAddIn.csproj">
 			<Name>ExcelAddIn</Name>
 			<Project>{7CAED4A8-523E-47DA-B5A9-E8FFF57AF193}</Project>
@@ -36,10 +41,6 @@
 		<ProjectReference Include="..\WordAddIn\WordAddIn.csproj">
 			<Name>WordAddIn</Name>
 			<Project>{6E8D58CA-0CAC-4C2A-BC0E-AB6E1071685D}</Project>
-		</ProjectReference>
-		<ProjectReference Include="..\CustomInstaller\CustomInstaller.csproj">
-			<Name>CustomInstaller</Name>
-			<Project>{BD21DD34-A03D-43BA-A5EF-B39A20C03212}</Project>
 		</ProjectReference>
 	</ItemGroup>
 	<ItemGroup>
