@@ -106,6 +106,31 @@ exports.config = {
 			}
 		}
     },
+	security: {
+		client: {
+			iframe: {
+				sandbox: {
+					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxed iframes
+					// By default, this levels are set to be the more secure for each level.
+					// This section allow you to relax this security but at your own risk
+					//  - allow-forms			Enables form submission
+					//  - allow-pointer-lock	Enables pointer APIs (for example pointer position)
+					//  - allow-popups			Enables popups
+					//  - allow-same-origin	Allows the iframe content to be treated as being from the same origin
+					//  - allow-scripts		Enables scripts
+					//  - allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
+					// Setting a level to null will disable the sandboxing of the iframe
+					// You can find more information on sanboxed iframes on http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/
+					// 
+					// low: null,
+					// medium: null,
+					// medium: "",
+					// medium: "allow-same-origin allow-forms allow-scripts",
+					// high: ""
+				}
+			}
+		}
+	},
 	system: {
 		// enables memwatch module
 		memwatch: false,
