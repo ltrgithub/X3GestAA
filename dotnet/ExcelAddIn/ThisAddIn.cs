@@ -79,6 +79,8 @@ namespace ExcelAddIn
         ActionPanel actionPanel = new ActionPanel();
         Microsoft.Office.Tools.CustomTaskPane taskPane;
         private Boolean handleWorkbookOpen = false;
+        private System.Timers.Timer _activateSheetTimer;
+        private SynchronizationContext _syncContext;
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -96,11 +98,18 @@ namespace ExcelAddIn
 
             RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
-            
-            if (this.Application.ActiveWorkbook != null)
+
+            Workbook Wb = this.Application.ActiveWorkbook;
+            if (Wb != null)
             {
                 SetServerLocations(this.Application.ActiveWorkbook);
-                AutoConnect(this.Application.ActiveWorkbook);
+                /*
+                 * With Office 2016, we have noticed that the WorkbookOpen and WorkbookActivate events are not being fired 
+                 * when exporting to Excel. To workaround this, a timer is used to invoke the WorkbookActivate method after
+                 * a short delay. If an older version of Office is used and the WorkbookActivate event fires normally,
+                 * the timer is disabled to prevent a double-invocation of the WorkbookActivate event.
+                 */ 
+                SetSheetActivationTimer();
             }
 
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
@@ -237,7 +246,7 @@ namespace ExcelAddIn
 
         public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
-            
+            _activateSheetTimer.Dispose();
             if (EmbeddedHelper.IsEmbedded(Wb))
             {
                 EmbeddedHelper.setSyracuseTabVisibility(false);
@@ -262,8 +271,8 @@ namespace ExcelAddIn
                 else
                 {
                     // Is the document an excel document with embedded data?
-                    if (handleCvgDocument(Wb) == false)
-                        AutoConnect(Wb);
+                    handleCvgDocument(Wb);
+                    AutoConnect(Wb);
                 }
             }
             checkButton(Wb);
@@ -379,12 +388,6 @@ namespace ExcelAddIn
         void Application_SheetSelectionChange(object sh, Excel.Range target)
         {
             ActionPanel.onSelectionChange();
-        }
-
-        struct Datasource
-        {
-            public string uuid;
-            public string dsName;
         }
 
         /*
@@ -578,7 +581,7 @@ namespace ExcelAddIn
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
 
         bool handleCvgDocument(Excel.Workbook wb)
@@ -721,6 +724,24 @@ namespace ExcelAddIn
                 }
             }
             this.commons.DisplayServerLocations();
+        }
+
+        private void SetSheetActivationTimer()
+        {
+            _syncContext = SynchronizationContext.Current;
+            _activateSheetTimer = new System.Timers.Timer();
+            _activateSheetTimer.Interval = 1000;
+            _activateSheetTimer.Enabled = true;
+            _activateSheetTimer.Elapsed += (sender_t, e_t) => { OnActivateSheetTimerEvent(Application.ActiveWorkbook); };
+        }
+
+        private void OnActivateSheetTimerEvent(Excel.Workbook Wb)
+        {
+            _syncContext.Send(state =>
+            {
+                handleWorkbookOpen = true;
+                Application_WorkbookActivate(Wb);
+            }, null);
         }
     }
 }
