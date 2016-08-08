@@ -175,7 +175,7 @@ exports.config = {
                 },
                 sage_id: {
                                 // base URL of sage ID service - this one is staging, not prod
-                                baseUrl: "https://na-services.sso.staging.services.sage.com/SSO",
+                                baseUrl: "https://na-api.sso.staging.services.sage.com/SSO",
                                 // absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
                                 pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
                                 // passphrase for the certificate file. This one works with the staging test certificate
@@ -184,7 +184,7 @@ exports.config = {
                                     client_id: '',
                                     scope: '',
                                     secret_key: '',
-                                    baseUrl: 'https://na-signon.sso.staging.services.sage.com/SSO',
+                                    baseUrl: 'https://na-oauth.sso.staging.services.sage.com/SSO',
                                     redirectUrl: 'https://staging-notifications.sagex3.com/auth/oauth2/sageid/sageIdRedirect',
                                     redirectPath: '/auth/oauth2/sageid/sageIdCallback',
                                     key: '',
