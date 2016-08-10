@@ -246,7 +246,9 @@ namespace ExcelAddIn
 
         public void Application_WorkbookActivate(Excel.Workbook Wb)
         {
-            _activateSheetTimer.Dispose();
+            if (_activateSheetTimer != null)
+                _activateSheetTimer.Dispose();
+
             if (EmbeddedHelper.IsEmbedded(Wb))
             {
                 EmbeddedHelper.setSyracuseTabVisibility(false);
