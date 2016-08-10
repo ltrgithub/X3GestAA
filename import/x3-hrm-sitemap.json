@@ -1253,13 +1253,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESDIC",
-      "title": "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f",
-      "description": "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f",
+      "code": "STD_X3_HRM_GESDDA",
+      "title": "title_721711b2-bed4-4ea0-bb86-af572aefa40d",
+      "description": "description_721711b2-bed4-4ea0-bb86-af572aefa40d",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESDIC",
+      "fusionFunction": "GESDDA",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -1281,13 +1281,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESDDA",
-      "title": "title_721711b2-bed4-4ea0-bb86-af572aefa40d",
-      "description": "description_721711b2-bed4-4ea0-bb86-af572aefa40d",
+      "code": "STD_X3_HRM_GESDIC",
+      "title": "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f",
+      "description": "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESDDA",
+      "fusionFunction": "GESDIC",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -1525,16 +1525,26 @@
           ]
         },
         {
-          "code": "STD_X3_HRM_GESDIC",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESDDA",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESDSN",
-          "$variantType": "menuItem"
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "70633bfb-cba6-40e4-a8b1-0f2345ff15d4",
+          "title": "title_70633bfb-cba6-40e4-a8b1-0f2345ff15d4",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESDDA",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESDIC",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESDSN",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -11214,6 +11224,243 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESCDT",
+      "title": "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESCDT",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESSTH",
+      "title": "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad",
+      "description": "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESSTH",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESSPH",
+      "title": "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead",
+      "description": "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESSPH",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESSEH",
+      "title": "title_94958bfe-16b1-4180-8ff4-533b9209f855",
+      "description": "description_94958bfe-16b1-4180-8ff4-533b9209f855",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESSEH",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESSXH",
+      "title": "title_7396ff18-e0fb-4a46-bd49-8528196c1762",
+      "description": "description_7396ff18-e0fb-4a46-bd49-8528196c1762",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESSXH",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESSCH",
+      "title": "title_da397920-5170-4a50-9d24-f4b9de50c2cc",
+      "description": "description_da397920-5170-4a50-9d24-f4b9de50c2cc",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESSCH",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_6ddad5eb-cb76-491f-b893-037ad7a7f630",
+      "code": "STD_X3_HRM_TRAN",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_TRTPS",
+          "title": "title_4559238a-f7d2-4199-9662-555d2f68af96",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESCDT",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESSTH",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_TRFOR",
+          "title": "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESSPH",
+              "$variantType": "menuItem"
+            }
+          ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_TRMAS",
+          "title": "title_dc80bfd9-9fda-406a-a091-299095c2e857",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESSEH",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESSXH",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESSCH",
+              "$variantType": "menuItem"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESEXK",
       "title": "title_5b5c364e-4b50-4a2b-9d62-d5b826215072",
       "description": "description_5b5c364e-4b50-4a2b-9d62-d5b826215072",
@@ -11909,320 +12156,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESADLV",
-      "title": "title_ed6a3388-ba85-4d2c-bafa-2962083d147f",
-      "description": "description_ed6a3388-ba85-4d2c-bafa-2962083d147f",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESADLV",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESADLK",
-      "title": "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95",
-      "description": "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESADLK",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_de7a477d-36da-430c-b298-82e92b0f9df4",
-      "code": "STD_X3_HRM_MEADL",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": [
-        {
-          "code": "STD_X3_HRM_GESADLV",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESADLK",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESCDT",
-      "title": "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESCDT",
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSTH",
-      "title": "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad",
-      "description": "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESSTH",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSPH",
-      "title": "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead",
-      "description": "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESSPH",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSEH",
-      "title": "title_94958bfe-16b1-4180-8ff4-533b9209f855",
-      "description": "description_94958bfe-16b1-4180-8ff4-533b9209f855",
-      "linkType": "$function",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESSEH",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSXH",
-      "title": "title_7396ff18-e0fb-4a46-bd49-8528196c1762",
-      "description": "description_7396ff18-e0fb-4a46-bd49-8528196c1762",
-      "linkType": "$function",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESSXH",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSCH",
-      "title": "title_da397920-5170-4a50-9d24-f4b9de50c2cc",
-      "description": "description_da397920-5170-4a50-9d24-f4b9de50c2cc",
-      "linkType": "$function",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESSCH",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_6ddad5eb-cb76-491f-b893-037ad7a7f630",
-      "code": "STD_X3_HRM_TRAN",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": [
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_TRTPS",
-          "title": "title_4559238a-f7d2-4199-9662-555d2f68af96",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "STD_X3_HRM_GESCDT",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_GESSTH",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_TRFOR",
-          "title": "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "STD_X3_HRM_GESSPH",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_TRMAS",
-          "title": "title_dc80bfd9-9fda-406a-a091-299095c2e857",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "STD_X3_HRM_GESSEH",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_GESSXH",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_GESSCH",
-              "$variantType": "menuItem"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESDVT",
       "title": "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd",
       "description": "description_edd3cc66-57f0-4337-99fd-2b1e80ca78dd",
@@ -12299,6 +12232,83 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESADLV",
+      "title": "title_ed6a3388-ba85-4d2c-bafa-2962083d147f",
+      "description": "description_ed6a3388-ba85-4d2c-bafa-2962083d147f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESADLV",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESADLK",
+      "title": "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95",
+      "description": "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESADLK",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_de7a477d-36da-430c-b298-82e92b0f9df4",
+      "code": "STD_X3_HRM_MEADL",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "code": "STD_X3_HRM_GESADLV",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESADLK",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_ccfa405e-c4a8-4f9d-bd40-bca59b462f7f",
       "code": "STD_X3_HRM_MENV",
@@ -12334,6 +12344,9 @@
           "code": "STD_X3_HRM_PLAN"
         },
         {
+          "code": "STD_X3_HRM_TRAN"
+        },
+        {
           "code": "STD_X3_HRM_PANOF"
         },
         {
@@ -12346,13 +12359,10 @@
           "code": "STD_X3_HRM_PAPTL"
         },
         {
-          "code": "STD_X3_HRM_MEADL"
-        },
-        {
-          "code": "STD_X3_HRM_TRAN"
-        },
-        {
           "code": "STD_X3_HRM_MENV_MISC"
+        },
+        {
+          "code": "STD_X3_HRM_MEADL"
         }
       ]
     },
@@ -19920,6 +19930,13 @@
               "$variantType": "menuItem"
             }
           ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "SPE_X3_HRM_PTADE",
+          "title": "title_d2a96af8-4eb1-4e76-8ae5-d20f93718576",
+          "items": []
         }
       ]
     },
@@ -22621,7 +22638,7 @@
     {
       "$type": "menuBlock",
       "title": "title_c046fa1c-298c-43da-9f02-857e98f67db1",
-      "code": "CLSMNG",
+      "code": "STD_X3_HRM_CLSMNG",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -22695,7 +22712,7 @@
           "code": "STD_X3_HRM_CAR"
         },
         {
-          "code": "CLSMNG"
+          "code": "STD_X3_HRM_CLSMNG"
         }
       ]
     },
@@ -24189,6 +24206,31 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "SPE_X3_HRM_AIFIMPGENFIC",
+      "title": "title_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b",
+      "description": "description_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "AIFIMPGENFIC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MTDI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_f7bb463a-3c46-4fd2-8590-382f5792f28c",
       "code": "STD_X3_HRM_DVIEX",
@@ -24233,6 +24275,10 @@
         },
         {
           "code": "STD_X3_HRM_GESRCT",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "SPE_X3_HRM_AIFIMPGENFIC",
           "$variantType": "menuItem"
         }
       ]
@@ -25953,13 +25999,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_ALOCTRAD",
-      "title": "title_af531f46-6be7-4169-a4a4-3c2954966849",
-      "description": "description_af531f46-6be7-4169-a4a4-3c2954966849",
+      "code": "STD_X3_HRM_GESATR",
+      "title": "title_841e82f3-84f3-47dd-a98e-e412b9399db6",
+      "description": "description_841e82f3-84f3-47dd-a98e-e412b9399db6",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "ALOCTRAD",
+      "fusionFunction": "GESATR",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -25981,13 +26027,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESATR",
-      "title": "title_841e82f3-84f3-47dd-a98e-e412b9399db6",
-      "description": "description_841e82f3-84f3-47dd-a98e-e412b9399db6",
+      "code": "STD_X3_HRM_ALOCTRAD",
+      "title": "title_af531f46-6be7-4169-a4a4-3c2954966849",
+      "description": "description_af531f46-6be7-4169-a4a4-3c2954966849",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESATR",
+      "fusionFunction": "ALOCTRAD",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -26065,34 +26111,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_ATXNOTRANS",
-      "title": "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2",
-      "description": "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "ATXNOTRANS",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_ATRAD"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "STD_X3_HRM_AGENREFAML",
       "title": "title_fd929b0b-89df-45bc-a685-59ccd3f9dc93",
       "description": "description_fd929b0b-89df-45bc-a685-59ccd3f9dc93",
@@ -26149,13 +26167,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESAMD",
-      "title": "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97",
-      "description": "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97",
+      "code": "STD_X3_HRM_ARECTXTTRD",
+      "title": "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce",
+      "description": "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESAMD",
+      "fusionFunction": "ARECTXTTRD",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -26177,14 +26195,15 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESATT",
-      "title": "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e",
+      "code": "STD_X3_HRM_ATXNOTRANS",
+      "title": "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2",
+      "description": "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESATT",
+      "fusionFunction": "ATXNOTRANS",
+      "fusionKey": "",
       "target": "self",
-      "requestLevel": "99",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -26204,13 +26223,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_AIMPATR",
-      "title": "title_cea3254d-b889-4f2a-8602-8455f62fc19a",
-      "description": "description_cea3254d-b889-4f2a-8602-8455f62fc19a",
+      "code": "STD_X3_HRM_AEXPATD",
+      "title": "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af",
+      "description": "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "AIMPATR",
+      "fusionFunction": "AEXPATD",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -26288,13 +26307,13 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_AEXPATD",
-      "title": "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af",
-      "description": "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af",
+      "code": "STD_X3_HRM_AIMPATR",
+      "title": "title_cea3254d-b889-4f2a-8602-8455f62fc19a",
+      "description": "description_cea3254d-b889-4f2a-8602-8455f62fc19a",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "AEXPATD",
+      "fusionFunction": "AIMPATR",
       "fusionKey": "",
       "target": "self",
       "$factory": true,
@@ -26316,15 +26335,69 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_ARECTXTTRD",
-      "title": "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce",
-      "description": "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce",
+      "code": "STD_X3_HRM_GESAEX",
+      "title": "title_94d48ba4-668c-41a2-8665-86435745030d",
+      "description": "description_94d48ba4-668c-41a2-8665-86435745030d",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "ARECTXTTRD",
+      "fusionFunction": "GESAEX",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_ATRAD"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESAMD",
+      "title": "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97",
+      "description": "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESAMD",
       "fusionKey": "",
       "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_ATRAD"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESATT",
+      "title": "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESATT",
+      "target": "self",
+      "requestLevel": "99",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -26393,11 +26466,11 @@
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_ALOCTRAD",
+              "code": "STD_X3_HRM_GESATR",
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_GESATR",
+              "code": "STD_X3_HRM_ALOCTRAD",
               "$variantType": "menuItem"
             },
             {
@@ -26419,10 +26492,6 @@
           "$factoryOwner": "SAGE",
           "items": [
             {
-              "code": "STD_X3_HRM_ATXNOTRANS",
-              "$variantType": "menuItem"
-            },
-            {
               "code": "STD_X3_HRM_AGENREFAML",
               "$variantType": "menuItem"
             },
@@ -26431,15 +26500,15 @@
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_GESAMD",
+              "code": "STD_X3_HRM_ARECTXTTRD",
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_GESATT",
+              "code": "STD_X3_HRM_ATXNOTRANS",
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_AIMPATR",
+              "code": "STD_X3_HRM_AEXPATD",
               "$variantType": "menuItem"
             },
             {
@@ -26451,11 +26520,19 @@
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_AEXPATD",
+              "code": "STD_X3_HRM_AIMPATR",
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_ARECTXTTRD",
+              "code": "STD_X3_HRM_GESAEX",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESAMD",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESATT",
               "$variantType": "menuItem"
             },
             {
@@ -26692,8 +26769,8 @@
       "title_6057bf50-ffe8-42fb-8acb-ee0ebbd2eb49": "روابط التوثيق",
       "title_44fa870a-d92b-4657-aa66-53e202676b2e": "حقول الوثائق",
       "title_1f672da5-fe72-49b6-a9ba-721a97925395": "مساعدة الكلمات الرئيسية",
-      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "قاموس حقل الموظفين",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "GESDDA",
+      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "قاموس حقل الموظفين",
       "title_b6f83495-1d43-4a21-abd4-16a90959f756": "GESDSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "نصوص القاموس",
       "title_d55c6412-a18c-4813-97a6-85d009a26c3a": "شاشات",
@@ -27032,6 +27109,16 @@
       "title_fb92e15c-4998-40d0-82dc-7f67295bd798": "تحديث الإنشاء",
       "title_d9199cc7-1bf7-4dad-990d-842ba99244be": "مقارنة خطط الرواتب",
       "title_12697dbc-4c68-4212-8995-225f4c362f08": "متابعة تصحيح خطة الدفع",
+      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "معاملات الدخول",
+      "title_4559238a-f7d2-4199-9662-555d2f68af96": "ادخال الوقت",
+      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "محاور",
+      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "معاملة إدخال الوقت",
+      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "التدريب",
+      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "تخطيط معاملات الإدخال",
+      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "الراتب الكلي",
+      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "المعاملة الافتراضية للوصول",
+      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "المعاملة الافتراضية للمغادرة",
+      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "معاملات فرضية التعديل على العقد",
       "title_cbd8a1a0-5cc4-4015-a978-3db410ed2bf1": "مذكرات النفقات",
       "title_5b5c364e-4b50-4a2b-9d62-d5b826215072": "نفقات المسافة المقطوعة",
       "title_22c7209a-1da3-4975-96f7-14fe82a804e3": "بوابة SHRM",
@@ -27054,22 +27141,12 @@
       "title_2042d784-b832-42ee-973b-30b047304330": "وجهات المدخل",
       "title_aae84d58-c274-49c0-b75c-8cf18992efe6": "عملية",
       "title_ccffa325-8da5-4d8b-8d51-5643db66799c": "قائمة العملية",
+      "title_ec59ffea-892e-4fff-8d07-aef2432e2d4b": "اعداد",
+      "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "حقوق التصويت",
+      "title_edf68796-99b8-4594-8288-4459a2e24807": "معيار BI",
       "title_de7a477d-36da-430c-b298-82e92b0f9df4": "إدارة التسليمات",
       "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "التسليمات",
       "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "اعداد المجموعات",
-      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "معاملات الدخول",
-      "title_4559238a-f7d2-4199-9662-555d2f68af96": "ادخال الوقت",
-      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "محاور",
-      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "معاملة إدخال الوقت",
-      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "التدريب",
-      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "تخطيط معاملات الإدخال",
-      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "الراتب الكلي",
-      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "المعاملة الافتراضية للوصول",
-      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "المعاملة الافتراضية للمغادرة",
-      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "معاملات فرضية التعديل على العقد",
-      "title_ec59ffea-892e-4fff-8d07-aef2432e2d4b": "اعداد",
-      "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "حقوق التصويت",
-      "title_edf68796-99b8-4594-8288-4459a2e24807": "GESOBI",
       "title_bd51451d-7d67-4a15-ba8e-83d507301f56": "المعطيات",
       "title_c4ad3dae-62cd-48e8-b039-a8496f07c5f1": "الجداول المشتركة",
       "title_a5bf5380-85bc-40c8-9aa9-2002b3ba1dac": "بلدان",
@@ -27107,7 +27184,7 @@
       "title_db53a7d3-9d7f-4d27-99d6-bd9877678849": "تعداد الموظفين",
       "title_9c2f8a7c-7059-425d-adc4-fc1b7b27cfd1": "تحديث عقود الموظفين",
       "title_9ab813d9-d849-418c-931e-1b0e48a7622c": "تحديث متابعة الوظيفة",
-      "title_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "GENINIEVA",
+      "title_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "خلق تجربة مقابلة",
       "title_7d692f65-aab9-4753-b75b-6f48b482a5d9": "استخراج التاريخ",
       "title_2b4a8f01-1bea-45db-8be0-0ad70e7654fd": "المخطط الانسيابي",
       "title_f8325c3a-db06-48bd-a4dc-436ce2a9a63d": "وصول طاقم العمل - المغادرون",
@@ -27145,7 +27222,7 @@
       "title_4eb65908-d85a-481d-9847-2a8a64d2530e": "معدلات القرض القياسية",
       "title_6429119c-e83e-4799-b1fb-6bfefe8b7fda": "نوع القرض",
       "title_ecf8d2c7-769c-4e18-a11e-f88659392c0f": "إعداد القرض",
-      "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "GESHRLLA",
+      "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "قروض الموظفين",
       "title_337063b5-8def-4bc9-a026-a0a640085e11": "طلب القرض",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "إنشاء أقساط القرض",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "إدارة الوقت",
@@ -27258,9 +27335,9 @@
       "title_705478f6-e551-4cf5-85c8-35e44a885604": "GESDFC",
       "title_5c0eacdb-5468-4ccf-b503-32aa4d011fe1": "GESDAE",
       "title_409735ee-b0d4-470f-808c-3fc1e3a174f2": "عقود",
-      "title_9be6eb99-5b6f-4e28-a591-1143f0a63a7d": "GESDPP",
+      "title_9be6eb99-5b6f-4e28-a591-1143f0a63a7d": "تعويض",
       "title_d3397afe-7eb4-4d0c-b007-c7de382a6dd0": "عقود",
-      "title_fb8e4605-4281-4e2b-94cc-681979fc081a": "GESDMP",
+      "title_fb8e4605-4281-4e2b-94cc-681979fc081a": "تعويض",
       "title_97a56de0-400c-440c-98ed-e17aea61fbf0": "المنتفعون",
       "title_a87d844e-8c7d-4a09-bc6d-3eda55ea4956": "ظروف خطرة",
       "title_234754ab-dbe9-4ef1-af0b-2d9b97a1eaa8": "مقدمين الراتب",
@@ -27269,9 +27346,9 @@
       "title_94309f0e-6c37-4223-91ef-592caec81efd": "CTRTDS",
       "title_7933a6bb-287f-42d9-bf27-7ad62ff9b8f8": "GESIDA",
       "title_ee9eabcd-88b0-4fb8-a8e6-1a3c229237eb": "عقود",
-      "title_883d8dcc-d620-40d2-b750-5ff7ecc4f1fd": "GESIDR",
+      "title_883d8dcc-d620-40d2-b750-5ff7ecc4f1fd": "تعويض",
       "title_a969cf9f-1344-4683-98e3-918be32e60f5": "عقود",
-      "title_38367120-6361-4532-854c-ac51a1c112f6": "GESIDW",
+      "title_38367120-6361-4532-854c-ac51a1c112f6": "تعويض",
       "title_5f39dd4f-5446-4299-8455-31a30d7dee5a": "المنتفعون",
       "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "GESLOS",
       "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "الضمان الاجتماعي / التأمين",
@@ -27280,6 +27357,7 @@
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "GESM30H",
       "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "التقرير المميز للنشاط الاجتماعي",
       "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "التصريح بالدخل",
+      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "ترحيلات",
       "title_ef3e85e8-987c-443e-a356-f68616da24fb": "اعداد",
       "title_cd80e5c6-4288-4120-8b01-3ad50accba09": "GESHRDFS",
       "title_71eeb33d-eaca-4457-bda4-bef18cb69593": "GESHRDSH",
@@ -27289,6 +27367,7 @@
       "title_fc1b9b81-cd9c-4175-855f-7022867825d5": "الهيكل العام",
       "title_e0745ef9-6d1a-4b86-8c64-946f953ff0f4": "GESHRDCP",
       "title_f1b78308-d52e-427e-a127-a601af08b8b3": "GESHRDFY",
+      "title_760e7d54-4a1a-458d-8c91-75bbe4f0b6d0": "التصريح الشهريّ",
       "title_ffc08cc8-9356-4808-be0b-8cbae0d7f517": "إستخراج",
       "title_1e35f5ac-5db9-413c-acdd-2a864a08582c": "GESHRDMM",
       "title_4166e044-bbe1-4827-b2bf-3e826eb9bbda": "GESHRDMC",
@@ -27321,6 +27400,8 @@
       "title_d5a2901c-b243-490f-9852-33dccf1342a3": "إستيراد",
       "title_170b76c7-d0e9-47e5-ab16-c28ff390a66f": "معونة اجتماعية",
       "title_d3918ee2-7a63-41c7-a20c-cdfdc5111fa0": "تأمين صحي تكميلي",
+      "title_50d19e96-7b32-4699-93e8-d627bbdf652d": "GENHRSDG",
+      "title_caf89420-7030-40c0-8a04-9feedcaf0c78": "GENHRSDM",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "إستخراج",
       "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "بيانات",
       "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "خلق الملف",
@@ -27348,7 +27429,7 @@
       "title_ec7396bc-2896-4d58-b8ba-837a44d26fc4": "إعادة الارسال بأرقام جديدة",
       "title_e41d5aec-bb5b-4d3b-ab9c-327d45ee8c37": "تنفي1ذ الاستخراج",
       "title_34a48200-2673-4c74-b1ee-02463404c0fd": "المهارات والوظائف",
-      "title_9fc26b70-1563-4992-865e-1f890b854284": "EMP501",
+      "title_9fc26b70-1563-4992-865e-1f890b854284": "إدراك EMP501",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "مذكرات النفقات",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "مذكرات النفقات",
       "title_b11e842b-a583-414f-8f10-0994334c5307": "رموز النفقات",
@@ -27465,6 +27546,7 @@
       "title_743415ef-c630-4420-969c-62258c547e1d": "TRTRECUP",
       "title_670ae857-b946-4191-81d6-88c0539edfa6": "TRTIMPTDS",
       "title_bb60e0d5-6f7a-431e-a472-5abc545e4034": "GESRCT",
+      "title_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b": "تحويل ملفات الخط الفردي",
       "title_f792cd09-f9c0-4eb4-9817-a85f74d3a265": "مستخدمين",
       "title_7466e389-ed33-4ae4-9df0-7215719d700e": "تشخيص",
       "title_332afe3b-cf18-428b-a24c-2b300e7120d6": "تغيير كلمة المرور",
@@ -27505,25 +27587,27 @@
       "title_db008eee-1dbc-4a72-9808-7aaef497530b": "GED إستجواب",
       "title_43f9de7f-53d8-4ddd-8de1-b45f546d56aa": "مراقبة الإنطباعات",
       "title_74545310-ae50-43cd-9efb-e9b4750da0a7": "آثار القراءة",
+      "title_60d6143d-62f3-4a9d-ab4f-72590093c1f9": "إستفسارات",
+      "title_785bea63-af89-46ba-a33f-868d7aea20fd": "الراتب",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "ترجمات",
       "title_2f4c5580-7ecc-44d0-a197-0a727dae6c49": "البرامج",
       "title_b920c9d0-dce1-492a-a3d9-e316306aba9b": "وظائف",
       "title_b54d2e79-661d-4243-97b7-69d7d51dc16e": "نصوص للترجمة",
-      "title_af531f46-6be7-4169-a4a4-3c2954966849": "ترجمة القوائم المحلية",
       "title_841e82f3-84f3-47dd-a98e-e412b9399db6": "ترجمة النصوص",
+      "title_af531f46-6be7-4169-a4a4-3c2954966849": "ترجمة القوائم المحلية",
       "title_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "عملية الترجمة",
       "title_27fa7854-e106-4bf7-867b-2c4be205c5d0": "ترجمة التسميات",
       "title_ae42338c-9740-4c9a-9673-1a6a8d13ba12": "أدوات",
-      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "النص غير مترجم",
       "title_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "خلق النصوص",
       "title_190d526e-1071-455a-87c8-2d101d3b5711": "خلق مراجع العبور",
-      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "ترجمة الشاشات",
-      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "ترجمة الجداول",
-      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "إستيراد النصوص",
+      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "البحث عن النص",
+      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "النص غير مترجم",
+      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "تصدير الرسائل",
       "title_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "تصدير النصوص",
       "title_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "إستيراد الرسائل",
-      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "تصدير الرسائل",
-      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "البحث عن النص",
+      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "إستيراد النصوص",
+      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "ترجمة الشاشات",
+      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "ترجمة الجداول",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "خلق التسميات",
       "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "توثيق",
       "title_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "وثائق خطة العمل",
@@ -27622,10 +27706,11 @@
       "description_44fa870a-d92b-4657-aa66-53e202676b2e": "GESADZ",
       "title_1f672da5-fe72-49b6-a9ba-721a97925395": "Help key-words",
       "description_1f672da5-fe72-49b6-a9ba-721a97925395": "GESAMC",
-      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Employee field dictionary",
-      "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
+      "title_70633bfb-cba6-40e4-a8b1-0f2345ff15d4": "Field dictionary",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "DADS-U field dictionary",
       "description_721711b2-bed4-4ea0-bb86-af572aefa40d": "GESDDA",
+      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Employee field dictionary",
+      "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_b6f83495-1d43-4a21-abd4-16a90959f756": "DSN field dictionary",
       "description_b6f83495-1d43-4a21-abd4-16a90959f756": "GESDSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "Script dictionary",
@@ -28140,7 +28225,7 @@
       "description_cfa5462d-3073-41af-ac20-999006ef8d5f": "GESORG",
       "title_3b3167cc-32f8-48d5-ac7a-ab221debcae0": "Assignment",
       "description_3b3167cc-32f8-48d5-ac7a-ab221debcae0": "GESPCA",
-      "title_708dee7f-7c93-4a5c-8053-84fd263203b2": "Affiliation",
+      "title_708dee7f-7c93-4a5c-8053-84fd263203b2": "Affiliation ",
       "description_708dee7f-7c93-4a5c-8053-84fd263203b2": "GESORA",
       "title_b6adcba4-5dfa-4803-b405-c66a3c26b9b3": "Grids",
       "description_b6adcba4-5dfa-4803-b405-c66a3c26b9b3": "GESGRI",
@@ -28232,6 +28317,21 @@
       "description_d9199cc7-1bf7-4dad-990d-842ba99244be": "CMPPLAN",
       "title_12697dbc-4c68-4212-8995-225f4c362f08": "Payment plan patches follow-up",
       "description_12697dbc-4c68-4212-8995-225f4c362f08": "GESPPP",
+      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Entry transactions",
+      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Time entry",
+      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Dimension types",
+      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Time entry transaction",
+      "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "GESSTH",
+      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Training",
+      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Plan input transactions",
+      "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "GESSPH",
+      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Total payroll",
+      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Hypothetical transactions for arrival",
+      "description_94958bfe-16b1-4180-8ff4-533b9209f855": "GESSEH",
+      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Hypothetical transaction for departure",
+      "description_7396ff18-e0fb-4a46-bd49-8528196c1762": "GESSXH",
+      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Contract modification hypothesis transactions",
+      "description_da397920-5170-4a50-9d24-f4b9de50c2cc": "GESSCH",
       "title_cbd8a1a0-5cc4-4015-a978-3db410ed2bf1": "Expense notes  ",
       "title_5b5c364e-4b50-4a2b-9d62-d5b826215072": "Mileage expenses",
       "description_5b5c364e-4b50-4a2b-9d62-d5b826215072": "GESEXK",
@@ -28275,31 +28375,16 @@
       "description_ccffa325-8da5-4d8b-8d51-5643db66799c": "GESAPO",
       "title_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "Dashboard pages",
       "description_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "GESAPS",
-      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Deliverable management",
-      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Deliverables",
-      "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
-      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Setup kits",
-      "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
-      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Entry transactions",
-      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Time entry",
-      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Dimension types",
-      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Time entry transaction",
-      "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "GESSTH",
-      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Training",
-      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Plan input transactions",
-      "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "GESSPH",
-      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Total payroll",
-      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Hypothetical transactions for arrival",
-      "description_94958bfe-16b1-4180-8ff4-533b9209f855": "GESSEH",
-      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Hypothetical transaction for departure",
-      "description_7396ff18-e0fb-4a46-bd49-8528196c1762": "GESSXH",
-      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Contract modification hypothesis transactions",
-      "description_da397920-5170-4a50-9d24-f4b9de50c2cc": "GESSCH",
       "title_ec59ffea-892e-4fff-8d07-aef2432e2d4b": "Setup",
       "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "Voting rights",
       "description_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "GESDVT",
       "title_edf68796-99b8-4594-8288-4459a2e24807": "BI criteria",
       "description_edf68796-99b8-4594-8288-4459a2e24807": "GESOBI",
+      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Deliverable management",
+      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Deliverables",
+      "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
+      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Setup kits",
+      "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
       "title_bd51451d-7d67-4a15-ba8e-83d507301f56": "Common data",
       "title_c4ad3dae-62cd-48e8-b039-a8496f07c5f1": "Common tables",
       "title_a5bf5380-85bc-40c8-9aa9-2002b3ba1dac": "Country",
@@ -28360,7 +28445,7 @@
       "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Missions",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Profiles",
       "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "GESPRF",
-      "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classifications as per labour agreement",
+      "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classifications as per labor agreement",
       "description_1e465614-7592-4e33-9459-4e6811e31ac8": "GESCCV",
       "title_db53a7d3-9d7f-4d27-99d6-bd9877678849": "Employee populations",
       "description_db53a7d3-9d7f-4d27-99d6-bd9877678849": "GESPOP",
@@ -28415,6 +28500,7 @@
       "description_af62857b-ca01-4bed-b1de-dc0b35edb0ab": "REGUNPERS",
       "title_1d1789a7-6ede-4a71-8055-41f7776d11f0": "Electoral lists",
       "description_1d1789a7-6ede-4a71-8055-41f7776d11f0": "LISTELEC",
+      "title_cfa61ee2-ccde-4e1f-a4bc-1023e566e66b": "Strenuous work",
       "title_57937499-b1dd-4dcd-b050-bfce85de812f": "Extraction",
       "title_b3824cf3-1731-480e-b832-e146bfcc761d": "Exposure records",
       "title_bcab5a2d-d602-4ce4-9de2-309c90bc0197": "DUE",
@@ -28684,12 +28770,12 @@
       "description_5f39dd4f-5446-4299-8455-31a30d7dee5a": "GESIDQ",
       "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Legal obligations setup",
       "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "Social security/Insurance",
-      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Monthly tax declaration",
+      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Monthly PAYE declaration",
       "title_249c4f61-87ff-43aa-af20-bbd878eb1cb2": "Model 10",
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "Model 30",
       "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "Social activity unique report",
       "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Income declaration",
-      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migration tool V6-U9",
+      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migrations",
       "description_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migration tool V6-U9",
       "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066": "DSN",
       "title_ef3e85e8-987c-443e-a356-f68616da24fb": "Setup",
@@ -28778,6 +28864,7 @@
       "description_5435b4d7-7776-4ea0-89e7-338e443b9a0c": "Update",
       "title_4cb68880-2cbe-40fd-8330-7ee778001ad4": "Statement of contributions",
       "description_4cb68880-2cbe-40fd-8330-7ee778001ad4": "Statement of contributions",
+      "title_d2a96af8-4eb1-4e76-8ae5-d20f93718576": "Tax declaration",
       "title_19691840-6ec5-4d60-b972-620ff5245413": "MEC",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
@@ -29048,6 +29135,8 @@
       "description_670ae857-b946-4191-81d6-88c0539edfa6": "TRTIMPTDS",
       "title_bb60e0d5-6f7a-431e-a472-5abc545e4034": "DADS-U totals retrieval",
       "description_bb60e0d5-6f7a-431e-a472-5abc545e4034": "GESRCT",
+      "title_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b": "Single-line file conversion",
+      "description_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b": "AIFIMPGENFIC",
       "title_4580c88d-4091-424e-823a-7e23193c0088": "Bank file definitions",
       "title_b3cbd4da-a9c1-471c-94bf-e841762a089c": "Send files",
       "description_b3cbd4da-a9c1-471c-94bf-e841762a089c": "ALMATFR",
@@ -29154,34 +29243,36 @@
       "title_b920c9d0-dce1-492a-a3d9-e316306aba9b": "Functions",
       "title_b54d2e79-661d-4243-97b7-69d7d51dc16e": "Texts to translate",
       "description_b54d2e79-661d-4243-97b7-69d7d51dc16e": "ATXTTRAD",
-      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Local menu translation",
-      "description_af531f46-6be7-4169-a4a4-3c2954966849": "ALOCTRAD",
       "title_841e82f3-84f3-47dd-a98e-e412b9399db6": "Text translation",
       "description_841e82f3-84f3-47dd-a98e-e412b9399db6": "GESATR",
+      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Local menu translation",
+      "description_af531f46-6be7-4169-a4a4-3c2954966849": "ALOCTRAD",
       "title_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "Process translation",
       "description_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "APRTRAD",
       "title_27fa7854-e106-4bf7-867b-2c4be205c5d0": "Description translation",
       "description_27fa7854-e106-4bf7-867b-2c4be205c5d0": "FUNTRATXI",
       "title_ae42338c-9740-4c9a-9673-1a6a8d13ba12": "Tools",
-      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Untranslated text",
-      "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "ATXNOTRANS",
       "title_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "Text generation",
       "description_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "AGENREFAML",
       "title_190d526e-1071-455a-87c8-2d101d3b5711": "Generation of cross reference",
       "description_190d526e-1071-455a-87c8-2d101d3b5711": "AGENREFTXT",
-      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Screen translation",
-      "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "GESAMD",
-      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Table translation",
-      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import texts",
-      "description_cea3254d-b889-4f2a-8602-8455f62fc19a": "AIMPATR",
+      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Text search",
+      "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
+      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Untranslated text",
+      "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "ATXNOTRANS",
+      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export messages",
+      "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "AEXPATD",
       "title_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "Text export ",
       "description_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "AEXPATR",
       "title_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "Import messages",
       "description_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "AIMPATD",
-      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export messages",
-      "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "AEXPATD",
-      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Text search",
-      "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
+      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import texts",
+      "description_cea3254d-b889-4f2a-8602-8455f62fc19a": "AIMPATR",
+      "title_94d48ba4-668c-41a2-8665-86435745030d": "Exceptions (translations)",
+      "description_94d48ba4-668c-41a2-8665-86435745030d": "GESAEX",
+      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Screen translation",
+      "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "GESAMD",
+      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Table translation",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "Create descriptions",
       "description_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "ALANG",
       "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "Documentation",
@@ -29232,8 +29323,8 @@
       "title_6057bf50-ffe8-42fb-8acb-ee0ebbd2eb49": "Enlaces de documentación",
       "title_44fa870a-d92b-4657-aa66-53e202676b2e": "Documentación sobre campos",
       "title_1f672da5-fe72-49b6-a9ba-721a97925395": "Claves de ayuda",
-      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Diccionario de campos empleados",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "Diccionario campos DADS-U",
+      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Diccionario de campos empleados",
       "title_b6f83495-1d43-4a21-abd4-16a90959f756": "Diccionario campos DSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "Diccionario scripts",
       "title_d55c6412-a18c-4813-97a6-85d009a26c3a": "Pantallas",
@@ -29546,7 +29637,7 @@
       "title_7f53ca35-4dd8-490a-98c6-8df43d254562": "Imprimir nómina",
       "title_32472bf2-dd8a-4e2a-afbe-3df473067165": "Otras impresiones",
       "title_cd829463-7cab-4144-bd22-32300333b3cc": "Totales registros empleados",
-      "title_58de9d66-a9fb-488c-a0e0-7f77638e9ba2": "Masa salarial",
+      "title_58de9d66-a9fb-488c-a0e0-7f77638e9ba2": "?",
       "title_4be9c1ea-22dc-48ea-a5f6-ca17f9185e1a": "Actual. variables",
       "title_b4dab47e-d94c-448b-b456-2f510a8037ca": "Páginas de captura",
       "title_ef575969-2218-4e90-a20b-ad1fa58d445e": "Interface tiempos",
@@ -29573,6 +29664,16 @@
       "title_fb92e15c-4998-40d0-82dc-7f67295bd798": "Actualizar creación",
       "title_d9199cc7-1bf7-4dad-990d-842ba99244be": "Comparación planes de nómina",
       "title_12697dbc-4c68-4212-8995-225f4c362f08": "Seg. de parches plan de nóminas",
+      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Transacciones de entrada",
+      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Entrada de los tiempos",
+      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Ejes",
+      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Transacción entrada de tiempos",
+      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Formación",
+      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Transacción de entrada de planes",
+      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "?",
+      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Transacciones supuestos de entrada",
+      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Transacciones supuestos de salida",
+      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Transacciones supuesto modif.cont.",
       "title_cbd8a1a0-5cc4-4015-a978-3db410ed2bf1": "Notas de gastos",
       "title_5b5c364e-4b50-4a2b-9d62-d5b826215072": "Gastos kilometraje",
       "title_22c7209a-1da3-4975-96f7-14fe82a804e3": "SHRM Portal",
@@ -29590,28 +29691,18 @@
       "title_90eb6828-acb3-4098-974b-6d72e3cdfd16": "Comparación asientos automáticos",
       "title_12cb2942-3be2-4558-9d1b-524fb596d3c1": "Sección por defecto",
       "title_2454fbbb-4566-486f-9137-24a7c78d631b": "Portal interactivo",
-      "title_894e5f37-6716-4607-807d-1acfdf81e97a": "Componentes inactivos",
+      "title_894e5f37-6716-4607-807d-1acfdf81e97a": "Componentes interactivos",
       "title_ae16a528-376d-4fd2-a371-4ef62383b1ce": "Viñetas",
       "title_2042d784-b832-42ee-973b-30b047304330": "Vistas del portal",
       "title_aae84d58-c274-49c0-b75c-8cf18992efe6": "Procesos",
       "title_ccffa325-8da5-4d8b-8d51-5643db66799c": "Menú procesos",
       "title_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "Páginas del portal",
-      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Gestión de entregables",
-      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Entregables",
-      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Kits de parametrización",
-      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Transacciones de entrada",
-      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Captura de tiempos",
-      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Ejes",
-      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Transacción entrada de tiempos",
-      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Formación",
-      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Transacción de entrada de planes",
-      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Masa salarial",
-      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Transacciones supuestos de entrada",
-      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Transacciones supuestos de salida",
-      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Transacciones supuesto modif.cont.",
       "title_ec59ffea-892e-4fff-8d07-aef2432e2d4b": "Parametrización",
       "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "Derecho a voto",
       "title_edf68796-99b8-4594-8288-4459a2e24807": "Criterios BI",
+      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Gestión de entregables",
+      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Entregables",
+      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Kits de parametrización",
       "title_bd51451d-7d67-4a15-ba8e-83d507301f56": "Datos base",
       "title_c4ad3dae-62cd-48e8-b039-a8496f07c5f1": "Tablas comunes",
       "title_a5bf5380-85bc-40c8-9aa9-2002b3ba1dac": "País",
@@ -29651,7 +29742,7 @@
       "title_db53a7d3-9d7f-4d27-99d6-bd9877678849": "Población empleados",
       "title_9c2f8a7c-7059-425d-adc4-fc1b7b27cfd1": "Act de contratos de empleados",
       "title_9ab813d9-d849-418c-931e-1b0e48a7622c": "Act seg. de carreras",
-      "title_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "GENINIEVA",
+      "title_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "Gener. Entrev. Ficticias",
       "title_7d692f65-aab9-4753-b75b-6f48b482a5d9": "Extracción histórico",
       "title_2b4a8f01-1bea-45db-8be0-0ad70e7654fd": "Organigrama",
       "title_f8325c3a-db06-48bd-a4dc-436ce2a9a63d": "Entradas - Salidas de personal",
@@ -29692,7 +29783,7 @@
       "title_6429119c-e83e-4799-b1fb-6bfefe8b7fda": "GESHRLTYP",
       "title_ecf8d2c7-769c-4e18-a11e-f88659392c0f": "GESHRLLS",
       "title_c5c8bae6-693d-41d6-a253-b5a9004f1b0e": "Prestamos empleados",
-      "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "GESHRLLA",
+      "title_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "Préstamos a empleados",
       "description_de49620b-2ada-45c6-ad9d-364cfb3e5fd0": "Préstamos a empleados",
       "title_337063b5-8def-4bc9-a026-a0a640085e11": "GESHRLAR",
       "title_b9036c87-bee8-4b39-bfab-0e36da0049d1": "Gestión prestamos",
@@ -29722,10 +29813,10 @@
       "title_1fa2ffd2-f707-4ce1-a216-cff24ab83729": "Tiempos - Actividades",
       "title_e4f1c7a4-3a87-47de-80e8-26339e3642c2": "Captura",
       "title_e81fbd40-b753-4ff1-a296-b6c08ba0fb8c": "Plan operacional",
-      "title_6206f0e1-360d-4fdf-aca1-1cdf17ff8d65": "Captura de tiempos",
+      "title_6206f0e1-360d-4fdf-aca1-1cdf17ff8d65": "Entrada de los tiempos",
       "title_f27f7357-b7b8-4b8e-8e69-49da6328f837": "Hojas de tiempos",
       "title_f013f29c-2d41-4ad0-ae61-182777dbb248": "Regularizaciones",
-      "title_88f43872-c68c-499f-8000-dacef686033e": "Síntesis de tiempos",
+      "title_88f43872-c68c-499f-8000-dacef686033e": "Síntesis de los tiempos",
       "title_ad9ec8fb-4712-4c72-9f55-8eb319fe693d": "Parada de tiempos",
       "title_bacfea3e-c013-4830-930c-84a254268077": "Importación tiempo de máquina",
       "title_af798ade-c409-49ba-8f83-97ebe51bdc7a": "Modelo 1",
@@ -29830,6 +29921,7 @@
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "GESM30H",
       "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "GESSAURH",
       "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "FUNINCDCL",
+      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migraciones",
       "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066": "DSN",
       "title_ef3e85e8-987c-443e-a356-f68616da24fb": "Parametrización",
       "title_cd80e5c6-4288-4120-8b01-3ad50accba09": "Estructura fichero",
@@ -29876,6 +29968,8 @@
       "title_d5a2901c-b243-490f-9852-33dccf1342a3": "Import.",
       "title_170b76c7-d0e9-47e5-ab16-c28ff390a66f": "Prevención",
       "title_d3918ee2-7a63-41c7-a20c-cdfdc5111fa0": "Mútua",
+      "title_50d19e96-7b32-4699-93e8-d627bbdf652d": "GENHRSDG",
+      "title_caf89420-7030-40c0-8a04-9feedcaf0c78": "GENHRSDM",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extracción",
       "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Datos",
       "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "Generación de fichero",
@@ -29890,8 +29984,8 @@
       "title_e212b8cf-94f0-4966-92c3-31e1286249f5": "Extracción",
       "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Datos",
       "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "Generación de fichero",
-      "title_f0682f55-d2ca-4c7e-868a-2f0b06c00758": "Tickets restaurant",
-      "title_643fbdc0-778a-4219-a3f0-df2284e00631": "Cheques restaurante",
+      "title_f0682f55-d2ca-4c7e-868a-2f0b06c00758": "Tickets restaurante",
+      "title_643fbdc0-778a-4219-a3f0-df2284e00631": "Tickets de comida",
       "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Exportación estatutarios",
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Export UIF",
       "title_4068d8bf-d2ee-4717-a325-8536b3b4e96a": "GENHREXTVAL",
@@ -29914,7 +30008,7 @@
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Parámetros",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
       "title_92865936-4d60-408e-8b0a-e71673878aa1": "Fondos",
-      "title_8296d31e-b723-4999-b172-b59a38ea28d3": "Cotizaciones",
+      "title_8296d31e-b723-4999-b172-b59a38ea28d3": "?",
       "title_f42f21f6-9924-42f2-ab7b-731843cc388c": "Métodos de reparto",
       "title_6d87c7bf-da18-44bf-a21f-cb49c156658d": "Participación en beneficios",
       "title_47538ba0-eb86-491e-8b24-bbf616fc76e7": "Cálculo bases",
@@ -29922,7 +30016,7 @@
       "title_7d4636fd-cc61-4bab-b9be-349a72dd06e8": "Retartos",
       "title_25f69651-7379-4aaf-a6f6-a133a9f776f0": "Concesión individual",
       "title_e45c28aa-12df-4552-8331-1d2e4e8727bd": "Parada particiones/intereses",
-      "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "Masa salarial",
+      "title_3ff85af9-65d5-49b9-b323-b2c97b75975d": "?",
       "title_9cd95fca-635b-4c9e-9523-651ce8bced73": "Parámetros",
       "title_33585ffc-151b-440d-a087-5e8a2602b124": "Antes de cada medida",
       "title_6949c74c-3487-4297-96b6-afacde7a235b": "Grids MS",
@@ -29941,10 +30035,10 @@
       "title_be45facf-c80c-46d5-bbca-f777091771f3": "Generación de plan de pagos MS",
       "title_a40d7744-1b97-4988-a78c-dd254fdb669b": "Actualización nóminas de la MS",
       "title_184321fe-7e6a-43c8-9913-a1efd3fcb311": "Consultas",
-      "title_186ce2af-87f6-4dee-a99f-9f1d36f12e39": "Seq. de la masa salarial",
+      "title_186ce2af-87f6-4dee-a99f-9f1d36f12e39": "?",
       "title_4fe07ce7-cdf8-4d0a-8d48-f3775bbc423e": "Resumen medidas MS",
       "title_4495cc4c-9724-4f70-a028-4e1bd1454f4e": "Libros de nómina",
-      "title_67845384-b287-4e64-b801-e0233215b12e": "Masa salarial",
+      "title_67845384-b287-4e64-b801-e0233215b12e": "?",
       "title_b04923a4-b041-40c3-abcb-3052488383b5": "Escenarios",
       "title_204a81cf-562c-418b-8391-8e91be536e02": "Competencias y carreras",
       "title_9a1092d1-430c-4f38-995f-61ecfb40375c": "Directorio de competencias",
@@ -29961,7 +30055,7 @@
       "title_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "Referencial de empleos",
       "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f": "Gestión competencias y carreras",
       "title_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "Carreras",
-      "title_682c1646-422f-42ed-b284-91ed70375a4b": "Campaña de entrevistas",
+      "title_682c1646-422f-42ed-b284-91ed70375a4b": "Campañas de entrevistas",
       "title_84f825b3-cc38-4446-a692-ae10a3b07ec2": "Entrevistas",
       "title_c5a4f931-b76a-4047-8c79-f4d270335ff3": "Actualización entrevista competencias",
       "title_68c51846-2e86-4b96-b4cc-998f1baf1d6d": "Radar de competencias",
@@ -30024,6 +30118,7 @@
       "title_743415ef-c630-4420-969c-62258c547e1d": "Importación datos RRHH",
       "title_670ae857-b946-4191-81d6-88c0539edfa6": "Importación Norma DADS-U",
       "title_bb60e0d5-6f7a-431e-a472-5abc545e4034": "Recuperación acumulados DADS-U",
+      "title_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b": "Consersión ficheros monolínea",
       "title_4580c88d-4091-424e-823a-7e23193c0088": "Ficheros bancarios",
       "title_f792cd09-f9c0-4eb4-9817-a85f74d3a265": "Usuarios",
       "title_7466e389-ed33-4ae4-9df0-7215719d700e": "Personalización",
@@ -30048,13 +30143,13 @@
       "title_a538456f-c99c-4da8-bdab-cd5116fca467": "Datos base",
       "title_99ba331b-3df7-4b0d-a2ea-a43f9f7c2f3a": "Gestión de personal",
       "title_9eff33fc-97ca-4109-8f07-c3574b63001f": "Gestión de tiempos",
-      "title_f11b389d-f995-48a1-a664-b682870ba300": "Gestión de pagos",
+      "title_f11b389d-f995-48a1-a664-b682870ba300": "Gestión de nóminas",
       "title_36d1f621-3fcb-4278-a6b1-09f60b3febad": "Cargas",
       "title_327a66f9-7865-4f96-ae39-fb58a127c375": "Históricos",
       "title_db5f4037-c749-4872-aea1-8ee52d58b818": "Informes legales",
       "title_dac7d67b-4da3-40f2-8b52-c0743aff523a": "Pagos",
       "title_145c178c-2b3a-4518-a0b3-473ce7d80ed2": "Participación en beneficios",
-      "title_df9cfd4c-acf0-4485-8003-9b0329f82e2c": "Masa salarial",
+      "title_df9cfd4c-acf0-4485-8003-9b0329f82e2c": "?",
       "title_2c517abd-a91f-46f5-9bf2-63e7ab063188": "Competencias y carreras",
       "title_a108fbec-c5f8-4774-82d4-47440415320e": "Formación",
       "title_5fa76b52-8891-46f9-8d4f-1997ab18fc55": "Informes",
@@ -30066,25 +30161,27 @@
       "title_db008eee-1dbc-4a72-9808-7aaef497530b": "Interrogación GED",
       "title_43f9de7f-53d8-4ddd-8de1-b45f546d56aa": "Seguimiento impresiones",
       "title_74545310-ae50-43cd-9efb-e9b4750da0a7": "Lectura seguimientos",
+      "title_60d6143d-62f3-4a9d-ab4f-72590093c1f9": "Peticiones",
+      "title_785bea63-af89-46ba-a33f-868d7aea20fd": "Nómina",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "Traducciones",
       "title_2f4c5580-7ecc-44d0-a197-0a727dae6c49": "Aplicación",
       "title_b920c9d0-dce1-492a-a3d9-e316306aba9b": "Funciones",
       "title_b54d2e79-661d-4243-97b7-69d7d51dc16e": "Textos a traducir",
-      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Traducción menús locales",
       "title_841e82f3-84f3-47dd-a98e-e412b9399db6": "Traducción textos",
+      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Traducción menús locales",
       "title_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "Traducción procesos",
       "title_27fa7854-e106-4bf7-867b-2c4be205c5d0": "Traducción de literales",
       "title_ae42338c-9740-4c9a-9673-1a6a8d13ba12": "Útiles",
-      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Textos no traducidos",
       "title_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "Generación textos",
       "title_190d526e-1071-455a-87c8-2d101d3b5711": "Generación ref. cruzadas",
-      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Traducción pantallas",
-      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Traducción de tablas",
-      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import. Textos",
+      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Búsqueda texto",
+      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Textos no traducidos",
+      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export mensajes",
       "title_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "Export. Textos",
       "title_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "Importación mensajes",
-      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export mensajes",
-      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Búsqueda texto",
+      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import. Textos",
+      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Traducción pantallas",
+      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Traducción de tablas",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "Generación de descripciones",
       "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "Documentación",
       "title_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "Plan de trabajo documentación",
@@ -30152,10 +30249,10 @@
       "description_44fa870a-d92b-4657-aa66-53e202676b2e": "GESADZ",
       "title_1f672da5-fe72-49b6-a9ba-721a97925395": "Mots-clés d'aide",
       "description_1f672da5-fe72-49b6-a9ba-721a97925395": "GESAMC",
-      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Dictionnaire champs salariés",
-      "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "Dictionnaire champs DADS-U",
       "description_721711b2-bed4-4ea0-bb86-af572aefa40d": "GESDDA",
+      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Dictionnaire champs salariés",
+      "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_b6f83495-1d43-4a21-abd4-16a90959f756": "Dictionnaire champs DSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "Dictionnaire scripts",
       "title_d55c6412-a18c-4813-97a6-85d009a26c3a": "Ecrans",
@@ -30640,7 +30737,7 @@
       "description_39edd644-9405-4d0f-8640-89f0a376599f": "APARHIS",
       "title_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "Optimisation base de données",
       "description_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "GESANX",
-      "title_ae3e3ebb-43fd-4982-82dc-272fa5499f07": "Extraction modèle",
+      "title_ae3e3ebb-43fd-4982-82dc-272fa5499f07": "Modèle extraction",
       "title_ecb0ace6-c2c1-4cdf-adbc-2a3a75cb6103": "Structure générale",
       "title_1ac2d7c1-eb6f-42d6-920d-d8781991ec24": "Dossiers",
       "description_1ac2d7c1-eb6f-42d6-920d-d8781991ec24": "GESADS",
@@ -30756,6 +30853,21 @@
       "description_d9199cc7-1bf7-4dad-990d-842ba99244be": "CMPPLAN",
       "title_12697dbc-4c68-4212-8995-225f4c362f08": "Suivi des patchs plan de paie",
       "description_12697dbc-4c68-4212-8995-225f4c362f08": "GESPPP",
+      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Transactions de saisie",
+      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Saisie des temps",
+      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Axes",
+      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Transactions de saisie des temps",
+      "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "GESSTH",
+      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Formation",
+      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Transactions de saisie des plans",
+      "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "GESSPH",
+      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Masse salariale",
+      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Transactions hypothèses d'entrée",
+      "description_94958bfe-16b1-4180-8ff4-533b9209f855": "GESSEH",
+      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Transactions hypothèses de sortie",
+      "description_7396ff18-e0fb-4a46-bd49-8528196c1762": "GESSXH",
+      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Transactions hypothèses modif.contr",
+      "description_da397920-5170-4a50-9d24-f4b9de50c2cc": "GESSCH",
       "title_cbd8a1a0-5cc4-4015-a978-3db410ed2bf1": "Notes de frais",
       "title_5b5c364e-4b50-4a2b-9d62-d5b826215072": "Frais kilométriques",
       "description_5b5c364e-4b50-4a2b-9d62-d5b826215072": "GESEXK",
@@ -30799,31 +30911,16 @@
       "description_ccffa325-8da5-4d8b-8d51-5643db66799c": "GESAPO",
       "title_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "Pages du portail",
       "description_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "GESAPS",
-      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Gestion des livrables",
-      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Livrables",
-      "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
-      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Kits de paramétrage",
-      "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
-      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Transactions de saisie",
-      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Saisie des temps",
-      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Axes",
-      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Transactions de saisie des temps",
-      "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "GESSTH",
-      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Formation",
-      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Transactions de saisie des plans",
-      "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "GESSPH",
-      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Masse salariale",
-      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Transactions hypothèses d'entrée",
-      "description_94958bfe-16b1-4180-8ff4-533b9209f855": "GESSEH",
-      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Transactions hypothèses de sortie",
-      "description_7396ff18-e0fb-4a46-bd49-8528196c1762": "GESSXH",
-      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Transactions hypothèses modif.contr",
-      "description_da397920-5170-4a50-9d24-f4b9de50c2cc": "GESSCH",
       "title_ec59ffea-892e-4fff-8d07-aef2432e2d4b": "Paramétrage",
       "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "Droits de vote",
       "description_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "GESDVT",
       "title_edf68796-99b8-4594-8288-4459a2e24807": "Critères BI",
       "description_edf68796-99b8-4594-8288-4459a2e24807": "GESOBI",
+      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Gestion des livrables",
+      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Livrables",
+      "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
+      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Kits de paramétrage",
+      "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
       "title_bd51451d-7d67-4a15-ba8e-83d507301f56": "Données de base",
       "title_c4ad3dae-62cd-48e8-b039-a8496f07c5f1": "Tables communes",
       "title_a5bf5380-85bc-40c8-9aa9-2002b3ba1dac": "Pays",
@@ -31206,6 +31303,7 @@
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "Modèle 30",
       "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "Rapport unique d'activité sociale",
       "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Déclaration revenu",
+      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migrations",
       "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066": "DSN",
       "title_ef3e85e8-987c-443e-a356-f68616da24fb": "Paramétrage",
       "title_cd80e5c6-4288-4120-8b01-3ad50accba09": "Structure fichier",
@@ -31252,6 +31350,9 @@
       "title_d5a2901c-b243-490f-9852-33dccf1342a3": "Import",
       "title_170b76c7-d0e9-47e5-ab16-c28ff390a66f": "Prévoyance",
       "title_d3918ee2-7a63-41c7-a20c-cdfdc5111fa0": "Mutuelle",
+      "title_50d19e96-7b32-4699-93e8-d627bbdf652d": "Génération déclarations",
+      "title_caf89420-7030-40c0-8a04-9feedcaf0c78": "Déclaration réglementaire",
+      "title_d2a96af8-4eb1-4e76-8ae5-d20f93718576": "Déclaration fiscale",
       "title_19691840-6ec5-4d60-b972-620ff5245413": "AEM",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
@@ -31283,7 +31384,7 @@
       "description_1e1717e1-a81e-49ec-9192-a20ea5578326": "TRTCQL",
       "title_f0682f55-d2ca-4c7e-868a-2f0b06c00758": "Tickets restaurant",
       "title_643fbdc0-778a-4219-a3f0-df2284e00631": "Chèques déjeuner",
-      "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Exports statutaires",
+      "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Exports réglementaires",
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Export UIF",
       "title_4068d8bf-d2ee-4717-a325-8536b3b4e96a": "Validation exécution taxe",
       "title_9d35f547-867a-4c88-a810-3d57d939761a": "ITREG",
@@ -31502,6 +31603,7 @@
       "description_670ae857-b946-4191-81d6-88c0539edfa6": "TRTIMPTDS",
       "title_bb60e0d5-6f7a-431e-a472-5abc545e4034": "Reprise des cumuls DADS-U",
       "description_bb60e0d5-6f7a-431e-a472-5abc545e4034": "GESRCT",
+      "title_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b": "Conversion fichiers mono-ligne",
       "title_4580c88d-4091-424e-823a-7e23193c0088": "Fichiers bancaires",
       "title_b3cbd4da-a9c1-471c-94bf-e841762a089c": "Emission fichiers",
       "description_b3cbd4da-a9c1-471c-94bf-e841762a089c": "ALMATFR",
@@ -31598,39 +31700,41 @@
       "description_43f9de7f-53d8-4ddd-8de1-b45f546d56aa": "PSIMP",
       "title_74545310-ae50-43cd-9efb-e9b4750da0a7": "Lecture traces",
       "description_74545310-ae50-43cd-9efb-e9b4750da0a7": "LECTRACE",
+      "title_60d6143d-62f3-4a9d-ab4f-72590093c1f9": "Requêtes",
+      "title_785bea63-af89-46ba-a33f-868d7aea20fd": "Paie",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "Traductions",
       "title_2f4c5580-7ecc-44d0-a197-0a727dae6c49": "Logiciel",
       "title_b920c9d0-dce1-492a-a3d9-e316306aba9b": "Fonctions",
       "title_b54d2e79-661d-4243-97b7-69d7d51dc16e": "Textes à traduire",
       "description_b54d2e79-661d-4243-97b7-69d7d51dc16e": "ATXTTRAD",
-      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Traduction menus locaux",
-      "description_af531f46-6be7-4169-a4a4-3c2954966849": "ALOCTRAD",
       "title_841e82f3-84f3-47dd-a98e-e412b9399db6": "Traduction textes",
       "description_841e82f3-84f3-47dd-a98e-e412b9399db6": "GESATR",
+      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Traduction menus locaux",
+      "description_af531f46-6be7-4169-a4a4-3c2954966849": "ALOCTRAD",
       "title_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "Traduction processus",
       "description_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "APRTRAD",
       "title_27fa7854-e106-4bf7-867b-2c4be205c5d0": "Traduction des libellés",
       "description_27fa7854-e106-4bf7-867b-2c4be205c5d0": "FUNTRATXI",
       "title_ae42338c-9740-4c9a-9673-1a6a8d13ba12": "Outils",
-      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Textes-Aplstd non traduits",
-      "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "ATXNOTRANS",
       "title_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "Génération textes",
       "description_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "AGENREFAML",
       "title_190d526e-1071-455a-87c8-2d101d3b5711": "Génération réf. croisées",
       "description_190d526e-1071-455a-87c8-2d101d3b5711": "AGENREFTXT",
-      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Traduction écrans",
-      "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "GESAMD",
-      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Traduction tables",
-      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import textes",
-      "description_cea3254d-b889-4f2a-8602-8455f62fc19a": "AIMPATR",
+      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Recherche texte",
+      "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
+      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Textes-Aplstd non traduits",
+      "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "ATXNOTRANS",
+      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export messages",
+      "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "AEXPATD",
       "title_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "Export textes",
       "description_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "AEXPATR",
       "title_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "Import messages",
       "description_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "AIMPATD",
-      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export messages",
-      "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "AEXPATD",
-      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Recherche texte",
-      "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
+      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import textes",
+      "description_cea3254d-b889-4f2a-8602-8455f62fc19a": "AIMPATR",
+      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Traduction écrans",
+      "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "GESAMD",
+      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Traduction tables",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "Génération des libellés",
       "description_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "ALANG",
       "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "Documentation",
@@ -31730,10 +31834,10 @@
       "description_44fa870a-d92b-4657-aa66-53e202676b2e": "GESADZ",
       "title_1f672da5-fe72-49b6-a9ba-721a97925395": "Palavras-chave de ajuda",
       "description_1f672da5-fe72-49b6-a9ba-721a97925395": "GESAMC",
-      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Dicionário campos funcion.",
-      "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_721711b2-bed4-4ea0-bb86-af572aefa40d": "Dicionário campos DADS-U",
       "description_721711b2-bed4-4ea0-bb86-af572aefa40d": "GESDDA",
+      "title_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "Dicionário campos funcion.",
+      "description_bd4fe5da-b1d5-480f-ae31-05ab5ea23d5f": "GESDIC",
       "title_b6f83495-1d43-4a21-abd4-16a90959f756": "Dicionário campo DSN",
       "title_5b4dcf9e-559a-4f14-9f0e-795e65338157": "Dicionário tratamentos",
       "title_d55c6412-a18c-4813-97a6-85d009a26c3a": "Ecrãs",
@@ -32218,7 +32322,7 @@
       "description_39edd644-9405-4d0f-8640-89f0a376599f": "APARHIS",
       "title_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "Optimização base de dados",
       "description_c8eb8e63-4e3e-4517-bbea-dd468437f6e7": "GESANX",
-      "title_ae3e3ebb-43fd-4982-82dc-272fa5499f07": "Modelo de extração",
+      "title_ae3e3ebb-43fd-4982-82dc-272fa5499f07": "Extração modelo",
       "title_ecb0ace6-c2c1-4cdf-adbc-2a3a75cb6103": "Estructura geral",
       "title_1ac2d7c1-eb6f-42d6-920d-d8781991ec24": "Dossiers",
       "description_1ac2d7c1-eb6f-42d6-920d-d8781991ec24": "GESADS",
@@ -32334,6 +32438,21 @@
       "description_d9199cc7-1bf7-4dad-990d-842ba99244be": "CMPPLAN",
       "title_12697dbc-4c68-4212-8995-225f4c362f08": "Seg. dos patchs plano de pag.",
       "description_12697dbc-4c68-4212-8995-225f4c362f08": "GESPPP",
+      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Transacções de registo",
+      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Registo de tempos",
+      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Eixos",
+      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Transac. de registo de tempos",
+      "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "GESSTH",
+      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Formação",
+      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Transacções de registo dos planos",
+      "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "GESSPH",
+      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Massa salarial",
+      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Transacções hipóteses de entrada",
+      "description_94958bfe-16b1-4180-8ff4-533b9209f855": "GESSEH",
+      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Transacções hipóteses de saída",
+      "description_7396ff18-e0fb-4a46-bd49-8528196c1762": "GESSXH",
+      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Transacções hipóteses modif.contr",
+      "description_da397920-5170-4a50-9d24-f4b9de50c2cc": "GESSCH",
       "title_cbd8a1a0-5cc4-4015-a978-3db410ed2bf1": "Notas de despesa",
       "title_5b5c364e-4b50-4a2b-9d62-d5b826215072": "Despesas (KM)",
       "description_5b5c364e-4b50-4a2b-9d62-d5b826215072": "GESEXK",
@@ -32378,31 +32497,16 @@
       "description_ccffa325-8da5-4d8b-8d51-5643db66799c": "GESAPO",
       "title_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "Páginas do portal",
       "description_49def8fd-7856-4eb4-a3b5-97fb180c46f2": "GESAPS",
-      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Gestão da licença",
-      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Disponiveis",
-      "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
-      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Kits de parametrização",
-      "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
-      "title_6ddad5eb-cb76-491f-b893-037ad7a7f630": "Transacções de registo",
-      "title_4559238a-f7d2-4199-9662-555d2f68af96": "Registo de tempos",
-      "title_a3c1a4ad-43ac-411a-a03c-7dadaf2100ac": "Eixos",
-      "title_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "Transac. de registo de tempos",
-      "description_fffbc26d-34a0-473c-b6ac-f32707b8c7ad": "GESSTH",
-      "title_b125d6d5-a11e-4e7b-9d2d-b9ba2832c5b1": "Formação",
-      "title_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "Transacções de registo dos planos",
-      "description_8c95c6cf-dc2e-44b9-a64f-68fcf3dcbead": "GESSPH",
-      "title_dc80bfd9-9fda-406a-a091-299095c2e857": "Massa salarial",
-      "title_94958bfe-16b1-4180-8ff4-533b9209f855": "Transacções hipóteses de entrada",
-      "description_94958bfe-16b1-4180-8ff4-533b9209f855": "GESSEH",
-      "title_7396ff18-e0fb-4a46-bd49-8528196c1762": "Transacções hipóteses de saída",
-      "description_7396ff18-e0fb-4a46-bd49-8528196c1762": "GESSXH",
-      "title_da397920-5170-4a50-9d24-f4b9de50c2cc": "Transacções hipóteses modif.contr",
-      "description_da397920-5170-4a50-9d24-f4b9de50c2cc": "GESSCH",
       "title_ec59ffea-892e-4fff-8d07-aef2432e2d4b": "Parâmetrização",
       "title_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "Direitos de voto",
       "description_edd3cc66-57f0-4337-99fd-2b1e80ca78dd": "GESDVT",
       "title_edf68796-99b8-4594-8288-4459a2e24807": "Critérios BI",
       "description_edf68796-99b8-4594-8288-4459a2e24807": "GESOBI",
+      "title_de7a477d-36da-430c-b298-82e92b0f9df4": "Gestão da licença",
+      "title_ed6a3388-ba85-4d2c-bafa-2962083d147f": "Disponiveis",
+      "description_ed6a3388-ba85-4d2c-bafa-2962083d147f": "GESADLV",
+      "title_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "Kits de parametrização",
+      "description_b3a45dd4-a13d-4cad-9dca-52fc6e890b95": "GESADLK",
       "title_bd51451d-7d67-4a15-ba8e-83d507301f56": "Dados de base",
       "title_c4ad3dae-62cd-48e8-b039-a8496f07c5f1": "Tabelas comuns",
       "title_a5bf5380-85bc-40c8-9aa9-2002b3ba1dac": "País",
@@ -32421,7 +32525,7 @@
       "description_fb893b7d-906b-4079-ab1e-54d8a4846e5c": "GESTUN",
       "title_c72893c9-e6fc-4167-8267-1fb4607c58b2": "Conversões unidades",
       "title_90945080-5b76-49b8-a67e-2a4c2814d9c2": "Interlocutores",
-      "title_435a5f75-b3f1-4707-8f07-bca60f69caf8": "CAE",
+      "title_435a5f75-b3f1-4707-8f07-bca60f69caf8": "Cód. CAE",
       "title_1c737f78-de12-48a8-beef-0cf8634710ca": "Impostos",
       "title_ed0fc459-3817-4f3d-b902-b317e0a9d5cb": "Tabelas contabilidade",
       "title_b9918fdd-1355-402e-8f21-964a93cab3e3": "Naturezas",
@@ -32469,7 +32573,7 @@
       "description_9c2f8a7c-7059-425d-adc4-fc1b7b27cfd1": "UPDEMP",
       "title_9ab813d9-d849-418c-931e-1b0e48a7622c": "Act seg. carreira",
       "description_9ab813d9-d849-418c-931e-1b0e48a7622c": "UPDSUICAR",
-      "title_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "Geração simulação entrevista",
+      "title_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "Ger.sim.entrevista",
       "description_385e6ad7-daf8-407c-825f-f45bb4ee35b7": "Ger.sim.entrevista",
       "title_7d692f65-aab9-4753-b75b-6f48b482a5d9": "Extracção histórico",
       "description_7d692f65-aab9-4753-b75b-6f48b482a5d9": "EXTRACT",
@@ -32782,13 +32886,13 @@
       "description_5f39dd4f-5446-4299-8455-31a30d7dee5a": "GESIDQ",
       "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Parametrização obrigações legais",
       "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "Segurança Social/Seguradora",
-      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Declaração mensal de remunerações",
+      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Declaração fiscal mensal",
       "title_249c4f61-87ff-43aa-af20-bbd878eb1cb2": "Modelo 10",
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "Modelo 30",
-      "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "Relatório único de Atividade Social",
+      "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "Relatório unico atividade social",
       "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Declaração rendimento",
       "description_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Declaração individual de rendimentos",
-      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Ferramenta Migração V6-U9",
+      "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migrações",
       "description_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Ferramenta Migração V6-U9",
       "title_ebe95ce0-2cc0-40ea-b3a3-04595375b066": "DSN",
       "title_ef3e85e8-987c-443e-a356-f68616da24fb": "Parâmetrização",
@@ -32836,6 +32940,9 @@
       "title_d5a2901c-b243-490f-9852-33dccf1342a3": "Import.",
       "title_170b76c7-d0e9-47e5-ab16-c28ff390a66f": "Previdência",
       "title_d3918ee2-7a63-41c7-a20c-cdfdc5111fa0": "Mútua",
+      "title_50d19e96-7b32-4699-93e8-d627bbdf652d": "Geração declaração",
+      "title_caf89420-7030-40c0-8a04-9feedcaf0c78": "Declaração legal",
+      "title_d2a96af8-4eb1-4e76-8ae5-d20f93718576": "Declaração de imposto",
       "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extracção",
       "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
       "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Dados",
@@ -32868,7 +32975,7 @@
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Exportação UIF",
       "title_4068d8bf-d2ee-4717-a325-8536b3b4e96a": "Validação execução fiscal",
       "title_9d35f547-867a-4c88-a810-3d57d939761a": "ITREG",
-      "title_de73652f-f377-4de0-a154-74cd47cf83df": "Execução fiscal meio do ano",
+      "title_de73652f-f377-4de0-a154-74cd47cf83df": "Execução taxa semestral",
       "title_fb87eb7f-4be3-4503-8462-182d2bc93985": "Execução fiscal final ano",
       "title_a882d333-51b9-473e-a640-8f67cf4463b2": "Fim da execução",
       "title_bf4d6b12-ae63-45b3-a6ed-34fb586bdc73": "Re-submeter com numeração existente",
@@ -33093,6 +33200,7 @@
       "description_670ae857-b946-4191-81d6-88c0539edfa6": "TRTIMPTDS",
       "title_bb60e0d5-6f7a-431e-a472-5abc545e4034": "Retoma dos acum. DADS-U",
       "description_bb60e0d5-6f7a-431e-a472-5abc545e4034": "GESRCT",
+      "title_b6ffd4cb-9df1-4e38-a2d4-1b45fc57560b": "Conversão ficheiros mono-linha",
       "title_4580c88d-4091-424e-823a-7e23193c0088": "Ficheiros bancários",
       "title_b3cbd4da-a9c1-471c-94bf-e841762a089c": "Emissão ficheiros",
       "description_b3cbd4da-a9c1-471c-94bf-e841762a089c": "ALMATFR",
@@ -33188,39 +33296,41 @@
       "description_43f9de7f-53d8-4ddd-8de1-b45f546d56aa": "PSIMP",
       "title_74545310-ae50-43cd-9efb-e9b4750da0a7": "Leitura dos rastos",
       "description_74545310-ae50-43cd-9efb-e9b4750da0a7": "LECTRACE",
+      "title_60d6143d-62f3-4a9d-ab4f-72590093c1f9": "Pedidos",
+      "title_785bea63-af89-46ba-a33f-868d7aea20fd": "Salários",
       "title_bf59d3bf-5bfa-4736-8d19-958ec07e970e": "Traduções",
       "title_2f4c5580-7ecc-44d0-a197-0a727dae6c49": "Software",
       "title_b920c9d0-dce1-492a-a3d9-e316306aba9b": "Funções",
       "title_b54d2e79-661d-4243-97b7-69d7d51dc16e": "Textos a traduzir",
       "description_b54d2e79-661d-4243-97b7-69d7d51dc16e": "ATXTTRAD",
-      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Tradução menus locais",
-      "description_af531f46-6be7-4169-a4a4-3c2954966849": "ALOCTRAD",
       "title_841e82f3-84f3-47dd-a98e-e412b9399db6": "Tradução textos",
       "description_841e82f3-84f3-47dd-a98e-e412b9399db6": "GESATR",
+      "title_af531f46-6be7-4169-a4a4-3c2954966849": "Tradução menus locais",
+      "description_af531f46-6be7-4169-a4a4-3c2954966849": "ALOCTRAD",
       "title_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "Tradução processo",
       "description_db9c5de1-7fd5-4676-a0c6-c22bde9361e2": "APRTRAD",
       "title_27fa7854-e106-4bf7-867b-2c4be205c5d0": "Tradução descrições",
       "description_27fa7854-e106-4bf7-867b-2c4be205c5d0": "FUNTRATXI",
       "title_ae42338c-9740-4c9a-9673-1a6a8d13ba12": "Utilitários",
-      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Textos não traduzidos",
-      "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "ATXNOTRANS",
       "title_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "Geração textos",
       "description_fd929b0b-89df-45bc-a685-59ccd3f9dc93": "AGENREFAML",
       "title_190d526e-1071-455a-87c8-2d101d3b5711": "Geração ref. cruzadas",
       "description_190d526e-1071-455a-87c8-2d101d3b5711": "AGENREFTXT",
-      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Tradução ecrãs",
-      "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "GESAMD",
-      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Tradução tabelas",
-      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import. textos",
-      "description_cea3254d-b889-4f2a-8602-8455f62fc19a": "AIMPATR",
+      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Pesquisar texto",
+      "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
+      "title_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "Textos não traduzidos",
+      "description_b7ddc6c0-8e2a-4089-9814-1257fc8db9e2": "ATXNOTRANS",
+      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export. mensagens",
+      "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "AEXPATD",
       "title_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "Export. textos",
       "description_51499dd5-4930-4c6f-9e20-c537f2ebc4a3": "AEXPATR",
       "title_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "Import. mensagens",
       "description_8b637a0f-25dd-4e8a-89bb-7bceb9f51686": "AIMPATD",
-      "title_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "Export. mensagens",
-      "description_b77f3e93-c6da-4b5e-8e1b-a3ee266985af": "AEXPATD",
-      "title_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "Pesquisar texto",
-      "description_1adb2d3d-a1e7-42ce-b96d-502ce48de1ce": "ARECTXTTRD",
+      "title_cea3254d-b889-4f2a-8602-8455f62fc19a": "Import. textos",
+      "description_cea3254d-b889-4f2a-8602-8455f62fc19a": "AIMPATR",
+      "title_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "Tradução ecrãs",
+      "description_cd9036c7-12aa-4b33-af37-eb1f6519dd97": "GESAMD",
+      "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Tradução tabelas",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "Geração das descr.",
       "description_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "ALANG",
       "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "Documentação",
