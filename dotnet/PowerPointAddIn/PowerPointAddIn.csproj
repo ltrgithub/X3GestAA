@@ -142,8 +142,10 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(Configuration)==Debug (copy "$(OutDir)Sage.Syracuse.PowerPointAddIn.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)CommonDataHelper.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)CommonDialogs.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do nothing!")</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -413,7 +415,7 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="PowerPoint" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\15.0\PowerPoint\InstallRoot\Path#powerpnt.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <ProjectProperties HostName="PowerPoint" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\PowerPoint\InstallRoot\Path#powerpnt.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="PowerPoint" GeneratedCodeNamespace="PowerPointAddIn" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="PowerPointAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="PowerPointAddIn.Designer.xml" GeneratedCode="PowerPointAddIn.Designer.cs" />
         </Host>
