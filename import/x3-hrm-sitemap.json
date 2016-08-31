@@ -8145,34 +8145,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSRV",
-      "title": "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151",
-      "description": "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESSRV",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_ecb0ace6-c2c1-4cdf-adbc-2a3a75cb6103",
       "code": "STD_X3_HRM_MEGEN",
@@ -8220,8 +8192,11 @@
           "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_HRM_GESSRV",
-          "$variantType": "menuItem"
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "eb0069f0-ace1-4583-8823-7e42467b5c87",
+          "title": "title_eb0069f0-ace1-4583-8823-7e42467b5c87",
+          "items": []
         }
       ]
     },
@@ -26145,8 +26120,7 @@
       "description_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "GESFCY",
       "title_e49635b2-3c53-4b2b-9e5b-25013456b37d": "Site/company groupings",
       "description_e49635b2-3c53-4b2b-9e5b-25013456b37d": "GESAGF",
-      "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "Services",
-      "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "GESSRV",
+      "title_eb0069f0-ace1-4583-8823-7e42467b5c87": "test",
       "title_9c2da7a6-4aec-4887-b0ae-d99801332e33": "General parameters",
       "title_a350e199-5af5-479f-b43c-e8ffdb34197d": "Parameter values",
       "description_a350e199-5af5-479f-b43c-e8ffdb34197d": "ADPVAL",
@@ -27730,8 +27704,6 @@
       "description_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "GESFCY",
       "title_e49635b2-3c53-4b2b-9e5b-25013456b37d": "Groupes de sites/sociétés",
       "description_e49635b2-3c53-4b2b-9e5b-25013456b37d": "GESAGF",
-      "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "Services",
-      "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "GESSRV",
       "title_9c2da7a6-4aec-4887-b0ae-d99801332e33": "Paramètres généraux",
       "title_a350e199-5af5-479f-b43c-e8ffdb34197d": "Valeurs paramètres",
       "description_a350e199-5af5-479f-b43c-e8ffdb34197d": "ADPVAL",
@@ -29241,8 +29213,6 @@
       "description_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "GESFCY",
       "title_e49635b2-3c53-4b2b-9e5b-25013456b37d": "Grupos de estab./socs.",
       "description_e49635b2-3c53-4b2b-9e5b-25013456b37d": "GESAGF",
-      "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "Serviços",
-      "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "GESSRV",
       "title_9c2da7a6-4aec-4887-b0ae-d99801332e33": "Parâmetros gerais",
       "title_a350e199-5af5-479f-b43c-e8ffdb34197d": "Valores parâmetros",
       "description_a350e199-5af5-479f-b43c-e8ffdb34197d": "ADPVAL",
