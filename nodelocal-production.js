@@ -224,4 +224,7 @@ exports.config = {
         webApiAuth: "",
         farmElbUrl: "https://symphony.na.cloud.sagex3.com",
     },
+    salesforce: {
+        restPath: '/services/data/v36.0/'
+    },
 };
