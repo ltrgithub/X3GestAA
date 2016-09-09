@@ -134,6 +134,7 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
+        hostname: "x3_elasticsearch",
 		//tracer: console.log,
 
 		// Using a minimal stemmer should only group plurals rather than a
@@ -191,5 +192,11 @@ exports.config = {
     },
     textsServer: {
         "url": "http://10.169.142.155:8085"
-    }
+    },
+	batch: {
+		"auto": {
+			"retries": 10,
+			"intervalMs": 30000
+		}
+	}
 };

@@ -387,6 +387,15 @@ namespace WordAddIn
         }
         public void expectedVersion(String neededVersion)
         {
+            Document doc = customData.getWordDoc();
+            if (isReadOnly(doc))
+            {
+                /*
+                 * If the document is readonly, don't check the addin version - a new RW document will be opened which will lead to a version check.
+                 */
+                return;
+            }
+
             string[] needed = neededVersion.Split('.');
             int neddedBinary = (Convert.ToInt32(needed[0]) << 24);
             neddedBinary += (Convert.ToInt32(needed[1]) << 16);
@@ -416,6 +425,27 @@ namespace WordAddIn
             Document doc = customData.getWordDoc();
             Boolean readOnly = false;
 
+            if (isReadOnly(doc))
+            {
+                FileInfo filePath = new FileInfo(doc.FullName);
+                string fileName = filePath.ToString();
+                
+                // Make the file RW
+                FileAttributes attributes = File.GetAttributes(fileName);
+                attributes = RemoveAttribute(attributes, FileAttributes.ReadOnly);
+                File.SetAttributes(fileName, attributes);
+
+                ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
+                doc = Globals.WordAddIn.Application.Documents.Open(filePath.FullName);
+                readOnly = true;
+            }
+            return readOnly;
+        }
+
+        private Boolean isReadOnly(Document doc)
+        {
+            Boolean readOnly = false;
+
             FileInfo filePath = new FileInfo(doc.FullName);
             string fileName = filePath.ToString();
 
@@ -423,15 +453,7 @@ namespace WordAddIn
             {
                 FileAttributes attributes = File.GetAttributes(fileName);
                 if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
-                {
-                    // Make the file RW
-                    attributes = RemoveAttribute(attributes, FileAttributes.ReadOnly);
-                    File.SetAttributes(fileName, attributes);
-
-                    ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdDoNotSaveChanges);
-                    doc = Globals.WordAddIn.Application.Documents.Open(filePath.FullName);
                     readOnly = true;
-                }
             }
             return readOnly;
         }
