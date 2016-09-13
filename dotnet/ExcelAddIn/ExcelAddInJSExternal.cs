@@ -191,6 +191,14 @@ namespace ExcelAddIn
                      */
                     return;
                 }
+
+                if (isReadOnly(workbook))
+                {
+                    /*
+                     * If the workbook is readonly, don't check the addin version - for template types, a new RW workbook will be opened which will lead to a version check.
+                     */
+                    return;
+                }
             }
 
             string[] needed = neededVersion.Split('.');
@@ -221,6 +229,27 @@ namespace ExcelAddIn
             Workbook workbook = customData.getExcelWorkbook();
             Boolean readOnly = false;
 
+            if (isReadOnly(workbook))
+            { 
+                FileInfo filePath = new FileInfo(workbook.FullName);
+                string fileName = filePath.ToString();
+
+                // Make the file RW
+                FileAttributes attributes = File.GetAttributes(fileName);
+                attributes = RemoveAttribute(attributes, FileAttributes.ReadOnly);
+                File.SetAttributes(fileName, attributes);
+
+                ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close(false); // don't save the changes.
+                workbook = Globals.ThisAddIn.Application.Workbooks.Open(filePath.FullName);
+                readOnly = true;
+            }
+            return readOnly;
+        }
+
+        private Boolean isReadOnly(Workbook workbook)
+        {
+            Boolean readOnly = false;
+
             FileInfo filePath = new FileInfo(workbook.FullName);
             string fileName = filePath.ToString();
 
@@ -229,12 +258,6 @@ namespace ExcelAddIn
                 FileAttributes attributes = File.GetAttributes(fileName);
                 if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
                 {
-                    // Make the file RW
-                    attributes = RemoveAttribute(attributes, FileAttributes.ReadOnly);
-                    File.SetAttributes(fileName, attributes);
-
-                    ((Microsoft.Office.Interop.Excel._Workbook)workbook).Close(false); // don't save the changes.
-                    workbook = Globals.ThisAddIn.Application.Workbooks.Open(filePath.FullName);
                     readOnly = true;
                 }
             }
