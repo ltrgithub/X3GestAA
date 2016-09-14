@@ -380,10 +380,14 @@ exports.config = {
     },
     // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
     // See section 4.1.2 in Sage ID Reference Documentation for further information
-    /*mongoNotify: {
-		host: 'localhost',
-		port: '27017',
-		database: 'syracuse',
+    // Also for OAuth2 redirection
+	/*mongoNotify: {
+		oauthHost: '10.198.254.52,10.198.254.53,10.198.254.135,10.198.254.136',
+		host: '10.198.254.30',
+		port: 27017,
+		database: 'api',
+		oauthCollection: 'oauth_redirects',         
+		apiHost: 'https://staging-api.sagex3.com'
 	},*/    
 };
 
