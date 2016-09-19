@@ -9432,7 +9432,29 @@
       "pageName": "ProjectManager",
       "$factory": true,
       "$factoryOwner": "SAGE",
-      "roles": [],
+      "roles": [
+        {
+          "code": "ERP-DIRECTOR"
+        },
+        {
+          "code": "NA-DIRECTOR"
+        },
+        {
+          "code": "ADMIN"
+        },
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "Partner"
+        },
+        {
+          "code": "SEED contributor"
+        }
+      ],
       "vignettes": [
         {
           "$type": "landingPageVignette",
@@ -9467,6 +9489,15 @@
           "endpoint": null
         }
       ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "de5e61e1-a219-4cf5-a820-c030c92e23e2",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@c0c5b003-4d36-4f8e-9f67-5246f49703a6}\",\"$layout\":{\"$items\":[{\"$bind\":\"7fca6ede-52a5-4c0c-9634-966a334e531a\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"1fbc9833-572b-48fb-80dd-6b6daf8e3ced\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"cc5ccfc7-dd0b-413f-aa82-09d24b67ea69\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"979cd212-2394-4004-82e4-2db14e9562c9\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "ProjectManager",
+        "$variantType": "landingPage"
+      }
     },
     {
       "$type": "menuItem",
@@ -9864,6 +9895,7 @@
       "description_3ddea2fc-ff3a-4d78-9c21-48ba6abb7afa": "رئيس المحاسبة",
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "TRD_X3REFV7_CCPTT1M3",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "مؤشرات",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "إجراء",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "مدير المبيعات",
       "description_80f3d98f-ae67-4b2b-8c66-9436ad056572": "مدير مبيعات",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "STD_X3_ERP_ADV",
@@ -10192,6 +10224,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "Hauptbuchhatler Indikatoren",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "Schlüsselinformationen",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "Geschäftsprozess",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Vertriebsmanagement",
       "description_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Vertriebsmanagement",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "Vertriebsmanagement",
@@ -10417,6 +10450,15 @@
       "description_af65f43e-4456-45b2-96c7-c1f352f3e426": "Zweifelhafte Forderungen",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "Liquiditätsvorschau",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Liquiditätsvorschau",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "Ausgaben",
+      "title_74839699-2337-4451-8674-8f3060883902": "Budgetfortschritt",
+      "description_74839699-2337-4451-8674-8f3060883902": "Budgetfortschritt",
+      "title_2672f738-d577-4676-9a8c-8ab8c4376295": "Budgetüberschreitung",
+      "description_2672f738-d577-4676-9a8c-8ab8c4376295": "Budgetüberschreitung",
+      "title_e8624a8b-a69d-4929-a0e2-51284647e220": "Budgetmeilenstein",
+      "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Budgetmeilenstein",
+      "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Zeitenübersicht",
+      "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Zeitenübersicht",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Anlagen",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Homepage Anlagen",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Abschreibungen/Periode",
@@ -10523,6 +10565,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "Chief accountant Indicators",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "Key Information",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "Business process",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "Sales Administrator",
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Blocked Orders / Customers",
@@ -10687,6 +10730,12 @@
       "description_af65f43e-4456-45b2-96c7-c1f352f3e426": "Doubtful receivables",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "Cash Forecasts",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Cash Forecasts",
+      "title_74839699-2337-4451-8674-8f3060883902": "Budget progress",
+      "description_74839699-2337-4451-8674-8f3060883902": "Budget progress",
+      "title_2672f738-d577-4676-9a8c-8ab8c4376295": "Budget exceeded",
+      "description_2672f738-d577-4676-9a8c-8ab8c4376295": "Budget exceeded",
+      "title_e8624a8b-a69d-4929-a0e2-51284647e220": "Budget milestone",
+      "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Budget milestone",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Perform Period Cut-offs",
       "title_cfed8c0f-58b6-4215-ac84-974e68247975": "Perform Fiscal Year Cut-offs",
       "title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Manage your physical equipment",
@@ -11121,6 +11170,7 @@
       "title_efa11d2b-27f5-4c8a-81f2-ca733319f60e": "displayLineNum",
       "title_c7b9c157-865d-4816-a501-8635b89bfcce": "forcedExecution",
       "title_e2b54d35-67a1-4494-88b5-a42a2b40da26": "frequency",
+      "pageLayout.de5e61e1-a219-4cf5-a820-c030c92e23e2.@c0c5b003-4d36-4f8e-9f67-5246f49703a6": "Key information",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Fixed assets",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Fixed assets home page",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Perform Period Cut-offs",
@@ -11252,6 +11302,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "Indicadores jefe de contab.",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "Indicadores",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "Procesos",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrador de ventas",
       "description_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrador de ventas",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "Administrador de ventas",
@@ -11467,6 +11518,15 @@
       "description_af65f43e-4456-45b2-96c7-c1f352f3e426": "Morosidad",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "Previsiones de tesorería",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Previsiones de tesorería",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "Gastos",
+      "title_74839699-2337-4451-8674-8f3060883902": "Avance presupuesto",
+      "description_74839699-2337-4451-8674-8f3060883902": "Avance presupuesto",
+      "title_2672f738-d577-4676-9a8c-8ab8c4376295": "Exceso presupuesto",
+      "description_2672f738-d577-4676-9a8c-8ab8c4376295": "Exceso presupuesto",
+      "title_e8624a8b-a69d-4929-a0e2-51284647e220": "Metas presupuesto",
+      "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Metas presupuesto",
+      "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Resumen de tiempos",
+      "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Resumen de tiempos",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Inmovilizados",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Página inicio Inmovilizados",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Realizar los cierre periodos",
@@ -11864,6 +11924,7 @@
       "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Jalons budget",
       "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Synthèse des temps",
       "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Synthèse des temps",
+      "pageLayout.de5e61e1-a219-4cf5-a820-c030c92e23e2.@c0c5b003-4d36-4f8e-9f67-5246f49703a6": "Indicateurs",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Immobilisations",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Page d'accueil Immobilisations",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "Réaliser les arrêtés périod.",
@@ -11983,6 +12044,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "TRD_X3REFV7_CCPTT1M3",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "Informazioni chiave",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "Business process",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrator delle vendite",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "STD_X3_ERP_ADV",
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
@@ -12171,6 +12233,7 @@
       "description_f606f89e-43b8-476e-9fea-8e1148d58551": "Insoluti",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "Previsioni finanziarie",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Previsioni finanziarie",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "Spese",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "STD_X3_ERP_TRS05_002",
       "title_cfed8c0f-58b6-4215-ac84-974e68247975": "STD_X3_ERP_TRS05_003",
       "title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
@@ -12280,6 +12343,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "TRD_X3REFV7_CCPTT1M3",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "Główne informacje",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "Proces biznesowy",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrator sprzedaży",
       "description_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrator sprzedaży",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "STD_X3_ERP_ADV",
@@ -12456,6 +12520,7 @@
       "description_f606f89e-43b8-476e-9fea-8e1148d58551": "Zaległe płatności",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "Zarządzanie prognozą gotówki",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Zarządzanie prognozą gotówki",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "Wydatki",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "STD_X3_ERP_TRS05_002",
       "title_cfed8c0f-58b6-4215-ac84-974e68247975": "STD_X3_ERP_TRS05_003",
       "title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
@@ -12574,6 +12639,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "Indicadores Chefe Contabilidad",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "Informação chave",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "Processo de negócio",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrador vendas",
       "description_80f3d98f-ae67-4b2b-8c66-9436ad056572": "Administrador de vendas",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "Administ.Vendas",
@@ -12785,6 +12851,14 @@
       "description_af65f43e-4456-45b2-96c7-c1f352f3e426": "Cobranças duvidosas",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "Previsões tesouraria",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Previsões tesouraria",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "Despesas",
+      "title_74839699-2337-4451-8674-8f3060883902": "Progresso orçamento",
+      "description_74839699-2337-4451-8674-8f3060883902": "Progresso orçamento",
+      "title_2672f738-d577-4676-9a8c-8ab8c4376295": "Orçamento excedido",
+      "title_e8624a8b-a69d-4929-a0e2-51284647e220": "Metas orçamentais",
+      "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Metas orçamentais",
+      "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Sumário tempo",
+      "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Sumário tempo",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Investimentos",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "Pág. receção investimentos",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "trat. Encerram. periodo",
@@ -13458,6 +13532,10 @@
       "description_af65f43e-4456-45b2-96c7-c1f352f3e426": "可疑收款项",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "现金预测",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "现金预测",
+      "title_74839699-2337-4451-8674-8f3060883902": "预算进度",
+      "title_2672f738-d577-4676-9a8c-8ab8c4376295": "预算超支",
+      "title_e8624a8b-a69d-4929-a0e2-51284647e220": "预算里程碑",
+      "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "时间汇总",
       "title_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "固定资产",
       "description_4c4e16ad-e06a-48e5-bd96-2daf9abe9af9": "固定资产主页",
       "title_b65cd30a-b590-4882-be98-1e40eb1716a7": "实现周期性结算",
