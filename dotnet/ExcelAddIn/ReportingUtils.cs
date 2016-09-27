@@ -140,7 +140,7 @@ namespace ExcelAddIn
         private static void FillCollectionControls(Workbook workbook, Dictionary<String, object> entityData, Dictionary<String, ExcelReportingField> fieldsInfo, BrowserDialog browserDialog, ProgressDialog pd)
         {
             /*
-             * Iterate through the list of placeholder groups. Populate only non-tabular placeholders within each group.
+             * Iterate through the list of placeholder groups. 
              */
             var orderedPlaceholderTableList = ReportingUtils.buildPlaceholderTableList().GroupBy(x => new { x.id, x.placeholder.row }).ToList();
             foreach (IGrouping<object, PlaceholderTable> orderedPlaceholderTables in orderedPlaceholderTableList)
@@ -151,7 +151,6 @@ namespace ExcelAddIn
 
                 foreach (var placeholderTable in orderedPlaceholderTables)
                 {
-
                     if (GetTabularFieldsList(fieldsInfo).Count(pair => pair.Key.Equals(placeholderTable.placeholder.name)) > 0)
                     {
                         /*
@@ -261,19 +260,26 @@ namespace ExcelAddIn
                                 if (nonTabularCollection.ContainsKey("$items"))
                                 {
                                     Object[] itemsArray = (Object[])nonTabularCollection.Where(key => key.Key.Equals("$items")).First().Value;
-                                    Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
-
-                                    String field = placeholderTable.placeholder.name.Split('.')[1];
-                                    if (field != null && itemsDictionary.ContainsKey(field))
+                                    if (itemsArray.Length > 0)
                                     {
-                                        Dictionary<String, object> item = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
+                                        Dictionary<String, object> itemsDictionary = (Dictionary<String, object>)itemsArray[0];
 
-                                        String link = null;
-                                        if (((Dictionary<String, object>)itemsDictionary[field]).ContainsKey("$link"))
-                                            link = (String)((Dictionary<String, object>)itemsDictionary[field])["$link"];
+                                        String field = placeholderTable.placeholder.name.Split('.')[1];
+                                        if (field != null && itemsDictionary.ContainsKey(field))
+                                        {
+                                            Dictionary<String, object> item = (Dictionary<String, Object>)((Dictionary<String, object>)itemsDictionary[field])["$value"];
 
-                                        String propData = item.First().Value.ToString();
-                                        PopulatePlaceholderCell(placeholderTable.placeholder, propData, link);
+                                            String link = null;
+                                            if (((Dictionary<String, object>)itemsDictionary[field]).ContainsKey("$link"))
+                                                link = (String)((Dictionary<String, object>)itemsDictionary[field])["$link"];
+
+                                            String propData = item.First().Value.ToString();
+                                            PopulatePlaceholderCell(placeholderTable.placeholder, propData, link);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        PopulatePlaceholderCell(placeholderTable.placeholder, String.Empty, String.Empty); // just clear the placeholder 
                                     }
                                 }
                             }
@@ -329,7 +335,7 @@ namespace ExcelAddIn
                     else if (container.ContainsKey("$level"))
                     {
                         int level = Convert.ToInt32(container["$level"].ToString());
-                        if (level == 2 && container.ContainsKey("$bind"))
+                        if (level >= 2 && container.ContainsKey("$bind"))
                         {
                             bind = container["$bind"].ToString() + ".";
                         }
@@ -413,6 +419,8 @@ namespace ExcelAddIn
 
         public static List<PlaceholderTable> buildPlaceholderTableList()
         {
+            PrintPlaceholderData("******************** buildPlaceholderTableList ********************");
+
             List<Placeholder> placeholderList = new List<Placeholder>();
             foreach (Name name in Globals.ThisAddIn.Application.ActiveWorkbook.Names)
             {
@@ -427,16 +435,22 @@ namespace ExcelAddIn
                     if (range.Value2 != null)
                     {
                         String title = range.Value2;
-                        if (title.Contains("."))
+                        if (!string.IsNullOrEmpty(title) && title.StartsWith("<<") && title.EndsWith(">>"))
                         {
-                            title = title.Split('.')[1];
-                            placeholder.title = title.Substring(0, title.Length - 2);
+                            if (title.Contains(".") && !title.EndsWith("."))
+                            {
+                                title = title.Split('.')[1];
+                                placeholder.title = title.Substring(0, title.Length - 2);
+                            }
+                            else
+                            {
+                                placeholder.title = title.Substring(2, title.Length - 4);
+                            }
                         }
-                        else
-                            placeholder.title = title.Substring(2, title.Length - 4); ;
                     }
-
                     placeholderList.Add(placeholder);
+
+                    PrintPlaceholderData(String.Format("Title: {0}, Name: {1}, Row: {2}, Column: {3}", placeholder.title, placeholder.name, placeholder.row, placeholder.column));
                 }
                 catch (Exception)
                 {
@@ -532,6 +546,12 @@ namespace ExcelAddIn
         public static Boolean isPlaceholderInTable(IGrouping<object, ExcelAddIn.ReportingUtils.PlaceholderTable> placeholderTable, String placeholderName)
         {
             return placeholderTable.Where(x => x.placeholder.name.Equals(placeholderName)).Count() > 0;
+        }
+
+        [System.Diagnostics.Conditional("DEBUG")]
+        public static void PrintPlaceholderData(String text) 
+        {
+            System.Diagnostics.Debug.WriteLine(text);
         }
 
         //public static void test()

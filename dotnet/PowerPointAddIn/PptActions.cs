@@ -316,7 +316,7 @@ namespace PowerPointAddIn
         // Called by JS
         public void addDataToWorksheet(Presentation pres, PptCustomXlsData customXlsData, String jsonData)
         {
-            Workbook wb = customXlsData.getWorkbook();
+            Workbook wb = customXlsData?.getWorkbook();
             if (wb == null)
                 return;
 
