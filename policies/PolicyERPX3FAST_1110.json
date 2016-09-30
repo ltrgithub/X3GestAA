@@ -1,6 +1,6 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2016-09-23T12:51:39Z",
+	"generationStamp": "2016-09-29T12:58:11Z",
 	"partnerId": "",
 	"product": {
 		"code": "1",
@@ -261,6 +261,7 @@
 			"keyFunctions": [
 				"FUNMAUTR",
 				"FUNPSSCH",
+				"FUNPSVIEW",
 				"GESMFG",
 				"GESMTK",
 				"GESROU",
@@ -516,7 +517,7 @@
 				"pt-PT": "Gestão talentos",
 				"es-ES": "Gestión del talento",
 				"en-GB": "Human Capital management",
-				"de-DE": "Human Capital management",
+				"de-DE": "Human Capital Management",
 				"pl-PL": "Human Capital management",
 				"ZH-CN": "人力资本管理",
 				"ru-RU": "Human Capital management",
@@ -1844,7 +1845,7 @@
 				"EN-AU": "Presence of specific tab",
 				"PT-BR": "Presença separador específico"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "HRHRM",
 			"title": {
@@ -3194,7 +3195,7 @@
 				"EN-AU": "Employee and contract fields",
 				"PT-BR": "Campos funcionario e contrato"
 			},
-			"condition": "always"
+			"condition": "never"
 		}, {
 			"code": "PORP",
 			"title": {
@@ -4651,6 +4652,8 @@
 				"FUNCFMINV",
 				"FUNMAUTR",
 				"FUNPIH",
+				"FUNPSSCH",
+				"FUNPSVIEW",
 				"FUNSNS",
 				"FUNVENSPSI",
 				"GESACLA",
@@ -4679,9 +4682,11 @@
 				"GESOPP",
 				"GESPAY",
 				"GESPIH",
+				"GESPJM",
 				"GESPOH",
 				"GESPRH",
 				"GESPSH",
+				"GESPSO",
 				"GESPTH",
 				"GESROU",
 				"GESSCO",
@@ -4706,6 +4711,9 @@
 				"LETTRAGE",
 				"LETTRAUTO",
 				"PAYPROPAL",
+				"PJMACTAFCP",
+				"PJMRPTEXT",
+				"PJMTE",
 				"RELBANK",
 				"VXAPT"
 			]
@@ -4932,9 +4940,9 @@
 				"pt-PT": "Op.Prod.Sched.Planner",
 				"es-ES": "Usuario prod.planif.planner",
 				"en-GB": "Op.Prod.Sched.Planner",
-				"de-DE": "Op.Prod.Sched.Planner",
+				"de-DE": "Benutzer Prod.Sched.Planer",
 				"pl-PL": "Op.Prod.Sched.Planner",
-				"ZH-CN": "Op.Prod.Sched.Planner",
+				"ZH-CN": "操作用户-有计划员权限的生产排程员",
 				"ru-RU": "Op.Prod.Sched.Planner",
 				"AR-SA": "Op.Prod.Sched.Planner",
 				"EN-AU": "Op.Prod.Sched.Planner",
@@ -4952,16 +4960,16 @@
 				"pt-PT": "Op.Prod.sched.viewer",
 				"es-ES": "Usuario prod.planif.estándar",
 				"en-GB": "Op.Prod.sched.viewer",
-				"de-DE": "Op.Prod.sched.viewer",
+				"de-DE": "Benutzer Prod.Sched.Standard",
 				"pl-PL": "Op.Prod.sched.viewer",
-				"ZH-CN": "Op.Prod.sched.viewer",
+				"ZH-CN": "操作用户-有标准权限的生产排程员",
 				"ru-RU": "Op.Prod.sched.viewer",
 				"AR-SA": "Op.Prod.sched.viewer",
 				"EN-AU": "Op.Prod.sched.viewer",
 				"PT-BR": "Op.Prod.sched.viewer"
 			},
 			"functions": [
-				"FUNPSSCH"
+				"FUNPSVIEW"
 			]
 		}, {
 			"code": "ERPTRAN",
@@ -4982,7 +4990,8 @@
 			},
 			"functions": [
 				"GESEXS",
-				"GESPSH"
+				"GESPSH",
+				"PJMTE"
 			]
 		}
 	],
@@ -5045,76 +5054,76 @@
 			"code": "WSGRACELIMIT",
 			"title": {
 				"fr-FR": "Grâce avant arrêt web services",
-				"en-US": "Grâce avant arrêt web services",
-				"it-IT": "",
+				"en-US": "Delay before WS interruption",
+				"it-IT": "Delay before WS interruption",
 				"pt-PT": "Atr.serv.antes parar webserv",
 				"es-ES": "Ext.antes cerrar Webservices",
-				"en-GB": "",
+				"en-GB": "Delay before WS interruption",
 				"de-DE": "Vor Anh Webservices",
-				"pl-PL": "",
-				"ZH-CN": "",
-				"ru-RU": "",
-				"AR-SA": "",
-				"EN-AU": "",
-				"PT-BR": ""
+				"pl-PL": "Delay before WS interruption",
+				"ZH-CN": "Delay before WS interruption",
+				"ru-RU": "Delay before WS interruption",
+				"AR-SA": "Delay before WS interruption",
+				"EN-AU": "Delay before WS interruption",
+				"PT-BR": "Delay before WS interruption"
 			},
 			"type": "integer"
 		}, {
 			"code": "WSGRACESLOWDOWN",
 			"title": {
 				"fr-FR": "Facteur ralentissement WS",
-				"en-US": "Facteur ralentissement WS",
-				"it-IT": "",
+				"en-US": "Factor slowing down WS",
+				"it-IT": "Factor slowing down WS",
 				"pt-PT": "Fator de desaceleração WS",
 				"es-ES": "Factor de ralentización WS",
-				"en-GB": "",
+				"en-GB": "Factor slowing down WS",
 				"de-DE": "Faktor Verl WS",
-				"pl-PL": "",
-				"ZH-CN": "",
-				"ru-RU": "",
-				"AR-SA": "",
-				"EN-AU": "",
-				"PT-BR": ""
+				"pl-PL": "Factor slowing down WS",
+				"ZH-CN": "Factor slowing down WS",
+				"ru-RU": "Factor slowing down WS",
+				"AR-SA": "Factor slowing down WS",
+				"EN-AU": "Factor slowing down WS",
+				"PT-BR": "Factor slowing down WS"
 			},
 			"type": "integer"
 		}, {
 			"code": "WSPERIOD",
 			"title": {
 				"fr-FR": "Périodicitédu contrôle WS",
-				"en-US": "Périodicitédu contrôle WS",
-				"it-IT": "",
+				"en-US": "Frequency of WS check",
+				"it-IT": "Frequency of WS check",
 				"pt-PT": "Periodicidade do controlo WS",
 				"es-ES": "Periodicidad control WS",
-				"en-GB": "",
+				"en-GB": "Frequency of WS check",
 				"de-DE": "Periodizität Prüf WS",
-				"pl-PL": "",
-				"ZH-CN": "",
-				"ru-RU": "",
-				"AR-SA": "",
-				"EN-AU": "",
-				"PT-BR": ""
+				"pl-PL": "Frequency of WS check",
+				"ZH-CN": "Frequency of WS check",
+				"ru-RU": "Frequency of WS check",
+				"AR-SA": "Frequency of WS check",
+				"EN-AU": "Frequency of WS check",
+				"PT-BR": "Frequency of WS check"
 			},
 			"type": "string"
 		}, {
 			"code": "WSSIZELIMIT",
 			"title": {
 				"fr-FR": "Volume web services",
-				"en-US": "Volume web services",
-				"it-IT": "",
+				"en-US": "Volume of Web Services",
+				"it-IT": "Volume of Web Services",
 				"pt-PT": "Volume web services",
 				"es-ES": "Volumen Webservices",
-				"en-GB": "",
+				"en-GB": "Volume of Web Services",
 				"de-DE": "Volumen Webservices",
-				"pl-PL": "",
-				"ZH-CN": "",
-				"ru-RU": "",
-				"AR-SA": "",
-				"EN-AU": "",
-				"PT-BR": ""
+				"pl-PL": "Volume of Web Services",
+				"ZH-CN": "Volume of Web Services",
+				"ru-RU": "Volume of Web Services",
+				"AR-SA": "Volume of Web Services",
+				"EN-AU": "Volume of Web Services",
+				"PT-BR": "Volume of Web Services"
 			},
 			"type": "integer"
 		}
 	],
-	"signature": "UC2C8fN9Flb6w/8PvK74jJjXP5QmzEx+s5XSFhaqYp/ZcVWGzUfnOK17s+PmX6JlBvtZL0XTJrN4gt3VmoPGB1e/C0qEOFCfgy+9d3uhBj/CDEDk68wUZ8xIefIV+QK3c8j+PAkZ4B560rO9IGIKiRvBN7OILZKpCRtRZDKjDKw5XjqSnTmB97kcDKxJOK8cWpwBaaX4+0Sl8AbHEMZ8hCB3c7P8365Sd46wy6OVKdm+ncb2XXxUcySJc4+BWwZt1Z0Y6kdSxpZZe/bsSpHlJ1wNT16XCW9d2iql017iRQn3Gv2iRsJAv+SOd8k069qnxYwNZ4D1Ju+pRmhHQHSOEhNar+w0qk8gfqAtW8noWO9H+I46JYGrCtwEoqDLdF+0p3uIxTebXtSBLpTUCp0CnfYe2Jf5li0129erNCaRh02ZFkjkl7oqUyFM74Uuj9J6e1eJaH+mzu7PojdCSFKOrR3Yy3eKax8kDkEmkb6DX2EjLfCTecbYmjz3wENZc/Tp7NJMVTbM/C/pdFYB5LIotoMV7Vpk+W8LxbLHdLfc1Cb7KtoYqWHpmuyrkd+foHZfcAYsQ8X+Rbt1561C5Hr1wuPrZMqkbf+g8Ps9bp6FIL+lLTDGIla2F7VCDuP+OAiH9PMJFNXTaA+F1ordLGHGft33giHGvTytukmKa6Z5Cx4=",
+	"signature": "5E13uivTN7C2lT/UU0VbRDjGAS5iu1HG7gY1MDAp5L5Lfw5/BMfjCeFMArAs1WdL/udkcw+b0exxAwx334+FVnfE8I0CJj2jF5KcJys1itAUyhlNxnC5Li4ofCSkQRFNnOWd2Y1jXUEX2+MRrBlqr/IzNORGqRXxxr9ttHy8VTYggY+r6P2VuYPNh4KwtlLwvUOmMl6zbSPWoNhh8lmEEQ6pUHQ+zaNQmJPjYAoHBY5y6iBEBqMMXc3IeDBJirBflYKHG2ZBFumWWRFdnvEimC8OfVfRxyXFy9ct3gHwbDgLmHgKOPUVBFhSktf1KkyatTmOFl8h8qJQmpk24RGWP6DDP9+LPxU5THQy7DZrRJA/7M9D8uatzM5ovNPkw2mEPp7IKOtEjJ9cOXVPU2NTK1eyS6lWryl6MeUc9HKywsz8voccReSF/EqQ3pTz7GODrGeHQCyq0v7razUPq7MF6Lb4c5G2mJ3/ttBitBdRqvZHHUunMxrwjDWPlKw/N5FRmW2crgx2Hn4qbHOlA6GCwCkHaoK6l9WKL+nzPZHelr00DGbjOTq/2gt7IsTQjCX3mSzNkgVuud1N9xc1FMpOEWWEGsMCC2rXda+deZilCwehTQcj2Fe2Ir5lHgg/JQ28U50WnLlXtAjdW1dTIM0Fkk5SggqK+ulO4uVJUkL2CEM=",
 	"signatureText": "SAGE SAS"
 }
