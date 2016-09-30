@@ -342,6 +342,16 @@ namespace WordAddIn
                 Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Add(item);
             }
         }
+
+        public static void doGarbageCollect(ref int gcCount)
+        {
+            if (gcCount > 200)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                gcCount = 0;
+            }
+        }
     }
 }
 
