@@ -364,5 +364,25 @@ namespace WordAddIn
             //    MessageBox.Show(e.Message);
             //};
         }
+
+        private static Dictionary<int, bool?> _ccDictionary = new Dictionary<int, bool?>();
+        public static void clearContentControlStatus()
+        {
+            _ccDictionary.Clear();
+        }
+        public static bool isSingleContentControlCell(Cell cell)
+        {
+            return cell.Range.ContentControls.Count == 1;
+        }
+
+        public static bool isDirectContentControlType(Cell cell)
+        {
+            if (_ccDictionary.ContainsKey(cell.ColumnIndex) == false)
+            {
+                ContentControl cc = cell.Range.ContentControls[1];
+                _ccDictionary[cell.ColumnIndex] = cc.Type == WdContentControlType.wdContentControlText && !(String.IsNullOrEmpty(cc.Range.Text) == false && cc.Range.Text.Contains("DISPLAYBARCODE"));
+            }
+            return (bool)_ccDictionary[cell.ColumnIndex];
+        }
     }
 }

@@ -579,6 +579,8 @@ namespace WordAddIn
                 return;
             }
 
+            ContentControlHelper.clearContentControlStatus();
+
             // Hide table to make updates faster (ScreenUpdating seems not to work)
             Globals.WordAddIn.Application.ScreenUpdating = true;
             Globals.WordAddIn.Application.ScreenRefresh();
@@ -598,6 +600,7 @@ namespace WordAddIn
                 Range newRowRange = firstRow.Range;
                 firstRow.Select();
 
+                int gcCount = 0;
                 for (int item = 0; item < info.items.Length; item++)
                 {
                     Dictionary<String, object> collectionItem = (Dictionary<String, object>)info.items[item];
@@ -609,9 +612,12 @@ namespace WordAddIn
                         foreach (Cell templateCell in templateRow.Cells)
                         {
                             TemplateHelper.loadCell(doc, table, fieldInfo, newRow, templateCell, collectionItem, info.templateRows.Count, browserDialog);
+                            gcCount++;
                         }
                         pd.SignalRowDone();
                     }
+
+                    CommonUtils.doGarbageCollect(ref gcCount);
                 }
             }
             table.Range.Font.Hidden = 0;

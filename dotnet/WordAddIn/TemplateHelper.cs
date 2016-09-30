@@ -9,21 +9,11 @@ namespace WordAddIn
 {
     public class TemplateHelper
     {
-        public static bool isSingleContentControlCell(Cell cell)
-        {
-            return cell.Range.ContentControls.Count == 1;
-        }
-
-        public static bool isDirectContentControlType(ContentControl cc) 
-        {
-            return cc.Type == WdContentControlType.wdContentControlText;
-        }
-
         public static void loadCell(Document doc, Table table, Dictionary<String, WordReportingField> fieldInfo, Row row, Cell templateCell, Dictionary<String, object> collectionItem, int templateRowCount, BrowserDialog browserDialog)
         {
             if (templateRowCount == 1 &&
-                isSingleContentControlCell(templateCell) &&
-                isDirectContentControlType(templateCell.Range.ContentControls[1]))
+                ContentControlHelper.isSingleContentControlCell(templateCell) &&
+                ContentControlHelper.isDirectContentControlType(templateCell))
             {
                 directCellLoad(doc, table, fieldInfo, row, templateCell, collectionItem);
             }
@@ -91,27 +81,8 @@ namespace WordAddIn
                     value = TemplateUtils.parseValue(entity, type, ti.display);
                 }
 
-                if (String.IsNullOrEmpty(cc.Range.Text) == false && cc.Range.Text.Contains("DISPLAYBARCODE"))
-                {
-                    // to make the field code changeable
-                    doc.ToggleFormsDesign();
-                    Range aFieldCode = ((Field)cc.Range.Fields[1]).Code;
-                    var prop1 = Regex.Match(aFieldCode.Text, "\"[^\"]*\"");
-                    if ((prop1.ToString() != "") && (value != " "))
-                    {
-                        aFieldCode.Text = aFieldCode.Text.Replace(prop1.ToString(), "\"" + value + "\"");
-                    }
-                    else
-                    {
-                        aFieldCode.Text = "";
-                    }
-                    doc.ToggleFormsDesign();
-                }
-                else
-                {
-                    Cell tableCell = row.Cells[templateCell.ColumnIndex];
-                    tableCell.Range.Text = value;
-                }
+                Cell tableCell = row.Cells[templateCell.ColumnIndex];
+                tableCell.Range.Text = value;
             }
         }
 
