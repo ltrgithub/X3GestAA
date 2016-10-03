@@ -6,21 +6,8 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Rb = Microsoft.Office.Tools.Ribbon;
 using System.IO;
-using System.Web.Script.Serialization;
-using Microsoft.Office.Core;
 using System.Globalization;
-using CommonDialogs.PublishDocumentDialog;
 using CommonDataHelper;
-using CommonDataHelper.TagHelper;
-using CommonDataHelper.PublisherHelper;
-using CommonDataHelper.StorageVolumeHelper;
-using System.ComponentModel;
-using CommonDataHelper.OwnerHelper;
-using CommonDialogs.PublishDocumentTemplateDialog;
-using CommonDataHelper.EndpointHelper;
-using CommonDataHelper.PublisherHelper.Model.Common;
-using System.Net;
-using System.Reflection;
 
 namespace WordAddIn
 {
