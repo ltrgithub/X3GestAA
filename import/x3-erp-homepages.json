@@ -9427,6 +9427,70 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_PJMOPE18",
+      "title": "title_cf349c07-9673-475f-bd1b-24f1d5f05e74",
+      "description": "description_cf349c07-9673-475f-bd1b-24f1d5f05e74",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "PJMOPE18",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MPRP"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_18da4623-1146-44ec-8120-5404d103ee75",
+          "prompt": false,
+          "value": "true"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "level",
+          "title": "title_a1ebd07c-288f-4d46-8e93-1b362ab3028b",
+          "prompt": false,
+          "value": "1"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "displayLineNum",
+          "title": "title_efa11d2b-27f5-4c8a-81f2-ca733319f60e",
+          "prompt": false,
+          "value": "false"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_c7b9c157-865d-4816-a501-8635b89bfcce",
+          "prompt": false,
+          "value": "false"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "frequency",
+          "title": "title_e2b54d35-67a1-4494-88b5-a42a2b40da26",
+          "prompt": false,
+          "value": "3"
+        }
+      ]
+    },
+    {
       "$type": "landingPage",
       "title": "title_b5ef672f-6a27-4725-b052-4650bdff26f6",
       "description": "description_b5ef672f-6a27-4725-b052-4650bdff26f6",
@@ -9479,6 +9543,14 @@
           "bind": "8d404e06-3125-4383-9fa6-5a08d4151100",
           "vignette": {
             "code": "STD_X3_ERP_PJMOPE15"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "ad07b990-c018-4ccf-9a9c-28ebe347f49a",
+          "vignette": {
+            "code": "STD_X3_ERP_PJMOPE18"
           },
           "endpoint": null
         },
@@ -11552,6 +11624,9 @@
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "Previsiones de tesorería",
       "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "Gastos",
       "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@2fb68a9f-cac4-4713-8691-871f999ec57c": "Previsiones tesorería",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@34ae3822-749f-4d82-9728-940b0acda2b0": "Volumen de negocios & Margen",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@b09fe5d1-20b5-4c42-bcac-0e8104f583ce": "Citas",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@ef9bd43b-7c69-4248-974d-75fd01f0e593": "KPI",
       "title_74839699-2337-4451-8674-8f3060883902": "Avance presupuesto",
       "description_74839699-2337-4451-8674-8f3060883902": "Avance presupuesto",
       "title_2672f738-d577-4676-9a8c-8ab8c4376295": "Exceso presupuesto",
