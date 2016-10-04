@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using CommonDialogs;
-using CommonDataHelper;
-using CommonDataHelper.HttpHelper;
-using System.Runtime.InteropServices;
 using System.Net;
-using System.Threading;
 
 namespace CommonDataHelper
 {
+    public delegate void ConnectionProgressDialogShow (bool show);
+
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class ConnectionDialog : Form
     {
@@ -25,6 +16,13 @@ namespace CommonDataHelper
         private bool? _connected = null;
         private Boolean _canceled = false;
         private Boolean _retry = false;
+        private ConnectionProgressDialogShow _connectionProgressDialogShow = null;
+
+        public ConnectionDialog(ConnectionProgressDialogShow connectionProgressDialogShow)
+        {
+            InitializeComponent();
+            _connectionProgressDialogShow = connectionProgressDialogShow;
+        }
 
         public ConnectionDialog()
         {
@@ -71,6 +69,7 @@ namespace CommonDataHelper
 
                 CommonDataHelper.HttpHelper.RibbonHelper.toggleButtonDisconnect();
                 Hide();
+                _connectionProgressDialogShow?.Invoke(true);
                 return;
 
             }
@@ -119,6 +118,7 @@ namespace CommonDataHelper
                             /*
                              * We've been redirected to the new-style login page, so we have to display the page in the browser.
                              */
+                            _connectionProgressDialogShow?.Invoke(false);
                             Show();
 
                             Uri loginUri = new Uri(BaseUrlHelper.BaseUrl, _loginPart);
@@ -232,6 +232,7 @@ namespace CommonDataHelper
                 e.Cancel = true;
                 _canceled = true;
                 Hide();
+                _connectionProgressDialogShow?.Invoke(true);
             }
             base.OnFormClosing(e);
         }
@@ -251,6 +252,7 @@ namespace CommonDataHelper
                 response = webHelper.getInitialPostConnectionJson(mainUrl.ToString(), out statusCode);
                 if (statusCode == HttpStatusCode.OK)
                 {
+                    _connectionProgressDialogShow?.Invoke(false);
                     Show();
 
                     webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(documentCompleted);

@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
 using Microsoft.Office.Interop.Word;
-using Office = Microsoft.Office.Core;
 using System.Windows.Forms;
-using Microsoft.Win32;
 using CommonDataHelper;
 using CommonDataHelper.PublisherHelper;
 using CommonDataHelper.HttpHelper;
+using CommonDialogs.ConnectionProgressDialog;
 
 namespace WordAddIn
 {
     public partial class WordAddIn
     {
         private BrowserDialog browserDialog = null;
-
+  
         public ReportingActions reporting = null;
         public MailMergeActions mailmerge = null;
         public CommonUtils commons = null;
@@ -28,7 +23,7 @@ namespace WordAddIn
             reporting = new ReportingActions(browserDialog);
             mailmerge = new MailMergeActions(browserDialog);
             commons = new CommonUtils(browserDialog);
-            
+
             RibbonHelper.ButtonDisconnect = Globals.Ribbons.Ribbon.buttonDisconnect;
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = false;
 
@@ -69,7 +64,6 @@ namespace WordAddIn
         public void on_window_activate(Document doc, Window win)
         {
             addReportingFieldsTaskPane(win);
-            
         }
 
         public void on_window_deactivate(Document doc, Window win)
@@ -108,6 +102,7 @@ namespace WordAddIn
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData != null)
             {
+                ConnectionProgressHelper.showConnectionDialog(true);
                 BaseUrlHelper.CustomData = customData;
                 BaseUrlHelper.BaseUrl = new Uri(customData.getServerUrl());
 
