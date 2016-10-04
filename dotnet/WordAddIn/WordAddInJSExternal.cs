@@ -2,12 +2,11 @@
 using System.IO;
 using System.Collections.Generic;
 using Microsoft.Office.Interop.Word;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Microsoft.Office.Core;
-using System.Security.AccessControl;
 using CommonDataHelper;
 using CommonDataHelper.GlobalHelper;
+using CommonDialogs.ConnectionProgressDialog;
 
 // Do not rename, namespace and classname are refered in JS as WordAddIn.WordAddInJSExternal
 namespace WordAddIn
@@ -67,6 +66,7 @@ namespace WordAddIn
                 doc.Application.WindowState = WdWindowState.wdWindowStateMinimize;
             }
 
+            ConnectionProgressHelper.showConnectionDialog(false);
             ProgressDialog pd = new ProgressDialog();
             pd.Show();
             pd.Refresh(); // to see the label (and not a white bar)

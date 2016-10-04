@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Word;
-using Microsoft.Office.Tools.Word;
-using CommonDialogs;
 using CommonDataHelper;
 using CommonDataHelper.HttpHelper;
+using CommonDialogs.ConnectionProgressDialog;
 
 namespace WordAddIn
 {
@@ -50,7 +42,7 @@ namespace WordAddIn
 
         public bool connectToServer(SyracuseOfficeCustomData customData)
         {
-            new ConnectionDialog().connectToServer();
+            new ConnectionDialog(ConnectionProgressHelper.showConnectionDialog).connectToServer();
 
             string serverUrl = customData.getServerUrl();
             if (serverUrl != null)
