@@ -18,7 +18,7 @@ ENV LD_LIBRARY_PATH=/opt/oracle/instantclient_12_1:$LD_LIBRARY_PATH PATH=/opt/or
 
 WORKDIR /syracuse
 
-COPY $SHADOW_MODULES shadow_modules
+COPY $SHADOW_MODULES shadow-modules
 COPY $SYRACUSE_SRC .
 
 RUN cp /syracuse/docker/nodelocal-syr-etna.docker /syracuse/nodelocal.js
