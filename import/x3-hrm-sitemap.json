@@ -21367,6 +21367,34 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESPOT",
+      "title": "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db",
+      "description": "description_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESPOT",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PERSO"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f",
       "code": "STD_X3_HRM_CAR",
@@ -21400,6 +21428,18 @@
         {
           "code": "STD_X3_HRM_RECPRF",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "5470d6bb-15c7-401f-b386-3fa1909bcf90",
+          "title": "title_5470d6bb-15c7-401f-b386-3fa1909bcf90",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESPOT",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -26838,6 +26878,7 @@
       "description_68c51846-2e86-4b96-b4cc-998f1baf1d6d": "RECCPC",
       "title_455fa680-7935-419d-a6f0-43a2487512dd": "Search for profiles",
       "description_455fa680-7935-419d-a6f0-43a2487512dd": "RECPRF",
+      "title_5470d6bb-15c7-401f-b386-3fa1909bcf90": "Tests IC",
       "title_c046fa1c-298c-43da-9f02-857e98f67db1": "Classification",
       "title_21a96e47-3323-4367-b04e-51ce3a457c48": "History",
       "title_48378819-a5f7-4faa-8b07-1cc22deb60b3": "Classification history",
