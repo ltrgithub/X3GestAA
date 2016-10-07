@@ -36,10 +36,10 @@ namespace CommonDialogs.ServerLocationDialog
                 serverLocationsListBox.Items.Add(uri.ToString());
             });
 
-            serverLocationsListBox.SelectedIndex = 0;
-            upButton.Enabled = false;
-            if (serverLocationsListBox.Items.Count > 1)
-                downButton.Enabled = true;
+            updateButtonState();
+
+            if (serverLocationsListBox.Items.Count > 0)
+                serverLocationsListBox.SelectedIndex = 0;
         }
 
         private void upButton_Click(object sender, EventArgs e)

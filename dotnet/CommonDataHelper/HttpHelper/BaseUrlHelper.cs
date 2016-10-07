@@ -111,7 +111,13 @@ namespace CommonDataHelper
         private static Uri getBaseUrlFromUserPreferenceFile()
         {
             loadPreferencesList();
-            return PrefUrlHelper.getBaseUrlsFromUserPreferenceFile[0];
+            Uri uri;
+            if (PrefUrlHelper.getBaseUrlsFromUserPreferenceFile.Count > 0)
+                uri = PrefUrlHelper.getBaseUrlsFromUserPreferenceFile[0];
+            else
+                uri = new Uri("http://localhost:8124");
+
+            return uri;
         }
 
         private static void saveUrlPreference(Uri url)
