@@ -70,6 +70,7 @@ namespace WordAddIn
         {
         }
 
+        bool _connected = false;
         // Called when ever a document is opend by word or one is activated
         public void on_document_changed()
         {
@@ -92,17 +93,23 @@ namespace WordAddIn
             Globals.Ribbons.Ribbon.galleryPublishAs.Enabled = true;
             if (MailMergeActions.isMailMergeDocument(doc))
             {
+                if (!_connected)
+                    ConnectionProgressHelper.showConnectionDialog(true);
                 mailmerge.ActiveDocumentChanged(doc);
+                _connected = true;
+
             }
             else if (ReportingActions.isReportingDocument(Application.ActiveDocument))
             {
+                if (!_connected)
+                    ConnectionProgressHelper.showConnectionDialog(true);
                 reporting.ActiveDocumentChanged(doc);
+                _connected = true;
             }
 
             SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc);
             if (customData != null)
             {
-                ConnectionProgressHelper.showConnectionDialog(true);
                 BaseUrlHelper.CustomData = customData;
                 BaseUrlHelper.BaseUrl = new Uri(customData.getServerUrl());
 
