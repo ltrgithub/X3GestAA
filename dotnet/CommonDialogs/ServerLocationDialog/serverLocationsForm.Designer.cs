@@ -95,6 +95,7 @@
             this.serverLocationsListBox.Size = new System.Drawing.Size(509, 260);
             this.serverLocationsListBox.TabIndex = 5;
             this.serverLocationsListBox.SelectedIndexChanged += new System.EventHandler(this.serverLocationsListBox_SelectedIndexChanged);
+            this.serverLocationsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serverLocationsListBox_KeyDown);
             // 
             // serverLocationsDialog
             // 
