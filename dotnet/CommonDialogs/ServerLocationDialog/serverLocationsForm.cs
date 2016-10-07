@@ -67,10 +67,7 @@ namespace CommonDialogs.ServerLocationDialog
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            int selectedIndex = serverLocationsListBox.SelectedIndex;
-            serverLocationsListBox.Items.RemoveAt(selectedIndex);
-            updateButtonState();
-            serverLocationsListBox.SelectedIndex = Math.Min(selectedIndex, serverLocationsListBox.Items.Count-1);
+            removeListEntry();
         }
 
         private void updateButtonState()
@@ -95,6 +92,20 @@ namespace CommonDialogs.ServerLocationDialog
             _updateServerLocationsDelegate(uriList, _prefFilePath);
             _postUpdateDelegate(true);
             Close();
+        }
+
+        private void serverLocationsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && serverLocationsListBox.Items.Count > 0)
+                removeListEntry();
+        }
+
+        private void removeListEntry()
+        {
+            int selectedIndex = serverLocationsListBox.SelectedIndex;
+            serverLocationsListBox.Items.RemoveAt(selectedIndex);
+            updateButtonState();
+            serverLocationsListBox.SelectedIndex = Math.Min(selectedIndex, serverLocationsListBox.Items.Count - 1);
         }
     }
 }
