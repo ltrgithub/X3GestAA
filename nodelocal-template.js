@@ -239,9 +239,7 @@ exports.config = {
         },
 		protocol: {
 			// trace: console.log,
-			LBFChunkSize: 64, // in Kb
-			currentVersion : 150069
-
+			LBFChunkSize: 64 // in Kb
 		},
 		// session tracing
 		sessions: {
