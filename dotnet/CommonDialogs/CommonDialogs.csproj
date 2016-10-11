@@ -42,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionProgressDialog\ConnectionProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionProgressDialog\ConnectionProgressDialog.Designer.cs">
+      <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionProgressDialog\ConnectionProgressHelper.cs" />
     <Compile Include="Properties\Resources.en.Designer.cs">
       <DependentUpon>Resources.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -79,15 +86,26 @@
       <DependentUpon>PublishDocumentDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="InfoMessage\InfoMessageBox.cs" />
+    <Compile Include="ServerLocationDialog\serverLocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerLocationDialog\serverLocationsForm.Designer.cs">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.resx">
+      <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressDialog\ProgressDialog.resx">
       <DependentUpon>ProgressDialog.cs</DependentUpon>
@@ -95,6 +113,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PublishDocumentDialog\PublishDocumentDialog.de.resx">
       <DependentUpon>PublishDocumentDialog.cs</DependentUpon>
@@ -114,12 +133,21 @@
     <EmbeddedResource Include="PublishDocumentTemplateDialog\PublishDocumentTemplateDialog.resx">
       <DependentUpon>PublishDocumentTemplateDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomComponents\CustomComponents.csproj">
       <Project>{A07CF3DA-504F-421F-93D4-293DBE52B20E}</Project>
       <Name>CustomComponents</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,21 +6,9 @@ using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Rb = Microsoft.Office.Tools.Ribbon;
 using System.IO;
-using System.Web.Script.Serialization;
-using Microsoft.Office.Core;
 using System.Globalization;
-using CommonDialogs.PublishDocumentDialog;
 using CommonDataHelper;
-using CommonDataHelper.TagHelper;
-using CommonDataHelper.PublisherHelper;
-using CommonDataHelper.StorageVolumeHelper;
-using System.ComponentModel;
-using CommonDataHelper.OwnerHelper;
-using CommonDialogs.PublishDocumentTemplateDialog;
-using CommonDataHelper.EndpointHelper;
-using CommonDataHelper.PublisherHelper.Model.Common;
-using System.Net;
-using System.Reflection;
+using CommonDataHelper.HttpHelper;
 
 namespace WordAddIn
 {
@@ -330,16 +318,30 @@ namespace WordAddIn
             return customData;
         }
 
-        public void DisplayServerLocations()
+        public void DisplayServerLocations(bool force = false)
         {
             Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Clear();
             Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = BaseUrlHelper.BaseUrl.ToString();
-            List<Uri> _urls = BaseUrlHelper.getBaseUrlsFromUserPreferenceFile;
+            List<Uri> _urls = null;
+            if (force)
+                PrefUrlHelper.readUserPreferenceFile(ref _urls);
+            else
+                _urls = PrefUrlHelper.getBaseUrlsFromUserPreferenceFile;
             foreach (Uri _uri in _urls)
             {
                 Rb.RibbonDropDownItem item = Globals.Factory.GetRibbonFactory().CreateRibbonDropDownItem();
                 item.Label = _uri.ToString();
                 Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Add(item);
+            }
+        }
+
+        public static void doGarbageCollect(ref int gcCount)
+        {
+            if (gcCount > 200)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                gcCount = 0;
             }
         }
     }

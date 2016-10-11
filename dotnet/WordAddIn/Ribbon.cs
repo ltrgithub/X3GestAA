@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using CommonDataHelper;
 using CommonDataHelper.PublisherHelper;
+using CommonDialogs.ServerLocationDialog;
+using System.Diagnostics;
 
 namespace WordAddIn
 {
@@ -115,6 +117,14 @@ namespace WordAddIn
         private void buttonDisconnect_Click(object sender, RibbonControlEventArgs e)
         {
             new ConnectionDialog().disconnectFromServer();
+        }
+
+        private void serverLocationsButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            new serverLocationsDialog(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\" + Process.GetCurrentProcess().ProcessName + ".X3.settings",
+                CommonDataHelper.HttpHelper.PrefUrlHelper.readUserPreferenceFile,
+                CommonDataHelper.HttpHelper.PrefUrlHelper.updateUserPreferenceFile,
+                Globals.WordAddIn.commons.DisplayServerLocations).ShowDialog();
         }
     }
 }

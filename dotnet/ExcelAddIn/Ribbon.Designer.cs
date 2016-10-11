@@ -119,6 +119,8 @@ namespace ExcelAddIn
             this.version = this.Factory.CreateRibbonLabel();
             this.cleanupTemplateGroup = this.Factory.CreateRibbonGroup();
             this.buttonCleanup = this.Factory.CreateRibbonButton();
+            this.box1 = this.Factory.CreateRibbonBox();
+            this.serverLocationsButton = this.Factory.CreateRibbonButton();
             this.syracuseTab.SuspendLayout();
             this.groupPublishDocument.SuspendLayout();
             this.groupReporting.SuspendLayout();
@@ -128,6 +130,8 @@ namespace ExcelAddIn
             this.groupSageX3.SuspendLayout();
             this.groupVersion.SuspendLayout();
             this.cleanupTemplateGroup.SuspendLayout();
+            this.box1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // syracuseTab
             // 
@@ -163,10 +167,10 @@ namespace ExcelAddIn
             this.galleryPublishAs.ColumnCount = 1;
             this.galleryPublishAs.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.galleryPublishAs.Image = global::ExcelAddIn.Properties.Resources.sauvegarder;
-            resources.ApplyResources(ribbonDropDownItemImpl7, "ribbonDropDownItemImpl7");
-            resources.ApplyResources(ribbonDropDownItemImpl8, "ribbonDropDownItemImpl8");
-            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl7);
-            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl8);
+            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
+            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl1);
+            this.galleryPublishAs.Items.Add(ribbonDropDownItemImpl2);
             resources.ApplyResources(this.galleryPublishAs, "galleryPublishAs");
             this.galleryPublishAs.Name = "galleryPublishAs";
             this.galleryPublishAs.ShowImage = true;
@@ -224,7 +228,7 @@ namespace ExcelAddIn
             // 
             // groupSettings
             // 
-            this.groupSettings.Items.Add(this.comboBoxServerLocation);
+            this.groupSettings.Items.Add(this.box1);
             this.groupSettings.Items.Add(this.buttonDisconnect);
             resources.ApplyResources(this.groupSettings, "groupSettings");
             this.groupSettings.Name = "groupSettings";
@@ -237,7 +241,6 @@ namespace ExcelAddIn
             // 
             // buttonDisconnect
             // 
-            this.buttonDisconnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.buttonDisconnect.Image = global::ExcelAddIn.Properties.Resources.logout;
             resources.ApplyResources(this.buttonDisconnect, "buttonDisconnect");
             this.buttonDisconnect.Name = "buttonDisconnect";
@@ -275,23 +278,23 @@ namespace ExcelAddIn
             // 
             // dropDownInsert
             // 
-            resources.ApplyResources(ribbonDropDownItemImpl1, "ribbonDropDownItemImpl1");
-            resources.ApplyResources(ribbonDropDownItemImpl2, "ribbonDropDownItemImpl2");
             resources.ApplyResources(ribbonDropDownItemImpl3, "ribbonDropDownItemImpl3");
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl1);
-            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl2);
+            resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
+            resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
             this.dropDownInsert.Items.Add(ribbonDropDownItemImpl3);
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl4);
+            this.dropDownInsert.Items.Add(ribbonDropDownItemImpl5);
             resources.ApplyResources(this.dropDownInsert, "dropDownInsert");
             this.dropDownInsert.Name = "dropDownInsert";
             // 
             // dropDownDelete
             // 
-            resources.ApplyResources(ribbonDropDownItemImpl4, "ribbonDropDownItemImpl4");
-            resources.ApplyResources(ribbonDropDownItemImpl5, "ribbonDropDownItemImpl5");
             resources.ApplyResources(ribbonDropDownItemImpl6, "ribbonDropDownItemImpl6");
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl4);
-            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl5);
+            resources.ApplyResources(ribbonDropDownItemImpl7, "ribbonDropDownItemImpl7");
+            resources.ApplyResources(ribbonDropDownItemImpl8, "ribbonDropDownItemImpl8");
             this.dropDownDelete.Items.Add(ribbonDropDownItemImpl6);
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl7);
+            this.dropDownDelete.Items.Add(ribbonDropDownItemImpl8);
             resources.ApplyResources(this.dropDownDelete, "dropDownDelete");
             this.dropDownDelete.Name = "dropDownDelete";
             // 
@@ -333,6 +336,21 @@ namespace ExcelAddIn
             this.buttonCleanup.Name = "buttonCleanup";
             this.buttonCleanup.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonCleanup_Click);
             // 
+            // box1
+            // 
+            this.box1.Items.Add(this.comboBoxServerLocation);
+            this.box1.Items.Add(this.serverLocationsButton);
+            this.box1.Name = "box1";
+            // 
+            // serverLocationsButton
+            // 
+            this.serverLocationsButton.Image = global::ExcelAddIn.Properties.Resources.edit;
+            resources.ApplyResources(this.serverLocationsButton, "serverLocationsButton");
+            this.serverLocationsButton.Name = "serverLocationsButton";
+            this.serverLocationsButton.ShowImage = true;
+            this.serverLocationsButton.ShowLabel = false;
+            this.serverLocationsButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.serverLocationsButton_Click);
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -357,6 +375,9 @@ namespace ExcelAddIn
             this.groupVersion.PerformLayout();
             this.cleanupTemplateGroup.ResumeLayout(false);
             this.cleanupTemplateGroup.PerformLayout();
+            this.box1.ResumeLayout(false);
+            this.box1.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 
@@ -388,6 +409,8 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSettings;
         internal Microsoft.Office.Tools.Ribbon.RibbonComboBox comboBoxServerLocation;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonDisconnect;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton serverLocationsButton;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection
