@@ -333,6 +333,14 @@ namespace WordAddIn
                 item.Label = _uri.ToString();
                 Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.Add(item);
             }
+
+            if (force)
+            {
+                if (Globals.Ribbons.Ribbon.comboBoxServerLocation.Items.OfType<Rb.RibbonDropDownItem>().Any(cbi => cbi.Label.Equals(BaseUrlHelper.BaseUrl.ToString())) == false)
+                {
+                    Globals.Ribbons.Ribbon.comboBoxServerLocation.Text = String.Empty;
+                }
+            }
         }
 
         public static void doGarbageCollect(ref int gcCount)
