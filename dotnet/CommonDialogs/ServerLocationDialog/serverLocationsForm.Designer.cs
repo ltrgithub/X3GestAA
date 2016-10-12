@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(serverLocationsDialog));
             this.upButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -38,8 +39,10 @@
             // 
             // upButton
             // 
+            this.upButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.upButton.Image = global::CommonDialogs.Properties.Resources.arrow_up;
             this.upButton.Location = new System.Drawing.Point(526, 22);
+            this.upButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(75, 23);
             this.upButton.TabIndex = 0;
@@ -48,7 +51,9 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(440, 273);
+            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.Location = new System.Drawing.Point(440, 259);
+            this.okButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 30);
             this.okButton.TabIndex = 1;
@@ -58,7 +63,9 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(526, 273);
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Location = new System.Drawing.Point(526, 259);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 30);
             this.cancelButton.TabIndex = 2;
@@ -68,7 +75,9 @@
             // 
             // removeButton
             // 
+            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removeButton.Location = new System.Drawing.Point(526, 80);
+            this.removeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 26);
             this.removeButton.TabIndex = 3;
@@ -78,8 +87,10 @@
             // 
             // downButton
             // 
+            this.downButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.downButton.Image = global::CommonDialogs.Properties.Resources.arrow_down;
-            this.downButton.Location = new System.Drawing.Point(526, 51);
+            this.downButton.Location = new System.Drawing.Point(526, 50);
+            this.downButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(75, 23);
             this.downButton.TabIndex = 4;
@@ -89,19 +100,18 @@
             // serverLocationsListBox
             // 
             this.serverLocationsListBox.FormattingEnabled = true;
-            this.serverLocationsListBox.ItemHeight = 16;
             this.serverLocationsListBox.Location = new System.Drawing.Point(7, 6);
+            this.serverLocationsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.serverLocationsListBox.Name = "serverLocationsListBox";
-            this.serverLocationsListBox.Size = new System.Drawing.Size(509, 260);
+            this.serverLocationsListBox.Size = new System.Drawing.Size(508, 238);
             this.serverLocationsListBox.TabIndex = 5;
             this.serverLocationsListBox.SelectedIndexChanged += new System.EventHandler(this.serverLocationsListBox_SelectedIndexChanged);
             this.serverLocationsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serverLocationsListBox_KeyDown);
             // 
             // serverLocationsDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 310);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(612, 299);
             this.ControlBox = false;
             this.Controls.Add(this.serverLocationsListBox);
             this.Controls.Add(this.downButton);
@@ -110,6 +120,8 @@
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.upButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "serverLocationsDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Server locations";

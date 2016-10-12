@@ -984,213 +984,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_RSAV005",
-      "title": "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "SAV005",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MCRM"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_9c5e5007-6740-4e35-88b7-c4cc57893f8e",
-          "prompt": false,
-          "value": "RSAV005"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_d5bc5fdd-a0fa-4af9-a91b-fb67f1643718",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RSAV006",
-      "title": "title_d535898c-d888-498d-9487-41a5b2aceff3",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "SAV006",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MCRM"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_4d7ba5b2-de5e-40da-9558-60cce2b03f76",
-          "prompt": false,
-          "value": "RSAV006"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_f9e9ed90-38f1-4076-bedd-805807184730",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_INDIC_HDK",
-      "title": "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0",
-      "description": "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_HDK",
-      "target": "self",
-      "processName": "INDIC_HDK",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MSAL"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_SUPPORT",
-      "title": "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9",
-      "description": "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~VEN09_006~HDK",
-      "target": "self",
-      "processName": "VEN09_006",
-      "processMenu": "HDK",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MSAL"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_5eb18841-76a5-478a-a938-0dc81b72ba10",
-      "useCurrentEndpoint": true,
-      "pageName": "NAservicemanager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "NA-SUPPORTMANA"
-        },
-        {
-          "code": "ADMIN"
-        },
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "SEED contributor"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "af8681c7-1486-4212-9c81-eb2e71f59df2",
-          "vignette": {
-            "code": "STD_X3_ERP_RSAV005"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "a027b583-e050-4198-9571-91ef6db035f1",
-          "vignette": {
-            "code": "STD_X3_ERP_RSAV006"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "b4b6cdf4-426a-44a7-84dc-77741348cb35",
-          "vignette": {
-            "code": "STD_X3_ERP_INDIC_HDK"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "22a042b8-e096-49fc-adb4-a746b4b97982",
-          "vignette": {
-            "code": "STD_X3_ERP_SUPPORT"
-          },
-          "endpoint": null
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "cc984c46-686c-4458-a5a5-d9ac26f7d408",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"af8681c7-1486-4212-9c81-eb2e71f59df2\",\"$title\":\"-\"},{\"$bind\":\"a027b583-e050-4198-9571-91ef6db035f1\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"displayLineNum\"},{\"$bind\":\"recordsPerPage\"},{\"$bind\":\"req_id\"},{\"$bind\":\"first_record\"},{\"$bind\":\"ifCube\"},{\"$bind\":\"level_p\"},{\"$bind\":\"level_m\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"z_p\"},{\"$bind\":\"z_m\"},{\"$bind\":\"SREDET\"},{\"$bind\":\"INTUSR\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"SRESAT\"},{\"$bind\":\"LNGDES\"},{\"$bind\":\"SREBPC\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"SRENUM\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\"}}],\"$widths\":\"50,50\"},{\"$bind\":\"b4b6cdf4-426a-44a7-84dc-77741348cb35\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"22a042b8-e096-49fc-adb4-a746b4b97982\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@5677cbaf-a2a2-4f5b-8483-5c4668779466}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "NAservicemanager",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_ERP_RVEN041",
       "title": "title_e1ae867c-6d2c-4604-9685-685ef035e65b",
       "linkType": "$request",
@@ -2875,6 +2668,214 @@
       "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@67a2899f-b774-4bc0-bac3-fb899aafca51}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"dbcf2f4d-d6b0-4619-adcf-f37e63d7c007\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"PSHFCY\"},{\"$bind\":\"BPSNUM\"},{\"$bind\":\"BPSNAM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"bdf3c672-5c95-4b7e-b553-0ce94ecf005b\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"POHFCY\"},{\"$bind\":\"ORDDAT\"},{\"$bind\":\"EXTRCPDAT1\"},{\"$bind\":\"POHNUM\"},{\"$bind\":\"BPSNUM\"},{\"$bind\":\"BPSNAM\"},{\"$bind\":\"ITMREF\"},{\"$bind\":\"DES1AXX\"},{\"$bind\":\"QTYPUU\"},{\"$bind\":\"RCPQTYPUU\"},{\"$bind\":\"PUU\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"932f110a-8331-4e73-8477-c5ceddfdefbd\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$title\":\"{@35a4d8bd-d993-4fd2-90a5-166025620662}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"87b398a1-3ce5-4d4f-b892-3357c3a52ed6\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
       "page": {
         "pageName": "NAbuyer",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RSAV005",
+      "title": "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "SAV005",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MCRM"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_9c5e5007-6740-4e35-88b7-c4cc57893f8e",
+          "prompt": false,
+          "value": "RSAV005"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_d5bc5fdd-a0fa-4af9-a91b-fb67f1643718",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RSAV006",
+      "title": "title_d535898c-d888-498d-9487-41a5b2aceff3",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "SAV006",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MCRM"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_4d7ba5b2-de5e-40da-9558-60cce2b03f76",
+          "prompt": false,
+          "value": "RSAV006"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_f9e9ed90-38f1-4076-bedd-805807184730",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_HDK",
+      "title": "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0",
+      "description": "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_HDK",
+      "target": "self",
+      "processName": "INDIC_HDK",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MSAL"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_SUPPORT",
+      "title": "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9",
+      "description": "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~VEN09_006~HDK",
+      "target": "self",
+      "processName": "VEN09_006",
+      "processMenu": "HDK",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MSAL"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_5eb18841-76a5-478a-a938-0dc81b72ba10",
+      "description": "description_5eb18841-76a5-478a-a938-0dc81b72ba10",
+      "useCurrentEndpoint": true,
+      "pageName": "NAservicemanager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "NA-SUPPORTMANA"
+        },
+        {
+          "code": "ADMIN"
+        },
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "SEED contributor"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "af8681c7-1486-4212-9c81-eb2e71f59df2",
+          "vignette": {
+            "code": "STD_X3_ERP_RSAV005"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "a027b583-e050-4198-9571-91ef6db035f1",
+          "vignette": {
+            "code": "STD_X3_ERP_RSAV006"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "b4b6cdf4-426a-44a7-84dc-77741348cb35",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_HDK"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "22a042b8-e096-49fc-adb4-a746b4b97982",
+          "vignette": {
+            "code": "STD_X3_ERP_SUPPORT"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "cc984c46-686c-4458-a5a5-d9ac26f7d408",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"af8681c7-1486-4212-9c81-eb2e71f59df2\",\"$title\":\"-\"},{\"$bind\":\"a027b583-e050-4198-9571-91ef6db035f1\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"displayLineNum\"},{\"$bind\":\"recordsPerPage\"},{\"$bind\":\"req_id\"},{\"$bind\":\"first_record\"},{\"$bind\":\"ifCube\"},{\"$bind\":\"level_p\"},{\"$bind\":\"level_m\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"z_p\"},{\"$bind\":\"z_m\"},{\"$bind\":\"SREDET\"},{\"$bind\":\"INTUSR\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"SRESAT\"},{\"$bind\":\"LNGDES\"},{\"$bind\":\"SREBPC\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"SRENUM\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\"}}],\"$widths\":\"50,50\"},{\"$bind\":\"b4b6cdf4-426a-44a7-84dc-77741348cb35\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"22a042b8-e096-49fc-adb4-a746b4b97982\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@5677cbaf-a2a2-4f5b-8483-5c4668779466}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "NAservicemanager",
         "$variantType": "landingPage"
       }
     },
@@ -9926,11 +9927,6 @@
       "pageLayout.b7541149-c301-4aee-bd5c-5b8ddc2423cb.@dd2da1cd-482d-45b3-8654-b57f138b3f4f": "عملية",
       "title_5927e03d-6f9a-48b8-8d96-9a03f1628b9f": "NAمدير",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "عملية",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "NAمسؤول دعم الزبون",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "مؤشرات",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "عملية",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "NA أمين مخزن",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "STD_X3_ERP_RVEN041",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
@@ -9982,6 +9978,11 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "مؤشرات",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "عملية",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "عملية",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "NAمسؤول دعم الزبون",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "مؤشرات",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "عملية",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "مسؤول المعمل",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "title_9e0ec861-f874-4fe1-9f5d-eeec27e8725f": "STD_X3_ERP_RGPA013",
@@ -10206,19 +10207,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Setup Wizard",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Geschäftsprozess",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Kundenbetreuer/Helpdesk",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Laufende Serviceanfragen ",
-      "title_9c5e5007-6740-4e35-88b7-c4cc57893f8e": "portview",
-      "title_d5bc5fdd-a0fa-4af9-a91b-fb67f1643718": "cube",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Serviceanfragen/MA",
-      "title_4d7ba5b2-de5e-40da-9558-60cce2b03f76": "portview",
-      "title_f9e9ed90-38f1-4076-bedd-805807184730": "cube",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Kundenbetreuung Indikatoren",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Kundenbetreuung/Helpdesk",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Schlüsselinformationen",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Geschäftsprozess",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "Lagerverantwortlicher",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "Bestellungen ohne Lieferung",
       "title_6d61a797-c3a9-407d-96c7-472f67833115": "portview",
@@ -10319,6 +10307,19 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Schlüsselinformationen",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Geschäftsprozess",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Geschäftsprozess",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Kundenbetreuer/Helpdesk",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Laufende Serviceanfragen ",
+      "title_9c5e5007-6740-4e35-88b7-c4cc57893f8e": "portview",
+      "title_d5bc5fdd-a0fa-4af9-a91b-fb67f1643718": "cube",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Serviceanfragen/MA",
+      "title_4d7ba5b2-de5e-40da-9558-60cce2b03f76": "portview",
+      "title_f9e9ed90-38f1-4076-bedd-805807184730": "cube",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Kundenbetreuung Indikatoren",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Kundenbetreuung/Helpdesk",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Schlüsselinformationen",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Geschäftsprozess",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Werkstattleiter",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "Nicht zugeord. Auftr des Tages",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -10602,13 +10603,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Setup Wizard",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Business process",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Service request tracking",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Services Requests / Employee",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Customer support indicators",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Customer support",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Business process",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "Orders without Delivery",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "Orders Lines to Receipt Calend",
       "title_2491d7bb-69dd-4883-8a76-4f848ec076de": "Stock Controller Indicators",
@@ -10668,6 +10662,13 @@
       "title_ae832654-1a91-4840-b326-464ce236373c": "Late Orders",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Business process",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Business process",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Service request tracking",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Services Requests / Employee",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Customer support indicators",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Customer support",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Business process",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "Allocated WOs of current day",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
       "title_9e0ec861-f874-4fe1-9f5d-eeec27e8725f": "PCP to Calculate",
@@ -10883,15 +10884,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Setup Guide",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Business Process",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Service Manager",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Open Service Requests",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Service Requests by Employee",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Customer support indicators",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Customer support",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Key Information",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Business Process",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "Material handler",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "Orders to Ship",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "Orders to Receive Calendar",
@@ -10970,6 +10962,15 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Key Information",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Business Process",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Business Process",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Service manager",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Open Service Requests",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Service Requests by Employee",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Customer support indicators",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Customer support",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Key Information",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Business Process",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Workshop manager",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "Allocated WOs Started Today",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -11323,15 +11324,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Asistente de parametrización",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Procesos",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Responsable soporte cliente NA",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Seguimiento solicitud servicio",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Solicitudes serv./colaborador",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Indicadores soporte cliente",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Soporte cliente",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Indicadores",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Procesos",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "Almacenero NA",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "Pedidos sin entrega",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "Calendario lín.ped. a recepc.",
@@ -11409,6 +11401,15 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Indicadores",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Procesos",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Procesos",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Responsable soporte cliente NA",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Seguimiento solicitud servicio",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Solicitudes serv./colaborador",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Indicadores soporte cliente",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Soporte cliente",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Indicadores",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Procesos",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsable de taller",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF del día asignadas",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -11694,15 +11695,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Assistant de paramétrage",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Processus",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Responsable support client NA",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Suivi des demandes de service",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Demandes service/collaborateur",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Indicateurs support client",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Support client",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Processus",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Indicateurs",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "Magasinier NA",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "Commandes sans livraison",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "Lignes comm. à réceptionner",
@@ -11779,6 +11771,15 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Indicateurs",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Processus",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Processus",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Responsable support client NA",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Suivi des demandes de service",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Demandes service/collaborateur",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Indicateurs support client",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Support client",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Processus",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Indicateurs",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsable atelier",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -12090,14 +12091,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Setup Guide",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Business process",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "X3_ERP_INDIC_HDK",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "X3_ERP_SUPPORT",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Informazioni chiave",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Business process",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "STD_X3_ERP_RVEN041",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
       "title_2491d7bb-69dd-4883-8a76-4f848ec076de": "X3_ERP_INDIC_MAGA",
@@ -12166,6 +12159,14 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Informazioni chiave",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Business process",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Business process",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "X3_ERP_INDIC_HDK",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "X3_ERP_SUPPORT",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Informazioni chiave",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Business process",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsabile reparto",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -12386,14 +12387,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Setup Guide",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Proces biznesowy",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "X3_ERP_INDIC_HDK",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "X3_ERP_SUPPORT",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Główne informacje",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Proces biznesowy",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "STD_X3_ERP_RVEN041",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
       "title_2491d7bb-69dd-4883-8a76-4f848ec076de": "X3_ERP_INDIC_MAGA",
@@ -12466,6 +12459,14 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Główne informacje",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Proces biznesowy",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Proces biznesowy",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "X3_ERP_INDIC_HDK",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "X3_ERP_SUPPORT",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Główne informacje",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Proces biznesowy",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Kierownik produkcji",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -12677,15 +12678,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Assistente Parametriz.",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Processo de negócio",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Director de serviços",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Seguim. pedidos de serviço",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Pedidos serviço / colaborador",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Indic. Suporte Cliente",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Suporte cliente",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Informação Chave",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Processo de negócio",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "Manipulador de materiais",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "Encomendas sem expedição",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "Linhas enc. a recepc. Calendár",
@@ -12763,6 +12755,15 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Informação Chave",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Processo de negócio",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Processo de negócio",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Director de serviços",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "Seguim. pedidos de serviço",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "Pedidos serviço / colaborador",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "Indic. Suporte Cliente",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "Suporte cliente",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Informação Chave",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Processo de negócio",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsavel workshop",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF do dia alocadas",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -13028,15 +13029,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "Setup Guide",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "Бизнес-процесс",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Менеджер по обслуживанию",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "X3_ERP_INDIC_HDK",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "X3_ERP_SUPPORT",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Основная информация",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Бизнес-процесс",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "Заведующий материалами",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "STD_X3_ERP_RVEN041",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
@@ -13113,6 +13105,15 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "Основная информация",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "Бизнес-процесс",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "Бизнес-процесс",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "Менеджер по обслуживанию",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "STD_X3_ERP_RSAV005",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "X3_ERP_INDIC_HDK",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "X3_ERP_SUPPORT",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "Основная информация",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "Бизнес-процесс",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Менеджер воркшопа",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -13347,15 +13348,6 @@
       "title_3f226675-ba00-486e-a067-b81d48db9652": "参数设置向导",
       "description_3f226675-ba00-486e-a067-b81d48db9652": "ASP00",
       "pageLayout.e4eb4671-d879-47f6-ae9a-896cc6f1d4f9.@74f5d1a3-cb35-4f71-91ab-3a60ef982cd6": "业务流程",
-      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "北美客户支持经理",
-      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "服务请求追踪",
-      "title_d535898c-d888-498d-9487-41a5b2aceff3": "服务请求 / 雇员",
-      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "客户支持经理指标",
-      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
-      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "客户支持",
-      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "关键指标",
-      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "业务流程",
       "title_a7952a38-8313-4c87-bf04-6440cd1f6e48": "北美仓库管理员",
       "title_e1ae867c-6d2c-4604-9685-685ef035e65b": "未发货的订单",
       "title_66fd3225-6e0f-416e-917f-1387d6605c38": "待收货的订单行时间表",
@@ -13432,6 +13424,15 @@
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@67a2899f-b774-4bc0-bac3-fb899aafca51": "关键指标",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@35a4d8bd-d993-4fd2-90a5-166025620662": "业务流程",
       "pageLayout.719d627f-7ed0-4651-8dcf-db9c7b28448e.@c0d19673-ac03-427f-af67-0d03cb2db466": "业务流程",
+      "title_5eb18841-76a5-478a-a938-0dc81b72ba10": "北美客户支持经理",
+      "title_2d7666f1-fc9f-4480-854d-6c36b4fd199c": "服务请求追踪",
+      "title_d535898c-d888-498d-9487-41a5b2aceff3": "服务请求 / 雇员",
+      "title_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "客户支持经理指标",
+      "description_f0a410bf-504f-4b05-b9bb-3041d6d74bb0": "INDIC_HDK",
+      "title_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "客户支持",
+      "description_1cee2bd8-48e1-4874-8498-8bb68aedc8a9": "SUPPORT",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@f933aa8a-9e1c-455d-8b0d-d30a5f34f41a": "关键指标",
+      "pageLayout.cc984c46-686c-4458-a5a5-d9ac26f7d408.@5677cbaf-a2a2-4f5b-8483-5c4668779466": "业务流程",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "车间主任",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "当日已分配的工单",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
