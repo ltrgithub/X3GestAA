@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(serverLocationsDialog));
             this.upButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -99,11 +100,10 @@
             // serverLocationsListBox
             // 
             this.serverLocationsListBox.FormattingEnabled = true;
-            this.serverLocationsListBox.ItemHeight = 16;
             this.serverLocationsListBox.Location = new System.Drawing.Point(7, 6);
             this.serverLocationsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.serverLocationsListBox.Name = "serverLocationsListBox";
-            this.serverLocationsListBox.Size = new System.Drawing.Size(508, 244);
+            this.serverLocationsListBox.Size = new System.Drawing.Size(508, 238);
             this.serverLocationsListBox.TabIndex = 5;
             this.serverLocationsListBox.SelectedIndexChanged += new System.EventHandler(this.serverLocationsListBox_SelectedIndexChanged);
             this.serverLocationsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serverLocationsListBox_KeyDown);
@@ -120,6 +120,7 @@
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.upButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "serverLocationsDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
