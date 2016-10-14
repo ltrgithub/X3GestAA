@@ -10,6 +10,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using CommonDataHelper.GlobalHelper;
+using CommonDialogs.ConnectionProgressDialog;
 
 namespace WordAddIn
 {
@@ -24,9 +25,9 @@ namespace WordAddIn
         public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
         private static string transparentImageFile = null;
         private static string officeVersion = Globals.WordAddIn.Application.Version;
-
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
+            ConnectionProgressHelper.showConnectionDialog(false);
             SageJsonSerializer ser = new SageJsonSerializer();
             Dictionary<String, object> layout = (Dictionary<String, object>)ser.DeserializeObject(layoutAndData);
             SyracuseOfficeCustomData customData;
@@ -231,6 +232,8 @@ namespace WordAddIn
         {
             WdViewType vt = doc.ActiveWindow.View.Type;
             bool pagination = doc.Application.Options.Pagination;
+
+            ConnectionProgressHelper.showConnectionDialog(false);
             ProgressDialog pd = new ProgressDialog();
             pd.Show();
             pd.Refresh();
