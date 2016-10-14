@@ -2147,6 +2147,87 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_GEODE_REAPICK1",
+      "title": "title_660ef890-6533-4c76-87b4-be8db3618dec",
+      "description": "description_660ef890-6533-4c76-87b4-be8db3618dec",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "REAPICK1",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_JSTK"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_REAPICK2",
+      "title": "title_429b1016-ac80-40d3-9c58-8af997b56c38",
+      "description": "description_429b1016-ac80-40d3-9c58-8af997b56c38",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "REAPICK2",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_JSTK"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_ALERTSTO",
+      "title": "title_d005bb72-efb3-42f7-ad36-e25821c08d53",
+      "description": "description_d005bb72-efb3-42f7-ad36-e25821c08d53",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "ALERTSTO",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_JSTK"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_GEODE_AIFIMPGENFIC",
       "title": "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf",
       "description": "description_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf",
@@ -2197,6 +2278,33 @@
       },
       "module": {
         "code": "STD_X3_GEODE_JOUT"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_EIDELAY",
+      "title": "title_184a10af-baa9-4156-9855-465e9f88e330",
+      "description": "description_184a10af-baa9-4156-9855-465e9f88e330",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "EIDELAY",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_JINP"
       },
       "categories": [],
       "parameters": []
@@ -20229,10 +20337,14 @@
       "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "Preparation indicators",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "Picking Manager",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "Directive Missions",
+      "title_660ef890-6533-4c76-87b4-be8db3618dec": "affected picking slots to replenish",
+      "title_429b1016-ac80-40d3-9c58-8af997b56c38": "Non affected picking slots",
+      "title_d005bb72-efb3-42f7-ad36-e25821c08d53": "Items below warning stock",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Single line files conversion",
       "description_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "AIFIMPGENFIC",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Upd carrier parcel",
       "description_17bd8165-e439-4f1e-be56-ed03c8fce4df": "CRPUPD",
+      "title_184a10af-baa9-4156-9855-465e9f88e330": "Delayed Expected Inputs",
       "title_bfe8449e-20ab-4b64-b7fb-c38baf8beea7": "Repacking",
       "description_bfe8449e-20ab-4b64-b7fb-c38baf8beea7": "GESCOI",
       "title_decc8473-c63c-4506-9c0b-9f0a4ba55070": "Declared packing",
@@ -22251,8 +22363,13 @@
       "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "Indicateurs préparation",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "Responsable Préparations",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "Radio fréquence directive",
+      "title_660ef890-6533-4c76-87b4-be8db3618dec": "Emplacements Picking affectés à réapprovisionner",
+      "title_429b1016-ac80-40d3-9c58-8af997b56c38": "Emplacements Picking non affectés",
+      "title_d005bb72-efb3-42f7-ad36-e25821c08d53": "Articles sous stock d'alerte",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Conversion fichiers mono-ligne",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Maj colis transporteur",
+      "title_184a10af-baa9-4156-9855-465e9f88e330": "Entrées Attendues en retard",
+      "description_184a10af-baa9-4156-9855-465e9f88e330": "EIDELAY",
       "title_bfe8449e-20ab-4b64-b7fb-c38baf8beea7": "Recolisage",
       "title_decc8473-c63c-4506-9c0b-9f0a4ba55070": "Colisage déclaratif",
       "title_5819fd5c-6386-4244-b84f-d8cc9deca35f": "Ordre Palettisation",
