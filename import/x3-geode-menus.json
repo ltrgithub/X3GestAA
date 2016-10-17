@@ -2165,7 +2165,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JSTK"
       },
@@ -2192,9 +2194,38 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JSTK"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_CRADELA1",
+      "title": "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e",
+      "description": "description_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "CRADELA1",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_MTDI"
       },
       "categories": [],
       "parameters": []
@@ -2211,7 +2242,7 @@
       "keyIsWhere": false,
       "target": "self",
       "$factory": true,
-      "requestName": "ALERTSTO",
+      "requestName": "STKALERT",
       "requestLevel": "1",
       "$factoryOwner": "SAGE",
       "application": {
@@ -2219,7 +2250,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JSTK"
       },
@@ -2302,7 +2335,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JINP"
       },
@@ -20339,6 +20374,7 @@
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "Directive Missions",
       "title_660ef890-6533-4c76-87b4-be8db3618dec": "affected picking slots to replenish",
       "title_429b1016-ac80-40d3-9c58-8af997b56c38": "Non affected picking slots",
+      "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e": "Delayed Appointment not arrived",
       "title_d005bb72-efb3-42f7-ad36-e25821c08d53": "Items below warning stock",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Single line files conversion",
       "description_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "AIFIMPGENFIC",
@@ -22365,6 +22401,7 @@
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "Radio fréquence directive",
       "title_660ef890-6533-4c76-87b4-be8db3618dec": "Emplacements Picking affectés à réapprovisionner",
       "title_429b1016-ac80-40d3-9c58-8af997b56c38": "Emplacements Picking non affectés",
+      "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e": "RDV non arrivé en retard",
       "title_d005bb72-efb3-42f7-ad36-e25821c08d53": "Articles sous stock d'alerte",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Conversion fichiers mono-ligne",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Maj colis transporteur",
