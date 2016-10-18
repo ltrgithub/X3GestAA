@@ -7231,6 +7231,32 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_MSNMATUV",
+      "title": "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb",
+      "description": "description_51d54a57-35a3-4a05-98ba-da52cbcc8edb",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "MSNMATUV",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_JMSN"
+      },
+      "parameters": []
+    },
+    {
       "$type": "landingPage",
       "title": "title_436bfa6b-1a59-4cc0-bb80-774befa38772",
       "description": "description_436bfa6b-1a59-4cc0-bb80-774befa38772",
@@ -7327,13 +7353,23 @@
           "endpoint": {
             "dataset": "GEOREFCHAL"
           }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "60775d08-1afd-4b9c-a552-56fb707fef4f",
+          "vignette": {
+            "code": "STD_X3_GEODE_MSNMATUV"
+          },
+          "endpoint": {
+            "dataset": "GEOREFCHAL"
+          }
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "2170c305-61d4-4182-be98-e0b9f8066a43",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7b1a4611-1e43-4c2e-b05a-39796830e5a6}\",\"$layout\":{\"$items\":[{\"$bind\":\"9d22e162-d2ac-4aa7-9817-ead289e98896\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"f56f58e8-f2cb-4c06-9c4b-7ef68d3b899b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"586e45ad-fe51-4403-ad4a-52ccd6fdc1ff\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"edd91a57-c4c6-4eb7-8de8-d209d207268b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"212ecdc4-65fc-4bb6-a313-3d71bd1f2930\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"be3bff5e-c2ea-4224-80d1-8c4cf1f7d2bf\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"e5b5e7b1-eaf1-4172-bf93-74e490a34afa\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cb8b12ca-52e2-4862-a761-be5fc6b301b3}\",\"$layout\":{\"$items\":[{\"$bind\":\"74e7a7c7-303c-4cd1-a656-02ad5e576c7a\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7b1a4611-1e43-4c2e-b05a-39796830e5a6}\",\"$layout\":{\"$items\":[{\"$bind\":\"9d22e162-d2ac-4aa7-9817-ead289e98896\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"f56f58e8-f2cb-4c06-9c4b-7ef68d3b899b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"586e45ad-fe51-4403-ad4a-52ccd6fdc1ff\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"edd91a57-c4c6-4eb7-8de8-d209d207268b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"212ecdc4-65fc-4bb6-a313-3d71bd1f2930\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"60775d08-1afd-4b9c-a552-56fb707fef4f\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"be3bff5e-c2ea-4224-80d1-8c4cf1f7d2bf\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"e5b5e7b1-eaf1-4172-bf93-74e490a34afa\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cb8b12ca-52e2-4862-a761-be5fc6b301b3}\",\"$layout\":{\"$items\":[{\"$bind\":\"74e7a7c7-303c-4cd1-a656-02ad5e576c7a\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "GEORESMIS",
         "$variantType": "landingPage"
@@ -11618,6 +11654,7 @@
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "Materials follow-up",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Resources in mission",
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Unavailable resources",
+      "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb": "Unavailable materials",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Business Process",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Key information",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "Stock manager",
@@ -12449,6 +12486,7 @@
       "title_5e907e3a-9550-44d8-af36-a285f7c852cc": "cube",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Ressources en mission",
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Ressources indisponible",
+      "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb": "Matériels indisponible",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Processus",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Indicateurs",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "Responsable stock",
