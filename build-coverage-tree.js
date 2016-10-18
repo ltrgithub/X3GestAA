@@ -38,7 +38,7 @@ function compileFile(fname) {
 		if (srcStat.mtime.getTime() < dstStat.mtime.getTime()) return;
 	} catch (ex) {}
 	// take care of binary copy first
-	if (/\.(node)$/.test(srcPath)) {
+	if (/\.(node|pdf)$/.test(srcPath)) {
 		fs.writeFileSync(dstPath, fs.readFileSync(srcPath));
 		return;
 	}
@@ -61,7 +61,7 @@ function compileDir(dir) {
 		var fname = fsp.join(dir, sub);
 		if (fs.lstatSync(fsp.join(__dirname, fname)).isDirectory()) {
 			compileDir(fname);
-		} else if (/(^coffee|\.(ts|js|_js|json|node|txt|opts))$/.test(sub) // allowed extensions
+		} else if (/(^coffee|\.(ts|js|_js|json|node|txt|opts|pdf))$/.test(sub) // allowed extensions
 			&& !/\.d\.ts$/.test(sub) // except .d.ts
 			&& (/^(([^\///]*[\///]){2}(lib|test)[\///]|([^\///]*[\///]){0,2}[^\///]*$)/.test(fname) // allowed directories
 				|| /(^(import|shadow-modules)[\///])/.test(fname))) {
@@ -78,6 +78,7 @@ compileDir(shadowDir);
 compileDir('node_modules');
 compileDir('import');
 compileFile('nodelocal.js');
-
+// we don't copy the html directories but we need this one for the cookie request
+copyFile('node_modules/syracuse-main/html/main.html');
 
 process.exit(0);

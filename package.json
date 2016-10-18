@@ -4,6 +4,6 @@
   },
   "scripts": {
   	"test": "mocha --opts ./mocha.opts node_modules/html-escape/test/server",
-  	"test:coverage": "node build-coverage-tree && pushd ../syracuse-coverage && istanbul cover -i \"syracuse-orm/**\" _mocha -- --opts ./mocha.opts syracuse-orm/test/server; popd"
+  	"test:coverage": "node build-coverage-tree && pushd ../syracuse-coverage/node_modules && istanbul cover -i \"syracuse-orm/**\" _mocha -- --opts ./mocha.opts syracuse-orm/test/server; popd"
   }
 }
