@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublishDocumentDialog));
             this.groupBoxDescription = new System.Windows.Forms.GroupBox();
             this.labelDescriptionErrorText = new System.Windows.Forms.Label();
-            this.textBoxDescription = new CustomComponents.RichTextBox();
             this.comboBoxOwner = new System.Windows.Forms.ComboBox();
             this.comboBoxStorageVolume = new System.Windows.Forms.ComboBox();
             this.checkBoxReadOnly = new System.Windows.Forms.CheckBox();
@@ -45,6 +44,7 @@
             this.checkedListBoxTags = new System.Windows.Forms.CheckedListBox();
             this.labelTeams = new System.Windows.Forms.Label();
             this.labelTags = new System.Windows.Forms.Label();
+            this.textBoxDescription = new CustomComponents.RichTextBox();
             this.groupBoxDescription.SuspendLayout();
             this.groupBoxTagsAndTeams.SuspendLayout();
             this.SuspendLayout();
@@ -69,13 +69,6 @@
             this.labelDescriptionErrorText.ForeColor = System.Drawing.Color.Red;
             this.labelDescriptionErrorText.Name = "labelDescriptionErrorText";
             this.labelDescriptionErrorText.Tag = "";
-            // 
-            // textBoxDescription
-            // 
-            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ShowError = false;
-            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // comboBoxOwner
             // 
@@ -158,6 +151,13 @@
             // 
             resources.ApplyResources(this.labelTags, "labelTags");
             this.labelTags.Name = "labelTags";
+            // 
+            // textBoxDescription
+            // 
+            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ShowError = false;
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // PublishDocumentDialog
             // 
