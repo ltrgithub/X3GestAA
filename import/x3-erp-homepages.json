@@ -7198,7 +7198,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JMSN"
       },
@@ -7224,7 +7226,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JMSN"
       },
@@ -7250,7 +7254,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JMSN"
       },
@@ -9520,6 +9526,9 @@
           "code": "ERP-DIRECTOR"
         },
         {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
           "code": "NA-APACCMAN"
         },
         {
@@ -9946,70 +9955,6 @@
       ]
     },
     {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_PJMOPE18",
-      "title": "title_cf349c07-9673-475f-bd1b-24f1d5f05e74",
-      "description": "description_cf349c07-9673-475f-bd1b-24f1d5f05e74",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestName": "PJMOPE18",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MPRP"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_18da4623-1146-44ec-8120-5404d103ee75",
-          "prompt": false,
-          "value": "true"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "level",
-          "title": "title_a1ebd07c-288f-4d46-8e93-1b362ab3028b",
-          "prompt": false,
-          "value": "1"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "displayLineNum",
-          "title": "title_efa11d2b-27f5-4c8a-81f2-ca733319f60e",
-          "prompt": false,
-          "value": "false"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "forcedExecution",
-          "title": "title_c7b9c157-865d-4816-a501-8635b89bfcce",
-          "prompt": false,
-          "value": "false"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "frequency",
-          "title": "title_e2b54d35-67a1-4494-88b5-a42a2b40da26",
-          "prompt": false,
-          "value": "3"
-        }
-      ]
-    },
-    {
       "$type": "landingPage",
       "title": "title_b5ef672f-6a27-4725-b052-4650bdff26f6",
       "description": "description_b5ef672f-6a27-4725-b052-4650bdff26f6",
@@ -10068,14 +10013,6 @@
         {
           "$type": "landingPageVignette",
           "bind": "ad07b990-c018-4ccf-9a9c-28ebe347f49a",
-          "vignette": {
-            "code": "STD_X3_ERP_PJMOPE18"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "4cb81a76-4ca8-4464-be2d-c9a7777d8222",
           "vignette": {
             "code": "STD_X3_ERP_PJMOPE18"
           },
