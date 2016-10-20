@@ -121,12 +121,6 @@
   <data name="comboBoxActivityCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;checkBoxReadOnly.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;comboBoxOwner.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;textBoxCode.Type" xml:space="preserve">
     <value>CustomComponents.RichTextBox, CustomComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
@@ -140,10 +134,6 @@
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>305, 357</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="checkBoxReadOnly.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;labelDescriptionErrorText.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -153,17 +143,27 @@
   <data name="&gt;&gt;labelActivityCode.Name" xml:space="preserve">
     <value>labelActivityCode</value>
   </data>
+  <data name="checkedListBoxTags.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;labelTags.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;labelCompany.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="groupBoxRelatedTo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
   <data name="labelTags.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="comboBoxActivityCode.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;labelPurpose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labelActivityCode.Text" xml:space="preserve">
     <value>Activity code</value>
@@ -182,6 +182,9 @@
   </data>
   <data name="labelTeams.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxTags.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkedListBoxTeams.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -204,11 +207,11 @@
   <data name="labelDescriptionErrorText.Text" xml:space="preserve">
     <value>         </value>
   </data>
+  <data name="&gt;&gt;labelDescriptionErrorText.Name" xml:space="preserve">
+    <value>labelDescriptionErrorText</value>
+  </data>
   <data name="&gt;&gt;labelOwner.Parent" xml:space="preserve">
     <value>groupBoxDescription</value>
-  </data>
-  <data name="groupBoxTagsAndTeams.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
   </data>
   <data name="&gt;&gt;btnOk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -228,8 +231,14 @@
   <data name="labelCompany.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="comboBoxPurpose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 21</value>
+  </data>
   <data name="&gt;&gt;labelDescriptionErrorText.Parent" xml:space="preserve">
     <value>groupBoxDescription</value>
+  </data>
+  <data name="&gt;&gt;labelTags.Parent" xml:space="preserve">
+    <value>groupBoxTagsAndTeams</value>
   </data>
   <data name="labelTags.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -272,9 +281,6 @@
   </data>
   <data name="labelOwner.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCompany.Parent" xml:space="preserve">
-    <value>groupBoxRelatedTo</value>
   </data>
   <data name="labelOwner.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -658,6 +664,9 @@
   <data name="&gt;&gt;textBoxDescription.Parent" xml:space="preserve">
     <value>groupBoxDescription</value>
   </data>
+  <data name="comboBoxCompany.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="groupBoxTagsAndTeams.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 228</value>
   </data>
@@ -667,7 +676,7 @@
   <data name="&gt;&gt;checkedListBoxTags.Parent" xml:space="preserve">
     <value>groupBoxTagsAndTeams</value>
   </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+  <data name="checkBoxReadOnly.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="labelDescription.TabIndex" type="System.Int32, mscorlib">
@@ -709,9 +718,6 @@
   <data name="&gt;&gt;groupBoxRelatedTo.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 202</value>
-  </data>
   <data name="&gt;&gt;comboBoxEndpoint.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
@@ -730,17 +736,20 @@
   <data name="labelCodeErrorText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;checkBoxReadOnly.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="checkedListBoxTags.Location" type="System.Drawing.Point, System.Drawing">
     <value>90, 24</value>
   </data>
+  <data name="labelActivityCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
   <data name="&gt;&gt;comboBoxPurpose.Parent" xml:space="preserve">
     <value>groupBoxRelatedTo</value>
   </data>
-  <data name="groupBoxRelatedTo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="comboBoxEndpoint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 58</value>
   </data>
   <data name="&gt;&gt;checkedListBoxTeams.Parent" xml:space="preserve">
     <value>groupBoxTagsAndTeams</value>
@@ -754,8 +763,8 @@
   <data name="labelTeams.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Endpoint</value>
+  <data name="&gt;&gt;labelActivityCode.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="labelCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -787,9 +796,6 @@
   <data name="labelTeams.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="labelDescriptionErrorText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
   <data name="&gt;&gt;comboBoxActivityCode.Name" xml:space="preserve">
     <value>comboBoxActivityCode</value>
   </data>
@@ -802,6 +808,9 @@
   <data name="&gt;&gt;labelLegislation.Name" xml:space="preserve">
     <value>labelLegislation</value>
   </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
   <data name="&gt;&gt;btnOk.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -811,20 +820,14 @@
   <data name="&gt;&gt;labelCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="labelTags.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
   </data>
-  <data name="&gt;&gt;checkBoxReadOnly.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelDescription.Parent" xml:space="preserve">
     <value>groupBoxDescription</value>
-  </data>
-  <data name="comboBoxPurpose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 21</value>
   </data>
   <data name="&gt;&gt;labelLegislation.Parent" xml:space="preserve">
     <value>groupBoxRelatedTo</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxTagsAndTeams.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -832,14 +835,8 @@
   <data name="checkBoxReadOnly.Text" xml:space="preserve">
     <value>Read-only</value>
   </data>
-  <data name="&gt;&gt;labelTeams.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="labelCodeErrorText.Text" xml:space="preserve">
     <value>         </value>
-  </data>
-  <data name="labelDescriptionErrorText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelPurpose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -847,11 +844,14 @@
   <data name="labelOwner.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;labelCompany.Parent" xml:space="preserve">
+    <value>groupBoxRelatedTo</value>
+  </data>
   <data name="labelCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnOk.Name" xml:space="preserve">
     <value>btnOk</value>
@@ -862,20 +862,17 @@
   <data name="&gt;&gt;textBoxDescription.Type" xml:space="preserve">
     <value>CustomComponents.RichTextBox, CustomComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="checkBoxReadOnly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 17</value>
-  </data>
   <data name="labelDescriptionErrorText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="groupBoxTagsAndTeams.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="btnOk.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="checkedListBoxTeams.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
-  </data>
-  <data name="labelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
   </data>
   <data name="comboBoxActivityCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 21</value>
@@ -889,9 +886,6 @@
   <data name="labelDescriptionErrorText.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
   </data>
-  <data name="labelLegislation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 121</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -901,8 +895,8 @@
   <data name="&gt;&gt;labelCodeErrorText.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="comboBoxLegislation.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="comboBoxActivityCode.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="comboBoxCompany.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -922,11 +916,14 @@
   <data name="groupBoxRelatedTo.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;groupBoxDescription.Name" xml:space="preserve">
-    <value>groupBoxDescription</value>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labelCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;comboBoxCompany.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="labelTeams.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 24</value>
@@ -934,20 +931,17 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Publish Document Template</value>
   </data>
-  <data name="checkedListBoxTags.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="checkBoxReadOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
   </data>
   <data name="&gt;&gt;labelDescription.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="comboBoxOwner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 21</value>
+  <data name="&gt;&gt;comboBoxPurpose.Name" xml:space="preserve">
+    <value>comboBoxPurpose</value>
   </data>
-  <data name="comboBoxEndpoint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 58</value>
-  </data>
-  <data name="&gt;&gt;labelActivityCode.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;comboBoxOwner.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="labelDescription.Text" xml:space="preserve">
     <value>Description *</value>
@@ -957,6 +951,9 @@
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="comboBoxPurpose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 25</value>
   </data>
   <data name="&gt;&gt;comboBoxOwner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -979,6 +976,9 @@
   <data name="comboBoxActivityCode.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="labelLegislation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 121</value>
+  </data>
   <data name="&gt;&gt;checkedListBoxTeams.Name" xml:space="preserve">
     <value>checkedListBoxTeams</value>
   </data>
@@ -988,11 +988,8 @@
   <data name="labelActivityCode.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;comboBoxEndpoint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCompany.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="labelDescriptionErrorText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="groupBoxTagsAndTeams.Size" type="System.Drawing.Size, System.Drawing">
     <value>594, 113</value>
@@ -1006,11 +1003,11 @@
   <data name="&gt;&gt;comboBoxActivityCode.Parent" xml:space="preserve">
     <value>groupBoxRelatedTo</value>
   </data>
-  <data name="&gt;&gt;labelTeams.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="checkedListBoxTags.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 64</value>
   </data>
   <data name="&gt;&gt;checkedListBoxTeams.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1030,14 +1027,17 @@
   <data name="&gt;&gt;checkedListBoxTags.Name" xml:space="preserve">
     <value>checkedListBoxTags</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>groupBoxRelatedTo</value>
   </data>
-  <data name="&gt;&gt;checkedListBoxTags.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="comboBoxOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 21</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelCompany.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="labelOwner.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1051,8 +1051,11 @@
   <data name="labelCompany.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="comboBoxOwner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 149</value>
+  <data name="labelCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 28</value>
+  </data>
+  <data name="textBoxCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 20</value>
   </data>
   <data name="&gt;&gt;comboBoxPurpose.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -1066,17 +1069,14 @@
   <data name="&gt;&gt;labelOwner.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;comboBoxPurpose.Name" xml:space="preserve">
-    <value>comboBoxPurpose</value>
+  <data name="groupBoxTagsAndTeams.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;labelDescriptionErrorText.Name" xml:space="preserve">
-    <value>labelDescriptionErrorText</value>
+  <data name="&gt;&gt;labelPurpose.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;comboBoxLegislation.Name" xml:space="preserve">
-    <value>comboBoxLegislation</value>
-  </data>
-  <data name="comboBoxCompany.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="comboBoxLegislation.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="groupBoxRelatedTo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1093,14 +1093,8 @@
   <data name="labelDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 91</value>
-  </data>
-  <data name="labelCompany.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;labelDescription.Parent" xml:space="preserve">
-    <value>groupBoxDescription</value>
+  <data name="labelCode.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;labelOwner.Name" xml:space="preserve">
     <value>labelOwner</value>
@@ -1108,20 +1102,23 @@
   <data name="labelOwner.Text" xml:space="preserve">
     <value>Owner</value>
   </data>
+  <data name="labelPurpose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
   <data name="&gt;&gt;labelDescription.Name" xml:space="preserve">
     <value>labelDescription</value>
   </data>
   <data name="labelCompany.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
   </data>
-  <data name="btnOk.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;labelLegislation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Endpoint</value>
   </data>
   <data name="labelPurpose.Text" xml:space="preserve">
     <value>Purpose</value>
+  </data>
+  <data name="labelLegislation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;labelCodeErrorText.Parent" xml:space="preserve">
     <value>groupBoxDescription</value>
@@ -1132,8 +1129,8 @@
   <data name="&gt;&gt;labelLegislation.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;labelPurpose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBoxDescription.Name" xml:space="preserve">
+    <value>groupBoxDescription</value>
   </data>
   <data name="labelCodeErrorText.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -1174,8 +1171,8 @@
   <data name="&gt;&gt;groupBoxDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelTags.Parent" xml:space="preserve">
-    <value>groupBoxTagsAndTeams</value>
+  <data name="&gt;&gt;labelTeams.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnOk.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1192,17 +1189,20 @@
   <data name="labelCodeErrorText.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="labelLegislation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="groupBoxTagsAndTeams.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="textBoxCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="groupBoxRelatedTo.Text" xml:space="preserve">
     <value>RELATED TO</value>
+  </data>
+  <data name="&gt;&gt;comboBoxEndpoint.Name" xml:space="preserve">
+    <value>comboBoxEndpoint</value>
   </data>
   <data name="&gt;&gt;labelTeams.Parent" xml:space="preserve">
     <value>groupBoxTagsAndTeams</value>
@@ -1210,8 +1210,8 @@
   <data name="&gt;&gt;groupBoxTagsAndTeams.Name" xml:space="preserve">
     <value>groupBoxTagsAndTeams</value>
   </data>
-  <data name="&gt;&gt;labelCompany.Parent" xml:space="preserve">
-    <value>groupBoxRelatedTo</value>
+  <data name="&gt;&gt;checkBoxReadOnly.Parent" xml:space="preserve">
+    <value>groupBoxDescription</value>
   </data>
   <data name="labelTeams.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1228,8 +1228,8 @@
   <data name="&gt;&gt;groupBoxRelatedTo.Name" xml:space="preserve">
     <value>groupBoxRelatedTo</value>
   </data>
-  <data name="labelActivityCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
+  <data name="labelDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
   </data>
   <data name="groupBoxTagsAndTeams.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1240,8 +1240,8 @@
   <data name="&gt;&gt;labelActivityCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelCode.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="labelDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 91</value>
   </data>
   <data name="labelCodeErrorText.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>180, 36</value>
@@ -1252,11 +1252,11 @@
   <data name="labelActivityCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 152</value>
   </data>
-  <data name="&gt;&gt;labelTags.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="comboBoxOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 149</value>
   </data>
-  <data name="&gt;&gt;comboBoxEndpoint.Name" xml:space="preserve">
-    <value>comboBoxEndpoint</value>
+  <data name="groupBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 202</value>
   </data>
   <data name="labelCodeErrorText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1264,11 +1264,11 @@
   <data name="labelCode.Text" xml:space="preserve">
     <value>Code *</value>
   </data>
-  <data name="comboBoxPurpose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 25</value>
+  <data name="&gt;&gt;labelLegislation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 28</value>
+  <data name="&gt;&gt;comboBoxLegislation.Name" xml:space="preserve">
+    <value>comboBoxLegislation</value>
   </data>
   <data name="groupBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -1276,14 +1276,14 @@
   <data name="comboBoxCompany.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 21</value>
   </data>
-  <data name="checkedListBoxTags.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 64</value>
+  <data name="&gt;&gt;comboBoxCompany.Parent" xml:space="preserve">
+    <value>groupBoxRelatedTo</value>
   </data>
   <data name="&gt;&gt;groupBoxDescription.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="labelTags.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
+  <data name="&gt;&gt;labelTeams.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBoxCode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1297,14 +1297,14 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="labelDescriptionErrorText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="labelPurpose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+  <data name="&gt;&gt;comboBoxEndpoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelPurpose.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="comboBoxLegislation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
