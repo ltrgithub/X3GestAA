@@ -7198,7 +7198,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JMSN"
       },
@@ -7224,7 +7226,37 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JMSN"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_MSNMATUV",
+      "title": "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb",
+      "description": "description_51d54a57-35a3-4a05-98ba-da52cbcc8edb",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestName": "MSNMATUV",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JMSN"
       },
@@ -7327,13 +7359,23 @@
           "endpoint": {
             "dataset": "GEOREFCHAL"
           }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "60775d08-1afd-4b9c-a552-56fb707fef4f",
+          "vignette": {
+            "code": "STD_X3_GEODE_MSNMATUV"
+          },
+          "endpoint": {
+            "dataset": "GEOREFCHAL"
+          }
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "2170c305-61d4-4182-be98-e0b9f8066a43",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7b1a4611-1e43-4c2e-b05a-39796830e5a6}\",\"$layout\":{\"$items\":[{\"$bind\":\"9d22e162-d2ac-4aa7-9817-ead289e98896\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"f56f58e8-f2cb-4c06-9c4b-7ef68d3b899b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"586e45ad-fe51-4403-ad4a-52ccd6fdc1ff\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"edd91a57-c4c6-4eb7-8de8-d209d207268b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"212ecdc4-65fc-4bb6-a313-3d71bd1f2930\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"be3bff5e-c2ea-4224-80d1-8c4cf1f7d2bf\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"e5b5e7b1-eaf1-4172-bf93-74e490a34afa\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cb8b12ca-52e2-4862-a761-be5fc6b301b3}\",\"$layout\":{\"$items\":[{\"$bind\":\"74e7a7c7-303c-4cd1-a656-02ad5e576c7a\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@7b1a4611-1e43-4c2e-b05a-39796830e5a6}\",\"$layout\":{\"$items\":[{\"$bind\":\"9d22e162-d2ac-4aa7-9817-ead289e98896\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"f56f58e8-f2cb-4c06-9c4b-7ef68d3b899b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"586e45ad-fe51-4403-ad4a-52ccd6fdc1ff\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"edd91a57-c4c6-4eb7-8de8-d209d207268b\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"212ecdc4-65fc-4bb6-a313-3d71bd1f2930\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"60775d08-1afd-4b9c-a552-56fb707fef4f\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"be3bff5e-c2ea-4224-80d1-8c4cf1f7d2bf\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"e5b5e7b1-eaf1-4172-bf93-74e490a34afa\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cb8b12ca-52e2-4862-a761-be5fc6b301b3}\",\"$layout\":{\"$items\":[{\"$bind\":\"74e7a7c7-303c-4cd1-a656-02ad5e576c7a\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "GEORESMIS",
         "$variantType": "landingPage"
@@ -9484,6 +9526,9 @@
           "code": "ERP-DIRECTOR"
         },
         {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
           "code": "NA-APACCMAN"
         },
         {
@@ -9910,70 +9955,6 @@
       ]
     },
     {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_PJMOPE18",
-      "title": "title_cf349c07-9673-475f-bd1b-24f1d5f05e74",
-      "description": "description_cf349c07-9673-475f-bd1b-24f1d5f05e74",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestName": "PJMOPE18",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MPRP"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_18da4623-1146-44ec-8120-5404d103ee75",
-          "prompt": false,
-          "value": "true"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "level",
-          "title": "title_a1ebd07c-288f-4d46-8e93-1b362ab3028b",
-          "prompt": false,
-          "value": "1"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "displayLineNum",
-          "title": "title_efa11d2b-27f5-4c8a-81f2-ca733319f60e",
-          "prompt": false,
-          "value": "false"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "forcedExecution",
-          "title": "title_c7b9c157-865d-4816-a501-8635b89bfcce",
-          "prompt": false,
-          "value": "false"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "frequency",
-          "title": "title_e2b54d35-67a1-4494-88b5-a42a2b40da26",
-          "prompt": false,
-          "value": "3"
-        }
-      ]
-    },
-    {
       "$type": "landingPage",
       "title": "title_b5ef672f-6a27-4725-b052-4650bdff26f6",
       "description": "description_b5ef672f-6a27-4725-b052-4650bdff26f6",
@@ -10032,14 +10013,6 @@
         {
           "$type": "landingPageVignette",
           "bind": "ad07b990-c018-4ccf-9a9c-28ebe347f49a",
-          "vignette": {
-            "code": "STD_X3_ERP_PJMOPE18"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "4cb81a76-4ca8-4464-be2d-c9a7777d8222",
           "vignette": {
             "code": "STD_X3_ERP_PJMOPE18"
           },
@@ -11618,6 +11591,7 @@
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "Materials follow-up",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Resources in mission",
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Unavailable resources",
+      "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb": "Unavailable materials",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Business Process",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Key information",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "Stock manager",
@@ -12449,6 +12423,7 @@
       "title_5e907e3a-9550-44d8-af36-a285f7c852cc": "cube",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Ressources en mission",
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Ressources indisponible",
+      "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb": "Matériels indisponible",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Processus",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Indicateurs",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "Responsable stock",
