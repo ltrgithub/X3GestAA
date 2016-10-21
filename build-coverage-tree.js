@@ -45,7 +45,9 @@ function compileFile(fname) {
 	var source = fs.readFileSync(srcPath, 'utf8');
 	var transformed = {};
 	if (needsTransform) { // && !/[\///](shadow-modules|\.bin)[\///]/.test(srcPath)) {
-		transformed = transformJs(srcPath, {});
+		transformed = transformJs(srcPath, {
+			babel: { compact: false },
+		});
 	} else {
 		transformed.code = source;
 	}
