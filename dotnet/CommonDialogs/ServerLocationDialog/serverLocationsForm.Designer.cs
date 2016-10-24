@@ -39,80 +39,53 @@
             // 
             // upButton
             // 
-            this.upButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.upButton, "upButton");
             this.upButton.Image = global::CommonDialogs.Properties.Resources.arrow_up;
-            this.upButton.Location = new System.Drawing.Point(526, 22);
-            this.upButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(75, 23);
-            this.upButton.TabIndex = 0;
             this.upButton.UseVisualStyleBackColor = true;
             this.upButton.Click += new System.EventHandler(this.upButton_Click);
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(440, 259);
-            this.okButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 30);
-            this.okButton.TabIndex = 1;
-            this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(526, 259);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 30);
-            this.cancelButton.TabIndex = 2;
-            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // removeButton
             // 
-            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeButton.Location = new System.Drawing.Point(526, 80);
-            this.removeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.removeButton, "removeButton");
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 26);
-            this.removeButton.TabIndex = 3;
-            this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // downButton
             // 
-            this.downButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.downButton, "downButton");
             this.downButton.Image = global::CommonDialogs.Properties.Resources.arrow_down;
-            this.downButton.Location = new System.Drawing.Point(526, 50);
-            this.downButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(75, 23);
-            this.downButton.TabIndex = 4;
             this.downButton.UseVisualStyleBackColor = true;
             this.downButton.Click += new System.EventHandler(this.downButton_Click);
             // 
             // serverLocationsListBox
             // 
+            resources.ApplyResources(this.serverLocationsListBox, "serverLocationsListBox");
             this.serverLocationsListBox.FormattingEnabled = true;
-            this.serverLocationsListBox.Location = new System.Drawing.Point(7, 6);
-            this.serverLocationsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.serverLocationsListBox.Name = "serverLocationsListBox";
-            this.serverLocationsListBox.Size = new System.Drawing.Size(508, 238);
-            this.serverLocationsListBox.TabIndex = 5;
             this.serverLocationsListBox.SelectedIndexChanged += new System.EventHandler(this.serverLocationsListBox_SelectedIndexChanged);
             this.serverLocationsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serverLocationsListBox_KeyDown);
             // 
             // serverLocationsDialog
             // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(612, 299);
-            this.ControlBox = false;
             this.Controls.Add(this.serverLocationsListBox);
             this.Controls.Add(this.downButton);
             this.Controls.Add(this.removeButton);
@@ -120,11 +93,9 @@
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.upButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "serverLocationsDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Server locations";
             this.Load += new System.EventHandler(this.serverLocationsForm_Load);
             this.ResumeLayout(false);
 
