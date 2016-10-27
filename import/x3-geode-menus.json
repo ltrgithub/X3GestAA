@@ -305,50 +305,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_GEODE_SLFOLLOW",
-      "title": "title_e60e289a-7bd9-49a0-97da-6dc66734f77b",
-      "description": "description_e60e289a-7bd9-49a0-97da-6dc66734f77b",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "requestName": "SLFOLLOW",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JSTK"
-      },
-      "categories": [],
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_21048430-9824-4a2d-b447-d3f7a8fa271e",
-          "prompt": false,
-          "value": "SLFOLLOW"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_e2df921d-9c8a-42cd-990d-ad5f556e7758",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_GEODE_BOFOLLOW",
       "title": "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5",
       "description": "description_84d2e12d-14e1-4e40-ae08-981f4dad6af5",
@@ -2664,6 +2620,33 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_GEODE_COLISQ",
+      "title": "title_f541c869-7034-4fb6-a82c-7d3629524e1d",
+      "description": "description_f541c869-7034-4fb6-a82c-7d3629524e1d",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "COLIS",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_JOUT"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_GEODE_CRACAL",
       "title": "title_b93e7efc-9336-4adc-b621-505487e91f5c",
       "description": "description_b93e7efc-9336-4adc-b621-505487e91f5c",
@@ -2853,6 +2836,50 @@
           "$type": "menuItemParameter",
           "name": "cube",
           "title": "title_40a32db6-5cb2-4ebb-b722-e0db4492d8fb",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_SLFOLLOW",
+      "title": "title_e60e289a-7bd9-49a0-97da-6dc66734f77b",
+      "description": "description_e60e289a-7bd9-49a0-97da-6dc66734f77b",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "SLFOLLOW",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JINP"
+      },
+      "categories": [],
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_21048430-9824-4a2d-b447-d3f7a8fa271e",
+          "prompt": false,
+          "value": "SLFOLLOW"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_e2df921d-9c8a-42cd-990d-ad5f556e7758",
           "prompt": false,
           "value": "false"
         }
@@ -20926,7 +20953,6 @@
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Unavailable resources",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Resources in mission",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "Stock Manager",
-      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "SL Portfolio",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "Assembling Portfolio",
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "Assembly mvts",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "DO line in Cdk requirement",
@@ -20989,6 +21015,7 @@
       "title_566fd723-da78-4a19-864b-d2ce4737aae5": "Calendar Receipt Carrier appoint.",
       "title_3a506fe5-c433-4b85-90a6-578e284dfcc5": "Calendatr Shipment Carrier Appoint.",
       "title_9429e1c5-1f39-4bff-a71c-5f6008fd6f75": "Calendar Others Carrier Appoint.",
+      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "SL Portfolio",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Single line files conversion",
       "description_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "AIFIMPGENFIC",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Upd carrier parcel",
@@ -22254,7 +22281,6 @@
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "STD_X3_GEODE_COLIS",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "STD_X3_GEODE_STATTN",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "STD_X3_GEODE_STO",
-      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "STD_X3_GEODE_BOFOLLOW",
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "STD_X3_GEODE_CDKNEEDS",
@@ -22303,6 +22329,7 @@
       "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "STD_X3_GEODE_PICBIS",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "STD_X3_GEODE_PGEOMIPS",
+      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Consersión ficheros monolínea",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Act. bulto transportista",
       "title_bfe8449e-20ab-4b64-b7fb-c38baf8beea7": "Reempaquetar",
@@ -22899,9 +22926,6 @@
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Ressources indisponible",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Ressources en mission",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "Responsable Stockage",
-      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "Portefeuille LR",
-      "title_21048430-9824-4a2d-b447-d3f7a8fa271e": "portview",
-      "title_e2df921d-9c8a-42cd-990d-ad5f556e7758": "cube",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "Portefeuille Assemblage",
       "title_42edc894-14e2-43c4-8058-78f4e70bdaf3": "portview",
       "title_5c8c5244-1e5d-4a21-acdb-e67ccd5c3720": "cube",
@@ -23032,6 +23056,7 @@
       "title_3727441b-69c4-4734-b4ce-65952594b842": "portview",
       "title_ccc7c013-e502-4476-9065-d4aca0c4b03b": "KPI Qualité - Entrées Attendues",
       "title_d2236bf3-558b-43cb-a3df-7b5864eb9a63": "portview",
+      "title_f541c869-7034-4fb6-a82c-7d3629524e1d": "Colis non expédiés",
       "title_b93e7efc-9336-4adc-b621-505487e91f5c": "Calendrier RDV tous type",
       "title_ef48ff2d-7872-4198-8f7e-d63f551f278b": "portview",
       "title_d47a42da-878f-4ba2-ad0f-82c2caa795d8": "count",
@@ -23048,6 +23073,9 @@
       "title_16138e2b-41c6-4fb7-9240-6268a2af94b9": "portview",
       "title_dc8a7200-8a16-4e66-9faa-5ddbfdcd17f9": "count",
       "title_40a32db6-5cb2-4ebb-b722-e0db4492d8fb": "cube",
+      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "Portefeuille LR",
+      "title_21048430-9824-4a2d-b447-d3f7a8fa271e": "portview",
+      "title_e2df921d-9c8a-42cd-990d-ad5f556e7758": "cube",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Conversion fichiers mono-ligne",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Maj colis transporteur",
       "title_184a10af-baa9-4156-9855-465e9f88e330": "Entrées Attendues en retard",
@@ -23724,7 +23752,6 @@
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "Colli spediti",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "Tragitti spedizione",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "Responsabile Magazzino",
-      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "Portafoglio Assemblaggio",
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "Riga OC in fabb Cross Docking",
@@ -23773,6 +23800,7 @@
       "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "Responsabile Preparazioni",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "RF direttiva",
+      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "AIFIMPGENFIC",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Agg. colli trasportatore",
       "title_bfe8449e-20ab-4b64-b7fb-c38baf8beea7": "Reimpacchettamento",
@@ -24364,7 +24392,6 @@
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "STD_X3_GEODE_COLIS",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "STD_X3_GEODE_STATTN",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "STD_X3_GEODE_STO",
-      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "STD_X3_GEODE_BOFOLLOW",
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "STD_X3_GEODE_CDKNEEDS",
@@ -24413,6 +24440,7 @@
       "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "STD_X3_GEODE_PICBIS",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "STD_X3_GEODE_PGEOMIPS",
+      "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Conversão ficheiros mono-linha",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Act. vol. transportador",
       "title_bfe8449e-20ab-4b64-b7fb-c38baf8beea7": "Repacking",
