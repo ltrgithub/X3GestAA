@@ -7020,6 +7020,77 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_GEODE_ADM",
+      "title": "title_8c46528a-7ce2-4818-8985-ba617522aa94",
+      "description": "description_8c46528a-7ce2-4818-8985-ba617522aa94",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "ADM001",
+      "processMenu": "ADM",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MTDI"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b",
+      "description": "description_7c66635d-a2f8-4dae-98b8-2d97bc38b99b",
+      "useCurrentEndpoint": true,
+      "pageName": "GEORESADM",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "ADMIN"
+        },
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "Developers"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "5c61ee1a-bc1c-4e49-bb61-57b2998c7cd9",
+          "vignette": {
+            "code": "STD_X3_GEODE_ADM"
+          },
+          "endpoint": {
+            "dataset": "GEOREFCHAL"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "40e04fef-51d7-4a56-8843-b43c6eb7dee1",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d251b446-1975-4c27-9339-2e748e4da5ac}\",\"$layout\":{\"$items\":[{\"$bind\":\"5c61ee1a-bc1c-4e49-bb61-57b2998c7cd9\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "GEORESADM",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_GEODE_REAPICK1",
       "title": "title_660ef890-6533-4c76-87b4-be8db3618dec",
       "description": "description_660ef890-6533-4c76-87b4-be8db3618dec",
@@ -7590,7 +7661,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_MTDI"
       },
@@ -7638,7 +7711,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_MTDI"
       },
@@ -8352,7 +8427,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JOUT"
       },
@@ -9193,7 +9270,9 @@
         "contract": "geode"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_GEODE_JINP"
       },
@@ -10832,77 +10911,6 @@
       "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@5988242f-67bc-4c02-92c9-26891c2bbf70}\",\"$layout\":{\"$layoutType\":\"stack\",\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"6baafe26-9a2d-41cf-9858-a3ee31b66e9f\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"2598504a-bbd6-4a34-b900-410379d864dc\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"a45d4026-218c-4e20-bec7-0d827c7d0173\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"64da2d34-c017-4104-a6ed-1f0a4446795c\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"668851d3-f6df-44a2-83e2-ad48a4605d88\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"100\"}],\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@61475864-54a4-4967-a70d-496ed1e0ff6b}\",\"$layout\":{\"$items\":[{\"$bind\":\"eb9792fc-5118-40f4-8f86-0ac4c16f77b6\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "CCM",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_GEODE_ADM",
-      "title": "title_8c46528a-7ce2-4818-8985-ba617522aa94",
-      "description": "description_8c46528a-7ce2-4818-8985-ba617522aa94",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "processName": "ADM001",
-      "processMenu": "ADM",
-      "processLeg": "",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MTDI"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b",
-      "description": "description_7c66635d-a2f8-4dae-98b8-2d97bc38b99b",
-      "useCurrentEndpoint": true,
-      "pageName": "GEORESADM",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "ADMIN"
-        },
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "Developers"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "5c61ee1a-bc1c-4e49-bb61-57b2998c7cd9",
-          "vignette": {
-            "code": "STD_X3_GEODE_ADM"
-          },
-          "endpoint": {
-            "dataset": "GEOREFCHAL"
-          }
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "40e04fef-51d7-4a56-8843-b43c6eb7dee1",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d251b446-1975-4c27-9339-2e748e4da5ac}\",\"$layout\":{\"$items\":[{\"$bind\":\"5c61ee1a-bc1c-4e49-bb61-57b2998c7cd9\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
-      "page": {
-        "pageName": "GEORESADM",
         "$variantType": "landingPage"
       }
     },
@@ -13543,6 +13551,9 @@
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Business Process",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Follow-up",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@b0ebc9ac-d4d5-47d5-bcf3-920c9c2a9039": "KPI Quality",
+      "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "Operating manager",
+      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Operating Manager",
+      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Business process",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "Stock manager",
       "title_660ef890-6533-4c76-87b4-be8db3618dec": "affected picking slots to replenish",
       "title_429b1016-ac80-40d3-9c58-8af997b56c38": "Non affected picking slots",
@@ -13639,9 +13650,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Business Process",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Key Information",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Business Process",
-      "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "Operating manager",
-      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Operating Manager",
-      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Business process",
       "title_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "CFO dashboard",
       "description_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "CFO dashboard",
       "title_1a16a345-caa9-43a8-8338-f7560d4310b8": "Turnover N/N-1 (value)",
@@ -14021,6 +14029,7 @@
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "STD_X3_GEODE_MATFOLLOW",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Proceso",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Indicadores",
+      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "title_57066157-285f-46c2-ab5e-0a986cda935c": "STD_X3_GEODE_SKO",
       "title_28a4e033-427a-47da-bcd6-394632aea25c": "STD_X3_GEODE_TOFOLLOW",
       "title_dfddb114-69df-4f5e-a23a-be191c8d7b6e": "STD_X3_GEODE_QCFOLLOW",
@@ -14089,7 +14098,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Proceso de negocio",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Información clave",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Proceso de negocio",
-      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "title_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "Cuadro mando Director financiero",
       "description_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "Cuadro mando Director financiero",
       "title_1a16a345-caa9-43a8-8338-f7560d4310b8": "Volumen de Negocio N/N-1 (valor)",
@@ -14439,6 +14447,9 @@
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Processus",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Suivi d'activité",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@b0ebc9ac-d4d5-47d5-bcf3-920c9c2a9039": "KPI Qualité",
+      "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "Responsable exploitation",
+      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Responsable Exploitation",
+      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Processus",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "Responsable stock",
       "title_660ef890-6533-4c76-87b4-be8db3618dec": "Emplacements Picking affectés à réapprovisionner",
       "title_429b1016-ac80-40d3-9c58-8af997b56c38": "Emplacements Picking non affectés",
@@ -14605,9 +14616,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Processus métier",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Informations clés",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Processus métier",
-      "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "Responsable exploitation",
-      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Responsable Exploitation",
-      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Processus",
       "title_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "Tableaux Directeur financier",
       "description_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "Tableaux Directeur financier",
       "title_1a16a345-caa9-43a8-8338-f7560d4310b8": "Chiffre d'affaires N/N-1 (montant)",
@@ -14914,6 +14922,7 @@
       "title_e413cb86-cb8f-48fa-9ec0-9d8899636597": "STD_X3_GEODE_SMNOPREJ",
       "title_bc39a34a-b86a-4577-9870-dbe2953d2344": "STD_X3_GEODE_RSSFOLLOW",
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "STD_X3_GEODE_MATFOLLOW",
+      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Responsabile Gestione",
       "title_57066157-285f-46c2-ab5e-0a986cda935c": "STD_X3_GEODE_SKO",
       "title_28a4e033-427a-47da-bcd6-394632aea25c": "Portafoglio OT",
       "title_dfddb114-69df-4f5e-a23a-be191c8d7b6e": "Portafoglio Controllo Qualità",
@@ -14964,7 +14973,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Business process",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Business process",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Informazioni chiave",
-      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Responsabile Gestione",
       "title_1a16a345-caa9-43a8-8338-f7560d4310b8": "Fatturato N/N-1 (importo)",
       "description_1a16a345-caa9-43a8-8338-f7560d4310b8": "Fatturato N/N-1 (importo)",
       "title_1f284aa9-5d87-4e72-a610-a7cfbb02f4df": "Fatturato N/N-1 (%)",
@@ -15548,6 +15556,7 @@
       "title_e413cb86-cb8f-48fa-9ec0-9d8899636597": "STD_X3_GEODE_SMNOPREJ",
       "title_bc39a34a-b86a-4577-9870-dbe2953d2344": "STD_X3_GEODE_RSSFOLLOW",
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "STD_X3_GEODE_MATFOLLOW",
+      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "title_57066157-285f-46c2-ab5e-0a986cda935c": "STD_X3_GEODE_SKO",
       "title_28a4e033-427a-47da-bcd6-394632aea25c": "STD_X3_GEODE_TOFOLLOW",
       "title_dfddb114-69df-4f5e-a23a-be191c8d7b6e": "STD_X3_GEODE_QCFOLLOW",
@@ -15607,7 +15616,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Processo de negócio",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Informação chave",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Processo de negócio",
-      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "title_1a16a345-caa9-43a8-8338-f7560d4310b8": "Volume negócios N/N-1 (montante)",
       "description_1a16a345-caa9-43a8-8338-f7560d4310b8": "Volume negócios N/N-1 (montante)",
       "title_1f284aa9-5d87-4e72-a610-a7cfbb02f4df": "Volume negócios N/N-1 (%)",
@@ -16246,6 +16254,8 @@
       "title_e413cb86-cb8f-48fa-9ec0-9d8899636597": "驳回的操作",
       "title_bc39a34a-b86a-4577-9870-dbe2953d2344": "资源追踪",
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "物料追踪",
+      "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "运营经理",
+      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "运营经理",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "库存经理",
       "title_fbd75d2a-7145-4d87-9f25-444247362b64": "物流经理",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "物流服务",
@@ -16280,8 +16290,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "业务流程",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "关键指标",
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "业务流程",
-      "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "运营经理",
-      "title_8c46528a-7ce2-4818-8985-ba617522aa94": "运营经理",
       "title_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "CFO仪表板",
       "description_3bc24d48-9488-4ef1-b9f1-bfc4a9c383c1": "CFO仪表板",
       "title_1a16a345-caa9-43a8-8338-f7560d4310b8": "周转率 N/N-1 (金额)",
