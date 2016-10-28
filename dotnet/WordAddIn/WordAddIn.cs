@@ -126,6 +126,10 @@ namespace WordAddIn
                         Globals.Ribbons.Ribbon.buttonPublish.Enabled = true;
                     }
                 }
+                else if (_connected && string.IsNullOrEmpty(customData.getDocumentRepresentation()))
+                {
+                    ConnectionProgressHelper.showConnectionDialog(false);
+                }
             }
            
             commons.SetSupportedLocales(customData);
