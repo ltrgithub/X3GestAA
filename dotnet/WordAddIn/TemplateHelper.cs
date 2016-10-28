@@ -86,6 +86,84 @@ namespace WordAddIn
             }
         }
 
+        /// <summary>
+        /// Store the start row and the number of template rows for a given table in the document's custom data.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="table"></param>
+        /// <param name="collectionName"></param>
+        /// <param name="startRow"></param>
+        /// <param name="numRows"></param>
+        public static void addMappedRowsCustomData(Document doc, Table table, TableInfo info, int startRow, int numRows)
+        {
+            if (info.templateRows.Count == 1)
+            {
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+                if (customData != null)
+                {
+                    String mappedRowsStart = "mappedRowsStart-" + info.collectionName;
+                    String mappedRowsCount = "mappedRowsCount-" + info.collectionName;
+
+                    customData.setStringProperty(mappedRowsStart, "" + startRow);
+                    customData.setStringProperty(mappedRowsCount, "" + numRows);
+                    customData.writeDictionaryToDocument();
+                }
+            }
+        }
+
+        /// <summary>
+        /// If a custom data entry exists for the mapped rows, then use this metadata to clear the associated template rows in the table.
+        /// Due to performance issues with removing large numbers of rows, we instead clear the contents of the cells within the
+        /// template rows. We then remove or add rows to the table to match the number of rows required.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="table"></param>
+        /// <param name="info"></param>
+        /// <param name="newRowCount"></param>
+        public static bool clearMappedRows(Document doc, Table table, TableInfo info, int newRowCount)
+        {
+            bool dirty = false;
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+            if (info.templateRows.Count == 1 && customData != null)
+            {
+                String mappedRowsStart = "mappedRowsStart-" + info.collectionName;
+                String mappedRowsCount = "mappedRowsCount-" + info.collectionName;
+
+                int startRow, rowCount;
+                if (Int32.TryParse(customData.getStringProperty(mappedRowsStart, false), out startRow) &&
+                    Int32.TryParse(customData.getStringProperty(mappedRowsCount, false), out rowCount))
+                {
+
+                    info.templateRows[0].Range.Font.Hidden = 0; // redisplay the hidden template row
+                    startRow++; // template row now showing, so startRow is the row after...
+
+                    Cell cellTopLeft = table.Rows[startRow].Cells[1];
+                    Cell cellBottomRight = table.Rows[Math.Min(startRow + rowCount-1, table.Rows.Count)].Cells[table.Columns.Count];
+                    doc.Range(cellTopLeft.Range.Start, cellBottomRight.Range.End).Delete();
+
+                    if (table.Rows.Count < startRow + rowCount -1) // handle the case where the user has deleted rows in the table before the refresh
+                    {
+                        doc.Application.Selection.InsertRowsBelow(startRow + rowCount - table.Rows.Count );
+                    }
+
+                    int newRowDelta = newRowCount - rowCount;
+                    if (newRowDelta > 0)
+                    {
+                        doc.Application.Selection.InsertRowsBelow(newRowDelta);
+                    }
+                    else if (newRowDelta < 0)
+                    {
+                        for (int ii = startRow; ii < startRow + Math.Abs(newRowDelta); ii++)
+                        {
+                            table.Rows[ii].Delete();
+                        }
+                    }
+                    dirty = true;
+                }
+            }
+            return dirty;
+        }
+
         private static void copyCellContent(Cell src, Cell dest)
         {
             foreach (ContentControl s in src.Range.ContentControls)
