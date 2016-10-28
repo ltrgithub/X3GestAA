@@ -137,13 +137,16 @@ namespace WordAddIn
                     info.templateRows[0].Range.Font.Hidden = 0; // redisplay the hidden template row
                     startRow++; // template row now showing, so startRow is the row after...
 
-                    Cell cellTopLeft = table.Rows[startRow].Cells[1];
-                    Cell cellBottomRight = table.Rows[Math.Min(startRow + rowCount-1, table.Rows.Count)].Cells[table.Columns.Count];
-                    doc.Range(cellTopLeft.Range.Start, cellBottomRight.Range.End).Delete();
+                    if (startRow <= table.Rows.Count)
+                    {
+                        Cell cellTopLeft = table.Rows[startRow].Cells[1];
+                        Cell cellBottomRight = table.Rows[Math.Min(startRow + rowCount - 1, table.Rows.Count)].Cells[table.Columns.Count];
+                        doc.Range(cellTopLeft.Range.Start, cellBottomRight.Range.End).Delete();
+                    }
 
                     if (table.Rows.Count < startRow + rowCount -1) // handle the case where the user has deleted rows in the table before the refresh
                     {
-                        doc.Application.Selection.InsertRowsBelow(startRow + rowCount - table.Rows.Count );
+                        doc.Application.Selection.InsertRowsBelow(startRow + rowCount - table.Rows.Count - 1);
                     }
 
                     int newRowDelta = newRowCount - rowCount;
@@ -162,6 +165,20 @@ namespace WordAddIn
                 }
             }
             return dirty;
+        }
+
+        public static bool isDirectTemplateRow(Document doc, Row row, TagInfo tag)
+        {
+            bool directTemplateRow = false;
+            if (row.Index > 1)
+            {
+                SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
+                if (customData != null)
+                {
+                    directTemplateRow = customData.getDictionary().ContainsKey("mappedRowsStart-" + tag.collection);
+                }
+            }
+            return directTemplateRow;
         }
 
         private static void copyCellContent(Cell src, Cell dest)

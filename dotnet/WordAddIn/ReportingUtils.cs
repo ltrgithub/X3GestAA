@@ -467,11 +467,19 @@ namespace WordAddIn
             }
         }
 
+        /// <summary>
+        /// Find the rows that contain Content Controls.
+        /// For each distinctive row, create a row in templateRows.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="table"></param>
+        /// <param name="templateRows"></param>
         private static void DetectTableSize(Document doc, Table table, List<Row> templateRows)
         {
             List<string> matchedRows = new List<string>();
             List<Row> rowsToRemove = new List<Row>();
 
+            Boolean? directTemplateUsed = null;
             foreach (Row row in table.Rows)
             {
                 if (row.Range.ContentControls.Count > 0)
@@ -479,11 +487,15 @@ namespace WordAddIn
                     List<string> tags = new List<string>();
                     foreach (ContentControl ctrl in row.Range.ContentControls)
                     {
-                        TagInfo tag = TagInfo.create(ctrl);
+                       TagInfo tag = TagInfo.create(ctrl);
                         if (tag != null)
                         {
                             if (!tag.isSimple)
                             {
+                                if (directTemplateUsed == null)
+                                {
+                                    directTemplateUsed = TemplateHelper.isDirectTemplateRow(doc, row, tag);
+                                }
                                 tags.Add(ctrl.Tag);
                             }
                         }
@@ -506,6 +518,11 @@ namespace WordAddIn
                             matchedRows.Add(id);
                         }
                     }
+                }
+                
+                if (directTemplateUsed != null && (bool)directTemplateUsed) // a direct (fast loading) template will only ever have a single template row
+                {
+                    break;
                 }
             }
 
