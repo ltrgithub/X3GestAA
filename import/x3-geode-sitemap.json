@@ -7067,6 +7067,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_ATXTSRVSYNC",
+      "title": "title_38dbda5b-bed9-431a-85ad-6b1f2903a718",
+      "description": "description_38dbda5b-bed9-431a-85ad-6b1f2903a718",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ATXTSRVSYNC",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_GEODE_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_add2ecf2-ef79-4320-8f61-7c2f4b5b4b7c",
       "code": "STD_X3_GEODE_GDEV_MISC",
@@ -7083,6 +7110,10 @@
         },
         {
           "code": "STD_X3_GEODE_GESAGD",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_ATXTSRVSYNC",
           "$variantType": "menuItem"
         }
       ]
@@ -20341,513 +20372,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_RPT02",
-      "title": "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c",
-      "description": "description_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "RPT02",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_RPT03",
-      "title": "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a",
-      "description": "description_e74b3eb5-b36d-4d24-bef7-2e7c5579263a",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "RPT03",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_RPT04",
-      "title": "title_70468014-66ec-4536-89f5-31003b83c62d",
-      "description": "description_70468014-66ec-4536-89f5-31003b83c62d",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "RPT04",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_RPT05",
-      "title": "title_75cc2ed8-66d6-4121-b607-2b3930c32c43",
-      "description": "description_75cc2ed8-66d6-4121-b607-2b3930c32c43",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "RPT05",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_RPT06",
-      "title": "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546",
-      "description": "description_5c94df29-29cd-41c4-b8b0-3ee77aceb546",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "RPT06",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_RPT01",
-      "title": "title_c5b9ced9-e6f3-4483-a868-5efe496e1532",
-      "description": "description_c5b9ced9-e6f3-4483-a868-5efe496e1532",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "RPT01",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_411b3ac2-def2-4180-b8da-cc2be696f34d",
-      "code": "STD_X3_GEODE_GIMP",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "items": [
-        {
-          "code": "STD_X3_GEODE_RPT02",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_RPT03",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_RPT04",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_RPT05",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_RPT06",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_RPT01",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_AIMP",
-      "title": "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f",
-      "description": "description_340b70f9-cdaa-431b-b661-c11b5abc5a3f",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "AIMP",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_ABIIMP",
-      "title": "title_45294382-9a75-4822-9a2d-9697c3f812ae",
-      "description": "description_45294382-9a75-4822-9a2d-9697c3f812ae",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "ABIIMP",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_EXEALH",
-      "title": "title_8f588586-8c29-4826-8471-bc3aa330ef26",
-      "description": "description_8f588586-8c29-4826-8471-bc3aa330ef26",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "EXEALH",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_EXEALHGRP",
-      "title": "title_c83f5736-9cdc-4867-bead-a84ff3467745",
-      "description": "description_c83f5736-9cdc-4867-bead-a84ff3467745",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "EXEALHGRP",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_ARCVISU",
-      "title": "title_d571bec8-26f2-47a0-96ba-ad428ddd535a",
-      "description": "description_d571bec8-26f2-47a0-96ba-ad428ddd535a",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "ARCVISU",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_ARCVISUOBJ",
-      "title": "title_62d6d0d0-2250-45b1-bb8c-787974f47a33",
-      "description": "description_62d6d0d0-2250-45b1-bb8c-787974f47a33",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "ARCVISUOBJ",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_PSIMP",
-      "title": "title_6318beda-e26f-4d61-8a21-d46d77238b51",
-      "description": "description_6318beda-e26f-4d61-8a21-d46d77238b51",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "PSIMP",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_LECTRACE",
-      "title": "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c",
-      "description": "description_6ca591ba-2f04-4a19-86a5-bf88a3434e7c",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "LECTRACE",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MIMP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282",
-      "code": "STD_X3_GEODE_MIMP_MISC",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "items": [
-        {
-          "code": "STD_X3_GEODE_AIMP",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_ABIIMP",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_EXEALH",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_EXEALHGRP",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_ARCVISU",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_ARCVISUOBJ",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_PSIMP",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_LECTRACE",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuModule",
-      "title": "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e",
-      "code": "STD_X3_GEODE_MIMP",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "submodules": [
-        {
-          "code": "STD_X3_GEODE_GIMP"
-        },
-        {
-          "code": "STD_X3_GEODE_MIMP_MISC"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "STD_X3_GEODE_AREQUETE",
       "title": "title_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c",
       "description": "description_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c",
@@ -21847,6 +21371,120 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_HISTO",
+      "title": "title_a987e5a9-2c42-438f-8965-6fab0ff91665",
+      "description": "description_a987e5a9-2c42-438f-8965-6fab0ff91665",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "HISTO",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MTDI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_SAIWRKPLN",
+      "title": "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb",
+      "description": "description_53e1d8e6-2bb4-4163-83ac-9dde22b081fb",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "SAIWRKPLN",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MTDI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_AVOLUME",
+      "title": "title_726c270d-9434-4b44-a263-4ac527592994",
+      "description": "description_726c270d-9434-4b44-a263-4ac527592994",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "AVOLUME",
+        "representation": "AVOLUME"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MTDI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a",
+      "code": "STD_X3_GEODE_MTDI_MISC",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "items": [
+        {
+          "code": "STD_X3_GEODE_HISTO",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_SAIWRKPLN",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_AVOLUME",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_GEODE_GESAM3",
       "title": "title_6a3a5d59-7231-433c-af9e-9eed4290595f",
       "description": "description_6a3a5d59-7231-433c-af9e-9eed4290595f",
@@ -22115,120 +21753,6 @@
       ]
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_HISTO",
-      "title": "title_a987e5a9-2c42-438f-8965-6fab0ff91665",
-      "description": "description_a987e5a9-2c42-438f-8965-6fab0ff91665",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "HISTO",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MTDI"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_SAIWRKPLN",
-      "title": "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb",
-      "description": "description_53e1d8e6-2bb4-4163-83ac-9dde22b081fb",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "SAIWRKPLN",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MTDI"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_GEODE_AVOLUME",
-      "title": "title_726c270d-9434-4b44-a263-4ac527592994",
-      "description": "description_726c270d-9434-4b44-a263-4ac527592994",
-      "linkType": "$representation",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "99",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy",
-        "entity": "AVOLUME",
-        "representation": "AVOLUME"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MTDI"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a",
-      "code": "STD_X3_GEODE_MTDI_MISC",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "items": [
-        {
-          "code": "STD_X3_GEODE_HISTO",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_SAIWRKPLN",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_GEODE_AVOLUME",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
       "$type": "menuModule",
       "title": "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9",
       "code": "STD_X3_GEODE_MTDI",
@@ -22255,6 +21779,9 @@
           "code": "STD_X3_GEODE_MINT"
         },
         {
+          "code": "STD_X3_GEODE_MTDI_MISC"
+        },
+        {
           "code": "STD_X3_GEODE_MMOUL"
         },
         {
@@ -22262,9 +21789,513 @@
         },
         {
           "code": "STD_X3_GEODE_MASS"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_RPT02",
+      "title": "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c",
+      "description": "description_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "RPT02",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_RPT03",
+      "title": "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a",
+      "description": "description_e74b3eb5-b36d-4d24-bef7-2e7c5579263a",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "RPT03",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_RPT04",
+      "title": "title_70468014-66ec-4536-89f5-31003b83c62d",
+      "description": "description_70468014-66ec-4536-89f5-31003b83c62d",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "RPT04",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_RPT05",
+      "title": "title_75cc2ed8-66d6-4121-b607-2b3930c32c43",
+      "description": "description_75cc2ed8-66d6-4121-b607-2b3930c32c43",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "RPT05",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_RPT06",
+      "title": "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546",
+      "description": "description_5c94df29-29cd-41c4-b8b0-3ee77aceb546",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "RPT06",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_RPT01",
+      "title": "title_c5b9ced9-e6f3-4483-a868-5efe496e1532",
+      "description": "description_c5b9ced9-e6f3-4483-a868-5efe496e1532",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "RPT01",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_411b3ac2-def2-4180-b8da-cc2be696f34d",
+      "code": "STD_X3_GEODE_GIMP",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "items": [
+        {
+          "code": "STD_X3_GEODE_RPT02",
+          "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_GEODE_MTDI_MISC"
+          "code": "STD_X3_GEODE_RPT03",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_RPT04",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_RPT05",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_RPT06",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_RPT01",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_AIMP",
+      "title": "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f",
+      "description": "description_340b70f9-cdaa-431b-b661-c11b5abc5a3f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "AIMP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_ABIIMP",
+      "title": "title_45294382-9a75-4822-9a2d-9697c3f812ae",
+      "description": "description_45294382-9a75-4822-9a2d-9697c3f812ae",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ABIIMP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_EXEALH",
+      "title": "title_8f588586-8c29-4826-8471-bc3aa330ef26",
+      "description": "description_8f588586-8c29-4826-8471-bc3aa330ef26",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXEALH",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_EXEALHGRP",
+      "title": "title_c83f5736-9cdc-4867-bead-a84ff3467745",
+      "description": "description_c83f5736-9cdc-4867-bead-a84ff3467745",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXEALHGRP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_ARCVISU",
+      "title": "title_d571bec8-26f2-47a0-96ba-ad428ddd535a",
+      "description": "description_d571bec8-26f2-47a0-96ba-ad428ddd535a",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ARCVISU",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_ARCVISUOBJ",
+      "title": "title_62d6d0d0-2250-45b1-bb8c-787974f47a33",
+      "description": "description_62d6d0d0-2250-45b1-bb8c-787974f47a33",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ARCVISUOBJ",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_PSIMP",
+      "title": "title_6318beda-e26f-4d61-8a21-d46d77238b51",
+      "description": "description_6318beda-e26f-4d61-8a21-d46d77238b51",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "PSIMP",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_GEODE_LECTRACE",
+      "title": "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c",
+      "description": "description_6ca591ba-2f04-4a19-86a5-bf88a3434e7c",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "LECTRACE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MIMP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282",
+      "code": "STD_X3_GEODE_MIMP_MISC",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "items": [
+        {
+          "code": "STD_X3_GEODE_AIMP",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_ABIIMP",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_EXEALH",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_EXEALHGRP",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_ARCVISU",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_ARCVISUOBJ",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_PSIMP",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_GEODE_LECTRACE",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
+      "$type": "menuModule",
+      "title": "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e",
+      "code": "STD_X3_GEODE_MIMP",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "submodules": [
+        {
+          "code": "STD_X3_GEODE_GIMP"
+        },
+        {
+          "code": "STD_X3_GEODE_MIMP_MISC"
         }
       ]
     },
@@ -23163,10 +23194,10 @@
           "code": "STD_X3_GEODE_VT"
         },
         {
-          "code": "STD_X3_GEODE_MIMP"
+          "code": "STD_X3_GEODE_MTDI"
         },
         {
-          "code": "STD_X3_GEODE_MTDI"
+          "code": "STD_X3_GEODE_MIMP"
         },
         {
           "code": "STD_X3_GEODE_ATRAD"
@@ -23187,8 +23218,8 @@
       "title_e27de370-7630-418b-9396-d0a1c499de68": "Logistical services",
       "title_7044c63f-681c-4a26-9689-bbeba87f4901": "Directive missions",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Usage ",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Translations"
     },
     "de-de": {
@@ -23204,8 +23235,8 @@
       "title_e27de370-7630-418b-9396-d0a1c499de68": "Logistical services",
       "title_7044c63f-681c-4a26-9689-bbeba87f4901": "Directive missions",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Usage ",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Translations"
     },
     "en-gb": {
@@ -23220,8 +23251,8 @@
       "title_e27de370-7630-418b-9396-d0a1c499de68": "Logistical services",
       "title_7044c63f-681c-4a26-9689-bbeba87f4901": "Directive missions",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Usage ",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Translations"
     },
     "en-us": {
@@ -23652,6 +23683,8 @@
       "description_c8e653c8-6fa8-4d71-b5b9-12c23bca3c98": "GESXCB",
       "title_db4064c3-201e-40e8-a6c5-98285ceb0f11": "Groups-objects assignment",
       "description_db4064c3-201e-40e8-a6c5-98285ceb0f11": "GESAGD",
+      "title_38dbda5b-bed9-431a-85ad-6b1f2903a718": "Text synchronization",
+      "description_38dbda5b-bed9-431a-85ad-6b1f2903a718": "ATXTSRVSYNC",
       "title_645f862d-2960-43b2-a70a-a7063a75aafe": "Setup",
       "title_c2983975-296f-46ca-ab8a-e65547310aa8": "Users",
       "title_3d875a40-62da-4c14-96e9-cfe0232072c7": "Users",
@@ -24071,6 +24104,8 @@
       "description_1de942a1-c5e4-4c8d-b9e6-696e8341b6fd": "GESOFR",
       "title_6c1e1841-5b02-4ee3-8f61-5eaa62b7e998": "Purge of forecast",
       "description_6c1e1841-5b02-4ee3-8f61-5eaa62b7e998": "OFRUPD",
+      "title_125e6ef2-88e6-4760-997f-31ed8c525b6b": "FIFO Sequentiality management",
+      "title_9267155f-88c8-4107-a8b1-9f96e5541deb": "Date Return follow-up",
       "title_2ab2f9f2-1ce6-4ce1-911f-070314cb4cd1": "Resources",
       "title_cc954cd7-7f3f-4a2e-a3f1-bee6e73401d9": "Resources",
       "description_cc954cd7-7f3f-4a2e-a3f1-bee6e73401d9": "GESRSS",
@@ -24439,37 +24474,6 @@
       "title_6068fe30-ada3-4221-8c4f-050e73accc2a": "Utilities",
       "title_2d0b2828-bc67-4e9b-b7d0-6e7a91148682": "Supplier EAN",
       "title_1e121a5a-3472-4c95-8e5a-4aa923d72b1e": "Operator code RTZ",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
-      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Prints/group",
-      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Common data",
-      "description_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "RPT02",
-      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Receipts",
-      "description_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "RPT03",
-      "title_70468014-66ec-4536-89f5-31003b83c62d": "Issues",
-      "description_70468014-66ec-4536-89f5-31003b83c62d": "RPT04",
-      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stock",
-      "description_75cc2ed8-66d6-4121-b607-2b3930c32c43": "RPT05",
-      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Miscellaneous",
-      "description_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "RPT06",
-      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisor",
-      "description_c5b9ced9-e6f3-4483-a868-5efe496e1532": "RPT01",
-      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Reports",
-      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Reports",
-      "description_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "AIMP",
-      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "BO execution",
-      "description_45294382-9a75-4822-9a2d-9697c3f812ae": "ABIIMP",
-      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "View queries",
-      "description_8f588586-8c29-4826-8471-bc3aa330ef26": "EXEALH",
-      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "View a group of queries",
-      "description_c83f5736-9cdc-4867-bead-a84ff3467745": "EXEALHGRP",
-      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Archive viewing",
-      "description_d571bec8-26f2-47a0-96ba-ad428ddd535a": "ARCVISU",
-      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "EDM inquiry",
-      "description_62d6d0d0-2250-45b1-bb8c-787974f47a33": "ARCVISUOBJ",
-      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Print supervision",
-      "description_6318beda-e26f-4d61-8a21-d46d77238b51": "PSIMP",
-      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Log reading",
-      "description_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "LECTRACE",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Usage ",
       "title_5b9b3a09-1604-4f87-87a3-1b3e0722b348": "Batch server",
       "title_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c": "Query management",
@@ -24533,6 +24537,12 @@
       "description_355c2a24-ee70-42e0-bf01-d9cf11dbb3e9": "INTEPU",
       "title_7d394645-1a48-481c-9884-e94e6beb8cf4": "Inquiry",
       "description_7d394645-1a48-481c-9884-e94e6beb8cf4": "ITRCNL",
+      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Usage ",
+      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "History/purge",
+      "description_a987e5a9-2c42-438f-8965-6fab0ff91665": "HISTO",
+      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Workflow monitor",
+      "description_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "SAIWRKPLN",
+      "title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
       "title_52f5a85e-bee6-4dab-9412-2ca6bd61936e": "Migrations",
       "title_6a3a5d59-7231-433c-af9e-9eed4290595f": "Migration process",
       "description_6a3a5d59-7231-433c-af9e-9eed4290595f": "GESAM3",
@@ -24550,12 +24560,37 @@
       "description_e8809c56-6398-42da-9bb8-57a56d486b1e": "ASRMAJBAS",
       "title_b595da1d-e5ac-44d0-98d9-6a2728989f5c": "Indexing",
       "description_b595da1d-e5ac-44d0-98d9-6a2728989f5c": "ASRINDBAS",
-      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Usage ",
-      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "History/purge",
-      "description_a987e5a9-2c42-438f-8965-6fab0ff91665": "HISTO",
-      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Workflow monitor",
-      "description_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "SAIWRKPLN",
-      "title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
+      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Prints/group",
+      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Common data",
+      "description_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "RPT02",
+      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Receipts",
+      "description_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "RPT03",
+      "title_70468014-66ec-4536-89f5-31003b83c62d": "Issues",
+      "description_70468014-66ec-4536-89f5-31003b83c62d": "RPT04",
+      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stock",
+      "description_75cc2ed8-66d6-4121-b607-2b3930c32c43": "RPT05",
+      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Miscellaneous",
+      "description_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "RPT06",
+      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisor",
+      "description_c5b9ced9-e6f3-4483-a868-5efe496e1532": "RPT01",
+      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Reports",
+      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Reports",
+      "description_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "AIMP",
+      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "BO execution",
+      "description_45294382-9a75-4822-9a2d-9697c3f812ae": "ABIIMP",
+      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "View queries",
+      "description_8f588586-8c29-4826-8471-bc3aa330ef26": "EXEALH",
+      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "View a group of queries",
+      "description_c83f5736-9cdc-4867-bead-a84ff3467745": "EXEALHGRP",
+      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Archive viewing",
+      "description_d571bec8-26f2-47a0-96ba-ad428ddd535a": "ARCVISU",
+      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "EDM inquiry",
+      "description_62d6d0d0-2250-45b1-bb8c-787974f47a33": "ARCVISUOBJ",
+      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Print supervision",
+      "description_6318beda-e26f-4d61-8a21-d46d77238b51": "PSIMP",
+      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Log reading",
+      "description_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "LECTRACE",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Translations",
       "title_f8c8edb3-544e-453a-8aa6-61469e022262": "Software",
       "title_18947e19-6b50-4cb7-8883-50cd405e68cb": "Functions",
@@ -24668,7 +24703,7 @@
       "title_c9859acb-5848-4a3b-8ae7-8d92536d450e": "Diccionario scripts",
       "title_52936c9e-fd6c-4e8a-90dd-ac0c6cd460d7": "Subprograma",
       "title_5a902ef0-7392-4ab6-90cd-5b52a714d02c": "Puntos de entrada",
-      "title_9b565687-c7b0-4a6d-b139-0aa6d56d594c": "Servicios Web",
+      "title_9b565687-c7b0-4a6d-b139-0aa6d56d594c": "Web services",
       "title_8fdd1a52-f400-4691-9c03-09bb578528f3": "Informes",
       "title_5d716dea-96cf-4329-ae4b-8473ee60a51e": "Interfaces",
       "title_c145c144-2e6e-4753-9d41-a0cf7fe61f2e": "Informes ZPL",
@@ -24695,7 +24730,7 @@
       "title_a3416c51-f602-4a10-8a3f-b7ce702918e0": "Disponibilidad",
       "title_b8562e6e-bb9a-4b03-829f-974a62ef81d5": "Informes BO",
       "title_8fc8dd68-4440-468d-aaf3-6c1de5e4a6b6": "Traducción",
-      "title_ea0a3c36-aca0-48b6-b61c-80198d0a55d5": "Mapping",
+      "title_ea0a3c36-aca0-48b6-b61c-80198d0a55d5": "Mapeo",
       "title_d8973dfc-eca4-480a-9493-889f13f1cd1a": "Informes Business Objects",
       "title_64d0e7df-88fc-40f0-aacc-bdc8efc61cb1": "Utilidades",
       "title_55bc8be0-aa5c-42d3-b564-2d47d781254c": "Mantenimientos",
@@ -24839,6 +24874,8 @@
       "title_dc398a0c-e8a6-4fcd-9829-6bd781f2e288": "Test unitario",
       "title_960c925d-f297-4f01-8325-3009d4be4657": "Guardar datos estables",
       "title_60aae1c0-6001-48a5-8553-cca72ba7bd3b": "Recuperación datos estables",
+      "title_add2ecf2-ef79-4320-8f61-7c2f4b5b4b7c": "Desarrollo",
+      "title_38dbda5b-bed9-431a-85ad-6b1f2903a718": "Sincronización de los textos",
       "title_645f862d-2960-43b2-a70a-a7063a75aafe": "Parametrización",
       "title_c2983975-296f-46ca-ab8a-e65547310aa8": "Usuarios",
       "title_3d875a40-62da-4c14-96e9-cfe0232072c7": "Usuarios",
@@ -24989,7 +25026,7 @@
       "title_9f569b7a-84ad-4248-b76e-5d0c9da44518": "Modo de recepción",
       "title_5d27444e-9c9f-41ee-9045-b2fd04076000": "Contrato fecha",
       "title_add38c1e-a57f-4a80-b1d0-4b746fd690c5": "Contrato fecha",
-      "title_92ead520-c8ee-42cc-8be0-184528aad0a5": "GESDCB",
+      "title_92ead520-c8ee-42cc-8be0-184528aad0a5": "Recuperación de fecha",
       "title_5fc3a82b-e680-4bbf-8e78-1bd3420e9945": "Salidas",
       "title_741784c0-a23e-4ae7-a589-b7926af93db6": "Configuración",
       "title_7749a66e-1109-43b8-8cc5-5e113d4c41dc": "Modos de salida",
@@ -25002,10 +25039,10 @@
       "title_e40b421f-b37b-46b3-9e01-04893519670a": "Código estatus",
       "title_6f2b77f5-fcf8-4485-b4c7-9d9482847939": "Códigos de razones",
       "title_611fac9f-3f76-42da-87d5-242f826b54b9": "Correspondencia ",
-      "title_9b49c1b9-b073-4397-94be-36811d4d4e9f": "GESLCD",
+      "title_9b49c1b9-b073-4397-94be-36811d4d4e9f": "Gestión lote por cliente",
       "title_3b57ab52-1953-46d5-9bde-978d261bb490": "Contrato fecha",
       "title_82d5ba62-6bdf-490f-bb3b-ce91b2382f05": "Contrato fecha",
-      "title_c6dd8c79-7c3a-405f-ba01-c8908e6c1378": "GESCCB",
+      "title_c6dd8c79-7c3a-405f-ba01-c8908e6c1378": "Secuencialidad FIFO",
       "title_f7ab2b06-982b-49ed-be22-e988863fef89": "Stocks",
       "title_efa5b36e-c359-4a36-86f3-2c148a37cb15": "Configuración",
       "title_7812c847-6ffc-4de8-9364-7262a32094d9": "Naturalezas de stock",
@@ -25058,7 +25095,7 @@
       "title_46c42b49-4c98-448c-be2b-9585b093057a": "Asociación de calles",
       "title_9e3558a1-df0a-493f-91b9-c7b83a4faf86": "Disponibles",
       "title_7bfbcf39-576c-4a92-a856-1a91b537574d": "Estadísticas",
-      "title_f3599bc3-6857-4b37-826f-b06c28442ea4": "BEASTT",
+      "title_f3599bc3-6857-4b37-826f-b06c28442ea4": "Seguimiento de lisos",
       "title_6f77aa9b-f76d-4425-89f9-1e628569ae22": "Artículos",
       "title_c2337eb7-467f-462f-aec2-2e1f04aadb31": "Artículos",
       "title_2b49b22d-ed00-4d8d-ae3f-457581d9534a": "Contenedores artículos",
@@ -25263,23 +25300,6 @@
       "title_ea706f2b-f72e-495e-a815-5f3d5e99036f": "Utilidades",
       "title_47a46aee-78a6-49e1-b31c-f9706d21b0d3": "Modo prueba",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Informes",
-      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Informes/grupo",
-      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Datos base",
-      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entradas",
-      "title_70468014-66ec-4536-89f5-31003b83c62d": "Salidas",
-      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stocks",
-      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Varios",
-      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisor",
-      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Informes",
-      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Informes",
-      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Ejecución Business Object",
-      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Ejecución de consultas",
-      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualización grupo de consultas",
-      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualización archive",
-      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Interrogación GED",
-      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Seguimiento impresiones",
-      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Lectura seguimientos",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Explotación",
       "title_5b9b3a09-1604-4f87-87a3-1b3e0722b348": "Servidor batch",
       "title_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c": "Gestión de peticiones",
@@ -25314,6 +25334,9 @@
       "title_37af443f-b76b-448b-9634-f19be00d2373": "Lanzamiento",
       "title_355c2a24-ee70-42e0-bf01-d9cf11dbb3e9": "Depuración de directorios",
       "title_7d394645-1a48-481c-9884-e94e6beb8cf4": "Consulta",
+      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Explotación",
+      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Historización / Depuración",
+      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Monitor workflow",
       "title_52f5a85e-bee6-4dab-9412-2ca6bd61936e": "Migraciones",
       "title_6a3a5d59-7231-433c-af9e-9eed4290595f": "Procesos de migración",
       "title_ba1e67b1-c5c0-4f72-9943-8e190d1d5ff7": "Monitor de enlace",
@@ -25321,9 +25344,23 @@
       "title_a3a2b741-5ec2-4eae-86f3-bcb8c2820286": "Conexiones",
       "title_7e66de87-390a-48a6-be82-e12b86e78cfb": "Tablas",
       "title_24ac3ad4-a2d6-4d8e-a7f2-0c9fe47451eb": "Campos",
-      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Explotación",
-      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Historización / Depuración",
-      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Monitor workflow",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Informes",
+      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Informes/grupo",
+      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Datos base",
+      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entradas",
+      "title_70468014-66ec-4536-89f5-31003b83c62d": "Salidas",
+      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stocks",
+      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Varios",
+      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisor",
+      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Informes",
+      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Informes",
+      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Ejecución Business Object",
+      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Ejecución de consultas",
+      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualización grupo de consultas",
+      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualización archive",
+      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Interrogación GED",
+      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Seguimiento impresiones",
+      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Lectura seguimientos",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Traducciones",
       "title_f8c8edb3-544e-453a-8aa6-61469e022262": "Aplicación",
       "title_18947e19-6b50-4cb7-8883-50cd405e68cb": "Funciones",
@@ -25587,6 +25624,7 @@
       "title_add2ecf2-ef79-4320-8f61-7c2f4b5b4b7c": "Développement",
       "title_c8e653c8-6fa8-4d71-b5b9-12c23bca3c98": "Marquage des corrections",
       "title_db4064c3-201e-40e8-a6c5-98285ceb0f11": "Affectation groupes-objets",
+      "title_38dbda5b-bed9-431a-85ad-6b1f2903a718": "Synchronisation des textes",
       "title_645f862d-2960-43b2-a70a-a7063a75aafe": "Paramétrage",
       "title_c2983975-296f-46ca-ab8a-e65547310aa8": "Utilisateurs",
       "title_3d875a40-62da-4c14-96e9-cfe0232072c7": "Utilisateurs",
@@ -26064,23 +26102,6 @@
       "description_2d0b2828-bc67-4e9b-b7d0-6e7a91148682": "VTEDO",
       "title_1e121a5a-3472-4c95-8e5a-4aa923d72b1e": "RAZ code opérateur",
       "description_1e121a5a-3472-4c95-8e5a-4aa923d72b1e": "VTCODOPE",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Impressions",
-      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Impressions/groupe",
-      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Données de base",
-      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entrées",
-      "title_70468014-66ec-4536-89f5-31003b83c62d": "Sorties",
-      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stocks",
-      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Divers",
-      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Superviseur",
-      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Impressions",
-      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Impressions",
-      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Exécution BO",
-      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Visualisation de requêtes",
-      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualisation groupe de requêtes",
-      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualisation archive",
-      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Interrogation GED",
-      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Surveillance impressions",
-      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Lecture traces",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Exploitation",
       "title_5b9b3a09-1604-4f87-87a3-1b3e0722b348": "Serveur batch",
       "title_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c": "Gestion des requêtes",
@@ -26116,6 +26137,11 @@
       "title_37af443f-b76b-448b-9634-f19be00d2373": "Lancement",
       "title_355c2a24-ee70-42e0-bf01-d9cf11dbb3e9": "Epuration des répertoires",
       "title_7d394645-1a48-481c-9884-e94e6beb8cf4": "Consultation",
+      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Exploitation",
+      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Historisation / Epuration",
+      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Moniteur Workflow",
+      "title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
+      "description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME",
       "title_52f5a85e-bee6-4dab-9412-2ca6bd61936e": "Migrations",
       "title_6a3a5d59-7231-433c-af9e-9eed4290595f": "Procédures de migration",
       "title_ba1e67b1-c5c0-4f72-9943-8e190d1d5ff7": "Moniteur d'enchainement",
@@ -26126,11 +26152,23 @@
       "title_722e614b-93b4-40ef-ba8b-35cf1de987bc": "Moteur de recherche",
       "title_e8809c56-6398-42da-9bb8-57a56d486b1e": "Synchronisation indexation",
       "title_b595da1d-e5ac-44d0-98d9-6a2728989f5c": "Indexation",
-      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Exploitation",
-      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Historisation / Epuration",
-      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Moniteur Workflow",
-      "title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
-      "description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Impressions",
+      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Impressions/groupe",
+      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Données de base",
+      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entrées",
+      "title_70468014-66ec-4536-89f5-31003b83c62d": "Sorties",
+      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stocks",
+      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Divers",
+      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Superviseur",
+      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Impressions",
+      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Impressions",
+      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Exécution BO",
+      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Visualisation de requêtes",
+      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualisation groupe de requêtes",
+      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualisation archive",
+      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Interrogation GED",
+      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Surveillance impressions",
+      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Lecture traces",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Traductions",
       "title_f8c8edb3-544e-453a-8aa6-61469e022262": "Logiciel",
       "title_18947e19-6b50-4cb7-8883-50cd405e68cb": "Fonctions",
@@ -26389,6 +26427,8 @@
       "title_7e39a6d9-8a1b-4f36-a1f1-c1aee1b9387c": "Test sito Web",
       "title_960c925d-f297-4f01-8325-3009d4be4657": "ATSTSAV",
       "title_60aae1c0-6001-48a5-8553-cca72ba7bd3b": "ATSTREC",
+      "title_add2ecf2-ef79-4320-8f61-7c2f4b5b4b7c": "Sviluppo",
+      "title_38dbda5b-bed9-431a-85ad-6b1f2903a718": "Sincronizzazione testi",
       "title_645f862d-2960-43b2-a70a-a7063a75aafe": "Parametrizzazione",
       "title_c2983975-296f-46ca-ab8a-e65547310aa8": "Utenti",
       "title_3d875a40-62da-4c14-96e9-cfe0232072c7": "Utenti",
@@ -26811,23 +26851,6 @@
       "title_ea706f2b-f72e-495e-a815-5f3d5e99036f": "Strumenti",
       "title_47a46aee-78a6-49e1-b31c-f9706d21b0d3": "Modalità test",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Stampe",
-      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Stampe/gruppo",
-      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Dati di base",
-      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entrate",
-      "title_70468014-66ec-4536-89f5-31003b83c62d": "Uscite",
-      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stock",
-      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Diversi",
-      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisore",
-      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Stampe",
-      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Stampe",
-      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Lancio BO",
-      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Visualizzazione consultazioni",
-      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualizzazione gruppo consultazioni",
-      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualizzazione archivio",
-      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Interrogazione GES",
-      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Controllo stampe",
-      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Lettura tracce",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Utilizzo",
       "title_5b9b3a09-1604-4f87-87a3-1b3e0722b348": "Server batch",
       "title_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c": "Gestione richieste",
@@ -26862,6 +26885,9 @@
       "title_37af443f-b76b-448b-9634-f19be00d2373": "Lancio",
       "title_355c2a24-ee70-42e0-bf01-d9cf11dbb3e9": "Cancellazione directory",
       "title_7d394645-1a48-481c-9884-e94e6beb8cf4": "Consultazione",
+      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Utilizzo",
+      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Storicizzazione/Cancellazione",
+      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Monitor Workflow",
       "title_52f5a85e-bee6-4dab-9412-2ca6bd61936e": "Migrazioni",
       "title_6a3a5d59-7231-433c-af9e-9eed4290595f": "Procedure di migrazione",
       "title_ba1e67b1-c5c0-4f72-9943-8e190d1d5ff7": "Monitor concatenamento",
@@ -26869,9 +26895,23 @@
       "title_a3a2b741-5ec2-4eae-86f3-bcb8c2820286": "Connessioni",
       "title_7e66de87-390a-48a6-be82-e12b86e78cfb": "Tabelle",
       "title_24ac3ad4-a2d6-4d8e-a7f2-0c9fe47451eb": "Campi",
-      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Utilizzo",
-      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Storicizzazione/Cancellazione",
-      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Monitor Workflow",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Stampe",
+      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Stampe/gruppo",
+      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Dati di base",
+      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entrate",
+      "title_70468014-66ec-4536-89f5-31003b83c62d": "Uscite",
+      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stock",
+      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Diversi",
+      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisore",
+      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Stampe",
+      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Stampe",
+      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Lancio BO",
+      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Visualizzazione consultazioni",
+      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualizzazione gruppo consultazioni",
+      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualizzazione archivio",
+      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Interrogazione GES",
+      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Controllo stampe",
+      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Lettura tracce",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Traduzioni",
       "title_f8c8edb3-544e-453a-8aa6-61469e022262": "Software",
       "title_18947e19-6b50-4cb7-8883-50cd405e68cb": "Funzioni",
@@ -26909,8 +26949,8 @@
       "title_e27de370-7630-418b-9396-d0a1c499de68": "Logistical services",
       "title_7044c63f-681c-4a26-9689-bbeba87f4901": "Directive missions",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Usage ",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Translations"
     },
     "pt-pt": {
@@ -27142,6 +27182,8 @@
       "title_dc398a0c-e8a6-4fcd-9829-6bd781f2e288": "testes unitários",
       "title_960c925d-f297-4f01-8325-3009d4be4657": "salvaguarda dados estáveis",
       "title_60aae1c0-6001-48a5-8553-cca72ba7bd3b": "Recuperação dados estáveis",
+      "title_add2ecf2-ef79-4320-8f61-7c2f4b5b4b7c": "Desenvolvimento",
+      "title_38dbda5b-bed9-431a-85ad-6b1f2903a718": "Sincronização de textos",
       "title_645f862d-2960-43b2-a70a-a7063a75aafe": "Parametrização",
       "title_c2983975-296f-46ca-ab8a-e65547310aa8": "Utilizadores",
       "title_3d875a40-62da-4c14-96e9-cfe0232072c7": "Utilizadores",
@@ -27564,23 +27606,6 @@
       "title_ea706f2b-f72e-495e-a815-5f3d5e99036f": "Utilitários",
       "title_47a46aee-78a6-49e1-b31c-f9706d21b0d3": "Modo teste",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Impressões",
-      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Impressões/grupo",
-      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Dados de base",
-      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entradas",
-      "title_70468014-66ec-4536-89f5-31003b83c62d": "Saídas",
-      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stocks",
-      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Diversos",
-      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisor",
-      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Impressões",
-      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Impressões",
-      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Execução BO",
-      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Visualização de pedidos",
-      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualização grupo de pedidos",
-      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualização arquivo",
-      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Consulta GED",
-      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Vigilância impressões",
-      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Leitura dos rastos",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Exploração",
       "title_5b9b3a09-1604-4f87-87a3-1b3e0722b348": "Servidor batch",
       "title_41aa2a24-9d2e-4fac-9ea2-9ecd03f1fc6c": "Gestão dos pedidos",
@@ -27615,6 +27640,9 @@
       "title_37af443f-b76b-448b-9634-f19be00d2373": "Lançamento",
       "title_355c2a24-ee70-42e0-bf01-d9cf11dbb3e9": "expurgo dos directórios",
       "title_7d394645-1a48-481c-9884-e94e6beb8cf4": "Consulta",
+      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Exploração",
+      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Histórico/Expurgo",
+      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Monitor Workflow",
       "title_52f5a85e-bee6-4dab-9412-2ca6bd61936e": "Migrações",
       "title_6a3a5d59-7231-433c-af9e-9eed4290595f": "Procedim. de migração",
       "title_ba1e67b1-c5c0-4f72-9943-8e190d1d5ff7": "Monitor de encadeamento",
@@ -27622,9 +27650,23 @@
       "title_a3a2b741-5ec2-4eae-86f3-bcb8c2820286": "Conexões",
       "title_7e66de87-390a-48a6-be82-e12b86e78cfb": "Tabelas",
       "title_24ac3ad4-a2d6-4d8e-a7f2-0c9fe47451eb": "Campos",
-      "title_6ee95bd2-187b-4933-bff1-14c2e90efe7a": "Exploração",
-      "title_a987e5a9-2c42-438f-8965-6fab0ff91665": "Histórico/Expurgo",
-      "title_53e1d8e6-2bb4-4163-83ac-9dde22b081fb": "Monitor Workflow",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Impressões",
+      "title_411b3ac2-def2-4180-b8da-cc2be696f34d": "Impressões/grupo",
+      "title_d5c19da9-cb7e-4246-9db1-9f2aa6e2569c": "Dados de base",
+      "title_e74b3eb5-b36d-4d24-bef7-2e7c5579263a": "Entradas",
+      "title_70468014-66ec-4536-89f5-31003b83c62d": "Saídas",
+      "title_75cc2ed8-66d6-4121-b607-2b3930c32c43": "Stocks",
+      "title_5c94df29-29cd-41c4-b8b0-3ee77aceb546": "Diversos",
+      "title_c5b9ced9-e6f3-4483-a868-5efe496e1532": "Supervisor",
+      "title_1ae7e0cd-8f43-4517-9baf-c9a338efc282": "Impressões",
+      "title_340b70f9-cdaa-431b-b661-c11b5abc5a3f": "Impressões",
+      "title_45294382-9a75-4822-9a2d-9697c3f812ae": "Execução BO",
+      "title_8f588586-8c29-4826-8471-bc3aa330ef26": "Visualização de pedidos",
+      "title_c83f5736-9cdc-4867-bead-a84ff3467745": "Visualização grupo de pedidos",
+      "title_d571bec8-26f2-47a0-96ba-ad428ddd535a": "Visualização arquivo",
+      "title_62d6d0d0-2250-45b1-bb8c-787974f47a33": "Consulta GED",
+      "title_6318beda-e26f-4d61-8a21-d46d77238b51": "Vigilância impressões",
+      "title_6ca591ba-2f04-4a19-86a5-bf88a3434e7c": "Leitura dos rastos",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Traduções",
       "title_f8c8edb3-544e-453a-8aa6-61469e022262": "Software",
       "title_18947e19-6b50-4cb7-8883-50cd405e68cb": "Funções",
@@ -27662,8 +27704,8 @@
       "title_e27de370-7630-418b-9396-d0a1c499de68": "Logistical services",
       "title_7044c63f-681c-4a26-9689-bbeba87f4901": "Directive missions",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "Handheld procedures",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "Usage ",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "Reports",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "Translations"
     },
     "zh-cn": {
@@ -27681,9 +27723,9 @@
       "title_7044c63f-681c-4a26-9689-bbeba87f4901": "指令任务",
       "title_cc46c9e6-7a4c-4654-b41b-e23bce4a7a2c": "手持式程序",
       "title_e389a914-20a1-4acb-8fd4-7bb0e08026df": "手持式程序",
-      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "报表打印",
       "title_56ccc31a-f28b-46f4-ac96-3eb72ae482b9": "工具",
       "title_726c270d-9434-4b44-a263-4ac527592994": "X3存储空间",
+      "title_e7436d51-cfa9-4ba3-80f5-9149a007b22e": "报表打印",
       "title_d5f291c7-f90a-4947-9c0f-17aa6dd646b0": "翻译"
     }
   },
