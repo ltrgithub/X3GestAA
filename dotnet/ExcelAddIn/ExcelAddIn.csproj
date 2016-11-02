@@ -156,6 +156,8 @@
     <PostBuildEvent>if $(Configuration)==Debug (copy "$(OutDir)Sage.Syracuse.ExcelAddIn.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDataHelper.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDialogs.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)fr\Sage.Syracuse.ExcelAddIn.resources.dll" "$(SageOfficeAddinsDir)\fr" /y
+copy "$(OutDir)fr\CommonDialogs.resources.dll" "$(SageOfficeAddinsDir)\fr" /y
 copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do nothing!")</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
@@ -562,9 +564,16 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
       <Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
       <Name>CommonDataHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CommonDialogs\CommonDialogs.csproj">
+      <Project>{341E57EE-7F9A-4408-A29F-D4A4340039EE}</Project>
+      <Name>CommonDialogs</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>
@@ -578,7 +587,7 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\15.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x " AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x " AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Excel" GeneratedCodeNamespace="ExcelAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="76517034B29E3E9BF3F0B8C86B4B0CC28FFF3A0F" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>

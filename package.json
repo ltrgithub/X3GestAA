@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "streamline-runtime": "^1.0.37"
+  },
+  "scripts": {
+  	"test": "cd node_modules; mocha --opts mocha.opts syracuse-orm/test/server; cd ..",
+  	"test:coverage": "node build-coverage-tree && pushd ../syracuse-coverage/node_modules && istanbul cover -i \"syracuse-orm/**\" _mocha -- --opts ./mocha.opts syracuse-orm/test/server; popd"
+  }
+}
