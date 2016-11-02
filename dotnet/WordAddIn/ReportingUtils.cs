@@ -438,6 +438,7 @@ namespace WordAddIn
                     {
                         continue;
                     }
+
                     List<Row> templateRows = new List<Row>();
                     DetectTableSize(doc, table, templateRows);
 
@@ -466,11 +467,19 @@ namespace WordAddIn
             }
         }
 
+        /// <summary>
+        /// Find the rows that contain Content Controls.
+        /// For each distinctive row, create a row in templateRows.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="table"></param>
+        /// <param name="templateRows"></param>
         private static void DetectTableSize(Document doc, Table table, List<Row> templateRows)
         {
             List<string> matchedRows = new List<string>();
             List<Row> rowsToRemove = new List<Row>();
 
+            Boolean? directTemplateUsed = null;
             foreach (Row row in table.Rows)
             {
                 if (row.Range.ContentControls.Count > 0)
@@ -478,11 +487,15 @@ namespace WordAddIn
                     List<string> tags = new List<string>();
                     foreach (ContentControl ctrl in row.Range.ContentControls)
                     {
-                        TagInfo tag = TagInfo.create(ctrl);
+                       TagInfo tag = TagInfo.create(ctrl);
                         if (tag != null)
                         {
                             if (!tag.isSimple)
                             {
+                                if (directTemplateUsed == null)
+                                {
+                                    directTemplateUsed = TemplateHelper.isDirectTemplateRow(doc, row, tag);
+                                }
                                 tags.Add(ctrl.Tag);
                             }
                         }
@@ -505,6 +518,11 @@ namespace WordAddIn
                             matchedRows.Add(id);
                         }
                     }
+                }
+                
+                if (directTemplateUsed != null && (bool)directTemplateUsed) // a direct (fast loading) template will only ever have a single template row
+                {
+                    break;
                 }
             }
 
@@ -594,8 +612,14 @@ namespace WordAddIn
             {
                 Row precidingRow = info.templateRows[info.templateRows.Count - 1];
                 precidingRow.Select();
-                doc.Application.Selection.InsertRowsBelow(numRows);
+                
                 int startRow = (int)info.templateRows[info.templateRows.Count - 1].Range.Information[WdInformation.wdEndOfRangeRowNumber];
+                int rowIndex = startRow;
+
+                if (!TemplateHelper.clearMappedRows(doc, table, info, numRows))
+                {
+                    doc.Application.Selection.InsertRowsBelow(numRows);
+                }
 
                 Row firstRow = table.Rows[startRow + 1];
                 Row lastRow = table.Rows[startRow + numRows];
@@ -609,8 +633,8 @@ namespace WordAddIn
 
                     foreach (Row templateRow in info.templateRows)
                     {
-                        startRow++;
-                        Row newRow = table.Rows[startRow];
+                        rowIndex++;
+                        Row newRow = table.Rows[rowIndex];
                         foreach (Cell templateCell in templateRow.Cells)
                         {
                             TemplateHelper.loadCell(doc, table, fieldInfo, newRow, templateCell, collectionItem, info.templateRows.Count, browserDialog);
@@ -621,6 +645,7 @@ namespace WordAddIn
 
                     CommonUtils.doGarbageCollect(ref gcCount);
                 }
+                TemplateHelper.addMappedRowsCustomData(doc, table, info, startRow, numRows);
             }
             table.Range.Font.Hidden = 0;
 
