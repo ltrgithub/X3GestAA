@@ -145,6 +145,8 @@
     <PostBuildEvent>if $(Configuration)==Debug (copy "$(OutDir)Sage.Syracuse.WordAddIn.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDataHelper.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDialogs.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)fr\Sage.Syracuse.WordAddIn.resources.dll" "$(SageOfficeAddinsDir)\fr" /y
+copy "$(OutDir)fr\CommonDialogs.resources.dll" "$(SageOfficeAddinsDir)\fr" /y
 copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do nothing!")</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
@@ -402,7 +404,7 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\15.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
         <Host Name="Word" GeneratedCodeNamespace="WordAddIn" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="WordAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="WordAddIn.Designer.xml" GeneratedCode="WordAddIn.Designer.cs" />
         </Host>

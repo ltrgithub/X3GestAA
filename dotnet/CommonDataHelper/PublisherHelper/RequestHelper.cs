@@ -6,6 +6,7 @@ using CommonDataHelper.PublisherHelper.Model.Common;
 using System.Net;
 using System.Web;
 using System.Text.RegularExpressions;
+using CommonDialogs.ConnectionProgressDialog;
 
 namespace CommonDataHelper.PublisherHelper
 {
@@ -137,6 +138,9 @@ namespace CommonDataHelper.PublisherHelper
             {
                 if (documentUrl.StartsWith("http") == false)
                     documentUrl = new Uri(BaseUrlHelper.BaseUrl, documentUrl).ToString();
+
+                ConnectionProgressHelper.showConnectionDialog(false);
+
                 string prototypeJson = webHelper.getServerJson(documentUrl, out httpStatusCode);
                 if (httpStatusCode == HttpStatusCode.OK)
                 {
