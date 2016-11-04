@@ -10129,6 +10129,33 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRGRB",
+      "title": "title_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a",
+      "description": "description_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRGRB",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESRUB",
       "title": "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d",
       "description": "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d",
@@ -10262,6 +10289,33 @@
       "representationRef": {
         "$type": "representationProxy"
       },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_MAJRUB6",
+      "title": "title_d659216e-2875-4cc4-9b31-78ec70a09722",
+      "description": "description_d659216e-2875-4cc4-9b31-78ec70a09722",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "MAJRUB6",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
       "module": {
         "code": "STD_X3_HRM_MENV"
       },
@@ -11036,6 +11090,10 @@
       },
       "items": [
         {
+          "code": "STD_X3_HRM_GESHRGRB",
+          "$variantType": "menuItem"
+        },
+        {
           "code": "STD_X3_HRM_GESRUB",
           "$variantType": "menuItem"
         },
@@ -11061,6 +11119,10 @@
           "items": [
             {
               "code": "STD_X3_HRM_CUMRUB",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_MAJRUB6",
               "$variantType": "menuItem"
             },
             {
@@ -28539,6 +28601,7 @@
       "title_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "Casual worker statement",
       "description_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "GESPVA",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Payroll plan",
+      "title_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a": "Grouping of headings",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Headings",
       "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "GESRUB",
       "title_ab801a1b-21a1-4852-918a-fd2d4e88e850": "Variables",
@@ -28549,6 +28612,7 @@
       "title_5c01ed76-6bfd-4416-8706-ec4aad677099": "Heading update",
       "title_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "Totals",
       "description_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "CUMRUB",
+      "title_d659216e-2875-4cc4-9b31-78ec70a09722": "Grouping of headings",
       "title_62cf8d95-f55c-4b63-bf7d-0a73e959bba6": "Pôle emploi/Sickness/WA/Final sett",
       "description_62cf8d95-f55c-4b63-bf7d-0a73e959bba6": "MAJRUB1",
       "title_7f53ca35-4dd8-490a-98c6-8df43d254562": "Slip printing",
@@ -31104,6 +31168,8 @@
       "title_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "Arrêté des intermittents",
       "description_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "GESPVA",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Plan de paie",
+      "title_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a": "Regroupement rubriques",
+      "description_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a": "GESHRGRB",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Rubriques",
       "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "GESRUB",
       "title_ab801a1b-21a1-4852-918a-fd2d4e88e850": "Variables",
@@ -31114,6 +31180,8 @@
       "title_5c01ed76-6bfd-4416-8706-ec4aad677099": "Maj rubriques",
       "title_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "Cumuls",
       "description_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "CUMRUB",
+      "title_d659216e-2875-4cc4-9b31-78ec70a09722": "Regroupement rubriques",
+      "description_d659216e-2875-4cc4-9b31-78ec70a09722": "MAJRUB6",
       "title_62cf8d95-f55c-4b63-bf7d-0a73e959bba6": "Pôle emploi/Maladie/AT/SDC",
       "description_62cf8d95-f55c-4b63-bf7d-0a73e959bba6": "MAJRUB1",
       "title_7f53ca35-4dd8-490a-98c6-8df43d254562": "Impression bulletin",
