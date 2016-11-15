@@ -159,6 +159,7 @@ public class CertTool {
 		if ((value = findReplace(dn, "L", null)) != null) wrapper.println(" City: "+escapeChars(value));
 		if ((value = findReplace(dn, "ST", null)) != null) wrapper.println(" State: "+escapeChars(value));
 		if ((value = findReplace(dn, "C", null)) != null) wrapper.println(" Country: "+escapeChars(value));
+		if ((value = findReplace(dn, "E", null)) != null || (value = findReplace(dn, "emailAddress", null)) != null) wrapper.println(" Email: "+escapeChars(value));
 	}
 	
 	
@@ -320,6 +321,18 @@ public class CertTool {
 				exc = "Server name " + input + (newName ? " already exists" : " does not exist");
 			}
 			break;
+		case EMAIL:
+			if (input != null && input.length() > 0)
+			{
+				int index = input.indexOf('@');
+				if (index < 0) 
+					exc = "Address does not contain '@'";
+				else if (index == 0)
+					exc = "Nothing before '@' in email address";
+				else if (index == input.length()-1)
+					exc = "Nothing behind '@' in email address";
+			}
+			break;			
 		case DN:
 			if (input != null && input.length() >= 2) {
 				return null;
@@ -515,8 +528,11 @@ public class CertTool {
 		String l = escape(findReplace(dn, "L", null));
 		String c = escape(findReplace(dn, "C", null));
 		String st = escape(findReplace(dn, "ST", null));
-		String[] parts = new String[6];
+		String email = escape(findReplace(dn, "emailAddress", null));
+		if (email == null) email = escape(findReplace(dn, "E", null));
+		String[] parts = new String[7];
 		int index = 0;
+		if (email != null) parts[index++] = "emailAddress="+email;
 		if (cn != null) parts[index++] = "CN="+cn;
 		if (ou != null) parts[index++] = "OU="+ou;
 		if (o != null) parts[index++] = "O="+o;
@@ -912,8 +928,13 @@ public class CertTool {
 						String o = input("Organization", Check.DN, findReplace(dn, "O", null));
 						String ou = input("Organizational unit", Check.DN, findReplace(dn, "OU", null));
 						if (cn == null)
-							cn = input("Name", Check.DN, findReplace(dn, "CN", null));						
+							cn = input("Name", Check.DN, findReplace(dn, "CN", null));
+						String email0 = findReplace(dn, "emailAddress", null);
+						if (email0 == null) email0 = findReplace(dn, "E", null);
+						String email = input("Optional email", Check.EMAIL, email0);
 						dn = "CN=" + escape(cn) + ",OU="+escape(ou) + ",O="+escape(o)+",L="+escape(l)+",ST="+escape(st)+",C="+escape(c);
+						if (email != null)
+							dn = "emailAddress="+escape(email)+","+dn;
 					} else {
 						if (dn == null || cn == null) 
 							testInteractive("No subject given");
@@ -1250,6 +1271,7 @@ public class CertTool {
 	public static void main(String[] args) {
 		
 		try {
+
 			CertTool tool = null;
 			boolean hex = false; // hex input from command line
 			// read options from command line
@@ -1268,8 +1290,8 @@ public class CertTool {
 						wrapper.println("Parameters for tasks:");
 						wrapper.println("-pass <value>   Passphrase for server private key");
 						wrapper.println("-capass <value>  Passphrase for CA private key");
-						wrapper.println("-dn <value> Distinguished name of certificate subject");
-						wrapper.println("-dn2 <values> Values for C, ST, L, O, OU, CN for name of certificate subject in this order");
+						wrapper.println("-dn <value> Distinguished name of certificate subject (no email address!)");
+						wrapper.println("-dn2 <values> Values for C, ST, L, O, OU, CN and optional email for name of certificate subject in this order");
 						wrapper.println("-cn <value> Common name within distinguished name");
 						wrapper.println("-days <value> Number of days of certificate validity");
 						wrapper.println("-port <value> Transfer data to this port of a Syracuse server");
@@ -1310,8 +1332,8 @@ public class CertTool {
 						if ("-dn2".equals(argument)) {
 							if (i >= args.length-6) 
 								throw new CertToolException("Not enough arguments for distinguished name parts");
-							String[] parts = new String[6];
-							for (int j = 0; j<6; j++) {
+							String[] parts = new String[7];
+							for (int j = 0; j<7 && i < args.length-1; j++) {
 								if (hex)
 									parts[j] = escape(hexdecode(args[++i]));
 								else
@@ -1319,9 +1341,11 @@ public class CertTool {
 							}
 							hex = false;
 							String arg = "C="+parts[0]+",ST="+parts[1]+",L="+parts[2]+",O="+parts[3]+",OU="+parts[4]+",CN="+parts[5];
-							tool.checkDn(arg);							
-							X500Principal p1 = new X500Principal(arg);
-							arg = p1.getName();
+							if (parts[6] != null && parts[6].length() > 0)
+								arg += ",emailAddress="+parts[6];
+							tool.checkDn(arg);
+							// X500Principal p1 = new X500Principal(arg);
+							// arg = p1.getName();
 							tool.dn = arg;
 							continue ARGS;
 						}
@@ -1485,6 +1509,7 @@ public class CertTool {
 		checkDn1(list, "ST", "state");
 		checkDn1(list, "O", "organization");
 		checkDn1(list, "OU", "organizational unit");
+		if (list.size() > 0) checkDn1(list, "emailAddress", "email address");
 		if (list.size() > 0) throw new CertToolException("Unknown attribute "+list.get(0)+" in distinguished name");
 	}
 	
@@ -1521,6 +1546,7 @@ enum Check {
 	SERVER_NAME_NONE, // server name or empty
 	SERVER_NAME, // server namy only
 	ACTION, // number of action
+	EMAIL, // email address
 	DN, // check for part of distinguished name (at least 2 characters, no
 		// comma)
 	C, // check for two letter country code
