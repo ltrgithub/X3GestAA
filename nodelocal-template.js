@@ -405,6 +405,11 @@ exports.config = {
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
         farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
     },
+    // mobile client's configuration 
+	mobileClientConfig: {
+		// http request default timeout in ms
+		httpTimeout: 600000
+	}
     // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
     // See section 4.1.2 in Sage ID Reference Documentation for further information
     // Also for OAuth2 redirection
