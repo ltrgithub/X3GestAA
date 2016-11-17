@@ -4,7 +4,7 @@
 /// # Mongodb handle API  
 /// usually this object is already instantiated on the context
 /// ```javascript
-/// var dataModel = require("syracuse-orm/lib/dataModel");
+/// var dataModel = require("../../../src/orm/dataModel");
 /// var model = dataModel.make(...);
 /// // now get the mongodb handle
 /// var db = dataModel.getOrm(_, model, dataset);  
@@ -21,7 +21,7 @@ var globals = require('streamline-runtime').globals;
 var parser = require("@sage/syracuse-sdata-parser");
 var ez = require('ez-streams');
 var sys = require("util");
-var perfmon = require('../../../../src/perfmon/record');
+var perfmon = require('../../..//src/perfmon/record');
 var base64;
 var importHandler = require("syracuse-import/lib/jsonImport");
 

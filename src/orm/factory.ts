@@ -3,7 +3,7 @@
 /// !doc
 /// # Factory API
 /// ```javascript
-/// var factory = require('syracuse-orm/lib/factory')
+/// var factory = require('../../src/orm/factory')
 /// ```
 ///
 
@@ -22,14 +22,14 @@ var fileStoreFactory = require("./fileStoreFactory");
 var locale = require('streamline-locale');
 var Template = require('@sage/syracuse-core').resource.proxy.Template;
 //
-var serializer = require("syracuse-orm/lib/serializer");
+var serializer = require("../../src/orm/serializer");
 var signSerializer = new serializer.SignSerializer();
 var saveSerializer = new serializer.SaveSerializer("$snapshot");
 //
 var parser = require('@sage/syracuse-sdata-parser');
 var sdataAsync = require("syracuse-sdata/lib/sdataAsync");
 var checksum = require("./checksum");
-var perfmon = require('../../../src/perfmon/record');
+var perfmon = require('../..//src/perfmon/record');
 var sys = require("util");
 var base64; // encryption
 var config = require('config');
@@ -4829,7 +4829,7 @@ exports.replyLocalizedProperty = function(_, context, instance, propertyName, re
 /// -------------
 /// ## Factory replyInstances function :
 /// ``` javascript
-/// var factory = require("syracuse-orm/lib/factory");
+/// var factory = require("../../src/orm/factory");
 /// ...
 /// factory.replyInstances(_, context);
 /// ```
@@ -4911,7 +4911,7 @@ exports.replyInstances = function(_, context, entity, parameters) {
 /// -------------
 /// ## Factory fetchInstance function :
 /// ``` javascript
-/// var factory = require("syracuse-orm/lib/factory");
+/// var factory = require("../../src/orm/factory");
 /// ...
 /// var instance = factory.fetchInstance(_, context);
 /// ```
@@ -4932,7 +4932,7 @@ exports.fetchInstance = function(_, context) {
 /// -------------
 /// ## Factory replyInstance function :
 /// ``` javascript
-/// var factory = require("syracuse-orm/lib/factory");
+/// var factory = require("../../src/orm/factory");
 /// ...
 /// factory.replyInstance(_, context);
 /// ```
