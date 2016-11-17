@@ -1,7 +1,7 @@
 "use strict";
 var config = require('config');
 var ez = require('ez-streams');
-var htmlTransforms = require('html-escape/lib/transforms');
+var htmlTransforms = require('@sage/html-sanitizer/src/transforms');
 
 var allowedTypes = config.upload && config.upload.allowedTypes;
 if (!allowedTypes) {
