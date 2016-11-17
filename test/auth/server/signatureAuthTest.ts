@@ -39,7 +39,7 @@ describe(module.id, () => {
 
 	});
 
-	var signatureAuth = require("syracuse-auth/lib/signatureAuth");
+	var signatureAuth = require("../../../src/auth/signatureAuth");
 
 	var PASSWORD = "testtestpass";
 	var SIGNATURE = "testtestsig";

@@ -7,7 +7,7 @@ var globals = require('streamline-runtime').globals;
 var authHelpers = require('./helpers');
 var crypto = require('crypto');
 var config = require('config');
-var ldapauth = require("syracuse-auth/lib/ldap").ldapauth;
+var ldapauth = require("../../src/auth/ldap").ldapauth;
 
 exports.$exported = true;
 

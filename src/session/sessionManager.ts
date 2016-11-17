@@ -566,7 +566,7 @@ exports.sessionManager = new function() {
 			// delete session
 			if (session && session.loginError) {
 				errorExists = true;
-				require('syracuse-auth/lib/helpers').redirect(_, request, response, "/auth/login/page");
+				require('../../src/auth/helpers').redirect(_, request, response, "/auth/login/page");
 			}
 			_deleteSession(_, cookie, session, true);
 		}

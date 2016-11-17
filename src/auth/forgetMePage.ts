@@ -1,7 +1,7 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var authHelper = require('syracuse-auth/lib/helpers');
+var authHelper = require('../../src/auth/helpers');
 var helpers = require('@sage/syracuse-core').helpers;
 
 
@@ -19,7 +19,7 @@ function genPage(_, request, response) {
 	});
 	params.passwordVisibility = params.basicVisibility || params.digestVisibility || params.sageerpx3Visibility || params.ldapVisibility;
 
-	params.js$oauth2s = JSON.stringify(require('syracuse-auth/lib/oauth2').getServerList(_));
+	params.js$oauth2s = JSON.stringify(require('../../src/auth/oauth2').getServerList(_));
 
 	params.js$login = request.session.getTokenLoginUser(_, request);
 	params.js$hasCookie = request.session.checkPersistentCookie(_, request, false);
@@ -40,7 +40,7 @@ function genPage(_, request, response) {
 function submit(_, request, response) {
 	var params = request.readAll(_);
 	if (helpers.http.parseHeaders(request.headers || {})["content-type"] === "application/json") params = JSON.parse(params);
-	if (!require('syracuse-auth/lib/dispatcher').ensureAuthenticated(_, request, response, params)) return;
+	if (!require('../../src/auth/dispatcher').ensureAuthenticated(_, request, response, params)) return;
 
 	authHelper.redirect(_, request, response, request.session.authTargetUrl || '/', false);
 }

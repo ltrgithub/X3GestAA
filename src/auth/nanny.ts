@@ -6,9 +6,9 @@ var config = require('config');
 var syracuse;
 var mock = require('syracuse-load/lib/mock');
 var config = require('config');
-var checkUser = require('syracuse-auth/lib/checkUser');
-var authHelper = require('syracuse-auth/lib/helpers');
-var changePasswordError = require('syracuse-auth/lib/changePassword').changePasswordError;
+var checkUser = require('../../src/auth/checkUser');
+var authHelper = require('../../src/auth/helpers');
+var changePasswordError = require('../../src/auth/changePassword').changePasswordError;
 
 // Authorization for internal requests which are redirected from child process to child process internally within one load balancer (nanny).
 // The authorization header must contain "Nanny" followed by a space and the login name UTF8 encoded, then base64 encoded.

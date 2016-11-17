@@ -4,20 +4,25 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var config = require('config');
 var locale = require('streamline-locale');
-var checkUser = require('syracuse-auth/lib/checkUser');
-var authHelper = require('syracuse-auth/lib/helpers');
-var changePasswordError = require('syracuse-auth/lib/changePassword').changePasswordError;
+var checkUser = require('../../src/auth/checkUser');
+var authHelper = require('../../src/auth/helpers');
+var changePassword = require('../../src/auth/changePassword').changePassword;
 
 function unauthorized() {
-	return authHelper.unauthorized('Basic realm=' + config.session.realm);
+	return authHelper.unauthorized('SageERPX3');
 }
 
 exports.authenticate = function(_, request, response, session) {
-	var credentials = /^basic\s([\w\+\/]+\=*)/i.exec(request.headers.authorization);
+	var credentials = (request.headers.authorization || "").split(" ");
 	if (!(credentials && credentials[1])) throw unauthorized();
 	var usrpwd = new Buffer(credentials[1], "base64");
-	// use UTF8 for new login screen
-	usrpwd = usrpwd.toString("utf8");
+	// Chrome uses UTF8 for authentication
+	var agent = request.headers["user-agent"];
+	if (agent && (agent.indexOf(" Chrome/") >= 0)) {
+		usrpwd = usrpwd.toString("utf8");
+	} else {
+		usrpwd = usrpwd.toString("binary");
+	}
 	var index = usrpwd.indexOf(':');
 	if (index < 0) throw unauthorized();
 
@@ -26,10 +31,11 @@ exports.authenticate = function(_, request, response, session) {
 
 	if (!(login && pass)) throw unauthorized();
 
-	var user = checkUser.fromLoginPage(_, request, "basic", login, pass, 'Basic realm=' + config.session.realm);
+	// var passHash = computeHash(login, pass);
+	var user = checkUser.fromLoginPage(_, request, "sageerpx3", login, pass);
 
 	// redirect to password change dialog if requested by config
-	if (user.mustChangePassword(_)) throw changePasswordError(_, request, response, user);
+	if (user.mustChangePassword(_)) return changePassword(_, request, response, user);
 
 	tracer && tracer("User authenticated.");
 	session.authData = {

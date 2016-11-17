@@ -6,11 +6,11 @@ var fs = require('streamline-fs');
 var querystring = require('querystring');
 var url = require('url');
 var config = require('config');
-var authHelper = require('syracuse-auth/lib/helpers');
-var checkUser = require('syracuse-auth/lib/checkUser');
-var loginPage = require('syracuse-auth/lib/loginPage');
-var changePassword = require('syracuse-auth/lib/changePassword');
-var forgetMePage = require('syracuse-auth/lib/forgetMePage');
+var authHelper = require('../../src/auth/helpers');
+var checkUser = require('../../src/auth/checkUser');
+var loginPage = require('../../src/auth/loginPage');
+var changePassword = require('../../src/auth/changePassword');
+var forgetMePage = require('../../src/auth/forgetMePage');
 
 function badRequest(_, request, response, message) {
 	response.writeHead(400, {
@@ -150,8 +150,8 @@ exports.dispatcher = authHelper.dispatcher(2, {
 	login: loginPage.dispatch,
 	forgetMe: forgetMePage.dispatch,
 	changePassword: changePassword.dispatch,
-	oauth2: require('syracuse-auth/lib/oauth2').dispatch,
-	saml2: require('syracuse-auth/lib/saml2').dispatch,
-	'sage-id': require('syracuse-auth/lib/sage-id').dispatch,
-	userinfo: require('syracuse-auth/lib/userInfo').dispatch
+	oauth2: require('../../src/auth/oauth2').dispatch,
+	saml2: require('../../src/auth/saml2').dispatch,
+	'sage-id': require('../../src/auth/sage-id').dispatch,
+	userinfo: require('../../src/auth/userInfo').dispatch
 });

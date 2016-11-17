@@ -1,7 +1,7 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var authHelper = require('syracuse-auth/lib/helpers');
+var authHelper = require('../../src/auth/helpers');
 var helpers = require('@sage/syracuse-core').helpers;
 var config = require('config');
 
@@ -27,8 +27,8 @@ function genPage(_, request, response) {
 		params[label] = locale.format(module, label);
 	});
 
-	var oauth2s = require('syracuse-auth/lib/oauth2').getServerList(_);
-	var saml2s = require('syracuse-auth/lib/saml2').getServerList(_);
+	var oauth2s = require('../../src/auth/oauth2').getServerList(_);
+	var saml2s = require('../../src/auth/saml2').getServerList(_);
 
 	// set visibility flags for the different authentication methods which do not provide several servers
 	['basic', 'digest', 'ldap', 'sage-id'].forEach(function(method) {
@@ -62,7 +62,7 @@ function genPage(_, request, response) {
 function submit(_, request, response) {
 	var params = request.readAll(_);
 	if (helpers.http.parseHeaders(request.headers || {})["content-type"] === "application/json") params = JSON.parse(params);
-	if (!require('syracuse-auth/lib/dispatcher').ensureAuthenticated(_, request, response, params)) return;
+	if (!require('../../src/auth/dispatcher').ensureAuthenticated(_, request, response, params)) return;
 
 
 	authHelper.redirect(_, request, response, request.session.authTargetUrl || '/', true);
