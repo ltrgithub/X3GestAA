@@ -24,7 +24,7 @@ memwatch && memwatch.on("leak", function(info) {
 exports.dispatcher = function(config) {
 	return function(_, request, response) {
 		var url = request.url.split('&')[0]; // temp hack to get rid of &format=text appended by client
-		if (url === '/syracuse-memwatch/heapdiff') {
+		if (url === '/memwatch/heapdiff') {
 			if (!memwatch) {
 				response.writeHead(500, {
 					"Content-Type": "text/plain; charset=utf8"
