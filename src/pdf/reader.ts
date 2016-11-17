@@ -4,7 +4,7 @@
 /// 
 /// # PDF Reader
 /// ```javascript
-/// var pdfReader = require('syracuse-pdf').reader  
+/// var pdfReader = require('syracuse/src/pdf/reader')  
 /// ```
 /// 
 

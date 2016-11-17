@@ -4,7 +4,7 @@
 /// 
 /// # PDF Writer
 /// ```javascript
-/// var pdfWriter = require('syracuse-pdf').writer  
+/// var pdfWriter = require('syracuse/src/pdf/writer')  
 /// ```
 /// 
 
