@@ -1,11 +1,11 @@
 "use strict";
 
-var perfmon = require('syracuse-perfmon/lib/record');
+var perfmon = require('../../src/perfmon/record');
 
 exports.dispatcher = function(config) {
 	return function(_, request, response) {
 		var url = request.url.split('&')[0]; // temp hack to get rid of &format=text appended by client
-		if (url === '/syracuse-perfmon/session-data') {
+		if (url === '/perfmon/session-data') {
 			response.writeHead(200, {
 				"Content-Type": "application/json"
 			});
