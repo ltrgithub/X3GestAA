@@ -1,6 +1,6 @@
 "use strict";
 
-var config = (require("../../../nodelocal").config || {});
+var config = (require("../../nodelocal").config || {});
 var conf_sage_id = config.sage_id || {};
 conf_sage_id.certOK = conf_sage_id.pfx = conf_sage_id.cert = conf_sage_id.key = undefined;
 var helpers = require('@sage/syracuse-core').helpers;
@@ -12,7 +12,7 @@ var urlHelper = require('url');
 var authHelper = require('../../src/auth/helpers');
 var fs = require('streamline-fs');
 var certTools = require('syracuse-load/lib/certTools');
-var sageId = require("../..//src/sage-id");
+var sageId = require("../../src/sage-id");
 
 // Temp for debugging
 tracer = tracer || console.log;
