@@ -6,7 +6,7 @@
 /// This API allows you to gather performance data in your JS code. Typical usage is:
 /// 
 /// ``` javascript
-/// var perfmon = require('syracuse-perfmon');
+/// var perfmon = require('../../src/perfmon/record');
 /// 
 /// function myFunction(p1, p2) {
 ///   var timing = perfmon.start(module, "myFunction", p1);
@@ -153,7 +153,7 @@ function updateStats(t) {
 
 /// ## Monitoring code sections
 /// 
-/// `var perfmon = require('syracuse-perfmon');`
+/// `var perfmon = require('../../src/perfmon/record');`
 /// 
 /// * `var timing = perfmon.start(module, tag, details);`  
 ///   start a monitoring operation.  

@@ -157,7 +157,7 @@
 				addClickHandlers();
 			}
 		};
-		xhr.open('GET', '/syracuse-perfmon/session-data', true);
+		xhr.open('GET', '/perfmon/session-data', true);
 		xhr.send();
 	};
 })();

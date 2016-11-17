@@ -11,7 +11,7 @@ var x3pool = require("syracuse-x3/lib/pool");
 var util = require("util");
 var sys = util;
 var uuid = require('@sage/syracuse-core').uuid;
-var perfmon = require('syracuse-perfmon');
+var perfmon = require('../../src/perfmon/record');
 var locale = require('streamline-locale');
 var checkUser;
 var config;
