@@ -3,7 +3,7 @@ var fs = require('streamline-fs');
 var path = require('path');
 var config = require('config'); // must be first syracuse require
 var helpers = require('@sage/syracuse-core').helpers;
-var perfmon = require("syracuse-perfmon");
+var perfmon = require('syracuse-perfmon/lib/record');
 var datetime = require('@sage/syracuse-core').types.datetime;
 var sessionManager = require('../../../src/session/sessionManager').sessionManager;
 

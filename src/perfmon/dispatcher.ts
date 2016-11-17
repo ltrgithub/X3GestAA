@@ -1,6 +1,6 @@
 "use strict";
 
-var perfmon = require('syracuse-perfmon');
+var perfmon = require('syracuse-perfmon/lib/record');
 
 exports.dispatcher = function(config) {
 	return function(_, request, response) {
