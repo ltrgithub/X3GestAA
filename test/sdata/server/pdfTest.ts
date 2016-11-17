@@ -16,7 +16,7 @@ describe(module.id, () => {
 	var helpers = require('@sage/syracuse-core').helpers;
 	var aspect = require('../fixtures/aspect');
 	var types = require('@sage/syracuse-core').types;
-	var pdfRenderer = require('syracuse-sdata/lib/render/pdf');
+	var pdfRenderer = require('../../../src/sdata/render/pdf');
 	var sys = require("util");
 	var forEachKey = helpers.object.forEachKey;
 

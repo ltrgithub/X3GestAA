@@ -6,7 +6,7 @@ Object.keys(assert).forEach(key => {
 
 describe(module.id, () => {
 
-	var aspect = require("../../test/fixtures/aspect");
+	var aspect = require("../fixtures/aspect");
 
 	it('Before aspect point cut', function() {
 		var obj = {

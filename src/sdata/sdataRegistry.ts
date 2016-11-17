@@ -203,7 +203,7 @@ function requireExtension(path) {
 		return require(path);
 	} catch (ex) {
 		if (ex.code === 'MODULE_NOT_FOUND') {
-			return require(fsp.join(__dirname, '../../../src', path));
+			return require(fsp.join(__dirname, '../', path));
 		} else {
 			throw ex;
 		}
