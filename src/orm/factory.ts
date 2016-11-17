@@ -27,7 +27,7 @@ var signSerializer = new serializer.SignSerializer();
 var saveSerializer = new serializer.SaveSerializer("$snapshot");
 //
 var parser = require('@sage/syracuse-sdata-parser');
-var sdataAsync = require("syracuse-sdata/lib/sdataAsync");
+var sdataAsync = require("../../src/sdata/sdataAsync");
 var checksum = require("./checksum");
 var perfmon = require('../..//src/perfmon/record');
 var sys = require("util");

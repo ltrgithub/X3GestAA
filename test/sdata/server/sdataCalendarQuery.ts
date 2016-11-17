@@ -9,9 +9,9 @@ var mongodb = require('mongodb');
 var streams = require('streamline-streams');
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 var sys = require("util");
-var dataModel = require('../../../../src/orm/dataModel');
+var dataModel = require('../../..//src/orm/dataModel');
 var forEachKey = helpers.object.forEachKey;
-var sdataRegistry = require('syracuse-sdata/lib/sdataRegistry');
+var sdataRegistry = require('../../../src/sdata/sdataRegistry');
 var patchtools = require('syracuse-patch/lib/patchtools');
 
 var tracer; // = console.log;
