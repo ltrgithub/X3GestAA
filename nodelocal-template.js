@@ -393,7 +393,12 @@ exports.config = {
         webApiUrl: "https://devapi.dev-sageerpx3online.com",
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
         farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
-    },    
+    },   
+    // mobile client's configuration 
+	mobileClientConfig: {
+		// http request default timeout in ms
+		httpTimeout: 600000
+	}
 };
 
 // for git enabled configurations one can override the standard config
