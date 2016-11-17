@@ -1,4 +1,4 @@
-const checksum = require('syracuse-orm/lib/checksum');
+const checksum = require('../../../src/orm/checksum');
 
 import { assert } from 'chai';
 const strictEqual = assert.strictEqual;

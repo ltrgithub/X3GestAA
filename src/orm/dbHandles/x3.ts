@@ -5,12 +5,12 @@ var config = require('config'); // must be first
 var helpers = require('@sage/syracuse-core').helpers;
 var pool = require("syracuse-x3/lib/pool");
 var parser = require('@sage/syracuse-sdata-parser');
-var Factory = require("syracuse-orm/lib/factory").Factory;
+var Factory = require("../../../src/orm/factory").Factory;
 var Template = require('@sage/syracuse-core').resource.proxy.Template;
 var locale = require('streamline-locale');
 var resourceHelpers = require('@sage/syracuse-core').resource.util;
 var httpHelpers = require('@sage/syracuse-core').http;
-var entityClasses = require("syracuse-orm/lib/entities");
+var entityClasses = require("../../../src/orm/entities");
 var sys = require("util");
 
 var nocache = config && config.hosting && config.hosting.nocache;
