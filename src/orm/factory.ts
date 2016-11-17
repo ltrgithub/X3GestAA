@@ -3173,7 +3173,7 @@ function Factory(entityMeta) {
 			// use global locale to fill default value.
 			// when (non empty) value for global default locale is set, then also default value is set
 
-			admHelper = admHelper || require('syracuse-auth/lib/helpers');
+			admHelper = admHelper || require('../../src/auth/helpers');
 			var settingdata = admHelper.getStandardSetting(_);
 			var lCode = (settingdata && settingdata.localeCode) || "en-us";
 			if (!_data[lCode] || lCode === localeCode) {

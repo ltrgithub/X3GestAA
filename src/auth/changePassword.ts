@@ -3,7 +3,7 @@
 var locale = require('streamline-locale');
 var fs = require('streamline-fs');
 var config = require('config');
-var authHelper = require('syracuse-auth/lib/helpers');
+var authHelper = require('../../src/auth/helpers');
 var querystring = require('querystring');
 
 exports.changePasswordError = function(_, request, response, user) {

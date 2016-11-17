@@ -11,7 +11,7 @@ if (!config.sage_id) {
 var mongodb = require('mongodb');
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 var ez = require("ez-streams");
-var sageidauth = require('syracuse-auth/lib/sage-id');
+var sageidauth = require('../../../src/auth/sage-id');
 
 var path = require('path');
 var fs = require('fs');

@@ -4,9 +4,9 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var config = require('config');
 var locale = require('streamline-locale');
-var checkUser = require('syracuse-auth/lib/checkUser');
-var authHelper = require('syracuse-auth/lib/helpers');
-var changePassword = require('syracuse-auth/lib/changePassword').changePassword;
+var checkUser = require('../../src/auth/checkUser');
+var authHelper = require('../../src/auth/helpers');
+var changePassword = require('../../src/auth/changePassword').changePassword;
 
 function unauthorized() {
 	return authHelper.unauthorized('SageERPX3');

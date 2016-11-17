@@ -2,8 +2,8 @@
 
 var helpers = require('@sage/syracuse-core').helpers;
 var sys = require("util");
-var checkUser = require('syracuse-auth/lib/checkUser');
-var authHelper = require('syracuse-auth/lib/helpers');
+var checkUser = require('../../src/auth/checkUser');
+var authHelper = require('../../src/auth/helpers');
 
 var tracer; // = console.log;
 

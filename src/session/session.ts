@@ -482,7 +482,7 @@ exports.Session = helpers.defineClass(Session, events.EventEmitter, {
 
 exports.setup = function(settings) {
 	// must require checkUser here instead of in file's header because of some circular requires 
-	if (!checkUser) checkUser = require("syracuse-auth/lib/checkUser");
+	if (!checkUser) checkUser = require("../../src/auth/checkUser");
 	//
 	config = settings;
 };

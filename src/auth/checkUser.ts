@@ -6,8 +6,8 @@ var crypto = require('crypto');
 var check = require('syracuse-license/lib/check');
 var globals = require('streamline-runtime').globals;
 var config = require('config');
-var authHelper = require("syracuse-auth/lib/helpers");
-var sageId = require("../../../src/sage-id");
+var authHelper = require("../../src/auth/helpers");
+var sageId = require("../..//src/sage-id");
 
 exports.checkUserLogin = function(_, session, login, request) {
 	var db = adminHelpers.AdminHelper.getCollaborationOrm(_);
@@ -124,7 +124,7 @@ exports.fromLoginPage = function(_, request, method, login, password, challenge,
 			throw new Error(locale.format(module, "notFound", login));
 		} else {
 			if (method === 'sage-id')
-				sageId.create(require("syracuse-auth/lib/sage-id").getSageIdOptions(_, request)).logout(request, null, session, _);
+				sageId.create(require("../../src/auth/sage-id").getSageIdOptions(_, request)).logout(request, null, session, _);
 			throw authHelper.unauthorized(challenge);
 		}
 	}

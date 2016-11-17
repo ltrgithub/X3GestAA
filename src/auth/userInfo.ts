@@ -3,7 +3,7 @@
 const globals = require('streamline-runtime').globals;
 const helpers = require('@sage/syracuse-core').helpers;
 const adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
-const authHelper = require('syracuse-auth/lib/helpers');
+const authHelper = require('../../src/auth/helpers');
 const jwt = require('jsonwebtoken');
 
 const excludes = {
