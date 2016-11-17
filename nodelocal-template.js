@@ -421,6 +421,12 @@ exports.config = {
 		oauthCollection: 'oauth_redirects',         
 		apiHost: 'https://staging-api.sagex3.com'
 	},*/    
+
+    // mobile client's configuration 
+	mobileClientConfig: {
+		// http request default timeout in ms
+		httpTimeout: 600000
+	}
 };
 
 // for git enabled configurations one can override the standard config
