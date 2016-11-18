@@ -6,7 +6,7 @@ var cr = require('crypto');
 var dbDriver = require('syracuse-load/lib/dbDriver');
 var config = require('config');
 var ez = require("ez-streams");
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var x3client = require('syracuse-x3/lib/client');
 var flows = require('streamline-runtime').flows;
 

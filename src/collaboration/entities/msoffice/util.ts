@@ -1,6 +1,6 @@
 "use strict";
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 
 exports.query = function(_, context, parameters, entity, facet, func, where) {
 	var ep = _getX3EntitiesEndpoint(_, context, parameters);

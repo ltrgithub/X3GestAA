@@ -5,11 +5,11 @@ var globals = require('streamline-runtime').globals;
 var config = require('config'); // must be first syracuse require
 var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
 var sys = require('util');
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
-var ldap = require("syracuse-collaboration/lib/entities/user/ldap");
+var ldap = require("../../../src/collaboration/entities/user/ldap");
 var ldapjs = require("ldapjs");
 var ldapPort = 1390;
 var db;
@@ -43,7 +43,7 @@ describe(module.id, () => {
 	// Init environnement test
 	//------------------------
 	it('Init environnement', function(_) {
-		require('../../../../src/license/index').register(_);
+		require('../../..//src/license/index').register(_);
 		db = adminTestFixtures.initializeTestEnvironnement(_);
 		ok(db != null, "Environnement initialized");
 	});

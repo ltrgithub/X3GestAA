@@ -1,13 +1,13 @@
 "use strict";
 
 var util = require("util");
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 var ldapjs = require("ldapjs");
 var fs = require('streamline-fs');
 var userEntity = require('./user');
-var ldapauth = require('../../../../../src/auth/ldap').ldapauth;
-var authHelper = require('../../../../../src/auth/helpers');
+var ldapauth = require('../../../..//src/auth/ldap').ldapauth;
+var authHelper = require('../../../..//src/auth/helpers');
 
 var tracer; // = console.log;
 

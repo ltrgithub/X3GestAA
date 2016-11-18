@@ -1,6 +1,6 @@
 "use strict";
 
-var f = require('syracuse-collaboration/lib/entities/licenseView').simplify;
+var f = require('../../../src/collaboration/entities/licenseView').simplify;
 
 
 import { assert } from 'chai';

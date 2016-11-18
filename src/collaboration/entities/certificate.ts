@@ -9,7 +9,7 @@ var mock = require('syracuse-load/lib/mock');
 var certTools = require('syracuse-load/lib/certTools');
 var crypto = require('crypto');
 var os = require('os');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var globals = require('streamline-runtime').globals;
 
 /// !doc

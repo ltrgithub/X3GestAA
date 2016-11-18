@@ -15,14 +15,14 @@ var scheduler = require("syracuse-event/lib/scheduler");
 var uuid = require('@sage/syracuse-core').uuid;
 
 var x3client = require('syracuse-x3/lib/client');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 
 var sadFsq = require('syracuse-x3/lib/clients/sadfsq/sadfsqClient');
 var SadFsqClient = sadFsq.SadFsqClient;
 
 var scheduler = require("syracuse-event/lib/scheduler");
-var sessionManager = require('../../../../src/session/sessionManager').sessionManager;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var sessionManager = require('../../..//src/session/sessionManager').sessionManager;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 
 var importTool = require("syracuse-import/lib/jsonImport");
 

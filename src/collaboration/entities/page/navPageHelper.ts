@@ -3,7 +3,7 @@
 var flows = require('streamline-runtime').flows;
 var globals = require('streamline-runtime').globals;
 var locale = require('streamline-locale');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 
 exports.tracer = null;
 var _tracer; // = console.error;

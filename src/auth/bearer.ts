@@ -8,7 +8,7 @@ var checkUser = require('../../src/auth/checkUser');
 var authHelper = require('../../src/auth/helpers');
 var changePasswordError = require('../../src/auth/changePassword').changePasswordError;
 var oauth2 = require('./oauth2');
-var adminHelpers = require('syracuse-collaboration/lib/helpers');
+var adminHelpers = require('../../src/collaboration/helpers');
 var jsxml = require('js-xml');
 var url = require('url');
 

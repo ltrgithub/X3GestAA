@@ -3,7 +3,7 @@ var locale = require('streamline-locale');
 var config = require('config');
 var mock = require('syracuse-load/lib/mock');
 var util = require('util');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var clusterData;
 
 //collect up-to-date status information from servers including ping times to child processes

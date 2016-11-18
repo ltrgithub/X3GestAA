@@ -2,8 +2,8 @@
 
 var helpers = require('@sage/syracuse-core').helpers;
 var config = require('config'); // must be first syracuse require
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
 var mongodb = require('mongodb');
 var jsonImport = require("syracuse-import/lib/jsonImport");
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');

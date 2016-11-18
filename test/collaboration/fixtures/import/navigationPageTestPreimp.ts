@@ -1,7 +1,7 @@
 "use strict";
 
 exports.execute = function(_, db, options) {
-	require("syracuse-collaboration/lib/advancedScripts/pre-import-sitemap").execute(_, db, options);
+	require("../../../../src/collaboration/advancedScripts/pre-import-sitemap").execute(_, db, options);
 	// check some blocks
 	var collMb = db.db.collection("MenuBlock", _);
 	var menuBlocks = collMb.find({

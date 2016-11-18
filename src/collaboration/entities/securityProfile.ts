@@ -2,7 +2,7 @@
 
 var fs = require('streamline-fs');
 var fsp = require('path');
-var getFactoryOwner = require("../../../../src/orm/serializer").getFactoryOwner;
+var getFactoryOwner = require("../../..//src/orm/serializer").getFactoryOwner;
 var locale = require('streamline-locale');
 var globals = require('streamline-runtime').globals;
 

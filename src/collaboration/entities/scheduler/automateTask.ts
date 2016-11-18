@@ -2,8 +2,8 @@
 
 var locale = require('streamline-locale');
 var IndexHelper = require("syracuse-search/lib/elasticIndex").IndexHelper;
-var AdminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
-var sessionManager = require('../../../../../src/session/sessionManager').sessionManager;
+var AdminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var sessionManager = require('../../../..//src/session/sessionManager').sessionManager;
 var globals = require('streamline-runtime').globals;
 
 exports.entity = {

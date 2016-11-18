@@ -1,6 +1,6 @@
 "use strict";
 
-var sdataRegistry = require("../../../src/sdata/sdataRegistry");
+var sdataRegistry = require("../..//src/sdata/sdataRegistry");
 var helpers = require('@sage/syracuse-core').helpers;
 var pluralize = helpers.string.pluralize;
 var httpHelpers = require('@sage/syracuse-core').http;
@@ -142,7 +142,7 @@ exports.adminHelper = exports.AdminHelper = {
 		var contract = sdataRegistry.getContract(_config.application, _config.contract, true);
 		var dataset = _config.dataset;
 		// require dynamically to avoid problem with circular require
-		var result = require("../../../src/orm/dataModel").getOrm(_, this.getCollaborationModel(), contract.datasets[dataset]);
+		var result = require("../..//src/orm/dataModel").getOrm(_, this.getCollaborationModel(), contract.datasets[dataset]);
 		if (multiTenant) _orm[tenantId] = result;
 		else _orm = result;
 		return result;
@@ -151,7 +151,7 @@ exports.adminHelper = exports.AdminHelper = {
 		var contract = sdataRegistry.getContract(_config.application, _config.contract, true);
 		var dataset = _config.dataset;
 		// require dynamically to avoid problem with circular require
-		return require("../../../src/orm/dataModel").make(contract, dataset);
+		return require("../..//src/orm/dataModel").make(contract, dataset);
 	},
 	getCollaborationApplication(_) {
 		return this.getApplication(_, _config.application, _config.contract);

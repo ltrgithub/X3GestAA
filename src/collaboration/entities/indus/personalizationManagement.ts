@@ -1,7 +1,7 @@
 "use strict";
 
 var jsonExport = require("syracuse-import/lib/jsonExport");
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 var helpers = require('@sage/syracuse-core').helpers;
 var jsurl = require("jsurl");
 var locale = require('streamline-locale');

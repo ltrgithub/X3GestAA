@@ -2,7 +2,7 @@
 
 var locale = require('streamline-locale');
 var scheduler = require("syracuse-event/lib/scheduler");
-var factory = require("../../../../../src/orm/factory");
+var factory = require("../../../..//src/orm/factory");
 var index = require("syracuse-search/lib/elasticIndex");
 var IndexHelper = index.IndexHelper;
 var sys = require("util");

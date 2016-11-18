@@ -1,7 +1,7 @@
 "use strict";
 
 var globals = require('streamline-runtime').globals;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 
 exports.entity = {
 	$titleTemplate: "Teams",

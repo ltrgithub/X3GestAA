@@ -1,11 +1,11 @@
 "use strict";
 
 var util = require("util");
-var check = require('../../../../src/license/check');
+var check = require('../../..//src/license/check');
 var fs = require('streamline-fs');
 var locale = require('streamline-locale');
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var globals = require('streamline-runtime').globals;
 var syracuseDate = require('@sage/syracuse-core').types.date;
 var htmlEscape = helpers.string.htmlEscape;
@@ -72,7 +72,7 @@ exports.entity = {
 			
 				var t = check.checkConcurrent;
 				// checkConcurrent(_, session, role, userName, device, diagnoses)
-				require('../../../../src/license/index').load('license').unsinn = 1;
+				require('../../..//src/license/index').load('license').unsinn = 1;
 				check.checkConcurrent = function(_, session, role, userName, device, diagnoses) {
 					return t(_, session, role, userName, device, diagnoses);
 				};

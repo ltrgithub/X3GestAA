@@ -6,7 +6,7 @@ var config = require('config'); // must be first syracuse require
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 var sys = require('util');
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
 
 // put mock LDAP user data into target
@@ -51,13 +51,13 @@ describe(module.id, () => {
 		db = testAdmin.initializeTestEnvironnement(_);
 
 		// initialize dummy license system (cannot decrypt files because Streamline has already been loaded)
-		require('../../../../src/license/index').register(_);
+		require('../../..//src/license/index').register(_);
 
 		ok(db != null, "Environnement initialized");
 		//
 	});
 
-	var ldap = require("syracuse-collaboration/lib/entities/user/ldap");
+	var ldap = require("../../../src/collaboration/entities/user/ldap");
 
 	it('create ldap instance', function(_) {
 		//		var db = adminHelper.getCollaborationOrm(_);

@@ -1,7 +1,7 @@
 "use strict";
 
 var http = require('http');
-var httpClient = require('../../../../../src/http-client/httpClient');
+var httpClient = require('../../../..//src/http-client/httpClient');
 var config = require('config');
 
 var tracer = config && config.rest && config.rest.client && config.rest.client.tracer != null ? config.rest.client.tracer : false;

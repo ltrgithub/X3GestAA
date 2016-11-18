@@ -6,7 +6,7 @@ var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 var sys = require('util');
 var flows = require('streamline-runtime').flows;
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var mobileAppEntity = require("syracuse-tablet/lib/entities/mobileApplication").entity;
 
 var db;

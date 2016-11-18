@@ -1,8 +1,8 @@
 "use strict";
 
-var factory = require("../../../../../src/orm/factory");
+var factory = require("../../../..//src/orm/factory");
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 
 function _changeTransaction(page, transaction) {

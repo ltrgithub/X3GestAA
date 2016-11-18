@@ -1,7 +1,7 @@
 "use strict";
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
-var sdataRegistry = require("../../../../../src/sdata/sdataRegistry");
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var sdataRegistry = require("../../../..//src/sdata/sdataRegistry");
 var flows = require('streamline-runtime').flows;
 var helpers = require('@sage/syracuse-core').helpers;
 var pluralize = helpers.string.pluralize;

@@ -2,7 +2,7 @@
 var locale = require('streamline-locale');
 var util = require('util');
 var ldapEntity = require('./ldap');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 
 exports.entity = {
 	$canCreate: false,

@@ -1,7 +1,7 @@
 "use strict";
 
 var sys = require("util");
-var check = require("../../../../../src/license/check");
+var check = require("../../../..//src/license/check");
 
 exports.entity = {
 	$properties: {

@@ -1,13 +1,13 @@
 "use strict";
 
 exports.tracer; // = console.log;
-var pageLayoutProxy = require('syracuse-collaboration/lib/entities/page/pageLayoutProxy');
+var pageLayoutProxy = require('../../../src/collaboration/entities/page/pageLayoutProxy');
 
 var _scripts = [];
 
 _scripts[1] = function(_, db) {
 	exports.tracer && exports.tracer("Executing update script to version: 1; Encryption for OAuth2 secret");
-	var base64 = require('../../../../src/license/index').load('license');
+	var base64 = require('../../..//src/license/index').load('license');
 	//
 	var coll = db.db.collection("Oauth2", _);
 	var pls = coll.find({}).toArray(_);

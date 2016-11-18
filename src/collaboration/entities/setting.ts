@@ -14,7 +14,7 @@ exports.entity = {
 		},
 		authentication: {
 			$title: "Authentication",
-			$enum: require('../../../../src/auth/helpers').authEnum(true),
+			$enum: require('../../..//src/auth/helpers').authEnum(true),
 			defaultValue: function(_, instance) {
 				var config = require("config");
 				var method = (config && config.session && config.session.auth) || "basic";

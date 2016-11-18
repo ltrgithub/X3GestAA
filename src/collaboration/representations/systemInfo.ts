@@ -1,6 +1,6 @@
 "use strict";
 
-var entity = require('syracuse-collaboration/lib/entities/systemInfo').entity;
+var entity = require('../../../src/collaboration/entities/systemInfo').entity;
 
 function bindings(prefix) {
 	return Object.keys(entity.$properties).filter(function(key) {

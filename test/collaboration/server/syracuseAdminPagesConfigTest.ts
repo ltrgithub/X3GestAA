@@ -5,11 +5,11 @@ var uuid = helpers.uuid;
 var forEachKey = helpers.object.forEachKey;
 var types = require('@sage/syracuse-core').types;
 var config = require('config'); // must be first syracuse require
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
 var mongodb = require('mongodb');
 var sys = require("util");
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var tracer; // = console.log;
 
 //force basic auth

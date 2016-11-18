@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const connAppHelper = require('syracuse-4gl-api/lib/connectedApp');
 const adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
 
-const adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+const adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 const testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 
 

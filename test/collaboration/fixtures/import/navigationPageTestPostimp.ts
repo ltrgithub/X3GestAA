@@ -26,5 +26,5 @@ exports.execute = function(_, db, options) {
 		}
 	});
 	//
-	require("syracuse-collaboration/lib/advancedScripts/post-import-sitemap").execute(_, db, options);
+	require("../../../../src/collaboration/advancedScripts/post-import-sitemap").execute(_, db, options);
 };

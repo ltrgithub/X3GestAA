@@ -1,6 +1,6 @@
 "use strict";
 
-var adminHelpers = require('syracuse-collaboration/lib/helpers');
+var adminHelpers = require('../../src/collaboration/helpers');
 var locale = require('streamline-locale');
 var fs = require('streamline-fs');
 var querystring = require('querystring');

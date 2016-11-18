@@ -2,7 +2,7 @@
 
 exports.tracer; // = console.log;
 var config = require('config');
-var adminHelpers = require('syracuse-collaboration/lib/helpers');
+var adminHelpers = require('../../../src/collaboration/helpers');
 var _scripts = [];
 
 _scripts[1] = function(_, db) {

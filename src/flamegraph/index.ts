@@ -4,7 +4,7 @@ var config = require('config');
 
 exports.autoStart = function(_) {
 	if (!config.streamline.flamegraph) return;
-	var adminHelpers = require('syracuse-collaboration/lib/helpers');
+	var adminHelpers = require('../../src/collaboration/helpers');
 	var db = adminHelpers.AdminHelper.getCollaborationOrm(_);
 	var settings = require('../../src/flamegraph/entities/setting').getInstance(_, db);
 	if (!settings.autoStart(_)) return;

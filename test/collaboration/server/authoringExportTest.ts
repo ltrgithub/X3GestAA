@@ -4,16 +4,16 @@ var helpers = require('@sage/syracuse-core').helpers;
 var uuid = helpers.uuid;
 var forEachKey = helpers.object.forEachKey;
 var config = require('config'); // must be first syracuse require
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
 var mongodb = require('mongodb');
 var sys = require("util");
-var factory = require("../../../../src/orm/factory");
+var factory = require("../../..//src/orm/factory");
 var jsonImport = require("syracuse-import/lib/jsonImport");
 var jsonExport = require("syracuse-import/lib/jsonExport");
 var locale = require('streamline-locale');
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 
 import {

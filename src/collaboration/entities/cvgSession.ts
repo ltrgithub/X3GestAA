@@ -1,6 +1,6 @@
 "use strict";
 
-var sessionManager = require('../../../../src/session/sessionManager').sessionManager;
+var sessionManager = require('../../..//src/session/sessionManager').sessionManager;
 var config = require('config');
 var cvgReuseList = require('syracuse-x3/lib/cvgListReuse');
 

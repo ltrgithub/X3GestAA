@@ -1,11 +1,11 @@
 "use strict";
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var helpers = require('@sage/syracuse-core').helpers;
 var sys = require("util");
 var flows = require('streamline-runtime').flows;
-var checksum = require("../../../../src/orm/checksum");
-var signSerializer = new(require("../../../../src/orm/serializer").SignSerializer)();
+var checksum = require("../../..//src/orm/checksum");
+var signSerializer = new(require("../../..//src/orm/serializer").SignSerializer)();
 
 exports.tracer = null;
 

@@ -1,6 +1,6 @@
 "use strict";
 var util = require('util');
-var adminHelpers = require('syracuse-collaboration/lib/helpers');
+var adminHelpers = require('../../src/collaboration/helpers');
 var fs = require('streamline-fs');
 var http = require('http');
 var fsp = require('path');
@@ -13,7 +13,7 @@ var date = require('@sage/syracuse-core').types.date;
 var datetime = require('@sage/syracuse-core').types.datetime;
 var config = require('config');
 var mock = require('syracuse-load/lib/mock');
-var hostEntity = require('syracuse-collaboration/lib/entities/host');
+var hostEntity = require('../../src/collaboration/entities/host');
 var tracer = require('@sage/syracuse-core').getTracer('license'); //= console.log;
 var localhost = require('os').hostname().replace(/\./g, ","); // no dots, because they will be interpreted as object properties when stored in a MongoDB counter
 var sessionManager = require('../../src/session/sessionManager').sessionManager;
@@ -394,7 +394,7 @@ function _storeDB(licenses, _) {
 	}
 	// update badge information
 	tracer.debug && tracer.debug("STORE BADGES");
-	require('syracuse-collaboration/lib/entities/badge').updateBadges(_);
+	require('../../src/collaboration/entities/badge').updateBadges(_);
 }
 
 // distributes the input data into a newly created object:

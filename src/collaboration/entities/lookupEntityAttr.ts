@@ -2,7 +2,7 @@
 
 var flows = require('streamline-runtime').flows;
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 
 exports.entity = {

@@ -2,7 +2,7 @@
 
 var ez = require("ez-streams");
 var locale = require('streamline-locale');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 
 exports.entity = {
 	$isPersistent: false,

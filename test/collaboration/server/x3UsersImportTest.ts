@@ -2,13 +2,13 @@
 
 var helpers = require('@sage/syracuse-core').helpers;
 var config = require('config'); // must be first syracuse require
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
 var mongodb = require('mongodb');
 var sys = require("util");
-var factory = require("../../../../src/orm/factory");
+var factory = require("../../..//src/orm/factory");
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 
 //force basic auth

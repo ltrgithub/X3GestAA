@@ -4,10 +4,10 @@ var ez = require('ez-streams');
 var config = require('config'); // must be first syracuse require
 var crypto = require('crypto');
 var globals = require('streamline-runtime').globals;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var helpers = require('@sage/syracuse-core').helpers;
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
 var mongodb = require('mongodb');
 var sys = require("util");
 
@@ -18,7 +18,7 @@ exports.makeBasicAuthorizationToken = function(user, pass) {
 };
 
 exports.modifyCollaborationEndpoint = function(datasetName, fctModel, testData) {
-	var contract = require("syracuse-collaboration/lib/contract").contract;
+	var contract = require("../../../src/collaboration/contract").contract;
 	if (testData) {
 		contract.entities = testData.endpoint.contract.entities;
 		//console.log("testData "+console.log(JSON.stringify(contract.representations,null,2)))
@@ -100,7 +100,7 @@ exports.createTestAdminEndpoint = function(_, datasetName, fctModel, testData) {
 	resetDb(_, adminEndpoint, datasetName);
 	adminHelper.setup(config.collaboration);
 	config.sdata.endpoints = [adminEndpoint];
-	require('../../../../src/orm/dbHandles/mongoDbHandle').setup(null, {});
+	require('../../..//src/orm/dbHandles/mongoDbHandle').setup(null, {});
 	registry.register([adminEndpoint]);
 	return adminEndpoint;
 }

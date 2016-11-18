@@ -1,12 +1,12 @@
 "use strict";
 
 var globals = require('streamline/lib/globals');
-var x3Handle = require("../../../../src/orm/dbHandles/x3");
+var x3Handle = require("../../..//src/orm/dbHandles/x3");
 var locale = require('streamline-locale');
-var dataModel = require("../../../../src/orm/dataModel");
-var registry = require("../../../../src/sdata/sdataRegistry");
-var httpClient = require('../../../../src/http-client/httpClient');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var dataModel = require("../../..//src/orm/dataModel");
+var registry = require("../../..//src/sdata/sdataRegistry");
+var httpClient = require('../../..//src/http-client/httpClient');
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var config = require('config');
 var cvgCacheManager = require('syracuse-x3/lib/cvgCacheManager');
 var IndexHelper = require("syracuse-search/lib/elasticIndex").IndexHelper;

@@ -10,7 +10,7 @@ const ok = assert.ok;
 import * as fs from 'fs';
 import { helpers, apis } from '@sage/syracuse-core';
 var syracuse = require('syracuse-main/lib/syracuse'),
-	adminHelper = require("syracuse-collaboration/lib/helpers"),
+	adminHelper = require("../../../src/collaboration/helpers"),
 	sa = require('../../../src/orm/storageArea');
 
 const testAdmin = apis.get('test-admin');

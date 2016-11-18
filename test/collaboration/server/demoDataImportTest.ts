@@ -8,7 +8,7 @@ var sys = require("util");
 var jsonImport = require("syracuse-import/lib/jsonImport");
 var jsonExport = require("syracuse-import/lib/jsonExport");
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 
 helpers.pageFileStorage = false;

@@ -1,6 +1,6 @@
 "use strict";
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 var AuthoringHelper = require("./pageHelpers").AuthoringHelper;
 var locale = require('streamline-locale');
 var globals = require('streamline-runtime').globals;

@@ -5,9 +5,9 @@ var uuid = helpers.uuid;
 var config = require('config'); // must be first syracuse require
 var sys = require("util");
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
-var factory = require("../../../../src/orm/factory");
+var factory = require("../../..//src/orm/factory");
 
 var port = (config.unit_test && config.unit_test.serverPort) || 3004;
 var baseUrl = "http://localhost:" + port;

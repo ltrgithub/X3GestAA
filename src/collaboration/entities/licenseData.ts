@@ -1,7 +1,7 @@
 "use strict";
 
 var util = require('util');
-var check = require('../../../../src/license/check');
+var check = require('../../..//src/license/check');
 var locale = require('streamline-locale');
 var syracuseTypes = require('@sage/syracuse-core').types;
 var db;
@@ -269,7 +269,7 @@ function _fillData(_, context, instanceValue, keyValue) {
 	var data = check.getFullLicense(_);
 	var raw = data && data[0];
 	// fetch badges from badge entity
-	db = db || require('syracuse-collaboration/lib/helpers').AdminHelper.getCollaborationOrm(_);
+	db = db || require('../../../src/collaboration/helpers').AdminHelper.getCollaborationOrm(_);
 	badgeEntity = badgeEntity || db.model.getEntity(_, "badge");
 	var appEntity = db.model.getEntity(_, "application");
 	var result = [];

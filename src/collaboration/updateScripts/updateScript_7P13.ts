@@ -1,7 +1,7 @@
 "use strict";
 
 exports.tracer; // = console.log;
-var pageLayoutProxy = require('syracuse-collaboration/lib/entities/page/pageLayoutProxy');
+var pageLayoutProxy = require('../../../src/collaboration/entities/page/pageLayoutProxy');
 
 var _scripts = [];
 

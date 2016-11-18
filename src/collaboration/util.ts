@@ -1,7 +1,7 @@
 "use strict";
 
-var sdataRegistry = require("../../../src/sdata/sdataRegistry");
-var dataModel = require("../../../src/orm/dataModel");
+var sdataRegistry = require("../..//src/sdata/sdataRegistry");
+var dataModel = require("../..//src/orm/dataModel");
 var helpers = require('@sage/syracuse-core').helpers;
 
 var _config = {};

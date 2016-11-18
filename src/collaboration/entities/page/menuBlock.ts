@@ -140,7 +140,7 @@ exports.entity = {
 						//					process.exit(1);
                         */
 					} catch (e) {};
-					require("../../../../../src/session/sessionManager").gentlyTerminate(_, "menuBlock", true);
+					require("../../../..//src/session/sessionManager").gentlyTerminate(_, "menuBlock", true);
 				}
 				if (!adminMode && res_it.menuBlock && res_it.menuBlock.items && !res_it.menuBlock.items.length) return;
 				if (!adminMode && res_it.menuBlock && res_it.menuBlock.items && !res_it.menuBlock.items.length) return;

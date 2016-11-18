@@ -4,11 +4,11 @@ var config = require('config'); // must be first syracuse require
 var helpers = require('@sage/syracuse-core').helpers;
 var uuid = helpers.uuid;
 
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
 var ez = require('ez-streams');
 var mongodb = require('mongodb');
-var dataModel = require("../../../../src/orm/dataModel");
+var dataModel = require("../../..//src/orm/dataModel");
 var x3Mock = require("syracuse-x3/test/fixtures/x3Mock");
 var x3MockServer;
 var x3port = (config.unit_test && config.unit_test.x3mockPort) || 3005;
