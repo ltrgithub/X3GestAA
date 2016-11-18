@@ -54,7 +54,7 @@ function genPage(_, request, response) {
 		params.errorMessage = "";
 	}
 
-	authHelper.genPage(_, response, __dirname + "/../html/login.html", params);
+	authHelper.genPage(_, response, __dirname + "/../../public/auth/login.html", params);
 
 
 }
