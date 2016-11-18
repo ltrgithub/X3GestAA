@@ -1183,7 +1183,7 @@ function MongoDbHandle(model, dataset) {
 	// helper function
 
 	function _encryptData(_, data) {
-		base64 = base64 || require('syracuse-license').load('license');
+		base64 = base64 || require('../../../src/license/index').load('license');
 		if (data.length >= 64) throw new Error(locale.format(module, "cannotEncrypt", data.length));
 		var result = base64.license(0, data, new Boolean(true));
 		if (result === null || result === undefined) throw new Error("Old version of license module");
@@ -1202,7 +1202,7 @@ function MongoDbHandle(model, dataset) {
 				if (value && value._uuid) data.$set[path + "._uuid"] = value._uuid;
 				else data.$set[path] = {};
 			} else if ($p.$encrypt) { // encrypt
-				base64 = base64 || require('syracuse-license').load('license');
+				base64 = base64 || require('../../../src/license/index').load('license');
 				if (value.toString().length >= 64) throw new Error(locale.format(module, "cannotEncrypt", value.toString().length));
 				data.$set[path] = base64.license(0, value.toString(), new Boolean(true));
 				if (data.$set[path] === null || data.$set[path] === undefined) throw new Error("Old version of license module");

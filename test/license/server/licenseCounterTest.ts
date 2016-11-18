@@ -22,8 +22,8 @@ describe(module.id, () => {
 
 
 
-		var step = require('syracuse-license/lib/check')._st;
-		var newLicense = require('syracuse-license/lib/check')._nl;
+		var step = require('../../../src/license/check')._st;
+		var newLicense = require('../../../src/license/check')._nl;
 		var licenseData = {
 			WSSIZELIMIT: 2048, // MB
 			WSPERIOD: "DAY", // (a string: DAY, MONTH or YEAR).

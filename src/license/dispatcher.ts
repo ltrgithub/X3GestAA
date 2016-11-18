@@ -1,6 +1,6 @@
 "use strict";
 
-var check = require('syracuse-license/lib/check');
+var check = require('../../src/license/check');
 var mock = require('syracuse-load/lib/mock');
 var url = require('url');
 var config;
@@ -38,7 +38,7 @@ exports.dispatcher = function(config) {
 			var r = /c=(\d+)/.exec(request.url);
 			var res = 0;
 			if (r) {
-				res = require('syracuse-license/lib/check').step(_, r[1], {
+				res = require('../../src/license/check').step(_, r[1], {
 					"x3ServerHost": "aws-x3-indv7",
 					"x3ServerPort": 17100,
 					"x3Solution": "X3V7",

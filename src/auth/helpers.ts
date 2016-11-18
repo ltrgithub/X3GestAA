@@ -12,7 +12,7 @@ var standardCache;
 var globals = require('streamline-runtime').globals;
 var cacheAccess = 0;
 var multiTenant = config.hosting && config.hosting.multiTenant;
-var checkLicense = require("syracuse-license/lib/check");
+var checkLicense = require("../../src/license/check");
 var funnel = require('streamline-runtime').flows.funnel(1);
 
 var authMethods = (config.session && config.session.auth) || "basic";
