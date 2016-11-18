@@ -3,7 +3,7 @@
 /// !doc
 /// # Storage Area API  
 /// ```javascript
-/// var sa = require('../../src/orm/storageArea')  
+/// var sa = require('../orm/storageArea')  
 /// ```
 /// This module is exported to be able to be call from X3
 
@@ -12,7 +12,7 @@ exports.$exported = true;
 var helpers = require('@sage/syracuse-core').helpers,
 	uuid = require('@sage/syracuse-core').uuid,
 	globals = require('streamline-runtime').globals,
-	adminHelper = require("../../src/collaboration/helpers").AdminHelper;
+	adminHelper = require("../collaboration/helpers").AdminHelper;
 
 
 function checkExpirationDocument(_, document) {

@@ -11,9 +11,9 @@ var httpHelpers = require('@sage/syracuse-core').http;
 var factory = require("../..//src/orm/factory");
 var resourceHelpers = require('@sage/syracuse-core').resource.util;
 var resourceProxy = require('@sage/syracuse-core').resource.proxy;
-var sdataRegistry = require("../../src/sdata/sdataRegistry");
+var sdataRegistry = require("../sdata/sdataRegistry");
 var dataModel = require("../..//src/orm/dataModel");
-var adminUtil = require("../../src/collaboration/util");
+var adminUtil = require("../collaboration/util");
 var pluralize = helpers.string.pluralize;
 var locale = require('streamline-locale');
 var http = require('http');
@@ -632,7 +632,7 @@ exports.Context = class Context {
 
 			case "pdf":
 				var proto = self.getPrototypeResource(_, self.parameters.representation, true);
-				result = require('../../src/sdata/render/pdf').render(_, self, result, proto);
+				result = require('../sdata/render/pdf').render(_, self, result, proto);
 				headers["content-type"] = httpHelpers.mediaTypes.pdf;
 				encoding = "binary";
 				break;

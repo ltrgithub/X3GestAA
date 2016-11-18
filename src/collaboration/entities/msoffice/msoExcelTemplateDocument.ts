@@ -2,7 +2,7 @@
 
 var date = require('@sage/syracuse-core').types.date;
 var globals = require('streamline-runtime').globals;
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 
 var templatePresetValues = {

@@ -2,12 +2,12 @@
 var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var locale = require('streamline-locale');
-var adminHelpers = require('../../src/collaboration/helpers');
+var adminHelpers = require('../collaboration/helpers');
 var globals = require('streamline-runtime').globals;
 var authHelpers = require('./helpers');
 var crypto = require('crypto');
 var config = require('config');
-var ldapAuthentication = require("../../src/auth/ldap").ldapAuthentication;
+var ldapAuthentication = require("../auth/ldap").ldapAuthentication;
 
 exports.$exported = true;
 

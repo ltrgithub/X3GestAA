@@ -2,8 +2,8 @@
 
 var globals = require('streamline-runtime').globals;
 var locale = require('streamline-locale');
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
-var navPageHelper = require('../../../../src/collaboration/entities/page/navPageHelper');
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
+var navPageHelper = require('../../../collaboration/entities/page/navPageHelper');
 
 exports.entity = {
 	$titleTemplate: "Navigation",

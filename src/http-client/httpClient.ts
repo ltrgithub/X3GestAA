@@ -1,6 +1,6 @@
 "use strict";
 
-var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../collaboration/helpers").AdminHelper;
 var ez = require("ez-streams");
 var locale = require('streamline-locale');
 var perfmon = require('../..//src/perfmon/record');

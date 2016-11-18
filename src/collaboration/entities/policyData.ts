@@ -1,7 +1,7 @@
 "use strict";
 
 var check = require('../../..//src/license/check');
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 
 //synchronize badge entity contents with data from policy file
 exports.updatePolicyData = function(_) {

@@ -5,11 +5,11 @@ var util = require('util');
 var config = require('config');
 var Certificate = require("jsx509").Certificate;
 var integrity = require("jsx509").integrity;
-var mock = require('../../../src/load-balancer/mock');
-var certTools = require('../../../src/load-balancer/certTools');
+var mock = require('../../load-balancer/mock');
+var certTools = require('../../load-balancer/certTools');
 var crypto = require('crypto');
 var os = require('os');
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 var globals = require('streamline-runtime').globals;
 
 /// !doc

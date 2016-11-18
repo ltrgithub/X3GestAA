@@ -4,9 +4,9 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var config = require('config');
 var locale = require('streamline-locale');
-var checkUser = require('../../src/auth/checkUser');
-var authHelper = require('../../src/auth/helpers');
-var changePasswordError = require('../../src/auth/changePassword').changePasswordError;
+var checkUser = require('../auth/checkUser');
+var authHelper = require('../auth/helpers');
+var changePasswordError = require('../auth/changePassword').changePasswordError;
 
 function unauthorized() {
 	return authHelper.unauthorized('Basic realm=' + config.session.realm);

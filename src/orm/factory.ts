@@ -3,7 +3,7 @@
 /// !doc
 /// # Factory API
 /// ```javascript
-/// var factory = require('../../src/orm/factory')
+/// var factory = require('../orm/factory')
 /// ```
 ///
 
@@ -16,18 +16,18 @@ var forEachKey = helpers.object.forEachKey;
 var types = require('@sage/syracuse-core').types;
 var resourceHelpers = require('@sage/syracuse-core').resource.util;
 var flows = require('streamline-runtime').flows;
-var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../collaboration/helpers").AdminHelper;
 var admHelper;
 var fileStoreFactory = require("./fileStoreFactory");
 var locale = require('streamline-locale');
 var Template = require('@sage/syracuse-core').resource.proxy.Template;
 //
-var serializer = require("../../src/orm/serializer");
+var serializer = require("../orm/serializer");
 var signSerializer = new serializer.SignSerializer();
 var saveSerializer = new serializer.SaveSerializer("$snapshot");
 //
 var parser = require('@sage/syracuse-sdata-parser');
-var sdataAsync = require("../../src/sdata/sdataAsync");
+var sdataAsync = require("../sdata/sdataAsync");
 var checksum = require("./checksum");
 var perfmon = require('../..//src/perfmon/record');
 var sys = require("util");
@@ -2874,7 +2874,7 @@ function Factory(entityMeta) {
 									if (data.$isSnapshot) {
 										selfdata[key] = value;
 									} else {
-										base64 = base64 || require('../../src/license/index').load('license');
+										base64 = base64 || require('../license/index').load('license');
 										selfdata[key] = base64.license(1, value, new Boolean(false));
 										if (selfdata[key] === null || selfdata[key] === undefined) {
 											console.error("Cannot decrypt " + value + ". Set default password '-'");
@@ -3173,7 +3173,7 @@ function Factory(entityMeta) {
 			// use global locale to fill default value.
 			// when (non empty) value for global default locale is set, then also default value is set
 
-			admHelper = admHelper || require('../../src/auth/helpers');
+			admHelper = admHelper || require('../auth/helpers');
 			var settingdata = admHelper.getStandardSetting(_);
 			var lCode = (settingdata && settingdata.localeCode) || "en-us";
 			if (!_data[lCode] || lCode === localeCode) {
@@ -4829,7 +4829,7 @@ exports.replyLocalizedProperty = function(_, context, instance, propertyName, re
 /// -------------
 /// ## Factory replyInstances function :
 /// ``` javascript
-/// var factory = require("../../src/orm/factory");
+/// var factory = require("../orm/factory");
 /// ...
 /// factory.replyInstances(_, context);
 /// ```
@@ -4911,7 +4911,7 @@ exports.replyInstances = function(_, context, entity, parameters) {
 /// -------------
 /// ## Factory fetchInstance function :
 /// ``` javascript
-/// var factory = require("../../src/orm/factory");
+/// var factory = require("../orm/factory");
 /// ...
 /// var instance = factory.fetchInstance(_, context);
 /// ```
@@ -4932,7 +4932,7 @@ exports.fetchInstance = function(_, context) {
 /// -------------
 /// ## Factory replyInstance function :
 /// ``` javascript
-/// var factory = require("../../src/orm/factory");
+/// var factory = require("../orm/factory");
 /// ...
 /// factory.replyInstance(_, context);
 /// ```

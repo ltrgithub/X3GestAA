@@ -4,11 +4,11 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var config = require('config');
 var syracuse;
-var mock = require('../../src/load-balancer/mock');
+var mock = require('../load-balancer/mock');
 var config = require('config');
-var checkUser = require('../../src/auth/checkUser');
-var authHelper = require('../../src/auth/helpers');
-var changePasswordError = require('../../src/auth/changePassword').changePasswordError;
+var checkUser = require('../auth/checkUser');
+var authHelper = require('../auth/helpers');
+var changePasswordError = require('../auth/changePassword').changePasswordError;
 
 // Authorization for internal requests which are redirected from child process to child process internally within one load balancer (nanny).
 // The authorization header must contain "Nanny" followed by a space and the login name UTF8 encoded, then base64 encoded.

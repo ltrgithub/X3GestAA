@@ -1,12 +1,12 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var adminHelpers = require('../../src/collaboration/helpers');
+var adminHelpers = require('../collaboration/helpers');
 var crypto = require('crypto');
-var check = require('../../src/license/check');
+var check = require('../license/check');
 var globals = require('streamline-runtime').globals;
 var config = require('config');
-var authHelper = require("../../src/auth/helpers");
+var authHelper = require("../auth/helpers");
 var sageId = require("../..//src/sage-id");
 
 exports.checkUserLogin = function(_, session, login, request) {
@@ -124,7 +124,7 @@ exports.fromLoginPage = function(_, request, method, login, password, challenge,
 			throw new Error(locale.format(module, "notFound", login));
 		} else {
 			if (method === 'sage-id')
-				sageId.create(require("../../src/auth/sage-id").getSageIdOptions(_, request)).logout(request, null, session, _);
+				sageId.create(require("../auth/sage-id").getSageIdOptions(_, request)).logout(request, null, session, _);
 			throw authHelper.unauthorized(challenge);
 		}
 	}

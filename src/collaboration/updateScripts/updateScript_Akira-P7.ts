@@ -1,7 +1,7 @@
 "use strict";
 
 exports.tracer; // = console.log;
-var pageLayoutProxy = require('../../../src/collaboration/entities/page/pageLayoutProxy');
+var pageLayoutProxy = require('../../collaboration/entities/page/pageLayoutProxy');
 
 var _scripts = [];
 

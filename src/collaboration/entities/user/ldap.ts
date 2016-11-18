@@ -1,13 +1,13 @@
 "use strict";
 
 var util = require("util");
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 var ldapjs = require("ldapjs");
 var fs = require('streamline-fs');
 var userEntity = require('./user');
-var ldapAuthentication = require('../../../../src/auth/ldap').ldapAuthentication;
-var authHelper = require('../../../../src/auth/helpers');
+var ldapAuthentication = require('../../../auth/ldap').ldapAuthentication;
+var authHelper = require('../../../auth/helpers');
 
 var tracer; // = console.log;
 

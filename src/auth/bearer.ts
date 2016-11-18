@@ -4,11 +4,11 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var config = require('config');
 var locale = require('streamline-locale');
-var checkUser = require('../../src/auth/checkUser');
-var authHelper = require('../../src/auth/helpers');
-var changePasswordError = require('../../src/auth/changePassword').changePasswordError;
+var checkUser = require('../auth/checkUser');
+var authHelper = require('../auth/helpers');
+var changePasswordError = require('../auth/changePassword').changePasswordError;
 var oauth2 = require('./oauth2');
-var adminHelpers = require('../../src/collaboration/helpers');
+var adminHelpers = require('../collaboration/helpers');
 var jsxml = require('js-xml');
 var url = require('url');
 

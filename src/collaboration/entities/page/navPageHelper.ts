@@ -3,7 +3,7 @@
 var flows = require('streamline-runtime').flows;
 var globals = require('streamline-runtime').globals;
 var locale = require('streamline-locale');
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 
 exports.tracer = null;
 var _tracer; // = console.error;

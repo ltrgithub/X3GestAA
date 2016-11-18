@@ -3,7 +3,7 @@
 var locale = require('streamline-locale');
 var sys = require("util");
 var check = require("../../../..//src/license/check");
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 
 exports.entity = {
 	$properties: {

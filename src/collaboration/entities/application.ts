@@ -1,6 +1,6 @@
 "use strict";
 var locale = require('streamline-locale');
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 exports.entity = {
 	$withCache: true,
 	$titleTemplate: "Applications",

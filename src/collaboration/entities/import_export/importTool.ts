@@ -2,7 +2,7 @@
 
 var locale = require('streamline-locale');
 var importTool = require("syracuse-import/lib/jsonImport");
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var helpers = require('@sage/syracuse-core').helpers;
 var zip = require('streamline-zip');
 

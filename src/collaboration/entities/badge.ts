@@ -2,7 +2,7 @@
 
 var util = require("util");
 var fs = require('streamline-fs');
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 var check = require('../../..//src/license/check');
 
 //synchronize badge entity contents with data from policy file

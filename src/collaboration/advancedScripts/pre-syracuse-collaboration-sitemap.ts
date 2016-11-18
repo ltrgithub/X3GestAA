@@ -1,6 +1,6 @@
 "use strict";
 
-var helper = require('../../../src/collaboration/entities/page/navPageHelper');
+var helper = require('../../collaboration/entities/page/navPageHelper');
 exports.tracer = null;
 
 exports.dataUpdate = function(_, db) {

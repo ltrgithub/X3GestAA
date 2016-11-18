@@ -6,9 +6,9 @@ var crypto = require('crypto');
 var util = require('util');
 var config = require('config');
 var locale = require('streamline-locale');
-var checkUser = require('../../src/auth/checkUser');
-var authHelper = require('../../src/auth/helpers');
-var changePassword = require('../../src/auth/changePassword').changePassword;
+var checkUser = require('../auth/checkUser');
+var authHelper = require('../auth/helpers');
+var changePassword = require('../auth/changePassword').changePassword;
 
 //	store a nonce for 20 minutes
 var NONCE_STORE_THRESHOLD = 1200000;

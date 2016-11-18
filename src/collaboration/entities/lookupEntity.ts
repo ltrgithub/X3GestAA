@@ -4,7 +4,7 @@ var dataModel = require("../../..//src/orm/dataModel");
 var sdataRegistry = require("../../..//src/sdata/sdataRegistry");
 var flows = require('streamline-runtime').flows;
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 
 exports.entity = {
 	$properties: {

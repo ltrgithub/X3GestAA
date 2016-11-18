@@ -301,7 +301,7 @@ exports.getSyncData = getSyncData;
 exports.getOrm = function(_, model, dataset) {
 	//console.log("dataset "+dataset.driver);
 	var orm;
-	if (dataset.driver && (dataset.driver === "mongodb")) orm = require("../../src/orm/dbHandles/mongoDbHandle").create(_, model, dataset);
+	if (dataset.driver && (dataset.driver === "mongodb")) orm = require("../orm/dbHandles/mongoDbHandle").create(_, model, dataset);
 	else throw new Error("unsupported ORM driver: " + dataset.driver);
 	// add synchronization data
 	if (model.contract && model.contract.entities) {

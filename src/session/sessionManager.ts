@@ -6,15 +6,15 @@ var sessionMod = require('./session');
 var Session = sessionMod.Session;
 var sessionPool = require('./sessionPool');
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../collaboration/helpers").AdminHelper;
 var os = require("os");
 var traceHelper = require('syracuse-trace/lib/helper');
 var globals = require('streamline-runtime').globals;
-var check = require('../../src/license/check');
+var check = require('../license/check');
 var locale = require('streamline-locale');
 var sys = require("util");
 var url = require('url');
-var adminHelpers = require('../../src/collaboration/helpers');
+var adminHelpers = require('../collaboration/helpers');
 var path = require('path');
 var fs = require('streamline-fs');
 var querystring = require('querystring');
@@ -566,7 +566,7 @@ exports.sessionManager = new function() {
 			// delete session
 			if (session && session.loginError) {
 				errorExists = true;
-				require('../../src/auth/helpers').redirect(_, request, response, "/auth/login/page");
+				require('../auth/helpers').redirect(_, request, response, "/auth/login/page");
 			}
 			_deleteSession(_, cookie, session, true);
 		}

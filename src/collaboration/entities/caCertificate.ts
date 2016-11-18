@@ -2,7 +2,7 @@
 var locale = require('streamline-locale');
 var util = require('util');
 var cert = require('./certificate');
-var certTools = require('../../../src/load-balancer/certTools');
+var certTools = require('../../load-balancer/certTools');
 var config = require('config');
 var globals = require('streamline-runtime').globals;
 

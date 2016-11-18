@@ -2,7 +2,7 @@
 
 var globals = require('streamline-runtime').globals;
 var config = require('config'); // must be first syracuse require
-var adminHelper = require("../../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../../collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 var SYRACUSRMNG = "SYRACUSRMNG";
 

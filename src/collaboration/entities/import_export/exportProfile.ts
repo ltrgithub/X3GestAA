@@ -1,7 +1,7 @@
 "use strict";
 
 var sys = require("util");
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var jsonExport = require("syracuse-import/lib/jsonExport");
 var jsurl = require("jsurl");
 

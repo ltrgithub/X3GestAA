@@ -1,7 +1,7 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 var httpClient = require('../../..//src/http-client/httpClient');
 var helpers = require('@sage/syracuse-core').helpers;
 var batchHelper = require('syracuse-batch/lib/batchHelper');

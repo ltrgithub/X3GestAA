@@ -4,9 +4,9 @@ var config = require('config');
 
 exports.autoStart = function(_) {
 	if (!config.streamline.flamegraph) return;
-	var adminHelpers = require('../../src/collaboration/helpers');
+	var adminHelpers = require('../collaboration/helpers');
 	var db = adminHelpers.AdminHelper.getCollaborationOrm(_);
-	var settings = require('../../src/flamegraph/entities/setting').getInstance(_, db);
+	var settings = require('../flamegraph/entities/setting').getInstance(_, db);
 	if (!settings.autoStart(_)) return;
 	var entity = db.getEntity(_, "flamegraphRecording");
 	var recording = entity.createInstance(_, db);

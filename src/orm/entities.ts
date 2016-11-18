@@ -711,7 +711,7 @@ function _getEntityPrototype(_, model, entity, reprName, facetName, isChild, chi
 
 	function _addWordLinks(_, resource, entityName, facetName) {
 		if (!adminBaseUrl) {
-			var adminEP = require("../../src/collaboration/helpers").AdminHelper.getCollaborationEndpoint(_);
+			var adminEP = require("../collaboration/helpers").AdminHelper.getCollaborationEndpoint(_);
 			adminBaseUrl = adminEP && adminEP.getBaseUrl(_);
 		}
 
@@ -772,7 +772,7 @@ function _getEntityPrototype(_, model, entity, reprName, facetName, isChild, chi
 
 	function _addExcelLinks(_, resource, entityName, facetName) {
 		if (!adminBaseUrl) {
-			var adminEP = require("../../src/collaboration/helpers").AdminHelper.getCollaborationEndpoint(_);
+			var adminEP = require("../collaboration/helpers").AdminHelper.getCollaborationEndpoint(_);
 			adminBaseUrl = adminEP && adminEP.getBaseUrl(_);
 		}
 

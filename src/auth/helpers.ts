@@ -12,7 +12,7 @@ var standardCache;
 var globals = require('streamline-runtime').globals;
 var cacheAccess = 0;
 var multiTenant = config.hosting && config.hosting.multiTenant;
-var checkLicense = require("../../src/license/check");
+var checkLicense = require("../license/check");
 var funnel = require('streamline-runtime').flows.funnel(1);
 
 var authMethods = (config.session && config.session.auth) || "basic";
@@ -38,7 +38,7 @@ var unofficialMods = ["nanny"];
 
 exports.getAuthModule = function(name) {
 	if (authMethods.indexOf(name) < 0 && unofficialMods.indexOf(name) < 0) return null;
-	return require('../../src/auth/' + name);
+	return require('../auth/' + name);
 };
 
 
@@ -169,7 +169,7 @@ exports.getStandardSetting = function(_) {
 			if (multiTenant) standardCache = {};
 		}
 		// now we really have to obtain all data
-		var db = require('../../src/collaboration/helpers').AdminHelper.getCollaborationOrm(_);
+		var db = require('../collaboration/helpers').AdminHelper.getCollaborationOrm(_);
 		var settings = db.fetchInstances(_, db.model.getEntity(_, "setting"));
 		var setting = settings.length > 0 ? settings[0] : null;
 		var method = setting ? setting.authentication(_) : authMethods[0];
@@ -309,7 +309,7 @@ function _errorLogging(_) {
 		if (globals.context.request && globals.context.request.headers)
 			console.log(c + "Cookie " + globals.context.request.headers.cookie + " Path " + globals.context.request.url);
 		console.log(c + "Local sessions " + require('../..//src/session/sessionManager').localSessions());
-		var adminHelpers = require('../../src/collaboration/helpers');
+		var adminHelpers = require('../collaboration/helpers');
 		var db = adminHelpers.AdminHelper.getCollaborationOrm(_);
 		// fetch user
 		if (db) {

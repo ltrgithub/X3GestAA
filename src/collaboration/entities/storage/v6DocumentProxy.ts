@@ -4,7 +4,7 @@ var jsurl = require("jsurl");
 var ez = require("ez-streams");
 var httpHelpers = require('@sage/syracuse-core').http;
 var locale = require('streamline-locale');
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 
 function _deleteDocument(_, docUrl, headers) {
 	if (!docUrl) return {

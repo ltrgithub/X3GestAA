@@ -2,7 +2,7 @@
 
 var events = require('events');
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../collaboration/helpers").AdminHelper;
 var flows = require('streamline-runtime').flows;
 var glob = require('streamline-runtime').globals;
 var locale = require('streamline-locale');
@@ -11,7 +11,7 @@ var x3pool = require("syracuse-x3/lib/pool");
 var util = require("util");
 var sys = util;
 var uuid = require('@sage/syracuse-core').uuid;
-var perfmon = require('../../src/perfmon/record');
+var perfmon = require('../perfmon/record');
 var locale = require('streamline-locale');
 var checkUser;
 var config;
@@ -482,7 +482,7 @@ exports.Session = helpers.defineClass(Session, events.EventEmitter, {
 
 exports.setup = function(settings) {
 	// must require checkUser here instead of in file's header because of some circular requires 
-	if (!checkUser) checkUser = require("../../src/auth/checkUser");
+	if (!checkUser) checkUser = require("../auth/checkUser");
 	//
 	config = settings;
 };

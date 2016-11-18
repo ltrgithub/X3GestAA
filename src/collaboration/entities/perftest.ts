@@ -3,10 +3,10 @@
 var util = require("util");
 var tracer; // = console.log
 var cr = require('crypto');
-var dbDriver = require('../../../src/load-balancer/dbDriver');
+var dbDriver = require('../../load-balancer/dbDriver');
 var config = require('config');
 var ez = require("ez-streams");
-var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../collaboration/helpers").AdminHelper;
 var x3client = require('syracuse-x3/lib/client');
 var flows = require('streamline-runtime').flows;
 

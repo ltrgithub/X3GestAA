@@ -1,6 +1,6 @@
 "use strict";
 
-var perfmon = require('../../src/perfmon/record');
+var perfmon = require('../perfmon/record');
 
 exports.dispatcher = function(config) {
 	return function(_, request, response) {

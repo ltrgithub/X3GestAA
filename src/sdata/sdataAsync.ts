@@ -9,7 +9,7 @@ var helpers = require('@sage/syracuse-core').helpers;
 var locale = require('streamline-locale');
 var config = require('config');
 var EventEmitter = require('events').EventEmitter;
-var httpClient = require('../../src/http-client/httpClient');
+var httpClient = require('../http-client/httpClient');
 
 var asyncRepliesTimeout = config && config.session && config.session.asyncTimeout;
 

@@ -1,7 +1,7 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var AdminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var AdminHelper = require("../../../collaboration/helpers").AdminHelper;
 var sessionManager = require('../../../..//src/session/sessionManager').sessionManager;
 var globals = require('streamline-runtime').globals;
 

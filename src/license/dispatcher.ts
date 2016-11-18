@@ -1,7 +1,7 @@
 "use strict";
 
-var check = require('../../src/license/check');
-var mock = require('../../src/load-balancer/mock');
+var check = require('../license/check');
+var mock = require('../load-balancer/mock');
 var url = require('url');
 var config;
 var globals = require('streamline-runtime').globals;
@@ -38,7 +38,7 @@ exports.dispatcher = function(config) {
 			var r = /c=(\d+)/.exec(request.url);
 			var res = 0;
 			if (r) {
-				res = require('../../src/license/check').step(_, r[1], {
+				res = require('../license/check').step(_, r[1], {
 					"x3ServerHost": "aws-x3-indv7",
 					"x3ServerPort": 17100,
 					"x3Solution": "X3V7",

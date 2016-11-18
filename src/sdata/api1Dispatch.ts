@@ -1,6 +1,6 @@
 "use strict";
 
-var sdata = require('../../src/sdata/sdataDispatch');
+var sdata = require('../sdata/sdataDispatch');
 
 function fixRequest(request) {
 	// set $stateless flag to be routed through mobile1 stateless dispatcher

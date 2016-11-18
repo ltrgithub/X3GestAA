@@ -1,7 +1,7 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var config = require('config');
 
 function _disabled(_, instance) {
@@ -179,7 +179,7 @@ exports.entity = {
 
 
 			if (!professionCode) {
-				var pc = require("../../../../src/collaboration/entities/user/professionCode");
+				var pc = require("../../../collaboration/entities/user/professionCode");
 				var pcs = pc.getProfessionCodesForUser(_, self.user(_), self.endpoint(_));
 				if (pcs.length > 0) professionCode = pcs[0].codmet(_);
 			}

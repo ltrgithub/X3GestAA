@@ -2,7 +2,7 @@
 
 var factory = require("../../../..//src/orm/factory");
 var helpers = require('@sage/syracuse-core').helpers;
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 
 function _changeTransaction(page, transaction) {

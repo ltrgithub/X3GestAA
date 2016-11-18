@@ -1,16 +1,16 @@
 "use strict";
 
-var adminHelpers = require('../../src/collaboration/helpers');
+var adminHelpers = require('../collaboration/helpers');
 var locale = require('streamline-locale');
 var fs = require('streamline-fs');
 var querystring = require('querystring');
 var url = require('url');
 var config = require('config');
-var authHelper = require('../../src/auth/helpers');
-var checkUser = require('../../src/auth/checkUser');
-var loginPage = require('../../src/auth/loginPage');
-var changePassword = require('../../src/auth/changePassword');
-var forgetMePage = require('../../src/auth/forgetMePage');
+var authHelper = require('../auth/helpers');
+var checkUser = require('../auth/checkUser');
+var loginPage = require('../auth/loginPage');
+var changePassword = require('../auth/changePassword');
+var forgetMePage = require('../auth/forgetMePage');
 
 function badRequest(_, request, response, message) {
 	response.writeHead(400, {
@@ -150,8 +150,8 @@ exports.dispatcher = authHelper.dispatcher(2, {
 	login: loginPage.dispatch,
 	forgetMe: forgetMePage.dispatch,
 	changePassword: changePassword.dispatch,
-	oauth2: require('../../src/auth/oauth2').dispatch,
-	saml2: require('../../src/auth/saml2').dispatch,
-	'sage-id': require('../../src/auth/sage-id').dispatch,
-	userinfo: require('../../src/auth/userInfo').dispatch
+	oauth2: require('../auth/oauth2').dispatch,
+	saml2: require('../auth/saml2').dispatch,
+	'sage-id': require('../auth/sage-id').dispatch,
+	userinfo: require('../auth/userInfo').dispatch
 });

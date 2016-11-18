@@ -1,6 +1,6 @@
 "use strict";
 
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var AuthoringHelper = require("./pageHelpers").AuthoringHelper;
 var locale = require('streamline-locale');
 var globals = require('streamline-runtime').globals;

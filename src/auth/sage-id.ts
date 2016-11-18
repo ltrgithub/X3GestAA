@@ -7,12 +7,12 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer('session.trace');
 var mongodb = require('mongodb');
 var sessionManager = require('../..//src/session/sessionManager').sessionManager;
-var checkUser = require('../../src/auth/checkUser');
+var checkUser = require('../auth/checkUser');
 var urlHelper = require('url');
-var authHelper = require('../../src/auth/helpers');
+var authHelper = require('../auth/helpers');
 var fs = require('streamline-fs');
-var certTools = require('../../src/load-balancer/certTools');
-var sageId = require("../../src/sage-id");
+var certTools = require('../load-balancer/certTools');
+var sageId = require("../sage-id");
 
 // Temp for debugging
 tracer = tracer || console.log;
@@ -50,7 +50,7 @@ function getOptions(_, request) {
 	}
 	if (!conf_sage_id.certOK) throw new Error("No sage-id configuration");
 	return {
-		httpClient: require('../../src/http-client/httpClient').httpRequest,
+		httpClient: require('../http-client/httpClient').httpRequest,
 		baseUrl: conf_sage_id.baseUrl,
 		pfx: conf_sage_id.pfx,
 		cert: conf_sage_id.cert,

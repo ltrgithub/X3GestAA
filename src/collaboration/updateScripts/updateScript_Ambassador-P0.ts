@@ -2,7 +2,7 @@
 
 exports.tracer; // = console.log;
 var helpers = require('@sage/syracuse-core').helpers;
-var helperAdmin = require("../../../src/collaboration/helpers");
+var helperAdmin = require("../../collaboration/helpers");
 var _scripts = [];
 
 _scripts[1] = function(_, db) {

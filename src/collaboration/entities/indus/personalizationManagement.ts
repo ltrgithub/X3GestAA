@@ -1,7 +1,7 @@
 "use strict";
 
 var jsonExport = require("syracuse-import/lib/jsonExport");
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var helpers = require('@sage/syracuse-core').helpers;
 var jsurl = require("jsurl");
 var locale = require('streamline-locale');
@@ -238,7 +238,7 @@ exports.entity = {
 							unmark: "pre_import"
 						},
 						"$scriptsBefore": [{
-							"module": "../../../src/collaboration/advancedScripts/pre-import-sitemap",
+							"module": "../../collaboration/advancedScripts/pre-import-sitemap",
 							"options": {
 								"homepagesFilter": instance.navPageFilter(_),
 								"modulesFilter": instance.navPageModulesFilter(_),
@@ -247,7 +247,7 @@ exports.entity = {
 							}
 						}],
 						"$scriptsAfter": [{
-							"module": "../../../src/collaboration/advancedScripts/post-import-sitemap",
+							"module": "../../collaboration/advancedScripts/post-import-sitemap",
 							"options": {
 								"homepagesFilter": instance.navPageFilter(_),
 								"modulesFilter": instance.navPageModulesFilter(_),

@@ -1,6 +1,6 @@
 "use strict";
 
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var flows = require('streamline-runtime').flows;
 
 exports.entity = {

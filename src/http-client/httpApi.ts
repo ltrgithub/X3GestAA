@@ -1,12 +1,12 @@
 "use strict";
 
-var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../collaboration/helpers").AdminHelper;
 var locale = require('streamline-locale');
 
 /// !doc
 /// # Http API  
 /// ```javascript
-/// var httpApi = require('../../src/http-client/httpApi')  
+/// var httpApi = require('../http-client/httpApi')  
 /// ```
 /// This module is exported to be able to be call from X3
 

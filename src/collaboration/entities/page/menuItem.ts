@@ -2,7 +2,7 @@
 
 var dataModel = require("../../../..//src/orm/dataModel");
 var sdataRegistry = require("../../../..//src/sdata/sdataRegistry");
-var adminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
+var adminHelper = require("../../../collaboration/helpers").AdminHelper;
 var globals = require('streamline-runtime').globals;
 var sys = require("util");
 
