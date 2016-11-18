@@ -1745,7 +1745,7 @@ function _propagate(_, method, path, content, extra) { // propagation only when 
 }
 
 /// splits license data from input into license files and removes unnecessary data around them
-// Redundant code: this also appears in syracuse-load/lib/balancer._js
+// Redundant code: this also appears in src/load/balancer.ts
 exports._s = function(content) {
 	// remove beginning and end
 	content = content.replace(/^[^\{\}]*\{/, "").replace(/\}[^\{\}]*$/, "");

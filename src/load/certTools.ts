@@ -606,9 +606,10 @@ function _changes(cert, name, ca) {
 }
 
 // load native module for passphrase encryption
-
 function _getCryptoModule() {
-	return require('../build/Release/crypt');
+	var arch = os.platform() + '-' + os.arch();
+	var v8 = 'v8-' + /[0-9]+\.[0-9]+/.exec(process.versions.v8)[0];
+	return require(`./bin/${arch}-${v8}/crypt`);
 }
 
 function readPassphrases(directory, _, exc) {

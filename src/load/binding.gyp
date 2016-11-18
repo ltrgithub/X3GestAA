@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "crypt",
-      "sources": [ "src/crypt.cc" ],
+      "sources": [ "cpp/crypt.cc" ],
       'conditions': [
         ['OS=="mac"',
           {
