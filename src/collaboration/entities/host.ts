@@ -1,7 +1,7 @@
 "use strict";
 var locale = require('streamline-locale');
 var config = require('config');
-var mock = require('../../../src/load/mock');
+var mock = require('../../../src/load-balancer/mock');
 var util = require('util');
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 var clusterData;

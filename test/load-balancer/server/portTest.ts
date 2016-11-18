@@ -1,5 +1,5 @@
 "use strict";
-var balancer = require('../../../src/load/balancer');
+var balancer = require('../../../src/load-balancer/balancer');
 var util = require('util');
 var fs = require('fs');
 

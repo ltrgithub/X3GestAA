@@ -2,7 +2,7 @@
 # Certificate tools in connection with certificate entity
 # for use with load balancer and Syracuse
 ```javascript
-var certTools = require('syracuse/src/load/certTools')  
+var certTools = require('syracuse/src/load-balancer/certTools')  
 ```
 
 -------------

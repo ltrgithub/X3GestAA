@@ -25,7 +25,7 @@ if (process.platform === 'win32') {
 	var STARTED_MESSAGE = ((SVC_CTRL == 'systemctl') ? 'ActiveState=active' : '\n' + config.serviceName + ' start/running,');
 }
 var TEMP_PATH = path.join(config.basePath, config.temporaryPath);
-var AGENT_FILE = path.join(TEMP_PATH, 'src/load/syragent.js');
+var AGENT_FILE = path.join(TEMP_PATH, 'src/load-balancer/syragent.js');
 var NODE_FILE = path.join(TEMP_PATH, config.nodePath, 'node');
 var AUTOUPDATE = path.join(__dirname, 'autoupdate' + SHELL_EXT);
 var SHUTDOWN_SEMAPHORE = path.join(__dirname, 'shutdown.txt');

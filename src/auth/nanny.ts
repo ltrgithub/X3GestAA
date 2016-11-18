@@ -4,7 +4,7 @@ var helpers = require('@sage/syracuse-core').helpers;
 var tracer = helpers.debug.tracer("session.trace");
 var config = require('config');
 var syracuse;
-var mock = require('../../src/load/mock');
+var mock = require('../../src/load-balancer/mock');
 var config = require('config');
 var checkUser = require('../../src/auth/checkUser');
 var authHelper = require('../../src/auth/helpers');

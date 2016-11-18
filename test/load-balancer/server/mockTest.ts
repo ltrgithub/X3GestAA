@@ -1,6 +1,6 @@
 "use strict";
 
-var mocks = require('../../../src/load/mock');
+var mocks = require('../../../src/load-balancer/mock');
 var util = require('util');
 var stream = require('stream');
 var tracer; // = console.log;

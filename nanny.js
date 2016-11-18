@@ -36,7 +36,7 @@ if (config.collaboration && config.collaboration.cacheDir) { // user dependent c
 
 require('@sage/syracuse-core/streamline-loader')(config.streamline);
 
-require("./src/load/balancer").startCb(config, function(err, result) {
+require("./src/load-balancer/balancer").startCb(config, function(err, result) {
 	if (err) {
 		console.log("Error: " + err.message + " " + err.stack);
 		process.exit(1);

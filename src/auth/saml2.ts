@@ -16,7 +16,7 @@ var jsxml = require('js-xml');
 var zlib = require('zlib');
 var oids = require('jsx509/lib/oids');
 var util = require('util');
-var mock = require('../../src/load/mock');
+var mock = require('../../src/load-balancer/mock');
 var sessionManager = require('../..//src/session/sessionManager').sessionManager;
 var traceHelper = require('syracuse-trace/lib/helper');
 var certtools;
@@ -69,7 +69,7 @@ function signXML(_, xml, data, path) {
 	} finally {
 		SignedXml.SignatureAlgorithms[algorithm] = old;
 	}
-	certtools = certtools || require('../../src/load/certTools');
+	certtools = certtools || require('../../src/load-balancer/certTools');
 	var digest = certtools.sign(_, data.certificate.name(_), algorithm0, signedInfo, {
 		output_encoding: 'base64'
 	}, globals.context.tenantId);
@@ -168,7 +168,7 @@ function create(data, request, saml2) {
 				var algorithm = getAlgorithm(algorithm0);
 				params += "&SigAlg=" + encodeURIComponent(algorithm);
 				tracer.debug && tracer.debug("Text for signature for HTTP redirect: " + params);
-				certtools = certtools || require('../../src/load/certTools');
+				certtools = certtools || require('../../src/load-balancer/certTools');
 				var digest = certtools.sign(_, data.certificate.name(_), algorithm0, new Buffer(params), {
 					output_encoding: 'base64'
 				}, globals.context.tenantId);
@@ -277,7 +277,7 @@ function create(data, request, saml2) {
 							// this does not conform fully to the standard because it may produce errors when the parameters are in different order
 							var params = request.url.substring(request.url.indexOf("?") + 1, request.url.indexOf("&Signature="));
 							tracer.info && tracer.info("Query string for signature verification " + params);
-							certtools = certtools || require('../../src/load/certTools');
+							certtools = certtools || require('../../src/load-balancer/certTools');
 							var verify = certtools.verify(_, data.idProvCertificate.name(_), algorithm0, new Buffer(params), content.Signature, {
 								signature_encoding: 'base64'
 							}, globals.context.tenantId);
