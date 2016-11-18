@@ -3,12 +3,11 @@
 var helpers = require('@sage/syracuse-core').helpers;
 var globals = require('streamline-runtime').globals;
 var config = require('config'); // must be first syracuse require
-var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
+var adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
 var sys = require('util');
 var dataModel = require("../../..//src/orm/dataModel");
 var registry = require("../../..//src/sdata/sdataRegistry");
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
-var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
 var ldap = require("../../../src/collaboration/entities/user/ldap");
 var ldapjs = require("ldapjs");
 var ldapPort = 1390;

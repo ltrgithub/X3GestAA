@@ -267,7 +267,7 @@ describe(module.id, () => {
 		});
 		ok(profileInst != null, "very simple export profile created");
 		var entityAttr = model.getEntity(_, "entityAttribute");
-		var expFilePath = "node_modules/syracuse-collaboration/test/fixtures/very-simple-export-profile";
+		var expFilePath = "test/collaboration/fixtures/very-simple-export-profile";
 
 
 		var content = jsonExport.jsonExport(_, profileInst, {
@@ -438,7 +438,7 @@ describe(module.id, () => {
 	testSettings.forEach(function(test) {
 		//console.log("TEST: " + JSON.stringify(test,null,2));
 		var profileDescr = test.profileDescr;
-		var importFile = "../node_modules/syracuse-collaboration/test/fixtures/exportTestSamples/" + test.profileDescr + "-import.json";
+		var importFile = "../test/collaboration/fixtures/exportTestSamples/" + test.profileDescr + "-import.json";
 		var profileCode = test.profileCode;
 		var exportItems = test.exportItems;
 		var content;

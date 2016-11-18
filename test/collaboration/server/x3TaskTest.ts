@@ -5,7 +5,7 @@ var helpers = require('@sage/syracuse-core').helpers;
 var uuid = helpers.uuid;
 
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
-var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
+var adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
 var ez = require('ez-streams');
 var mongodb = require('mongodb');
 var dataModel = require("../../..//src/orm/dataModel");

@@ -7,7 +7,7 @@ var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 var sys = require('util');
 
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
-var adminTestFixtures = require("syracuse-collaboration/test/fixtures/adminTestFixtures");
+var adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
 
 // put mock LDAP user data into target
 
