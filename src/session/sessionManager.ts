@@ -21,7 +21,7 @@ var querystring = require('querystring');
 var SocketHandler = require("syracuse-notification/lib/socketHandler");
 var flows = require('streamline-runtime').flows;
 
-var tracer = require("syracuse-trace/lib/helper").getTracer("sessionManager.session");
+var tracer = require('@sage/syracuse-core').getTracer("sessionManager.session");
 
 var _sessions = {};
 exports.localSessions = function() {

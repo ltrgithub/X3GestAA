@@ -1,6 +1,6 @@
 "use strict";
 
-var recorder = require('syracuse-load/lib/recorder');
+var recorder = require('../../../src/load-balancer/recorder');
 var util = require('util');
 var stream = require('stream');
 var fs = require('streamline-fs');

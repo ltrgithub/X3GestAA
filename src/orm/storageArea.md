@@ -1,6 +1,6 @@
 # Storage Area API  
 ```javascript
-var sa = require('syracuse-orm/lib/storageArea')  
+var sa = require('syracuse/src/orm/storageArea')  
 ```
 This module is exported to be able to be call from X3
 -------------

@@ -2,7 +2,7 @@
 
 var config = require('config');
 var url = require('url');
-var mock = require('syracuse-load/lib/mock');
+var mock = require('../../src/load-balancer/mock');
 var syracuse;
 
 function notifyEnd(_) {

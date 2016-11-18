@@ -11,7 +11,7 @@ var checkUser = require('../../src/auth/checkUser');
 var urlHelper = require('url');
 var authHelper = require('../../src/auth/helpers');
 var fs = require('streamline-fs');
-var certTools = require('syracuse-load/lib/certTools');
+var certTools = require('../../src/load-balancer/certTools');
 var sageId = require("../../src/sage-id");
 
 // Temp for debugging

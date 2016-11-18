@@ -12,7 +12,7 @@ var l = lic.load('license');
 var date = require('@sage/syracuse-core').types.date;
 var datetime = require('@sage/syracuse-core').types.datetime;
 var config = require('config');
-var mock = require('syracuse-load/lib/mock');
+var mock = require('../../src/load-balancer/mock');
 var hostEntity = require('../../src/collaboration/entities/host');
 var tracer = require('@sage/syracuse-core').getTracer('license'); //= console.log;
 var localhost = require('os').hostname().replace(/\./g, ","); // no dots, because they will be interpreted as object properties when stored in a MongoDB counter
@@ -1745,7 +1745,7 @@ function _propagate(_, method, path, content, extra) { // propagation only when 
 }
 
 /// splits license data from input into license files and removes unnecessary data around them
-// Redundant code: this also appears in syracuse-load/lib/balancer._js
+// Redundant code: this also appears in src/load-balancer/balancer.ts
 exports._s = function(content) {
 	// remove beginning and end
 	content = content.replace(/^[^\{\}]*\{/, "").replace(/\}[^\{\}]*$/, "");
