@@ -16,7 +16,7 @@ var forEachKey = helpers.object.forEachKey;
 var types = require('@sage/syracuse-core').types;
 var resourceHelpers = require('@sage/syracuse-core').resource.util;
 var flows = require('streamline-runtime').flows;
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
 var admHelper;
 var fileStoreFactory = require("./fileStoreFactory");
 var locale = require('streamline-locale');

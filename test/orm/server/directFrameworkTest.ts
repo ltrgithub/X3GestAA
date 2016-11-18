@@ -6,7 +6,7 @@ const { fetchFromUrl, unitTestSafeCall } = require('../../../src/orm/factory');
 const { verify } = require('../../../src/orm/checksum');
 const { SignSerializer } = require('../../../src/orm/serializer');
 const locale = require('streamline-locale');
-const { adminHelper } = require('syracuse-collaboration/lib/helpers');
+const { adminHelper } = require('../../../src/collaboration/helpers');
 import { _ } from 'streamline-runtime';
 
 import { assert } from 'chai';

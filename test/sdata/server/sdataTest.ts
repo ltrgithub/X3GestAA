@@ -2214,7 +2214,7 @@ describe(module.id, () => {
 
 	});
 
-	//UNIT TEST FOR syracuse-collaboration/lib/entities/about._js
+	//UNIT TEST FOR syracuse/src/collaboration/entities/about._js
 	it('about test', function(_) {
 		cookie = getCookie(_);
 		var body = get(_, cookie, baseUrl + "/sdata/syracuse/collaboration/syracuse/abouts('''')?representation=about.$details");

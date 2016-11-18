@@ -12,7 +12,7 @@ exports.$exported = true;
 var helpers = require('@sage/syracuse-core').helpers,
 	uuid = require('@sage/syracuse-core').uuid,
 	globals = require('streamline-runtime').globals,
-	adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+	adminHelper = require("../../src/collaboration/helpers").AdminHelper;
 
 
 function checkExpirationDocument(_, document) {

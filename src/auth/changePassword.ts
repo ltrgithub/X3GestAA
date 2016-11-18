@@ -16,7 +16,7 @@ exports.changePasswordError = function(_, request, response, user) {
 
 var genPage = function(_, request, response) {
 	var user = request.session.changePasswordUser;
-	var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+	var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
 	var db = adminHelper.getCollaborationOrm(_);
 	var up = db.model.getEntity(_, "userProfile").factory.createInstance(_, null, db);
 	up.loadUserProfile(_, user, (request.headers["accept-language"] || "").split(",")[0]);

@@ -169,7 +169,7 @@ exports.getStandardSetting = function(_) {
 			if (multiTenant) standardCache = {};
 		}
 		// now we really have to obtain all data
-		var db = require('syracuse-collaboration/lib/helpers').AdminHelper.getCollaborationOrm(_);
+		var db = require('../../src/collaboration/helpers').AdminHelper.getCollaborationOrm(_);
 		var settings = db.fetchInstances(_, db.model.getEntity(_, "setting"));
 		var setting = settings.length > 0 ? settings[0] : null;
 		var method = setting ? setting.authentication(_) : authMethods[0];
@@ -309,7 +309,7 @@ function _errorLogging(_) {
 		if (globals.context.request && globals.context.request.headers)
 			console.log(c + "Cookie " + globals.context.request.headers.cookie + " Path " + globals.context.request.url);
 		console.log(c + "Local sessions " + require('../..//src/session/sessionManager').localSessions());
-		var adminHelpers = require('syracuse-collaboration/lib/helpers');
+		var adminHelpers = require('../../src/collaboration/helpers');
 		var db = adminHelpers.AdminHelper.getCollaborationOrm(_);
 		// fetch user
 		if (db) {

@@ -20,7 +20,7 @@ describe(module.id, () => {
 	var sys = require("util");
 	var forEachKey = helpers.object.forEachKey;
 
-	var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+	var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 	var testAdmin = require('@sage/syracuse-core').apis.get('test-admin');
 
 	var tracer; // = console.log;

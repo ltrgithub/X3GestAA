@@ -2,7 +2,7 @@
 
 var helpers = require('@sage/syracuse-core').helpers;
 var registry = require('@sage/syracuse-core').registry;
-var adminHelper = require("syracuse-collaboration/lib/helpers");
+var adminHelper = require("../../src/collaboration/helpers");
 var locale = require('streamline-locale');
 var config = require("config");
 var fsp = require("path");

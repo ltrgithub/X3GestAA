@@ -1,7 +1,7 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var adminHelpers = require('syracuse-collaboration/lib/helpers');
+var adminHelpers = require('../../src/collaboration/helpers');
 var crypto = require('crypto');
 var check = require('../../src/license/check');
 var globals = require('streamline-runtime').globals;

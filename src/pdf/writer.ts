@@ -16,7 +16,7 @@ var pdfUtils = require('./utils'),
 	EOL = '\n';
 
 var locale = require('streamline-locale');
-var adminHelper = require("syracuse-collaboration/lib/helpers").AdminHelper;
+var adminHelper = require("../../src/collaboration/helpers").AdminHelper;
 
 /// -------------
 /// ## create function :
