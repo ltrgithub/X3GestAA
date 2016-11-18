@@ -32,7 +32,9 @@ if (config.noDevLic) {
 exports.LICENSE_FILE = LICENSE_FILE;
 
 exports.load = function(name) {
-	return require('../build/Release/' + name);
+	var arch = os.platform() + '-' + os.arch();
+	var v8 = 'v8-' + /[0-9]+\.[0-9]+/.exec(process.versions.v8)[0];
+	return require(`../bin/${arch}-${v8}/${name}`);
 };
 
 // add policies from policies folder
