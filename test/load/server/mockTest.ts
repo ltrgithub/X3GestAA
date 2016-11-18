@@ -1,6 +1,6 @@
 "use strict";
 
-var mocks = require('syracuse-load/lib/mock');
+var mocks = require('../../../src/load/mock');
 var util = require('util');
 var stream = require('stream');
 var tracer; // = console.log;

@@ -12,7 +12,7 @@ var l = lic.load('license');
 var date = require('@sage/syracuse-core').types.date;
 var datetime = require('@sage/syracuse-core').types.datetime;
 var config = require('config');
-var mock = require('syracuse-load/lib/mock');
+var mock = require('../../src/load/mock');
 var hostEntity = require('../../src/collaboration/entities/host');
 var tracer = require('@sage/syracuse-core').getTracer('license'); //= console.log;
 var localhost = require('os').hostname().replace(/\./g, ","); // no dots, because they will be interpreted as object properties when stored in a MongoDB counter

@@ -1,7 +1,7 @@
 "use strict";
 
 var check = require('../../src/license/check');
-var mock = require('syracuse-load/lib/mock');
+var mock = require('../../src/load/mock');
 var url = require('url');
 var config;
 var globals = require('streamline-runtime').globals;

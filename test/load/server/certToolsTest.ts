@@ -5,7 +5,7 @@ Object.keys(assert).forEach(key => {
 });
 
 describe(module.id, () => {
-	var certTools = require('syracuse-load/lib/certTools');
+	var certTools = require('../../../src/load/certTools');
 	var util = require('util');
 	var fs = require('streamline-fs');
 	var jsx509 = require('jsx509');

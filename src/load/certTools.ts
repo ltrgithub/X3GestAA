@@ -19,7 +19,7 @@ var ez = require('ez-streams');
 /// # for use with load balancer and Syracuse
 ///
 /// ```javascript
-/// var certTools = require('syracuse-load/lib/certTools')  
+/// var certTools = require('../../src/load/certTools')  
 /// ```
 /// 
 var tracer; // = console.log;

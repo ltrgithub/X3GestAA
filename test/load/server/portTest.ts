@@ -1,5 +1,5 @@
 "use strict";
-var balancer = require('syracuse-load/lib/balancer');
+var balancer = require('../../../src/load/balancer');
 var util = require('util');
 var fs = require('fs');
 

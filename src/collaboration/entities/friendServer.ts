@@ -6,7 +6,7 @@ var fs = require('streamline-fs');
 var fsp = require("path");
 var https = require("https");
 var config = require('config');
-var certtools = require('syracuse-load/lib/certTools');
+var certtools = require('../../../src/load/certTools');
 
 exports.entity = {
 	$titleTemplate: "Collaboration friend server",

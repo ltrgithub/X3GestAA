@@ -3,7 +3,7 @@
 var util = require("util");
 var tracer; // = console.log
 var cr = require('crypto');
-var dbDriver = require('syracuse-load/lib/dbDriver');
+var dbDriver = require('../../../src/load/dbDriver');
 var config = require('config');
 var ez = require("ez-streams");
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
