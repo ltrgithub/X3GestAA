@@ -1,5 +1,5 @@
 "use strict";
-var check = require('syracuse-license/lib/check');
+var check = require('../../../src/license/check');
 var date = require('@sage/syracuse-core').types.date;
 var util = require('util');
 var tracer; // = console.error;

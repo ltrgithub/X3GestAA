@@ -2874,7 +2874,7 @@ function Factory(entityMeta) {
 									if (data.$isSnapshot) {
 										selfdata[key] = value;
 									} else {
-										base64 = base64 || require('syracuse-license').load('license');
+										base64 = base64 || require('../../src/license/index').load('license');
 										selfdata[key] = base64.license(1, value, new Boolean(false));
 										if (selfdata[key] === null || selfdata[key] === undefined) {
 											console.error("Cannot decrypt " + value + ". Set default password '-'");

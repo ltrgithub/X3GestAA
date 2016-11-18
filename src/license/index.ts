@@ -32,7 +32,7 @@ if (config.noDevLic) {
 exports.LICENSE_FILE = LICENSE_FILE;
 
 exports.load = function(name) {
-	return require('./build/Release/' + name);
+	return require('../../node_modules/syracuse-license/build/Release/' + name);
 };
 
 // add policies from policies folder

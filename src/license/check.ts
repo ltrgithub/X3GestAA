@@ -7,7 +7,7 @@ var fsp = require('path');
 var locale = require('streamline-locale');
 var helpers = require('@sage/syracuse-core').helpers;
 var checkFunnel = require('streamline/lib/util/flows').funnel(1);
-var lic = require('../index');
+var lic = require('./index');
 var l = lic.load('license');
 var date = require('@sage/syracuse-core').types.date;
 var datetime = require('@sage/syracuse-core').types.datetime;
@@ -16,7 +16,7 @@ var mock = require('syracuse-load/lib/mock');
 var hostEntity = require('syracuse-collaboration/lib/entities/host');
 var tracer = require('@sage/syracuse-core').getTracer('license'); //= console.log;
 var localhost = require('os').hostname().replace(/\./g, ","); // no dots, because they will be interpreted as object properties when stored in a MongoDB counter
-var sessionManager = require('../../../src/session/sessionManager').sessionManager;
+var sessionManager = require('../../src/session/sessionManager').sessionManager;
 var globals = require('streamline-runtime').globals;
 
 // var mongodb = require('mongodb')
