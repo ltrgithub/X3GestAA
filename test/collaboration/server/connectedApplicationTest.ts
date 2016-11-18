@@ -6,7 +6,7 @@ const globals = require('streamline-runtime').globals;
 const flows = require('streamline-runtime').flows;
 const jwt = require('jsonwebtoken');
 const connAppHelper = require('syracuse-4gl-api/lib/connectedApp');
-const adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
+const adminTestFixtures = require("../../collaboration/fixtures/adminTestFixtures");
 
 const adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 const testAdmin = require('@sage/syracuse-core').apis.get('test-admin');

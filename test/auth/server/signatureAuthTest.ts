@@ -3,7 +3,7 @@
 var helpers = require('@sage/syracuse-core').helpers;
 var globals = require('streamline-runtime').globals;
 var config = require('config'); // must be first syracuse require
-var adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
+var adminTestFixtures = require("../../collaboration/fixtures/adminTestFixtures");
 var util = require('util');
 
 

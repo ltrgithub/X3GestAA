@@ -9,7 +9,7 @@ var config = require('syracuse-main/lib/nodeconfig').config; // must be first sy
 var navPageHelper = require("../../../src/collaboration/entities/page/navPageHelper");
 
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
-var adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
+var adminTestFixtures = require("../../collaboration/fixtures/adminTestFixtures");
 
 //force basic auth
 config.session = config.session || {};

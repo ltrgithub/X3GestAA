@@ -2,7 +2,7 @@
 var util = require('util');
 var tracer; // = console.log;
 var globals = require('streamline-runtime').globals;
-var adminTestFixtures = require("../../../test/collaboration/fixtures/adminTestFixtures");
+var adminTestFixtures = require("../../collaboration/fixtures/adminTestFixtures");
 
 import { assert } from 'chai';
 Object.keys(assert).forEach(key => {
