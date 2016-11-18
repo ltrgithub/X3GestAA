@@ -3,7 +3,7 @@
 /// !doc
 /// # SOAP Client API  
 /// ```javascript
-/// var soap = require('syracuse-httpclient/lib/soapClient');
+/// var soap = require('../../src/http-client/soapClient');
 /// ```
 ///  
 var soap = require('soap');
@@ -28,7 +28,7 @@ var soapClient = {
 			options.debug && console.log("Headers: " + JSON.stringify(options.headers, null, 2));
 			options.debug && console.log("Body: " + data);
 
-			var request = require('syracuse-httpclient/lib/httpClient').httpRequest(_, options);
+			var request = require('../../src/http-client/httpClient').httpRequest(_, options);
 			//request.write(_, data, 'utf8');
 			request.write(_, data, options.forceDataEncode || 'utf8');
 			var response = request.end().response(_);
