@@ -238,7 +238,7 @@ exports.entity = {
 							unmark: "pre_import"
 						},
 						"$scriptsBefore": [{
-							"module": "syracuse-collaboration/lib/advancedScripts/pre-import-sitemap",
+							"module": "../../../src/collaboration/advancedScripts/pre-import-sitemap",
 							"options": {
 								"homepagesFilter": instance.navPageFilter(_),
 								"modulesFilter": instance.navPageModulesFilter(_),
@@ -247,7 +247,7 @@ exports.entity = {
 							}
 						}],
 						"$scriptsAfter": [{
-							"module": "syracuse-collaboration/lib/advancedScripts/post-import-sitemap",
+							"module": "../../../src/collaboration/advancedScripts/post-import-sitemap",
 							"options": {
 								"homepagesFilter": instance.navPageFilter(_),
 								"modulesFilter": instance.navPageModulesFilter(_),

@@ -358,16 +358,16 @@ exports.contract = {
 			"x3-hrm-menus.json",
 			"x3-geode-menus.json", {
 				import: "syracuse-collaboration-sitemap.json",
-				//				preScript: "syracuse-collaboration/lib/advancedScripts/pre-syracuse-collaboration-sitemap",
-				//				postScript: "syracuse-collaboration/lib/advancedScripts/post-syracuse-collaboration-sitemap"
+				//				preScript: "../../../src/collaboration/advancedScripts/pre-syracuse-collaboration-sitemap",
+				//				postScript: "../../../src/collaboration/advancedScripts/post-syracuse-collaboration-sitemap"
 			}, {
 				import: "x3-erp-sitemap.json",
-				//				preScript: "syracuse-collaboration/lib/advancedScripts/pre-x3-erp-sitemap",
-				//				postScript: "syracuse-collaboration/lib/advancedScripts/post-x3-erp-sitemap"
+				//				preScript: "../../../src/collaboration/advancedScripts/pre-x3-erp-sitemap",
+				//				postScript: "../../../src/collaboration/advancedScripts/post-x3-erp-sitemap"
 			}, {
 				import: "x3-hrm-sitemap.json",
-				//				preScript: "syracuse-collaboration/lib/advancedScripts/pre-x3-hrm-sitemap",
-				//				postScript: "syracuse-collaboration/lib/advancedScripts/post-x3-hrm-sitemap"
+				//				preScript: "../../../src/collaboration/advancedScripts/pre-x3-hrm-sitemap",
+				//				postScript: "../../../src/collaboration/advancedScripts/post-x3-hrm-sitemap"
 			}, {
 				import: "x3-geode-sitemap.json"
 			},
@@ -380,88 +380,88 @@ exports.contract = {
 			"syracuse-admin-notif-theme.json"
 		],
 		updateScript: [{
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P2",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P2",
 			version: 2
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript",
+			script: "../../../src/collaboration/updateScripts/updateScript",
 			version: 63
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P3",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P3",
 			version: 9
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P4",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P4",
 			version: 7
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P6",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P6",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_F_101353_factory_metadata",
+			script: "../../../src/collaboration/updateScripts/updateScript_F_101353_factory_metadata",
 			version: 9
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P7",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P7",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P9",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P9",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P13",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P13",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_sky",
+			script: "../../../src/collaboration/updateScripts/updateScript_sky",
 			version: 6
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_F_101353_info_metadata",
+			script: "../../../src/collaboration/updateScripts/updateScript_F_101353_info_metadata",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_F_88106_3",
+			script: "../../../src/collaboration/updateScripts/updateScript_F_88106_3",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Akira-P0",
+			script: "../../../src/collaboration/updateScripts/updateScript_Akira-P0",
 			version: 5
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Akira-P1",
+			script: "../../../src/collaboration/updateScripts/updateScript_Akira-P1",
 			version: 6
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Ambassador-P0",
+			script: "../../../src/collaboration/updateScripts/updateScript_Ambassador-P0",
 			version: 6
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_F_107803_multi_process_server_management",
+			script: "../../../src/collaboration/updateScripts/updateScript_F_107803_multi_process_server_management",
 			version: 3
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_F_111144",
+			script: "../../../src/collaboration/updateScripts/updateScript_F_111144",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Ambassador-P3",
+			script: "../../../src/collaboration/updateScripts/updateScript_Ambassador-P3",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Avenger-P0",
+			script: "../../../src/collaboration/updateScripts/updateScript_Avenger-P0",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P13",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P13",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_F_115599_iddn",
+			script: "../../../src/collaboration/updateScripts/updateScript_F_115599_iddn",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Avenger-P1",
+			script: "../../../src/collaboration/updateScripts/updateScript_Avenger-P1",
 			version: 2
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_U11_P0",
+			script: "../../../src/collaboration/updateScripts/updateScript_U11_P0",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Avenger-P2",
+			script: "../../../src/collaboration/updateScripts/updateScript_Avenger-P2",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Akira-P7",
+			script: "../../../src/collaboration/updateScripts/updateScript_Akira-P7",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Ambassador-P4",
+			script: "../../../src/collaboration/updateScripts/updateScript_Ambassador-P4",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_Ambassador-P5",
+			script: "../../../src/collaboration/updateScripts/updateScript_Ambassador-P5",
 			version: 1
 		}, {
-			script: "syracuse-collaboration/lib/updateScripts/updateScript_7P14",
+			script: "../../../src/collaboration/updateScripts/updateScript_7P14",
 			version: 1
 		}]
 	}

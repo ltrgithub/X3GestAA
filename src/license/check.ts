@@ -1678,7 +1678,7 @@ function _usedLicenses(_, db, totalBadges, totalProducts, otherBadges, session, 
 		var req = globals.context.request;
 		var url = req ? req.url : "--"; // batch sessions
 		var sessionKey = (req && req.connection ? (req.connection.remoteAddress || "") : "-") + "_" + userName;
-		// SESSIONTYPE: When you change the next line, please also change the code in syracuse-collaboration/lib/entities/sessionInfo marked with SESSIONTYPE
+		// SESSIONTYPE: When you change the next line, please also change the code in syracuse/src/collaboration/entities/sessionInfo marked with SESSIONTYPE
 		if (!url || (!/^\/(?:api\d+|soap-generic)\//.test(url)))
 			addSessionBadges(sessionKey, Object.keys(totalBadges)); // Object.keys(totalBadges).forEach(function(badge) { addBadge(sessionKey, badge)});
 		else
