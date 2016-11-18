@@ -47,7 +47,7 @@ var baseUrl = 'http://localhost:' + testConfig.port;
 var mockUrl = 'http://localhost:' + testConfig.mockPort;
 
 var sageid = require('sage-id/lib/index').create({
-	httpClient: require('../../../src/httpclient/httpClient').httpRequest,
+	httpClient: require('../../../src/http-client/httpClient').httpRequest,
 	baseUrl: mockUrl + '/SSO',
 	pfx: new Buffer(0),
 	passphrase: "",
