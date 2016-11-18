@@ -26,7 +26,7 @@ var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
 
 var importTool = require("syracuse-import/lib/jsonImport");
 
-var tracer = require('syracuse-trace/lib/helper').getTracer('patch');
+var tracer = require('@sage/syracuse-core').getTracer('patch');
 
 var config = require('config'); // must be first syracuse require
 

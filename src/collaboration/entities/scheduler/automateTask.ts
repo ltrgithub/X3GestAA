@@ -1,7 +1,6 @@
 "use strict";
 
 var locale = require('streamline-locale');
-var IndexHelper = require("syracuse-search/lib/elasticIndex").IndexHelper;
 var AdminHelper = require("../../../../src/collaboration/helpers").AdminHelper;
 var sessionManager = require('../../../..//src/session/sessionManager').sessionManager;
 var globals = require('streamline-runtime').globals;

@@ -1,6 +1,6 @@
 # Factory API
 ```javascript
-var factory = require('syracuse-orm/lib/factory')
+var factory = require('syracuse/src/orm/factory')
 ```
 -------------
 ## Collections toArray function :
@@ -193,7 +193,7 @@ Returns the created new element
 -------------
 ## Factory replyInstances function :
 ``` javascript
-var factory = require("syracuse-orm/lib/factory");
+var factory = require('syracuse/src/orm/factory')
 ...
 factory.replyInstances(_, context);
 ```
@@ -202,7 +202,7 @@ The context must provide the database abstraction, an entity and the filters
 -------------
 ## Factory fetchInstance function :
 ``` javascript
-var factory = require("syracuse-orm/lib/factory");
+var factory = require('syracuse/src/orm/factory')
 ...
 var instance = factory.fetchInstance(_, context);
 ```
@@ -212,7 +212,7 @@ Returns the fetched element or null
 -------------
 ## Factory replyInstance function :
 ``` javascript
-var factory = require("syracuse-orm/lib/factory");
+var factory = require('syracuse/src/orm/factory')
 ...
 factory.replyInstance(_, context);
 ```
