@@ -2,8 +2,8 @@
 var helpers = require('@sage/syracuse-core').helpers;
 var uuid = helpers.uuid;
 var config = require('config'); // must be first
-var dataModel = require("../../..//src/orm/dataModel");
-var registry = require("../../..//src/sdata/sdataRegistry");
+var dataModel = require("../../../src/orm/dataModel");
+var registry = require("../../../src/sdata/sdataRegistry");
 var mongodb = require('mongodb');
 var ez = require('ez-streams');
 var adminHelper = require("../../../src/collaboration/helpers").AdminHelper;
@@ -438,7 +438,7 @@ describe(module.id, () => {
 	testSettings.forEach(function(test) {
 		//console.log("TEST: " + JSON.stringify(test,null,2));
 		var profileDescr = test.profileDescr;
-		var importFile = "../test/collaboration/fixtures/exportTestSamples/" + test.profileDescr + "-import.json";
+		var importFile = "test/collaboration/fixtures/exportTestSamples/" + test.profileDescr + "-import.json";
 		var profileCode = test.profileCode;
 		var exportItems = test.exportItems;
 		var content;

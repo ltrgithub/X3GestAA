@@ -6,8 +6,8 @@ var locale = require('streamline-locale');
 var ldapjs = require("ldapjs");
 var fs = require('streamline-fs');
 var userEntity = require('./user');
-var ldapauth = require('../../../..//src/auth/ldap').ldapauth;
-var authHelper = require('../../../..//src/auth/helpers');
+var ldapAuthentication = require('../../../../src/auth/ldap').ldapAuthentication;
+var authHelper = require('../../../../src/auth/helpers');
 
 var tracer; // = console.log;
 
@@ -775,7 +775,7 @@ exports.entity = {
 			config.searchFilter = config.searchFilter || "(" + config.authenticationNameMapping + "={{username}})";
 			config.cache = false;
 			config.tlsOptions = self.getTlsOptions(_);
-			return ldapauth.ldapAuthentication(_, user, password, config);
+			return ldapAuthentication(_, user, password, config);
 		},
 		getTlsOptions: function(_) {
 			var self = this;
