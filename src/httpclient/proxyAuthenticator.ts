@@ -1,6 +1,6 @@
 "use strict";
 var NtlmAuthenticator = require("jsntlm/lib/ntlmAuthenticator").NtlmAuthenticator;
-var perfmon = require('../../../src/perfmon/record');
+var perfmon = require('../..//src/perfmon/record');
 
 exports.authenticate = function(callback, options) {
 

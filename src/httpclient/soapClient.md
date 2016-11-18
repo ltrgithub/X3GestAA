@@ -1,6 +1,6 @@
 # SOAP Client API  
 ```javascript
-var soap = require('syracuse-httpclient/lib/soapClient');
+var soap = require('syracuse-soap/lib/soapClient');
 ```
  
 -------------

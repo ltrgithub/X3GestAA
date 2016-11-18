@@ -1,6 +1,6 @@
 # Http API  
 ```javascript
-var httpApi = require('syracuse-httpclient/lib/httpApi')  
+var httpApi = require('syracuse/src/httpclient/httpApi')  
 ```
 This module is exported to be able to be call from X3
 -------------

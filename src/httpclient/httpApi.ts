@@ -6,7 +6,7 @@ var locale = require('streamline-locale');
 /// !doc
 /// # Http API  
 /// ```javascript
-/// var httpApi = require('syracuse-httpclient/lib/httpApi')  
+/// var httpApi = require('../../src/httpclient/httpApi')  
 /// ```
 /// This module is exported to be able to be call from X3
 

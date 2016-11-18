@@ -50,7 +50,7 @@ function getOptions(_, request) {
 	}
 	if (!conf_sage_id.certOK) throw new Error("No sage-id configuration");
 	return {
-		httpClient: require('syracuse-httpclient/lib/httpClient').httpRequest,
+		httpClient: require('../../src/httpclient/httpClient').httpRequest,
 		baseUrl: conf_sage_id.baseUrl,
 		pfx: conf_sage_id.pfx,
 		cert: conf_sage_id.cert,
