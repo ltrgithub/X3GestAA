@@ -7,7 +7,7 @@ var globals = require('streamline-runtime').globals;
 var authHelpers = require('./helpers');
 var crypto = require('crypto');
 var config = require('config');
-var ldapauth = require("../../src/auth/ldap").ldapauth;
+var ldapAuthentication = require("../../src/auth/ldap").ldapAuthentication;
 
 exports.$exported = true;
 
@@ -79,7 +79,7 @@ function _sign(_, password, login) {
 				return _error(locale.format(module, "ldapInactive"));
 			} else {
 				try {
-					ldapauth.ldapAuthentication(_, ldapName, password, localConfig.ldap);
+					ldapAuthentication(_, ldapName, password, localConfig.ldap);
 				} catch (e) {
 					tracer && tracer("LDAP Authentication error: " + e.toString());
 					return _error(locale.format(module, "ldapError"));
