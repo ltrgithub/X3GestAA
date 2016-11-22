@@ -108,7 +108,7 @@ if (/^[NWB]\d+$/.test(process.argv[2])) {
 
 //require('coffee-script/lib/coffee-script/extensions');
 
-require('syracuse-license').register(function(err, data) {
+require('@sage/syracuse-lib/src/license/index').register(function(err, data) {
 	if (err) console.log("" + err);
 	else if (!data) console.log("No license");
 
