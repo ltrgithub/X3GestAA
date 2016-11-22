@@ -19,16 +19,8 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.security.GeneralSecurityException;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.PublicKey;
-import java.security.SecureRandom;
-import java.security.Signature;
+import java.security.*;
+import java.security.cert.*;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,6 +42,7 @@ import org.bouncycastle.asn1.x509.Extension;
 import org.bouncycastle.cert.CertIOException;
 import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
+import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.openssl.EncryptionException;
 import org.bouncycastle.openssl.PEMEncryptedKeyPair;
 import org.bouncycastle.openssl.PEMEncryptor;
@@ -494,20 +487,24 @@ public class CertTool {
 	 */
 	static X509CertificateHolder generateCertificate(String issuerDn,
 			KeyPair issuerPair, String subjectDn, PublicKey subjectKey,
-			Date validUntil, boolean ca) throws OperatorCreationException, CertIOException {
+			Date validUntil, X509CertificateHolder cacertHolder) throws CertToolException, OperatorCreationException, CertIOException, CertificateException {
 		wrapper.println("Generate certificate ...");
-		issuerDn = sortDn(issuerDn);
-		subjectDn = sortDn(subjectDn);
-		X500Principal issuer = new X500Principal(issuerDn);
 		X500Principal subject = new X500Principal(subjectDn);
 		Date notBefore = new Date();
 		Date notAfter = validUntil;
 		BigInteger serial = new BigInteger(""+notBefore.getTime());
-		JcaX509v3CertificateBuilder builder = new JcaX509v3CertificateBuilder(
-				issuer, serial, notBefore, notAfter, subject, subjectKey);
-		// Need this extension to signify that this certificate is a CA and
-		// can issue certificates. (Extension is marked as critical)
-		if (ca) builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
+		
+		JcaX509v3CertificateBuilder builder;
+		if (cacertHolder != null) {
+			X509Certificate certCA = new JcaX509CertificateConverter().getCertificate(cacertHolder);
+			builder = new JcaX509v3CertificateBuilder(certCA,serial,notBefore,notAfter,subject,subjectKey);
+		} else {
+			builder = new JcaX509v3CertificateBuilder(subject, serial, notBefore, notAfter, subject, subjectKey);
+			// Need this extension to signify that this certificate is a CA and
+			// can issue certificates. (Extension is marked as critical)
+			builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
+		}
+		
 
 		ContentSigner cs = new JcaContentSignerBuilder("SHA256withRSA")
 				.build(issuerPair.getPrivate());
@@ -516,36 +513,6 @@ public class CertTool {
 
 	}
 
-	/** sorts the parts of a distinguished name so that the CN will be first and the country the last (important in order to have consistent 
-	 * distinguished names for CA certificate and issuer of server certificate.
-	 * @param dn distinguished name to sort
-	 * @return sorted distinguished name
-	 */
-	private static String sortDn(String dn) {
-		String cn = escape(findReplace(dn, "CN", null));
-		String ou = escape(findReplace(dn, "OU", null));
-		String o = escape(findReplace(dn, "O", null));
-		String l = escape(findReplace(dn, "L", null));
-		String c = escape(findReplace(dn, "C", null));
-		String st = escape(findReplace(dn, "ST", null));
-		String email = escape(findReplace(dn, "emailAddress", null));
-		if (email == null) email = escape(findReplace(dn, "E", null));
-		String[] parts = new String[7];
-		int index = 0;
-		if (email != null) parts[index++] = "emailAddress="+email;
-		if (cn != null) parts[index++] = "CN="+cn;
-		if (ou != null) parts[index++] = "OU="+ou;
-		if (o != null) parts[index++] = "O="+o;
-		if (l != null) parts[index++] = "L="+l;
-		if (st != null) parts[index++] = "ST="+st;
-		if (c != null) parts[index++] = "C="+c;
-		StringBuilder result = new StringBuilder();
-		for (int i = 0; i < index; i++) {
-			if (i > 0) result.append(',');
-			result.append(parts[i]);
-		}
-		return result.toString();
-	}
 
 	
 	private char[] readPrivateKey(String name, char[] passphrase, String message) throws CertToolException, IOException {
@@ -644,6 +611,27 @@ public class CertTool {
 		}
 		return result.toString();
 	}
+	
+	private static int findIndex(String dn, int index) {
+		int index2 = -1;
+		boolean backsl = false;
+		LOOP: for (int i = index; i<dn.length(); i++) {
+			switch (dn.charAt(i)) {
+			case '\\':
+				backsl = !backsl;
+				break;
+			case ',': if (!backsl) {
+				index2 = i; 
+				break LOOP;
+				};
+				break;				
+			default:
+				backsl = false;
+				break;
+			}
+		}
+		return index2;
+	}
 
 	/** scans in the given distinguished for the given id, e. g. common name 'CN'.
 	 * if replacement is given, the value for the id will be replaced and the full dn with replacement will be returned
@@ -667,23 +655,7 @@ public class CertTool {
 			}
 		}
 		if (index >= 0) {
-			int index2 = -1;
-			boolean backsl = false;
-			LOOP: for (int i = index; i<dn.length(); i++) {
-				switch (dn.charAt(i)) {
-				case '\\':
-					backsl = !backsl;
-					break;
-				case ',': if (!backsl) {
-					index2 = i; 
-					break LOOP;
-					};
-					break;				
-				default:
-					backsl = false;
-					break;
-				}
-			}
+			int index2 = findIndex(dn, index);
 			if (index2 >= 0) {
 				if (replacement == null)
 					return unescape(dn.substring(index, index2));
@@ -951,6 +923,23 @@ public class CertTool {
 							cert != null ? findReplace(cert.getSubject().toString(), "CN", null) : name);
 				}
 				dn = findReplace(dn, "CN", cn);
+				// remove email address
+				String key = "emailAddress=";
+				int index = dn.indexOf(key);
+				if (index <0 ) {
+					key = "E=";
+					index = dn.indexOf(key);
+				}
+				if (index == 0 || index > 0 && dn.charAt(index-1) == ',') {
+					int index2 = findIndex(dn, index+key.length());
+					if (index2 > 0)
+						dn = dn.substring(0, index)+dn.substring(index2+1);
+					else {
+						dn = dn.substring(0, index);
+						if (dn.endsWith(",")) dn = dn.substring(0, dn.length()-1);
+					}
+				}
+				
 			}
 		}
 
@@ -1058,7 +1047,7 @@ public class CertTool {
 				issuer = dn;
 			}
 			cert = generateCertificate(issuer, caKey, dn, key.getPublic(),
-					validUntil, name == null);
+					validUntil, name == null ? null : caCert);
 			writeKey(name, key, pass, null);
 			writeCertificate(name, cert, null);
 			if (name == null)
@@ -1081,7 +1070,7 @@ public class CertTool {
 			} 
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(cert),
-					validUntil, name == null);
+					validUntil, name == null ? null : caCert);
 			writeCertificate(name, cert, null);
 			if (name == null) {
 				caCert = cert;
@@ -1098,7 +1087,7 @@ public class CertTool {
 			caCertOld = caCert;
 			caCert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(caCert),
-					validUntil, true);
+					validUntil, null);
 			writeCertificate(null, caCert, null);
 			if (!certNames.isEmpty()) { // also update other certificates
 				wrapper.println("Update server certificates ...");
@@ -1106,7 +1095,7 @@ public class CertTool {
 					cert = readCertificate(certName);
 					cert = generateCertificate(caCert.getSubject().toString(),
 							caKey, cert.getSubject().toString(),
-							extractPublicKey(cert), validUntil, false);
+							extractPublicKey(cert), validUntil, caCert);
 					writeCertificate(certName, cert, null);
 					if (port >= 0 && caKey != null) {
 						int port2 = askForTransfer(certName, true);
@@ -1131,7 +1120,7 @@ public class CertTool {
 				}
 			}
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
-					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter(), name == null);
+					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter(), name == null ? null : caCert);
 			writeCertificate(name, cert, null);
 			writeKey(name, key, pass, null);
 			if (name == null) {
@@ -1143,7 +1132,7 @@ public class CertTool {
 						cert = readCertificate(certName);
 						cert = generateCertificate(caCert.getSubject().toString(),
 								caKey, cert.getSubject().toString(),
-								extractPublicKey(cert), cert.getNotAfter(), false);
+								extractPublicKey(cert), cert.getNotAfter(), caCert);
 						writeCertificate(certName, cert, null);
 						if (port >= 0 && caKeyOld != null) {
 							int port2 = askForTransfer(certName, true);
@@ -1174,7 +1163,7 @@ public class CertTool {
 				issuer = caCert.getSubject().toString();
 			}
 			cert = generateCertificate(issuer, caKey, dn,
-					extractPublicKey(cert), cert.getNotAfter(), name == null);
+					extractPublicKey(cert), cert.getNotAfter(), name == null ? null : caCert);
 			writeCertificate(name, cert, null);
 			if (name == null) {
 				String oldIssuer = caCert.getSubject().toString();
@@ -1196,7 +1185,7 @@ public class CertTool {
 							certDN = findReplace(issuer, "CN", findReplace(certDN, "CN", null));							
 						}
 						cert = generateCertificate(issuer, caKey, certDN, extractPublicKey(cert),
-								cert.getNotAfter(), false);
+								cert.getNotAfter(), caCert);
 						writeCertificate(certName, cert, null);
 						if (port >= 0 && caKey != null) {
 							int port2 = askForTransfer(certName, true);
