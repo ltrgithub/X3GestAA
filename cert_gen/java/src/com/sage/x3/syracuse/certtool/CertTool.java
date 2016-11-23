@@ -19,16 +19,8 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.security.GeneralSecurityException;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.PublicKey;
-import java.security.SecureRandom;
-import java.security.Signature;
+import java.security.*;
+import java.security.cert.*;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,6 +42,7 @@ import org.bouncycastle.asn1.x509.Extension;
 import org.bouncycastle.cert.CertIOException;
 import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
+import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.openssl.EncryptionException;
 import org.bouncycastle.openssl.PEMEncryptedKeyPair;
 import org.bouncycastle.openssl.PEMEncryptor;
@@ -159,6 +152,7 @@ public class CertTool {
 		if ((value = findReplace(dn, "L", null)) != null) wrapper.println(" City: "+escapeChars(value));
 		if ((value = findReplace(dn, "ST", null)) != null) wrapper.println(" State: "+escapeChars(value));
 		if ((value = findReplace(dn, "C", null)) != null) wrapper.println(" Country: "+escapeChars(value));
+		if ((value = findReplace(dn, "E", null)) != null || (value = findReplace(dn, "emailAddress", null)) != null) wrapper.println(" Email: "+escapeChars(value));
 	}
 	
 	
@@ -320,6 +314,18 @@ public class CertTool {
 				exc = "Server name " + input + (newName ? " already exists" : " does not exist");
 			}
 			break;
+		case EMAIL:
+			if (input != null && input.length() > 0)
+			{
+				int index = input.indexOf('@');
+				if (index < 0) 
+					exc = "Address does not contain '@'";
+				else if (index == 0)
+					exc = "Nothing before '@' in email address";
+				else if (index == input.length()-1)
+					exc = "Nothing behind '@' in email address";
+			}
+			break;			
 		case DN:
 			if (input != null && input.length() >= 2) {
 				return null;
@@ -481,20 +487,24 @@ public class CertTool {
 	 */
 	static X509CertificateHolder generateCertificate(String issuerDn,
 			KeyPair issuerPair, String subjectDn, PublicKey subjectKey,
-			Date validUntil, boolean ca) throws OperatorCreationException, CertIOException {
+			Date validUntil, X509CertificateHolder cacertHolder) throws CertToolException, OperatorCreationException, CertIOException, CertificateException {
 		wrapper.println("Generate certificate ...");
-		issuerDn = sortDn(issuerDn);
-		subjectDn = sortDn(subjectDn);
-		X500Principal issuer = new X500Principal(issuerDn);
 		X500Principal subject = new X500Principal(subjectDn);
 		Date notBefore = new Date();
 		Date notAfter = validUntil;
 		BigInteger serial = new BigInteger(""+notBefore.getTime());
-		JcaX509v3CertificateBuilder builder = new JcaX509v3CertificateBuilder(
-				issuer, serial, notBefore, notAfter, subject, subjectKey);
-		// Need this extension to signify that this certificate is a CA and
-		// can issue certificates. (Extension is marked as critical)
-		if (ca) builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
+		
+		JcaX509v3CertificateBuilder builder;
+		if (cacertHolder != null) {
+			X509Certificate certCA = new JcaX509CertificateConverter().getCertificate(cacertHolder);
+			builder = new JcaX509v3CertificateBuilder(certCA,serial,notBefore,notAfter,subject,subjectKey);
+		} else {
+			builder = new JcaX509v3CertificateBuilder(subject, serial, notBefore, notAfter, subject, subjectKey);
+			// Need this extension to signify that this certificate is a CA and
+			// can issue certificates. (Extension is marked as critical)
+			builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
+		}
+		
 
 		ContentSigner cs = new JcaContentSignerBuilder("SHA256withRSA")
 				.build(issuerPair.getPrivate());
@@ -503,33 +513,6 @@ public class CertTool {
 
 	}
 
-	/** sorts the parts of a distinguished name so that the CN will be first and the country the last (important in order to have consistent 
-	 * distinguished names for CA certificate and issuer of server certificate.
-	 * @param dn distinguished name to sort
-	 * @return sorted distinguished name
-	 */
-	private static String sortDn(String dn) {
-		String cn = escape(findReplace(dn, "CN", null));
-		String ou = escape(findReplace(dn, "OU", null));
-		String o = escape(findReplace(dn, "O", null));
-		String l = escape(findReplace(dn, "L", null));
-		String c = escape(findReplace(dn, "C", null));
-		String st = escape(findReplace(dn, "ST", null));
-		String[] parts = new String[6];
-		int index = 0;
-		if (cn != null) parts[index++] = "CN="+cn;
-		if (ou != null) parts[index++] = "OU="+ou;
-		if (o != null) parts[index++] = "O="+o;
-		if (l != null) parts[index++] = "L="+l;
-		if (st != null) parts[index++] = "ST="+st;
-		if (c != null) parts[index++] = "C="+c;
-		StringBuilder result = new StringBuilder();
-		for (int i = 0; i < index; i++) {
-			if (i > 0) result.append(',');
-			result.append(parts[i]);
-		}
-		return result.toString();
-	}
 
 	
 	private char[] readPrivateKey(String name, char[] passphrase, String message) throws CertToolException, IOException {
@@ -628,6 +611,27 @@ public class CertTool {
 		}
 		return result.toString();
 	}
+	
+	private static int findIndex(String dn, int index) {
+		int index2 = -1;
+		boolean backsl = false;
+		LOOP: for (int i = index; i<dn.length(); i++) {
+			switch (dn.charAt(i)) {
+			case '\\':
+				backsl = !backsl;
+				break;
+			case ',': if (!backsl) {
+				index2 = i; 
+				break LOOP;
+				};
+				break;				
+			default:
+				backsl = false;
+				break;
+			}
+		}
+		return index2;
+	}
 
 	/** scans in the given distinguished for the given id, e. g. common name 'CN'.
 	 * if replacement is given, the value for the id will be replaced and the full dn with replacement will be returned
@@ -651,23 +655,7 @@ public class CertTool {
 			}
 		}
 		if (index >= 0) {
-			int index2 = -1;
-			boolean backsl = false;
-			LOOP: for (int i = index; i<dn.length(); i++) {
-				switch (dn.charAt(i)) {
-				case '\\':
-					backsl = !backsl;
-					break;
-				case ',': if (!backsl) {
-					index2 = i; 
-					break LOOP;
-					};
-					break;				
-				default:
-					backsl = false;
-					break;
-				}
-			}
+			int index2 = findIndex(dn, index);
 			if (index2 >= 0) {
 				if (replacement == null)
 					return unescape(dn.substring(index, index2));
@@ -912,8 +900,13 @@ public class CertTool {
 						String o = input("Organization", Check.DN, findReplace(dn, "O", null));
 						String ou = input("Organizational unit", Check.DN, findReplace(dn, "OU", null));
 						if (cn == null)
-							cn = input("Name", Check.DN, findReplace(dn, "CN", null));						
+							cn = input("Name", Check.DN, findReplace(dn, "CN", null));
+						String email0 = findReplace(dn, "emailAddress", null);
+						if (email0 == null) email0 = findReplace(dn, "E", null);
+						String email = input("Optional email", Check.EMAIL, email0);
 						dn = "CN=" + escape(cn) + ",OU="+escape(ou) + ",O="+escape(o)+",L="+escape(l)+",ST="+escape(st)+",C="+escape(c);
+						if (email != null)
+							dn = "emailAddress="+escape(email)+","+dn;
 					} else {
 						if (dn == null || cn == null) 
 							testInteractive("No subject given");
@@ -930,6 +923,23 @@ public class CertTool {
 							cert != null ? findReplace(cert.getSubject().toString(), "CN", null) : name);
 				}
 				dn = findReplace(dn, "CN", cn);
+				// remove email address
+				String key = "emailAddress=";
+				int index = dn.indexOf(key);
+				if (index <0 ) {
+					key = "E=";
+					index = dn.indexOf(key);
+				}
+				if (index == 0 || index > 0 && dn.charAt(index-1) == ',') {
+					int index2 = findIndex(dn, index+key.length());
+					if (index2 > 0)
+						dn = dn.substring(0, index)+dn.substring(index2+1);
+					else {
+						dn = dn.substring(0, index);
+						if (dn.endsWith(",")) dn = dn.substring(0, dn.length()-1);
+					}
+				}
+				
 			}
 		}
 
@@ -1037,7 +1047,7 @@ public class CertTool {
 				issuer = dn;
 			}
 			cert = generateCertificate(issuer, caKey, dn, key.getPublic(),
-					validUntil, name == null);
+					validUntil, name == null ? null : caCert);
 			writeKey(name, key, pass, null);
 			writeCertificate(name, cert, null);
 			if (name == null)
@@ -1060,7 +1070,7 @@ public class CertTool {
 			} 
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(cert),
-					validUntil, name == null);
+					validUntil, name == null ? null : caCert);
 			writeCertificate(name, cert, null);
 			if (name == null) {
 				caCert = cert;
@@ -1077,7 +1087,7 @@ public class CertTool {
 			caCertOld = caCert;
 			caCert = generateCertificate(caCert.getSubject().toString(), caKey,
 					cert.getSubject().toString(), extractPublicKey(caCert),
-					validUntil, true);
+					validUntil, null);
 			writeCertificate(null, caCert, null);
 			if (!certNames.isEmpty()) { // also update other certificates
 				wrapper.println("Update server certificates ...");
@@ -1085,7 +1095,7 @@ public class CertTool {
 					cert = readCertificate(certName);
 					cert = generateCertificate(caCert.getSubject().toString(),
 							caKey, cert.getSubject().toString(),
-							extractPublicKey(cert), validUntil, false);
+							extractPublicKey(cert), validUntil, caCert);
 					writeCertificate(certName, cert, null);
 					if (port >= 0 && caKey != null) {
 						int port2 = askForTransfer(certName, true);
@@ -1110,7 +1120,7 @@ public class CertTool {
 				}
 			}
 			cert = generateCertificate(caCert.getSubject().toString(), caKey,
-					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter(), name == null);
+					cert.getSubject().toString(), key.getPublic(), cert.getNotAfter(), name == null ? null : caCert);
 			writeCertificate(name, cert, null);
 			writeKey(name, key, pass, null);
 			if (name == null) {
@@ -1122,7 +1132,7 @@ public class CertTool {
 						cert = readCertificate(certName);
 						cert = generateCertificate(caCert.getSubject().toString(),
 								caKey, cert.getSubject().toString(),
-								extractPublicKey(cert), cert.getNotAfter(), false);
+								extractPublicKey(cert), cert.getNotAfter(), caCert);
 						writeCertificate(certName, cert, null);
 						if (port >= 0 && caKeyOld != null) {
 							int port2 = askForTransfer(certName, true);
@@ -1153,7 +1163,7 @@ public class CertTool {
 				issuer = caCert.getSubject().toString();
 			}
 			cert = generateCertificate(issuer, caKey, dn,
-					extractPublicKey(cert), cert.getNotAfter(), name == null);
+					extractPublicKey(cert), cert.getNotAfter(), name == null ? null : caCert);
 			writeCertificate(name, cert, null);
 			if (name == null) {
 				String oldIssuer = caCert.getSubject().toString();
@@ -1175,7 +1185,7 @@ public class CertTool {
 							certDN = findReplace(issuer, "CN", findReplace(certDN, "CN", null));							
 						}
 						cert = generateCertificate(issuer, caKey, certDN, extractPublicKey(cert),
-								cert.getNotAfter(), false);
+								cert.getNotAfter(), caCert);
 						writeCertificate(certName, cert, null);
 						if (port >= 0 && caKey != null) {
 							int port2 = askForTransfer(certName, true);
@@ -1250,6 +1260,7 @@ public class CertTool {
 	public static void main(String[] args) {
 		
 		try {
+
 			CertTool tool = null;
 			boolean hex = false; // hex input from command line
 			// read options from command line
@@ -1268,8 +1279,8 @@ public class CertTool {
 						wrapper.println("Parameters for tasks:");
 						wrapper.println("-pass <value>   Passphrase for server private key");
 						wrapper.println("-capass <value>  Passphrase for CA private key");
-						wrapper.println("-dn <value> Distinguished name of certificate subject");
-						wrapper.println("-dn2 <values> Values for C, ST, L, O, OU, CN for name of certificate subject in this order");
+						wrapper.println("-dn <value> Distinguished name of certificate subject (no email address!)");
+						wrapper.println("-dn2 <values> Values for C, ST, L, O, OU, CN and optional email for name of certificate subject in this order");
 						wrapper.println("-cn <value> Common name within distinguished name");
 						wrapper.println("-days <value> Number of days of certificate validity");
 						wrapper.println("-port <value> Transfer data to this port of a Syracuse server");
@@ -1310,8 +1321,8 @@ public class CertTool {
 						if ("-dn2".equals(argument)) {
 							if (i >= args.length-6) 
 								throw new CertToolException("Not enough arguments for distinguished name parts");
-							String[] parts = new String[6];
-							for (int j = 0; j<6; j++) {
+							String[] parts = new String[7];
+							for (int j = 0; j<7 && i < args.length-1; j++) {
 								if (hex)
 									parts[j] = escape(hexdecode(args[++i]));
 								else
@@ -1319,9 +1330,11 @@ public class CertTool {
 							}
 							hex = false;
 							String arg = "C="+parts[0]+",ST="+parts[1]+",L="+parts[2]+",O="+parts[3]+",OU="+parts[4]+",CN="+parts[5];
-							tool.checkDn(arg);							
-							X500Principal p1 = new X500Principal(arg);
-							arg = p1.getName();
+							if (parts[6] != null && parts[6].length() > 0)
+								arg += ",emailAddress="+parts[6];
+							tool.checkDn(arg);
+							// X500Principal p1 = new X500Principal(arg);
+							// arg = p1.getName();
 							tool.dn = arg;
 							continue ARGS;
 						}
@@ -1485,6 +1498,7 @@ public class CertTool {
 		checkDn1(list, "ST", "state");
 		checkDn1(list, "O", "organization");
 		checkDn1(list, "OU", "organizational unit");
+		if (list.size() > 0) checkDn1(list, "emailAddress", "email address");
 		if (list.size() > 0) throw new CertToolException("Unknown attribute "+list.get(0)+" in distinguished name");
 	}
 	
@@ -1521,6 +1535,7 @@ enum Check {
 	SERVER_NAME_NONE, // server name or empty
 	SERVER_NAME, // server namy only
 	ACTION, // number of action
+	EMAIL, // email address
 	DN, // check for part of distinguished name (at least 2 characters, no
 		// comma)
 	C, // check for two letter country code
