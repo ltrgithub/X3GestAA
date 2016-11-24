@@ -10190,6 +10190,32 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "code": "V907_00012",
+      "title": "title_61ab37e4-6d28-4e9d-b390-93888747b103",
+      "description": "description_61ab37e4-6d28-4e9d-b390-93888747b103",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "V907_00012",
+      "processMenu": "V907_0001A",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
       "$type": "landingPage",
       "title": "title_f2e0800a-a448-49ce-8c91-0195817b86cd",
       "description": "description_f2e0800a-a448-49ce-8c91-0195817b86cd",
@@ -10228,13 +10254,23 @@
             "code": "STD_X3_ERP_ASP00"
           },
           "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7b1afe3f-47d4-4c19-8025-d98b29a4cbd8",
+          "vignette": {
+            "code": "V907_00012"
+          },
+          "endpoint": {
+            "dataset": "SEEDTEST"
+          }
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "ee4ae0cf-8ecb-4820-a497-508949cb9831",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@2b8229b7-b41f-46d6-bc36-adb21a0118ad}\",\"$layout\":{\"$items\":[{\"$bind\":\"e28fc8c7-c9c1-4010-92b0-416215eb785b\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@2b8229b7-b41f-46d6-bc36-adb21a0118ad}\",\"$layout\":{\"$items\":[{\"$bind\":\"e28fc8c7-c9c1-4010-92b0-416215eb785b\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@46373a10-8cc3-40a4-ae27-88e7ec5f932a}\",\"$layout\":{\"$items\":[{\"$bind\":\"7b1afe3f-47d4-4c19-8025-d98b29a4cbd8\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
       "page": {
         "pageName": "Systemadministrator",
         "$variantType": "landingPage"
@@ -13827,7 +13863,10 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Follow-up",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Quality",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "System administrator",
+      "title_61ab37e4-6d28-4e9d-b390-93888747b103": "Development training Level 3 step 1",
+      "description_61ab37e4-6d28-4e9d-b390-93888747b103": "Development training Level 3 step 1",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business Process",
+      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@46373a10-8cc3-40a4-ae27-88e7ec5f932a": "Development training",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Executive",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "Purchase Inv by Product Family",
       "description_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "SACH04",
@@ -16507,6 +16546,8 @@
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "收货经理",
       "title_d25680c7-3b62-46ba-8022-27918ea75090": "预计收货",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "系统管理员",
+      "title_61ab37e4-6d28-4e9d-b390-93888747b103": "开发培训等级3 第1步",
+      "description_61ab37e4-6d28-4e9d-b390-93888747b103": "开发培训等级3 第1步",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "业务流程",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "北美经理",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "已开票费用",
