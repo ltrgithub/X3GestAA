@@ -145,6 +145,8 @@
     <PostBuildEvent>if $(Configuration)==Debug (copy "$(OutDir)Sage.Syracuse.WordAddIn.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDataHelper.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDialogs.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)fr\Sage.Syracuse.WordAddIn.resources.dll" "$(SageOfficeAddinsDir)\fr" /y
+copy "$(OutDir)fr\CommonDialogs.resources.dll" "$(SageOfficeAddinsDir)\fr" /y
 copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do nothing!")</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
@@ -366,6 +368,8 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+    <None Include="Resources\arrow-down.png" />
+    <None Include="Resources\arrow-up.png" />
     <Content Include="Resources\preview.png" />
     <Content Include="Resources\mailmerge.png" />
     <Content Include="Resources\s-aw-light-boolean.png" />

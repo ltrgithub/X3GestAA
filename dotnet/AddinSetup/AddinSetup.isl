@@ -2777,7 +2777,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>-1163605746</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1696869291</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_IE10FOUND</td><td>1033</td><td>Internet Explorer 10 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-475893974</td></row>
@@ -3883,9 +3883,9 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>463580905</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>463582953</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>-1163605746</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Sage.com</td><td>0</td><td/><td>1696869291</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Install Office Add-ins for Sage ERP X3</td><td>0</td><td/><td>505527822</td></row>
-		<row><td>ID_STRING4</td><td>1033</td><td>Sage</td><td>0</td><td/><td>-1163605746</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>Sage</td><td>0</td><td/><td>1696869291</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>463580905</td></row>
 	</table>
 
@@ -4514,9 +4514,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{A653476A-1C79-44F3-9680-045510C3D03F}</td><td/></row>
+		<row><td>ProductCode</td><td>{02BCA4BE-9477-4D9B-AEB0-93E63D7DDA1A}</td><td/></row>
 		<row><td>ProductName</td><td>Sage Office Addins</td><td/></row>
-		<row><td>ProductVersion</td><td>1.12.0001</td><td/></row>
+		<row><td>ProductVersion</td><td>1.12.0005</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4528,7 +4528,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE12FOUND;IE10FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28;ISACTIONPROP29;ISACTIONPROP30;ISACTIONPROP31;IE8FOUND;IE9FOUND;ISACTIONPROP32;ISACTIONPROP33;ISACTIONPROP34;ISACTIONPROP34;ISACTIONPROP35;ISACTIONPROP36;ISACTIONPROP38;ISACTIONPROP37;ISACTIONPROP39;ISACTIONPROP40;ISACTIONPROP41;ISACTIONPROP42;ISACTIONPROP44</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3;ISACTIONPROP4;ISACTIONPROP5;ISACTIONPROP6;ISACTIONPROP7;ISACTIONPROP9;ISACTIONPROP8;ISACTIONPROP10;ISACTIONPROP11;ISACTIONPROP12;ISACTIONPROP13;ISACTIONPROP15;ISACTIONPROP17;ISACTIONPROP14;ISACTIONPROP16;ISACTIONPROP18;ISACTIONPROP19;ISACTIONPROP20;ISACTIONPROP21;ISACTIONPROP24;ISACTIONPROP22;ISACTIONPROP23;ISACTIONPROP25;IE12FOUND;IE10FOUND;ISACTIONPROP26;ISACTIONPROP27;ISACTIONPROP28;ISACTIONPROP29;ISACTIONPROP30;ISACTIONPROP31;IE8FOUND;IE9FOUND;ISACTIONPROP32;ISACTIONPROP33;ISACTIONPROP34;ISACTIONPROP34;ISACTIONPROP35;ISACTIONPROP36;ISACTIONPROP38;ISACTIONPROP37;ISACTIONPROP39;ISACTIONPROP40;ISACTIONPROP41;ISACTIONPROP42;ISACTIONPROP44;ISACTIONPROP43;ISACTIONPROP45;ISACTIONPROP46;ISACTIONPROP47</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td/></row>
@@ -4859,6 +4859,10 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.11.0005</td><td>1.11.0005</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP41</td><td>1.11.0005</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.11.0006</td><td>1.11.0006</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP42</td><td>1.11.0006</td></row>
 		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.11.0007</td><td>1.11.0007</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP44</td><td>1.11.0007</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.12.0001</td><td>1.12.0001</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP43</td><td>1.12.0001</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.12.0002</td><td>1.12.0002</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP45</td><td>1.12.0002</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.12.0003</td><td>1.12.0003</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP46</td><td>1.12.0003</td></row>
+		<row><td>{E769DC86-CCF4-43E2-9EA4-6696629F053C}</td><td>1.12.0004</td><td>1.12.0004</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP47</td><td>1.12.0004</td></row>
 	</table>
 
 	<table name="Verb">
