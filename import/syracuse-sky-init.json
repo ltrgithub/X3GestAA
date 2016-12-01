@@ -142,17 +142,30 @@
 		"role": "ADMCA",
 		"$factory": true,"$factoryOwner": "SAGE"
 	}, {
+		"$type": "group",
+		"description": "description_702545c4-1bc7-421a-a2f0-68141f183b78",
+		"role": "ADMIN",
+		"$factory": true,"$factoryOwner": "SAGE"
+	}, {
 		"$type": "user",
 		"login": "ADMCA",
 		"lastName": "Customer administrator",
 		"password": "U9b97c47443e1ec4b0006cd8727124dd1",
 		"groups": ["description_59cfa737-d988-4a70-9615-27e60fd94335"],
 		"$factory": true,"$factoryOwner": "SAGE"
-	}],
+	}, {
+		"$type": "user",
+		"login": "cloudmanager",
+		"lastName": "Cloud Manager",
+		"password": "U6e0302d2e84abede3d9ee538ed14e259",
+		"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"],
+		"$factory": true,"$factoryOwner": "SAGE"
+	  }],
 	"$localization": {
 		"en-us": {
 			"description_4a921978-2f34-454f-a781-aae1667ba16a": "Customer administrator",
 			"description_59cfa737-d988-4a70-9615-27e60fd94335": "Customer administrators",
+			"description_702545c4-1bc7-421a-a2f0-68141f183b78": "Super administrators",
 			"description_814daedc-1f04-4e20-97ad-ceb67c43ecd8": "Customer admin security profile",
 			"description_29cc9d96-4cbb-4baa-a126-30a890d7aac6": "Personal user profile",
 			"description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c": "Users, groups and roles management",
@@ -169,6 +182,7 @@
 		"fr-fr": {
 			"description_4a921978-2f34-454f-a781-aae1667ba16a": "Customer administrator",
 			"description_59cfa737-d988-4a70-9615-27e60fd94335": "Customer administrators",
+			"description_702545c4-1bc7-421a-a2f0-68141f183b78": "Super administrators",
 			"description_814daedc-1f04-4e20-97ad-ceb67c43ecd8": "Customer admin security profile",
 			"description_29cc9d96-4cbb-4baa-a126-30a890d7aac6": "Personal user profile",
 			"description_f575e4cd-3afa-4bc7-8e81-285d321b6c0c": "Users, groups and roles management",
