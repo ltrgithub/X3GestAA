@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2015-06-09T16:37:18.000Z",
-		"$lastModified": "2016-12-02T15:09:04.000Z",
+		"$lastModified": "2016-12-02T16:51:53.000Z",
 		"$chapter": {
 			"$name": "Admin",
 			"$description": "Syracuse admin",
@@ -16217,16 +16217,2415 @@
 		"pageData.1f6d1902-52ce-420a-bf18-2ef62cb677fd.a5c8752a-48be-4733-b5b3-fae396a2ea1d": {
 			"text": {
 				"en-us": "Mes documents à signer",
-				"fr-fr": "Mes documents à signer"
+				"fr-fr": "Mes documents à signer",
+				"de-de": "Meine zu unterzeichnenden Dokumente",
+				"it-it": "Documenti da firmare",
+				"es-es": "Mis documentos a firmar"
 			},
 			"$key": "DF5732F33B0433235A9007E1C845B66B7F9885B2"
 		},
 		"pageData.1f6d1902-52ce-420a-bf18-2ef62cb677fd.74033ce0-cc0e-4c07-9321-eb812f7e64d2": {
 			"text": {
 				"en-us": "Mes documents signés",
-				"fr-fr": "Mes documents signés"
+				"fr-fr": "Mes documents signés",
+				"de-de": "Meine unterzeichneten Dokumente",
+				"it-it": "Documenti firmati",
+				"es-es": "Mis documentos firmados"
 			},
 			"$key": "AF2F3CE97BC600F18B8D21AD013EE759A4AAAC2D"
+		}
+	},
+	"import/syracuse-admin-notifications.json": {
+		"$key": "4AA44C9A287BBD0BC18BC42C8F957046FE9EAD0F",
+		"description_318011c8-4a3d-4a39-8984-14044ae2b0d0": {
+			"text": {
+				"en-us": "Web service pool limit warning",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Notification de blocage des services web",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "69A9EFEDA2CCEE8299239061E9675393C81CB082"
+		},
+		"description_46dfbb03-6dbe-4619-98df-fd0d69320fe9": {
+			"text": {
+				"en-us": "Web service pool slow down announcement",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Avertissement de consommation des service web",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "D9C45EB5F0EE1A472C2E15CA9C212E7CF6BA337E"
+		},
+		"description_3f6ce905-5fec-467b-88c5-31d5171d0bcd": {
+			"text": {
+				"en-us": "Web service pool slow down warning",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Notification de ralentissement des services web",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "F4392C26D7701F3DBB345AB2E4D05D059ECE391E"
+		}
+	},
+	"import/syracuse-admin-templates.json": {
+		"$key": "3FBD9B12840911CF42CE05904F81C18E01E1C9D3",
+		"description_cd571b8f-c673-49d2-a276-10eb36abad8b": {
+			"text": {
+				"en-us": "Template for quotes (Chinese)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (Chinese)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "CA6FD2CB41FBCBD37FF42C969D4CEC485B29AC7F"
+		},
+		"description_d463a11a-9746-47a0-827c-21d7129e86ba": {
+			"text": {
+				"en-us": "Template for quotes (English)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (English)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "FFCB35650B082FAFAE9265BD2543816A5C35EA30"
+		},
+		"description_dac73469-5ef4-4e02-86ba-a834df185bcb": {
+			"text": {
+				"en-us": "Template for quotes (French)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (French)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "D56AE47D7F7BB2E699F585FCE7C6CF72A6CF4172"
+		},
+		"description_215eefe1-30be-4507-94f0-525199995695": {
+			"text": {
+				"en-us": "Template for quotes (German)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (German)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "01542DFE2A492BB4068623B899B4E2C7E3F5D2AC"
+		},
+		"description_b69ff960-fbf1-4fd4-91a6-2706e4d8fd4e": {
+			"text": {
+				"en-us": "Template for quotes (Polish)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (Polish)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "86998B0A87F030835CD8CFB7E044365B1CA83AE1"
+		},
+		"description_6a8d5527-6784-43ad-8aa8-8c8ed7a6e5e9": {
+			"text": {
+				"en-us": "Template for quotes (Portuguese)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (Portuguese)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "DFED4F326B1C68C2174BFC70CFE376EBB118E760"
+		},
+		"description_40e11f23-b884-47d3-a08d-8406b661d56f": {
+			"text": {
+				"en-us": "Template for quotes (Russian)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (Russian)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "0C5B7586B9B4C6378B19FE15A6328541A964881C"
+		},
+		"description_58aa3b7b-28d4-4de9-ab1f-2736a780d75a": {
+			"text": {
+				"en-us": "Template for quotes (Spanish)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Template for quotes (Spanish)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "E09813818AD0A5A7C04F2A34F1CC5C4B4EA4F224"
+		},
+		"description_b1108ea3-7d04-4339-94f5-1d2bf0ac80e8": {
+			"text": {
+				"en-us": "Mass mailing",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mass mailing",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "B587887FD9561C9730B8F11F742FF8687FC67147"
+		},
+		"description_4f3c6b1a-c797-4379-ad5c-7c9d87039727": {
+			"text": {
+				"en-us": "T",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Test Quote",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": null
+			},
+			"$key": "257A0EC1002B350A57919AFD76EA64B962E964CC"
+		}
+	},
+	"import/x3-mobile-applications.json": {
+		"$key": "CFF13AA918E318CBA4617B6AE7FFEED5E3FDC73D",
+		"title_4c659906-82f6-4523-b0a8-a265af3609c8": {
+			"text": {
+				"en-us": "Advanced sales order",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Advanced sales order",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "高级销售订单"
+			},
+			"$key": "3DEE048EF602BBFCDA07D5AB2206B8436E562357"
+		},
+		"description_4c659906-82f6-4523-b0a8-a265af3609c8": {
+			"text": {
+				"en-us": "Advanced sales order",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Advanced sales order",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "高级销售订单"
+			},
+			"$key": "3B667D98A9E1A0FBE03E68311489CB68A53200BB"
+		},
+		"title_f727ff54-2c87-42a8-aa94-c166a200cf44": {
+			"text": {
+				"en-us": "Annual ranking of customers appointments",
+				"ar-sa": null,
+				"de-de": "Jährliche Rangfolge von Kundenterminen",
+				"en-gb": null,
+				"es-es": "Clasificación anual citas clientes",
+				"fr-fr": "Classement annuel RDV / client",
+				"it-it": "Classificaz. annuale incontri clienti",
+				"pl-pl": null,
+				"pt-pt": "Ranking anual de reniões clientes",
+				"ru-ru": null,
+				"zh-cn": "客户约会年度排名"
+			},
+			"$key": "69C09CE1E54B267DA93B9C9FA4CD643CF91E9589"
+		},
+		"description_f727ff54-2c87-42a8-aa94-c166a200cf44": {
+			"text": {
+				"en-us": "Annual ranking of customers appointments",
+				"ar-sa": null,
+				"de-de": "Jährliche Rangfolge von Kundenterminen",
+				"en-gb": null,
+				"es-es": "Clasificación anual citas clientes",
+				"fr-fr": "Classement annuel RDV / client",
+				"it-it": "Classificaz. annuale incontri clienti",
+				"pl-pl": null,
+				"pt-pt": "Ranking anual de reniões clientes",
+				"ru-ru": null,
+				"zh-cn": "客户约会年度排名"
+			},
+			"$key": "C01439C8736DA3B8DCFBCB82EC649737F1D1BE7F"
+		},
+		"title_8c4b6a78-587c-4ff7-a6aa-244fab56406b": {
+			"text": {
+				"en-us": "Annual ranking of customers calls",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Classement annuel des appels clients",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "客户通话年度排名"
+			},
+			"$key": "B3A01892E69603C820FE25B2FE2F0DAD428F2C86"
+		},
+		"description_8c4b6a78-587c-4ff7-a6aa-244fab56406b": {
+			"text": {
+				"en-us": "Annual ranking of customers calls",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Classement annuel des appels clients",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "客户通话年度排名"
+			},
+			"$key": "D536AFA4D5F846A1DDADDFCFB02A35B20660B75F"
+		},
+		"title_6cc9824c-f73c-43c2-aee1-d3531ec16b67": {
+			"text": {
+				"en-us": "Annual ranking of customers margin",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Classement annuel des taux de marge par client",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "客户利润年度排名"
+			},
+			"$key": "318C07EB269A4B8787423A01CE083B9E828B539C"
+		},
+		"description_6cc9824c-f73c-43c2-aee1-d3531ec16b67": {
+			"text": {
+				"en-us": "Annual ranking of customers margin",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Classement annuel des taux de marge par client",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "客户利润年度排名"
+			},
+			"$key": "4B762624CCBF01377348E520AC470B4985144674"
+		},
+		"title_bb7a86c7-6cd9-4383-854e-68039bc3ea31": {
+			"text": {
+				"en-us": "Available stock",
+				"ar-sa": null,
+				"de-de": "Stock disponible",
+				"en-gb": "Stock disponible",
+				"es-es": "Stock disponible",
+				"fr-fr": "Stock disponible",
+				"it-it": "Stock disponible",
+				"pl-pl": "Stock disponible",
+				"pt-pt": "Stock disponible",
+				"ru-ru": "Stock disponible",
+				"zh-cn": "可承诺存货数量"
+			},
+			"$key": "66772D7AA08B319DC0B3C478F24E5D69C4E60899"
+		},
+		"description_bb7a86c7-6cd9-4383-854e-68039bc3ea31": {
+			"text": {
+				"en-us": "Available stock",
+				"ar-sa": null,
+				"de-de": "Stock disponible",
+				"en-gb": "Stock disponible",
+				"es-es": "Stock disponible",
+				"fr-fr": "Stock disponible",
+				"it-it": "Stock disponible",
+				"pl-pl": "Stock disponible",
+				"pt-pt": "Stock disponible",
+				"ru-ru": "Stock disponible",
+				"zh-cn": "可承诺存货数量"
+			},
+			"$key": "30E83126ADE2AEEEE0ECE83AEBB561C56A6B2D43"
+		},
+		"title_e6b763f7-23c8-4dcd-ac3f-97c245a12b65": {
+			"text": {
+				"en-us": "Cash Forecasts",
+				"ar-sa": null,
+				"de-de": "Liquiditätsvorschau",
+				"en-gb": null,
+				"es-es": "Previsiones de tesorería",
+				"fr-fr": "Prévisions de trésorerie",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": "Previsões tesouraria",
+				"ru-ru": null,
+				"zh-cn": "现金预测"
+			},
+			"$key": "93CB6EDA132C0A5424051F6064239A33FF5F1DB7"
+		},
+		"description_e6b763f7-23c8-4dcd-ac3f-97c245a12b65": {
+			"text": {
+				"en-us": "Cash Forecasts",
+				"ar-sa": null,
+				"de-de": "Liquiditätsvorschau",
+				"en-gb": null,
+				"es-es": "Previsiones de tesorería",
+				"fr-fr": "Prévisions de trésorerie",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": "Previsões tesouraria",
+				"ru-ru": null,
+				"zh-cn": "现金预测"
+			},
+			"$key": "8DCAD89B40703437FD5822C8EBE9793F9ACE832F"
+		},
+		"title_34acd63e-988c-4a99-88b6-702b6e7615ac": {
+			"text": {
+				"en-us": "Cash Forecasts",
+				"ar-sa": "توقعات النقد",
+				"de-de": "Liquiditätsvorschau",
+				"en-gb": null,
+				"es-es": "Previsiones de tesorería",
+				"fr-fr": "Prévisions de trésorerie",
+				"it-it": "Previsioni finanziarie",
+				"pl-pl": "Zarządzanie prognozą gotówki",
+				"pt-pt": "Previsões tesouraria",
+				"ru-ru": "Прогнозы поступлений",
+				"zh-cn": "现金预测"
+			},
+			"$key": "333275B62EFF211205A7D8E2ACB98A2F524FF7AC"
+		},
+		"description_34acd63e-988c-4a99-88b6-702b6e7615ac": {
+			"text": {
+				"en-us": "Cash Forecasts",
+				"ar-sa": "توقعات النقد",
+				"de-de": "Liquiditätsvorschau",
+				"en-gb": null,
+				"es-es": "Previsiones de tesorería",
+				"fr-fr": "Cash Forecasts",
+				"it-it": "Previsioni finanziarie",
+				"pl-pl": "Zarządzanie prognozą gotówki",
+				"pt-pt": "Previsões tesouraria",
+				"ru-ru": "Прогнозы поступлений",
+				"zh-cn": "现金预测"
+			},
+			"$key": "CEE23A81203BB0334674B57A35423B322DDD7A35"
+		},
+		"title_3d3111cd-9674-4046-9a2f-cc8e49150930": {
+			"text": {
+				"en-us": "End-of-Life Products",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Produits en fin de vie",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "使用寿命结束的产品"
+			},
+			"$key": "92CC4D9206F603BC1C530D5B0E2A6B3722949490"
+		},
+		"description_3d3111cd-9674-4046-9a2f-cc8e49150930": {
+			"text": {
+				"en-us": "End-of-Life Products",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Produits en fin de vie",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "使用寿命结束的产品"
+			},
+			"$key": "3108DFBDEA1AA753DD1A69C81BD94F79771A776F"
+		},
+		"title_a7478fd0-c0ce-481f-bd4f-13c2a45b3cbf": {
+			"text": {
+				"en-us": "Expense entry",
+				"ar-sa": null,
+				"de-de": "Erfassung Ausgaben",
+				"en-gb": null,
+				"es-es": "Entrada de notas de gastos",
+				"fr-fr": "Saisie des notes de frais",
+				"it-it": "Inserimento spese",
+				"pl-pl": "Wprowadzenie wydatku",
+				"pt-pt": "Registo despesas",
+				"ru-ru": null,
+				"zh-cn": "费用录入"
+			},
+			"$key": "D7D1C66C58D67141126ECE1CBD7F5D871E0C4B85"
+		},
+		"description_a7478fd0-c0ce-481f-bd4f-13c2a45b3cbf": {
+			"text": {
+				"en-us": "Expense entry",
+				"ar-sa": null,
+				"de-de": "Erfassung Ausgaben",
+				"en-gb": null,
+				"es-es": "Entrada de notas de gastos",
+				"fr-fr": "Saisie des notes de frais",
+				"it-it": "Inserimento spese",
+				"pl-pl": "Wprowadzenie wydatku",
+				"pt-pt": "Registo despesas",
+				"ru-ru": null,
+				"zh-cn": "费用录入"
+			},
+			"$key": "2AC1432AD61F7861B8830D722DEA7FD2679FF5F2"
+		},
+		"title_5bdb999f-acb3-4198-a5f2-b2ebf566b3a6": {
+			"text": {
+				"en-us": "Expenses",
+				"ar-sa": null,
+				"de-de": "Ausgaben",
+				"en-gb": null,
+				"es-es": "Gastos",
+				"fr-fr": "Dépenses",
+				"it-it": "Spese",
+				"pl-pl": "Wydatki",
+				"pt-pt": "Despesas",
+				"ru-ru": null,
+				"zh-cn": "费用"
+			},
+			"$key": "552582AF7D2397D67C063E5D876A1E6ECE6CDF4C"
+		},
+		"description_5bdb999f-acb3-4198-a5f2-b2ebf566b3a6": {
+			"text": {
+				"en-us": "Expenses",
+				"ar-sa": null,
+				"de-de": "Ausgaben",
+				"en-gb": null,
+				"es-es": "Gastos",
+				"fr-fr": "Dépenses",
+				"it-it": "Spese",
+				"pl-pl": "Wydatki",
+				"pt-pt": "Despesas",
+				"ru-ru": null,
+				"zh-cn": "费用"
+			},
+			"$key": "FC9B4316037882807D8D1429C4289C75E8A8266E"
+		},
+		"title_acb5dc81-83ac-44e8-af6d-48a3fd31d7bd": {
+			"text": {
+				"en-us": "Expenses N/N-1 (%)",
+				"ar-sa": "(%) N/N-1 مصاريف",
+				"de-de": "Ausgaben N/N-1 (%)",
+				"en-gb": null,
+				"es-es": "Gastos N/N-1 (%)",
+				"fr-fr": "Dépenses N/N-1 (%)",
+				"it-it": "Spese N/N-1 (%)",
+				"pl-pl": "Nakłady N/N-1 (%)",
+				"pt-pt": "Despesas N/N-1 (%)",
+				"ru-ru": "Затраты N/N-1 (%)",
+				"zh-cn": "费用N/N-1 (%)"
+			},
+			"$key": "20940C2A3D7D467F149E0C60092EDCDB320695CB"
+		},
+		"description_acb5dc81-83ac-44e8-af6d-48a3fd31d7bd": {
+			"text": {
+				"en-us": "Expenses N/N-1 (%)",
+				"ar-sa": "(%) N/N-1 مصاريف",
+				"de-de": "Ausgaben N/N-1 (%)",
+				"en-gb": null,
+				"es-es": "Gastos N/N-1 (%)",
+				"fr-fr": "Dépenses N/N-1 (%)",
+				"it-it": "Spese N/N-1 (%)",
+				"pl-pl": "Nakłady N/N-1 (%)",
+				"pt-pt": "Despesas N/N-1 (%)",
+				"ru-ru": "Затраты N/N-1 (%)",
+				"zh-cn": "费用N/N-1 (%)"
+			},
+			"$key": "80249E1D5F91F60238028D2D427B41290D4D91CF"
+		},
+		"title_62581fff-6190-4b30-aa3b-da8bdf59b8a9": {
+			"text": {
+				"en-us": "Expenses N/N-1 (value)",
+				"ar-sa": "(مصاريف (مبلغ",
+				"de-de": "Ausgaben N/N-1 (Betrag)",
+				"en-gb": null,
+				"es-es": "Gastos N/N-1 (valor)",
+				"fr-fr": "Dépenses N/N-1 (valeur)",
+				"it-it": "Spese N/N-1 (importo)",
+				"pl-pl": "Nakłady N/N-1 (kwota)",
+				"pt-pt": "Despesas N/N-1 (montante)",
+				"ru-ru": "Затраты N/N-1 (cумма)",
+				"zh-cn": "费用N/N-1 (金额)"
+			},
+			"$key": "23D1D8AFA82608B2B547EA7AF27C80862726E547"
+		},
+		"description_62581fff-6190-4b30-aa3b-da8bdf59b8a9": {
+			"text": {
+				"en-us": "Expenses N/N-1 (value)",
+				"ar-sa": "(مصاريف (مبلغ",
+				"de-de": "Ausgaben N/N-1 (Betrag)",
+				"en-gb": null,
+				"es-es": "Gastos N/N-1 (valor)",
+				"fr-fr": "Dépenses N/N-1 (valeur)",
+				"it-it": "Spese N/N-1 (importo)",
+				"pl-pl": "Nakłady N/N-1 (kwota)",
+				"pt-pt": "Nakłady N/N-1 (kwota)",
+				"ru-ru": "Затраты N/N-1 (cумма)",
+				"zh-cn": "费用N/N-1 (金额)"
+			},
+			"$key": "2117B76C0801AE76DF983355036BB9D8E50B02FD"
+		},
+		"title_b44d600a-18ab-486c-9af1-10ba52c6abae": {
+			"text": {
+				"en-us": "Expenses not approved",
+				"ar-sa": null,
+				"de-de": "Ausgaben, nicht freigegeben",
+				"en-gb": null,
+				"es-es": "Notas de gastos no validadas",
+				"fr-fr": "Notes de frais non validées",
+				"it-it": "Spese non vistate",
+				"pl-pl": "Wydatki niezatwierdzone",
+				"pt-pt": "Despesas não autor.",
+				"ru-ru": null,
+				"zh-cn": "未审批费用"
+			},
+			"$key": "D45E03393F9821593ECE17EE44FAA5547BD9946F"
+		},
+		"description_b44d600a-18ab-486c-9af1-10ba52c6abae": {
+			"text": {
+				"en-us": "Expenses not approved",
+				"ar-sa": null,
+				"de-de": "Ausgaben, nicht freigegeben",
+				"en-gb": null,
+				"es-es": "Notas de gastos no validadas",
+				"fr-fr": "Notes de frais non validées",
+				"it-it": "Spese non vistate",
+				"pl-pl": "Wydatki niezatwierdzone",
+				"pt-pt": "Despesas não autor.",
+				"ru-ru": null,
+				"zh-cn": "未审批费用"
+			},
+			"$key": "8F98D1B4B97EAE35E026889C9EBCC4FC9BF843E9"
+		},
+		"title_cae9b7c0-2912-412c-afe6-3b33051936f1": {
+			"text": {
+				"en-us": "Inactive Customers",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Clients inactifs",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "非活跃客户"
+			},
+			"$key": "5AD16B1874EDB12A601A4E4F712700DF6875351D"
+		},
+		"description_cae9b7c0-2912-412c-afe6-3b33051936f1": {
+			"text": {
+				"en-us": "Inactive Customers",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Clients inactifs",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "非活跃客户"
+			},
+			"$key": "650415E0EA6B58307DF8627E5BC6B1D850108A2F"
+		},
+		"title_c48ed867-2612-4c0b-84ac-d1efc7e79899": {
+			"text": {
+				"en-us": "Margin",
+				"ar-sa": null,
+				"de-de": "Marge",
+				"en-gb": null,
+				"es-es": "Margen",
+				"fr-fr": "Marge",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "利润"
+			},
+			"$key": "822693DAAF47D5FCC1520783DC5E4C9E2B3B500E"
+		},
+		"description_c48ed867-2612-4c0b-84ac-d1efc7e79899": {
+			"text": {
+				"en-us": "Margin",
+				"ar-sa": null,
+				"de-de": "Marge",
+				"en-gb": null,
+				"es-es": "Margen",
+				"fr-fr": "Marge",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "利润"
+			},
+			"$key": "7A3B8D26562A4C4877782058E89F4D767178F26F"
+		},
+		"title_15b42801-d7ba-4089-a06c-0036cbb5e796": {
+			"text": {
+				"en-us": "Margin N/N-1 (%)",
+				"ar-sa": "(%) N/N-1 الهامش",
+				"de-de": "Marge N/N-1 (%)",
+				"en-gb": null,
+				"es-es": "Margen N/N-1 (%)",
+				"fr-fr": "Marge N/N-1 (%)",
+				"it-it": "Margine N/N-1 (%)",
+				"pl-pl": "Marża N/N-1 (%)",
+				"pt-pt": "Margem N/N-1 (%)",
+				"ru-ru": "Прибыль N/N-1 (%)",
+				"zh-cn": "利润 N/N-1 (%)"
+			},
+			"$key": "CFBCD1274A9F230E4EF9B96780D7C497D85543F5"
+		},
+		"description_15b42801-d7ba-4089-a06c-0036cbb5e796": {
+			"text": {
+				"en-us": "Margin N/N-1 (%)",
+				"ar-sa": "(%) N/N-1 الهامش",
+				"de-de": "Marge N/N-1 (%)",
+				"en-gb": null,
+				"es-es": "Margen N/N-1 (%)",
+				"fr-fr": "Marge N/N-1 (%)",
+				"it-it": "Margine N/N-1 (%)",
+				"pl-pl": "Marża N/N-1 (%)",
+				"pt-pt": "Margem N/N-1 (%)",
+				"ru-ru": "Прибыль N/N-1 (%)",
+				"zh-cn": "利润 N/N-1 (%)"
+			},
+			"$key": "20D4CCED3A5DB5D0707D601484DBBA262D9CE443"
+		},
+		"title_557e8bce-869a-41ba-8eb8-61f4e2382979": {
+			"text": {
+				"en-us": "Margin N/N-1 (value)",
+				"ar-sa": "(مبلغ) N/N-1 الهامش",
+				"de-de": "Marge N/N-1 (Betrag)",
+				"en-gb": null,
+				"es-es": "Margen N/N-1 (valor)",
+				"fr-fr": "Marge N/N-1 (valeur)",
+				"it-it": "Margine N/N-1 (importo)",
+				"pl-pl": "Marża N/N-1 (kwota)",
+				"pt-pt": "Margem N/N-1 (montante)",
+				"ru-ru": "Прибыль N/N-1 (cумма)",
+				"zh-cn": "利润 N/N-1 (金额)"
+			},
+			"$key": "E8DE1F09AB9F4C179F00F1FD5C710350D5CF8DC0"
+		},
+		"description_557e8bce-869a-41ba-8eb8-61f4e2382979": {
+			"text": {
+				"en-us": "Margin N/N-1 (value)",
+				"ar-sa": "(مبلغ) N/N-1 الهامش",
+				"de-de": "Marge N/N-1 (Betrag)",
+				"en-gb": null,
+				"es-es": "Margen N/N-1 (valor)",
+				"fr-fr": "Marge N/N-1 (valeur)",
+				"it-it": "Margine N/N-1 (importo)",
+				"pl-pl": "Marża N/N-1 (kwota)",
+				"pt-pt": "Margem N/N-1 (montante)",
+				"ru-ru": "Прибыль N/N-1 (cумма)",
+				"zh-cn": "利润 N/N-1 (金额)"
+			},
+			"$key": "753A8ED1A0B14CF777E31F789F9EBDE86581729A"
+		},
+		"title_c8af4aa8-61bd-4139-b3e9-95048ddcc8d1": {
+			"text": {
+				"en-us": "My orders w. Late Ship Date",
+				"ar-sa": null,
+				"de-de": "Mes commandes en retard",
+				"en-gb": "Mes commandes en retard",
+				"es-es": "Mes commandes en retard",
+				"fr-fr": "Mes commandes en retard",
+				"it-it": "Mes commandes en retard",
+				"pl-pl": "Mes commandes en retard",
+				"pt-pt": "Mes commandes en retard",
+				"ru-ru": "Mes commandes en retard",
+				"zh-cn": "我的逾期订单"
+			},
+			"$key": "A7406F6D15BA9FEAEE534426A364EBAA09B46F34"
+		},
+		"description_c8af4aa8-61bd-4139-b3e9-95048ddcc8d1": {
+			"text": {
+				"en-us": "Mes commandes en retard",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes en retard",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的逾期订单"
+			},
+			"$key": "3649FFD7399EF9FBA6A4D41397C1F74A756A0F18"
+		},
+		"title_1b7694a7-791b-4314-8b63-48c02c985501": {
+			"text": {
+				"en-us": "My Forecast vs Ordered",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes objectifs CA commandé",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的预测 VS 已订购额"
+			},
+			"$key": "011ABC8F2276F2051D901A5F53FCA509B2BBF765"
+		},
+		"description_1b7694a7-791b-4314-8b63-48c02c985501": {
+			"text": {
+				"en-us": "My Forecast vs Ordered",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes objectifs CA commandé",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的预测 VS 已订购额"
+			},
+			"$key": "FB39D033D314C2012258266FDADECAD80D07FFBE"
+		},
+		"title_381b58e0-70b4-433e-86bc-16486f14c02d": {
+			"text": {
+				"en-us": "My Quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes Devis",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的报价"
+			},
+			"$key": "3DC6F68E7142D670067307E75BAE0041E4579FFC"
+		},
+		"description_381b58e0-70b4-433e-86bc-16486f14c02d": {
+			"text": {
+				"en-us": "My Quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes Devis",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的报价"
+			},
+			"$key": "524FF704871979A21E1EEC254BC170C208BE6EBB"
+		},
+		"title_e4628a14-2945-4044-b7a1-d52005b4c525": {
+			"text": {
+				"en-us": "My active quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis actifs",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的有效报价"
+			},
+			"$key": "8925428D5EA35920D9AB1313B71C83AA0FBD6E43"
+		},
+		"description_e4628a14-2945-4044-b7a1-d52005b4c525": {
+			"text": {
+				"en-us": "My active quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis actifs",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的有效报价"
+			},
+			"$key": "38A593F224BDDC2E7187D6E21674371E8038A277"
+		},
+		"title_ef8bcc09-125b-49d2-bbc9-2429800546a4": {
+			"text": {
+				"en-us": "My appointments to carry out",
+				"ar-sa": null,
+				"de-de": "STD_ERP_X3_VEN090",
+				"en-gb": "STD_ERP_X3_VEN090",
+				"es-es": "STD_ERP_X3_VEN090",
+				"fr-fr": "Mes rendez-vous à effectuer",
+				"it-it": "STD_ERP_X3_VEN090",
+				"pl-pl": "STD_ERP_X3_VEN090",
+				"pt-pt": "STD_ERP_X3_VEN090",
+				"ru-ru": "STD_ERP_X3_VEN090",
+				"zh-cn": "我的待完成约会"
+			},
+			"$key": "F287C0D96F4EA668619E6B493D1D0AB4170D3360"
+		},
+		"description_ef8bcc09-125b-49d2-bbc9-2429800546a4": {
+			"text": {
+				"en-us": "My appointments to carry out",
+				"ar-sa": null,
+				"de-de": "STD_ERP_X3_VEN090",
+				"en-gb": "STD_ERP_X3_VEN090",
+				"es-es": "STD_ERP_X3_VEN090",
+				"fr-fr": "Mes rendez-vous à effectuer",
+				"it-it": "STD_ERP_X3_VEN090",
+				"pl-pl": "STD_ERP_X3_VEN090",
+				"pt-pt": "STD_ERP_X3_VEN090",
+				"ru-ru": "STD_ERP_X3_VEN090",
+				"zh-cn": "我的待完成约会"
+			},
+			"$key": "904056831C2D08DC180B949F95D933D5EE2BEF11"
+		},
+		"title_ed02fc3b-38ed-4636-b2a8-e5fc212916a5": {
+			"text": {
+				"en-us": "My customers",
+				"ar-sa": null,
+				"de-de": "Customers",
+				"en-gb": "Customers",
+				"es-es": "Customers",
+				"fr-fr": "Mes clients",
+				"it-it": "Customers",
+				"pl-pl": "Customers",
+				"pt-pt": "Customers",
+				"ru-ru": "Customers",
+				"zh-cn": "客户"
+			},
+			"$key": "A0DDB54F7546D4F08C9B5DE7024FD855C3CF9581"
+		},
+		"description_ed02fc3b-38ed-4636-b2a8-e5fc212916a5": {
+			"text": {
+				"en-us": "My customers",
+				"ar-sa": null,
+				"de-de": "Customers",
+				"en-gb": "Customers",
+				"es-es": "Customers",
+				"fr-fr": "Mes clients",
+				"it-it": "Customers",
+				"pl-pl": "Customers",
+				"pt-pt": "Customers",
+				"ru-ru": "Customers",
+				"zh-cn": "客户"
+			},
+			"$key": "3A70A08B3F1D11056BCD74DFF618586E5118708F"
+		},
+		"title_3b6cc43e-5b8c-497d-a053-9463a1108ca9": {
+			"text": {
+				"en-us": "My customers without any orders (3 months)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes clients sans commande (3 mois)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我（3个月内）无任何订单的客户"
+			},
+			"$key": "6A63D2A64B8AE0A8FF1C6CF8FD54469888189635"
+		},
+		"description_3b6cc43e-5b8c-497d-a053-9463a1108ca9": {
+			"text": {
+				"en-us": "My customers without any orders (3 months)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes clients sans commande (3 mois)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我（3个月内）无任何订单的客户"
+			},
+			"$key": "CDADCC8FCB24E8CA423FC3546EF71EA0F54E2C4D"
+		},
+		"title_d6a0308c-9408-49f0-a261-4667fae66052": {
+			"text": {
+				"en-us": "My done appointments",
+				"ar-sa": null,
+				"de-de": "My appointments",
+				"en-gb": "My appointments",
+				"es-es": "My appointments",
+				"fr-fr": "Mes rendez-vous effectués",
+				"it-it": "My appointments",
+				"pl-pl": "My appointments",
+				"pt-pt": "My appointments",
+				"ru-ru": "My appointments",
+				"zh-cn": "我的已完成约会"
+			},
+			"$key": "F53B59FDA6F76178C9D7106E3A86FAAB098EDA73"
+		},
+		"description_d6a0308c-9408-49f0-a261-4667fae66052": {
+			"text": {
+				"en-us": "My done appointments",
+				"ar-sa": null,
+				"de-de": "My appointments",
+				"en-gb": "My appointments",
+				"es-es": "My appointments",
+				"fr-fr": "Mes rendez-vous effectués",
+				"it-it": "My appointments",
+				"pl-pl": "My appointments",
+				"pt-pt": "My appointments",
+				"ru-ru": "My appointments",
+				"zh-cn": "我的已完成约会"
+			},
+			"$key": "23F7C1911F668A19B0810C470F83292D56C551AA"
+		},
+		"title_5f5ec516-41de-40e6-acc3-b75a60993d0b": {
+			"text": {
+				"en-us": "My done phone calls",
+				"ar-sa": null,
+				"de-de": "My phone calls",
+				"en-gb": "My phone calls",
+				"es-es": "My phone calls",
+				"fr-fr": "Mes appels effectués",
+				"it-it": "My phone calls",
+				"pl-pl": "My phone calls",
+				"pt-pt": "My phone calls",
+				"ru-ru": "My phone calls",
+				"zh-cn": "我的已完成通话"
+			},
+			"$key": "2AF1EDECFDF1A76BCFCE4211C8F83BAB51716F67"
+		},
+		"description_5f5ec516-41de-40e6-acc3-b75a60993d0b": {
+			"text": {
+				"en-us": "My done phone calls",
+				"ar-sa": null,
+				"de-de": "My phone calls",
+				"en-gb": "My phone calls",
+				"es-es": "My phone calls",
+				"fr-fr": "Mes appels effectués",
+				"it-it": "My phone calls",
+				"pl-pl": "My phone calls",
+				"pt-pt": "My phone calls",
+				"ru-ru": "My phone calls",
+				"zh-cn": "我的已完成通话"
+			},
+			"$key": "DFCA47764A1A1B6594496A50BD3723B83FC4D07F"
+		},
+		"title_2dc2c319-6cc5-4025-831f-606dc2913416": {
+			"text": {
+				"en-us": "My done tasks",
+				"ar-sa": null,
+				"de-de": "My tasks",
+				"en-gb": "My tasks",
+				"es-es": "My tasks",
+				"fr-fr": "Mes tâches réalisées",
+				"it-it": "My tasks",
+				"pl-pl": "My tasks",
+				"pt-pt": "My tasks",
+				"ru-ru": "My tasks",
+				"zh-cn": "我的已完成任务"
+			},
+			"$key": "501FF25F77BA3E0A2F762E6ED6856D4B6826D600"
+		},
+		"description_2dc2c319-6cc5-4025-831f-606dc2913416": {
+			"text": {
+				"en-us": "My done tasks",
+				"ar-sa": null,
+				"de-de": "My tasks",
+				"en-gb": "My tasks",
+				"es-es": "My tasks",
+				"fr-fr": "Mes tâches réalisées",
+				"it-it": "My tasks",
+				"pl-pl": "My tasks",
+				"pt-pt": "My tasks",
+				"ru-ru": "My tasks",
+				"zh-cn": "我的已完成任务"
+			},
+			"$key": "1BA4EC837D12DEDDD192F8236A62DACA7CE5F901"
+		},
+		"title_f01654f3-cdf4-448a-a837-157045c243b2": {
+			"text": {
+				"en-us": "My expired quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis expirés",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的已过期报价"
+			},
+			"$key": "90B6D0CCED145EA8FF70D1DEF47BD08B0DC16AED"
+		},
+		"description_f01654f3-cdf4-448a-a837-157045c243b2": {
+			"text": {
+				"en-us": "My expired quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis expirés",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的已过期报价"
+			},
+			"$key": "7C91D9D97A7F3B9228B07C26945CE007709A1DE3"
+		},
+		"title_aad1c2a3-c412-40a6-b159-8fd965b6544f": {
+			"text": {
+				"en-us": "My invoices",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes factures",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的发票"
+			},
+			"$key": "46C0325F3F6B8D6C287E4779424F327A31A221FD"
+		},
+		"description_aad1c2a3-c412-40a6-b159-8fd965b6544f": {
+			"text": {
+				"en-us": "My invoices",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes factures",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的发票"
+			},
+			"$key": "6045678A5B9F8CA4CB781E4CD3750083E8EE2A7F"
+		},
+		"title_ea4f823d-54a5-4a0b-bab9-3dfd04a7cac4": {
+			"text": {
+				"en-us": "My last quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes derniers devis",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的近期报价"
+			},
+			"$key": "7C7A830AF9D757BB356878FF7E248DCF4ABCF996"
+		},
+		"description_ea4f823d-54a5-4a0b-bab9-3dfd04a7cac4": {
+			"text": {
+				"en-us": "My last quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes derniers devis",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的近期报价"
+			},
+			"$key": "E72960EB5383649C9BC9E45E8D55E866EADB8C5D"
+		},
+		"title_97f9948d-6144-4524-85bb-5cc23277f54d": {
+			"text": {
+				"en-us": "My late invoices",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes factures en retard",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的逾期发票"
+			},
+			"$key": "437B1105A4DC4D9DC8151A8D7448BD67C72BFE1B"
+		},
+		"description_97f9948d-6144-4524-85bb-5cc23277f54d": {
+			"text": {
+				"en-us": "My late invoices",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes factures en retard",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的逾期发票"
+			},
+			"$key": "37123B72A8128F0421859FC2CB3E67FCF8BB1112"
+		},
+		"title_f49c162a-af31-457c-943f-faa719403efd": {
+			"text": {
+				"en-us": "My order book",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mon carnet de commande",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的订货簿"
+			},
+			"$key": "183E9A8810594E8ED03A4C5B1319CB6A80FB86D9"
+		},
+		"description_f49c162a-af31-457c-943f-faa719403efd": {
+			"text": {
+				"en-us": "My order book",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mon carnet de commande",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的订货簿"
+			},
+			"$key": "A798302181BC36BDB6EA14DB921D12B0BC73A93E"
+		},
+		"title_85eaeb7f-b95c-4e5a-91ab-d41cde7daa79": {
+			"text": {
+				"en-us": "My orders",
+				"ar-sa": null,
+				"de-de": "Meine Aufträge",
+				"en-gb": null,
+				"es-es": "Mis pedidos",
+				"fr-fr": "Mes commandes",
+				"it-it": "Miei ordini",
+				"pl-pl": null,
+				"pt-pt": "Minhas encomendas",
+				"ru-ru": null,
+				"zh-cn": "我的订单"
+			},
+			"$key": "BF14EDB984762E65B27790399B71D9927D9AC6F1"
+		},
+		"description_85eaeb7f-b95c-4e5a-91ab-d41cde7daa79": {
+			"text": {
+				"en-us": "My orders",
+				"ar-sa": null,
+				"de-de": "Meine Aufträge",
+				"en-gb": null,
+				"es-es": "Mis pedidos",
+				"fr-fr": "Mes commandes",
+				"it-it": "Miei ordini",
+				"pl-pl": null,
+				"pt-pt": "Minhas encomendas",
+				"ru-ru": null,
+				"zh-cn": "我的订单"
+			},
+			"$key": "44555D6CD84BD5047A5694B807BCE5236BD0E7E7"
+		},
+		"title_598e8d20-51f2-4488-8504-f7a0e2feb3a3": {
+			"text": {
+				"en-us": "My orders of the day",
+				"ar-sa": null,
+				"de-de": "Meine Tagesaufträge",
+				"en-gb": null,
+				"es-es": "Mis pedidos de hoy",
+				"fr-fr": "Mes commandes du jour",
+				"it-it": "Ordini del giorno",
+				"pl-pl": null,
+				"pt-pt": "Minhas encomendas do dia",
+				"ru-ru": null,
+				"zh-cn": "我的当日订单"
+			},
+			"$key": "6754842CD5FE96444636FF01DC70DE2B9279EC8F"
+		},
+		"description_598e8d20-51f2-4488-8504-f7a0e2feb3a3": {
+			"text": {
+				"en-us": "My orders of the day",
+				"ar-sa": null,
+				"de-de": "Meine Tagesaufträge",
+				"en-gb": null,
+				"es-es": "Mis pedidos de hoy",
+				"fr-fr": "My orders of the day",
+				"it-it": "Ordini del giorno",
+				"pl-pl": null,
+				"pt-pt": "Minhas encomendas do dia",
+				"ru-ru": null,
+				"zh-cn": "我的当日订单"
+			},
+			"$key": "782ADFEF175FA5CAB0578B9A025D3ABE074F1EA2"
+		},
+		"title_b00e3b02-f3dd-468a-b03d-5859058f91d7": {
+			"text": {
+				"en-us": "My orders to Deliver",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes à livrer",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的待发货订单"
+			},
+			"$key": "9076AF8F33043FC65CBC4FE69806F65215F23C4C"
+		},
+		"description_b00e3b02-f3dd-468a-b03d-5859058f91d7": {
+			"text": {
+				"en-us": "My orders to Deliver",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes à livrer",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的待发货订单"
+			},
+			"$key": "A3E7184A12CD679D91CA284B5353AEE1D9B5C875"
+		},
+		"title_7e3f3c1f-2132-4def-b267-1debf4ea3edd": {
+			"text": {
+				"en-us": "My orders w. Late Ship Date",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes en retard",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的逾期发货订单"
+			},
+			"$key": "40602EAAD568E14F0CF387EFC4CBA1079D42BA4C"
+		},
+		"description_7e3f3c1f-2132-4def-b267-1debf4ea3edd": {
+			"text": {
+				"en-us": "My orders w. Late Ship Date",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes en retard",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的逾期发货订单"
+			},
+			"$key": "6A0E3243BBA16BDBDE60517ACD6635F05C3EBEC6"
+		},
+		"title_236c4e55-39df-472b-bfc5-d2893fbb1df3": {
+			"text": {
+				"en-us": "My phone calls to execute",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes appels à effectuer",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的待完成通话"
+			},
+			"$key": "A57FC7BED7E13FE55ED859F5C45A4EC7D6B73E4A"
+		},
+		"description_236c4e55-39df-472b-bfc5-d2893fbb1df3": {
+			"text": {
+				"en-us": "My phone calls to execute",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes appels à effectuer",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的待完成通话"
+			},
+			"$key": "272D360B1D4CA305EF9923EEBB280A17D99BE8B6"
+		},
+		"title_99732e42-8945-489f-865a-2c02a9d168d3": {
+			"text": {
+				"en-us": "My prepayment not received",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes acomptes non reçus",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我未收到的预付款"
+			},
+			"$key": "D33F86AE57346D76C47B60CBC1FA00616DFB4EBE"
+		},
+		"description_99732e42-8945-489f-865a-2c02a9d168d3": {
+			"text": {
+				"en-us": "My prepayment not received",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes acomptes non reçus",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我未收到的预付款"
+			},
+			"$key": "1566CBDD0B4AB2618A18D73218CD079309CB6EB6"
+		},
+		"title_186f1150-e9c9-40b5-bfe5-8099347dbf3e": {
+			"text": {
+				"en-us": "My quotes of the day",
+				"ar-sa": null,
+				"de-de": "Meine Tagesangebote",
+				"en-gb": null,
+				"es-es": "Mis presupuestos de hoy",
+				"fr-fr": "Mes devis du jour",
+				"it-it": "Prev. del giorno",
+				"pl-pl": null,
+				"pt-pt": "Meus orçamentos do dia",
+				"ru-ru": null,
+				"zh-cn": "我的当日报价"
+			},
+			"$key": "4CA27F12B6D092294D9E361FB8D113AB003A774C"
+		},
+		"description_186f1150-e9c9-40b5-bfe5-8099347dbf3e": {
+			"text": {
+				"en-us": "My quotes of the day",
+				"ar-sa": null,
+				"de-de": "Meine Tagesangebote",
+				"en-gb": null,
+				"es-es": "Mis presupuestos de hoy",
+				"fr-fr": "Mes devis du jour",
+				"it-it": "Prev. del giorno",
+				"pl-pl": null,
+				"pt-pt": "Meus orçamentos do dia",
+				"ru-ru": null,
+				"zh-cn": "我的当日报价"
+			},
+			"$key": "CE5EF1C90E587B07DDE3AB3D94291A8BE7F452DE"
+		},
+		"title_b6c5cc3b-2118-4f14-8db3-63d963f250fe": {
+			"text": {
+				"en-us": "My recent Orders (week)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes récentes (sem.)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的近期订单（周）"
+			},
+			"$key": "A95804FDBE8657719ADE5C0AEBD87ADB0AC27AB3"
+		},
+		"description_b6c5cc3b-2118-4f14-8db3-63d963f250fe": {
+			"text": {
+				"en-us": "My recent Orders (week)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes récentes (sem.)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的近期订单（周）"
+			},
+			"$key": "11A32F88D4992089F57CB66AC69F1AA5A87442F8"
+		},
+		"title_6710f85e-8060-4357-a9de-70efd3030256": {
+			"text": {
+				"en-us": "My recent quotes (week)",
+				"ar-sa": null,
+				"de-de": "VEN084",
+				"en-gb": "VEN084",
+				"es-es": "VEN084",
+				"fr-fr": "Mes devis récents (sem.)",
+				"it-it": "VEN084",
+				"pl-pl": "VEN084",
+				"pt-pt": "VEN084",
+				"ru-ru": "VEN084",
+				"zh-cn": "我的近期报价（周）"
+			},
+			"$key": "27AC64E7713A7B4627717CB8D9B0CC7514D02EE9"
+		},
+		"description_6710f85e-8060-4357-a9de-70efd3030256": {
+			"text": {
+				"en-us": "My recent quotes (week)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis récents (sem.)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的近期报价（周）"
+			},
+			"$key": "6443DED8D5F9CC623D80F213D38EB9EFF400BA4C"
+		},
+		"title_6573e9e6-1d0a-43a9-b61f-6e42c7a0a0ee": {
+			"text": {
+				"en-us": "My tasks to do",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes tâches à réaliser",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的待完成任务"
+			},
+			"$key": "6B24DDCC950C90E423A29C43A6D45790A802FEEE"
+		},
+		"description_6573e9e6-1d0a-43a9-b61f-6e42c7a0a0ee": {
+			"text": {
+				"en-us": "My tasks to do",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes tâches à réaliser",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的待完成任务"
+			},
+			"$key": "E3C1718EAABAB592EB5AB7FFA2CF18B69F6DB512"
+		},
+		"title_d09885ea-5b14-4446-bcb1-0782033bb07b": {
+			"text": {
+				"en-us": "Purchase open orders to sign",
+				"ar-sa": null,
+				"de-de": "Offene zu unterzeichnende Bestellungen",
+				"en-gb": null,
+				"es-es": "Pedidos abiertos de compra a firmar",
+				"fr-fr": "Commandes ouvertes d'achat à signer",
+				"it-it": "Ordini aperti d'acquisto a firmare",
+				"pl-pl": "Otwarte zamówienia zakupu do podpisania",
+				"pt-pt": "Encomendas abertas de compras a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名合同"
+			},
+			"$key": "73200BCF1DD03BE1796A1C2F33FD25D325EF1DE3"
+		},
+		"description_d09885ea-5b14-4446-bcb1-0782033bb07b": {
+			"text": {
+				"en-us": "Open orders to sign",
+				"ar-sa": null,
+				"de-de": "A signer",
+				"en-gb": "A signer",
+				"es-es": "A signer",
+				"fr-fr": "Commandes ouvertes d'achat à signer",
+				"it-it": "A signer",
+				"pl-pl": "A signer",
+				"pt-pt": "A signer",
+				"ru-ru": "A signer",
+				"zh-cn": "待签名合同"
+			},
+			"$key": "490BBEA35DF3908C1FD2EE95CF22BDE47D8B2D09"
+		},
+		"title_dbffd05c-39ba-4a26-a553-b02f4fec6abe": {
+			"text": {
+				"en-us": "Purchase orders to sign",
+				"ar-sa": null,
+				"de-de": "Zu unterzeichnende Bestellungen",
+				"en-gb": null,
+				"es-es": "Pedidos de compra a firmar",
+				"fr-fr": "Commandes d'achat à signer",
+				"it-it": "Ordini d'acquisto a firmare",
+				"pl-pl": "Zamówienia zakupu do podpisania",
+				"pt-pt": "Encomendas de compra a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名订单"
+			},
+			"$key": "A943E4E5149A402D1D5ACE09C3AFD3DE37000120"
+		},
+		"description_dbffd05c-39ba-4a26-a553-b02f4fec6abe": {
+			"text": {
+				"en-us": "Purchase orders to sign",
+				"ar-sa": null,
+				"de-de": "Zu unterzeichnende Bestellungen",
+				"en-gb": null,
+				"es-es": "Pedidos de compra a firmar",
+				"fr-fr": "Commandes d'achat à signer",
+				"it-it": "Ordini d'acquisto a firmare",
+				"pl-pl": "Zamówienia zakupu do podpisania",
+				"pt-pt": "Encomendas de compra a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名订单"
+			},
+			"$key": "9D3855674D6BC98B1AB067A3AB8CF4ABD0914E60"
+		},
+		"title_68c3d527-f24e-4073-8367-de2d3450915c": {
+			"text": {
+				"en-us": "Purchase price inquiries",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Recherche Tarifs achat",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "采购价格查询"
+			},
+			"$key": "856511F5968DC695E466B46F05D6226E2DF3D797"
+		},
+		"description_68c3d527-f24e-4073-8367-de2d3450915c": {
+			"text": {
+				"en-us": "Purchase price inquiries",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Recherche Tarifs achat",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "采购价格查询"
+			},
+			"$key": "8787067751EE194ED5DD186B00692621D36123F2"
+		},
+		"title_1519ed6d-9436-431a-b24a-f75e3b3124f4": {
+			"text": {
+				"en-us": "Purchase requests to sign",
+				"ar-sa": null,
+				"de-de": "Zu unterzeichnende Bestellanfragen",
+				"en-gb": null,
+				"es-es": "Solicitudes de compra a firmar",
+				"fr-fr": "Demandes d'achats à signer",
+				"it-it": "Richieste d'acquisto a firmare",
+				"pl-pl": "Wnioski zakupowe do podpisania",
+				"pt-pt": "Pedidos de compra a assinar",
+				"ru-ru": null,
+				"zh-cn": "采购请求"
+			},
+			"$key": "1B925567A42C4457D296F7BB25512656BFE63374"
+		},
+		"description_1519ed6d-9436-431a-b24a-f75e3b3124f4": {
+			"text": {
+				"en-us": "Purchase requests to sign",
+				"ar-sa": null,
+				"de-de": "Zu unterzeichnende Bestellanfragen",
+				"en-gb": null,
+				"es-es": "Solicitudes de compra a firmar",
+				"fr-fr": "Demandes d'achats à signer",
+				"it-it": "Richieste d'acquisto a firmare",
+				"pl-pl": "Wnioski zakupowe do podpisania",
+				"pt-pt": "Pedidos de compra a assinar",
+				"ru-ru": null,
+				"zh-cn": "采购请求"
+			},
+			"$key": "AF6E081ABD8FE9A0CD95D5B197B493BAC18AA1DA"
+		},
+		"title_ab56a08f-2446-408f-b729-e80b4401b19a": {
+			"text": {
+				"en-us": "Quotes to sign",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Devis à signer",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "待签名报价"
+			},
+			"$key": "2242F438D24CC04474DDEF63CB344C182339B075"
+		},
+		"description_ab56a08f-2446-408f-b729-e80b4401b19a": {
+			"text": {
+				"en-us": "Quotes to sign",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Devis à signer",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "待签名报价"
+			},
+			"$key": "A20E168B4C1E813C1C0963F33CC81AB20C87FB8D"
+		},
+		"title_76c671cf-945c-4b33-a4f3-ed335bf8b1b1": {
+			"text": {
+				"en-us": "Sales Inv with Discount",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes taux de remise facturé",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "有折扣的销售发票"
+			},
+			"$key": "1746050B2AFF6DDCF2FCAD3B5B1E1281A9987D37"
+		},
+		"description_76c671cf-945c-4b33-a4f3-ed335bf8b1b1": {
+			"text": {
+				"en-us": "Sales Inv with Discount",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes taux de remise facturé",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "有折扣的销售发票"
+			},
+			"$key": "67422A3B5D5EE3E8D06540BF4FDD73AF08B7B01C"
+		},
+		"title_a95c75a4-37eb-40fc-9a5d-643c42c0457d": {
+			"text": {
+				"en-us": "Sales by Region",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Sales by Region",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "销售额/地理区域"
+			},
+			"$key": "55E75DD095DE7AA5291EB19382ACE04E70536327"
+		},
+		"description_a95c75a4-37eb-40fc-9a5d-643c42c0457d": {
+			"text": {
+				"en-us": "Sales by Region",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Sales by Region",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "销售额/地理区域"
+			},
+			"$key": "65CB534C7348926ED372DBB89205A6BEBE0566A5"
+		},
+		"title_e80999a5-83f4-40b9-a04e-3d0a6315ef9a": {
+			"text": {
+				"en-us": "Sales open orders to sign",
+				"ar-sa": null,
+				"de-de": "Offene zu unterzeichnende Aufträge",
+				"en-gb": null,
+				"es-es": "Pedidos abiertos de venta a firmar",
+				"fr-fr": "Commandes ouvertes de ventes à signer",
+				"it-it": "Ordini aperti di vendita a firmare",
+				"pl-pl": "Otwarte zamówienia sprzedaży do podpisania",
+				"pt-pt": "Encomendas abertas de vendas a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名合同"
+			},
+			"$key": "DC8BA4718A0873246E1F0404D9B0A094DFE6179A"
+		},
+		"description_e80999a5-83f4-40b9-a04e-3d0a6315ef9a": {
+			"text": {
+				"en-us": "Sales open orders to sign",
+				"ar-sa": null,
+				"de-de": "Offene zu unterzeichnende Aufträge",
+				"en-gb": null,
+				"es-es": "Pedidos abiertos de venta a firmar",
+				"fr-fr": "Commandes ouvertes de ventes à signer",
+				"it-it": "Ordini aperti di vendita a firmare",
+				"pl-pl": "Otwarte zamówienia sprzedaży do podpisania",
+				"pt-pt": "Encomendas abertas de vendas a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名合同"
+			},
+			"$key": "77CE87730CCADDD5ADEFBC2A110FA9B69F1948C3"
+		},
+		"title_f747b1cf-308f-45dd-aef9-ecb927f408d1": {
+			"text": {
+				"en-us": "Sales orders to sign",
+				"ar-sa": null,
+				"de-de": "Zu unterzeichnende Aufträge",
+				"en-gb": null,
+				"es-es": "Pedidos de venta a firmar",
+				"fr-fr": "Commande de vente à signer",
+				"it-it": "Ordini di vendita a firmare",
+				"pl-pl": "Zamówienia sprzedaży do podpisania",
+				"pt-pt": "Encomendas de venda a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名销售订单"
+			},
+			"$key": "DE403A4E105FCFEB8A0760384E50B617D31CA02E"
+		},
+		"description_f747b1cf-308f-45dd-aef9-ecb927f408d1": {
+			"text": {
+				"en-us": "Sales orders to sign",
+				"ar-sa": null,
+				"de-de": "Zu unterzeichnende Aufträge",
+				"en-gb": null,
+				"es-es": "Pedidos de venta a firmar",
+				"fr-fr": "Commande de vente à signer",
+				"it-it": "Ordini di vendita a firmare",
+				"pl-pl": "Zamówienia sprzedaży do podpisania",
+				"pt-pt": "Encomendas de venda a assinar",
+				"ru-ru": null,
+				"zh-cn": "待签名销售订单"
+			},
+			"$key": "8EE3924EF8CD522BDBC6896DA4FADE915AFA6A94"
+		},
+		"title_8083c5ed-848f-40e9-9c5e-5bcd4557fb5f": {
+			"text": {
+				"en-us": "Sales price inquiries",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Recherche Tarifs vente",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "销售价格查询"
+			},
+			"$key": "12C34BEF96271BCCD813C997995225E8B10BA91E"
+		},
+		"description_8083c5ed-848f-40e9-9c5e-5bcd4557fb5f": {
+			"text": {
+				"en-us": "Sales price inquiries",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Recherche Tarifs vente",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "销售价格查询"
+			},
+			"$key": "6CB1CA9E87622BD3BC483E4849D2808669DC1B34"
+		},
+		"title_ad83df73-beca-4373-aa19-a9c8d0902b8d": {
+			"text": {
+				"en-us": "My signed purchase open orders",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes ouvertes d'achat signées",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的已签名合同"
+			},
+			"$key": "DFAD2F7F0FAE36017EB020085E37B1BFFBC169C8"
+		},
+		"description_ad83df73-beca-4373-aa19-a9c8d0902b8d": {
+			"text": {
+				"en-us": "Signed purchase open orders",
+				"ar-sa": null,
+				"de-de": "Unterzeichnete offene Bestellungen",
+				"en-gb": null,
+				"es-es": "Pedidos abiertos de compra firmados",
+				"fr-fr": "Commandes ouvertes d'achat signées",
+				"it-it": "Ordini aperti d'acquisto firmati",
+				"pl-pl": "Podpisane otwarte zamówienia zakupu",
+				"pt-pt": "Encomendas abertas de compra assinadas",
+				"ru-ru": null,
+				"zh-cn": "我的已签名合同"
+			},
+			"$key": "BFBF04AC84C004EA06F0521FC37FD196D1389B71"
+		},
+		"title_c1c02873-2f72-451b-afbc-98fa09ba6024": {
+			"text": {
+				"en-us": "My signed purchase orders",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes d'achat signées",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "已签名采购订单"
+			},
+			"$key": "40FF82FAD8B74C4F7CF3282DC2880FF4CBA618FB"
+		},
+		"description_c1c02873-2f72-451b-afbc-98fa09ba6024": {
+			"text": {
+				"en-us": "Signed purchase orders",
+				"ar-sa": null,
+				"de-de": "Unterzeichnete Bestellungen",
+				"en-gb": null,
+				"es-es": "Pedidos de compra firmados",
+				"fr-fr": "Commandes d'achat signées",
+				"it-it": "Ordini d'acquisto firmati",
+				"pl-pl": "Podpisane zamówienia zakupu",
+				"pt-pt": "Encomendas de compra assinados",
+				"ru-ru": null,
+				"zh-cn": "已签名采购订单"
+			},
+			"$key": "F8B174345F1FD6F02F8E97E8037FC324F89BE538"
+		},
+		"title_4634d58c-81eb-4527-bafb-77e9b4a782a0": {
+			"text": {
+				"en-us": "My signed purchase requests",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes demandes d'achat signées",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "已签名采购请求"
+			},
+			"$key": "7D9379DA71720735B36E56001AB073D211111816"
+		},
+		"description_4634d58c-81eb-4527-bafb-77e9b4a782a0": {
+			"text": {
+				"en-us": "Signed purchase requests",
+				"ar-sa": null,
+				"de-de": "Unterzeichnete Bestellanfragen",
+				"en-gb": null,
+				"es-es": "Solicitudes de compra firmadas",
+				"fr-fr": "Demandes d'achat signées",
+				"it-it": "Richieste d'acquisto firmate",
+				"pl-pl": "Podpisane wnioski zakupowe",
+				"pt-pt": "Pedidos de compra assinados",
+				"ru-ru": null,
+				"zh-cn": "已签名采购请求"
+			},
+			"$key": "E7D760A6293856201892FDA59DB35E6B6A38198C"
+		},
+		"title_9341cdb8-e97f-40c4-a6be-0d7f475cb49e": {
+			"text": {
+				"en-us": "My signed quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis signés",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "已签名报价"
+			},
+			"$key": "3C67BD7B723F8ED444BA4309B7E98E43D993EFDB"
+		},
+		"description_9341cdb8-e97f-40c4-a6be-0d7f475cb49e": {
+			"text": {
+				"en-us": "Signed quotes",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Devis signés",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "已签名报价"
+			},
+			"$key": "FB1F4B9E3613B82B46A5E2289E143452ABB98E19"
+		},
+		"title_db8a998a-1aa1-4d31-a900-de9381a23d17": {
+			"text": {
+				"en-us": "My signed sales open orders",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes ouvertes de ventes signées",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的已签名合同"
+			},
+			"$key": "483034F74C9DF6201486D1DB6C599DA3E83CC552"
+		},
+		"description_db8a998a-1aa1-4d31-a900-de9381a23d17": {
+			"text": {
+				"en-us": "Signed sales open orders",
+				"ar-sa": null,
+				"de-de": "Unterzeichnete offene Aufträge",
+				"en-gb": null,
+				"es-es": "Pedidos abiertos de venta firmados",
+				"fr-fr": "Commandes ouvertes de ventes signées",
+				"it-it": "Ordini aperti di vendita firmati",
+				"pl-pl": "Podpisane otwarte zamówienia sprzedaży",
+				"pt-pt": "Encomendas abertas de vendas assinadas",
+				"ru-ru": null,
+				"zh-cn": "我的已签名合同"
+			},
+			"$key": "3BD35BB1EFF275049980ACA6DC045A3193898A1B"
+		},
+		"title_870789dd-3d0d-4ab2-b414-8a02635b9689": {
+			"text": {
+				"en-us": "My signed sales orders",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes commandes de vente signées",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "已签名销售订单"
+			},
+			"$key": "9AAC3A17EC9C4B2F1E66FA0C6CE88CD4EF3E0EBC"
+		},
+		"description_870789dd-3d0d-4ab2-b414-8a02635b9689": {
+			"text": {
+				"en-us": "Signed sales orders",
+				"ar-sa": null,
+				"de-de": "Unterzeichnete Aufträge",
+				"en-gb": null,
+				"es-es": "Pedidos de venta firmados",
+				"fr-fr": "Commandes de vente signées",
+				"it-it": "Ordini di vendita firmati",
+				"pl-pl": "Podpisane zmówienia sprzedaży",
+				"pt-pt": "Encomendas de vendas assinadas",
+				"ru-ru": null,
+				"zh-cn": "已签名销售订单"
+			},
+			"$key": "282F2BE82BC846CBBA4D1E1A6F7F58AD2D342B08"
+		},
+		"title_23e56fba-ab2e-4391-bed5-6efb87d28f89": {
+			"text": {
+				"en-us": "Soon expired products",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Produits à péremption proche",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "临近过期的产品"
+			},
+			"$key": "6FF09874D0593EF58AC428A1A7EA6A8337135695"
+		},
+		"description_23e56fba-ab2e-4391-bed5-6efb87d28f89": {
+			"text": {
+				"en-us": "Soon expired products",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Produits à péremption proche",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "临近过期的产品"
+			},
+			"$key": "C2F1EA9EB1A7D2E4964448BEB73A01300CA2928A"
+		},
+		"title_d2052869-5d04-40a6-970e-20bfcf7e8bf7": {
+			"text": {
+				"en-us": "Statistics on specific sales order",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Statistics on specific sales order",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "特定销售订单的统计数据"
+			},
+			"$key": "10AD1B0389B5C17559F1690D098BFB9B479F9A9C"
+		},
+		"description_d2052869-5d04-40a6-970e-20bfcf7e8bf7": {
+			"text": {
+				"en-us": "Specific Sales figures",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Specific Sales figures",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "特定销售订单的统计数据"
+			},
+			"$key": "656945D88F9673B798A06C835C5DE4F9A0DF070A"
+		},
+		"title_a2de2c4f-b8c3-4f91-b625-5baabe1b2884": {
+			"text": {
+				"en-us": "Specific lead management",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Specific lead management",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "特定销售线索管理"
+			},
+			"$key": "CEAEA677854D245B9021E4153E97951EF10E9D53"
+		},
+		"description_a2de2c4f-b8c3-4f91-b625-5baabe1b2884": {
+			"text": {
+				"en-us": "Specific lead management",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Specific lead management",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "特定销售线索管理"
+			},
+			"$key": "217E87CB83A8D66BD9584467A87EAB261A693E8B"
+		},
+		"title_eb9ef5d7-8913-48c3-b106-8ffe19ae5900": {
+			"text": {
+				"en-us": "Turnover",
+				"ar-sa": null,
+				"de-de": "Umsatz",
+				"en-gb": null,
+				"es-es": "Volumen de negocio",
+				"fr-fr": "Chiffre d'affaires",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "周转率"
+			},
+			"$key": "A3817395F946DEF08D64F9002BC3BE674121B7A4"
+		},
+		"description_eb9ef5d7-8913-48c3-b106-8ffe19ae5900": {
+			"text": {
+				"en-us": "Turnover",
+				"ar-sa": null,
+				"de-de": "Umsatz",
+				"en-gb": null,
+				"es-es": "Volumen de negocio",
+				"fr-fr": "Chiffre d'affaires",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "周转率"
+			},
+			"$key": "A950336297312BEDA757156FD88ACDC5496DDE12"
+		},
+		"title_ce85f1a5-ce11-4188-8975-1e814b48c668": {
+			"text": {
+				"en-us": "Turnover (invoiced) growth",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Croissance CA facturé",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "（已开票的）营业额增长"
+			},
+			"$key": "74E5629DD333AF0A6659A2DB094DDA90CEF72AA2"
+		},
+		"description_ce85f1a5-ce11-4188-8975-1e814b48c668": {
+			"text": {
+				"en-us": "Turnover (invoiced) growth",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Croissance CA facturé",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "（已开票的）营业额增长"
+			},
+			"$key": "460342CD6A5F8EB4CA7090D56BF32A603238D6F8"
+		},
+		"title_aa681902-d5ab-47c1-8877-3764217571b6": {
+			"text": {
+				"en-us": "Turnover N/N-1 (%)",
+				"ar-sa": "(%) N/N-1 رأسمال",
+				"de-de": "Umsatz N/N-1 (%)",
+				"en-gb": null,
+				"es-es": "Volumen de negocio N/N-1 (%)",
+				"fr-fr": "Chiffre d'affaires N/N-1 (%)",
+				"it-it": "Fatturato N/N-1 (%)",
+				"pl-pl": "Obrót N/N-1 (%)",
+				"pt-pt": "Volume negócios N/N-1 (%)",
+				"ru-ru": "Товарооборот N/N-1 (%)",
+				"zh-cn": "周转率 N/N-1 (%)"
+			},
+			"$key": "98E8CFA90BF2C4906FFC315F1ACB1C23CD8B8155"
+		},
+		"description_aa681902-d5ab-47c1-8877-3764217571b6": {
+			"text": {
+				"en-us": "Turnover N/N-1 (%)",
+				"ar-sa": "(%) N/N-1 رأسمال",
+				"de-de": "Umsatz N/N-1 (%)",
+				"en-gb": null,
+				"es-es": "Volumen de negocio N/N-1 (%)",
+				"fr-fr": "Chiffre d'affaires N/N-1 (%)",
+				"it-it": "Fatturato N/N-1 (%)",
+				"pl-pl": "Obrót N/N-1 (%)",
+				"pt-pt": "Volume negócios N/N-1 (%)",
+				"ru-ru": "Товарооборот N/N-1 (%)",
+				"zh-cn": "周转率 N/N-1 (%)"
+			},
+			"$key": "7B89FCB2D057223902AEA51D0AA36204DCA51982"
+		},
+		"title_6bc72ed4-ca22-4c1e-9933-532a0cf36a96": {
+			"text": {
+				"en-us": "Turnover N/N-1 (value)",
+				"ar-sa": "(مبلغ) N/N-1 رأسمال",
+				"de-de": "Umsatz N/N-1 (Betrag)",
+				"en-gb": null,
+				"es-es": "Volumen de negocio N/N-1 (valor)",
+				"fr-fr": "Chiffre d'affaires N/N-1 (montant)",
+				"it-it": "Fatturato N/N-1 (importo)",
+				"pl-pl": "Obrót N/N-1 (kwota)",
+				"pt-pt": "Volume negócios N/N-1 (montante)",
+				"ru-ru": "Товарооборот N/N-1 (cумма)",
+				"zh-cn": "周转率 N/N-1 (金额)"
+			},
+			"$key": "A779446C1CA59D5F86F1EB3463792C3D64EEF0D2"
+		},
+		"description_6bc72ed4-ca22-4c1e-9933-532a0cf36a96": {
+			"text": {
+				"en-us": "Turnover N/N-1 (value)",
+				"ar-sa": "(مبلغ) N/N-1 رأسمال",
+				"de-de": "Umsatz N/N-1 (Betrag)",
+				"en-gb": null,
+				"es-es": "Volumen de negocio N/N-1 (valor)",
+				"fr-fr": "Chiffre d'affaires N/N-1 (montant)",
+				"it-it": "Fatturato N/N-1 (importo)",
+				"pl-pl": "Obrót N/N-1 (kwota)",
+				"pt-pt": "Volume negócios N/N-1 (montante)",
+				"ru-ru": "Товарооборот N/N-1 (cумма)",
+				"zh-cn": "周转率 N/N-1 (金额)"
+			},
+			"$key": "5D712E649E0EC1C858388B284B1FEA7D7CAFF0AD"
+		},
+		"title_cddd3460-ef15-48cc-b983-eb6985012116": {
+			"text": {
+				"en-us": "View expenses",
+				"ar-sa": null,
+				"de-de": "Ausgaben anzeigen",
+				"en-gb": null,
+				"es-es": "Consulta de notas de gastos",
+				"fr-fr": "Consultation des notes de frais",
+				"it-it": "Mostra sp.",
+				"pl-pl": null,
+				"pt-pt": "Consultar minhas despesas",
+				"ru-ru": null,
+				"zh-cn": "费用查询"
+			},
+			"$key": "ADD4A8E1A98D9D4E97DC44227A4987F945F9B1BF"
+		},
+		"description_cddd3460-ef15-48cc-b983-eb6985012116": {
+			"text": {
+				"en-us": "View expenses",
+				"ar-sa": null,
+				"de-de": "Ausgaben anzeigen",
+				"en-gb": null,
+				"es-es": "Consulta de notas de gastos",
+				"fr-fr": "Consultation des notes de frais",
+				"it-it": "Mostra sp.",
+				"pl-pl": null,
+				"pt-pt": "Consultar minhas despesas",
+				"ru-ru": null,
+				"zh-cn": "费用查询"
+			},
+			"$key": "954258D69A5C62CE712AE3AF38EEE413B54E60A8"
+		},
+		"title_5c331840-b7c3-4ded-bd1f-5463f5932961": {
+			"text": {
+				"en-us": "My short dated quotes (week)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis à expiration (Sem.)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的快过期报价（周）"
+			},
+			"$key": "AD4DDF101F114E5E745DCAEC8A42B245AA11A472"
+		},
+		"description_5c331840-b7c3-4ded-bd1f-5463f5932961": {
+			"text": {
+				"en-us": "My short dated quotes (week)",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Mes devis à expiration (Sem.)",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": null,
+				"ru-ru": null,
+				"zh-cn": "我的快过期报价（周）"
+			},
+			"$key": "56EE8FE0E6480E2A989B32B7AD275493E920A2E8"
+		},
+		"title_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": {
+			"text": {
+				"en-us": "Specific order management",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Specific order management",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": "Gestão especifica despesas",
+				"ru-ru": null,
+				"zh-cn": "特定订单管理"
+			},
+			"$key": "6648C9D5E5149D8866A3E3DAA9E1296C6FB8BE86"
+		},
+		"description_44b847d6-57e4-45e8-a427-1b94a6f8a6b7": {
+			"text": {
+				"en-us": "Specific order management",
+				"ar-sa": null,
+				"de-de": null,
+				"en-gb": null,
+				"es-es": null,
+				"fr-fr": "Specific order management",
+				"it-it": null,
+				"pl-pl": null,
+				"pt-pt": "Gestão especifica despesas",
+				"ru-ru": null,
+				"zh-cn": "特定订单管理"
+			},
+			"$key": "0A049B83BC75E8FC8243115E258CE9727C06735C"
 		}
 	}
 }
