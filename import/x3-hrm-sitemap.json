@@ -13748,6 +13748,31 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_SKLMAP",
+      "title": "title_f01c31f3-42a5-4d52-af07-b6a7c54d56b5",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "SKLMAP",
+        "representation": "SKILLSMAP"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_f8325c3a-db06-48bd-a4dc-436ce2a9a63d",
       "code": "STD_X3_HRM_ENTST",
@@ -13764,6 +13789,10 @@
         },
         {
           "code": "STD_X3_HRM_GESATS",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_SKLMAP",
           "$variantType": "menuItem"
         }
       ]
@@ -28849,6 +28878,7 @@
       "description_8858d785-c740-429d-ac14-8a2fc79f0823": "GESENT",
       "title_24a8ea98-5704-4a77-8c35-501df5ae4b69": "Staff departures",
       "description_24a8ea98-5704-4a77-8c35-501df5ae4b69": "GESATS",
+      "title_f01c31f3-42a5-4d52-af07-b6a7c54d56b5": "SkillsMap staff requisition",
       "title_5d97cb44-f178-4520-bfa3-e388b72d1666": "Administrative documents",
       "title_b0676e63-2857-4b15-b7e0-4f767cb68bfa": "Documents generator",
       "title_95127f91-828f-42de-b3b6-09c3a662ac1c": "Documents formula",
