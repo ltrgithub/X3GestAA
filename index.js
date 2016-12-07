@@ -111,6 +111,7 @@ if (/^[NWB]\d+$/.test(process.argv[2])) {
 require('@sage/syracuse-lib/src/license/index').register(function(err, data) {
 	if (err) console.log("" + err);
 	else if (!data) console.log("No license");
+	require('@sage/syracuse-lib/src/license/check');
 
 	// streamline is now registered with babel, at the very beginning
 	//require("streamline").register(config.streamline);
