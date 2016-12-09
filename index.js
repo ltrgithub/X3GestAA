@@ -9,9 +9,9 @@ require('npm-shadow')();
 var config = {};
 
 try {
-	config = require("./nodelocal1").config || {};
+	config = require("./nodelocal").config || {};
 } catch (ex) {
-	console.error(ex);
+	console.error("Error in nodelocal.js: "+ex);
 	process.exit(6);	
 }
 if (config.streamlineFromCI) {
