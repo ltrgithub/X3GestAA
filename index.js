@@ -7,9 +7,10 @@
 var config = {};
 
 try {
-	config = require("./nodelocal").config || {};
+	config = require("./nodelocal1").config || {};
 } catch (ex) {
 	console.error(ex);
+	process.exit(6);	
 }
 
 (function() {
