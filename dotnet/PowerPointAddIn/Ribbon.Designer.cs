@@ -86,6 +86,7 @@ namespace PowerPointAddIn
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ribbon));
             Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
+            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.tabSageERPX3 = this.Factory.CreateRibbonTab();
             this.groupPublish = this.Factory.CreateRibbonGroup();
             this.buttonPublish = this.Factory.CreateRibbonButton();
@@ -94,20 +95,28 @@ namespace PowerPointAddIn
             this.buttonRefresh = this.Factory.CreateRibbonButton();
             this.buttonRefreshAll = this.Factory.CreateRibbonButton();
             this.groupSettings = this.Factory.CreateRibbonGroup();
+            this.box1 = this.Factory.CreateRibbonBox();
             this.comboBoxServerLocation = this.Factory.CreateRibbonComboBox();
+            this.serverLocationsButton = this.Factory.CreateRibbonButton();
             this.buttonDisconnect = this.Factory.CreateRibbonButton();
             this.groupVersion = this.Factory.CreateRibbonGroup();
             this.installedVersion = this.Factory.CreateRibbonLabel();
             this.buttonUpdate = this.Factory.CreateRibbonButton();
             this.version = this.Factory.CreateRibbonLabel();
-            this.checkBoxShowTemplatePane = this.Factory.CreateRibbonCheckBox();
             this.buttonRefreshReport = this.Factory.CreateRibbonButton();
             this.buttonPreview = this.Factory.CreateRibbonButton();
             this.tabSageERPX3.SuspendLayout();
             this.groupPublish.SuspendLayout();
             this.groupReporting.SuspendLayout();
             this.groupSettings.SuspendLayout();
+            this.box1.SuspendLayout();
             this.groupVersion.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // checkBoxShowTemplatePane
+            // 
+            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
+            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
             // 
             // tabSageERPX3
             // 
@@ -174,10 +183,16 @@ namespace PowerPointAddIn
             // 
             // groupSettings
             // 
-            this.groupSettings.Items.Add(this.comboBoxServerLocation);
+            this.groupSettings.Items.Add(this.box1);
             this.groupSettings.Items.Add(this.buttonDisconnect);
             resources.ApplyResources(this.groupSettings, "groupSettings");
             this.groupSettings.Name = "groupSettings";
+            // 
+            // box1
+            // 
+            this.box1.Items.Add(this.comboBoxServerLocation);
+            this.box1.Items.Add(this.serverLocationsButton);
+            this.box1.Name = "box1";
             // 
             // comboBoxServerLocation
             // 
@@ -185,9 +200,16 @@ namespace PowerPointAddIn
             this.comboBoxServerLocation.Name = "comboBoxServerLocation";
             this.comboBoxServerLocation.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.comboBoxServerLocation_TextChanged);
             // 
+            // serverLocationsButton
+            // 
+            resources.ApplyResources(this.serverLocationsButton, "serverLocationsButton");
+            this.serverLocationsButton.Name = "serverLocationsButton";
+            this.serverLocationsButton.ShowImage = true;
+            this.serverLocationsButton.ShowLabel = false;
+            this.serverLocationsButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.serverLocationsButton_Click);
+            // 
             // buttonDisconnect
             // 
-            this.buttonDisconnect.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.buttonDisconnect.Image = global::PowerPointAddIn.Properties.Resources.logout;
             resources.ApplyResources(this.buttonDisconnect, "buttonDisconnect");
             this.buttonDisconnect.Name = "buttonDisconnect";
@@ -220,11 +242,6 @@ namespace PowerPointAddIn
             resources.ApplyResources(this.version, "version");
             this.version.Name = "version";
             // 
-            // checkBoxShowTemplatePane
-            // 
-            resources.ApplyResources(this.checkBoxShowTemplatePane, "checkBoxShowTemplatePane");
-            this.checkBoxShowTemplatePane.Name = "checkBoxShowTemplatePane";
-            // 
             // buttonRefreshReport
             // 
             resources.ApplyResources(this.buttonRefreshReport, "buttonRefreshReport");
@@ -249,8 +266,11 @@ namespace PowerPointAddIn
             this.groupReporting.PerformLayout();
             this.groupSettings.ResumeLayout(false);
             this.groupSettings.PerformLayout();
+            this.box1.ResumeLayout(false);
+            this.box1.PerformLayout();
             this.groupVersion.ResumeLayout(false);
             this.groupVersion.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 
@@ -268,11 +288,13 @@ namespace PowerPointAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonUpdate;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel version;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupSettings;
-        internal Microsoft.Office.Tools.Ribbon.RibbonComboBox comboBoxServerLocation;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonPublish;
         internal Microsoft.Office.Tools.Ribbon.RibbonGallery galleryPublishAs;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonDisconnect;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonComboBox comboBoxServerLocation;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton serverLocationsButton;
     }
 
     partial class ThisRibbonCollection : Microsoft.Office.Tools.Ribbon.RibbonReadOnlyCollection

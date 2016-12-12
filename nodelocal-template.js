@@ -106,31 +106,6 @@ exports.config = {
 			}
 		}
     },
-	security: {
-		client: {
-			iframe: {
-				sandbox: {
-					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxed iframes
-					// By default, this levels are set to be the more secure for each level.
-					// This section allow you to relax this security but at your own risk
-					//  - allow-forms			Enables form submission
-					//  - allow-pointer-lock	Enables pointer APIs (for example pointer position)
-					//  - allow-popups			Enables popups
-					//  - allow-same-origin	Allows the iframe content to be treated as being from the same origin
-					//  - allow-scripts		Enables scripts
-					//  - allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
-					// Setting a level to null will disable the sandboxing of the iframe
-					// You can find more information on sanboxed iframes on http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/
-					// 
-					// low: null,
-					// medium: null,
-					// medium: "",
-					// medium: "allow-same-origin allow-forms allow-scripts",
-					// high: ""
-				}
-			}
-		}
-	},
 	system: {
 		// enables memwatch module
 		memwatch: false,
@@ -327,7 +302,7 @@ exports.config = {
 		// base URL of sage ID service - this one is staging, not prod
 		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
 		// absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
-		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
+		pfxFile: __dirname + "/test/auth/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 		devOpsEmail: 'SageERPX3DevOps@sage.com',
@@ -405,6 +380,11 @@ exports.config = {
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
         farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
     },
+    // mobile client's configuration 
+	mobileClientConfig: {
+		// http request default timeout in ms
+		httpTimeout: 600000
+	}
     // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
     // See section 4.1.2 in Sage ID Reference Documentation for further information
     // Also for OAuth2 redirection
@@ -416,12 +396,6 @@ exports.config = {
 		oauthCollection: 'oauth_redirects',         
 		apiHost: 'https://staging-api.sagex3.com'
 	},*/    
-
-    // mobile client's configuration 
-	mobileClientConfig: {
-		// http request default timeout in ms
-		httpTimeout: 600000
-	}
 };
 
 // for git enabled configurations one can override the standard config
