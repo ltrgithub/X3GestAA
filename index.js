@@ -11,7 +11,8 @@ var config = {};
 try {
 	config = require("./nodelocal").config || {};
 } catch (ex) {
-	console.error(ex);
+	console.error("Error in nodelocal.js: "+ex);
+	process.exit(6);	
 }
 if (config.streamlineFromCI) {
 	try {
@@ -108,9 +109,10 @@ if (/^[NWB]\d+$/.test(process.argv[2])) {
 
 //require('coffee-script/lib/coffee-script/extensions');
 
-require('syracuse-license').register(function(err, data) {
+require('@sage/syracuse-lib/src/license/index').register(function(err, data) {
 	if (err) console.log("" + err);
 	else if (!data) console.log("No license");
+	require('@sage/syracuse-lib/src/license/check');
 
 	// streamline is now registered with babel, at the very beginning
 	//require("streamline").register(config.streamline);

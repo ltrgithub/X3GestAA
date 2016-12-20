@@ -84,9 +84,9 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_GEODE_CRAINPRO",
-      "title": "title_2b379a60-d27f-4722-8578-a6d8d3acfdd7",
-      "description": "description_2b379a60-d27f-4722-8578-a6d8d3acfdd7",
+      "code": "STD_X3_GEODE_COLISQ",
+      "title": "title_f541c869-7034-4fb6-a82c-7d3629524e1d",
+      "description": "description_f541c869-7034-4fb6-a82c-7d3629524e1d",
       "linkType": "$request",
       "icon": "",
       "applicationMenu": false,
@@ -94,7 +94,204 @@
       "keyIsWhere": false,
       "target": "self",
       "$factory": true,
-      "requestName": "CRAINPRO",
+      "requestName": "COLIS",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JOUT"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_COL4",
+      "title": "title_1d5ac012-4358-4fd1-b265-180605fa2d35",
+      "description": "description_1d5ac012-4358-4fd1-b265-180605fa2d35",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "COL4",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JOUT"
+      },
+      "categories": [],
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_59eaa689-b726-49d0-a632-7ed986a5421a",
+          "prompt": false,
+          "value": "COL4"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_3da5ef82-2717-4759-87d2-ca1eed4d8b9d",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_INDSTO",
+      "title": "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be",
+      "description": "description_6aaaf528-7e44-43f6-9a43-8ea31037b5be",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "processName": "STO001B",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JSTK"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_INDREC",
+      "title": "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf",
+      "description": "description_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "processName": "REC004B",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JINP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_INDEXP",
+      "title": "title_f1acf73c-b42e-4217-9ffc-868c19904e83",
+      "description": "description_f1acf73c-b42e-4217-9ffc-868c19904e83",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "processName": "EXP004B",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JOUT"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_INDPREP",
+      "title": "title_eac972dc-1c9a-45a1-863e-32443e4e263a",
+      "description": "description_eac972dc-1c9a-45a1-863e-32443e4e263a",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "processName": "PIC011B",
+      "processMenu": "",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_JOUT"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_CRAQA",
+      "title": "title_202087b5-a426-4a7f-908e-8fc9e30bb599",
+      "description": "description_202087b5-a426-4a7f-908e-8fc9e30bb599",
+      "linkType": "$stats",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "statName": "CRAQA",
       "requestLevel": "1",
       "$factoryOwner": "SAGE",
       "application": {
@@ -109,7 +306,15 @@
         "code": "STD_X3_GEODE_MTDI"
       },
       "categories": [],
-      "parameters": []
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_8512bb5e-60ec-4073-b2ff-27342b8b5e12",
+          "prompt": false,
+          "value": "CRAQA"
+        }
+      ]
     },
     {
       "$type": "menuItem",
@@ -147,35 +352,6 @@
           "value": "COLIS"
         }
       ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_GEODE_COLISQ",
-      "title": "title_f541c869-7034-4fb6-a82c-7d3629524e1d",
-      "description": "description_f541c869-7034-4fb6-a82c-7d3629524e1d",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "requestName": "COLIS",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JOUT"
-      },
-      "categories": [],
-      "parameters": []
     },
     {
       "$type": "menuItem",
@@ -297,6 +473,35 @@
       },
       "module": {
         "code": "STD_X3_GEODE_JMSN"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_GEODE_CRAINPRO",
+      "title": "title_2b379a60-d27f-4722-8578-a6d8d3acfdd7",
+      "description": "description_2b379a60-d27f-4722-8578-a6d8d3acfdd7",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "$factory": true,
+      "requestName": "CRAINPRO",
+      "requestLevel": "1",
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "geode"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_GEODE_MTDI"
       },
       "categories": [],
       "parameters": []
@@ -547,50 +752,6 @@
           "$type": "menuItemParameter",
           "name": "cube",
           "title": "title_b8c6de78-a8c3-4e50-9ba3-5223d54dcc0d",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_GEODE_COL4",
-      "title": "title_1d5ac012-4358-4fd1-b265-180605fa2d35",
-      "description": "description_1d5ac012-4358-4fd1-b265-180605fa2d35",
-      "linkType": "$request",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "requestName": "COL4",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JOUT"
-      },
-      "categories": [],
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_59eaa689-b726-49d0-a632-7ed986a5421a",
-          "prompt": false,
-          "value": "COL4"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_3da5ef82-2717-4759-87d2-ca1eed4d8b9d",
           "prompt": false,
           "value": "false"
         }
@@ -1920,37 +2081,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_GEODE_INDSTO",
-      "title": "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be",
-      "description": "description_6aaaf528-7e44-43f6-9a43-8ea31037b5be",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "processName": "STO001B",
-      "processMenu": "",
-      "processLeg": "",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JSTK"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_GEODE_QUA",
       "title": "title_88f8444a-b587-46ae-afc4-a11b8ee658dc",
       "description": "description_88f8444a-b587-46ae-afc4-a11b8ee658dc",
@@ -2106,68 +2236,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_GEODE_INDREC",
-      "title": "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf",
-      "description": "description_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "processName": "REC004B",
-      "processMenu": "",
-      "processLeg": "",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JINP"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_GEODE_INDEXP",
-      "title": "title_f1acf73c-b42e-4217-9ffc-868c19904e83",
-      "description": "description_f1acf73c-b42e-4217-9ffc-868c19904e83",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "processName": "EXP004B",
-      "processMenu": "",
-      "processLeg": "",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JOUT"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_GEODE_DIS",
       "title": "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051",
       "description": "description_1c1b16fd-e064-4d65-b1d5-14cf633ba051",
@@ -2180,37 +2248,6 @@
       "$factory": true,
       "processName": "EXP001",
       "processMenu": "DIS",
-      "processLeg": "",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_JOUT"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_GEODE_INDPREP",
-      "title": "title_eac972dc-1c9a-45a1-863e-32443e4e263a",
-      "description": "description_eac972dc-1c9a-45a1-863e-32443e4e263a",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "processName": "PIC011B",
-      "processMenu": "",
       "processLeg": "",
       "requestLevel": "1",
       "$factoryOwner": "SAGE",
@@ -2582,43 +2619,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_GEODE_CRAQA",
-      "title": "title_202087b5-a426-4a7f-908e-8fc9e30bb599",
-      "description": "description_202087b5-a426-4a7f-908e-8fc9e30bb599",
-      "linkType": "$stats",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "keyIsWhere": false,
-      "target": "self",
-      "$factory": true,
-      "statName": "CRAQA",
-      "requestLevel": "1",
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "geode"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_GEODE_MTDI"
-      },
-      "categories": [],
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_8512bb5e-60ec-4073-b2ff-27342b8b5e12",
-          "prompt": false,
-          "value": "CRAQA"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_GEODE_DOHQA",
       "title": "title_a4bd5226-3398-4449-b478-71b5c56eeaec",
       "description": "description_a4bd5226-3398-4449-b478-71b5c56eeaec",
@@ -2739,6 +2739,13 @@
           "title": "title_ea5e4cb7-9264-452e-a66b-988e999f9eb9",
           "prompt": false,
           "value": "false"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_c3b7ae0f-c867-4876-9af6-129a9b6a8076",
+          "prompt": false,
+          "value": "true"
         }
       ]
     },
@@ -2790,6 +2797,13 @@
           "title": "title_bb351608-3272-4e69-8454-a2aeeff081c6",
           "prompt": false,
           "value": "false"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_876353d8-72cd-4b36-bba0-df58cb073ced",
+          "prompt": false,
+          "value": "true"
         }
       ]
     },
@@ -2841,6 +2855,13 @@
           "title": "title_4e0aaff4-2458-476e-ba4c-49d6d109559a",
           "prompt": false,
           "value": "false"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_dd31e097-e906-4259-8115-c0f6b17b923b",
+          "prompt": false,
+          "value": "true"
         }
       ]
     },
@@ -2892,6 +2913,13 @@
           "title": "title_40a32db6-5cb2-4ebb-b722-e0db4492d8fb",
           "prompt": false,
           "value": "false"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "forcedExecution",
+          "title": "title_feb69cb3-a177-4f06-bbed-4a71a91cf595",
+          "prompt": false,
+          "value": "true"
         }
       ]
     },
@@ -20979,24 +21007,31 @@
   ],
   "$localization": {
     "ar-sa": {},
-    "de-de": {},
+    "de-de": {
+      "title_726c270d-9434-4b44-a263-4ac527592994": "Speicherplatz X3"
+    },
     "en-gb": {},
     "en-us": {
       "title_104a88f0-6921-44ad-9b60-c5d220e7bbed": "Google",
       "title_5f3bf487-2040-47b2-9775-88fe571b7dac": "WMS Geode demo",
-      "title_2b379a60-d27f-4722-8578-a6d8d3acfdd7": "Appointments in progress",
+      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "Cancelled mvts",
+      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "Stock indicators",
+      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "Receipt indicators",
+      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "Shipment indicators",
+      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "Preparation indicators",
+      "title_202087b5-a426-4a7f-908e-8fc9e30bb599": "KPI Quality - Carrier Appointments",
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "Shipped parcels",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "Rounds",
       "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb": "Unavailable materials",
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Unavailable resources",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Resources in mission",
+      "title_2b379a60-d27f-4722-8578-a6d8d3acfdd7": "Appointments in progress",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "Stock Manager",
       "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "SL Portfolio",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "Assembling Portfolio",
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "Assembly mvts",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "DO line in Cdk requirement",
       "title_9f852974-36b0-4b96-8a51-d79fb8af00ea": "Reported parcels",
-      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "Cancelled mvts",
       "title_a97cca2c-28d8-4e21-850b-4e377c49eac4": "DI Portfolio",
       "title_993c64a4-1a6c-4ce0-a557-e78b761541be": "DO Portfolio",
       "title_58d01c8e-c7fb-4e41-a9eb-1d995213b919": "DO line in shortage",
@@ -21028,16 +21063,12 @@
       "title_498f8430-620e-445e-8683-72a66bd3697b": "Output mvts",
       "title_70dccdeb-1e26-4bc9-95f6-a6ac34275db7": "Delivery Orders",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "Administratives Receipts",
-      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "Stock indicators",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "Quality Manager",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Operating Manager",
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "Setup wizard",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Logistical Services",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "Reception Manager",
-      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "Receipt indicators",
-      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "Shipment indicators",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "Shipment Manager",
-      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "Preparation indicators",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "Picking Manager",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "Directive Missions",
       "title_660ef890-6533-4c76-87b4-be8db3618dec": "affected picking slots to replenish",
@@ -21050,7 +21081,6 @@
       "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e": "Delayed Appointment not arrived",
       "title_9f264f15-294c-407f-bed5-2d6e30b3b13d": "Shipment Appointments in progress",
       "title_3cbfa36e-12c4-4624-b8e9-50c271915bca": "Other Appointments in progress",
-      "title_202087b5-a426-4a7f-908e-8fc9e30bb599": "KPI Quality - Carrier Appointments",
       "title_a4bd5226-3398-4449-b478-71b5c56eeaec": "KPI Quality - Delivery Orders",
       "title_ccc7c013-e502-4476-9065-d4aca0c4b03b": "KPI Quality - Expected Inputs",
       "title_b93e7efc-9336-4adc-b621-505487e91f5c": "Calendar All carrier appointments",
@@ -21081,7 +21111,9 @@
       "title_d634e5bf-d846-4f9c-9997-3cf27365f903": "Repalletization",
       "description_d634e5bf-d846-4f9c-9997-3cf27365f903": "GESSHR",
       "title_125e6ef2-88e6-4760-997f-31ed8c525b6b": "FIFO Sequentiality management",
+      "description_125e6ef2-88e6-4760-997f-31ed8c525b6b": "ITMCLTFIF",
       "title_9267155f-88c8-4107-a8b1-9f96e5541deb": "Date Return follow-up",
+      "description_9267155f-88c8-4107-a8b1-9f96e5541deb": "ITMDVRFIF",
       "title_4f727f1e-752e-443a-b04f-e65014d8e05d": "Auto palletisation",
       "description_4f727f1e-752e-443a-b04f-e65014d8e05d": "PALAUT",
       "title_9f2f67af-12b2-4898-b2fd-4030023ef312": "Dock status",
@@ -22297,6 +22329,7 @@
       "title_83e98717-c5f6-4fb1-86d2-64173928ba39": "Geode source verif.",
       "description_83e98717-c5f6-4fb1-86d2-64173928ba39": "ZZVRF",
       "title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
+      "description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME",
       "title_ae9f7992-9fd7-410a-8f6a-b6e6431f4737": "Environment",
       "title_1e121a5a-3472-4c95-8e5a-4aa923d72b1e": "Operator code RTZ",
       "title_f2af5443-4b40-4938-b901-04d8c0b958cf": "Consumable input",
@@ -22323,6 +22356,11 @@
     "es-es": {
       "title_104a88f0-6921-44ad-9b60-c5d220e7bbed": "Google",
       "title_5f3bf487-2040-47b2-9775-88fe571b7dac": "STD_X3_GEODE_WWMS",
+      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "STD_X3_GEODE_COL4",
+      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "STD_X3_GEODE_INDSTO",
+      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "STD_X3_GEODE_INDREC",
+      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "STD_X3_GEODE_INDEXP",
+      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "STD_X3_GEODE_COLIS",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "STD_X3_GEODE_STATTN",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "STD_X3_GEODE_STO",
@@ -22331,7 +22369,6 @@
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "STD_X3_GEODE_CDKNEEDS",
       "title_9f852974-36b0-4b96-8a51-d79fb8af00ea": "STD_X3_GEODE_COL3",
-      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "STD_X3_GEODE_COL4",
       "title_a97cca2c-28d8-4e21-850b-4e377c49eac4": "STD_X3_GEODE_DIFOLLOW",
       "title_993c64a4-1a6c-4ce0-a557-e78b761541be": "STD_X3_GEODE_DOFOLLOW",
       "title_58d01c8e-c7fb-4e41-a9eb-1d995213b919": "STD_X3_GEODE_DOLSSH",
@@ -22363,16 +22400,12 @@
       "title_498f8430-620e-445e-8683-72a66bd3697b": "STD_X3_GEODE_STATMVTS",
       "title_70dccdeb-1e26-4bc9-95f6-a6ac34275db7": "STD_X3_GEODE_STATOL",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "STD_X3_GEODE_STATRA",
-      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "STD_X3_GEODE_INDSTO",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "STD_X3_GEODE_QUA",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "STD_X3_GEODE_ASP00",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "STD_X3_GEODE_REC",
-      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "STD_X3_GEODE_INDREC",
-      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "STD_X3_GEODE_INDEXP",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "STD_X3_GEODE_DIS",
-      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "STD_X3_GEODE_PICBIS",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "STD_X3_GEODE_PGEOMIPS",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Consersión ficheros monolínea",
@@ -22958,20 +22991,30 @@
       "title_d771bba1-35b0-404b-9135-537177e120cb": "Bloqueo dossier",
       "title_e559118c-9a7d-4a0c-aca2-0b1717962d48": "Símbolos bloqueados",
       "title_dd1fec55-ba64-4f1e-ac15-f12722e3098a": "Consulta sitio web",
+      "title_726c270d-9434-4b44-a263-4ac527592994": "Espacio de almacenamiento X3",
       "title_ae9f7992-9fd7-410a-8f6a-b6e6431f4737": "Entorno"
     },
     "fr-fr": {
       "title_104a88f0-6921-44ad-9b60-c5d220e7bbed": "Google",
       "title_5f3bf487-2040-47b2-9775-88fe571b7dac": "Démo WMS Geode",
-      "title_2b379a60-d27f-4722-8578-a6d8d3acfdd7": "RDV transporteurs en cours",
+      "title_f541c869-7034-4fb6-a82c-7d3629524e1d": "Colis non expédiés",
+      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "Mouvements  annulés",
+      "title_59eaa689-b726-49d0-a632-7ed986a5421a": "portview",
+      "title_3da5ef82-2717-4759-87d2-ca1eed4d8b9d": "cube",
+      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "Indicateurs Stocks",
+      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "Indicateurs Réceptions",
+      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "Indicateurs expédition",
+      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "Indicateurs préparation",
+      "title_202087b5-a426-4a7f-908e-8fc9e30bb599": "KPI Qualité - RDV transporteur",
+      "title_8512bb5e-60ec-4073-b2ff-27342b8b5e12": "portview",
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "Colis expédiés",
       "title_196e4434-784a-4371-a6f1-68d86ab786ca": "portview",
-      "title_f541c869-7034-4fb6-a82c-7d3629524e1d": "Colis non expédiés",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "Tournées d'expédition",
       "title_cce3b6fa-3765-4c62-a4ad-fa1ce66c50ed": "portview",
       "title_51d54a57-35a3-4a05-98ba-da52cbcc8edb": "Matériels indisponible",
       "title_7a7afd9b-797c-4f29-a683-fcafd874fb7f": "Ressources indisponible",
       "title_75759ac3-340e-4eaf-9894-60afa37529f2": "Ressources en mission",
+      "title_2b379a60-d27f-4722-8578-a6d8d3acfdd7": "RDV transporteurs en cours",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "Responsable Stockage",
       "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "Portefeuille LR",
       "title_21048430-9824-4a2d-b447-d3f7a8fa271e": "portview",
@@ -22988,9 +23031,6 @@
       "title_9f852974-36b0-4b96-8a51-d79fb8af00ea": "Colis reporté",
       "title_b466f984-5f2b-4092-9f69-49b3eff5057a": "portview",
       "title_b8c6de78-a8c3-4e50-9ba3-5223d54dcc0d": "cube",
-      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "Mouvements  annulés",
-      "title_59eaa689-b726-49d0-a632-7ed986a5421a": "portview",
-      "title_3da5ef82-2717-4759-87d2-ca1eed4d8b9d": "cube",
       "title_a97cca2c-28d8-4e21-850b-4e377c49eac4": "Portefeuille ED",
       "title_11b64073-d14d-4628-a86d-5b562266d416": "portview",
       "title_c3cad193-5765-446a-ad00-58640102eb7c": "cube",
@@ -23078,16 +23118,12 @@
       "title_604c4884-429a-4572-b9f2-adaeb46d2318": "portview",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "Receptions administratives",
       "title_6b1f750a-1fed-47f0-80ec-d712fcee37e6": "portview",
-      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "Indicateurs Stocks",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "Responsable Qualité",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Responsable Exploitation",
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "Assistant de paramètrage",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Prestations Logistiques",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "Responsable Réception",
-      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "Indicateurs Réceptions",
-      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "Indicateurs expédition",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "Responsable Expédition",
-      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "Indicateurs préparation",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "Responsable Préparations",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "Radio fréquence directive",
       "title_660ef890-6533-4c76-87b4-be8db3618dec": "Emplacements Picking affectés à réapprovisionner",
@@ -23100,8 +23136,6 @@
       "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e": "RDV transporteurs non arrivé en retard",
       "title_9f264f15-294c-407f-bed5-2d6e30b3b13d": "RDV transporteur Expédition en cours",
       "title_3cbfa36e-12c4-4624-b8e9-50c271915bca": "RDV Transporteur Autre en cours",
-      "title_202087b5-a426-4a7f-908e-8fc9e30bb599": "KPI Qualité - RDV transporteur",
-      "title_8512bb5e-60ec-4073-b2ff-27342b8b5e12": "portview",
       "title_a4bd5226-3398-4449-b478-71b5c56eeaec": "KPI Qualité - Ordre livraison",
       "title_3727441b-69c4-4734-b4ce-65952594b842": "portview",
       "title_ccc7c013-e502-4476-9065-d4aca0c4b03b": "KPI Qualité - Entrées Attendues",
@@ -23110,18 +23144,22 @@
       "title_ef48ff2d-7872-4198-8f7e-d63f551f278b": "portview",
       "title_d47a42da-878f-4ba2-ad0f-82c2caa795d8": "count",
       "title_ea5e4cb7-9264-452e-a66b-988e999f9eb9": "cube",
+      "title_c3b7ae0f-c867-4876-9af6-129a9b6a8076": "forcedExecution",
       "title_566fd723-da78-4a19-864b-d2ce4737aae5": "Calendrier RDV Réception",
       "title_e7baf132-6e99-4932-af8b-0a9ff8648c8d": "portview",
       "title_906764e6-7b00-47d1-91a4-e37669f8100c": "count",
       "title_bb351608-3272-4e69-8454-a2aeeff081c6": "cube",
+      "title_876353d8-72cd-4b36-bba0-df58cb073ced": "forcedExecution",
       "title_3a506fe5-c433-4b85-90a6-578e284dfcc5": "Calendrier RDV Expédition",
       "title_5e617b9b-2484-445e-8e7f-7006125d9bd9": "portview",
       "title_fda5e4e1-dea5-40b5-be7c-67c1b5c4f556": "count",
       "title_4e0aaff4-2458-476e-ba4c-49d6d109559a": "cube",
+      "title_dd31e097-e906-4259-8115-c0f6b17b923b": "forcedExecution",
       "title_9429e1c5-1f39-4bff-a71c-5f6008fd6f75": "Calendier RDV Autre",
       "title_16138e2b-41c6-4fb7-9240-6268a2af94b9": "portview",
       "title_dc8a7200-8a16-4e66-9faa-5ddbfdcd17f9": "count",
       "title_40a32db6-5cb2-4ebb-b722-e0db4492d8fb": "cube",
+      "title_feb69cb3-a177-4f06-bbed-4a71a91cf595": "forcedExecution",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Conversion fichiers mono-ligne",
       "title_38dbda5b-bed9-431a-85ad-6b1f2903a718": "Synchronisation des textes",
       "title_17bd8165-e439-4f1e-be56-ed03c8fce4df": "Maj colis transporteur",
@@ -23796,6 +23834,11 @@
     "it-it": {
       "title_104a88f0-6921-44ad-9b60-c5d220e7bbed": "Google",
       "title_5f3bf487-2040-47b2-9775-88fe571b7dac": "STD_X3_GEODE_WWMS",
+      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "STD_X3_GEODE_COL4",
+      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "STD_X3_GEODE_INDSTO",
+      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "STD_X3_GEODE_INDREC",
+      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "STD_X3_GEODE_INDEXP",
+      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "Colli spediti",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "Tragitti spedizione",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "Responsabile Magazzino",
@@ -23804,7 +23847,6 @@
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "Riga OC in fabb Cross Docking",
       "title_9f852974-36b0-4b96-8a51-d79fb8af00ea": "STD_X3_GEODE_COL3",
-      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "STD_X3_GEODE_COL4",
       "title_a97cca2c-28d8-4e21-850b-4e377c49eac4": "Portafoglio ED",
       "title_993c64a4-1a6c-4ce0-a557-e78b761541be": "Portafoglio OC",
       "title_58d01c8e-c7fb-4e41-a9eb-1d995213b919": "Righe OC in rottura",
@@ -23836,16 +23878,12 @@
       "title_498f8430-620e-445e-8683-72a66bd3697b": "Movimenti di uscita",
       "title_70dccdeb-1e26-4bc9-95f6-a6ac34275db7": "Ordini di consegna",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "Ricevimenti amministrativi",
-      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "STD_X3_GEODE_INDSTO",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "Responsabile Qualità",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "Responsabile Gestione",
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "Assistente parametrizzazione",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Prestazioni Logistiche",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "Responsabile Ricevimento",
-      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "STD_X3_GEODE_INDREC",
-      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "STD_X3_GEODE_INDEXP",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "Responsabile Spedizione",
-      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "Responsabile Preparazioni",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "RF direttiva",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "AIFIMPGENFIC",
@@ -24437,6 +24475,11 @@
     "pt-pt": {
       "title_104a88f0-6921-44ad-9b60-c5d220e7bbed": "Google",
       "title_5f3bf487-2040-47b2-9775-88fe571b7dac": "STD_X3_GEODE_WWMS",
+      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "STD_X3_GEODE_COL4",
+      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "STD_X3_GEODE_INDSTO",
+      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "STD_X3_GEODE_INDREC",
+      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "STD_X3_GEODE_INDEXP",
+      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_8625fc40-6474-424f-9ccd-6f311a80ae4a": "STD_X3_GEODE_COLIS",
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "STD_X3_GEODE_STATTN",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "STD_X3_GEODE_STO",
@@ -24445,7 +24488,6 @@
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "STD_X3_GEODE_CDKNEEDS",
       "title_9f852974-36b0-4b96-8a51-d79fb8af00ea": "STD_X3_GEODE_COL3",
-      "title_1d5ac012-4358-4fd1-b265-180605fa2d35": "STD_X3_GEODE_COL4",
       "title_a97cca2c-28d8-4e21-850b-4e377c49eac4": "STD_X3_GEODE_DIFOLLOW",
       "title_993c64a4-1a6c-4ce0-a557-e78b761541be": "STD_X3_GEODE_DOFOLLOW",
       "title_58d01c8e-c7fb-4e41-a9eb-1d995213b919": "STD_X3_GEODE_DOLSSH",
@@ -24477,16 +24519,12 @@
       "title_498f8430-620e-445e-8683-72a66bd3697b": "STD_X3_GEODE_STATMVTS",
       "title_70dccdeb-1e26-4bc9-95f6-a6ac34275db7": "STD_X3_GEODE_STATOL",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "STD_X3_GEODE_STATRA",
-      "title_6aaaf528-7e44-43f6-9a43-8ea31037b5be": "STD_X3_GEODE_INDSTO",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "STD_X3_GEODE_QUA",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "STD_X3_GEODE_ASP00",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "STD_X3_GEODE_REC",
-      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "STD_X3_GEODE_INDREC",
-      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "STD_X3_GEODE_INDEXP",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "STD_X3_GEODE_DIS",
-      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "STD_X3_GEODE_INDPREP",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "STD_X3_GEODE_PICBIS",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "STD_X3_GEODE_PGEOMIPS",
       "title_bf7610f1-1d0f-43e1-85f4-bf7d05f62eaf": "Conversão ficheiros mono-linha",
@@ -25072,10 +25110,14 @@
       "title_d771bba1-35b0-404b-9135-537177e120cb": "Bloqueio dossier",
       "title_e559118c-9a7d-4a0c-aca2-0b1717962d48": "Símbolos bloqueados",
       "title_dd1fec55-ba64-4f1e-ac15-f12722e3098a": "Visualização site web",
+      "title_726c270d-9434-4b44-a263-4ac527592994": "Espaço stocks X3",
       "title_ae9f7992-9fd7-410a-8f6a-b6e6431f4737": "Ambiente"
     },
     "ru-ru": {},
     "zh-cn": {
+      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "收货指标",
+      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "装运指标",
+      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "备货指标",
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "物料追踪",
       "title_26e4a131-c470-466c-abe5-bb87ea25cfed": "锁定的指令",
       "title_9b163547-ad13-4044-a279-37928d7b9c0c": "锁定的操作",
@@ -25086,10 +25128,7 @@
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "参数设置向导",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "物流服务",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "收货经理",
-      "title_7ce71e8b-aafe-431f-b077-4e0e0e4da7cf": "收货指标",
-      "title_f1acf73c-b42e-4217-9ffc-868c19904e83": "装运指标",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "运输经理",
-      "title_eac972dc-1c9a-45a1-863e-32443e4e263a": "备货指标",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "领料经理",
       "title_12434e0b-fe68-4b4b-9886-f53b91c789e1": "指令任务经理",
       "title_726c270d-9434-4b44-a263-4ac527592994": "X3存储空间"
