@@ -39,6 +39,18 @@ exports.config = {
 		nodeOptions:""
 	},
 	security: {
+		signIn: {
+			//== Enable / disable "remember me" feature. Default is true
+			//rememberMe: false,
+
+			//== Set autocomplete to "on" or "off" for login and/or password
+			//== The autocomplete behavior is browser specific and browser can prompt for saving password even if is set to off
+			//== Default is "on" if "remember me" is enable and "off" if it is disabled
+			// autoComplete: {
+			// 	login: true,
+			// 	password: true
+			// }
+		},
 		client: {
 			iframe: {
 				sandbox: {
