@@ -1,6 +1,6 @@
 {
 	"fileType": "Policy",
-	"generationStamp": "2016-10-21T10:06:19Z",
+	"generationStamp": "2017-01-02T11:04:14Z",
 	"partnerId": "",
 	"product": {
 		"code": "2",
@@ -456,9 +456,9 @@
 			"title": {
 				"fr-FR": "Dématérialisation",
 				"en-US": "Paperless document exchange",
-				"it-IT": "Paperless document exchange",
+				"it-IT": "Dematerializzazione",
 				"pt-PT": "Desmaterialização",
-				"es-ES": "Dematerialización"
+				"es-ES": "Intercambio electrónico"
 			},
 			"condition": "always"
 		}, {
@@ -666,7 +666,7 @@
 			"title": {
 				"fr-FR": "Localisation globale Sage ZA",
 				"en-US": "Global Sage ZA localization",
-				"it-IT": "Global Sage ZA localization",
+				"it-IT": "Localizzazione globale Sage ZA",
 				"pt-PT": "Localização Sage ZA global",
 				"es-ES": "Localización global Sage ZA"
 			},
@@ -738,7 +738,7 @@
 				"en-US": "Load analysis",
 				"it-IT": "Analisi di carico",
 				"pt-PT": "Análise de carga",
-				"es-ES": "Analisis de carga"
+				"es-ES": "Análisis de carga"
 			},
 			"condition": "license"
 		}, {
@@ -746,7 +746,7 @@
 			"title": {
 				"fr-FR": "Gestion multi-législations",
 				"en-US": "Multi-legislation management",
-				"it-IT": "Gestione mutli legislazioni",
+				"it-IT": "Gestione multi-legislazioni",
 				"pt-PT": "Gestão multi-legislação",
 				"es-ES": "Gestión multi-legislaciones"
 			},
@@ -836,7 +836,7 @@
 			"title": {
 				"fr-FR": "Colisage déclaratif",
 				"en-US": "Declared packing",
-				"it-IT": "Impacc.dichiarativo",
+				"it-IT": "Impacch.dichiarativo",
 				"pt-PT": "Packing declarativo",
 				"es-ES": "Declaración bultos"
 			},
@@ -855,7 +855,7 @@
 			"code": "PLZ",
 			"title": {
 				"fr-FR": "Colisage et palettisation",
-				"en-US": "Packing Palletization",
+				"en-US": "Packing and Palletization",
 				"it-IT": "Impacchettamento impedanamento",
 				"pt-PT": "Embalagem paletização",
 				"es-ES": "Bultos paletización"
@@ -1147,6 +1147,16 @@
 	],
 	"parameters": [
 		{
+			"code": "MAXSITE",
+			"title": {
+				"fr-FR": "Nombre de Sites",
+				"en-US": "Number of Sites",
+				"it-IT": "Number of Sites",
+				"pt-PT": "Number of Sites",
+				"es-ES": "Number of Sites"
+			},
+			"type": "integer"
+		}, {
 			"code": "MAXTERMINALRF",
 			"title": {
 				"fr-FR": "Nombre de Terminaux portables",
@@ -1198,6 +1208,6 @@
 			"type": "integer"
 		}
 	],
-	"signature": "498CodoFai3ZxzBiWem4EUZ5bFxHWIssdUkV514EwYX0s5eu1p22geKi2qF9F1RYS6mNXQJdQnvO7iGJfmzEFJT5vLg3Gcj24zS0X6cRNYrHcnOTACCbq6tIO2E/oaW+LI3u9ITZ47UYU0x4u1Ku0ZYzbTgrNIQ/j3e2inzdHRocvrQWCX3FXsJJ4eZMO3mvQPMLZC016lRiOQ4uglx00koJ4GK20ZDEEaOOD+fa5ozqbFyZiALMKpw8j4S/jOoSx7Ah0/Oj2QWPOfUYgMNzJYlVBgJabwZKL8FSvkihNG/aDmK078HUvvJ2f0lQdB+94AO31abgN/xfpAFfVV9XcOq/cyIjW3Nlbp4cajQjhSDN4PExJ+ewV6cRqiwZrn9qYUiqlLap3YVm8uMaelY3Vn+i3KF3ocGRt9zI+aGe5YwH/CuyttTpne9ryuKdkLGg66OvoURjR+kpMGRiDw2OZLdO2RX36w5goPiVzDROT565SXf6RvvsNKW484j6w5dnsFFYqB0DhthaaOyXENsHKwoKo6OnqrS6kTwKAyj83QQU7dBpwj678CXZtk4xFXQrKqTUd2XP5zLy7pXWNkGZKICyjVkOb+LRqlzOUUU+1q7V3gcw7NlQTQBwsQB6tALAQ5A9+UkX4fndxLwvjE0sN7DW0jaulGmUlhgl1Hnq4uk=",
+	"signature": "NNRZZaH+wVggyMT295t6YuQv1d+JyifVIxSsSmO/1OTU12p3pE2nAIH1tPhJEUs9SFCmcqZIDBgwR7rwCGk6wU113invbZ5khcipDZTy8C6tNy32w1tE7/weekEF8M05FkN5BhCteifBg9XFWn5AfnvNlFj8Cq2sGGErFaBEcp3ZplwZrztnGR7CgzShdks5QFYoRQB99zAjGZ57ZvYt0q/HY9wh6EaS9STPil3bigR0/166D181IfCykHzpKAoh5lU0DBMY/L2KR3CmukKoRx2G4+SVbSkGdgQMT/zvkawYH1WIfOrNyt0AL/j2yoFpWKtDiV3FZ6QmcWfM/6LRXKz6grUlb/aksckNhIBPf34XLpWvTSf9CchsKpfQQGVYeS7DrXxWSZpJSfBVMqXp0c+VkXGayy9PaM9IYtxSYAymDiCsasG7DZA2n2mZWpLyIbiJHLh14TOcEEl/YNW6vGE/4UBhon+cOH/AmOYMXPNzm+tctBXTv9ArCCTm28fp6RdbRuYGEL4jKXIOqnAliMs+xn3kMANaBeCrJ+nKPkwszP35CDppbaVOA3LMaX/u3toBQiI31ZeCnt2JWoxUyMGRvXD+8QF3DddI2PtH0i3JEQ6RWMbWU9DWg4Zh3u3gZ27scs4pyI54yIRv4IfGdin0EGgXocV1yi/QYE5QEwU=",
 	"signatureText": "SAGE SAS"
 }
