@@ -154,12 +154,22 @@ namespace ExcelAddIn
         Boolean _doRefreshAll = false;
         public void RefreshAll()
         {
-            if (!connected)
-                _connect("", true, Globals.ThisAddIn.Application.ActiveWorkbook);
+            String server = Globals.Ribbons.Ribbon.comboBoxServerLocation.Text;
+            resetWebBrowser(server);
+            _connect(server, true, Globals.ThisAddIn.Application.ActiveWorkbook);
 
             _doRefreshAll = true;
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
+        }
+
+        public void resetWebBrowser(String server)
+        {
+            if (webBrowser != null && webBrowser.Url.ToString().StartsWith(server) == false)
+            {
+                webBrowser.Dispose();
+                webBrowser = new System.Windows.Forms.WebBrowser();
+            }
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
