@@ -19477,6 +19477,60 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_CONSDSNB",
+      "title": "title_99c4e3c4-3e05-4407-a047-0b4929997240",
+      "description": "description_99c4e3c4-3e05-4407-a047-0b4929997240",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "CONSDSNB",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_CONSDSNN",
+      "title": "title_e78a792c-e2ee-4d00-a578-34a352b32949",
+      "description": "description_e78a792c-e2ee-4d00-a578-34a352b32949",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "CONSDSNN",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PAY"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESHRSDS",
       "title": "title_1ed77a2c-c9f3-4d6b-8d98-882180687ef5",
       "description": "description_1ed77a2c-c9f3-4d6b-8d98-882180687ef5",
@@ -20122,6 +20176,22 @@
                 {
                   "code": "STD_X3_HRM_TRTDSNCLO",
                   "$variantType": "menuItem"
+                },
+                {
+                  "$type": "menuSubblock",
+                  "$variantType": "menuBlock",
+                  "code": "c5e04e70-f085-4506-a78a-377cd1f56e73",
+                  "title": "title_c5e04e70-f085-4506-a78a-377cd1f56e73",
+                  "items": [
+                    {
+                      "code": "STD_X3_HRM_CONSDSNB",
+                      "$variantType": "menuItem"
+                    },
+                    {
+                      "code": "STD_X3_HRM_CONSDSNN",
+                      "$variantType": "menuItem"
+                    }
+                  ]
                 }
               ]
             }
@@ -29266,6 +29336,9 @@
       "description_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "TRTDSNSUP",
       "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "Declaration closing",
       "description_5081f007-b673-49c1-95b9-27f7d5fc22fe": "TRTDSNCLO",
+      "title_c5e04e70-f085-4506-a78a-377cd1f56e73": "Inquiries",
+      "title_99c4e3c4-3e05-4407-a047-0b4929997240": "Extracted payslips",
+      "title_e78a792c-e2ee-4d00-a578-34a352b32949": "Payslips not extracted",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799": "N4DS setup",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "AED",
@@ -31803,6 +31876,11 @@
       "title_a37929b9-6e19-447c-b5b4-d985d516513b": "Outils",
       "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "Suppression des déclarations",
       "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "Fermeture des déclarations",
+      "title_c5e04e70-f085-4506-a78a-377cd1f56e73": "Consultations",
+      "title_99c4e3c4-3e05-4407-a047-0b4929997240": "Bulletins extraits",
+      "description_99c4e3c4-3e05-4407-a047-0b4929997240": "CONSDSNB",
+      "title_e78a792c-e2ee-4d00-a578-34a352b32949": "Bulletins non extraits",
+      "description_e78a792c-e2ee-4d00-a578-34a352b32949": "CONSDSNN",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799": "Paramétrage N4DS",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "AED",
