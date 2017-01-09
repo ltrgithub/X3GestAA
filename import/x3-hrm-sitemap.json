@@ -20757,6 +20757,64 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRENT",
+      "title": "title_dcabfde0-1271-46c1-93d2-3134181acb45",
+      "description": "description_dcabfde0-1271-46c1-93d2-3134181acb45",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRENT",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRATS",
+      "title": "title_842f8cc9-baed-43bf-b3f3-81ab834092be",
+      "description": "description_842f8cc9-baed-43bf-b3f3-81ab834092be",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRATS",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_f8325c3a-db06-48bd-a4dc-436ce2a9a63d",
       "code": "STD_X3_HRM_ENTST",
@@ -20773,6 +20831,14 @@
         },
         {
           "code": "STD_X3_HRM_GESATS",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESHRENT",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESHRATS",
           "$variantType": "menuItem"
         }
       ]
@@ -39086,6 +39152,10 @@
       "description_8858d785-c740-429d-ac14-8a2fc79f0823": "GESENT",
       "title_24a8ea98-5704-4a77-8c35-501df5ae4b69": "Staff departures",
       "description_24a8ea98-5704-4a77-8c35-501df5ae4b69": "GESATS",
+      "title_dcabfde0-1271-46c1-93d2-3134181acb45": "Arrival of employees",
+      "description_dcabfde0-1271-46c1-93d2-3134181acb45": "GESHRENT",
+      "title_842f8cc9-baed-43bf-b3f3-81ab834092be": "Staff departures",
+      "description_842f8cc9-baed-43bf-b3f3-81ab834092be": "GESHRATS",
       "title_5d97cb44-f178-4520-bfa3-e388b72d1666": "Administrative documents",
       "title_54c94e46-fc1d-487e-9de6-20d620aaf8b0": "Documents generator",
       "title_95127f91-828f-42de-b3b6-09c3a662ac1c": "Documents formula",
@@ -41224,6 +41294,8 @@
       "description_8858d785-c740-429d-ac14-8a2fc79f0823": "GESENT",
       "title_24a8ea98-5704-4a77-8c35-501df5ae4b69": "Sorties de salariés",
       "description_24a8ea98-5704-4a77-8c35-501df5ae4b69": "GESATS",
+      "title_dcabfde0-1271-46c1-93d2-3134181acb45": "Entrées de salariés",
+      "title_842f8cc9-baed-43bf-b3f3-81ab834092be": "Sorties de salariés",
       "title_5d97cb44-f178-4520-bfa3-e388b72d1666": "Documents administratifs",
       "title_54c94e46-fc1d-487e-9de6-20d620aaf8b0": "Générateur de documents",
       "title_95127f91-828f-42de-b3b6-09c3a662ac1c": "Formules documents",
