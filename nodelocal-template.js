@@ -101,6 +101,21 @@ exports.config = {
 		}
 	},
 	security: {
+		signIn: {
+			rememberMe: {
+				//-- set the lifetime in number of days of the remember me token. Default is 28 (4 weeks).
+				//-- A value less or equal to 0 will disable the remember me feature
+				// lifetime: 0
+			},
+
+			//-- Set autocomplete to "on" or "off" for login and/or password
+			//-- The autocomplete behavior is browser specific and browser can prompt for saving password even if is set to off
+			//-- Default is "on" if "remember me" is enabled and "off" if it is disabled
+			// autoComplete: {
+			// 	login: true,
+			// 	password: true
+			// }
+		},
 		client: {
 			iframe: {
 				sandbox: {
