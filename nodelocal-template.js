@@ -85,28 +85,6 @@ exports.config = {
 			// "access-control-allow-origin": "*",
 			// "access-control-allow-headers": "authorization, content-type, soapaction, x-requested-with",
 		},
-		client: {
-			iframe: {
-				sandbox: {
-					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxing iframes
-					// By default, this levels are set to be the more secure for each level.
-					// This section allow you to relax this security but at your own risk
-					// allow-forms			Enables form submission
-					// allow-pointer-lock	Enables pointer APIs (for example pointer position)
-					// allow-popups			Enables popups
-					// allow-same-origin	Allows the iframe content to be treated as being from the same origin
-					// allow-scripts		Enables scripts
-					// allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
-					// low: null,
-					// medium: null,
-					// medium: "",
-					// medium: "allow-same-origin allow-forms allow-scripts",
-					// high: ""
-				}
-			}
-		}
-    },
-	security: {
 		signIn: {
 			rememberMe: {
 				//-- set the lifetime in number of days of the remember me token. Default is 28 (4 weeks).
