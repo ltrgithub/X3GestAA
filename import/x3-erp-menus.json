@@ -152,21 +152,21 @@
 		},
 		{
 			"$type": "menuCategory",
-			"code": "STD_ORDERS",
-			"description": "description_2836fd8d-47f8-4391-9641-073335050651",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
 			"$factory": true,
 			"$factoryOwner": "SAGE"
 		},
 		{
 			"$type": "menuItem",
-			"code": "STD_X3_ERP_SACH01",
-			"title": "title_5f1c8e06-57e9-4526-a7d0-500c51042b55",
+			"code": "STD_X3_ERP_SACH18",
+			"title": "title_739a185d-7c52-44ad-9f13-e36313be6409",
 			"linkType": "$stats",
 			"applicationMenu": false,
 			"facet": "$query",
 			"target": "self",
 			"$factory": true,
-			"statName": "ACH01",
+			"statName": "ACH18",
 			"requestLevel": "99",
 			"$factoryOwner": "SAGE",
 			"application": {
@@ -182,16 +182,16 @@
 			},
 			"categories": [
 				{
-					"code": "STD_ORDERS"
+					"code": "STD_COMDATA"
 				}
 			],
 			"parameters": [
 				{
 					"$type": "menuItemParameter",
 					"name": "portview",
-					"title": "title_48e1b0fe-5aa6-4cbd-8cfc-1c9cda757b7e",
+					"title": "title_12674881-4b94-4b5a-90c6-a7b487c6e4f7",
 					"prompt": false,
-					"value": "SACH01"
+					"value": "SACH18"
 				}
 			]
 		},
@@ -2716,110 +2716,6 @@
 		},
 		{
 			"$type": "menuCategory",
-			"code": "STD_TRANS",
-			"description": "description_b449d294-dbfe-479e-9693-f7b4438caf1d",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RCPT010",
-			"title": "title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "CPT010",
-			"requestLevel": "1",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_CPTA"
-			},
-			"categories": [
-				{
-					"code": "STD_TRANS"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_227e89b9-6d55-49a0-a60b-3a9804d3df3e",
-					"prompt": false,
-					"value": "RCPT010"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_5938659d-f980-46cb-b03c-a43981de9420",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_CRM",
-			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RCRM013",
-			"title": "title_f422a121-baf1-4ffa-9f42-6bdb378028fe",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "CRM013",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_CRM"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_ffd19649-d112-40e9-9a40-05d0e9a40c6a",
-					"prompt": false,
-					"value": "RCRM013"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_1ef48ed7-7344-498c-9f4f-b91fb42d48ff",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
 			"code": "STD_RECEIPTS",
 			"description": "description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b",
 			"$factory": true,
@@ -2827,15 +2723,15 @@
 		},
 		{
 			"$type": "menuItem",
-			"code": "STD_X3_ERP_NARACH033",
-			"title": "title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c",
-			"linkType": "$request",
+			"code": "STD_X3_ERP_SACH15",
+			"title": "title_4b941224-ae58-4f3c-b223-2ca732906ede",
+			"linkType": "$stats",
 			"applicationMenu": false,
 			"facet": "$query",
 			"target": "self",
 			"$factory": true,
-			"requestName": "NAACH033",
-			"requestLevel": "2",
+			"statName": "ACH15",
+			"requestLevel": "99",
 			"$factoryOwner": "SAGE",
 			"application": {
 				"application": "x3",
@@ -2857,321 +2753,9 @@
 				{
 					"$type": "menuItemParameter",
 					"name": "portview",
-					"title": "title_f400acfe-d2b4-462a-b4b7-1fa2afc1d3c0",
+					"title": "title_9d77bc08-17a5-4588-a1d6-63117c8f6c1b",
 					"prompt": false,
-					"value": "NARACH033"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_dbf0d4a1-7fcf-498d-8880-f18ed6f066d5",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_RETURNS",
-			"description": "description_d50670da-8a82-4f82-b54a-6091996bc268",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN044",
-			"title": "title_5476736a-3398-4241-a3df-e9625b8d1cdd",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN044",
-			"requestLevel": "3",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_RETURNS"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_72da550e-b560-4bf6-9a79-3db4baf56833",
-					"prompt": false,
-					"value": "RVEN044"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_6f48cadf-75e3-49e0-9360-ee704b19421e",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_INVOICES",
-			"description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN051",
-			"title": "title_4b74fb74-b4c4-490b-845d-744d0849dfe6",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN051",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_INVOICES"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_568236b9-d905-4508-ae56-9e492cefe975",
-					"prompt": false,
-					"value": "RVEN051"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_b808fbff-4cd3-4b4d-87f2-98a9455ddadd",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_INVOICES",
-			"description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN052",
-			"title": "title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN052",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_INVOICES"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_70c0a104-c9b0-4fbc-9028-feaba92affad",
-					"prompt": false,
-					"value": "RVEN052"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_42e410cb-bc5a-49ce-91be-cb608156bf90",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_PRICES",
-			"description": "description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN059",
-			"title": "title_818e813d-e382-4611-843f-79f51c5ecdd5",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN059",
-			"requestLevel": "3",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_PRICES"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_e088cc8c-c389-4d84-8637-57f9e9ddd61e",
-					"prompt": false,
-					"value": "RVEN059"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_6196c9ae-f745-482a-affa-4421778ffa2d",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN060",
-			"title": "title_8f4a4118-88d1-4bfc-8092-73468967e77e",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN060",
-			"requestLevel": "3",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_3d3656b2-5383-4306-85e4-9b878d40e479",
-					"prompt": false,
-					"value": "RVEN060"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_9a2413e5-40bb-456e-bd50-ea282a19ca34",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_RETURNS",
-			"description": "description_d50670da-8a82-4f82-b54a-6091996bc268",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_SACH09",
-			"title": "title_123d8728-2c41-4c41-8bbf-27db00046ba8",
-			"linkType": "$stats",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"statName": "ACH09",
-			"requestLevel": "99",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MPUR"
-			},
-			"categories": [
-				{
-					"code": "STD_RETURNS"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_445e4247-4142-4ebf-af1b-795a227fa9a5",
-					"prompt": false,
-					"value": "SACH09"
+					"value": "SACH15"
 				}
 			]
 		},
@@ -3229,15 +2813,15 @@
 		},
 		{
 			"$type": "menuItem",
-			"code": "STD_X3_ERP_SACH15",
-			"title": "title_4b941224-ae58-4f3c-b223-2ca732906ede",
-			"linkType": "$stats",
+			"code": "STD_X3_ERP_NARACH033",
+			"title": "title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c",
+			"linkType": "$request",
 			"applicationMenu": false,
 			"facet": "$query",
 			"target": "self",
 			"$factory": true,
-			"statName": "ACH15",
-			"requestLevel": "99",
+			"requestName": "NAACH033",
+			"requestLevel": "2",
 			"$factoryOwner": "SAGE",
 			"application": {
 				"application": "x3",
@@ -3259,9 +2843,113 @@
 				{
 					"$type": "menuItemParameter",
 					"name": "portview",
-					"title": "title_9d77bc08-17a5-4588-a1d6-63117c8f6c1b",
+					"title": "title_f400acfe-d2b4-462a-b4b7-1fa2afc1d3c0",
 					"prompt": false,
-					"value": "SACH15"
+					"value": "NARACH033"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_dbf0d4a1-7fcf-498d-8880-f18ed6f066d5",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RGPA002",
+			"title": "title_38986895-6851-4397-8c2d-6e02106c0122",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "GPA002",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MMFG"
+			},
+			"categories": [
+				{
+					"code": "STD_COMDATA"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_e879f78f-d530-4650-925d-8e21d798bc0c",
+					"prompt": false,
+					"value": "RGPA002"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_2eeacf36-1356-4f38-b7db-994a9d68574a",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CRM",
+			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_SCRM02",
+			"title": "title_f1ac74a9-7edc-41b3-b439-1fe884da22b7",
+			"linkType": "$stats",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"statName": "CRM02",
+			"requestLevel": "99",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_CRM"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_2c79c497-8081-4ef9-80d4-3af729c99bbf",
+					"prompt": false,
+					"value": "SCRM02"
 				}
 			]
 		},
@@ -3312,6 +3000,96 @@
 		},
 		{
 			"$type": "menuCategory",
+			"code": "STD_RETURNS",
+			"description": "description_d50670da-8a82-4f82-b54a-6091996bc268",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_SACH09",
+			"title": "title_123d8728-2c41-4c41-8bbf-27db00046ba8",
+			"linkType": "$stats",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"statName": "ACH09",
+			"requestLevel": "99",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MPUR"
+			},
+			"categories": [
+				{
+					"code": "STD_RETURNS"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_445e4247-4142-4ebf-af1b-795a227fa9a5",
+					"prompt": false,
+					"value": "SACH09"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CRM",
+			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_SCRM03",
+			"title": "title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb",
+			"linkType": "$stats",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"statName": "CRM03",
+			"requestLevel": "99",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_CRM"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_5098c210-f35f-44ad-a717-a9a2a0e69741",
+					"prompt": false,
+					"value": "SCRM03"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
 			"code": "STD_INVOICES",
 			"description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
 			"$factory": true,
@@ -3352,51 +3130,6 @@
 					"title": "title_7c347191-2575-48f1-8778-02d75020cee1",
 					"prompt": false,
 					"value": "SACH17"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_SACH18",
-			"title": "title_739a185d-7c52-44ad-9f13-e36313be6409",
-			"linkType": "$stats",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"statName": "ACH18",
-			"requestLevel": "99",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MPUR"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_12674881-4b94-4b5a-90c6-a7b487c6e4f7",
-					"prompt": false,
-					"value": "SACH18"
 				}
 			]
 		},
@@ -3487,96 +3220,6 @@
 					"title": "title_214ec944-3fc3-4319-b2e9-839c0286da35",
 					"prompt": false,
 					"value": "SCRM01"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_CRM",
-			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_SCRM02",
-			"title": "title_f1ac74a9-7edc-41b3-b439-1fe884da22b7",
-			"linkType": "$stats",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"statName": "CRM02",
-			"requestLevel": "99",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_CRM"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_2c79c497-8081-4ef9-80d4-3af729c99bbf",
-					"prompt": false,
-					"value": "SCRM02"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_CRM",
-			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_SCRM03",
-			"title": "title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb",
-			"linkType": "$stats",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"statName": "CRM03",
-			"requestLevel": "99",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_CRM"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_5098c210-f35f-44ad-a717-a9a2a0e69741",
-					"prompt": false,
-					"value": "SCRM03"
 				}
 			]
 		},
@@ -8799,266 +8442,6 @@
 		},
 		{
 			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RGPA002",
-			"title": "title_38986895-6851-4397-8c2d-6e02106c0122",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "GPA002",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MMFG"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_e879f78f-d530-4650-925d-8e21d798bc0c",
-					"prompt": false,
-					"value": "RGPA002"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_2eeacf36-1356-4f38-b7db-994a9d68574a",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RGPA003",
-			"title": "title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "GPA003",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MMFG"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_89108180-99b0-4b0b-b25d-4bf96f1f7c13",
-					"prompt": false,
-					"value": "RGPA003"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_3e05182e-8e41-4761-b424-36a027b8a9fe",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_STOCK",
-			"description": "description_f2c15d82-5022-4c3f-b802-06a4a53d0712",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RSTO001",
-			"title": "title_5bf1fa61-ec7b-4ade-844b-45fe7256611b",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "STO001",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSTO"
-			},
-			"categories": [
-				{
-					"code": "STD_STOCK"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_99a54d9b-2ae8-466a-8696-c371c806e6eb",
-					"prompt": false,
-					"value": "RSTO001"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_6964b9c2-8800-4382-9105-60e5ffede258",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_STOCK",
-			"description": "description_f2c15d82-5022-4c3f-b802-06a4a53d0712",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RSTO002",
-			"title": "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "STO002",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSTO"
-			},
-			"categories": [
-				{
-					"code": "STD_STOCK"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_4fab2371-78af-4585-a1fb-48bf2df47825",
-					"prompt": false,
-					"value": "RSTO002"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_945f71f5-8828-4af1-86dd-0f9357c745c6",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_STOCK",
-			"description": "description_f2c15d82-5022-4c3f-b802-06a4a53d0712",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RSTO012",
-			"title": "title_6b4e258f-5567-4a02-a5b7-b9c13ac37558",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "STO012",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSTO"
-			},
-			"categories": [
-				{
-					"code": "STD_STOCK"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_4a40d11f-1a96-4fe1-a017-3c51cbbebf43",
-					"prompt": false,
-					"value": "RSTO012"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_70593284-9613-43b2-a4f5-89c5a10dea2c",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
 			"code": "STD_ORDERS",
 			"description": "description_2836fd8d-47f8-4391-9641-073335050651",
 			"$factory": true,
@@ -9447,214 +8830,6 @@
 		},
 		{
 			"$type": "menuCategory",
-			"code": "STD_CONTRACTS",
-			"description": "description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RACH017",
-			"title": "title_e731d87f-3d82-47ef-a62e-fbe447349e30",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "ACH017",
-			"requestLevel": "4",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MPUR"
-			},
-			"categories": [
-				{
-					"code": "STD_CONTRACTS"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_e6b1ab3b-868b-4858-8240-4f03b12c24fe",
-					"prompt": false,
-					"value": "RACH017"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_ed7b7448-50de-4aea-934f-df3c80830cc4",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_ORDERS",
-			"description": "description_2836fd8d-47f8-4391-9641-073335050651",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RACH018",
-			"title": "title_cc9c1476-f60e-4601-acf1-0e471ec81e43",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "ACH018",
-			"requestLevel": "4",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MPUR"
-			},
-			"categories": [
-				{
-					"code": "STD_ORDERS"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_6c542876-63da-48e5-a20a-35c019a618db",
-					"prompt": false,
-					"value": "RACH018"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_31196c48-a10e-4048-b86e-fbe06de5cc5b",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_CRM",
-			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RCRM008",
-			"title": "title_13a03125-dfa9-445d-ae17-98b470fb8a08",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "CRM008",
-			"requestLevel": "1",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_CRM"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_e0cc81df-78c5-4ad8-8a32-5a441e0d82a4",
-					"prompt": false,
-					"value": "RCRM008"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_b16a421c-83f0-45ef-b1de-e3f6b28b74bb",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_CRM",
-			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RCRM011",
-			"title": "title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "CRM011",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_CRM"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_c9cde840-89d9-4a2a-b689-ca502d74ed0d",
-					"prompt": false,
-					"value": "RCRM011"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_6a662376-9e6b-4d6f-8fc7-4b2648e5b461",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
 			"code": "STD_CRM",
 			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
 			"$factory": true,
@@ -9811,214 +8986,6 @@
 		},
 		{
 			"$type": "menuCategory",
-			"code": "STD_CRM",
-			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RSAV009",
-			"title": "title_c26eb807-ec60-40a0-952b-fb6c5042d817",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "SAV009",
-			"requestLevel": "1",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MCRM"
-			},
-			"categories": [
-				{
-					"code": "STD_CRM"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_4855b3bd-2fd8-45b3-b9f5-d58e9e2da685",
-					"prompt": false,
-					"value": "RSAV009"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_7bf62591-432f-47d5-a2b6-bf5a52fb48dc",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_PURCH_INVOICE",
-			"description": "description_da974ae8-2026-481f-baf4-06b3e46ad027",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RTRS004",
-			"title": "title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "TRS004",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_GTRS"
-			},
-			"categories": [
-				{
-					"code": "STD_PURCH_INVOICE"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_1f3cf472-143a-4021-ac8b-525a91630782",
-					"prompt": false,
-					"value": "RTRS004"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_9adef9e4-7643-485f-9af4-65f166249c11",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_SALES_INVOICE",
-			"description": "description_214ea152-adda-4f2b-bc0e-520197c64ed5",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RTRS006",
-			"title": "title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "TRS006",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_GTRS"
-			},
-			"categories": [
-				{
-					"code": "STD_SALES_INVOICE"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_fbbb2418-d511-4edd-a2f9-a8148e250af5",
-					"prompt": false,
-					"value": "RTRS006"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_7dac982e-a55f-44f9-96b6-9a4c82228d00",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_CUST_TRK",
-			"description": "description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RTRS007",
-			"title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "TRS007",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_GTRS"
-			},
-			"categories": [
-				{
-					"code": "STD_CUST_TRK"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
-					"prompt": false,
-					"value": "RTRS007"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
 			"code": "STD_COMDATA",
 			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
 			"$factory": true,
@@ -10064,162 +9031,6 @@
 					"$type": "menuItemParameter",
 					"name": "cube",
 					"title": "title_886499ed-fb9c-4638-a2cc-3aedf9ec4375",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN011",
-			"title": "title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN011",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_727ebcb9-4319-413f-82ea-ca8f97b8dc91",
-					"prompt": false,
-					"value": "RVEN011"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_e0098ae3-375d-412e-aefb-3fc3ea6acc86",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN014",
-			"title": "title_d3a6e30f-6799-4161-86c5-ff99343ed023",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN014",
-			"requestLevel": "2",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_62a7cb15-efe7-4f27-9700-b48b6e4dee9c",
-					"prompt": false,
-					"value": "RVEN014"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_98682614-44b6-4836-a84a-41351ad20ecd",
-					"prompt": false,
-					"value": "false"
-				}
-			]
-		},
-		{
-			"$type": "menuCategory",
-			"code": "STD_COMDATA",
-			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
-			"$factory": true,
-			"$factoryOwner": "SAGE"
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_RVEN015",
-			"title": "title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86",
-			"linkType": "$request",
-			"applicationMenu": false,
-			"facet": "$query",
-			"target": "self",
-			"$factory": true,
-			"requestName": "VEN015",
-			"requestLevel": "3",
-			"$factoryOwner": "SAGE",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"endpoint": null,
-			"representationRef": {
-				"$type": "representationProxy"
-			},
-			"module": {
-				"code": "STD_X3_ERP_MSAL"
-			},
-			"categories": [
-				{
-					"code": "STD_COMDATA"
-				}
-			],
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "portview",
-					"title": "title_e619b218-6855-45ff-b17e-d123a82417ff",
-					"prompt": false,
-					"value": "RVEN015"
-				},
-				{
-					"$type": "menuItemParameter",
-					"name": "cube",
-					"title": "title_adced841-5b5f-4642-bc0b-5f1eb94828c2",
 					"prompt": false,
 					"value": "false"
 				}
@@ -18113,6 +16924,1195 @@
 		},
 		{
 			"$type": "menuCategory",
+			"code": "STD_ORDERS",
+			"description": "description_2836fd8d-47f8-4391-9641-073335050651",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_SACH01",
+			"title": "title_5f1c8e06-57e9-4526-a7d0-500c51042b55",
+			"linkType": "$stats",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"statName": "ACH01",
+			"requestLevel": "99",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MPUR"
+			},
+			"categories": [
+				{
+					"code": "STD_ORDERS"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_48e1b0fe-5aa6-4cbd-8cfc-1c9cda757b7e",
+					"prompt": false,
+					"value": "SACH01"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_TRANS",
+			"description": "description_b449d294-dbfe-479e-9693-f7b4438caf1d",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RCPT010",
+			"title": "title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "CPT010",
+			"requestLevel": "1",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_CPTA"
+			},
+			"categories": [
+				{
+					"code": "STD_TRANS"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_227e89b9-6d55-49a0-a60b-3a9804d3df3e",
+					"prompt": false,
+					"value": "RCPT010"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_5938659d-f980-46cb-b03c-a43981de9420",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CRM",
+			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RCRM013",
+			"title": "title_f422a121-baf1-4ffa-9f42-6bdb378028fe",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "CRM013",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_CRM"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_ffd19649-d112-40e9-9a40-05d0e9a40c6a",
+					"prompt": false,
+					"value": "RCRM013"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_1ef48ed7-7344-498c-9f4f-b91fb42d48ff",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_RETURNS",
+			"description": "description_d50670da-8a82-4f82-b54a-6091996bc268",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN044",
+			"title": "title_5476736a-3398-4241-a3df-e9625b8d1cdd",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN044",
+			"requestLevel": "3",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_RETURNS"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_72da550e-b560-4bf6-9a79-3db4baf56833",
+					"prompt": false,
+					"value": "RVEN044"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_6f48cadf-75e3-49e0-9360-ee704b19421e",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_INVOICES",
+			"description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN051",
+			"title": "title_4b74fb74-b4c4-490b-845d-744d0849dfe6",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN051",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_INVOICES"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_568236b9-d905-4508-ae56-9e492cefe975",
+					"prompt": false,
+					"value": "RVEN051"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_b808fbff-4cd3-4b4d-87f2-98a9455ddadd",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_INVOICES",
+			"description": "description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN052",
+			"title": "title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN052",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_INVOICES"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_70c0a104-c9b0-4fbc-9028-feaba92affad",
+					"prompt": false,
+					"value": "RVEN052"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_42e410cb-bc5a-49ce-91be-cb608156bf90",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_PRICES",
+			"description": "description_62759c23-ed8c-4bc1-9a79-6e4e4ef16ead",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN059",
+			"title": "title_818e813d-e382-4611-843f-79f51c5ecdd5",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN059",
+			"requestLevel": "3",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_PRICES"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_e088cc8c-c389-4d84-8637-57f9e9ddd61e",
+					"prompt": false,
+					"value": "RVEN059"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_6196c9ae-f745-482a-affa-4421778ffa2d",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN060",
+			"title": "title_8f4a4118-88d1-4bfc-8092-73468967e77e",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN060",
+			"requestLevel": "3",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_COMDATA"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_3d3656b2-5383-4306-85e4-9b878d40e479",
+					"prompt": false,
+					"value": "RVEN060"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_9a2413e5-40bb-456e-bd50-ea282a19ca34",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RGPA003",
+			"title": "title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "GPA003",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MMFG"
+			},
+			"categories": [
+				{
+					"code": "STD_COMDATA"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_89108180-99b0-4b0b-b25d-4bf96f1f7c13",
+					"prompt": false,
+					"value": "RGPA003"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_3e05182e-8e41-4761-b424-36a027b8a9fe",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_STOCK",
+			"description": "description_f2c15d82-5022-4c3f-b802-06a4a53d0712",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RSTO001",
+			"title": "title_5bf1fa61-ec7b-4ade-844b-45fe7256611b",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "STO001",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSTO"
+			},
+			"categories": [
+				{
+					"code": "STD_STOCK"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_99a54d9b-2ae8-466a-8696-c371c806e6eb",
+					"prompt": false,
+					"value": "RSTO001"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_6964b9c2-8800-4382-9105-60e5ffede258",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_STOCK",
+			"description": "description_f2c15d82-5022-4c3f-b802-06a4a53d0712",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RSTO002",
+			"title": "title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "STO002",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSTO"
+			},
+			"categories": [
+				{
+					"code": "STD_STOCK"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_4fab2371-78af-4585-a1fb-48bf2df47825",
+					"prompt": false,
+					"value": "RSTO002"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_945f71f5-8828-4af1-86dd-0f9357c745c6",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_STOCK",
+			"description": "description_f2c15d82-5022-4c3f-b802-06a4a53d0712",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RSTO012",
+			"title": "title_6b4e258f-5567-4a02-a5b7-b9c13ac37558",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "STO012",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSTO"
+			},
+			"categories": [
+				{
+					"code": "STD_STOCK"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_4a40d11f-1a96-4fe1-a017-3c51cbbebf43",
+					"prompt": false,
+					"value": "RSTO012"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_70593284-9613-43b2-a4f5-89c5a10dea2c",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CONTRACTS",
+			"description": "description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RACH017",
+			"title": "title_e731d87f-3d82-47ef-a62e-fbe447349e30",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "ACH017",
+			"requestLevel": "4",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MPUR"
+			},
+			"categories": [
+				{
+					"code": "STD_CONTRACTS"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_e6b1ab3b-868b-4858-8240-4f03b12c24fe",
+					"prompt": false,
+					"value": "RACH017"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_ed7b7448-50de-4aea-934f-df3c80830cc4",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_ORDERS",
+			"description": "description_2836fd8d-47f8-4391-9641-073335050651",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RACH018",
+			"title": "title_cc9c1476-f60e-4601-acf1-0e471ec81e43",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "ACH018",
+			"requestLevel": "4",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MPUR"
+			},
+			"categories": [
+				{
+					"code": "STD_ORDERS"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_6c542876-63da-48e5-a20a-35c019a618db",
+					"prompt": false,
+					"value": "RACH018"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_31196c48-a10e-4048-b86e-fbe06de5cc5b",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CRM",
+			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RCRM008",
+			"title": "title_13a03125-dfa9-445d-ae17-98b470fb8a08",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "CRM008",
+			"requestLevel": "1",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_CRM"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_e0cc81df-78c5-4ad8-8a32-5a441e0d82a4",
+					"prompt": false,
+					"value": "RCRM008"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_b16a421c-83f0-45ef-b1de-e3f6b28b74bb",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CRM",
+			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RCRM011",
+			"title": "title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "CRM011",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_CRM"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_c9cde840-89d9-4a2a-b689-ca502d74ed0d",
+					"prompt": false,
+					"value": "RCRM011"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_6a662376-9e6b-4d6f-8fc7-4b2648e5b461",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CRM",
+			"description": "description_95912433-83de-4cf1-ad60-205a5ab66cdf",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RSAV009",
+			"title": "title_c26eb807-ec60-40a0-952b-fb6c5042d817",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "SAV009",
+			"requestLevel": "1",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MCRM"
+			},
+			"categories": [
+				{
+					"code": "STD_CRM"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_4855b3bd-2fd8-45b3-b9f5-d58e9e2da685",
+					"prompt": false,
+					"value": "RSAV009"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_7bf62591-432f-47d5-a2b6-bf5a52fb48dc",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_PURCH_INVOICE",
+			"description": "description_da974ae8-2026-481f-baf4-06b3e46ad027",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RTRS004",
+			"title": "title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "TRS004",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_GTRS"
+			},
+			"categories": [
+				{
+					"code": "STD_PURCH_INVOICE"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_1f3cf472-143a-4021-ac8b-525a91630782",
+					"prompt": false,
+					"value": "RTRS004"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_9adef9e4-7643-485f-9af4-65f166249c11",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_SALES_INVOICE",
+			"description": "description_214ea152-adda-4f2b-bc0e-520197c64ed5",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RTRS006",
+			"title": "title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "TRS006",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_GTRS"
+			},
+			"categories": [
+				{
+					"code": "STD_SALES_INVOICE"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_fbbb2418-d511-4edd-a2f9-a8148e250af5",
+					"prompt": false,
+					"value": "RTRS006"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_7dac982e-a55f-44f9-96b6-9a4c82228d00",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_CUST_TRK",
+			"description": "description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RTRS007",
+			"title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "TRS007",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_GTRS"
+			},
+			"categories": [
+				{
+					"code": "STD_CUST_TRK"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
+					"prompt": false,
+					"value": "RTRS007"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN011",
+			"title": "title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN011",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_COMDATA"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_727ebcb9-4319-413f-82ea-ca8f97b8dc91",
+					"prompt": false,
+					"value": "RVEN011"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_e0098ae3-375d-412e-aefb-3fc3ea6acc86",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN014",
+			"title": "title_d3a6e30f-6799-4161-86c5-ff99343ed023",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN014",
+			"requestLevel": "2",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_COMDATA"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_62a7cb15-efe7-4f27-9700-b48b6e4dee9c",
+					"prompt": false,
+					"value": "RVEN014"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_98682614-44b6-4836-a84a-41351ad20ecd",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
+			"code": "STD_COMDATA",
+			"description": "description_8c2835f5-714f-4429-a941-f9ef03d14601",
+			"$factory": true,
+			"$factoryOwner": "SAGE"
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_RVEN015",
+			"title": "title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86",
+			"linkType": "$request",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"$factory": true,
+			"requestName": "VEN015",
+			"requestLevel": "3",
+			"$factoryOwner": "SAGE",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy"
+			},
+			"module": {
+				"code": "STD_X3_ERP_MSAL"
+			},
+			"categories": [
+				{
+					"code": "STD_COMDATA"
+				}
+			],
+			"parameters": [
+				{
+					"$type": "menuItemParameter",
+					"name": "portview",
+					"title": "title_e619b218-6855-45ff-b17e-d123a82417ff",
+					"prompt": false,
+					"value": "RVEN015"
+				},
+				{
+					"$type": "menuItemParameter",
+					"name": "cube",
+					"title": "title_adced841-5b5f-4642-bc0b-5f1eb94828c2",
+					"prompt": false,
+					"value": "false"
+				}
+			]
+		},
+		{
+			"$type": "menuCategory",
 			"code": "STD_MVTS",
 			"description": "description_3c8d2b00-8e51-4d61-b3ea-65d99869c35f",
 			"$factory": true,
@@ -21510,7 +21510,8 @@
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "STD_X3_ERP_STO11_001",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "طلبيات",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "بيانات القاعدة",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "بلجيكا",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "معدات",
@@ -21521,7 +21522,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "STD_X3_ERP_TRS04_001",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "تابع التسويات",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "STD_X3_ERP_TCO10_001",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "بيانات القاعدة",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "STD_X3_ERP_TRS02_002",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "فواتير",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "STD_X3_ERP_TCO03_001",
@@ -21594,26 +21594,18 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "STD_X3_ERP_SVEN19",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "STD_X3_ERP_RACH019",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "مؤن بالإنتظار",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
-			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "إيصالات",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "STD_X3_ERP_SACH15",
+			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "إيصالات",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "STD_X3_ERP_SACH16",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "STD_X3_ERP_SACH19",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "STD_X3_ERP_SCRM01",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "STD_X3_ERP_SCRM04",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "STD_X3_ERP_SGPA01",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "الميزانية",
@@ -21729,11 +21721,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "STD_X3_ERP_RSAV008",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "STD_X3_ERP_TRS08_004",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "STD_X3_ERP_ACH04_003",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "STD_X3_ERP_GPA06_002",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "STD_X3_ERP_RACH005",
@@ -21744,24 +21731,10 @@
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "STD_X3_ERP_RACH015",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "STD_X3_ERP_RACH016",
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "عقود",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "STD_X3_ERP_RCRM012",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "STD_X3_ERP_RGPA007",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "فواتير الشراء",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "فواتير البيع",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "تابع الزبائن",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "STD_X3_ERP_RVEN017",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "STD_X3_ERP_RVEN018",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "STD_X3_ERP_RVEN019",
@@ -21812,6 +21785,7 @@
 			"title_6d0573c3-3b77-43bd-a39a-222db2a7a431": "STD_X3_ERP_RCRM010",
 			"title_f8871515-79b7-450a-a548-36921046d2f4": "STD_X3_ERP_RSTO008",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "STD_X3_ERP_VEN09_002",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "تابع الزبائن",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "STD_X3_ERP_VEN08_002",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "المندوبين",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "STD_X3_ERP_SIMM10",
@@ -21885,6 +21859,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "وثائق للحساب",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "STD_X3_ERP_RCPT006",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "STD_X3_ERP_RCPT007",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "مؤن بالإنتظار",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "STD_X3_ERP_RCPT008",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "STD_X3_ERP_RCPT009",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "STD_X3_ERP_RCPT012",
@@ -21930,6 +21905,31 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "STD_X3_ERP_RACH010",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "STD_X3_ERP_RACH011",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "STD_X3_ERP_RACH026",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "فواتير الشراء",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "فواتير البيع",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
@@ -21976,8 +21976,9 @@
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "Bestellung vorbereiten",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "Aufträge Einkauf",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Aufw. bestellte Artikeln/Lief.",
-			"title_48e1b0fe-5aa6-4cbd-8cfc-1c9cda757b7e": "portview",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Lieferantenperformance",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Stammdaten",
+			"title_12674881-4b94-4b5a-90c6-a7b487c6e4f7": "portview",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgien",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Verwalten von Sachanlagen",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "Ausstattungen",
@@ -21988,7 +21989,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "Lieferantenzahlung erstellen",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Zahlungsverfolgung",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "Spediteurverwaltung",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Stammdaten",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "Eingangsrechnungen",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Rechnung",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "Verwaltung Leistungsdaten",
@@ -22066,52 +22066,31 @@
 			"title_a5c2f882-9905-437f-afcc-64372c86266b": "portview",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Bestellungen in Verzug/Kunde",
 			"title_640479ec-ea44-4184-b9ae-9e32ca861ffc": "portview",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Lfd. Abgrenzung Eingangsrech.",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Rückst. / Abgrenz. ausstehend",
-			"title_227e89b9-6d55-49a0-a60b-3a9804d3df3e": "portview",
-			"title_5938659d-f980-46cb-b03c-a43981de9420": "cube",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Terminnachverfolgung / MA",
-			"title_ffd19649-d112-40e9-9a40-05d0e9a40c6a": "portview",
-			"title_1ef48ed7-7344-498c-9f4f-b91fb42d48ff": "cube",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Nicht faktur. Wareneingänge",
+			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Eingang Geschäftsabschluss",
 			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Wareneingänge",
-			"title_f400acfe-d2b4-462a-b4b7-1fa2afc1d3c0": "portview",
-			"title_dbf0d4a1-7fcf-498d-8880-f18ed6f066d5": "cube",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Retour/K mit erwart Gutschrift",
-			"title_72da550e-b560-4bf6-9a79-3db4baf56833": "portview",
-			"title_6f48cadf-75e3-49e0-9360-ee704b19421e": "cube",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Auszustellende Gutschr.",
-			"title_568236b9-d905-4508-ae56-9e492cefe975": "portview",
-			"title_b808fbff-4cd3-4b4d-87f2-98a9455ddadd": "cube",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Zu buchende Gutsch u Rechn",
-			"title_70c0a104-c9b0-4fbc-9028-feaba92affad": "portview",
-			"title_42e410cb-bc5a-49ce-91be-cb608156bf90": "cube",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarif T20:: Produktpreise n  K",
-			"title_e088cc8c-c389-4d84-8637-57f9e9ddd61e": "portview",
-			"title_6196c9ae-f745-482a-affa-4421778ffa2d": "cube",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "T20-Preis: Kundenpr. n Prod.",
-			"title_3d3656b2-5383-4306-85e4-9b878d40e479": "portview",
-			"title_9a2413e5-40bb-456e-bd50-ea282a19ca34": "cube",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Analyse der Retourengründe",
-			"title_445e4247-4142-4ebf-af1b-795a227fa9a5": "portview",
+			"title_9d77bc08-17a5-4588-a1d6-63117c8f6c1b": "portview",
 			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Auftr. aus Geschäftsabschl.",
 			"title_5a5c293b-9868-4249-83ae-3ccd5be647ff": "portview",
-			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Eingang Geschäftsabschluss",
-			"title_9d77bc08-17a5-4588-a1d6-63117c8f6c1b": "portview",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Nicht faktur. Wareneingänge",
+			"title_f400acfe-d2b4-462a-b4b7-1fa2afc1d3c0": "portview",
+			"title_dbf0d4a1-7fcf-498d-8880-f18ed6f066d5": "cube",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "Artikel ohne Artikel-Standort",
+			"title_e879f78f-d530-4650-925d-8e21d798bc0c": "portview",
+			"title_2eeacf36-1356-4f38-b7db-994a9d68574a": "cube",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Anrufhistorie / Vertreter",
+			"title_2c79c497-8081-4ef9-80d4-3af729c99bbf": "portview",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "Rechn. aus Geschäftsabschl.",
 			"title_deab86ef-f911-4afc-8bc1-aeb6db48a392": "portview",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Analyse der Retourengründe",
+			"title_445e4247-4142-4ebf-af1b-795a227fa9a5": "portview",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Protokoll Aufgaben/Vertreter",
+			"title_5098c210-f35f-44ad-a717-a9a2a0e69741": "portview",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Erhaltener Rabattsatz",
 			"title_7c347191-2575-48f1-8778-02d75020cee1": "portview",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Lieferantenperformance",
-			"title_12674881-4b94-4b5a-90c6-a7b487c6e4f7": "portview",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "Retourenquote Einkauf",
 			"title_9a01b6ee-5cf2-489a-91ce-9e7b6e3f97d9": "portview",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "Protokoll Termine/Vertreter",
 			"title_214ec944-3fc3-4319-b2e9-839c0286da35": "portview",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Anrufhistorie / Vertreter",
-			"title_2c79c497-8081-4ef9-80d4-3af729c99bbf": "portview",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Protokoll Aufgaben/Vertreter",
-			"title_5098c210-f35f-44ad-a717-a9a2a0e69741": "portview",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "Serviceanfragen/Zuordnung",
 			"title_ed40a444-89c3-4a41-861a-ef80ed514d7d": "portview",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "Analyse Komponenten/Hauptartik",
@@ -22386,21 +22365,6 @@
 			"title_c3b7460f-a3ad-4df3-ab5f-de6d91829770": "portview",
 			"title_9014696a-66cf-4479-86bf-5ae1f0d33088": "cube",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "Sonstige Zahlungseingänge",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "Artikel ohne Artikel-Standort",
-			"title_e879f78f-d530-4650-925d-8e21d798bc0c": "portview",
-			"title_2eeacf36-1356-4f38-b7db-994a9d68574a": "cube",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Artikel ohne Artikel-Kosten",
-			"title_89108180-99b0-4b0b-b25d-4bf96f1f7c13": "portview",
-			"title_3e05182e-8e41-4761-b424-36a027b8a9fe": "cube",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Erwartete Tageswareneingänge",
-			"title_99a54d9b-2ae8-466a-8696-c371c806e6eb": "portview",
-			"title_6964b9c2-8800-4382-9105-60e5ffede258": "cube",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Erwartete Tageswarenauslief.",
-			"title_4fab2371-78af-4585-a1fb-48bf2df47825": "portview",
-			"title_945f71f5-8828-4af1-86dd-0f9357c745c6": "cube",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Zu verpack. Kommissioniersch.",
-			"title_4a40d11f-1a96-4fe1-a017-3c51cbbebf43": "portview",
-			"title_70593284-9613-43b2-a4f5-89c5a10dea2c": "cube",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "Lieferabruf",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "Komponenten- und Lastanalyse",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "Lieferanten / Kategorie",
@@ -22423,18 +22387,6 @@
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "Kontrakt",
 			"title_cc875998-2f1e-4e26-8b87-6469c1d33ecf": "portview",
 			"title_a29dcb62-2f5f-473d-9c40-6e75b2dce6a5": "cube",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Offene Aufträge / Lieferant",
-			"title_e6b1ab3b-868b-4858-8240-4f03b12c24fe": "portview",
-			"title_ed7b7448-50de-4aea-934f-df3c80830cc4": "cube",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Zu erhaltend. Best./Lieferant",
-			"title_6c542876-63da-48e5-a20a-35c019a618db": "portview",
-			"title_31196c48-a10e-4048-b86e-fbe06de5cc5b": "cube",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/Hauptvertreter",
-			"title_e0cc81df-78c5-4ad8-8a32-5a441e0d82a4": "portview",
-			"title_b16a421c-83f0-45ef-b1de-e3f6b28b74bb": "cube",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Aufgabennachverfolgung / MA",
-			"title_c9cde840-89d9-4a2a-b689-ca502d74ed0d": "portview",
-			"title_6a662376-9e6b-4d6f-8fc7-4b2648e5b461": "cube",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "Anrufnachverfolgung / MA",
 			"title_89d2d1da-3d6e-4b6b-bd48-0fb3a43e03dc": "portview",
 			"title_8a67cad2-c083-4b88-b866-227745442871": "cube",
@@ -22444,33 +22396,9 @@
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "Aufträge mit Fehlmengen",
 			"title_3d122ebe-56fe-4ce2-9a7f-8a042054f301": "portview",
 			"title_7fb56c68-14b9-4c62-a537-5f26d7b1c181": "cube",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Arbeitseinsatz/MA",
-			"title_4855b3bd-2fd8-45b3-b9f5-d58e9e2da685": "portview",
-			"title_7bf62591-432f-47d5-a2b6-bf5a52fb48dc": "cube",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Einkaufsrechnungen ni. gebucht",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Eingangsrechnung",
-			"title_1f3cf472-143a-4021-ac8b-525a91630782": "portview",
-			"title_9adef9e4-7643-485f-9af4-65f166249c11": "cube",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Verkaufsrechnung., ni. gebucht",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Ausgangsrechnung",
-			"title_fbbb2418-d511-4edd-a2f9-a8148e250af5": "portview",
-			"title_7dac982e-a55f-44f9-96b6-9a4c82228d00": "cube",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Fällige Kunden-OPs, in Verzug",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Kundenverwaltung",
-			"title_5404de1d-abb3-4f63-a647-bcfaf42a17df": "portview",
-			"title_e90e8483-1963-431c-af59-668c851ba9ba": "cube",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Inaktive Stücklisten",
 			"title_376e6e96-6d8f-4636-aa02-3b674c7c5a91": "portview",
 			"title_886499ed-fb9c-4638-a2cc-3aedf9ec4375": "cube",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Kunden / Hauptvertreter",
-			"title_727ebcb9-4319-413f-82ea-ca8f97b8dc91": "portview",
-			"title_e0098ae3-375d-412e-aefb-3fc3ea6acc86": "cube",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Interessenten / Sektor",
-			"title_62a7cb15-efe7-4f27-9700-b48b6e4dee9c": "portview",
-			"title_98682614-44b6-4836-a84a-41351ad20ecd": "cube",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Interessenten / Region",
-			"title_e619b218-6855-45ff-b17e-d123a82417ff": "portview",
-			"title_adced841-5b5f-4642-bc0b-5f1eb94828c2": "cube",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "Vertreter/Stand./Funkt.",
 			"title_c9cdbc77-1213-4668-ab94-3ab329884def": "portview",
 			"title_eccb5abd-49c8-41a6-a79e-5e139d2761a9": "cube",
@@ -22549,6 +22477,7 @@
 			"title_c1a5bfef-f030-43ef-8c02-069d18032571": "portview",
 			"title_18d6adab-26bb-4e21-b635-8f6e4f11cba8": "cube",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "Verfolgung Kundeninstallation",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Kundenverwaltung",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "Provisionsberechnung Vertreter",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "Vertreter",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "Anlagenabgang",
@@ -22740,6 +22669,7 @@
 			"title_f69c2666-19cf-4280-828c-b52655f1f3c7": "portview",
 			"title_3298318e-3caf-47e7-8cb5-42cf1994cfd7": "cube",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "Wareneing. bisher n. abgeschl.",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Rückst. / Abgrenz. ausstehend",
 			"title_739a7d5b-1b61-40d6-af69-4f0738543918": "portview",
 			"title_e865d4fd-18b6-4ff5-8148-f1e88748316c": "cube",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "Retouren bisher ni. abgeschl.",
@@ -22860,6 +22790,76 @@
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "Retournierte Artikel nach Lief",
 			"title_b92fc595-766a-44ff-990e-10c48a97ec8b": "portview",
 			"title_9ea3fd83-3765-46a3-84d7-5e19d738a2a1": "cube",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Aufw. bestellte Artikeln/Lief.",
+			"title_48e1b0fe-5aa6-4cbd-8cfc-1c9cda757b7e": "portview",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Lfd. Abgrenzung Eingangsrech.",
+			"title_227e89b9-6d55-49a0-a60b-3a9804d3df3e": "portview",
+			"title_5938659d-f980-46cb-b03c-a43981de9420": "cube",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Terminnachverfolgung / MA",
+			"title_ffd19649-d112-40e9-9a40-05d0e9a40c6a": "portview",
+			"title_1ef48ed7-7344-498c-9f4f-b91fb42d48ff": "cube",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Retour/K mit erwart Gutschrift",
+			"title_72da550e-b560-4bf6-9a79-3db4baf56833": "portview",
+			"title_6f48cadf-75e3-49e0-9360-ee704b19421e": "cube",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Auszustellende Gutschr.",
+			"title_568236b9-d905-4508-ae56-9e492cefe975": "portview",
+			"title_b808fbff-4cd3-4b4d-87f2-98a9455ddadd": "cube",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Zu buchende Gutsch u Rechn",
+			"title_70c0a104-c9b0-4fbc-9028-feaba92affad": "portview",
+			"title_42e410cb-bc5a-49ce-91be-cb608156bf90": "cube",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarif T20:: Produktpreise n  K",
+			"title_e088cc8c-c389-4d84-8637-57f9e9ddd61e": "portview",
+			"title_6196c9ae-f745-482a-affa-4421778ffa2d": "cube",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "T20-Preis: Kundenpr. n Prod.",
+			"title_3d3656b2-5383-4306-85e4-9b878d40e479": "portview",
+			"title_9a2413e5-40bb-456e-bd50-ea282a19ca34": "cube",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Artikel ohne Artikel-Kosten",
+			"title_89108180-99b0-4b0b-b25d-4bf96f1f7c13": "portview",
+			"title_3e05182e-8e41-4761-b424-36a027b8a9fe": "cube",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Erwartete Tageswareneingänge",
+			"title_99a54d9b-2ae8-466a-8696-c371c806e6eb": "portview",
+			"title_6964b9c2-8800-4382-9105-60e5ffede258": "cube",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Erwartete Tageswarenauslief.",
+			"title_4fab2371-78af-4585-a1fb-48bf2df47825": "portview",
+			"title_945f71f5-8828-4af1-86dd-0f9357c745c6": "cube",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Zu verpack. Kommissioniersch.",
+			"title_4a40d11f-1a96-4fe1-a017-3c51cbbebf43": "portview",
+			"title_70593284-9613-43b2-a4f5-89c5a10dea2c": "cube",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Offene Aufträge / Lieferant",
+			"title_e6b1ab3b-868b-4858-8240-4f03b12c24fe": "portview",
+			"title_ed7b7448-50de-4aea-934f-df3c80830cc4": "cube",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Zu erhaltend. Best./Lieferant",
+			"title_6c542876-63da-48e5-a20a-35c019a618db": "portview",
+			"title_31196c48-a10e-4048-b86e-fbe06de5cc5b": "cube",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/Hauptvertreter",
+			"title_e0cc81df-78c5-4ad8-8a32-5a441e0d82a4": "portview",
+			"title_b16a421c-83f0-45ef-b1de-e3f6b28b74bb": "cube",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Aufgabennachverfolgung / MA",
+			"title_c9cde840-89d9-4a2a-b689-ca502d74ed0d": "portview",
+			"title_6a662376-9e6b-4d6f-8fc7-4b2648e5b461": "cube",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Arbeitseinsatz/MA",
+			"title_4855b3bd-2fd8-45b3-b9f5-d58e9e2da685": "portview",
+			"title_7bf62591-432f-47d5-a2b6-bf5a52fb48dc": "cube",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Einkaufsrechnungen ni. gebucht",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Eingangsrechnung",
+			"title_1f3cf472-143a-4021-ac8b-525a91630782": "portview",
+			"title_9adef9e4-7643-485f-9af4-65f166249c11": "cube",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Verkaufsrechnung., ni. gebucht",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Ausgangsrechnung",
+			"title_fbbb2418-d511-4edd-a2f9-a8148e250af5": "portview",
+			"title_7dac982e-a55f-44f9-96b6-9a4c82228d00": "cube",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Fällige Kunden-OPs, in Verzug",
+			"title_5404de1d-abb3-4f63-a647-bcfaf42a17df": "portview",
+			"title_e90e8483-1963-431c-af59-668c851ba9ba": "cube",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Kunden / Hauptvertreter",
+			"title_727ebcb9-4319-413f-82ea-ca8f97b8dc91": "portview",
+			"title_e0098ae3-375d-412e-aefb-3fc3ea6acc86": "cube",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Interessenten / Sektor",
+			"title_62a7cb15-efe7-4f27-9700-b48b6e4dee9c": "portview",
+			"title_98682614-44b6-4836-a84a-41351ad20ecd": "cube",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Interessenten / Region",
+			"title_e619b218-6855-45ff-b17e-d123a82417ff": "portview",
+			"title_adced841-5b5f-4642-bc0b-5f1eb94828c2": "cube",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Überfällige Aufträge",
 			"title_617d1de8-d32d-4c53-ab20-7b47a8294091": "portview",
 			"title_47a28b46-2f44-4501-ac8f-59becaae4eca": "cube",
@@ -23044,7 +23044,7 @@
 			"title_9d60d37e-e5fc-4731-891b-2cd16768b238": "CRM Activities- Appointment",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "Prepare Orders",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Ordered Expenses Prdt/Suppl",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Supplier Performance",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgium",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Manage your physical equipment",
 			"title_c2aabe70-e54f-474b-97f1-85e16fc52ba7": "Others",
@@ -23113,25 +23113,17 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "Sales Delivery Projects",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Receivable orders/Supplier",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Late Orders / Customers",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Purchase Accruals in Process",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisions Pending",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Appointment tracking/employee",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Receipts not Invoiced",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Returns/Cust Pend Credit Memo",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Invoices & Cred. Memos to Decl",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Invoices & Cred. Memos to Post",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "T20 Prices: Prdt price/Cust",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "T20 Prices: Cust prices/Prdt",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Return Reasons Analysis",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Purchase Order Projects",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Purchase Receipt Projects",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Purchase Order Projects",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Receipts not Invoiced",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "Products without Product-Site",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Call History/Sales Rep",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "Purchase Invoice Projects",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Return Reasons Analysis",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Task Histry/Sales Rep",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Obtained Discount Rate",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Supplier Performance",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "Purchase return rates",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "Appointment History/Sales Rep",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Call History/Sales Rep",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Task Histry/Sales Rep",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "Services Requests / Allocation",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "Parent Prdt/Compon Blce Sheet",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "Balance Sheet",
@@ -23242,11 +23234,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "Services Requests / Employee",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "Late service requests",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "Cust Payments: Miscellaneous",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "Products without Product-Site",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Products without Product-Cost",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Pending Receipts of curr. day",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Pending Deliveries of curr day",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Picking notes to Pack",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "Supplier Delivery Request",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "Analyze components & expenses",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "Suppliers/Category",
@@ -23255,21 +23242,10 @@
 			"title_8bf3caae-9a2d-4f60-8d97-28676fd95531": "Supplier Quotes/RFQ",
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "Products without Suppliers",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Open Contracts/Product",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Open Contracts/Supplier",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Receivable orders/Product",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/Main Sales Rep",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Task tracking/employee",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "Call tracking/employee",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "BOMs under Development",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "Shortage Sales Orders",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Interventions / collaborator",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Unposted Purchase Invoices",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Unposted Sales Invoices",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Late Customer Open Items",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Inactive Sales BOMs",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Customers/Main Sales Rep",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects / Activity Sector",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Propects FR / Department",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "Sales Reps/Site/Function",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "Carriers without Prices",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "Carriers FR / Department",
@@ -23393,6 +23369,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "Documents to Post",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "Unposted batchs",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "Unclosed Receipts on curr. day",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisions Pending",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "Unclosed Returns on curr. day",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "Unclo. Deliveries on curr. day",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "Recurring Journal Tracking",
@@ -23438,6 +23415,29 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "Products/Suppliers",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "Suppliers/Products",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "Returned Products/Supplier",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Ordered Expenses Prdt/Suppl",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Purchase Accruals in Process",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Appointment tracking/employee",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Returns/Cust Pend Credit Memo",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Invoices & Cred. Memos to Decl",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Invoices & Cred. Memos to Post",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "T20 Prices: Prdt price/Cust",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "T20 Prices: Cust prices/Prdt",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Products without Product-Cost",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Pending Receipts of curr. day",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Pending Deliveries of curr day",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Picking notes to Pack",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Open Contracts/Supplier",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Receivable orders/Product",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/Main Sales Rep",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Task tracking/employee",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Interventions / collaborator",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Unposted Purchase Invoices",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Unposted Sales Invoices",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Late Customer Open Items",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Customers/Main Sales Rep",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects / Activity Sector",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Propects FR / Department",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Late WOs",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "Invoiced Expenses of curr. day",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "Orders Lines to Receipt Calend",
@@ -23583,7 +23583,8 @@
 			"description_40f0bd63-2063-4a72-97ef-d9d9282f789c": "WEB",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "Order Preparation",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "Orders",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Orders by Product Family",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Supplier Performance",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Common Data",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgium",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Manage Asset Location/Transfer",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "Facilities",
@@ -23594,7 +23595,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "Prepare Supplier Payments",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Payment Tracking",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "Manage Carriers",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Common Data",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "Purchase Invoices",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Invoices",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "Manage Technical Data",
@@ -23671,26 +23671,18 @@
 			"title_265523d7-b97f-4e33-97dc-b30023fa5d19": "cube",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Orders with Late Ship Date ",
 			"title_769dc275-6e2d-492d-b629-971a9a9f170a": "cube",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Purchase Accruals in Progress",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Transactions to Process",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Appointment tracking/employee",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Receipts not Invoiced",
-			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Receipts",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Returns Pending Credit Memo",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Invoices & Cred. Memos to Decl",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Unposted Invoices and Memos",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Product Prices / Customer",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Customer Prices / Product",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Returns by Reason",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Project Purchase Orders",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Purchase Receipt Projects",
+			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Receipts",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Project Purchase Orders",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Receipts not Invoiced",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "Products without Product Site",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Sales Rep Call History",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "Purchase Invoice Projects",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Returns by Reason",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Sales Rep Task History",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Purchase Inv with Discount",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Supplier Performance",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "Supplier Return Rate",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "Sales Rep Appt History",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Sales Rep Call History",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Sales Rep Task History",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "Service Requests by Allocation",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "Products Consumed in WO ",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "Production",
@@ -23806,11 +23798,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "Service Requests by Employee",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "Late Service Requests",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "Process Wire Transfers",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "Products without Product Site",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Products without Product Cost",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Late Purchase Receipts ",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Late Orders to be Shipped",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Unpacked Picking Tickets",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "Supplier Delivery Request",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "Analyze components & expenses",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "Supplier by Category",
@@ -23821,24 +23808,10 @@
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "Products without Suppliers",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Open Contracts/Product",
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "Contracts",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Open Contracts/Supplier",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Orders to Receive by Supplier",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads by Sales Rep",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Task tracking/employee",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "Call tracking/employee",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "BOMs In Development",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "SO's with Short Stock",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Interventions / collaborator",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Unposted Purchase Invoices",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Purchase Invoices",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Unposted Sales Invoices",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Sales Invoices",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Past Due Customer Open Items",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Customer Tracking",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Inactive Sales BOMs",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Customers by Primary Sales Rep",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects by Activity Sector",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospects by Department",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "Sales Reps/Site/Function",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "Carriers without Prices",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "Carriers by Department",
@@ -23891,6 +23864,7 @@
 			"title_6d0573c3-3b77-43bd-a39a-222db2a7a431": "Leads by Interest",
 			"title_f8871515-79b7-450a-a548-36921046d2f4": "WO's with Short Stock",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "Track Installed Base",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Customer Tracking",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "Commission Sales Reps",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "Sales reps",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "Asset issues",
@@ -23967,6 +23941,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "Unposted Documents",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "Unposted Batchs",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "Receipts not Invoiced",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Transactions to Process",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "Supplier Returns not Memo'd",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "Shipments not Invoiced",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "Recurring Journals",
@@ -24012,6 +23987,31 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "Product with Supplier",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "Supplier with Product",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "Validated Supplier Rtn Lines",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Orders by Product Family",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Purchase Accruals in Progress",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Appointment tracking/employee",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Returns Pending Credit Memo",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Invoices & Cred. Memos to Decl",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Unposted Invoices and Memos",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Product Prices / Customer",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Customer Prices / Product",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Products without Product Cost",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Late Purchase Receipts ",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Late Orders to be Shipped",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Unpacked Picking Tickets",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Open Contracts/Supplier",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Orders to Receive by Supplier",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads by Sales Rep",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Task tracking/employee",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Interventions / collaborator",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Unposted Purchase Invoices",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Purchase Invoices",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Unposted Sales Invoices",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Sales Invoices",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Past Due Customer Open Items",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Customers by Primary Sales Rep",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects by Activity Sector",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospects by Department",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Late WOs",
 			"description_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "Late WOs",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "Purchase Inv by Supplier",
@@ -24164,7 +24164,8 @@
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "Preparar los pedidos",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "Pedidos",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Gastos pedidos art./prov.",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Seguimiento del proveedor",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Datos base",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Bélgica",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Gestionar equipamiento físico",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "Equipamientos",
@@ -24175,7 +24176,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "Preparar pagos proveedores",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguimiento de pagos",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "Gestionar los transportistas",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Datos base",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "Facturas de recep/pedidos",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Facturas",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "Gestión de los datos técnicos",
@@ -24248,26 +24248,18 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "Proyectos entregas de ventas",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Pedidos a recibir/provee",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Pedidos retrasados/cliente",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Gast. Ant. en curso",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisiones en espera",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Seguimiento citas/colaborador",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Recepciones no facturadas",
-			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Recepciones",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Devoluciones/Cli ptes de abono",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Facturas y abonos a declarar",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Facturas y abonos a contab.",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarifa T20:art/prec cli",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Tarifa T20:Cli/prec art",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Análisis motivo devoluciones",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Proyectos pedidos de compras",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Proyectos recepciones compras",
+			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Recepciones",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Proyectos pedidos de compras",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Recepciones no facturadas",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "Artículos sin artículo/planta",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Histórico llamadas/representan",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "Proyectos facturas de compras",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Análisis motivo devoluciones",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Histórico tareas/representante",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Índice de descuento obtenido",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Seguimiento del proveedor",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "Índice devoluciones compras",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "Histórico citas/representante",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Histórico llamadas/representan",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Histórico tareas/representante",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "Solicitudes serv./afectación",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "Balance componente/compuesto",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "Balance",
@@ -24383,11 +24375,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "Solicitudes serv./colaborador",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "Solicitudes servicios retraso",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "Cobro cliente: Diversos",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "Artículos sin artículo/planta",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Artículos sin Artículo coste",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "En espera de recepción por dia",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "En espera de entrega por dia",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Nota de praparación a embalar",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "Solicitud entrega a proveedor",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "Análisis componentes",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "Proveedores / categoría",
@@ -24398,24 +24385,10 @@
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "Artículos sin proveedor",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Pedidos abiertos/artic",
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "Contratos",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Pedidos abiertos/provee",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Pedidos a recibir/artic.",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/representante principal",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Seguimiento tareas/colaborador",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "Seguim de llamadas/colaborador",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "Estructuras en elaboración",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "Pedidos de venta en ruptura",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Intervenciones / colaborador",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Fac.compra no contabilizadas",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Facturas de compra",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Fac.venta no contabilizadas",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Facturas de venta",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimientos clientes retraso",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Seguimiento clientes",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Estructuras com. inactivas",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Clientes/Repres. principal",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospectos/Sector Actividad",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospectos FR/ Código Postal",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "Repres/Planta/Función",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "Transportistas sin tarifas",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "Trans FR/ Código Postal",
@@ -24468,6 +24441,7 @@
 			"title_6d0573c3-3b77-43bd-a39a-222db2a7a431": "Leads / Interés",
 			"title_f8871515-79b7-450a-a548-36921046d2f4": "OF en ruptura",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "Seguimiento parque cliente",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Seguimiento clientes",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "Comisión del representante",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "Representantes",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "Bajas de activos",
@@ -24542,6 +24516,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "Documentos a contabilizar",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "Lotes no contabilizados",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "Recepciones n/saldadas de hoy",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisiones en espera",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "Devoluciones n/saldadas de hoy",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "Entr.no saldadas al día de hoy",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "Seguim. asientos periodicos",
@@ -24587,6 +24562,31 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "Artículos/proveedores",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "Proveedores / artículos",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "Artículos devueltos/proveedor",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Gastos pedidos art./prov.",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Gast. Ant. en curso",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Seguimiento citas/colaborador",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Devoluciones/Cli ptes de abono",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Facturas y abonos a declarar",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Facturas y abonos a contab.",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarifa T20:art/prec cli",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Tarifa T20:Cli/prec art",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Artículos sin Artículo coste",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "En espera de recepción por dia",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "En espera de entrega por dia",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Nota de praparación a embalar",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Pedidos abiertos/provee",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Pedidos a recibir/artic.",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads/representante principal",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Seguimiento tareas/colaborador",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Intervenciones / colaborador",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Fac.compra no contabilizadas",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Facturas de compra",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Fac.venta no contabilizadas",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Facturas de venta",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimientos clientes retraso",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Clientes/Repres. principal",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospectos/Sector Actividad",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospectos FR/ Código Postal",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "OF en retraso",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "Gastos facturados del día",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "Calendario lín.ped. a recepc.",
@@ -24733,7 +24733,8 @@
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "Baidu",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "Préparer les commandes",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "Commandes",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Dépenses commandées art./four",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Performance des fournisseurs",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Données de base",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgique",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Gérer vos équipements phys.",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "Equipements",
@@ -24744,7 +24745,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "Préparer règlements fournis.",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Suivi règlements",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "Gérer les transporteurs",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Données de base",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "Factures sur récept./comm.",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Factures",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "Gérer les données techniques",
@@ -24817,26 +24817,18 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "Affaires livraisons ventes",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Commandes à recevoir / fourn.",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Commandes en retard / client",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "CCA en cours",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisions en attente",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Suivi des RV / collaborateur",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Réceptions non facturées NA",
-			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Réceptions",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Retours / client attente avoir",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Factures et avoirs à déclarer",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Factures et avoirs à comptab.",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarif T20 : tarif art / client",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Tarif T20 : tarif clts/article",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Analyse motifs de retour",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Affaires commandes achats",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Affaires réceptions achats",
+			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Réceptions",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Affaires commandes achats",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "Réceptions non facturées NA",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "Articles sans article site",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Historique appels/représentant",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "Affaires factures achats",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Analyse motifs de retour",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Historique tâches/représentant",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "Taux de remise obtenu",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Performance des fournisseurs",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "Taux de retours achat",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "Historique RDV / représentant",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Historique appels/représentant",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Historique tâches/représentant",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "Demandes service/affectation",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "Bilan composé / composant",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "Bilan",
@@ -24952,11 +24944,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "Demandes service/collaborateur",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "Demandes service en retard",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "Règlt clients : Divers",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "Articles sans article site",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Articles sans article cout",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Attentes de réception du jour",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Attentes de livraison du jour",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Bons de préparation à coliser",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "Appel de livraison fournisseur",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "Analyser composants et charges",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "Fournisseurs / catégorie",
@@ -24967,24 +24954,10 @@
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "Articles sans fournisseurs",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Contrats ouverts / article",
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "Contrats",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Contrats ouverts / fournisseur",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Commandes à recevoir / article",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads / Représentant principal",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Suivi des tâches/collaborateur",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "Suivi des appels/collaborateur",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "Nomenclatures en élaboration",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "Commandes de vente en rupture",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Interventions / collaborateur",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Fact. achat non comptabilisées",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Factures d'achat",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Fact. vente non comptabilisées",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Factures de vente",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Echéances clients en retard",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Suivi clients",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Nomenclatures com. inactives",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Clients/représentant principal",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects / secteur activité",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospects FR / département",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "Représentants/site/fonction",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "Transporteurs sans tarifs",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "Transporteurs FR / département",
@@ -25037,6 +25010,7 @@
 			"title_6d0573c3-3b77-43bd-a39a-222db2a7a431": "Leads / Intérêt",
 			"title_f8871515-79b7-450a-a548-36921046d2f4": "OF en rupture",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "Suivre le parc client",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Suivi clients",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "Commisionner les représentants",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "Représentants",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "Sorties d'actif",
@@ -25111,6 +25085,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "Documents à comptabiliser",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "Lots non comptabilisés",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "Récept.non soldées aujourd'hui",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisions en attente",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "Retours non soldés aujourd'hui",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "Livr. non soldées aujourd'hui",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "Suivi des abonnements",
@@ -25156,6 +25131,31 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "Articles / fournisseurs",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "Fournisseurs / articles",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "Articles retournés / fourn.",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Dépenses commandées art./four",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "CCA en cours",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Suivi des RV / collaborateur",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Retours / client attente avoir",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Factures et avoirs à déclarer",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Factures et avoirs à comptab.",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarif T20 : tarif art / client",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Tarif T20 : tarif clts/article",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Articles sans article cout",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Attentes de réception du jour",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Attentes de livraison du jour",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Bons de préparation à coliser",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Contrats ouverts / fournisseur",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Commandes à recevoir / article",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads / Représentant principal",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Suivi des tâches/collaborateur",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Interventions / collaborateur",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Fact. achat non comptabilisées",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Factures d'achat",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Fact. vente non comptabilisées",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Factures de vente",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Echéances clients en retard",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Clients/représentant principal",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects / secteur activité",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospects FR / département",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "OF en retard",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "Dépenses facturées du jour",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "Lignes comm. à récept.calendr.",
@@ -25308,7 +25308,7 @@
 			"title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "STD_X3_ERP_STO11_001",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgio",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
 			"title_c2aabe70-e54f-474b-97f1-85e16fc52ba7": "Altro",
@@ -25375,24 +25375,17 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "STD_X3_ERP_SVEN19",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "STD_X3_ERP_RACH019",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "STD_X3_ERP_SACH15",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "STD_X3_ERP_SACH16",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "STD_X3_ERP_SACH19",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "STD_X3_ERP_SCRM01",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "STD_X3_ERP_SCRM04",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "STD_X3_ERP_SGPA01",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "Balanço",
@@ -25502,11 +25495,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "STD_X3_ERP_RSAV008",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "STD_X3_ERP_TRS08_004",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "STD_X3_ERP_ACH04_003",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "STD_X3_ERP_GPA06_002",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "STD_X3_ERP_RACH005",
@@ -25515,21 +25503,10 @@
 			"title_8bf3caae-9a2d-4f60-8d97-28676fd95531": "STD_X3_ERP_RACH013",
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "STD_X3_ERP_RACH015",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "STD_X3_ERP_RACH016",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "STD_X3_ERP_RCRM012",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "STD_X3_ERP_RGPA007",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "STD_X3_ERP_RVEN017",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "STD_X3_ERP_RVEN018",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "STD_X3_ERP_RVEN019",
@@ -25697,6 +25674,29 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "STD_X3_ERP_RACH010",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "STD_X3_ERP_RACH011",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "STD_X3_ERP_RACH026",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
@@ -25838,7 +25838,7 @@
 			"title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "STD_X3_ERP_STO11_001",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Belgia",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
 			"title_c2aabe70-e54f-474b-97f1-85e16fc52ba7": "Inne",
@@ -25905,24 +25905,17 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "STD_X3_ERP_SVEN19",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "STD_X3_ERP_RACH019",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "STD_X3_ERP_SACH15",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "STD_X3_ERP_SACH16",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "STD_X3_ERP_SACH19",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "STD_X3_ERP_SCRM01",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "STD_X3_ERP_SCRM04",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "STD_X3_ERP_SGPA01",
 			"title_9c56655a-7d1b-4fe4-aad5-bc121ad1bad0": "STD_X3_ERP_SGPA02",
@@ -26031,11 +26024,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "STD_X3_ERP_RSAV008",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "STD_X3_ERP_TRS08_004",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "STD_X3_ERP_ACH04_003",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "STD_X3_ERP_GPA06_002",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "STD_X3_ERP_RACH005",
@@ -26044,21 +26032,10 @@
 			"title_8bf3caae-9a2d-4f60-8d97-28676fd95531": "STD_X3_ERP_RACH013",
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "STD_X3_ERP_RACH015",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "STD_X3_ERP_RACH016",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "STD_X3_ERP_RCRM012",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "STD_X3_ERP_RGPA007",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "STD_X3_ERP_RVEN017",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "STD_X3_ERP_RVEN018",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "STD_X3_ERP_RVEN019",
@@ -26226,6 +26203,29 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "STD_X3_ERP_RACH010",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "STD_X3_ERP_RACH011",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "STD_X3_ERP_RACH026",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
@@ -26369,7 +26369,8 @@
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "Preparação encomendas",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "Encomendas",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Desp. Encom. Art./Forn.",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Performance fornecedores",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Dados de base",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "belgica",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "Gestão física equipamento",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "Equipamentos",
@@ -26380,7 +26381,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "Prep. Pagamentos fornecedores",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "Seguim. Pagamentos",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "Gestão transportadores",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "Dados de base",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "Facturas Recep./encomenda",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Facturas",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "Gestão dados técnicos",
@@ -26453,26 +26453,18 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "Projectos exped. vendas",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "Encomendas a receber / fornec.",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Encomendas em atraso / cliente",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Diferimentos compras em curso",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisões em espera",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Seguim.Reuniões / colaborador",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
-			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Recepções",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Devol. /Clientes a aguardar NC",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Facturas e NC a declarar",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Facturas & NC a contabil.",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarifa T20 : Art. / cliente",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Tarifa T20: preços Cli/Art.",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Análise motivos devolução",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Projectos encomendas compras",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "Projectos recpções compras",
+			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "Recepções",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "Projectos encomendas compras",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "Artigos sem registo artigo/Est",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Histórico chamadas / represent",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "Projectos facturas compras",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "Análise motivos devolução",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Histórico tarefas / representa",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "taxa desconto obtida",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "Performance fornecedores",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "Taxa de devolução de compras",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "Historico reuniões / represent",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "Histórico chamadas / represent",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "Histórico tarefas / representa",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "Pedidos serviço / alocação",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "balanço composto / componente",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "Balanço",
@@ -26588,11 +26580,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "Pedidos serviço / colaborador",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "Pedidos serviço em atraso",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "Pagam. Clientes: Diversos",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "Artigos sem registo artigo/Est",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Artigos sem artigos/custo",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Recep. em espera no dia hoje",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Expediç. em espera no dia hoje",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Listas de prepar. a embalar",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "Pedido Entrega Fornecedores",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "Análise componentes & despesas",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "Fornecedores / categoria",
@@ -26603,24 +26590,10 @@
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "Artigos sem fornecedores",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "Encomendas abertas / artigo",
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "Contratos",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Encomendas abertas / fornecedo",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Encomendas a receber / artigo",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads / Representante princ.",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Seguimento tarefas / empregado",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "Seguim.Chamadas/Colaborador",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "BOM's em elaboração",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "Encomendas de venda em ruptura",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Intervenções / colaborador",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Facturas compra não contab.",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Facturas compra",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Fact. vendas não contab.",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Facturas de venda",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimentos clientes em atraso",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Seguimento clientes",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "Nomenclat. Comerc. Inactivas",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Clientes / Repres. principal",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects / Sector Actividade",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospects FR / departamento",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "Repres. / Estab. / Função",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "Transportadores sem tarifas",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "Transp. FR / Departam.",
@@ -26673,6 +26646,7 @@
 			"title_6d0573c3-3b77-43bd-a39a-222db2a7a431": "Leads / Interesses",
 			"title_f8871515-79b7-450a-a548-36921046d2f4": "OF em ruptura",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "Seguir o parque cliente",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "Seguimento clientes",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "Comissão dos representantes",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "Representantes",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "Saída de bens",
@@ -26747,6 +26721,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "Documentos a contabilizar",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "Lotes não contabilizados",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "Recep. n/ saldadas à data hoje",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "Provisões em espera",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "Devol. n/ saldad. à data hoje",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "Exped. n/ saldad. à data hoje",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "Seguim. Assinaturas",
@@ -26792,6 +26767,31 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "Artigos / Fornecedores",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "Fornecedores / Artigos",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "Artigos devolvidos/fornecedor",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "Desp. Encom. Art./Forn.",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "Diferimentos compras em curso",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "Seguim.Reuniões / colaborador",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "Devol. /Clientes a aguardar NC",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "Facturas e NC a declarar",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "Facturas & NC a contabil.",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "Tarifa T20 : Art. / cliente",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "Tarifa T20: preços Cli/Art.",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "Artigos sem artigos/custo",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "Recep. em espera no dia hoje",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "Expediç. em espera no dia hoje",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "Listas de prepar. a embalar",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "Encomendas abertas / fornecedo",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "Encomendas a receber / artigo",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "Leads / Representante princ.",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "Seguimento tarefas / empregado",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "Intervenções / colaborador",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "Facturas compra não contab.",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "Facturas compra",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "Fact. vendas não contab.",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "Facturas de venda",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimentos clientes em atraso",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "Clientes / Repres. principal",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "Prospects / Sector Actividade",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "Prospects FR / departamento",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "OF's em atraso",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "Despesas facturadas dia hoje",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "Linhas enc. a recepc. Calendár",
@@ -26936,7 +26936,7 @@
 			"title_9d60d37e-e5fc-4731-891b-2cd16768b238": "STD_X3_ERP_VEN02_001",
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "STD_X3_ERP_BAIDU",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "STD_X3_ERP_STO11_001",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "Бельгия",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "STD_X3_ERP_TRS05_004",
 			"title_c2aabe70-e54f-474b-97f1-85e16fc52ba7": "Прочее",
@@ -27003,24 +27003,17 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "STD_X3_ERP_SVEN19",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "STD_X3_ERP_RACH019",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "STD_X3_ERP_SACH15",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "STD_X3_ERP_SACH14",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "STD_X3_ERP_NARACH033",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "STD_X3_ERP_SACH16",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "STD_X3_ERP_SACH09",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "STD_X3_ERP_SACH17",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "STD_X3_ERP_SACH18",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "STD_X3_ERP_SACH19",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "STD_X3_ERP_SCRM01",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "STD_X3_ERP_SCRM02",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "STD_X3_ERP_SCRM03",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "STD_X3_ERP_SCRM04",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "STD_X3_ERP_SGPA01",
 			"title_9c56655a-7d1b-4fe4-aad5-bc121ad1bad0": "STD_X3_ERP_SGPA02",
@@ -27129,11 +27122,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "STD_X3_ERP_RSAV006",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "STD_X3_ERP_RSAV008",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "STD_X3_ERP_TRS08_004",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "STD_X3_ERP_RGPA002",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "STD_X3_ERP_ACH04_003",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "STD_X3_ERP_GPA06_002",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "STD_X3_ERP_RACH005",
@@ -27142,21 +27130,10 @@
 			"title_8bf3caae-9a2d-4f60-8d97-28676fd95531": "STD_X3_ERP_RACH013",
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "STD_X3_ERP_RACH015",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "STD_X3_ERP_RACH016",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "STD_X3_ERP_RCRM012",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "STD_X3_ERP_RGPA004",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "STD_X3_ERP_RGPA007",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "STD_X3_ERP_RVEN004",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "STD_X3_ERP_RVEN017",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "STD_X3_ERP_RVEN018",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "STD_X3_ERP_RVEN019",
@@ -27324,6 +27301,29 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "STD_X3_ERP_RACH010",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "STD_X3_ERP_RACH011",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "STD_X3_ERP_RACH026",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "STD_X3_ERP_SACH01",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "STD_X3_ERP_RCPT010",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "STD_X3_ERP_RCRM013",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "STD_X3_ERP_RVEN044",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "STD_X3_ERP_RVEN051",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "STD_X3_ERP_RVEN052",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "STD_X3_ERP_RVEN059",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "STD_X3_ERP_RVEN060",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "STD_X3_ERP_RGPA003",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "STD_X3_ERP_RSTO001",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "STD_X3_ERP_RSTO002",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "STD_X3_ERP_RSTO012",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "STD_X3_ERP_RACH017",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "STD_X3_ERP_RACH018",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "STD_X3_ERP_RCRM008",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "STD_X3_ERP_RCRM011",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "STD_X3_ERP_RSAV009",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "STD_X3_ERP_RTRS004",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "STD_X3_ERP_RTRS006",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "STD_X3_ERP_RVEN011",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "STD_X3_ERP_RVEN014",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "STD_X3_ERP_RVEN015",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "STD_X3_ERP_RGPA015",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "STD_X3_ERP_SACH06",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "STD_X3_ERP_RSTO0061",
@@ -27467,7 +27467,8 @@
 			"title_9f244524-a375-4483-98fb-712c32ac3768": "百度",
 			"title_d2f89bcb-ab40-45b2-bac1-516470f4dbf8": "订单备货",
 			"description_2836fd8d-47f8-4391-9641-073335050651": "订单",
-			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "产品已订货费用 / 供应商",
+			"title_739a185d-7c52-44ad-9f13-e36313be6409": "供应商成绩",
+			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "基础数据",
 			"title_9dec6036-296f-4e12-8098-aeb1e059f7f6": "比利时",
 			"title_eae445af-5bbf-4414-a211-1a62a2ebd5b2": "管理您的实物设备",
 			"description_5837b404-6209-43a8-97e7-8205747a7037": "设备",
@@ -27478,7 +27479,6 @@
 			"title_460b2233-2f1b-4beb-ae62-bd8c0df47036": "准备供应商付款",
 			"description_9a00f1d3-1a17-4800-957b-53176f13ac32": "收付款追踪",
 			"title_5ba98ccd-8d02-48b2-8970-68ba7b3046ce": "管理承运人",
-			"description_8c2835f5-714f-4429-a941-f9ef03d14601": "基础数据",
 			"title_7b23391e-97de-4473-b05a-bd80387cd31c": "收货 / 订单发票",
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "采购发票",
 			"title_b1ebab3d-40d2-42bd-9584-306a1a1a67b4": "管理技术数据",
@@ -27552,26 +27552,18 @@
 			"title_7c9acf39-96b5-4c66-8ee7-a92596783bf1": "销售发货项目",
 			"title_28a8399e-45ac-4f73-ae5d-0a40587b54ba": "应收订单 / 供应商",
 			"title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "逾期订单 / 客户",
-			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "处理中的待摊费用",
-			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "待处理准备金",
-			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "约会追踪/雇员",
-			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "未开票的收货项",
-			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "收货",
-			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "退货 / 待收贷记凭证的客户",
-			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "待申报的发票和贷记凭证",
-			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "待入账的发票和贷记凭证",
-			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "T20价目表：产品价目表 / 客户",
-			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "T20价目表：客户价目表 / 产品",
-			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "退货原因分析",
-			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "采购订单项目",
 			"title_4b941224-ae58-4f3c-b223-2ca732906ede": "采购收货项目",
+			"description_58a28f7c-dd69-4b3e-a1f0-4ce8f0fc9c8b": "收货",
+			"title_e2acbedd-bedb-43d3-8f17-4e5f65edc6f5": "采购订单项目",
+			"title_f8281332-5f84-4af1-b0b3-a0b7213c3f5c": "未开票的收货项",
+			"title_38986895-6851-4397-8c2d-6e02106c0122": "无产品地点的产品",
+			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "通话历史记录 / 销售代表",
 			"title_2baa85ed-d395-44b7-9da1-6d95391450e1": "采购发票项目",
+			"title_123d8728-2c41-4c41-8bbf-27db00046ba8": "退货原因分析",
+			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "任务历史记录 / 销售代表",
 			"title_9fe5d5fa-52de-44b3-9ca1-1dc892d37c96": "获得的折扣比例",
-			"title_739a185d-7c52-44ad-9f13-e36313be6409": "供应商成绩",
 			"title_7455cb98-6f20-4deb-8922-525fe89646b3": "采购退货率",
 			"title_2dd6d410-93d4-4019-85be-e49af4cb929d": "约会历史记录 / 销售代表",
-			"title_f1ac74a9-7edc-41b3-b439-1fe884da22b7": "通话历史记录 / 销售代表",
-			"title_6c87bf2e-bce8-4975-a90b-ac483c1e9afb": "任务历史记录 / 销售代表",
 			"title_fd389842-d03c-4927-9fe8-412bccaf20f4": "服务请求/分配",
 			"title_654ce288-ca14-4c88-af9d-bd1b28f4347a": "主产品 / 成分总结报告",
 			"description_48d5c157-cb2b-4885-aeaf-feb89a0aadb1": "总结报告",
@@ -27687,11 +27679,6 @@
 			"title_d535898c-d888-498d-9487-41a5b2aceff3": "服务请求 / 雇员",
 			"title_62c2a7a8-8000-4c5a-9357-7bddb3e835ff": "延误的服务请求",
 			"title_c4af1e59-f76f-47c9-968f-039ae906b8bd": "客户付款：其他",
-			"title_38986895-6851-4397-8c2d-6e02106c0122": "无产品地点的产品",
-			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "无产品成本的产品",
-			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "当日待收货项",
-			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "当日待发货项",
-			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "待装箱的备货单",
 			"title_916b98ab-22ee-4777-8744-bfbdccc66f7b": "供应商发货通知",
 			"title_3bb69786-ec46-45b8-8779-df37a227fc4c": "分析成分与负荷",
 			"title_db137b14-5939-4bac-be6c-e401a3c4869a": "供应商 / 类别",
@@ -27702,24 +27689,10 @@
 			"title_e976f9da-465b-40b1-aded-d23e2929714d": "无供应商的产品",
 			"title_73ee84ab-81c6-4694-9cbd-027ab1b04840": "合同 / 产品",
 			"description_e59c88cc-2e43-4d89-a01b-38f8f0db8aca": "合同",
-			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "合同 / 供应商",
-			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "应收订单 / 产品",
-			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "销售线索 / 主要销售代表",
-			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "任务追踪/雇员",
 			"title_a2dd671c-a15c-460b-8f10-88c312faf38a": "通话追踪/雇员",
 			"title_ca32a7e1-54d9-4bfd-b374-50acd218cec9": "制订中的BOM",
 			"title_46a7b79c-41cd-4b46-84a6-f203824f3c23": "短缺的销售订单",
-			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "服务反馈 / 雇员",
-			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "未过账的采购发票",
-			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "采购发票",
-			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "未过账的销售发票",
-			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "销售发票",
-			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "逾期的客户未结账项",
-			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "客户追踪",
 			"title_9f53a592-5fb3-437e-b772-d8e2d9b6f9e5": "未激活的销售BOM",
-			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "客户 / 主要销售代表",
-			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "潜在客户 / 业务领域",
-			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "法国潜在客户 / 行政区",
 			"title_36b97b69-50c2-4e40-8663-e6d1c2ef212d": "销售代表/地点/功能",
 			"title_45014e78-99c7-4220-8571-de1ee4e26aa3": "无价目表的承运人",
 			"title_3b9c62af-ccad-45ef-ae43-0cfbf3c51902": "法国承运人 / 行政区",
@@ -27772,6 +27745,7 @@
 			"title_6d0573c3-3b77-43bd-a39a-222db2a7a431": "销售线索 / 关注程度",
 			"title_f8871515-79b7-450a-a548-36921046d2f4": "工单短缺",
 			"title_e04edd80-c9b4-48f8-9f32-e67f281ad899": "追踪客户安装基础",
+			"description_495ebc16-cd47-4a9c-8a53-ebebed05e1ce": "客户追踪",
 			"title_730e5501-d3b6-43a6-a041-9a51e8d2c2ab": "销售代表佣金",
 			"description_9df4ec64-f51c-424b-849e-9f9fe381e798": "销售代表",
 			"title_69981d5f-da20-4b30-b062-e4243538bfe7": "资产转出",
@@ -27846,6 +27820,7 @@
 			"description_bc7d8eae-5621-49cb-865d-fe9d380e30ea": "待入账单据",
 			"title_b79c6fed-4ca0-49b2-b0f4-464e9ae65cdc": "未入账批次",
 			"title_f46faa14-d7d0-471a-bd9a-667da4d2aebe": "至今未关账的收货项",
+			"description_b449d294-dbfe-479e-9693-f7b4438caf1d": "待处理准备金",
 			"title_185aae2d-4cef-4a79-bb16-90812f0f1668": "至今未关账的退货项",
 			"title_16566eaa-7366-47b3-bab4-e798eba02333": "至今未关账的发货项",
 			"title_f49198d2-7932-4ebc-9362-177acb65fd05": "周期性凭证追踪",
@@ -27891,6 +27866,31 @@
 			"title_c76ae932-8892-4337-b93c-da3103aebffc": "产品 / 供应商",
 			"title_e47a9af7-3ac0-4298-bf7d-42b6d0b19e0d": "供应商 / 产品",
 			"title_4b2d4638-bfdd-40d1-bced-b0be6627b259": "退回的产品 / 供应商",
+			"title_5f1c8e06-57e9-4526-a7d0-500c51042b55": "产品已订货费用 / 供应商",
+			"title_1cc4ab7a-f1ff-42b7-a480-8f3e2b7a3c1f": "处理中的待摊费用",
+			"title_f422a121-baf1-4ffa-9f42-6bdb378028fe": "约会追踪/雇员",
+			"title_5476736a-3398-4241-a3df-e9625b8d1cdd": "退货 / 待收贷记凭证的客户",
+			"title_4b74fb74-b4c4-490b-845d-744d0849dfe6": "待申报的发票和贷记凭证",
+			"title_653e8fbe-2a7c-4f83-8b9b-00b3efa691f4": "待入账的发票和贷记凭证",
+			"title_818e813d-e382-4611-843f-79f51c5ecdd5": "T20价目表：产品价目表 / 客户",
+			"title_8f4a4118-88d1-4bfc-8092-73468967e77e": "T20价目表：客户价目表 / 产品",
+			"title_a162150d-bf57-4de5-8b3e-e3f6d5dfe8b6": "无产品成本的产品",
+			"title_5bf1fa61-ec7b-4ade-844b-45fe7256611b": "当日待收货项",
+			"title_ec4e5f57-816f-4291-8d4d-2a995ebfaa2f": "当日待发货项",
+			"title_6b4e258f-5567-4a02-a5b7-b9c13ac37558": "待装箱的备货单",
+			"title_e731d87f-3d82-47ef-a62e-fbe447349e30": "合同 / 供应商",
+			"title_cc9c1476-f60e-4601-acf1-0e471ec81e43": "应收订单 / 产品",
+			"title_13a03125-dfa9-445d-ae17-98b470fb8a08": "销售线索 / 主要销售代表",
+			"title_94fec9ae-fcd4-447d-8c7b-55ca108ac06a": "任务追踪/雇员",
+			"title_c26eb807-ec60-40a0-952b-fb6c5042d817": "服务反馈 / 雇员",
+			"title_d1cc2fdb-63fe-4c9d-a4ef-0561edeeed86": "未过账的采购发票",
+			"description_da974ae8-2026-481f-baf4-06b3e46ad027": "采购发票",
+			"title_dc55a2ab-79b1-4c99-84d0-76cfb32288f8": "未过账的销售发票",
+			"description_214ea152-adda-4f2b-bc0e-520197c64ed5": "销售发票",
+			"title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "逾期的客户未结账项",
+			"title_1d3a6e4d-863a-4493-a1cb-2dd4e4fefe04": "客户 / 主要销售代表",
+			"title_d3a6e30f-6799-4161-86c5-ff99343ed023": "潜在客户 / 业务领域",
+			"title_9b2bd7b6-c93a-4f95-b02a-3ae0291a8c86": "法国潜在客户 / 行政区",
 			"title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a": "延误的工单",
 			"title_ae7de0d0-6be5-40cb-9878-334009398948": "当日已开票费用",
 			"title_66fd3225-6e0f-416e-917f-1387d6605c38": "待收货的订单行时间表",
