@@ -2878,7 +2878,7 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "SUP_APSADX",
+      "code": "DEM_X3_ERP_SUP_APSADX",
       "title": "title_760c2401-5feb-4d81-ae65-cc6dc051010a",
       "description": "description_760c2401-5feb-4d81-ae65-cc6dc051010a",
       "linkType": "$representation",
@@ -2886,8 +2886,8 @@
       "applicationMenu": false,
       "facet": "$query",
       "target": "self",
-      "$factory": false,
-      "$factoryOwner": null,
+      "$factory": true,
+      "$factoryOwner": "SEED",
       "application": {
         "application": "x3",
         "contract": "erp"
@@ -2898,7 +2898,9 @@
         "entity": "APSADX",
         "representation": "APSADX"
       },
-      "module": null,
+      "module": {
+        "code": "DEM_X3_ERP_DEMO"
+      },
       "categories": [],
       "parameters": []
     },
@@ -5570,7 +5572,7 @@
               "$factoryOwner": "SAGE",
               "items": [
                 {
-                  "code": "SUP_APSADX",
+                  "code": "DEM_X3_ERP_SUP_APSADX",
                   "$variantType": "menuItem"
                 },
                 {
