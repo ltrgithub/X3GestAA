@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2015-06-09T16:17:59.000Z",
-		"$lastModified": "2017-01-20T18:47:02.000Z",
+		"$lastModified": "2017-01-20T19:03:30.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -1882,7 +1882,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "23B50E579800C452B10EB75C395DAF1E23A9189A"
 		},
@@ -2047,7 +2048,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "FA1642E52F73EF10EE3F88F44B53395B6F5E8CA3"
 		},
@@ -3666,6 +3668,13 @@
 				"ar-sa": "أي نموذج"
 			},
 			"$key": "E1876CDA683246CFBACB4B5A45044B9378E1D694"
+		},
+		"new_csv": {
+			"text": {
+				"en-us": "Create CSV",
+				"fr-fr": "Create CSV"
+			},
+			"$key": "1ACF4441BA3E7FEA51B6EECF33858768C9E921FD"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/msoffice/resources/msoExcelTemplateDocument": {
@@ -6906,6 +6915,27 @@
 				"ru-ru": "Максимальный размер лога слишком маленький и был изменен на 10м"
 			},
 			"$key": "7E1A4AE70EE62D5A83B7C181F3108251492E319A"
+		},
+		"adminAuthSet": {
+			"text": {
+				"en-us": "Set authentication method of admin user to '{0}'",
+				"fr-fr": "Set authentication method of admin user to '{0}'"
+			},
+			"$key": "9BBDA1BA850BF0438BBF132867A42F0A2DCFEF5C"
+		},
+		"sameEmail": {
+			"text": {
+				"en-us": "Users '{0}' and '{1}' have same authentication method and same email address '{2}' and therefore block authentication",
+				"fr-fr": "Users '{0}' and '{1}' have same authentication method and same email address '{2}' and therefore block authentication"
+			},
+			"$key": "D6C1B3B15170E3440BA27969544C9AE68D601A7B"
+		},
+		"userEmail": {
+			"text": {
+				"en-us": "User {0} cannot log in because there are several users with email address {1}",
+				"fr-fr": "User {0} cannot log in because there are several users with email address {1}"
+			},
+			"$key": "3BC64C64326DADAA987BF28DC03D74D896418317"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/resources/traceConfig": {
@@ -7586,14 +7616,14 @@
 		"abortPatch": {
 			"text": {
 				"en-us": "Applying patch aborted",
-				"fr-fr": "Applying patch aborted"
+				"fr-fr": "L'application du patch a été abandonnée"
 			},
 			"$key": "01D0647D2EFB863AF2D4E4C04AC9724543DC9616"
 		},
 		"traceNotFound": {
 			"text": {
 				"en-us": "Trace not found on the server: {0}",
-				"fr-fr": "Trace not found on the server: {0}"
+				"fr-fr": "Le fichier de trace {0} n'a pas été trouvé"
 			},
 			"$key": "0C97364662370E603ACA5535ACE5E933B85AAB5A"
 		},
@@ -8271,7 +8301,7 @@
 		},
 		"msgGroupNotFound": {
 			"text": {
-				"en-us": "No group founded for LDAP group {0} ",
+				"en-us": "No group founded for LDAP group {0}",
 				"fr-fr": "No group founded for LDAP group {0} "
 			},
 			"$key": "918CE90D120CE64E7EEF799CDCD63EECA977DD74"
@@ -8320,6 +8350,27 @@
 				"es-es": "Tarea creada en el programador \"{0}\""
 			},
 			"$key": "B00300E6C2221D961C89A2497FB0FAED97C3A57E"
+		},
+		"noGroupSearchFilter": {
+			"text": {
+				"en-us": "No group search filter given for LDAP server '{0}'",
+				"fr-fr": "No group search filter given for LDAP server '{0}'"
+			},
+			"$key": "A6498BEB91F165B878EB69A501EF49BB615AC42E"
+		},
+		"deactivateUser": {
+			"text": {
+				"en-us": "Deactivate user {0} on endpoint {1}",
+				"fr-fr": "Deactivate user {0} on endpoint {1}"
+			},
+			"$key": "7BA12257F2CC3BEA418029CEF3A4B790AB33D1B6"
+		},
+		"errorUserAuthentication": {
+			"text": {
+				"en-us": "The \"Standard\" user authentication is not compatible with your \"Basic\" policy defined in global settings.",
+				"fr-fr": "The \"Standard\" user authentication is not compatible with your \"Basic\" policy defined in global settings."
+			},
+			"$key": "163CA68BBE79447FF3C905EA45A2AD0790279BE8"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/user/resources/ldapAttributeName": {
@@ -8711,6 +8762,48 @@
 				"fr-fr": "Wrong signature code"
 			},
 			"$key": "C9D479050FC38AE67CBD5D45315171F4B7D718E9"
+		},
+		"activateUser": {
+			"text": {
+				"en-us": "Activate user {0} on endpoint {1}",
+				"fr-fr": "Activate user {0} on endpoint {1}"
+			},
+			"$key": "A1A0A2153DD65BA9DB0ECAF6AFB2D2D6FFD29971"
+		},
+		"deactivateUser": {
+			"text": {
+				"en-us": "Deactivate user {0} on endpoint {1}",
+				"fr-fr": "Deactivate user {0} on endpoint {1}"
+			},
+			"$key": "DC62B15ED2B8E348ED6E099B2C1A759F753DD610"
+		},
+		"doubleEmail": {
+			"text": {
+				"en-us": "The user '{0}' has same authentication method and email address '{1}' and will therefore block authentication",
+				"fr-fr": "The user '{0}' has same authentication method and email address '{1}' and will therefore block authentication"
+			},
+			"$key": "2D608C31CECDA8DC3648F25AC2B17DA5E5C187ED"
+		},
+		"endpointError": {
+			"text": {
+				"en-us": "Error when accessing endpoint {0}: {1}",
+				"fr-fr": "Error when accessing endpoint {0}: {1}"
+			},
+			"$key": "3364B751421CE943086FBCA92799C7CF3CB24282"
+		},
+		"setActiveError": {
+			"text": {
+				"en-us": "Error when activating/deactivating users {0}",
+				"fr-fr": "Error when activating/deactivating users {0}"
+			},
+			"$key": "ECCC0F3AE83B023E0C65637EB6E8E1A6B13F4AA9"
+		},
+		"userBlocked": {
+			"text": {
+				"en-us": "User '{0}' will be blocked for authentication because login name occurs as email for multiple users",
+				"fr-fr": "User '{0}' will be blocked for authentication because login name occurs as email for multiple users"
+			},
+			"$key": "0FEB5785F6B59B23FDB95984ACF991C0AC6ED20F"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/entities/user/resources/userBookmarkProxy": {
@@ -9229,6 +9322,13 @@
 				"ru-ru": "Невозможно извлечь пользователя из X3, пожалуйста проверьте фильтры"
 			},
 			"$key": "7F2CAF770B75A43370FFB9789B8BE352FD2CFFD5"
+		},
+		"noColon": {
+			"text": {
+				"en-us": "User name {0} must not contain colon!",
+				"fr-fr": "User name {0} must not contain colon!"
+			},
+			"$key": "F43C2C565B33188EF80CF9959A472B5B428EE683"
 		}
 	},
 	"node_modules/syracuse-collaboration/lib/representations/msoffice/resources/documentExcel": {
@@ -12133,7 +12233,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "217D9217BB90F1707818CDB9EC87F27D24F59882"
 		},
@@ -12749,7 +12850,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "DD215775CCCBD6A523905AFD93FF8F3A443B8802"
 		},
@@ -12917,7 +13019,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "51E92CB25ABB3B92B486518FD2D487C3DFC91F65"
 		},
@@ -13084,7 +13187,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "BA5A1783D24A0B39DC285A9CB29D3E8B8111B2B9"
 		},
@@ -13252,7 +13356,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "A72F758B2D1DCFC0060E98B555C1CC6D8E0B9DC4"
 		},
@@ -13490,7 +13595,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "F70EDEE0A3CB06AF2B1401886F66AD00C1143861"
 		},
@@ -14709,7 +14815,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "950716D3B76E407B43305226BF48AC5E352A729F"
 		},
@@ -14723,7 +14830,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "9AA81AC915E23EBCE8405A8CF2CD5D3C4807450E"
 		},
@@ -15857,7 +15965,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "7557730D2FB3EE7430A6840641B83B81EA2013CC"
 		},
@@ -15871,7 +15980,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "FD78C60EA29083B1D38D23AADA6DF1A9E8F4DAE2"
 		},
@@ -15969,7 +16079,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "B4312848CEC74F38B1BE1818514041079C6ACD5D"
 		},
@@ -16161,7 +16272,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "804362F138F792144DD4E88A873CA444515B6FD4"
 		},
@@ -16538,7 +16650,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "Nome",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "AB5A38CBB2E27EC62FE391AB902285A87E7FC7A3"
 		},
@@ -16860,7 +16973,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "E855C50B1F3D8541448BB23EB0F7AF9C8BAEE937"
 		},
@@ -16874,7 +16988,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "A63B9D052DD60EEEBD9E57D417EB72523A5887E2"
 		},
@@ -18574,7 +18689,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "DB7D3EDBC9F7FD44065D5C5DDC489286E077DF7E"
 		},
@@ -18630,7 +18746,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "09D445FB749A010129EEF4C8176A419DD86E3563"
 		},
@@ -19413,7 +19530,7 @@
 				"zh-cn": "小部件",
 				"fr-fr": "Vignette",
 				"de-de": "Vignette",
-				"en-gb": "===",
+				"en-gb": "Vignette",
 				"ru-ru": "Компонент"
 			},
 			"$key": "BE388F2C7B19F4BBC1F655589AE842697D4D1DB9"
@@ -19442,7 +19559,8 @@
 				"fr-fr": "Application",
 				"en-gb": "===",
 				"pt-pt": "Aplicação",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "0423DCBA2791F8D3DE66A8B5C9213547BB6D8D04"
 		},
@@ -19680,7 +19798,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "C765608BDA037AC9D797D77C71C5607583A208C8"
 		},
@@ -19792,7 +19911,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "Nome",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "EA1DB95D5828AFA8835F74A580354FAC66CC7723"
 		},
@@ -19988,7 +20108,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "Código",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "C1ABBC46B6321A08EF570870147CB1651C4E2827"
 		},
@@ -20857,7 +20978,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "1E376C5FC74E060D53D546E4C52C2428E5D033E9"
 		},
@@ -20969,7 +21091,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "0B6321B6BDC51639A3101F39A7B2973E6E3C7C35"
 		},
@@ -21123,7 +21246,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "2BA14BC25FEB6F02DB5161DF7BA2CD13DBF051E8"
 		},
@@ -21221,7 +21345,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "047FCBA65B70A6986CF22F9B76E99EAAAF7D648A"
 		},
@@ -21823,7 +21948,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "4D11A5022FDD8ECC6046AEBE4B22A91A3BF0F370"
 		},
@@ -21879,7 +22005,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "6D538AFE1C5863BF6A071B9D12276AD74C0FF753"
 		},
@@ -21935,7 +22062,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "1105951326E4522445ADAB449B10A4E46AC05C28"
 		},
@@ -21991,7 +22119,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "4776CA500775751B1CC151811B2832B76DDDE936"
 		},
@@ -22033,7 +22162,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "A9986C5E627CD145DC42C4243949F17BCB89648F"
 		},
@@ -22090,7 +22220,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "49FB5DE1925AAF5E200C2A988E3B918F681DA211"
 		},
@@ -22160,7 +22291,8 @@
 				"fr-fr": "Application",
 				"en-gb": "===",
 				"pt-pt": "Aplicação",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "EE704C73CA9F3A83E592F901B61778534142B93B"
 		},
@@ -22174,7 +22306,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "6949521B4FE6D8A1763ED858CC813BAC4A5A8C3D"
 		},
@@ -22342,7 +22475,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "Código",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "B5B3CF29B00E04619D48333EBC309B63FA1C68B6"
 		},
@@ -22426,7 +22560,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "AB41EB04B229D7908595ADEA4DC8A3F851A0412B"
 		},
@@ -22468,7 +22603,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "1FB679EC276FD3CE9F32384AF806923EE51362E5"
 		},
@@ -23112,7 +23248,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "258278E6E0E4671D2950F2352670D0FDEE245B92"
 		},
@@ -23224,7 +23361,8 @@
 				"fr-fr": "Application",
 				"en-gb": "===",
 				"pt-pt": "Aplicação",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "FA1140352E2C83B19AF762E2D55015B28DFC9F7E"
 		},
@@ -23238,7 +23376,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "Código",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "D62D7CC67A145F671E1AB7E7F97EC6C3AFB87397"
 		},
@@ -23378,7 +23517,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "B9FBA84EFD6BF90A85784162A67E9CCEEE1A48E5"
 		},
@@ -23392,7 +23532,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "60542FB06986C112283D02473A1DC53D52DA09A3"
 		},
@@ -23672,7 +23813,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "FCC621A3B7C5A23391C31935ADE461EB0EEDF1DD"
 		},
@@ -24750,7 +24892,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "99B2533E4FD76CB544DE1C130173D6B95EF46A12"
 		},
@@ -25266,7 +25409,8 @@
 				"zh-cn": "代码",
 				"fr-fr": "Code",
 				"de-de": "===",
-				"en-gb": "==="
+				"en-gb": "===",
+				"it-it": "Codice"
 			},
 			"$key": "182367E1AA7911800C852F141FA059A783628E7E"
 		},
@@ -25409,7 +25553,8 @@
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
 				"de-de": "===",
-				"en-gb": "==="
+				"en-gb": "===",
+				"it-it": "Nome"
 			},
 			"$key": "6BEB5C4737FC54D58BC9C34399348C3CD35323A9"
 		},
@@ -25744,7 +25889,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "4C39C5EFDD4E4A56CDC6B4E78B996AD1E108C7BB"
 		},
@@ -25913,7 +26059,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "6FEF5001FF03328426AAB89B26460E1DBF98E3AB"
 		},
@@ -26166,7 +26313,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "E83575B7404458FE6E9635BBB35CECD138C6EBB8"
 		},
@@ -26180,7 +26328,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "2F7747461FED47A59B87E039FD4B42E7ACDBF123"
 		},
@@ -26404,7 +26553,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "05D819703FF45ECCFCFC49FAACD1EAECCF40D18F"
 		},
@@ -26488,7 +26638,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "6FC156DF3C505EB1EA8CB43C9CE212E253F9BC9C"
 		},
@@ -27034,7 +27185,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "22D5EB8F276853C06A33081D4721632798D95235"
 		},
@@ -27623,7 +27775,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "557F00CCA484142D1EB6B85B3A4C32202BF12552"
 		},
@@ -28322,7 +28475,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "8D7F518392AD10353A571CA234D6D54B8DF5F88B"
 		},
@@ -28518,7 +28672,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "3624F4E984F748EBFC167A5D25EAE41E9A635880"
 		},
@@ -28868,7 +29023,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "E416681FE52E09E438C5B8B7F629953168CBA158"
 		},
@@ -29022,7 +29178,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "E791C340423828A98B15BEB6958237420B3308AB"
 		},
@@ -29414,7 +29571,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "7B2E7B683745AF2F854A826469FCA295ED762583"
 		},
@@ -29624,7 +29782,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "365050B1E817543B639794713ED053912F184BAF"
 		},
@@ -30436,7 +30595,8 @@
 				"de-de": "===",
 				"en-gb": "===",
 				"pt-pt": "Código",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "80F23A116148339EDBC4D8A8E69A6BCBE8A9FE8E"
 		},
@@ -30759,7 +30919,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "9B2C2EA6043AA91B4F29D289275D8B3991881DDE"
 		},
@@ -30927,7 +31088,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "BB95F9395C5DEBFDEEA76FCDB65687001B671840"
 		},
@@ -31067,7 +31229,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "ACF29730C4355E09E366095AFE6C450027A555AE"
 		},
@@ -31235,7 +31398,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "A758D84F21DDB8ECB466A874EEC8033FD3485971"
 		},
@@ -31347,7 +31511,8 @@
 				"zh-cn": "应用程序",
 				"fr-fr": "Application",
 				"en-gb": "===",
-				"ru-ru": "Приложение"
+				"ru-ru": "Приложение",
+				"it-it": "Applicazione"
 			},
 			"$key": "C279F08472FA8206B029A93365A0636BCCE2217D"
 		},
@@ -31389,7 +31554,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "9787647A485970239D07CB946F20754924C1F039"
 		},
@@ -31613,7 +31779,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "312450EB1A5DF371BFACD74CC123EE3BDB07AE37"
 		},
@@ -31851,7 +32018,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "955927207E38CC46709C2C94CB95EBF723E8C713"
 		},
@@ -34679,7 +34847,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "72B9655FFB057CF523954FF7C1A5364FFEBA51EB"
 		},
@@ -35160,7 +35329,8 @@
 				"pt-pt": "Nome",
 				"ru-ru": "Имя",
 				"ar-sa": "إسم",
-				"es-es": "Nombre"
+				"es-es": "Nombre",
+				"it-it": "Nome"
 			},
 			"$key": "22F36BCEAF7BBFAB898868A8135337C414A70C34"
 		},
@@ -36673,7 +36843,8 @@
 				"ar-sa": "تطبيق",
 				"pt-pt": "Aplicação",
 				"ru-ru": "Приложение",
-				"es-es": "Aplicación"
+				"es-es": "Aplicación",
+				"it-it": "Applicazione"
 			},
 			"$key": "5534898BED9097B02E92D91F2B3C1C05FCBF6401"
 		},
@@ -36686,7 +36857,8 @@
 				"ar-sa": "رمز",
 				"pt-pt": "Código",
 				"ru-ru": "Код",
-				"es-es": "Código"
+				"es-es": "Código",
+				"it-it": "Codice"
 			},
 			"$key": "31458AAB95427F0BF6E6A2CFDD7EC9EB12968240"
 		},
@@ -37023,7 +37195,8 @@
 				"ar-sa": "إسم",
 				"pt-pt": "Nome",
 				"ru-ru": "Имя",
-				"es-es": "Nombre"
+				"es-es": "Nombre",
+				"it-it": "Nome"
 			},
 			"$key": "494A5C47D93F4BB733619366580217B4B4C06436"
 		},
@@ -37272,7 +37445,8 @@
 				"ar-sa": "إسم",
 				"pt-pt": "Nome",
 				"ru-ru": "Имя",
-				"es-es": "Nombre"
+				"es-es": "Nombre",
+				"it-it": "Nome"
 			},
 			"$key": "F8B136A07F54D6E13FC6949DB9C36B0D693F2301"
 		},
@@ -38090,7 +38264,8 @@
 				"en-us": "Name",
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
-				"es-es": "Nombre"
+				"es-es": "Nombre",
+				"it-it": "Nome"
 			},
 			"$key": "946CF4A8B284AE7EFD49C3D54D28BF7F109E0538"
 		},
@@ -38734,7 +38909,8 @@
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Nome"
 			},
 			"$key": "4CD3D8EE8C9559B7D7B4D9C18196E1A244FBBECF"
 		},
@@ -39587,7 +39763,8 @@
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Nome"
 			},
 			"$key": "B4054A8B005D42EE6818AC5E9250D884416ACB1A"
 		},
@@ -40093,7 +40270,8 @@
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Nome"
 			},
 			"$key": "45AB629CE0F2F6143FD01ED135E893AB532AEDD4"
 		},
@@ -40385,7 +40563,8 @@
 				"pt-pt": "Código",
 				"zh-cn": "代码",
 				"fr-fr": "Code",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Codice"
 			},
 			"$key": "31BDE56E678321D945FF087DA5A4BDD6DF74683F"
 		},
@@ -40725,7 +40904,8 @@
 				"es-es": "Aplicación",
 				"pt-pt": "Aplicação",
 				"zh-cn": "应用程序",
-				"fr-fr": "Application"
+				"fr-fr": "Application",
+				"it-it": "Applicazione"
 			},
 			"$key": "FD32A3DC8C646CE75BB06B48D49436DCBB5F2290"
 		},
@@ -40761,7 +40941,8 @@
 				"pt-pt": "Código",
 				"zh-cn": "代码",
 				"fr-fr": "Code",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Codice"
 			},
 			"$key": "506D281ACCC54654457AA57B89E1A9E9C8178D7E"
 		},
@@ -40773,7 +40954,8 @@
 				"pt-pt": "Código",
 				"zh-cn": "代码",
 				"fr-fr": "Code",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Codice"
 			},
 			"$key": "9D09578EDB50C029E31D6BEB9F1E37A9C0FE83D5"
 		},
@@ -40812,6 +40994,175 @@
 				"zh-cn": "==="
 			},
 			"$key": "71F580CCD7FE5E4FD5DEDAEEC5CFC56CBEC93237"
+		},
+		"connectedApplication.$titleTemplate": {
+			"text": {
+				"en-us": "Connected applications",
+				"fr-fr": "Application connectée"
+			},
+			"$key": "DA72ADD299B54640BB2D3D1CAC8CA68D8A9EF5A3"
+		},
+		"connectedApplication.$descriptionTemplate": {
+			"text": {
+				"en-us": "Connected applications",
+				"fr-fr": "Application connectée"
+			},
+			"$key": "89200C91E5C86ACE428CBE928E13A23AC2C266D9"
+		},
+		"connectedApplication.$listTitle": {
+			"text": {
+				"en-us": "List of connected applications",
+				"fr-fr": "Liste des application connectées"
+			},
+			"$key": "F8DCB5989F9B5189CCF1F4F7D4538A83DDBD5636"
+		},
+		"connectedApplication.$createActionTitle": {
+			"text": {
+				"en-us": "Create connected application",
+				"fr-fr": "Créer une application connectée"
+			},
+			"$key": "9260DBE33A638C93EAAF959ABFD80971CCE16A9E"
+		},
+		"connectedApplication.name.$title": {
+			"text": {
+				"en-us": "Name",
+				"fr-fr": "Nom",
+				"it-it": "Nome",
+				"pt-pt": "Nome",
+				"es-es": "Nombre"
+			},
+			"$key": "2C6C5A9A61009077C3A633C69A75CD67AD720718"
+		},
+		"connectedApplication.url.$title": {
+			"text": {
+				"en-us": "Url",
+				"fr-fr": "URL",
+				"ar-sa": "URL",
+				"zh-cn": "URL",
+				"de-de": "URL",
+				"pt-pt": "URL",
+				"es-es": "URL"
+			},
+			"$key": "8E1D8B0FDA70C3144FD5E34BE4ACE8A11A614D20"
+		},
+		"connectedApplication.clientId.$title": {
+			"text": {
+				"en-us": "Client ID",
+				"fr-fr": "ID client",
+				"zh-cn": "客户端ID",
+				"de-de": "Client-ID",
+				"pt-pt": "ID do cliente",
+				"ru-ru": "ID клиента",
+				"es-es": "ID cliente"
+			},
+			"$key": "C42549F1DD2B128B269F6D884BB77EAEA202CB34"
+		},
+		"connectedApplication.secret.$title": {
+			"text": {
+				"en-us": "Secret",
+				"fr-fr": "Secret"
+			},
+			"$key": "AABECF690EC8BE84BEEA39C16E9C90827C3DC718"
+		},
+		"connectedApplication.secretCreated.$title": {
+			"text": {
+				"en-us": "Secret to keep",
+				"fr-fr": "Secret à conserver"
+			},
+			"$key": "EA399DDD6CF932D358A8A527B656147FAF425BAE"
+		},
+		"connectedApplication.secretCreated.$description": {
+			"text": {
+				"en-us": "Please store your secret somewhere safe because it will never be displayed again !",
+				"fr-fr": "Conservez ce secret dans un endroit sécurisé car il ne sera plus jamais affiché !"
+			},
+			"$key": "5CB2B26D62267AF599F9560C9B8C9B825CE41D3F"
+		},
+		"connectedApplication.active.$title": {
+			"text": {
+				"en-us": "Active",
+				"fr-fr": "Actif",
+				"de-de": "Aktiv",
+				"pt-pt": "Activo",
+				"es-es": "Activo"
+			},
+			"$key": "F4DB93DAAA662D94FE078A5CD2B64EAB93C136AD"
+		},
+		"connectedApplication.expiration.$title": {
+			"text": {
+				"en-us": "Tokens validity",
+				"fr-fr": "Validité des jetons"
+			},
+			"$key": "22D882EA83EA58C04CC310E3A047A641845137C8"
+		},
+		"connectedApplication.expiration.$description": {
+			"text": {
+				"en-us": "expressed in seconds",
+				"fr-fr": "Exprimée en secondes ou une chaine de caractères représentant une durée. Ex: \"60\", \"2 days\", \"10h\", \"2.5 hrs\", \"7d\", \"1m\", \"5s\""
+			},
+			"$key": "6F8DB2D4AC98135CDB243EFAD9AC6B66689ED545"
+		},
+		"connectedApplication.payloads.$title": {
+			"text": {
+				"en-us": "Tokens currently valid",
+				"fr-fr": "Jetons en cours de validité"
+			},
+			"$key": "87171E60A2715F296980070D5E378A7713D0DDA8"
+		},
+		"connectedApplication.$services.generateSecret.$title": {
+			"text": {
+				"en-us": "Regenerate secret",
+				"fr-fr": "Regénerer le secret"
+			},
+			"$key": "F9494B6175437476E1E5AF2F0FA43380FC1E1A91"
+		},
+		"connectedApplication.$services.generateSecret.$description": {
+			"text": {
+				"en-us": "This action will delete all currently valid tokens",
+				"fr-fr": "Cette action supprimera tous les jetons en cours de validité"
+			},
+			"$key": "0F78E919EDC410F6035F2F9A8BBB398B5E1DDDBD"
+		},
+		"tokenPayload.jti.$title": {
+			"text": {
+				"en-us": "Token ID",
+				"fr-fr": "ID du jeton"
+			},
+			"$key": "1346DAA1D5FF9334DDC37B3204CB83766ECA63EF"
+		},
+		"tokenPayload.iat.$title": {
+			"text": {
+				"en-us": "Issued at",
+				"fr-fr": "Créé le"
+			},
+			"$key": "AA14EE8B02A93C7EDBFAA0AE6E395F588820D9EE"
+		},
+		"tokenPayload.exp.$title": {
+			"text": {
+				"en-us": "Expires in",
+				"fr-fr": "Expire dans"
+			},
+			"$key": "D6FBD191D95222E032F4D607B5DCB4FFE70FE4FB"
+		},
+		"tokenPayload.sub.$title": {
+			"text": {
+				"en-us": "Subject",
+				"fr-fr": "Sujet",
+				"de-de": "Betreff",
+				"pt-pt": "Objeto",
+				"es-es": "Asunto"
+			},
+			"$key": "5FA0915968F7874A23A66EA7BBEE744E248E11A1"
+		},
+		"tokenPayload.info.$title": {
+			"text": {
+				"en-us": "Information",
+				"fr-fr": "Informations",
+				"de-de": "Informationen",
+				"pt-pt": "Informações",
+				"es-es": "Información"
+			},
+			"$key": "7A86C7B6C74C36F58B813A7226576E7E21139892"
 		}
 	},
 	"node_modules/syracuse-core/lib/types/resources/bigint": {
@@ -45360,7 +45711,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "撤销",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "79420AA1CD4F4C23897038B214E7FE4869CE8797"
 		},
@@ -46673,7 +47025,7 @@
 			"text": {
 				"en-us": "More...",
 				"ar-sa": "أكثر",
-				"en-gb": "More...",
+				"en-gb": "===",
 				"es-es": "Más...",
 				"pt-pt": "Mais...",
 				"zh-cn": "更多...",
@@ -46847,7 +47199,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "撤销",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "A90C977026D3A393E65B0EB68A0EB9AB3DAF7C33"
 		},
@@ -48108,7 +48461,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "2E3D6360DFE6154C7C899B76B6D7DD77792718F0"
 		},
@@ -54624,7 +54978,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "B90C68C0A9C0E2AF47BB23C8CE6B5114ACC44A43"
 		},
@@ -56447,7 +56802,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "3FC844231F5B33450957AB2684C820B6C7828718"
 		},
@@ -56678,7 +57034,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "D27FEA91D7E2E4AE4D8AF43D41FBCF0668E776E2"
 		},
@@ -56777,7 +57134,8 @@
 				"ru-ru": "Код",
 				"zh-cn": "代码",
 				"ar-sa": "رمز",
-				"es-es": "Código"
+				"es-es": "Código",
+				"it-it": "Codice"
 			},
 			"$key": "D9521B1A9AFD7775EBC1B3EEB742A6B0DBEAF6F3"
 		},
@@ -60068,7 +60426,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "E44AE5CF8861815ED87E249040914BCDDB522755"
 		},
@@ -60124,7 +60483,8 @@
 				"ru-ru": "Удалить",
 				"zh-cn": "删除",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "EA42C21CFD46E536548396EC3367E76EF43E9012"
 		},
@@ -60222,7 +60582,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "B63670AA48E9F9C99053D32D788942B8602519B7"
 		},
@@ -60950,7 +61311,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "05BF9B7D3490676F5D294709D2791E9959048D29"
 		},
@@ -61020,7 +61382,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "941541E007A5CC611CFEFFA3E143A231ACF9614A"
 		},
@@ -61398,7 +61761,8 @@
 				"ru-ru": "Отменить",
 				"zh-cn": "取消",
 				"ar-sa": "إلغاء",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "EB1AC29625AE1BC9AEAA1EF121790CC0CE50C232"
 		},
@@ -62003,7 +62367,8 @@
 				"fr-fr": "Cancel",
 				"de-de": "Abbrechen",
 				"pt-pt": "Cancelar",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "C36AEB574EF4A186F365D0862CF77ABEE0596757"
 		},
@@ -64109,7 +64474,8 @@
 				"ar-sa": "إلغاء",
 				"pt-pt": "Cancelar",
 				"ru-ru": "Отменить",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "268F4AF1AE8AB274746BF847D04EBCF59E833A87"
 		},
@@ -65193,7 +65559,8 @@
 				"fr-fr": "Vignette",
 				"de-de": "Vignette",
 				"zh-cn": "小部件",
-				"ar-sa": "نافذة"
+				"ar-sa": "نافذة",
+				"en-gb": "Vignette"
 			},
 			"$key": "A3601B9F2FE854A5569418100B5DA0C446868C17"
 		},
@@ -66569,6 +66936,16 @@
 				"fr-fr": "An invalid filter condition has been ignored"
 			},
 			"$key": "591590A214D322CD54F14FF82379F34BBF48BAEC"
+		},
+		"authentication.external.accs": {
+			"text": {
+				"en-us": "External accounts",
+				"fr-fr": "Comptes externes",
+				"de-de": "Externe Konten",
+				"pt-pt": "Contas externas",
+				"es-es": "Cuenta externa"
+			},
+			"$key": "9E633626A709E79C2D9D3928E4445D2A0AAD0AC6"
 		}
 	},
 	"node_modules/syracuse-trace/lib/entities/resources/traceRecord": {
@@ -67689,10 +68066,31 @@
 		},
 		"cti": {
 			"text": {
-				"en-us": "CTI servive",
+				"en-us": "CTI service",
 				"fr-fr": "CTI servive"
 			},
 			"$key": "87EF3F3BD0110F32F0225C2C2B4E5E35A14C4C24"
+		},
+		"classic.csvExport": {
+			"text": {
+				"en-us": "Export to CSV",
+				"fr-fr": "Export to CSV"
+			},
+			"$key": "F4102D5BFECE28E65F3CF24525BFB6CD3028A9FA"
+		},
+		"sagept": {
+			"text": {
+				"en-us": "Sage Portugal",
+				"fr-fr": "Sage Portugal"
+			},
+			"$key": "E67D49C9EB66AE39B78C1EA4282522DC477C2A60"
+		},
+		"sagept.efat": {
+			"text": {
+				"en-us": "EFAT",
+				"fr-fr": "EFAT"
+			},
+			"$key": "FBE1821F30663E1F51A90460A78BBD5A3A7D4DFC"
 		}
 	},
 	"node_modules/syracuse-trace/lib/resources/strings": {
@@ -67763,7 +68161,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "EAC02B5472ED330315695EF4204323863C033871"
 		},
@@ -68422,7 +68821,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "AB3BC688632107A60756829299C883F129E9F4EB"
 		},
@@ -68478,7 +68878,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "F9E411F33AE5C826E8A3BF6AE435AEFBB58ECCE5"
 		},
@@ -68548,7 +68949,8 @@
 				"fr-fr": "Code",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "D04D6D220C94A9F96E4911D783C66B746E799F3C"
 		},
@@ -71686,7 +72088,7 @@
 				"fr-fr": "Vignettes",
 				"pt-pt": "Vinhetas",
 				"zh-cn": "小部件",
-				"de-de": "===",
+				"de-de": "Vignetten",
 				"en-gb": "===",
 				"ru-ru": "Гаджеты"
 			},
@@ -72146,7 +72548,7 @@
 				"fr-fr": "Vignette",
 				"pt-pt": "Vinheta",
 				"zh-cn": "小部件",
-				"de-de": "===",
+				"de-de": "Vignette",
 				"ru-ru": "Приспособление"
 			},
 			"$key": "4A2F3BE1CFC2DEBF7C22BD08E0F3C2C97690A1CA"
@@ -72893,7 +73295,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "A85D2467E477CDF1E78711F1F1698DA800278E31"
 		},
@@ -73792,7 +74195,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "D9C2A94F0B37B1BD33A29D12E7E8F7056078EC1F"
 		},
@@ -74830,7 +75234,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "0D9BCC5C64412ABD8F89FFE57DFBB8FA5B53BE9D"
 		},
@@ -75558,7 +75963,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "852360DC2A2620E995AA2F7694E71CF74708457B"
 		},
@@ -76479,7 +76885,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "2553D412F2F711F072EF5C56914F90955DFEBC3C"
 		},
@@ -78331,7 +78738,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "454BC1F9CD5D58DA0C29293FBE245C16E8604CA8"
 		},
@@ -79660,7 +80068,8 @@
 				"zh-cn": "名称",
 				"de-de": "===",
 				"en-gb": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "23E58501294CECE703ED8D150E3497B6195BAFF0"
 		},
@@ -80192,7 +80601,8 @@
 				"pt-pt": "Cancelar",
 				"zh-cn": "取消",
 				"en-gb": "===",
-				"ru-ru": "Отменить"
+				"ru-ru": "Отменить",
+				"it-it": "Annulla"
 			},
 			"$key": "C4B5B0601DA2864BA579B4C97B1AC5E4E47500FA"
 		},
@@ -81797,6 +82207,55 @@
 				"zh-cn": "您是否已为Office安装了SyracuseAddins？"
 			},
 			"$key": "421C670DFEC04B54F51F9C97372CBBBA0CB288CA"
+		},
+		"fieldChoiceEmpty": {
+			"text": {
+				"en-us": "(Empty)",
+				"fr-fr": "(Empty)"
+			},
+			"$key": "84F6CC73076352E3D76DBFAAB868DBA5943FD370"
+		},
+		"fieldSummaryEmpty": {
+			"text": {
+				"en-us": "No {0}",
+				"fr-fr": "No {0}"
+			},
+			"$key": "72E76FE793E998B4FC0144D8A4089B13D1A4C978"
+		},
+		"fdocInProgress": {
+			"text": {
+				"en-us": "Upload in progress. You have to wait end of upload before saving",
+				"fr-fr": "Upload in progress. You have to wait end of upload before saving"
+			},
+			"$key": "8CBB1C91831C25A3839C01C47A5AB73FAE345402"
+		},
+		"onuserprofilechange_applicationConnection": {
+			"text": {
+				"en-us": "Changing you application settings will require you to leave the current function",
+				"fr-fr": "Changing you application settings will require you to leave the current function"
+			},
+			"$key": "52B9F4996B57F11DB077F852FEE51B95856A3584"
+		},
+		"export_csv": {
+			"text": {
+				"en-us": "CSV export",
+				"fr-fr": "CSV export"
+			},
+			"$key": "7A8BE7B903E6F82A15DCF7511345494F164D12AB"
+		},
+		"field_richdata_xml_error": {
+			"text": {
+				"en-us": "Value doesn't match XML schema or XML is badly formatted",
+				"fr-fr": "Value doesn't match XML schema or XML is badly formatted"
+			},
+			"$key": "9EF9B6D04EF912A58BEB188DEB78C19AD2232DA3"
+		},
+		"field_richdata_json_error": {
+			"text": {
+				"en-us": "JSON is badly formatted",
+				"fr-fr": "JSON is badly formatted"
+			},
+			"$key": "C4104E951BD7F1FB06D2E5086230A7F6B52CAE9E"
 		}
 	},
 	"node_modules/syracuse-x3/lib/clients/common/cvg/resources/CvgClientAbs": {
@@ -87045,6 +87504,13 @@
 				"es-es": "El sistema de servicios RESTful se ha bloqueado porque el límite definido por la licencia (WSGRACELIMIT) se ha sobrepasado"
 			},
 			"$key": "7EF603C07529CFE0F28765AFAC21BB1BAC07B3AD"
+		},
+		"updateSessError": {
+			"text": {
+				"en-us": "Update session error",
+				"fr-fr": "Update session error"
+			},
+			"$key": "75E49A8E5CAFB5FB04D5688957BD14F5D4075AC2"
 		}
 	},
 	"node_modules/syracuse-x3/lib/resources/cvgPageConverter": {
@@ -87363,7 +87829,8 @@
 				"ar-sa": "إسم",
 				"pt-pt": "Nome",
 				"ru-ru": "Имя",
-				"es-es": "Nombre"
+				"es-es": "Nombre",
+				"it-it": "Nome"
 			},
 			"$key": "C3A5B20AA4CB71D1D840AC9BC15350A5F8606E1C"
 		},
@@ -87545,7 +88012,8 @@
 				"ar-sa": "إلغاء",
 				"pt-pt": "Cancelar",
 				"ru-ru": "Отменить",
-				"es-es": "Cancelar"
+				"es-es": "Cancelar",
+				"it-it": "Annulla"
 			},
 			"$key": "2164B613EFD3E492C14593743236B77677FBE90D"
 		},
@@ -88221,7 +88689,8 @@
 				"zh-cn": "代码",
 				"fr-fr": "Code",
 				"de-de": "===",
-				"ru-ru": "Код"
+				"ru-ru": "Код",
+				"it-it": "Codice"
 			},
 			"$key": "66FF279F0DBA9A9C1BBA245A6F55195A6495EF39"
 		},
@@ -88364,7 +88833,8 @@
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
 				"de-de": "===",
-				"ru-ru": "Имя"
+				"ru-ru": "Имя",
+				"it-it": "Nome"
 			},
 			"$key": "FA5D8D92A73E1D93C9031EEFAA423436CB81ECDF"
 		},
@@ -88638,7 +89108,8 @@
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Nome"
 			},
 			"$key": "05A6A2196E1782E20B820789F7A3FBCD77EFA53B"
 		},
@@ -88890,7 +89361,8 @@
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
 				"zh-cn": "名称",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Nome"
 			},
 			"$key": "478E7E26D35FDD75B2022D13282AE0A07A8ED0CC"
 		}
@@ -90951,7 +91423,8 @@
 				"pt-pt": "Código",
 				"zh-cn": "代码",
 				"fr-fr": "Code",
-				"de-de": "==="
+				"de-de": "===",
+				"it-it": "Codice"
 			},
 			"$key": "FD6D98D70B6DC36A32441892686A2B6C7A4ADE53"
 		},
@@ -91385,6 +91858,13 @@
 				"fr-fr": "Imported users"
 			},
 			"$key": "A78C76277B9E698FF89DA8F3F6776CC053F5A1C1"
+		},
+		"@SynchronizationSectionTitle": {
+			"text": {
+				"en-us": "Synchronization settings",
+				"fr-fr": "Synchronization settings"
+			},
+			"$key": "3F5620773B0F5BA8C0E8E910142888AD095C4552"
 		}
 	},
 	"node_modules/syracuse-edi/lib/resources/edi_Entity": {
@@ -93656,6 +94136,41 @@
 				"zh-cn": "选择尺寸"
 			},
 			"$key": "5912AA4F367E3A24D5BEDD67EC74669375330136"
+		},
+		"highCharts_downloadPNG": {
+			"text": {
+				"en-us": "Download as PNG",
+				"fr-fr": "Download as PNG"
+			},
+			"$key": "8D91BCCCF3FB5E7211E5A712C48BE8ED39FA620D"
+		},
+		"highCharts_downloadJPEG": {
+			"text": {
+				"en-us": "Download as JPEG",
+				"fr-fr": "Download as JPEG"
+			},
+			"$key": "016E88F4D768CCF3AB5736C109183AB1ECFA5003"
+		},
+		"highCharts_downloadPDF": {
+			"text": {
+				"en-us": "Download as PDF",
+				"fr-fr": "Download as PDF"
+			},
+			"$key": "FB12CF6969BC1AA3A217E99898AA7E431E5247C2"
+		},
+		"highCharts_downloadSVG": {
+			"text": {
+				"en-us": "Download as SVG",
+				"fr-fr": "Download as SVG"
+			},
+			"$key": "12A56020E5D6115C37FE8A0F903E7CA977E394C1"
+		},
+		"highCharts_print": {
+			"text": {
+				"en-us": "Print chart",
+				"fr-fr": "Print chart"
+			},
+			"$key": "C95E2D96E261A2EAE8FEA5BAA7423187B13AE832"
 		}
 	},
 	"node_modules/ui-d3-graph/public/resources/gantt": {
@@ -94639,6 +95154,301 @@
 				"zh-cn": "不支持链接定义'{0}'"
 			},
 			"$key": "29F154DDA8DD5E9173A12F3B39E83981854D6324"
+		}
+	},
+	"node_modules/syracuse-4gl-api/lib/resources/connectedApp": {
+		"$key": "6E847B73A9190C8100467C40277E8012774757E5",
+		"connAppNotFound": {
+			"text": {
+				"en-us": "Connected application corresponding to client ID '{0}' does not exist",
+				"fr-fr": "Connected application corresponding to client ID '{0}' does not exist"
+			},
+			"$key": "287E929B64A0A5B440A5FCA5781264191ED243CA"
+		}
+	},
+	"node_modules/syracuse-collaboration/lib/entities/resources/cvgSession": {
+		"$key": "5717B908F6E970FDB330271D3C912C49CD72FE0D",
+		"deactivateLogSuccess": {
+			"text": {
+				"en-us": "deactivate x3 log successful",
+				"fr-fr": "deactivate x3 log successful"
+			},
+			"$key": "0A7BA872598DB0E8F2F62261EDB111BAAC666997"
+		},
+		"activateLogSuccess": {
+			"text": {
+				"en-us": "activate x3 log successful",
+				"fr-fr": "activate x3 log successful"
+			},
+			"$key": "234E81CB78159A59FB962A48DDB9C819D105C43F"
+		}
+	},
+	"node_modules/syracuse-collaboration/lib/representations/resources/connectedApplication": {
+		"$key": "C178FB63C843F82A546200D4F25A86F3D78614CD",
+		"@ConfigSectionTitle": {
+			"text": {
+				"en-us": "Connected application information",
+				"fr-fr": "Connected application information"
+			},
+			"$key": "91AD6A9A6DF624227C2A13C5F39F837CA1E0A2C3"
+		}
+	},
+	"node_modules/syracuse-edi/lib/tool/resources/helpers": {
+		"$key": "215C937C984F4C504331B149078D77257F586463",
+		"condBrackets": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition has more closing than opening brackets (position {2}): {3}",
+				"fr-fr": "Mapping from {0} to {1}: condition has more closing than opening brackets (position {2}): {3}"
+			},
+			"$key": "62E3617BC8BFE988DF364DFB70F6F83D9E87CEAF"
+		},
+		"condVarNotInPrototype": {
+			"text": {
+				"en-us": "Mapping with JSON element {0}: part {1} of condition variable {2} does not exist in prototype",
+				"fr-fr": "Mapping with JSON element {0}: part {1} of condition variable {2} does not exist in prototype"
+			},
+			"$key": "A97B33D818185BEAE4E8ADA685F31CAD90FABFB2"
+		},
+		"condVarNotUnique": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition variable {2} not uniquely determined in path",
+				"fr-fr": "Mapping from {0} to {1}: condition variable {2} not uniquely determined in path"
+			},
+			"$key": "DFA45C2C5480DD18FF6F9C5BBE0136E1485D28E1"
+		},
+		"condVarReferenceValue": {
+			"text": {
+				"en-us": "Mapping with JSON element {0}: Condition variable {1}: Reference or array cannot be last part of path",
+				"fr-fr": "Mapping with JSON element {0}: Condition variable {1}: Reference or array cannot be last part of path"
+			},
+			"$key": "0B2B350C992E035A23BE38BF9405224C08E6DA3C"
+		},
+		"contained": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: Part of path {2} is contained in existing path {3}",
+				"fr-fr": "Mapping from {0} to {1}: Part of path {2} is contained in existing path {3}"
+			},
+			"$key": "83688AA9C20F9DBBB25F7B0C189B8C0E28668887"
+		},
+		"contained2": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: part of path {2} is contained in corresponding part of path {3}",
+				"fr-fr": "Mapping from {0} to {1}: part of path {2} is contained in corresponding part of path {3}"
+			},
+			"$key": "54EA1A9E9AFED74FD9AA9FD643E809390B990C18"
+		},
+		"contains": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: Part of path {2} contains existing path {3}",
+				"fr-fr": "Mapping from {0} to {1}: Part of path {2} contains existing path {3}"
+			},
+			"$key": "5B48F2A81FE4AA31B47CDDD03138AA7D71E2F173"
+		},
+		"contains2": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: part of path {2} contains existing part of path {3}",
+				"fr-fr": "Mapping from {0} to {1}: part of path {2} contains existing part of path {3}"
+			},
+			"$key": "E8EF9465F7A17EF6DB4AC0C79A6F416DA0D55EBA"
+		},
+		"destLessGroups": {
+			"text": {
+				"en-us": "Destination path {0} contains less repetition groups than {1}",
+				"fr-fr": "Destination path {0} contains less repetition groups than {1}"
+			},
+			"$key": "ADAE5193D88B4949223994B2451567735BD9A762"
+		},
+		"destMoreGroups": {
+			"text": {
+				"en-us": "Destination path {0} contains more repetition groups than {1}",
+				"fr-fr": "Destination path {0} contains more repetition groups than {1}"
+			},
+			"$key": "3B3DB9668A02F633BD21AF132D02D0714CD0A702"
+		},
+		"emptyJsonPath": {
+			"text": {
+				"en-us": "Empty JSON path for XML path {0}",
+				"fr-fr": "Empty JSON path for XML path {0}"
+			},
+			"$key": "35644E391E8A6FC8D6717AC31F9D149CF3EAF908"
+		},
+		"empyXmlPath": {
+			"text": {
+				"en-us": "Empty XML path for JSON path {0}",
+				"fr-fr": "Empty XML path for JSON path {0}"
+			},
+			"$key": "95CFC24CE1F76D09BBA4BAC7A7F72F46D49BB8E4"
+		},
+		"fullChange": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: Final part of path {2} is now mapped to different path {3}",
+				"fr-fr": "Mapping from {0} to {1}: Final part of path {2} is now mapped to different path {3}"
+			},
+			"$key": "00019F4C98E7D85172447CD09B7DD0CE12787EA7"
+		},
+		"fullToGroup": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: Repetition group {2} has already been treated as last part of path and was mapped to {3}",
+				"fr-fr": "Mapping from {0} to {1}: Repetition group {2} has already been treated as last part of path and was mapped to {3}"
+			},
+			"$key": "09F6629CA7E6BEEFD9232D871B93B68F2046063C"
+		},
+		"groupChange": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: Repetition group {2} was mapped to {3} and is now mapped to different group {4}",
+				"fr-fr": "Mapping from {0} to {1}: Repetition group {2} was mapped to {3} and is now mapped to different group {4}"
+			},
+			"$key": "BDBFF6AF4FAA18F1A1228BF5547C9EA4B8B69CFB"
+		},
+		"groupToFull": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: Final path {2} has already been treated as repetition group and was mapped to {3}",
+				"fr-fr": "Mapping from {0} to {1}: Final path {2} has already been treated as repetition group and was mapped to {3}"
+			},
+			"$key": "58D1D2FC464916F05B1D52CC2CE29630A6D58A9A"
+		},
+		"incorrectJson": {
+			"text": {
+				"en-us": "Mapping with JSON path {0}: Part {1} does not have correct format",
+				"fr-fr": "Mapping with JSON path {0}: Part {1} does not have correct format"
+			},
+			"$key": "06514BFCB70DD1405D0A7AE62A7C36CBEB3DC139"
+		},
+		"incorrectXml": {
+			"text": {
+				"en-us": "Mapping with XML path {0}: Part {1} does not have correct format",
+				"fr-fr": "Mapping with XML path {0}: Part {1} does not have correct format"
+			},
+			"$key": "F754102EAA184724F9CDEED444F09569D6076DE8"
+		},
+		"noMapping": {
+			"text": {
+				"en-us": "No mappings defined",
+				"fr-fr": "No mappings defined"
+			},
+			"$key": "137B8ADF7A7417B3203C3C1BF015BB95667683E2"
+		},
+		"notInPrototype": {
+			"text": {
+				"en-us": "Mapping with JSON element {0}: part {1} does not exist in prototype",
+				"fr-fr": "Mapping with JSON element {0}: part {1} does not exist in prototype"
+			},
+			"$key": "153CBC4F2F36A4BB41BD3BC8B9AD6543F410AEEF"
+		},
+		"referenceValue": {
+			"text": {
+				"en-us": "Mapping with JSON element {0}: Reference or array cannot be last part of path",
+				"fr-fr": "Mapping with JSON element {0}: Reference or array cannot be last part of path"
+			},
+			"$key": "FAD0F4CBCB4F174EFFCB4D484E2E74F75F18DC3E"
+		},
+		"rootDifferent": {
+			"text": {
+				"en-us": "XML root element was {0} and is different in path {1}",
+				"fr-fr": "XML root element was {0} and is different in path {1}"
+			},
+			"$key": "0E299625FC50F9FB4C673F5CFFB83ED90693831B"
+		},
+		"rootRepetition": {
+			"text": {
+				"en-us": "XML root element cannot be repetition group in path {0}",
+				"fr-fr": "XML root element cannot be repetition group in path {0}"
+			},
+			"$key": "187650ADD70844FB24A88B6F54F97FFC2287531D"
+		},
+		"wrongCondBrack2": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition has more opening brackets than closing brackets: {2}",
+				"fr-fr": "Mapping from {0} to {1}: condition has more opening brackets than closing brackets: {2}"
+			},
+			"$key": "9F70F53813A96CBC8ACAD9A5D47AB494797CEA0B"
+		},
+		"wrongCondBrackClose": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition has ')' at wrong place (position {2}): {3}",
+				"fr-fr": "Mapping from {0} to {1}: condition has ')' at wrong place (position {2}): {3}"
+			},
+			"$key": "E1610306CE7D3EFD8A6947173698315EDB46315D"
+		},
+		"wrongCondBrackOpen": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition has '(' at wrong place (position {2}): {3}",
+				"fr-fr": "Mapping from {0} to {1}: condition has '(' at wrong place (position {2}): {3}"
+			},
+			"$key": "3539FFBB376E150A525AFCFBDBB1601D9C28C67A"
+		},
+		"wrongCondCond": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition {2} at wrong place (position {3}): {4}",
+				"fr-fr": "Mapping from {0} to {1}: condition {2} at wrong place (position {3}): {4}"
+			},
+			"$key": "3D0463E9B323CB3075D8C6E6472A20C1A60A26EC"
+		},
+		"wrongCondConst": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: wrong constant in condition: {2}",
+				"fr-fr": "Mapping from {0} to {1}: wrong constant in condition: {2}"
+			},
+			"$key": "C89DCA67D852F5EB19DF74CEBBF9BBFE8F60CC53"
+		},
+		"wrongCondEnd": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition ends unexpectedly: {2}",
+				"fr-fr": "Mapping from {0} to {1}: condition ends unexpectedly: {2}"
+			},
+			"$key": "75987DD1AA97AE8412887CCBCD1109074AABDEE6"
+		},
+		"wrongCondFormat": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition has wrong format (position {2}): {3}",
+				"fr-fr": "Mapping from {0} to {1}: condition has wrong format (position {2}): {3}"
+			},
+			"$key": "ED95E887609713438C82D1FBAABF298C1D4817AC"
+		},
+		"wrongCondOp": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: condition has operator {2} at wrong place (position {3}): {4}",
+				"fr-fr": "Mapping from {0} to {1}: condition has operator {2} at wrong place (position {3}): {4}"
+			},
+			"$key": "B6CC078CB04F781218B923C1305AC1543CD121F5"
+		},
+		"wrongCondOp2": {
+			"text": {
+				"en-us": "Mapping from {0} to {1}: wrong operator in condition {2}",
+				"fr-fr": "Mapping from {0} to {1}: wrong operator in condition {2}"
+			},
+			"$key": "AA87F42EBB3B975E7A86C9564009912275B9D335"
+		},
+		"wrongCondPrototype": {
+			"text": {
+				"en-us": "Mapping with JSON element {0}: type for part {1} of condition variable {2} does not exist in prototype",
+				"fr-fr": "Mapping with JSON element {0}: type for part {1} of condition variable {2} does not exist in prototype"
+			},
+			"$key": "214CFE5B5E0238674375737B0FB8C1B6A4B68E90"
+		},
+		"wrongCondVar": {
+			"text": {
+				"en-us": "Mapping with JSON path {0}: Part '{1}' of condition variable {2} does not have correct format",
+				"fr-fr": "Mapping with JSON path {0}: Part '{1}' of condition variable {2} does not have correct format"
+			},
+			"$key": "DE376F94522C8437E8FF8263079401C233499C00"
+		},
+		"wrongPrototype": {
+			"text": {
+				"en-us": "Mapping with JSON element {0}: type for part {1} does not exist in prototype",
+				"fr-fr": "Mapping with JSON element {0}: type for part {1} does not exist in prototype"
+			},
+			"$key": "9E82FE166DA078BEECCC9BE0E48ADA57044F66FC"
+		}
+	},
+	"node_modules/syracuse-x3/lib/convergence/model/resources/CvgCsvExport": {
+		"$key": "A393158DC0590ECFD7059E6F58E148EAF31244CE",
+		"noData": {
+			"text": {
+				"en-us": "The csv export that you requested contains no data. Please check your parameters before launching the export.",
+				"fr-fr": "The csv export that you requested contains no data. Please check your parameters before launching the export."
+			},
+			"$key": "6A378495E5CD2133BD00A0CC64E9692B9F98D046"
 		}
 	}
 }
