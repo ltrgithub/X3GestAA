@@ -9353,7 +9353,7 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_PJM100_001",
+      "code": "DEM_X3_ERP_PJM100_001",
       "title": "title_cabb8f09-2ae0-44c7-971b-bc600b997f21",
       "description": "description_cabb8f09-2ae0-44c7-971b-bc600b997f21",
       "linkType": "$process",
@@ -9377,7 +9377,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_ERP_MPRP"
+        "code": "DEM_X3_ERP_DEMO"
       },
       "parameters": []
     },
@@ -9452,7 +9452,7 @@
           "$type": "landingPageVignette",
           "bind": "380fadfb-af21-4ed0-94b4-d0a024e75c8f",
           "vignette": {
-            "code": "STD_X3_ERP_PJM100_001"
+            "code": "DEM_X3_ERP_PJM100_001"
           },
           "endpoint": {
             "dataset": "SEEDTEST"
@@ -11530,7 +11530,7 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_TCWPSHTOSIG",
+      "code": "DEM_X3_ERP__TCWPSHTOSIG",
       "title": "title_85c3150b-9af0-467e-976a-8d1936e12def",
       "description": "description_85c3150b-9af0-467e-976a-8d1936e12def",
       "linkType": "$representation",
@@ -11538,8 +11538,8 @@
       "applicationMenu": false,
       "facet": "$query",
       "target": "self",
-      "$factory": false,
-      "$factoryOwner": null,
+      "$factory": true,
+      "$factoryOwner": "SEED",
       "application": {
         "application": "x3",
         "contract": "erp"
@@ -11550,7 +11550,9 @@
         "entity": "TCWPSH",
         "representation": "TCWPSHTOSIG"
       },
-      "module": null,
+      "module": {
+        "code": "DEM_X3_ERP_DEMO"
+      },
       "parameters": []
     },
     {
@@ -11822,7 +11824,7 @@
           "$type": "landingPageVignette",
           "bind": "af31e7e1-5ae1-4141-961a-13043348df97",
           "vignette": {
-            "code": "STD_X3_ERP_TCWPSHTOSIG"
+            "code": "DEM_X3_ERP__TCWPSHTOSIG"
           },
           "endpoint": null
         },
