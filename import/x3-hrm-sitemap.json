@@ -13360,6 +13360,33 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESMID",
+      "title": "title_491abc28-47fd-4269-a8de-2288e05b8648",
+      "description": "description_491abc28-47fd-4269-a8de-2288e05b8648",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESMID",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GRH"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESPRF",
       "title": "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9",
       "description": "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9",
@@ -13653,6 +13680,10 @@
             },
             {
               "code": "STD_X3_HRM_GESMIS",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESMID",
               "$variantType": "menuItem"
             },
             {
@@ -22642,33 +22673,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESMID",
-      "title": "title_491abc28-47fd-4269-a8de-2288e05b8648",
-      "description": "description_491abc28-47fd-4269-a8de-2288e05b8648",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESMID",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_GRH"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_9a1092d1-430c-4f38-995f-61ecfb40375c",
       "code": "STD_X3_HRM_RHCPC",
@@ -22727,10 +22731,6 @@
         },
         {
           "code": "STD_X3_HRM_CONSRJO",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESMID",
           "$variantType": "menuItem"
         }
       ]
@@ -27652,6 +27652,7 @@
       "title_d110cef8-c891-4ff4-8755-7b486e17d58b": "الوظائف القياسية",
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "المناصب",
       "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "المهمات",
+      "title_491abc28-47fd-4269-a8de-2288e05b8648": "مؤشر المهمة",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "الملفات الشخصية",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "التصنيف حسب اتفاقية العمل",
       "title_db53a7d3-9d7f-4d27-99d6-bd9877678849": "تعداد الموظفين",
@@ -27965,7 +27966,6 @@
       "title_c7153ada-adac-4333-ad74-cbfeff34f95e": "المستوى الوظيفي",
       "title_6278ff3f-e5cd-49fa-a9fb-6e893ec760ab": "مجموعة المهارات",
       "title_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "المبادئ التوجيهية للوظيفة",
-      "title_491abc28-47fd-4269-a8de-2288e05b8648": "مؤشر المهمة",
       "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f": "إدارة المهارات والوظائف",
       "title_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "الوظائف",
       "title_682c1646-422f-42ed-b284-91ed70375a4b": "حملات المقابلات",
@@ -28927,6 +28927,8 @@
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "Positions",
       "description_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "GESPOT",
       "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Responsibilities",
+      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Responsibility indicator",
+      "description_491abc28-47fd-4269-a8de-2288e05b8648": "GESMID",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Profiles",
       "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "GESPRF",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classifications as per labor agreement",
@@ -29510,8 +29512,6 @@
       "description_6278ff3f-e5cd-49fa-a9fb-6e893ec760ab": "GESGCP4",
       "title_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "Job guidelines ",
       "description_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "CONSRJO",
-      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Responsibility indicator",
-      "description_491abc28-47fd-4269-a8de-2288e05b8648": "GESMID",
       "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f": "Management of skills and careers",
       "title_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "Careers",
       "description_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "GESECP",
@@ -30242,6 +30242,7 @@
       "title_d110cef8-c891-4ff4-8755-7b486e17d58b": "Tipo de cargos",
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "Partidas",
       "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Misiones",
+      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Indicador misión",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Perfiles",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Clasificaciones convencionales",
       "title_db53a7d3-9d7f-4d27-99d6-bd9877678849": "?",
@@ -30565,7 +30566,6 @@
       "title_c7153ada-adac-4333-ad74-cbfeff34f95e": "?",
       "title_6278ff3f-e5cd-49fa-a9fb-6e893ec760ab": "Grupos de competencias",
       "title_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "Referencial de empleos",
-      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Indicador misión",
       "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f": "Gestión competencias y carreras",
       "title_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "Carreras",
       "title_682c1646-422f-42ed-b284-91ed70375a4b": "Campañas de entrevistas",
@@ -31497,6 +31497,7 @@
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "Postes",
       "description_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "GESPOT",
       "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Missions",
+      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Indicateur mission",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Profils",
       "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "GESPRF",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classements conventionnels",
@@ -32042,7 +32043,6 @@
       "description_6278ff3f-e5cd-49fa-a9fb-6e893ec760ab": "GESGCP4",
       "title_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "Référentiel des emplois",
       "description_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "CONSRJO",
-      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Indicateur mission",
       "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f": "Gestion compétences et carrières",
       "title_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "Carrières",
       "description_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "GESECP",
@@ -32923,6 +32923,8 @@
       "title_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "Declaração trabalhador temporário",
       "description_2a39ac25-2d5f-4ab6-8bb7-ba2f5075751c": "GESPVA",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Plano pagamentos",
+      "title_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a": "Reagrupamento de rubricas",
+      "description_8db2aa9e-ecd6-402d-abc8-bc1b84ad408a": "Reagrupamento de rubricas",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Rubricas",
       "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "GESRUB",
       "title_ab801a1b-21a1-4852-918a-fd2d4e88e850": "Variáveis",
@@ -32933,6 +32935,8 @@
       "title_5c01ed76-6bfd-4416-8706-ec4aad677099": "Act rubricas",
       "title_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "Acumulados",
       "description_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "CUMRUB",
+      "title_d659216e-2875-4cc4-9b31-78ec70a09722": "Reagrupamento de rubricas",
+      "description_d659216e-2875-4cc4-9b31-78ec70a09722": "Reagrupamento de rubricas",
       "title_62cf8d95-f55c-4b63-bf7d-0a73e959bba6": "Assedic/Doença/AT/SDC",
       "description_62cf8d95-f55c-4b63-bf7d-0a73e959bba6": "MAJRUB1",
       "title_7f53ca35-4dd8-490a-98c6-8df43d254562": "Impressão de recibo",
@@ -33117,6 +33121,7 @@
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "Postos",
       "description_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "GESPOT",
       "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Missões",
+      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Missão indicador",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Perfis",
       "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "GESPRF",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classificações convencionais",
@@ -33443,11 +33448,12 @@
       "description_5f39dd4f-5446-4299-8455-31a30d7dee5a": "GESIDQ",
       "title_806ddb45-a215-4658-9157-30a9dd1f0e35": "Parametrização obrigações legais",
       "title_2da828a7-ddc8-493b-bd03-2f669f26eb05": "Segurança Social/Seguradora",
-      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Declaração fiscal mensal",
+      "title_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Declaração mensal de remunerações",
+      "description_f2ade0a1-7083-4e1c-8277-aff5a44564d2": "Declaração mensal de remunerações",
       "title_249c4f61-87ff-43aa-af20-bbd878eb1cb2": "Modelo 10",
       "title_9b61a64d-64c8-4b41-9829-0ecb0c26d6d8": "Modelo 30",
       "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf": "Relatório unico atividade social",
-      "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Declaração rendimento",
+      "title_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Declaração individual de rendimentos",
       "description_17f93a7b-a346-4d10-a1fb-c67789e4e5c1": "Declaração individual de rendimentos",
       "title_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Migrações",
       "description_4d1a943d-21ea-4a1c-a7b2-e0b0e042ddc5": "Ferramenta Migração V6-U9",
@@ -33639,7 +33645,6 @@
       "description_6278ff3f-e5cd-49fa-a9fb-6e893ec760ab": "GESGCP4",
       "title_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "Referencial dos empregos",
       "description_17ab67b7-c7bf-4eaf-b096-50b0b91891fe": "CONSRJO",
-      "title_491abc28-47fd-4269-a8de-2288e05b8648": "Missão indicador",
       "title_5f2a71ad-e0e9-45e9-a28a-86aa7f36f34f": "Gestão competências e carreiras",
       "title_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "Carreiras",
       "description_a2895c8f-faf0-4d4b-88a3-9d5b388642bf": "GESECP",
