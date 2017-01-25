@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2015-06-09T16:17:59.000Z",
-		"$lastModified": "2017-01-23T16:33:03.000Z",
+		"$lastModified": "2017-01-25T15:38:22.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -402,7 +402,7 @@
 				"es-es": "Ningún fichero partner",
 				"fr-fr": "Aucun fichier partenaire",
 				"pt-pt": "Nenhum ficheiro partner",
-				"zh-cn": "没有合作伙伴文件",
+				"zh-cn": "无可用的策略",
 				"en-gb": "===",
 				"ru-ru": "Нет файла партнера"
 			},
@@ -730,7 +730,7 @@
 				"es-es": "Nombre de fichero incorrecto {0}",
 				"fr-fr": "Nom de fichier nvalide {0}",
 				"pt-pt": "Nome do ficheiro inválido {0}",
-				"zh-cn": "无效用户名{0}",
+				"zh-cn": "无效文件名{0}",
 				"en-gb": "===",
 				"ru-ru": "Неверное имя файла {0}"
 			},
@@ -800,7 +800,7 @@
 				"es-es": "Licencia incorrecta {0}, esperada {1}",
 				"fr-fr": "Référence détenteur licence invalide {0}, attendue {1}",
 				"pt-pt": "Referência licença inválida {0}, esperado {1}",
-				"zh-cn": "无效的许可证索引{0}，预期为{1}",
+				"zh-cn": "无效的许可证持有人索引号{0}，预期为{1}",
 				"en-gb": "===",
 				"ru-ru": "Неверная ссылка лицензиата {0}, ожидалось {1}"
 			},
@@ -814,7 +814,7 @@
 				"es-es": "El fichero de licencia no es un JSON válido: {0}",
 				"fr-fr": "Fichier licence invalide JSON : {0}",
 				"pt-pt": "Ficheiro licença não é válido JSON: {0}",
-				"zh-cn": "许可证文件不是有效的JSON：{0}",
+				"zh-cn": "许可证文件不是有效的JSON文件：{0}",
 				"en-gb": "===",
 				"ru-ru": "Формат JSON файла лицензии неверен: {0}"
 			},
@@ -828,7 +828,7 @@
 				"es-es": "El fichero de licencia no tiene producto o política",
 				"fr-fr": "Le fichier licence n'a ni produit ni règles.",
 				"pt-pt": "Ficheiro de licença não tem produto ou cont.lic.",
-				"zh-cn": "许可证文件不含产品或策略",
+				"zh-cn": "许可证文件既不包含产品文件，也不包含策略文件",
 				"en-gb": "===",
 				"ru-ru": "В файле лицензии нет продукта или политики"
 			},
@@ -856,7 +856,7 @@
 				"es-es": "Error de lectura del fichero de licencia: {0}",
 				"fr-fr": "Erreur de lecture du fichier licence : {0}",
 				"pt-pt": "Erro na leitura de ficheiro: {0}",
-				"zh-cn": "许可证文件读取错误：{0}",
+				"zh-cn": "读取许可证文件时出错：{0}",
 				"en-gb": "===",
 				"ru-ru": "Ошибка чтения файла лицензии: {0}"
 			},
@@ -968,7 +968,7 @@
 				"es-es": "El fichero de política no es un JSON válido: {0}",
 				"fr-fr": "Le fichier de règles est invalide JSON: {0}",
 				"pt-pt": "Ficheiro de cont.lic. não é válido JSON: {0}",
-				"zh-cn": "策略文件不是有效的JSON：{0}",
+				"zh-cn": "策略文件不是有效的JSON文件：{0}",
 				"en-gb": "===",
 				"ru-ru": "Формат JSON файла политики неверен: {0}"
 			},
@@ -982,7 +982,7 @@
 				"es-es": "El fichero de política no tiene producto o política.",
 				"fr-fr": "Le fichier de règles ne possède ni produit ni règles.",
 				"pt-pt": "Ficheiro de licença não tem produto ou cont.lic.",
-				"zh-cn": "策略文件不包含产品或策略",
+				"zh-cn": "策略文件既不包含产品文件，也不包含策略文件",
 				"en-gb": "===",
 				"ru-ru": "В файле политики нет продукта или политики"
 			},
@@ -996,7 +996,7 @@
 				"es-es": "Fichero de política no encontrado: {0}",
 				"fr-fr": "Fichier de règles introuvable : {0}",
 				"pt-pt": "Ficheiro de cont.lic. não encontrado: {0}",
-				"zh-cn": "未找到策略文件{0}",
+				"zh-cn": "无法找到策略文件{0}",
 				"en-gb": "===",
 				"ru-ru": "Файл политики не найден: {0}"
 			},
@@ -1010,7 +1010,7 @@
 				"es-es": "Error de lectura del fichero de política: {0}",
 				"fr-fr": "Erreur de lecture du fichier de règles : {0}",
 				"pt-pt": "Erro na leitura de ficheiro cont.lic.:{0}",
-				"zh-cn": "策略文件读取错误：{0}",
+				"zh-cn": "读取策略文件时出错：{0}",
 				"en-gb": "===",
 				"ru-ru": "Ошибка чтения файла политики: {0}"
 			},
@@ -1083,7 +1083,7 @@
 				"es-es": "Autorización requerida",
 				"fr-fr": "Autorisation requise",
 				"pt-pt": "Autorização necessária",
-				"zh-cn": "要有授权",
+				"zh-cn": "需要授权",
 				"en-gb": "===",
 				"ru-ru": "Требуется проверка подлинности"
 			},
@@ -4204,7 +4204,7 @@
 				"es-es": "Crear el dashboard '{0}'",
 				"fr-fr": "Créer le tableau de bord '{0}'",
 				"pt-pt": "Criar o painel '{0}'",
-				"zh-cn": "创建'{0}'仪表板",
+				"zh-cn": "创建仪表板'{0}'",
 				"en-gb": "===",
 				"ru-ru": "Создать '{0}' панель инструментов"
 			},
@@ -4218,7 +4218,7 @@
 				"es-es": "Modificar el dashboard '{0}'",
 				"fr-fr": "Modifier le tableau de bord '{0}'",
 				"pt-pt": "Edite o painel '{0}'",
-				"zh-cn": "编辑'{0}'仪表板",
+				"zh-cn": "编辑仪表板'{0}'",
 				"en-gb": "===",
 				"ru-ru": "Настроить  '{0}' панель инструментов"
 			},
@@ -4824,7 +4824,7 @@
 				"es-es": "La entrada de menú {0} ({1}) se ha creado",
 				"fr-fr": "L'entrée de menu {0} {1} a été créée",
 				"pt-pt": "A entrada de menu {0} {1} foi criado",
-				"zh-cn": "已创建菜单项{0}",
+				"zh-cn": "已创建菜单项{0} {1}",
 				"en-gb": "Menu entry {0} has been created",
 				"ru-ru": "Наименование меню {0} ({1}) было создано"
 			},
@@ -4978,7 +4978,7 @@
 				"en-gb": "===",
 				"pt-pt": "Vários sub-blocos foram encontrados com o sufixo '{0}' ao nível do código dentro do sub modulo '{1}. Por favor elimine um deles antes de executar a importação.",
 				"ru-ru": "Несколько подблоки были найдены с кодом суффиксом '{0}' на код в подмодуле '{1}'. Пожалуйста, удалите одинвозобновление импорта.",
-				"zh-cn": "在代码层级已找到多个后缀为'{0}'的子版块'{1}'。请 先删除它们中的一个，然后再重新执行导入。",
+				"zh-cn": "在子模块'{1}'中的代码层级已找到多个后缀为'{0}'的子版块。请 先删除它们中的一个，然后再重新执行导入。",
 				"ar-sa": "_تم العثور على العديد من كتلة من الباطن مع لاحقة '{0}' على مستوى الرمز  في وحدة فرعية {1} '. يرجى حذفواحد منهم قبل تشغيل الاستيراد",
 				"es-es": "Varios subbloques se han encontrado con el sufijo '{0}' a nivel del código en en submódulo '{1}'. Borre uno de ellos antes de relanzar la importación."
 			},
@@ -5967,7 +5967,7 @@
 				"es-es": "Imposible borrar las licencias válidas",
 				"fr-fr": "Impossible de supprimer des licences valides",
 				"pt-pt": "Não é possível excluir licenças válidas",
-				"zh-cn": "无法删除一项有效的许可证",
+				"zh-cn": "无法删除有效的许可证",
 				"en-gb": "===",
 				"ru-ru": "Нельзя удалить верные лицензии"
 			},
@@ -7347,7 +7347,7 @@
 				"en-gb": "===",
 				"pt-pt": "Versão de {0}",
 				"ru-ru": "обновить {0}",
-				"zh-cn": "版型{0}",
+				"zh-cn": "{0}版本",
 				"ar-sa": "{0}الإصدار",
 				"es-es": "Actualización de {0}"
 			},
@@ -7959,7 +7959,7 @@
 				"es-es": "Imposible cambiar el tipo de almacenamiento de un volumen existente ({0})",
 				"fr-fr": "Impossible de changer le type de stockage d'un volume existant ({0})",
 				"pt-pt": "Não é possível alterar o tipo de um volume de armazenamento existente ({0})",
-				"zh-cn": "不能变更一个现有容体的存储类型({0})",
+				"zh-cn": "不能变更一个现有存储卷的存储类型({0})",
 				"en-gb": "===",
 				"ru-ru": "Невозможно изменить тип хранения для существующего тома ({0})"
 			},
@@ -15362,7 +15362,7 @@
 				"es-es": "Claves",
 				"fr-fr": "Clés",
 				"pt-pt": "Chaves",
-				"zh-cn": "钥",
+				"zh-cn": "密钥",
 				"en-gb": "===",
 				"ru-ru": "Ключи"
 			},
@@ -16120,7 +16120,7 @@
 				"de-de": "Hilfebasis-URL",
 				"es-es": "URL Ayuda",
 				"fr-fr": "URL de base de l'aide",
-				"zh-cn": "帮助的基本URL",
+				"zh-cn": "帮助数据库URL",
 				"en-gb": "===",
 				"pt-pt": "URL da base de ajuda",
 				"ru-ru": "URL базы справки"
@@ -17546,7 +17546,7 @@
 				"ar-sa": "$menu and $fusionBar fieldsتشمل شخصيات المنتج",
 				"de-de": "Artikelfelder $menu und $fusionBar in Diagnose einschließen",
 				"es-es": "Incluir en los diagnosticos de los campos producidos $menu y $fusionbar",
-				"zh-cn": "包含进诊断文章的$menu和$fusionBar字段",
+				"zh-cn": "包含进产品的诊断$menu和字段$fusionBar中",
 				"fr-fr": "Inclure dans diagnostics $menu et champs $fusionBar de l'article",
 				"en-gb": "===",
 				"pt-pt": "Incluir no diagnostico campos de artigo $menu e $fusionBar",
@@ -17560,7 +17560,7 @@
 				"ar-sa": "$menu and $fusionBar fieldsشخصية المنتج",
 				"de-de": "Diagnose Artikel $menu und $fusionBar",
 				"es-es": "Realizar el diagnostico de los campos producidos $menu y $fusionbar",
-				"zh-cn": "诊断文章的$menu和$fusionBar",
+				"zh-cn": "产品的诊断$menu和字段$fusionBar",
 				"fr-fr": "Diagnostic $menu et champs $fusionBar de l'article",
 				"en-gb": "===",
 				"pt-pt": "Dagnostico artigo $menu e $fusionBar",
@@ -17842,7 +17842,7 @@
 				"es-es": "Servidor {hostname}",
 				"fr-fr": "Hôte {hostname}",
 				"pt-pt": "host {hostname}",
-				"zh-cn": "{hostname}",
+				"zh-cn": "主机{hostname}",
 				"en-gb": "{hostname}",
 				"ru-ru": "Хост {hostname}"
 			},
@@ -17898,7 +17898,7 @@
 				"es-es": "Desactivada",
 				"fr-fr": "Désactivé",
 				"pt-pt": "Desativado",
-				"zh-cn": "取消激活的",
+				"zh-cn": "已取消激活",
 				"en-gb": "===",
 				"ru-ru": "Деактивировано"
 			},
@@ -20600,7 +20600,7 @@
 				"es-es": "Versión producto",
 				"fr-fr": "Version produit",
 				"pt-pt": "Versão do produto",
-				"zh-cn": "产品更新",
+				"zh-cn": "产品版本",
 				"en-gb": "===",
 				"ru-ru": "Версия продукта",
 				"pl-pl": "Wersja produktu"
@@ -22861,7 +22861,7 @@
 				"de-de": "Ist wo",
 				"es-es": "Clausula \"where\"",
 				"fr-fr": "Clause \"where\"",
-				"zh-cn": "在哪里",
+				"zh-cn": "where条款",
 				"en-gb": "===",
 				"pt-pt": "clausula \"where\"",
 				"ru-ru": "Где"
@@ -26493,7 +26493,7 @@
 				"pt-pt": "Faceta",
 				"en-gb": "===",
 				"ru-ru": "Аспект",
-				"zh-cn": "层面"
+				"zh-cn": "分面"
 			},
 			"$key": "F729FC5C891F152C2F06037FF47982EA992DCC8F"
 		},
@@ -27334,7 +27334,7 @@
 				"es-es": "Páginas inicio, vignetas asociadas y menus serán exportados",
 				"fr-fr": "Les pages d'accueil, les vignettes associées et les menus seront exportés.",
 				"pt-pt": "Home page, vinhetas e menus associados serão exportados",
-				"zh-cn": "导出主页、关联的小部件和菜单",
+				"zh-cn": "将导出主页、关联的小部件和菜单",
 				"en-gb": "===",
 				"ru-ru": "Домашние страницы, ассоциированные компоненты и меню будут экспортированы"
 			},
@@ -39033,7 +39033,7 @@
 				"es-es": "Servidor X3 TAGS",
 				"fr-fr": "Balises serveur X3",
 				"pt-pt": "Tags servidor X3",
-				"zh-cn": "X3服务器"
+				"zh-cn": "X3服务器标签"
 			},
 			"$key": "97F26E2A4618B49EDDC020E457D99DBC0BE4D831"
 		},
@@ -39407,7 +39407,7 @@
 				"fr-fr": "Durée de vie",
 				"pt-pt": "Duração de vida",
 				"es-es": "Duración de vida",
-				"zh-cn": "==="
+				"zh-cn": "使用期限"
 			},
 			"$key": "48AA16FEE6D91E0A870A56DB5F61C5112D0EEFCB"
 		},
@@ -43888,7 +43888,7 @@
 				"es-es": "Nueva licencia para el producto {0} versión {1} política {2} versión {3} ya no es válida",
 				"fr-fr": "La nouvelle licence pour le produit {0} version {1} règles {2} version {3} n'est plus valide.",
 				"pt-pt": "Nova licença para o produto {0} versão {1} política {2} versão {3} não é mais válido",
-				"zh-cn": "产品{0}版本{1}的策略{2}版本{3}的新许可证不再有效。",
+				"zh-cn": "产品{0}版本{1}策略{2}版本{3}的新许可证不再有效。",
 				"en-gb": "===",
 				"ru-ru": "Новая лицензия для продукта {0} версии {1} политики {2} версии {3} уже не действительна"
 			},
@@ -43902,7 +43902,7 @@
 				"es-es": "Nueva licencia para el partner {0} y producto {1} versión {2} política {3} versión {4} ya no es válida",
 				"fr-fr": "La nouvelle licence pour le partenaire  {0} produit {1} version {2} règles {3} version {4} n'est plus valide.",
 				"pt-pt": "Nova licença para parceiro {0} produto {1} versão {2} política {3} versão {4} não é mais válido",
-				"zh-cn": "合作伙伴{0}和产品{1}版本{2}的策略{3}版本{4}的新许可证不再有效。",
+				"zh-cn": "合作伙伴{0}和产品{1}版本{2}策略{3}版本{4}的新许可证不再有效。",
 				"en-gb": "===",
 				"ru-ru": "Новая лицензия для партнера {0} продукта {1} версии {2} политики{3}  версии {4} уже не действительна"
 			},
@@ -43916,7 +43916,7 @@
 				"es-es": "Nueva licencia para el producto {0} versión {1} política {2} versión {3} ya no es válida",
 				"fr-fr": "La nouvelle licence pour le produit {0} version {1} règles {2} version {3} n'est pas encore valide.",
 				"pt-pt": "Nova licença para o produto {0} versão {1} política {2} versão {3} ainda não é válido",
-				"zh-cn": "产品{0}版本{1}的策略{2}版本{3}的新许可证尚未生效。",
+				"zh-cn": "产品{0}版本{1}策略{2}版本{3}的新许可证尚未生效。",
 				"en-gb": "===",
 				"ru-ru": "Новая лицензия для продукта {0} версии {1} политики {2} версии {3} еще не действительна"
 			},
@@ -43958,7 +43958,7 @@
 				"es-es": "El producto {0} está bajo licencia únicamente hasta la versión {1} pero se requiere la versión {2}",
 				"fr-fr": "Le produit {0} a une licence uniquement jusqu'à la version {1} alors que version {2} est demandée.",
 				"pt-pt": "O produto {0} tem uma licença valida apenas para a versão {1}, mas é necessária a da versão {2}.",
-				"zh-cn": "产品{0}现使用的许可证仅可用于更新版本{1}及其以下版本，但现需要更新版本{2}",
+				"zh-cn": "产品{0}现使用的许可证仅可用于版本{1}及其以下版本，但现需要版本{2}",
 				"en-gb": "===",
 				"ru-ru": "Продукт {0} не только лицензию, пока версии {1}, но версия {2} запрашивается"
 			},
@@ -44070,7 +44070,7 @@
 				"es-es": "La licencia para el partner {0} y el producto {1} versión {2} y las reglas {3} versión {4}no corresponde con un producto de base instalado pero a {5}",
 				"fr-fr": "La licence pour le partenaire '{0}' produit '{1}' version {2} règles '{3}' version {4} n'est pas adaptée pas à  un produit de base installée mais à un code produit {5}",
 				"pt-pt": "A licença para o parceiro {0} produto {1} versão {2} regras '{3}' versão {4} não correspondem a umproduto da base instalada mas a um código de produto {5}",
-				"zh-cn": "合作伙伴'{0}'和产品'{1}' 版型{2}以及策略'{3}'版本{4}的许可证与安装基础的 产品不相符， 但符合产品代码'{5}' 产品不相符， 但符合产品代码'{5}'",
+				"zh-cn": "合作伙伴'{0}'和产品'{1}' 版本{2}以及策略'{3}'版本{4}的许可证与安装基础的 产品不相符， 但符合产品代码'{5}'",
 				"en-gb": "===",
 				"ru-ru": "Лицензия на партнера '{0}' и продукт '{1}' версия {2} и политика '{3}' версия {4} не подходит к инпродукт, но код продукта '{5}'",
 				"it-it": "License for partner '{0}' and product '{1}' version {2} and policy '{3}' version {4} does not fit an installed base",
@@ -44086,7 +44086,7 @@
 				"es-es": "La licencia para el producto {0} versión {1} y las reglas {2} versión {3} no tiene ninguna información",
 				"fr-fr": "La licence pour le produit {0} version {1} règles {2} version {3} n'a auccune information sur les règles",
 				"pt-pt": "A licença para o produto {0} versão {1} regras {2} versão {3} não tem nenhuma informação sobre as regras",
-				"zh-cn": "产品{0}版型{1}和策略{2}版本{3}的许可证没有任何相符信息。",
+				"zh-cn": "产品{0}版型{1}和策略{2}版本{3}的许可证没有任何对应的策略信息。",
 				"en-gb": "===",
 				"ru-ru": "Лицензия на продукт {0} версии {1} и политика {2} версия {3} не имеет соответствующей политики информа"
 			},
@@ -44100,7 +44100,7 @@
 				"es-es": "La licencia para partner {0} y producto {1} versión {2} y reglas {3} versión {4} no tiene información que corresponde a las reglas",
 				"fr-fr": "La licence pour le partenaire {0} produit {1} version {2} règles {3} version {4} n'a aucune information correspondante sur les règles",
 				"pt-pt": "Licença para parceiro {0} produto {1} versão {2} regras {3} versão {4} não tem nenhuma informaçãocorrespondente às suas regras",
-				"zh-cn": "合作伙伴{0}和产品{1}版型{2}以及策略{3}版本{4}的许可证没有对应的策略 信息",
+				"zh-cn": "合作伙伴{0}和产品{1}版本{2}以及策略{3}版本{4}的许可证没有对应的策略 信息",
 				"en-gb": "===",
 				"ru-ru": "Лицензия на партнера {0} и продукт {1} версия {2} и политика {3} версия {4} не соответствуютинформация",
 				"it-it": "License for partner {0} and product {1} version {2} and policy {3} version {4} does not have corresponding policy",
@@ -44242,7 +44242,7 @@
 				"es-es": "Inicio de validez ausente en el tipo de fichero '{0}' par el producto '{1}' actualización {2}",
 				"fr-fr": "Il manque le début de validité dans le fichier type '{0}' pour le produit '{1}' version {2}",
 				"pt-pt": "falta o inicio de validade do ficheiro tipo '{0}' para o produto '{1}' versão {2}",
-				"zh-cn": "产品'{1}'版型{2}的文件类型'{0}'中缺少有效期的开始日期",
+				"zh-cn": "产品'{1}'版本{2}的文件类型'{0}'中缺少有效期的开始日期",
 				"en-gb": "===",
 				"ru-ru": "Отсутствует начало валидности в типе файла '{0}' для продукта  '{1}' версии {2}"
 			},
@@ -44256,7 +44256,7 @@
 				"es-es": "Validez ausente en el tipo de fichero '{0}' par el producto '{1}' versión {2}",
 				"fr-fr": "Il manque la validité dans le fichier type '{0}' pour le produit '{1}' version {2}",
 				"pt-pt": "Falta a validade no ficheiro tipo '{0}' para o produto '{1}' versão {2}",
-				"zh-cn": "产品'{1}'版型{2}的文件类型'{0}'中缺少有效期",
+				"zh-cn": "产品'{1}'版本{2}的文件类型'{0}'中缺少有效期",
 				"en-gb": "===",
 				"ru-ru": "Отсутствует валидность в типе файла '{0}' для продукта  '{1}' версии {2}"
 			},
@@ -44270,7 +44270,7 @@
 				"es-es": "Fin de validez ausente en el tipo de fichero '{0}' par el producto '{1}' versión {2}",
 				"fr-fr": "Il manque la fin de validité dans le fichier type '{0}' pour le produit '{1}' version {2}",
 				"pt-pt": "Falta o fim da validade no ficheiro tipo '{0}' para o produto '{1}' versão {2}",
-				"zh-cn": "产品'{1}'版型{2}的文件类型'{0}'中缺少有效期的结束日期",
+				"zh-cn": "产品'{1}'版本{2}的文件类型'{0}'中缺少有效期的结束日期",
 				"en-gb": "===",
 				"ru-ru": "Отсутствует конец валидности в типе файла '{0}' для продукта  '{1}' версии {2}"
 			},
@@ -44438,7 +44438,7 @@
 				"es-es": "Firma errónea en fichero de licencia para el producto '{0}' versión {1} política '{2}'  versión {3}",
 				"fr-fr": "Signature incorrecte dans le fichier licence pour le produit '{0}' version {1} règles '{2}' version {3}",
 				"pt-pt": "Assinatura errada no arquivo de licença para o produto '{0}' versão {1} regra '{2}' versão {3}",
-				"zh-cn": "对于产品'{0}'版型{1}和策略'{2}'版本{3}，其许可证文件中的签名错误。",
+				"zh-cn": "对于产品'{0}'版本{1}和策略'{2}'版本{3}，其许可证文件中的签名错误。",
 				"en-gb": "===",
 				"ru-ru": "Неверная подпись в файле лицензии для продукта '{0}' в типе файла {1} для продукта '{2}' версии {3}"
 			},
@@ -44452,7 +44452,7 @@
 				"es-es": "Firma errónea en fichero de licencia para el partner '{0}', producto '{1}' versión {2} política '{3}'  versión {4}",
 				"fr-fr": "Signature incorrecte dans le fichier licence pour le partenaire '{0} produit '{1}' version {2} règles '{3}' version {4}",
 				"pt-pt": "Assinatura errada no arquivo de licença para parceiro '{0}', produto '{1}' versão {2} regras '{3}' versão {4}",
-				"zh-cn": "对于合作伙伴'{0}'、产品'{1}'版型{2}以及策略'{3}'版本{4}，其许可证文件中的签名错误。",
+				"zh-cn": "对于合作伙伴'{0}'、产品'{1}'版本{2}以及策略'{3}'版本{4}，其许可证文件中的签名错误。",
 				"en-gb": "===",
 				"ru-ru": "Неверная подпись в файле лицензии для партнера '{0}', продукта '{1}' обновления {2} и политики'{3}' версии {4}"
 			},
@@ -44480,7 +44480,7 @@
 				"es-es": "Firma errónea en fichero de política para el producto '{0}' versión {1} y política '{2}'  versión {3}",
 				"fr-fr": "Signature incorrecte dans le fichier règles pour le produit '{0}' version {1} règles '{2}' version {3}",
 				"pt-pt": "Assinatura errada no arquivo de regras para o produto '{0}' versão {1} regras '{2}' versão {3}",
-				"zh-cn": "对于产品'{0}'版型{1}和策略'{2}'版本{3}，其策略文件中的签名错误。",
+				"zh-cn": "对于产品'{0}'版本{1}和策略'{2}'版本{3}，其策略文件中的签名错误。",
 				"en-gb": "===",
 				"ru-ru": "Неверная подпись в файле политики для продукта '{0}' обновления {1} и политики '{2}' версии {3}"
 			},
@@ -44494,7 +44494,7 @@
 				"es-es": "Firma errónea en fichero de política para el partner '{0}', producto '{1}' versión {2} y política '{3}'  versión {4}",
 				"fr-fr": "Signature incorrecte dans le fichier règles pour le partenaire '{0}'produit '{1}' version {2} règles '{3}' version {4}",
 				"pt-pt": "Assinatura errada no arquivo de política de parceiro de '{0}', produto '{1}' versão {2} regras '{3}' versão {4}",
-				"zh-cn": "对于合作伙伴'{0}'、产品'{1}'版型{2}以及策略'{3}'版本{4}，其策略文件中的签名错误。",
+				"zh-cn": "对于合作伙伴'{0}'、产品'{1}'版本{2}以及策略'{3}'版本{4}，其策略文件中的签名错误。",
 				"en-gb": "===",
 				"ru-ru": "Неверная подпись в файле политики для партнера '{0}', продукта '{1}' обновления {2} для политики'{3}' версии {4}"
 			},
@@ -45275,7 +45275,7 @@
 				"es-es": "Diferencia de versión : versión principal {0}, versión local {1}",
 				"fr-fr": "Version incompatible: version principale {0}, version locale {1}",
 				"pt-pt": "Versão incompatível: versão principal {0}, versão local {1}",
-				"zh-cn": "版本不匹配：主要更新{0}，本地更新{1}",
+				"zh-cn": "版本不匹配：主要版本{0}，本地版本{1}",
 				"ru-ru": "Несоответствие версий: основная версия {0} локальная версия {1}"
 			},
 			"$key": "1C61CF1866981259206DF29775D824F5BA09DFA0"
@@ -48950,7 +48950,7 @@
 				"fr-fr": "Version produit",
 				"pl-pl": "Wersja produktu",
 				"pt-pt": "Versão do produto",
-				"zh-cn": "产品更新",
+				"zh-cn": "产品版本",
 				"en-gb": "===",
 				"ru-ru": "Версия продукта",
 				"ar-sa": "الإصدار المنتج",
@@ -61931,7 +61931,7 @@
 				"en-gb": "===",
 				"pt-pt": "Versão do produto",
 				"ru-ru": "Версия продукта",
-				"zh-cn": "产品更新",
+				"zh-cn": "产品版本",
 				"ar-sa": "الإصدار المنتج",
 				"pl-pl": "Wersja produktu",
 				"es-es": "Versión producto"
@@ -66575,7 +66575,7 @@
 				"de-de": "'Als Entwurf speichern' sichert Ihre Daten lokal, um sie später wiederherzustellen",
 				"pt-pt": "\"Guardar como rascunho\" para conservar os seus dados localmente e recupera-los mais tarde",
 				"es-es": "\"Registre como borrador\" para conservar sus datos en local y recuperarlos más tarde",
-				"zh-cn": "\"另存为草稿\"会将您的数据保存在本地，以便之后再恢复",
+				"zh-cn": "\"另存为草稿\"会将您的数据保存在本地，以便之后再检索这些数据",
 				"ar-sa": "تسجيل مثل المسودة لحفظ البيانات المحلية و إسترداداها لاحقا"
 			},
 			"$key": "E3756FE7FDDED5B35E2C3C6A2B5F34F4636831DF"
@@ -66755,7 +66755,7 @@
 				"de-de": "Der Inhalt einer Vignette wurde geändert und nicht gespeichert",
 				"pt-pt": "O conteúdo duma vinheta foi modificado mas não foi guardado",
 				"es-es": "El contenido de una viñeta se ha modificado pero no se ha guardado",
-				"zh-cn": "已修改了一个小部件的内容，但未保存",
+				"zh-cn": "已修改了一个小部件的内容，但尚未保存",
 				"ar-sa": "تم تعديل محتوى النافذة لكن لم يتم حمايتها"
 			},
 			"$key": "AE29122174707BA7C070083A5FCD84432C55A177"
@@ -67352,7 +67352,7 @@
 				"es-es": "Portal X3 Sage X3 People",
 				"fr-fr": "Portail Sage X3 People",
 				"pt-pt": "Portal X3 Sage X3 People",
-				"zh-cn": "X3 Sage X3 People门户",
+				"zh-cn": "Sage X3 People门户",
 				"en-gb": "===",
 				"ru-ru": "Х3 HRM портал"
 			},
@@ -79408,7 +79408,7 @@
 				"fr-fr": "Version produit",
 				"pl-pl": "Wersja produktu",
 				"pt-pt": "Versão do produto",
-				"zh-cn": "产品更新",
+				"zh-cn": "产品版本",
 				"ru-ru": "Версия продукта",
 				"ar-sa": "الإصدار المنتج"
 			},
@@ -85266,7 +85266,7 @@
 				"es-es": "El parámetro 'attributes' debe ser una tabla",
 				"fr-fr": "Le paramètre 'attributs' doit être une liste",
 				"pt-pt": "O parâmetro 'atributos' deve ser um array",
-				"zh-cn": " '属性'参数必须是一个阵列",
+				"zh-cn": "  '属性'参数必须是一个数组",
 				"en-gb": "===",
 				"ru-ru": "Параметр \"атрибуты\" должны быть массив"
 			},
@@ -86447,7 +86447,7 @@
 				"es-es": "El fichero de descripción se ha solicitado [{0}] veces al servidor de cache. El estado de este recuso es [{1}]",
 				"fr-fr": "Le fichier de description a été demandé [{0}] fois au serveur de cache.  L'état de cette ressource est [{1}] .",
 				"pt-pt": "O arquivo de descrição foi solicitada [{0}] tanto o cache do servidor.  O estado deste recurso é [{1}].",
-				"zh-cn": "缓存服务器已[{0}]次请求该描述文件。这些资源的状态为[{1}]。",
+				"zh-cn": "缓存服务器已[{0}]次请求该描述文件。这个资源的状态为[{1}]。",
 				"en-gb": "==="
 			},
 			"$key": "AB927C89F6F591BE631BA9A5F3577D8E12307C6B"
@@ -86564,7 +86564,7 @@
 				"es-es": "El contexto de conexión al servidor X3 no es válido: {0}.",
 				"fr-fr": "Le contexte de connexion au serveur X3 est invalide : {0}.",
 				"pt-pt": "O servidor de conexão de contexto X3 é inválido: {0}.",
-				"zh-cn": "连接至X3服务器的语境无效：{0}。",
+				"zh-cn": "连接至X3服务器的关联背景无效：{0}。",
 				"en-gb": "==="
 			},
 			"$key": "09E8F0B108F3EB27727F847D38982CE44A4086A8"
@@ -87374,7 +87374,7 @@
 				"es-es": "Fallo de la conexión al servidor {0}:{1}; Error {2}",
 				"fr-fr": "Echec de la connexion au serveur {0}:{1}; Erreur {2}",
 				"pt-pt": "Falha ao conectar ao servidor {0}: {1}; Erro {2}",
-				"zh-cn": "无法连接到服务器{0}:{1}；错误{2}",
+				"zh-cn": "连接到服务器{0}:{1}失败；错误{2}",
 				"en-gb": "===",
 				"ru-ru": "Не удается подключиться к серверу {0}: {1}; Ошибка {2}"
 			},
@@ -87458,7 +87458,7 @@
 				"es-es": "La desconexión del servidor ha fallado",
 				"fr-fr": "La déconnexion serveur a échoué",
 				"pt-pt": "O servidor não desconexão",
-				"zh-cn": "断开服务器失败",
+				"zh-cn": "断开服务器连接失败",
 				"en-gb": "===",
 				"ru-ru": "Ошибка отключения сервера"
 			},
@@ -87612,7 +87612,7 @@
 				"es-es": "Ninguna sesión está disponible. \nEl número de pases asignados al usuario se han alcanzado",
 				"fr-fr": "Aucune session n'est disponible. \nLe nombre de badges alloués à l'utilisateur a été atteint.",
 				"pt-pt": "Não há sessões estão disponíveis. \nA foi atingido o número de cartas atribuídas ao utilizador.",
-				"zh-cn": "没有任何可用的会话。\n已达到分配给该用户的标记数量。",
+				"zh-cn": "没有任何可用的会话。\n已达到分配给该用户的识别标记数量。",
 				"en-gb": "===",
 				"ru-ru": "Нет сессия не доступна, когда есть слишком много значков для имен пользователей"
 			},
@@ -87643,7 +87643,7 @@
 				"es-es": "Ninguna configuración para el punto de conexión {0}",
 				"fr-fr": "Pas de configuration pour le point de connexion {0}",
 				"pt-pt": "Nenhuma configuração para endpoint {0}",
-				"zh-cn": "端点{0}没有配置",
+				"zh-cn": "没有配置端点{0}",
 				"en-gb": "===",
 				"ru-ru": "Нет конечной конфигурации для {0}"
 			},
@@ -87786,7 +87786,7 @@
 				"en-us": "Please wait while connecting",
 				"fr-fr": "Patientiez, connexion en cours",
 				"de-de": "Bitte während dem Verbinden warten",
-				"zh-cn": "连接时请稍候",
+				"zh-cn": "正在连接，请稍候",
 				"ar-sa": "الانتظار، الاتصال الحالي",
 				"pt-pt": "Por favor aguarde enquanto conecta",
 				"ru-ru": "Подождите окончательного подсоединения",
@@ -87891,7 +87891,7 @@
 				"en-us": "Order bys",
 				"fr-fr": "Dates commande",
 				"de-de": "Aufträge",
-				"zh-cn": "排列顺序",
+				"zh-cn": "订单日期",
 				"ar-sa": "تواريخ الطلبية",
 				"pt-pt": "Datas encomenda",
 				"ru-ru": "Порядок",
@@ -88048,7 +88048,7 @@
 				"en-us": "Workbook settings - Data Sources",
 				"fr-fr": "Paramètres classeur - Sources de données",
 				"de-de": "Arbeitsmappeneinstellungen - Datenquellen",
-				"zh-cn": "工作簿参数设置 - 数据源",
+				"zh-cn": "工作簿参数设置——数据源",
 				"ar-sa": "معلمات المصنّف-مصادر البيانات",
 				"pt-pt": "Configurações Workbook - Data Sources",
 				"ru-ru": "Настройки рабочей книги - Источники данных",
@@ -91520,7 +91520,7 @@
 				"de-de": "Die X3-Runtimes können verwendet werden, um Batch-Abfragen mit Lastenausgleich zu starten. Maximale Anzahl aktiver Abfragen auf 0 gesetzt bedeutet 'nicht aktiv'",
 				"fr-fr": "Exécutions X3 utilisées pour lancer des requêtes batch avec équilibrage de charge. Limite de requêtes actives à 0 soit 'inactives'",
 				"pt-pt": "O runtime X3 que pode ser usado para lançar pedidos batch com carregamento balanceado. Queries máx. ativas definidas em 0 significa não ativas",
-				"zh-cn": "用来启动带有负载平衡的批处理请求的X3 runtimes。有效请求限值设为0即表示 “无效”",
+				"zh-cn": "X3 runtimes可以用来启动带有负载平衡的批处理请求。有效请求限值设为0即表示 “无效”",
 				"es-es": "Ejecuciones X3 utilizadas para lanzar peticiones batch con balanceo de carga. Límite de peticiones activas a 0, \"inactivas\""
 			},
 			"$key": "D04FF1A7B8A8FC3854F2E60DB7EFD8D7597ED99F"
@@ -94768,7 +94768,7 @@
 				"fr-fr": "Aligner le texte à gauche",
 				"pt-pt": "Alinhar texto à esquerda",
 				"ru-ru": "Выравнивание текста слева",
-				"zh-cn": "左对齐文本"
+				"zh-cn": "文本左对齐"
 			},
 			"$key": "2665BA41D86776A087F2B560484A0E34486C506F"
 		},
@@ -94794,7 +94794,7 @@
 				"fr-fr": "Aligner le text à droite",
 				"pt-pt": "Alinhar o texto à direita",
 				"ru-ru": "Выравнивание текста справа",
-				"zh-cn": "右对齐文本"
+				"zh-cn": "文本右对齐"
 			},
 			"$key": "03F0873FDD5726CA4520CB6F45E4BB4799808F08"
 		},
@@ -95144,7 +95144,7 @@
 				"fr-fr": "Le contenu RTF dépasse la limite de {0} octets.",
 				"pt-pt": "Conteúdo RTF excede o limite de {0} bytes.",
 				"ru-ru": "Содержание RTF превышает максимальную длину {0} байт.",
-				"zh-cn": "RTF内容超出了{0}字节的限制。",
+				"zh-cn": "RTF内容超出了{0}个字节的限制。",
 				"es-es": "El contenido RTF supera el límite de {0} octetos."
 			},
 			"$key": "345BA0F79257FCC0378DD985622AE511523519E2"
@@ -95158,7 +95158,7 @@
 				"fr-fr": "Un contenu RTF est attendu ! Reçu: '{0}'",
 				"pt-pt": "Conteúdo RTF é esperado! Nota fiscal '{0}'",
 				"ru-ru": "Ожидаемые содержание RTF! вместо: '{0}'",
-				"zh-cn": "预期为RTF内容！收到：'{0}'"
+				"zh-cn": "预期为RTF内容！收到的是：'{0}'"
 			},
 			"$key": "49E84A880C69ABB65682AC236F5FB943FD7F0AD6"
 		}
