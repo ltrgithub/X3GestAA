@@ -1354,6 +1354,9 @@
           "code": "Developers"
         },
         {
+          "code": "SEED admin"
+        },
+        {
           "code": "SEED contributor"
         }
       ],
@@ -3522,221 +3525,6 @@
       "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@b7418641-8d0d-4529-b160-de97f46d31f3}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"8da3912b-4971-4e52-9852-74dd6edb87f0\",\"$layout\":{\"$items\":[]},\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"datstart1\",\"$isAdvanced\":true},{\"$bind\":\"datend1\",\"$isAdvanced\":true}],\"$widths\":\"50,50\"},{\"$bind\":\"def_company\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"ITMREF\"},{\"$bind\":\"C_ITMREF\"},{\"$bind\":\"STOFCY\"},{\"$bind\":\"C_STOFCY\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"},{\"$bind\":\"amount3\"},{\"$bind\":\"amount4\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\"}},{\"$bind\":\"9de5b829-aee1-488f-a9bd-2ef1269e2b84\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$graphPosition\":\"behind\",\"$itemsPerPage\":10,\"$layout\":{\"$items\":[{\"$bind\":\"ITMREF\"},{\"$bind\":\"DES1AXX\"},{\"$bind\":\"STOFCY\"},{\"$bind\":\"STA\"},{\"$bind\":\"LOC\"},{\"$bind\":\"QTYSTU\"},{\"$bind\":\"LOT\"},{\"$bind\":\"SLO\"},{\"$bind\":\"SERNUM\"},{\"$bind\":\"line_no\"}]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]},\"$layout\":{\"$items\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"7a3ad52a-bb26-454a-8d39-0e0ddb2a021a\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"7102ae8f-efc7-4544-9eb1-ebe86c1785b8\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@8fba941c-7bc9-4e7e-9203-daeae79ce4d0}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
       "page": {
         "pageName": "Stockmanager",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RGPA015",
-      "title": "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a",
-      "description": "description_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "GPA015",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MMFG"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_617d1de8-d32d-4c53-ab20-7b47a8294091",
-          "prompt": false,
-          "value": "RGPA015"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_47a28b46-2f44-4501-ac8f-59becaae4eca",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RGPA016",
-      "title": "title_a37fe8fe-3433-4893-a7c0-0ef4be2b9bf9",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "GPA016",
-      "requestLevel": "2",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MMFG"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_97472622-b1ed-4e0f-a6de-0d4722322d6f",
-          "prompt": false,
-          "value": "RGPA016"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_f1654dce-dadb-42c0-875b-cf70b98e75f2",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_INDIC_PLAN",
-      "title": "title_40c69b7c-e7dc-41ea-b447-fc2263f7028f",
-      "description": "description_40c69b7c-e7dc-41ea-b447-fc2263f7028f",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_PLAN",
-      "target": "self",
-      "processName": "INDIC_PLAN",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MMFG"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RESPPLANN",
-      "title": "title_171c8424-dac5-44d0-82c1-2c925a6f498a",
-      "description": "description_171c8424-dac5-44d0-82c1-2c925a6f498a",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~GPA03_001~PLANNING",
-      "target": "self",
-      "processName": "GPA03_001",
-      "processMenu": "PLANNING",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MMFG"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7",
-      "description": "description_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7",
-      "useCurrentEndpoint": true,
-      "pageName": "Planningmanager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "ERP-PLANMANA"
-        },
-        {
-          "code": "ERP-SYSTADMIN"
-        },
-        {
-          "code": "ADMIN"
-        },
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "GUEST"
-        },
-        {
-          "code": "SEED contributor"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "c93f7263-24f3-4abc-9f28-952629ca9d8f",
-          "vignette": {
-            "code": "STD_X3_ERP_RGPA015"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "ae6954bf-db5b-4869-9eb0-e023fb41d4ca",
-          "vignette": {
-            "code": "STD_X3_ERP_RGPA016"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "a9fc2c66-ab71-49bd-90dc-2ff7f791ce5f",
-          "vignette": {
-            "code": "STD_X3_ERP_INDIC_PLAN"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "f49aa952-d423-4119-be70-6152e9709c3e",
-          "vignette": {
-            "code": "STD_X3_ERP_RESPPLANN"
-          },
-          "endpoint": null
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "729659d5-d9a8-4efb-a7de-b75e22866d59",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@6805a136-be51-455c-a2b9-93f6acd6a9e4}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"c93f7263-24f3-4abc-9f28-952629ca9d8f\",\"$title\":\"-\"},{\"$bind\":\"ae6954bf-db5b-4869-9eb0-e023fb41d4ca\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"a9fc2c66-ab71-49bd-90dc-2ff7f791ce5f\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"f49aa952-d423-4119-be70-6152e9709c3e\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@7ea52985-5f73-4331-a58c-6a8e86988cf8}\",\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "Planningmanager",
         "$variantType": "landingPage"
       }
     },
@@ -9431,6 +9219,261 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_ERP_RGPA015",
+      "title": "title_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a",
+      "description": "description_eee1e6c8-cce2-4d1a-afd6-67c593de8e2a",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "GPA015",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MMFG"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_617d1de8-d32d-4c53-ab20-7b47a8294091",
+          "prompt": false,
+          "value": "RGPA015"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_47a28b46-2f44-4501-ac8f-59becaae4eca",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RGPA016",
+      "title": "title_a37fe8fe-3433-4893-a7c0-0ef4be2b9bf9",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "GPA016",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MMFG"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_97472622-b1ed-4e0f-a6de-0d4722322d6f",
+          "prompt": false,
+          "value": "RGPA016"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_f1654dce-dadb-42c0-875b-cf70b98e75f2",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_PLAN",
+      "title": "title_40c69b7c-e7dc-41ea-b447-fc2263f7028f",
+      "description": "description_40c69b7c-e7dc-41ea-b447-fc2263f7028f",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_PLAN",
+      "target": "self",
+      "processName": "INDIC_PLAN",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MMFG"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPPLANN",
+      "title": "title_171c8424-dac5-44d0-82c1-2c925a6f498a",
+      "description": "description_171c8424-dac5-44d0-82c1-2c925a6f498a",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~GPA03_001~PLANNING",
+      "target": "self",
+      "processName": "GPA03_001",
+      "processMenu": "PLANNING",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MMFG"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "DEM_X3_ERP_PJM100_001",
+      "title": "title_cabb8f09-2ae0-44c7-971b-bc600b997f21",
+      "description": "description_cabb8f09-2ae0-44c7-971b-bc600b997f21",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "PJM002",
+      "processMenu": "PROJECT",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SEED",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "DEM_X3_ERP_DEMO"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7",
+      "description": "description_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7",
+      "useCurrentEndpoint": true,
+      "pageName": "Planningmanager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "ERP-PLANMANA"
+        },
+        {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
+          "code": "ADMIN"
+        },
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "SEED contributor"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "c93f7263-24f3-4abc-9f28-952629ca9d8f",
+          "vignette": {
+            "code": "STD_X3_ERP_RGPA015"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "ae6954bf-db5b-4869-9eb0-e023fb41d4ca",
+          "vignette": {
+            "code": "STD_X3_ERP_RGPA016"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "a9fc2c66-ab71-49bd-90dc-2ff7f791ce5f",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_PLAN"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "f49aa952-d423-4119-be70-6152e9709c3e",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPPLANN"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "380fadfb-af21-4ed0-94b4-d0a024e75c8f",
+          "vignette": {
+            "code": "DEM_X3_ERP_PJM100_001"
+          },
+          "endpoint": {
+            "dataset": "SEEDTEST"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "729659d5-d9a8-4efb-a7de-b75e22866d59",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@6805a136-be51-455c-a2b9-93f6acd6a9e4}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$category\":\"space\"},{\"$layoutType\":\"stack\",\"$items\":[{\"$bind\":\"ae6954bf-db5b-4869-9eb0-e023fb41d4ca\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"100\"}],\"$widths\":\"50,50\"},{\"$bind\":\"a9fc2c66-ab71-49bd-90dc-2ff7f791ce5f\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}},{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"c93f7263-24f3-4abc-9f28-952629ca9d8f\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}},{\"$category\":\"space\"},{\"$category\":\"space\"}],\"$widths\":\"33.33,33.33,33.33\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"f49aa952-d423-4119-be70-6152e9709c3e\",\"$title\":\"-\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@7ea52985-5f73-4331-a58c-6a8e86988cf8}\",\"$isEmptyVisible\":true},{\"$bind\":\"380fadfb-af21-4ed0-94b4-d0a024e75c8f\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "Planningmanager",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_ASP00",
       "title": "title_3f226675-ba00-486e-a067-b81d48db9652",
       "description": "description_3f226675-ba00-486e-a067-b81d48db9652",
@@ -9513,6 +9556,9 @@
           "code": "GUEST"
         },
         {
+          "code": "SEED admin"
+        },
+        {
           "code": "SEED contributor"
         }
       ],
@@ -9540,7 +9586,7 @@
     {
       "$type": "pageLayout",
       "code": "ee4ae0cf-8ecb-4820-a497-508949cb9831",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@2b8229b7-b41f-46d6-bc36-adb21a0118ad}\",\"$layout\":{\"$items\":[{\"$bind\":\"e28fc8c7-c9c1-4010-92b0-416215eb785b\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@2b8229b7-b41f-46d6-bc36-adb21a0118ad}\",\"$layout\":{\"$items\":[{\"$bind\":\"e28fc8c7-c9c1-4010-92b0-416215eb785b\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@99a4c23d-4a72-4744-82aa-45bfb99eba3e}\",\"$layout\":{\"$items\":[{\"$bind\":\"7b1afe3f-47d4-4c19-8025-d98b29a4cbd8\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\"}",
       "page": {
         "pageName": "Systemadministrator",
         "$variantType": "landingPage"
@@ -11490,7 +11536,7 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_TCWPSHTOSIG",
+      "code": "DEM_X3_ERP__TCWPSHTOSIG",
       "title": "title_85c3150b-9af0-467e-976a-8d1936e12def",
       "description": "description_85c3150b-9af0-467e-976a-8d1936e12def",
       "linkType": "$representation",
@@ -11498,8 +11544,8 @@
       "applicationMenu": false,
       "facet": "$query",
       "target": "self",
-      "$factory": false,
-      "$factoryOwner": null,
+      "$factory": true,
+      "$factoryOwner": "SEED",
       "application": {
         "application": "x3",
         "contract": "erp"
@@ -11510,7 +11556,9 @@
         "entity": "TCWPSH",
         "representation": "TCWPSHTOSIG"
       },
-      "module": null,
+      "module": {
+        "code": "DEM_X3_ERP_DEMO"
+      },
       "parameters": []
     },
     {
@@ -11782,7 +11830,7 @@
           "$type": "landingPageVignette",
           "bind": "af31e7e1-5ae1-4141-961a-13043348df97",
           "vignette": {
-            "code": "STD_X3_ERP_TCWPSHTOSIG"
+            "code": "DEM_X3_ERP__TCWPSHTOSIG"
           },
           "endpoint": null
         },
@@ -12670,9 +12718,6 @@
       "title_dc3b2367-2072-4054-8abe-4314beb81bff": "STD_X3_ERP_RSTO010",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "مؤشرات",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "عملية",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "مسؤول التخطيط",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "مؤشرات",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "عملية",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "ممون",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "STD_X3_ERP_RACH029",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "STD_X3_ERP_INDIC_APPR",
@@ -12712,6 +12757,9 @@
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "مؤشرات",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "عملية",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "عملية",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "مسؤول التخطيط",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "مؤشرات",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "عملية",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "مدير النظام",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "عملية",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "NA مدير",
@@ -13027,9 +13075,6 @@
       "title_661d2850-f1cb-43c9-b0e3-39bc15ff4c41": "portview",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Schlüsselinformationen",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Geschäftsprozess",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Produktionsplanung",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Schlüsselinformationen",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Geschäftsprozess",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Beschaffungsmanager",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Verzögerte Einkaufsanfr.",
       "title_88b56218-5276-4022-a8e3-48e756a2feaf": "portview",
@@ -13105,17 +13150,26 @@
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Geschäftsprozess",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Prozess",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Indikatoren",
+      "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@b0ebc9ac-d4d5-47d5-bcf3-920c9c2a9039": "KPI-Qualität",
       "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Geschäftsprozess",
       "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@ff00fb4d-1926-4b4e-ae1a-ff84e24930b1": "Prozess",
+      "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@bf4c2cb1-e505-4dec-b3cf-994128d9c53e": "Aktivitätsverfolgung",
       "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@9795c36a-1b6d-484f-9012-3a3c31916255": "Indikatoren",
       "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@2ed9c29b-dfc2-448a-af00-84eff95c9839": "Geschäftsprozess",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Prozess",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Aktivitätsverfolgung",
       "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@9d8c7721-772d-4cce-af30-86ec4a7691e0": "Prozess",
       "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@207ecb95-628a-43fa-ae78-ca585213de34": "Indikatoren",
+      "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@e189a366-6273-48a2-8a08-e23167fdeec3": "KPI-Qualität",
       "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@f7b4a448-82d1-452f-b7de-df3f09958781": "Prozess",
       "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@6bbb617c-e4b6-43b7-9b75-11e1dfa1457c": "Indikatoren",
+      "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@46cf9488-14ec-43a6-a0ec-f4588729c931": "KPI-Qualität",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Prozess",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indikatoren",
+      "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI-Qualität",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Produktionsplanung",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Schlüsselinformationen",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Geschäftsprozess",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Systemadministrator",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Geschäftsprozess",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Geschäftsleitung",
@@ -13182,6 +13236,7 @@
       "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Budgetmeilenstein",
       "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Zeitenübersicht",
       "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Zeitenübersicht",
+      "pageLayout.de5e61e1-a219-4cf5-a820-c030c92e23e2.@c0c5b003-4d36-4f8e-9f67-5246f49703a6": "Schlüsselinformationen",
       "title_8d6e311a-79f1-4426-a824-a2825165e164": "Einkaufs-Übersicht",
       "title_85c3150b-9af0-467e-976a-8d1936e12def": "Zu unterzeichnende Bestellanfragen",
       "description_85c3150b-9af0-467e-976a-8d1936e12def": "Zu unterzeichnende Bestellanfragen",
@@ -13201,6 +13256,8 @@
       "description_abf4c1fa-b003-4b93-a737-0731baf7e137": "Unterzeichnete offene Bestellungen",
       "title_f237dd5f-de1e-429c-8074-7008bfbe4f3d": "Historische offene unterzeichnete Bestellungen",
       "description_f237dd5f-de1e-429c-8074-7008bfbe4f3d": "Historische offene unterzeichnete Bestellungen",
+      "title_58285105-cd00-4448-b2fe-917174797193": "Historische unterzeichnete Verkaufsdokumente",
+      "description_58285105-cd00-4448-b2fe-917174797193": "Historische unterzeichnete Verkaufsdokumente",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@436c6cd0-aed9-4460-bdce-aa49780e5a98": "Meine unterzeichneten Dokumente",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@8285bf6a-520a-4add-ae5a-daa0a83eb8a3": "Offener Auftrag",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@398ddd1c-5a40-4b20-ba1d-e0de62b1647b": "Historische",
@@ -13369,8 +13426,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business process",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Key Information",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Key Information",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business process",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Late Purchase Requests",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "Material buyer Indicators",
       "description_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "INDIC_APPR",
@@ -13419,6 +13474,8 @@
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business process",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Key Information",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Business process",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Key Information",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business process",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "System Administrator",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business process",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "Invoiced Expenses",
@@ -13681,9 +13738,6 @@
       "title_47ef36fa-2290-47c9-b0ff-19f38158ae95": "Portal code",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Key Information",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Business Process",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Planning manager",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Key Information",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business Process",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Material buyer",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Late Purchase Requests",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "Material buyer Indicators",
@@ -13844,11 +13898,16 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Processus",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicateurs",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Quality",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Planning manager",
+      "title_cabb8f09-2ae0-44c7-971b-bc600b997f21": "Project Management",
+      "description_cabb8f09-2ae0-44c7-971b-bc600b997f21": "Project Management",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Key Information",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Business Process",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "System administrator",
       "title_61ab37e4-6d28-4e9d-b390-93888747b103": "Development training Level 3 step 1",
       "description_61ab37e4-6d28-4e9d-b390-93888747b103": "Development training Level 3 step 1",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business Process",
-      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@46373a10-8cc3-40a4-ae27-88e7ec5f932a": "Development training",
+      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@99a4c23d-4a72-4744-82aa-45bfb99eba3e": "Development training",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Executive",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "Purchase Inv by Product Family",
       "description_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "SACH04",
@@ -14186,9 +14245,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Indicadores",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Procesos",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsable planificación",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Indicadores",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Procesos",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Aprovisionador",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Solicitudes compra en retraso",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "Indicadores aprovisionador",
@@ -14258,11 +14314,13 @@
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "STD_X3_GEODE_MATFOLLOW",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Proceso",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Indicadores",
+      "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@b0ebc9ac-d4d5-47d5-bcf3-920c9c2a9039": "KPI Calidad",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
       "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Procesos",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "STD_X3_GEODE_QUA",
       "title_dfddb114-69df-4f5e-a23a-be191c8d7b6e": "STD_X3_GEODE_QCFOLLOW",
       "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@ff00fb4d-1926-4b4e-ae1a-ff84e24930b1": "Proceso",
+      "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@bf4c2cb1-e505-4dec-b3cf-994128d9c53e": "Seguimiento de actividad",
       "title_57066157-285f-46c2-ab5e-0a986cda935c": "STD_X3_GEODE_SKO",
       "title_28a4e033-427a-47da-bcd6-394632aea25c": "STD_X3_GEODE_TOFOLLOW",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "STD_X3_GEODE_BOFOLLOW",
@@ -14272,6 +14330,7 @@
       "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@2ed9c29b-dfc2-448a-af00-84eff95c9839": "Procesos",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Proceso",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Seguimiento de actividad",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "STD_X3_GEODE_PICBIS",
       "title_993c64a4-1a6c-4ce0-a557-e78b761541be": "STD_X3_GEODE_DOFOLLOW",
       "title_58d01c8e-c7fb-4e41-a9eb-1d995213b919": "STD_X3_GEODE_DOLSSH",
@@ -14284,6 +14343,7 @@
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "STD_X3_GEODE_CDKNEEDS",
       "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@9d8c7721-772d-4cce-af30-86ec4a7691e0": "Proceso",
       "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@207ecb95-628a-43fa-ae78-ca585213de34": "Indicadores",
+      "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@e189a366-6273-48a2-8a08-e23167fdeec3": "KPI Calidad",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "STD_X3_GEODE_DIS",
       "title_6f08ad8d-5f7a-4ff0-8864-2e1f5d74ed06": "STD_X3_GEODE_OL1",
       "title_b156a18f-7bde-48ce-b400-4a4037e67c4e": "STD_X3_GEODE_TOUGEN1",
@@ -14295,6 +14355,7 @@
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "STD_X3_GEODE_STATTN",
       "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@f7b4a448-82d1-452f-b7de-df3f09958781": "Proceso",
       "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@6bbb617c-e4b6-43b7-9b75-11e1dfa1457c": "Indicadores",
+      "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@46cf9488-14ec-43a6-a0ec-f4588729c931": "KPI Calidad",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "STD_X3_GEODE_REC",
       "title_d25680c7-3b62-46ba-8022-27918ea75090": "STD_X3_GEODE_STATEA",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "STD_X3_GEODE_STATRA",
@@ -14309,6 +14370,10 @@
       "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Proceso",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicadores",
+      "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Calidad",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsable planificación",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Indicadores",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Procesos",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Portal de usuario",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Procesos",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Director NA",
@@ -14374,6 +14439,7 @@
       "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Metas presupuesto",
       "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Resumen de tiempos",
       "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Resumen de tiempos",
+      "pageLayout.de5e61e1-a219-4cf5-a820-c030c92e23e2.@c0c5b003-4d36-4f8e-9f67-5246f49703a6": "Indicadores",
       "title_8d6e311a-79f1-4426-a824-a2825165e164": "Workflow compras",
       "title_85c3150b-9af0-467e-976a-8d1936e12def": "Solicitudes de compra a firmar",
       "description_85c3150b-9af0-467e-976a-8d1936e12def": "Solicitudes de compra a firmar",
@@ -14591,9 +14657,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processus",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Indicateurs",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsable planning",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processus",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Indicateurs",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Approvisionneur",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Demandes d'achat en retard",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "Indicateurs approvisionneur",
@@ -14842,6 +14905,11 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Processus",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicateurs",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Qualité",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsable planning",
+      "title_cabb8f09-2ae0-44c7-971b-bc600b997f21": "Gestion d'affaires",
+      "description_cabb8f09-2ae0-44c7-971b-bc600b997f21": "Gestion d'affaires",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processus",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Indicateurs",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrateur système",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Processus",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Directeur NA",
@@ -15119,9 +15187,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Informazioni chiave",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processo",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsabile planning",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Informazioni chiave",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processo",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Acquisitore Prod",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "STD_X3_ERP_RACH029",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "STD_X3_ERP_INDIC_APPR",
@@ -15227,6 +15292,9 @@
       "title_ce2425d3-ea56-49a2-967e-d9145dda0306": "STD_X3_GEODE_ENT1",
       "title_7e51b5bf-ed60-49c6-97a2-c6c0aa866a33": "STD_X3_GEODE_ENT2",
       "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsabile planning",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Informazioni chiave",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processo",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Portale utente",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business process",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "STD_X3_ERP_SACH04",
@@ -15471,9 +15539,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Główne informacje",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Proces biznesowy",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Planista",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Główne informacje",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Proces biznesowy",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Kupiec surowców",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "STD_X3_ERP_RACH029",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "STD_X3_ERP_INDIC_APPR",
@@ -15533,6 +15598,9 @@
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Proces biznesowy",
       "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Proces biznesowy",
       "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@2ed9c29b-dfc2-448a-af00-84eff95c9839": "Proces biznesowy",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Planista",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Główne informacje",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Proces biznesowy",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrator systemu",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Proces biznesowy",
       "title_3fde10e0-c2b0-4315-8fe2-60beee3fb314": "STD_X3_ERP_SACH04",
@@ -15774,9 +15842,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Informação chave",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Processo de negócio",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsável planeamento",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Informação chave",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processo de negócio",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Aprovisionador",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "Pedidos de compra em atraso",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "Indicadores aprovisionador",
@@ -15847,20 +15912,23 @@
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "STD_X3_GEODE_MATFOLLOW",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "Processo",
       "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "Indicadores",
+      "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@b0ebc9ac-d4d5-47d5-bcf3-920c9c2a9039": "KPI Qualidade",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "STD_X3_GEODE_ADM",
-      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Processo de negócio",
+      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "Processo",
       "title_88f8444a-b587-46ae-afc4-a11b8ee658dc": "STD_X3_GEODE_QUA",
       "title_dfddb114-69df-4f5e-a23a-be191c8d7b6e": "STD_X3_GEODE_QCFOLLOW",
       "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@ff00fb4d-1926-4b4e-ae1a-ff84e24930b1": "Processo",
+      "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@bf4c2cb1-e505-4dec-b3cf-994128d9c53e": "Seguimento atividade",
       "title_57066157-285f-46c2-ab5e-0a986cda935c": "STD_X3_GEODE_SKO",
       "title_28a4e033-427a-47da-bcd6-394632aea25c": "STD_X3_GEODE_TOFOLLOW",
       "title_84d2e12d-14e1-4e40-ae08-981f4dad6af5": "STD_X3_GEODE_BOFOLLOW",
       "title_e578a026-2c0c-4339-8ab2-de6eb8dc0c7a": "STD_X3_GEODE_BOMMVT",
       "title_16c668ef-90f3-43b2-8aec-fe74a1ee608a": "STD_X3_GEODE_STO",
       "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@9795c36a-1b6d-484f-9012-3a3c31916255": "Indicadores",
-      "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@2ed9c29b-dfc2-448a-af00-84eff95c9839": "Processo de negócio",
+      "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@2ed9c29b-dfc2-448a-af00-84eff95c9839": "Processo",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Processo",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Seguimento atividade",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "STD_X3_GEODE_PICBIS",
       "title_993c64a4-1a6c-4ce0-a557-e78b761541be": "STD_X3_GEODE_DOFOLLOW",
       "title_58d01c8e-c7fb-4e41-a9eb-1d995213b919": "STD_X3_GEODE_DOLSSH",
@@ -15873,6 +15941,7 @@
       "title_fd9f1fa3-dac7-4b1e-a52a-d671427cb2b4": "STD_X3_GEODE_CDKNEEDS",
       "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@207ecb95-628a-43fa-ae78-ca585213de34": "Indicadores",
       "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@9d8c7721-772d-4cce-af30-86ec4a7691e0": "Processo",
+      "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@e189a366-6273-48a2-8a08-e23167fdeec3": "KPI Qualidade",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "STD_X3_GEODE_DIS",
       "title_6f08ad8d-5f7a-4ff0-8864-2e1f5d74ed06": "STD_X3_GEODE_OL1",
       "title_b156a18f-7bde-48ce-b400-4a4037e67c4e": "STD_X3_GEODE_TOUGEN1",
@@ -15884,6 +15953,7 @@
       "title_da759fa7-d1d9-423b-a1ae-7fc3a326034c": "STD_X3_GEODE_STATTN",
       "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@6bbb617c-e4b6-43b7-9b75-11e1dfa1457c": "Indicadores",
       "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@f7b4a448-82d1-452f-b7de-df3f09958781": "Processo",
+      "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@46cf9488-14ec-43a6-a0ec-f4588729c931": "KPI Qualidade",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "STD_X3_GEODE_REC",
       "title_d25680c7-3b62-46ba-8022-27918ea75090": "STD_X3_GEODE_STATEA",
       "title_e7c7b8e0-3055-4407-be8e-9ba9c4a37650": "STD_X3_GEODE_STATRA",
@@ -15898,6 +15968,10 @@
       "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Processo",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicadores",
+      "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Qualidade",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Responsável planeamento",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Informação chave",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Processo de negócio",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrador de sistema",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Processo de negócio",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Executivo",
@@ -15956,6 +16030,7 @@
       "description_e8624a8b-a69d-4929-a0e2-51284647e220": "Metas orçamentais",
       "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Sumário tempo",
       "description_cf349c07-9673-475f-bd1b-24f1d5f05e74": "Sumário tempo",
+      "pageLayout.de5e61e1-a219-4cf5-a820-c030c92e23e2.@c0c5b003-4d36-4f8e-9f67-5246f49703a6": "Indicadores",
       "title_8d6e311a-79f1-4426-a824-a2825165e164": "Workflow compras",
       "title_85c3150b-9af0-467e-976a-8d1936e12def": "Pedidos de compra a assinar",
       "description_85c3150b-9af0-467e-976a-8d1936e12def": "Pedidos de compra a assinar",
@@ -15975,6 +16050,8 @@
       "description_abf4c1fa-b003-4b93-a737-0731baf7e137": "Encomendas abertas de compra assinadas",
       "title_f237dd5f-de1e-429c-8074-7008bfbe4f3d": "Histórico das encomendas abertas de compra assinadas",
       "description_f237dd5f-de1e-429c-8074-7008bfbe4f3d": "Histórico das encomendas abertas de compra assinadas",
+      "title_58285105-cd00-4448-b2fe-917174797193": "Histórico documentos compra assinados",
+      "description_58285105-cd00-4448-b2fe-917174797193": "Histórico documentos compra assinados",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@436c6cd0-aed9-4460-bdce-aa49780e5a98": "Meus documentos assinados",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@8285bf6a-520a-4add-ae5a-daa0a83eb8a3": "Encomendas abertas",
       "pageLayout.6e079068-fca7-4bb1-b33a-cbb48c2b7446.@398ddd1c-5a40-4b20-ba1d-e0de62b1647b": "Histórico",
@@ -16173,9 +16250,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "Основная информация",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "Бизнес-процесс",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Менеджер по планированию",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Основная информация",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Бизнес-процесс",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "Материал покупатель",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "STD_X3_ERP_RACH029",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "STD_X3_ERP_INDIC_APPR",
@@ -16236,6 +16310,9 @@
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Основная информация",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Бизнес-процесс",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Бизнес-процесс",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "Менеджер по планированию",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "Основная информация",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "Бизнес-процесс",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Системный администратор",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Бизнес-процесс",
       "title_3d27f3a0-d365-45e5-bed5-de3c261205d4": "Управляющий персонал",
@@ -16450,6 +16527,7 @@
       "title_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "总会计师指标",
       "description_590ba6ea-4137-49b2-8f00-22b4a8cf8cb8": "INDIC_CCPT",
       "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@f81166d0-4d1e-4700-88a3-d48cceda4832": "关键指标",
+      "pageLayout.8c36ed6a-17d0-48dd-a5d0-d0829fd62159.@dab124be-39ce-4937-8541-026474810524": "业务流程",
       "title_80f3d98f-ae67-4b2b-8c66-9436ad056572": "销售管理员",
       "description_80f3d98f-ae67-4b2b-8c66-9436ad056572": "销售管理员",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "销售管理员",
@@ -16495,9 +16573,6 @@
       "description_e64c6aea-a496-46ea-a20e-e3724d01ea8a": "SSTO01",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@8fba941c-7bc9-4e7e-9203-daeae79ce4d0": "业务流程",
       "pageLayout.d0943dfb-f070-4e0a-bac2-8be4968fa285.@b7418641-8d0d-4529-b160-de97f46d31f3": "关键指数",
-      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "计划经理",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "关键指数",
-      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "业务流程",
       "title_72d3bee2-7bd7-43a6-8c87-8cf0e09a184d": "供货员",
       "title_f4e9a579-698d-402f-a4be-400552868cab": "逾期的采购请求",
       "title_9014bcf1-ad0a-41ed-bbe5-729103b852d4": "供货员指标",
@@ -16508,6 +16583,7 @@
       "pageLayout.25079552-a4cd-4968-b01f-ae00565809c3.@4c38c46c-927d-49fc-922e-1d1bf46c9dc2": "关键指数",
       "title_59706e61-70bf-4a68-9c81-aacb18b07e0c": "参数设置向导",
       "title_25d7f2d5-3514-42f3-a878-e37653b0aabf": "参数设置向导",
+      "pageLayout.4af9287e-a5d5-48af-8a19-df4a89d47c4d.@4ddbe79c-17ab-4da9-9d92-045c1802cbd0": "业务流程",
       "title_88716efd-2df1-4d51-8802-7354a5c90b41": "销售人员",
       "title_c3d8d194-da2b-48a0-83c0-fa644b411b19": "销售人员指标",
       "description_c3d8d194-da2b-48a0-83c0-fa644b411b19": "INDIC_COMM",
@@ -16567,19 +16643,41 @@
       "title_e413cb86-cb8f-48fa-9ec0-9d8899636597": "驳回的操作",
       "title_bc39a34a-b86a-4577-9870-dbe2953d2344": "资源追踪",
       "title_13e0b0ad-53d8-4b2f-aeb2-7aef6968355a": "物料追踪",
+      "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@cb8b12ca-52e2-4862-a761-be5fc6b301b3": "业务流程",
+      "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@7b1a4611-1e43-4c2e-b05a-39796830e5a6": "关键指标",
+      "pageLayout.2170c305-61d4-4182-be98-e0b9f8066a43.@b0ebc9ac-d4d5-47d5-bcf3-920c9c2a9039": "KPI质量",
       "title_7c66635d-a2f8-4dae-98b8-2d97bc38b99b": "运营经理",
       "title_8c46528a-7ce2-4818-8985-ba617522aa94": "运营经理",
+      "pageLayout.40e04fef-51d7-4a56-8843-b43c6eb7dee1.@d251b446-1975-4c27-9339-2e748e4da5ac": "业务流程",
       "title_a293917f-2f39-4855-b12f-2f7ccda866bc": "质量经理",
+      "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@ff00fb4d-1926-4b4e-ae1a-ff84e24930b1": "业务流程",
+      "pageLayout.2caa8727-dc1b-4b41-b149-38a0f4db3e3a.@bf4c2cb1-e505-4dec-b3cf-994128d9c53e": "活动追踪",
       "title_3f1f68e3-4348-4c6a-8faa-e67c0773c18f": "库存经理",
+      "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@9795c36a-1b6d-484f-9012-3a3c31916255": "关键指标",
+      "pageLayout.bfd138b1-c304-49bc-ac68-282d818a5bcc.@2ed9c29b-dfc2-448a-af00-84eff95c9839": "业务流程",
       "title_fbd75d2a-7145-4d87-9f25-444247362b64": "物流经理",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "物流服务",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "业务流程",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "活动追踪",
       "title_400ecc41-db74-429b-a357-808ac00d5ec9": "领料经理",
       "title_ca7dbbed-1aae-4ea1-aa6d-bed016c0171d": "领料经理",
+      "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@207ecb95-628a-43fa-ae78-ca585213de34": "关键指标",
+      "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@9d8c7721-772d-4cce-af30-86ec4a7691e0": "业务流程",
+      "pageLayout.2da9216a-bb41-4cef-96c3-a3cf0e2df101.@e189a366-6273-48a2-8a08-e23167fdeec3": "KPI质量",
       "title_1bdcc122-9e15-4157-a4f4-7ae445fd7904": "运输经理",
       "title_1c1b16fd-e064-4d65-b1d5-14cf633ba051": "运输经理",
+      "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@6bbb617c-e4b6-43b7-9b75-11e1dfa1457c": "关键指标",
+      "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@f7b4a448-82d1-452f-b7de-df3f09958781": "业务流程",
+      "pageLayout.d81edfb6-cf2b-4ea6-9c7f-6762ae0061f4.@46cf9488-14ec-43a6-a0ec-f4588729c931": "KPI质量",
       "title_2be8407c-7e7c-4eaf-af0b-076681bef337": "收货经理",
       "title_37859cdd-3316-4b08-9e2d-9074168bbe31": "收货经理",
       "title_d25680c7-3b62-46ba-8022-27918ea75090": "预计收货",
+      "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "业务流程",
+      "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "关键指标",
+      "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI质量",
+      "title_70b8e4d9-1bf0-48c7-885d-8bb05a85c4e7": "计划经理",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@6805a136-be51-455c-a2b9-93f6acd6a9e4": "关键指数",
+      "pageLayout.729659d5-d9a8-4efb-a7de-b75e22866d59.@7ea52985-5f73-4331-a58c-6a8e86988cf8": "业务流程",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "系统管理员",
       "title_61ab37e4-6d28-4e9d-b390-93888747b103": "开发培训等级3 第1步",
       "description_61ab37e4-6d28-4e9d-b390-93888747b103": "开发培训等级3 第1步",
@@ -16634,10 +16732,16 @@
       "description_af65f43e-4456-45b2-96c7-c1f352f3e426": "可疑收款项",
       "title_cd27458f-83af-4ced-a953-13c4437400b6": "现金预测",
       "description_cd27458f-83af-4ced-a953-13c4437400b6": "现金预测",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@2fb68a9f-cac4-4713-8691-871f999ec57c": "现金预测",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@34ae3822-749f-4d82-9728-940b0acda2b0": "营业额和利润",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@c305852f-9fcd-4954-b883-6aefc79a3ecf": "费用",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@b09fe5d1-20b5-4c42-bcac-0e8104f583ce": "约会",
+      "pageLayout.2ab186e9-7ba3-461c-bb2a-45cdb898b051.@ef9bd43b-7c69-4248-974d-75fd01f0e593": "KPIs",
       "title_74839699-2337-4451-8674-8f3060883902": "预算进度",
       "title_2672f738-d577-4676-9a8c-8ab8c4376295": "预算超支",
       "title_e8624a8b-a69d-4929-a0e2-51284647e220": "预算里程碑",
       "title_cf349c07-9673-475f-bd1b-24f1d5f05e74": "时间汇总",
+      "pageLayout.de5e61e1-a219-4cf5-a820-c030c92e23e2.@c0c5b003-4d36-4f8e-9f67-5246f49703a6": "关键指标",
       "title_8d6e311a-79f1-4426-a824-a2825165e164": "采购工作流",
       "title_85c3150b-9af0-467e-976a-8d1936e12def": "待签名的采购请求",
       "description_85c3150b-9af0-467e-976a-8d1936e12def": "待签名的采购请求",

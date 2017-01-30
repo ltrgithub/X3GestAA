@@ -21,37 +21,57 @@ namespace ExcelAddIn
         // Equal function for Excel / Word / Powerpoint
         private void setLanguage()
         {
-            int languageCode = 0;
+            int languageID = 0;
+            string languageCode = string.Empty;
             const string keyEntry = "UILanguage";
+           const string keyEntryTag = "UILanguageTag";
+            // 16.0 Office 2016
             // 15.0 Office 2013
             // 14.0 2010
             // 12.0 2003
-            string[] versions = { "15.0", "14.0", "12.0" };
+            string[] versions = {"16.0",  "15.0", "14.0", "12.0" };
             foreach (string version in versions)
             {
                 string reg = @"Software\Microsoft\Office\" + version + "\\Common\\LanguageResources";
                 try
                 {
                     RegistryKey k = Registry.CurrentUser.OpenSubKey(reg);
-                    if (k != null && k.GetValue(keyEntry) != null) languageCode = (int)k.GetValue(keyEntry);
+                    if (k != null && k.GetValue(keyEntry) != null) languageID = (int)k.GetValue(keyEntry);
+                }
+                catch { }
 
+                try
+                {
+                    RegistryKey k = Registry.CurrentUser.OpenSubKey(reg);
+                    if (k != null && k.GetValue(keyEntryTag) != null) languageCode = k.GetValue(keyEntryTag).ToString();
                 }
                 catch { }
 
                 try
                 {
                     RegistryKey k = Registry.LocalMachine.OpenSubKey(reg);
-                    if (k != null && k.GetValue(keyEntry) != null) languageCode = (int)k.GetValue(keyEntry);
+                    if (k != null && k.GetValue(keyEntry) != null) languageID = (int)k.GetValue(keyEntry);
                 }
                 catch { }
 
-                if (languageCode > 0)
+                try
+                {
+                    RegistryKey k = Registry.LocalMachine.OpenSubKey(reg);
+                    if (k != null && k.GetValue(keyEntryTag) != null) languageCode = k.GetValue(keyEntryTag).ToString();
+                }
+                catch { }
+
+                if (languageID > 0 || languageCode.Length > 0)
                 {
                     break;
                 }
             }
 
-            if (languageCode > 0)
+            if (languageID > 0)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageID);
+            }
+            else if (languageCode.Length > 0)
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageCode);
             }
