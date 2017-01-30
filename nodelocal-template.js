@@ -122,8 +122,12 @@ exports.config = {
 					// high: ""
 				}
 			}
+		},
+		profile: {
+			// Default is to reject all kind of MS Office, OpenOffice, LibreOffice, StarOffice documents
+			officeDocumentBlackList: /(msword|ms-word|ms-excel|ms-powerpoint|openxmlformats-officedocument|oasis.opendocument|stardivision)/i
 		}
-	},
+    },
 	system: {
 		// enables memwatch module
 		memwatch: false,
