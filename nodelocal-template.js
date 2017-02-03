@@ -44,6 +44,13 @@ exports.config = {
 		// allow to pass some node parameter like --prof
 		nodeOptions: ""
 	},
+	x3batch: {
+		// retry so many times to connect to X3 server (as admin client) 
+		// after failing for the first time (retrying only when retryInterval is > 0)
+		retryCount:0,
+		// time in milliseconds before trying again to connect to X3 server. When 0, do not try again. 
+		retryInterval: 0
+	},
     security: {
         http: {
 			// HTTP headers added
