@@ -38,6 +38,36 @@ namespace RegistryHelper
                     Office2010RegistryHelper.registerAddIn(installDirectory, install);
                 }
             }
+            else if (args.Length > 1 && args[1].Trim().Equals("update64bit"))
+            {
+                if (Office2016RegistryHelper.isOffice2016Installed())
+                {
+                    //Office2016RegistryHelper.copyAddinsRegistry();
+                }
+                else if (Office2013RegistryHelper.isOffice2013Installed())
+                {
+                    Office2013RegistryHelper.copyAddinsRegistry();
+                }
+                else if (Office2010RegistryHelper.isOffice2010Installed())
+                {
+                    //Office2010RegistryHelper.copyAddinsRegistry();
+                }
+            }
+            else if (args.Length > 1 && args[1].Trim().Equals("uninstall"))
+            {
+                if (Office2016RegistryHelper.isOffice2016Installed())
+                {
+                    //Office2016RegistryHelper.removeAddinRegistry();
+                }
+                else if (Office2013RegistryHelper.isOffice2013Installed())
+                {
+                    Office2013RegistryHelper.removeAddinRegistry();
+                }
+                else if (Office2010RegistryHelper.isOffice2010Installed())
+                {
+                    //Office2010RegistryHelper.removeAddinRegistry();
+                }
+            }
             waitTimer.Start();
         }
 
