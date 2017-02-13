@@ -49,7 +49,13 @@ exports.config = {
 		// after failing for the first time (retrying only when retryInterval is > 0)
 		retryCount:0,
 		// time in milliseconds before trying again to connect to X3 server. When 0, do not try again. 
-		retryInterval: 0
+		retryInterval: 0,
+		// host name including port and protocol to compute baseUrl which is sent to X3. 
+		// A placeholder {{tenantId}} will be replaced with current tenant name.
+		// Examples:
+		// host: "https://abc.def.com:8126", 
+		// or (with placeholder):
+		// host: "https://{{tenantId}}.def.com:8126",
 	},
     security: {
         http: {
