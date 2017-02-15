@@ -280,6 +280,7 @@ exports.config = {
 		// ignoreFrequency: true,
 		// offStemmer : true, // desactivation of the stemmer for the search indexation
         // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
+		//indexPrefix : "tenantXXX_configYYY" // used in particular by cloudV2 to prefix index names in single tenant mode
 	},
 	notificatonServer: {
 		//"log Level" : 3,
