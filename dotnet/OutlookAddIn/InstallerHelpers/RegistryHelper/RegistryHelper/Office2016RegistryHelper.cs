@@ -16,7 +16,7 @@ namespace RegistryHelper
         private const string _localMachineRoot = "HKEY_LOCAL_MACHINE";
         private const string _officeMSI = @"\Software\Microsoft\Office\16.0\Outlook";
         private const string _officeCTR = @"\SOFTWARE\Microsoft\Office\ClickToRun\Registry\MACHINE\Software\Wow6432Node\Microsoft\Office\16.0\Outlook";  // click-to-run Installation
-
+        private const string _officeVersion = "16.0";
 
         public static Boolean isOffice2016Installed()
         {
@@ -105,5 +105,92 @@ namespace RegistryHelper
                 Registry.SetValue(keyName.ToString(), valueName, 1, RegistryValueKind.DWord);
             }
         }
+
+        #region 64bit registry setting
+
+        public static void copyAddinsRegistry()
+        {
+            if (!isOffice32Bit())
+            {
+                string regSrc = @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect";
+                Logger._log("regSrc: " + regSrc);
+                string regDest = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect";
+                Logger._log("regDest: " + regDest);
+                writeToRegistry(regSrc, regDest);
+                regSrc = string.Format(@"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\{0}\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect", _officeVersion);
+                Logger._log("regSrc: " + regSrc);
+                regDest = string.Format(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\{0}\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect", _officeVersion);
+                Logger._log("regDest: " + regDest);
+                writeToRegistry(regSrc, regDest);
+            }
+        }
+
+        private static void writeToRegistry(string regSrc, string regDest)
+        {
+            string[] _valueNames = { "Description", "FriendlyName" };
+            string[] _values = { "valDescription", "valFriendlyName" };
+            Logger._log("search registry values for " + regSrc);
+            for (int i = 0; i < _valueNames.Length; i++)
+            {
+                _values[i] = (string)Registry.GetValue(regSrc, _valueNames[i], null);
+                if (String.IsNullOrEmpty(_values[i]))
+                {
+                    Logger._log("no value for " + _valueNames[i]);
+                    return;
+                }
+                else
+                {
+                    Logger._log(_valueNames[i] + ": " + _values[i]);
+                }
+            }
+            int ergLoadBehavior = (int)Registry.GetValue(regSrc, "LoadBehavior", 0);
+
+            Logger._log("set registry values for " + regDest);
+            for (int i = 0; i < _valueNames.Length; i++)
+            {
+                try
+                {
+                    Registry.SetValue(regDest, _valueNames[i], _values[i]);
+                    Logger._log("after SetValue " + _valueNames[i] + ": " + (string)Registry.GetValue(regDest, _valueNames[i], null));
+                }
+                catch (Exception e)
+                {
+                    Logger._log(e.Message);
+                    throw new Win32Exception(e.Message);
+                }
+            }
+            Registry.SetValue(regDest, "LoadBehavior", ergLoadBehavior);
+            Logger._log("after SetValue " + "LoadBehavior" + ": " + (int)Registry.GetValue(regDest, "LoadBehavior", 0));
+            Logger._log("End of copyAddinsRegistry");
+        }
+
+        public static void removeAddinRegistry()
+        {
+            Logger._log("removeRegistry");
+            string keyName = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect";
+            removeKeyFromRegistry(keyName);
+            keyName = string.Format(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\{0}\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\Outlook\Addins\AdxOLNetv2s0.Connect", _officeVersion);
+            removeKeyFromRegistry(keyName);
+            Logger._log("End of removeRegistry");
+        }
+
+        private static void removeKeyFromRegistry(string keyName)
+        {
+            if (!isOffice32Bit())
+            {
+                try
+                {
+                    Registry.LocalMachine.CreateSubKey(keyName);
+                    Registry.LocalMachine.DeleteSubKeyTree(keyName);
+                    Logger._log("removed " + keyName);
+                }
+                catch (Exception e)
+                {
+                    Logger._log("could not remove " + keyName + " - " + e.ToString());
+                }
+            }
+        }
+
+        #endregion 64bit registry setting
     }
 }
