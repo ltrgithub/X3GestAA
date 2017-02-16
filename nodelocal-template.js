@@ -44,6 +44,19 @@ exports.config = {
 		// allow to pass some node parameter like --prof
 		nodeOptions: ""
 	},
+	x3batch: {
+		// retry so many times to connect to X3 server (as admin client) 
+		// after failing for the first time (retrying only when retryInterval is > 0)
+		retryCount:0,
+		// time in milliseconds before trying again to connect to X3 server. When 0, do not try again. 
+		retryInterval: 0,
+		// host name including port and protocol to compute baseUrl which is sent to X3. 
+		// A placeholder {{tenantId}} will be replaced with current tenant name.
+		// Examples:
+		// host: "https://abc.def.com:8126", 
+		// or (with placeholder):
+		// host: "https://{{tenantId}}.def.com:8126",
+	},
     security: {
         http: {
 			// HTTP headers added
@@ -267,6 +280,7 @@ exports.config = {
 		// ignoreFrequency: true,
 		// offStemmer : true, // desactivation of the stemmer for the search indexation
         // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
+		//indexPrefix : "tenantXXX_configYYY" // used in particular by cloudV2 to prefix index names in single tenant mode
 	},
 	notificatonServer: {
 		//"log Level" : 3,
