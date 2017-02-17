@@ -144,6 +144,7 @@
     </PreBuildEvent>
     <PostBuildEvent>if $(Configuration)==Debug (copy "$(OutDir)Sage.Syracuse.PowerPointAddIn.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CommonDataHelper.dll" "$(SageOfficeAddinsDir)" /y
+copy "$(OutDir)fr\Sage.Syracuse.PowerPointAddIn.resources.dll" "$(SageOfficeAddinsDir)fr" /y
 copy "$(OutDir)CommonDialogs.dll" "$(SageOfficeAddinsDir)" /y
 copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do nothing!")</PostBuildEvent>
   </PropertyGroup>
@@ -389,6 +390,7 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
   <ItemGroup>
     <None Include="Resources\refresh.png" />
     <None Include="Resources\logout.png" />
+    <None Include="Resources\edit.png" />
     <Content Include="Resources\refresh-all.png" />
     <Content Include="Resources\sauvegarder.png" />
     <Content Include="Resources\sauvegarder2.png" />
