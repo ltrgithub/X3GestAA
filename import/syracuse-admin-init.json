@@ -82,6 +82,12 @@
 	"numberGroupSeparator": " "
   }, {
 	"$type": "localePreference",
+	"code": "en-AU",
+	"description": "description_17a4797e-3480-42db-9a23-93c00598538c",
+	"numberDecimalSeparator": ".",
+	"numberGroupSeparator": ","
+  }, {
+	"$type": "localePreference",
 	"code": "en-GB",
 	"enabled": true,
 	"firstWeekOfYear": 4,
@@ -109,6 +115,12 @@
 	"firstWeekOfYear": 4,
 	"numberGroupSeparator": " "
   }, {
+	"$type": "localePreference",
+	"code": "pt-BR",
+	"description": "description_50ed1e50-7dfd-4c30-b925-f3e3a76411ee",
+	"numberDecimalSeparator": ",",
+	"numberGroupSeparator": " "
+  },{
 	"$type": "localePreference",
 	"code": "pt-PT",
 	"enabled": true,
@@ -299,13 +311,23 @@
   }, {
 	"$type": "user",
 	"login": "admin",
+	"securityLevel": 0,
 	"lastName": "Super administrator",
 	"password": "f5066151ecf0c2511ea0f73306e27a4f",
 	"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"],
 	"$factory": true,"$factoryOwner": "SAGE"
   }, {
 	"$type": "user",
+	"login": "cloudmanager",
+	"securityLevel": 1,
+	"lastName": "Cloud Manager",
+	"password": "U6e0302d2e84abede3d9ee538ed14e259",
+	"groups": ["description_702545c4-1bc7-421a-a2f0-68141f183b78"],
+	"$factory": true,"$factoryOwner": "SAGE"
+  }, {
+	"$type": "user",
 	"login": "import",
+	"securityLevel": 2,
 	"firstName": "Import",
 	"lastName": "Special user",
 	"password": "bf5cdfbfb4800831cb6c6f9c86e30d44",
