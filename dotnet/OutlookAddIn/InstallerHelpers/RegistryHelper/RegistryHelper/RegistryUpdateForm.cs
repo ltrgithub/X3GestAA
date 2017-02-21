@@ -42,7 +42,7 @@ namespace RegistryHelper
             {
                 if (Office2016RegistryHelper.isOffice2016Installed())
                 {
-                    //Office2016RegistryHelper.copyAddinsRegistry();
+                    Office2016RegistryHelper.copyAddinsRegistry();
                 }
                 else if (Office2013RegistryHelper.isOffice2013Installed())
                 {
@@ -50,14 +50,14 @@ namespace RegistryHelper
                 }
                 else if (Office2010RegistryHelper.isOffice2010Installed())
                 {
-                    //Office2010RegistryHelper.copyAddinsRegistry();
+                    Office2010RegistryHelper.copyAddinsRegistry();
                 }
             }
             else if (args.Length > 1 && args[1].Trim().Equals("uninstall"))
             {
                 if (Office2016RegistryHelper.isOffice2016Installed())
                 {
-                    //Office2016RegistryHelper.removeAddinRegistry();
+                    Office2016RegistryHelper.removeAddinRegistry();
                 }
                 else if (Office2013RegistryHelper.isOffice2013Installed())
                 {
@@ -65,7 +65,7 @@ namespace RegistryHelper
                 }
                 else if (Office2010RegistryHelper.isOffice2010Installed())
                 {
-                    //Office2010RegistryHelper.removeAddinRegistry();
+                    Office2010RegistryHelper.removeAddinRegistry();
                 }
             }
             waitTimer.Start();
