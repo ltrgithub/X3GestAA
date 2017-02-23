@@ -1,7 +1,7 @@
 {
 	"$config": {
 		"$createDate": "2015-06-09T16:17:59.000Z",
-		"$lastModified": "2017-01-25T15:38:22.000Z",
+		"$lastModified": "2017-02-23T16:18:51.000Z",
 		"$chapter": {
 			"$name": "Syracuse",
 			"$description": "Syracuse resources",
@@ -6699,10 +6699,10 @@
 			"text": {
 				"en-us": "Your security profile has a security level {0}, and you can't use or provide elements associated to security level {1}",
 				"ar-sa": "Votre profil ne vous permet pas d'utiliser ou d'autoriser le niveau de sécurité {1}",
-				"de-de": "Ihr Profil hat keine Berechtigung, Sicherheitsebene {0} zu verwenden oder bereitzustellen",
-				"es-es": "Su perfil no permite utilizar o autorizar el nivel de securidad {0}",
+				"de-de": "Ihr Profil hat Sicherheitsebene {0} und Sie können keine Elemente der Sicherheitsebene {1} verwenden oder bereitstellen.",
+				"es-es": "Su perfil no le permite utilizar o autorizar el nivel de seguridad {1}",
 				"fr-fr": "Votre profil ne vous permet pas d'utiliser ou d'autoriser le niveau de sécurité {1}",
-				"pt-pt": "O seu perfil não permite utilizar ou autorizar nivel de segurança {0}",
+				"pt-pt": "O seu perfil não permite utilizar ou autorizar nivel de segurança {1}",
 				"zh-cn": "您的安全配置文件的安全级别为{0}，而您不能使用或提供与安全级别{1}相关的元素",
 				"en-gb": "Votre profil ne vous permet pas d'utiliser ou d'autoriser le niveau de sécurité {1}",
 				"ru-ru": "Ваш профиль не позволяет использовать или предоставлять уровенб безопасности {0}",
@@ -7616,14 +7616,20 @@
 		"abortPatch": {
 			"text": {
 				"en-us": "Applying patch aborted",
-				"fr-fr": "L'application du patch a été abandonnée"
+				"fr-fr": "L'application du patch a été abandonnée",
+				"de-de": "Die Patchanwendung wurde abgebrochen",
+				"pt-pt": "A aplicação da patch foi abandonada",
+				"es-es": "Se ha abandonado la aplicación del parche"
 			},
 			"$key": "01D0647D2EFB863AF2D4E4C04AC9724543DC9616"
 		},
 		"traceNotFound": {
 			"text": {
 				"en-us": "Trace not found on the server: {0}",
-				"fr-fr": "Le fichier de trace {0} n'a pas été trouvé"
+				"fr-fr": "Le fichier de trace {0} n'a pas été trouvé",
+				"de-de": "Die Logdatei {0} wurde nicht gefunden",
+				"pt-pt": "O ficheiro de rastro {0} não foi encontrado",
+				"es-es": "No se ha encontrado el fichero de traza {0}"
 			},
 			"$key": "0C97364662370E603ACA5535ACE5E933B85AAB5A"
 		},
@@ -7631,9 +7637,9 @@
 			"text": {
 				"en-us": "The update failed",
 				"fr-fr": "La mise à jour a échoué",
-				"de-de": "Fehler bei der Aktualisierung",
-				"pt-pt": "A atualização falhou",
-				"es-es": "La actualización ha fallado"
+				"de-de": "Aktualisierung fehlgeschlagen",
+				"pt-pt": "Falha na atualização",
+				"es-es": "Ha fallado la actualización"
 			},
 			"$key": "59314EBA773228AC3BBEF0050AEAB3B73962CF1A"
 		},
@@ -7647,7 +7653,10 @@
 		"noPatchFiles": {
 			"text": {
 				"en-us": "No file found for patch '{0}' in the update",
-				"fr-fr": "L'update ne contient pas de fichiers pour le patch '{0}'"
+				"fr-fr": "L'update ne contient pas de fichiers pour le patch '{0}'",
+				"de-de": "Das Update enthält keine Dateien für Patch '{0}'",
+				"pt-pt": "A atualização não contem ficheiros para a patch '{0}'",
+				"es-es": "La actualización no contiene ficheros para el parche \"{0}\""
 			},
 			"$key": "BE6DCBE69B773F88F33A2F1087413411227CAE26"
 		}
@@ -8345,8 +8354,8 @@
 			"text": {
 				"en-us": "Task created on scheduler \"{0}\"",
 				"fr-fr": "Tâche créée sur le programmateur \"{0}\"",
-				"de-de": "Aufgabe im Planer \"{0}\" erstellt",
-				"pt-pt": "Tarefa criada no programador \"{0}\"",
+				"de-de": "Aufgabe wurde im Planer \"{0}\" erstellt",
+				"pt-pt": "Tarefa criada sobre o programador ''{0}''",
 				"es-es": "Tarea creada en el programador \"{0}\""
 			},
 			"$key": "B00300E6C2221D961C89A2497FB0FAED97C3A57E"
@@ -14713,7 +14722,7 @@
 				"en-us": "Dashboard {dashboardName}",
 				"ar-sa": "جدول {إسم الجدول}",
 				"fr-fr": "Tableau de bord {dashboardName}",
-				"pt-pt": "Quadro de controlo  {dashboardname}",
+				"pt-pt": "Quadro de controlo  {dashboardName}",
 				"zh-cn": "仪表板{dashboardName}",
 				"de-de": "===",
 				"en-gb": "===",
@@ -18673,7 +18682,7 @@
 				"fr-fr": "Site Sage X3 People {nom}",
 				"zh-cn": "Sage X3 People地点{name}",
 				"en-gb": "Sage X3 People Site {name}",
-				"pt-pt": "Estab. Sage X3 People {nome}",
+				"pt-pt": "Estab. Sage X3 People {nom}",
 				"ru-ru": "Sage X3 People Site {name}",
 				"it-it": "Sage X3 People Site {name}",
 				"pl-pl": "Sage X3 People Site {name}"
@@ -19656,7 +19665,7 @@
 				"fr-fr": "LDAP {nom}",
 				"de-de": "===",
 				"en-gb": "===",
-				"pt-pt": "LDAP  {nom}",
+				"pt-pt": "LDAP {nom}",
 				"ru-ru": "===",
 				"zh-cn": "===",
 				"es-es": "LDAP {nombre}"
@@ -38105,8 +38114,9 @@
 			"text": {
 				"en-us": "Endpoint",
 				"fr-fr": "Point de connexion",
-				"pt-pt": "EndPoint",
-				"es-es": "Punto de conexión"
+				"pt-pt": "Ponto de conexão",
+				"es-es": "Punto de conexión",
+				"de-de": "==="
 			},
 			"$key": "A45BD57DBE16377FEB9C663F821C5E872F4C7817"
 		},
@@ -38161,14 +38171,20 @@
 		"boProfile.$valueTemplate": {
 			"text": {
 				"en-us": "{user} : {security}",
-				"fr-fr": "{user} : {security}"
+				"fr-fr": "{user} : {security}",
+				"de-de": "===",
+				"pt-pt": "===",
+				"es-es": "{user}: {security}"
 			},
 			"$key": "B014882D7A35BD4E34AF05FA697585E02E25A62C"
 		},
 		"boProfile.security.secLdap": {
 			"text": {
 				"en-us": "secLdap",
-				"fr-fr": "secLdap"
+				"fr-fr": "secLdap",
+				"de-de": "===",
+				"pt-pt": "===",
+				"es-es": "==="
 			},
 			"$key": "C91ABE36A26AC34364DD7A4DA102412D7F811EFC"
 		},
@@ -38225,21 +38241,27 @@
 		"copyright.$descriptionTemplate": {
 			"text": {
 				"en-us": "Credits",
-				"fr-fr": "Credits"
+				"fr-fr": "Crédits",
+				"pt-pt": "Créditos",
+				"es-es": "Créditos"
 			},
 			"$key": "0E91883CE49F851501527F7CA76B6A50B8131E3B"
 		},
 		"copyright.$listTitle": {
 			"text": {
 				"en-us": "Credits",
-				"fr-fr": "Credits"
+				"fr-fr": "Crédits",
+				"pt-pt": "Créditos",
+				"es-es": "Créditos"
 			},
 			"$key": "6A251DC5069B1E220C73447D24C20C4E27D2396B"
 		},
 		"copyright.$titleTemplate": {
 			"text": {
 				"en-us": "Credits",
-				"fr-fr": "Credits"
+				"fr-fr": "Crédits",
+				"pt-pt": "Créditos",
+				"es-es": "Créditos"
 			},
 			"$key": "FE8AF2236D6511C3E7E1A61C383033C199E15150"
 		},
@@ -38267,7 +38289,10 @@
 		"copyright.license.$title": {
 			"text": {
 				"en-us": "Licenses",
-				"fr-fr": "Licenses"
+				"fr-fr": "Licences",
+				"de-de": "Lizenzen",
+				"pt-pt": "Licenças",
+				"es-es": "Licencias"
 			},
 			"$key": "83AA93A932123DFF65F0B6817463CF56C9A9C6F7"
 		},
@@ -38277,7 +38302,8 @@
 				"fr-fr": "Nom",
 				"pt-pt": "Nome",
 				"es-es": "Nombre",
-				"it-it": "Nome"
+				"it-it": "Nome",
+				"de-de": "==="
 			},
 			"$key": "946CF4A8B284AE7EFD49C3D54D28BF7F109E0538"
 		},
@@ -38304,7 +38330,8 @@
 				"pt-pt": "Versão",
 				"es-es": "Versión",
 				"fr-fr": "Version",
-				"pl-pl": "Wersja"
+				"pl-pl": "Wersja",
+				"de-de": "==="
 			},
 			"$key": "0881315FBDB36F8F33B98D647B9BE57C6B1C82DA"
 		},
@@ -38563,9 +38590,9 @@
 			"text": {
 				"en-us": "Database host",
 				"fr-fr": "Hôte de la base de données",
-				"de-de": "Host-Datenbank",
-				"pt-pt": "Banco de dados do host",
-				"es-es": "Servidor de la base de datos"
+				"de-de": "Datenbankhost",
+				"pt-pt": "Host da base de dados",
+				"es-es": "Host de la base de datos"
 			},
 			"$key": "65DC0CEAB1AF04C9D7D843391DFAEB40A6D8D871"
 		},
@@ -38575,7 +38602,7 @@
 				"fr-fr": "Nom de la base de données",
 				"de-de": "Datenbankname",
 				"pt-pt": "Nome da base de dados",
-				"es-es": "Nombre base de datos"
+				"es-es": "Nombre de la base de datos"
 			},
 			"$key": "862DAE2634F0A6B9E87639315D95E2870A8DD5D1"
 		},
@@ -38590,8 +38617,8 @@
 			"text": {
 				"en-us": "Database port",
 				"fr-fr": "Port de la base de données",
-				"de-de": "Port-Datenbank",
-				"pt-pt": "Porto de banco de dados",
+				"de-de": "Datenbankport",
+				"pt-pt": "Porta da base de dados",
 				"es-es": "Puerto de la base de datos"
 			},
 			"$key": "8E350E4D3036C238F71F437DAE9E35EA5E791C7E"
@@ -38618,8 +38645,8 @@
 				"en-us": "Database driver",
 				"fr-fr": "Pilote de la base de données",
 				"de-de": "Datenbanktreiber",
-				"pt-pt": "Dirigir o banco de dados",
-				"es-es": "Controlador de la base de datos"
+				"pt-pt": "Piloto da base de dados",
+				"es-es": "Driver de la base de datos"
 			},
 			"$key": "1A442417C897B429BA32EBD77B1023675EE77CA2"
 		},
@@ -41011,28 +41038,40 @@
 		"connectedApplication.$titleTemplate": {
 			"text": {
 				"en-us": "Connected applications",
-				"fr-fr": "Application connectée"
+				"fr-fr": "Application connectée",
+				"de-de": "Verbundene Anwendungen",
+				"pt-pt": "Aplicação conectada",
+				"es-es": "Aplicación conectada"
 			},
 			"$key": "DA72ADD299B54640BB2D3D1CAC8CA68D8A9EF5A3"
 		},
 		"connectedApplication.$descriptionTemplate": {
 			"text": {
 				"en-us": "Connected applications",
-				"fr-fr": "Application connectée"
+				"fr-fr": "Application connectée",
+				"de-de": "Verbundene Anwendungen",
+				"pt-pt": "Aplicação conectada",
+				"es-es": "Aplicación conectada"
 			},
 			"$key": "89200C91E5C86ACE428CBE928E13A23AC2C266D9"
 		},
 		"connectedApplication.$listTitle": {
 			"text": {
 				"en-us": "List of connected applications",
-				"fr-fr": "Liste des application connectées"
+				"fr-fr": "Liste des application connectées",
+				"de-de": "Liste der verbundenen Anwendungen",
+				"pt-pt": "Lista das aplicações conectadas",
+				"es-es": "Lista de aplicaciones conectadas"
 			},
 			"$key": "F8DCB5989F9B5189CCF1F4F7D4538A83DDBD5636"
 		},
 		"connectedApplication.$createActionTitle": {
 			"text": {
 				"en-us": "Create connected application",
-				"fr-fr": "Créer une application connectée"
+				"fr-fr": "Créer une application connectée",
+				"de-de": "Verbundene Anwendung erstellen",
+				"pt-pt": "Criar uma aplicação conectada",
+				"es-es": "Crear una aplicación conectada"
 			},
 			"$key": "9260DBE33A638C93EAAF959ABFD80971CCE16A9E"
 		},
@@ -41042,7 +41081,8 @@
 				"fr-fr": "Nom",
 				"it-it": "Nome",
 				"pt-pt": "Nome",
-				"es-es": "Nombre"
+				"es-es": "Nombre",
+				"de-de": "==="
 			},
 			"$key": "2C6C5A9A61009077C3A633C69A75CD67AD720718"
 		},
@@ -41073,21 +41113,30 @@
 		"connectedApplication.secret.$title": {
 			"text": {
 				"en-us": "Secret",
-				"fr-fr": "Secret"
+				"fr-fr": "Code secret",
+				"de-de": "Geheimer Schlüssel",
+				"pt-pt": "Segredo",
+				"es-es": "Código secreto"
 			},
 			"$key": "AABECF690EC8BE84BEEA39C16E9C90827C3DC718"
 		},
 		"connectedApplication.secretCreated.$title": {
 			"text": {
 				"en-us": "Secret to keep",
-				"fr-fr": "Secret à conserver"
+				"fr-fr": "Code secret à conserver",
+				"de-de": "Geheimer Schlüssel aufzubewahren",
+				"pt-pt": "Segredo a conservar",
+				"es-es": "Código secreto a guardar"
 			},
 			"$key": "EA399DDD6CF932D358A8A527B656147FAF425BAE"
 		},
 		"connectedApplication.secretCreated.$description": {
 			"text": {
 				"en-us": "Please store your secret somewhere safe because it will never be displayed again !",
-				"fr-fr": "Conservez ce secret dans un endroit sécurisé car il ne sera plus jamais affiché !"
+				"fr-fr": "Conservez ce code secret dans un endroit sécurisé car il ne sera plus jamais affiché !",
+				"de-de": "Bitte bewahren Sie Ihren geheimen Schlüssel an einem sicheren Ort auf, da dieser nie wieder angezeigt wird!",
+				"pt-pt": "Conserve este segredo em lugar seguro porque ele nunca será exibido!",
+				"es-es": "Guarde este código secreto en un lugar seguro, ya que no se volverá a mostrar"
 			},
 			"$key": "5CB2B26D62267AF599F9560C9B8C9B825CE41D3F"
 		},
@@ -41096,7 +41145,7 @@
 				"en-us": "Active",
 				"fr-fr": "Actif",
 				"de-de": "Aktiv",
-				"pt-pt": "Activo",
+				"pt-pt": "Ativo",
 				"es-es": "Activo"
 			},
 			"$key": "F4DB93DAAA662D94FE078A5CD2B64EAB93C136AD"
@@ -41104,56 +41153,78 @@
 		"connectedApplication.expiration.$title": {
 			"text": {
 				"en-us": "Tokens validity",
-				"fr-fr": "Validité des jetons"
+				"fr-fr": "Validité des jetons",
+				"de-de": "Gültigkeit der Tokens",
+				"pt-pt": "Validade dos tokens",
+				"es-es": "Validez de las fichas"
 			},
 			"$key": "22D882EA83EA58C04CC310E3A047A641845137C8"
 		},
 		"connectedApplication.expiration.$description": {
 			"text": {
 				"en-us": "expressed in seconds",
-				"fr-fr": "Exprimée en secondes ou une chaine de caractères représentant une durée. Ex: \"60\", \"2 days\", \"10h\", \"2.5 hrs\", \"7d\", \"1m\", \"5s\""
+				"fr-fr": "Exprimée en secondes ou une chaine de caractères représentant une durée. Ex: \"60\", \"2 days\", \"10h\", \"2.5 hrs\", \"7d\", \"1m\", \"5s\"",
+				"de-de": "in Sekunden"
 			},
 			"$key": "6F8DB2D4AC98135CDB243EFAD9AC6B66689ED545"
 		},
 		"connectedApplication.payloads.$title": {
 			"text": {
 				"en-us": "Tokens currently valid",
-				"fr-fr": "Jetons en cours de validité"
+				"fr-fr": "Jetons en cours de validité",
+				"de-de": "Aktuell gültige Tokens",
+				"pt-pt": "Tokens em curso de validação",
+				"es-es": "Fichas válidas actualmente"
 			},
 			"$key": "87171E60A2715F296980070D5E378A7713D0DDA8"
 		},
 		"connectedApplication.$services.generateSecret.$title": {
 			"text": {
 				"en-us": "Regenerate secret",
-				"fr-fr": "Regénerer le secret"
+				"fr-fr": "Regénerer le code secret",
+				"de-de": "Geheimen Schlüssel neu generieren",
+				"pt-pt": "Regenerar o segredo",
+				"es-es": "Regenerar el código secreto"
 			},
 			"$key": "F9494B6175437476E1E5AF2F0FA43380FC1E1A91"
 		},
 		"connectedApplication.$services.generateSecret.$description": {
 			"text": {
 				"en-us": "This action will delete all currently valid tokens",
-				"fr-fr": "Cette action supprimera tous les jetons en cours de validité"
+				"fr-fr": "Cette action supprimera tous les jetons en cours de validité",
+				"de-de": "Diese Aktion löscht alle aktuell gültigen Tokens",
+				"pt-pt": "Esta ação eliminará todos os tokens em curso de validação",
+				"es-es": "Esta acción suprimirá todas las fichas que son válidas actualmente"
 			},
 			"$key": "0F78E919EDC410F6035F2F9A8BBB398B5E1DDDBD"
 		},
 		"tokenPayload.jti.$title": {
 			"text": {
 				"en-us": "Token ID",
-				"fr-fr": "ID du jeton"
+				"fr-fr": "ID du jeton",
+				"de-de": "Token-ID",
+				"pt-pt": "ID do token",
+				"es-es": "ID de la ficha"
 			},
 			"$key": "1346DAA1D5FF9334DDC37B3204CB83766ECA63EF"
 		},
 		"tokenPayload.iat.$title": {
 			"text": {
 				"en-us": "Issued at",
-				"fr-fr": "Créé le"
+				"fr-fr": "Créé le",
+				"de-de": "Ausgegeben am",
+				"pt-pt": "Criado em",
+				"es-es": "Creada el"
 			},
 			"$key": "AA14EE8B02A93C7EDBFAA0AE6E395F588820D9EE"
 		},
 		"tokenPayload.exp.$title": {
 			"text": {
 				"en-us": "Expires in",
-				"fr-fr": "Expire dans"
+				"fr-fr": "Expire dans",
+				"de-de": "Läuft ab in",
+				"pt-pt": "Expira em",
+				"es-es": "Caduca en"
 			},
 			"$key": "D6FBD191D95222E032F4D607B5DCB4FFE70FE4FB"
 		},
@@ -43467,7 +43538,7 @@
 				"de-de": "Import abgeschlossen, {0} Objekt(e) wurden erstellt, {1} Objekt(e) wurden geändert, {2} Fehler",
 				"es-es": "Import efectuado, {0} objeto(s) creado(s), {1} objeto(s) modificado(s), {2} errores",
 				"fr-fr": "Import effectué, {0} objet(s) créé(s), {1} objet(s) modifiés, {2} erreurs",
-				"pt-pt": "Importação realizada, {0} objeto (s) jogo (s), {1} objeto (s) modificado, erros {2}",
+				"pt-pt": "Importação realizada, {0} objeto (s) criados (s), {1} objeto (s) modificado, {2} erros",
 				"zh-cn": "导入已完成，已创建{0}个对象，已修改{1}个对象，{2}个错误",
 				"en-gb": "===",
 				"ru-ru": "Импорт проведен, {0} объектов создано {1} объектов изменено {2} ошибки"
@@ -49344,7 +49415,7 @@
 				"de-de": "{0}.{1} Fehler: $enumCaptions - dieses Format ist veraltet, bitte verwenden Sie $enum:[{$value:one_value,$title:a_title},..",
 				"es-es": "{0}.{1} error: $enumCaptions - este formato está obsoleto, utilice $enum:[{$value:one_value,$title:a_title},...]",
 				"fr-fr": "{0}.{1} erreur: $enumCaptions - ce format est obsolète, veuillez utiliser $enum:[{$value:one_value,$title:a_title},...]",
-				"pt-pt": "{0}.{1} erro: $enumCaptions - este formato é obsoleto, utilize $enum:[{$value:one_value, $title:a_title},...]",
+				"pt-pt": "{0}.{1} erro: $enumCaptions - este formato é obsoleto, utilize $enum:[{$value:one_value,$title:a_title},...]",
 				"zh-cn": "{0}.{1}错误：$enumCaptions - 这种格式已过时，请使用$enum:[{$value:one_value,$title:a_title},...]",
 				"en-gb": "===",
 				"ru-ru": "{0}.{1} ошибка: $enumCaptions - формат устарел, используйте $enum:[{$value:one_value,$title:a_title},...]"
@@ -61578,7 +61649,7 @@
 				"ru-ru": "Фильтр {0} не будет Применяться, поскольку он содержит недопустимые элементы: {1}. Фильтр: {2}",
 				"zh-cn": "将不会应用筛选器{0}，因为它包含了无效元素：{1}。筛选器：{2}",
 				"ar-sa": "{2}:لم يتم تطبيق المرشح{0} لأنه يحتوي لعناصر غير صالحة:{1} المرشح",
-				"es-es": "El filtro [0] no se aplicará porque contiene elementos no válidos : {1}. Filtro: {2}"
+				"es-es": "El filtro {0} no se va a aplicar porque contiene elementos no válidos: {1}. Filtro: {2}"
 			},
 			"$key": "2513BE2A78F4BC107FE2C7F6954A0FE7AD862668"
 		},
@@ -65866,7 +65937,7 @@
 				"en-us": "Select",
 				"fr-fr": "Sélectionner",
 				"de-de": "Auswählen",
-				"pt-pt": "Seleccionar",
+				"pt-pt": "Selecionar",
 				"es-es": "Seleccionar"
 			},
 			"$key": "AFB5EFB91DFEBF45D064B41845E6E11DE064266B"
@@ -67998,14 +68069,20 @@
 		"etna": {
 			"text": {
 				"en-us": "ETNA",
-				"fr-fr": "ETNA"
+				"fr-fr": "ETNA",
+				"de-de": "===",
+				"pt-pt": "===",
+				"es-es": "==="
 			},
 			"$key": "BCA995E170E85EC67CB38602DB0806F12F1E3796"
 		},
 		"etna.engine": {
 			"text": {
 				"en-us": "ETNA engine",
-				"fr-fr": "moteur ETNA"
+				"fr-fr": "moteur ETNA",
+				"de-de": "ETNA-Modul",
+				"pt-pt": "motor ETNA",
+				"es-es": "motor ETNA"
 			},
 			"$key": "A640B6954070EFF444F6F86708490B7F801E0419"
 		},
@@ -68019,42 +68096,60 @@
 		"etna.supervisor": {
 			"text": {
 				"en-us": "X3 supervisor",
-				"fr-fr": "Superviseur X3"
+				"fr-fr": "Superviseur X3",
+				"de-de": "X3 Supervisor",
+				"pt-pt": "Supervisor X3",
+				"es-es": "Supervisor X3"
 			},
 			"$key": "66F318E9F692CF9B7B76D827DF278E4155C733CE"
 		},
 		"etna.dbms": {
 			"text": {
 				"en-us": "X3 supervisor dbms",
-				"fr-fr": "X3 supervisor dbms"
+				"fr-fr": "X3 supervisor dbms",
+				"de-de": "X3 Supervisor dbms",
+				"pt-pt": "Supervisor X3 dbms",
+				"es-es": "==="
 			},
 			"$key": "5065D44986A0DF3F346329648F90F1E6CB191A27"
 		},
 		"etna.crud": {
 			"text": {
 				"en-us": "CRUD supervisor",
-				"fr-fr": "CRUD superviseur"
+				"fr-fr": "CRUD superviseur",
+				"de-de": "CRUD Supervisor",
+				"pt-pt": "Supervisor CRUD",
+				"es-es": "==="
 			},
 			"$key": "C2B4F659CEA2F2C2E093CB4D80A1F14971A6425F"
 		},
 		"etna.events": {
 			"text": {
 				"en-us": "supervisor events",
-				"fr-fr": "évênements du superviseur"
+				"fr-fr": "évênements du superviseur",
+				"de-de": "Supervisor-Ereignisse",
+				"pt-pt": "eventos do supervisor",
+				"es-es": "eventos del supervisor"
 			},
 			"$key": "5FFEFA944DB92ED42BDDFA0B5A2383CEF3B207CF"
 		},
 		"etna.accessorsGet": {
 			"text": {
 				"en-us": "get accessors",
-				"fr-fr": "accesseurs get"
+				"fr-fr": "accesseurs get",
+				"de-de": "get-Accessoren",
+				"pt-pt": "acessores get",
+				"es-es": "descriptores de acceso get"
 			},
 			"$key": "787C59F25D7E0025943441C84A9D51BD6B6C5DF8"
 		},
 		"etna.accessorsSet": {
 			"text": {
 				"en-us": "set accessors",
-				"fr-fr": "accesseurs set"
+				"fr-fr": "accesseurs set",
+				"de-de": "set-Accessoren",
+				"pt-pt": "acessores get",
+				"es-es": "descriptores de acceso set"
 			},
 			"$key": "F4CBADE66A12589F686DF91F8D8C965F011F93DF"
 		},
@@ -75354,10 +75449,10 @@
 			"text": {
 				"en-us": "{kind} job '{title}'' still in progress. If you confirm, you will not be able to track its progress. Do you confirm?",
 				"ar-sa": "في التقدم. إذا تريد التأكيد لن تكون قادر على التقدم. التأكيد؟{jobkind}'{jobTtitle}'عمل",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Bestätigen Sie, können Sie den Fortschritt nicht verfolgen. Bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'en curso.  Si confirma, no podrá seguir la progresión. ¿Desea confirmar?",
+				"de-de": "Aufgabe {kind} '{title}' noch nicht beendet. Bestätigen Sie, können Sie den Fortschritt nicht verfolgen. Bestätigen?",
+				"es-es": "Tarea {jobKind} '{jobTitle}\" en curso.  Si confirma, no podrá seguir el progreso. ¿Desea confirmar?",
 				"fr-fr": "Tâche {jobKind} '{jobTitle}'en cours. Si vous confirmez, vous ne serez pas en mesure de suivre leur progression. Confirmer?",
-				"pt-pt": "Tarefa {jobKind}  '{jobTitle}' em curso. Se confirmado, você não será capaz de seguir seu progresso. Confirma?",
+				"pt-pt": "Tarefa {jobKind}  '{jobTitle}' em curso. Se confirmar, não será capaz de seguir seu progresso. Confirma?",
 				"zh-cn": "正在处理{jobKind}任务'{jobTitle}'。如果您确认，那么您将不能追踪其进度。确认吗？",
 				"en-gb": "{jobKind} job '{jobTitle}'' still in progress. If you confirm, you will not be able to track its progress. Do you confirm?",
 				"ru-ru": "{jobKind} работа '{jobTitle}'' 'все еще продолжается. Если вы подтвердите, вы не сможете отслеживать"
@@ -75382,10 +75477,10 @@
 			"text": {
 				"en-us": "{kind} job '{title}'' still in progress. Do you confirm cancel?",
 				"ar-sa": "في التقدم دائما. تأكيد الإلغاء؟{jobKind} ' {jobTitle}''عمل",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Abbrechen bestätigen?",
+				"de-de": "Aufgabe {kind} '{title}' noch nicht beendet. Abbrechen bestätigen?",
 				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la cancelación?",
 				"fr-fr": "Tâche {jobKind} '{jobTitle}'' toujours en cours. Confirmer l'annulation?",
-				"pt-pt": "Tarefa {jobKind} '{jobTitle}' em curso. Confirme o cancelamento?",
+				"pt-pt": "Tarefa {jobKind} '{jobTitle}'' em curso. Confirme a anulação?",
 				"zh-cn": "{jobKind}任务'{jobTitle}''仍在处理中。您确认要取消吗？",
 				"en-gb": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm cancel?",
 				"ru-ru": "{jobKind} работа '{jobTitle}'' 'все еще продолжается. Вы подтверждаете отменить?"
@@ -75410,11 +75505,11 @@
 			"text": {
 				"en-us": "{kind} job '{title}'' still in progress. Do you confirm abort?",
 				"ar-sa": "في التقدم دائما. تأكيد الترك؟{jobKind} ' {jobTitle}''عمل",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Abbrechen bestätigen?",
+				"de-de": "Aufgabe {kind} '{title}' noch nicht beendet. Abbrechen bestätigen?",
 				"en-gb": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm abort ?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la cancelación?",
+				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea abandonar?",
 				"fr-fr": "Tâche {jobKind} '{jobTitle}'' toujours en cours. Confirmer l'abandon ?",
-				"pt-pt": "Tarefa {jobKind}  '{jobTitle}' em curso. Confirme o abandono?",
+				"pt-pt": "Tarefa {jobKind} '{jobTitle}'' em curso. Confirme o abandono?",
 				"zh-cn": "{jobKind}任务'{jobTitle}''仍在处理中。您确认要放弃吗？",
 				"ru-ru": "{jobKind} работа '{jobTitle}'' 'все еще продолжается. Вы подтверждаете прервать?"
 			},
@@ -75425,7 +75520,7 @@
 				"en-us": "Abort operation",
 				"ar-sa": "ترك العملية",
 				"de-de": "Aktion abbrechen",
-				"es-es": "Cancelar la operación",
+				"es-es": "Abandonar la operación",
 				"fr-fr": "Abandonner l'opération",
 				"pt-pt": "Abandonar a operação",
 				"zh-cn": "放弃操作",
@@ -75438,10 +75533,10 @@
 			"text": {
 				"en-us": "{kind} job '{title}'' still in progress. Do you confirm suspend?",
 				"ar-sa": "في التقدم دائما. تأكيد القطع؟{jobKind} ' {jobTitle}''عمل",
-				"de-de": "Aufgabe {jobKind} '{jobTitle}' noch nicht beendet. Unterbrechen bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la suspensión?",
+				"de-de": "Aufgabe {kind} '{title}' noch nicht beendet. Unterbrechen bestätigen?",
+				"es-es": "Tarea {jobKind} '{jobTitle}'' todavía en curso. ¿Desea confirmar la interrupción?",
 				"fr-fr": "Tâche {jobKind} '{jobTitle}'' toujours en cours. Confirmer l'interruption ?",
-				"pt-pt": "Tarefa {jobKind}  '{jobTitle}' em curso. Confirme a interrupção?",
+				"pt-pt": "Tarefa  {jobKind} '{jobTitle}''  em curso. Confirme a interrupção?",
 				"zh-cn": "{jobKind}任务'{jobTitle}''仍在处理中。您确认要中断吗？",
 				"en-gb": "{jobKind} job '{jobTitle}'' still in progress. Do you confirm suspend?",
 				"ru-ru": "{jobKind} работа '{jobTitle}'' 'все еще продолжается. Вы подтверждаете приостановить?"
@@ -75466,10 +75561,10 @@
 			"text": {
 				"en-us": "{kind} job '{title}'' have been paused. Do you confirm resume?",
 				"ar-sa": "في التقدم دائما. تأكيد العودة؟{jobKind} ' {jobTitle}''عمل",
-				"de-de": "Die Aufgabe {jobKind} '{jobTitle}'' wurde unterbrochen. Fortsetzen bestätigen?",
-				"es-es": "Tarea {jobKind} '{jobTitle}'' se ha interrumpido. ¿Desea confirmar la recuperación?",
+				"de-de": "Die Aufgabe {kind} '{title}'' wurde unterbrochen. Fortsetzen bestätigen?",
+				"es-es": "La tarea {jobKind} '{jobTitle}'' se ha interrumpido. ¿Desea confirmar la recuperación?",
 				"fr-fr": "La tâche {jobKind} '{jobTitle}'' a été interrompue. Confirmer la reprise ?",
-				"pt-pt": "A tarefa  {jobKind} '{jobTitle}'' foi interrompida. Confirme o recomeço?",
+				"pt-pt": "A tarefa  {jobKind} '{jobTitle}'' foi interrompida. Confirma o recomeço?",
 				"zh-cn": "{jobKind}任务'{jobTitle}''已中断。确认要恢复吗？",
 				"en-gb": "{jobKind} job '{jobTitle}'' have been paused. Do you confirm resume?",
 				"ru-ru": "{jobKind} работа '{jobTitle}'' 'были приостановлены. Вы подтверждаете возобнавление?"
@@ -82072,7 +82167,7 @@
 				"en-us": "Locale",
 				"fr-fr": "Paramètres régionaux",
 				"de-de": "Gebietsschema",
-				"pt-pt": "Configurações regionais",
+				"pt-pt": "Parametros regionais",
 				"es-es": "Parámetros regionales"
 			},
 			"$key": "81C11C833026CD914340A8FEBB6874810DA1B15E"
@@ -82174,7 +82269,7 @@
 			"text": {
 				"en-us": "Version",
 				"ar-sa": "الإصدار",
-				"de-de": null,
+				"de-de": "===",
 				"es-es": "Versión",
 				"fr-fr": "Version",
 				"pl-pl": "Wersja",
@@ -82332,7 +82427,7 @@
 				"en-us": "Error file name exceeds 12 characters",
 				"ar-sa": "اسم الملف خطأ يتجاوز 12 حرفا",
 				"de-de": "Fehler: Der Dateiname enthält mehr als 12 Zeichen",
-				"es-es": "Error, el nombre del fichero es superiror a 12 carácteres",
+				"es-es": "Error, el nombre del fichero es superior a 12 carácteres",
 				"fr-fr": "Erreur le nom de fichier est supérieur à 12 caractères",
 				"pt-pt": "Erro o nome do ficheiro é superior a 12 caracteres",
 				"zh-cn": "文件名错误，超过12个字符",
@@ -89313,7 +89408,7 @@
 				"de-de": "Design {name}",
 				"es-es": "Tema {name}",
 				"fr-fr": "Thème {nom}",
-				"pt-pt": "Tema  {nom}",
+				"pt-pt": "Tema {nom}",
 				"zh-cn": "主题{name}"
 			},
 			"$key": "DB37732EE97266C9C51552733590B0CF4A0C145A"
@@ -89444,7 +89539,7 @@
 				"de-de": "{0} Menüpunkt(e) wurde(n) hinzugefügt ({1}) und mit dieser Sage X3 People-Seite verknüpft",
 				"es-es": "Se han añadido ({1}) y asociado {0} entrada(s) de menú a esta site Sage X3 People",
 				"fr-fr": "{0} entrée(s) de menu a/ont été ajoutée(s) ({1}) et liée(s) à ce site Sage X3 People",
-				"pt-pt": "{0} entrada(s) de menu foi(oram) acrescentado(s) e ligados(s) a este site Sage X3 People",
+				"pt-pt": "{0} entrada(s) de menu foi(oram) acrescentado(s) ({1}) e ligados(s) a este site Sage X3 People",
 				"zh-cn": "已添加了{0}个菜单项({1})，并将其关联至该Sage X3 People地点"
 			},
 			"$key": "47241F51EC126686F09EB9D00FB06E50ADF270D0"
@@ -91868,14 +91963,20 @@
 		"@ImportedUsersSectionTitle": {
 			"text": {
 				"en-us": "Imported users",
-				"fr-fr": "Imported users"
+				"fr-fr": "Utilisateurs importés",
+				"de-de": "Importierte Benutzer",
+				"pt-pt": "Utilizadores importados",
+				"es-es": "Usuarios importados"
 			},
 			"$key": "A78C76277B9E698FF89DA8F3F6776CC053F5A1C1"
 		},
 		"@SynchronizationSectionTitle": {
 			"text": {
 				"en-us": "Synchronization settings",
-				"fr-fr": "Synchronization settings"
+				"fr-fr": "Paramétrages synchronisation",
+				"de-de": "Synchronisationsparameter",
+				"pt-pt": "Parametros sincronização",
+				"es-es": "Parametrizaciones de sincronización"
 			},
 			"$key": "3F5620773B0F5BA8C0E8E910142888AD095C4552"
 		}
@@ -93225,7 +93326,7 @@
 				"en-us": "Product Flag",
 				"ar-sa": "علم السلعة",
 				"de-de": "Produkt-Flag",
-				"es-es": "Flag artículo",
+				"es-es": "Flag producto",
 				"fr-fr": "Flag produit",
 				"pt-pt": "Flag produto",
 				"ru-ru": "Флаг Продукта",
@@ -93392,7 +93493,7 @@
 			"text": {
 				"en-us": "Translation of Syracuse messages",
 				"ar-sa": "ترجمة رسائل سيراكوز",
-				"de-de": "Übersetzung der Syracus-Nachrichten",
+				"de-de": "Übersetzung der Syracuse-Meldungen",
 				"es-es": "Traducción de mensajes Syracuse",
 				"fr-fr": "Traduction des messages Syracuse",
 				"pt-pt": "Tradução de mensagens de Syracuse",
@@ -93458,7 +93559,7 @@
 				"en-us": "File name without extension (saved as .txt in translation-indexes folder)",
 				"ar-sa": "إسم الملف دون قسم( حماية تحت نص ملف ترجمة المؤشرات",
 				"de-de": "Dateiname ohne Erweiterung (als .txt im Ordner Übersetzungsindizes gespeichert)",
-				"es-es": "Nombre de fichero sin extensión (guardar como .txt en el dossier indices-traducción",
+				"es-es": "Nombre de fichero sin extensión (guardar como .txt en el dossier índices-traducción)",
 				"fr-fr": "Nom de fichier sans extension (sauvegardé sous .txt dans le dossier indexes-traduction",
 				"pt-pt": "Nome do ficheiro sem extensão (salvaguarda em .txt no dossier indexes-tradução",
 				"ru-ru": "Имя файла без расширения (сохранено в формате .txt в папке перевод-индексы)",
@@ -93470,9 +93571,9 @@
 			"text": {
 				"en-us": "Fix untranslated message for specified language",
 				"fr-fr": "Corriger le message non traduit pour la langue indiquée",
-				"de-de": "Nicht übersetzte Meldung für angegebene Sprache festlegen",
+				"de-de": "Nicht übersetzte Meldung für angegebene Sprache korrigieren",
 				"pt-pt": "Corrigir a mensagem não traduzida para a língua indicada",
-				"es-es": "Corregir el mensaje no traducido al idioma indicado"
+				"es-es": "Corregir el mensaje no traducido para el idioma indicado"
 			},
 			"$key": "2438968F1135F0332E0F2819FCA3DD3E6B93885D"
 		},
@@ -93481,7 +93582,7 @@
 				"en-us": "Keep timestamp in the saved contents",
 				"ar-sa": "حفظ الطابع الزمني في محتوى الحماية",
 				"de-de": "Zeitstempel in den gespeicherten Inhalten speichern",
-				"es-es": "Conservar la fecha fecha/hora en el contenido guadado",
+				"es-es": "Conservar el sello de tiempo en el contenido guadado",
 				"fr-fr": "Conserver l'horodatage dans le contenu sauvegardé",
 				"pt-pt": "Mantenha o timestamp no conteúdo salvo",
 				"ru-ru": "Сохранять отметку времени в сохраненом содержании",
@@ -93520,7 +93621,7 @@
 				"en-us": "Download translation contents to a file",
 				"ar-sa": "تحميل محتوى المترجم في الملف",
 				"de-de": "Übersetzungsinhalte in einer Datei herunterladen",
-				"es-es": "Cargar el contenido traducido en un fichero",
+				"es-es": "Descargar el contenido traducido en un fichero",
 				"fr-fr": "Télécharger le contenu traduit dans un fichier",
 				"pt-pt": "Faça o download do conteúdo traduzido em um ficheiro",
 				"ru-ru": "Скачать перевод в виде файла",
@@ -93533,7 +93634,7 @@
 				"en-us": "Download log",
 				"ar-sa": "تحميل الشخصية",
 				"de-de": "Logdatei herunterladen",
-				"es-es": "Bajar la traza",
+				"es-es": "Descargar la traza",
 				"fr-fr": "Télécharger trace",
 				"pt-pt": "Download rastro",
 				"ru-ru": "Скачать журнал",
@@ -93546,7 +93647,7 @@
 				"en-us": "2: Push translations (to target EP)",
 				"ar-sa": "2:(دفع الترجمات(نحو مصدر بيانات التعيين",
 				"de-de": "2: Übersetzungen verschieben (nach Ziel EP)",
-				"es-es": "2: Mover traducciones (hacia objetivo EP)",
+				"es-es": "2: Cargar las traducciones (en la fuente de datos de destino)",
 				"fr-fr": "2: Pousser les traductions (vers la source de données de destination)",
 				"pt-pt": "2: Empurre traduções (para direcionar EP)",
 				"ru-ru": "2: переводы (целевой EP)",
@@ -93558,9 +93659,9 @@
 			"text": {
 				"en-us": "Smart copy of translations from source endpoint to target",
 				"fr-fr": "Copie intelligente de la traduction du point de connexion vers la cible",
-				"de-de": "Intelligente Kopie der Übersetzung vom Endpoint zum Ziel",
-				"pt-pt": "Copia inteligente da tradução da origem dos dados para o alvo",
-				"es-es": "Copia inteligente de la traducción del punto de conexión al objetivo"
+				"de-de": "Smart-Kopie der Übersetzungen von einem Endpoint zum Ziel",
+				"pt-pt": "Copia inteligente da transação do ponto de conexão ao alvo",
+				"es-es": "Copia inteligente de la traducción del punto de conexión en el objetivo"
 			},
 			"$key": "A0DB0F7FDBF5AF21D63B9AF8D9F8BEFEC4E2A535"
 		},
@@ -93569,7 +93670,7 @@
 				"en-us": "1: Merge translations (from source EP)",
 				"ar-sa": "1:(دمج الترجمات(من مصدر البيانات الأصلية",
 				"de-de": "1: Übersetzungen zusammenführen (von Quelle EP)",
-				"es-es": "1: Fucionar traducciones (desde origen EP)",
+				"es-es": "1: Unir las traducciones (a partir de la fuente de datos de origen)",
 				"fr-fr": "1: Fusionner les traductions (à partir de la source de données d'origine)",
 				"pt-pt": "1: mesclar traduções (de fonte EP)",
 				"ru-ru": "1: Слияние переводы (из исходного ЕР)",
@@ -93581,8 +93682,8 @@
 			"text": {
 				"en-us": "Transform mobile resources",
 				"ar-sa": "تحويل الموارد المتحركة",
-				"de-de": "Mobile Resourcen umwandeln",
-				"es-es": "Transformar recursos móviles",
+				"de-de": "Mobile Ressourcen umwandeln",
+				"es-es": "Transformar los recursos móviles",
 				"fr-fr": "Transformer les ressources mobiles",
 				"pt-pt": "Transformar recursos móveis",
 				"ru-ru": "Transform мобильные ресурсы",
@@ -93608,7 +93709,7 @@
 				"en-us": "File to load (in translation-indexes folder)",
 				"ar-sa": "ملف ااتحميل (في ملف ترجمة المؤشرات)",
 				"de-de": "Datei zum Herunterladen (in Ordner Übersetzungsindizes)",
-				"es-es": "Fichero a cargar (en el dossier indices-traducción)",
+				"es-es": "Fichero a cargar (en el dossier índices-traducción)",
 				"fr-fr": "Fichier à charger (dans le dossier indexes-traduction)",
 				"pt-pt": "Ficheiro a carregar (no dossier indexes-tradução)",
 				"ru-ru": "Файл для загрузки (в папке перевод-индексов)",
@@ -93634,7 +93735,7 @@
 				"en-us": "Update index from csv",
 				"ar-sa": "csvتحديث المؤشر من خلال",
 				"de-de": "Index von csv aktualisieren",
-				"es-es": "Actualizar índices desde csv",
+				"es-es": "Actualizar el índice desde csv",
 				"fr-fr": "Mettre à jour l'index à partir de csv",
 				"pt-pt": "Atualização do indice a partir de csv",
 				"ru-ru": "Индекс Обновление от CSV",
@@ -93659,8 +93760,8 @@
 			"text": {
 				"en-us": "Admin resources",
 				"ar-sa": "موارد الإدارة",
-				"de-de": "Admin-Resourcen",
-				"es-es": "Admin. recursos",
+				"de-de": "Admin-Ressourcen",
+				"es-es": "Recursos Admin.",
 				"fr-fr": "Ressources Admin",
 				"pt-pt": "Recursos do administrador",
 				"ru-ru": "Действия администратора ресурсы",
@@ -93685,7 +93786,7 @@
 			"text": {
 				"en-us": "DotNet resources",
 				"ar-sa": "DotNetموارد",
-				"de-de": "DotNet-Resourcen",
+				"de-de": "DotNet-Ressourcen",
 				"es-es": "Recursos DotNet",
 				"fr-fr": "Ressources DotNet",
 				"pt-pt": "Recursos DotNet",
@@ -93699,7 +93800,7 @@
 				"en-us": "Select the endpoint used as reference for translation teams",
 				"ar-sa": "إختيار مصدر بيانات المستخدم مثل مرجعية فرق الترجمة",
 				"de-de": "Verwendeten Endpoint als Referenz für Übersetzungsteams auswählen",
-				"es-es": "Seleccionar el endpoint utilizado como referencia para los equipos de traducción",
+				"es-es": "Seleccionar el punto de conexión que se utiliza como referencia para los equipos de traducción",
 				"fr-fr": "Sélectionner le endpoint utilisé comme référence pour les équipes de traduction",
 				"pt-pt": "Selecione o endpoint utilizado como referência para as equipes de tradução",
 				"ru-ru": "Выберите конечную точку, используемый в качестве ссылки для команд перевода",
@@ -93715,7 +93816,8 @@
 				"fr-fr": "Source de données",
 				"pt-pt": "EndPoint",
 				"ru-ru": "Конечная точка",
-				"zh-cn": "端点"
+				"zh-cn": "端点",
+				"de-de": "==="
 			},
 			"$key": "8E5B108555C5EC335D8BCFE2930654636A95E105"
 		},
@@ -93724,7 +93826,7 @@
 				"en-us": "Select the endpoint used to read text translations (should be SUPERV7)",
 				"ar-sa": "SUPERVإختيار مصدر بيانات المستخدمة لقراءة  ترجمات النصوص (تقنيا)",
 				"de-de": "Den Endpoint zum Lesen der Übersetzungstexte auswählen (sollte SUPERV7 sein)",
-				"es-es": "Seleccionar la fuente de datos utilizada para leer las traducciones de textos (teoricamente SUPERV7)",
+				"es-es": "Seleccionar la fuente de datos que se utiliza para leer las traducciones de textos (en teoría SUPERV7)",
 				"fr-fr": "Sélectionner la source de données utilisée pour lire les traductions textes (théoriquement SUPERV7)",
 				"pt-pt": "Selecione a fonte de dados usada para ler traduções de texto (teoricamente SUPERV7)",
 				"ru-ru": "Выбрать конечную точку для чтения перевода текста (должно быть SUPERV7)",
@@ -93750,7 +93852,7 @@
 				"en-us": "Select the endpoint used to write text translations (should be SUPERV)",
 				"ar-sa": "SUPERVإختيار مصدر بيانات المستخدمة لكتابة ترجمات النصوص (تقنيا)",
 				"de-de": "Den Endpoint zum Schreiben der Übersetzungstexte auswählen (sollte SUPERV sein)",
-				"es-es": "Seleccionar la fuente de datos utilizada para escribir las traducciones de textos (teoricamente SUPERV7)",
+				"es-es": "Seleccionar la fuente de datos que se utiliza para escribir las traducciones de textos (en teoría SUPERV)",
 				"fr-fr": "Sélectionner la source de données utilisée pour écrire les traductions textes (théoriquement SUPERV)",
 				"pt-pt": "Selecione a fonte de dados usada para escrever traduções de texto (teoricamente SUPERV)",
 				"ru-ru": "Выбрать конечную точку для чтения перевода текста (должно быть SUPERV)",
@@ -93789,7 +93891,7 @@
 				"en-us": "Ignore checksum",
 				"ar-sa": "تجاهل الإختبار",
 				"de-de": "Prüfsumme nicht beachten",
-				"es-es": "Ignorar comprobaciones",
+				"es-es": "Ignorar las comprobaciones",
 				"fr-fr": "Ignorer le checksum",
 				"pt-pt": "ignorar verficação",
 				"ru-ru": "Игнорировать суммы",
@@ -93802,7 +93904,7 @@
 				"en-us": "Ignore index endpoint",
 				"ar-sa": "تجاهل مصدر بيانات المؤشر",
 				"de-de": "Index-Endpoint nicht beachten",
-				"es-es": "Ignorar índice endpoint",
+				"es-es": "Ignorar la fuente de datos del índice",
 				"fr-fr": "Ignorer la source de données de l'index",
 				"pt-pt": "Ignorar índice do endpoint",
 				"ru-ru": "Игнорировать индекса конечной",
@@ -93815,7 +93917,7 @@
 				"en-us": "Landing Page tab only",
 				"ar-sa": "فقط مفتاح الصفحة الأمامية",
 				"de-de": "Nur Register Landing Page",
-				"es-es": "Unicamente pestaña de páginas personalizadas",
+				"es-es": "Solo la pestaña Página de inicio",
 				"fr-fr": "Onglet Page d'accueil uniquement",
 				"pt-pt": "Separador da página de destino apenas",
 				"ru-ru": "Только вкладка целевых страниц",
@@ -93828,7 +93930,7 @@
 				"en-us": "Load from index (reinject only)",
 				"ar-sa": "تحميل من خلال المؤشر(إعادة دمج فقط)",
 				"de-de": "Vom Index laden (nur neu einfügen)",
-				"es-es": "Cargar desde índice (reinyect solo)",
+				"es-es": "Cargar desde el índice (solo reintegrar)",
 				"fr-fr": "Charger à partir de l'index (réintégrer uniquement)",
 				"pt-pt": "Carregar do índice (reinjectar apenas)",
 				"ru-ru": "Загрузить из индекса (инжектируем только)",
@@ -93841,7 +93943,7 @@
 				"en-us": "Do not write to target endpoint",
 				"ar-sa": "لا كتابة نحو مصدر بيانات التعيين",
 				"de-de": "Nicht auf einen Ziel-Endpoint schreiben",
-				"es-es": "No escribir hacia la fuente de datos de destino",
+				"es-es": "No escribir a la fuente de datos de destino",
 				"fr-fr": "Ne pas écrire vers la source de données de destination",
 				"pt-pt": "Não escreva para a fonte de dados de destino",
 				"ru-ru": "Не пишите целевой конечной точки",
@@ -93854,7 +93956,7 @@
 				"en-us": "No DB Store",
 				"ar-sa": "DB عدد المخزن",
 				"de-de": "Kein DB-Store",
-				"es-es": "Nº almacen. BD",
+				"es-es": "Nº DB Store",
 				"fr-fr": "N° DB Store",
 				"pt-pt": "Nº loja DB",
 				"ru-ru": "Нет БД магазин",
@@ -93880,7 +93982,7 @@
 				"en-us": "Reset index",
 				"ar-sa": "إعادة وضع المؤشر للصفر",
 				"de-de": "Index zurücksetzen",
-				"es-es": "Resetear índices",
+				"es-es": "Resetear el índice",
 				"fr-fr": "Remettre l'index à zéro",
 				"pt-pt": "Repor índice a zero",
 				"ru-ru": "Сброс индекс",
@@ -93892,8 +93994,8 @@
 			"text": {
 				"en-us": "Syracuse resources",
 				"ar-sa": "موارد سيراكوز",
-				"de-de": "Syracuse-Resources",
-				"es-es": "Recursos syracuse",
+				"de-de": "Syracuse-Ressourcen",
+				"es-es": "Recursos Syracuse",
 				"fr-fr": "Ressources Syracuse",
 				"pt-pt": "Recursos Syracuse",
 				"ru-ru": "Ресурсы Syracuse",
@@ -93906,7 +94008,7 @@
 				"en-us": "Verify (extract only)",
 				"ar-sa": "تحديد(إستخراج فقط)",
 				"de-de": "Prüfen (nur Auszug)",
-				"es-es": "Comprobar (extraer solo)",
+				"es-es": "Comprobar (solo extraer)",
 				"fr-fr": "Vérifier (extraire uniquement)",
 				"pt-pt": "Verifique (extrato apenas)",
 				"ru-ru": "Проверьте (экстракт только)",
@@ -94192,7 +94294,7 @@
 			"text": {
 				"en-us": "more",
 				"ar-sa": "الزيادة",
-				"de-de": "weitere",
+				"de-de": "mehr",
 				"es-es": "más",
 				"fr-fr": "plus",
 				"pt-pt": "mais",
@@ -94206,7 +94308,7 @@
 				"en-us": "all-day",
 				"ar-sa": "اليوم<br/>كل ال",
 				"de-de": "Ganztägig",
-				"es-es": "todo<br/>el día",
+				"es-es": "Todo el<br/>día",
 				"fr-fr": "Toute la<br/>journée",
 				"pt-pt": "Todos os dias",
 				"ru-ru": "весь день",
@@ -94323,7 +94425,7 @@
 				"en-us": "From",
 				"ar-sa": "من",
 				"de-de": "Von",
-				"es-es": "De",
+				"es-es": "de",
 				"fr-fr": "de",
 				"pt-pt": "De",
 				"ru-ru": "Из"
@@ -94335,7 +94437,7 @@
 				"en-us": "To",
 				"ar-sa": "إلى",
 				"de-de": "Bis",
-				"es-es": "hasta",
+				"es-es": "a",
 				"fr-fr": "à",
 				"pt-pt": "Para",
 				"ru-ru": "До"
@@ -94345,21 +94447,27 @@
 		"gantt_duration": {
 			"text": {
 				"en-us": "Duration (Days)",
-				"fr-fr": "Duration (Days)"
+				"fr-fr": "Duration (Days)",
+				"de-de": "Dauer (Tage=",
+				"pt-pt": "Duração (Dias)"
 			},
 			"$key": "75816C850AE556CA59787B86CECD165F590C5E19"
 		},
 		"gantt_peopleAssisgned": {
 			"text": {
 				"en-us": "People Assigned",
-				"fr-fr": "People Assigned"
+				"fr-fr": "People Assigned",
+				"de-de": "Zugewiesene Personen",
+				"pt-pt": "Pessoas afectas"
 			},
 			"$key": "46F93C5C6F2F7B06609EE1A691F3DF5EC30F8E8E"
 		},
 		"gantt_otherTask": {
 			"text": {
 				"en-us": "Other",
-				"fr-fr": "Other"
+				"fr-fr": "Other",
+				"de-de": "Sonstige",
+				"pt-pt": "Outros"
 			},
 			"$key": "571D0139737DFD8F14A838C15EA6EDDFD7265607"
 		}
