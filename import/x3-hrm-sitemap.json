@@ -10550,6 +10550,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRTFB",
+      "title": "title_64717743-4ca8-4855-b503-a14f5b8093f5",
+      "description": "description_64717743-4ca8-4855-b503-a14f5b8093f5",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRTFB",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_7c95e93f-a412-4e5b-a936-7882d93d4ace",
       "code": "STD_X3_HRM_PTAB",
@@ -10672,6 +10699,10 @@
         },
         {
           "code": "STD_X3_HRM_GESHRLIC",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESHRTFB",
           "$variantType": "menuItem"
         }
       ]
@@ -27022,468 +27053,6 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_EXTRAEM",
-      "title": "title_80909b4c-d767-4b9c-be18-02ffe124268b",
-      "description": "description_80909b4c-d767-4b9c-be18-02ffe124268b",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "EXTRAEM",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESMEA",
-      "title": "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86",
-      "description": "description_8534e349-a4f6-4872-bb47-f5e2c7e66d86",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESMEA",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_TRTAEM",
-      "title": "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11",
-      "description": "description_883d34cc-fccb-4b5a-9eb4-4fda08a19d11",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "TRTAEM",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_19691840-6ec5-4d60-b972-620ff5245413",
-      "code": "STD_X3_HRM_AEM",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": [
-        {
-          "code": "STD_X3_HRM_EXTRAEM",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESMEA",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_TRTAEM",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_EXTRCCS",
-      "title": "title_eeb3a0c2-1400-41ea-b359-6326e3ded12f",
-      "description": "description_eeb3a0c2-1400-41ea-b359-6326e3ded12f",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "EXTRCCS",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESCCS",
-      "title": "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6",
-      "description": "description_e1d6ed8f-3531-4c75-8236-a5e309b937d6",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESCCS",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_TRTCCS",
-      "title": "title_db3ec906-1851-45e8-b996-fb67061f09b7",
-      "description": "description_db3ec906-1851-45e8-b996-fb67061f09b7",
-      "linkType": "$function",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "TRTCCS",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_6195399b-f0cb-4037-b88b-6e70ac55111b",
-      "code": "STD_X3_HRM_PCCS",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": [
-        {
-          "code": "STD_X3_HRM_EXTRCCS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESCCS",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_TRTCCS",
-          "$variantType": "menuItem"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_EXTRTRL",
-      "title": "title_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa",
-      "description": "description_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "EXTRTRL",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESTRL",
-      "title": "title_afd6f5a6-8233-4290-b24b-214b4a451ad3",
-      "description": "description_afd6f5a6-8233-4290-b24b-214b4a451ad3",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESTRL",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_TRTTRL",
-      "title": "title_799b3774-e083-4433-81c4-9a364bb236db",
-      "description": "description_799b3774-e083-4433-81c4-9a364bb236db",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "TRTTRL",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_EXTRCQL",
-      "title": "title_e212b8cf-94f0-4966-92c3-31e1286249f5",
-      "description": "description_e212b8cf-94f0-4966-92c3-31e1286249f5",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "EXTRCQL",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESCQL",
-      "title": "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648",
-      "description": "description_2812e0ae-7b17-4cda-9a4f-6cc96389e648",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESCQL",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_TRTCQL",
-      "title": "title_1e1717e1-a81e-49ec-9192-a20ea5578326",
-      "description": "description_1e1717e1-a81e-49ec-9192-a20ea5578326",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "TRTCQL",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuBlock",
-      "title": "title_1f694c47-fe20-412e-a816-02fc6ade491b",
-      "code": "STD_X3_HRM_PTRE",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": [
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "a58cc55f-5027-4f02-88ad-7372ae7c7ac6",
-          "title": "title_b45f17b8-bb33-4a7b-8216-0c6b33840453",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "STD_X3_HRM_EXTRTRL",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_GESTRL",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_TRTTRL",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "e494ea0e-d109-4be2-9311-6c6bfcdb37a0",
-          "title": "title_1aa84d92-2bd6-4714-a3d2-583edcc48aca",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": [
-            {
-              "code": "STD_X3_HRM_EXTRCQL",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_GESCQL",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "STD_X3_HRM_TRTCQL",
-              "$variantType": "menuItem"
-            }
-          ]
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_PTRH",
-          "title": "title_2d286633-6b11-46ac-adbe-fd42f17b9fba",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": []
-        },
-        {
-          "$type": "menuSubblock",
-          "$variantType": "menuBlock",
-          "code": "STD_X3_HRM_PCQH",
-          "title": "title_eafdd863-ed8f-4cdd-8b16-cbd41c5566f1",
-          "$factory": true,
-          "$factoryOwner": "SAGE",
-          "items": []
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GENQRT",
       "title": "title_34a48200-2673-4c74-b1ee-02463404c0fd",
       "description": "description_34a48200-2673-4c74-b1ee-02463404c0fd",
@@ -27586,15 +27155,6 @@
         },
         {
           "code": "STD_X3_HRM_PDEC"
-        },
-        {
-          "code": "STD_X3_HRM_AEM"
-        },
-        {
-          "code": "STD_X3_HRM_PCCS"
-        },
-        {
-          "code": "STD_X3_HRM_PTRE"
         },
         {
           "code": "STD_X3_HRM_PSTA"
@@ -40385,7 +39945,7 @@
       "description_4ff7e2bb-87cb-444f-bf7d-f41e6d649800": "GESHRNCT",
       "title_67405f08-e380-48a0-9810-020247f35713": "Entry reason",
       "description_67405f08-e380-48a0-9810-020247f35713": "GESHRCGD",
-      "title_f5c6c88d-6da4-4f76-ba25-fca3680127ab": "End reason",
+      "title_f5c6c88d-6da4-4f76-ba25-fca3680127ab": "Output reason",
       "description_f5c6c88d-6da4-4f76-ba25-fca3680127ab": "GESHRXGD",
       "title_84dee749-92f3-452f-9492-106d59875c7a": "Collective agreement",
       "description_84dee749-92f3-452f-9492-106d59875c7a": "GESHRCLV",
@@ -40393,6 +39953,8 @@
       "description_a897cfd6-2c00-4232-8bd8-9d107fad6cae": "GESHRCSP",
       "title_5fe7a2dc-b8fb-4d07-bd69-34a8e2e2679d": "Permits and authorizations",
       "description_5fe7a2dc-b8fb-4d07-bd69-34a8e2e2679d": "GESHRLIC",
+      "title_64717743-4ca8-4855-b503-a14f5b8093f5": "Bank file definitions",
+      "description_64717743-4ca8-4855-b503-a14f5b8093f5": "GESHRTFB",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Payroll plan",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Headings",
       "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "GESRUB",
@@ -41131,7 +40693,7 @@
       "description_c2fff644-f4c4-44ac-8783-58d56382f297": "GESCLD",
       "title_beda3615-89dc-40f5-bcad-50df490ad8dc": "Project to sold products",
       "description_beda3615-89dc-40f5-bcad-50df490ad8dc": "GESCLF",
-      "title_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
+      "title_a306737b-2a0d-460c-9df4-18a0ee050ed4": "GESSTY",
       "description_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
       "title_e119e582-9e69-4b6e-be5c-ea5cd95517de": "Leave - Absence",
       "title_c9065547-4567-4269-a725-410b1f3aa1a8": "Annual leave",
@@ -41406,37 +40968,6 @@
       "title_8bbd6051-ad91-4ab3-bc0e-a633069a6efb": "N4DS setup",
       "title_2193ffde-2bb7-4806-85a1-bf663f69e553": "AED",
       "title_86bed322-d62a-4e06-b1d2-75e41f66b122": "DADS-U",
-      "title_19691840-6ec5-4d60-b972-620ff5245413": "MEC",
-      "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
-      "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
-      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Data",
-      "description_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "GESMEA",
-      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "File generation",
-      "description_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "TRTAEM",
-      "title_6195399b-f0cb-4037-b88b-6e70ac55111b": "Entertainment fund",
-      "title_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "Extraction",
-      "description_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "EXTRCCS",
-      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Data",
-      "description_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "GESCCS",
-      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "File generation",
-      "description_db3ec906-1851-45e8-b996-fb67061f09b7": "TRTCCS",
-      "title_1f694c47-fe20-412e-a816-02fc6ade491b": "Luncheon vouchers",
-      "title_b45f17b8-bb33-4a7b-8216-0c6b33840453": "Tickets restaurant",
-      "title_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "Extraction",
-      "description_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "EXTRTRL",
-      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Data",
-      "description_afd6f5a6-8233-4290-b24b-214b4a451ad3": "GESTRL",
-      "title_799b3774-e083-4433-81c4-9a364bb236db": "File generation",
-      "description_799b3774-e083-4433-81c4-9a364bb236db": "TRTTRL",
-      "title_1aa84d92-2bd6-4714-a3d2-583edcc48aca": "Chèques déjeuner",
-      "title_e212b8cf-94f0-4966-92c3-31e1286249f5": "Extraction",
-      "description_e212b8cf-94f0-4966-92c3-31e1286249f5": "EXTRCQL",
-      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Data",
-      "description_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "GESCQL",
-      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "File generation",
-      "description_1e1717e1-a81e-49ec-9192-a20ea5578326": "TRTCQL",
-      "title_2d286633-6b11-46ac-adbe-fd42f17b9fba": "Lunch vouchers",
-      "title_eafdd863-ed8f-4cdd-8b16-cbd41c5566f1": "Lunch vouchers",
       "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Statutory exports",
       "title_34a48200-2673-4c74-b1ee-02463404c0fd": "Skills extract",
       "description_34a48200-2673-4c74-b1ee-02463404c0fd": "Skills extract",
@@ -43621,37 +43152,6 @@
       "title_8bbd6051-ad91-4ab3-bc0e-a633069a6efb": "Paramétrage N4DS",
       "title_2193ffde-2bb7-4806-85a1-bf663f69e553": "AED",
       "title_86bed322-d62a-4e06-b1d2-75e41f66b122": "DADS-U",
-      "title_19691840-6ec5-4d60-b972-620ff5245413": "AEM",
-      "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extraction",
-      "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
-      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Données",
-      "description_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "GESMEA",
-      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "Génération du fichier",
-      "description_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "TRTAEM",
-      "title_6195399b-f0cb-4037-b88b-6e70ac55111b": "Congés spectacles",
-      "title_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "Extraction",
-      "description_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "EXTRCCS",
-      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Données",
-      "description_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "GESCCS",
-      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "Génération du fichier",
-      "description_db3ec906-1851-45e8-b996-fb67061f09b7": "TRTCCS",
-      "title_1f694c47-fe20-412e-a816-02fc6ade491b": "Titres restaurant",
-      "title_b45f17b8-bb33-4a7b-8216-0c6b33840453": "Tickets restaurant",
-      "title_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "Extraction",
-      "description_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "EXTRTRL",
-      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Données",
-      "description_afd6f5a6-8233-4290-b24b-214b4a451ad3": "GESTRL",
-      "title_799b3774-e083-4433-81c4-9a364bb236db": "Génération du fichier",
-      "description_799b3774-e083-4433-81c4-9a364bb236db": "TRTTRL",
-      "title_1aa84d92-2bd6-4714-a3d2-583edcc48aca": "Chèques déjeuner",
-      "title_e212b8cf-94f0-4966-92c3-31e1286249f5": "Extraction",
-      "description_e212b8cf-94f0-4966-92c3-31e1286249f5": "EXTRCQL",
-      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Données",
-      "description_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "GESCQL",
-      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "Génération du fichier",
-      "description_1e1717e1-a81e-49ec-9192-a20ea5578326": "TRTCQL",
-      "title_2d286633-6b11-46ac-adbe-fd42f17b9fba": "Tickets restaurant",
-      "title_eafdd863-ed8f-4cdd-8b16-cbd41c5566f1": "Chèques déjeuner",
       "title_6f65e090-f2c8-46fd-9156-9e972278f592": "Exports statutaires",
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Export UIF",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notes de frais",
@@ -45250,30 +44750,6 @@
       "title_5f39dd4f-5446-4299-8455-31a30d7dee5a": "Beneficiários",
       "description_5f39dd4f-5446-4299-8455-31a30d7dee5a": "GESIDQ",
       "title_a87d844e-8c7d-4a09-bc6d-3eda55ea4956": "Pénibilité",
-      "title_80909b4c-d767-4b9c-be18-02ffe124268b": "Extracção",
-      "description_80909b4c-d767-4b9c-be18-02ffe124268b": "EXTRAEM",
-      "title_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "Ficheiro AEM",
-      "description_8534e349-a4f6-4872-bb47-f5e2c7e66d86": "GESMEA",
-      "title_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "Geração",
-      "description_883d34cc-fccb-4b5a-9eb4-4fda08a19d11": "TRTAEM",
-      "title_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "Extracção",
-      "description_eeb3a0c2-1400-41ea-b359-6326e3ded12f": "EXTRCCS",
-      "title_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "Ficheiro licenças espectáculo",
-      "description_e1d6ed8f-3531-4c75-8236-a5e309b937d6": "GESCCS",
-      "title_db3ec906-1851-45e8-b996-fb67061f09b7": "Geração",
-      "description_db3ec906-1851-45e8-b996-fb67061f09b7": "TRTCCS",
-      "title_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "Extracção",
-      "description_d5edcb97-fb38-4ad8-9f70-c887cf50a4aa": "EXTRTRL",
-      "title_afd6f5a6-8233-4290-b24b-214b4a451ad3": "Tickets restaurante",
-      "description_afd6f5a6-8233-4290-b24b-214b4a451ad3": "GESTRL",
-      "title_799b3774-e083-4433-81c4-9a364bb236db": "Geração",
-      "description_799b3774-e083-4433-81c4-9a364bb236db": "TRTTRL",
-      "title_e212b8cf-94f0-4966-92c3-31e1286249f5": "Extracção",
-      "description_e212b8cf-94f0-4966-92c3-31e1286249f5": "EXTRCQL",
-      "title_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "Cheques almoço",
-      "description_2812e0ae-7b17-4cda-9a4f-6cc96389e648": "GESCQL",
-      "title_1e1717e1-a81e-49ec-9192-a20ea5578326": "Geração",
-      "description_1e1717e1-a81e-49ec-9192-a20ea5578326": "TRTCQL",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notas de despesa",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Notas de despesa",
       "title_b11e842b-a583-414f-8f10-0994334c5307": "Cód. desp.",
