@@ -293,7 +293,14 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
-		//tracer: console.log,
+		// url of the elasticsearch server. This parameter supersede the hostname and port
+		// baseUrl: "https://elastic-server:9200",
+
+		// hostname of the elasticsearch server. localhost by default
+		// hostname: "elastic-server",
+
+		// port of the elasticsearch server. 9200 by default
+		// port: 9200,
 
 		// Using a minimal stemmer should only group plurals rather than a
 		// deeper root of the word.
