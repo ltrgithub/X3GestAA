@@ -186,6 +186,15 @@ exports.config = {
 	},
     collaboration: {
         certdir: "certificates"  // path to certificates folder
+		// options for MongoDB connection:
+		// port: 27017, 
+		// driver: "mongodb",
+		// hostname: "localhost",
+		// connectionString: "localhost:27017",
+		// databaseName: "syracuse",
+		// dataset: "syracuse",
+		// mongoX509Cert: ["mongoclient", "mongoca"], // connection with X509 certificate: 
+		//           first entry: name of client certificate with private key, following entries: CA certificate(s)		
     },
     extensions: {
         "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
