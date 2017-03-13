@@ -213,7 +213,7 @@ namespace WordAddIn
                 return;
             }
             Globals.Ribbons.Ribbon.toggleMakeSum.Enabled = true;
-            Match m = ReportingUtils.sumRegex.Match(cc.Tag);
+            Match m = ContentControlHelper.sumRegex.Match(cc.Tag);
             if (m.Success)
             {
                 Globals.Ribbons.Ribbon.toggleMakeSum.Checked = true;
@@ -233,7 +233,7 @@ namespace WordAddIn
             {
                 return;
             }
-            Match m = ReportingUtils.sumRegex.Match(cc.Tag);
+            Match m = ContentControlHelper.sumRegex.Match(cc.Tag);
             if (m.Success)
             {
                 cc.Tag = m.Groups["exp"].Value;

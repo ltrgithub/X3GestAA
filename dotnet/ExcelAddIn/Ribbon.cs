@@ -3,6 +3,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System;
 using CommonDataHelper;
 using CommonDataHelper.PublisherHelper;
+using CommonDialogs.ServerLocationDialog;
+using System.Diagnostics;
 
 namespace ExcelAddIn
 {
@@ -133,6 +135,14 @@ namespace ExcelAddIn
         private void buttonDisconnect_Click(object sender, RibbonControlEventArgs e)
         {
             new ConnectionDialog().disconnectFromServer();
+        }
+
+        private void serverLocationsButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            new serverLocationsDialog(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\" + Process.GetCurrentProcess().ProcessName + ".X3.settings",
+                    CommonDataHelper.HttpHelper.PrefUrlHelper.readUserPreferenceFile,
+                    CommonDataHelper.HttpHelper.PrefUrlHelper.updateUserPreferenceFile,
+                    Globals.ThisAddIn.commons.DisplayServerLocations).ShowDialog();
         }
     }
 }
