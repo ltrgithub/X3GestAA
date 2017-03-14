@@ -2,6 +2,9 @@ FROM node:6
 
 ARG SYRACUSE_SRC="."
 
+ARG SYRACUSE_VER=""
+ENV SYRACUSE_VER=${SYRACUSE_VER}
+
 # install needed packages
 RUN apt-get update && apt-get install -y curl xz-utils libxml2 libaio1 ksh && \
   mkdir -p /tmp /syracuse /config /extensions /opt/oracle && cd /tmp && \
