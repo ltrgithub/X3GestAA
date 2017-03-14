@@ -87,16 +87,18 @@ if (/^[NWB]\d+$/.test(process.argv[2])) {
 			buffer = null;
 		}
 	});
+	var log = console.log;
 	process.stdoutOld = process.stdout;
 	var output = function() {
-		var content = util.format.apply(this, arguments) + '\n';
+		var cnt = util.format.apply(this, arguments);
+		if (config && config.traces && config.traces.childrenToConsole) log(process.argv[2] + ":" + cnt);
+		var content = cnt + '\n';
 		if (buffer === null) {
 			if (!stream.write(content)) buffer = "";
 		} else {
 			buffer += content;
 		}
 	};
-	var log = console.log;
 	console.log = console.error = console.info = console.warn = console.trace = output;
 	if (log === console.log) {
 		console.error("Output	streams	cannot	be	changed.");

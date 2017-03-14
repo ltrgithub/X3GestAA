@@ -40,7 +40,7 @@ node {
             stage('Test image') {
                 docker.image('mongo:3.2').withRun('--hostname="mongodb"') {mongo ->
                     syrImage.inside("--link=${mongo.id}") {
-                        sh('cp -R devLic /syracuse/ && cd /syracuse && node nanny install 8124 2 && node nanny check 1200')
+                        sh('cp -R devLic /syracuse/ && cp nodelocal-docker-test.js /syracuse/nodelocal.js && cd /syracuse && node nanny install 8124 2 && node nanny check 1200')
                     }
                 }
             }
