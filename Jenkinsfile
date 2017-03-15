@@ -20,15 +20,13 @@ node {
                     checkout scm
                     sh ('git submodule update --init')
                     sh ('if [ "$(ls -l ${CI_DEST}/syracuse)" ]; then rm -R "${CI_DEST}/syracuse"; fi;')
-                    sh ('node apatch direct --image ${CI_DEST}/syracuse --desc "${BRANCH_NAME} build ${BUILD_ID} of $(date +%Y-%m-%d)" --release "${SYRACUSE_RELEASE}.${BUILD_ID}" --no-check --symbols DOCKER')
+                    sh ('node apatch direct --image ${CI_DEST}/syracuse --desc "${BRANCH_NAME} build ${BUILD_ID} of $(date +%Y-%m-%d)" --release "${SYRACUSE_RELEASE}.${BUILD_ID}" --no-check')
                 }
             }
         }
         docker.withRegistry('https://repository.sagex3.com', 'jenkins_platform') {
             def syrImage
             stage('Build docker image') {
-                sh('mkdir -p ${CI_DEST}/syracuse/shadow-modules/linux-x64-v8-4.5')
-                sh('cp -R ${WORKSPACE}/shadow-modules/linux-x64-v8-4.5 ${CI_DEST}/syracuse/shadow-modules/')
                 sh('cp -R ${WORKSPACE}/docker ${CI_DEST}/syracuse')
                 sh('cp ${WORKSPACE}/nodelocal* ${CI_DEST}/syracuse')
                 def buildRandom = sh(script: 'echo $(cat /dev/urandom | tr -cd "a-f0-9" | head -c 10)', returnStdout: true).substring(0,9)
