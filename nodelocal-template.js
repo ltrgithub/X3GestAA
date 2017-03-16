@@ -195,6 +195,8 @@ exports.config = {
 		// dataset: "syracuse",
 		// mongoX509Cert: ["mongoclient", "mongoca"], // connection with X509 certificate: 
 		//           first entry: name of client certificate with private key, following entries: CA certificate(s)		
+		// lockWaitTimeout: 240000, // timeout for acquiring instance lock. default is 60000
+		// dbLockWaitTimeout: 240000, // timeout for acquiring db lock. default is 'lockWaitTimeout'
     },
     extensions: {
         "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
