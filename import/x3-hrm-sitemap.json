@@ -10463,35 +10463,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESHRTFB",
-      "title": "title_64717743-4ca8-4855-b503-a14f5b8093f5",
-      "description": "description_64717743-4ca8-4855-b503-a14f5b8093f5",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESHRTFB",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_7c95e93f-a412-4e5b-a936-7882d93d4ace",
       "code": "STD_X3_HRM_PTAB",
@@ -10606,10 +10577,6 @@
         },
         {
           "code": "STD_X3_HRM_GESHRLIC",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_GESHRTFB",
           "$variantType": "menuItem"
         }
       ]
@@ -23739,6 +23706,34 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESVEP",
+      "title": "title_3138430c-e878-4828-b640-248e78d8bdad",
+      "description": "description_3138430c-e878-4828-b640-248e78d8bdad",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESVEP",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_GESRGL",
       "title": "title_58d48972-608d-4e03-b0f1-d8a014aa1495",
       "description": "description_58d48972-608d-4e03-b0f1-d8a014aa1495",
@@ -23952,6 +23947,10 @@
             },
             {
               "code": "STD_X3_HRM_GESVEPZMB",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESVEP",
               "$variantType": "menuItem"
             }
           ]
@@ -39703,8 +39702,6 @@
       "description_a897cfd6-2c00-4232-8bd8-9d107fad6cae": "GESHRCSP",
       "title_5fe7a2dc-b8fb-4d07-bd69-34a8e2e2679d": "Permits and authorizations",
       "description_5fe7a2dc-b8fb-4d07-bd69-34a8e2e2679d": "GESHRLIC",
-      "title_64717743-4ca8-4855-b503-a14f5b8093f5": "Bank file definitions",
-      "description_64717743-4ca8-4855-b503-a14f5b8093f5": "GESHRTFB",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Payroll plan",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Headings",
       "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "GESRUB",
@@ -40534,9 +40531,9 @@
       "title_83af299f-d332-4f6a-b787-81444136fda3": "Payslips",
       "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Employee payslips ZA",
       "description_354f9828-e5ee-4b87-883e-17ebc8fba476": "GESVEPZAF",
-      "title_620dee76-6135-4fb9-b209-f3a5a9bde252": "Back pays",
       "title_3138430c-e878-4828-b640-248e78d8bdad": "Employee payslips",
       "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
+      "title_620dee76-6135-4fb9-b209-f3a5a9bde252": "Back pays",
       "title_58d48972-608d-4e03-b0f1-d8a014aa1495": "Adjustments",
       "description_58d48972-608d-4e03-b0f1-d8a014aa1495": "GESRGL",
       "title_8b90b6ef-cc63-4d66-87d2-f63b04650227": "Pay reversals",
@@ -40550,6 +40547,8 @@
       "description_340c93b0-a020-486b-9434-3919da2122d6": "GESHRBAN",
       "title_c63fc607-9c22-4ff2-8a1d-e2362de0b814": "Funds",
       "description_c63fc607-9c22-4ff2-8a1d-e2362de0b814": "GESHRCAI",
+      "title_64717743-4ca8-4855-b503-a14f5b8093f5": "Bank file definitions",
+      "description_64717743-4ca8-4855-b503-a14f5b8093f5": "GESHRTFB",
       "title_c73f5c44-3089-4609-a73b-bcac65c3106b": "Payment balance",
       "description_c73f5c44-3089-4609-a73b-bcac65c3106b": "GESHRSLD",
       "title_301bd554-4144-432a-a732-19d05f30b66a": "Payroll MO",
@@ -42731,9 +42730,9 @@
       "description_d859dd22-775a-46e3-9373-76ad9e22e9f0": "TRTSAIVAR",
       "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Bulletins salariés",
       "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Bulletins salariés",
-      "title_620dee76-6135-4fb9-b209-f3a5a9bde252": "Rappels de salaires",
       "title_3138430c-e878-4828-b640-248e78d8bdad": "Bulletins salariés",
       "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
+      "title_620dee76-6135-4fb9-b209-f3a5a9bde252": "Rappels de salaires",
       "title_58d48972-608d-4e03-b0f1-d8a014aa1495": "Régularisations",
       "description_58d48972-608d-4e03-b0f1-d8a014aa1495": "GESRGL",
       "title_8b90b6ef-cc63-4d66-87d2-f63b04650227": "Extournes de paie",
@@ -44357,9 +44356,9 @@
       "description_a8a15556-969a-45c3-b4f1-69034461cb57": "PRMSAIVAR",
       "title_d859dd22-775a-46e3-9373-76ad9e22e9f0": "Outros registos",
       "description_d859dd22-775a-46e3-9373-76ad9e22e9f0": "TRTSAIVAR",
-      "title_620dee76-6135-4fb9-b209-f3a5a9bde252": "Reg. salários",
       "title_3138430c-e878-4828-b640-248e78d8bdad": "Recibos funcionários",
       "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
+      "title_620dee76-6135-4fb9-b209-f3a5a9bde252": "Reg. salários",
       "title_58d48972-608d-4e03-b0f1-d8a014aa1495": "Regularizações",
       "description_58d48972-608d-4e03-b0f1-d8a014aa1495": "GESRGL",
       "title_8b90b6ef-cc63-4d66-87d2-f63b04650227": "Estornos de pag.",
