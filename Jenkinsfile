@@ -4,12 +4,12 @@ node {
     withEnv(["CI_DEST=${WORKSPACE}/tmp/customer_image", "SYRACUSE_IMAGE=x3-syracuse-etna"]) {
         env.SYRACUSE_RELEASE = 'stage'
         def tag
-        if('${BRANCH_NAME}' == 'integration') {
+        if("${BRANCH_NAME}" == 'integration') {
             tag = 'latest'
             env.SYRACUSE_RELEASE = '2.999'
         } else {
-            if ('${BRANCH_NAME}' =~ /^release\//) {
-                tag = '${BRANCH_NAME}'.split('/')[1]
+            if ("${BRANCH_NAME}" =~ /^release\//) {
+                tag = "${BRANCH_NAME}".split('/')[1]
                 env.SYRACUSE_RELEASE = tag
             }
         }
