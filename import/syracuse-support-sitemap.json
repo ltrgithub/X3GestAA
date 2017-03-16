@@ -508,7 +508,7 @@
   },
   "$scriptsBefore": [
     {
-      "module": "../../advancedScripts/pre-import-sitemap",
+      "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/pre-import-sitemap",
       "options": {
         "homepagesFilter": "(pageName like 'home%')",
         "modulesFilter": "(application.description eq 'Syracuse support') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
@@ -518,7 +518,7 @@
   ],
   "$scriptsAfter": [
     {
-      "module": "../../advancedScripts/post-import-sitemap",
+      "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/post-import-sitemap",
       "options": {
         "homepagesFilter": "(pageName like 'home%')",
         "modulesFilter": "(application.description eq 'Syracuse support') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
