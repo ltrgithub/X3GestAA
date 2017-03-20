@@ -1,0 +1,257 @@
+{
+	"$prototypes": {
+		"user": {
+			"$key": "login",
+			"groups": {
+				"$key": "description.en-us",
+                "$localized": ["description"]
+			},
+            "endpoints": {
+                "$key": "endpoint",
+                "endpoint": {
+                    "$key": "dataset"
+                }
+            }
+		},
+		"group": {
+			"$key": "description.en-us",
+			"$localized": [
+				"description"
+			]
+		},
+		"x3solution": {
+			"$key": "code",
+			"$localized": [
+				"description"
+			],
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"runtimes": {
+				"$key": "serverHost",
+				"$localized": [
+					"description"
+				]
+			}
+		},
+		"x3server": {
+			"$key": "serverHost",
+			"$localized": [
+				"description"
+			]
+		},
+		"application": {
+			"$key": [
+				"application",
+				"contract"
+			]
+		},
+		"endPoint": {
+			"$key": "dataset",
+			"$localized": [
+				"description"
+			],
+			"groups": {
+				"$key": "description.en-us",
+                "$localized": ["description"]
+			},
+			"applicationRef": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"x3solution": {
+				"$key": "code"
+			}
+		}
+	},
+	"$items": [
+		{
+			"$type": "x3solution",
+			"code": "SOLDEV",
+			"description": "description_2e0e692d-f226-4f8c-9724-29482ad36b4c",
+			"solutionName": "SOLDEV",
+			"serverHost": "x3_runtime",
+			"serverPort": 1801,
+			"serverTimeout": 60000,
+			"webServer": "x3_pub_http",
+			"webServerPort": 80,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"runtimes": [
+				{
+					"description": "description_fbd8154a-cac9-4905-bc1b-17cb41d0f67d",
+					"serverHost": "x3_runtime",
+					"serverPort": 1801,
+					"tag": "MAIN",
+					"banTimeout": 60,
+					"autoConfig": true
+				}
+			]
+		},
+		{
+			"$type": "endPoint",
+			"description": "description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5",
+			"helpBaseUrl": "",
+			"protocol": "x3",
+			"dataset": "SOLDEV_FOLDEV",
+			"localDatabase": false,
+			"databaseDriver": "mongodb",
+			"databasePort": 27017,
+			"x3ServerFolder": "FOLDEV",
+			"x3Historic": false,
+			"useEtna": false,
+			"gitFolder": "/metadata",
+			"enableSqlConfiguration": true,
+			"etnaSolutionPath": "/folders/",
+			"etnaDriver": "oracle",
+			"etnaDatabaseHost": "x3_database",
+			"etnaDatabasePort": 1521,
+			"etnaOracleSID": "xe.oracle.docker",
+			"etnaDatabaseUser": "FOLDEV",
+			"etnaDatabasePassword": "tiger",
+			"etnaMongoHost": "mongodb",
+			"etnaMongoPort": 27017,
+			"x3RightsIgnore": false,
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+			"applicationRef": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"x3solution": "SOLDEV"
+		},
+		{
+			"$type": "endPoint",
+			"description": "description_1f75f450-c9f3-4dbc-ad71-ac7f0801c4c5",
+			"helpBaseUrl": "",
+			"protocol": "x3",
+			"dataset": "MONO",
+			"x3ServerFolder": "MONO",
+			"x3Historic": false,
+			"useEtna": false,
+			"x3RightsIgnore": false,
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+			"applicationRef": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"x3solution": "SOLDEV"
+		},
+		{
+			"$type": "endPoint",
+			"description": "description_1f75f450-c9f3-4dbc-ad71-ac7f0801c5c5",
+			"helpBaseUrl": "",
+			"protocol": "x3",
+			"dataset": "MULTI",
+			"x3ServerFolder": "MULTI",
+			"x3Historic": false,
+			"useEtna": false,
+			"x3RightsIgnore": false,
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+			"applicationRef": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"x3solution": "SOLDEV"
+		},
+		{
+			"$type": "endPoint",
+			"description": "description_1f75f450-c9f3-4dbc-ad71-ac7f0801c3c5",
+			"helpBaseUrl": "",
+			"protocol": "x3",
+			"dataset": "HMONO",
+            "x3ParentFolder": "MONO",
+			"x3ServerFolder": "HMONO",
+			"x3Historic": true,
+			"useEtna": false,
+			"x3RightsIgnore": false,
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+			"applicationRef": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"x3solution": "SOLDEV"
+		},
+		{
+			"$type": "user",
+			"login": "DOCKER",
+			"title": "mr",
+			"lastName": "docker User",
+			"active": true,
+			"password": "Udac610eb3c10e1f8b321033088420e36",
+			"email": "",
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+            "endpoints": [{
+                "login": "ADMIN",
+                "endpoint": {
+                    "dataset": "SOLDEV_FOLDEV"    
+                }
+            }]
+		}
+	],
+	"$localization": {
+		"ar-sa": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"de-de": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"en-gb": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"en-us": {
+			"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203": "Super administrators",
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c3c5": "HMONO",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c4c5": "MONO"
+		},
+		"es-es": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"fr-fr": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"it-it": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"pl-pl": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"pt-pt": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"ru-ru": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		},
+		"zh-cn": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "SOLDEV on Docker",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "etna SOLDEV / FOLDEV"
+		}
+	}
+}
