@@ -26,6 +26,8 @@ node {
         }
         docker.withRegistry('https://repository.sagex3.com', 'jenkins_platform') {
             def syrImage
+            def scmSuperv
+            def scmX3
             stage('Build docker image') {
                 sh('mkdir -p ${CI_DEST}/syracuse/shadow-modules/linux-x64-v8-5.1')
                 sh('cp -R ${WORKSPACE}/shadow-modules/linux-x64-v8-5.1 ${CI_DEST}/syracuse/shadow-modules/')
@@ -45,9 +47,15 @@ node {
                     }
                 }
             }
+            stage('Build SCM artefacts') {
+                scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
+                scmSuperv = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
+            }
             if (tag) {
                 stage('Push image') {
                     syrImage.push(tag)
+                    scmSuperv.push(tag)
+                    scmX3.push(tag)
                 }
             }
         }
