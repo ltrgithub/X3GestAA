@@ -26,10 +26,12 @@ node {
         }
         docker.withRegistry('https://repository.sagex3.com', 'jenkins_platform') {
             def syrImage
+            def scmSuperv
+            def scmX3
+            def buildRandom = sh(script: 'echo $(cat /dev/urandom | tr -cd "a-f0-9" | head -c 10)', returnStdout: true).substring(0,9)
             stage('Build docker image') {
                 sh('cp -R ${WORKSPACE}/docker ${CI_DEST}/syracuse')
                 sh('cp ${WORKSPACE}/nodelocal* ${CI_DEST}/syracuse')
-                def buildRandom = sh(script: 'echo $(cat /dev/urandom | tr -cd "a-f0-9" | head -c 10)', returnStdout: true).substring(0,9)
                 syrImage = docker.build("${SYRACUSE_IMAGE}:stage_${BUILD_ID}_${buildRandom}", '-f tmp/customer_image/syracuse/docker/Dockerfile-syr-etna \
                     --build-arg "https_proxy=${HTTP_PROXY}" \
                     --build-arg "http_proxy=${HTTPS_PROXY}" \
@@ -43,9 +45,15 @@ node {
                     }
                 }
             }
+            stage('Build SCM artefacts') {
+                scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
+                scmX3 = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
+            }
             if (tag) {
                 stage('Push image') {
                     syrImage.push(tag)
+                    scmSuperv.push(tag)
+                    scmX3.push(tag)
                 }
             }
         }
