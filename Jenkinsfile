@@ -49,7 +49,7 @@ node {
             }
             stage('Build SCM artefacts') {
                 scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
-                scmSuperv = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
+                scmX3 = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
             }
             if (tag) {
                 stage('Push image') {
