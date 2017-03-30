@@ -1,0 +1,197 @@
+{
+	"$prototypes": {
+		"user": {
+			"$key": "login",
+			"groups": {
+				"$key": "description.en-us",
+                "$localized": ["description"]
+			},
+            "endpoints": {
+                "$key": "endpoint",
+                "endpoint": {
+                    "$key": "dataset"
+                }
+            }
+		},
+		"group": {
+			"$key": "description.en-us",
+			"$localized": [
+				"description"
+			]
+		},
+		"x3solution": {
+			"$key": "code",
+			"$localized": [
+				"description"
+			],
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"runtimes": {
+				"$key": "serverHost",
+				"$localized": [
+					"description"
+				]
+			}
+		},
+		"x3server": {
+			"$key": "serverHost",
+			"$localized": [
+				"description"
+			]
+		},
+		"application": {
+			"$key": [
+				"application",
+				"contract"
+			]
+		},
+		"endPoint": {
+			"$key": "dataset",
+			"$localized": [
+				"description"
+			],
+			"groups": {
+				"$key": "description.en-us",
+                "$localized": ["description"]
+			},
+			"applicationRef": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"x3solution": {
+				"$key": "code"
+			}
+		}
+	},
+	"$items": [
+		{
+			"$type": "x3solution",
+			"code": "REPOSX3",
+			"description": "description_2e0e692d-f226-4f8c-9724-29482ad36b4c",
+			"solutionName": "REPOSX3",
+			"serverHost": "x3_runtime",
+			"serverPort": 1801,
+			"serverTimeout": 60000,
+			"webServer": "x3_pub_http",
+			"webServerPort": 80,
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"runtimes": [
+				{
+					"description": "description_fbd8154a-cac9-4905-bc1b-17cb41d0f67d",
+					"serverHost": "x3_runtime",
+					"serverPort": 1801,
+					"tag": "MAIN",
+					"banTimeout": 60,
+					"autoConfig": true
+				}
+			]
+		},
+		{
+			"$type": "endPoint",
+			"description": "description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5",
+			"helpBaseUrl": "",
+			"protocol": "x3",
+			"dataset": "LOCALDEV",
+			"localDatabase": false,
+			"databaseDriver": "mongodb",
+			"databasePort": 27017,
+			"x3ServerFolder": "REPOSX3",
+			"x3Historic": false,
+			"useEtna": false,
+			"gitFolder": "/metadata",
+			"enableSqlConfiguration": true,
+			"etnaSolutionPath": "/folders/",
+			"etnaDriver": "oracle",
+			"etnaDatabaseHost": "x3_database",
+			"etnaDatabasePort": 1521,
+			"etnaOracleSID": "xe.oracle.docker",
+			"etnaDatabaseUser": "REPOSX3",
+			"etnaDatabasePassword": "tiger",
+			"etnaMongoHost": "mongodb",
+			"etnaMongoPort": 27017,
+			"x3RightsIgnore": false,
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+			"applicationRef": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"x3solution": "REPOSX3"
+		},
+		{
+			"$type": "user",
+			"login": "DOCKER",
+			"title": "mr",
+			"lastName": "docker User",
+			"active": true,
+			"password": "Udac610eb3c10e1f8b321033088420e36",
+			"email": "",
+			"groups": [
+				"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203"
+			],
+            "endpoints": [{
+                "login": "ADMIN",
+                "endpoint": {
+                    "dataset": "LOCALDEV"    
+                }
+            }]
+		}
+	],
+	"$localization": {
+		"ar-sa": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"de-de": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"en-gb": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"en-us": {
+			"description_c3c3fdb0-3083-4ab6-a369-d4cb065a2203": "Super administrators",
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"es-es": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"fr-fr": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"it-it": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"pl-pl": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"pt-pt": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"ru-ru": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		},
+		"zh-cn": {
+			"description_2e0e692d-f226-4f8c-9724-29482ad36b4c": "REPOSX3",
+			"description_1f75f450-c9f3-4dbc-ad71-ac7f0801c2c5": "Local development"
+		}
+	}
+}
