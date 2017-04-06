@@ -219,6 +219,7 @@ exports.config = {
         // unit tests related options
         // x3endpoint: {},
         elasticsearch: {},
+        ignore: [/replaceVars(No)?Compress/i, /uiTest/i],
         suppress: {
             officeX3Lookup: true,
             x3print: true
