@@ -118,7 +118,8 @@ exports.config = {
 		// cache tracing
 		cache: {
 			// trace: console.log,
-		}
+		},
+		appHostOverride: process.env.X3_RUNTIME_HOSTNAME
 	},
 
 	help: {
