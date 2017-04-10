@@ -98,18 +98,36 @@ exports.config = {
 			// "access-control-allow-origin": "*",
 			// "access-control-allow-headers": "authorization, content-type, soapaction, x-requested-with",
 		},
+		signIn: {
+			rememberMe: {
+				//-- set the lifetime in number of days of the remember me token. Default is 28 (4 weeks).
+				//-- A value less or equal to 0 will disable the remember me feature
+				// lifetime: 0
+    },
+
+			//-- Set autocomplete to "on" or "off" for login and/or password
+			//-- The autocomplete behavior is browser specific and browser can prompt for saving password even if is set to off
+			//-- Default is "on" if "remember me" is enabled and "off" if it is disabled
+			// autoComplete: {
+			// 	login: true,
+			// 	password: true
+			// }
+		},
 		client: {
 			iframe: {
 				sandbox: {
-					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxing iframes
+					// The html vignettes allow 3 levels of security ('low', 'medium' and 'high') for sandboxed iframes
 					// By default, this levels are set to be the more secure for each level.
 					// This section allow you to relax this security but at your own risk
-					// allow-forms			Enables form submission
-					// allow-pointer-lock	Enables pointer APIs (for example pointer position)
-					// allow-popups			Enables popups
-					// allow-same-origin	Allows the iframe content to be treated as being from the same origin
-					// allow-scripts		Enables scripts
-					// allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
+					//  - allow-forms			Enables form submission
+					//  - allow-pointer-lock	Enables pointer APIs (for example pointer position)
+					//  - allow-popups			Enables popups
+					//  - allow-same-origin	Allows the iframe content to be treated as being from the same origin
+					//  - allow-scripts		Enables scripts
+					//  - allow-top-navigation	Allows the iframe content to navigate its top-level browsing context					
+					// Setting a level to null will disable the sandboxing of the iframe
+					// You can find more information on sanboxed iframes on http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/
+					// 
 					// low: null,
 					// medium: null,
 					// medium: "",
@@ -117,6 +135,10 @@ exports.config = {
 					// high: ""
 				}
 			}
+		},
+		profile: {
+			// Default is to reject all kind of MS Office, OpenOffice, LibreOffice, StarOffice documents
+			officeDocumentBlackList: /(msword|ms-word|ms-excel|ms-powerpoint|openxmlformats-officedocument|oasis.opendocument|stardivision)/i
 		}
     },
 	system: {
@@ -164,6 +186,17 @@ exports.config = {
 	},
     collaboration: {
         certdir: "certificates"  // path to certificates folder
+		// options for MongoDB connection:
+		// port: 27017, 
+		// driver: "mongodb",
+		// hostname: "localhost",
+		// connectionString: "localhost:27017",
+		// databaseName: "syracuse",
+		// dataset: "syracuse",
+		// mongoX509Cert: ["mongoclient", "mongoca"], // connection with X509 certificate: 
+		//           first entry: name of client certificate with private key, following entries: CA certificate(s)		
+		// lockWaitTimeout: 240000, // timeout for acquiring instance lock. default is 60000
+		// dbLockWaitTimeout: 240000, // timeout for acquiring db lock. default is 'lockWaitTimeout'
     },
     extensions: {
         "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
@@ -262,7 +295,14 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
-		//tracer: console.log,
+		// url of the elasticsearch server. This parameter supersede the hostname and port
+		// baseUrl: "https://elastic-server:9200",
+
+		// hostname of the elasticsearch server. localhost by default
+		// hostname: "elastic-server",
+
+		// port of the elasticsearch server. 9200 by default
+		// port: 9200,
 
 		// Using a minimal stemmer should only group plurals rather than a
 		// deeper root of the word.

@@ -1,32 +1,37 @@
-FROM node:4.6
+FROM node:6
 
 ARG SYRACUSE_SRC="."
-ARG SHADOW_MODULES
+
+ARG SYRACUSE_VER=""
+ENV SYRACUSE_VER=${SYRACUSE_VER}
 
 # install needed packages
 RUN apt-get update && apt-get install -y curl xz-utils libxml2 libaio1 ksh && \
   mkdir -p /tmp /syracuse /config /extensions /opt/oracle && cd /tmp && \
   wget https://s3-eu-west-1.amazonaws.com/sagex3platform/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar && \
   wget https://s3-eu-west-1.amazonaws.com/sagex3platform/instantclient-basiclite-linux.x64-12.1.0.2.0.tar && \
+  wget https://s3-eu-west-1.amazonaws.com/sagex3platform/instantclient-sdk-linux.x64-12.1.0.2.0.tar && \
   cd /opt/oracle && tar -xf /tmp/instantclient-basiclite-linux.x64-12.1.0.2.0.tar && \
   tar -xf /tmp/instantclient-sqlplus-linux.x64-12.1.0.2.0.tar && \
-  ln -s /opt/oracle/instantclient_12_1/libclntsh.so.12.1 /opt/oracle/instantclient_12_1/libclntsh.so && \
-  ln -s /opt/oracle/instantclient_12_1/libocci.so.12.1 /opt/oracle/instantclient_12_1/libocci.so && \
+  tar -xf /tmp/instantclient-sdk-linux.x64-12.1.0.2.0.tar && \
+  mv /opt/oracle/instantclient_12_1 /opt/oracle/instantclient && \
+  ln -s /opt/oracle/instantclient/libclntsh.so.12.1 /opt/oracle/instantclient/libclntsh.so && \
+  ln -s /opt/oracle/instantclient/libocci.so.12.1 /opt/oracle/instantclient/libocci.so && \
   rm /tmp/*
     
-ENV LD_LIBRARY_PATH=/opt/oracle/instantclient_12_1:$LD_LIBRARY_PATH PATH=/opt/oracle/instantclient_12_1:$PATH
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient:$LD_LIBRARY_PATH PATH=/opt/oracle/instantclient:$PATH
 
 WORKDIR /syracuse
 
-COPY $SHADOW_MODULES shadow-modules
 COPY $SYRACUSE_SRC .
+
+# make sure oracle.node is build with right version
+RUN cd /syracuse/shadow-modules/linux-x64-v8-5.1/ && npm install oracledb
 
 RUN cp /syracuse/docker/nodelocal-syr-etna.docker /syracuse/nodelocal.js
 
 RUN cd /syracuse
 
-VOLUME /config
-VOLUME /extensions
 EXPOSE 8124
 
 RUN chmod a+x docker/start-syr-etna.sh
