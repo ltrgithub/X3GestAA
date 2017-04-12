@@ -74,7 +74,7 @@ exports.config = {
 	},
 	*/
 	session: {
-		timeout: 20, // minutes
+		timeout: 360, // minutes
 		asyncTimeout: 20, // Delete asynchronous sdata trackers after 20 minutes by default for GET operations.
 		checkInterval: 60, // secondes
 		//		ignoreStoreSession: true,
@@ -185,6 +185,7 @@ exports.config = {
 	},
     collaboration: {
          hostname: "mongodb",
+	 databaseName: (process.env.SYRACUSE_VER ? process.env.SYRACUSE_VER + "_" : "") + "syracuse"
     },
     extensions: {
         "root": "/extensions",

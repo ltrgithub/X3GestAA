@@ -639,8 +639,10 @@ namespace ExcelAddIn
                     Excel.Worksheet ws = cd.GetReservedSheet(false);
                     if (ws != null)
                     {
-                        ws.Application.DisplayAlerts = false;
+                        Excel.Application app = ws.Application;
+                        app.DisplayAlerts = false;
                         ws.Delete();
+                        app.DisplayAlerts = true;
                     }
 
                     return true;
