@@ -40,12 +40,23 @@ node {
                     --build-arg "SYRACUSE_SRC=syracuse" \
                     "${CI_DEST}/"')
             }
-            stage('Test image') {
+            stage('Test image start') {
                 docker.image('mongo:3.2').withRun('--hostname="mongodb"') {mongo ->
                     syrImage.inside("--link=${mongo.id}") {
                         sh('cp -R devLic /syracuse/ && cp nodelocal-docker-test.js /syracuse/nodelocal.js && cd /syracuse && node nanny install 8124 2 && node nanny check 1200')
                     }
                 }
+            }
+            stage('Run unit tests') {
+                docker.image('mongo:3.2').withRun('--hostname="mongodb"') {mongo ->
+                    syrImage.inside("--link=${mongo.id}") {
+                        sh('cp -R devLic /syracuse/ && cp nodelocal-docker-test.js /syracuse/nodelocal.js')
+                        sh('cp -R node_modules/@sage/syracuse-lib/test /syracuse/node_modules/@sage/syracuse-lib/')
+                        sh('npm install -g mocha-jenkins-reporter')
+                        sh('export JUNIT_REPORT_PATH=$(pwd)/test_report.xml && cd /syracuse/node_modules/@sage/syracuse-lib && npm run test:jenkins')
+                    }
+                }
+                step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
             }
             stage('Build SCM artefacts') {
                 scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
