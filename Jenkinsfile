@@ -55,7 +55,7 @@ node {
                         sh('cp -R node_modules/test-contract /syracuse/node_modules/')
                         sh('npm install -g mocha')
                         sh('npm install -g mocha-jenkins-reporter')
-                        sh('export JUNIT_REPORT_PATH=$(pwd)/test_report.xml && cd /syracuse/node_modules/@sage/syracuse-lib && npm run test:jenkins && exit 0')
+                        sh('export JUNIT_REPORT_PATH=$(pwd)/test_report.xml && cd /syracuse/node_modules/@sage/syracuse-lib && npm run test:jenkins || exit 0')
                     }
                 }
                 step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
