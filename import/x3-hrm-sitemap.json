@@ -16533,6 +16533,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESUNNB",
+      "title": "title_2474beda-253f-46a1-88c3-88f2aec93a52",
+      "description": "description_2474beda-253f-46a1-88c3-88f2aec93a52",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESUNNB",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MDBA"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_d5cc5abb-476a-4263-b7db-1bf34c6a4732",
       "code": "STD_X3_HRM_MDRIT",
@@ -16603,6 +16630,10 @@
         },
         {
           "code": "STD_X3_HRM_GESTSA",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESUNNB",
           "$variantType": "menuItem"
         }
       ]
@@ -23637,6 +23668,97 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESVEP",
+      "title": "title_3138430c-e878-4828-b640-248e78d8bdad",
+      "description": "description_3138430c-e878-4828-b640-248e78d8bdad",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESVEP",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESVEPZAF",
+      "title": "title_354f9828-e5ee-4b87-883e-17ebc8fba476",
+      "description": "description_354f9828-e5ee-4b87-883e-17ebc8fba476",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESVEPZAF",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESVEPZMB",
+      "title": "title_1255b02b-3eb0-4108-b521-a299e4244bb0",
+      "description": "description_1255b02b-3eb0-4108-b521-a299e4244bb0",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESVEPZMB",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_91da1071-a2b8-4d65-95cb-48fc47ca5807",
       "code": "STD_X3_HRM_PFEU",
@@ -23729,8 +23851,109 @@
               "$variantType": "menuItem"
             }
           ]
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "936ffb68-fd49-4de4-8701-fde4e5944eef",
+          "title": "title_936ffb68-fd49-4de4-8701-fde4e5944eef",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESVEP",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESVEPZAF",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESVEPZMB",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRFRM",
+      "title": "title_70b6f5a7-908f-4830-a84d-ada22398b00e",
+      "description": "description_70b6f5a7-908f-4830-a84d-ada22398b00e",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRFRM",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_HRFRMVAL",
+      "title": "title_d9dfb850-4881-41b6-a0fe-c25b065681d7",
+      "description": "description_d9dfb850-4881-41b6-a0fe-c25b065681d7",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "HRFRMVAL",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_HRFICMAG",
+      "title": "title_60d81062-9150-4b07-aa4f-b24c33db1b58",
+      "description": "description_60d81062-9150-4b07-aa4f-b24c33db1b58",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "HRFICMAG",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
     },
     {
       "$type": "menuItem",
@@ -23764,15 +23987,16 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_FRMVAL",
-      "title": "title_1372a382-2910-4cb8-a32a-5a3dc165e5de",
-      "description": "description_1372a382-2910-4cb8-a32a-5a3dc165e5de",
+      "code": "STD_X3_HRM_GESHRSLD",
+      "title": "title_c73f5c44-3089-4609-a73b-bcac65c3106b",
+      "description": "description_c73f5c44-3089-4609-a73b-bcac65c3106b",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "FRMVAL",
-      "fusionKey": "",
+      "fusionFunction": "GESHRSLD",
+      "keyIsWhere": false,
       "target": "self",
+      "requestLevel": "1",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -23784,35 +24008,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "STD_X3_HRM_FICMAG",
-      "title": "title_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab",
-      "description": "description_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab",
-      "linkType": "$function",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "FICMAG",
-      "fusionKey": "",
-      "target": "self",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_HRM_GTRS"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -23829,15 +24025,23 @@
       },
       "items": [
         {
+          "code": "STD_X3_HRM_GESHRFRM",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_HRFRMVAL",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_HRFICMAG",
+          "$variantType": "menuItem"
+        },
+        {
           "code": "STD_X3_HRM_GESHRTFB",
           "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_HRM_FRMVAL",
-          "$variantType": "menuItem"
-        },
-        {
-          "code": "STD_X3_HRM_FICMAG",
+          "code": "STD_X3_HRM_GESHRSLD",
           "$variantType": "menuItem"
         }
       ]
@@ -23865,7 +24069,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -23893,7 +24097,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -23921,7 +24125,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -23949,7 +24153,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -23977,7 +24181,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -29057,6 +29261,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_FUNCFMSRH",
+      "title": "title_a6bf11f2-8d66-4e27-a83e-125c61a447d7",
+      "description": "description_a6bf11f2-8d66-4e27-a83e-125c61a447d7",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "FUNCFMSRH",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MSAL"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_e990a160-a527-4068-b53e-0b0a21ed71ff",
       "code": "STD_X3_HRM_MSRET",
@@ -29077,6 +29308,10 @@
         },
         {
           "code": "STD_X3_HRM_GESSRS",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_FUNCFMSRH",
           "$variantType": "menuItem"
         }
       ]
@@ -33031,6 +33266,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_CONSCAT",
+      "title": "title_e3669b22-a3a0-454c-9849-0aa2dcd86c75",
+      "description": "description_e3669b22-a3a0-454c-9849-0aa2dcd86c75",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "CONSCAT",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MTDI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_1b10b84b-7d2c-4c41-9a65-98eacd46a70c",
       "code": "STD_X3_HRM_MTDI_MISC",
@@ -33055,6 +33317,10 @@
         },
         {
           "code": "STD_X3_HRM_FUNEFATGNR",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_CONSCAT",
           "$variantType": "menuItem"
         }
       ]
@@ -37632,6 +37898,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_PJMOVE",
+      "title": "title_4419c8f3-1d7d-4037-874c-7fb676f9a639",
+      "description": "description_4419c8f3-1d7d-4037-874c-7fb676f9a639",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "PJMOVE",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MPRP"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_ec2a33b8-5288-4161-9d2f-6a3971075659",
       "code": "STD_X3_HRM_MPJM",
@@ -37664,6 +37957,10 @@
         },
         {
           "code": "STD_X3_HRM_PJMTE",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_PJMOVE",
           "$variantType": "menuItem"
         }
       ]
@@ -39453,7 +39750,7 @@
       "description_a2dc1aec-589d-47e1-9dd8-d6f46b9e491f": "TB336",
       "title_11026e05-8d25-49bb-8f08-41f6159d13de": "Employee pages",
       "description_11026e05-8d25-49bb-8f08-41f6159d13de": "TB337",
-      "title_633df455-a136-43b4-a665-3bf976e042dd": "Exemptions",
+      "title_633df455-a136-43b4-a665-3bf976e042dd": "GESEXO",
       "description_633df455-a136-43b4-a665-3bf976e042dd": "GESEXO",
       "title_9b36839f-bf1d-486b-8535-d87c0b323606": "Exceptions",
       "description_9b36839f-bf1d-486b-8535-d87c0b323606": "GESECH",
@@ -39791,6 +40088,8 @@
       "description_5ac67747-d1e3-4480-9226-c95fcaf3b399": "GESTCT",
       "title_a085416e-f512-4581-9329-e63506684dc0": "Safety stock factors",
       "description_a085416e-f512-4581-9329-e63506684dc0": "GESTSA",
+      "title_2474beda-253f-46a1-88c3-88f2aec93a52": "UN number",
+      "description_2474beda-253f-46a1-88c3-88f2aec93a52": "GESUNNB",
       "title_ce7f90b2-ffa8-4515-a3fc-58b5e1277bbf": "BP tables",
       "title_41caee70-d7e0-4620-a35e-f4f98c93cac5": "Customer stat groups",
       "description_41caee70-d7e0-4620-a35e-f4f98c93cac5": "DIVTSC",
@@ -40145,9 +40444,9 @@
       "description_a4a1f112-3136-4cfa-b70f-07e1569eb9ee": "GESPLN",
       "title_c2fff644-f4c4-44ac-8783-58d56382f297": "Calendars",
       "description_c2fff644-f4c4-44ac-8783-58d56382f297": "GESCLD",
-      "title_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Nature of activity",
+      "title_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Plan task",
       "description_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Nature of activity",
-      "title_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
+      "title_a306737b-2a0d-460c-9df4-18a0ee050ed4": "GESSTY",
       "description_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
       "title_e119e582-9e69-4b6e-be5c-ea5cd95517de": "Leave - Absence",
       "title_c9065547-4567-4269-a725-410b1f3aa1a8": "Annual leave",
@@ -40191,7 +40490,7 @@
       "title_e3808f8e-64be-4196-81a4-0ed3543675ed": "Template 2",
       "description_e3808f8e-64be-4196-81a4-0ed3543675ed": "IMPEV",
       "title_dc27981d-466e-48be-a129-72502ff6ab31": "Inquiries",
-      "title_fba3b7f7-7ee9-4875-88bf-aca45aee6ad3": "CONSTPS",
+      "title_fba3b7f7-7ee9-4875-88bf-aca45aee6ad3": "Time inquiry",
       "description_fba3b7f7-7ee9-4875-88bf-aca45aee6ad3": "CONSTPS",
       "title_d03b854a-e366-45dc-8df0-25287b186533": "Individual planning",
       "description_d03b854a-e366-45dc-8df0-25287b186533": "VPLANI",
@@ -40237,13 +40536,24 @@
       "description_a8a15556-969a-45c3-b4f1-69034461cb57": "PRMSAIVAR",
       "title_d859dd22-775a-46e3-9373-76ad9e22e9f0": "Other entries",
       "description_d859dd22-775a-46e3-9373-76ad9e22e9f0": "TRTSAIVAR",
+      "title_936ffb68-fd49-4de4-8701-fde4e5944eef": "Payslips",
+      "title_3138430c-e878-4828-b640-248e78d8bdad": "Employee payslips (GESEVP)",
+      "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
+      "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Employee payslips (GESVEPZAF)",
+      "description_354f9828-e5ee-4b87-883e-17ebc8fba476": "GESVEPZAF",
+      "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Employee payslips (GESVEPZMB)",
+      "description_1255b02b-3eb0-4108-b521-a299e4244bb0": "GESVEPZMB",
       "title_c9cadd2a-8e4c-40c1-84cf-22cf1da2dbb3": "Payments",
+      "title_70b6f5a7-908f-4830-a84d-ada22398b00e": "Entry of payments",
+      "description_70b6f5a7-908f-4830-a84d-ada22398b00e": "GESHRFRM",
+      "title_d9dfb850-4881-41b6-a0fe-c25b065681d7": "Payment validation",
+      "description_d9dfb850-4881-41b6-a0fe-c25b065681d7": "HRFRMVAL",
+      "title_60d81062-9150-4b07-aa4f-b24c33db1b58": "Electronic transfers",
+      "description_60d81062-9150-4b07-aa4f-b24c33db1b58": "HRFICMAG",
       "title_64717743-4ca8-4855-b503-a14f5b8093f5": "Bank file definitions",
       "description_64717743-4ca8-4855-b503-a14f5b8093f5": "GESHRTFB",
-      "title_1372a382-2910-4cb8-a32a-5a3dc165e5de": "Payment validation",
-      "description_1372a382-2910-4cb8-a32a-5a3dc165e5de": "FRMVAL",
-      "title_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "Electronic remittances",
-      "description_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "FICMAG",
+      "title_c73f5c44-3089-4609-a73b-bcac65c3106b": "Payment balance",
+      "description_c73f5c44-3089-4609-a73b-bcac65c3106b": "GESHRSLD",
       "title_301bd554-4144-432a-a732-19d05f30b66a": "Payroll MO",
       "title_97a2b0fd-6cd1-40db-ad57-c27d6df6b3ce": "Payroll MO calculation",
       "description_97a2b0fd-6cd1-40db-ad57-c27d6df6b3ce": "ODPAY",
@@ -40560,6 +40870,8 @@
       "description_d32ad151-3442-4c78-a6f0-7b0f8a8d53a7": "GESSRL",
       "title_e022c68b-f6ff-4216-a3c0-c52f3a4e76bd": "Subcontract material returns",
       "description_e022c68b-f6ff-4216-a3c0-c52f3a4e76bd": "GESSRS",
+      "title_a6bf11f2-8d66-4e27-a83e-125c61a447d7": "Return validation",
+      "description_a6bf11f2-8d66-4e27-a83e-125c61a447d7": "FUNCFMSRH",
       "title_7d003997-779c-4718-ac07-23076051f853": "Inquiries",
       "title_c715116e-a6e0-4726-a847-21a7982caf52": "Quotes",
       "title_e797b6a7-c939-4d4e-b345-db392d0f5be3": "List of quotes",
@@ -40808,6 +41120,8 @@
       "description_232e416e-3b37-4673-9343-196707716fe8": "SAIWRKPLN",
       "title_7e0c55d8-1f9f-4e46-a335-d48c242eb35f": "EFAT communication (Portugal)",
       "description_7e0c55d8-1f9f-4e46-a335-d48c242eb35f": "FUNEFATGNR",
+      "title_e3669b22-a3a0-454c-9849-0aa2dcd86c75": "TA EI management",
+      "description_e3669b22-a3a0-454c-9849-0aa2dcd86c75": "CONSCAT",
       "title_72cf1545-8ebf-4921-b17c-7fa6598a82e9": "Migrations",
       "title_655b2654-bc97-426d-9407-014f8abf908e": "Migration process",
       "description_655b2654-bc97-426d-9407-014f8abf908e": "GESAM3",
@@ -41103,6 +41417,8 @@
       "description_9963705f-f1b9-414b-b649-9d598a381bae": "PJMRPTEXT",
       "title_aeab4d86-dbbb-42f8-b531-392918448288": "Time entry",
       "description_aeab4d86-dbbb-42f8-b531-392918448288": "PJMTE",
+      "title_4419c8f3-1d7d-4037-874c-7fb676f9a639": "Project overview",
+      "description_4419c8f3-1d7d-4037-874c-7fb676f9a639": "PJMOVE",
       "title_4152a92e-d125-48a8-b12d-984ba480a79b": "Projects",
       "title_a6e62649-9340-4297-b5f8-28822f6f841f": "Sales order resynchronization",
       "description_a6e62649-9340-4297-b5f8-28822f6f841f": "PJMSOQSYN",
@@ -42422,11 +42738,11 @@
       "description_a8a15556-969a-45c3-b4f1-69034461cb57": "PRMSAIVAR",
       "title_d859dd22-775a-46e3-9373-76ad9e22e9f0": "Autres saisies",
       "description_d859dd22-775a-46e3-9373-76ad9e22e9f0": "TRTSAIVAR",
+      "title_3138430c-e878-4828-b640-248e78d8bdad": "Bulletins salariés",
+      "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
+      "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Bulletins salariés",
+      "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Bulletins salariés",
       "title_c9cadd2a-8e4c-40c1-84cf-22cf1da2dbb3": "Règlements",
-      "title_1372a382-2910-4cb8-a32a-5a3dc165e5de": "Validation des règlements",
-      "description_1372a382-2910-4cb8-a32a-5a3dc165e5de": "FRMVAL",
-      "title_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "Virements magnétiques",
-      "description_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "FICMAG",
       "title_301bd554-4144-432a-a732-19d05f30b66a": "OD de paie",
       "title_97a2b0fd-6cd1-40db-ad57-c27d6df6b3ce": "Calcul OD de paie",
       "description_97a2b0fd-6cd1-40db-ad57-c27d6df6b3ce": "ODPAY",
@@ -44043,11 +44359,9 @@
       "description_a8a15556-969a-45c3-b4f1-69034461cb57": "PRMSAIVAR",
       "title_d859dd22-775a-46e3-9373-76ad9e22e9f0": "Outros registos",
       "description_d859dd22-775a-46e3-9373-76ad9e22e9f0": "TRTSAIVAR",
+      "title_3138430c-e878-4828-b640-248e78d8bdad": "Recibos funcionários",
+      "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
       "title_c9cadd2a-8e4c-40c1-84cf-22cf1da2dbb3": "Pagamentos",
-      "title_1372a382-2910-4cb8-a32a-5a3dc165e5de": "Validação das regulariz.",
-      "description_1372a382-2910-4cb8-a32a-5a3dc165e5de": "FRMVAL",
-      "title_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "Transferências magnéticas",
-      "description_dff1cfaf-3b1b-44ef-b061-ae6ffd899aab": "FICMAG",
       "title_301bd554-4144-432a-a732-19d05f30b66a": "OD de pag.",
       "title_97a2b0fd-6cd1-40db-ad57-c27d6df6b3ce": "Cálculo OD salários",
       "description_97a2b0fd-6cd1-40db-ad57-c27d6df6b3ce": "ODPAY",
