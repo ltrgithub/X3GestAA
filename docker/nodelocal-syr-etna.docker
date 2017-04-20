@@ -199,5 +199,23 @@ exports.config = {
 			"retries": 10,
 			"intervalMs": 30000
 		}
-	}
+	},
+	scmServer: {
+      // THe URL to connect to the text server
+      url: "http://172.17.0.1:3000",
+      // Files to be ignored when generating a patch
+      ignore:[
+          "TRT;W*",
+          "TRT;X*",
+          "TRT;Y*",
+          "TRT;Z*",
+          "TRT;SPE*",
+          "ADO;*",
+          "ADZ;*",
+          "ADF;*",
+          "ADP;ATXTETAG",
+          "ADP;RIGHTSETAG",
+          "ALH;X*"
+      ],
+  	},
 };
