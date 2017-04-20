@@ -52,6 +52,7 @@ node {
                     syrImage.inside("--link=${mongo.id}") {
                         sh('cp -R devLic /syracuse/ && cp nodelocal-docker-test.js /syracuse/nodelocal.js')
                         sh('cp -R node_modules/@sage/syracuse-lib/test /syracuse/node_modules/@sage/syracuse-lib/')
+                        sh('cp -R node_modules/test-contract /syracuse/node_modules/')
                         sh('npm install -g mocha')
                         sh('npm install -g mocha-jenkins-reporter')
                         sh('export JUNIT_REPORT_PATH=$(pwd)/test_report.xml && cd /syracuse/node_modules/@sage/syracuse-lib && npm run test:jenkins')
