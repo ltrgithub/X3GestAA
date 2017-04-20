@@ -58,7 +58,7 @@ node {
                         sh('export JUNIT_REPORT_PATH=$(pwd)/test_report.xml && cd /syracuse/node_modules/@sage/syracuse-lib && npm run test:jenkins || exit 0')
                     }
                 }
-                step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', unstableThreshold: '1']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
+                step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', unstableThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
             }
             stage('Build SCM artefacts') {
                 scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
