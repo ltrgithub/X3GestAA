@@ -5452,6 +5452,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GENCTRCOT",
+      "title": "title_11e8523d-b93f-4435-9d1e-e79b10316e9f",
+      "description": "description_11e8523d-b93f-4435-9d1e-e79b10316e9f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GENCTRCOT",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_6c1dca57-1d20-478c-8145-4b2e58d7266f",
       "code": "STD_X3_HRM_GUTIL",
@@ -5994,6 +6021,10 @@
             },
             {
               "code": "STD_X3_HRM_GENTPO",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GENCTRCOT",
               "$variantType": "menuItem"
             }
           ]
@@ -15116,6 +15147,37 @@
       ]
     },
     {
+      "$type": "menuBlock",
+      "title": "title_c867cca0-64af-46da-828b-d0b9fe09da3a",
+      "code": "STD_X3_HRM_FEPA",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_EPAP",
+          "title": "title_1fb72249-1342-41c4-9eae-41b055580873",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": []
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "STD_X3_HRM_EPSET",
+          "title": "title_c064ae77-5166-4b52-a39d-5da710fc9b9e",
+          "$factory": true,
+          "$factoryOwner": "SAGE",
+          "items": []
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a",
       "code": "STD_X3_HRM_PERSO",
@@ -15146,6 +15208,9 @@
         },
         {
           "code": "STD_X3_HRM_EXTPAY"
+        },
+        {
+          "code": "STD_X3_HRM_FEPA"
         }
       ]
     },
@@ -20393,6 +20458,24 @@
                 {
                   "code": "STD_X3_HRM_GESHRMDM",
                   "$variantType": "menuItem"
+                },
+                {
+                  "$type": "menuSubblock",
+                  "$variantType": "menuBlock",
+                  "code": "STD_X3_HRM_PDSNP",
+                  "title": "title_f6677801-8c13-4223-8afd-b5bbe059e777",
+                  "$factory": true,
+                  "$factoryOwner": "SAGE",
+                  "items": []
+                },
+                {
+                  "$type": "menuSubblock",
+                  "$variantType": "menuBlock",
+                  "code": "STD_X3_HRM_PDSNS",
+                  "title": "title_8c86a54c-59b5-40d9-9b65-b7cb1f176f83",
+                  "$factory": true,
+                  "$factoryOwner": "SAGE",
+                  "items": []
                 }
               ]
             },
@@ -20483,6 +20566,15 @@
                       "$variantType": "menuItem"
                     }
                   ]
+                },
+                {
+                  "$type": "menuSubblock",
+                  "$variantType": "menuBlock",
+                  "code": "STD_X3_HRM_PDSNR",
+                  "title": "title_f6893dad-b1e9-4456-b3c9-d643e30ce377",
+                  "$factory": true,
+                  "$factoryOwner": "SAGE",
+                  "items": []
                 }
               ]
             }
@@ -27660,6 +27752,7 @@
       "title_4d1f2f9e-7457-428e-a3d8-0571c7cb2ce9": "إنشاء التابع",
       "title_dc3a4d74-65cb-4bd0-849b-80584107a155": "إعادة خساب تكلفة المدرب",
       "title_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "تحديث عدد الموظفين",
+      "title_11e8523d-b93f-4435-9d1e-e79b10316e9f": "GENCTRCOT",
       "title_2716ebd5-6040-4909-82f0-483a073b264d": "بوابة تفاعلية",
       "title_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "الأسر المصغرة",
       "title_fe6c9349-76e3-4526-b49f-1d8942d0973e": "معلمات اللوحة",
@@ -27967,6 +28060,9 @@
       "title_c04cb148-8b9c-461c-bb38-7748606f60a5": "الإعداد",
       "title_a1a228c2-26ce-4aa3-a8c3-4ef4b5deff0f": "الإعداد",
       "title_ec095d29-9fb1-499c-9d8c-cf84214f7516": "عملية القروض",
+      "title_c867cca0-64af-46da-828b-d0b9fe09da3a": "دفع خارجي",
+      "title_1fb72249-1342-41c4-9eae-41b055580873": "دفع خارجي",
+      "title_c064ae77-5166-4b52-a39d-5da710fc9b9e": "الإعداد",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "إدارة الوقت",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "معايير  ",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "طبيعة الفعاليات",
@@ -28124,6 +28220,7 @@
       "title_61502192-8b12-4204-82bc-beca55cf9349": "GESHRCDF",
       "title_9b661143-89ff-42a9-83a4-96664eb05b05": "إنشاء ",
       "title_8390f635-9b55-4eb1-b282-e82f4713b055": "GESHRMDM",
+      "title_f6677801-8c13-4223-8afd-b5bbe059e777": "معونة اجتماعية",
       "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "استخراج",
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "GESHRDWS",
       "title_8826eb7d-c9ca-447e-95c2-aa2b968719ff": "إنشاء ",
@@ -28136,6 +28233,7 @@
       "title_a37929b9-6e19-447c-b5b4-d985d516513b": "أدوات",
       "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "TRTDSNSUP",
       "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "TRTDSNCLO",
+      "title_f6893dad-b1e9-4456-b3c9-d643e30ce377": "الإستفسارات",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "درهم إماراتي",
       "title_bbf1672a-5490-4111-89ab-f14663b737af": "DADS-U",
@@ -28741,6 +28839,8 @@
       "description_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "TRTGENPOP",
       "title_b600c546-15d4-411e-8567-d97767de8ca8": "Organization table generation",
       "description_b600c546-15d4-411e-8567-d97767de8ca8": "GENTPO",
+      "title_11e8523d-b93f-4435-9d1e-e79b10316e9f": "Contribution contract update",
+      "description_11e8523d-b93f-4435-9d1e-e79b10316e9f": "GENCTRCOT",
       "title_2716ebd5-6040-4909-82f0-483a073b264d": "Interactive dashboard",
       "title_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "Gadget groups",
       "description_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "GESATP",
@@ -29302,6 +29402,9 @@
       "title_434f268b-443e-43bb-aa76-5ab7aa7aff6c": "External payment process",
       "title_1a033b4c-8dc7-41ba-816d-1fe4170cedee": "Generate external payments",
       "description_1a033b4c-8dc7-41ba-816d-1fe4170cedee": "Generate external payments",
+      "title_c867cca0-64af-46da-828b-d0b9fe09da3a": "External payments",
+      "title_1fb72249-1342-41c4-9eae-41b055580873": "External payments",
+      "title_c064ae77-5166-4b52-a39d-5da710fc9b9e": "Setup",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Time management",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parameter definition",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Nature of events",
@@ -29596,6 +29699,8 @@
       "description_9b661143-89ff-42a9-83a4-96664eb05b05": "GENDSNM",
       "title_8390f635-9b55-4eb1-b282-e82f4713b055": "Data management",
       "description_8390f635-9b55-4eb1-b282-e82f4713b055": "GESHRMDM",
+      "title_f6677801-8c13-4223-8afd-b5bbe059e777": "Welfare",
+      "title_8c86a54c-59b5-40d9-9b65-b7cb1f176f83": "Site social data",
       "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5": "Leave/return declaration",
       "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "Extraction",
       "description_d9a6e8d5-6679-4db7-98b2-949f269e794a": "EXTRDSNA",
@@ -29624,6 +29729,7 @@
       "title_c5e04e70-f085-4506-a78a-377cd1f56e73": "Inquiries",
       "title_99c4e3c4-3e05-4407-a047-0b4929997240": "Extracted payslips",
       "title_e78a792c-e2ee-4d00-a578-34a352b32949": "Unextracted payslips",
+      "title_f6893dad-b1e9-4456-b3c9-d643e30ce377": "Inquiries",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799": "N4DS setup",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "AED",
@@ -30265,6 +30371,7 @@
       "title_4d1f2f9e-7457-428e-a3d8-0571c7cb2ce9": "Generación subordinados",
       "title_dc3a4d74-65cb-4bd0-849b-80584107a155": "Recalcular coste formadores",
       "title_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "ACT poblaciones empleado",
+      "title_11e8523d-b93f-4435-9d1e-e79b10316e9f": "GENCTRCOT",
       "title_2716ebd5-6040-4909-82f0-483a073b264d": "Portal interactivo",
       "title_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "Familias viñetas",
       "title_fe6c9349-76e3-4526-b49f-1d8942d0973e": "Parámetros portal",
@@ -30581,6 +30688,9 @@
       "title_c04cb148-8b9c-461c-bb38-7748606f60a5": "Parametrización",
       "title_a1a228c2-26ce-4aa3-a8c3-4ef4b5deff0f": "Parametrización",
       "title_ec095d29-9fb1-499c-9d8c-cf84214f7516": "Proceso de préstamos",
+      "title_c867cca0-64af-46da-828b-d0b9fe09da3a": "Pagos externos",
+      "title_1fb72249-1342-41c4-9eae-41b055580873": "Pagos externos",
+      "title_c064ae77-5166-4b52-a39d-5da710fc9b9e": "Parametrización",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestión de tiempos",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parámetros",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Naturalezas de los eventos",
@@ -30740,6 +30850,7 @@
       "title_61502192-8b12-4204-82bc-beca55cf9349": "GESHRCDF",
       "title_9b661143-89ff-42a9-83a4-96664eb05b05": "Generación",
       "title_8390f635-9b55-4eb1-b282-e82f4713b055": "Gestión de datos",
+      "title_f6677801-8c13-4223-8afd-b5bbe059e777": "?",
       "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5": "Declaración baja/alta",
       "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "Extracción",
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Datos empleados",
@@ -30754,6 +30865,7 @@
       "title_a37929b9-6e19-447c-b5b4-d985d516513b": "Útiles",
       "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "Borrado de declaraciones",
       "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "Cierre de declaraciones",
+      "title_f6893dad-b1e9-4456-b3c9-d643e30ce377": "Consultas",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799": "Parametrización N4DS",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "AED",
@@ -31334,6 +31446,7 @@
       "description_dc3a4d74-65cb-4bd0-849b-80584107a155": "TRTCALCOUT",
       "title_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "MAJ populations de salariés",
       "description_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "TRTGENPOP",
+      "title_11e8523d-b93f-4435-9d1e-e79b10316e9f": "Mise à jour contrat cotisation",
       "title_2716ebd5-6040-4909-82f0-483a073b264d": "Portail interactif",
       "title_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "Familles vignettes",
       "description_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "GESATP",
@@ -31869,6 +31982,9 @@
       "title_c04cb148-8b9c-461c-bb38-7748606f60a5": "Paramétrage",
       "title_a1a228c2-26ce-4aa3-a8c3-4ef4b5deff0f": "Paramétrage",
       "title_ec095d29-9fb1-499c-9d8c-cf84214f7516": "Processus de prêts",
+      "title_c867cca0-64af-46da-828b-d0b9fe09da3a": "Versement extérieurs",
+      "title_1fb72249-1342-41c4-9eae-41b055580873": "Versement extérieurs",
+      "title_c064ae77-5166-4b52-a39d-5da710fc9b9e": "Paramétrage",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestion des temps",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Paramètres",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Natures d'événements",
@@ -32149,6 +32265,8 @@
       "description_7a8e7c7e-2564-4925-91f6-f5de4738bb62": "GESHRFFY",
       "title_9b661143-89ff-42a9-83a4-96664eb05b05": "Génération",
       "title_8390f635-9b55-4eb1-b282-e82f4713b055": "Gestion des données",
+      "title_f6677801-8c13-4223-8afd-b5bbe059e777": "Prévoyance",
+      "title_8c86a54c-59b5-40d9-9b65-b7cb1f176f83": "Données sociales site",
       "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5": "Déclaration arrêt/reprise",
       "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "Extraction",
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Données salariés",
@@ -32168,6 +32286,7 @@
       "description_99c4e3c4-3e05-4407-a047-0b4929997240": "CONSDSNB",
       "title_e78a792c-e2ee-4d00-a578-34a352b32949": "Bulletins non extraits",
       "description_e78a792c-e2ee-4d00-a578-34a352b32949": "CONSDSNN",
+      "title_f6893dad-b1e9-4456-b3c9-d643e30ce377": "Consultations",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799": "Paramétrage N4DS",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "AED",
@@ -32959,6 +33078,7 @@
       "description_dc3a4d74-65cb-4bd0-849b-80584107a155": "TRTCALCOUT",
       "title_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "ACT populações de funcionários",
       "description_f91b5e84-b9ce-4f1d-8ae3-aa2db6dafc7f": "TRTGENPOP",
+      "title_11e8523d-b93f-4435-9d1e-e79b10316e9f": "GENCTRCOT",
       "title_2716ebd5-6040-4909-82f0-483a073b264d": "Portal interactivo",
       "title_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "Famílias vinhetas",
       "description_98dbd5b5-f9b9-4ed0-8faa-f8bb4768fd6a": "GESATP",
@@ -33496,6 +33616,9 @@
       "description_d3b96156-6cda-41cd-8227-500e966127a9": "Geração empréstimo",
       "title_c04cb148-8b9c-461c-bb38-7748606f60a5": "Parâmetrização",
       "title_a1a228c2-26ce-4aa3-a8c3-4ef4b5deff0f": "Parâmetrização",
+      "title_c867cca0-64af-46da-828b-d0b9fe09da3a": "Pagamentos externos",
+      "title_1fb72249-1342-41c4-9eae-41b055580873": "Pagamentos externos",
+      "title_c064ae77-5166-4b52-a39d-5da710fc9b9e": "Parâmetrização",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Gestão de tempos",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parâmetros",
       "title_e877baba-4eec-45b7-8f8d-35fa6df7c914": "Natur. de eventos",
@@ -33768,6 +33891,8 @@
       "title_61502192-8b12-4204-82bc-beca55cf9349": "GESHRCDF",
       "title_9b661143-89ff-42a9-83a4-96664eb05b05": "Geração",
       "title_8390f635-9b55-4eb1-b282-e82f4713b055": "Gestão dados",
+      "title_f6677801-8c13-4223-8afd-b5bbe059e777": "Previdência",
+      "title_8c86a54c-59b5-40d9-9b65-b7cb1f176f83": "Dados estabelecimento social",
       "title_71dfcfd7-57a1-4397-8a32-4dcf9e9314b5": "Declaração saída/regresso",
       "title_d9a6e8d5-6679-4db7-98b2-949f269e794a": "Extracção",
       "title_fb1342ce-a8d8-4018-ad1d-3f888ccad69f": "Dados colab.",
@@ -33782,6 +33907,7 @@
       "title_a37929b9-6e19-447c-b5b4-d985d516513b": "Utilitários",
       "title_6a7b78d2-8129-4648-ba71-da0da0b4ba3d": "Supressão das declarações",
       "title_5081f007-b673-49c1-95b9-27f7d5fc22fe": "Fecho declaração",
+      "title_f6893dad-b1e9-4456-b3c9-d643e30ce377": "Consultas",
       "title_f686dbaa-9eb0-4c26-8719-94ec2ce0dac4": "DUCS",
       "title_fd2bb07c-257a-4bd2-ba70-cf546b8b0799": "Parametrização N4DS",
       "title_29594f2b-e5fc-4b07-a8b6-7cbbe702cf6f": "AED",
