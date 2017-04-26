@@ -16,12 +16,16 @@
             "verboseDiagnosticLogging": false
         },
         {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach",
-            "port": 5858,
+            "type": "node2",
+            "request": "launch",
+            "name": "Unit test",
+            "program": "${workspaceRoot}/shadow-modules/win32-x64-v8-5.1/node_modules/mocha/bin/_mocha",
+            "args":  ["--opts", "test/mocha.opts", "test/collaboration/server/authoringExportTest.ts", "test/collaboration/server/breadCrumbTest.ts", "test/collaboration/server/connectedApplicationTest.ts"],
+            "cwd": "${workspaceRoot}/node_modules/@sage/syracuse-lib",
             "outFiles": ["${workspaceRoot}/.streamline/**/*"],
-            "sourceMaps": true
+            "sourceMaps": true,
+            "diagnosticLogging": false,
+            "verboseDiagnosticLogging": false
         }
     ]
 }
