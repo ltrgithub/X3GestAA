@@ -19,7 +19,7 @@ namespace WordAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            System.Diagnostics.Debugger.Launch();
+            //System.Diagnostics.Debugger.Launch();
 
             browserDialog = new BrowserDialog();
             reporting = new ReportingActions(browserDialog);

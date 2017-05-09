@@ -84,6 +84,8 @@ namespace ExcelAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            //System.Diagnostics.Debugger.Launch();
+
             browserDialog = new BrowserDialog();
             
             templateActions = new TemplateActions(browserDialog);
