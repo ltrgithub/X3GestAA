@@ -765,12 +765,12 @@ namespace WordAddIn
             catch (Exception) { };
             if (ctrl.Type == WdContentControlType.wdContentControlPicture)
             {
-                if ((table != null) && (officeVersion == "15.0"))
+                if ((table != null) && (officeVersion == "15.0" || officeVersion == "16.0"))
                 {
                     table.Range.Font.Hidden = 0;
                 }
                 setContentControlImage(doc, ctrl, entity, ti, allData, browserDialog);
-                if ((table != null) && (officeVersion == "15.0"))
+                if ((table != null) && (officeVersion == "15.0" || officeVersion == "16.0"))
                 {
                     table.Range.Font.Hidden = 1;
                 }
