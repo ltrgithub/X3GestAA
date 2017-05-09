@@ -869,6 +869,7 @@ namespace WordAddIn
             System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
             if (text.ToLower().StartsWith("{\\rtf"))
             {
+                ctrl.MultiLine = true;
                 rtBox.Rtf = text;
                 r.Text = rtBox.Text;
             }
