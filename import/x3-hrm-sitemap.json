@@ -2184,6 +2184,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESAPD",
+      "title": "title_c7f673db-5ca2-451c-b8a5-55bda3e8b979",
+      "description": "description_c7f673db-5ca2-451c-b8a5-55bda3e8b979",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESAPD",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_5b4dcf9e-559a-4f14-9f0e-795e65338157",
       "code": "STD_X3_HRM_GTRT",
@@ -2306,6 +2333,10 @@
         },
         {
           "code": "STD_X3_HRM_GESACD",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESAPD",
           "$variantType": "menuItem"
         }
       ]
@@ -7275,6 +7306,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESAGD",
+      "title": "title_dda088a2-e68e-40fb-a923-18bb8954b217",
+      "description": "description_dda088a2-e68e-40fb-a923-18bb8954b217",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESAGD",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_GDEV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_c44fce95-f9a6-4e12-8d8e-9bfb4b18d468",
       "code": "STD_X3_HRM_GDEV_MISC",
@@ -7287,6 +7345,10 @@
       "items": [
         {
           "code": "STD_X3_HRM_ATXTSRVSYNC",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESAGD",
           "$variantType": "menuItem"
         }
       ]
@@ -29964,6 +30026,60 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_ARPTTRD",
+      "title": "title_3b63c109-65cf-42c3-8fc4-554af34a014f",
+      "description": "description_3b63c109-65cf-42c3-8fc4-554af34a014f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "ARPTTRD",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_ATRAD"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_XXTXTNUTIL",
+      "title": "title_73b6d13f-d0d5-4c02-8d4c-6d8152dca7c6",
+      "description": "description_73b6d13f-d0d5-4c02-8d4c-6d8152dca7c6",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "XXTXTNUTIL",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_ATRAD"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_2f4c5580-7ecc-44d0-a197-0a727dae6c49",
       "code": "STD_X3_HRM_ATPRD",
@@ -30061,6 +30177,14 @@
               "$variantType": "menuItem"
             }
           ]
+        },
+        {
+          "code": "STD_X3_HRM_ARPTTRD",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_XXTXTNUTIL",
+          "$variantType": "menuItem"
         }
       ]
     },
@@ -30434,6 +30558,8 @@
       "description_5563d1f0-18f2-4cb3-9dbd-fbc1ebf2e3b5": "GESANG",
       "title_24feebff-d347-4282-9d4c-e8fa5c759b7c": "Reserved brackets",
       "description_24feebff-d347-4282-9d4c-e8fa5c759b7c": "GESACD",
+      "title_c7f673db-5ca2-451c-b8a5-55bda3e8b979": "Products",
+      "description_c7f673db-5ca2-451c-b8a5-55bda3e8b979": "GESAPD",
       "title_fb534edd-131e-4733-819e-f478d405a25d": "Business intelligence",
       "title_a767b813-a0da-43b4-a3a0-0f2b11b429a8": "Setup",
       "title_cbc8d281-5b7a-4f65-93e9-9484d5f02219": "Data warehouse",
@@ -30755,6 +30881,8 @@
       "title_c44fce95-f9a6-4e12-8d8e-9bfb4b18d468": "Development",
       "title_c36472e0-3d42-49c0-b63f-54892fa956f5": "Text synchronization",
       "description_c36472e0-3d42-49c0-b63f-54892fa956f5": "ATXTSRVSYNC",
+      "title_dda088a2-e68e-40fb-a923-18bb8954b217": "Groups-objects assignment",
+      "description_dda088a2-e68e-40fb-a923-18bb8954b217": "GESAGD",
       "title_ccfa405e-c4a8-4f9d-bd40-bca59b462f7f": "Setup",
       "title_3425842b-e03d-4635-b06e-ed49d8cfa15a": "Users",
       "title_c695e1ef-c31a-4226-a292-513b160f305f": "Users",
@@ -31412,7 +31540,7 @@
       "description_c2fff644-f4c4-44ac-8783-58d56382f297": "GESCLD",
       "title_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Plan task",
       "description_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Nature of activity",
-      "title_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
+      "title_a306737b-2a0d-460c-9df4-18a0ee050ed4": "GESSTY",
       "description_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
       "title_e119e582-9e69-4b6e-be5c-ea5cd95517de": "Leave - Absence",
       "title_c9065547-4567-4269-a725-410b1f3aa1a8": "Annual leave",
@@ -31507,7 +31635,7 @@
       "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
       "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Employee payslips ZAF",
       "description_354f9828-e5ee-4b87-883e-17ebc8fba476": "GESVEPZAF",
-      "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Employee payslips ZMB",
+      "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Employee payslips",
       "description_1255b02b-3eb0-4108-b521-a299e4244bb0": "GESVEPZMB",
       "title_ae8f2af2-2e44-444b-b473-acfb6b25ca45": "Printing of slips",
       "description_ae8f2af2-2e44-444b-b473-acfb6b25ca45": "PRNBUL",
@@ -32167,6 +32295,10 @@
       "title_f9f25ea8-1036-49bf-be7c-eba0f718b45e": "Table translation",
       "title_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "Create descriptions",
       "description_4b19786b-5516-4a7c-ae1a-a54a362c64d7": "ALANG",
+      "title_3b63c109-65cf-42c3-8fc4-554af34a014f": "Report translation",
+      "description_3b63c109-65cf-42c3-8fc4-554af34a014f": "ARPTTRD",
+      "title_73b6d13f-d0d5-4c02-8d4c-6d8152dca7c6": "Purging of texts",
+      "description_73b6d13f-d0d5-4c02-8d4c-6d8152dca7c6": "XXTXTNUTIL",
       "title_7f496ec1-fe46-47e4-a003-cdbbe2f4bd2a": "Documentation",
       "title_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "Documentation workbench",
       "description_399a1bb1-f276-43aa-b2c0-6b6915cfd37e": "ADOCTRA",
