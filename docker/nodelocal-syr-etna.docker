@@ -173,7 +173,7 @@ exports.config = {
 		// White list of media types that we allow in upload operations
 		// This entry is mandatory when hosting.multiTenant is true.
 		// The white list may be specified as a single regular expression or an array or regular expressions.
-		allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
+		// allowedTypes: /^(application|image|text\/(plain|rtf))(\/|$)/
 	},
 	sage_id: {
 		// base URL of sage ID service - this one is staging, not prod
@@ -199,5 +199,23 @@ exports.config = {
 			"retries": 10,
 			"intervalMs": 30000
 		}
-	}
+	},
+	scmServer: {
+      // THe URL to connect to the text server
+      url: "http://172.17.0.1:3000",
+      // Files to be ignored when generating a patch
+      ignore:[
+          "TRT;W*",
+          "TRT;X*",
+          "TRT;Y*",
+          "TRT;Z*",
+          "TRT;SPE*",
+          "ADO;*",
+          "ADZ;*",
+          "ADF;*",
+          "ADP;ATXTETAG",
+          "ADP;RIGHTSETAG",
+          "ALH;X*"
+      ],
+  	},
 };
