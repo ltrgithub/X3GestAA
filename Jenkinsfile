@@ -60,15 +60,17 @@ node {
                 }
                 step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
             }
-            stage('Build SCM artefacts') {
-                scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
-                scmX3 = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
-            }
-            if (tag) {
-                stage('Push image') {
-                    syrImage.push(tag)
-                    scmSuperv.push(tag)
-                    scmX3.push(tag)
+            if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
+                stage('Build SCM artefacts') {
+                    scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
+                    scmX3 = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
+                }
+                if (tag) {
+                    stage('Push image') {
+                        syrImage.push(tag)
+                        scmSuperv.push(tag)
+                        scmX3.push(tag)
+                    }
                 }
             }
         }
