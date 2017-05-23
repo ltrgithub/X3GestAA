@@ -9409,6 +9409,210 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_HRM_EMPLOIDESS",
+      "title": "title_636fdb8f-7646-4f93-a243-c8efdb77e1d6",
+      "description": "description_636fdb8f-7646-4f93-a243-c8efdb77e1d6",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EMPLOIDESS",
+        "representation": "EMPLOIDESS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_CNGEMPESS",
+      "title": "title_85d3f0bd-955a-4069-be98-f6a8957c9adf",
+      "description": "description_85d3f0bd-955a-4069-be98-f6a8957c9adf",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "CNGEMPESS",
+        "representation": "CNGEMPESS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_DEMCONGEESS",
+      "title": "title_99925c89-655a-4be5-904c-3dfb6fd869c7",
+      "description": "description_99925c89-655a-4be5-904c-3dfb6fd869c7",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "DEMCONGEESS",
+        "representation": "DEMCONGEESS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_DEMCNGESSTA",
+      "title": "title_e1d2e74c-3c4e-4e67-a7e9-bffb65946e25",
+      "description": "description_e1d2e74c-3c4e-4e67-a7e9-bffb65946e25",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "DEMCONGEESS",
+        "representation": "DEMCNGESSTA"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_EXPENSEESS",
+      "title": "title_63491e21-aaf0-4868-9f13-207423ab2686",
+      "description": "description_63491e21-aaf0-4868-9f13-207423ab2686",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EXPENSESESS",
+        "representation": "EXPENSESESS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_1ea1ccbf-acb8-4559-aa36-2a88680e6477",
+      "description": "description_1ea1ccbf-acb8-4559-aa36-2a88680e6477",
+      "useCurrentEndpoint": true,
+      "pageName": "STD_X3_HRM_ESS",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "Developers"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "9f8ff4cf-136b-4a82-b78a-85206b2d9b6d",
+          "vignette": {
+            "code": "STD_X3_HRM_EMPLOIDESS"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "5a18f238-9a49-451f-80c5-0cb7fdb84608",
+          "vignette": {
+            "code": "STD_X3_HRM_CNGEMPESS"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "b34639c7-18e5-4fee-b1c7-18ca935629c0",
+          "vignette": {
+            "code": "STD_X3_HRM_DEMCONGEESS"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "39f2e1d2-63a9-4a82-944b-a9cc01b69a84",
+          "vignette": {
+            "code": "STD_X3_HRM_DEMCNGESSTA"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "643c993a-1543-42cf-95d4-22d26733af09",
+          "vignette": {
+            "code": "STD_X3_HRM_EXPENSEESS"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "f97723ea-206d-4341-bbda-4ebf8522d857",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a}\",\"$layout\":{\"$items\":[{\"$bind\":\"9f8ff4cf-136b-4a82-b78a-85206b2d9b6d\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@564a9692-2f3a-4ae8-8693-64f9882c3169}\",\"$layout\":{\"$items\":[{\"$bind\":\"5a18f238-9a49-451f-80c5-0cb7fdb84608\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"b34639c7-18e5-4fee-b1c7-18ca935629c0\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"39f2e1d2-63a9-4a82-944b-a9cc01b69a84\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9ef8c629-b104-44e7-9516-4bd2bbb33f7c}\",\"$layout\":{\"$items\":[{\"$bind\":\"643c993a-1543-42cf-95d4-22d26733af09\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "STD_X3_HRM_ESS",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "EQ",
       "title": "title_68c7211c-f4ed-4e8c-8450-61fd1041467c",
       "description": "description_68c7211c-f4ed-4e8c-8450-61fd1041467c",
@@ -11741,6 +11945,21 @@
       "description_8c6f9542-66e3-4d40-88a6-da2f36579411": "Disciplinary",
       "pageLayout.6199dd5e-139c-4724-bb18-b2e7abd4cb22.@2b49a613-9a12-4c0c-8b6c-a28687bd799c": "Process",
       "pageLayout.6199dd5e-139c-4724-bb18-b2e7abd4cb22.@5b122fc2-aa6a-4fa3-94b9-32f002b39175": "New Tab 1",
+      "title_1ea1ccbf-acb8-4559-aa36-2a88680e6477": "Employee self service",
+      "description_1ea1ccbf-acb8-4559-aa36-2a88680e6477": "Employee self service",
+      "title_636fdb8f-7646-4f93-a243-c8efdb77e1d6": "Employee ESS",
+      "description_636fdb8f-7646-4f93-a243-c8efdb77e1d6": "Employee ESS",
+      "title_85d3f0bd-955a-4069-be98-f6a8957c9adf": "Leave balance",
+      "description_85d3f0bd-955a-4069-be98-f6a8957c9adf": "Leave balance",
+      "title_99925c89-655a-4be5-904c-3dfb6fd869c7": "Leave request",
+      "description_99925c89-655a-4be5-904c-3dfb6fd869c7": "ESS Leave request",
+      "title_e1d2e74c-3c4e-4e67-a7e9-bffb65946e25": "Leave history",
+      "description_e1d2e74c-3c4e-4e67-a7e9-bffb65946e25": "Leave history",
+      "title_63491e21-aaf0-4868-9f13-207423ab2686": "Expense notes",
+      "description_63491e21-aaf0-4868-9f13-207423ab2686": "ESS Expense notes",
+      "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a": "Employee",
+      "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@564a9692-2f3a-4ae8-8693-64f9882c3169": "Leave",
+      "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@9ef8c629-b104-44e7-9516-4bd2bbb33f7c": "Expense notes",
       "title_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff": "Equity Management",
       "description_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff": "Equity Management",
       "title_68c7211c-f4ed-4e8c-8450-61fd1041467c": "Employment Equity",
