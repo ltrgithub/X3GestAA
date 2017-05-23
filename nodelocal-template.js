@@ -231,8 +231,10 @@ exports.config = {
 		checkInterval: 60,
 		// ?
 		//		ignoreStoreSession: true,
-		// authentication modes
+		// authentication modes : available for interactive connection
 		"auth": "basic",
+		// allow other authenticationfor service mode; interactive form is hidden (but not forbidden) 
+		// "serviceAuth": "basic"
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
