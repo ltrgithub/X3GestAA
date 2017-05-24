@@ -9536,6 +9536,82 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_EXPESSSTA",
+      "title": "title_b3f893cb-5392-44f1-a9d0-6820bf1c70f5",
+      "description": "description_b3f893cb-5392-44f1-a9d0-6820bf1c70f5",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EXPENSESESS",
+        "representation": "EXPESSSTA"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_ESSWRKFLWEXS",
+      "title": "title_59825e19-3e2b-4f15-a07e-a4b5d6b37280",
+      "description": "description_59825e19-3e2b-4f15-a07e-a4b5d6b37280",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "WRKHISSUIESS",
+        "representation": "ESSWRKFLWEXS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_ESSWRKFLWDCG",
+      "title": "title_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2",
+      "description": "description_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "WRKHISSUIESS",
+        "representation": "ESSWRKFLWDCG"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
       "$type": "landingPage",
       "title": "title_1ea1ccbf-acb8-4559-aa36-2a88680e6477",
       "description": "description_1ea1ccbf-acb8-4559-aa36-2a88680e6477",
@@ -9599,13 +9675,43 @@
           "endpoint": {
             "dataset": "HRMTESTZAF"
           }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "180f9c5b-5019-4161-8e93-347c1afa3581",
+          "vignette": {
+            "code": "STD_X3_HRM_EXPESSSTA"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "a149ba25-99d3-4fed-aa9c-384a0bbf4933",
+          "vignette": {
+            "code": "STD_X3_HRM_ESSWRKFLWEXS"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "3aecd9fc-a31b-404d-8135-90f63c3f1344",
+          "vignette": {
+            "code": "STD_X3_HRM_ESSWRKFLWDCG"
+          },
+          "endpoint": {
+            "dataset": "HRMTESTZAF"
+          }
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "f97723ea-206d-4341-bbda-4ebf8522d857",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a}\",\"$layout\":{\"$items\":[{\"$bind\":\"9f8ff4cf-136b-4a82-b78a-85206b2d9b6d\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@564a9692-2f3a-4ae8-8693-64f9882c3169}\",\"$layout\":{\"$items\":[{\"$bind\":\"5a18f238-9a49-451f-80c5-0cb7fdb84608\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"b34639c7-18e5-4fee-b1c7-18ca935629c0\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"39f2e1d2-63a9-4a82-944b-a9cc01b69a84\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9ef8c629-b104-44e7-9516-4bd2bbb33f7c}\",\"$layout\":{\"$items\":[{\"$bind\":\"643c993a-1543-42cf-95d4-22d26733af09\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a}\",\"$layout\":{\"$items\":[{\"$bind\":\"9f8ff4cf-136b-4a82-b78a-85206b2d9b6d\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@564a9692-2f3a-4ae8-8693-64f9882c3169}\",\"$layout\":{\"$items\":[{\"$bind\":\"5a18f238-9a49-451f-80c5-0cb7fdb84608\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"b34639c7-18e5-4fee-b1c7-18ca935629c0\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"39f2e1d2-63a9-4a82-944b-a9cc01b69a84\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9ef8c629-b104-44e7-9516-4bd2bbb33f7c}\",\"$layout\":{\"$items\":[{\"$bind\":\"643c993a-1543-42cf-95d4-22d26733af09\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"180f9c5b-5019-4161-8e93-347c1afa3581\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cbf9c160-da71-4137-8daf-48bb5dd33acb}\",\"$layout\":{\"$items\":[{\"$bind\":\"a149ba25-99d3-4fed-aa9c-384a0bbf4933\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"3aecd9fc-a31b-404d-8135-90f63c3f1344\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "STD_X3_HRM_ESS",
         "$variantType": "landingPage"
@@ -11957,9 +12063,16 @@
       "description_e1d2e74c-3c4e-4e67-a7e9-bffb65946e25": "Leave history",
       "title_63491e21-aaf0-4868-9f13-207423ab2686": "Expense notes",
       "description_63491e21-aaf0-4868-9f13-207423ab2686": "ESS Expense notes",
+      "title_b3f893cb-5392-44f1-a9d0-6820bf1c70f5": "History",
+      "description_b3f893cb-5392-44f1-a9d0-6820bf1c70f5": "History",
+      "title_59825e19-3e2b-4f15-a07e-a4b5d6b37280": "Expenses",
+      "description_59825e19-3e2b-4f15-a07e-a4b5d6b37280": "Expenses workflow approval",
+      "title_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2": "Leave",
+      "description_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2": "Leave workflow approval",
       "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a": "Employee",
       "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@564a9692-2f3a-4ae8-8693-64f9882c3169": "Leave",
       "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@9ef8c629-b104-44e7-9516-4bd2bbb33f7c": "Expense notes",
+      "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@cbf9c160-da71-4137-8daf-48bb5dd33acb": "Approvals",
       "title_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff": "Equity Management",
       "description_3ed4d0fc-10b7-40aa-b165-5eebfc02f2ff": "Equity Management",
       "title_68c7211c-f4ed-4e8c-8450-61fd1041467c": "Employment Equity",
