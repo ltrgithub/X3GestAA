@@ -154,12 +154,16 @@ namespace ExcelAddIn
         Boolean _doRefreshAll = false;
         public void RefreshAll()
         {
-            String server = Globals.Ribbons.Ribbon.comboBoxServerLocation.Text;
-            resetWebBrowser(server);
-            _connect(server, true, Globals.ThisAddIn.Application.ActiveWorkbook);
-
+            if (!connected)
+                _connect("", true, Globals.ThisAddIn.Application.ActiveWorkbook);
+            SyracuseCustomData cd = new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook);
+            string dsAdd = cd != null ? cd.GetCustomDataByName("datasourcesAddress") : "";
+            if (dsAdd != "")
+                cd.StoreCustomDataByName("datasourcesAddress", dsAdd.Replace("$bulk", "$bulk&forcedExecution=true"));
             _doRefreshAll = true;
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
+            if (dsAdd != "")
+                cd.StoreCustomDataByName("datasourcesAddress", dsAdd);
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
         }
 
