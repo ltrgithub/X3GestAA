@@ -156,9 +156,14 @@ namespace ExcelAddIn
         {
             if (!connected)
                 _connect("", true, Globals.ThisAddIn.Application.ActiveWorkbook);
-
+            SyracuseCustomData cd = new SyracuseCustomData(Globals.ThisAddIn.Application.ActiveWorkbook);
+            string dsAdd = cd != null ? cd.GetCustomDataByName("datasourcesAddress") : "";
+            if (dsAdd != "")
+                cd.StoreCustomDataByName("datasourcesAddress", dsAdd.Replace("$bulk", "$bulk&forcedExecution=true"));
             _doRefreshAll = true;
             webBrowser.Document.InvokeScript("onOfficeEvent", new object[] { "refreshAll" });
+            if (dsAdd != "")
+                cd.StoreCustomDataByName("datasourcesAddress", dsAdd);
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
         }
 
