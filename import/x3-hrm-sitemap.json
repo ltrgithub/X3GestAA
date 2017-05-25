@@ -8375,17 +8375,15 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESGCM",
-      "title": "title_551dad1f-2262-4a9f-83ae-f60beea7348e",
-      "description": "description_551dad1f-2262-4a9f-83ae-f60beea7348e",
+      "code": "STD_X3_HRM_GESSRV",
+      "title": "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151",
+      "description": "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151",
       "linkType": "$function",
-      "icon": "",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESGCM",
+      "fusionFunction": "GESSRV",
       "fusionKey": "",
       "target": "self",
-      "requestLevel": "99",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -8405,15 +8403,17 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESSRV",
-      "title": "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151",
-      "description": "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151",
+      "code": "STD_X3_HRM_GESGCM",
+      "title": "title_551dad1f-2262-4a9f-83ae-f60beea7348e",
+      "description": "description_551dad1f-2262-4a9f-83ae-f60beea7348e",
       "linkType": "$function",
+      "icon": "",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESSRV",
+      "fusionFunction": "GESGCM",
       "fusionKey": "",
       "target": "self",
+      "requestLevel": "99",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -8517,6 +8517,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESDIE",
+      "title": "title_aa6819ca-493a-415f-94a1-b1020121cabf",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESDIE",
+      "target": "self",
+      "requestLevel": "99",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_ecb0ace6-c2c1-4cdf-adbc-2a3a75cb6103",
       "code": "STD_X3_HRM_MEGEN",
@@ -8544,11 +8571,11 @@
           "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_HRM_GESGCM",
+          "code": "STD_X3_HRM_GESSRV",
           "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_HRM_GESSRV",
+          "code": "STD_X3_HRM_GESGCM",
           "$variantType": "menuItem"
         },
         {
@@ -8561,6 +8588,10 @@
         },
         {
           "code": "STD_X3_HRM_GESCDI",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESDIE",
           "$variantType": "menuItem"
         }
       ]
@@ -30478,13 +30509,14 @@
       "description_84f6c46c-8090-4ccc-96dc-a01ca07e6d30": "GESCPY",
       "title_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "Sites",
       "description_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "GESFCY",
-      "title_551dad1f-2262-4a9f-83ae-f60beea7348e": "Account core models",
       "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "Services",
       "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "GESSRV",
+      "title_551dad1f-2262-4a9f-83ae-f60beea7348e": "Account core models",
       "title_d26eb13e-4531-4ec3-b78f-39f633f7caad": "Ledgers",
       "title_bff7be61-f5aa-4dc5-b09b-bec0c9d332c1": "Chart of accounts",
       "title_8b9c71d0-b276-4dfe-a843-eb46a6a76e3e": "Default dimension types",
       "description_8b9c71d0-b276-4dfe-a843-eb46a6a76e3e": "GESCDI",
+      "title_aa6819ca-493a-415f-94a1-b1020121cabf": "Dimension types",
       "title_9c2da7a6-4aec-4887-b0ae-d99801332e33": "General parameters",
       "title_a350e199-5af5-479f-b43c-e8ffdb34197d": "Parameter values",
       "description_a350e199-5af5-479f-b43c-e8ffdb34197d": "ADPVAL",
@@ -31121,7 +31153,7 @@
       "title_83af299f-d332-4f6a-b787-81444136fda3": "Payslips",
       "title_3138430c-e878-4828-b640-248e78d8bdad": "Employee payslips",
       "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
-      "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "SA employee payslips",
+      "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Employee payslips",
       "description_354f9828-e5ee-4b87-883e-17ebc8fba476": "GESVEPZAF",
       "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Employee payslips",
       "description_1255b02b-3eb0-4108-b521-a299e4244bb0": "GESVEPZMB",
@@ -32338,13 +32370,14 @@
       "description_84f6c46c-8090-4ccc-96dc-a01ca07e6d30": "GESCPY",
       "title_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "Sites",
       "description_3a097210-7dfd-46b8-8da0-9d8419a9bae1": "GESFCY",
-      "title_551dad1f-2262-4a9f-83ae-f60beea7348e": "Modèles comptables",
       "title_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "Services",
       "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "GESSRV",
+      "title_551dad1f-2262-4a9f-83ae-f60beea7348e": "Modèles comptables",
       "title_d26eb13e-4531-4ec3-b78f-39f633f7caad": "Référentiels",
       "title_bff7be61-f5aa-4dc5-b09b-bec0c9d332c1": "Plans de comptes",
       "title_8b9c71d0-b276-4dfe-a843-eb46a6a76e3e": "Axes par défaut",
       "description_8b9c71d0-b276-4dfe-a843-eb46a6a76e3e": "GESCDI",
+      "title_aa6819ca-493a-415f-94a1-b1020121cabf": "Axes",
       "title_9c2da7a6-4aec-4887-b0ae-d99801332e33": "Paramètres généraux",
       "title_a350e199-5af5-479f-b43c-e8ffdb34197d": "Valeurs paramètres",
       "description_a350e199-5af5-479f-b43c-e8ffdb34197d": "ADPVAL",
@@ -33920,6 +33953,7 @@
       "description_fdb4800f-4a15-4ab6-89f0-8f0a5b63d151": "GESSRV",
       "title_d26eb13e-4531-4ec3-b78f-39f633f7caad": "Referenciais",
       "description_8b9c71d0-b276-4dfe-a843-eb46a6a76e3e": "GESCDI",
+      "title_aa6819ca-493a-415f-94a1-b1020121cabf": "Eixos",
       "title_9c2da7a6-4aec-4887-b0ae-d99801332e33": "Parâmetros gerais",
       "title_a350e199-5af5-479f-b43c-e8ffdb34197d": "Valores parâmetros",
       "description_a350e199-5af5-479f-b43c-e8ffdb34197d": "ADPVAL",
