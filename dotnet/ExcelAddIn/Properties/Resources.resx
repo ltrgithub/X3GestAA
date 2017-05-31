@@ -123,21 +123,21 @@
   <data name="MSG_DOC_NOT_PUBLISHED_TITLE" xml:space="preserve">
     <value>Not published yet</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="s_aw_light_date" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s-aw-light-date.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MSG_INVALID_SERVER_URL_TITLE" xml:space="preserve">
+    <value>Invalid server location</value>
   </data>
   <data name="MSG_RESTART" xml:space="preserve">
     <value>Please restart your Excel after the installation of the new Addin.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="sauvegarder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sauvegarder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InsertRowsError" xml:space="preserve">
     <value>Cannot insert {0} rows, the range might overlap another table. Please check your insert preferences.{2}(Error was: "{1}")</value>
   </data>
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sauvegarder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sauvegarder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MSG_SAVE_AS" xml:space="preserve">
     <value>Warning, the document will be saved on your workstation but not in the X3 base. To publish it in the X3 base, click “No” then use the “Publish” button. 
@@ -154,6 +154,18 @@ Do you wish to continue? </value>
   </data>
   <data name="preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OverrideTableConfirm" xml:space="preserve">
+    <value>The reference "{0}" is allready associated with table "{1}". Do You want to delete table "{1}" and replace its content ?</value>
+  </data>
+  <data name="MSG_INVALID_SERVER_URL" xml:space="preserve">
+    <value>The specified server location is invalid</value>
+  </data>
+  <data name="s_aw_light_date" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s-aw-light-date.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InsertCellsError" xml:space="preserve">
     <value>Cannot shift down {0} columns and {1} rows, the range might overlap another table. Please check your insert preferences.{3}(Error was: "{2}")</value>
@@ -173,17 +185,14 @@ Do you wish to continue? </value>
   <data name="MSG_NEW_VERSION_TITLE" xml:space="preserve">
     <value>Install new version?</value>
   </data>
-  <data name="MSG_INVALID_SERVER_URL_TITLE" xml:space="preserve">
-    <value>Invalid server location</value>
+  <data name="sauvegarder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sauvegarder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddinTitle" xml:space="preserve">
-    <value>Sage X3 for Office</value>
+  <data name="MSG_RESTART_TITLE" xml:space="preserve">
+    <value>Restart Excel</value>
   </data>
   <data name="server_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\server-settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="connect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\connect.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -191,8 +200,8 @@ Do you wish to continue? </value>
   <data name="s_aw_light_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-aw-light-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OverrideTableConfirm" xml:space="preserve">
-    <value>The reference "{0}" is allready associated with table "{1}". Do You want to delete table "{1}" and replace its content ?</value>
+  <data name="AddinTitle" xml:space="preserve">
+    <value>Sage X3 for Office</value>
   </data>
   <data name="DeleteCellsError" xml:space="preserve">
     <value>Cannot shift up {0} columns and {1} rows. The range value are cleared.{3}(Error was: "{2}")</value>
@@ -200,17 +209,11 @@ Do you wish to continue? </value>
   <data name="s_aw_light_vignette" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-aw-light-vignette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="s_aw_light_graph" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s-aw-light-graph.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="s_aw_light_boolean" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-aw-light-boolean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="s_aw_light_choice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-aw-light-choice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sauvegarder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sauvegarder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="s_aw_light_collection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s-aw-light-collection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -221,8 +224,8 @@ Do you wish to continue? </value>
   <data name="MSG_ERROR_NO_DOC" xml:space="preserve">
     <value>Unable to access document.</value>
   </data>
-  <data name="MSG_RESTART_TITLE" xml:space="preserve">
-    <value>Restart Excel</value>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MSG_ERROR_DOWNLOAD" xml:space="preserve">
     <value>Downloading the document failed. 
@@ -232,12 +235,12 @@ URL was: {1}</value>
   <data name="InitializationError" xml:space="preserve">
     <value>Error initializing Excel Addin: {0}.</value>
   </data>
+  <data name="s_aw_light_graph" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s-aw-light-graph.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ResizeTableError" xml:space="preserve">
     <value>Cannot resize a table with {0} columns and {1} rows. Please check Your insert preferences.
 (Error was: "{2}")</value>
-  </data>
-  <data name="MSG_INVALID_SERVER_URL" xml:space="preserve">
-    <value>The specified server location is invalid</value>
   </data>
   <data name="MSG_NEW_VERSION" xml:space="preserve">
     <value>New Addin available. Do do want to install it?</value>
@@ -245,7 +248,7 @@ URL was: {1}</value>
   <data name="MSG_DOC_NOT_PUBLISHED" xml:space="preserve">
     <value>The document has not been published yet, it will be published as new document.</value>
   </data>
-  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

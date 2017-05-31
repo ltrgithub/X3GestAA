@@ -9,6 +9,8 @@ using System.Globalization;
 using CommonDataHelper;
 using CommonDataHelper.PublisherHelper;
 using Microsoft.Office.Interop.PowerPoint;
+using CommonDialogs.ServerLocationDialog;
+using System.Diagnostics;
 
 namespace PowerPointAddIn
 {
@@ -84,6 +86,14 @@ namespace PowerPointAddIn
         private void buttonDisconnect_Click(object sender, RibbonControlEventArgs e)
         {
             new ConnectionDialog().disconnectFromServer();
+        }
+
+        private void serverLocationsButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            new serverLocationsDialog(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\" + Process.GetCurrentProcess().ProcessName + ".X3.settings",
+                CommonDataHelper.HttpHelper.PrefUrlHelper.readUserPreferenceFile,
+                CommonDataHelper.HttpHelper.PrefUrlHelper.updateUserPreferenceFile,
+                Globals.PowerPointAddIn.common.DisplayServerLocations).ShowDialog();
         }
     }
 }

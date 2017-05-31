@@ -591,9 +591,16 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
       <Project>{1E9C69EF-2D53-46D5-93FC-E40A7E0FC36F}</Project>
       <Name>CommonDataHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CommonDialogs\CommonDialogs.csproj">
+      <Project>{341E57EE-7F9A-4408-A29F-D4A4340039EE}</Project>
+      <Name>CommonDialogs</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>

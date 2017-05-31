@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.32",
+    "@types/mongodb": "^2.1.33",
+    "@types/node": "^6.0.45",
+    "streamline-node": "^2.0.1"
+  },
+  "dependencies": {
+    "@sage/syracuse-core": "^2.0.12",
+    "ez-streams": "^3.2.2",
+    "streamline-runtime": "^1.0.37"
+  },
+  "scripts": {
+  	"test": "mocha --opts mocha.opts test/orm/server",
+  	"test:coverage": "node build-coverage-tree && pushd \"../syracuse-coverage/node_modules/@sage/syracuse-lib\" && npm install mocha && istanbul cover -i \"./src/**\" node_modules/mocha/bin/_mocha -- --opts ./test/mocha_cov.opts -t 60000 test/start.js test/**/server/*.js && popd"
+  }
+}

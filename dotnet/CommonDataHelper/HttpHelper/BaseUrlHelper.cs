@@ -5,35 +5,18 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
+using CommonDataHelper.HttpHelper;
 
 namespace CommonDataHelper
 {
     public class BaseUrlHelper
     {
-        /*
-         * We're maintaining the base URL globally for the moment.
-         * This may change with Excel, as different base URLs may be required 
-         * where more than one datasource is present in a worksheet.
-         */
-        private static List<Uri> _prefUrls = new List<Uri>();
-        public static List<Uri> getBaseUrlsFromUserPreferenceFile
-        {
-            get
-            {
-                return _prefUrls;
-            }
-        }
-
         private static Uri _baseUrl = null;
         private static Boolean _showActionPanel;
         public static Boolean ShowActionPanel
         {
             get 
             {
-                if (_showActionPanel == null)
-                {
-                    readUserPreferenceFile();
-                }
                 return _showActionPanel; 
             }
             set 
@@ -57,9 +40,9 @@ namespace CommonDataHelper
                     else
                     {
                         loadPreferencesList();
-                        if (!_prefUrls.Contains(baseUrl))
+                        if (!PrefUrlHelper.getBaseUrlsFromUserPreferenceFile.Contains(baseUrl))
                         {
-                            _prefUrls.Add(baseUrl);
+                            PrefUrlHelper.getBaseUrlsFromUserPreferenceFile.Add(baseUrl);
                         }
                     }
                     _baseUrl = baseUrl;
@@ -118,63 +101,23 @@ namespace CommonDataHelper
 
         private static void loadPreferencesList()
         {
-            if (_prefUrls.Count == 0)
+            if (PrefUrlHelper.getBaseUrlsFromUserPreferenceFile.Count == 0)
             {
-                readUserPreferenceFile();
+                List<Uri> uriList = PrefUrlHelper.getBaseUrlsFromUserPreferenceFile;
+                _showActionPanel = HttpHelper.PrefUrlHelper.readUserPreferenceFile(ref uriList);
             }
         }
 
         private static Uri getBaseUrlFromUserPreferenceFile()
         {
             loadPreferencesList();
-            return _prefUrls[0];
-        }
-
-        private static void readUserPreferenceFile()
-        {
-            String path = getPreferenceFilePath();
-            Uri preferenceUrl = null;
-            _prefUrls.Clear();
-            _showActionPanel = false;
-
-            if (File.Exists(path))
-            {
-                string sContent = string.Empty;
-
-                StreamReader preferencesFile = new StreamReader(path, System.Text.Encoding.Default);
-                while (!preferencesFile.EndOfStream)
-                {
-                    sContent = preferencesFile.ReadLine();
-                    if (sContent.Substring(0, 4).Equals("Url="))
-                    {
-                        try
-                        {
-                            preferenceUrl = new Uri(sContent.Substring(4, sContent.Length - 4));
-                            _prefUrls.Add(preferenceUrl);
-                        }
-                        catch (Exception)
-                        {
-                        }
-                    }
-                    else if (sContent.Equals("Show=True"))
-                    {
-                        _showActionPanel = true;
-                    }
-                }
-                preferencesFile.Close();
-            }
+            Uri uri;
+            if (PrefUrlHelper.getBaseUrlsFromUserPreferenceFile.Count > 0)
+                uri = PrefUrlHelper.getBaseUrlsFromUserPreferenceFile[0];
             else
-            {
-                preferenceUrl = new Uri(@"http://localhost:8124");
-                _prefUrls.Add(preferenceUrl);
-            }
+                uri = new Uri("http://localhost:8124");
 
-            return;
-        }
-
-        private static string getPreferenceFilePath()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Microsoft\\Office\\" + Process.GetCurrentProcess().ProcessName + ".X3.settings";
+            return uri;
         }
 
         private static void saveUrlPreference(Uri url)
@@ -188,7 +131,7 @@ namespace CommonDataHelper
                 return;
             }
 
-            String path = getPreferenceFilePath();
+            String path = HttpHelper.PrefUrlHelper.getPreferenceFilePath();
             String urlFromFile = null;
             Boolean urlExists = false;
             List<string> lines = new List<string>();
@@ -218,7 +161,7 @@ namespace CommonDataHelper
 
         private static void saveActionPanelPreference(Boolean showActionPanel)
         {
-            String path = getPreferenceFilePath();
+            String path = HttpHelper.PrefUrlHelper.getPreferenceFilePath();
             List<string> lines = new List<string>();
             if (File.Exists(path))
             {

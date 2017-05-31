@@ -21,10 +21,6 @@ namespace WordAddIn
     }
     class ReportingUtils
     {
-        public static CultureInfo decimalFormat = CultureInfo.CreateSpecificCulture("en-US");
-        public static Regex sumRegex = new Regex("\\$sum\\((?<exp>.*)\\)");
-        private static string transparentImageFile = null;
-        private static string officeVersion = Globals.WordAddIn.Application.Version;
         public static void createWordTemplate(Document doc, String layoutAndData)
         {
             ConnectionProgressHelper.showConnectionDialog(false);
@@ -250,7 +246,7 @@ namespace WordAddIn
 
                 Dictionary<String, WordReportingField> fieldInfo = BuildFieldInfo((object[])layout["proto"]);
 
-                List<ContentControl> allContentControls = GetAllContentControls(doc);
+                List<ContentControl> allContentControls = ContentControlHelper.GetAllContentControls(doc);
 
                 Globals.WordAddIn.Application.ScreenUpdating = true;
                 Globals.WordAddIn.Application.ScreenRefresh();
@@ -271,7 +267,7 @@ namespace WordAddIn
 
                 FillCollectionControls(doc, entityData, fieldInfo, browserDialog, pd);
 
-                File.Delete(getTransparentImage());
+                File.Delete(TemplateUtils.getTransparentImage());
 
                 doc.Range().Fields.Update();
                 if (oldSelection != null && oldSelection.Range != null)
@@ -337,49 +333,6 @@ namespace WordAddIn
             return fields;
         }
 
-        private static string parseValue(Dictionary<String, object> entity, string type)
-        {
-            object o = null;
-            
-            try {
-                o = ((Dictionary<String, object>)entity["$value"])["$value"];
-            } catch (Exception) {
-                return "";
-            }
-            if (o == null)
-            {
-                return "";
-            }
-            if (type != null)
-            {
-
-                if ((type.Equals("application/x-decimal") || type.Equals("application/x-quantity")) && o.GetType() == typeof(String))
-                {
-                    return Decimal.Parse(o.ToString(), decimalFormat).ToString();
-                }
-            }
-            return o.ToString();
-        }
-
-        private static string parseValue(Dictionary<String, object> entity, string type, string display)
-        {
-            object o = null;
-
-            try
-            {
-                o = ((Dictionary<String, object>)entity["$value"])[display];
-            }
-            catch (Exception)
-            {
-                return "";
-            }
-            if (o == null)
-            {
-                return "";
-            }
-            return o.ToString();
-        }
-
         private static void FillNonCollectionControls(Document doc, List<ContentControl> allContentControls, Dictionary<String, object> entityData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog)
         {
             List<ContentControl> controlsList = new List<ContentControl>();
@@ -422,7 +375,7 @@ namespace WordAddIn
                 {
                     propData = GetNonTabularNestedData(entityData, tag);
                 }
-                setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog, null);
+                ContentControlHelper.setContentControl(doc, ctrl, propData, tag, entityData, fieldInfo, browserDialog, null);
             }
             doc.ActiveWindow.View.ShowFieldCodes = false;
         }
@@ -485,6 +438,7 @@ namespace WordAddIn
                     {
                         continue;
                     }
+
                     List<Row> templateRows = new List<Row>();
                     DetectTableSize(doc, table, templateRows);
 
@@ -501,6 +455,7 @@ namespace WordAddIn
 
             int numInfo = 0;
             pd.SetRowsExpected(rowsToFill);
+            SyracuseOfficeCustomData customData = SyracuseOfficeCustomData.getFromDocument(doc, false);
             foreach (Table table in tables)
             {
                 try
@@ -512,11 +467,19 @@ namespace WordAddIn
             }
         }
 
+        /// <summary>
+        /// Find the rows that contain Content Controls.
+        /// For each distinctive row, create a row in templateRows.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="table"></param>
+        /// <param name="templateRows"></param>
         private static void DetectTableSize(Document doc, Table table, List<Row> templateRows)
         {
             List<string> matchedRows = new List<string>();
             List<Row> rowsToRemove = new List<Row>();
 
+            Boolean? directTemplateUsed = null;
             foreach (Row row in table.Rows)
             {
                 if (row.Range.ContentControls.Count > 0)
@@ -524,11 +487,15 @@ namespace WordAddIn
                     List<string> tags = new List<string>();
                     foreach (ContentControl ctrl in row.Range.ContentControls)
                     {
-                        TagInfo tag = TagInfo.create(ctrl);
+                       TagInfo tag = TagInfo.create(ctrl);
                         if (tag != null)
                         {
                             if (!tag.isSimple)
                             {
+                                if (directTemplateUsed == null)
+                                {
+                                    directTemplateUsed = TemplateHelper.isDirectTemplateRow(doc, row, tag);
+                                }
                                 tags.Add(ctrl.Tag);
                             }
                         }
@@ -551,6 +518,11 @@ namespace WordAddIn
                             matchedRows.Add(id);
                         }
                     }
+                }
+                
+                if (directTemplateUsed != null && (bool)directTemplateUsed) // a direct (fast loading) template will only ever have a single template row
+                {
+                    break;
                 }
             }
 
@@ -627,6 +599,8 @@ namespace WordAddIn
                 return;
             }
 
+            ContentControlHelper.clearContentControlStatus();
+
             // Hide table to make updates faster (ScreenUpdating seems not to work)
             Globals.WordAddIn.Application.ScreenUpdating = true;
             Globals.WordAddIn.Application.ScreenRefresh();
@@ -638,43 +612,40 @@ namespace WordAddIn
             {
                 Row precidingRow = info.templateRows[info.templateRows.Count - 1];
                 precidingRow.Select();
-                doc.Application.Selection.InsertRowsBelow(numRows);
+                
                 int startRow = (int)info.templateRows[info.templateRows.Count - 1].Range.Information[WdInformation.wdEndOfRangeRowNumber];
+                int rowIndex = startRow;
+
+                if (!TemplateHelper.clearMappedRows(doc, table, info, numRows))
+                {
+                    doc.Application.Selection.InsertRowsBelow(numRows);
+                }
 
                 Row firstRow = table.Rows[startRow + 1];
                 Row lastRow = table.Rows[startRow + numRows];
                 Range newRowRange = firstRow.Range;
                 firstRow.Select();
 
+                int gcCount = 0;
                 for (int item = 0; item < info.items.Length; item++)
                 {
                     Dictionary<String, object> collectionItem = (Dictionary<String, object>)info.items[item];
+
                     foreach (Row templateRow in info.templateRows)
                     {
-                        startRow++;
-                        Row newRow = table.Rows[startRow];
-                        foreach (Cell cell in templateRow.Cells)
+                        rowIndex++;
+                        Row newRow = table.Rows[rowIndex];
+                        foreach (Cell templateCell in templateRow.Cells)
                         {
-                            Cell newCell = newRow.Cells[cell.ColumnIndex];
-                            copyCellContent(cell, newCell);
-                            foreach (ContentControl cc in newCell.Range.ContentControls)
-                            {
-                                TagInfo t2 = TagInfo.create(cc);
-                                if (t2 != null)
-                                {
-                                    if (t2.isSimple)
-                                        continue;
-                                    if (collectionItem.ContainsKey(t2.property))
-                                    {
-                                        Dictionary<String, object> entity = (Dictionary<String, object>)collectionItem[t2.property];
-                                        setContentControl(doc, cc, entity, t2, null, fieldInfo, browserDialog, table);
-                                    }
-                                }
-                            }
+                            TemplateHelper.loadCell(doc, table, fieldInfo, newRow, templateCell, collectionItem, info.templateRows.Count, browserDialog);
+                            gcCount++;
                         }
                         pd.SignalRowDone();
                     }
+
+                    CommonUtils.doGarbageCollect(ref gcCount);
                 }
+                TemplateHelper.addMappedRowsCustomData(doc, table, info, startRow, numRows);
             }
             table.Range.Font.Hidden = 0;
 
@@ -683,39 +654,6 @@ namespace WordAddIn
             {
                 templateRow.Range.Font.Hidden = 1;
             }
-        }
-
-        /**
-         * Get all content controls in document
-         */
-        private static List<ContentControl> GetAllContentControls(Document doc)
-        {
-            List<ContentControl> list = new List<ContentControl>();
-            foreach (Range range in doc.StoryRanges)
-            {
-                try
-                {
-                    foreach (ContentControl cc in range.ContentControls)
-                    {
-                        if (!list.Contains(cc))
-                        {
-                            list.Add(cc);
-                        }
-                    }
-                    foreach (Microsoft.Office.Interop.Word.Shape shape in range.ShapeRange)
-                    {
-                        foreach (ContentControl cc in shape.TextFrame.TextRange.ContentControls)
-                        {
-                            if (!list.Contains(cc))
-                            {
-                                list.Add(cc);
-                            }
-                        }
-                    }
-                }
-                catch (Exception) { }
-            }
-            return list;
         }
 
         /**
@@ -756,397 +694,6 @@ namespace WordAddIn
             }
             return list;
         }
-
-        private static void setContentControl(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, Dictionary<String, WordReportingField> fieldInfo, BrowserDialog browserDialog, Table table)
-        {
-
-            WordReportingField field = null;
-            try { field = fieldInfo[ti.tag]; }
-            catch (Exception) { };
-            if (ctrl.Type == WdContentControlType.wdContentControlPicture)
-            {
-                if ((table != null) && (officeVersion == "15.0" || officeVersion == "16.0"))
-                {
-                    table.Range.Font.Hidden = 0;
-                }
-                setContentControlImage(doc, ctrl, entity, ti, allData, browserDialog);
-                if ((table != null) && (officeVersion == "15.0" || officeVersion == "16.0"))
-                {
-                    table.Range.Font.Hidden = 1;
-                }
-            }
-            else if (ctrl.Type == WdContentControlType.wdContentControlText)
-            {
-                setContentControlText(doc, ctrl, entity, ti, allData, field);
-                addLinkToContentControl(doc, ctrl, entity);
-            }
-        }
-
-        private static void setContentControlText(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, WordReportingField field)
-        {
-            string value = null;
-            string type = null;
-
-            if (ti.display == null)
-            {
-                if (ti.isFormula && "$sum".Equals(ti.formula))
-                {
-                    value = calculateSum(doc, ctrl, entity, ti, allData, field);
-                }
-                else
-                {
-                    try { type = entity["$type"].ToString(); }
-                    catch (Exception) { }
-
-                    if (type != null && (type.Contains("x-document") || type.Contains("text/html") || type.Contains("text/rtf") || type.Contains("text/plain")))
-                    {
-                        setContentControlClob(doc, ctrl, entity, field);
-                        return;
-                    }
-
-                    value = parseValue(entity, type);
-                    value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
-                }
-            }
-            else
-            {
-                value = parseValue(entity, type, ti.display);
-            }
-
-            if (ctrl.Range.Text.Contains("DISPLAYBARCODE"))
-            {
-                // to make the field code changeable
-                doc.ToggleFormsDesign();
-                Range aFieldCode = ((Field)ctrl.Range.Fields[1]).Code;
-                var prop1 = Regex.Match(aFieldCode.Text, "\"[^\"]*\"");
-                if ((prop1.ToString() != "") && (value != " "))
-                {
-                    aFieldCode.Text = aFieldCode.Text.Replace(prop1.ToString(), "\"" + value + "\"");
-                }
-                else
-                {
-                    aFieldCode.Text = "";
-                }
-                doc.ToggleFormsDesign();
-            }
-            else
-            {
-                ctrl.Range.Text = value;
-            }
-        }
-
-        private static void setBarcode(Document doc, Range aRange, Dictionary<String, object> entity, string ti, Dictionary<String, object> allData, WordReportingField field)
-        {
-            string value = null;
-            string type = null;
-
-            value = parseValue(entity, type);
-            value = ReportingFieldUtil.formatValue(value, ReportingFieldUtil.getType(type), field);
-
-            try
-            {
-                aRange.Text = aRange.Text.Replace("<" + ti + ">", value);
-            }
-            catch (Exception) { }
-        }
-
-        private static void setContentControlClob(Document doc, ContentControl ctrl, Dictionary<string, object> entity, WordReportingField field)
-        {
-            object o = null;
-            try
-            {
-                o = ((Dictionary<String, object>)entity["$value"])["$value"];
-            }
-            catch (Exception) {}
-            if (o == null)
-            {
-                ctrl.Range.Text = "";
-                return;
-            }
-            
-            Range r = ctrl.Range;
-            String text = o.ToString();
-            System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
-            if (text.ToLower().StartsWith("{\\rtf"))
-            {
-                ctrl.MultiLine = true;
-                rtBox.Rtf = text;
-                r.Text = rtBox.Text;
-            }
-            else if (text.ToLower().StartsWith("<html>"))
-            {
-                // TODO: HTML Does not work at the moment
-                r.Text = text;
-            }
-            else
-            {
-                r.Text = text;
-            }
-        }
-
-        private static string calculateSum(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, WordReportingField field)
-        {
-            try
-            {
-                Dictionary<String, object> propData = (Dictionary<String, object>)allData[ti.collection];
-                object[] items = null;
-                string proptype = propData["$type"].ToString();
-                if ("application/x-array".Equals(proptype))
-                {
-                    if (propData.ContainsKey("$items"))
-                    {
-                        items = (object[])propData["$items"];
-                    }
-                }
-                if (items == null)
-                {
-                    return "<error>";
-                }
-
-
-                int scale = 2;
-                if (propData.ContainsKey("$scale"))
-                {
-                    scale = (int) propData["$scale"];
-                }
-
-                string itemtype = ctrl.Title;
-                ReportingFieldTypes type = ReportingFieldUtil.getType(itemtype);
-                Decimal sumDecimal = 0;
-                string sumString = null;
-                foreach (object record in items)
-                {
-                    Dictionary<String, object> item = (Dictionary<String, object>)((Dictionary<String, object>)record)[ti.property];
-                    string value = parseValue(item, itemtype);
-                    switch (type)
-                    {
-                        case ReportingFieldTypes.DECIMAL:
-                            Decimal d = Decimal.Parse(value);
-                            sumDecimal += d;
-                            break;
-                        case ReportingFieldTypes.INTEGER:
-                            Int64 i = Int64.Parse(value);
-                            sumDecimal += i;
-                            break;
-                        default:
-                            if (sumString != null)
-                            {
-                                sumString += ", " + value;
-                            }
-                            else
-                            {
-                                sumString = value;
-                            }
-                            break;
-                    }
-                }
-                switch (type)
-                {
-                    case ReportingFieldTypes.DECIMAL:
-                        return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type, field);
-                    case ReportingFieldTypes.INTEGER:
-                        return ReportingFieldUtil.formatValue(sumDecimal.ToString(), type);
-                    default:
-                        return sumString;
-                }
-            }
-            catch (Exception) { };
-            return "<error>";
-        }
-
-        private static void setContentControlImage(Document doc, ContentControl ctrl, Dictionary<String, object> entity, TagInfo ti, Dictionary<String, object> allData, BrowserDialog browserDialog)
-        {
-            string type = null;
-            string link = null;
-            string url = null;
-
-            if (browserDialog == null)
-            {
-                return;
-            }
-            try { type = entity["$type"].ToString(); }
-            catch (Exception) { }
-            try { link = entity["$link"].ToString(); }
-            catch (Exception) { }
-            try { url = ((Dictionary<String, object>)entity["$value"])["$url"].ToString(); }
-            catch (Exception) { }
-
-            bool imageWasSet = false;
-            if (ctrl.Type == WdContentControlType.wdContentControlPicture)
-            {
-                try
-                {
-
-                    string imageFile = null;
-                    if (url != null)
-                    {
-                        imageFile = downloadImage(url, browserDialog);
-                    }
-                    if (imageFile != null && !"".Equals(imageFile))
-                    {
-
-                        float width = -1;
-                        float height = -1;
-
-                        if (ctrl.Range.InlineShapes.Count > 0)
-                        {
-                            width = ctrl.Range.InlineShapes[1].Width;
-                            height = ctrl.Range.InlineShapes[1].Height;
-                            ctrl.Range.InlineShapes[1].Delete();
-                        }
-
-                        doc.InlineShapes.AddPicture(imageFile, false, true, ctrl.Range);
-                        imageWasSet = true;
-                        if (ctrl.Range.InlineShapes.Count > 0 && width > 0 && height > 0)
-                        {
-                            InlineShape shape = ctrl.Range.InlineShapes[1];
-                            // Image should be displayed in original size but not greater than 16 cm
-                            float scal = 100;
-                            shape.ScaleHeight = scal;
-                            shape.ScaleWidth = scal;
-                            // maxWith = 160mm
-                            // Millimeter 2 Inch = 25.4
-                            // Inch 2 Pixel = 72
-                            float maxWidth = 454;  // 160 / 25.4 * 72
-                            if (ti.display != null)
-                            {
-                                maxWidth = getMaxWidth(ti.display);
-                                if (maxWidth <= 0)
-                                {
-                                    maxWidth = 454;
-                                }
-                            }
-
-                            if (shape.Width > maxWidth)
-                            {
-                                scal = 100 * maxWidth / shape.Width;
-                                shape.ScaleHeight = scal;
-                                shape.ScaleWidth = scal;
-                            }
-                        }
-                        addLinkToContentControl(doc, ctrl, entity);
-                        File.Delete(imageFile);
-                    }
-                    if (!imageWasSet)
-                    {
-                        if (ctrl.Range.InlineShapes.Count > 0)
-                        {
-                            ctrl.Range.InlineShapes[1].Delete();
-                        }
-                        doc.InlineShapes.AddPicture(getTransparentImage(), false, true, ctrl.Range);
-                    }
-                }
-                catch (Exception) { };
-            }
-        }
-
-        private static float getMaxWidth(string display)
-        {
-            try
-            {
-                return Convert.ToInt32(display);
-            } catch (Exception) {
-                return -1;
-            }
-        }
-
-        private static string downloadImage(string url, BrowserDialog browserDialog)
-        {
-            string imageFile = null;
-            try
-            {
-                // currenty, only syracuse sends protocol, host and port. Add this information for X3 entities
-                if (!(url.StartsWith("http:") || url.StartsWith("https:")))
-                {
-                    url = browserDialog.serverUrl + url;
-                }
-                byte[] image = browserDialog.readBinaryURLContent(url);
-                if (image != null)
-                {
-                    imageFile = Path.GetTempFileName();
-                    using (FileStream stream = new FileStream(imageFile, FileMode.Create))
-                    {
-                        using (BinaryWriter writer = new BinaryWriter(stream))
-                        {
-                            writer.Write(image);
-                            writer.Close();
-                        }
-                    }
-                }
-            }
-            catch (Exception) { /*MessageBox.Show(e.Message + ":" + e.StackTrace);*/  };
-            return imageFile;
-        }
-
-        private static string getTransparentImage()
-        {
-            if (transparentImageFile != null)
-            {
-                if (File.Exists(transparentImageFile) == true)
-                {
-                    return transparentImageFile;
-                }
-            }
-            string imageFile = Path.GetTempFileName();
-            using (FileStream stream = new FileStream(imageFile, FileMode.Create))
-            {
-                using (BinaryWriter writer = new BinaryWriter(stream))
-                {
-                    writer.Write(global::WordAddIn.Properties.Resources.transparent);
-                    writer.Close();
-                }
-            }
-            transparentImageFile = imageFile;
-            return imageFile;
-        }
-
-        private static void addLinkToContentControl(Document doc, ContentControl c, Dictionary<String, object> entity)
-        {
-            string link = null;
-            try { link = entity["$link"].ToString(); }
-            catch (Exception) { }
-
-            if (link == null)
-            {
-                return;
-            }
-            Range r = c.Range;
-            String tag;
-            String title;
-            WdContentControlType type = c.Type;
-            tag = c.Tag;
-            title = c.Title;
-            /*
-            try
-            {
-                while (r.Hyperlinks.Count > 0) r.Hyperlinks[1].Delete();
-                c.Delete();
-            }
-            catch (Exception) { };
-            try
-            {
-                //Hyperlink l = r.Hyperlinks.Add(r, link);
-                c = doc.ContentControls.Add(type, r);
-                c.Tag = tag;
-                c.Title = title;
-            }
-            catch (Exception e) {
-                MessageBox.Show(e.Message);
-            };
-             */
-        }
-
-        private static void copyCellContent(Cell src, Cell dest)
-        {
-            foreach (ContentControl s in src.Range.ContentControls)
-            {
-                Range dr = dest.Range;
-                dr.Collapse(WdCollapseDirection.wdCollapseStart);
-                ContentControl d = dr.ContentControls.Add(s.Type);
-                d.Tag = s.Tag;
-                d.Title = s.Title;
-            }
-        }
     }
 
     public partial class TableInfo
@@ -1155,67 +702,5 @@ namespace WordAddIn
         public object[] items;
         public List<Row> templateRows;
         public int numRows;
-    }
-
-    // Information extracted from a ContentControl tag-property
-    // [display:][<entity>.]<property>
-    // <entity>   only when handling collections (Name of collection property of entity)
-    // <property> property whos value is to displayed
-    // <display>  $title or $value (Display title or value of property) - NOT USED YET
-    public class TagInfo
-    {
-        public string tag;
-        public string property;
-        public string collection;
-        public string display;
-        public bool isSimple;
-        public bool isFormula;
-        public string formula;
-
-        public static TagInfo create(ContentControl c)
-        {
-            try
-            {
-                int i;
-                TagInfo t = new TagInfo();
-                string tag = c.Tag;
-                i = tag.IndexOf(":");
-                if (i > -1)
-                {
-                    t.display = tag.Substring(0, i);
-                    tag = tag.Substring(i + 1);
-                }
-
-                Match m = ReportingUtils.sumRegex.Match(tag);
-                if (m.Success)
-                {
-                    t.isFormula = true;
-                    t.formula = "$sum";
-                    tag = m.Groups["exp"].Value;
-                }
-                t.tag = tag;
-                i = tag.IndexOf(".");
-                if (i > -1)
-                {
-                    t.collection = tag.Substring(0, i);
-                    t.property = tag.Substring(i + 1);
-                    t.isSimple = false || t.isFormula;
-                }
-                else
-                {
-                    t.collection = "";
-                    t.property = tag;
-                    t.isSimple = true;
-                    t.formula = null;
-                    t.isFormula = false;
-                }
-
-                return t;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
     }
 }

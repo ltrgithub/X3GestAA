@@ -167,6 +167,15 @@ namespace ExcelAddIn
             Globals.Ribbons.Ribbon.buttonDisconnect.Enabled = true;
         }
 
+        public void resetWebBrowser(String server)
+        {
+            if (webBrowser != null && webBrowser.Url.ToString().StartsWith(server) == false)
+            {
+                webBrowser.Dispose();
+                webBrowser = new System.Windows.Forms.WebBrowser();
+            }
+        }
+
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             Globals.ThisAddIn.ShowSettingsForm();

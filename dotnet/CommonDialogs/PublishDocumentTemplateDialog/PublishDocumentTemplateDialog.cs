@@ -202,10 +202,10 @@ namespace CommonDialogs.PublishDocumentTemplateDialog
                 switch (_documentType)
                 {
                     case "saveMailMergeTemplatePrototype":
-                        this.Text = CommonDialogs.Properties.Resources.PUBLISH_DOCUMENT_TEMPLATE_MAIL_MERGE;
+                        this.Text = String.IsNullOrEmpty(this.Text) ? CommonDialogs.Properties.Resources.PUBLISH_DOCUMENT_TEMPLATE_MAIL_MERGE : this.Text;
                         break;
                     case "saveReportTemplatePrototype":
-                        this.Text = CommonDialogs.Properties.Resources.PUBLISH_DOCUMENT_TEMPLATE_REPORT;
+                        this.Text = String.IsNullOrEmpty(this.Text) ? CommonDialogs.Properties.Resources.PUBLISH_DOCUMENT_TEMPLATE_REPORT : this.Text;
                         break;
                 }
             }

@@ -228,6 +228,7 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
       <DependentUpon>BrowserDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonUtils.cs" />
+    <Compile Include="ContentControlHelper.cs" />
     <Compile Include="MailMergeActions.cs" />
     <Compile Include="Properties\Resources.fr.Designer.cs">
       <DependentUpon>Resources.fr.resx</DependentUpon>
@@ -253,6 +254,9 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
       <DependentUpon>ReportingTemplatePane.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportingFieldTypes.cs" />
+    <Compile Include="TagInfo.cs" />
+    <Compile Include="TemplateHelper.cs" />
+    <Compile Include="TemplateUtils.cs" />
     <Compile Include="WordAddInJSExternal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -364,6 +368,8 @@ copy "$(OutDir)CustomComponents.dll" "$(SageOfficeAddinsDir)" /y) ELSE (echo "Do
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+    <None Include="Resources\arrow-down.png" />
+    <None Include="Resources\arrow-up.png" />
     <Content Include="Resources\preview.png" />
     <Content Include="Resources\mailmerge.png" />
     <Content Include="Resources\s-aw-light-boolean.png" />

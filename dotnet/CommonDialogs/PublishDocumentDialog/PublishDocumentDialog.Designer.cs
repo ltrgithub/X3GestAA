@@ -51,7 +51,6 @@
             // 
             // groupBoxDescription
             // 
-            resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Controls.Add(this.labelDescriptionErrorText);
             this.groupBoxDescription.Controls.Add(this.textBoxDescription);
             this.groupBoxDescription.Controls.Add(this.comboBoxOwner);
@@ -60,6 +59,7 @@
             this.groupBoxDescription.Controls.Add(this.labelOwner);
             this.groupBoxDescription.Controls.Add(this.labelStorageVolume);
             this.groupBoxDescription.Controls.Add(this.labelDescription);
+            resources.ApplyResources(this.groupBoxDescription, "groupBoxDescription");
             this.groupBoxDescription.Name = "groupBoxDescription";
             this.groupBoxDescription.TabStop = false;
             // 
@@ -79,16 +79,16 @@
             // 
             // comboBoxOwner
             // 
-            resources.ApplyResources(this.comboBoxOwner, "comboBoxOwner");
             this.comboBoxOwner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOwner.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxOwner, "comboBoxOwner");
             this.comboBoxOwner.Name = "comboBoxOwner";
             // 
             // comboBoxStorageVolume
             // 
-            resources.ApplyResources(this.comboBoxStorageVolume, "comboBoxStorageVolume");
             this.comboBoxStorageVolume.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStorageVolume.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxStorageVolume, "comboBoxStorageVolume");
             this.comboBoxStorageVolume.Name = "comboBoxStorageVolume";
             // 
             // checkBoxReadOnly
@@ -114,39 +114,39 @@
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOk
             // 
-            resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnOk, "btnOk");
             this.btnOk.Name = "btnOk";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // groupBoxTagsAndTeams
             // 
-            resources.ApplyResources(this.groupBoxTagsAndTeams, "groupBoxTagsAndTeams");
             this.groupBoxTagsAndTeams.Controls.Add(this.checkedListBoxTeams);
             this.groupBoxTagsAndTeams.Controls.Add(this.checkedListBoxTags);
             this.groupBoxTagsAndTeams.Controls.Add(this.labelTeams);
             this.groupBoxTagsAndTeams.Controls.Add(this.labelTags);
+            resources.ApplyResources(this.groupBoxTagsAndTeams, "groupBoxTagsAndTeams");
             this.groupBoxTagsAndTeams.Name = "groupBoxTagsAndTeams";
             this.groupBoxTagsAndTeams.TabStop = false;
             // 
             // checkedListBoxTeams
             // 
-            resources.ApplyResources(this.checkedListBoxTeams, "checkedListBoxTeams");
             this.checkedListBoxTeams.FormattingEnabled = true;
+            resources.ApplyResources(this.checkedListBoxTeams, "checkedListBoxTeams");
             this.checkedListBoxTeams.Name = "checkedListBoxTeams";
             // 
             // checkedListBoxTags
             // 
-            resources.ApplyResources(this.checkedListBoxTags, "checkedListBoxTags");
             this.checkedListBoxTags.FormattingEnabled = true;
+            resources.ApplyResources(this.checkedListBoxTags, "checkedListBoxTags");
             this.checkedListBoxTags.Name = "checkedListBoxTags";
             // 
             // labelTeams

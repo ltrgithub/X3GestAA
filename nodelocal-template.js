@@ -103,7 +103,7 @@ exports.config = {
 				//-- set the lifetime in number of days of the remember me token. Default is 28 (4 weeks).
 				//-- A value less or equal to 0 will disable the remember me feature
 				// lifetime: 0
-			},
+    },
 
 			//-- Set autocomplete to "on" or "off" for login and/or password
 			//-- The autocomplete behavior is browser specific and browser can prompt for saving password even if is set to off
@@ -186,6 +186,17 @@ exports.config = {
 	},
     collaboration: {
         certdir: "certificates"  // path to certificates folder
+		// options for MongoDB connection:
+		// port: 27017, 
+		// driver: "mongodb",
+		// hostname: "localhost",
+		// connectionString: "localhost:27017",
+		// databaseName: "syracuse",
+		// dataset: "syracuse",
+		// mongoX509Cert: ["mongoclient", "mongoca"], // connection with X509 certificate: 
+		//           first entry: name of client certificate with private key, following entries: CA certificate(s)		
+		// lockWaitTimeout: 240000, // timeout for acquiring instance lock. default is 60000
+		// dbLockWaitTimeout: 240000, // timeout for acquiring db lock. default is 'lockWaitTimeout'
     },
     extensions: {
         "root": "../extensions", // root path of extensions; optional; defaults to "../extensions"
@@ -220,8 +231,10 @@ exports.config = {
 		checkInterval: 60,
 		// ?
 		//		ignoreStoreSession: true,
-		// authentication modes
+		// authentication modes : available for interactive connection
 		"auth": "basic",
+		// allow other authenticationfor service mode; interactive form is hidden (but not forbidden) 
+		// "serviceAuth": "basic"
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service
@@ -284,7 +297,14 @@ exports.config = {
 		// url: "http://uranus2:8080/AdxDoc_DOCV7X3/"
 	},
 	searchEngine: {
-		//tracer: console.log,
+		// url of the elasticsearch server. This parameter supersede the hostname and port
+		// baseUrl: "https://elastic-server:9200",
+
+		// hostname of the elasticsearch server. localhost by default
+		// hostname: "elastic-server",
+
+		// port of the elasticsearch server. 9200 by default
+		// port: 9200,
 
 		// Using a minimal stemmer should only group plurals rather than a
 		// deeper root of the word.
@@ -302,6 +322,7 @@ exports.config = {
 		// ignoreFrequency: true,
 		// offStemmer : true, // desactivation of the stemmer for the search indexation
         // useFolderNameAsIndexName: false, // for X3 instead of dataset, use solutionName.folderName as index name
+		//indexPrefix : "tenantXXX_configYYY" // used in particular by cloudV2 to prefix index names in single tenant mode
 	},
 	notificatonServer: {
 		//"log Level" : 3,
@@ -337,7 +358,7 @@ exports.config = {
 		// base URL of sage ID service - this one is staging, not prod
 		baseUrl: "https://services.sso.staging.services.sage.com/SSO",
 		// absolute file name of the PFX certificate file provided by Sage ID. This one only works with staging server
-		pfxFile: __dirname + "/node_modules/syracuse-auth/test/certificates/Sage_ERP_X3_Development.pfx",
+		pfxFile: __dirname + "/test/auth/certificates/Sage_ERP_X3_Development.pfx",
 		// passphrase for the certificate file. This one works with the staging test certificate
 		passphrase: "as985k3bZ8p2",
 		devOpsEmail: 'SageERPX3DevOps@sage.com',
@@ -415,6 +436,11 @@ exports.config = {
         webApiAuth: "Basic c3ltcGhvbnk6d2ViJHRvcmVCeVhNJngz",
         farmElbUrl: "https://dev.symphony.na.cloud.dev-sageerpx3online.com",
     },
+    // mobile client's configuration 
+	mobileClientConfig: {
+		// http request default timeout in ms
+		httpTimeout: 600000
+	}
     // For Sage ID notifications handling, during authentication/logout records will be inserted and deleted
     // See section 4.1.2 in Sage ID Reference Documentation for further information
     // Also for OAuth2 redirection
@@ -426,12 +452,6 @@ exports.config = {
 		oauthCollection: 'oauth_redirects',         
 		apiHost: 'https://staging-api.sagex3.com'
 	},*/    
-
-    // mobile client's configuration 
-	mobileClientConfig: {
-		// http request default timeout in ms
-		httpTimeout: 600000
-	}
 };
 
 // for git enabled configurations one can override the standard config

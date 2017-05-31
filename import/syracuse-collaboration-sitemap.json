@@ -2811,6 +2811,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_TRACEABILITY",
+      "title": "title_2eb7ce6a-1569-467a-b587-9665244d7a4a",
+      "description": "description_2eb7ce6a-1569-467a-b587-9665244d7a4a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "historyLogs",
+        "representation": "historyLog"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_TRACE_RECORD",
       "title": "title_5251fcbb-7be2-420c-8026-191536612e20",
       "description": "description_5251fcbb-7be2-420c-8026-191536612e20",
@@ -2974,6 +3003,10 @@
           "title": "title_4d2a5f90-3414-4ab1-a3f3-5fc013f9545e",
           "items": [
             {
+              "code": "S_TRACEABILITY",
+              "$variantType": "menuItem"
+            },
+            {
               "code": "S_TRACE_RECORD",
               "$variantType": "menuItem"
             },
@@ -3031,21 +3064,15 @@
     },
     {
       "$type": "navigationPage",
-      "title": "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340",
-      "pageName": "homefa",
-      "$factory": false,
-      "$factoryOwner": null,
+      "title": "title_f9daedd5-fd98-4461-b309-2b9bf796360a",
+      "pageName": "home",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "modules": [
         {
           "code": "S_MOD_ADMIN"
         }
       ]
-    },
-    {
-      "$type": "navigationPage",
-      "title": "title_50ef32aa-30e9-4578-8e12-0c78b3c4a258",
-      "pageName": "homeyyfin",
-      "modules": []
     },
     {
       "$type": "menuItem",
@@ -5495,6 +5522,35 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "S_TRACEABILITY",
+      "title": "title_2eb7ce6a-1569-467a-b587-9665244d7a4a",
+      "description": "description_2eb7ce6a-1569-467a-b587-9665244d7a4a",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "syracuse",
+        "contract": "collaboration"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "historyLogs",
+        "representation": "historyLog"
+      },
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "S_TRACE_RECORD",
       "title": "title_5251fcbb-7be2-420c-8026-191536612e20",
       "description": "description_5251fcbb-7be2-420c-8026-191536612e20",
@@ -5658,6 +5714,10 @@
           "title": "title_4d2a5f90-3414-4ab1-a3f3-5fc013f9545e",
           "items": [
             {
+              "code": "S_TRACEABILITY",
+              "$variantType": "menuItem"
+            },
+            {
               "code": "S_TRACE_RECORD",
               "$variantType": "menuItem"
             },
@@ -5715,10 +5775,10 @@
     },
     {
       "$type": "navigationPage",
-      "title": "title_f9daedd5-fd98-4461-b309-2b9bf796360a",
-      "pageName": "home",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
+      "title": "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340",
+      "pageName": "homefa",
+      "$factory": false,
+      "$factoryOwner": null,
       "modules": [
         {
           "code": "S_MOD_ADMIN"
@@ -5728,7 +5788,6 @@
   ],
   "$localization": {
     "ar-sa": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "إدارة",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "إدارة",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "مستخدمين",
@@ -5864,10 +5923,11 @@
       "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "مرتّب",
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "آلية",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "سجل الأعمال",
-      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم"
+      "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "مسارات الخادم",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "de-de": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administration",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Benutzer",
@@ -6010,16 +6070,16 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Planer",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverprotokolle",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Serverprotokolle",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administrations-Dashboard"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "en-gb": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
       "title_55a397a6-e57d-4071-8515-7d643891dd58": "Licenses",
-      "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import Tool"
+      "description_28f02ec9-c04b-4cf7-a16c-59fe21b7dac4": "Import Tool",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "en-us": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administration",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Users",
@@ -6165,6 +6225,7 @@
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "Classic Client sessions",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "Reused clients sessions",
       "title_4d2a5f90-3414-4ab1-a3f3-5fc013f9545e": "Logs",
+      "title_2eb7ce6a-1569-467a-b587-9665244d7a4a": "MongoDB traceability",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Host traces",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse server traces",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Engine trace",
@@ -6173,11 +6234,10 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Scheduler",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Server logs",
-      "title_50ef32aa-30e9-4578-8e12-0c78b3c4a258": "homeyyfin",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "es-es": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administración",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administración",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Usuarios",
@@ -6320,11 +6380,11 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Autómatas",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Diario de tareas",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "trazas servidor",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menú de administración"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "fr-fr": {
       "title_fffc893e-6e9f-49cc-8ff9-d5b918a6e5be": "Menu Dossier Historique",
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administration",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Utilisateurs",
       "title_234de8fb-57cf-4333-8956-d608d215734a": "Utilisateurs",
@@ -6455,10 +6515,10 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Automates",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Traces serveur",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Traces serveur",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menu d'administration"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "it-it": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administrator",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administrator",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Utenti",
@@ -6579,10 +6639,10 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Schedulatore",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Tracce server",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Tracce server",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Menù administrator"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "pl-pl": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administracja",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administracja",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Użytkownicy",
@@ -6676,10 +6736,10 @@
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "Konfiguracja sesji X3",
       "title_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Zadania planowane",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Konsola administracyjna"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "pt-pt": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Administração",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Administração",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Utilizadores",
@@ -6824,10 +6884,10 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Agendamento",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Logs do servidor",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Painel administração"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "ru-ru": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "Администрирование",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "Администрирование",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "Пользователи",
@@ -6964,10 +7024,10 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "Планировщик",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "Логи сервера",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Рабочий стол администратора"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page"
     },
     "zh-cn": {
-      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "固定资产导航页面",
+      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板",
       "title_782c2b56-31d8-46bd-8f6a-93e47dce9abf": "管理",
       "title_1a147185-cb29-424a-abc1-8b271c3bcdee": "管理",
       "title_55148bdd-9188-464d-9257-ef382e65ceae": "用户",
@@ -7113,6 +7173,7 @@
       "title_b4f0ba74-1006-4f98-9c05-a25bfad25acc": "经典版客户端会话",
       "title_389eb4c7-35b0-403a-8303-f8bd0588c8a1": "可重复使用的经典版会话",
       "title_4d2a5f90-3414-4ab1-a3f3-5fc013f9545e": "日志",
+      "title_2eb7ce6a-1569-467a-b587-9665244d7a4a": "MongoDB追溯",
       "title_5251fcbb-7be2-420c-8026-191536612e20": "Web服务器追踪日志",
       "description_5251fcbb-7be2-420c-8026-191536612e20": "Syracuse服务器追踪日志",
       "title_1ada49fe-fe28-4d68-ab14-04a68a6815c2": "引擎追踪日志",
@@ -7121,7 +7182,7 @@
       "description_692c782c-b203-46fc-bfe4-1069ee8c1c04": "排程器",
       "title_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "服务器追踪日志",
       "description_3b80c77f-20b6-47c8-9ca2-946a4dd5993c": "服务器追踪日志",
-      "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "管理面板"
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "固定资产导航页面"
     }
   },
   "$options": {
@@ -7129,7 +7190,7 @@
   },
   "$scriptsBefore": [
     {
-      "module": "syracuse-collaboration/lib/advancedScripts/pre-import-sitemap",
+      "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/pre-import-sitemap",
       "options": {
         "homepagesFilter": "(pageName like 'home%')",
         "modulesFilter": "(application.description eq 'Syracuse Collaboration') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
@@ -7140,7 +7201,7 @@
   ],
   "$scriptsAfter": [
     {
-      "module": "syracuse-collaboration/lib/advancedScripts/post-import-sitemap",
+      "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/post-import-sitemap",
       "options": {
         "homepagesFilter": "(pageName like 'home%')",
         "modulesFilter": "(application.description eq 'Syracuse Collaboration') and ($factory eq true) and ($factoryOwner eq 'SAGE')",

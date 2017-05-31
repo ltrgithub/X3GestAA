@@ -86,8 +86,17 @@
       <DependentUpon>PublishDocumentDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="InfoMessage\InfoMessageBox.cs" />
+    <Compile Include="ServerLocationDialog\serverLocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerLocationDialog\serverLocationsForm.Designer.cs">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.ar-SA.resx">
+      <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.de.resx">
       <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,10 +106,10 @@
     <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.es.resx">
       <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.fo.resx">
+    <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.fr.resx">
       <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.fr.resx">
+    <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.pl.resx">
       <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.pt.resx">
@@ -114,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConnectionProgressDialog\ConnectionProgressDialog.zh-CN.resx">
       <DependentUpon>ConnectionProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressDialog\ProgressDialog.ar-SA.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressDialog\ProgressDialog.de.resx">
       <DependentUpon>ProgressDialog.cs</DependentUpon>
@@ -157,6 +169,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PublishDocumentDialog\PublishDocumentDialog.ar-sa.resx">
+      <DependentUpon>PublishDocumentDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PublishDocumentDialog\PublishDocumentDialog.de.resx">
       <DependentUpon>PublishDocumentDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PublishDocumentDialog\PublishDocumentDialog.zh-cn.resx">
       <DependentUpon>PublishDocumentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublishDocumentTemplateDialog\PublishDocumentTemplateDialog.ar-sa.resx">
+      <DependentUpon>PublishDocumentTemplateDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PublishDocumentTemplateDialog\PublishDocumentTemplateDialog.de.resx">
       <DependentUpon>PublishDocumentTemplateDialog.cs</DependentUpon>
@@ -211,6 +229,36 @@
     <EmbeddedResource Include="PublishDocumentTemplateDialog\PublishDocumentTemplateDialog.zh-cn.resx">
       <DependentUpon>PublishDocumentTemplateDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.ar-SA.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.de.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.en.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.es.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.fr.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.pl.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.pt.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.ru.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerLocationDialog\serverLocationsForm.zh-CN.resx">
+      <DependentUpon>serverLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomComponents\CustomComponents.csproj">
@@ -218,7 +266,12 @@
       <Name>CustomComponents</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
