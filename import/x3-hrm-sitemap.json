@@ -17036,18 +17036,6 @@
       ]
     },
     {
-      "$type": "menuBlock",
-      "title": "title_271f2eaf-7f66-4e0c-8471-352c0e3aacb2",
-      "code": "S_ATTACH",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "items": []
-    },
-    {
       "$type": "menuModule",
       "title": "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a",
       "code": "STD_X3_HRM_PERSO",
@@ -17072,9 +17060,6 @@
         },
         {
           "code": "STD_X3_HRM_LOA"
-        },
-        {
-          "code": "S_ATTACH"
         }
       ]
     },
@@ -22185,6 +22170,33 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_HRCARRNOF",
+      "title": "title_c47748ed-f73b-451c-8102-ee92c1322c7f",
+      "description": "description_c47748ed-f73b-451c-8102-ee92c1322c7f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "HRCARRNOF",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PNOF"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd",
       "code": "STD_X3_HRM_PNOF_MISC",
@@ -22194,7 +22206,12 @@
         "application": "x3",
         "contract": "hrm"
       },
-      "items": []
+      "items": [
+        {
+          "code": "STD_X3_HRM_HRCARRNOF",
+          "$variantType": "menuItem"
+        }
+      ]
     },
     {
       "$type": "menuModule",
@@ -31046,7 +31063,6 @@
       "title_f4462b00-9428-40b9-a3b2-6cb8e02c9942": "Loans process",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "Generate loan installment",
       "description_d3b96156-6cda-41cd-8227-500e966127a9": "Generate loan installment",
-      "title_271f2eaf-7f66-4e0c-8471-352c0e3aacb2": "Attachable earnings",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Time management",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parameter definition",
       "title_eb494dd4-8266-4602-8460-53df9d2e0d4f": "Nature of events",
@@ -31360,6 +31376,8 @@
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "UIF export",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes  ",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Expense notes  ",
+      "title_c47748ed-f73b-451c-8102-ee92c1322c7f": "Expense note transfer",
+      "description_c47748ed-f73b-451c-8102-ee92c1322c7f": "HRCARRNOF",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Parameter definition",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
