@@ -22197,6 +22197,88 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRTES",
+      "title": "title_e496d253-b37e-4574-844b-e29b90d3887f",
+      "description": "description_e496d253-b37e-4574-844b-e29b90d3887f",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRTES",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PNOF"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHREXS",
+      "title": "title_33fab6cc-9cec-4832-81c7-45015262aec4",
+      "description": "description_33fab6cc-9cec-4832-81c7-45015262aec4",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHREXS",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PNOF"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_EXSPST",
+      "title": "title_2d44a9d5-e11e-4315-bd3e-3919b88da081",
+      "description": "description_2d44a9d5-e11e-4315-bd3e-3919b88da081",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "EXSPST",
+      "fusionKey": "",
+      "target": "self",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_HRM_PNOF"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd",
       "code": "STD_X3_HRM_PNOF_MISC",
@@ -22209,6 +22291,18 @@
       "items": [
         {
           "code": "STD_X3_HRM_HRCARRNOF",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESHRTES",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESHREXS",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_EXSPST",
           "$variantType": "menuItem"
         }
       ]
@@ -31378,6 +31472,12 @@
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Expense notes  ",
       "title_c47748ed-f73b-451c-8102-ee92c1322c7f": "Expense note transfer",
       "description_c47748ed-f73b-451c-8102-ee92c1322c7f": "HRCARRNOF",
+      "title_e496d253-b37e-4574-844b-e29b90d3887f": "Expense codes",
+      "description_e496d253-b37e-4574-844b-e29b90d3887f": "GESHRTES",
+      "title_33fab6cc-9cec-4832-81c7-45015262aec4": "Expense notes  ",
+      "description_33fab6cc-9cec-4832-81c7-45015262aec4": "GESHREXS",
+      "title_2d44a9d5-e11e-4315-bd3e-3919b88da081": "Expense posting",
+      "description_2d44a9d5-e11e-4315-bd3e-3919b88da081": "EXSPST",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Parameter definition",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
@@ -33082,6 +33182,8 @@
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Export UIF",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notes de frais",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Notes de frais",
+      "title_2d44a9d5-e11e-4315-bd3e-3919b88da081": "Comptabilisation des frais",
+      "description_2d44a9d5-e11e-4315-bd3e-3919b88da081": "EXSPST",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Participation - Intéressement",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Paramètres",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
@@ -34527,6 +34629,8 @@
       "title_a87d844e-8c7d-4a09-bc6d-3eda55ea4956": "Pénibilité",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notas de despesa",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Notas de despesa",
+      "title_2d44a9d5-e11e-4315-bd3e-3919b88da081": "Contabilização de desp.",
+      "description_2d44a9d5-e11e-4315-bd3e-3919b88da081": "EXSPST",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Participações - Rep. de lucros",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Parâmetros",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
