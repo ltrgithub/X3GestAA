@@ -18227,15 +18227,16 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESPPH",
-      "title": "title_3be84ee6-be36-4b89-8072-1a9bb46bb18f",
-      "description": "description_3be84ee6-be36-4b89-8072-1a9bb46bb18f",
+      "code": "STD_X3_HRM_GESHRPPH",
+      "title": "title_fb4f26eb-49a1-4713-a6f8-243fb6325fca",
+      "description": "description_fb4f26eb-49a1-4713-a6f8-243fb6325fca",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESPPH",
-      "fusionKey": "",
+      "fusionFunction": "GESHRPPH",
+      "keyIsWhere": false,
       "target": "self",
+      "requestLevel": "1",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -18247,7 +18248,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -18917,7 +18918,7 @@
           "$factoryOwner": "SAGE",
           "items": [
             {
-              "code": "STD_X3_HRM_GESPPH",
+              "code": "STD_X3_HRM_GESHRPPH",
               "$variantType": "menuItem"
             },
             {
@@ -22113,6 +22114,33 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHREXS",
+      "title": "title_33fab6cc-9cec-4832-81c7-45015262aec4",
+      "description": "description_33fab6cc-9cec-4832-81c7-45015262aec4",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHREXS",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_PNOF"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
       "code": "STD_X3_HRM_HRCARRNOF",
       "title": "title_c47748ed-f73b-451c-8102-ee92c1322c7f",
       "description": "description_c47748ed-f73b-451c-8102-ee92c1322c7f",
@@ -22140,16 +22168,15 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESHREXS",
-      "title": "title_33fab6cc-9cec-4832-81c7-45015262aec4",
-      "description": "description_33fab6cc-9cec-4832-81c7-45015262aec4",
+      "code": "STD_X3_HRM_EXSPST",
+      "title": "title_2d44a9d5-e11e-4315-bd3e-3919b88da081",
+      "description": "description_2d44a9d5-e11e-4315-bd3e-3919b88da081",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESHREXS",
-      "keyIsWhere": false,
+      "fusionFunction": "EXSPST",
+      "fusionKey": "",
       "target": "self",
-      "requestLevel": "1",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -22157,7 +22184,9 @@
         "contract": "hrm"
       },
       "endpoint": null,
-      "representationRef": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
       "module": {
         "code": "STD_X3_HRM_PNOF"
       },
@@ -22180,11 +22209,15 @@
           "$variantType": "menuItem"
         },
         {
+          "code": "STD_X3_HRM_GESHREXS",
+          "$variantType": "menuItem"
+        },
+        {
           "code": "STD_X3_HRM_HRCARRNOF",
           "$variantType": "menuItem"
         },
         {
-          "code": "STD_X3_HRM_GESHREXS",
+          "code": "STD_X3_HRM_EXSPST",
           "$variantType": "menuItem"
         }
       ]
@@ -31119,8 +31152,8 @@
       "title_1a00a926-f024-4882-a3ba-de099dc4a8d7": "Automatic generation",
       "description_1a00a926-f024-4882-a3ba-de099dc4a8d7": "TRTAUT",
       "title_19bf4ade-3ff4-47e0-926d-6ef32f9ce951": "Payroll preparation",
-      "title_3be84ee6-be36-4b89-8072-1a9bb46bb18f": "Preparation slips",
-      "description_3be84ee6-be36-4b89-8072-1a9bb46bb18f": "GESPPH",
+      "title_fb4f26eb-49a1-4713-a6f8-243fb6325fca": "Preparation slips",
+      "description_fb4f26eb-49a1-4713-a6f8-243fb6325fca": "GESHRPPH",
       "title_ba7db07f-4fdb-4b84-ba8b-3b74a5bf7269": "Prepay variables inquiry",
       "description_ba7db07f-4fdb-4b84-ba8b-3b74a5bf7269": "CONSPPD",
       "title_a039a67b-f313-4176-a4d5-e7a2117be3ac": "Total acceptance",
@@ -31349,10 +31382,12 @@
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Expense notes  ",
       "title_e496d253-b37e-4574-844b-e29b90d3887f": "Expense codes",
       "description_e496d253-b37e-4574-844b-e29b90d3887f": "GESHRTES",
-      "title_c47748ed-f73b-451c-8102-ee92c1322c7f": "Expense note transfer",
-      "description_c47748ed-f73b-451c-8102-ee92c1322c7f": "HRCARRNOF",
       "title_33fab6cc-9cec-4832-81c7-45015262aec4": "Expense notes  ",
       "description_33fab6cc-9cec-4832-81c7-45015262aec4": "GESHREXS",
+      "title_c47748ed-f73b-451c-8102-ee92c1322c7f": "Expense note transfer",
+      "description_c47748ed-f73b-451c-8102-ee92c1322c7f": "HRCARRNOF",
+      "title_2d44a9d5-e11e-4315-bd3e-3919b88da081": "Expense posting",
+      "description_2d44a9d5-e11e-4315-bd3e-3919b88da081": "EXSPST",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Profit-sharing",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Parameter definition",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
@@ -32871,8 +32906,7 @@
       "title_1a00a926-f024-4882-a3ba-de099dc4a8d7": "Génération automatique",
       "description_1a00a926-f024-4882-a3ba-de099dc4a8d7": "TRTAUT",
       "title_19bf4ade-3ff4-47e0-926d-6ef32f9ce951": "Préparations de paie",
-      "title_3be84ee6-be36-4b89-8072-1a9bb46bb18f": "Bordereaux de préparation",
-      "description_3be84ee6-be36-4b89-8072-1a9bb46bb18f": "GESPPH",
+      "title_fb4f26eb-49a1-4713-a6f8-243fb6325fca": "Bordereaux de préparation",
       "title_ba7db07f-4fdb-4b84-ba8b-3b74a5bf7269": "Consultation variables prépa.",
       "description_ba7db07f-4fdb-4b84-ba8b-3b74a5bf7269": "CONSPPD",
       "title_a039a67b-f313-4176-a4d5-e7a2117be3ac": "Acceptation en masse",
@@ -33049,6 +33083,8 @@
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "Export UIF",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notes de frais",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Notes de frais",
+      "title_2d44a9d5-e11e-4315-bd3e-3919b88da081": "Comptabilisation des frais",
+      "description_2d44a9d5-e11e-4315-bd3e-3919b88da081": "EXSPST",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Participation - Intéressement",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Paramètres",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
@@ -34371,8 +34407,6 @@
       "title_1a00a926-f024-4882-a3ba-de099dc4a8d7": "Geração automática",
       "description_1a00a926-f024-4882-a3ba-de099dc4a8d7": "TRTAUT",
       "title_19bf4ade-3ff4-47e0-926d-6ef32f9ce951": "Preparações processamento",
-      "title_3be84ee6-be36-4b89-8072-1a9bb46bb18f": "Extrato de preparação",
-      "description_3be84ee6-be36-4b89-8072-1a9bb46bb18f": "GESPPH",
       "title_ba7db07f-4fdb-4b84-ba8b-3b74a5bf7269": "Consulta variável adiant.",
       "description_ba7db07f-4fdb-4b84-ba8b-3b74a5bf7269": "CONSPPD",
       "title_a039a67b-f313-4176-a4d5-e7a2117be3ac": "Aceitação em massa",
@@ -34494,6 +34528,8 @@
       "title_a87d844e-8c7d-4a09-bc6d-3eda55ea4956": "Pénibilité",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Notas de despesa",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Notas de despesa",
+      "title_2d44a9d5-e11e-4315-bd3e-3919b88da081": "Contabilização de desp.",
+      "description_2d44a9d5-e11e-4315-bd3e-3919b88da081": "EXSPST",
       "title_8ed65546-2b3d-4e30-9d15-3a0ebcdd3959": "Participações - Rep. de lucros",
       "title_a5dbfa7b-3015-46e8-8dd8-dcf11fa0605b": "Parâmetros",
       "title_3807944b-eb17-49b6-93da-d6583609f361": "Bases",
