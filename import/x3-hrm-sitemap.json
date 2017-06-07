@@ -16824,6 +16824,81 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRAEH",
+      "title": "title_18d0a936-53f7-49ae-a10b-3ec029f2c0a4",
+      "description": "description_18d0a936-53f7-49ae-a10b-3ec029f2c0a4",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRAEH",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRAET",
+      "title": "title_862e7e3f-d80b-4222-8b5c-95a65650fa66",
+      "description": "description_862e7e3f-d80b-4222-8b5c-95a65650fa66",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRAET",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_755b5687-98e3-4e94-9dd5-4369aa55f947",
+      "code": "STD_X3_HRM_ATEA",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "code": "STD_X3_HRM_GESHRAEH",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_GESHRAET",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a",
       "code": "STD_X3_HRM_PERSO",
@@ -16848,6 +16923,9 @@
         },
         {
           "code": "STD_X3_HRM_LOA"
+        },
+        {
+          "code": "STD_X3_HRM_ATEA"
         }
       ]
     },
@@ -21928,6 +22006,50 @@
       ]
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESAPPLEV",
+      "title": "title_20ed28ad-e05c-4f53-b2a0-7b17efbe65f1",
+      "description": "description_20ed28ad-e05c-4f53-b2a0-7b17efbe65f1",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESAPPLEV",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_f1b254b7-e790-4117-b9c3-491f533ea418",
+      "code": "STD_X3_HRM_UKFUN",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "code": "STD_X3_HRM_GESAPPLEV",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_befbdb20-8082-4267-8b8c-44350f2734b1",
       "code": "STD_X3_HRM_PAY",
@@ -21955,6 +22077,9 @@
         },
         {
           "code": "STD_X3_HRM_PSTA"
+        },
+        {
+          "code": "STD_X3_HRM_UKFUN"
         }
       ]
     },
@@ -30876,7 +31001,7 @@
       "title_9238ec8a-dfc9-47d9-95e9-e4a5c9dac1b1": "Strenuous work",
       "title_57937499-b1dd-4dcd-b050-bfce85de812f": "Extraction",
       "title_b3824cf3-1731-480e-b832-e146bfcc761d": "Exposure records",
-      "title_b6e7ce26-6e8f-4517-88ab-d5fbd3ac0af1": "Annual employee report ",
+      "title_b6e7ce26-6e8f-4517-88ab-d5fbd3ac0af1": "Annual employee report",
       "title_b77dcfab-266a-4944-b385-c77e944226af": "Indicators",
       "description_b77dcfab-266a-4944-b385-c77e944226af": "GESBIN",
       "title_a14a33aa-1095-4fe8-9e4a-df2cedbd8eff": "Extraction",
@@ -30901,6 +31026,11 @@
       "title_f4462b00-9428-40b9-a3b2-6cb8e02c9942": "Loans process",
       "title_d3b96156-6cda-41cd-8227-500e966127a9": "Generate loan installment",
       "description_d3b96156-6cda-41cd-8227-500e966127a9": "Generate loan installment",
+      "title_755b5687-98e3-4e94-9dd5-4369aa55f947": "Attachable earnings",
+      "title_18d0a936-53f7-49ae-a10b-3ec029f2c0a4": "Employee setup",
+      "description_18d0a936-53f7-49ae-a10b-3ec029f2c0a4": "GESHRAEH",
+      "title_862e7e3f-d80b-4222-8b5c-95a65650fa66": "Attachable earnings types",
+      "description_862e7e3f-d80b-4222-8b5c-95a65650fa66": "GESHRAET",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Time management",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parameter definition",
       "title_eb494dd4-8266-4602-8460-53df9d2e0d4f": "Nature of events",
@@ -31212,6 +31342,9 @@
       "title_34a48200-2673-4c74-b1ee-02463404c0fd": "Skills extract",
       "description_34a48200-2673-4c74-b1ee-02463404c0fd": "Skills extract",
       "title_95abc98a-1f11-4ffe-a395-8f10fd67ad2c": "UIF export",
+      "title_f1b254b7-e790-4117-b9c3-491f533ea418": "UK functions",
+      "title_20ed28ad-e05c-4f53-b2a0-7b17efbe65f1": "Apprenticeship levy",
+      "description_20ed28ad-e05c-4f53-b2a0-7b17efbe65f1": "GESAPPLEV",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes  ",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Expense notes  ",
       "title_e496d253-b37e-4574-844b-e29b90d3887f": "Expense codes",
