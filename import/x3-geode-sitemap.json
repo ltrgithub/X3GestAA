@@ -29371,7 +29371,7 @@
     {
       "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/pre-import-sitemap",
       "options": {
-        "homepagesFilter": "(pageName like 'home%')",
+        "homepagesFilter": "($factory eq true) and ($factoryOwner eq 'SAGE')",
         "modulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "submodulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "factoryOwner": "SAGE"
@@ -29382,7 +29382,7 @@
     {
       "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/post-import-sitemap",
       "options": {
-        "homepagesFilter": "(pageName like 'home%')",
+        "homepagesFilter": "($factory eq true) and ($factoryOwner eq 'SAGE')",
         "modulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "submodulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "factoryOwner": "SAGE"
