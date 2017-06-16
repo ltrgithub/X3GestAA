@@ -11163,6 +11163,64 @@
     },
     {
       "$type": "menuItem",
+      "code": "QCOMCOUNT",
+      "title": "title_ee333673-6c00-4d4f-90c4-10808446608a",
+      "description": "description_ee333673-6c00-4d4f-90c4-10808446608a",
+      "linkType": "$request",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "QCOMCNT",
+      "requestLevel": "1",
+      "$factory": false,
+      "$factoryOwner": null,
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_c7113733-13ec-422e-b9cf-3db850b3ca96",
+      "description": "description_c7113733-13ec-422e-b9cf-3db850b3ca96",
+      "useCurrentEndpoint": false,
+      "pageName": "Boarding",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "5233870a-d8e9-4460-a5f6-209943f2f3b0",
+          "vignette": {
+            "code": "QCOMCOUNT"
+          },
+          "endpoint": {
+            "dataset": "PAYREFCLOU"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "7e50f7d7-e18c-406b-9320-931047ad7a90",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@6e8fbc06-8cfe-4e7d-aec8-948362a2e3bd}\",\"$layout\":{\"$items\":[{\"$bind\":\"6cbb6573-a14c-464d-b458-7d0e29b69672\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@b24dca49-126b-410e-bf10-1c7a6ad47721}\",\"$layout\":{\"$items\":[{\"$bind\":\"7d5d4db4-bdd5-4677-8d28-3c8f9e3f190c\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"6d5154ca-c8df-45b8-a9cd-8c5883631569\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"a78f23e6-7eed-46de-9f0a-2c33fa2e66f8\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"5233870a-d8e9-4460-a5f6-209943f2f3b0\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "page": {
+        "pageName": "Boarding",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_PJMOPE11",
       "title": "title_74839699-2337-4451-8674-8f3060883902",
       "description": "description_74839699-2337-4451-8674-8f3060883902",
@@ -13888,6 +13946,12 @@
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@aa8d6171-dd25-4360-a56f-a894eb234426": "New Tab 2",
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3bf6e260-f781-435e-b29d-7422da263c54": "New Tab 1",
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@871022bd-269a-4150-805e-51643621bdfd": "New Tab 1",
+      "title_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
+      "description_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
+      "title_ee333673-6c00-4d4f-90c4-10808446608a": "Employee count",
+      "description_ee333673-6c00-4d4f-90c4-10808446608a": "Employees per company",
+      "pageLayout.7e50f7d7-e18c-406b-9320-931047ad7a90.@6e8fbc06-8cfe-4e7d-aec8-948362a2e3bd": "Process",
+      "pageLayout.7e50f7d7-e18c-406b-9320-931047ad7a90.@b24dca49-126b-410e-bf10-1c7a6ad47721": "Statistics",
       "title_b5ef672f-6a27-4725-b052-4650bdff26f6": "Project manager",
       "description_b5ef672f-6a27-4725-b052-4650bdff26f6": "Project manager",
       "title_74839699-2337-4451-8674-8f3060883902": "Budget progress",
@@ -16703,6 +16767,8 @@
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@aa8d6171-dd25-4360-a56f-a894eb234426": "新页签2",
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@3bf6e260-f781-435e-b29d-7422da263c54": "新页签1",
       "pageLayout.31ec86ac-a227-43b8-b563-f1314a335394.@871022bd-269a-4150-805e-51643621bdfd": "新页签1",
+      "title_ee333673-6c00-4d4f-90c4-10808446608a": "员工数",
+      "description_ee333673-6c00-4d4f-90c4-10808446608a": "每家公司员工数",
       "title_b5ef672f-6a27-4725-b052-4650bdff26f6": "项目经理",
       "description_b5ef672f-6a27-4725-b052-4650bdff26f6": "项目经理",
       "title_74839699-2337-4451-8674-8f3060883902": "预算进度",
