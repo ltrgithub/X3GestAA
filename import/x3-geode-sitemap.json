@@ -24798,8 +24798,8 @@
       "$type": "navigationPage",
       "title": "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340",
       "pageName": "homefa",
-      "$factory": false,
-      "$factoryOwner": null,
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "modules": []
     }
   ],
@@ -29371,7 +29371,7 @@
     {
       "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/pre-import-sitemap",
       "options": {
-        "homepagesFilter": "(pageName like 'home%')",
+        "homepagesFilter": "($factory eq true) and ($factoryOwner eq 'SAGE')",
         "modulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "submodulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "factoryOwner": "SAGE"
@@ -29382,7 +29382,7 @@
     {
       "module": "@sage/syracuse-lib/src/collaboration/advancedScripts/post-import-sitemap",
       "options": {
-        "homepagesFilter": "(pageName like 'home%')",
+        "homepagesFilter": "($factory eq true) and ($factoryOwner eq 'SAGE')",
         "modulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "submodulesFilter": "(application.description eq 'GEODE') and ($factory eq true) and ($factoryOwner eq 'SAGE')",
         "factoryOwner": "SAGE"

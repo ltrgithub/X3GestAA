@@ -16,9 +16,19 @@ node {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sagex3ci', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
             docker.image('node:6').inside {
                 sh ('echo "https://$GIT_USERNAME:$GIT_PASSWORD@github.com" >> ~/.git-credentials && git config --replace-all --global credential.https://github.com/Sage-ERP-X3/Syracuse.git sagex3ci && git config --replace-all --global credential.helper store --file')
-                stage('Build customer image') {
+                stage('Checkout source code') {
                     checkout scm
                     sh ('git submodule update --init')
+                }
+                stage('Security check: retire.js / Node Security Project') {
+                    sh('npm install -g retire')
+                    sh('npm run security:retire-linux || exit 0')
+                    step([$class: 'WarningsPublisher', canComputeNew: false, canResolveRelativePaths: false, consoleParsers: [[parserName: 'Node Security Project Vulnerabilities'], [parserName: 'RetireJS']], failedTotalAll: '0', usePreviousBuildAsReference: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: ''])
+                    if (currentBuild.result == "FAILURE") {
+                        error("Build failed because of security check failure. Please review RetireJS and Node Security Project Logs then fix the isuues or edit the .retireignore.json file to add exceptions.")
+                    }
+                }
+                stage('Build customer image') {
                     sh ('if [ "$(ls -l ${CI_DEST}/syracuse)" ]; then rm -R "${CI_DEST}/syracuse"; fi;')
                     sh ('node apatch direct --image ${CI_DEST}/syracuse --desc "${BRANCH_NAME} build ${BUILD_ID} of $(date +%Y-%m-%d)" --release "${SYRACUSE_RELEASE}.${BUILD_ID}" --no-check --symbols DOCKER')
                 }
