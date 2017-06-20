@@ -339,6 +339,33 @@
 			"type": "$menu"
 		},
 		{
+			"$type": "dashboardDef",
+			"title": "title_938090e7-f520-4630-87a3-cb66479efb23",
+			"description": "description_938090e7-f520-4630-87a3-cb66479efb23",
+			"dashboardName": "EXPENSES",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_b302a85d-8150-48a9-b017-01ff610435c6",
+					"description": "description_b302a85d-8150-48a9-b017-01ff610435c6",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "expenses"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
+		},
+		{
 			"$type": "menuItem",
 			"code": "STD_X3_ERP_PPRICSEARCHM",
 			"title": "title_d4aef320-167b-4702-b22b-1170f16cb090",
@@ -361,6 +388,33 @@
 			"title": "title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e",
 			"description": "description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e",
 			"type": "$menu"
+		},
+		{
+			"$type": "dashboardDef",
+			"title": "title_a6915960-92bf-4173-8891-7c6d9840557d",
+			"description": "description_a6915960-92bf-4173-8891-7c6d9840557d",
+			"dashboardName": "PURCHASES_MYINQUIRIES",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_dfc85a0d-5ee4-461b-99a9-2dd7b61d8a0d",
+					"description": "description_dfc85a0d-5ee4-461b-99a9-2dd7b61d8a0d",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "purchase-prices-search"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
 		},
 		{
 			"$type": "menuItem",
@@ -472,6 +526,33 @@
 			"type": "$menu"
 		},
 		{
+			"$type": "dashboardDef",
+			"title": "title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a",
+			"description": "description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a",
+			"dashboardName": "PURCHASE_MYACTIONS",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_3b0bbaa5-4292-47a7-881d-9b01e9cabb21",
+					"description": "description_3b0bbaa5-4292-47a7-881d-9b01e9cabb21",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "purchase_my_actions"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
+		},
+		{
 			"$type": "menuItem",
 			"code": "BPCUSTOMERM",
 			"title": "title_98e35768-5f99-4a9b-9dab-5ef7019c1684",
@@ -496,6 +577,33 @@
 			"type": "$menu"
 		},
 		{
+			"$type": "dashboardDef",
+			"title": "title_c335f485-8c69-4a5a-b266-2cf6e28bce54",
+			"description": "description_c335f485-8c69-4a5a-b266-2cf6e28bce54",
+			"dashboardName": "SALES_MYCLIENTS",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_312da3d8-ee1d-4a4a-b556-fcf890f4e142",
+					"description": "description_312da3d8-ee1d-4a4a-b556-fcf890f4e142",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "customers"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
+		},
+		{
 			"$type": "menuItem",
 			"code": "STD_X3_ERP_SPRICESEAM",
 			"title": "title_ba2b8e96-323b-460c-b01c-cda50ba13271",
@@ -518,6 +626,33 @@
 			"title": "title_9d0ed06a-56ff-4091-873c-e526881fc6f8",
 			"description": "description_9d0ed06a-56ff-4091-873c-e526881fc6f8",
 			"type": "$menu"
+		},
+		{
+			"$type": "dashboardDef",
+			"title": "title_33da5e15-246a-423c-ad97-ff35124885d3",
+			"description": "description_33da5e15-246a-423c-ad97-ff35124885d3",
+			"dashboardName": "SALES_MYINQUIRIES",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_fb9d1101-1d38-44a7-a982-c99e61444b40",
+					"description": "description_fb9d1101-1d38-44a7-a982-c99e61444b40",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "sales-prices-search"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
 		},
 		{
 			"$type": "menuItem",
@@ -629,6 +764,33 @@
 			"type": "$menu"
 		},
 		{
+			"$type": "dashboardDef",
+			"title": "title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02",
+			"description": "description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02",
+			"dashboardName": "SALES_MYACTIONS",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "DEFAULT",
+					"title": "title_333aea84-c23f-4bc8-8f31-3037a72a544b",
+					"description": "description_333aea84-c23f-4bc8-8f31-3037a72a544b",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "sales_my_actions"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
+		},
+		{
 			"$type": "menuItem",
 			"code": "STD_X3_ ERP_LOCATIONS_CREATION",
 			"title": "title_92aa5b08-7f73-47bc-a67a-2190d932b069",
@@ -702,6 +864,33 @@
 			"title": "title_fc6172f6-d373-4534-8fa9-116eda100189",
 			"description": "description_fc6172f6-d373-4534-8fa9-116eda100189",
 			"type": "$menu"
+		},
+		{
+			"$type": "dashboardDef",
+			"title": "title_34207889-c5f1-418d-9aa7-be838a21165d",
+			"description": "description_34207889-c5f1-418d-9aa7-be838a21165d",
+			"dashboardName": "STD_X3_ERP_PHYSICAL_ASSETS",
+			"variants": [
+				{
+					"$type": "dashboardVariant",
+					"code": "PHYELT",
+					"title": "title_5805802a-d8b8-4c00-af67-cd7f7fe22952",
+					"description": "description_5805802a-d8b8-4c00-af67-cd7f7fe22952",
+					"application": {
+						"application": "x3",
+						"contract": "erp"
+					},
+					"vignettes": [
+						{
+							"$type": "dashboardVignette",
+							"portlet": {
+								"code": "PHYELT_MOBILE"
+							},
+							"endpoint": null
+						}
+					]
+				}
+			]
 		}
 	],
 	"$localization": {
@@ -805,7 +994,7 @@
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Ausgaben anzeigen",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Ausgaben anzeigen",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Einkauf - Meine Anzeigen",
-			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobil - Meine Anzeigen",
+			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobil - Einkaufsanzeigen",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Einkauf - Meine Anzeigen",
 			"description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Mobil - Einkaufsanzeigen",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Preisanzeige",
@@ -854,20 +1043,20 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Unterzeichnet",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Meine offenen Aufträge",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Unterzeichnet",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Anlagen",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Anlagen",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Anlagen",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Anlagen",
+			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Inventargüter",
+			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Inventargüter",
+			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Inventargüter",
+			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Inventargüter",
 			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Inventargüter",
 			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Inventargüter",
 			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Orte erstellen",
 			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Orte anzeigen",
 			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Inventargüter erstellen",
 			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Inventargüter anzeigen",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Anlagen",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Anlagen",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Anlagen",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Anlagen"
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Inventargüter",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Inventargüter",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Inventargüter",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Inventargüter"
 		},
 		"en-gb": {
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Available stock",
@@ -888,7 +1077,11 @@
 			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Physical elements",
 			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Physical elements",
 			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets"
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets",
+			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Physical elements",
+			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Physical elements",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical elements",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical elements"
 		},
 		"en-us": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Available stock",
@@ -974,7 +1167,7 @@
 		},
 		"es-es": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
-			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
+			"description_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Movilidad - Stock disponible",
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Stock disponible",
 			"description_d306d33d-9861-4ad0-bb2e-f0063365354b": "Movilidad - Stock disponible",
 			"title_7e8efef8-7666-461e-98d6-66dd287899af": "Stock disponible",
@@ -990,13 +1183,13 @@
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consultar mis gastos",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consultar mis gastos",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Compras - Mis consultas",
-			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Consultas - Movilidad",
+			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Movilidad - Consultas Compras",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Compras - Mis consultas",
 			"description_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Movilidad - Consultas compras",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consulta tarifas",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consulta tarifas de compra",
 			"title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Compras - Mis acciones",
-			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Mobilidad - Acciones de firma compras",
+			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Movilidad - Acciones de firma compras",
 			"title_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Compras - Mis acciones",
 			"description_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Movilidad - Acciones de firma compras",
 			"title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Solicitudes de compra",
@@ -1018,13 +1211,13 @@
 			"title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Clientes",
 			"description_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Clientes",
 			"title_33da5e15-246a-423c-ad97-ff35124885d3": "Ventas - Mis consultas",
-			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Consultas - Movilidad",
+			"description_33da5e15-246a-423c-ad97-ff35124885d3": "Movilidad - Consultas ventas",
 			"title_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Ventas - Mis consultas",
 			"description_9d0ed06a-56ff-4091-873c-e526881fc6f8": "Movilidad - Consultas ventas",
 			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas",
 			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Consulta tarifas venta",
 			"title_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Ventas - Mis acciones",
-			"description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Acciones de firma ventas en movilidad",
+			"description_9d33e28f-93cb-4eee-a3ac-5c7e2c370d02": "Movilidad - Acciones de firma ventas",
 			"title_72d5f477-16a0-46de-b662-af2c98e11ee5": "Ventas - Mis acciones",
 			"description_72d5f477-16a0-46de-b662-af2c98e11ee5": "Movilidad - Acciones de firma ventas",
 			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Presupuestos",
@@ -1160,7 +1353,7 @@
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consultazione listini",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consultazione listini d'acquisto",
 			"title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Acquisti - Mie azioni",
-			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Azioni di firma acquisti en mobilità",
+			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Mobilità - Azioni di firma acquisti",
 			"title_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Acquisti - Mie azioni",
 			"description_96fd3df3-a39a-4609-ba87-5f074dd60a88": "Mobilità - Azioni di firma acquisti",
 			"title_76c9652a-d39a-4391-ba28-df4c9abc0714": "Richieste d'acquisto",
@@ -1208,7 +1401,15 @@
 			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Crea localizzazioni",
 			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Vedi localizzaz.",
 			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Crea elementi fisici",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Vedi elementi fisici"
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Vedi elementi fisici",
+			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Elementi fisici",
+			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Elementi fisici",
+			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Beni fisici",
+			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Beni fisici",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Beni fisici",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Beni fisici",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Beni fisici",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Beni fisici"
 		},
 		"pl-pl": {
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Zapas dostępny",
@@ -1227,7 +1428,11 @@
 			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Oferty",
 			"title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Kontrakty sprzdażowe",
 			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne"
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne",
+			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Elementy fizyczne",
+			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Elementy fizyczne",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Elementy fizyczne",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Elementy fizyczne"
 		},
 		"pt-pt": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponível",
