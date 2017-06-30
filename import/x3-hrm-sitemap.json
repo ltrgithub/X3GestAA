@@ -356,6 +356,26 @@
   },
   "$items": [
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_ESS_HOME",
+      "title": "title_965c4eba-3274-4cde-8974-feac682e4cd1",
+      "description": "description_965c4eba-3274-4cde-8974-feac682e4cd1",
+      "linkType": "$external",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "externalUrl": "http://aws-syrindambas.sagefr.adinternal.com:8124/syracuse-main/html/main.html?url=?representation=home.$landing",
+      "target": "self",
+      "requestLevel": "1",
+      "application": null,
+      "endpoint": null,
+      "representationRef": null,
+      "module": null,
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_b4018244-2b61-49fd-a892-c5012f10e662",
       "code": "STD_X3_HRM_SITE",
@@ -365,7 +385,12 @@
         "application": "x3",
         "contract": "hrm"
       },
-      "items": []
+      "items": [
+        {
+          "code": "STD_ESS_HOME",
+          "$variantType": "menuItem"
+        }
+      ]
     },
     {
       "$type": "menuModule",
@@ -28489,6 +28514,8 @@
       "title_f9daedd5-fd98-4461-b309-2b9bf796360a": "Administration dashboard",
       "title_1548b05d-b8f5-4284-8d66-d9df5ee3d619": "Sage X3 People Sites",
       "title_b4018244-2b61-49fd-a892-c5012f10e662": "Sites",
+      "title_965c4eba-3274-4cde-8974-feac682e4cd1": "Employee Self Service",
+      "description_965c4eba-3274-4cde-8974-feac682e4cd1": "Employee Self Service",
       "title_4492769b-c64c-4c93-b481-952138788b42": "Development",
       "title_82cdb4ce-df1e-47f6-9365-2ea063b18c9e": "Data and parameters",
       "title_8fb53983-5c2f-429a-b741-62dc9f85eafc": "Tables",
