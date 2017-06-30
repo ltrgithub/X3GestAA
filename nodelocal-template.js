@@ -216,7 +216,13 @@ exports.config = {
 			server: {},
 			replSet: {},
 			mongos: {}
-        }
+        },
+		logger: { // logger options, see driver documentation
+//			level: "error",
+//			filter: {
+//				class: ["ReplSet"]
+//			}
+		}
     },
 	session: {
 		// interactive session timeout (minutes).
