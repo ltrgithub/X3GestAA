@@ -24,6 +24,13 @@
         "description"
       ]
     },
+    "navigationPage": {
+      "$key": "pageName",
+      "$localized": [
+        "description",
+        "title"
+      ]
+    },
     "role": {
       "$key": "code",
       "$localized": [
@@ -34,16 +41,59 @@
       },
       "securityProfile": {
         "$key": "code"
+      },
+      "navigationPage": {
+        "$key": "pageName"
       }
     }
   },
   "$items": [
     {
       "$type": "badge",
+      "code": "HRMFULL",
+      "title": "title_168db24d-b471-4ab5-9df9-806911b936fa",
+      "keyFunction": "APATCHP,CARRNOF,CONSMAS,CONSMES,CONSSBF,EXSPST,FRMVAL,GENPLAN,GESCEV,GESDPI,GESECP,GESEVA,GESFRM,GESINS,GESMCH,GESPLF,GESVEP,INSTPORTAL,PRHDCG,RECCPC,RECPRF,TRTCAL",
+      "keyFunction2": "APATCHP, CARRNOF, CONSMAS, CONSMES, CONSSBF, EXSPST, FRMVAL, GENPLAN, GESCEV, GESDPI, GESECP, GESEVA, GESFRM, GESINS, GESMCH, GESPLF, GESVEP, INSTPORTAL, PRHDCG, RECCPC, RECPRF, TRTCAL",
+      "noCheck": false,
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "badge",
       "code": "FAFULL",
       "title": "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c",
       "keyFunction": "",
       "keyFunction2": "",
+      "noCheck": false,
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "badge",
+      "code": "HRMSS",
+      "title": "title_32eb6beb-4d1a-4ffc-abed-df37c5064209",
+      "keyFunction": "APATCHP,CARRNOF,CONSMAS,CONSMES,CONSSBF,EXSPST,FRMVAL,GENPLAN,GESCEV,GESDPI,GESECP,GESEVA,GESFRM,GESINS,GESMCH,GESPLF,GESVEP,INSTPORTAL,PRHDCG,RECCPC,RECPRF,TRTCAL",
+      "keyFunction2": "APATCHP, CARRNOF, CONSMAS, CONSMES, CONSSBF, EXSPST, FRMVAL, GENPLAN, GESCEV, GESDPI, GESECP, GESEVA, GESFRM, GESINS, GESMCH, GESPLF, GESVEP, INSTPORTAL, PRHDCG, RECCPC, RECPRF, TRTCAL",
+      "noCheck": false,
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "badge",
+      "code": "HRMHR",
+      "title": "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7",
+      "keyFunction": "CONSSBF,GESCEV,GESECP,GESEVA,GESINS,GESPLF,RECCPC,RECPRF",
+      "keyFunction2": "CONSSBF, GESCEV, GESECP, GESEVA, GESINS, GESPLF, RECCPC, RECPRF",
+      "noCheck": false,
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "badge",
+      "code": "HRMDEV",
+      "title": "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4",
+      "keyFunction": "APATCH,APATCHA,APATCHP,CARRNOF,CONSMAS,CONSMES,CONSSBF,EXSPST,FRMVAL,GENPLAN,GESACLA,GESACTX,GESAFC,GESAMK,GESAOB,GESARP,GESASU,GESASW,GESATB,GESATY,GESAWI,GESCEV,GESDPI,GESECP,GESEVA,GESFRM,GESINS,GESMCH,GESPLF,GESVEP,INSTPORTAL,PRHDCG,RECCPC,RECPRF,TRTCAL",
+      "keyFunction2": "APATCH, APATCHA, APATCHP, CARRNOF, CONSMAS, CONSMES, CONSSBF, EXSPST, FRMVAL, GENPLAN, GESACLA, GESACTX, GESAFC, GESAMK, GESAOB, GESARP, GESASU, GESASW, GESATB, GESATY, GESAWI, GESCEV, GESDPI, GESECP, GESEVA, GESFRM, GESINS, GESMCH, GESPLF, GESVEP, INSTPORTAL, PRHDCG, RECCPC, RECPRF, TRTCAL",
       "noCheck": false,
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -104,6 +154,16 @@
       "title": "title_9ab4d64f-5814-4d91-8c5c-796267beb686",
       "keyFunction": "BUDAPP,CPTQUIT,FIYEND,FUNPIH,GESBIC,GESBIS,GESENV,GESEXS,GESFAS,GESGAS,GESLOF,GESPAY,GESPIH,GESPSH,LETTRAGE,LETTRAUTO,PAYPROPAL,RELBANK",
       "keyFunction2": "BUDAPP, CPTQUIT, FIYEND, FUNPIH, GESBIC, GESBIS, GESENV, GESEXS, GESFAS, GESGAS, GESLOF, GESPAY, GESPIH, GESPSH, LETTRAGE, LETTRAUTO, PAYPROPAL, RELBANK",
+      "noCheck": false,
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
+      "$type": "badge",
+      "code": "HRMPAY",
+      "title": "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35",
+      "keyFunction": "APATCHP,CARRNOF,CONSMAS,CONSMES,EXSPST,FRMVAL,GENPLAN,GESFRM,GESMCH,GESVEP,TRTCAL",
+      "keyFunction2": "APATCHP, CARRNOF, CONSMAS, CONSMES, EXSPST, FRMVAL, GENPLAN, GESFRM, GESMCH, GESVEP, TRTCAL",
       "noCheck": false,
       "$factory": true,
       "$factoryOwner": "SAGE"
@@ -523,6 +583,13 @@
       "$factoryOwner": "SAGE"
     },
     {
+      "$type": "navigationPage",
+      "pageName": "homefa",
+      "title": "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340",
+      "$factory": true,
+      "$factoryOwner": "SAGE"
+    },
+    {
       "$type": "role",
       "code": "ADMCA",
       "description": "description_a6177143-7366-4740-a10a-8b6f9eeb746b",
@@ -541,6 +608,7 @@
         "HRMDEV"
       ],
       "securityProfile": "ADMIN",
+      "navigationPage": "home",
       "$factory": true,
       "$factoryOwner": "SAGE"
     },
@@ -755,6 +823,7 @@
         "FAFULL"
       ],
       "securityProfile": "User",
+      "navigationPage": "homefa",
       "$factory": true,
       "$factoryOwner": "SAGE"
     },
@@ -766,6 +835,7 @@
         "FADEV"
       ],
       "securityProfile": "AdminX3",
+      "navigationPage": "homefa",
       "$factory": true,
       "$factoryOwner": "SAGE"
     },
@@ -777,6 +847,7 @@
         "HRMFULL"
       ],
       "securityProfile": "ADMIN",
+      "navigationPage": "home",
       "$factory": true,
       "$factoryOwner": "SAGE"
     },
@@ -966,6 +1037,7 @@
         "HRMPAY"
       ],
       "securityProfile": "User",
+      "navigationPage": "home",
       "$factory": true,
       "$factoryOwner": "SAGE"
     },
@@ -986,13 +1058,18 @@
   ],
   "$localization": {
     "ar-sa": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "مستخدم كامل",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Full User",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Operation User-Manufacturing",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "المطوّر",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Operation User-Distribution",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Transactional User",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Operation User-Finance",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Developer",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "شخصية أمن المدير",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "شخصية المستخدم",
@@ -1038,6 +1115,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "استيراد البيانات",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "تصدير البيانات",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "أدوات التطوير",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "مدير الزبون",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1081,13 +1159,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "المدير الأعظم"
     },
     "de-de": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Benutzer Vollzugriff",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Benutzer Vollzugriff",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Benutzer Fertigung",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Entwickler",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Benutzer Distribution",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Benutzer Transaktionen",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Benutzer Finanzen",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Entwickler",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Sicherheitsprofil Administrator",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Persönliches Benutzerprofil",
@@ -1133,6 +1216,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Datenimport",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Datenexport",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Entwicklungswerkzeuge",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Kundenadministrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1176,13 +1260,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super-Administrator"
     },
     "en-gb": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Full User",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Full User",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Operation User-Manufacturing",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Developer",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Operation User-Distribution",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Transactional User",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Operation User-Finance",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Developer",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
@@ -1228,6 +1317,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Import data",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Export data",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Development tools",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Customer administrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1271,13 +1361,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrator"
     },
     "en-us": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Full User",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Full User",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Operation User-Manufacturing",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Developer",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Operation User-Distribution",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Transactional User",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Operation User-Finance",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Developer",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
@@ -1323,6 +1418,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Import data",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Export data",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Development tools",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Customer administrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developer",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1366,13 +1462,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrator"
     },
     "es-es": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Usuario completo",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Usuario completo",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Usuario Op.-Producción",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Desarrollador",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Usuario Op.-Distribución",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Usuario Transaccional",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Usuario Op.-Finanzas",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Desarrollador",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Perfil seguridad administrador",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Perfil usuario personal",
@@ -1418,6 +1519,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Datos import",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Datos export",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Herramientas de desarrollo",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Administrador cliente",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1461,13 +1563,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrador"
     },
     "fr-fr": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Utilisateur Plein",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Utilisateur Complet",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Utilisateur Op.-Self service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Utilisateur Op.-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Développeur",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Utilisateur Complet",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Utilisateur Op.-Production",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Développeur",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Utilisateur Op.-Distribution",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Utilisateur Transactionnel",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utilisateur Op.-Finance",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Utilisateur Op.-Paie",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Développeur",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Profil sécurité administrateur",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Profil utilisateur personnel",
@@ -1513,6 +1620,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Importer les données",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Exporter les données",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Outils de développement",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Customer administrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1556,13 +1664,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrateur"
     },
     "it-it": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": " Utente full",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Utente full",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Utente applicativo Produzione",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Sviluppatore",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Utente applicat.Distribution",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Utente operativo",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utente applicativo Finance",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Sviluppatore",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
@@ -1608,6 +1721,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Import data",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Export data",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Strumenti di sviluppo",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Customer administrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1651,13 +1765,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrator"
     },
     "pl-pl": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Użytkownik pełny",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Użytkownik pełny",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Uż.operacyjny-produkcja",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Deweloper",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Uż.operacyjny-dystrybucja",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Użytkownik okazjonalny",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Uż.operacyjny-finanse",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Deweloper",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
@@ -1703,6 +1822,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Import data",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Export data",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Narzędzia programistyczne",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Customer administrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1746,13 +1866,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrator"
     },
     "pt-pt": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Utilizador completo",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Utilizador total",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Utilizador Oper.-Sel Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Utilizador Oper.-Rec.Humanos",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Programador",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Utilizador total",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Utilizador-Produção",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Programador",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Utilizador-Distribuição",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Utilizador transacional",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Utilizador-Finanças",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Utilizador oper.-Salários",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Programador",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Perfil administrador segurança",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Perfil utilizador pessoal",
@@ -1798,6 +1923,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Importar dados",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Exportar dados",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Ferramentas de desenvolvimento",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Administrador cliente",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1841,13 +1967,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrator"
     },
     "ru-ru": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "Full user",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "Пользователь с полным доступом",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "Employee Self Service",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "Operation User-HR",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "Developer",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "Пользовательсполнымдоступом",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "Исполнитель-производство",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "Developer",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "Исполнитель-дистрибуция",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "Управляющийтранзакциями",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "Исполнитель-финансы",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "Operation User-Payroll",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "Разработчик",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "Administrator security profile",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "Personal user profile",
@@ -1893,6 +2024,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "Import data",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "Export data",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "Средства разработки",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "Fixed assets navigation page",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "Customer administrator",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",
@@ -1936,13 +2068,18 @@
       "description_5491d848-54b4-43f8-a7e5-d52899314112": "Super administrator"
     },
     "zh-cn": {
+      "title_168db24d-b471-4ab5-9df9-806911b936fa": "完整用户",
       "title_30179167-34cc-4bcc-b53c-c5f7a9522d9c": "完整用户",
+      "title_32eb6beb-4d1a-4ffc-abed-df37c5064209": "操作用户-自助服务",
+      "title_41ad24ae-f1a9-46ea-ba5d-d8a918773ac7": "操作用户-人力资源",
+      "title_4a3eb8b2-ae5a-467a-8260-0067ef9447a4": "开发人员",
       "title_4ba25685-abcb-4186-baf3-341ff6165408": "完整用户",
       "title_6d5f8edf-356f-4190-8d1c-82429aa3c805": "操作用户-生产模块",
       "title_71858aff-4ecf-4034-b366-a9037a802d02": "开发人员",
       "title_7f61c80b-60be-4a43-8175-f9f739508b08": "操作用户-分销模块",
       "title_99f8ad5a-44ad-4ff5-8b9b-8534a728ffba": "交易处理用户",
       "title_9ab4d64f-5814-4d91-8c5c-796267beb686": "操作用户-财务模块",
+      "title_a0f8ecca-d561-4921-8cd1-e04fd72d6b35": "操作用户-薪资",
       "title_d6e78701-4a0b-4ca4-a5e6-1514efadfd88": "开发人员",
       "description_4b2771fa-6eb1-499d-9718-631f7db54b2b": "系统管理员安全策略",
       "description_92d76531-f2b7-4d0d-98c9-1eef93224c56": "个人用户策略",
@@ -1988,6 +2125,7 @@
       "description_1d1a8c93-53c2-4ca5-9335-237ee1a8a069": "导入数据",
       "description_602ae92e-1652-4a42-8205-ee80faddb1c8": "导出数据",
       "description_95fc4205-9955-41e0-9586-98c060c2e7ae": "开发工具",
+      "title_4ca1a7c5-8e0f-47a2-93d0-b3f321998340": "固定资产导航页面",
       "description_a6177143-7366-4740-a10a-8b6f9eeb746b": "客户管理员",
       "description_dfbfc731-b7f5-4bb2-b6c5-dd80ad33fe18": "Developpeur",
       "description_7e6964a5-7d2a-47f7-9d24-95c07e60dbad": "ERP-APACCMAN",

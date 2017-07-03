@@ -36,6 +36,23 @@
 	"$items": [
 		{
 			"$type": "menuItem",
+			"code": "STD_X3_GEODE_AVOLUME",
+			"title": "title_726c270d-9434-4b44-a263-4ac527592994",
+			"description": "description_726c270d-9434-4b44-a263-4ac527592994",
+			"linkType": "$representation",
+			"facet": "$query",
+			"application": {
+				"application": "x3",
+				"contract": "geode"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "AVOLUME",
+				"representation": "AVOLUME"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "STD_X3_GEODE_ITMCLTFIF",
 			"title": "title_125e6ef2-88e6-4760-997f-31ed8c525b6b",
 			"description": "description_125e6ef2-88e6-4760-997f-31ed8c525b6b",
@@ -67,23 +84,6 @@
 				"entity": "ITMDVRFIF",
 				"representation": "ITMDVRFIF"
 			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_GEODE_AVOLUME",
-			"title": "title_726c270d-9434-4b44-a263-4ac527592994",
-			"description": "description_726c270d-9434-4b44-a263-4ac527592994",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "geode"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "AVOLUME",
-				"representation": "AVOLUME"
-			}
 		}
 	],
 	"$localization": {
@@ -97,10 +97,10 @@
 		"en-us": {
 			"title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
 			"title_125e6ef2-88e6-4760-997f-31ed8c525b6b": "FIFO Sequentiality management",
-			"description_125e6ef2-88e6-4760-997f-31ed8c525b6b": "ITMCLTFIF",
 			"title_9267155f-88c8-4107-a8b1-9f96e5541deb": "Date Return follow-up",
-			"description_9267155f-88c8-4107-a8b1-9f96e5541deb": "ITMDVRFIF",
-			"description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME"
+			"description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME",
+			"description_125e6ef2-88e6-4760-997f-31ed8c525b6b": "ITMCLTFIF",
+			"description_9267155f-88c8-4107-a8b1-9f96e5541deb": "ITMDVRFIF"
 		},
 		"es-es": {
 			"title_726c270d-9434-4b44-a263-4ac527592994": "Espacio de almacenamiento X3",
@@ -108,12 +108,12 @@
 			"title_9267155f-88c8-4107-a8b1-9f96e5541deb": "Seguimiento de vuelta a una fecha"
 		},
 		"fr-fr": {
+			"title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
+			"description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME",
 			"title_125e6ef2-88e6-4760-997f-31ed8c525b6b": "Gestion séquentialité FIFO",
 			"description_125e6ef2-88e6-4760-997f-31ed8c525b6b": "ITMCLTFIF",
 			"title_9267155f-88c8-4107-a8b1-9f96e5541deb": "Suivi retour de date",
-			"description_9267155f-88c8-4107-a8b1-9f96e5541deb": "ITMDVRFIF",
-			"title_726c270d-9434-4b44-a263-4ac527592994": "Espace de stockage X3",
-			"description_726c270d-9434-4b44-a263-4ac527592994": "AVOLUME"
+			"description_9267155f-88c8-4107-a8b1-9f96e5541deb": "ITMDVRFIF"
 		},
 		"it-it": {},
 		"pl-pl": {},
