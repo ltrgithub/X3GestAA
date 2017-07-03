@@ -218,7 +218,17 @@ exports.config = {
 			mongos: {}
         },
 		logger: { // logger options, see driver documentation
-//			level: "error",
+			// Possible values for classes to filter are:
+			// - Db: The Db instance log statements
+			// - Server: A server instance (either standalone, a mongos or replicaset member)
+			// - ReplSet: Replicaset related log statements
+			// - Mongos: Mongos related log statements
+			// - Cursor: Cursor log statements
+			// - Pool: Connection Pool specific log statements
+			// - Connection: Singular connection specific log statements
+			// - Ping: Replicaset ping inquiry log statements
+
+//			level: "error", // "info" or "error" or "debug"
 //			filter: {
 //				class: ["ReplSet"]
 //			}
