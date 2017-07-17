@@ -3,7 +3,7 @@
 node {
     withEnv(["CI_DEST=${WORKSPACE}/tmp/customer_image", "SYRACUSE_IMAGE=x3-syracuse-etna"]) {
         env.SYRACUSE_RELEASE = 'stage'
-        def tag = 'test_10138'
+        def tag
         if("${BRANCH_NAME}" == 'integration') {
             tag = 'latest'
             env.SYRACUSE_RELEASE = '2.999'
