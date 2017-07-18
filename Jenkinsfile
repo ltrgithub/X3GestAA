@@ -23,10 +23,10 @@ node {
                 stage('Security check: retire.js / Node Security Project') {
                     sh('npm install -g retire')
                     sh('npm run security:retire-linux || exit 0')
-                    step([$class: 'WarningsPublisher', canComputeNew: false, canResolveRelativePaths: false, consoleParsers: [[parserName: 'Node Security Project Vulnerabilities'], [parserName: 'RetireJS']], failedTotalAll: '0', usePreviousBuildAsReference: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: ''])
-                    /* if (currentBuild.result == "FAILURE") {
+                    step([$class: 'WarningsPublisher', canComputeNew: false, canResolveRelativePaths: false, consoleParsers: [[parserName: 'Node Security Project Vulnerabilities'], [parserName: 'RetireJS']], failedTotalAll: '1000', usePreviousBuildAsReference: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: ''])
+                    if (currentBuild.result == "FAILURE") {
                         error("Build failed because of security check failure. Please review RetireJS and Node Security Project Logs then fix the isuues or edit the .retireignore.json file to add exceptions.")
-                    }*/
+                    }
                 }
                 stage('Build customer image') {
                     sh ('if [ "$(ls -l ${CI_DEST}/syracuse)" ]; then rm -R "${CI_DEST}/syracuse"; fi;')
