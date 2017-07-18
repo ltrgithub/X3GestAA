@@ -10361,6 +10361,89 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_HRM_DEMMGRESS",
+      "title": "title_685de6b9-4b11-4179-af57-87c1046671e1",
+      "description": "description_685de6b9-4b11-4179-af57-87c1046671e1",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "DEMCONGEESS",
+        "representation": "DEMMGRESS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_EXPMGRESS",
+      "title": "title_465d6939-dbdc-415d-9bd3-ce87a428f7dc",
+      "description": "description_465d6939-dbdc-415d-9bd3-ce87a428f7dc",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$create",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "EXPENSESESS",
+        "representation": "EXPMGRESS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_efc7b395-f9ad-4fe5-b199-79fcd2dea36b",
+      "description": "description_efc7b395-f9ad-4fe5-b199-79fcd2dea36b",
+      "useCurrentEndpoint": true,
+      "pageName": "STD_X3_HRM_MGRESS",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "Developers"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "2b78bded-ef47-48a9-a516-744fd3e14c75",
+          "vignette": {
+            "code": "STD_X3_HRM_DEMMGRESS"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "951f68cd-5d3d-4170-a25d-32bbdb642a02",
+          "vignette": {
+            "code": "STD_X3_HRM_EXPMGRESS"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_HRM_PROC_ONBOARD",
       "title": "title_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a",
       "description": "description_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a",
@@ -12112,6 +12195,12 @@
       "pageLayout.d1b18d5e-2798-4fd3-8168-655e123d918c.@c24c4e35-4e3a-401a-a575-aa15bd134d78": "Process Setup",
       "pageLayout.d1b18d5e-2798-4fd3-8168-655e123d918c.@b1c55c18-5338-46a7-b947-b16e837d7b03": "Process Employee",
       "pageLayout.d1b18d5e-2798-4fd3-8168-655e123d918c.@7d8280b1-d495-4d4f-92f5-6508f8cb5256": "Statistics",
+      "title_efc7b395-f9ad-4fe5-b199-79fcd2dea36b": "Manager self service",
+      "description_efc7b395-f9ad-4fe5-b199-79fcd2dea36b": "Manager self service",
+      "title_685de6b9-4b11-4179-af57-87c1046671e1": "Leave impersonations",
+      "description_685de6b9-4b11-4179-af57-87c1046671e1": "Leave impersonations",
+      "title_465d6939-dbdc-415d-9bd3-ce87a428f7dc": "Expenses impersonation",
+      "description_465d6939-dbdc-415d-9bd3-ce87a428f7dc": "Expenses impersonation",
       "title_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
       "description_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
       "title_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a": "On-Boarding",
