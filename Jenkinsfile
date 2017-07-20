@@ -73,7 +73,18 @@ node {
             stage('Run UI tests and code coverage report') {
                 docker.image('node:6').inside {
                     sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run test')
-                    step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'junit/junit.xml']]])
+                    step([  $class: 'XUnitBuilder', 
+                            thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], 
+                            tools: [[$class: 'JUnitType', pattern: 'junit/junit.xml']]
+                    ])
+                            
+                    step([  $class: 'CloverPublisher', 
+                            cloverReportDir: 'coverage',
+                            cloverReportFileName: 'clover.xml',
+                            healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80],
+                            unhealthyTarget: [methodCoverage: 50, conditionalCoverage: 50, statementCoverage: 50],
+                            failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
+                    ])
                 }
             }            
             if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
