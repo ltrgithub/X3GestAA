@@ -1,5 +1,20 @@
 {
 	"$prototypes": {
+		"proxyConfiguration": {
+			"$key": "name",
+			"excludes": {
+				"$key": "host"
+			}
+		},
+		"proxyConfigurationExclude": {
+			"$key": "host"
+		},		
+		"setting": {
+			"$key": "code",
+			"proxyConf": {
+				"$key": "name"
+			}
+		},
 		"user": {
 			"$key": "login",
 			"groups": {
@@ -70,6 +85,23 @@
 		}
 	},
 	"$items": [
+		{
+			"$type": "proxyConfiguration",
+			"name": "SAGE",
+			"host": "proxy971.scansafe.net",
+			"port": 8080,
+			"excludes": [
+				{
+					"host": "x3_elasticsearch"
+				}
+			]
+		},
+		{
+			"$type": "setting",
+			"code": "settings",
+			"proxy": true,
+			"proxyConf": "SAGE"
+		},
 		{
 			"$type": "x3solution",
 			"code": "REPOSX3",

@@ -4,7 +4,7 @@ using System.Net;
 
 namespace CommonDataHelper
 {
-    public delegate void ConnectionProgressDialogShow (bool show);
+    public delegate void ConnectionProgressDialogShow(bool show);
 
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class ConnectionDialog : Form
@@ -61,7 +61,8 @@ namespace CommonDataHelper
                 }
                 catch (WebException ex)
                 {
-                    if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                    HttpWebResponse httpResp = ex.Response as HttpWebResponse;
+                    if (httpResp != null && httpResp.StatusCode == HttpStatusCode.Unauthorized)
                     {
                         _connected = false;
                     }
@@ -110,7 +111,7 @@ namespace CommonDataHelper
                     if (String.IsNullOrEmpty(response.Headers["Location"]) == false)
                     {
                         String location = response.Headers["Location"];
-                        
+
                         webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(documentCompleted);
 
                         if (_externalRedirect || location.StartsWith(_loginPart))
@@ -179,7 +180,8 @@ namespace CommonDataHelper
             }
             catch (WebException ex)
             {
-                if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                HttpWebResponse httpResp = ex.Response as HttpWebResponse;
+                if (httpResp != null && httpResp.StatusCode == HttpStatusCode.Unauthorized)
                 {
                     /*
                      * We will get here when accessing an old-style Syracuse server.
@@ -263,7 +265,8 @@ namespace CommonDataHelper
             }
             catch (WebException ex)
             {
-                if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                HttpWebResponse httpResp = ex.Response as HttpWebResponse;
+                if (httpResp != null && httpResp.StatusCode == HttpStatusCode.Unauthorized)
                 {
                     /*
                      * We will get here when accessing an old-style Syracuse server.

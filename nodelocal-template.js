@@ -19,10 +19,12 @@ exports.config = {
 	 */
 	adminUserRestrict: false,
 	hosting: {
-		// multiTenant should be set to true when hosted in Cloud.
+		// multiTenant should be set to true when hosted in Cloud V1 (not MINDO)
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
 		// the mongodb database names and the elastic search index names.
 		multiTenant: false,
+		// When this option is set, we know we are on a cloud platform
+		/* cloudPlatform: "mindo", */
 		// https indicates if the public URLs must all be https URLs.
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.
@@ -216,7 +218,23 @@ exports.config = {
 			server: {},
 			replSet: {},
 			mongos: {}
-        }
+        },
+		logger: { // logger options, see driver documentation
+			// Possible values for classes to filter are:
+			// - Db: The Db instance log statements
+			// - Server: A server instance (either standalone, a mongos or replicaset member)
+			// - ReplSet: Replicaset related log statements
+			// - Mongos: Mongos related log statements
+			// - Cursor: Cursor log statements
+			// - Pool: Connection Pool specific log statements
+			// - Connection: Singular connection specific log statements
+			// - Ping: Replicaset ping inquiry log statements
+
+//			level: "error", // "info" or "error" or "debug"
+//			filter: {
+//				class: ["ReplSet"]
+//			}
+		}
     },
 	session: {
 		// interactive session timeout (minutes).
@@ -231,8 +249,10 @@ exports.config = {
 		checkInterval: 60,
 		// ?
 		//		ignoreStoreSession: true,
-		// authentication modes
+		// authentication modes : available for interactive connection
 		"auth": "basic",
+		// allow other authenticationfor service mode; interactive form is hidden (but not forbidden) 
+		// "serviceAuth": "basic"
 	},
 	streamline: {
 		// "homedrive": "c:", // running node as service

@@ -17,7 +17,7 @@ function mkdirp(path) {
 }
 
 function writeFile(path, text) {
-	if (verbose) console.log('creating ' + path);
+	if (verbose) console.log('Creating ' + path);
 	fs.writeFileSync(path, text, 'utf8');
 }
 
@@ -30,7 +30,9 @@ function copyFile(src) {
 function compileFile(fname) {
 	var srcPath = fsp.join(__dirname, fname);
 	var dstPath = fsp.join(__dirname, target, fname);
-	var needsTransform = /\.(_js|ts)$/.test(srcPath) && !/shadow-modules/.test(srcPath);
+	var needsTransform = (/node_modules(\/|\\)(@sage|syracuse-).*\.(js|_js|ts)$/.test(srcPath) && 
+		!/node_modules(\/|\\)@sage.*node_modules/.test(srcPath)) || (/\.(js|_js|ts)$/.test(srcPath) && 
+		(!/shadow-modules/.test(srcPath) || /(streamline-require)/.test(srcPath)));
 	if (needsTransform) dstPath = dstPath.replace(/\.(_js|ts)$/, '.js');
 	try {
 		var dstStat = fs.lstatSync(dstPath);
@@ -45,6 +47,7 @@ function compileFile(fname) {
 	var source = fs.readFileSync(srcPath, 'utf8');
 	var transformed = {};
 	if (needsTransform) { // && !/[\///](shadow-modules|\.bin)[\///]/.test(srcPath)) {
+		if (verbose) console.log("Transforming", srcPath);
 		transformed = transformJs(srcPath, {
 			babel: { compact: false },
 		});
@@ -59,7 +62,7 @@ function compileFile(fname) {
 function compileDir(dir) {
 	fs.readdirSync(fsp.join(__dirname, dir)).forEach(function(sub) {
 		// ignore some directories
-		if (/^(lint|codecheck|html|syracuse-ui|deps|js-beautify|tedious|qunit|autoUI)$/.test(sub)) return;
+		if (/^(lint|codecheck|html|syracuse-ui|deps|js-beautify|tedious|qunit|autoUI|node_modules|tools)$/.test(sub)) return;
 		var fname = fsp.join(dir, sub);
 		if (fs.lstatSync(fsp.join(__dirname, fname)).isDirectory()) {
 			compileDir(fname);
@@ -69,6 +72,19 @@ function compileDir(dir) {
 				|| /(^(import|shadow-modules)[\///])/.test(fname))) {
 			mkdirp(fsp.join(__dirname, target, dir));
 			compileFile(fname);
+		} else copyFile(fname);
+	})
+}
+
+function copyDir(dir) {
+	fs.readdirSync(fsp.join(__dirname, dir)).forEach(function(sub) {
+		// ignore some directories
+		var fname = fsp.join(dir, sub);
+		if (fs.lstatSync(fsp.join(__dirname, fname)).isDirectory()) {
+			copyDir(fname);
+		} else {
+			mkdirp(fsp.join(__dirname, target, dir));
+			copyFile(fname);
 		}
 	})
 }
@@ -76,11 +92,14 @@ function compileDir(dir) {
 var os = require('os');
 
 var shadowDir = 'shadow-modules/' + os.platform() + '-' + os.arch() + '-v8-' + /[0-9]+\.[0-9]+/.exec(process.versions.v8)[0];
-compileDir(shadowDir);
+copyDir(shadowDir);
+compileDir(shadowDir + "/node_modules/streamline-require");
 compileDir('node_modules');
 compileDir('import');
 compileFile('nodelocal.js');
 // we don't copy the html directories but we need this one for the cookie request
 copyFile('node_modules/syracuse-main/html/main.html');
+copyDir("devLic");
+copyDir("node_modules/test-contract/test-fixtures");
 
 process.exit(0);

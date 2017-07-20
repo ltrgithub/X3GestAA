@@ -13,6 +13,9 @@
   },
   "scripts": {
   	"test": "mocha --opts mocha.opts test/orm/server",
-  	"test:coverage": "node build-coverage-tree && pushd ../syracuse-coverage/node_modules && istanbul cover -i \"orm/**\" _mocha -- --opts ./mocha.opts test/orm/server; popd"
+  	"test:coverage": "node build-coverage-tree && pushd \"../syracuse-coverage/node_modules/@sage/syracuse-lib\" && npm install mocha && istanbul cover -i \"./src/**\" node_modules/mocha/bin/_mocha -- --opts ./test/mocha_cov.opts -t 60000 test/start.js test/**/server/*.js && popd",
+    "security:retire-win": "retire --jspath node_modules --nodepath shadow-modules/win32-x64-v8-4.5 --exitwith 0",
+    "security:retire-linux": "retire --jspath node_modules --nodepath shadow-modules/linux-x64-v8-4.5 --exitwith 0",
+    "customer-image": "node apatch direct --image ../syracuse_customer_image --desc \"Syracuse\" --no-check"
   }
 }

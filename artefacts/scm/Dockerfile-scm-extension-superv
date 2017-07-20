@@ -1,8 +1,8 @@
 FROM busybox
 
-RUN mkdir -p /config /extensions
+RUN mkdir -p /config /extensions /config/devLic
 
-COPY devLic/license.json /config/devLicense.json
+COPY devLic/ /config/devLic
 COPY artefacts/scm/nodelocal-syr-etna.docker /config/nodelocal.js
 COPY artefacts/scm/scm-initialization-superv/ /extensions/scm-initialization/
 
