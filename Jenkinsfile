@@ -70,6 +70,23 @@ node {
                 }
                 step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
             }
+            stage('Run UI tests and code coverage report') {
+                docker.image('node:6').inside {
+                    sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run test')
+                    step([  $class: 'XUnitBuilder', 
+                            thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], 
+                            tools: [[$class: 'JUnitType', pattern: 'node_modules/@sage/syracuse-react/junit/junit.xml']]
+                    ])
+                            
+                    step([  $class: 'CloverPublisher', 
+                            cloverReportDir: 'node_modules/@sage/syracuse-react/coverage',
+                            cloverReportFileName: 'clover.xml',
+                            healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80],
+                            unhealthyTarget: [methodCoverage: 50, conditionalCoverage: 50, statementCoverage: 50],
+                            failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
+                    ])
+                }
+            }            
             if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
                 stage('Build SCM artefacts') {
                     scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
