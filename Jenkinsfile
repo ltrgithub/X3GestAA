@@ -70,6 +70,13 @@ node {
                 }
                 step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
             }
+            stage('Run UI tests and code coverage report') {
+                sh ('cd node_modules/@sage/syracuse-react')
+                sh ('npm prune')
+                sh ('npm install')
+                sh ('npm run test')
+                step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'junit/junit.xml']]])
+            }            
             if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
                 stage('Build SCM artefacts') {
                     scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
