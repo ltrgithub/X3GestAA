@@ -71,11 +71,10 @@ node {
                 step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'test_report.xml']]])
             }
             stage('Run UI tests and code coverage report') {
-                sh ('cd node_modules/@sage/syracuse-react')
-                sh ('npm prune')
-                sh ('npm install')
-                sh ('npm run test')
-                step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'junit/junit.xml']]])
+                docker.image('node:6').inside {
+                    sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run test')
+                    step([$class: 'XUnitBuilder', thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], tools: [[$class: 'JUnitType', pattern: 'junit/junit.xml']]])
+                }
             }            
             if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
                 stage('Build SCM artefacts') {
