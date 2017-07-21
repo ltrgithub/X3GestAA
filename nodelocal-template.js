@@ -19,10 +19,12 @@ exports.config = {
 	 */
 	adminUserRestrict: false,
 	hosting: {
-		// multiTenant should be set to true when hosted in Cloud.
+		// multiTenant should be set to true when hosted in Cloud V1 (not MINDO)
 		// When this option is set, the tenantId is extracted from the HTTP Host header and is used to prefix
 		// the mongodb database names and the elastic search index names.
 		multiTenant: false,
+		// When this option is set, we know we are on a cloud platform
+		/* cloudPlatform: "mindo", */
 		// https indicates if the public URLs must all be https URLs.
 		// This is the case if the syracuse service is front-ended by a proxy or a load balancer that handles
 		// https on its behalf.

@@ -10320,6 +10320,8 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -10595,6 +10597,33 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRRPL",
+      "title": "title_2b5356a8-6211-4f3b-a86b-a6ddfa59a7fb",
+      "description": "description_2b5356a8-6211-4f3b-a86b-a6ddfa59a7fb",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRRPL",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_7c95e93f-a412-4e5b-a936-7882d93d4ace",
       "code": "STD_X3_HRM_PTAB",
@@ -10704,8 +10733,41 @@
               "$variantType": "menuItem"
             }
           ]
+        },
+        {
+          "code": "STD_X3_HRM_GESHRRPL",
+          "$variantType": "menuItem"
         }
       ]
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "SPE_X3_HRM_GESHRGRB",
+      "title": "title_74b4fade-99c3-409f-9302-db5c8fbbd013",
+      "description": "description_74b4fade-99c3-409f-9302-db5c8fbbd013",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRGRB",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_MENV"
+      },
+      "categories": [],
+      "parameters": []
     },
     {
       "$type": "menuItem",
@@ -11064,33 +11126,6 @@
       "representationRef": {
         "$type": "representationProxy"
       },
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "SPE_X3_HRM_GESHRGRB",
-      "title": "title_74b4fade-99c3-409f-9302-db5c8fbbd013",
-      "description": "description_74b4fade-99c3-409f-9302-db5c8fbbd013",
-      "linkType": "$function",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESHRGRB",
-      "fusionKey": "",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
       "module": {
         "code": "STD_X3_HRM_MENV"
       },
@@ -11660,33 +11695,6 @@
       "parameters": []
     },
     {
-      "$type": "menuItem",
-      "$variantType": "menuItem",
-      "code": "SPE_X3_HRM_GESHRGRB",
-      "title": "title_74b4fade-99c3-409f-9302-db5c8fbbd013",
-      "description": "description_74b4fade-99c3-409f-9302-db5c8fbbd013",
-      "linkType": "$function",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$query",
-      "fusionFunction": "GESHRGRB",
-      "fusionKey": "",
-      "keyIsWhere": false,
-      "target": "self",
-      "requestLevel": "1",
-      "application": {
-        "application": "x3",
-        "contract": "hrm"
-      },
-      "endpoint": null,
-      "representationRef": null,
-      "module": {
-        "code": "STD_X3_HRM_MENV"
-      },
-      "categories": [],
-      "parameters": []
-    },
-    {
       "$type": "menuBlock",
       "title": "title_11ea9eb5-9769-4380-b99e-4d45a13dd936",
       "code": "STD_X3_HRM_PLAN",
@@ -11697,6 +11705,10 @@
         "contract": "hrm"
       },
       "items": [
+        {
+          "code": "SPE_X3_HRM_GESHRGRB",
+          "$variantType": "menuItem"
+        },
         {
           "code": "STD_X3_HRM_GESRUB",
           "$variantType": "menuItem"
@@ -11765,10 +11777,6 @@
             },
             {
               "code": "STD_X3_HRM_MAJVAR1",
-              "$variantType": "menuItem"
-            },
-            {
-              "code": "SPE_X3_HRM_GESHRGRB",
               "$variantType": "menuItem"
             }
           ]
@@ -11892,10 +11900,6 @@
               "$variantType": "menuItem"
             }
           ]
-        },
-        {
-          "code": "SPE_X3_HRM_GESHRGRB",
-          "$variantType": "menuItem"
         }
       ]
     },
@@ -14744,8 +14748,8 @@
       "fusionFunction": "GESCNA",
       "fusionKey": "",
       "target": "self",
-      "$factory": false,
-      "$factoryOwner": null,
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -15800,7 +15804,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PERSO"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -16311,15 +16315,16 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HRM_GESCLC",
-      "title": "title_f6ce271b-a5d7-4423-b3ab-8102749fb9a5",
-      "description": "description_f6ce271b-a5d7-4423-b3ab-8102749fb9a5",
+      "code": "STD_X3_HRM_GESHRCLC",
+      "title": "title_1de0170f-d3ab-4eb3-a669-8f1ee7a7528e",
+      "description": "description_1de0170f-d3ab-4eb3-a669-8f1ee7a7528e",
       "linkType": "$function",
       "applicationMenu": false,
       "facet": "$query",
-      "fusionFunction": "GESCLC",
-      "fusionKey": "",
+      "fusionFunction": "GESHRCLC",
+      "keyIsWhere": false,
       "target": "self",
+      "requestLevel": "1",
       "$factory": true,
       "$factoryOwner": "SAGE",
       "application": {
@@ -16331,7 +16336,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_MENV"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -16675,7 +16680,7 @@
               "$variantType": "menuItem"
             },
             {
-              "code": "STD_X3_HRM_GESCLC",
+              "code": "STD_X3_HRM_GESHRCLC",
               "$variantType": "menuItem"
             },
             {
@@ -17233,6 +17238,99 @@
       ]
     },
     {
+      "$type": "menuBlock",
+      "title": "title_87b9bb80-c67c-479a-9cae-196912138aa9",
+      "code": "STD_X3_HRM_Test",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESPICF",
+      "title": "title_41ab7171-2452-412b-8fe9-7e312d8a6062",
+      "description": "description_41ab7171-2452-412b-8fe9-7e312d8a6062",
+      "linkType": "$function",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESPICF",
+      "fusionKey": "",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_PIHRMFAIR",
+      "title": "title_3ff14786-6d04-45ee-9bb0-561df5933422",
+      "description": "description_3ff14786-6d04-45ee-9bb0-561df5933422",
+      "linkType": "$representation",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "PIHRMFAIR",
+        "representation": "PIHRMFAIR"
+      },
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuBlock",
+      "title": "title_3d3a8be1-c300-4704-bcda-cb1adaa1a5ac",
+      "code": "STD_X3_HRM_PICF",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "items": [
+        {
+          "code": "STD_X3_HRM_GESPICF",
+          "$variantType": "menuItem"
+        },
+        {
+          "code": "STD_X3_HRM_PIHRMFAIR",
+          "$variantType": "menuItem"
+        }
+      ]
+    },
+    {
       "$type": "menuModule",
       "title": "title_b5f7f9e3-9fea-4f2f-97bf-e80cd97ab81a",
       "code": "STD_X3_HRM_PERSO",
@@ -17260,6 +17358,12 @@
         },
         {
           "code": "STD_X3_HRM_ATEA"
+        },
+        {
+          "code": "STD_X3_HRM_Test"
+        },
+        {
+          "code": "STD_X3_HRM_PICF"
         }
       ]
     },
@@ -18928,7 +19032,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -19764,7 +19868,7 @@
     {
       "$type": "menuItem",
       "$variantType": "menuItem",
-      "code": "STD_X3_HMR_GESSAURH",
+      "code": "STD_X3_HRM_GESSAURH",
       "title": "title_d5aa573e-9672-4fb2-951d-9059cdeb63bf",
       "description": "description_d5aa573e-9672-4fb2-951d-9059cdeb63bf",
       "linkType": "$function",
@@ -19776,6 +19880,8 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -21748,7 +21854,7 @@
       },
       "items": [
         {
-          "code": "STD_X3_HMR_GESSAURH",
+          "code": "STD_X3_HRM_GESSAURH",
           "$variantType": "menuItem"
         },
         {
@@ -22266,6 +22372,8 @@
       "keyIsWhere": false,
       "target": "self",
       "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
       "application": {
         "application": "x3",
         "contract": "hrm"
@@ -22305,7 +22413,7 @@
         "$type": "representationProxy"
       },
       "module": {
-        "code": "STD_X3_HRM_PAY"
+        "code": "STD_X3_HRM_HRPAI"
       },
       "categories": [],
       "parameters": []
@@ -28619,6 +28727,8 @@
       "title_84dee749-92f3-452f-9492-106d59875c7a": "Collective wage agreement",
       "title_a897cfd6-2c00-4232-8bd8-9d107fad6cae": "Socio-professional category",
       "title_5fe7a2dc-b8fb-4d07-bd69-34a8e2e2679d": "Permits and authorisations",
+      "title_74b4fade-99c3-409f-9302-db5c8fbbd013": "GESHRGRB",
+      "description_74b4fade-99c3-409f-9302-db5c8fbbd013": "GESHRGRB",
       "title_db6916be-68fb-4e53-b2d5-1417f55b7c53": "Accounts on headings",
       "title_5e2aae31-b213-4ddd-b332-b820ef8b0bba": "Accumulations",
       "title_7f53ca35-4dd8-490a-98c6-8df43d254562": "Slip printing",
@@ -28627,8 +28737,6 @@
       "title_b4dab47e-d94c-448b-b456-2f510a8037ca": "Entry pages",
       "title_ef575969-2218-4e90-a20b-ad1fa58d445e": "Time Interface",
       "title_8e19e573-58b1-4943-abce-a6c16601d5ec": "Print update",
-      "title_74b4fade-99c3-409f-9302-db5c8fbbd013": "GESHRGRB",
-      "description_74b4fade-99c3-409f-9302-db5c8fbbd013": "GESHRGRB",
       "title_cdff632a-88e8-4bb1-8999-ef02c2c9c2c2": "Print update",
       "title_557245f3-4fe2-4c7e-88ef-395b13db3fd4": "Total employee files",
       "title_f4d5f41c-a922-4424-801b-4388bbc41052": "Legislation pages",
@@ -29311,7 +29419,11 @@
       "description_5fe7a2dc-b8fb-4d07-bd69-34a8e2e2679d": "GESHRLIC",
       "title_d6a7b57f-4935-4a9c-8538-0bb74a7288e2": "Occupational health",
       "description_d6a7b57f-4935-4a9c-8538-0bb74a7288e2": "GESMEW",
+      "title_2b5356a8-6211-4f3b-a86b-a6ddfa59a7fb": "Replacement reason",
+      "description_2b5356a8-6211-4f3b-a86b-a6ddfa59a7fb": "GESHRRPL",
       "title_11ea9eb5-9769-4380-b99e-4d45a13dd936": "Payroll plan",
+      "title_74b4fade-99c3-409f-9302-db5c8fbbd013": "Grouping of headings",
+      "description_74b4fade-99c3-409f-9302-db5c8fbbd013": "Grouping of headings",
       "title_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "Headings",
       "description_33b92d20-7ae8-49c5-9f7a-12f24656e35d": "GESRUB",
       "title_db6916be-68fb-4e53-b2d5-1417f55b7c53": "Accounts on headings",
@@ -29339,8 +29451,6 @@
       "description_ef575969-2218-4e90-a20b-ad1fa58d445e": "TPSVAR",
       "title_8e19e573-58b1-4943-abce-a6c16601d5ec": "Print update",
       "description_8e19e573-58b1-4943-abce-a6c16601d5ec": "MAJVAR1",
-      "title_74b4fade-99c3-409f-9302-db5c8fbbd013": "Grouping of headings",
-      "description_74b4fade-99c3-409f-9302-db5c8fbbd013": "Grouping of headings",
       "title_d2b0946a-3a4e-4571-a339-32ed7cfe0f20": "Total update",
       "title_cdff632a-88e8-4bb1-8999-ef02c2c9c2c2": "Print update",
       "description_cdff632a-88e8-4bb1-8999-ef02c2c9c2c2": "MAJCUM1",
@@ -29634,7 +29744,7 @@
       "description_d110cef8-c891-4ff4-8755-7b486e17d58b": "GESJOT",
       "title_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "Positions",
       "description_d0d7f2d6-f5b0-42a4-8a9a-9dfe2785e7db": "GESPOT",
-      "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Missions",
+      "title_2e36aabc-92df-4e96-a98f-e1f870d28440": "Responsibilities",
       "title_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "Profiles",
       "description_2475a441-b2dd-40f6-82d0-7cbe39f6cee9": "GESPRF",
       "title_1e465614-7592-4e33-9459-4e6811e31ac8": "Classifications as per labour agreement",
@@ -29664,8 +29774,8 @@
       "title_5c1a4508-3564-4f2c-8422-f1756ccfdceb": "Documents generator",
       "title_95127f91-828f-42de-b3b6-09c3a662ac1c": "Documents formula",
       "description_95127f91-828f-42de-b3b6-09c3a662ac1c": "GESFOC",
-      "title_f6ce271b-a5d7-4423-b3ab-8102749fb9a5": "Calculated journals",
-      "description_f6ce271b-a5d7-4423-b3ab-8102749fb9a5": "GESCLC",
+      "title_1de0170f-d3ab-4eb3-a669-8f1ee7a7528e": "Document clauses",
+      "description_1de0170f-d3ab-4eb3-a669-8f1ee7a7528e": "GESHRCLC",
       "title_214bf866-5f3a-4cfb-b6a6-556dd9e28f8b": "Document generation",
       "description_214bf866-5f3a-4cfb-b6a6-556dd9e28f8b": "TRTGENCTR",
       "title_2c5c5427-5724-473e-99e1-e0f6bb93b777": "Documents",
@@ -29721,6 +29831,12 @@
       "description_18d0a936-53f7-49ae-a10b-3ec029f2c0a4": "GESHRAEH",
       "title_862e7e3f-d80b-4222-8b5c-95a65650fa66": "Attachable earnings types",
       "description_862e7e3f-d80b-4222-8b5c-95a65650fa66": "GESHRAET",
+      "title_87b9bb80-c67c-479a-9cae-196912138aa9": "Test Submodule",
+      "title_3d3a8be1-c300-4704-bcda-cb1adaa1a5ac": "People integration",
+      "title_41ab7171-2452-412b-8fe9-7e312d8a6062": "Setup",
+      "description_41ab7171-2452-412b-8fe9-7e312d8a6062": "GESPICF",
+      "title_3ff14786-6d04-45ee-9bb0-561df5933422": "Integration",
+      "description_3ff14786-6d04-45ee-9bb0-561df5933422": "PIHRMFAIR",
       "title_94979c41-1019-4b69-88e4-a963392e37f2": "Time management",
       "title_f0e08d43-28fa-47d0-9f4b-b1470541a800": "Parameter definition",
       "title_eb494dd4-8266-4602-8460-53df9d2e0d4f": "Nature of events",
@@ -29733,7 +29849,7 @@
       "description_a306737b-2a0d-460c-9df4-18a0ee050ed4": "Reference week",
       "title_a4a1f112-3136-4cfa-b70f-07e1569eb9ee": "Reference plannings",
       "description_a4a1f112-3136-4cfa-b70f-07e1569eb9ee": "GESPLN",
-      "title_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Nature of activity",
+      "title_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Natures of activity",
       "description_ee0e4a63-8e76-43bf-8a5f-36a3d4689975": "Nature of activity",
       "title_c2fff644-f4c4-44ac-8783-58d56382f297": "Calendars",
       "description_c2fff644-f4c4-44ac-8783-58d56382f297": "GESCLD",
@@ -29827,7 +29943,7 @@
       "title_83af299f-d332-4f6a-b787-81444136fda3": "Payslips",
       "title_3138430c-e878-4828-b640-248e78d8bdad": "Employee payslips",
       "description_3138430c-e878-4828-b640-248e78d8bdad": "GESVEP",
-      "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Employee payslips SA",
+      "title_354f9828-e5ee-4b87-883e-17ebc8fba476": "Employee payslips",
       "description_354f9828-e5ee-4b87-883e-17ebc8fba476": "GESVEPZAF",
       "title_1255b02b-3eb0-4108-b521-a299e4244bb0": "Employee payslips ZMB",
       "description_1255b02b-3eb0-4108-b521-a299e4244bb0": "GESVEPZMB",
@@ -31315,8 +31431,7 @@
       "title_5c1a4508-3564-4f2c-8422-f1756ccfdceb": "Générateur de documents",
       "title_95127f91-828f-42de-b3b6-09c3a662ac1c": "Formules documents",
       "description_95127f91-828f-42de-b3b6-09c3a662ac1c": "GESFOC",
-      "title_f6ce271b-a5d7-4423-b3ab-8102749fb9a5": "Clauses documents",
-      "description_f6ce271b-a5d7-4423-b3ab-8102749fb9a5": "GESCLC",
+      "title_1de0170f-d3ab-4eb3-a669-8f1ee7a7528e": "Clauses documents",
       "title_214bf866-5f3a-4cfb-b6a6-556dd9e28f8b": "Génération documents",
       "description_214bf866-5f3a-4cfb-b6a6-556dd9e28f8b": "TRTGENCTR",
       "title_2c5c5427-5724-473e-99e1-e0f6bb93b777": "Documents",
@@ -32690,8 +32805,6 @@
       "title_5c1a4508-3564-4f2c-8422-f1756ccfdceb": "Gerador de documentos",
       "title_95127f91-828f-42de-b3b6-09c3a662ac1c": "Fórmulas documentos",
       "description_95127f91-828f-42de-b3b6-09c3a662ac1c": "GESFOC",
-      "title_f6ce271b-a5d7-4423-b3ab-8102749fb9a5": "Cláusulas documentos",
-      "description_f6ce271b-a5d7-4423-b3ab-8102749fb9a5": "GESCLC",
       "title_214bf866-5f3a-4cfb-b6a6-556dd9e28f8b": "Geração documentos",
       "description_214bf866-5f3a-4cfb-b6a6-556dd9e28f8b": "TRTGENCTR",
       "title_2c5c5427-5724-473e-99e1-e0f6bb93b777": "Documentos",

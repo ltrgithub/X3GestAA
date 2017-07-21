@@ -119,7 +119,7 @@ exports.config = {
 		cache: {
 			// trace: console.log,
 		},
-		appHostOverride: process.env.X3_RUNTIME_HOSTNAME
+		appHostOverride: process.env.SCM_HOSTNAME
 	},
 
 	help: {
@@ -186,8 +186,8 @@ exports.config = {
 		passphrase: "as985k3bZ8p2",
 	},
     collaboration: {
-         hostname: "mongodb",
-	 databaseName: (process.env.SYRACUSE_VER ? process.env.SYRACUSE_VER + "_" : "") + "syracuse"
+        hostname: "mongodb",
+		databaseName: (process.env.SYRACUSE_VER ? process.env.SYRACUSE_VER + "_" : "") + "syracuse"
     },
     extensions: {
         "root": "/extensions",
@@ -206,5 +206,23 @@ exports.config = {
 			"retries": 10,
 			"intervalMs": 30000
 		}
-	}
+	},
+	scmServer: {
+      // THe URL to connect to the text server
+      url: "http://172.17.0.1:3000",
+      // Files to be ignored when generating a patch
+      ignore:[
+          "TRT;W*",
+          "TRT;X*",
+          "TRT;Y*",
+          "TRT;Z*",
+          "TRT;SPE*",
+          "ADO;*",
+          "ADZ;*",
+          "ADF;*",
+          "ADP;ATXTETAG",
+          "ADP;RIGHTSETAG",
+          "ALH;X*"
+      ],
+  	}
 };
