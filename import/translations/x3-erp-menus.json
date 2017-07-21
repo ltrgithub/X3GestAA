@@ -580,6 +580,23 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "STD_X3_ERP_SYBUDAPP",
+			"title": "title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9",
+			"description": "description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9",
+			"linkType": "$representation",
+			"facet": "$query",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "BUDAPP",
+				"representation": "BUDAPP"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "STD_X3_ERP_CCMCHGREQ",
 			"title": "title_e5f18957-db90-4b29-9690-6b42e11e88cb",
 			"description": "description_e5f18957-db90-4b29-9690-6b42e11e88cb",
@@ -908,123 +925,6 @@
 		},
 		{
 			"$type": "menuItem",
-			"code": "STD_X3_ERP_NCSCRE",
-			"title": "title_d53e6d4e-965e-49f3-b3bd-e108d15cb455",
-			"description": "description_d53e6d4e-965e-49f3-b3bd-e108d15cb455",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "NCSRECENT",
-				"representation": "NCSRECENT"
-			},
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "filter",
-					"title": "title_535e4841-bb95-43c5-b37d-b0b0d166ca43",
-					"value": "CCMCRE"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_NCSRECENT",
-			"title": "title_12d6da77-6998-45dc-b1da-55747e4568d5",
-			"description": "description_12d6da77-6998-45dc-b1da-55747e4568d5",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "NCSRECENT",
-				"representation": "NCSRECENT"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_NCSAPV",
-			"title": "title_5fdd8939-698a-4abf-88b5-d55760788f1f",
-			"description": "description_5fdd8939-698a-4abf-88b5-d55760788f1f",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "NCSRECENT",
-				"representation": "NCSRECENT"
-			},
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "filter",
-					"title": "title_d006a4cc-bab8-4c26-8cd0-2cdc39d7ec1d",
-					"value": "NCSAPV"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_NCSCHG",
-			"title": "title_f6144f1d-5b79-4093-84a5-a042df80b412",
-			"description": "description_f6144f1d-5b79-4093-84a5-a042df80b412",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "NCSRECENT",
-				"representation": "NCSRECENT"
-			},
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "filter",
-					"title": "title_1aa8f5e4-f059-477d-b677-569a69c9244b",
-					"value": "CCMCHG"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_NCSPLN",
-			"title": "title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f",
-			"description": "description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "NCSRECENT",
-				"representation": "NCSRECENT"
-			},
-			"parameters": [
-				{
-					"$type": "menuItemParameter",
-					"name": "filter",
-					"title": "title_b23fc27e-f5df-4cdf-8fad-33ce1e619689",
-					"value": "CCMPLN"
-				}
-			]
-		},
-		{
-			"$type": "menuItem",
 			"code": "STD_X3_ERP_PHYBUI",
 			"title": "title_c86ad417-975a-498a-bf2a-155382ef9b15",
 			"description": "description_c86ad417-975a-498a-bf2a-155382ef9b15",
@@ -1127,23 +1027,6 @@
 		},
 		{
 			"$type": "menuItem",
-			"code": "STD_X3_ERP_PBDUICONF",
-			"title": "title_413c646b-7895-4953-b935-2e30b530498b",
-			"description": "description_413c646b-7895-4953-b935-2e30b530498b",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PBDUICONF",
-				"representation": "PBDUICONF"
-			}
-		},
-		{
-			"$type": "menuItem",
 			"code": "STD_X3_ERP_PBDCONFIG",
 			"title": "title_3b968eba-b711-4f58-b1b1-f4e2e5583e59",
 			"description": "description_3b968eba-b711-4f58-b1b1-f4e2e5583e59",
@@ -1208,23 +1091,6 @@
 				"$type": "representationProxy",
 				"entity": "CCMPLANH",
 				"representation": "CCMPLANH"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_NCSPLANH",
-			"title": "title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f",
-			"description": "description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "CCMPLANH",
-				"representation": "NCSPLANH"
 			}
 		},
 		{
@@ -1294,6 +1160,23 @@
 				"$type": "representationProxy",
 				"entity": "PPRICESEARCH",
 				"representation": "PPRICSEARCHM"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_TCWPSHTOSIG",
+			"title": "title_85c3150b-9af0-467e-976a-8d1936e12def",
+			"description": "description_85c3150b-9af0-467e-976a-8d1936e12def",
+			"linkType": "$representation",
+			"facet": "$query",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "TCWPSH",
+				"representation": "TCWPSHTOSIG"
 			}
 		},
 		{
@@ -1826,6 +1709,23 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "STD_X3_ERP_SUP_APSADX",
+			"title": "title_760c2401-5feb-4d81-ae65-cc6dc051010a",
+			"description": "description_760c2401-5feb-4d81-ae65-cc6dc051010a",
+			"linkType": "$representation",
+			"facet": "$query",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "APSADX",
+				"representation": "APSADX"
+			}
+		},
+		{
+			"$type": "menuItem",
 			"code": "STD_X3_ERP_AMIGPORT",
 			"title": "title_43791f87-96d4-4fe4-b434-e506dc4d7a05",
 			"description": "description_43791f87-96d4-4fe4-b434-e506dc4d7a05",
@@ -1933,6 +1833,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "مطالب",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "فئات الموردين",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "الموردين",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "لائحة الموافقات",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "طلب التغيير",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "طلب التغيير",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "أنماط إقتصادية",
@@ -1966,8 +1867,6 @@
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "مواقع",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "مواد/أنماط إقتصادية",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "ERC ميزان مدفوعات المنتج",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "معلمات الحقل",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "ميزان المدفوعات-واجهة المستخدم",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "تكوين",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "ميزان المدفوعات- تكوين",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "خلق",
@@ -1984,6 +1883,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "طلبيات الشراء للتوقيع",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "تشاور التعريفات",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "تشاور تعريفات الشراء",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "طلبات الشراء للتوقيع",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "طلبات الشراء للتوقيع",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "طلبيات مفتوحة المبيع للتوقيع",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "طلبيات مفتوحة المبيع للتوقيع",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "طلبيات المبيع للتوقيع",
@@ -2034,6 +1935,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "للتوقيع",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "فترة النقل",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "فترة النقل",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "رصد المستخدمين",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "رصد المستخدمين",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "TVA إعفاء الأنماط",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "تشاور التكاليف الخاصة بي",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "تشاور التكاليف الخاصة بي"
@@ -2102,6 +2005,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Anfragen",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Lieferantenkategorien",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Lieferanten",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Genehmigungsliste",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Änderungsantrag",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Änderungsantrag",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Leistungskennziffern",
@@ -2137,16 +2041,6 @@
 			"description_2e995a50-f4b6-465a-aadd-8661ffb1c34c": "Auswirkungsanalyse",
 			"title_f586f273-5105-4022-92d8-36aeead215f6": "Indirekte Aktivitäten",
 			"description_f586f273-5105-4022-92d8-36aeead215f6": "Indirekte Aktivitäten",
-			"title_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "Nichtkonformität erstellt",
-			"description_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "Nichtkonformität erstellt",
-			"title_12d6da77-6998-45dc-b1da-55747e4568d5": "Datensatz Nichtkonformität",
-			"description_12d6da77-6998-45dc-b1da-55747e4568d5": "Datensatz Nichtkonformität",
-			"title_5fdd8939-698a-4abf-88b5-d55760788f1f": "Zu genehmigende Nichtkonformitäten",
-			"description_5fdd8939-698a-4abf-88b5-d55760788f1f": "Zu genehmigende Nichtkonformitäten",
-			"title_f6144f1d-5b79-4093-84a5-a042df80b412": "Zu verwaltende Nichtkonformitäten",
-			"description_f6144f1d-5b79-4093-84a5-a042df80b412": "Zu verwaltende Nichtkonformitäten",
-			"title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Zu planende Nichtkonformitäten",
-			"description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Zu planende Nichtkonformitäten",
 			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Gebäude",
 			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Inventargüter",
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Orte",
@@ -2154,8 +2048,6 @@
 			"title_3796658c-e97d-409a-a612-5117363a758e": "Struktur Finanzübersicht",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Produkt/Leistungskennziffern",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Zahlungsbilanz - Produkt/Leistungskennziffern",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Feldeinstellungen",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Zahlungsbilanz - Feldeinstellungen",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Konfiguration",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Zahlungsbilanz - Konfiguration",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Erstellung Meldung",
@@ -2170,6 +2062,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Zu unterzeichnende Bestellungen",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Preisanfrage",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Einkaufspreisanfrage",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Zu unterzeichnende Bestellanfragen",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Zu unterzeichnende Bestellanfragen",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Offene zu unterzeichnende Aufträge",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Offene zu unterzeichnende Aufträge",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Zu unterzeichnende Aufträge",
@@ -2228,6 +2122,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "Zu unterzeichnen",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transportlieferzeit",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transportlieferzeit",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitoring Benutzer",
 			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6-Portalmigration",
 			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6-Portalmigration",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Gründe Steuerbefreiung",
@@ -2307,8 +2203,6 @@
 			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Physical elements",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Product/reason code",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Payment balance declaration product/reason code",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Field settings",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Payment balance UI configuration",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generation",
 			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Payment balance declaration - Generation",
 			"title_e85daea9-a1da-4c90-bc45-e70fe4811500": "Place",
@@ -2321,6 +2215,8 @@
 			"title_7f9a72ba-dee4-4569-8d75-224e3a682401": "Purchase orders to sign",
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Purchase orders to sign",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Sales price search",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Purchase requests to sign",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Purchase requests to sign",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Sales open orders to sign",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Sales open orders to sign",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Sales orders to sign",
@@ -2352,7 +2248,9 @@
 			"title_b9b4679c-989e-41ad-a91d-4e93c0b90bbd": "Time zones",
 			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Quote",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
-			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time"
+			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User monitoring",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "User monitoring"
 		},
 		"en-us": {
 			"description_4d0a1ba8-8ba3-4614-a75b-5a498a6305fd": "Invoices",
@@ -2410,6 +2308,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Requests",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Supplier categories",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Suppliers",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Approval list",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Change request",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Change request",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Economic reason codes",
@@ -2443,8 +2342,6 @@
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Locations",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Product/reason code",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Payment balance ERC product",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Field settings",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Payment balance UI configuration",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Configuration",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Payment balance declaration configuration",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generation",
@@ -2461,6 +2358,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Purchase orders to sign",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Price inquiry",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Purchase price inquiry",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Purchase requests to sign",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Purchase requests to sign",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Sales open orders to sign",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Sales open orders to sign",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Sales orders to sign",
@@ -2511,6 +2410,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "To sign",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Transport lead time",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "User Monitoring",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "VAT exemption reasons",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
@@ -2530,16 +2431,6 @@
 			"description_2e995a50-f4b6-465a-aadd-8661ffb1c34c": "Impact analysis",
 			"title_f586f273-5105-4022-92d8-36aeead215f6": "Indirect references",
 			"description_f586f273-5105-4022-92d8-36aeead215f6": "Indirect references",
-			"title_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "Non-conformance created",
-			"description_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "Non-conformance created",
-			"title_12d6da77-6998-45dc-b1da-55747e4568d5": "Non-conformance record",
-			"description_12d6da77-6998-45dc-b1da-55747e4568d5": "Non-conformance record",
-			"title_5fdd8939-698a-4abf-88b5-d55760788f1f": "Non-conformances to approve",
-			"description_5fdd8939-698a-4abf-88b5-d55760788f1f": "Non-conformances to approve",
-			"title_f6144f1d-5b79-4093-84a5-a042df80b412": "Non-conformances to manage",
-			"description_f6144f1d-5b79-4093-84a5-a042df80b412": "Non-conformances to manage",
-			"title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Non-conformances to plan",
-			"description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Non-conformances to plan",
 			"title_f87f4b29-96bc-49cf-bf0e-7c1bb98c64c5": "Financial overview queries",
 			"title_3796658c-e97d-409a-a612-5117363a758e": "Financial overview structure",
 			"title_374ec348-7ef9-49f4-a1df-9507180e4079": "Shifts",
@@ -2554,6 +2445,7 @@
 			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6 Portal migration",
 			"description_301cd727-8380-48ea-bd8d-b22bc4c1778c": "BPSCATEG",
 			"description_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "BPSUPPLIER",
+			"description_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "BUDAPP",
 			"title_ea38a0d0-81f2-42f1-9f48-b922fee9c8a1": "JSON-X3 Transformation mapping",
 			"description_ea38a0d0-81f2-42f1-9f48-b922fee9c8a1": "JSNX3HEAD",
 			"title_a4f6d0b7-977b-4ef5-b5cc-da2b323c8e2a": "JSON-X3 Transport details",
@@ -2562,8 +2454,6 @@
 			"description_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "PHYLCT",
 			"description_f87f4b29-96bc-49cf-bf0e-7c1bb98c64c5": "PJMBUDTRQ",
 			"description_3796658c-e97d-409a-a612-5117363a758e": "PJMBUDTRS",
-			"title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Plan",
-			"description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Plan",
 			"description_4752f2da-6cfa-4726-95c9-b7f9bd19d9f2": "TIMEADJUST",
 			"description_388f7005-9c62-4032-af3a-944691f6df22": "TIMETRANS",
 			"description_b9b4679c-989e-41ad-a91d-4e93c0b90bbd": "TIMEZONEINFO",
@@ -2633,6 +2523,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Peticiones",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Categoría proveedores",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Proveedores",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Aprobación pptaria.",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Solicitud de cambio",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Solicitud de cambio",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos económicos",
@@ -2668,16 +2559,6 @@
 			"description_2e995a50-f4b6-465a-aadd-8661ffb1c34c": "Análisis de impactos",
 			"title_f586f273-5105-4022-92d8-36aeead215f6": "Tiempo fuera carga",
 			"description_f586f273-5105-4022-92d8-36aeead215f6": "Tiempo fuera carga",
-			"title_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "No conformidad creada",
-			"description_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "No conformidad creada",
-			"title_12d6da77-6998-45dc-b1da-55747e4568d5": "Registro de no conformidad",
-			"description_12d6da77-6998-45dc-b1da-55747e4568d5": "Registro de no conformidad",
-			"title_5fdd8939-698a-4abf-88b5-d55760788f1f": "No conformidades a validar",
-			"description_5fdd8939-698a-4abf-88b5-d55760788f1f": "No conformidades a validar",
-			"title_f6144f1d-5b79-4093-84a5-a042df80b412": "No conformidades a gestionar",
-			"description_f6144f1d-5b79-4093-84a5-a042df80b412": "No conformidades a gestionar",
-			"title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "No conformidades a planificar",
-			"description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "No conformidades a planificar",
 			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Edificios",
 			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Elementos físicos",
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Ubicaciones",
@@ -2685,8 +2566,6 @@
 			"title_3796658c-e97d-409a-a612-5117363a758e": "Estructura seguimiento financiero",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Artículos/Motivos económicos",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Balance de pagos producto ERC",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Parámetros campo",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Balance de pagos - interface usuario",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Configuración",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Blance de pagos - Configuración",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generación",
@@ -2695,8 +2574,6 @@
 			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lugar",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planificar",
 			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planificar",
-			"title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Planificar",
-			"description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Planificar",
 			"title_909262ac-87e4-4521-bde2-340857a842ff": "Búsqueda precio de compra",
 			"description_909262ac-87e4-4521-bde2-340857a842ff": "Búsqueda precio de compra",
 			"title_3265fcd5-ffc5-4653-8edf-050fec787f0b": "Pedidos abiertos de compra a firmar",
@@ -2705,6 +2582,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Pedidos de compra a firmar",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consulta tarifas",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consulta tarifas de compra",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Solicitudes de compra a firmar",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Solicitudes de compra a firmar",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Pedidos abiertos de venta a firmar",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Pedidos abiertos de venta a firmar",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Pedidos de venta a firmar",
@@ -2763,6 +2642,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "A firmar",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Plazo de transporte",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Plazo de transporte",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Vigilancia usuarios",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Vigilancia usuarios",
 			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Migración portales V6",
 			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Migración portales V6",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Motivos exento IVA",
@@ -2823,6 +2704,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Requêtes",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Catégories fournisseurs",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Fournisseurs",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Liste des approbations",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Demande de changement",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Demande de changement",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motifs économiques",
@@ -2865,8 +2747,6 @@
 			"title_3796658c-e97d-409a-a612-5117363a758e": "Structure suivi financier",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Articles/Motifs économiques",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Balance paiements produit ERC",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Paramètres champ",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Balance des paiements - Interface utilisateur",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Balance des paiements - Configuration",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Génération",
 			"description_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Balance des paiements - Génération",
@@ -2874,8 +2754,6 @@
 			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Lieu",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planifier",
 			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planifier",
-			"title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Planifier",
-			"description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Planifier",
 			"title_909262ac-87e4-4521-bde2-340857a842ff": "Recherche prix d'achat",
 			"description_909262ac-87e4-4521-bde2-340857a842ff": "Recherche prix d'achat",
 			"title_3265fcd5-ffc5-4653-8edf-050fec787f0b": "Commandes ouvertes d'achat à signer",
@@ -2884,6 +2762,7 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Commandes d'achat à signer",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consultation tarifs",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consultation tarifs achat",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Demandes d'achat à signer",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Commandes ouvertes de vente à signer",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Commandes ouvertes de vente à signer",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Commandes de vente à signer",
@@ -2946,6 +2825,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "A signer",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Délai transport",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Délai transport",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Surveillance utilisateurs",
 			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Migration portails V6",
 			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Migration portails V6",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Motifs exonération TVA",
@@ -3008,6 +2889,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Requêtes",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Categoria Fornitore",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Fornitori",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Elenco approvazioni",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Richiesta di modifica",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Richiesta di modifica",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivi economici",
@@ -3044,8 +2926,6 @@
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Ubicazioni",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Articoli/Motivi economici",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Bilancio pagam. prodotto ERC",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Parametri campo",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Bilancio dei pagamenti - Interfaccia utente",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Configuraz.",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Bilancio dei pagamenti-Configurazione",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Generaz.",
@@ -3054,8 +2934,6 @@
 			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Luogo",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Pianifica",
 			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Pianifica",
-			"title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Pianifica",
-			"description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Pianifica",
 			"title_909262ac-87e4-4521-bde2-340857a842ff": "Ricerca prezzo acquisto",
 			"description_909262ac-87e4-4521-bde2-340857a842ff": "Ricerca prezzo acquisto",
 			"title_3265fcd5-ffc5-4653-8edf-050fec787f0b": "Ordini aperti d'acquisto a firmare",
@@ -3064,6 +2942,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Ordini d'acquisto a firmare",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consultazione listini",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consultazione listini d'acquisto",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Richieste d'acquisto a firmare",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Richieste d'acquisto a firmare",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Ordini aperti di vendita a firmare",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Ordini aperti di vendita a firmare",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Ordini di vendita a firmare",
@@ -3115,6 +2995,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "A firmare",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Ritardo trasp.",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Ritardo trasp.",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Controllo utenti",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Controllo utenti",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Causali esenzione IVA",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Mostra sp.",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Mostra sp."
@@ -3165,6 +3047,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Requêtes",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Kategorie dostawców",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Dostawcy",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Lista zatwierdzeń",
 			"title_49528cbe-5962-40b9-8208-4358f82430e1": "Wprowadzenie wydatku",
 			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Wprowadzenie wydatku",
 			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Wydatki niezatwierdzone",
@@ -3193,6 +3076,8 @@
 			"title_7f9a72ba-dee4-4569-8d75-224e3a682401": "Zamówienia zakupu do podpisania",
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Zamówienia zakupu do podpisania",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Zapytanie o cenę",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Wnioski zakupowe do podpisania",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Wnioski zakupowe do podpisania",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Otwarte zamówienia sprzedaży do podpisania",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Otwarte zamówienia sprzedaży do podpisania",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Zamówienia sprzedaży do podpisania",
@@ -3282,6 +3167,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Pedidos",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Categoria fornecedor",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Fornecedores",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Aprovação orçamental",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Pedido de modificação",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Pedido de modificação",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Motivos economicos",
@@ -3317,16 +3203,6 @@
 			"description_2e995a50-f4b6-465a-aadd-8661ffb1c34c": "Análise de impacto",
 			"title_f586f273-5105-4022-92d8-36aeead215f6": "Tempo fora produção",
 			"description_f586f273-5105-4022-92d8-36aeead215f6": "Tempo fora produção",
-			"title_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "Criação não conformidade",
-			"description_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "Criação não conformidade",
-			"title_12d6da77-6998-45dc-b1da-55747e4568d5": "Registo não-conformidade",
-			"description_12d6da77-6998-45dc-b1da-55747e4568d5": "Registo não-conformidade",
-			"title_5fdd8939-698a-4abf-88b5-d55760788f1f": "Não conformidade para aprovar",
-			"description_5fdd8939-698a-4abf-88b5-d55760788f1f": "Não conformidade para aprovar",
-			"title_f6144f1d-5b79-4093-84a5-a042df80b412": "Não conformidade para gerir",
-			"description_f6144f1d-5b79-4093-84a5-a042df80b412": "Não conformidade para gerir",
-			"title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Não conformidade para planear",
-			"description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "Não conformidade para planear",
 			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "Edificios",
 			"title_719f15e2-6625-4392-9046-0ea5758466c3": "Elementos físicos",
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Localizações",
@@ -3334,8 +3210,6 @@
 			"title_3796658c-e97d-409a-a612-5117363a758e": "Estrutura seguimento financeiro",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "COPE - Produto/motivos economicos",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "COPE - Produto/motivos economicos",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Parametros campo",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "COPE - Parametrização campos",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "COPE - Configuração",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "COPE - Configuração",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Geração dados COPE",
@@ -3344,8 +3218,6 @@
 			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "Local",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planificar",
 			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "Planificar",
-			"title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Plano",
-			"description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "Plano",
 			"title_909262ac-87e4-4521-bde2-340857a842ff": "Pesquisa preço de compra",
 			"description_909262ac-87e4-4521-bde2-340857a842ff": "Pesquisa preço de compra",
 			"title_3265fcd5-ffc5-4653-8edf-050fec787f0b": "Encomendas abertas de compras a assinar",
@@ -3354,6 +3226,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Encomendas de compra a assinar",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Consulta de preço",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Consulta de preço de compra",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Pedidos de compra a assinar",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Pedidos de compra a assinar",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Encomendas abertas de vendas a assinar",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Encomendas abertas de vendas a assinar",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Encomendas de venda a assinar",
@@ -3412,6 +3286,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "A assinar",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Tempos de transporte",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Tempos de transporte",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitorização Utilizadores",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Monitorização Utilizadores",
 			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Portal migração V6",
 			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "Portal migração V6",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Motivos de isenção IVA",
@@ -3474,6 +3350,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "Запросы",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "Категории поставщиков",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "Поставщики",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "Лист утверждений",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "Запрос на изменения",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "Запрос на изменения",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "Коды экономических причин",
@@ -3509,8 +3386,6 @@
 			"description_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "Физическое местоположения",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Код продукта / причины",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "Баланс платежа ERC продукта",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "Настройки поля",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "Настройка интерфейса баланса платежа",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Настройка",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "Настройка декларации баланса платежа",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "Создание",
@@ -3527,6 +3402,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "Заказы закупок на подпись",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Запрос цены",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "Запрос цены покупки",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "Запросы закупок к подписи",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "Запросы закупок к подписи",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "Продажи открытые заказы к подписи",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "Продажи открытые заказы к подписи",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "Заказы продаж подписать",
@@ -3577,6 +3454,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "К подписанию",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Время подачи транспорта",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "Время подачи транспорта",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "Мониторинг Пользователя",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "Мониторинг Пользователя",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "Причины освобождения от уплаты НДС",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Показать расходы",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Показать расходы"
@@ -3645,6 +3524,7 @@
 			"description_b9cc84f2-b540-4d03-8c44-ddbea18913e7": "请求",
 			"title_301cd727-8380-48ea-bd8d-b22bc4c1778c": "供应商种类",
 			"title_f3a87eb7-5792-48d9-a5ac-760007f2a7b6": "供应商",
+			"title_7a2b8d0f-5b8a-47d9-b452-514eb1a263e9": "审批列表",
 			"title_e5f18957-db90-4b29-9690-6b42e11e88cb": "变更请求",
 			"description_e5f18957-db90-4b29-9690-6b42e11e88cb": "变更请求",
 			"title_5375d07a-8c11-415f-ad69-b9342aabac68": "经济原因代码",
@@ -3680,16 +3560,6 @@
 			"description_2e995a50-f4b6-465a-aadd-8661ffb1c34c": "影响分析",
 			"title_f586f273-5105-4022-92d8-36aeead215f6": "非生产时间",
 			"description_f586f273-5105-4022-92d8-36aeead215f6": "非生产时间",
-			"title_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "已创建的不合格项",
-			"description_d53e6d4e-965e-49f3-b3bd-e108d15cb455": "已创建的不合格项",
-			"title_12d6da77-6998-45dc-b1da-55747e4568d5": "不合格项记录",
-			"description_12d6da77-6998-45dc-b1da-55747e4568d5": "不合格项记录",
-			"title_5fdd8939-698a-4abf-88b5-d55760788f1f": "需审核的不合格项",
-			"description_5fdd8939-698a-4abf-88b5-d55760788f1f": "需审核的不合格项",
-			"title_f6144f1d-5b79-4093-84a5-a042df80b412": "需管理的不合格项",
-			"description_f6144f1d-5b79-4093-84a5-a042df80b412": "需管理的不合格项",
-			"title_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "需计划的不合格项",
-			"description_13a7f26b-25fe-4721-a8b1-09bd47d7ba0f": "需计划的不合格项",
 			"title_c86ad417-975a-498a-bf2a-155382ef9b15": "楼房",
 			"title_719f15e2-6625-4392-9046-0ea5758466c3": "实物资产",
 			"title_d8fb34d3-11c5-4496-a1e1-7adeadcd810c": "位置",
@@ -3697,8 +3567,6 @@
 			"title_3796658c-e97d-409a-a612-5117363a758e": "财务概况结构",
 			"title_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "产品/原因代码",
 			"description_ef9042bb-24e0-4b9b-8455-bfcf8be642bd": "付款余额ERC产品",
-			"title_413c646b-7895-4953-b935-2e30b530498b": "字段参数设置",
-			"description_413c646b-7895-4953-b935-2e30b530498b": "付款余额-UI配置",
 			"title_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "配置",
 			"description_3b968eba-b711-4f58-b1b1-f4e2e5583e59": "付款余额申报-配置",
 			"title_1a3718a3-b4cb-4c9d-a476-96e733865f96": "生成",
@@ -3707,8 +3575,6 @@
 			"description_e85daea9-a1da-4c90-bc45-e70fe4811500": "地方",
 			"title_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "计划",
 			"description_50952f0a-2d2f-4926-9b57-59d1945aa0b6": "计划",
-			"title_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "计划",
-			"description_764c82c9-40e0-468b-97fb-9ee2d94d3d5f": "计划",
 			"title_909262ac-87e4-4521-bde2-340857a842ff": "采购价格搜索",
 			"description_909262ac-87e4-4521-bde2-340857a842ff": "采购价格搜索",
 			"title_3265fcd5-ffc5-4653-8edf-050fec787f0b": "待签名的采购合同",
@@ -3717,6 +3583,8 @@
 			"description_7f9a72ba-dee4-4569-8d75-224e3a682401": "待签名的采购订单",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "价目表查询",
 			"description_d4aef320-167b-4702-b22b-1170f16cb090": "采购价目表查询",
+			"title_85c3150b-9af0-467e-976a-8d1936e12def": "待签名的采购请求",
+			"description_85c3150b-9af0-467e-976a-8d1936e12def": "待签名的采购请求",
 			"title_d8b14e53-343e-438e-bb36-c0cc49125afb": "待签名的销售合同",
 			"description_d8b14e53-343e-438e-bb36-c0cc49125afb": "待签名的销售合同",
 			"title_a6cae902-7f0a-436c-a0c3-678babc0e282": "待签名的销售订单",
@@ -3775,6 +3643,8 @@
 			"description_f2bec910-61a9-45b7-bad5-ff41e97f431e": "待签名",
 			"title_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "运输提前期",
 			"description_b6cee0c6-e8a9-4740-a580-a3dbd57d830b": "运输提前期",
+			"title_760c2401-5feb-4d81-ae65-cc6dc051010a": "用户监控",
+			"description_760c2401-5feb-4d81-ae65-cc6dc051010a": "用户监控",
 			"title_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6门户迁移",
 			"description_43791f87-96d4-4fe4-b434-e506dc4d7a05": "V6门户迁移",
 			"title_1f20f57a-a5c6-4dec-b682-b139cb86b5a6": "增值税免税原因",
