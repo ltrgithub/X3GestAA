@@ -13,6 +13,10 @@ node {
                 env.SYRACUSE_RELEASE = tag
             }
         }
+
+				gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
+
+
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sagex3ci', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
             docker.image('node:6').inside {
                 sh ('echo "https://$GIT_USERNAME:$GIT_PASSWORD@github.com" >> ~/.git-credentials && git config --replace-all --global credential.https://github.com/Sage-ERP-X3/Syracuse.git sagex3ci && git config --replace-all --global credential.helper store --file')
@@ -34,6 +38,36 @@ node {
                 }
             }
         }
+			
+			//
+			// Build Changelog.log
+			//
+				stage('Build ChangeLog') {
+							sh ('cd ${WORKSPACE}');
+							gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+
+							sh ("if [! -e changelog.log]; then echo ' ' > changelog.log;  fi");
+
+							sh ("if [-e changelog.log]; then mv changelog.log changelogtmp.log; fi");
+
+							sh ('echo Syracuse Customer Image ${BRANCH_NAME} ${BUILD_DISPLAY_NAME} ${BUILD_ID} $(date +"%Y-%m-%d %H:%M:%S") > "${WORKSPACE}/changelog.log"');
+							sh ("echo ' ' >> changelog.log");
+							sh ("git log --date-order --reverse --no-merges ${gitPreviousCommit}..${gitCommit} >> changelog.log");
+
+							// for information:
+							sh ("echo 'gitPreviousCommit='");
+							sh ("echo ${gitPreviousCommit} - ${gitCommit}");
+							sh ("echo 'changelog.log'");
+							sh ("cat changelog.log");
+
+							sh ('cd "${WORKSPACE}"');
+							sh ("echo ' ' >> changelog.log");
+							sh ('more "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"');
+							sh ('rm -f "${WORKSPACE}/changelogtmp.log"');
+						}
+
+
+
         docker.withRegistry('https://repository.sagex3.com', 'jenkins_platform') {
             def syrImage
             def scmSuperv
@@ -86,7 +120,8 @@ node {
                             failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
                     ])
                 }
-            }            
+            }
+
             if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
                 stage('Build SCM artefacts') {
                     scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
