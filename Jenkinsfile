@@ -11,6 +11,9 @@ node {
             if ("${BRANCH_NAME}" =~ /^release\//) {
                 tag = "${BRANCH_NAME}".split('/')[1]
                 env.SYRACUSE_RELEASE = tag
+			} else if ("${BRANCH_NAME}" =~ /^internal\/uipreview/) {
+                tag = '1975_uex'
+                env.SYRACUSE_RELEASE = tag
             }
         }
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sagex3ci', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
