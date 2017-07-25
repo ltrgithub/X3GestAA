@@ -48,14 +48,13 @@ node {
 			//
 				stage('Build ChangeLog') {
 							sh ('cd ${WORKSPACE}');
+							
 							if ( gitPreviousCommit == null) {
 								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
 							}
-
 							gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 
 							sh ("if [! -e changelog.log]; then echo ' ' > changelog.log;  fi");
-
 							sh ("if [-e changelog.log]; then mv changelog.log changelogtmp.log; fi");
 
 							sh ('echo Syracuse Customer Image ${BRANCH_NAME} ${BUILD_DISPLAY_NAME} ${BUILD_ID} $(date +"%Y-%m-%d %H:%M:%S") > "${WORKSPACE}/changelog.log"');
