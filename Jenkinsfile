@@ -14,7 +14,7 @@ node {
             }
         }
 
-				// The first time we launch this command on a new Branch, its failed: The repo doesn't exists yet.
+				// The first time we launch this command on a new Branch, its failed: The repo doesn't exists yet, so we need to test ...
 				def gitPreviousCommit = null
 				if ( fileExists( "${WORKSPACE}/Jenkinsfile" )) {
 								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
