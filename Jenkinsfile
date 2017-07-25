@@ -14,6 +14,7 @@ node {
             }
         }
 
+				// The first time we launch this command on a new Branch, its failed: The repo doesnt exists yet.
 				def gitPreviousCommit = null
 				if ( fileExists( '${WORKSPACE}/.git' )) {
 								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
@@ -62,9 +63,8 @@ node {
 							sh ("git log --date-order --reverse --no-merges ${gitPreviousCommit}..${gitCommit} >> changelog.log");
 
 							// for information:
-							sh ("echo 'gitPreviousCommit='");
-							sh ("echo ${gitPreviousCommit} - ${gitCommit}");
-							sh ("echo 'changelog.log'");
+							sh ("echo 'gitPreviousCommit: ${gitPreviousCommit} - gitCommit: ${gitCommit}'");
+							sh ("echo 'changelog.log contains: '");
 							sh ("cat changelog.log");
 
 							sh ('cd "${WORKSPACE}"');
