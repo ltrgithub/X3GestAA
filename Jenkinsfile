@@ -62,15 +62,15 @@ node {
 							sh ("echo ' ' >> changelog.log");
 							sh ("git log --date-order --reverse --no-merges ${gitPreviousCommit}..${gitCommit} >> changelog.log");
 
-							// for information:
-							sh ("echo 'gitPreviousCommit: ${gitPreviousCommit} - gitCommit: ${gitCommit}'");
-							sh ("echo 'changelog.log contains: '");
-							sh ("cat changelog.log");
-
 							sh ('cd "${WORKSPACE}"');
 							sh ("echo ' ' >> changelog.log");
 							sh ('more "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"');
 							sh ('rm -f "${WORKSPACE}/changelogtmp.log"');
+
+							// For information:
+							sh ("echo 'gitPreviousCommit: ${gitPreviousCommit} - gitCommit: ${gitCommit}'");
+							sh ("echo 'changelog.log contains: '");
+							sh ("cat changelog.log");
 						}
 
 
