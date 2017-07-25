@@ -367,6 +367,81 @@
 		},
 		{
 			"$type": "menuItem",
+			"code": "STD_X3_ ERP_LOCATIONS_CREATION",
+			"title": "title_92aa5b08-7f73-47bc-a67a-2190d932b069",
+			"description": "description_92aa5b08-7f73-47bc-a67a-2190d932b069",
+			"linkType": "$representation",
+			"facet": "$create",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "PHYLCT",
+				"representation": "PHYLCTM"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_ LOCATIONS_LIST",
+			"title": "title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01",
+			"description": "description_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01",
+			"linkType": "$representation",
+			"facet": "$query",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "PHYLCT",
+				"representation": "PHYLCTM"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_PHYSICAL_ASSETS_CREATION",
+			"title": "title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc",
+			"description": "description_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc",
+			"linkType": "$representation",
+			"facet": "$create",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "PHYELT",
+				"representation": "PHYELTM"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "STD_X3_ERP_ PHYSICAL_ASSETS_LIST",
+			"title": "title_dc819df0-a672-4e6f-9068-9aeed710e06c",
+			"description": "description_dc819df0-a672-4e6f-9068-9aeed710e06c",
+			"linkType": "$representation",
+			"facet": "$query",
+			"application": {
+				"application": "x3",
+				"contract": "erp"
+			},
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "PHYELT",
+				"representation": "PHYELTM"
+			}
+		},
+		{
+			"$type": "portlet",
+			"code": "PHYELT_MOBILE",
+			"title": "title_fc6172f6-d373-4534-8fa9-116eda100189",
+			"description": "description_fc6172f6-d373-4534-8fa9-116eda100189",
+			"type": "$menu"
+		},
+		{
+			"$type": "menuItem",
 			"code": "STD_X3_ERP_PPRICSEARCHM",
 			"title": "title_d4aef320-167b-4702-b22b-1170f16cb090",
 			"description": "description_d4aef320-167b-4702-b22b-1170f16cb090",
@@ -789,108 +864,6 @@
 					]
 				}
 			]
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ ERP_LOCATIONS_CREATION",
-			"title": "title_92aa5b08-7f73-47bc-a67a-2190d932b069",
-			"description": "description_92aa5b08-7f73-47bc-a67a-2190d932b069",
-			"linkType": "$representation",
-			"facet": "$create",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYLCT",
-				"representation": "PHYLCTM"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_ LOCATIONS_LIST",
-			"title": "title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01",
-			"description": "description_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYLCT",
-				"representation": "PHYLCTM"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_PHYSICAL_ASSETS_CREATION",
-			"title": "title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc",
-			"description": "description_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc",
-			"linkType": "$representation",
-			"facet": "$create",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYELT",
-				"representation": "PHYELTM"
-			}
-		},
-		{
-			"$type": "menuItem",
-			"code": "STD_X3_ERP_ PHYSICAL_ASSETS_LIST",
-			"title": "title_dc819df0-a672-4e6f-9068-9aeed710e06c",
-			"description": "description_dc819df0-a672-4e6f-9068-9aeed710e06c",
-			"linkType": "$representation",
-			"facet": "$query",
-			"application": {
-				"application": "x3",
-				"contract": "erp"
-			},
-			"representationRef": {
-				"$type": "representationProxy",
-				"entity": "PHYELT",
-				"representation": "PHYELTM"
-			}
-		},
-		{
-			"$type": "portlet",
-			"code": "PHYELT_MOBILE",
-			"title": "title_fc6172f6-d373-4534-8fa9-116eda100189",
-			"description": "description_fc6172f6-d373-4534-8fa9-116eda100189",
-			"type": "$menu"
-		},
-		{
-			"$type": "dashboardDef",
-			"title": "title_34207889-c5f1-418d-9aa7-be838a21165d",
-			"description": "description_34207889-c5f1-418d-9aa7-be838a21165d",
-			"dashboardName": "STD_X3_ERP_PHYSICAL_ASSETS",
-			"variants": [
-				{
-					"$type": "dashboardVariant",
-					"code": "PHYELT",
-					"title": "title_5805802a-d8b8-4c00-af67-cd7f7fe22952",
-					"description": "description_5805802a-d8b8-4c00-af67-cd7f7fe22952",
-					"application": {
-						"application": "x3",
-						"contract": "erp"
-					},
-					"vignettes": [
-						{
-							"$type": "dashboardVignette",
-							"portlet": {
-								"code": "PHYELT_MOBILE"
-							},
-							"endpoint": null
-						}
-					]
-				}
-			]
 		}
 	],
 	"$localization": {
@@ -911,6 +884,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "تكاليف لم تتم الموافقة عليها",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "تشاور التكاليف الخاصة بي",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "تشاور التكاليف الخاصة بي",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "أصول مادية",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "أصول مادية",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "أصول مادية",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "أصول مادية",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "أصول مادية",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "أصول مادية",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "خلق مواقع",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "رؤية مواقع",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "خلق عناصر مادية",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "رؤية عناصر مادية",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "شراءات-التشاورات الخاصة بي",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "تشاورات الشراء-التنقل",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "تشاورات الخاصة بي-الشراءات",
@@ -960,21 +943,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "طلبيات الخاصة بي",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "موقعة",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "طلبيات المفتوحة الخاصة بي",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "موقعة",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "أصول مادية",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "أصول مادية",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "أصول مادية",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "أصول مادية",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "أصول مادية",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "أصول مادية",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "خلق مواقع",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "رؤية مواقع",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "خلق عناصر مادية",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "رؤية عناصر مادية",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "أصول مادية",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "أصول مادية",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "أصول مادية",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "أصول مادية"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "موقعة"
 		},
 		"de-de": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Verfügbarer Bestand",
@@ -993,6 +962,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Ausgaben, nicht freigegeben",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Ausgaben anzeigen",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Ausgaben anzeigen",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Inventargüter",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Inventargüter",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Inventargüter",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Inventargüter",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Inventargüter",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Inventargüter",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Orte erstellen",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Orte anzeigen",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Inventargüter erstellen",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Inventargüter anzeigen",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Einkauf - Meine Anzeigen",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobil - Einkaufsanzeigen",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Einkauf - Meine Anzeigen",
@@ -1042,21 +1021,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Meine Aufträge",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Unterzeichnet",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Meine offenen Aufträge",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Unterzeichnet",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Inventargüter",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Inventargüter",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Inventargüter",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Inventargüter",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Inventargüter",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Inventargüter",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Orte erstellen",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Orte anzeigen",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Inventargüter erstellen",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Inventargüter anzeigen",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Inventargüter",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Inventargüter",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Inventargüter",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Inventargüter"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Unterzeichnet"
 		},
 		"en-gb": {
 			"title_d306d33d-9861-4ad0-bb2e-f0063365354b": "Available stock",
@@ -1064,6 +1029,10 @@
 			"description_7e8efef8-7666-461e-98d6-66dd287899af": "Available stock",
 			"title_938090e7-f520-4630-87a3-cb66479efb23": "Expenses",
 			"title_28676e5f-732d-42eb-8549-7dd773a15f22": "My Expenses",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Physical elements",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Physical elements",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Sales price search",
 			"title_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Purchases - My actions",
 			"description_9dfa43dc-8c40-4ed1-a28e-eef59bc1ac0a": "Mobility - Purchase signature actions",
@@ -1072,14 +1041,6 @@
 			"title_ba2b8e96-323b-460c-b01c-cda50ba13271": "Sales price search",
 			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "SPRICESEAM",
 			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Quote",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Physical assets",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Physical assets",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Physical elements",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Physical elements",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physical assets",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Physical elements",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Physical elements",
 			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical elements",
 			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical elements"
 		},
@@ -1100,6 +1061,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Expenses not approved",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "View expenses",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical assets",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical assets",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physcal assets",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physcal assets",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Physical assets",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Physical assets",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Create locations",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "View locations",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Create physical assets",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "View physical assets",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Purchases - My inquiries",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobility - Purchase inquiries",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Purchases - My inquiries",
@@ -1149,21 +1120,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "My orders",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signed",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "My open orders",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signed",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Physical assets",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Physical assets",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Physcal assets",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Physcal assets",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Physical assets",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Physical assets",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Create locations",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "View locations",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Create physical assets",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "View physical assets",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical assets",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Physical assets",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physcal assets",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Physcal assets"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signed"
 		},
 		"es-es": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
@@ -1182,6 +1139,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Gastos no firmados",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consultar mis gastos",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consultar mis gastos",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Bienes físicos",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Bienes físicos",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Bienes físicos",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Bienes físicos",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Bienes físicos",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Bienes físicos",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Crear ubicaciones",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Ver ubicaciones",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Crear elementos físicos",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Ver elementos físicos",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Compras - Mis consultas",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Movilidad - Consultas Compras",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Compras - Mis consultas",
@@ -1231,21 +1198,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Mis pedidos",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Firmados",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Mis pedidos abiertos",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Firmados",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Bienes físicos",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Bienes físicos",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Bienes físicos",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Bienes físicos",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Bienes físicos",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Bienes físicos",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Crear ubicaciones",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Ver ubicaciones",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Crear elementos físicos",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Ver elementos físicos",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Bienes físicos",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Bienes físicos",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Bienes físicos",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Bienes físicos"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Firmados"
 		},
 		"fr-fr": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponible",
@@ -1264,6 +1217,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Frais non approuvés",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Voir frais",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Voir frais",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Biens physiques",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Biens physiques",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Biens physiques",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Biens physiques",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Biens physiques",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Biens physiques",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Créer localisations",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Voir localisations",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Créer éléments physiques",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Voir éléments physiques",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Achats - Mes consultations",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobilité - Consultations Achats",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Achats - Mes consultations",
@@ -1313,21 +1276,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Mes commandes",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Signées",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Mes commandes ouvertes",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signées",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Biens physiques",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Biens physiques",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Biens physiques",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Biens physiques",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Biens physiques",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Biens physiques",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Créer localisations",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Voir localisations",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Créer éléments physiques",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Voir éléments physiques",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Biens physiques",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Biens physiques",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Biens physiques",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Biens physiques"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Signées"
 		},
 		"it-it": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Stock disponibile",
@@ -1346,6 +1295,12 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Spese non vistate",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Mostra sp.",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Mostra sp.",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Beni fisici",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Beni fisici",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Crea localizzazioni",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Vedi localizzaz.",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Crea elementi fisici",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Vedi elementi fisici",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Acquisti - Mie consultazioni",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Consultazioni - Mobilità",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Acquisti - Mie consultazioni",
@@ -1396,16 +1351,6 @@
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Firmati",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Miei ordini aperti",
 			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Firmati",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Beni fisici",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Beni fisici",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Crea localizzazioni",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Vedi localizzaz.",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Crea elementi fisici",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Vedi elementi fisici",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Elementi fisici",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Elementi fisici",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Beni fisici",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Beni fisici",
 			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Beni fisici",
 			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Beni fisici",
 			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Beni fisici",
@@ -1419,6 +1364,8 @@
 			"description_49528cbe-5962-40b9-8208-4358f82430e1": "Wprowadzenie wydatku",
 			"title_424693b0-ccce-439e-95d1-551d9f831cc4": "Wydatki niezatwierdzone",
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Wydatki niezatwierdzone",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne",
 			"title_d4aef320-167b-4702-b22b-1170f16cb090": "Zapytanie o cenę",
 			"title_2929a2ba-dd7a-4656-a324-f37fc99f4b9d": "Kontrakty sprzdażowe",
 			"title_98e35768-5f99-4a9b-9dab-5ef7019c1684": "Klienci",
@@ -1427,10 +1374,6 @@
 			"description_ba2b8e96-323b-460c-b01c-cda50ba13271": "Zapytanie o cenę",
 			"title_afdbf8c2-12f2-4621-904b-e0d3c20ed5ad": "Oferty",
 			"title_6e6fb0e1-d944-4686-b601-4a35e03d82bc": "Kontrakty sprzdażowe",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Elementy fizyczne",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Elementy fizyczne",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Elementy fizyczne",
 			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Elementy fizyczne",
 			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Elementy fizyczne"
 		},
@@ -1451,6 +1394,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Despesas não autor.",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consultar minhas despesas",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Consultar minhas despesas",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Ativos físicos",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Ativos físicos",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Ativos físicos",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Ativos físicos",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Ativos físicos",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Ativos físicos - STD_X3_ERP_PHYSICAL_ASSETS",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Criar localizações",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Ver localizações",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Criar elementos fisicos",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Ver elementos físicos",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Compras - Minhas consultas",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Mobilidade - Consultas compras",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Compra - Minhas consultas",
@@ -1500,21 +1453,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Minhas encomendas",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Assinada",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Minhas encomendas abertas",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Assinada",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Ativos físicos",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Ativos físicos",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Ativos físicos",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Ativos físicos",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Ativos físicos",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Ativos físicos - STD_X3_ERP_PHYSICAL_ASSETS",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Criar localizações",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Ver localizações",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Criar elementos fisicos",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Ver elementos físicos",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Ativos físicos",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Ativos físicos",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Ativos físicos",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Ativos físicos"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Assinada"
 		},
 		"ru-ru": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "Доступно на складе",
@@ -1533,6 +1472,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "Расходы не одобрены",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Показать расходы",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "Показать расходы",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Основные активы",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Основные активы",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Основные активы",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Основные активы",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Основные активы",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Основные средства",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Добавить местоположения",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Просмотреть местоположения",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Создание основных активов",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Просмотр основных активов",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "Закупки - Мои заказы",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "Мобильность - Запросы на закупку",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "Закупки - Мои запросы",
@@ -1582,21 +1531,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Мои заказы",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "Подписанные",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Мои открытые заказы",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Подписанные",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "Основные активы",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "Основные активы",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Основные активы",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "Основные активы",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "Основные активы",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "Основные средства",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "Добавить местоположения",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "Просмотреть местоположения",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "Создание основных активов",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "Просмотр основных активов",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "Основные активы",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "Основные активы",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Основные активы",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "Основные активы"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "Подписанные"
 		},
 		"zh-cn": {
 			"title_c2fed12c-20e5-4dcf-aacf-f198feb87774": "可承诺存货数量",
@@ -1615,6 +1550,16 @@
 			"description_424693b0-ccce-439e-95d1-551d9f831cc4": "未批准的费用",
 			"title_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "查看费用",
 			"description_43f2c9e2-22eb-4f16-9ce2-4ddd16771cc7": "查看费用",
+			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "实物资产",
+			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "实物资产",
+			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "实物资产",
+			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "实物资产",
+			"title_fc6172f6-d373-4534-8fa9-116eda100189": "实物资产",
+			"description_fc6172f6-d373-4534-8fa9-116eda100189": "实物资产",
+			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "创建位置",
+			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "查看位置",
+			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "创建实物资产",
+			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "查看实物资产",
 			"title_a6915960-92bf-4173-8891-7c6d9840557d": "采购 - 我的查询",
 			"description_a6915960-92bf-4173-8891-7c6d9840557d": "移动端 - 采购查询",
 			"title_ab5d363a-a8e9-4f60-92d5-5a169fa34f6e": "采购 - 我的查询",
@@ -1664,21 +1609,7 @@
 			"title_e0243649-e29c-4b81-b4e6-116a45d12f9c": "我的订单",
 			"description_e0243649-e29c-4b81-b4e6-116a45d12f9c": "已签名",
 			"title_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "我的合同",
-			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "已签名",
-			"title_34207889-c5f1-418d-9aa7-be838a21165d": "实物资产",
-			"description_34207889-c5f1-418d-9aa7-be838a21165d": "实物资产",
-			"title_5805802a-d8b8-4c00-af67-cd7f7fe22952": "实物资产",
-			"description_5805802a-d8b8-4c00-af67-cd7f7fe22952": "实物资产",
-			"title_fc6172f6-d373-4534-8fa9-116eda100189": "实物资产",
-			"description_fc6172f6-d373-4534-8fa9-116eda100189": "实物资产",
-			"title_92aa5b08-7f73-47bc-a67a-2190d932b069": "创建位置",
-			"title_7dc0f3cf-6ba6-41bf-bd59-512ec86dbb01": "查看位置",
-			"title_5fe1cc0f-a24c-48b7-9a07-4347b7e7c0bc": "创建实物资产",
-			"title_dc819df0-a672-4e6f-9068-9aeed710e06c": "查看实物资产",
-			"title_d89450a1-aa3d-49be-95d3-441ca95144a0": "实物资产",
-			"description_d89450a1-aa3d-49be-95d3-441ca95144a0": "实物资产",
-			"title_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "实物资产",
-			"description_7741b7be-18d3-4d29-b349-5a4221bc7cc2": "实物资产"
+			"description_1b551a77-a0d4-4d3a-aa6a-5cd6993f7882": "已签名"
 		}
 	}
 }
