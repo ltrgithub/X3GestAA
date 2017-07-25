@@ -14,7 +14,10 @@ node {
             }
         }
 
-				gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
+				def gitPreviousCommit = null
+				if ( fileExists( '${WORKSPACE}/.git' )) {
+								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
+				}
 
 
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sagex3ci', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
@@ -44,6 +47,10 @@ node {
 			//
 				stage('Build ChangeLog') {
 							sh ('cd ${WORKSPACE}');
+							if ( gitPreviousCommit == null) {
+								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
+							}
+
 							gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 
 							sh ("if [! -e changelog.log]; then echo ' ' > changelog.log;  fi");
