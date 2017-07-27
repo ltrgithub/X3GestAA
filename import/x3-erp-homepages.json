@@ -902,215 +902,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS005",
-      "title": "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS005",
-      "requestLevel": "2",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2",
-          "prompt": false,
-          "value": "RTRS005"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_cf22885d-bf79-4763-8c8b-011db42187b9",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS007",
-      "title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS007",
-      "requestLevel": "2",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
-          "prompt": false,
-          "value": "RTRS007"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "USR_X3REFV7_ART1M3",
-      "title": "title_880f77b1-7534-4e17-928c-31f05c046835",
-      "description": "description_880f77b1-7534-4e17-928c-31f05c046835",
-      "linkType": "$process",
-      "icon": "",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_RCPC",
-      "target": "self",
-      "processName": "INDIC_RCPC",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": null,
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RESPCPTCLT",
-      "title": "title_2b55e945-408e-4aff-8bc9-c24d4d929a51",
-      "description": "description_2b55e945-408e-4aff-8bc9-c24d4d929a51",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~TRS08_001~RESPCPTCLI",
-      "target": "self",
-      "processName": "TRS08_001",
-      "processMenu": "RESPCPTCLI",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_30b94774-e639-4598-bb3b-b02faa3e9231",
-      "useCurrentEndpoint": true,
-      "pageName": "NAARaccountingmanager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "SEED contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "GUEST"
-        },
-        {
-          "code": "NA-ARACCMAN"
-        },
-        {
-          "code": "ADMIN"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "dc6f5b77-9ae2-424b-8ab2-2f917be9833d",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS005"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "b116fa31-82f6-4918-838d-25e3dc26546e",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS007"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "ee3f4547-e7a9-4ae6-89fe-9fe8dfab2fc1",
-          "vignette": {
-            "code": "USR_X3REFV7_ART1M3"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "157a171d-9d74-4c0d-9bec-2de50be9c5f7",
-          "vignette": {
-            "code": "STD_X3_ERP_RESPCPTCLT"
-          },
-          "endpoint": null
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "4d66bacb-bdd6-4d46-9d62-2974a5f6dc97",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@9ce752a5-571a-4a8a-99cd-e0df763f73c4}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"dc6f5b77-9ae2-424b-8ab2-2f917be9833d\",\"$title\":\"-\"},{\"$bind\":\"b116fa31-82f6-4918-838d-25e3dc26546e\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"displayLineNum\"},{\"$bind\":\"recordsPerPage\"},{\"$bind\":\"req_id\"},{\"$bind\":\"first_record\"},{\"$bind\":\"ifCube\"},{\"$bind\":\"level_p\"},{\"$bind\":\"level_m\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"z_p\"},{\"$bind\":\"z_m\"},{\"$bind\":\"BPRPAY\"},{\"$bind\":\"BPRNAM\"},{\"$bind\":\"DUDDAT\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ACCCUR\"},{\"$bind\":\"FCY\"},{\"$bind\":\"NUM\"},{\"$bind\":\"SAC\"},{\"$bind\":\"DPTCOD\"},{\"$bind\":\"LEVFUP\"},{\"$bind\":\"DATFUP\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\"}}],\"$widths\":\"50,50\"},{\"$bind\":\"ee3f4547-e7a9-4ae6-89fe-9fe8dfab2fc1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"157a171d-9d74-4c0d-9bec-2de50be9c5f7\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "NAARaccountingmanager",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_ERP_RGPA009",
       "title": "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e",
       "description": "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e",
@@ -8641,220 +8432,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS005",
-      "title": "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS005",
-      "requestLevel": "2",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2",
-          "prompt": false,
-          "value": "RTRS005"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_cf22885d-bf79-4763-8c8b-011db42187b9",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS007",
-      "title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS007",
-      "requestLevel": "2",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
-          "prompt": false,
-          "value": "RTRS007"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_INDIC_RCPC",
-      "title": "title_d6885a38-3c97-4699-b4d4-f031410e690d",
-      "description": "description_d6885a38-3c97-4699-b4d4-f031410e690d",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_RCPC",
-      "target": "self",
-      "processName": "INDIC_RCPC",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RESPCPTCLT",
-      "title": "title_2b55e945-408e-4aff-8bc9-c24d4d929a51",
-      "description": "description_2b55e945-408e-4aff-8bc9-c24d4d929a51",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~TRS08_001~RESPCPTCLI",
-      "target": "self",
-      "processName": "TRS08_001",
-      "processMenu": "RESPCPTCLI",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_d603bce7-8959-4bb1-af85-6e07eae8ebba",
-      "description": "description_d603bce7-8959-4bb1-af85-6e07eae8ebba",
-      "useCurrentEndpoint": true,
-      "pageName": "ARaccountingmanager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "SEED contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "ERP-ARACCMAN"
-        },
-        {
-          "code": "ERP-SYSTADMIN"
-        },
-        {
-          "code": "GUEST"
-        },
-        {
-          "code": "ADMIN"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "e7f7d103-d55e-4e13-bc71-f1b817144958",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS005"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "eaae1a5d-b073-4e3a-8175-ff9ae15ec8b4",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS007"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "a4c38e8e-de38-4e28-aa15-a55a49309891",
-          "vignette": {
-            "code": "STD_X3_ERP_INDIC_RCPC"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "8a2b7b9e-7d8e-4dde-ae1f-fd5e8e7a0ed1",
-          "vignette": {
-            "code": "STD_X3_ERP_RESPCPTCLT"
-          },
-          "endpoint": null
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@5818ee7b-6719-4092-912d-46c88a1f7d42}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"e7f7d103-d55e-4e13-bc71-f1b817144958\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"CPY\"},{\"$bind\":\"BPCNUM\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"OSTAUZ\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"DLVOSTL\"},{\"$bind\":\"NIVDLVL\"},{\"$bind\":\"NPTINVL\"},{\"$bind\":\"ORDBPIATIL\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"line_no\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"eaae1a5d-b073-4e3a-8175-ff9ae15ec8b4\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPRPAY\"},{\"$bind\":\"BPRNAM\"},{\"$bind\":\"DUDDAT\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ACCCUR\"},{\"$bind\":\"FCY\"},{\"$bind\":\"NUM\"},{\"$bind\":\"SAC\"},{\"$bind\":\"DPTCOD\"},{\"$bind\":\"LEVFUP\"},{\"$bind\":\"DATFUP\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"a4c38e8e-de38-4e28-aa15-a55a49309891\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"8a2b7b9e-7d8e-4dde-ae1f-fd5e8e7a0ed1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@b45b2101-b67c-446b-9360-c95f0868a881}\",\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "ARaccountingmanager",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_ERP_RVEN031",
       "title": "title_b07fbe5f-8d46-441b-ba3d-939485b221be",
       "linkType": "$request",
@@ -9061,218 +8638,6 @@
       "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@12aadb27-6d89-4530-b4bb-448525695a8e}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"d2a21757-f851-48ba-b2b2-e94cfd23ccf0\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPCNUM\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"SALFCY\"},{\"$bind\":\"ORDDAT\"},{\"$bind\":\"SOHNUM\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"FORMULA_3\"},{\"$bind\":\"FORMULA_4\"},{\"$bind\":\"FORMULA_5\"},{\"$bind\":\"ORDNOT\"},{\"$bind\":\"ORDATI\"},{\"$bind\":\"CUR\"},{\"$bind\":\"FORMULA_6\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\",\"$menus\":[{\"$category\":\"link\",\"$bind\":\"Excel\",\"$skin\":\"s-vignette-menus-link\",\"$icon\":{\"$path\":\"file/s-link-\"}}]}},{\"$bind\":\"e5c6a63b-feb2-4253-b906-83165cdd8833\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPCORD\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"ITMREF\"},{\"$bind\":\"DES1AXX\"},{\"$bind\":\"QTY\"},{\"$bind\":\"SAU\"},{\"$bind\":\"FORMULA_1\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\",\"$menus\":[{\"$category\":\"link\",\"$bind\":\"Excel\",\"$skin\":\"s-vignette-menus-link\",\"$icon\":{\"$path\":\"file/s-link-\"}}]}}],\"$widths\":\"50,50\"},{\"$bind\":\"82da8cbd-17a6-44c8-9abf-59553c007f22\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"8903fd26-21eb-4ad6-aa7a-e5abbb8e9ea0\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@992825f7-4df4-43bf-b4f6-d844140a2e2e}\",\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
       "page": {
         "pageName": "NAsalesadministrator",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_NASACH18",
-      "title": "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb",
-      "description": "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb",
-      "linkType": "$stats",
-      "applicationMenu": false,
-      "facet": "$cube",
-      "keyParameter": "NAA18",
-      "target": "self",
-      "statName": "NAA18",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_MPUR"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "PORTVIEW",
-          "title": "title_b1d7bf72-be4d-4c96-a5f9-4750afe43173",
-          "prompt": false,
-          "value": "NASACH18"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_f2f54af5-3f69-4854-8f71-d778ea1c5929",
-          "prompt": false,
-          "value": "NASACH18"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS003",
-      "title": "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS003",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_7b8ed48c-ff38-4181-b69b-8f0842f4b5fc",
-          "prompt": false,
-          "value": "RTRS003"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_c775bfc0-219c-4754-b49f-fbd5e007df45",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_INDIC_RCPF",
-      "title": "title_825e6986-5104-44b6-be78-9eafe89eef72",
-      "description": "description_825e6986-5104-44b6-be78-9eafe89eef72",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_RCPF",
-      "target": "self",
-      "processName": "INDIC_RCPF",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RESPCPTFOU",
-      "title": "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
-      "description": "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~TRS04_001~RESPCPTFOU",
-      "target": "self",
-      "processName": "TRS04_001",
-      "processMenu": "RESPCPTFOU",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d",
-      "description": "description_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d",
-      "useCurrentEndpoint": true,
-      "pageName": "NAAPaccountingmanager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "SEED contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "GUEST"
-        },
-        {
-          "code": "NA-APACCMAN"
-        },
-        {
-          "code": "ADMIN"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "24f38ef4-d1ff-4c72-9631-bceaebf02a9c",
-          "vignette": {
-            "code": "STD_X3_ERP_NASACH18"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "c15f5cab-3857-43df-88fb-dc701d64c411",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS003"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "7c10bf65-3cb6-4405-af37-bcda4b968bc1",
-          "vignette": {
-            "code": "STD_X3_ERP_INDIC_RCPF"
-          },
-          "endpoint": null
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "99e1d07a-8cb0-405f-b320-37d1331364e3",
-          "vignette": {
-            "code": "STD_X3_ERP_RESPCPTFOU"
-          },
-          "endpoint": null
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "92edd203-b74b-42a1-9dea-a76d56f2afb1",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@62d17e43-4e1c-486b-9f8d-b5478bf32303}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"24f38ef4-d1ff-4c72-9631-bceaebf02a9c\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPSINV\"},{\"$bind\":\"TSICOD\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"},{\"$bind\":\"amount3\"},{\"$bind\":\"amount4\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\"}},{\"$bind\":\"c15f5cab-3857-43df-88fb-dc701d64c411\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"7c10bf65-3cb6-4405-af37-bcda4b968bc1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"99e1d07a-8cb0-405f-b320-37d1331364e3\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@e2c94202-e24a-4fa3-bdf8-419ba276dc0a}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "NAAPaccountingmanager",
         "$variantType": "landingPage"
       }
     },
@@ -9664,228 +9029,6 @@
     },
     {
       "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS003",
-      "title": "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS003",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_7b8ed48c-ff38-4181-b69b-8f0842f4b5fc",
-          "prompt": false,
-          "value": "RTRS003"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_c775bfc0-219c-4754-b49f-fbd5e007df45",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RTRS001",
-      "title": "title_6109390d-6c5d-432d-b907-daaccdcbb8dc",
-      "linkType": "$request",
-      "applicationMenu": false,
-      "facet": "$query",
-      "target": "self",
-      "requestName": "TRS001",
-      "requestLevel": "1",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": [
-        {
-          "$type": "menuItemParameter",
-          "name": "portview",
-          "title": "title_c44965b6-ecc8-4eb0-bdc0-d3fd4c09e5aa",
-          "prompt": false,
-          "value": "RTRS001"
-        },
-        {
-          "$type": "menuItemParameter",
-          "name": "cube",
-          "title": "title_a50e58c4-1ebd-458d-8eec-3e8746037708",
-          "prompt": false,
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_INDIC_RCPF",
-      "title": "title_825e6986-5104-44b6-be78-9eafe89eef72",
-      "description": "description_825e6986-5104-44b6-be78-9eafe89eef72",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "INDIC_RCPF",
-      "target": "self",
-      "processName": "INDIC_RCPF",
-      "processMenu": "",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "menuItem",
-      "code": "STD_X3_ERP_RESPCPTFOU",
-      "title": "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
-      "description": "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
-      "linkType": "$process",
-      "applicationMenu": false,
-      "facet": "$details",
-      "keyParameter": "~TRS04_001~RESPCPTFOU",
-      "target": "self",
-      "processName": "TRS04_001",
-      "processMenu": "RESPCPTFOU",
-      "processLeg": "",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "application": {
-        "application": "x3",
-        "contract": "erp"
-      },
-      "endpoint": null,
-      "representationRef": {
-        "$type": "representationProxy"
-      },
-      "module": {
-        "code": "STD_X3_ERP_GTRS"
-      },
-      "parameters": []
-    },
-    {
-      "$type": "landingPage",
-      "title": "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde",
-      "description": "description_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde",
-      "useCurrentEndpoint": true,
-      "pageName": "APAccountingManager",
-      "$factory": true,
-      "$factoryOwner": "SAGE",
-      "roles": [
-        {
-          "code": "Authoring contributor"
-        },
-        {
-          "code": "SEED contributor"
-        },
-        {
-          "code": "ADMCA"
-        },
-        {
-          "code": "Developers"
-        },
-        {
-          "code": "ERP-APACCMAN"
-        },
-        {
-          "code": "ERP-SYSTADMIN"
-        },
-        {
-          "code": "GUEST"
-        },
-        {
-          "code": "ADMIN"
-        }
-      ],
-      "vignettes": [
-        {
-          "$type": "landingPageVignette",
-          "bind": "7487e574-67ff-4c60-8006-30f4418c959c",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS003"
-          },
-          "endpoint": {
-            "dataset": "SEEDTEST"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "b73cd4dc-7575-45e2-9603-08c4c9532f2f",
-          "vignette": {
-            "code": "STD_X3_ERP_RTRS001"
-          },
-          "endpoint": {
-            "dataset": "SEEDTEST"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "f3da9697-7410-4f42-9569-67a502789d34",
-          "vignette": {
-            "code": "STD_X3_ERP_INDIC_RCPF"
-          },
-          "endpoint": {
-            "dataset": "SEEDTEST"
-          }
-        },
-        {
-          "$type": "landingPageVignette",
-          "bind": "71835259-1fee-483b-a231-8172f41f57f2",
-          "vignette": {
-            "code": "STD_X3_ERP_RESPCPTFOU"
-          },
-          "endpoint": {
-            "dataset": "SEEDTEST"
-          }
-        }
-      ]
-    },
-    {
-      "$type": "pageLayout",
-      "code": "a1a251b4-684f-48bb-a0ff-5817d84baa72",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@656afa2f-1f3c-4fb0-9c41-324817cd6869}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"7487e574-67ff-4c60-8006-30f4418c959c\",\"$title\":\"-\"},{\"$bind\":\"b73cd4dc-7575-45e2-9603-08c4c9532f2f\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"f3da9697-7410-4f42-9569-67a502789d34\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$title\":\"{@7685b672-b965-4ddb-961f-78a745757d9c}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"71835259-1fee-483b-a231-8172f41f57f2\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
-      "page": {
-        "pageName": "APAccountingManager",
-        "$variantType": "landingPage"
-      }
-    },
-    {
-      "$type": "menuItem",
       "code": "STD_X3_GEODE_DEP",
       "title": "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e",
       "description": "description_87a7454b-dbf6-44ce-b144-e2247bdfec8e",
@@ -10224,6 +9367,864 @@
       "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cfd8c061-9ee6-4444-9157-570d8b2a5975}\",\"$layout\":{\"$items\":[{\"$bind\":\"ba1a29de-bb81-4e99-9bde-262ba5364964\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8}\",\"$layout\":{\"$items\":[{\"$bind\":\"ca94757e-d44c-48ca-a798-9e121cfd5ee9\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"acc15fcc-eb56-41d0-8889-e205e51bd91c\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"d2ebec03-8776-4fdd-9792-407dbd5f1403\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"54d25203-af2b-43e2-aed6-eeb9eb6fe61e\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"e73018ad-cb14-464c-a49e-0d653a2e61f8\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"9f017a4e-5318-47c5-bdd6-40557b68a1ba\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "GEORESDEP",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS005",
+      "title": "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS005",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2",
+          "prompt": false,
+          "value": "RTRS005"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_cf22885d-bf79-4763-8c8b-011db42187b9",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS007",
+      "title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS007",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
+          "prompt": false,
+          "value": "RTRS007"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "USR_X3REFV7_ART1M3",
+      "title": "title_880f77b1-7534-4e17-928c-31f05c046835",
+      "description": "description_880f77b1-7534-4e17-928c-31f05c046835",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RCPC",
+      "target": "self",
+      "processName": "INDIC_RCPC",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPCPTCLT",
+      "title": "title_2b55e945-408e-4aff-8bc9-c24d4d929a51",
+      "description": "description_2b55e945-408e-4aff-8bc9-c24d4d929a51",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~TRS08_001~RESPCPTCLI",
+      "target": "self",
+      "processName": "TRS08_001",
+      "processMenu": "RESPCPTCLI",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_30b94774-e639-4598-bb3b-b02faa3e9231",
+      "description": "description_30b94774-e639-4598-bb3b-b02faa3e9231",
+      "useCurrentEndpoint": true,
+      "pageName": "NAARaccountingmanager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "SEED contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "NA-ARACCMAN"
+        },
+        {
+          "code": "ADMIN"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "dc6f5b77-9ae2-424b-8ab2-2f917be9833d",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS005"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "b116fa31-82f6-4918-838d-25e3dc26546e",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS007"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "ee3f4547-e7a9-4ae6-89fe-9fe8dfab2fc1",
+          "vignette": {
+            "code": "USR_X3REFV7_ART1M3"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "157a171d-9d74-4c0d-9bec-2de50be9c5f7",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPCPTCLT"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "4d66bacb-bdd6-4d46-9d62-2974a5f6dc97",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@9ce752a5-571a-4a8a-99cd-e0df763f73c4}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"dc6f5b77-9ae2-424b-8ab2-2f917be9833d\",\"$title\":\"-\"},{\"$bind\":\"b116fa31-82f6-4918-838d-25e3dc26546e\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"displayLineNum\"},{\"$bind\":\"recordsPerPage\"},{\"$bind\":\"req_id\"},{\"$bind\":\"first_record\"},{\"$bind\":\"ifCube\"},{\"$bind\":\"level_p\"},{\"$bind\":\"level_m\"},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"line_no\"},{\"$bind\":\"z_p\"},{\"$bind\":\"z_m\"},{\"$bind\":\"BPRPAY\"},{\"$bind\":\"BPRNAM\"},{\"$bind\":\"DUDDAT\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ACCCUR\"},{\"$bind\":\"FCY\"},{\"$bind\":\"NUM\"},{\"$bind\":\"SAC\"},{\"$bind\":\"DPTCOD\"},{\"$bind\":\"LEVFUP\"},{\"$bind\":\"DATFUP\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\"}}],\"$widths\":\"50,50\"},{\"$bind\":\"ee3f4547-e7a9-4ae6-89fe-9fe8dfab2fc1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"157a171d-9d74-4c0d-9bec-2de50be9c5f7\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "NAARaccountingmanager",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS005",
+      "title": "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS005",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2",
+          "prompt": false,
+          "value": "RTRS005"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_cf22885d-bf79-4763-8c8b-011db42187b9",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS007",
+      "title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS007",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
+          "prompt": false,
+          "value": "RTRS007"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_RCPC",
+      "title": "title_d6885a38-3c97-4699-b4d4-f031410e690d",
+      "description": "description_d6885a38-3c97-4699-b4d4-f031410e690d",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RCPC",
+      "target": "self",
+      "processName": "INDIC_RCPC",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPCPTCLT",
+      "title": "title_2b55e945-408e-4aff-8bc9-c24d4d929a51",
+      "description": "description_2b55e945-408e-4aff-8bc9-c24d4d929a51",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~TRS08_001~RESPCPTCLI",
+      "target": "self",
+      "processName": "TRS08_001",
+      "processMenu": "RESPCPTCLI",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_d603bce7-8959-4bb1-af85-6e07eae8ebba",
+      "description": "description_d603bce7-8959-4bb1-af85-6e07eae8ebba",
+      "useCurrentEndpoint": true,
+      "pageName": "ARaccountingmanager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "SEED contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "ERP-ARACCMAN"
+        },
+        {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "ADMIN"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "e7f7d103-d55e-4e13-bc71-f1b817144958",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS005"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "eaae1a5d-b073-4e3a-8175-ff9ae15ec8b4",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS007"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "a4c38e8e-de38-4e28-aa15-a55a49309891",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_RCPC"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "8a2b7b9e-7d8e-4dde-ae1f-fd5e8e7a0ed1",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPCPTCLT"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@5818ee7b-6719-4092-912d-46c88a1f7d42}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"e7f7d103-d55e-4e13-bc71-f1b817144958\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"CPY\"},{\"$bind\":\"BPCNUM\"},{\"$bind\":\"BPCNAM\"},{\"$bind\":\"OSTAUZ\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"DLVOSTL\"},{\"$bind\":\"NIVDLVL\"},{\"$bind\":\"NPTINVL\"},{\"$bind\":\"ORDBPIATIL\"},{\"$bind\":\"FORMULA_2\"},{\"$bind\":\"line_no\"}]},\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}},{\"$bind\":\"eaae1a5d-b073-4e3a-8175-ff9ae15ec8b4\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$criteria\"},{\"$bind\":\"headerMessage\",\"$isAdvanced\":true},{\"$bind\":\"levelMessage\",\"$isAdvanced\":true},{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPRPAY\"},{\"$bind\":\"BPRNAM\"},{\"$bind\":\"DUDDAT\"},{\"$bind\":\"FORMULA_1\"},{\"$bind\":\"ACCCUR\"},{\"$bind\":\"FCY\"},{\"$bind\":\"NUM\"},{\"$bind\":\"SAC\"},{\"$bind\":\"DPTCOD\"},{\"$bind\":\"LEVFUP\"},{\"$bind\":\"DATFUP\"},{\"$bind\":\"line_no\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$menus\":[]}}],\"$widths\":\"50,50\"},{\"$bind\":\"a4c38e8e-de38-4e28-aa15-a55a49309891\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"8a2b7b9e-7d8e-4dde-ae1f-fd5e8e7a0ed1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@b45b2101-b67c-446b-9360-c95f0868a881}\",\"$isEmptyVisible\":true,\"$opened\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "ARaccountingmanager",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_NASACH18",
+      "title": "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb",
+      "description": "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb",
+      "linkType": "$stats",
+      "applicationMenu": false,
+      "facet": "$cube",
+      "keyParameter": "NAA18",
+      "target": "self",
+      "statName": "NAA18",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_MPUR"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "PORTVIEW",
+          "title": "title_b1d7bf72-be4d-4c96-a5f9-4750afe43173",
+          "prompt": false,
+          "value": "NASACH18"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_f2f54af5-3f69-4854-8f71-d778ea1c5929",
+          "prompt": false,
+          "value": "NASACH18"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS003",
+      "title": "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS003",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_7b8ed48c-ff38-4181-b69b-8f0842f4b5fc",
+          "prompt": false,
+          "value": "RTRS003"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_c775bfc0-219c-4754-b49f-fbd5e007df45",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_RCPF",
+      "title": "title_825e6986-5104-44b6-be78-9eafe89eef72",
+      "description": "description_825e6986-5104-44b6-be78-9eafe89eef72",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RCPF",
+      "target": "self",
+      "processName": "INDIC_RCPF",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPCPTFOU",
+      "title": "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
+      "description": "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~TRS04_001~RESPCPTFOU",
+      "target": "self",
+      "processName": "TRS04_001",
+      "processMenu": "RESPCPTFOU",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d",
+      "description": "description_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d",
+      "useCurrentEndpoint": true,
+      "pageName": "NAAPaccountingmanager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "SEED contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "NA-APACCMAN"
+        },
+        {
+          "code": "ADMIN"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "24f38ef4-d1ff-4c72-9631-bceaebf02a9c",
+          "vignette": {
+            "code": "STD_X3_ERP_NASACH18"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "c15f5cab-3857-43df-88fb-dc701d64c411",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS003"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7c10bf65-3cb6-4405-af37-bcda4b968bc1",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_RCPF"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "99e1d07a-8cb0-405f-b320-37d1331364e3",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPCPTFOU"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "92edd203-b74b-42a1-9dea-a76d56f2afb1",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@62d17e43-4e1c-486b-9f8d-b5478bf32303}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"24f38ef4-d1ff-4c72-9631-bceaebf02a9c\",\"$title\":\"-\",\"$vignette\":{\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"$resources\",\"$format\":\"grid\",\"$isQuickFilter\":true,\"$alternateStyle\":true,\"$isTopLabelAlignment\":true,\"$layout\":{\"$items\":[{\"$bind\":\"BPSINV\"},{\"$bind\":\"TSICOD\"},{\"$bind\":\"amount1\"},{\"$bind\":\"amount2\"},{\"$bind\":\"amount3\"},{\"$bind\":\"amount4\"}]},\"$graphPosition\":\"behind\",\"$itemsPerPage\":10}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isTitleHidden\":true,\"$title\":\"{$title}\"}},{\"$bind\":\"c15f5cab-3857-43df-88fb-dc701d64c411\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"7c10bf65-3cb6-4405-af37-bcda4b968bc1\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$layout\":{\"$items\":[{\"$bind\":\"99e1d07a-8cb0-405f-b320-37d1331364e3\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$title\":\"{@e2c94202-e24a-4fa3-bdf8-419ba276dc0a}\",\"$isEmptyVisible\":true}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "NAAPaccountingmanager",
+        "$variantType": "landingPage"
+      }
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS003",
+      "title": "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS003",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_7b8ed48c-ff38-4181-b69b-8f0842f4b5fc",
+          "prompt": false,
+          "value": "RTRS003"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_c775bfc0-219c-4754-b49f-fbd5e007df45",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS001",
+      "title": "title_6109390d-6c5d-432d-b907-daaccdcbb8dc",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS001",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_c44965b6-ecc8-4eb0-bdc0-d3fd4c09e5aa",
+          "prompt": false,
+          "value": "RTRS001"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_a50e58c4-1ebd-458d-8eec-3e8746037708",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_RCPF",
+      "title": "title_825e6986-5104-44b6-be78-9eafe89eef72",
+      "description": "description_825e6986-5104-44b6-be78-9eafe89eef72",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RCPF",
+      "target": "self",
+      "processName": "INDIC_RCPF",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPCPTFOU",
+      "title": "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
+      "description": "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "~TRS04_001~RESPCPTFOU",
+      "target": "self",
+      "processName": "TRS04_001",
+      "processMenu": "RESPCPTFOU",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde",
+      "description": "description_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde",
+      "useCurrentEndpoint": true,
+      "pageName": "APAccountingManager",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "SEED contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "ERP-APACCMAN"
+        },
+        {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "ADMIN"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "7487e574-67ff-4c60-8006-30f4418c959c",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS003"
+          },
+          "endpoint": {
+            "dataset": "SEEDTEST"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "b73cd4dc-7575-45e2-9603-08c4c9532f2f",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS001"
+          },
+          "endpoint": {
+            "dataset": "SEEDTEST"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "f3da9697-7410-4f42-9569-67a502789d34",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_RCPF"
+          },
+          "endpoint": {
+            "dataset": "SEEDTEST"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "71835259-1fee-483b-a231-8172f41f57f2",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPCPTFOU"
+          },
+          "endpoint": {
+            "dataset": "SEEDTEST"
+          }
+        }
+      ]
+    },
+    {
+      "$type": "pageLayout",
+      "code": "a1a251b4-684f-48bb-a0ff-5817d84baa72",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$title\":\"{@656afa2f-1f3c-4fb0-9c41-324817cd6869}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"7487e574-67ff-4c60-8006-30f4418c959c\",\"$title\":\"-\"},{\"$bind\":\"b73cd4dc-7575-45e2-9603-08c4c9532f2f\",\"$title\":\"-\"}],\"$widths\":\"50,50\"},{\"$bind\":\"f3da9697-7410-4f42-9569-67a502789d34\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$isEmptyVisible\":true,\"$opened\":true},{\"$category\":\"section\",\"$title\":\"{@7685b672-b965-4ddb-961f-78a745757d9c}\",\"$isEmptyVisible\":true,\"$layout\":{\"$items\":[{\"$bind\":\"71835259-1fee-483b-a231-8172f41f57f2\",\"$title\":\"-\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"},\"$title\":\"{$title}\",\"$garbageFields\":[]}",
+      "page": {
+        "pageName": "APAccountingManager",
         "$variantType": "landingPage"
       }
     },
@@ -13785,12 +13786,6 @@
   ],
   "$localization": {
     "ar-sa": {
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "NAمسؤؤل حساب الزبون",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "مؤشرات",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "عملية",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "مسؤول المعمل",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "title_9e0ec861-f874-4fe1-9f5d-eeec27e8725f": "STD_X3_ERP_RGPA013",
@@ -13889,20 +13884,12 @@
       "title_ccac36d1-1ada-4274-a16c-0ed333b44d5c": "مدير",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "مؤشرات",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "علامة جديدة 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "مسؤول حساب الزبائن",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "مؤشرات",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "عملية",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "NA مديلر المبيعات",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "STD_X3_ERP_RVEN031",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "STD_X3_ERP_ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "مؤشرات",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "عملية",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "NA مسؤول حساب المورد",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "STD_X3_ERP_RTRS003",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "مؤشرات",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "عملية",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "إدارة المؤشرات",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "طلبات تغيير المخلوق",
       "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "طلبات التغيير للموافقة الخاصة بي",
@@ -13914,6 +13901,20 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "إجراء مهنة",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "مدير النظام",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "عملية",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "NAمسؤؤل حساب الزبون",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "مؤشرات",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "عملية",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "مسؤول حساب الزبائن",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "مؤشرات",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "عملية",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "NA مسؤول حساب المورد",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "STD_X3_ERP_RTRS003",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "مؤشرات",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "عملية",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "مسؤول حساب المورد",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "STD_X3_ERP_RTRS001",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "مؤشرات",
@@ -14040,19 +14041,6 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Prozess",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indikatoren",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI-Qualität",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Kreditorenbuchhalter",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Kunden über Kreditlimit",
-      "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2": "portview",
-      "title_cf22885d-bf79-4763-8c8b-011db42187b9": "cube",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Fällige Kunden-OPs, in Verzug",
-      "title_5404de1d-abb3-4f63-a647-bcfaf42a17df": "portview",
-      "title_e90e8483-1963-431c-af59-668c851ba9ba": "cube",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "Debitorenbuchhalter Indikat",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Debitorenbuchhaltung",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Schlüsselinformationen",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Geschäftsprozess",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Werkstattleiter",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "Nicht zugeord. Auftr des Tages",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -14285,11 +14273,6 @@
       "title_587fb7e2-d319-4b7e-b26f-46340c934aaa": "portview",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Schlüsselinformationen",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "Neues Register 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Kreditorenbuchhalter",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Debitorenbuchhalter Indikat",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Schlüsselinformationen",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Geschäftsprozess",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Vertriebsmanagement",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Gesperrte Best./Kunde",
       "title_9365970b-20ce-4967-9363-93a4d77b8a54": "portview",
@@ -14302,7 +14285,39 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Schlüsselinformationen",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Geschäftsprozess",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Debitorenbuchalter",
+      "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Änderungskontrolle",
+      "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Änderungsanträge erstellt",
+      "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "Änderungsanträge für meine Genehmigung",
+      "title_e974a7b0-a206-462a-a454-5c2a86459608": "Zu verwaltende Änderungsanträge",
+      "title_9982588f-bec8-464c-9ad6-bf6ae85703af": "Zu planende Änderungsanträge",
+      "title_e55f4b66-138d-4406-97f5-65745a45fde1": "Auszuführende Pläne",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Geschäftsprozess",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Schlüsselinformationen",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Geschäftsprozess",
+      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Systemadministrator",
+      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Geschäftsprozess",
+      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Verantwortlicher Logistik",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Prozess",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Aktivitätsverfolgung",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Debitorenbuchhalter",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Kunden über Kreditlimit",
+      "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2": "portview",
+      "title_cf22885d-bf79-4763-8c8b-011db42187b9": "cube",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Fällige Kunden-OPs, in Verzug",
+      "title_5404de1d-abb3-4f63-a647-bcfaf42a17df": "portview",
+      "title_e90e8483-1963-431c-af59-668c851ba9ba": "cube",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "Debitorenbuchhalter Indikat",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Debitorenbuchhaltung",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Schlüsselinformationen",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Geschäftsprozess",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Debitorenbuchhalter",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Debitorenbuchhalter Indikat",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Schlüsselinformationen",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Geschäftsprozess",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Kreditorenbuchhalter",
       "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Lieferantenperformance",
       "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
       "title_f2f54af5-3f69-4854-8f71-d778ea1c5929": "portview",
@@ -14315,27 +14330,13 @@
       "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
       "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Schlüsselinformationen",
       "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Geschäftsprozess",
-      "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Änderungskontrolle",
-      "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Änderungsanträge erstellt",
-      "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "Änderungsanträge für meine Genehmigung",
-      "title_e974a7b0-a206-462a-a454-5c2a86459608": "Zu verwaltende Änderungsanträge",
-      "title_9982588f-bec8-464c-9ad6-bf6ae85703af": "Zu planende Änderungsanträge",
-      "title_e55f4b66-138d-4406-97f5-65745a45fde1": "Auszuführende Pläne",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Geschäftsprozess",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Schlüsselinformationen",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Geschäftsprozess",
-      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Systemadministrator",
-      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Geschäftsprozess",
-      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Debitorenbuchalter",
+      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Kreditorenbuchhalter",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Fällige OPs mit Zahlungsfreig.",
       "title_c44965b6-ecc8-4eb0-bdc0-d3fd4c09e5aa": "portview",
       "title_a50e58c4-1ebd-458d-8eec-3e8746037708": "cube",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Schlüsselinformationen",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Geschäftsprozess",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Geschäftsprozess",
-      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Verantwortlicher Logistik",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Prozess",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Aktivitätsverfolgung",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "Einkäufer",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "Einkäufer",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Zu signierende Aufträge",
@@ -14489,13 +14490,6 @@
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@c43ec551-7168-4c19-8b89-c6bc59b0ad1d": "Prozess"
     },
     "en-gb": {
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Customers Exceeding Credit Lev",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Late Customer Open Items",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "A/R Accounting Manager Indic",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "A/R accounting manager",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Business process",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "Allocated WOs of current day",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
       "title_9e0ec861-f874-4fe1-9f5d-eeec27e8725f": "PCP to Calculate",
@@ -14619,10 +14613,6 @@
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Key Information",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "New tab 1",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "A/R Accounting Manager Indic",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Key Information",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Business process",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Blocked Orders / Customers",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Late Orders / Customers",
       "title_a3fa6259-6f26-4381-bc37-dff76faacf54": "Sales administror Indicators",
@@ -14630,6 +14620,21 @@
       "title_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "Sales Administrator",
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Business process",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Business process",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Business process",
+      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "System Administrator",
+      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business process",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Customers Exceeding Credit Lev",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Late Customer Open Items",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "A/R Accounting Manager Indic",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "A/R accounting manager",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Business process",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "A/R Accounting Manager Indic",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Key Information",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Business process",
       "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Supplier Performance",
       "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
       "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Late Suppl O. Item w/o PA",
@@ -14638,10 +14643,6 @@
       "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "A/P accounting manager",
       "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
       "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Business process",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Business process",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Business process",
-      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "System Administrator",
-      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business process",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Late Suppl O. Item w/ PA",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business process",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Key Information",
@@ -14787,15 +14788,6 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Processus",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicateurs",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Quality",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "A/R accounting manager",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Customers over Credit Limit",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Past Due Customer Open Items",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "A/R Account.Manager Indicators",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "A/R accounting manager",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Key Information",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Business Process",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Workshop manager",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "Allocated WOs Started Today",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -15048,11 +15040,6 @@
       "title_ff172aa4-860e-4a31-8705-427ca96bd52c": "Portal code",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Key Information",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "New Tab 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "A/R accounting manager",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "A/R Account.Manager Indicators",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Key Information",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Business Process",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Sales administrator",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Customers on Credit Hold",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Orders with Late Ship Date ",
@@ -15063,17 +15050,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Key Information",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Business Process",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "A/P accounting manager",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Supplier Performance",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_b1d7bf72-be4d-4c96-a5f9-4750afe43173": "Portal code",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Past Due Inv w/out Approval",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "A/P Account.Manager Indicators",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "A/P accounting manager",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Key Information",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Business Process",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Change control",
       "title_893f90f2-88a4-4a04-8d25-94208f516cdb": "CCM Visual Process",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Change requests created",
@@ -15089,11 +15065,6 @@
       "description_61ab37e4-6d28-4e9d-b390-93888747b103": "Development training Level 3 step 1",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business Process",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@99a4c23d-4a72-4744-82aa-45bfb99eba3e": "Development training",
-      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "A/P accounting manager",
-      "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Past Due Invoices w/ Approval",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Key Information",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business process",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Business Process",
       "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Responsable logistique",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Logistical Services",
       "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e": "Delayed Appointment not arrived",
@@ -15104,6 +15075,36 @@
       "title_9429e1c5-1f39-4bff-a71c-5f6008fd6f75": "Calendar Others Carrier Appoint.",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Processus",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Follow-up",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "A/R accounting manager",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Customers over Credit Limit",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Past Due Customer Open Items",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "A/R Account.Manager Indicators",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "A/R accounting manager",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Key Information",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Business Process",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "A/R accounting manager",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "A/R Account.Manager Indicators",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Key Information",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Business Process",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "A/P accounting manager",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Supplier Performance",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_b1d7bf72-be4d-4c96-a5f9-4750afe43173": "Portal code",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Past Due Inv w/out Approval",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "A/P Account.Manager Indicators",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "A/P accounting manager",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Key Information",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Business Process",
+      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "A/P accounting manager",
+      "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Past Due Invoices w/ Approval",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Key Information",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Business process",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Business Process",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "Buyer",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "Buyer",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Orders to Sign",
@@ -15337,15 +15338,6 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Proceso",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicadores",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Calidad",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Responsable conta cliente NA",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Clientes con encurso superado",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimientos clientes retraso",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "Indicadores resp.conta.cliente",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Responsable contab.clientes",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Indicadores",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Procesos",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsable de taller",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF del día asignadas",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -15557,11 +15549,6 @@
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Indicadores",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "Nueva pestaña 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Responsable conta. clientes",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Indicadores resp.conta.cliente",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Indicadores",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Procesos",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Administrador de ventas NA",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Pedidos bloq/clientes",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Pedidos retrasados/cliente",
@@ -15571,16 +15558,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Indicadores",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Procesos",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Responsable conta proveedor NA",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Seguimiento del proveedor",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Venc.prov.no AP con retraso",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "Indicadores resp.conta.proveed",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "Responsable contab.proveedores",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Indicadores",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Procesos",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Control de cambios",
       "title_893f90f2-88a4-4a04-8d25-94208f516cdb": "Proceso visual Gestión cambio",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Solicitudes de cambio creadas",
@@ -15593,15 +15570,39 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Proceso de negocio",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Portal de usuario",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Procesos",
+      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Responsable logístico",
+      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Proceso",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Seguimiento de actividad",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Responsable conta cliente NA",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Clientes con encurso superado",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimientos clientes retraso",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "Indicadores resp.conta.cliente",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Responsable contab.clientes",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Indicadores",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Procesos",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Responsable conta. clientes",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Indicadores resp.conta.cliente",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Indicadores",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Procesos",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Responsable conta proveedor NA",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Seguimiento del proveedor",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Venc.prov.no AP con retraso",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "Indicadores resp.conta.proveed",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "Responsable contab.proveedores",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Indicadores",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Procesos",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Respons. conta. proveedores",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Venc.prov.AP en retraso",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Indicadores",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Procesos",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Procesos",
-      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Responsable logístico",
-      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Proceso",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Seguimiento de actividad",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "Comprador",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "Comprador",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Pedidos a firmar",
@@ -15795,15 +15796,6 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Processus",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicateurs",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Qualité",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Responsable compta. clients",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Clients en dépassement encours",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Echéances clients en retard",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "Indicateurs resp.compta.client",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Responsable compta.clients",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Informations clés",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Processus métier",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsable atelier",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -16111,11 +16103,6 @@
       "title_ff172aa4-860e-4a31-8705-427ca96bd52c": "Portal code",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Indicateurs",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "Nouvel Onglet 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Responsable compta. clients",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Indicateurs resp.compta.client",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Processus",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Indicateurs",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Administrateur des ventes NA",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Commandes bloquées / client",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Commandes en retard / client",
@@ -16125,17 +16112,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Indicateurs",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Processus",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Responsable compta fournisseur NA",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Performance fournisseurs NA",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_b1d7bf72-be4d-4c96-a5f9-4750afe43173": "Portal code",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Ech. fourn.non BAP avec retard",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "Indicateurs resp.compta.fourn.",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "Responsable compta.fournisseur",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Processus",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Indicateurs",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Gestion des indices",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Demandes de changement créées",
       "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "Demandes de changement pour mon approbation",
@@ -16147,11 +16123,6 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Processus métier",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrateur système",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Processus",
-      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Responsable compta.fournisseur",
-      "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Ech. fourn. BAP en retard",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Indicateurs",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Processus",
-      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Processus",
       "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Responsable logistique",
       "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Prestations Logistiques",
       "title_3cdcda68-5f73-4ba1-9b6b-b401c2a5703e": "RDV transporteurs non arrivé en retard",
@@ -16170,6 +16141,36 @@
       "title_feb69cb3-a177-4f06-bbed-4a71a91cf595": "forcedExecution",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Processus",
       "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Suivi d'activité",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Responsable compta. clients",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Clients en dépassement encours",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Echéances clients en retard",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "Indicateurs resp.compta.client",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Responsable compta.clients",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Informations clés",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Processus métier",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Responsable compta. clients",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Indicateurs resp.compta.client",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Processus",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Indicateurs",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Responsable compta fournisseur NA",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "Performance fournisseurs NA",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_b1d7bf72-be4d-4c96-a5f9-4750afe43173": "Portal code",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Ech. fourn.non BAP avec retard",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "Indicateurs resp.compta.fourn.",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "Responsable compta.fournisseur",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Processus",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Indicateurs",
+      "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Responsable compta.fournisseur",
+      "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Ech. fourn. BAP en retard",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Indicateurs",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Processus",
+      "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Processus",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "Acheteur",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "Acheteur",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Commandes à signer",
@@ -16342,15 +16343,6 @@
       "title_ce2425d3-ea56-49a2-967e-d9145dda0306": "STD_X3_GEODE_ENT1",
       "title_7e51b5bf-ed60-49c6-97a2-c6c0aa866a33": "STD_X3_GEODE_ENT2",
       "title_e60e289a-7bd9-49a0-97da-6dc66734f77b": "STD_X3_GEODE_SLFOLLOW",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Responsabile conta clienti",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "X3_ERP_RESPCPTCLT",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Informazioni chiave",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Business process",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsabile reparto",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -16540,11 +16532,6 @@
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Informazioni chiave",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "Nuova scheda 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Responsabile conta clienti",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "X3_ERP_INDIC_RCPC",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Informazioni chiave",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Processo",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Responsabile vendite NA",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "STD_X3_ERP_RVEN031",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
@@ -16554,16 +16541,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Informazioni chiave",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Processo",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Responsabile contab. fornitore NA",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "STD_X3_ERP_RTRS003",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "X3_ERP_INDIC_RCPF",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "X3_ERP_RESPCPTFOU",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Flag",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Processo",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Gestione indici",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Richieste modifica create",
       "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "Richieste di modifica per approvazione",
@@ -16575,12 +16552,36 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Informaz. chiave",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Portale utente",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Business process",
+      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Prestazioni Logistiche",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Responsabile conta clienti",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "X3_ERP_RESPCPTCLT",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Informazioni chiave",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Business process",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Responsabile conta clienti",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "X3_ERP_INDIC_RCPC",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Informazioni chiave",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Processo",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Responsabile contab. fornitore NA",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "STD_X3_ERP_RTRS003",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "X3_ERP_INDIC_RCPF",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "X3_ERP_RESPCPTFOU",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Flag",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Processo",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Responsable conta.fornitori",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "STD_X3_ERP_RTRS001",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Informazioni chiave",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Processo",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Processo",
-      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "Prestazioni Logistiche",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "Acquisitore",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "Acquirente",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "X3_ERP_RACH020",
@@ -16703,15 +16704,6 @@
       "pageLayout.37b474e5-e6c7-485a-9737-547fc5361cd0.@669b21d8-8747-48c9-8915-616512190c58": "Storico"
     },
     "pl-pl": {
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Księgowy - należności",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "X3_ERP_RESPCPTCLT",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Główne informacje",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Proces biznesowy",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Kierownik produkcji",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -16861,11 +16853,6 @@
       "title_8378a040-5737-4e10-9872-c7aadaa10b4a": "Purchase Inv by Product Family",
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Główne informacje",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Księgowy - należności",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "X3_ERP_INDIC_RCPC",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Proces biznesowy",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Główne informacje",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Administrator sprzedaży",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "STD_X3_ERP_RVEN031",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
@@ -16875,6 +16862,25 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Główne informacje",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Proces biznesowy",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Proces biznesowy",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Proces biznesowy",
+      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Główne informacje",
+      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrator systemu",
+      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Proces biznesowy",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Księgowy - należności",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "X3_ERP_RESPCPTCLT",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Główne informacje",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Proces biznesowy",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Księgowy - należności",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "X3_ERP_INDIC_RCPC",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Proces biznesowy",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Główne informacje",
       "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Księgowy - zobowiązania",
       "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
       "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
@@ -16885,11 +16891,6 @@
       "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
       "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Główne informacje",
       "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Proces biznesowy",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@61475864-54a4-4967-a70d-496ed1e0ff6b": "Proces biznesowy",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Proces biznesowy",
-      "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@5988242f-67bc-4c02-92c9-26891c2bbf70": "Główne informacje",
-      "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrator systemu",
-      "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Proces biznesowy",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Księgowy - zobowiązania",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "STD_X3_ERP_RTRS001",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Proces biznesowy",
@@ -17024,15 +17025,6 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "Processo",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "Indicadores",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI Qualidade",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Gestor de conta fornecedores",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Clientes em ultrap.em curso",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimentos clientes em atraso",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "Indic.Contab.Gestão Terceiros",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Resp. Contab. clientes",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Informação Chave",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Processo de negócio",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Responsavel workshop",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF do dia alocadas",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -17246,11 +17238,6 @@
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Informação chave",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "Novo Separador 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Resp. Contab. Clientes",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Indic.Contab.Gestão Terceiros",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Informação chave",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Processo de negócio",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Administrador Vendas",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "Encom.Bloq. / clientes",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "Encomendas em atraso / cliente",
@@ -17260,16 +17247,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Informação chave",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Processo de negócio",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Gestor de contas Fornecedores",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Vencim.Forn. não BAP em atraso",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "Indic.Resp.Contab. Fornec.",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "Resp. Contab. fornec.",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Informação Chave",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Processo de negócio",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Controlo versão",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Criados pedidos de modificação",
       "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "Pedidos de modificação  para minha aprovação",
@@ -17281,15 +17258,39 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Processo de negócio",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Administrador de sistema",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Processo de negócio",
+      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Responsável logistica",
+      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Processo",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Seguimento atividade",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Gestor de conta fornecedores",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "Clientes em ultrap.em curso",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "Vencimentos clientes em atraso",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "Indic.Contab.Gestão Terceiros",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "Resp. Contab. clientes",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Informação Chave",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Processo de negócio",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Resp. Contab. Clientes",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "Indic.Contab.Gestão Terceiros",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Informação chave",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Processo de negócio",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Gestor de contas Fornecedores",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "Vencim.Forn. não BAP em atraso",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "Indic.Resp.Contab. Fornec.",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "Resp. Contab. fornec.",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Informação Chave",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Processo de negócio",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Resp. Contab. Fornecedor",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "Vencimentos B a P em atraso",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Informação Chave",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "Processo de negócio",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "Processo de negócio",
-      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "Responsável logistica",
-      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "STD_X3_GEODE_DEP",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "Processo",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "Seguimento atividade",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "Comprador",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "Comprador",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Encomendas por assinar",
@@ -17434,15 +17435,6 @@
       "pageLayout.b7a01b39-1bd7-4e81-bce8-b976c3774950.@c43ec551-7168-4c19-8b89-c6bc59b0ad1d": "Processos"
     },
     "ru-ru": {
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Дебиторская задолжденность",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "X3_ERP_RESPCPTCLT",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Основная информация",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Бизнес-процесс",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "Руководитель цеха",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "STD_X3_ERP_RGPA009",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -17596,11 +17588,6 @@
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "Основная информация",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "Новая вкладка 1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Дебиторская задолжденность",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "X3_ERP_INDIC_RCPC",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Основная информация",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Бизнес-процесс",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "Администратор продаж",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "STD_X3_ERP_RVEN031",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "STD_X3_ERP_RVEN035",
@@ -17610,16 +17597,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "Основная информация",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "Бизнес-процесс",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Кредиторская задолженность",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "STD_X3_ERP_RTRS003",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "X3_ERP_INDIC_RCPF",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "X3_ERP_RESPCPTFOU",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Основная информация",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Бизнес-процесс",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "Контроль изменений",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "Созданные запросы на изменения",
       "title_8b90ee06-8aad-49bb-ae4b-186b77543040": "Запросы на изменения на мое утерждение",
@@ -17631,6 +17608,30 @@
       "pageLayout.f2e1acea-cb18-490e-8158-238111a187b7.@24beebd7-2a7d-48ee-8005-e69551f469f3": "Бизнес-процесс",
       "title_f2e0800a-a448-49ce-8c91-0195817b86cd": "Системный администратор",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "Бизнес-процесс",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "Дебиторская задолжденность",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "STD_X3_ERP_RTRS005",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "STD_X3_ERP_RTRS007",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "USR_X3REFV7_ART1M3",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "X3_ERP_RESPCPTCLT",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "Основная информация",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "Бизнес-процесс",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "Дебиторская задолжденность",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "X3_ERP_INDIC_RCPC",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "Основная информация",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "Бизнес-процесс",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "Кредиторская задолженность",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "STD_X3_ERP_NASACH18",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "STD_X3_ERP_RTRS003",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "X3_ERP_INDIC_RCPF",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "X3_ERP_RESPCPTFOU",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "Основная информация",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "Бизнес-процесс",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "Кредиторская задолженность",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "STD_X3_ERP_RTRS001",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "Основная информация",
@@ -17759,15 +17760,6 @@
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@7b7fd828-a58c-4c2d-bf9f-aa6fef81dcc5": "业务流程",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@e2d76a02-bf0a-4fe2-9317-a459246a1bf9": "关键指标",
       "pageLayout.453f1638-eb21-4c0e-8829-5f6cca95958f.@fdb52840-9375-4506-8f3b-7e725d9e6731": "KPI质量",
-      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "北美客户应收账款会计主管",
-      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "超出信用限制的客户",
-      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "逾期的客户未结账项",
-      "title_880f77b1-7534-4e17-928c-31f05c046835": "客户应收账款会计主管指标",
-      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
-      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "客户应收账款会计主管",
-      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "关键指标",
-      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "业务流程",
       "title_33a5473a-a7ca-4596-a847-0aaef89441a5": "车间主任",
       "title_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "当日已分配的工单",
       "description_ea499cf1-a494-4bf8-b828-2b9c5d86469e": "OF du jour alloués",
@@ -17960,11 +17952,6 @@
       "description_8378a040-5737-4e10-9872-c7aadaa10b4a": "SACH04",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@7907c5bf-481f-4aa7-926d-04b9af25bd91": "关键指数",
       "pageLayout.57aa63d0-2671-4e6e-b854-417ccd7f5756.@96a2854c-8f0d-4bf9-bb10-76f5476495e9": "新页签1",
-      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "客户应收账款会计主管",
-      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "客户应收账款会计主管指标",
-      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "关键指数",
-      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "业务流程",
       "title_da7429e6-526c-496b-9a1d-dd201da363b1": "北美销售管理员",
       "title_b07fbe5f-8d46-441b-ba3d-939485b221be": "锁住的订单 / 客户",
       "title_f8416289-c875-48b1-96b8-0b0c9f90ca04": "逾期订单 / 客户",
@@ -17974,16 +17961,6 @@
       "description_d25f96b0-bfc0-4644-b2f9-2f429d8adaa2": "ADV",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@12aadb27-6d89-4530-b4bb-448525695a8e": "关键指数",
       "pageLayout.2ec3b413-3748-4976-8f92-c35f945b8e17.@992825f7-4df4-43bf-b4f6-d844140a2e2e": "业务流程",
-      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "北美供应商应付账款会计主管",
-      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "供应商绩效",
-      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
-      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "逾期但无付款审批单的供应商未结账项",
-      "title_825e6986-5104-44b6-be78-9eafe89eef72": "供应商应付账款会计主管指标",
-      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
-      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "供应商应付账款会计主管",
-      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "关键指数",
-      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "业务流程",
       "title_e26024a9-80ca-4879-b04d-f818cccf524e": "变更控制",
       "title_893f90f2-88a4-4a04-8d25-94208f516cdb": "CCM可视化流程图",
       "title_86f3840f-fb3b-4b09-ad61-6432b1eb9883": "已创建变更请求",
@@ -17998,15 +17975,39 @@
       "title_61ab37e4-6d28-4e9d-b390-93888747b103": "开发培训等级3 第1步",
       "description_61ab37e4-6d28-4e9d-b390-93888747b103": "开发培训等级3 第1步",
       "pageLayout.ee4ae0cf-8ecb-4820-a497-508949cb9831.@2b8229b7-b41f-46d6-bc36-adb21a0118ad": "业务流程",
+      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "物流经理",
+      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "物流服务",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "业务流程",
+      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "活动追踪",
+      "title_30b94774-e639-4598-bb3b-b02faa3e9231": "北美客户应收账款会计主管",
+      "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52": "超出信用限制的客户",
+      "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2": "逾期的客户未结账项",
+      "title_880f77b1-7534-4e17-928c-31f05c046835": "客户应收账款会计主管指标",
+      "description_880f77b1-7534-4e17-928c-31f05c046835": "INDIC_RCPC",
+      "title_2b55e945-408e-4aff-8bc9-c24d4d929a51": "客户应收账款会计主管",
+      "description_2b55e945-408e-4aff-8bc9-c24d4d929a51": "RESPCPTCLT",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@9ce752a5-571a-4a8a-99cd-e0df763f73c4": "关键指标",
+      "pageLayout.4d66bacb-bdd6-4d46-9d62-2974a5f6dc97.@3ceae23b-1eb4-4fa4-aab8-86207d48cc5e": "业务流程",
+      "title_d603bce7-8959-4bb1-af85-6e07eae8ebba": "客户应收账款会计主管",
+      "title_d6885a38-3c97-4699-b4d4-f031410e690d": "客户应收账款会计主管指标",
+      "description_d6885a38-3c97-4699-b4d4-f031410e690d": "INDIC_RCPC",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@5818ee7b-6719-4092-912d-46c88a1f7d42": "关键指数",
+      "pageLayout.ebe37ec4-ed44-4a4f-807d-f9aaa9dc37d5.@b45b2101-b67c-446b-9360-c95f0868a881": "业务流程",
+      "title_df30eb1d-b2a7-4047-9f32-66e1ffe6b00d": "北美供应商应付账款会计主管",
+      "title_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "供应商绩效",
+      "description_b7a2cf37-9f05-4a08-80a6-1dd151b28aeb": "NASACH18",
+      "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f": "逾期但无付款审批单的供应商未结账项",
+      "title_825e6986-5104-44b6-be78-9eafe89eef72": "供应商应付账款会计主管指标",
+      "description_825e6986-5104-44b6-be78-9eafe89eef72": "INDIC_RCPF",
+      "title_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "供应商应付账款会计主管",
+      "description_ab7c67c6-fab2-479e-a088-fef80f1c5a43": "RESPCPTFOU",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@62d17e43-4e1c-486b-9f8d-b5478bf32303": "关键指数",
+      "pageLayout.92edd203-b74b-42a1-9dea-a76d56f2afb1.@e2c94202-e24a-4fa3-bdf8-419ba276dc0a": "业务流程",
       "title_fa52e9c2-e55c-43ce-8ad3-950f5ac37dde": "供应商应付账款会计主管",
       "title_6109390d-6c5d-432d-b907-daaccdcbb8dc": "逾期但有付款审批单的供应商未结账项",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@7685b672-b965-4ddb-961f-78a745757d9c": "业务流程",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@656afa2f-1f3c-4fb0-9c41-324817cd6869": "关键指数",
       "pageLayout.a1a251b4-684f-48bb-a0ff-5817d84baa72.@383ad414-ba09-44f1-9c1c-d2c627c2c4b0": "业务流程",
-      "title_fbd75d2a-7145-4d87-9f25-444247362b64": "物流经理",
-      "title_87a7454b-dbf6-44ce-b144-e2247bdfec8e": "物流服务",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@cfd8c061-9ee6-4444-9157-570d8b2a5975": "业务流程",
-      "pageLayout.1d5ccd98-35d4-4af0-97c4-92a720369954.@10b65bb3-a1ca-4acb-bf5d-5873dcdf23d8": "活动追踪",
       "title_b175a3a7-7da1-4530-8a33-0edad2751129": "采购员",
       "description_b175a3a7-7da1-4530-8a33-0edad2751129": "采购员",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "应签字审批的订单",
