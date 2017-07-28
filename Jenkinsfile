@@ -14,12 +14,11 @@ node {
             }
         }
 
-				// The first time we launch this command on a new Branch, its failed: The repo doesn't exists yet, so we need to test ...
-				def gitPreviousCommit = null
-				if ( fileExists( "${WORKSPACE}/Jenkinsfile" )) {
-								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
-				}
-
+	// The first time we launch this command on a new Branch, its failed: The repo doesn't exists yet, so we need to test ...
+	def gitPreviousCommit = null
+	if ( fileExists( "${WORKSPACE}/Jenkinsfile" )) {
+		gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
+	}
 
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sagex3ci', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
             docker.image('node:6').inside {
@@ -39,40 +38,39 @@ node {
                 stage('Build customer image') {
                     sh ('if [ "$(ls -l ${CI_DEST}/syracuse)" ]; then rm -R "${CI_DEST}/syracuse"; fi;')
                     sh ('node apatch direct --image ${CI_DEST}/syracuse --desc "${BRANCH_NAME} build ${BUILD_ID} of $(date +%Y-%m-%d)" --release "${SYRACUSE_RELEASE}.${BUILD_ID}" --no-check --symbols DOCKER')
-                }
-            }
-        }
-			
 			//
 			// Build Changelog.log
 			//
-				stage('Build ChangeLog') {
-							sh ('cd ${WORKSPACE}');
-							
-							if ( gitPreviousCommit == null) {
-								gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
-							}
-							gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+			/*
+			sh ('cd ${WORKSPACE}');
+						
+			if ( gitPreviousCommit == null) {
+				gitPreviousCommit = sh(returnStdout: true, script: 'git rev-parse HEAD^').trim()
+			}
+			gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 
-							sh ("if [! -e changelog.log]; then echo ' ' > changelog.log;  fi");
-							sh ("if [-e changelog.log]; then mv changelog.log changelogtmp.log; fi");
+			sh ("if [! -e changelog.log]; then echo ' ' > changelog.log;  fi");
+			sh ("if [-e changelog.log]; then mv changelog.log changelogtmp.log; fi");
 
-							sh ('echo Syracuse Customer Image ${BRANCH_NAME} ${BUILD_DISPLAY_NAME} ${BUILD_ID} $(date +"%Y-%m-%d %H:%M:%S") > "${WORKSPACE}/changelog.log"');
-							sh ("echo ' ' >> changelog.log");
-							sh ("git log --date-order --reverse --no-merges ${gitPreviousCommit}..${gitCommit} >> changelog.log");
+			sh ('echo Syracuse Customer Image ${BRANCH_NAME} ${BUILD_DISPLAY_NAME} ${BUILD_ID} $(date +"%Y-%m-%d %H:%M:%S") > "${WORKSPACE}/changelog.log"');
+			sh ("echo ' ' >> changelog.log");
+			sh ("git log --date-order --reverse --no-merges ${gitPreviousCommit}..${gitCommit} >> changelog.log");
 
-							sh ('cd "${WORKSPACE}"');
-							sh ("echo ' ' >> changelog.log");
-							sh ('more "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"');
-							sh ('rm -f "${WORKSPACE}/changelogtmp.log"');
-
-							// For information:
-							sh ("echo 'gitPreviousCommit: ${gitPreviousCommit} - gitCommit: ${gitCommit}'");
-							sh ("echo 'changelog.log contains: '");
-							sh ("cat changelog.log");
-						}
-
-
+			
+			sh ('cd "${WORKSPACE}"');
+			sh ("echo ' ' >> changelog.log");
+			sh ('cat "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"');
+			sh ('rm -f "${WORKSPACE}/changelogtmp.log"');
+			*/
+			// For information:
+			/*
+			sh ("echo 'gitPreviousCommit: ${gitPreviousCommit} - gitCommit: ${gitCommit}'");
+			sh ("echo 'changelog.log contains: '");
+			sh ("cat changelog.log");
+			*/
+                }
+            }
+        }
 
         docker.withRegistry('https://repository.sagex3.com', 'jenkins_platform') {
             def syrImage
@@ -112,7 +110,7 @@ node {
             }
             stage('Run UI tests and code coverage report') {
                 docker.image('node:6').inside {
-                    sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run test')
+                    sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run test-coverage')
                     step([  $class: 'XUnitBuilder', 
                             thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], 
                             tools: [[$class: 'JUnitType', pattern: 'node_modules/@sage/syracuse-react/junit/junit.xml']]
