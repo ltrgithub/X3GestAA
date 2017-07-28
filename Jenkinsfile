@@ -41,7 +41,8 @@ node {
 					//
 					// Build Changelog.log
 					//
-                    
+                }
+                stage('Build changelog') {    
 					sh ('cd ${WORKSPACE}');
 								
 					if ( gitPreviousCommit == null) {
