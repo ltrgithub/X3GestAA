@@ -41,7 +41,7 @@ node {
 					//
 					// Build Changelog.log
 					//
-                    /*
+                    
 					sh ('cd ${WORKSPACE}');
 								
 					if ( gitPreviousCommit == null) {
@@ -60,7 +60,7 @@ node {
 					sh ("echo ' ' >> changelog.log");
 					sh ('more "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"');
 					sh ('rm -f "${WORKSPACE}/changelogtmp.log"');
-                    */
+                    
 					// For information:
 					/*
 					sh ("echo 'gitPreviousCommit: ${gitPreviousCommit} - gitCommit: ${gitCommit}'");
