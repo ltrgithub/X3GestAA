@@ -59,7 +59,7 @@ node {
 
 					sh ('cd "${WORKSPACE}"');
 					sh ("echo ' ' >> changelog.log");
-					sh ('more "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"');
+					sh ('if [-e changelogtmp.log]; then more "${WORKSPACE}/changelogtmp.log" >> "${WORKSPACE}/changelog.log"; fi');
 					sh ('rm -f "${WORKSPACE}/changelogtmp.log"');
                     
 					// For information:
