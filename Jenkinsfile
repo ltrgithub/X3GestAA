@@ -29,9 +29,9 @@ node {
                 }
 
                 stage('Build syracuse-react') {
-                    def reactCommitMesage = "Automated build of syracuse-react"; 
+                    def reactCommitMessage = "Automated build of syracuse-react"; 
                     def latestCommitMessage = sh(returnStdout: true, script: 'git log -1 --pretty=%B -- node_modules/@sage/syracuse-react').trim();
-                    if (latestCommitMessage == reactCommitMesage)
+                    if (latestCommitMessage == reactCommitMessage)
                     {
                         sh('Build of syracuse-react skipped, no new commits')
                     }
