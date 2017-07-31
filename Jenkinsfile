@@ -30,10 +30,11 @@ node {
 
                 stage('Build syracuse-react') {
                     sh ('rm -rf node_modules/@sage/syracuse-react/dist/*')
-                    sh ('cd node_modules/@sage/syracuse-react && npm install && npm prune && npm dist')
+                    sh ('npm install -g npm@5')
+                    sh ('cd node_modules/@sage/syracuse-react && npm install && npm prune && npm run dist')
                     sh ('git status')
                     sh ('git add node_modules/@sage/syracuse-react/dist/**')
-                    sh ("git commit -am 'Automated build of syracuse-react'")
+                    sh ("git commit -m 'Automated build of syracuse-react'")
                     sh ('git push origin ${BRANCH_NAME}')
                 }
                 
