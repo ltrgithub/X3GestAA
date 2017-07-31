@@ -33,6 +33,8 @@ node {
                     sh ('npm install -g npm@5')
                     sh ('cd node_modules/@sage/syracuse-react && npm install && npm prune && npm run dist')
                     sh ('git status')
+                    sh ('git config --global user.email sagex3ci@sage.com')
+                    sh ('git config --global user.name "Jenkins"')                    
                     sh ('git add node_modules/@sage/syracuse-react/dist/**')
                     sh ("git commit -m 'Automated build of syracuse-react'")
                     sh ('git push origin ${BRANCH_NAME}')
