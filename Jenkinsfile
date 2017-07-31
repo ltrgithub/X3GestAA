@@ -28,6 +28,7 @@ node {
                     sh ('git submodule update --init')
                 }
 
+                /* Move to a dedicated job
                 stage('Build syracuse-react') {
                     def reactCommitMessage = "Automated build of syracuse-react"; 
                     def latestCommitMessage = sh(returnStdout: true, script: 'git log -1 --pretty=%B -- node_modules/@sage/syracuse-react').trim();
@@ -48,6 +49,7 @@ node {
                         sh ('git push')
                     }
                 }
+                */
                 
                 stage('Security check: retire.js / Node Security Project') {
                     sh('npm install -g retire')
