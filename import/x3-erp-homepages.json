@@ -9641,6 +9641,30 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_ESSWRKFLWEMP",
+      "title": "title_e4b2d4f0-d11b-4510-9a60-698eedc8d2a8",
+      "description": "description_e4b2d4f0-d11b-4510-9a60-698eedc8d2a8",
+      "linkType": "$representation",
+      "applicationMenu": true,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "ESSWRKHISSUI",
+        "representation": "ESSWRKFLWEMP"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
       "$type": "landingPage",
       "title": "title_1ea1ccbf-acb8-4559-aa36-2a88680e6477",
       "description": "description_1ea1ccbf-acb8-4559-aa36-2a88680e6477",
@@ -9744,13 +9768,21 @@
           "endpoint": {
             "dataset": "TESTHRMAMB"
           }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "b2ac1d9b-dad1-4d0a-9949-092b7408431e",
+          "vignette": {
+            "code": "STD_X3_HRM_ESSWRKFLWEMP"
+          },
+          "endpoint": null
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "f97723ea-206d-4341-bbda-4ebf8522d857",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a}\",\"$layout\":{\"$items\":[{\"$bind\":\"9f8ff4cf-136b-4a82-b78a-85206b2d9b6d\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@564a9692-2f3a-4ae8-8693-64f9882c3169}\",\"$layout\":{\"$items\":[{\"$bind\":\"5a18f238-9a49-451f-80c5-0cb7fdb84608\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"b34639c7-18e5-4fee-b1c7-18ca935629c0\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"39f2e1d2-63a9-4a82-944b-a9cc01b69a84\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9ef8c629-b104-44e7-9516-4bd2bbb33f7c}\",\"$layout\":{\"$items\":[{\"$bind\":\"643c993a-1543-42cf-95d4-22d26733af09\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"180f9c5b-5019-4161-8e93-347c1afa3581\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cbf9c160-da71-4137-8daf-48bb5dd33acb}\",\"$layout\":{\"$items\":[{\"$bind\":\"a149ba25-99d3-4fed-aa9c-384a0bbf4933\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"3aecd9fc-a31b-404d-8135-90f63c3f1344\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@49622372-bda5-4d85-b230-f032e0debcde}\",\"$layout\":{\"$items\":[{\"$bind\":\"d48fd17b-a098-4b2b-929f-e95c2634d728\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a}\",\"$layout\":{\"$items\":[{\"$bind\":\"9f8ff4cf-136b-4a82-b78a-85206b2d9b6d\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@564a9692-2f3a-4ae8-8693-64f9882c3169}\",\"$layout\":{\"$items\":[{\"$bind\":\"5a18f238-9a49-451f-80c5-0cb7fdb84608\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"b34639c7-18e5-4fee-b1c7-18ca935629c0\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"39f2e1d2-63a9-4a82-944b-a9cc01b69a84\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@9ef8c629-b104-44e7-9516-4bd2bbb33f7c}\",\"$layout\":{\"$items\":[{\"$bind\":\"643c993a-1543-42cf-95d4-22d26733af09\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"180f9c5b-5019-4161-8e93-347c1afa3581\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@cbf9c160-da71-4137-8daf-48bb5dd33acb}\",\"$layout\":{\"$items\":[{\"$bind\":\"a149ba25-99d3-4fed-aa9c-384a0bbf4933\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"3aecd9fc-a31b-404d-8135-90f63c3f1344\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"b2ac1d9b-dad1-4d0a-9949-092b7408431e\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@49622372-bda5-4d85-b230-f032e0debcde}\",\"$layout\":{\"$items\":[{\"$bind\":\"d48fd17b-a098-4b2b-929f-e95c2634d728\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "STD_X3_HRM_ESS",
         "$variantType": "landingPage"
@@ -12201,6 +12233,8 @@
       "title_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2": "Leave",
       "description_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2": "Leave workflow approval",
       "title_db90d4d8-eb69-4b37-8791-ffbf3d35cc92": "Employee values",
+      "title_e4b2d4f0-d11b-4510-9a60-698eedc8d2a8": "Employee",
+      "description_e4b2d4f0-d11b-4510-9a60-698eedc8d2a8": "Employee approval",
       "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@d80fcdc9-b7ad-44f6-b50a-6dac8e8db19a": "Employee",
       "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@564a9692-2f3a-4ae8-8693-64f9882c3169": "Leave",
       "pageLayout.f97723ea-206d-4341-bbda-4ebf8522d857.@9ef8c629-b104-44e7-9516-4bd2bbb33f7c": "Expense notes",
