@@ -29,15 +29,24 @@ node {
                 }
 
                 stage('Build syracuse-react') {
-                    sh ('rm -rf node_modules/@sage/syracuse-react/dist/*')
-                    sh ('npm install -g npm@5')
-                    sh ('cd node_modules/@sage/syracuse-react && npm install && npm prune && npm run dist')
-                    sh ('git status')
-                    sh ('git config --global user.email sagex3ci@sage.com')
-                    sh ('git config --global user.name "Jenkins"')                    
-                    sh ('git add node_modules/@sage/syracuse-react/dist/**')
-                    sh ("git commit -m 'Automated build of syracuse-react'")
-                    sh ('git push origin ${BRANCH_NAME}')
+                    def reactCommitMesage = "Automated build of syracuse-react"; 
+                    def latestCommitMessage = sh(returnStdout: true, script: 'git log -1 --pretty=%B -- node_modules/@sage/syracuse-react').trim();
+                    if (latestCommitMessage == reactCommitMesage)
+                    {
+                        sh('Build of syracuse-react skipped, no new commits')
+                    }
+                    else 
+                    {
+                        sh ('rm -rf node_modules/@sage/syracuse-react/dist/*')
+                        sh ('npm install -g npm@5')
+                        sh ('cd node_modules/@sage/syracuse-react && npm install && npm prune && npm run dist')
+                        sh ('git status')
+                        sh ('git config --global user.email sagex3ci@sage.com')
+                        sh ('git config --global user.name "Jenkins"')                    
+                        sh ('git add node_modules/@sage/syracuse-react/dist/**')
+                        sh ("git commit -m '"+ reactCommitMessage + "'")
+                        sh ('git push')
+                    }
                 }
                 
                 stage('Security check: retire.js / Node Security Project') {
