@@ -27,6 +27,16 @@ node {
                     checkout scm
                     sh ('git submodule update --init')
                 }
+
+                stage('Build syracuse-react') {
+                    sh ('rm -rf node_modules/@sage/syracuse-react/dist/*')
+                    sh ('cd node_modules/@sage/syracuse-react && npm install && npm prune && npm dist')
+                    sh ('git status')
+                    sh ('git add node_modules/@sage/syracuse-react/dist/**')
+                    sh ("git commit -am 'Automated build of syracuse-react'")
+                    sh ('git push origin ${BRANCH_NAME}')
+                }
+                
                 stage('Security check: retire.js / Node Security Project') {
                     sh('npm install -g retire')
                     sh('npm run security:retire-linux || exit 0')
