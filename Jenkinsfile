@@ -86,6 +86,7 @@ node {
                     --build-arg "https_proxy=${HTTP_PROXY}" \
                     --build-arg "http_proxy=${HTTPS_PROXY}" \
                     --build-arg "SYRACUSE_SRC=syracuse" \
+		    --pull \
                     "${CI_DEST}/"')
             }
             stage('Test image start') {
@@ -128,8 +129,8 @@ node {
 
             if ((currentBuild.result == null) || (currentBuild.result == "SUCCESS")) {
                 stage('Build SCM artefacts') {
-                    scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv . ')            
-                    scmX3 = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 . ')            
+                    scmSuperv = docker.build("scm-extension-superv:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-superv --pull . ')            
+                    scmX3 = docker.build("scm-extension-x3:stage_${BUILD_ID}_${buildRandom}", '-f artefacts/scm/Dockerfile-scm-extension-x3 --pull . ')            
                 }
                 if (tag) {
                     stage('Push image') {
