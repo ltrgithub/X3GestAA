@@ -110,7 +110,7 @@ node {
             }
             stage('Run UI tests and code coverage report') {
                 docker.image('node:6').inside {
-                    sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run test-coverage')
+                    sh ('cd node_modules/@sage/syracuse-react && npm prune && npm install && npm run dist && npm run test-coverage')
                     step([  $class: 'XUnitBuilder', 
                             thresholds: [[$class: 'FailedThreshold', failureThreshold: '0']], 
                             tools: [[$class: 'JUnitType', pattern: 'node_modules/@sage/syracuse-react/junit/junit.xml']]
