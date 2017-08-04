@@ -10475,6 +10475,82 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_ESSWRKFLWDCG",
+      "title": "title_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2",
+      "description": "description_7bdc98a4-6bfb-4248-9ba2-a6ae79d8aae2",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "ESSWRKHISSUI",
+        "representation": "ESSWRKFLWDCG"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_ESSWRKFLWEXS",
+      "title": "title_59825e19-3e2b-4f15-a07e-a4b5d6b37280",
+      "description": "description_59825e19-3e2b-4f15-a07e-a4b5d6b37280",
+      "linkType": "$representation",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "ESSWRKHISSUI",
+        "representation": "ESSWRKFLWEXS"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_HRM_ESSWRKFLWEMP",
+      "title": "title_e4b2d4f0-d11b-4510-9a60-698eedc8d2a8",
+      "description": "description_e4b2d4f0-d11b-4510-9a60-698eedc8d2a8",
+      "linkType": "$representation",
+      "applicationMenu": true,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy",
+        "entity": "ESSWRKHISSUI",
+        "representation": "ESSWRKFLWEMP"
+      },
+      "module": null,
+      "parameters": []
+    },
+    {
       "$type": "landingPage",
       "title": "title_efc7b395-f9ad-4fe5-b199-79fcd2dea36b",
       "description": "description_efc7b395-f9ad-4fe5-b199-79fcd2dea36b",
@@ -10506,13 +10582,43 @@
             "code": "STD_X3_HRM_EXPMGRESS"
           },
           "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "26e9c205-b6e4-4e06-8513-048e98d2f374",
+          "vignette": {
+            "code": "STD_X3_HRM_ESSWRKFLWDCG"
+          },
+          "endpoint": {
+            "dataset": "TESTHRMAMB"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "840fa486-3aad-48ed-a816-f5607adeaea7",
+          "vignette": {
+            "code": "STD_X3_HRM_ESSWRKFLWEXS"
+          },
+          "endpoint": {
+            "dataset": "TESTHRMAMB"
+          }
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "21245a25-a83a-4a4f-aa4e-b05e974f41d8",
+          "vignette": {
+            "code": "STD_X3_HRM_ESSWRKFLWEMP"
+          },
+          "endpoint": {
+            "dataset": "TESTHRMAMB"
+          }
         }
       ]
     },
     {
       "$type": "pageLayout",
       "code": "eb6ff781-25f1-4b7f-b5b7-6d999f331439",
-      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d2bed5b4-e1f3-43bb-8cf0-c1f27590f54a}\",\"$layout\":{\"$items\":[{\"$bind\":\"2b78bded-ef47-48a9-a516-744fd3e14c75\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@e578d9d6-6018-488e-ab88-3901504f9b16}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$bind\":\"951f68cd-5d3d-4170-a25d-32bbdb642a02\",\"$layout\":{\"$items\":[]}}],\"$widths\":\"100\"}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
+      "content": "{\"$layout\":{\"$layoutType\":\"tabs\",\"$items\":[{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@d2bed5b4-e1f3-43bb-8cf0-c1f27590f54a}\",\"$layout\":{\"$items\":[{\"$bind\":\"2b78bded-ef47-48a9-a516-744fd3e14c75\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"951f68cd-5d3d-4170-a25d-32bbdb642a02\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"}},{\"$category\":\"section\",\"$isEmptyVisible\":true,\"$title\":\"{@e578d9d6-6018-488e-ab88-3901504f9b16}\",\"$layout\":{\"$items\":[{\"$layoutType\":\"row\",\"$items\":[{\"$category\":\"space\"}],\"$widths\":\"100\"},{\"$bind\":\"26e9c205-b6e4-4e06-8513-048e98d2f374\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"840fa486-3aad-48ed-a816-f5607adeaea7\",\"$layout\":{\"$items\":[]}},{\"$bind\":\"21245a25-a83a-4a4f-aa4e-b05e974f41d8\",\"$layout\":{\"$items\":[]}}],\"$layoutType\":\"stack\",\"$widths\":\"100\"},\"$opened\":true}],\"$widths\":\"100\"}}",
       "page": {
         "pageName": "STD_X3_HRM_MGRESS",
         "$variantType": "landingPage"
@@ -12281,8 +12387,8 @@
       "description_685de6b9-4b11-4179-af57-87c1046671e1": "Leave impersonations",
       "title_465d6939-dbdc-415d-9bd3-ce87a428f7dc": "Expenses impersonation",
       "description_465d6939-dbdc-415d-9bd3-ce87a428f7dc": "Expenses impersonation",
-      "pageLayout.eb6ff781-25f1-4b7f-b5b7-6d999f331439.@d2bed5b4-e1f3-43bb-8cf0-c1f27590f54a": "Leave impersonation",
-      "pageLayout.eb6ff781-25f1-4b7f-b5b7-6d999f331439.@e578d9d6-6018-488e-ab88-3901504f9b16": "Expense impersonation",
+      "pageLayout.eb6ff781-25f1-4b7f-b5b7-6d999f331439.@d2bed5b4-e1f3-43bb-8cf0-c1f27590f54a": "Impersonation",
+      "pageLayout.eb6ff781-25f1-4b7f-b5b7-6d999f331439.@e578d9d6-6018-488e-ab88-3901504f9b16": "Approvals",
       "title_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
       "description_c7113733-13ec-422e-b9cf-3db850b3ca96": "On-and off boarding",
       "title_906d8fd0-e7ab-4bc1-86f0-a9b0f71e0c7a": "On-Boarding",
