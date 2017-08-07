@@ -11372,6 +11372,422 @@
     },
     {
       "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS003",
+      "title": "title_4edd6e42-96c5-4e19-957a-3f20dd06f23f",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS003",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_7b8ed48c-ff38-4181-b69b-8f0842f4b5fc",
+          "prompt": false,
+          "value": "RTRS003"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_c775bfc0-219c-4754-b49f-fbd5e007df45",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS001",
+      "title": "title_6109390d-6c5d-432d-b907-daaccdcbb8dc",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS001",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_c44965b6-ecc8-4eb0-bdc0-d3fd4c09e5aa",
+          "prompt": false,
+          "value": "RTRS001"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_a50e58c4-1ebd-458d-8eec-3e8746037708",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_RCPF",
+      "title": "title_825e6986-5104-44b6-be78-9eafe89eef72",
+      "description": "description_825e6986-5104-44b6-be78-9eafe89eef72",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RCPF",
+      "target": "self",
+      "processName": "INDIC_RCPF",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPCPTFOUF",
+      "title": "title_be422130-de5f-424f-aecc-042ba385354e",
+      "description": "description_be422130-de5f-424f-aecc-042ba385354e",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "TRS04_001",
+      "processMenu": "RESPCPTFOF",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_f5cd1220-fcc7-44fa-bd52-62bf9878625d",
+      "description": "description_f5cd1220-fcc7-44fa-bd52-62bf9878625d",
+      "useCurrentEndpoint": true,
+      "pageName": "APAccountingManagerF",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "SEED contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
+          "code": "ERPFU-APACCMAN"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "PBA"
+        },
+        {
+          "code": "ADMIN"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "85554b39-7916-4fb8-a960-82fa4df94f55",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS003"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "be805a75-6889-4425-a980-a9c413f9a8ab",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS001"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "cc6f7f71-440d-4482-99d4-0da5dfb9a758",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_RCPF"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "f6d97320-55ac-4db1-a967-1e59774003a4",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPCPTFOUF"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS005",
+      "title": "title_ad80e500-3c8f-4ebe-9180-7a81f88faa52",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS005",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_3e332c39-10c8-4343-a2ec-9b315cc5abe2",
+          "prompt": false,
+          "value": "RTRS005"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_cf22885d-bf79-4763-8c8b-011db42187b9",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RTRS007",
+      "title": "title_4cd0cf41-e5ce-458b-b56e-9fd1ba06e8a2",
+      "linkType": "$request",
+      "applicationMenu": false,
+      "facet": "$query",
+      "target": "self",
+      "requestName": "TRS007",
+      "requestLevel": "2",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": [
+        {
+          "$type": "menuItemParameter",
+          "name": "portview",
+          "title": "title_5404de1d-abb3-4f63-a647-bcfaf42a17df",
+          "prompt": false,
+          "value": "RTRS007"
+        },
+        {
+          "$type": "menuItemParameter",
+          "name": "cube",
+          "title": "title_e90e8483-1963-431c-af59-668c851ba9ba",
+          "prompt": false,
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_INDIC_RCPC",
+      "title": "title_d6885a38-3c97-4699-b4d4-f031410e690d",
+      "description": "description_d6885a38-3c97-4699-b4d4-f031410e690d",
+      "linkType": "$process",
+      "applicationMenu": false,
+      "facet": "$details",
+      "keyParameter": "INDIC_RCPC",
+      "target": "self",
+      "processName": "INDIC_RCPC",
+      "processMenu": "",
+      "processLeg": "",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": {
+        "$type": "representationProxy"
+      },
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "code": "STD_X3_ERP_RESPCPTCLTF",
+      "title": "title_d8b94ea6-7f72-4805-a50a-3d0a3197146e",
+      "description": "description_d8b94ea6-7f72-4805-a50a-3d0a3197146e",
+      "linkType": "$process",
+      "icon": "",
+      "applicationMenu": false,
+      "facet": "$query",
+      "keyIsWhere": false,
+      "target": "self",
+      "processName": "TRS08_001",
+      "processMenu": "RESPCPTCLF",
+      "processLeg": "",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "erp"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_ERP_GTRS"
+      },
+      "parameters": []
+    },
+    {
+      "$type": "landingPage",
+      "title": "title_90739f58-fc8b-4217-a96e-9da4e63e4f4e",
+      "description": "description_90739f58-fc8b-4217-a96e-9da4e63e4f4e",
+      "useCurrentEndpoint": true,
+      "pageName": "ARaccountingmanagerF",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "roles": [
+        {
+          "code": "Authoring contributor"
+        },
+        {
+          "code": "SEED contributor"
+        },
+        {
+          "code": "ADMCA"
+        },
+        {
+          "code": "Developers"
+        },
+        {
+          "code": "ERP-SYSTADMIN"
+        },
+        {
+          "code": "ERPFU-ARACCMAN"
+        },
+        {
+          "code": "GUEST"
+        },
+        {
+          "code": "PBA"
+        },
+        {
+          "code": "ADMIN"
+        }
+      ],
+      "vignettes": [
+        {
+          "$type": "landingPageVignette",
+          "bind": "62be57a5-bb53-4a14-9d0e-3f394a455c05",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS005"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "964ff35f-471e-4e0f-9e95-8210f101d066",
+          "vignette": {
+            "code": "STD_X3_ERP_RTRS007"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "d33dd09f-4fa7-43c4-a3a9-0930f5b994d3",
+          "vignette": {
+            "code": "STD_X3_ERP_INDIC_RCPC"
+          },
+          "endpoint": null
+        },
+        {
+          "$type": "landingPageVignette",
+          "bind": "7bce9a04-974a-420c-a659-10866f3c90b3",
+          "vignette": {
+            "code": "STD_X3_ERP_RESPCPTCLTF"
+          },
+          "endpoint": null
+        }
+      ]
+    },
+    {
+      "$type": "menuItem",
       "code": "STD_X3_ERP_RACH009",
       "title": "title_656f14b6-9d53-4351-a252-821fbf125073",
       "linkType": "$request",
@@ -16216,6 +16632,8 @@
       "title_9ddbc074-e01b-4d65-9e98-b5f143ffac0d": "Sales administrator FS",
       "title_b8fbc679-23b5-4d15-9070-d71ee18743b5": "Rep Objectives / Inv Turnover",
       "description_b8fbc679-23b5-4d15-9070-d71ee18743b5": "SVEN05",
+      "title_be422130-de5f-424f-aecc-042ba385354e": "A/P accounting manager FS",
+      "title_d8b94ea6-7f72-4805-a50a-3d0a3197146e": "A/R accounting manager FS",
       "title_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Buyer FS",
       "description_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Buyer FS",
       "title_747c8750-9eba-4b38-b358-94f87a2147db": "Buyer FS",
@@ -16696,6 +17114,12 @@
       "title_77ae3081-d9c2-488f-84ab-a9dbe7474a03": "Sales engineer FS",
       "title_b8fbc679-23b5-4d15-9070-d71ee18743b5": "Sales Rep Forecast vs Actual",
       "title_e120d589-40f9-468b-aa57-191406ff33bb": "Portal code",
+      "title_f5cd1220-fcc7-44fa-bd52-62bf9878625d": "A/P accounting manager FS",
+      "title_be422130-de5f-424f-aecc-042ba385354e": "A/P accounting manager FS",
+      "description_be422130-de5f-424f-aecc-042ba385354e": "RESPCPTFOU",
+      "title_90739f58-fc8b-4217-a96e-9da4e63e4f4e": "A/R accounting manager FS",
+      "title_d8b94ea6-7f72-4805-a50a-3d0a3197146e": "A/R accounting manager FS",
+      "description_d8b94ea6-7f72-4805-a50a-3d0a3197146e": "RESPCPTCLT",
       "title_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Buyer FS",
       "title_747c8750-9eba-4b38-b358-94f87a2147db": "Buyer FS",
       "description_747c8750-9eba-4b38-b358-94f87a2147db": "ACHETEUR",
@@ -17211,6 +17635,8 @@
       "title_9ddbc074-e01b-4d65-9e98-b5f143ffac0d": "Administrador de ventas FS",
       "title_b8fbc679-23b5-4d15-9070-d71ee18743b5": "Objetivo repr./ CV facturada",
       "description_b8fbc679-23b5-4d15-9070-d71ee18743b5": "SVEN05",
+      "title_be422130-de5f-424f-aecc-042ba385354e": "Responsable contab.proveedores FS",
+      "title_d8b94ea6-7f72-4805-a50a-3d0a3197146e": "Responsable contab.clientes FS",
       "title_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Comprador FS",
       "description_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Comprador FS",
       "title_747c8750-9eba-4b38-b358-94f87a2147db": "Comprador FS",
@@ -17793,6 +18219,8 @@
       "title_b8fbc679-23b5-4d15-9070-d71ee18743b5": "Objectifs repr. / CA facturé",
       "description_b8fbc679-23b5-4d15-9070-d71ee18743b5": "SVEN05",
       "title_e120d589-40f9-468b-aa57-191406ff33bb": "Portal code",
+      "title_be422130-de5f-424f-aecc-042ba385354e": "Responsable compta.fournisseur FS",
+      "title_d8b94ea6-7f72-4805-a50a-3d0a3197146e": "Responsable compta.clients FS",
       "title_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Acheteur FS",
       "description_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Acheteur FS",
       "title_747c8750-9eba-4b38-b358-94f87a2147db": "Acheteur FS",
@@ -18937,6 +19365,8 @@
       "title_9ddbc074-e01b-4d65-9e98-b5f143ffac0d": "Administ.Vendas FS",
       "title_b8fbc679-23b5-4d15-9070-d71ee18743b5": "Object.Rep/real facturado",
       "description_b8fbc679-23b5-4d15-9070-d71ee18743b5": "SVEN05",
+      "title_be422130-de5f-424f-aecc-042ba385354e": "Resp. Contab. fornec.FS",
+      "title_d8b94ea6-7f72-4805-a50a-3d0a3197146e": "Resp. Contab. clientes FS",
       "title_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Comprador FS",
       "description_51e8da0c-86e7-43a9-925f-2ea5b66c33ad": "Comprador FS",
       "title_1440ddf5-78d2-4015-b298-82e3d4bb5cc8": "Encomendas por assinar",
