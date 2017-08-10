@@ -101,7 +101,7 @@ node {
                         sh('cp -R devLic /syracuse/ && cp nodelocal-docker-test.js /syracuse/nodelocal.js')
                         sh('cp -R node_modules/@sage/syracuse-lib/test /syracuse/node_modules/@sage/syracuse-lib/')
                         sh('cp -R node_modules/test-contract /syracuse/node_modules/')
-                        sh('npm install -g glob-cp && export NODE_PATH=/usr/local/lib/node_modules && node tools/copyTestFiles.js')
+                        sh('npm install -g glob-cp && export NODE_PATH=/usr/local/lib/node_modules && node tools/copyTestFiles.js && export NODE_PATH=')
                         sh('npm install -g mocha')
                         sh('npm install -g mocha-jenkins-reporter')
                         sh('export JUNIT_REPORT_PATH=$(pwd)/test_report.xml && npm run test:jenkins || exit 0')
