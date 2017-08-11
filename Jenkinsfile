@@ -3,8 +3,8 @@
 node {
     withEnv(["CI_DEST=${WORKSPACE}/tmp/customer_image", "SYRACUSE_IMAGE=x3-syracuse-etna"]) {
         env.SYRACUSE_RELEASE = 'stage'
-        def tag
-        if("${BRANCH_NAME}" == 'integration') {
+        def tag = 'etna_test'
+/*        if("${BRANCH_NAME}" == 'integration') {
             tag = 'latest'
             env.SYRACUSE_RELEASE = '2.999'
         } else {
@@ -12,7 +12,7 @@ node {
                 tag = "${BRANCH_NAME}".split('/')[1]
                 env.SYRACUSE_RELEASE = tag
             }
-        }
+        }*/
 
 	// The first time we launch this command on a new Branch, its failed: The repo doesn't exists yet, so we need to test ...
 	def gitPreviousCommit = null
