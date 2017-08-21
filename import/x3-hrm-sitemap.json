@@ -22653,6 +22653,60 @@
       "parameters": []
     },
     {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRESUBR",
+      "title": "title_a8075266-5ad2-49eb-85cd-2a059c8af580",
+      "description": "description_a8075266-5ad2-49eb-85cd-2a059c8af580",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRESUBR",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
+      "$type": "menuItem",
+      "$variantType": "menuItem",
+      "code": "STD_X3_HRM_GESHRESUB",
+      "title": "title_994c45f6-b0ea-4709-a847-8ff547c7b47d",
+      "description": "description_994c45f6-b0ea-4709-a847-8ff547c7b47d",
+      "linkType": "$function",
+      "applicationMenu": false,
+      "facet": "$query",
+      "fusionFunction": "GESHRESUB",
+      "keyIsWhere": false,
+      "target": "self",
+      "requestLevel": "1",
+      "$factory": true,
+      "$factoryOwner": "SAGE",
+      "application": {
+        "application": "x3",
+        "contract": "hrm"
+      },
+      "endpoint": null,
+      "representationRef": null,
+      "module": {
+        "code": "STD_X3_HRM_HRPAI"
+      },
+      "categories": [],
+      "parameters": []
+    },
+    {
       "$type": "menuBlock",
       "title": "title_f1b254b7-e790-4117-b9c3-491f533ea418",
       "code": "STD_X3_HRM_UKFUN",
@@ -22666,6 +22720,22 @@
         {
           "code": "STD_X3_HRM_GESAPPLEV",
           "$variantType": "menuItem"
+        },
+        {
+          "$type": "menuSubblock",
+          "$variantType": "menuBlock",
+          "code": "2072da96-4797-41ce-8e7b-4efdcef1fea9",
+          "title": "title_2072da96-4797-41ce-8e7b-4efdcef1fea9",
+          "items": [
+            {
+              "code": "STD_X3_HRM_GESHRESUBR",
+              "$variantType": "menuItem"
+            },
+            {
+              "code": "STD_X3_HRM_GESHRESUB",
+              "$variantType": "menuItem"
+            }
+          ]
         }
       ]
     },
@@ -30349,6 +30419,11 @@
       "title_f1b254b7-e790-4117-b9c3-491f533ea418": "UK functions",
       "title_20ed28ad-e05c-4f53-b2a0-7b17efbe65f1": "Apprenticeship levy",
       "description_20ed28ad-e05c-4f53-b2a0-7b17efbe65f1": "GESAPPLEV",
+      "title_2072da96-4797-41ce-8e7b-4efdcef1fea9": "E-Submissions",
+      "title_a8075266-5ad2-49eb-85cd-2a059c8af580": "E-submission registration",
+      "description_a8075266-5ad2-49eb-85cd-2a059c8af580": "GESHRESUBR",
+      "title_994c45f6-b0ea-4709-a847-8ff547c7b47d": "E-submission",
+      "description_994c45f6-b0ea-4709-a847-8ff547c7b47d": "GESHRESUB",
       "title_b4893b35-e39e-42a5-8090-1dbe4f2a70ab": "Expense notes  ",
       "title_cf1f6e92-d175-4152-82b9-e9174c0c91bd": "Expense notes  ",
       "title_e496d253-b37e-4574-844b-e29b90d3887f": "Expense codes",
