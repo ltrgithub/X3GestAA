@@ -22,13 +22,13 @@ pipeline {
     agent none
     stages {
         stage('Automatic QLF') {
-            step {                
+            steps {                
 			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo 'Qlf test'            
             }
         }
 		stage('Automatic Webdriver') {
-            step {                
+            steps {                
 			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo 'Webdriver'            
             }
