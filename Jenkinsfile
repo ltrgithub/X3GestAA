@@ -1,8 +1,7 @@
 #!groovy
 node {
 	stage('pull') {
-        /*checkout scm */
-		git url: 'https://ltrgithub:067fce1ae28b14870bd17cf51fcf7ec7b5fe86ed@github.com'
+        checkout scm
         bat ('git submodule update --init')
 		echo 'Okay pull and update'
     }
