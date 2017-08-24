@@ -1,12 +1,11 @@
 #!groovy
-node {
+/*node {
  checkout scm
-}
+}*/
+
 pipeline {
    agent none
-   /*
-   * checkout scm
-   */  
+   
    stages {
     stage('Auto-QLF') {	
         when {
