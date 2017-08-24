@@ -3,9 +3,8 @@
 node {
    /*
    * checkout scm
-   */
-    stages {
-        stage('QLF') {
+   */   
+    stage('QLF') {
 		    when {
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS' 
@@ -15,11 +14,11 @@ node {
 			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo 'Qlf test'
             }
-        }
-		stage('WebDriver') {
-            steps {
-                echo 'Webdriver'
-            }
+    }
+	stage('WebDriver') {
+        steps {
+			echo 'Webdriver'
         }
     }
+    
 }
