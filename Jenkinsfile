@@ -1,46 +1,43 @@
 #!groovy
-
 node {
+ checkout scm
+}
+pipeline {
+   agent none
    /*
    * checkout scm
-   */   
-    stage('QLF') {		    
-            steps {
-			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo 'Qlf test'
+   */  
+   stages {
+    stage('Auto-QLF') {	
+        when {
+            branch 'integration'
+            expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
             }
-    }
-	stage('WebDriver') {
+        }
         steps {
-			echo 'Webdriver'
+			echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            echo 'Auto-QLF'
         }
+            
     }
-    
-}
-
-pipeline {
-    agent none
-    stages {
-        stage('Automatic QLF') {
-            steps {                
-			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo 'Qlf test'            
-            }
-        }
-		stage('Automatic Webdriver') {
-            steps {                
-			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo 'Webdriver'            
-            }
-        }
+	stage('Auto-WebDriver') {
+        steps {
+			echo 'Auto-Webdriver'
+        }             
     }
-    post {
+   }
+   post {
         always {
             echo 'post always'  
         }
         failure {
             echo 'Failure'   
         }
-    }
+        unstable {
+            echo 'Unstable'    
+        }
+   }   
 }
+
 
