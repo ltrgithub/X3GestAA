@@ -1,42 +1,11 @@
 #!groovy
-/*node {
- checkout scm
-}*/
-
-pipeline {
-   agent none
-   
-   stages {
-    stage('Auto-QLF') {	
-        when {
-            branch 'integration'
-            expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-            }
-        }
-        steps {
-			echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            echo 'Auto-QLF'
-        }
-            
+node {
+	stage('pull') {
+        /*checkout scm */
+		git url: 'https://ltrgithub:7f94191ce312430c8170dbd889fafa922af99b87@github.com'
+        bat ('git submodule update --init')
+		echo 'Okay pull and update'
     }
-	stage('Auto-WebDriver') {
-        steps {
-			echo 'Auto-Webdriver'
-        }             
-    }
-   }
-   post {
-        always {
-            echo 'post always'  
-        }
-        failure {
-            echo 'Failure'   
-        }
-        unstable {
-            echo 'Unstable'    
-        }
-   }   
 }
 
 
