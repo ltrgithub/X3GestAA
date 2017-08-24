@@ -17,3 +17,30 @@ node {
     }
     
 }
+
+pipeline {
+    agent none
+    stages {
+        stage('Automatic QLF') {
+            step {                
+			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo 'Qlf test'            
+            }
+        }
+		stage('Automatic Webdriver') {
+            step {                
+			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo 'Webdriver'            
+            }
+        }
+    }
+    post {
+        always {
+            echo 'post always'  
+        }
+        failure {
+            echo 'Failure'   
+        }
+    }
+}
+
