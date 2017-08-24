@@ -2,7 +2,7 @@
 node {
 	stage('pull') {
         /*checkout scm */
-		git url: 'https://ltrgithub:7f94191ce312430c8170dbd889fafa922af99b87@github.com'
+		git url: 'https://ltrgithub:067fce1ae28b14870bd17cf51fcf7ec7b5fe86ed@github.com'
         bat ('git submodule update --init')
 		echo 'Okay pull and update'
     }
